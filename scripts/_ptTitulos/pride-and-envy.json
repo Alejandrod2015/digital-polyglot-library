@@ -1,0 +1,439 @@
+[
+  {
+    "slug": "antes-eran-mias",
+    "topic": "pride-and-envy",
+    "slotIndex": 1,
+    "title": "Antes eran mías",
+    "synopsis": "Adrián bakes at night in a corner bakery in Tucumán, and for two years his sister-in-law has been running the shop across the pavement. Since she changed the dough of her sweet bread she sells twice what he does, and the weekend customers now cross the street without looking at his sign. From the window by the oven he can see the bags going out of her door, and he counts them under his breath while he works, without ever once saying the word for what he is feeling.",
+    "text": "Adrián trabaja de noche en una panadería de esquina, en Tucumán, Argentina. Silvana abrió hace dos años en la vereda de enfrente. Nazario, su ayudante desde hace cinco años, amasa al lado y no dice nada. Su cuñada vende el doble que él.\n\nDesde la ventana se ven las bolsas de allá.\n\n“Once”, cuenta Adrián en voz baja, con las manos en la masa.\n\n“¿Once qué?”, le pregunta Nazario.\n\n“Once bolsas en media hora”, agrega Adrián. “Antes eran cuatro, y eran mías.”\n\n“Pasame la harina”, corta Nazario.\n\nLos sábados eran suyos, pero desde que Silvana le cambió la masa al pan dulce, la gente cruza la calle sin mirar la vidriera de acá.\n\n“Vos también podrías cambiarle algo”, le dice Nazario. “Aunque sea la vidriera.”\n\n“Yo no le cambio nada a lo que ya está bien”, contesta Adrián. “Que cambie ella, si le sobra tiempo y le sobran ganas.”\n\nCuenta las bolsas hasta las nueve, con el mate frío al lado y el cayote sin tocar.\n\nAdrián no dice envidia en toda la noche, porque decirlo sería darle la razón a ella.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "amasar",
+        "anchor": false,
+        "surface": "amasa",
+        "definition": "To press and fold flour and water until it becomes dough."
+      },
+      {
+        "type": "noun",
+        "word": "masa",
+        "anchor": false,
+        "definition": "The soft mix of flour and water that becomes bread."
+      },
+      {
+        "type": "adjective",
+        "word": "frío",
+        "definition": "Cold; gone cool, the way a drink left standing goes."
+      },
+      {
+        "type": "noun",
+        "word": "cuñada",
+        "anchor": false,
+        "definition": "The wife of your brother, or your wife's sister."
+      },
+      {
+        "type": "noun",
+        "word": "ayudante",
+        "anchor": false,
+        "surface": "ayudante",
+        "definition": "The person who works beside you and does what you ask."
+      },
+      {
+        "type": "verb",
+        "word": "cruzar",
+        "anchor": false,
+        "surface": "cruza",
+        "definition": "To go from one side of the street to the other."
+      },
+      {
+        "type": "noun",
+        "word": "envidia",
+        "anchor": false,
+        "definition": "The sour feeling when another person has what you want."
+      },
+      {
+        "type": "expression",
+        "word": "en voz baja",
+        "anchor": false,
+        "definition": "Speaking softly, so that the others do not hear you."
+      },
+      {
+        "type": "noun",
+        "word": "ventana",
+        "anchor": false,
+        "surface": "ventana",
+        "definition": "The opening in a wall that lets you see outside."
+      },
+      {
+        "type": "verb",
+        "word": "tocar",
+        "anchor": false,
+        "surface": "tocar",
+        "definition": "To put your hand on something, or to use it at all."
+      },
+      {
+        "type": "noun",
+        "word": "panadería",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The corner shop that bakes and sells its own bread."
+      },
+      {
+        "type": "noun",
+        "word": "vereda",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The pavement of the street, in the Argentine word for it."
+      },
+      {
+        "type": "noun",
+        "word": "mate",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The bitter herb drink shared all day in the Argentine north."
+      },
+      {
+        "type": "noun",
+        "word": "bolsa",
+        "definition": "Bag; the paper or plastic bag you carry what you bought in.",
+        "surface": "bolsas"
+      },
+      {
+        "type": "noun",
+        "word": "pan dulce",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The sweet holiday bread that Argentine bakeries fight over."
+      },
+      {
+        "type": "noun",
+        "word": "harina",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The white flour that everything in the bakery starts from."
+      },
+      {
+        "type": "expression",
+        "word": "media hora",
+        "anchor": false,
+        "surface": "media hora",
+        "definition": "Thirty minutes, half of one hour on the clock."
+      },
+      {
+        "type": "noun",
+        "word": "razón",
+        "anchor": false,
+        "definition": "Being right about something that the other person doubted."
+      },
+      {
+        "type": "noun",
+        "word": "sábado",
+        "anchor": false,
+        "surface": "sábados",
+        "definition": "The busiest day of the week for a shop like this one."
+      },
+      {
+        "type": "noun",
+        "word": "vidriera",
+        "anchor": true,
+        "surface": "vidriera",
+        "register": "cultural",
+        "definition": "The shop window, in the word used all over Argentina."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "slug": "el-mismo-pan-dulce",
+    "topic": "pride-and-envy",
+    "slotIndex": 2,
+    "title": "El mismo pan dulce",
+    "synopsis": "There are pastries from both bakeries on the family table, and Silvana bites into Adrián's sweet bread and stops chewing halfway. She knows her own recipe before she has swallowed it, and she says so in front of everyone, lightly, which is worse than saying it angrily. He answers by talking about the new oven, the gas, the way the pastry is folded, anything that is not the recipe, and his voice goes up on its own, which at that table counts as a confession.",
+    "text": "Hay empanadas en la mesa de la familia y facturas de las dos panaderías. Silvana muerde el pan dulce de Adrián y se queda quieta a media mordida.\n\nSilvana reconoce su propia receta antes de tragar.\n\n“Está buenísimo”, le suelta ella. “Igualito al mío.”\n\n“Es otra masa, y otro horno”, contesta Adrián.\n\n“Es la mía, Adrián. Yo le puse las nueces el año pasado.”\n\nÉl habla del horno nuevo y del gas.\n\n“Contame del horno”, lo corta Silvana.\n\nHabla del gasto, de la chapa que se calienta, de cualquier cosa que no sea la receta.\n\nSube la voz sin darse cuenta, y en esa mesa subir la voz es admitirlo todo.\n\n“Nadie inventa un pan dulce, Silvana”, insiste él. “Se hace lo que se puede.”\n\n“Nadie”, responde Silvana, “pero yo sé cuál es el mío, y vos también.”\n\nNadie levanta la mesa temprano ese día, y los platos quedan puestos.\n\nAdrián no vuelve a mirarla de frente en todo el almuerzo, y ese mes no hay otro domingo.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "morder",
+        "anchor": false,
+        "surface": "muerde",
+        "definition": "To cut into food with your teeth and take a piece."
+      },
+      {
+        "type": "verb",
+        "word": "reconocer",
+        "anchor": false,
+        "surface": "reconoce",
+        "definition": "To know a thing again because you made it yourself."
+      },
+      {
+        "type": "verb",
+        "word": "tragar",
+        "anchor": false,
+        "definition": "To let the food go down from your mouth to your stomach."
+      },
+      {
+        "type": "noun",
+        "word": "receta",
+        "anchor": false,
+        "definition": "The list of what goes in a dish and how it is made."
+      },
+      {
+        "type": "expression",
+        "word": "darse cuenta",
+        "anchor": false,
+        "surface": "darse cuenta",
+        "definition": "To notice a thing that was happening without you seeing it."
+      },
+      {
+        "type": "verb",
+        "word": "admitir",
+        "anchor": false,
+        "surface": "admitirlo",
+        "definition": "To accept out loud the thing you were trying to hide."
+      },
+      {
+        "type": "expression",
+        "word": "levantar la mesa",
+        "anchor": false,
+        "surface": "levanta la mesa",
+        "definition": "To clear the plates and end the meal for everyone."
+      },
+      {
+        "type": "noun",
+        "word": "almuerzo",
+        "anchor": false,
+        "definition": "The main meal of the day, eaten in the middle of it."
+      },
+      {
+        "type": "noun",
+        "word": "gas",
+        "anchor": false,
+        "definition": "What burns in the oven to make the heat for baking."
+      },
+      {
+        "type": "expression",
+        "word": "de frente",
+        "anchor": false,
+        "definition": "Looking straight at the other person, without turning away."
+      },
+      {
+        "type": "adjective",
+        "word": "igualito",
+        "anchor": false,
+        "definition": "Exactly the same, said with a little push of meaning."
+      },
+      {
+        "type": "noun",
+        "word": "empanada",
+        "anchor": true,
+        "surface": "empanadas",
+        "register": "cultural",
+        "definition": "The small filled pastry that Tucuman is famous for."
+      },
+      {
+        "type": "noun",
+        "word": "factura",
+        "anchor": true,
+        "surface": "facturas",
+        "register": "cultural",
+        "definition": "The small sweet pastries Argentines buy for the afternoon."
+      },
+      {
+        "type": "noun",
+        "word": "nuez",
+        "anchor": false,
+        "surface": "nueces",
+        "register": "cultural",
+        "definition": "The nut that goes inside the sweet holiday bread."
+      },
+      {
+        "type": "noun",
+        "word": "gasto",
+        "anchor": false,
+        "surface": "gasto",
+        "register": "cultural",
+        "definition": "The money that the shop has to spend to keep working."
+      },
+      {
+        "type": "noun",
+        "word": "horno",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The big bakery oven that the whole workroom is built around."
+      },
+      {
+        "type": "noun",
+        "word": "plato",
+        "anchor": false,
+        "surface": "plato",
+        "definition": "The flat dish that each person eats from at the table."
+      },
+      {
+        "type": "noun",
+        "word": "año",
+        "anchor": false,
+        "surface": "año",
+        "definition": "The twelve months that go by between one holiday and the next."
+      },
+      {
+        "type": "noun",
+        "word": "cosa",
+        "anchor": false,
+        "surface": "cosa",
+        "definition": "Any thing at all, when you do not want to name it."
+      },
+      {
+        "type": "adjective",
+        "word": "nuevo",
+        "anchor": false,
+        "definition": "Just bought or just built, not the old one from before."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "la-fuente-en-la-vereda",
+    "topic": "pride-and-envy",
+    "slotIndex": 3,
+    "title": "La fuente en la vereda",
+    "synopsis": "Silvana crosses to his bakery on a quiet weekday, carrying back the empty tray he sent her full, and tells him plainly that he copied her. He answers that he improved it. Apologising now would mean admitting she was right a second time, and he has already given her that once, so neither of them does it. She leaves without buying anything and without slamming the door, and days later there is a tray of his sweet bread at her door.",
+    "text": "Un martes sin clientes, Silvana cruza a la panadería de Adrián. Trae la fuente vacía que él le mandó llena. Los dos saben para qué vino.\n\n“Lo copiaste, Adrián”, le dice ella, sin levantar la voz.\n\n“Lo mejoré, que no es lo mismo”, contesta Adrián.\n\n“Lo copiaste y lo mejoraste, las dos cosas”, sigue ella. “Y no me lo dijiste.”\n\nÉl podría pedirle perdón ahora, pero pedir perdón sería darle la razón dos veces, y ya se la dio una.\n\n“Podrías haberme dicho”, sigue Silvana. “Yo te lo daba, si me lo pedías, y vos lo sabés.”\n\n“Ya sé”, admite él. “Por eso no te lo dije.”\n\n“Ponele que sí, entonces”, agrega.\n\n“Ponele”, acepta ella.\n\nSilvana se va sin comprar nada, y no cierra de golpe.\n\nEn esta familia esa es la manera de dejar un tema abierto.\n\nDías después, Adrián cruza con una fuente tapada.\n\nLa vereda huele a pan recién salido.\n\nLa deja en la puerta y no llama.\n\nNinguno de los dos pide perdón, y los dos saben exactamente qué quedó dicho.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "fuente",
+        "anchor": false,
+        "surface": "fuente",
+        "definition": "The flat dish you carry bread or food on."
+      },
+      {
+        "type": "adjective",
+        "word": "vacío",
+        "anchor": false,
+        "surface": "vacía",
+        "definition": "With nothing at all inside it, already emptied out."
+      },
+      {
+        "type": "verb",
+        "word": "copiar",
+        "anchor": false,
+        "surface": "copiaste",
+        "definition": "To make the same thing that another person made first."
+      },
+      {
+        "type": "verb",
+        "word": "mejorar",
+        "anchor": false,
+        "surface": "mejoré",
+        "definition": "To make a thing better than it was before you touched it."
+      },
+      {
+        "type": "noun",
+        "word": "perdón",
+        "anchor": false,
+        "definition": "The word you say when you admit that you were wrong."
+      },
+      {
+        "type": "expression",
+        "word": "de golpe",
+        "anchor": false,
+        "surface": "de golpe",
+        "definition": "Suddenly and hard, the way an angry person shuts a door."
+      },
+      {
+        "type": "verb",
+        "word": "llamar",
+        "anchor": false,
+        "surface": "llama",
+        "definition": "To ring or knock at a door so they open it."
+      },
+      {
+        "type": "noun",
+        "word": "puerta",
+        "anchor": false,
+        "definition": "The way in and out of a house or a shop."
+      },
+      {
+        "type": "verb",
+        "word": "comprar",
+        "anchor": false,
+        "definition": "To give money in exchange for a thing you take away."
+      },
+      {
+        "type": "expression",
+        "word": "ponele",
+        "anchor": false,
+        "surface": "Ponele",
+        "definition": "An Argentine way of saying let us say it is so."
+      },
+      {
+        "type": "verb",
+        "word": "aceptar",
+        "anchor": false,
+        "surface": "acepta",
+        "definition": "To take what the other person says without fighting it."
+      },
+      {
+        "type": "adjective",
+        "word": "abierto",
+        "anchor": false,
+        "definition": "Not closed and not finished, still there to come back to."
+      },
+      {
+        "type": "noun",
+        "word": "martes",
+        "anchor": false,
+        "definition": "Tuesday, a day with no customers in this street."
+      },
+      {
+        "type": "verb",
+        "word": "pedir",
+        "anchor": false,
+        "surface": "pedías",
+        "definition": "To ask another person to give you what you need."
+      },
+      {
+        "type": "verb",
+        "word": "saber",
+        "anchor": false,
+        "surface": "sé",
+        "definition": "To have the thing clear in your head, without being told."
+      },
+      {
+        "type": "adjective",
+        "word": "mismo",
+        "anchor": false,
+        "definition": "Not different at all from the other thing named."
+      },
+      {
+        "type": "adjective",
+        "word": "tapado",
+        "anchor": false,
+        "surface": "tapada",
+        "definition": "Covered with a cloth so that nobody sees what is inside."
+      },
+      {
+        "type": "verb",
+        "word": "salir",
+        "anchor": false,
+        "surface": "salido",
+        "definition": "To come out of the oven, finished and still hot."
+      },
+      {
+        "type": "expression",
+        "word": "dos veces",
+        "anchor": false,
+        "surface": "dos veces",
+        "definition": "On two separate occasions, one after the other."
+      },
+      {
+        "type": "adjective",
+        "word": "llena",
+        "anchor": false,
+        "surface": "llena",
+        "definition": "Full, with nothing more that will fit inside."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

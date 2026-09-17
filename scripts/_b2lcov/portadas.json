@@ -1,0 +1,233 @@
+[
+ {
+  "topic": "jokes-and-double-meanings",
+  "label": "Jokes & Double Meanings",
+  "place": "Guadalajara, México",
+  "names": [
+   "RENATA",
+   "JOAQUÍN"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is RENATA: woman, exactly 44 years old, sturdy build with broad shoulders, a little shorter than JOAQUÍN, warm brown skin, thick black wavy hair pulled back in a low bun, WITHOUT fringe, no facial hair, small gold hoop earrings, no glasses; wears a short-sleeved crimson-red blouse, a plain black bar apron tied at the waist, dark grey trousers and black flat shoes.\n\nRIGHT is JOAQUÍN: man, exactly 50 years old, clearly a man of fifty and not elderly, lean wiry build, a little taller than RENATA, light brown skin, short black hair with grey at the temples combed to the side, WITHOUT fringe, neat grey-black moustache and no beard, no glasses; wears a sky-blue long-sleeved guayabera shirt, tan cotton trousers, a brown leather belt and brown leather shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "los-aguanto-de-dos-en-dos",
+    "title": "Los aguanto de dos en dos",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The long wooden bar of an old cantina in Guadalajara, Mexico, early afternoon, warm yellow light from the street door, no other people. JOAQUÍN sits on a tall bar stool raising a small tequila glass towards RENATA with a sly look; RENATA stands behind the bar drying a glass with a white cloth, laughing a moment too late, her face turned slightly away. A row of small empty tequila glasses on the counter, a steaming clay pot and plain unlabelled glass bottles on a wooden shelf. Wide shot from the end of the bar, both waist-up or fuller.",
+    "note": "Los clientes de la cantina no salen: solo RENATA y JOAQUÍN."
+   },
+   {
+    "slug": "de-pura-muina",
+    "title": "De pura muina",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The same cantina on a quiet weekday morning, empty. RENATA stands behind the counter slicing a white jícama on a wooden board, gripping a pencil in her other hand; JOAQUÍN leans over the bar holding her small notebook, firmly closed, with an innocent face, and she holds his gaze without smiling. A bowl of bar snacks and a stack of clean plates on the counter. Close medium shot over RENATA's shoulder.",
+    "note": ""
+   },
+   {
+    "slug": "el-chiste-tan-suyo",
+    "title": "El chiste tan suyo",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The cantina at lunchtime, no other people. A straw hat hangs on a nail beside the door. RENATA and JOAQUÍN face each other across the bar, both very serious, touching two small tequila glasses together in a toast; JOAQUÍN tilts his head back to drink his in one go. Plain unlabelled bottles on the shelf and a steaming bowl on the counter. Low-angle shot from just below the edge of the bar, both waist-up.",
+    "note": "Los clientes que se ríen no salen: solo RENATA y JOAQUÍN."
+   }
+  ]
+ },
+ {
+  "topic": "negotiations-and-courtesies",
+  "label": "Negotiations & Courtesies",
+  "place": "Lima, Perú",
+  "names": [
+   "MARICARMEN",
+   "AURELIO"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is MARICARMEN: woman, exactly 48 years old, plump build, a head shorter than AURELIO, medium brown skin, dark brown hair cut in a short layered bob WITH a short side-swept fringe, no facial hair, thin gold-rimmed glasses; wears a teal-green knitted cardigan over a white blouse, a knee-length charcoal-grey skirt and black low-heeled shoes.\n\nRIGHT is AURELIO: man, exactly 41 years old, tall and slightly heavy, a head taller than MARICARMEN, light olive skin, short black hair gelled neatly back, WITHOUT fringe, clean-shaven, no glasses; wears a navy-blue suit jacket over a pale pink shirt with no tie, grey trousers and polished black shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-cortesia-mas-cara",
+    "title": "La cortesía más cara",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A Chinese-Peruvian restaurant (chifa) on an old street in central Lima, Peru, at lunchtime, soft grey daylight from a large window, no other people. MARICARMEN, seated, holds open a fabric sample book that shows only plain coloured cloth swatches; AURELIO, seated opposite, raises a pair of chopsticks and smiles broadly, praising a swatch. A plate of fried wonton, a white china teapot and two small cups on a round table with a red tablecloth. Wide shot from the side of the table, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "yo-no-fallo",
+    "title": "Yo no fallo",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A small sewing workshop in Lima before dawn, lit by a single desk lamp. MARICARMEN sits alone at a black sewing machine stitching a plain navy-blue tracksuit, tired; beside her a mobile phone lies face down next to a glass cup of warm herbal drink, and a tall stack of folded plain navy tracksuits with no logos. A finished dress on a hanger waits untouched on a rack. Medium shot from the front, slightly low.",
+    "note": "AURELIO no sale: la escena es MARICARMEN sola, cosiendo de madrugada."
+   },
+   {
+    "slug": "una-yapa-de-sobremesa",
+    "title": "Una yapa de sobremesa",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The same chifa after lunch, no other people. MARICARMEN and AURELIO shake hands across the table with a short firm handshake, both smiling politely; a paper napkin folded in half lies between them beside a pen. An empty serving dish, a plate with a little fried rice left and two small raised glasses. High-angle shot from above the table.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "secrets-and-silences",
+  "label": "Secrets & Silences",
+  "place": "Valparaíso, Chile",
+  "names": [
+   "MARCELA",
+   "IGNACIO"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is MARCELA: woman, exactly 38 years old, slim athletic build, a little shorter than IGNACIO, light tan skin with a few freckles, curly dark auburn hair tied in a high ponytail, WITHOUT fringe, no facial hair, no glasses; wears paint-splattered white overalls over a mustard-yellow t-shirt, a red bandana tied around her neck and grey work boots.\n\nRIGHT is IGNACIO: man, exactly 56 years old, clearly a man in his mid-fifties and not elderly, stocky build with a round belly, a little taller than MARCELA, fair ruddy skin, short grey hair cut close, WITHOUT fringe, full thick grey beard, no glasses; wears a dark green zip-up work jacket over a brown-and-cream checked flannel shirt, navy work trousers and black boots.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-once-con-chirrido",
+    "title": "La once con chirrido",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A steep hillside funicular station in Valparaíso, Chile, late afternoon, brightly coloured houses on the hill, no other people. MARCELA stands on a metal scaffold painting the station facade with a roller, looking down; IGNACIO leans out of the small wooden operator's hut holding a closed logbook and waves up at her. An old wooden funicular car on its steep rail and a big iron gear wheel beside the hut. Wide shot from the bottom of the slope.",
+    "note": ""
+   },
+   {
+    "slug": "la-licitacion-desierta",
+    "title": "La licitación desierta",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: Inside the small operator's hut at dusk, a warm lamp and a window onto the harbour. IGNACIO slides a plate of round homemade bread across a small table towards MARCELA, as if closing a deal; MARCELA sits back with her arms folded, not touching a sheet of paper folded in half on the table. A teapot and two cups of tea. Medium shot across the table, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "tres-veces-por-escrito",
+    "title": "Tres veces, por escrito",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The funicular stuck halfway up the steep slope at midday, no other people. MARCELA stands inside the small wooden car gripping the metal handrail with both hands, frightened; IGNACIO, beside the hut at the bottom, turns a big iron hand crank with all his weight. The steel cable, the rail and colourful hillside houses around them. Low-angle shot from the track looking up the slope, both full body.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "classes-and-teachers",
+  "label": "Classes & Teachers",
+  "place": "Buenos Aires, Argentina",
+  "names": [
+   "GRISELDA",
+   "ARIEL"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is GRISELDA: woman, exactly 46 years old, tall and slender, taller than ARIEL, pale skin, long straight light-brown hair worn loose to the shoulders WITH a long curtain fringe parted in the middle, no facial hair, round black-framed glasses; wears a burgundy turtleneck sweater under a long camel-brown wool coat, black trousers and brown ankle boots.\n\nRIGHT is ARIEL: man, exactly 42 years old, medium build, shorter than GRISELDA, light skin, short dark brown hair thinning on top, WITHOUT fringe, trimmed dark stubble beard, no glasses; wears a light grey quarter-zip sweater over a white collared shirt, dark blue jeans and white sneakers.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-otra-columna",
+    "title": "La otra columna",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: An old classroom in San Telmo, Buenos Aires, Argentina, morning light through tall windows, no other people. GRISELDA wipes a completely blank blackboard with a felt eraser, calm; ARIEL stands in the doorway with a closed grey folder under his arm, watching her over it. A cup of coffee and two croissants on a plate on the teacher's desk, and rows of empty wooden desks. Wide shot from the back of the classroom.",
+    "note": ""
+   },
+   {
+    "slug": "buena-suerte-en-porteno",
+    "title": "Buena suerte en porteño",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A school corridor in San Telmo at night, lit by old ceiling lamps, no other people. GRISELDA looks through the glass door of an empty classroom where pairs of headphones rest on bare desks; ARIEL walks past behind her carrying a closed envelope with small plain colourful squares for stamps. A wooden bench and an empty coat rack along the wall. Medium shot down the corridor, both waist-up.",
+    "note": "Los alumnos del grupo de la noche no salen: solo GRISELDA y ARIEL."
+   },
+   {
+    "slug": "que-buena-idea-ariel",
+    "title": "Qué buena idea, Ariel",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The same classroom in the afternoon, no other people. ARIEL stands in the doorway holding a letter folded in half against his chest, speaking; GRISELDA stands with her back to him at the window, pressing her lips together to hold in a laugh. Outside the window a plain green-and-yellow city bus passes. Over-the-shoulder shot from behind GRISELDA.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "fluency-and-forgetting",
+  "label": "Fluency & Forgetting",
+  "place": "Cali, Colombia",
+  "names": [
+   "JAIRO",
+   "YAMILETH"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is JAIRO: man, exactly 45 years old, broad heavy build, a head taller than YAMILETH, dark brown skin, very short black hair shaved close at the sides, WITHOUT fringe, short black goatee, no glasses; wears a bright orange short-sleeved polo shirt, beige chino trousers and white sneakers.\n\nRIGHT is YAMILETH: woman, exactly 44 years old, curvy build, a head shorter than JAIRO, dark brown skin, long black braids gathered into a thick ponytail, WITHOUT fringe, no facial hair, large round silver earrings, no glasses; wears a fuchsia-pink sleeveless blouse, a white knee-length skirt and white sandals.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "aqui-se-dice-arrendando",
+    "title": "Aquí se dice arrendando",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A sunny street corner in the Obrero neighbourhood of Cali, Colombia, hot afternoon, low brightly painted houses, no other people. YAMILETH hands JAIRO a tall glass of orange-green lulo juice with a crooked teasing smile; JAIRO stands beside a big rolling suitcase, laughing, a little embarrassed. A small plastic table with a plate of snacks and potted plants on the pavement. Wide shot from across the street.",
+    "note": ""
+   },
+   {
+    "slug": "el-trasteo-ajeno",
+    "title": "El trasteo ajeno",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The front of a small empty shop on the same street, early morning, with no sign of any kind on the shop. Cardboard boxes are piled at the open door and bunches of green balloons are tied to the doorframe. JAIRO stares at the boxes with his mouth half open; YAMILETH stands beside him with her arms crossed, explaining with one raised hand. Medium shot from the pavement, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "la-napa-del-dueno",
+    "title": "La ñapa del dueño",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A busy corner juice stand in Cali on a Saturday, no other people. JAIRO scrapes shaved ice into a clear cup of fruit dessert and raises a glass high as if toasting; YAMILETH stands at a small closed metal cash box, laughing. A blender full of orange juice and piles of guavas and limes on the counter. Close medium shot from inside the stand.",
+    "note": "El dueño del local no sale: solo JAIRO y YAMILETH."
+   }
+  ]
+ },
+ {
+  "topic": "partners-and-in-laws",
+  "label": "Partners & In-Laws",
+  "place": "La Plata, Argentina",
+  "names": [
+   "EMILIANO",
+   "NORMA"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is EMILIANO: man, exactly 29 years old, slim build, a head taller than NORMA, light skin, short wavy black hair, WITHOUT fringe, clean-shaven, no glasses; wears a light blue button-up shirt tucked into dark grey trousers, a brown leather belt and polished brown leather shoes.\n\nRIGHT is NORMA: woman, exactly 56 years old, clearly a woman in her mid-fifties and not elderly, short and sturdy, a head shorter than EMILIANO, fair skin, short curly copper-red hair, WITHOUT fringe, no facial hair, several gold rings on both hands, no glasses; wears a white cotton apron over a navy-blue short-sleeved dress and black comfortable shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "vitel-tone-con-blanco",
+    "title": "Vitel toné con blanco",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The counter of a family rotisserie shop in La Plata, Argentina, midday, a big oven glowing behind, no other people. EMILIANO stands at the counter holding out a dark wine bottle with no label, stiff and polite; NORMA, behind the counter, looks at the bottle before looking at him, turning a ring on her finger. Trays of roast chicken and potatoes in a glass display case. Medium shot from the customer side, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "aca-los-errores-se-pagan",
+    "title": "Acá los errores se pagan",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The small kitchen at the back of the rotisserie, morning. EMILIANO dips a cutlet into a tray of breadcrumbs, flour on his hands, looking down; NORMA stands with her hands on her hips beside a tray of blackened, burnt cutlets, stern. A second tray of golden cutlets and bowls of flour and beaten egg on the steel table. Wide shot from the kitchen door.",
+    "note": ""
+   },
+   {
+    "slug": "la-ultima-dorada",
+    "title": "La última dorada",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The rotisserie at night, closed and tidy, one lamp on, no other people. NORMA stands at the counter tasting a golden cutlet she has just uncovered from a white paper napkin, eyes half closed; EMILIANO stands by the door holding the shop keys, watching her. The counter wiped clean and a small bell above the door. Low-angle close shot from counter height.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "tales-and-tall-stories",
+  "label": "Tales & Tall Stories",
+  "place": "Aracataca, Colombia",
+  "names": [
+   "BALDOMERO",
+   "OFELIA"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is BALDOMERO: man, exactly 58 years old, clearly a strong man in his late fifties and not elderly, tall and broad-chested, a head taller than OFELIA, deep brown skin, short curly black hair going grey, WITHOUT fringe, full black-and-white moustache and no beard, no glasses; wears a loose white linen shirt with the sleeves rolled up, light khaki trousers and brown leather sandals.\n\nRIGHT is OFELIA: woman, exactly 50 years old, slim build, a head shorter than BALDOMERO, light brown skin, shoulder-length straight black hair held back with a yellow headband, WITHOUT fringe, no facial hair, no glasses; wears a sleeveless emerald-green dress with a thin white belt and white flat sandals.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "de-medio-metro-y-gracias",
+    "title": "De medio metro, y gracias",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The shaded wooden veranda of a guesthouse in Aracataca, Colombia, hot afternoon, bright tropical light, no other people. BALDOMERO sits in a wooden rocking chair spreading his arms as wide as they go to show an enormous fish; OFELIA stands beside him holding her hands only a short distance apart, correcting him with a dry look. Glasses of iced sugarcane drink on a small table and a red clay-tile floor. Wide shot from the garden.",
+    "note": "Los mochileros no salen: solo BALDOMERO y OFELIA."
+   },
+   {
+    "slug": "la-carreta-mojada",
+    "title": "La carreta mojada",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A sudden tropical downpour on the dirt street in front of the guesthouse, late afternoon, no other people. BALDOMERO stands in the rain, soaked, clutching a closed notebook dripping with water; OFELIA stands dry under the veranda roof holding a pile of folded towels out to him. Heavy lines of rain and puddles on the ground. Medium shot from inside the veranda looking out.",
+    "note": "Los mochileros no salen: solo BALDOMERO y OFELIA."
+   },
+   {
+    "slug": "la-historia-sin-agrandar",
+    "title": "La historia sin agrandar",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The guesthouse veranda in full late-afternoon light, no other people. OFELIA holds up an old yellowed photograph showing only a yellow train loaded with fish, with no people in it; BALDOMERO, in his rocking chair, looks from the photo up to her with a crooked smile. An old photo album, closed, on a stool beside him. Close over-the-shoulder shot from behind OFELIA.",
+    "note": ""
+   }
+  ]
+ }
+]

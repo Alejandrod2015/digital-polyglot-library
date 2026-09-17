@@ -26,7 +26,10 @@
  *   - acotacion: cuanta habla citada lleva al narrador al lado (solo avisa, no
  *     bloquea: la regla no tiene gate y decir lo contrario seria mentir);
  *   - la escalera de vocab del tema, informativa: la de verdad es del journey
- *     entero y por eso sale como pendiente de conjunto.
+ *     entero y por eso sale como pendiente de conjunto;
+ *   - LA BANDA GRAMATICAL del nivel (scripts/_gramProbe.ts, BANDA_NIVEL): donde
+ *     el nivel tiene banda medida (hoy B2) un marcador fuera de ella BLOQUEA;
+ *     donde no la tiene, solo informa.
  *
  * EL MODO --json existe para poder probar el cierre con fixtures donde no hay
  * base de datos. El fichero puede ser un array de historias, o un objeto
@@ -50,6 +53,7 @@ import {
   type ExistingStorySummary,
 } from "@/lib/validateGeneratedStory";
 import { validateJourneyStories } from "@/lib/validateJourneyStories";
+import { mide, BANDA_NIVEL } from "./_gramProbe";
 import {
   hashTema, escribirCierre, leerRegistro, claveCierre, faltaEnPlan,
   type Cierre, type HistoriaCierre, type PlanTema,
@@ -551,6 +555,33 @@ function desdeJson(fichero: string) {
       );
   }
 
+  // (f) BANDA GRAMATICAL DEL NIVEL (2026-09-10). La sonda de _gramProbe.ts sobre
+  //     las tres historias juntas. Donde el nivel tiene banda MEDIDA (hoy solo B2),
+  //     un marcador fuera de ella BLOQUEA: el piloto del B2 de Espana salio con 14
+  //     subjuntivos imperfectos por 100 oraciones, el triple que un C1 publicado, y
+  //     ningun check lo vio. Donde no hay banda medida, solo informa.
+  {
+    const banda = BANDA_NIVEL[nivelPlan];
+    const { oraciones, usos, tokens } = mide(textos.join("\n"));
+    const linea = ["pretérito", "subj. imperfecto", "condicional", "estilo indirecto"]
+      .map((m) => `${m} ${usos[m]}`).join(" · ");
+    if (!banda) {
+      console.log(`   [banda]     ${nivelPlan}: sin banda medida, solo informa · ${linea} (por 100 oraciones, ${oraciones} or.)`);
+      checks.push(`banda gramatical: sin banda medida para ${nivelPlan} (${linea})`);
+    } else {
+      const marcadores = Object.entries(banda);
+      console.log(`   [banda]     ${nivelPlan}: ${marcadores.map(([m, [lo, hi]]) => `${m} ${usos[m]} (${lo}-${hi})`).join(" · ")} · ${oraciones} or.`);
+      const fuera = marcadores.filter(([m, [lo, hi]]) => usos[m] < lo || usos[m] > hi);
+      for (const [m, [lo, hi]] of fuera)
+        fallos.push(
+          `[banda ${nivelPlan}] ${m} ${usos[m]} por 100 oraciones, fuera de ${lo}-${hi}: ` +
+          `${tokens[m].join(", ") || "ninguno"}`
+        );
+      if (!fuera.length)
+        checks.push(`banda gramatical ${nivelPlan} dentro: ${marcadores.map(([m]) => `${m} ${usos[m]}`).join(" · ")}`);
+    }
+  }
+
   // ── 4. Escalera de vocab del tema, informativa ──
   const esc = escaleraDelTema(conTexto);
   console.log(`   [escalera]  ${esc.media.toFixed(2)} encuentros por plaza dentro del tema (${esc.plazas} plazas)`);
@@ -613,6 +644,13 @@ function desdeJson(fichero: string) {
     plan,
     avisos: avisos.length ? avisos : undefined,
   };
+  // El modo --json es para PROBAR el cierre con fixtures: nunca escribe. Antes
+  // escribia igual, y el 2026-09-10 piso el cierre valido de un tema con el
+  // hash de un texto que no estaba guardado en la base.
+  if (modoJson) {
+    console.log(`\n✓ EL CIERRE PASARIA (modo fixture, hash ${cierre.hash}). NADA ESCRITO EN EL REGISTRO.`);
+    process.exit(0);
+  }
   escribirCierre(journeyId, topic, cierre);
   console.log(`\n✓ TEMA CERRADO. Registrado en scripts/tema-cierres.json (hash ${cierre.hash}), con su plan.`);
   console.log("   Eso, y no una frase, es lo que hace que el tema cuente como listo.");

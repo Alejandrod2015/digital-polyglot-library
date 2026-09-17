@@ -12,7 +12,10 @@
  * (~2,3 palabras/s). Aplicar el 2,7 del A0 cambiaria justo lo que aprobo.
  *
  * Uso:  DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" \
- *         npx tsx scripts/_narraUnaA2.ts <slug>
+ *         npx tsx scripts/_narraUnaA2.ts <slug> [--journey a2 | b1-latam | b2-latam]
+ *
+ * Antes de narrar, el modo en seco dice que voz y que paso del orden toca a
+ * cada historia, con las mismas funciones:  npx tsx scripts/_narraSeco.ts --journey <perfil>
  */
 // PRIMERO, y de efecto lateral: los import se izan, asi que un config() de
 // dotenv escrito aqui arriba corre DESPUES de cargarse elevenlabs.ts y su
@@ -24,35 +27,11 @@ import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { rapidasDe, informe } from "./checkNarrationPace";
 import { checkMasterCoverage } from "./coverageWhisperCheck";
-import * as fs from "fs";
-import * as path from "path";
+import { perfilDeArgs, vozDe, muestrasRegistradas } from "./_narraPerfiles";
 
-import { VOZ_POR_TEMA } from "./_a2Voces";
-import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
-import { VOZ_POR_TEMA_FR_A0 } from "./_frA0Voces";
-import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
-import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
-import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
-import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
-import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
-import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
-
-// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
-// usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string>; bundle: string; language?: string }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
-  "fr-a0": { journey: "cmtwo6cys0007j8yzg6ni3fsc", voces: VOZ_POR_TEMA_FR_A0, bundle: "french-friends-a0" },
-  "fr-a2-friends": { journey: "cmu04ereh000732z7px7naqa2", voces: VOZ_POR_TEMA_FR_A2, bundle: "french-friends-france-a2", language: "french" },
-  "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, bundle: "french-friends-france-b1", language: "french" },
-  "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, bundle: "german-friends-a1", language: "german" },
-  "de-a0-friends": { journey: "cmu047bkz0007326jsgeptkox", voces: VOZ_POR_TEMA_DE_A0_FRIENDS, bundle: "german-friends-a0", language: "german" },
-  "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
-  "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
-};
-const pi = process.argv.indexOf("--journey");
-const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends | it-a0-friends | es-a2-friends");
+// Ampliado el 2026-09-07 para el B1 latam y el 2026-09-11 para el B2 latam
+// (pedir-una-vez): los perfiles viven en _narraPerfiles.ts; sin flag, el A2.
+const PERFIL = perfilDeArgs(process.argv);
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
@@ -63,26 +42,23 @@ const prisma = new PrismaClient();
 
   const s = await prisma.journeyStory.findFirst({
     where: { journeyId: JOURNEY, slug },
-    select: { id: true, slug: true, title: true, text: true, topic: true, slotIndex: true, audioUrl: true },
+    select: { id: true, slug: true, title: true, text: true, topic: true, slotIndex: true, audioUrl: true, voiceId: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
   // Pisar audio existente exige decirlo: --rehacer. Sin eso, no se toca.
-  if (s.audioUrl && !process.argv.includes("--rehacer")) {
+  const rehacer = process.argv.includes("--rehacer");
+  if (s.audioUrl && !rehacer) {
     throw new Error(`${slug} YA tiene audio; para rehacerlo pasa --rehacer`);
   }
 
-  const voiceId = PERFIL.voces[s.topic];
-  if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
+  const voiceId = vozDe(PERFIL, s);
 
   // ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02). Primero la muestra
   // de titulo y primer parrafo, que el usuario comprueba; luego la primera
   // historia entera, que vuelve a comprobar; y solo entonces el resto del
   // tema. Cada paso se para hasta que el anterior existe, porque narrar de
   // golpe y equivocarse cuesta creditos y ya paso dos veces.
-  const REGISTRO = path.join(__dirname, "a2-muestras.json");
-  const muestras = fs.existsSync(REGISTRO)
-    ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
-    : {};
+  const muestras = muestrasRegistradas();
   // CUAL es la primera del tema sale del DATO, no de un numero fijo. El A2 y el
   // B1 latam numeran sus slots desde 1, pero el Friends FR A0 lo hace desde 0:
   // con `slotIndex === 1` a fuego, la SEGUNDA historia se tomaba por la primera
@@ -94,10 +70,11 @@ const prisma = new PrismaClient();
     select: { slug: true, slotIndex: true, audioUrl: true },
   });
   const esPrimera = s.slotIndex === primera?.slotIndex;
-  if (esPrimera && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+  if (esPrimera && !muestras[s.slug ?? ""] && !rehacer) {
     throw new Error(
       `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
-      `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}`
+      `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}` +
+      (process.argv.includes("--journey") ? ` --journey ${process.argv[process.argv.indexOf("--journey") + 1]}` : "")
     );
   }
   if (!esPrimera && !primera?.audioUrl) {

@@ -1,0 +1,258 @@
+{
+  "el-animal-de-madera-se-mueve": {
+    "méxico": { "es": "en Oaxaca, México", "en": "in Oaxaca, Mexico" },
+    "espera": { "es": "Espera, Itzel", "en": "Wait, Itzel" },
+    "ven": { "es": "Ven, no te quedes atrás", "en": "Come on, do not stay behind" }
+  },
+  "el-ladron-de-mangos": {
+    "espera": { "es": "Espera, acércate", "en": "Wait, come closer" },
+    "pobre": { "es": "Pobre, tiene muchas bocas", "en": "Poor thing, she has many mouths" },
+    "total": { "es": "Total, mangos hay de sobra", "en": "Anyway, there are plenty of mangoes" },
+    "ves": { "es": "¿Ves?", "en": "See?" }
+  },
+  "el-duende-del-patio": {
+    "méxico": { "es": "En Oaxaca, México", "en": "In Oaxaca, Mexico" },
+    "ah": { "es": "Ah, eso es el duende", "en": "Ah, that is the goblin" },
+    "decía": { "es": "Decía que de noche bajaba", "en": "She said he came down at night" },
+    "funciona": { "es": "Raro o no, funciona", "en": "Strange or not, it works" },
+    "dicen": { "es": "Dicen que el duende se porta bien", "en": "They say the goblin behaves well" },
+    "oye": { "es": "Oye, una cosa es creer", "en": "Look, believing is one thing" }
+  },
+  "la-luz-en-el-cerro": {
+    "méxico": { "es": "En Oaxaca, México", "en": "In Oaxaca, Mexico" },
+    "cuentan": { "es": "Cuentan que el cerro silba", "en": "They say the hill whistles" }
+  },
+  "la-vigilancia": {
+    "ella": { "es": "Ella y su amigo Rodrigo", "en": "She and her friend Rodrigo" },
+    "rápido": { "es": "Prende la linterna, rápido", "en": "Turn on the torch, quick" },
+    "cálmate": { "es": "Cálmate", "en": "Calm down" },
+    "espérate": { "es": "Espérate, voy a alumbrar", "en": "Hold on, I will shine the light" },
+    "mira": { "es": "¡Ahí, mira!", "en": "There, look!" }
+  },
+  "sabado-de-mercado": {
+    "mira": { "es": "Mira, Renata", "en": "Look, Renata" },
+    "vendedora": { "es": "Vendedora: Pásenle", "en": "Stallholder: Come on over" },
+    "pásenle": { "es": "Pásenle, niñas", "en": "Come on over, girls" },
+    "niñas": { "es": "Pásenle, niñas", "en": "Come on over, girls" },
+    "señora": { "es": "¿Cuánto es todo, señora?", "en": "How much is it all, madam?" },
+    "vamos": { "es": "Vamos, entonces", "en": "Let us go, then" },
+    "entonces": { "es": "Vamos, entonces", "en": "Let us go, then" }
+  },
+  "una-caja-y-una-maleta": {
+    "argentina": { "es": "en Buenos Aires, Argentina", "en": "in Buenos Aires, Argentina" },
+    "hola": { "es": "Hola", "en": "Hello" },
+    "mía": { "es": "¿Mía?", "en": "Mine?" },
+    "sabés": { "es": "hablo en tres semanas, ¿sabés?", "en": "I have spoken to in three weeks" }
+  },
+  "por-fin-se-abre-la-puerta": {
+    "tranquila": { "es": "Tranquila", "en": "Easy now" },
+    "hijo": { "es": "Hijo, no sé qué decir", "en": "Son, I do not know what to say" }
+  },
+  "tacos-para-todos": {
+    "hola": { "es": "Hola, pasen", "en": "Hello, come in" },
+    "pasen": { "es": "Hola, pasen", "en": "Hello, come in" },
+    "hay": { "es": "lo más especial que hay", "en": "the most special thing there is" },
+    "además": { "es": "Además, así nadie termina enfermo", "en": "Besides, that way nobody ends up ill" },
+    "bueno": { "es": "Bueno, no es el mole que prometí", "en": "Well, it is not the mole I promised" }
+  },
+  "esconder-al-perro": {
+    "colombia": { "es": "en el apartamento de Bogotá, Colombia", "en": "in the flat in Bogotá, Colombia" },
+    "perdón": { "es": "Perdón, perdón", "en": "Sorry, sorry" },
+    "calla": { "es": "Baja la voz, calla", "en": "Keep your voice down, hush" }
+  },
+  "la-promesa-del-mole": {
+    "bueno": { "es": "Bueno", "en": "Well" },
+    "claro": { "es": "Un video, claro", "en": "A video, of course" },
+    "oye": { "es": "Oye, ¿y también viene ese chico", "en": "Listen, is that boy coming too" },
+    "muchas": { "es": "Muchas, supongo", "en": "Lots, I suppose" },
+    "supongo": { "es": "Muchas, supongo", "en": "Lots, I suppose" },
+    "ah": { "es": "Ah, ahora sí soy tu amiga", "en": "Ah, now I am your friend" }
+  },
+  "humo-en-la-cocina": {
+    "bueno": { "es": "Bueno, en medio", "en": "All right, on medium" },
+    "oigan": { "es": "Oigan, huele raro", "en": "Listen, it smells odd" },
+    "rápido": { "es": "Apaga el fuego, rápido", "en": "Turn off the heat, quick" }
+  },
+  "el-micro-del-domingo": {
+    "argentina": { "es": "en Buenos Aires, Argentina", "en": "in Buenos Aires, Argentina" },
+    "así": { "es": "así que ella ya decidió", "en": "so she has already decided" },
+    "tandil": { "es": "volverse a su pueblo, Tandil", "en": "to go back to her town, Tandil" },
+    "esperá": { "es": "¡Esperá!", "en": "Wait!" },
+    "sabés": { "es": "Te esperé ayer, ¿sabés?", "en": "I waited for you yesterday, you know?" },
+    "mirá": { "es": "Mirá, me da miedo quedarme", "en": "Look, I am afraid to stay" },
+    "listo": { "es": "Listo", "en": "Done" }
+  },
+  "la-combi-equivocada": {
+    "perú": { "es": "en Lima, Perú", "en": "in Lima, Peru" },
+    "gracias": { "es": "Gracias", "en": "Thank you" },
+    "oye": { "es": "Oye, ¿tú también vas al centro?", "en": "Hey, are you going to the centre too?" },
+    "preocupada": { "es": "por la ventana, preocupada", "en": "out of the window, worried" },
+    "ay": { "es": "Ay, no, qué desastre", "en": "Oh no, what a disaster" },
+    "tranquila": { "es": "Tranquila", "en": "Take it easy" },
+    "espera": { "es": "Diego, espera", "en": "Diego, wait" }
+  },
+  "el-chofer-que-conoce-a-todos": {
+    "perú": { "es": "un paradero grande de Lima, Perú", "en": "a big stop in Lima, Peru" },
+    "allí": { "es": "Allí, apoyado en su combi", "en": "There, leaning on his minibus" },
+    "aló": { "es": "¿Aló, Lucho?", "en": "Hello, Lucho?" },
+    "listo": { "es": "Listo", "en": "Done" },
+    "gracias": { "es": "¡Gracias, de verdad!", "en": "Thank you, really!" },
+    "mira": { "es": "Mira, ahí llega la combi", "en": "Look, here comes the minibus" }
+  },
+  "el-kayak-se-va": {
+    "viste": { "es": "¿Viste?", "en": "See?" },
+    "oye": { "es": "Oye, ¿trajiste el agua?", "en": "Hey, did you bring the water?" },
+    "bueno": { "es": "Bueno", "en": "Well" },
+    "tranquila": { "es": "Tranquila, no está tan lejos", "en": "Easy, it is not that far" },
+    "rápido": { "es": "Rápido, que ya va a llover", "en": "Quick, it is going to rain" }
+  },
+  "el-rescate-en-la-isla": {
+    "tía": { "es": "Tía, le juro", "en": "Auntie, I swear" }
+  },
+  "no-hay-cafe": {
+    "espera": { "es": "Espera, ¿quién viene a las ocho", "en": "Wait, who comes at eight" }
+  },
+  "un-perro-bajo-la-lluvia": {
+    "colombia": { "es": "su apartamento de Bogotá, Colombia", "en": "his flat in Bogotá, Colombia" },
+    "bueno": { "es": "bueno, mira", "en": "all right, look" },
+    "ay": { "es": "ay, mírale esa cara de susto", "en": "oh, look at that frightened face" },
+    "gracias": { "es": "¡Gracias, hermana!", "en": "Thank you, sister!" }
+  },
+  "el-barrio-se-prepara": {
+    "colombia": { "es": "En Cartagena, Colombia", "en": "In Cartagena, Colombia" },
+    "banderas": { "es": "lleno de luces y banderas", "en": "full of lights and flags" },
+    "exacto": { "es": "Exacto", "en": "Exactly" }
+  },
+  "las-nueve-y-cinco": {
+    "perdoná": { "es": "Perdoná", "en": "Sorry" },
+    "después": { "es": "después, más firme", "en": "then, steadier" },
+    "aliviado": { "es": "Tomás respira, aliviado", "en": "Tomás breathes out, relieved" },
+    "ves": { "es": "¿Ves?", "en": "See?" }
+  },
+  "mama-conoce-al-perro": {
+    "colombia": { "es": "del apartamento de Bogotá, Colombia", "en": "of the flat in Bogotá, Colombia" },
+    "tranquila": { "es": "Tranquila, lo confesamos juntos", "en": "Easy, we own up together" },
+    "ay": { "es": "Ay, no, no, no", "en": "Oh no, no, no" },
+    "gracias": { "es": "¡Gracias!", "en": "Thank you!" },
+    "oíste": { "es": "¿Oíste, Lluvia?", "en": "Did you hear, Lluvia?" }
+  },
+  "nadie-quiere-dormir-todavia": {
+    "rápido": { "es": "Pide un deseo, rápido", "en": "Make a wish, quick" },
+    "sí": { "es": "Sí", "en": "Yes" },
+    "felices": { "es": "en silencio, felices", "en": "in silence, happy" },
+    "bueno": { "es": "Bueno, les cuento la del lago", "en": "All right, I will tell you the lake one" }
+  },
+  "del-mismo-pueblo": {
+    "argentina": { "es": "en Buenos Aires, Argentina", "en": "in Buenos Aires, Argentina" },
+    "esperá": { "es": "Esperá", "en": "Hold on" },
+    "sorprendida": { "es": "Después se ríe, sorprendida", "en": "Then she laughs, surprised" },
+    "ves": { "es": "¿Ves?", "en": "See?" }
+  },
+  "lo-que-hay-tras-la-subida": {
+    "chile": { "es": "En Patagonia, Chile", "en": "In Patagonia, Chile" },
+    "sí": { "es": "Es lindo, sí", "en": "It is lovely, yes" },
+    "esperen": { "es": "Esperen", "en": "Wait" }
+  },
+  "el-micro-junto-al-mar": {
+    "tranquilo": { "es": "Tranquilo, siempre entra uno más", "en": "Easy, there is always room for one" },
+    "sube": { "es": "Sube, hay dos asientos atrás", "en": "Get on, two seats at the back" },
+    "afuera": { "es": "Afuera, las casas del barrio brillan", "en": "Outside, the local houses shine" },
+    "muchachos": { "es": "Bajen en la próxima, muchachos", "en": "Get off at the next one, lads" },
+    "gracias": { "es": "Gracias, don Beto", "en": "Thank you, don Beto" }
+  },
+  "cafe-para-dos": {
+    "argentina": { "es": "de Buenos Aires, Argentina", "en": "of Buenos Aires, Argentina" },
+    "hola": { "es": "Hola, perdón", "en": "Hello, excuse me" },
+    "perdón": { "es": "Hola, perdón", "en": "Hello, excuse me" },
+    "sí": { "es": "Sí, claro", "en": "Yes, of course" },
+    "claro": { "es": "Sí, claro", "en": "Yes, of course" },
+    "afuera": { "es": "Afuera, la calle brilla", "en": "Outside, the street shines" },
+    "entonces": { "es": "Me paso un día de estos, entonces", "en": "I will drop by one day, then" }
+  },
+  "una-fiesta-sin-aviso": {
+    "pilar": { "es": "Pilar y Diego buscan la calle Unión", "en": "Pilar and Diego look for Unión street" },
+    "color": { "es": "llena de música y color", "en": "full of music and colour" },
+    "acérquense": { "es": "¡Acérquense!", "en": "Come closer!" },
+    "bueno": { "es": "Bueno, ya que estamos aquí", "en": "Well, since we are here" }
+  },
+  "buscando-el-mar": {
+    "perú": { "es": "una zona nueva de Lima, Perú", "en": "a new part of Lima, Peru" },
+    "perdón": { "es": "Perdón, señora", "en": "Excuse me, madam" },
+    "señora": { "es": "Perdón, señora", "en": "Excuse me, madam" },
+    "claro": { "es": "Claro, no estás lejos", "en": "Of course, you are not far" },
+    "gracias": { "es": "Gracias", "en": "Thank you" },
+    "tranquilo": { "es": "Tranquilo, le pasa a todos", "en": "Do not worry, it happens to everyone" },
+    "casi": { "es": "Casi", "en": "Almost" }
+  },
+  "vuelve-la-carpeta": {
+    "perú": { "es": "en el centro de Lima, Perú", "en": "in the centre of Lima, Peru" },
+    "sí": { "es": "Llegaste tarde, sí", "en": "You were late, yes" }
+  },
+  "la-isla-del-lago": {
+    "tenemos": { "es": "Tenemos que ir en kayak", "en": "We have to go by kayak" },
+    "dale": { "es": "Dale, va a ser una buena aventura", "en": "Come on, it will be a good adventure" },
+    "gracias": { "es": "Gracias, mamá", "en": "Thank you, Mum" },
+    "oye": { "es": "Oye, ¿y qué tiene de especial esa isla?", "en": "Hey, what is so special about that island?" }
+  },
+  "sin-cumbia-no-hay-fiesta": {
+    "colombia": { "es": "en Cartagena, Colombia", "en": "in Cartagena, Colombia" },
+    "toma": { "es": "Toma", "en": "Here you go" },
+    "oye": { "es": "Oye, ¿y este año quién dirige el baile", "en": "Hey, who is leading the dance this year" },
+    "quieta": { "es": "se va a quedar callada y quieta", "en": "will stay silent and still" },
+    "espera": { "es": "Espera, mira esto", "en": "Wait, look at this" },
+    "tranquilo": { "es": "Tranquilo, para el sábado", "en": "Do not worry, by Saturday" }
+  },
+  "se-fue-la-luz": {
+    "colombia": { "es": "Es lunes en Bogotá, Colombia", "en": "It is Monday in Bogotá, Colombia" },
+    "paciencia": { "es": "Paciencia", "en": "Patience" },
+    "tranquilos": { "es": "Tranquilos", "en": "Do not worry" },
+    "hijo": { "es": "Para ver, hijo", "en": "To see by, son" },
+    "ven": { "es": "¿Ven?", "en": "See?" },
+    "vengan": { "es": "Vengan, siéntense cerca de la vela", "en": "Come, sit close to the candle" },
+    "adentro": { "es": "adentro, la luz amarilla es suave", "en": "inside, the yellow light is soft" }
+  },
+  "una-caja-vieja": {
+    "tranquila": { "es": "Tranquila", "en": "It is fine" },
+    "ábrela": { "es": "Sí, ábrela", "en": "Yes, open it" }
+  },
+  "la-tia-lo-confiesa-todo": {
+    "méxico": { "es": "en Oaxaca, México", "en": "in Oaxaca, Mexico" }
+  },
+  "aprender-la-cumbia": {
+    "colombia": { "es": "en Cartagena, Colombia", "en": "in Cartagena, Colombia" },
+    "así": { "es": "Así, ¿uno y dos", "en": "Like this, one and two" },
+    "bueno": { "es": "Bueno, bueno, estoy aprendiendo", "en": "All right, all right, I am learning" },
+    "siéntelos": { "es": "No los pienses tanto, siéntelos", "en": "Do not think them, feel them" },
+    "despacio": { "es": "muevo yo la falda, despacio", "en": "I move the skirt, slowly" }
+  },
+  "la-fiesta-vuelve-a-la-calle": {
+    "colombia": { "es": "en Cartagena, Colombia", "en": "in Cartagena, Colombia" },
+    "tranquila": { "es": "Tranquila, practicamos toda la semana", "en": "Do not worry, we practised all week" },
+    "aprendieron": { "es": "bailan la cumbia que aprendieron", "en": "dance the cumbia they learnt" },
+    "oye": { "es": "Oye, ¡me están saliendo los pasos!", "en": "Hey, the steps are coming out right!" }
+  },
+  "mateo-trae-pan-dulce": {
+    "gracias": { "es": "Gracias, Mateo", "en": "Thank you, Mateo" }
+  },
+  "quien-escribio-este-libro": {
+    "hola": { "es": "Hola, Tomás", "en": "Hello, Tomás" },
+    "sí": { "es": "Sí", "en": "Yes" }
+  },
+  "cuando-llega-la-tormenta": {
+    "luego": { "es": "Luego, poco a poco", "en": "Then, little by little" },
+    "ven": { "es": "¿Ven?", "en": "See?" }
+  },
+  "por-fin-empieza-la-fiesta": {
+    "señora": { "es": "Mucho gusto, señora", "en": "Pleased to meet you, madam" },
+    "bienvenida": { "es": "Bienvenida, mija", "en": "Welcome, dear" },
+    "mija": { "es": "Bienvenida, mija", "en": "Welcome, dear" },
+    "gracias": { "es": "Gracias", "en": "Thank you" },
+    "entonces": { "es": "Voy a venir seguido, entonces", "en": "I will come often, then" }
+  },
+  "alguien-toca-el-porton": {
+    "dejen": { "es": "Dejen, yo abro", "en": "Leave it, I will open" },
+    "afuera": { "es": "Afuera, en la noche", "en": "Outside, in the night" },
+    "sí": { "es": "Sí, doña Rosa", "en": "Yes, doña Rosa" },
+    "vengan": { "es": "Vengan, no se queden ahí", "en": "Come in, do not stand there" }
+  }
+}

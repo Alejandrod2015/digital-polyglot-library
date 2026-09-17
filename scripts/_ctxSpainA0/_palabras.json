@@ -1,0 +1,123 @@
+{
+  "la-barceloneta-despierta": {
+    "él": { "es": "Él lleva el agua y la fruta", "en": "He carries the water and the fruit" },
+    "está": { "es": "El mar está muy tranquilo", "en": "The sea is very calm" },
+    "frío": { "es": "un poco de miedo del frío", "en": "a little afraid of the cold" },
+    "sonríe": { "es": "el agua está caliente y sonríe", "en": "the water is warm and she smiles" },
+    "pequeña": { "es": "Una ola pequeña llega", "en": "A small wave comes in" },
+    "ríe": { "es": "y ella ríe mucho", "en": "and she laughs a lot" }
+  },
+  "churros-en-la-gran-via": {
+    "cubren": { "es": "Las nubes grises cubren Madrid", "en": "Grey clouds cover Madrid" },
+    "vía": { "es": "caminan por la Gran Vía", "en": "walk along the Gran Vía" },
+    "más": { "es": "la calle más famosa de la ciudad", "en": "the most famous street in the city" },
+    "qué": { "es": "¡Qué frío!", "en": "So cold!" },
+    "frío": { "es": "¡Qué frío!", "en": "So cold!" },
+    "café": { "es": "Diego ve un café pequeño", "en": "Diego sees a small café" },
+    "pequeño": { "es": "un café pequeño en la esquina", "en": "a small café on the corner" },
+    "rápido": { "es": "los tres amigos entran rápido", "en": "the three friends go in quickly" },
+    "señora": { "es": "una señora los saluda con una sonrisa", "en": "a woman greets them with a smile" },
+    "está": { "es": "El chocolate está muy caliente y dulce", "en": "The chocolate is very hot and sweet" },
+    "móvil": { "es": "Marta saca el móvil", "en": "Marta takes out her phone" }
+  },
+  "lucia-llega-a-bilbao": {
+    "estación": { "es": "la espera en la estación", "en": "is waiting for her at the station" },
+    "se": { "es": "los dos se abrazan", "en": "the two of them hug" },
+    "está": { "es": "Lucía está muy contenta", "en": "Lucía is very happy" },
+    "así": { "es": "Fuera llueve un poco, así que Ander", "en": "Outside it rains a little, so Ander" },
+    "ría": { "es": "caminan cerca de la ría", "en": "walk near the estuary" },
+    "enseña": { "es": "Ander le enseña el casco viejo", "en": "Ander shows her the old town" },
+    "pequeñas": { "es": "hay muchas tiendas pequeñas", "en": "there are many small shops" },
+    "móvil": { "es": "Lucía saca el móvil y mira la hora", "en": "Lucía takes out her phone and checks the time" },
+    "sonríe": { "es": "Ander sonríe otra vez", "en": "Ander smiles again" },
+    "después": { "es": "Después, el cielo cambia", "en": "Then the sky changes" },
+    "sí": { "es": "Lucía dice que sí", "en": "Lucía says yes" },
+    "mañana": { "es": "Mañana los dos visitan el museo famoso", "en": "Tomorrow the two visit the famous museum" }
+  },
+  "el-museo-guggenheim": {
+    "guggenheim": { "es": "El museo Guggenheim", "en": "The Guggenheim museum" },
+    "se": { "es": "Ander se ríe", "en": "Ander laughs" }
+  },
+  "suena-la-plaza-mayor": {
+    "plaza": { "es": "Suena la Plaza Mayor", "en": "The Plaza Mayor sounds out" },
+    "mayor": { "es": "Suena la Plaza Mayor", "en": "The Plaza Mayor sounds out" },
+    "se": { "es": "El cielo se pone naranja", "en": "The sky turns orange" }
+  },
+  "naranjas-para-dos-amigas": {
+    "sevilla": { "es": "Lucía llega a Sevilla por la mañana", "en": "Lucía arrives in Seville in the morning" },
+    "se": { "es": "las dos amigas se abrazan con fuerza", "en": "the two friends hug tightly" }
+  },
+  "pintxos-en-el-casco-viejo": {
+    "pintxo": { "es": "El pintxo más fuerte", "en": "The strongest pintxo" },
+    "más": { "es": "El pintxo más fuerte", "en": "The strongest pintxo" }
+  },
+  "naranjas-en-el-mercado": {
+    "valencia": { "es": "su amigo Vicente en Valencia", "en": "her friend Vicente in Valencia" },
+    "se": { "es": "Se llama Amparo", "en": "Her name is Amparo" }
+  },
+  "ane-trae-mas-pintxos": {
+    "y": { "es": "Iñaki y Lucía pasean por el casco viejo", "en": "Iñaki and Lucía stroll through the old town" },
+    "se": { "es": "Se llama Ane y trabaja aquí", "en": "Her name is Ane and she works here" }
+  },
+  "paella-en-la-malvarrosa": {
+    "se": { "es": "Vicente y Lucía se ríen mucho", "en": "Vicente and Lucía laugh a lot" }
+  },
+  "la-boqueria-huele-a-fruta": {
+    "boquería": { "es": "La Boquería huele a fruta", "en": "La Boquería smells of fruit" },
+    "señora": { "es": "una señora vende fresas rojas", "en": "a woman sells red strawberries" },
+    "jamón": { "es": "Cerca hay jamón y pan fresco", "en": "Nearby there is ham and fresh bread" },
+    "señor": { "es": "otro señor vende pescado y queso", "en": "another man sells fish and cheese" }
+  },
+  "un-funicular-hasta-igueldo": {
+    "igueldo": { "es": "Un funicular hasta Igueldo", "en": "A funicular up to Igueldo" },
+    "y": { "es": "hoy Lucía y él suben al monte Igueldo", "en": "today Lucía and he go up Mount Igueldo" },
+    "él": { "es": "Lucía y él suben al monte", "en": "Lucía and he go up the hill" },
+    "se": { "es": "Lucía se siente un poco nerviosa", "en": "Lucía feels a little nervous" }
+  },
+  "la-ciudad-de-las-artes": {
+    "y": { "es": "Lucía y Vicente visitan un lugar especial", "en": "Lucía and Vicente visit a special place" },
+    "se": { "es": "se llama la Ciudad de las Artes", "en": "it is called the City of Arts" },
+    "de": { "es": "la Ciudad de las Artes", "en": "the City of Arts" },
+    "valencia": { "es": "está en Valencia", "en": "it is in Valencia" }
+  },
+  "marta-ensena-el-retiro": {
+    "enseña": { "es": "Marta enseña el Retiro", "en": "Marta shows the Retiro" }
+  },
+  "lucia-mira-la-sagrada-familia": {
+    "mira": { "es": "Lucía mira la Sagrada Familia", "en": "Lucía looks at the Sagrada Familia" },
+    "sagrada": { "es": "la Sagrada Familia", "en": "the Sagrada Familia" },
+    "familia": { "es": "la Sagrada Familia", "en": "the Sagrada Familia" },
+    "atrás": { "es": "empieza la iglesia mucho tiempo atrás", "en": "starts the church a long time ago" },
+    "todavía": { "es": "todavía no está terminada", "en": "it is still not finished" },
+    "está": { "es": "todavía no está terminada", "en": "it is still not finished" },
+    "así": { "es": "así que cada día llegan más obreros", "en": "so more workers arrive every day" },
+    "día": { "es": "cada día llegan más obreros", "en": "every day more workers arrive" },
+    "más": { "es": "llegan más obreros al lugar", "en": "more workers arrive at the site" },
+    "señala": { "es": "Pau señala las columnas del centro", "en": "Pau points at the central columns" },
+    "árboles": { "es": "parecen árboles de piedra", "en": "they look like stone trees" },
+    "ríe": { "es": "Pau le da la mano y ríe", "en": "Pau takes her hand and laughs" },
+    "a": { "es": "bajan las escaleras poco a poco", "en": "they go down the stairs little by little" }
+  },
+  "la-nieve-de-sierra-nevada": {
+    "lo": { "es": "A lo lejos hay montañas altas", "en": "In the distance there are high mountains" },
+    "se": { "es": "Lucía se pone un gorro y unos guantes", "en": "Lucía puts on a hat and gloves" }
+  },
+  "triana-y-su-ceramica-azul": {
+    "y": { "es": "Triana y su cerámica azul", "en": "Triana and its blue ceramics" },
+    "su": { "es": "Triana y su cerámica azul", "en": "Triana and its blue ceramics" },
+    "se": { "es": "Carmen y Lucía se sientan cerca del puente", "en": "Carmen and Lucía sit down near the bridge" }
+  },
+  "lucia-llega-a-san-sebastian": {
+    "san": { "es": "Lucía llega a San Sebastián", "en": "Lucía arrives in San Sebastián" },
+    "sebastián": { "es": "Lucía llega a San Sebastián", "en": "Lucía arrives in San Sebastián" }
+  },
+  "la-giralda-desde-arriba": {
+    "y": { "es": "Lucía y Carmen caminan por una plaza pequeña", "en": "Lucía and Carmen walk across a small square" },
+    "se": { "es": "Lucía se ríe y se tapa los oídos", "en": "Lucía laughs and covers her ears" },
+    "contentas": { "es": "bajan juntas y muy contentas", "en": "they go down together and very happy" }
+  },
+  "el-plan-de-nuria": {
+    "no": { "es": "No quedan entradas", "en": "There are no tickets left" },
+    "se": { "es": "las dos se ríen juntas", "en": "the two of them laugh together" }
+  }
+}

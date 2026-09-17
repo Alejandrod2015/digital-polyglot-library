@@ -1,0 +1,439 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "toalla,plancha,piedrita,aguacero",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "toalla",
+          "answer": "towel",
+          "options": [
+            "towel",
+            "iron",
+            "little stone",
+            "downpour"
+          ]
+        },
+        {
+          "word": "plancha",
+          "answer": "iron",
+          "options": [
+            "towel",
+            "iron",
+            "little stone",
+            "downpour"
+          ]
+        },
+        {
+          "word": "piedrita",
+          "answer": "little stone",
+          "options": [
+            "towel",
+            "iron",
+            "little stone",
+            "downpour"
+          ]
+        },
+        {
+          "word": "aguacero",
+          "answer": "downpour",
+          "options": [
+            "towel",
+            "iron",
+            "little stone",
+            "downpour"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rueda",
+    "sentence": "La [[rueda]] se desinfló sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "circle of listeners",
+      "options": [
+        "circle of listeners",
+        "line of customers",
+        "group of dancers",
+        "pile of chairs"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "La rueda se desinfló sola.",
+        "targetWord": "rueda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empapada",
+    "sentence": "Llovió todo el camino y llegué _____ hasta los zapatos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empapada",
+      "options": [
+        "empapada",
+        "cansada",
+        "asustada",
+        "enojada"
+      ],
+      "translation": "It rained the whole way and I arrived _____ right down to my shoes.",
+      "optionTranslations": [
+        "soaked",
+        "tired",
+        "scared",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Llovió todo el camino y llegué empapada hasta los zapatos.",
+        "targetWord": "empapada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "resucitar",
+    "sentence": "Déjenla, que la plancha no [[resucita]] tinta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to revive",
+      "options": [
+        "to revive",
+        "to dry out",
+        "to heat up",
+        "to smooth out"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Déjenla, que la plancha no resucita tinta.",
+        "targetWord": "resucita",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hoja por hoja",
+    "sentence": "La tinta se soltó del papel [[hoja por hoja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "page by page",
+      "options": [
+        "page by page",
+        "all at once",
+        "word by word",
+        "day after day"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "La tinta se soltó del papel hoja por hoja.",
+        "targetWord": "hoja por hoja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vuelto agua",
+    "sentence": "Todo [[vuelto agua]] sucia entre los dedos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turned into water",
+      "options": [
+        "turned into water",
+        "turned into dust",
+        "dried in the sun",
+        "held together"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Todo vuelto agua sucia entre los dedos.",
+        "targetWord": "vuelto agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin decir palabra",
+    "sentence": "Puso las hojas a secar, [[sin decir palabra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without a word",
+      "options": [
+        "without a word",
+        "without looking back",
+        "with a smile",
+        "in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Puso las hojas a secar, sin decir palabra.",
+        "targetWord": "Sin decir palabra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "techado",
+    "sentence": "Llovía, así que comimos en el patio _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "techado",
+      "options": [
+        "techado",
+        "soleado",
+        "mojado",
+        "pintado"
+      ],
+      "translation": "It was raining, so we ate in the _____ patio.",
+      "optionTranslations": [
+        "roofed",
+        "sunny",
+        "wet",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Llovía, así que comimos en el patio techado.",
+        "targetWord": "techado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invita la casa",
+    "sentence": "[[Invita la casa]], cuentero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's on the house",
+      "options": [
+        "it's on the house",
+        "the house is full",
+        "you pay tonight",
+        "we close early"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Invita la casa, cuentero.",
+        "targetWord": "Invita la casa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bulla",
+    "sentence": "A la hora de cerrar no hubo [[bulla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy noise",
+      "options": [
+        "happy noise",
+        "closing time",
+        "free drinks",
+        "bad weather"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "A la hora de cerrar no hubo bulla.",
+        "targetWord": "bulla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manotear",
+    "sentence": "contestó él, [[manoteando]] el aguacero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to flail at",
+      "options": [
+        "to flail at",
+        "to run from",
+        "to point at",
+        "to shout at"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "contestó él, manoteando el aguacero.",
+        "targetWord": "manoteando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "armado",
+    "sentence": "con la rueda de mochileros [[armada]] y la libreta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "set up",
+      "options": [
+        "set up",
+        "broken up",
+        "very quiet",
+        "half empty"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "con la rueda de mochileros armada y la libreta.",
+        "targetWord": "armada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer lo suyo",
+    "sentence": "El agua ya [[hizo lo suyo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to do its work",
+      "options": [
+        "to do its work",
+        "to dry up",
+        "to calm down",
+        "to go away"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "El agua ya hizo lo suyo.",
+        "targetWord": "hizo lo suyo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de las suyas",
+    "sentence": "Mañana me cuenta una de memoria, [[de las suyas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one of your own",
+      "options": [
+        "one of your own",
+        "one of mine",
+        "one from a book",
+        "a very short one"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Mañana me cuenta una de memoria, de las suyas.",
+        "targetWord": "de las suyas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una por una",
+    "sentence": "Puso las hojas a secar, piedritas encima, [[una por una]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one by one",
+      "options": [
+        "one by one",
+        "all in a pile",
+        "side by side",
+        "now and then"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Puso las hojas a secar, piedritas encima, una por una.",
+        "targetWord": "una por una",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gigante",
+    "sentence": "La ballena era _____: más grande que el barco entero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gigante",
+      "options": [
+        "gigante",
+        "elegante",
+        "valiente",
+        "paciente"
+      ],
+      "translation": "The whale was _____: bigger than the whole boat.",
+      "optionTranslations": [
+        "giant",
+        "elegant",
+        "brave",
+        "patient"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "La ballena era gigante: más grande que el barco entero.",
+        "targetWord": "gigante",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "a secar",
+    "sentence": "Lavé la camisa y la colgué _____ en el balcón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a secar",
+      "options": [
+        "a secar",
+        "a remojar",
+        "a planchar",
+        "a enfriar"
+      ],
+      "translation": "I washed the shirt and hung it _____ on the balcony.",
+      "optionTranslations": [
+        "to dry",
+        "to soak",
+        "to iron",
+        "to cool"
+      ],
+      "audioClip": {
+        "storySlug": "la-carreta-mojada",
+        "storySource": "user",
+        "sentence": "Lavé la camisa y la colgué a secar en el balcón.",
+        "targetWord": "a secar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

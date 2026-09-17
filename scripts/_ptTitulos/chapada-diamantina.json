@@ -1,0 +1,360 @@
+[
+  {
+    "slug": "oito-nao-quinze",
+    "topic": "chapada-diamantina",
+    "slotIndex": 0,
+    "title": "A minha é gente viva",
+    "synopsis": "El folleto ya esta impreso y promete grupos de quince. La guia sube con ocho y no lo discute, y la diferencia son siete plazas vendidas que alguien tiene que devolver. Rafaela tarda una conversacion en entender que el tope no lo pone una persona: lo pone la piedra mojada.",
+    "text": "Quem guia ali é Jussara. Rafaela vende a trilha há dois meses, e o folheto da agência promete grupo de quinze.\n\n“Eu subo com oito”, adverte ela, sem levantar os olhos do cantil. “O folheto já saiu com quinze.” “Então o folheto está furado. A lotação não é minha, é da encosta.”\n\nNo posto, a capacidade está pintada na madeira e a tinta está descascando.\n\nAo lado fica a autorização, assinada depois da vistoria, com a norma e a penalidade em letra pequena. A exigência é sempre a mesma.\n\n“Sete pagas, Jussara. Sete”, conta Rafaela. “Na pedra molhada eu não olho quinze.” “E a minha responsabilidade?” “A sua é o prejuízo. A minha é gente viva.” Jussara fecha o cantil e olha a encosta, que está escura de chuva desde cedo.\n\nRafaela dobra o folheto em quatro e guarda no bolso. A agência estorna sete naquela tarde, e ela anota a capacidade no caderno, com letra dura, embaixo da palavra multa.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "folheto",
+        "anchor": true,
+        "definition": "Printed sheet an agency uses to sell a trip."
+      },
+      {
+        "type": "noun",
+        "word": "lotação",
+        "anchor": true,
+        "definition": "The most people a place or trip can safely take."
+      },
+      {
+        "type": "noun",
+        "word": "capacidade",
+        "definition": "How many people something can hold at one time."
+      },
+      {
+        "type": "noun",
+        "word": "responsabilidade",
+        "definition": "Being the one who answers if things go wrong."
+      },
+      {
+        "type": "noun",
+        "word": "prejuízo",
+        "definition": "Money lost on a deal that did not work out."
+      },
+      {
+        "type": "noun",
+        "word": "multa",
+        "definition": "Money you have to pay for breaking a rule."
+      },
+      {
+        "type": "noun",
+        "word": "autorização",
+        "definition": "Written permission that lets you take groups in."
+      },
+      {
+        "type": "adjective",
+        "word": "furado",
+        "register": "colloquial",
+        "definition": "Full of holes, so it cannot be trusted at all."
+      },
+      {
+        "type": "verb",
+        "word": "advertir",
+        "surface": "adverte",
+        "definition": "To warn somebody about something before it happens."
+      },
+      {
+        "type": "verb",
+        "word": "descascar",
+        "surface": "descascando",
+        "definition": "To come off in flakes, the way old paint does."
+      },
+      {
+        "type": "verb",
+        "word": "estornar",
+        "surface": "estorna",
+        "definition": "To pay money back for a booking that is cancelled."
+      },
+      {
+        "type": "noun",
+        "word": "cantil",
+        "anchor": true,
+        "definition": "Metal water bottle carried on a long walk."
+      },
+      {
+        "type": "noun",
+        "word": "encosta",
+        "definition": "The sloping side of a hill that walkers go up."
+      },
+      {
+        "type": "noun",
+        "word": "posto",
+        "definition": "Small station at the start of the trail."
+      },
+      {
+        "type": "verb",
+        "word": "guiar",
+        "surface": "guia",
+        "definition": "To lead people along a route they do not know."
+      },
+      {
+        "type": "adjective",
+        "word": "assinado",
+        "surface": "assinada",
+        "definition": "Signed by hand, so that it counts as official."
+      },
+      {
+        "type": "noun",
+        "word": "norma",
+        "definition": "Rule that everybody working here has to keep."
+      },
+      {
+        "type": "noun",
+        "word": "exigência",
+        "definition": "Something demanded before you are allowed to go."
+      },
+      {
+        "type": "noun",
+        "word": "penalidade",
+        "definition": "What you have to pay if you break the rule."
+      },
+      {
+        "type": "noun",
+        "word": "vistoria",
+        "definition": "An official check that everything is as it should be."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "tornozelo-na-subida",
+    "topic": "chapada-diamantina",
+    "slotIndex": 1,
+    "title": "A compressa do cantil",
+    "synopsis": "El mirador de la foto esta a cuarenta minutos y el grupo entero quiere llegar. Un tobillo torcido a media subida cambia el plan y la radio no engancha desde ahi. Lo que Rafaela ve mientras bajan le dice por fin que es lo que su cliente esta comprando.",
+    "text": "A subida até o cume leva quarenta minutos, e o grupo sai animado às sete.\n\nDepois da primeira hora uma cliente pisa numa raiz e torce o pé. Jussara ajoelha, apalpa e fica calada. “É quebra?”, pergunta Rafaela. “Não. É entorse das feias, que incham em uma hora.”\n\nO rádio chia e não engancha. “Chamo socorro?” “Daqui não sai chamada.” “E o resgate?” “Sobe em quatro horas com maca. A gente desce em dupla e chega antes.”\n\nJussara improvisa uma tala com dois galhos e uma compressa fria do cantil. Descem com o peso repartido, e o inchaço já não deixa a bota fechar.\n\nNa enfermaria do posto, com o curativo pronto, a cliente pergunta pelo seguro. “A apólice cobre”, garante Rafaela, e sente alívio de saber uma resposta. Ninguém fala do cume.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "entorse",
+        "anchor": true,
+        "definition": "A twisted joint, hurt but with no bone broken."
+      },
+      {
+        "type": "noun",
+        "word": "quebra",
+        "definition": "A break, when the bone itself has gone."
+      },
+      {
+        "type": "verb",
+        "word": "apalpar",
+        "surface": "apalpa",
+        "definition": "To feel a hurt place with your fingers."
+      },
+      {
+        "type": "verb",
+        "word": "ajoelhar",
+        "surface": "ajoelha",
+        "definition": "To go down on your knees beside somebody."
+      },
+      {
+        "type": "noun",
+        "word": "raiz",
+        "definition": "Part of a tree that comes up through the path."
+      },
+      {
+        "type": "verb",
+        "word": "chiar",
+        "surface": "chia",
+        "definition": "To make a hissing noise instead of a voice."
+      },
+      {
+        "type": "verb",
+        "word": "enganchar",
+        "surface": "engancha",
+        "definition": "To catch a signal, to connect with the other end."
+      },
+      {
+        "type": "noun",
+        "word": "socorro",
+        "definition": "Help, called for when somebody is badly hurt."
+      },
+      {
+        "type": "noun",
+        "word": "resgate",
+        "definition": "A team coming up to carry an injured walker down."
+      },
+      {
+        "type": "noun",
+        "word": "maca",
+        "definition": "Flat bed with handles for carrying a hurt person."
+      },
+      {
+        "type": "noun",
+        "word": "tala",
+        "anchor": true,
+        "definition": "Stiff piece tied on to stop a joint from moving."
+      },
+      {
+        "type": "noun",
+        "word": "compressa",
+        "definition": "Cold wet cloth pressed onto a swollen place."
+      },
+      {
+        "type": "noun",
+        "word": "inchaço",
+        "definition": "The swelling that comes up after a joint is hurt."
+      },
+      {
+        "type": "noun",
+        "word": "enfermaria",
+        "definition": "Small room where hurt people are looked after."
+      },
+      {
+        "type": "noun",
+        "word": "curativo",
+        "definition": "Bandage put on to hold or cover an injury."
+      },
+      {
+        "type": "noun",
+        "word": "apólice",
+        "anchor": true,
+        "definition": "The paper that says what the insurance pays for."
+      },
+      {
+        "type": "noun",
+        "word": "alívio",
+        "definition": "The good feeling when a worry finally goes away."
+      },
+      {
+        "type": "noun",
+        "word": "dupla",
+        "definition": "Two people working together on the same job."
+      },
+      {
+        "type": "noun",
+        "word": "cume",
+        "anchor": true,
+        "definition": "The very top of the mountain, where the view is."
+      },
+      {
+        "type": "noun",
+        "word": "chamada",
+        "definition": "A call made from a phone or a radio."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "regra-no-lugar-da-foto",
+    "topic": "chapada-diamantina",
+    "slotIndex": 2,
+    "title": "A folha em branco na mesa",
+    "synopsis": "Rafaela quiere una frase buena para el folleto nuevo y la guia le dicta reglas, que en un folleto quedan feas. La palabra que mejor vendia se cae del papel esa manana. Lo que la sustituye no es mas bonito, pero es lo unico que se sostiene cuando llueve.",
+    "text": "Rafaela abre uma folha em branco na mesa do posto, com cheiro de café passado na hora, e Jussara dita enquanto enrola a corda no braço.\n\n“Grupo de oito. Bota fechada. Sai sete, volta quatro. Chuva forte, não sai.” “Isso não vende, Jussara”, avisa Rafaela. “Isso traz gente viva.”\n\nEla escreve mesmo assim: primeiro um rascunho, depois a revisão, e a gráfica que imprima.\n\n“E se eu botar cachoeira?” “Bota. Cachoeira tem.” “E aventura?” “Aventura não tem. Tem trilha, gruta e chuva.”\n\nRafaela pega a caneta, olha a palavra aventura no folheto velho e risca duas vezes.\n\nNo ônibus de volta ela lê a lista baixinho e ri sozinha do risco duplo. Em junho o folheto novo sai com as regras impressas antes da foto, e a reclamação que ela esperava não chega nunca.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "aventura",
+        "anchor": true,
+        "definition": "Exciting trip with some danger, the word that sold well."
+      },
+      {
+        "type": "noun",
+        "word": "cachoeira",
+        "anchor": true,
+        "definition": "Falling water on a river, where walkers stop to swim."
+      },
+      {
+        "type": "noun",
+        "word": "gruta",
+        "anchor": true,
+        "definition": "Cave in the rock that walkers go into with lamps."
+      },
+      {
+        "type": "verb",
+        "word": "ditar",
+        "surface": "dita",
+        "definition": "To say words out loud for another person to write."
+      },
+      {
+        "type": "verb",
+        "word": "riscar",
+        "surface": "risca",
+        "definition": "To draw a line through a word to cancel it."
+      },
+      {
+        "type": "noun",
+        "word": "caneta",
+        "definition": "Pen, the thing whose ink goes through the paper."
+      },
+      {
+        "type": "noun",
+        "word": "reclamação",
+        "definition": "A customer saying out loud that something was wrong."
+      },
+      {
+        "type": "noun",
+        "word": "bota",
+        "definition": "Strong closed shoe for walking on wet rock."
+      },
+      {
+        "type": "adjective",
+        "word": "fechado",
+        "surface": "fechada",
+        "definition": "Closed, covering the whole foot with no gaps."
+      },
+      {
+        "type": "verb",
+        "word": "botar",
+        "surface": "botar",
+        "definition": "To put a word in, to add it to the text."
+      },
+      {
+        "type": "noun",
+        "word": "lista",
+        "definition": "Set of short lines written one under the other."
+      },
+      {
+        "type": "adjective",
+        "word": "duplo",
+        "definition": "Double, done twice over the very same place."
+      },
+      {
+        "type": "adjective",
+        "word": "branco",
+        "definition": "Blank, with nothing written on it yet at all."
+      },
+      {
+        "type": "adjective",
+        "word": "viva",
+        "definition": "Alive, in one piece at the end of the day."
+      },
+      {
+        "type": "adjective",
+        "word": "impresso",
+        "surface": "impressas",
+        "definition": "Printed onto the paper by a machine, not written."
+      },
+      {
+        "type": "adverb",
+        "word": "nunca",
+        "definition": "Not at any time, not on a single occasion."
+      },
+      {
+        "type": "adjective",
+        "word": "velho",
+        "definition": "Old, the sheet that was printed before this one."
+      },
+      {
+        "type": "noun",
+        "word": "rascunho",
+        "definition": "Rough first version written before the final one."
+      },
+      {
+        "type": "noun",
+        "word": "revisão",
+        "definition": "Going over a text again to correct it."
+      },
+      {
+        "type": "noun",
+        "word": "gráfica",
+        "definition": "The shop that prints the sheets and the posters."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

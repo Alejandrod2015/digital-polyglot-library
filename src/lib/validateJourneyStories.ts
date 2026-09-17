@@ -52,6 +52,7 @@ import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
 import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
+import { formasDeVerbo } from "./cefr/spanishConjugations";
 
 export type JourneyStoryInput = {
   slug: string;
@@ -292,7 +293,9 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
   // es el caso de libro y el detector lo daba por no presentado porque exigia
   // la coma pegada al nombre de pila (2026-09-01).
   ["aposicion", (n) => new RegExp(`${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
-  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}(?!\\p{L})`, "iu")],
+  // "es|era|fue": en pasado la presentacion es la misma ("Quien abria la puerta
+  // era Mireya"), y la forma hermana VERBO_SER_ES ya lo aceptaba (2026-09-10).
+  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+(?:es|era|fue)\\s+${n}(?!\\p{L})`, "iu")],
   ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
@@ -909,7 +912,24 @@ export function validateJourneyStories(
     const textos = stories.map((s) => s.text.toLowerCase().replace(/’/g, "'"));
     const clave = (v: { word: string; surface?: string | null }) =>
       String(v.surface ?? v.word).toLowerCase().replace(/’/g, "'").replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
-    const encuentros = (v: { word: string; surface?: string | null }): number => {
+    const esEspanol = lang === "ES";
+    const encuentros = (v: { word: string; surface?: string | null; type?: string | null }): number => {
+      // Un VERBO se reencuentra en cualquiera de sus formas (2026-09-10). Se
+      // contaba por la superficie exacta, asi que al pasar un tema a pasado
+      // "se rinde" -> "se rindio" y "cobra" -> "cobro", y las plazas
+      // rendir/cobrar de OTRAS historias perdian su segundo encuentro aunque
+      // el lector viera el mismo verbo: el B2 latam empeoraba la cola solo por
+      // cambiar de tiempo. Se lematizan los dos lados, como pide
+      // feedback_lemmatize_both_sides. Solo en espanol: el generador de formas
+      // es de espanol, y aplicado a un verbo portugues contaria de mas.
+      if (esEspanol && String(v.type ?? "").toLowerCase() === "verb") {
+        const inf = String(v.word).toLowerCase().trim()
+          .replace(/^se\s+/, "").replace(/^(\p{L}+?(?:ar|er|ir))se$/u, "$1");
+        if (/(?:ar|er|ir)$/.test(inf)) {
+          const formas = formasDeVerbo(inf);
+          return cuerpos.filter((c) => [...formas].some((f) => c.has(f))).length;
+        }
+      }
       const k = clave(v);
       // Una pieza con guion o apostrofo ("la-haut", "aujourd'hui", "Au-dessus")
       // no puede buscarse en el set de tokens: `tok` parte por letras y la
@@ -943,7 +963,10 @@ export function validateJourneyStories(
       const unaVez = todas.filter((x) => x.n <= 1).length;
       pushSetEscalera("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
         media >= suelo,
-        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
+        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`,
+        // Declarada para el trinquete: aqui BAJAR la media es EMPEORAR. Sin
+        // esto journeyRatchet caia a leer "media N" como si bajar fuera mejorar.
+        { valor: media, mejor: "alta" });
     } else {
       const port = todas.filter((x) => !x.anchor);
       const anc = todas.filter((x) => x.anchor);
@@ -969,7 +992,8 @@ export function validateJourneyStories(
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
         `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
         `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
-        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
+        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
+        { valor: media, mejor: "alta" });
     }
   }
 

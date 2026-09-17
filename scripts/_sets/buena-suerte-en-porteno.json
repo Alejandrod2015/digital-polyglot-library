@@ -1,0 +1,439 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "pupitre,estampilla,jota,charla",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pupitre",
+          "answer": "a school desk",
+          "options": [
+            "a school desk",
+            "a postage stamp",
+            "the letter j",
+            "a chat"
+          ]
+        },
+        {
+          "word": "estampilla",
+          "answer": "a postage stamp",
+          "options": [
+            "a school desk",
+            "a postage stamp",
+            "the letter j",
+            "a chat"
+          ]
+        },
+        {
+          "word": "jota",
+          "answer": "the letter j",
+          "options": [
+            "a school desk",
+            "a postage stamp",
+            "the letter j",
+            "a chat"
+          ]
+        },
+        {
+          "word": "charla",
+          "answer": "a chat",
+          "options": [
+            "a school desk",
+            "a postage stamp",
+            "the letter j",
+            "a chat"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "porteño",
+    "sentence": "Nadie preguntaba cómo se decía buena suerte en [[porteño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from Buenos Aires",
+      "options": [
+        "from Buenos Aires",
+        "from the countryside",
+        "from the coast",
+        "from abroad"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Nadie preguntaba cómo se decía buena suerte en porteño.",
+        "targetWord": "porteño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "recreo",
+    "sentence": "Entre clase y clase hay un _____ corto para tomar café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recreo",
+      "options": [
+        "recreo",
+        "curso",
+        "ensayo",
+        "repaso"
+      ],
+      "translation": "Between classes there is a short _____ to have a coffee.",
+      "optionTranslations": [
+        "break",
+        "course",
+        "rehearsal",
+        "review"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Entre clase y clase hay un recreo corto para tomar café.",
+        "targetWord": "recreo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "consigna",
+    "sentence": "Dictaba despacio y repartía una [[consigna]] por pupitre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "task instruction",
+      "options": [
+        "task instruction",
+        "exam result",
+        "seating plan",
+        "reading list"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Dictaba despacio y repartía una consigna por pupitre.",
+        "targetWord": "consigna",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar lista",
+    "sentence": "[[Tomaba lista]] sin apuro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take attendance",
+      "options": [
+        "to take attendance",
+        "to make a list",
+        "to hand out tests",
+        "to set homework"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Tomaba lista sin apuro.",
+        "targetWord": "Tomaba lista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar la mano",
+    "sentence": "Nadie se reía, nadie [[levantaba la mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to raise your hand",
+      "options": [
+        "to raise your hand",
+        "to clap your hands",
+        "to wave goodbye",
+        "to shake your head"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Nadie se reía, nadie levantaba la mano.",
+        "targetWord": "levantaba la mano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "deletreó",
+    "sentence": "Por teléfono, ella _____ su apellido para que lo escribieran bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deletreó",
+      "options": [
+        "deletreó",
+        "olvidó",
+        "firmó",
+        "escondió"
+      ],
+      "translation": "On the phone, she _____ her surname so they would write it correctly.",
+      "optionTranslations": [
+        "spelled out",
+        "forgot",
+        "signed",
+        "hid"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Por teléfono, ella deletreó su apellido para que lo escribieran bien.",
+        "targetWord": "deletreó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltarse",
+    "sentence": "Cuando la charla [[se soltaba]], el instituto ya había cerrado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to loosen up",
+      "options": [
+        "to loosen up",
+        "to calm down",
+        "to break off",
+        "to slow down"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Cuando la charla se soltaba, el instituto ya había cerrado.",
+        "targetWord": "se soltaba",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "buena suerte",
+    "sentence": "Antes de entrar al examen, su amiga le deseó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "buena suerte",
+      "options": [
+        "buena suerte",
+        "buen viaje",
+        "feliz noche",
+        "buen finde"
+      ],
+      "translation": "Before going into the exam, her friend wished her _____.",
+      "optionTranslations": [
+        "good luck",
+        "a good trip",
+        "a happy night",
+        "a good weekend"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Antes de entrar al examen, su amiga le deseó buena suerte.",
+        "targetWord": "buena suerte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "che",
+    "sentence": "Vos sabés dónde encontrarme, [[che]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey, buddy",
+      "options": [
+        "hey, buddy",
+        "see you soon",
+        "no way",
+        "thanks a lot"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Vos sabés dónde encontrarme, che.",
+        "targetWord": "che",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "mejorar",
+    "sentence": "Cuando los números [[mejoren]], lo hablamos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to improve",
+      "options": [
+        "to improve",
+        "to get worse",
+        "to add up",
+        "to come in"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Cuando los números mejoren, lo hablamos.",
+        "targetWord": "mejoren",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "avanzar",
+    "sentence": "En el aula de al lado, los módulos [[avanzaban]] solos, con auriculares.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move forward",
+      "options": [
+        "to move forward",
+        "to start over",
+        "to shut down",
+        "to fall behind"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "En el aula de al lado, los módulos avanzaban solos, con auriculares.",
+        "targetWord": "avanzaban",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "sin apuro",
+    "sentence": "Tenía toda la mañana libre, así que desayunó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sin apuro",
+      "options": [
+        "sin apuro",
+        "sin permiso",
+        "sin miedo",
+        "sin dinero"
+      ],
+      "translation": "She had the whole morning free, so she had breakfast _____.",
+      "optionTranslations": [
+        "without hurrying",
+        "without permission",
+        "without fear",
+        "without money"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Tenía toda la mañana libre, así que desayunó sin apuro.",
+        "targetWord": "sin apuro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "pendiente",
+    "sentence": "Lo dejó sin abrir, tildado como [[pendiente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pending",
+      "options": [
+        "pending",
+        "urgent",
+        "finished",
+        "private"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Lo dejó sin abrir, tildado como pendiente.",
+        "targetWord": "pendiente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "cualquiera",
+    "sentence": "Un jueves [[cualquiera]] llegó al instituto un sobre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ordinary",
+      "options": [
+        "ordinary",
+        "special",
+        "rainy",
+        "busy"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Un jueves cualquiera llegó al instituto un sobre.",
+        "targetWord": "cualquiera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "parecerse",
+    "sentence": "Ese silencio no [[se parecía]] a nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be like",
+      "options": [
+        "to be like",
+        "to belong to",
+        "to lead to",
+        "to listen to"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "Ese silencio no se parecía a nada.",
+        "targetWord": "se parecía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "al pasar",
+    "sentence": "La noticia la trajo él en el recreo, [[al pasar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in passing",
+      "options": [
+        "in passing",
+        "in secret",
+        "in writing",
+        "in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "buena-suerte-en-porteno",
+        "storySource": "user",
+        "sentence": "La noticia la trajo él en el recreo, al pasar.",
+        "targetWord": "al pasar",
+        "language": "spanish"
+      }
+    }
+  }
+]

@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "guayaba,licuadora,hielo,camarón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "guayaba",
+          "answer": "guava",
+          "options": [
+            "guava",
+            "blender",
+            "ice",
+            "shrimp"
+          ]
+        },
+        {
+          "word": "licuadora",
+          "answer": "blender",
+          "options": [
+            "guava",
+            "blender",
+            "ice",
+            "shrimp"
+          ]
+        },
+        {
+          "word": "hielo",
+          "answer": "ice",
+          "options": [
+            "guava",
+            "blender",
+            "ice",
+            "shrimp"
+          ]
+        },
+        {
+          "word": "camarón",
+          "answer": "shrimp",
+          "options": [
+            "guava",
+            "blender",
+            "ice",
+            "shrimp"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ñapa",
+    "sentence": "Probó la lulada y pidió [[ñapa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a free extra",
+      "options": [
+        "a free extra",
+        "a discount",
+        "a receipt",
+        "a straw"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Probó la lulada y pidió ñapa.",
+        "targetWord": "ñapa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traducir",
+    "sentence": "Él ya no [[traducía]]: pensaba en caleño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to translate",
+      "options": [
+        "to translate",
+        "to stammer",
+        "to complain",
+        "to pretend"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Él ya no traducía: pensaba en caleño.",
+        "targetWord": "traducía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "exprimió",
+    "sentence": "Para sacar el jugo del limón, lo _____ con la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "exprimió",
+      "options": [
+        "exprimió",
+        "pintó",
+        "contó",
+        "escondió"
+      ],
+      "translation": "To get the juice out of the lemon, he _____ it by hand.",
+      "optionTranslations": [
+        "squeezed",
+        "painted",
+        "counted",
+        "hid"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Para sacar el jugo del limón, lo exprimió con la mano.",
+        "targetWord": "exprimió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plaza de mercado",
+    "sentence": "Meses de rebusque: [[plaza de mercado]], guayaba pelada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "market hall",
+      "options": [
+        "market hall",
+        "town square",
+        "bus station",
+        "shopping mall"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Meses de rebusque: plaza de mercado, guayaba pelada.",
+        "targetWord": "plaza de mercado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ir al grano",
+    "sentence": "Tengo otro local, mejor esquina, dijo el dueño, yendo [[al grano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get to the point",
+      "options": [
+        "to get to the point",
+        "to beat around the bush",
+        "to change the subject",
+        "to take a break"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Tengo otro local, mejor esquina, dijo el dueño, yendo al grano.",
+        "targetWord": "al grano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "Lo que [[perdiste]] fue un local, no el año.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lose",
+      "options": [
+        "to lose",
+        "to sell",
+        "to find",
+        "to rent"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Lo que perdiste fue un local, no el año.",
+        "targetWord": "perdiste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "probó",
+    "sentence": "Él _____ la sopa para ver si le faltaba sal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "probó",
+      "options": [
+        "probó",
+        "calentó",
+        "tapó",
+        "sirvió"
+      ],
+      "translation": "He _____ the soup to see if it needed salt.",
+      "optionTranslations": [
+        "tasted",
+        "heated",
+        "covered",
+        "served"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Él probó la sopa para ver si le faltaba sal.",
+        "targetWord": "probó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refrán",
+    "sentence": "Y el [[refrán]] no hacía falta terminarlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proverb",
+      "options": [
+        "proverb",
+        "rumour",
+        "riddle",
+        "nickname"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Y el refrán no hacía falta terminarlo.",
+        "targetWord": "refrán",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se duerme",
+    "sentence": "Cuando la película es aburrida, siempre _____ en el sofá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se duerme",
+      "options": [
+        "se duerme",
+        "se viste",
+        "se esconde",
+        "se sorprende"
+      ],
+      "translation": "When the film is boring, he always _____ on the sofa.",
+      "optionTranslations": [
+        "falls asleep",
+        "gets dressed",
+        "hides",
+        "gets surprised"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Cuando la película es aburrida, siempre se duerme en el sofá.",
+        "targetWord": "se duerme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "sentence": "Un sábado, ese dueño [[apareció]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show up",
+      "options": [
+        "to show up",
+        "to move out",
+        "to call back",
+        "to walk off"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Un sábado, ese dueño apareció.",
+        "targetWord": "apareció",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descansar",
+    "sentence": "La licuadora no [[descansaba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rest",
+      "options": [
+        "to rest",
+        "to leak",
+        "to spin",
+        "to cool"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "La licuadora no descansaba.",
+        "targetWord": "descansaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pelaba",
+    "sentence": "No le gustaba la cáscara, así que siempre _____ las manzanas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pelaba",
+      "options": [
+        "pelaba",
+        "lavaba",
+        "compraba",
+        "guardaba"
+      ],
+      "translation": "He did not like the skin, so he always _____ the apples.",
+      "optionTranslations": [
+        "peeled",
+        "washed",
+        "bought",
+        "stored"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "No le gustaba la cáscara, así que siempre pelaba las manzanas.",
+        "targetWord": "pelaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al momento",
+    "sentence": "Los jugos salían exprimidos [[al momento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the spot",
+      "options": [
+        "on the spot",
+        "in advance",
+        "by the glass",
+        "in the fridge"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Los jugos salían exprimidos al momento.",
+        "targetWord": "al momento",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "punto final",
+    "sentence": "De una, contestó él, antes del [[punto final]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full stop",
+      "options": [
+        "full stop",
+        "first word",
+        "question mark",
+        "deep breath"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "De una, contestó él, antes del punto final.",
+        "targetWord": "punto final",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en alto",
+    "sentence": "Levantó el vaso [[en alto]], como quien brinda por dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "up high",
+      "options": [
+        "up high",
+        "down low",
+        "to one side",
+        "behind his back"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Levantó el vaso en alto, como quien brinda por dentro.",
+        "targetWord": "en alto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "por dentro",
+    "sentence": "Por fuera sonreía, pero _____ estaba muy triste.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "por dentro",
+      "options": [
+        "por dentro",
+        "a tiempo",
+        "a propósito",
+        "por escrito"
+      ],
+      "translation": "On the outside he smiled, but _____ he was very sad.",
+      "optionTranslations": [
+        "inside",
+        "on time",
+        "on purpose",
+        "in writing"
+      ],
+      "audioClip": {
+        "storySlug": "la-napa-del-dueno",
+        "storySource": "user",
+        "sentence": "Por fuera sonreía, pero por dentro estaba muy triste.",
+        "targetWord": "por dentro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

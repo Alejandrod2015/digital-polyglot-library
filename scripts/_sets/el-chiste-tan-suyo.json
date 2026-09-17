@@ -1,0 +1,439 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "dejarse ganar",
+    "sentence": "Ella lo entendió: se estaba [[dejando ganar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let someone win",
+      "options": [
+        "to let someone win",
+        "to try to cheat",
+        "to play for time",
+        "to lose his temper"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Ella lo entendió: se estaba dejando ganar.",
+        "targetWord": "dejando ganar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la casa invita",
+    "sentence": "[[La casa no invita]], contestó ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's on the house",
+      "options": [
+        "it's on the house",
+        "the house is full",
+        "we're closing now",
+        "the kitchen is closed"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "La casa no invita, contestó ella.",
+        "targetWord": "La casa no invita",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "chiste,silbido,apuesta,cosecha",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chiste",
+          "answer": "joke",
+          "options": [
+            "joke",
+            "whistle",
+            "bet",
+            "harvest"
+          ]
+        },
+        {
+          "word": "silbido",
+          "answer": "whistle",
+          "options": [
+            "joke",
+            "whistle",
+            "bet",
+            "harvest"
+          ]
+        },
+        {
+          "word": "apuesta",
+          "answer": "bet",
+          "options": [
+            "joke",
+            "whistle",
+            "bet",
+            "harvest"
+          ]
+        },
+        {
+          "word": "cosecha",
+          "answer": "harvest",
+          "options": [
+            "joke",
+            "whistle",
+            "bet",
+            "harvest"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "trampa",
+    "sentence": "Ganó porque miró las cartas de los demás: hizo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trampa",
+      "options": [
+        "trampa",
+        "cola",
+        "dieta",
+        "siesta"
+      ],
+      "translation": "He won because he looked at the others' cards: he _____.",
+      "optionTranslations": [
+        "cheated",
+        "queued up",
+        "went on a diet",
+        "took a nap"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Ganó porque miró las cartas de los demás: hizo trampa.",
+        "targetWord": "trampa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desquite",
+    "sentence": "La cantina se llenó: se jugaba el [[desquite]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "payback",
+      "options": [
+        "payback",
+        "farewell",
+        "warm-up",
+        "truce"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "La cantina se llenó: se jugaba el desquite.",
+        "targetWord": "desquite",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venirse abajo",
+    "sentence": "La barra [[se vino abajo]]; desde la puerta, un silbido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring the house down",
+      "options": [
+        "to bring the house down",
+        "to fall silent",
+        "to empty out",
+        "to start a fight"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "La barra se vino abajo; desde la puerta, un silbido.",
+        "targetWord": "se vino abajo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se rindió",
+    "sentence": "Tras horas sin poder abrir el frasco, _____ y pidió ayuda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se rindió",
+      "options": [
+        "se rindió",
+        "se bañó",
+        "se peinó",
+        "se mudó"
+      ],
+      "translation": "After hours unable to open the jar, he _____ and asked for help.",
+      "optionTranslations": [
+        "gave up",
+        "took a bath",
+        "combed his hair",
+        "moved house"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Tras horas sin poder abrir el frasco, se rindió y pidió ayuda.",
+        "targetWord": "se rindió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de un jalón",
+    "sentence": "Él se lo tomó [[de un jalón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in one go",
+      "options": [
+        "in one go",
+        "very slowly",
+        "in small sips",
+        "with a frown"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Él se lo tomó de un jalón.",
+        "targetWord": "de un jalón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nomás",
+    "sentence": "[[Nomás]] que usted no había preguntado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just",
+      "options": [
+        "just",
+        "never",
+        "already",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Nomás que usted no había preguntado.",
+        "targetWord": "Nomás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parejo",
+    "sentence": "Iban [[parejos]]; ella notó la trampa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "neck and neck",
+      "options": [
+        "neck and neck",
+        "far behind",
+        "well ahead",
+        "worn out"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Iban parejos; ella notó la trampa.",
+        "targetWord": "parejos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hora de la comida",
+    "sentence": "A la [[hora de la comida]], la cantina se llenó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lunchtime",
+      "options": [
+        "lunchtime",
+        "closing time",
+        "happy hour",
+        "bedtime"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "A la hora de la comida, la cantina se llenó.",
+        "targetWord": "hora de la comida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acierto",
+    "sentence": "Él festejaba los [[aciertos]] ajenos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a direct hit",
+      "options": [
+        "a direct hit",
+        "a near miss",
+        "a long pause",
+        "a loud cheer"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Él festejaba los aciertos ajenos.",
+        "targetWord": "aciertos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antes de tiempo",
+    "sentence": "Él festejaba [[antes de tiempo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "too early",
+      "options": [
+        "too early",
+        "right on time",
+        "far too late",
+        "every time"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Él festejaba antes de tiempo.",
+        "targetWord": "antes de tiempo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "festejaba",
+    "sentence": "Mi vecino _____ cada gol de su equipo gritando por la ventana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "festejaba",
+      "options": [
+        "festejaba",
+        "olvidaba",
+        "fallaba",
+        "pagaba"
+      ],
+      "translation": "My neighbor _____ every goal his team scored by shouting out the window.",
+      "optionTranslations": [
+        "celebrated",
+        "forgot",
+        "missed",
+        "paid for"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Mi vecino festejaba cada gol de su equipo gritando por la ventana.",
+        "targetWord": "festejaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madurar",
+    "sentence": "Soltó un chiste de su cosecha, [[madurado]] con calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ripen",
+      "options": [
+        "to ripen",
+        "to shrink",
+        "to spoil",
+        "to cool"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Soltó un chiste de su cosecha, madurado con calma.",
+        "targetWord": "madurado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "serios",
+    "sentence": "Durante el examen, todos estaban muy _____ y nadie sonreía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "serios",
+      "options": [
+        "serios",
+        "contentos",
+        "rubios",
+        "sucios"
+      ],
+      "translation": "During the exam, everyone was very _____ and nobody smiled.",
+      "optionTranslations": [
+        "serious",
+        "happy",
+        "blond",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Durante el examen, todos estaban muy serios y nadie sonreía.",
+        "targetWord": "serios",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de siempre",
+    "sentence": "Él colgó el sombrero en el clavo [[de siempre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the usual one",
+      "options": [
+        "the usual one",
+        "a brand-new one",
+        "the wrong one",
+        "a borrowed one"
+      ],
+      "audioClip": {
+        "storySlug": "el-chiste-tan-suyo",
+        "storySource": "user",
+        "sentence": "Él colgó el sombrero en el clavo de siempre.",
+        "targetWord": "de siempre",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

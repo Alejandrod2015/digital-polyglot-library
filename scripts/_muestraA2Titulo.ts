@@ -14,7 +14,7 @@
  * Deja constancia en scripts/a2-muestras.json, que es lo que mira
  * `_narraUnaA2.ts` para no dejar narrar una primera historia sin muestra.
  *
- * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug>
+ * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug> [--journey a2 | b1-latam | b2-latam]
  */
 // PRIMERO, y de efecto lateral: ver scripts/_loadEnv.ts. Un config() de dotenv
 // escrito aqui arriba corre DESPUES de cargarse elevenlabs.ts, porque los
@@ -22,38 +22,15 @@
 import "./_loadEnv";
 
 import * as fs from "fs";
-import * as path from "path";
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
-import { VOZ_POR_TEMA } from "./_a2Voces";
-import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
-import { VOZ_POR_TEMA_FR_A0 } from "./_frA0Voces";
-import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
-import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
-import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
-import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
-import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
-import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
+import { perfilDeArgs, vozDe, REGISTRO_MUESTRAS } from "./_narraPerfiles";
 
-// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez: se amplia el script
-// en un commit, no se clona): --journey b1-latam usa su journey y su mapa de
-// voces; sin flag, el A2 de siempre.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string>; language?: string }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM },
-  "fr-a0": { journey: "cmtwo6cys0007j8yzg6ni3fsc", voces: VOZ_POR_TEMA_FR_A0 },
-  "fr-a2-friends": { journey: "cmu04ereh000732z7px7naqa2", voces: VOZ_POR_TEMA_FR_A2, language: "french" },
-  "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, language: "french" },
-  "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, language: "german" },
-  "de-a0-friends": { journey: "cmu047bkz0007326jsgeptkox", voces: VOZ_POR_TEMA_DE_A0_FRIENDS, language: "german" },
-  "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, language: "italian" },
-  "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, language: "spanish" },
-};
-const pi = process.argv.indexOf("--journey");
-const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends | it-a0-friends | es-a2-friends");
+// Ampliado el 2026-09-07 para el B1 latam y el 2026-09-11 para el B2 latam
+// (pedir-una-vez: se amplia el script en un commit, no se clona): los perfiles
+// viven en _narraPerfiles.ts; sin flag, el A2 de siempre.
+const PERFIL = perfilDeArgs(process.argv);
 const JOURNEY = PERFIL.journey;
-const REGISTRO = path.join(__dirname, "a2-muestras.json");
 
 const prisma = new PrismaClient();
 
@@ -63,12 +40,11 @@ const prisma = new PrismaClient();
 
   const s = await prisma.journeyStory.findFirst({
     where: { journeyId: JOURNEY, slug },
-    select: { title: true, text: true, topic: true },
+    select: { slug: true, title: true, text: true, topic: true, voiceId: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
 
-  const voiceId = PERFIL.voces[s.topic];
-  if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
+  const voiceId = vozDe(PERFIL, s);
 
   const parrafo = s.text.split(/\n\n+/)[0].trim();
   console.log(`${s.title} · ${parrafo.split(/\s+/).length} palabras · voz ${voiceId}`);
@@ -83,9 +59,9 @@ const prisma = new PrismaClient();
     contentGate: true,
   });
 
-  const reg = fs.existsSync(REGISTRO) ? JSON.parse(fs.readFileSync(REGISTRO, "utf8")) : {};
+  const reg = fs.existsSync(REGISTRO_MUESTRAS) ? JSON.parse(fs.readFileSync(REGISTRO_MUESTRAS, "utf8")) : {};
   reg[slug] = { url: res.url, fecha: new Date().toISOString(), voiceId };
-  fs.writeFileSync(REGISTRO, JSON.stringify(reg, null, 1) + "\n");
+  fs.writeFileSync(REGISTRO_MUESTRAS, JSON.stringify(reg, null, 1) + "\n");
 
   // Los gateFlags del render se imprimian solo al narrar la historia entera,
   // asi que de una muestra se perdian: el pipeline los calcula, nadie los mira

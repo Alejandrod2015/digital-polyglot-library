@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "cansado y atento, con la cortesía de quien pide favores",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: flashback marcado (el caderno abierto devuelve el primer día del viaje) y símil simple. Heredados: repetición rítmica en las tres salidas que Cleide enumera, contraste con pero, causalidad explícita, gancho final literal, imagen concreta de remate. Deliberadamente NO se repite el espejo concreto de los temas 2 y 3: tres temas seguidos con el mismo recurso serían estructura clónica entre temas.",
+  "historias": [
+    {
+      "slot": "campo-grande#0",
+      "quiere": "Renata quiere el autobús de las diez de la noche para llegar a Bonito por la mañana.",
+      "impide": "Ese autobús dejó de existir en mayo y su horario impreso ya no vale nada.",
+      "cuesta": "Elegir entre tres salidas sabiendo que la que le sirve puede costarle la conexión.",
+      "cambia": "Deja de agarrarse al papel y elige con la información que le dan; embarca a las once sin garantía.",
+      "emocion": "prisa que acepta el riesgo"
+    },
+    {
+      "slot": "campo-grande#1",
+      "quiere": "Renata quiere dormir doce horas de carretera en un asiento estrecho.",
+      "impide": "El hombre de al lado ronca desde antes de que acabe la ciudad y el pasillo está lleno.",
+      "cuesta": "Pedir paso tres veces y aguantar despierta lo que nadie va a compensarle.",
+      "cambia": "No cambia nada del viaje: cambia con quién lo pasa, porque la conversación del espejo convierte una noche perdida en una noche acompañada.",
+      "emocion": "incomodidad que se vuelve compañía"
+    },
+    {
+      "slot": "campo-grande#2",
+      "quiere": "Renata quiere recuperar el caderno de dos meses que dejó en la poltrona.",
+      "impide": "No hay metro ni tren y el autobús a la cochera no sale hasta las nueve.",
+      "cuesta": "Pagar el doble a un desconocido por siete minutos de calle vacía.",
+      "cambia": "Lo recupera y paga de más a propósito; lo que valía no era el trayecto, y quien lo cobra lo dice en voz alta.",
+      "emocion": "urgencia que se vuelve gratitud"
+    }
+  ]
+}

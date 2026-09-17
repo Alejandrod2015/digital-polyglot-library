@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "ficha,lectura,inscripción,disfrazado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ficha",
+          "answer": "a form",
+          "options": [
+            "a form",
+            "reading",
+            "registration",
+            "disguised"
+          ]
+        },
+        {
+          "word": "lectura",
+          "answer": "reading",
+          "options": [
+            "a form",
+            "reading",
+            "registration",
+            "disguised"
+          ]
+        },
+        {
+          "word": "inscripción",
+          "answer": "registration",
+          "options": [
+            "a form",
+            "reading",
+            "registration",
+            "disguised"
+          ]
+        },
+        {
+          "word": "disfrazado",
+          "answer": "disguised",
+          "options": [
+            "a form",
+            "reading",
+            "registration",
+            "disguised"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recomendar",
+    "sentence": "Me lo [[recomendó]] una amiga que se sabe los cuentos de memoria.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to recommend",
+      "options": [
+        "to recommend",
+        "to lend",
+        "to sell",
+        "to forbid"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Me lo recomendó una amiga que se sabe los cuentos de memoria.",
+        "targetWord": "recomendó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "matrícula",
+    "sentence": "Pagó la _____ y ya es alumna oficial del curso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "matrícula",
+      "options": [
+        "matrícula",
+        "multa",
+        "propina",
+        "cena"
+      ],
+      "translation": "She paid the _____ and is now an official student on the course.",
+      "optionTranslations": [
+        "enrolment fee",
+        "fine",
+        "tip",
+        "dinner"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Pagó la matrícula y ya es alumna oficial del curso.",
+        "targetWord": "matrícula",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trabarse",
+    "sentence": "Cuando [[me trabo]], cierro los ojos y me acuerdo de los cuentos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get stuck",
+      "options": [
+        "to get stuck",
+        "to get lost",
+        "to fall asleep",
+        "to feel sick"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Cuando me trabo, cierro los ojos y me acuerdo de los cuentos.",
+        "targetWord": "me trabo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acordó",
+    "sentence": "Por suerte se _____ de las llaves antes de cerrar la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acordó",
+      "options": [
+        "acordó",
+        "olvidó",
+        "quejó",
+        "burló"
+      ],
+      "translation": "Luckily he _____ the keys before closing the door.",
+      "optionTranslations": [
+        "remembered",
+        "forgot",
+        "complained about",
+        "made fun of"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Por suerte se acordó de las llaves antes de cerrar la puerta.",
+        "targetWord": "acordó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ojalá",
+    "sentence": "[[Ojalá]] se te ocurra más seguido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hopefully",
+      "options": [
+        "hopefully",
+        "probably",
+        "obviously",
+        "finally"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Ojalá se te ocurra más seguido.",
+        "targetWord": "Ojalá",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por las dudas",
+    "sentence": "La dictaba despacio, con la puerta abierta, [[por las dudas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just in case",
+      "options": [
+        "just in case",
+        "by accident",
+        "on purpose",
+        "for a while"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "La dictaba despacio, con la puerta abierta, por las dudas.",
+        "targetWord": "por las dudas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "más seguido",
+    "sentence": "Antes casi nunca iba al cine; ahora va _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "más seguido",
+      "options": [
+        "más seguido",
+        "más tarde",
+        "más lejos",
+        "más despacio"
+      ],
+      "translation": "Before, she hardly ever went to the cinema; now she goes _____.",
+      "optionTranslations": [
+        "more often",
+        "later",
+        "farther",
+        "more slowly"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Antes casi nunca iba al cine; ahora va más seguido.",
+        "targetWord": "más seguido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de espaldas",
+    "sentence": "No dijo nada; dejó que la carta hablara, [[de espaldas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with your back turned",
+      "options": [
+        "with your back turned",
+        "with your eyes closed",
+        "with your arms crossed",
+        "with your head down"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "No dijo nada; dejó que la carta hablara, de espaldas.",
+        "targetWord": "de espaldas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salvar",
+    "sentence": "El curso me [[salvó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to save",
+      "options": [
+        "to save",
+        "to bore",
+        "to change",
+        "to scare"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "El curso me salvó.",
+        "targetWord": "salvó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "digamos",
+    "sentence": "De cuentos, [[digamos]]. ¿La tomarías vos?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "let's say",
+      "options": [
+        "let's say",
+        "for sure",
+        "by the way",
+        "no way"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "De cuentos, digamos. ¿La tomarías vos?",
+        "targetWord": "digamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "aplaudieron",
+    "sentence": "Cuando el cantante terminó, todos _____ para pedir otra canción.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aplaudieron",
+      "options": [
+        "aplaudieron",
+        "durmieron",
+        "comieron",
+        "salieron"
+      ],
+      "translation": "When the singer finished, everyone _____ to ask for another song.",
+      "optionTranslations": [
+        "clapped",
+        "slept",
+        "ate",
+        "left"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Cuando el cantante terminó, todos aplaudieron para pedir otra canción.",
+        "targetWord": "aplaudieron",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "despegar",
+    "sentence": "Recién entonces él [[despegó]] el sobre pendiente y leyó moviendo los labios.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to unstick",
+      "options": [
+        "to unstick",
+        "to seal",
+        "to throw away",
+        "to tear up"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Recién entonces él despegó el sobre pendiente y leyó moviendo los labios.",
+        "targetWord": "despegó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "ocurrió",
+    "sentence": "No sabía qué regalarle, pero de pronto se le _____ algo perfecto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ocurrió",
+      "options": [
+        "ocurrió",
+        "cayó",
+        "rompió",
+        "perdió"
+      ],
+      "translation": "He did not know what to give her, but suddenly something perfect _____.",
+      "optionTranslations": [
+        "came to mind",
+        "was dropped",
+        "got broken",
+        "got lost"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "No sabía qué regalarle, pero de pronto se le ocurrió algo perfecto.",
+        "targetWord": "ocurrió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "por semana",
+    "sentence": "Al módulo le falta algo: una hora de lectura [[por semana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "per week",
+      "options": [
+        "per week",
+        "per day",
+        "per month",
+        "per class"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Al módulo le falta algo: una hora de lectura por semana.",
+        "targetWord": "por semana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "pararse",
+    "sentence": "Después cruzó el pasillo en silencio y [[se paró]] en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stand",
+      "options": [
+        "to stand",
+        "to knock",
+        "to sit",
+        "to trip"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Después cruzó el pasillo en silencio y se paró en la puerta.",
+        "targetWord": "se paró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "aguantarse la risa",
+    "sentence": "Dejó que la carta hablara, de espaldas, [[aguantándose la risa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold in a laugh",
+      "options": [
+        "to hold in a laugh",
+        "to hold back tears",
+        "to burst out laughing",
+        "to keep a secret"
+      ],
+      "audioClip": {
+        "storySlug": "que-buena-idea-ariel",
+        "storySource": "user",
+        "sentence": "Dejó que la carta hablara, de espaldas, aguantándose la risa.",
+        "targetWord": "aguantándose la risa",
+        "language": "spanish"
+      }
+    }
+  }
+]

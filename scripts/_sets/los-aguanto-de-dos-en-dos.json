@@ -1,0 +1,439 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "albur",
+    "sentence": "¿Me aguanta un [[albur]], patrona, o nomás la fama?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cheeky pun",
+      "options": [
+        "a cheeky pun",
+        "a tall tale",
+        "a drinking bet",
+        "a loud toast"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "¿Me aguanta un albur, patrona, o nomás la fama?",
+        "targetWord": "albur",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doble sentido",
+    "sentence": "Una frase de [[doble sentido]] escondido, y la barra soltó la carcajada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "double meaning",
+      "options": [
+        "double meaning",
+        "double bet",
+        "second round",
+        "hidden rule"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Una frase de doble sentido escondido, y la barra soltó la carcajada.",
+        "targetWord": "doble sentido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tejuino,carcajada,duelo,fama",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tejuino",
+          "answer": "corn drink",
+          "options": [
+            "corn drink",
+            "big laugh",
+            "duel",
+            "reputation"
+          ]
+        },
+        {
+          "word": "carcajada",
+          "answer": "big laugh",
+          "options": [
+            "corn drink",
+            "big laugh",
+            "duel",
+            "reputation"
+          ]
+        },
+        {
+          "word": "duelo",
+          "answer": "duel",
+          "options": [
+            "corn drink",
+            "big laugh",
+            "duel",
+            "reputation"
+          ]
+        },
+        {
+          "word": "fama",
+          "answer": "reputation",
+          "options": [
+            "corn drink",
+            "big laugh",
+            "duel",
+            "reputation"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patrona",
+    "sentence": "Mañana hay más, [[patrona]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "boss lady",
+      "options": [
+        "boss lady",
+        "dear neighbor",
+        "young miss",
+        "old friend"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Mañana hay más, patrona.",
+        "targetWord": "patrona",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "delató",
+    "sentence": "Juró que no comió dulces, pero la boca manchada lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "delató",
+      "options": [
+        "delató",
+        "salvó",
+        "calmó",
+        "despertó"
+      ],
+      "translation": "He swore he ate no sweets, but his stained mouth _____ him.",
+      "optionTranslations": [
+        "gave away",
+        "saved",
+        "calmed",
+        "woke"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Juró que no comió dulces, pero la boca manchada lo delató.",
+        "targetWord": "delató",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "va que va",
+    "sentence": "[[Va que va]], dijo él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deal, you're on",
+      "options": [
+        "deal, you're on",
+        "no way, sorry",
+        "maybe later",
+        "not so fast"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Va que va, dijo él.",
+        "targetWord": "Va que va",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer callar",
+    "sentence": "Nadie la había [[hecho callar]] en su negocio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shut someone up",
+      "options": [
+        "to shut someone up",
+        "to make someone laugh",
+        "to catch someone out",
+        "to make someone pay"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Nadie la había hecho callar en su negocio.",
+        "targetWord": "hecho callar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ingenio",
+    "sentence": "Con su _____, siempre tenía una respuesta graciosa para todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ingenio",
+      "options": [
+        "ingenio",
+        "dinero",
+        "miedo",
+        "sueño"
+      ],
+      "translation": "With his _____, he always had a funny answer for everything.",
+      "optionTranslations": [
+        "wit",
+        "money",
+        "fear",
+        "sleepiness"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Con su ingenio, siempre tenía una respuesta graciosa para todo.",
+        "targetWord": "ingenio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin despeinarse",
+    "sentence": "Contestaba [[sin despeinarse]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without breaking a sweat",
+      "options": [
+        "without breaking a sweat",
+        "without saying a word",
+        "without looking up",
+        "without any manners"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Contestaba sin despeinarse.",
+        "targetWord": "sin despeinarse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar caer",
+    "sentence": "Él [[dejó caer]] una frase mansa, de doble sentido escondido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to slip in casually",
+      "options": [
+        "to slip in casually",
+        "to shout out loud",
+        "to take back",
+        "to repeat slowly"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Él dejó caer una frase mansa, de doble sentido escondido.",
+        "targetWord": "dejó caer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "presumir",
+    "sentence": "Ella [[presumía]] de una sola cosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to boast",
+      "options": [
+        "to boast",
+        "to complain",
+        "to worry",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Ella presumía de una sola cosa.",
+        "targetWord": "presumía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calentando",
+    "sentence": "Antes del partido, los jugadores estaban _____ junto a la cancha.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calentando",
+      "options": [
+        "calentando",
+        "cocinando",
+        "pintando",
+        "planchando"
+      ],
+      "translation": "Before the match, the players were _____ next to the pitch.",
+      "optionTranslations": [
+        "warming up",
+        "cooking",
+        "painting",
+        "ironing"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Antes del partido, los jugadores estaban calentando junto a la cancha.",
+        "targetWord": "calentando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "manso",
+    "sentence": "Parecía peligroso, pero el perro era _____ y dejaba que lo acariciaran.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "manso",
+      "options": [
+        "manso",
+        "bravo",
+        "feo",
+        "flaco"
+      ],
+      "translation": "It looked dangerous, but the dog was _____ and let people pet it.",
+      "optionTranslations": [
+        "gentle",
+        "fierce",
+        "ugly",
+        "skinny"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "Parecía peligroso, pero el perro era manso y dejaba que lo acariciaran.",
+        "targetWord": "manso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atender",
+    "sentence": "La mujer que [[atendía]] la barra de una cantina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to serve",
+      "options": [
+        "to serve",
+        "to own",
+        "to clean",
+        "to visit"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "La mujer que atendía la barra de una cantina.",
+        "targetWord": "atendía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temprano",
+    "sentence": "El local olía a birria desde [[temprano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "early",
+      "options": [
+        "early",
+        "late",
+        "nearby",
+        "lately"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "El local olía a birria desde temprano.",
+        "targetWord": "temprano",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansarse",
+    "sentence": "¿[[Se cansa]] tan pronto?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get tired",
+      "options": [
+        "to get tired",
+        "to get bored",
+        "to get angry",
+        "to get nervous"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "¿Se cansa tan pronto?",
+        "targetWord": "Se cansa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empatar",
+    "sentence": "El duelo iba [[empatado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to draw level",
+      "options": [
+        "to draw level",
+        "to fall behind",
+        "to pull ahead",
+        "to call off"
+      ],
+      "audioClip": {
+        "storySlug": "los-aguanto-de-dos-en-dos",
+        "storySource": "user",
+        "sentence": "El duelo iba empatado.",
+        "targetWord": "empatado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

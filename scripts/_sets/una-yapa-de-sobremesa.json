@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "chaufa,lapicero,brindis,sobremesa",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chaufa",
+          "answer": "Peruvian fried rice",
+          "options": [
+            "Peruvian fried rice",
+            "ballpoint pen",
+            "toast with drinks",
+            "after-meal chat"
+          ]
+        },
+        {
+          "word": "lapicero",
+          "answer": "ballpoint pen",
+          "options": [
+            "Peruvian fried rice",
+            "ballpoint pen",
+            "toast with drinks",
+            "after-meal chat"
+          ]
+        },
+        {
+          "word": "brindis",
+          "answer": "toast with drinks",
+          "options": [
+            "Peruvian fried rice",
+            "ballpoint pen",
+            "toast with drinks",
+            "after-meal chat"
+          ]
+        },
+        {
+          "word": "sobremesa",
+          "answer": "after-meal chat",
+          "options": [
+            "Peruvian fried rice",
+            "ballpoint pen",
+            "toast with drinks",
+            "after-meal chat"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "yapa",
+    "sentence": "La [[yapa]] es que le sigo contestando el teléfono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free little extra",
+      "options": [
+        "free little extra",
+        "small discount",
+        "late fee",
+        "written receipt"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "La yapa es que le sigo contestando el teléfono.",
+        "targetWord": "yapa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mozo",
+    "sentence": "El [[mozo]] trajo el chaufa caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "waiter",
+      "options": [
+        "waiter",
+        "cook",
+        "cashier",
+        "owner"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "El mozo trajo el chaufa caliente.",
+        "targetWord": "mozo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regatear",
+    "sentence": "En el mercado conviene _____ para conseguir un precio más bajo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regatear",
+      "options": [
+        "regatear",
+        "pasear",
+        "cantar",
+        "bailar"
+      ],
+      "translation": "At the market it pays to _____ to get a lower price.",
+      "optionTranslations": [
+        "haggle",
+        "stroll",
+        "sing",
+        "dance"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "En el mercado conviene regatear para conseguir un precio más bajo.",
+        "targetWord": "regatear",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrar el trato",
+    "sentence": "[[Cerraron el trato]] con un apretón corto y un brindis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to close the deal",
+      "options": [
+        "to close the deal",
+        "to call off the deal",
+        "to split the bill",
+        "to leave the table"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Cerraron el trato con un apretón corto y un brindis.",
+        "targetWord": "Cerraron el trato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toma y daca",
+    "sentence": "Un [[toma y daca]] tan educado que parecía sobremesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "give and take",
+      "options": [
+        "give and take",
+        "all or nothing",
+        "wait and see",
+        "take it or leave it"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Un toma y daca tan educado que parecía sobremesa.",
+        "targetWord": "toma y daca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "halago",
+    "sentence": "Él elogiaba, ella agradecía el [[halago]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flattery",
+      "options": [
+        "flattery",
+        "criticism",
+        "advice",
+        "apology"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Él elogiaba, ella agradecía el halago.",
+        "targetWord": "halago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apretón",
+    "sentence": "Al conocerse, se dieron un _____ de manos muy firme.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apretón",
+      "options": [
+        "apretón",
+        "empujón",
+        "tirón",
+        "pisotón"
+      ],
+      "translation": "When they met, they gave each other a very firm hand _____.",
+      "optionTranslations": [
+        "squeeze",
+        "shove",
+        "tug",
+        "stomp"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Al conocerse, se dieron un apretón de manos muy firme.",
+        "targetWord": "apretón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de reojo",
+    "sentence": "Mirando [[de reojo]] la fuente vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out of the corner of the eye",
+      "options": [
+        "out of the corner of the eye",
+        "straight in the face",
+        "with eyes closed",
+        "from very close up"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Mirando de reojo la fuente vacía.",
+        "targetWord": "de reojo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "redondeó",
+    "sentence": "El total tenía muchos decimales, así que el vendedor lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "redondeó",
+      "options": [
+        "redondeó",
+        "duplicó",
+        "borró",
+        "olvidó"
+      ],
+      "translation": "The total had many decimals, so the seller _____ it.",
+      "optionTranslations": [
+        "rounded",
+        "doubled",
+        "erased",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "El total tenía muchos decimales, así que el vendedor lo redondeó.",
+        "targetWord": "redondeó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacerse de rogar",
+    "sentence": "No soltaba un centavo; él [[se hacía de rogar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to play hard to get",
+      "options": [
+        "to play hard to get",
+        "to give in quickly",
+        "to pay the bill",
+        "to change the subject"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "No soltaba un centavo; él se hacía de rogar.",
+        "targetWord": "se hacía de rogar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "centavo",
+    "sentence": "Gasté todo el sueldo y no me queda ni un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "centavo",
+      "options": [
+        "centavo",
+        "minuto",
+        "amigo",
+        "recuerdo"
+      ],
+      "translation": "I spent my whole salary and I don't have a single _____ left.",
+      "optionTranslations": [
+        "cent",
+        "minute",
+        "friend",
+        "memory"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Gasté todo el sueldo y no me queda ni un centavo.",
+        "targetWord": "centavo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordar",
+    "sentence": "[[Acordaron]] la cifra a medias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to agree on",
+      "options": [
+        "to agree on",
+        "to argue about",
+        "to write down",
+        "to forget about"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Acordaron la cifra a medias.",
+        "targetWord": "Acordaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar en limpio",
+    "sentence": "La [[sacaron en limpio]] en una servilleta, con el lapicero de ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to write out neatly",
+      "options": [
+        "to write out neatly",
+        "to wipe off completely",
+        "to tear into pieces",
+        "to fold in half"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "La sacaron en limpio en una servilleta, con el lapicero de ella.",
+        "targetWord": "sacaron en limpio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "a medias",
+    "sentence": "Pagamos la cena _____: yo puse la mitad y ella, el resto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a medias",
+      "options": [
+        "a medias",
+        "a ciegas",
+        "a solas",
+        "a tientas"
+      ],
+      "translation": "We paid for dinner _____: I paid half and she paid the rest.",
+      "optionTranslations": [
+        "split in half",
+        "blindly",
+        "alone",
+        "by feel"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Pagamos la cena a medias: yo puse la mitad y ella, el resto.",
+        "targetWord": "a medias",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de estreno",
+    "sentence": "Ese precio fue [[de estreno]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "introductory",
+      "options": [
+        "introductory",
+        "permanent",
+        "wholesale",
+        "negotiable"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Ese precio fue de estreno.",
+        "targetWord": "de estreno",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "para arriba",
+    "sentence": "Redondeamos [[para arriba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "upwards",
+      "options": [
+        "upwards",
+        "downwards",
+        "sideways",
+        "backwards"
+      ],
+      "audioClip": {
+        "storySlug": "una-yapa-de-sobremesa",
+        "storySource": "user",
+        "sentence": "Redondeamos para arriba.",
+        "targetWord": "para arriba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

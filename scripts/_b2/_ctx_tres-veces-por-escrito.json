@@ -1,0 +1,340 @@
+{
+  "a": {
+    "es": "A media subida",
+    "en": "halfway up"
+  },
+  "adentro": {
+    "es": "Marcela adentro, Ignacio en la caseta",
+    "en": "Marcela inside, Ignacio in the booth"
+  },
+  "agarró": {
+    "es": "que el freno agarró",
+    "en": "that the brake caught"
+  },
+  "al": {
+    "es": "el corazón al trote",
+    "en": "her heart racing"
+  },
+  "ascensor": {
+    "es": "el ascensor dio un salto",
+    "en": "the lift gave a jolt"
+  },
+  "años": {
+    "es": "Ignacio lo cargó años",
+    "en": "Ignacio carried it for years"
+  },
+  "bajo": {
+    "es": "Te bajo a manivela",
+    "en": "I'll take you down by hand-crank",
+    "g": "I'll take you down (bajar, present); not low/under here",
+    "t": "verb"
+  },
+  "bajó": {
+    "es": "el carro bajó de a poco",
+    "en": "the car went down little by little"
+  },
+  "cajón": {
+    "es": "En el cajón, tres cartas selladas",
+    "en": "in the drawer, three sealed letters"
+  },
+  "callado": {
+    "es": "dónde pesaba lo callado",
+    "en": "where the silence weighed"
+  },
+  "cargó": {
+    "es": "Ignacio lo cargó años",
+    "en": "Ignacio carried it for years"
+  },
+  "carro": {
+    "es": "el carro bajó de a poco",
+    "en": "the car went down little by little"
+  },
+  "cartas": {
+    "es": "tres cartas selladas pedían el repuesto",
+    "en": "three sealed letters asked for the part"
+  },
+  "caseta": {
+    "es": "Ignacio en la caseta",
+    "en": "Ignacio in the booth"
+  },
+  "casi": {
+    "es": "y casi la tumba",
+    "en": "and almost her downfall"
+  },
+  "cerrar": {
+    "es": "Lo que no hice fue cerrar",
+    "en": "what I didn't do was close it"
+  },
+  "cerraron": {
+    "es": "Por fin cerraron el ascensor",
+    "en": "they finally closed the lift"
+  },
+  "cerro": {
+    "es": "medio cerro sube su mercadería",
+    "en": "half the hill brings its goods up"
+  },
+  "con": {
+    "es": "Salió con piernas temblonas",
+    "en": "she came out with shaky legs"
+  },
+  "contestó": {
+    "es": "contestó Ignacio",
+    "en": "Ignacio answered"
+  },
+  "corazón": {
+    "es": "el corazón al trote",
+    "en": "her heart racing"
+  },
+  "cuánto": {
+    "es": "¿Cuánto sería un ratito?",
+    "en": "how long would a little while be"
+  },
+  "de": {
+    "es": "el carro bajó de a poco",
+    "en": "the car went down little by little"
+  },
+  "del": {
+    "es": "sujeta del pasamanos",
+    "en": "holding onto the handrail"
+  },
+  "dije": {
+    "es": "Sí dije",
+    "en": "yes I did say"
+  },
+  "dijiste": {
+    "es": "¿Y por qué no dijiste nada?",
+    "en": "and why didn't you say anything"
+  },
+  "dio": {
+    "es": "el ascensor dio un salto",
+    "en": "the lift gave a jolt"
+  },
+  "dónde": {
+    "es": "Marcela entendió dónde pesaba",
+    "en": "Marcela understood where it weighed"
+  },
+  "ella": {
+    "es": "preguntó ella",
+    "en": "she asked"
+  },
+  "en": {
+    "es": "Ignacio en la caseta",
+    "en": "Ignacio in the booth"
+  },
+  "encargó": {
+    "es": "que nadie encargó",
+    "en": "that nobody ordered"
+  },
+  "engranaje": {
+    "es": "volvió con engranaje nuevo",
+    "en": "it came back with a new gear"
+  },
+  "entendió": {
+    "es": "Marcela entendió dónde pesaba",
+    "en": "Marcela understood where it weighed"
+  },
+  "escrito": {
+    "es": "Tres veces, por escrito",
+    "en": "three times, in writing"
+  },
+  "estaba": {
+    "es": "el engranaje estaba a punto de ceder",
+    "en": "the gear was about to give"
+  },
+  "este": {
+    "es": "sube su mercadería en este fierro",
+    "en": "brings its goods up on this rig"
+  },
+  "falta": {
+    "es": "no hacía falta",
+    "en": "no need for that"
+  },
+  "fierro": {
+    "es": "sube su mercadería en este fierro",
+    "en": "brings its goods up on this rig"
+  },
+  "fin": {
+    "es": "Por fin cerraron el ascensor",
+    "en": "they finally closed the lift"
+  },
+  "fue": {
+    "es": "Lo que no hice fue cerrar",
+    "en": "what I didn't do was close it"
+  },
+  "guardó": {
+    "es": "ella guardó el secreto",
+    "en": "she kept the secret"
+  },
+  "había": {
+    "es": "en la caseta había una pared",
+    "en": "in the booth there was a wall"
+  },
+  "hacía": {
+    "es": "no hacía falta",
+    "en": "no need for that"
+  },
+  "hice": {
+    "es": "Lo que no hice fue cerrar",
+    "en": "what I didn't do was close it"
+  },
+  "lo": {
+    "es": "Lo que no hice fue cerrar",
+    "en": "what I didn't do was close it"
+  },
+  "media": {
+    "es": "A media subida",
+    "en": "halfway up"
+  },
+  "medio": {
+    "es": "medio cerro sube su mercadería",
+    "en": "half the hill brings its goods up"
+  },
+  "muevas": {
+    "es": "No te muevas",
+    "en": "don't move"
+  },
+  "más": {
+    "es": "Un ratito no más",
+    "en": "just a little while"
+  },
+  "nada": {
+    "es": "¿Y por qué no dijiste nada?",
+    "en": "and why didn't you say anything"
+  },
+  "nadie": {
+    "es": "que nadie encargó",
+    "en": "that nobody ordered"
+  },
+  "no": {
+    "es": "No te muevas",
+    "en": "don't move"
+  },
+  "nuevo": {
+    "es": "volvió con engranaje nuevo",
+    "en": "it came back with a new gear"
+  },
+  "pared": {
+    "es": "había una pared recién pintada",
+    "en": "there was a freshly painted wall"
+  },
+  "pedían": {
+    "es": "tres cartas selladas pedían el repuesto",
+    "en": "three sealed letters asked for the part"
+  },
+  "pesaba": {
+    "es": "dónde pesaba lo callado",
+    "en": "where the silence weighed"
+  },
+  "pidió": {
+    "es": "pidió Ignacio",
+    "en": "Ignacio asked"
+  },
+  "piernas": {
+    "es": "Salió con piernas temblonas",
+    "en": "she came out with shaky legs"
+  },
+  "pintada": {
+    "es": "una pared recién pintada",
+    "en": "a freshly painted wall"
+  },
+  "poco": {
+    "es": "el carro bajó de a poco",
+    "en": "the car went down little by little"
+  },
+  "por": {
+    "es": "Tres veces, por escrito",
+    "en": "three times, in writing"
+  },
+  "preguntó": {
+    "es": "preguntó Marcela",
+    "en": "Marcela asked"
+  },
+  "punto": {
+    "es": "a punto de ceder",
+    "en": "about to give"
+  },
+  "que": {
+    "es": "No te muevas, que el freno agarró",
+    "en": "don't move, the brake caught"
+  },
+  "quedó": {
+    "es": "se quedó quieto",
+    "en": "stayed still"
+  },
+  "quieto": {
+    "es": "se quedó quieto",
+    "en": "stayed still"
+  },
+  "qué": {
+    "es": "¿Y por qué no dijiste nada?",
+    "en": "and why didn't you say anything"
+  },
+  "ratito": {
+    "es": "Un ratito no más",
+    "en": "just a little while"
+  },
+  "salió": {
+    "es": "Salió con piernas temblonas",
+    "en": "she came out with shaky legs"
+  },
+  "se": {
+    "es": "se quedó quieto",
+    "en": "stayed still"
+  },
+  "semana": {
+    "es": "ella guardó el secreto una semana",
+    "en": "she kept the secret for a week"
+  },
+  "sonaba": {
+    "es": "todo sonaba a fierro viejo",
+    "en": "everything sounded like old iron"
+  },
+  "su": {
+    "es": "medio cerro sube su mercadería",
+    "en": "half the hill brings its goods up"
+  },
+  "sube": {
+    "es": "medio cerro sube su mercadería",
+    "en": "half the hill brings its goods up"
+  },
+  "subida": {
+    "es": "A media subida",
+    "en": "halfway up"
+  },
+  "sujeta": {
+    "es": "sujeta del pasamanos",
+    "en": "holding onto the handrail"
+  },
+  "sí": {
+    "es": "Sí dije",
+    "en": "yes I did say"
+  },
+  "te": {
+    "es": "No te muevas",
+    "en": "don't move"
+  },
+  "todo": {
+    "es": "todo sonaba a fierro viejo",
+    "en": "everything sounded like old iron"
+  },
+  "trote": {
+    "es": "el corazón al trote",
+    "en": "her heart racing"
+  },
+  "veces": {
+    "es": "Tres veces, por escrito",
+    "en": "three times, in writing"
+  },
+  "viejo": {
+    "es": "todo sonaba a fierro viejo",
+    "en": "everything sounded like old iron"
+  },
+  "volvió": {
+    "es": "volvió con engranaje nuevo",
+    "en": "it came back with a new gear"
+  },
+  "y": {
+    "es": "crujió y se quedó quieto",
+    "en": "creaked and stayed still"
+  }
+}

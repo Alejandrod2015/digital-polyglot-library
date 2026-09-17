@@ -1,0 +1,439 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mecedora,rodilla,techo,cielo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mecedora",
+          "answer": "rocking chair",
+          "options": [
+            "rocking chair",
+            "knee",
+            "roof",
+            "sky"
+          ]
+        },
+        {
+          "word": "rodilla",
+          "answer": "knee",
+          "options": [
+            "rocking chair",
+            "knee",
+            "roof",
+            "sky"
+          ]
+        },
+        {
+          "word": "techo",
+          "answer": "roof",
+          "options": [
+            "rocking chair",
+            "knee",
+            "roof",
+            "sky"
+          ]
+        },
+        {
+          "word": "cielo",
+          "answer": "sky",
+          "options": [
+            "rocking chair",
+            "knee",
+            "roof",
+            "sky"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuentero",
+    "sentence": "Él era el [[cuentero]] de Aracataca, Colombia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "storyteller",
+      "options": [
+        "storyteller",
+        "fisherman",
+        "shopkeeper",
+        "bus driver"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Él era el cuentero de Aracataca, Colombia.",
+        "targetWord": "cuentero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "echar carreta",
+    "sentence": "Le encanta _____: habla horas en las fiestas y todos se ríen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "echar carreta",
+      "options": [
+        "echar carreta",
+        "pedir la cuenta",
+        "lavar la vajilla",
+        "guardar la calma"
+      ],
+      "translation": "He loves to _____: he talks for hours at parties and everyone laughs.",
+      "optionTranslations": [
+        "spin yarns",
+        "ask for the bill",
+        "wash the dishes",
+        "keep calm"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Le encanta echar carreta: habla horas en las fiestas y todos se ríen.",
+        "targetWord": "echar carreta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hospedaje",
+    "sentence": "Ella era la dueña del [[hospedaje]] y ponía el orden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "guesthouse",
+      "options": [
+        "guesthouse",
+        "bakery",
+        "fishing boat",
+        "market stall"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Ella era la dueña del hospedaje y ponía el orden.",
+        "targetWord": "hospedaje",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agrandar",
+    "sentence": "y [[agrandó]] el pescado medio metro más, como si la retara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make bigger",
+      "options": [
+        "to make bigger",
+        "to cut in half",
+        "to cook slowly",
+        "to hand over"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "y agrandó el pescado medio metro más, como si la retara.",
+        "targetWord": "agrandó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "corrigió",
+    "sentence": "Él dijo mal la fecha y ella, amable, lo _____ enseguida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "corrigió",
+      "options": [
+        "corrigió",
+        "felicitó",
+        "aplaudió",
+        "saludó"
+      ],
+      "translation": "He got the date wrong and she kindly _____ him right away.",
+      "optionTranslations": [
+        "corrected",
+        "congratulated",
+        "applauded",
+        "greeted"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Él dijo mal la fecha y ella, amable, lo corrigió enseguida.",
+        "targetWord": "corrigió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mochilero",
+    "sentence": "Los [[mochileros]] se rieron y pidieron ronda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "backpacker",
+      "options": [
+        "backpacker",
+        "street musician",
+        "neighbour",
+        "waiter"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Los mochileros se rieron y pidieron ronda.",
+        "targetWord": "mochileros",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apostar",
+    "sentence": "[[Apostado]], dijo él, sin saber qué firmaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bet",
+      "options": [
+        "to bet",
+        "to lend",
+        "to refuse",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Apostado, dijo él, sin saber qué firmaba.",
+        "targetWord": "Apostado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salir cierto",
+    "sentence": "La historia que [[salga cierta]] le abre el de adentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn out true",
+      "options": [
+        "to turn out true",
+        "to end up forgotten",
+        "to sound too good",
+        "to be told first"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "La historia que salga cierta le abre el de adentro.",
+        "targetWord": "salga cierta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y gracias",
+    "sentence": "Medio metro, [[y gracias]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "and that's generous",
+      "options": [
+        "and that's generous",
+        "and thanks a lot",
+        "and not less",
+        "and good luck"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Medio metro, y gracias.",
+        "targetWord": "y gracias",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guarapo",
+    "sentence": "el corredor se llenó solo: mochileros, [[guarapo]] frío con hielo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sugarcane drink",
+      "options": [
+        "sugarcane drink",
+        "coconut water",
+        "lime soda",
+        "rice pudding"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "el corredor se llenó solo: mochileros, guarapo frío con hielo.",
+        "targetWord": "guarapo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciénaga",
+    "sentence": "De la [[ciénaga]] sacaban pescados gigantes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "marsh",
+      "options": [
+        "marsh",
+        "harbour",
+        "waterfall",
+        "fish market"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "De la ciénaga sacaban pescados gigantes.",
+        "targetWord": "ciénaga",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cargaron",
+    "sentence": "El sofá pesaba mucho, así que lo _____ entre varios vecinos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cargaron",
+      "options": [
+        "cargaron",
+        "pintaron",
+        "lavaron",
+        "buscaron"
+      ],
+      "translation": "The sofa was very heavy, so several neighbours _____ it together.",
+      "optionTranslations": [
+        "carried",
+        "painted",
+        "washed",
+        "looked for"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "El sofá pesaba mucho, así que lo cargaron entre varios vecinos.",
+        "targetWord": "cargaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "firmó",
+    "sentence": "Escribió su nombre al pie: así _____ el contrato del alquiler.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firmó",
+      "options": [
+        "firmó",
+        "leyó",
+        "perdió",
+        "rompió"
+      ],
+      "translation": "He wrote his name at the bottom: that is how he _____ the rental contract.",
+      "optionTranslations": [
+        "signed",
+        "read",
+        "lost",
+        "tore up"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Escribió su nombre al pie: así firmó el contrato del alquiler.",
+        "targetWord": "firmó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Echar carreta afuera también era arte; el cielo no [[avisaba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warn",
+      "options": [
+        "to warn",
+        "to promise",
+        "to wait",
+        "to forgive"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Echar carreta afuera también era arte; el cielo no avisaba.",
+        "targetWord": "avisaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mientras tanto",
+    "sentence": "[[Mientras tanto]], me cuenta afuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meanwhile",
+      "options": [
+        "meanwhile",
+        "afterwards",
+        "once again",
+        "at last"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Mientras tanto, me cuenta afuera.",
+        "targetWord": "Mientras tanto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en otra parte",
+    "sentence": "Era la dueña del hospedaje: paciencia [[en otra parte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "somewhere else",
+      "options": [
+        "somewhere else",
+        "right here",
+        "above all",
+        "every day"
+      ],
+      "audioClip": {
+        "storySlug": "de-medio-metro-y-gracias",
+        "storySource": "user",
+        "sentence": "Era la dueña del hospedaje: paciencia en otra parte.",
+        "targetWord": "en otra parte",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

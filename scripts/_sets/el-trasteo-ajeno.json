@@ -1,0 +1,439 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bomba,fiador,sílaba,giro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bomba",
+          "answer": "balloon",
+          "options": [
+            "balloon",
+            "guarantor",
+            "syllable",
+            "turn of phrase"
+          ]
+        },
+        {
+          "word": "fiador",
+          "answer": "guarantor",
+          "options": [
+            "balloon",
+            "guarantor",
+            "syllable",
+            "turn of phrase"
+          ]
+        },
+        {
+          "word": "sílaba",
+          "answer": "syllable",
+          "options": [
+            "balloon",
+            "guarantor",
+            "syllable",
+            "turn of phrase"
+          ]
+        },
+        {
+          "word": "giro",
+          "answer": "turn of phrase",
+          "options": [
+            "balloon",
+            "guarantor",
+            "syllable",
+            "turn of phrase"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de una",
+    "sentence": "Eso era hágale [[de una]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "just once",
+        "maybe later",
+        "step by step"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Eso era hágale de una.",
+        "targetWord": "de una",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hágale",
+    "sentence": "El próximo [[hágale]] no lo agarraría pensando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "go ahead",
+      "options": [
+        "go ahead",
+        "hold on",
+        "slow down",
+        "watch out"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "El próximo hágale no lo agarraría pensando.",
+        "targetWord": "hágale",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriendo",
+    "sentence": "Llegó con el [[arriendo]] en efectivo y los papeles del fiador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rent",
+      "options": [
+        "rent",
+        "loan",
+        "tip",
+        "salary"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Llegó con el arriendo en efectivo y los papeles del fiador.",
+        "targetWord": "arriendo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "en efectivo",
+    "sentence": "No aceptaban tarjeta, así que pagué _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "en efectivo",
+      "options": [
+        "en efectivo",
+        "a tiempo",
+        "por correo",
+        "con retraso"
+      ],
+      "translation": "They did not take cards, so I paid _____.",
+      "optionTranslations": [
+        "in cash",
+        "on time",
+        "by mail",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "No aceptaban tarjeta, así que pagué en efectivo.",
+        "targetWord": "en efectivo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decidido",
+    "sentence": "Venía [[decidido]], o eso creía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "determined",
+      "options": [
+        "determined",
+        "worried",
+        "exhausted",
+        "confused"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Venía decidido, o eso creía.",
+        "targetWord": "decidido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dudar",
+    "sentence": "El que [[duda]] pierde el local.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hesitate",
+      "options": [
+        "to hesitate",
+        "to complain",
+        "to bargain",
+        "to insist"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "El que duda pierde el local.",
+        "targetWord": "duda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cita",
+    "sentence": "Llamé al médico y me dio _____ para el lunes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cita",
+      "options": [
+        "cita",
+        "tarea",
+        "fruta",
+        "ropa"
+      ],
+      "translation": "I called the doctor and he gave me _____ for Monday.",
+      "optionTranslations": [
+        "an appointment",
+        "homework",
+        "fruit",
+        "clothes"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Llamé al médico y me dio cita para el lunes.",
+        "targetWord": "cita",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin pensarlo",
+    "sentence": "De una es ya, [[sin pensarlo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without thinking it over",
+      "options": [
+        "without thinking it over",
+        "without asking anyone",
+        "without paying a cent",
+        "without saying goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "De una es ya, sin pensarlo.",
+        "targetWord": "sin pensarlo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negocio",
+    "sentence": "El [[negocio]] de los jugos necesitaba el local.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "business",
+      "options": [
+        "business",
+        "recipe",
+        "festival",
+        "family"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "El negocio de los jugos necesitaba el local.",
+        "targetWord": "negocio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "desocupada",
+    "sentence": "Busqué una mesa _____ para sentarme, pero todas tenían gente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desocupada",
+      "options": [
+        "desocupada",
+        "cuadrada",
+        "pintada",
+        "decorada"
+      ],
+      "translation": "I looked for a _____ table to sit at, but they were all taken.",
+      "optionTranslations": [
+        "free",
+        "square",
+        "painted",
+        "decorated"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Busqué una mesa desocupada para sentarme, pero todas tenían gente.",
+        "targetWord": "desocupada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flotar",
+    "sentence": "Remató con un hágale de una que quedó [[flotando]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to float",
+      "options": [
+        "to float",
+        "to sink",
+        "to echo",
+        "to fade"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Remató con un hágale de una que quedó flotando.",
+        "targetWord": "flotando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amanecer",
+    "sentence": "El local [[amaneció]] con trasteo ajeno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to appear at dawn",
+      "options": [
+        "to appear at dawn",
+        "to close at dusk",
+        "to open at noon",
+        "to sleep till late"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "El local amaneció con trasteo ajeno.",
+        "targetWord": "amaneció",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar a",
+    "sentence": "Lo demás le [[sonaba a]] apuro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sound like",
+      "options": [
+        "to sound like",
+        "to smell like",
+        "to taste like",
+        "to look like"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Lo demás le sonaba a apuro.",
+        "targetWord": "sonaba a",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empezar de nuevo",
+    "sentence": "Se me borró todo el trabajo y tuve que _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empezar de nuevo",
+      "options": [
+        "empezar de nuevo",
+        "salir temprano",
+        "comer algo",
+        "dormir un rato"
+      ],
+      "translation": "All my work got deleted and I had to _____.",
+      "optionTranslations": [
+        "start over",
+        "leave early",
+        "eat something",
+        "take a nap"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Se me borró todo el trabajo y tuve que empezar de nuevo.",
+        "targetWord": "empezar de nuevo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bienvenido",
+    "sentence": "[[Bienvenido]] a empezar de nuevo, socio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "welcome",
+      "options": [
+        "welcome",
+        "good luck",
+        "well done",
+        "cheer up"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "Bienvenido a empezar de nuevo, socio.",
+        "targetWord": "Bienvenido",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin más",
+    "sentence": "El dueño lo miró como a un turista y guardó las llaves [[sin más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just like that",
+      "options": [
+        "just like that",
+        "very slowly",
+        "with a smile",
+        "once again"
+      ],
+      "audioClip": {
+        "storySlug": "el-trasteo-ajeno",
+        "storySource": "user",
+        "sentence": "El dueño lo miró como a un turista y guardó las llaves sin más.",
+        "targetWord": "sin más",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

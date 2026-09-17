@@ -1,0 +1,1142 @@
+[
+  {
+    "slug": "aqui-se-dice-arrendando",
+    "title": "Aquí se dice arrendando",
+    "synopsis": "After fifteen years up north, Jairo comes back to his old neighbourhood in Cali with a business in mind, and the neighbourhood receives him as if he had never left. His words did not: the loan words slip out, the joke that used to close his best story dies halfway, and the table laughs at him instead of with him.",
+    "text": "Jairo era cocinero, de vuelta tras quince años en Nueva Jersey. Llegó al barrio Obrero de Cali, Colombia. El barrio lo recibió como si nada.\n\nLa esquina de siempre, el calor pegado a la espalda. Yamileth, la socia de toda la vida, lo esperaba con lulada y mecato. “¿Qué más pues? ¿Cómo te fue por allá?”, saludó. “Quince inviernos, mija”, contestó.\n\n“Allá estuve rentando un puesto de comida”, siguió Jairo. “Rentando”, repitió Yamileth, sonrisa chueca. “Aquí se dice arrendando, gringo.” En la mesa, la familia puso sancocho y preguntas.\n\n“Voy a parquear el carro”, avisó. Cuando buscó el chiste de su mejor cuento, el chiste se le escapó: salió la mitad en caleño y la mitad en ninguna parte.\n\nLa mesa se rio, pero de otra cosa. A Jairo le dio pena: se quedó con el vaso a medio camino mientras el turno pasaba al siguiente. “Tranquilo, ve, que el caleño no se olvida”, le dijo Yamileth. “Está oxidado no más. Eso se desempolva.”",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "llegar",
+        "surface": "llegó",
+        "definition": "To arrive somewhere, reaching the place you were heading for."
+      },
+      {
+        "type": "verb",
+        "word": "olvidar",
+        "surface": "olvida",
+        "definition": "To forget, losing from memory what you once knew."
+      },
+      {
+        "type": "adjective",
+        "word": "caleño",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "From Cali; the way its people speak and are."
+      },
+      {
+        "type": "expression",
+        "word": "qué más",
+        "anchor": true,
+        "surface": "Qué más",
+        "register": "cultural",
+        "definition": "What else is new; the everyday Colombian hello."
+      },
+      {
+        "type": "noun",
+        "word": "mija",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "My dear; warm Colombian short form of mi hija."
+      },
+      {
+        "type": "verb",
+        "word": "oxidarse",
+        "surface": "oxidado",
+        "definition": "To rust, get stiff from not being used."
+      },
+      {
+        "type": "verb",
+        "word": "escaparse",
+        "surface": "se le escapó",
+        "definition": "To slip away from you just when you need it."
+      },
+      {
+        "type": "verb",
+        "word": "parquear",
+        "register": "colloquial",
+        "definition": "To park; loan word many returnees bring back home."
+      },
+      {
+        "type": "verb",
+        "word": "rentar",
+        "surface": "rentando",
+        "register": "colloquial",
+        "definition": "To rent; loan word that Colombia hears as foreign."
+      },
+      {
+        "type": "verb",
+        "word": "arrendar",
+        "surface": "arrendando",
+        "definition": "To rent, lease; the word Colombia actually uses."
+      },
+      {
+        "type": "verb",
+        "word": "desempolvar",
+        "surface": "se desempolva",
+        "definition": "To dust off something stored away too long."
+      },
+      {
+        "type": "expression",
+        "word": "dar pena",
+        "surface": "dio pena",
+        "definition": "To embarrass; in Colombia, pena means shame, not sorrow."
+      },
+      {
+        "type": "adjective",
+        "word": "chueco",
+        "surface": "chueca",
+        "definition": "Crooked, lopsided; a smile pulled to one side."
+      },
+      {
+        "type": "noun",
+        "word": "socio",
+        "surface": "socia",
+        "definition": "Business partner; the person who runs it with you."
+      },
+      {
+        "type": "noun",
+        "word": "gringo",
+        "register": "colloquial",
+        "definition": "Foreigner from the north; here, a teasing nickname."
+      },
+      {
+        "type": "adjective",
+        "word": "pegado",
+        "definition": "Stuck to something, pressed close against it all day."
+      },
+      {
+        "type": "expression",
+        "word": "a medio camino",
+        "definition": "Halfway there, stopped before reaching the end of something."
+      },
+      {
+        "type": "expression",
+        "word": "como si nada",
+        "definition": "As if nothing had happened at all in between."
+      },
+      {
+        "type": "expression",
+        "word": "de toda la vida",
+        "definition": "Lifelong; known and trusted since you can remember."
+      },
+      {
+        "type": "expression",
+        "word": "en ninguna parte",
+        "definition": "Nowhere; in no place at all, lost completely."
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 1
+  },
+  {
+    "slug": "el-trasteo-ajeno",
+    "title": "El trasteo ajeno",
+    "synopsis": "The corner shop by the park has been empty for a month and the juice business needs it, so Jairo arrives with the rent in cash and the guarantor's papers. The owner shows the place and closes with a phrase Jairo no longer knows how to read, and three days later someone else's moving boxes answer for him.",
+    "text": "El negocio de los jugos necesitaba el local de la esquina, desocupado. Jairo llegó con Yamileth, el arriendo en efectivo y los papeles del fiador.\n\nVenía decidido, o eso creía. El dueño dijo el precio y remató con un hágale de una que quedó flotando.\n\nJairo entendió una sola: la cifra. Lo demás le sonaba a apuro, como si el dueño tuviera otra cita. “Lo pienso y le aviso mañana”, contestó.\n\nEl dueño lo miró como a un turista y guardó las llaves sin más. A los tres días, el local amaneció con trasteo ajeno y bombas en la puerta.\n\n“¿Y eso?”, preguntó Jairo. “Eso era hágale de una”, contestó Yamileth. “De una es ya, sin pensarlo. El que duda pierde el local.”\n\n“¿Y por qué no me dijiste?” “Porque tú antes no preguntabas: hacías. Bienvenido a empezar de nuevo, socio.” No era palabra olvidada: nunca la tuvo. Quince años cabían en un giro de dos sílabas. El próximo hágale no lo agarraría pensando.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "de una",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Right away, no hesitation; Colombia's cousin of al tiro."
+      },
+      {
+        "type": "expression",
+        "word": "hágale",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Go ahead, do it; the Colombian push to action."
+      },
+      {
+        "type": "adjective",
+        "word": "decidido",
+        "surface": "decidido",
+        "definition": "Set on doing something, with your mind already made up."
+      },
+      {
+        "type": "noun",
+        "word": "arriendo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Rent; the money and the lease, in Colombian."
+      },
+      {
+        "type": "noun",
+        "word": "bomba",
+        "anchor": true,
+        "surface": "bombas",
+        "register": "cultural",
+        "definition": "Balloon; what Colombian parties tie at the door."
+      },
+      {
+        "type": "noun",
+        "word": "fiador",
+        "definition": "Guarantor; the person who answers for your rent."
+      },
+      {
+        "type": "adjective",
+        "word": "desocupado",
+        "definition": "Empty, vacant; standing there with nobody using it."
+      },
+      {
+        "type": "noun",
+        "word": "giro",
+        "definition": "Turn of phrase; a way of saying that locals share."
+      },
+      {
+        "type": "noun",
+        "word": "sílaba",
+        "surface": "sílabas",
+        "definition": "Syllable; one beat of sound inside a word."
+      },
+      {
+        "type": "verb",
+        "word": "flotar",
+        "surface": "flotando",
+        "definition": "To float, hang in the air without landing."
+      },
+      {
+        "type": "verb",
+        "word": "amanecer",
+        "surface": "amaneció",
+        "definition": "To wake up being; to appear when day breaks."
+      },
+      {
+        "type": "noun",
+        "word": "negocio",
+        "definition": "Business; the venture that has to pay its way."
+      },
+      {
+        "type": "noun",
+        "word": "cita",
+        "definition": "Appointment; the agreed time and place to meet someone."
+      },
+      {
+        "type": "verb",
+        "word": "dudar",
+        "surface": "duda",
+        "definition": "To hesitate, stop to think when action was expected."
+      },
+      {
+        "type": "expression",
+        "word": "en efectivo",
+        "definition": "In cash, paid with real bills on the spot."
+      },
+      {
+        "type": "expression",
+        "word": "sonar a",
+        "surface": "sonaba a",
+        "definition": "To sound like, give the feeling of being something."
+      },
+      {
+        "type": "expression",
+        "word": "sin pensarlo",
+        "definition": "Without thinking it over, right there on the spot."
+      },
+      {
+        "type": "expression",
+        "word": "empezar de nuevo",
+        "definition": "To start over again from the very first step."
+      },
+      {
+        "type": "expression",
+        "word": "bienvenido",
+        "surface": "Bienvenido",
+        "definition": "Welcome; what you say to someone who arrives."
+      },
+      {
+        "type": "expression",
+        "word": "sin más",
+        "definition": "Just like that, without adding another word to it."
+      }
+    ],
+    "arcType": "late-reveal",
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 2
+  },
+  {
+    "slug": "la-napa-del-dueno",
+    "title": "La ñapa del dueño",
+    "synopsis": "Three months later Jairo no longer translates in his head. The juice stand runs on market mornings, domino afternoons and old radio, and when the same owner appears with another corner and the same phrase, the answer comes out before the sentence ends. That night, at the table, he asks for his turn to tell the story, and this time the table laughs with him.",
+    "text": "Tras tres meses de rebusque (plaza de mercado, guayaba pelada), Jairo ya no traducía: pensaba en caleño.\n\nLos jugos salían exprimidos al momento y la licuadora no descansaba. Yamileth atendía la caja del local, a dos cuadras del que el dueño no arrendó. “Ya tienes caseros, ve”, le dijo Yamileth. “Lo que perdiste fue un local, no el año.”\n\nUn sábado, ese dueño apareció, probó la lulada y pidió ñapa. “Tengo otro local, mejor esquina”, dijo el dueño, yendo al grano. “Si le interesa, hágale...” “De una”, contestó Jairo, antes del punto final. “Aprendió rápido, don Jairo. La próxima me deja regatear.”\n\n“Camarón que se duerme...”, contestó Jairo, y el refrán no hacía falta terminarlo. Jairo pidió el turno. “Y yo ahí, contando billetes como turista...”, arrancó, y la mesa se rio con él. Le pidieron que contara otro. Las palabras no estaban perdidas: estaban en la gente. Jairo raspó hielo, repartió cholado dulce y levantó el vaso en alto, como quien brinda por dentro.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "descansar",
+        "surface": "descansaba",
+        "definition": "To rest, stopping the work for a while."
+      },
+      {
+        "type": "noun",
+        "word": "guayaba",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Guava; the sweet pink fruit of every Colombian patio."
+      },
+      {
+        "type": "expression",
+        "word": "plaza de mercado",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Market hall; where Colombian cities buy their fruit."
+      },
+      {
+        "type": "verb",
+        "word": "perder",
+        "surface": "perdiste",
+        "definition": "To lose something you had, often for good."
+      },
+      {
+        "type": "noun",
+        "word": "ñapa",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The little free extra; Colombia's word for the yapa."
+      },
+      {
+        "type": "expression",
+        "word": "ir al grano",
+        "surface": "al grano",
+        "definition": "To get to the point without turning around it."
+      },
+      {
+        "type": "noun",
+        "word": "refrán",
+        "definition": "Proverb; a short saying everyone can finish for you."
+      },
+      {
+        "type": "noun",
+        "word": "camarón",
+        "surface": "Camarón",
+        "definition": "Shrimp; star of the proverb about falling asleep."
+      },
+      {
+        "type": "expression",
+        "word": "punto final",
+        "definition": "Full stop; the very end of the sentence."
+      },
+      {
+        "type": "verb",
+        "word": "exprimir",
+        "surface": "exprimidos",
+        "definition": "To squeeze the juice out of a fruit."
+      },
+      {
+        "type": "noun",
+        "word": "licuadora",
+        "definition": "Blender; the machine that turns fruit into juice."
+      },
+      {
+        "type": "noun",
+        "word": "hielo",
+        "definition": "Ice; frozen water that keeps a drink cold."
+      },
+      {
+        "type": "expression",
+        "word": "al momento",
+        "definition": "On the spot, made fresh right there for you."
+      },
+      {
+        "type": "verb",
+        "word": "pelar",
+        "surface": "pelada",
+        "definition": "To peel the skin off a fruit before using it."
+      },
+      {
+        "type": "expression",
+        "word": "en alto",
+        "definition": "Raised up high, held above everything else around."
+      },
+      {
+        "type": "expression",
+        "word": "por dentro",
+        "definition": "On the inside, where nobody else can see."
+      },
+      {
+        "type": "verb",
+        "word": "dormirse",
+        "surface": "se duerme",
+        "definition": "To fall asleep, let yourself be caught off guard."
+      },
+      {
+        "type": "verb",
+        "word": "aparecer",
+        "surface": "apareció",
+        "definition": "To show up, arrive somewhere without being announced first."
+      },
+      {
+        "type": "verb",
+        "word": "probar",
+        "surface": "probó",
+        "definition": "To taste, try a little of something new."
+      },
+      {
+        "type": "verb",
+        "word": "traducir",
+        "surface": "traducía",
+        "definition": "To translate words from one language into another one."
+      }
+    ],
+    "arcType": "reframe-turn",
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 3
+  },
+  {
+    "slug": "vitel-tone-con-blanco",
+    "title": "Vitel toné con blanco",
+    "synopsis": "Emiliano arrives from Mendoza with polished shoes and a bottle under his arm, ready to meet his girlfriend's family, which in La Plata means one person: Norma, owner of the neighbourhood rotisería. Lunch turns out to be an exam nobody names, the wine ends up on the bottom shelf, and the only real laugh he earns comes from an honest answer.",
+    "text": "Emiliano, un joven de Mendoza, tocaba timbre con botella bajo el brazo y zapatos lustrados. Venía de Mendoza a conocer a la familia de la novia, que en La Plata, Argentina, era sobre todo Norma.\n\nNorma, la dueña de la rotisería, atendía con delantal y anillos en un local que olía a horno. Miró la botella antes que al muchacho. “Traje un vino de allá, de los buenos”, saludó.\n\n“Acá el vitel toné se lleva con blanco”, contestó Norma, y lo guardó abajo. “Pero se agradece, nene.” “¿Y de qué trabajás allá?”, preguntó ella. Emiliano contestó con la espalda derecha, como en entrevista. “¿Y cocinar, sabés?”, remató Norma. “Sé lavar los platos como nadie. Y sé escuchar”, contestó él, y Norma se rio de verdad.\n\nMeter la pata no fue grave: lo grave habría sido no darse cuenta. Emiliano se fijó en todo: el anillo que Norma hacía girar cuando dudaba. “El sábado vengo a ayudar”, prometió en la puerta, “aunque sea a pelar papas.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "rotisería",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Argentine shop selling roast meals and prepared food."
+      },
+      {
+        "type": "noun",
+        "word": "vitel toné",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Cold veal in tuna sauce, an Argentine celebration classic."
+      },
+      {
+        "type": "noun",
+        "word": "nene",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Kid, dear; warm Argentine way to address someone younger."
+      },
+      {
+        "type": "adjective",
+        "word": "lustrado",
+        "surface": "lustrados",
+        "definition": "Polished until it shines, carefully cleaned for the occasion."
+      },
+      {
+        "type": "noun",
+        "word": "botella",
+        "definition": "Bottle; the glass container a drink comes in."
+      },
+      {
+        "type": "noun",
+        "word": "novia",
+        "definition": "Girlfriend; the woman someone is in a relationship with."
+      },
+      {
+        "type": "noun",
+        "word": "muchacho",
+        "definition": "Young man; a casual friendly word for a guy."
+      },
+      {
+        "type": "noun",
+        "word": "anillo",
+        "surface": "anillos",
+        "definition": "Ring; the small metal circle worn on a finger."
+      },
+      {
+        "type": "noun",
+        "word": "entrevista",
+        "definition": "Interview; the formal meeting where someone examines you."
+      },
+      {
+        "type": "adjective",
+        "word": "grave",
+        "definition": "Serious, bad enough to cause some real damage."
+      },
+      {
+        "type": "expression",
+        "word": "meter la pata",
+        "surface": "Meter la pata",
+        "definition": "To put your foot in it, make an awkward mistake."
+      },
+      {
+        "type": "verb",
+        "word": "fijarse",
+        "surface": "se fijó",
+        "definition": "To pay close attention, notice the small details around."
+      },
+      {
+        "type": "expression",
+        "word": "hacer girar",
+        "surface": "hacía girar",
+        "definition": "To spin something around, turn it in slow circles."
+      },
+      {
+        "type": "expression",
+        "word": "se agradece",
+        "definition": "Much appreciated; the polite thanks that closes the subject."
+      },
+      {
+        "type": "expression",
+        "word": "lavar los platos",
+        "definition": "To wash the dishes after everyone has eaten."
+      },
+      {
+        "type": "expression",
+        "word": "de los buenos",
+        "definition": "One of the good ones, the real quality kind."
+      },
+      {
+        "type": "expression",
+        "word": "de allá",
+        "definition": "From over there, from the place someone comes from."
+      },
+      {
+        "type": "expression",
+        "word": "sobre todo",
+        "definition": "Above all, more than anything or anyone else."
+      },
+      {
+        "type": "expression",
+        "word": "como nadie",
+        "definition": "Like nobody else, better than anyone else around."
+      },
+      {
+        "type": "expression",
+        "word": "en la puerta",
+        "definition": "At the door, right at the moment of leaving."
+      }
+    ],
+    "arcType": "daily-encounter",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 1
+  },
+  {
+    "slug": "aca-los-errores-se-pagan",
+    "title": "Acá los errores se pagan",
+    "synopsis": "On his day off, Emiliano shows up at the rotisería before opening time, ready to earn his place. The first batch of milanesas comes out golden, the second burns while he helps a customer, and Norma neither shouts nor consoles: mistakes are paid from your own pocket in this house, and aprons go home with the ones who will come back.",
+    "text": "De franco en su laburo, Emiliano llegó el sábado antes de que Norma abriera.\n\n“¿Sabés rebozar, o allá eso se compra hecho?”, preguntó, y le tiró un delantal. “Aprendo rápido”, contestó él.\n\nHarina, huevo, pan rallado: la primera tanda de milanesas salió dorada. Norma no dijo nada, que era un cumplido.\n\nLa segunda se pasó de punto y se quemó: Emiliano atendía a una clienta del vitel toné, y la hornalla no esperaba a nadie. El local olía a quemado.\n\nNorma no gritó ni consoló: abrió la caja, sacó la cuenta de lo que valía. “Esto sale de tu bolsillo, nene”, dijo. “Acá los errores se pagan.”\n\n“¿Y la tanda que salió bien, quién la paga?”, preguntó Emiliano. “Eso se espera”, contestó ella. “Por eso no se paga.” Pagó sin chistar, mirando la caja y no a Norma, y siguió hasta la hora de cerrar. En la puerta, Norma le devolvió el delantal doblado. “Llevátelo”, dijo. “El que tiene delantal, vuelve.” Se lo llevó, ya suyo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "franco",
+        "anchor": true,
+        "surface": "de franco",
+        "register": "cultural",
+        "definition": "Day off; in Argentina, your free day from work."
+      },
+      {
+        "type": "noun",
+        "word": "milanesa",
+        "anchor": true,
+        "surface": "milanesas",
+        "register": "cultural",
+        "definition": "Breaded fried cutlet, the dish Argentina cannot live without."
+      },
+      {
+        "type": "expression",
+        "word": "pan rallado",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Breadcrumbs; the coating that makes a milanesa crunchy."
+      },
+      {
+        "type": "noun",
+        "word": "hornalla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Stove burner; the word Argentine kitchens use for it."
+      },
+      {
+        "type": "noun",
+        "word": "tanda",
+        "definition": "Batch; one round of things cooked at the same time."
+      },
+      {
+        "type": "verb",
+        "word": "rebozar",
+        "definition": "To coat food in flour, egg and breadcrumbs before frying."
+      },
+      {
+        "type": "verb",
+        "word": "quemarse",
+        "surface": "se quemó",
+        "definition": "To burn, get ruined by staying too long on the fire."
+      },
+      {
+        "type": "adjective",
+        "word": "dorado",
+        "surface": "dorada",
+        "definition": "Golden brown, fried to exactly the right point."
+      },
+      {
+        "type": "noun",
+        "word": "clienta",
+        "definition": "Customer; a woman buying something at the shop."
+      },
+      {
+        "type": "noun",
+        "word": "cumplido",
+        "definition": "Compliment; in some mouths, silence is the biggest one."
+      },
+      {
+        "type": "verb",
+        "word": "consolar",
+        "surface": "consoló",
+        "definition": "To comfort someone so that a failure hurts them less."
+      },
+      {
+        "type": "verb",
+        "word": "valer",
+        "surface": "valía",
+        "definition": "To be worth, have a certain value in money."
+      },
+      {
+        "type": "verb",
+        "word": "tirar",
+        "surface": "tiró",
+        "definition": "To throw, toss something for someone else to catch."
+      },
+      {
+        "type": "adjective",
+        "word": "doblado",
+        "definition": "Folded neatly, ready to be carried back home."
+      },
+      {
+        "type": "expression",
+        "word": "sacar la cuenta",
+        "surface": "sacó la cuenta",
+        "definition": "To work out the numbers, calculate what something costs."
+      },
+      {
+        "type": "expression",
+        "word": "pasarse de punto",
+        "surface": "se pasó de punto",
+        "definition": "To go past the right cooking point, get overdone."
+      },
+      {
+        "type": "expression",
+        "word": "sin chistar",
+        "definition": "Without a word of protest, accepting it in full silence."
+      },
+      {
+        "type": "expression",
+        "word": "a la hora de",
+        "surface": "la hora de cerrar",
+        "definition": "At the moment when something has to be done."
+      },
+      {
+        "type": "expression",
+        "word": "abrir la caja",
+        "surface": "abrió la caja",
+        "definition": "To open the till where the shop's money lives."
+      },
+      {
+        "type": "expression",
+        "word": "salir de tu bolsillo",
+        "surface": "sale de tu bolsillo",
+        "definition": "To come out of your own pocket, paid by you."
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 2
+  },
+  {
+    "slug": "la-ultima-dorada",
+    "title": "La última dorada",
+    "synopsis": "Weeks of free days later, Emiliano knows the rotisería by heart, and one morning Norma unties her apron, announces she is taking her own day off for the first time in years, and leaves him the till without ceremony. Nobody calls her all day. When she comes back at night, the money is counted, the door is locked, and there is one milanesa saved for her, still warm.",
+    "text": "Sábado tras sábado, la rutina se armó sola: Emiliano llegaba temprano y la campanita sonaba. Norma se desató el delantal a media mañana.\n\n“Hoy me voy de franco yo, por primera vez en años”, avisó. “Vos quedás a cargo del negocio. Cualquier cosa, me llamás.”\n\n“¿Y si viene mucha gente?”, preguntó Emiliano. “Mejor para vos: propina doble”, contestó ella, y se fue sin darse vuelta, cartera al hombro. Le habían contado que la caja no se la dejaba a cualquiera, y le llevó semanas ganarse el saludo de los clientes. Atendió, cobró, rebozó, sin que nadie llamara a Norma.\n\nA la vuelta, ya de noche, ella encontró el local cerrado con llave. La plata estaba contada, con el vuelto listo.\n\nEn el mostrador había una milanesa tapada con una servilleta, todavía tibia. “¿Y esto tapado, qué es?”, preguntó Norma. “La última dorada. Era para usted”, contestó Emiliano. Norma la probó parada. “¿Y vos comiste?”, preguntó con la boca llena. En esa casa, eso era un gracias.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "a cargo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "In charge, trusted to run things while the owner is away."
+      },
+      {
+        "type": "noun",
+        "word": "campanita",
+        "definition": "Little bell; the ring that announces someone at the door."
+      },
+      {
+        "type": "verb",
+        "word": "desatarse",
+        "surface": "se desató",
+        "definition": "To untie something that was knotted around you."
+      },
+      {
+        "type": "expression",
+        "word": "quedar a cargo",
+        "surface": "quedás a cargo",
+        "definition": "To stay in charge while the boss is somewhere else."
+      },
+      {
+        "type": "expression",
+        "word": "cualquier cosa",
+        "surface": "Cualquier cosa",
+        "definition": "Anything at all; whatever might come up meanwhile."
+      },
+      {
+        "type": "expression",
+        "word": "darse vuelta",
+        "definition": "To turn around and look back behind you."
+      },
+      {
+        "type": "noun",
+        "word": "cartera",
+        "definition": "Handbag; the bag a woman carries on her shoulder."
+      },
+      {
+        "type": "expression",
+        "word": "al hombro",
+        "definition": "Over the shoulder, hanging from it as you walk."
+      },
+      {
+        "type": "verb",
+        "word": "ganarse",
+        "definition": "To earn something slowly, deserve it with steady effort."
+      },
+      {
+        "type": "noun",
+        "word": "saludo",
+        "definition": "Greeting; the hello that people give or withhold."
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "surface": "cobró",
+        "definition": "To charge, take the customer's payment at the till."
+      },
+      {
+        "type": "expression",
+        "word": "a la vuelta",
+        "surface": "A la vuelta",
+        "definition": "On returning, at the moment somebody comes back."
+      },
+      {
+        "type": "expression",
+        "word": "de noche",
+        "definition": "At night, after the daylight is completely gone."
+      },
+      {
+        "type": "expression",
+        "word": "con llave",
+        "definition": "Locked properly, with the key turned all the way."
+      },
+      {
+        "type": "adjective",
+        "word": "contado",
+        "surface": "contada",
+        "definition": "Counted; checked carefully one coin at a time."
+      },
+      {
+        "type": "noun",
+        "word": "vuelto",
+        "register": "cultural",
+        "definition": "Change; the money handed back, in Latin American Spanish."
+      },
+      {
+        "type": "adjective",
+        "word": "tapado",
+        "surface": "tapada",
+        "definition": "Covered over so it stays clean and warm."
+      },
+      {
+        "type": "adjective",
+        "word": "tibio",
+        "surface": "tibia",
+        "definition": "Lukewarm; still keeping a little of its heat."
+      },
+      {
+        "type": "adjective",
+        "word": "parado",
+        "surface": "parada",
+        "definition": "Standing up, on your feet without sitting down."
+      },
+      {
+        "type": "expression",
+        "word": "por primera vez",
+        "definition": "For the first time after all these years."
+      }
+    ],
+    "arcType": "harmonic-close",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 3
+  },
+  {
+    "slug": "de-medio-metro-y-gracias",
+    "title": "De medio metro, y gracias",
+    "synopsis": "Every evening the porch of Ofelia's guesthouse in Aracataca fills with backpackers, and Baldomero tells them about the two-metre fish of the marsh. Ofelia corrects him with the exact figures, the travellers keep buying the tale anyway, and the evening ends with a bet that costs the storyteller his roofed corner.",
+    "text": "Una tarde cualquiera, el corredor se llenó solo: mochileros, guarapo frío con hielo y Baldomero, el cuentero de Aracataca, Colombia, en la mecedora.\n\nPresumía de cuarenta años agrandando el pueblo. Ofelia era la dueña del hospedaje y ponía el orden: paciencia en otra parte, y con los cuentos no hacía la vista gorda.\n\n“De la ciénaga sacaban pescados gigantes, de dos metros”, arrancó él. “Los cargaban entre cuatro.” “De medio metro”, corrigió Ofelia. “Medio metro, y gracias.” “Por eso el cuento no es suyo”, contestó Baldomero, y agrandó el pescado medio metro más, como si la retara.\n\nLos mochileros se rieron y pidieron ronda: nadie viajaría hasta acá por medio metro de pescado. “Vamos a subir la apuesta”, dijo Ofelia. “La historia que salga cierta le abre el de adentro. Mientras tanto, me cuenta afuera.” “Apostado”, dijo él, sin saber qué firmaba.\n\nEsa noche contó desde el andén, sin techo, libreta en rodilla. Echar carreta afuera también era arte; el cielo no avisaba.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cuentero",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Storyteller; the town voice that keeps its legends alive."
+      },
+      {
+        "type": "noun",
+        "word": "hospedaje",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Guesthouse; simple lodging travellers find in Colombian towns."
+      },
+      {
+        "type": "noun",
+        "word": "ciénaga",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Marsh; the great shallow water beside Caribbean towns."
+      },
+      {
+        "type": "noun",
+        "word": "mochilero",
+        "anchor": true,
+        "surface": "mochileros",
+        "register": "cultural",
+        "definition": "Backpacker; the traveller who arrives with everything on their back."
+      },
+      {
+        "type": "noun",
+        "word": "guarapo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Cool sugarcane drink served on hot Colombian afternoons."
+      },
+      {
+        "type": "noun",
+        "word": "mecedora",
+        "definition": "Rocking chair; where Caribbean porches do their thinking."
+      },
+      {
+        "type": "verb",
+        "word": "agrandar",
+        "surface": "agrandando",
+        "definition": "To make something bigger each time it gets told."
+      },
+      {
+        "type": "expression",
+        "word": "echar carreta",
+        "surface": "Echar carreta",
+        "register": "cultural",
+        "definition": "To spin yarns, talk long and entertainingly about anything."
+      },
+      {
+        "type": "verb",
+        "word": "firmar",
+        "surface": "firmaba",
+        "definition": "To sign, formally agreeing to something with your name."
+      },
+      {
+        "type": "verb",
+        "word": "corregir",
+        "surface": "corrigió",
+        "definition": "To correct someone, put the exact fact on the table."
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "cargaban",
+        "definition": "To carry something heavy between several people at once."
+      },
+      {
+        "type": "verb",
+        "word": "apostar",
+        "surface": "Apostado",
+        "definition": "To bet, put something at stake on a result."
+      },
+      {
+        "type": "noun",
+        "word": "rodilla",
+        "definition": "Knee; where a notebook rests when you sit."
+      },
+      {
+        "type": "noun",
+        "word": "techo",
+        "definition": "Roof; what stands between you and the rain."
+      },
+      {
+        "type": "noun",
+        "word": "cielo",
+        "definition": "Sky; where the weather decides things without asking anyone."
+      },
+      {
+        "type": "verb",
+        "word": "avisar",
+        "surface": "avisaba",
+        "definition": "To give warning before something is going to happen."
+      },
+      {
+        "type": "expression",
+        "word": "salir cierto",
+        "surface": "salga cierta",
+        "definition": "To turn out true after all, against every doubt."
+      },
+      {
+        "type": "expression",
+        "word": "mientras tanto",
+        "surface": "Mientras tanto",
+        "definition": "Meanwhile, in the time until the other thing happens."
+      },
+      {
+        "type": "expression",
+        "word": "y gracias",
+        "definition": "And that is being generous; and nothing more."
+      },
+      {
+        "type": "expression",
+        "word": "en otra parte",
+        "definition": "Somewhere else, not in the place you are looking."
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 1
+  },
+  {
+    "slug": "la-carreta-mojada",
+    "title": "La carreta mojada",
+    "synopsis": "The rain arrives without warning, as it always does in town, and it catches Baldomero telling stories outside, where the bet has left him. The notebook with forty years of tales gets soaked through, the ink lets go of the paper page by page, and for the first time anyone can remember, the porch spends the whole evening in silence.",
+    "text": "El aguacero llegó sin aviso. Baldomero estaba en el andén, con la rueda de mochileros armada y la libreta; Ofelia miraba el cielo. “¡Adentro, Baldomero, que se moja!”, gritó Ofelia. “¡Primero las hojas, que la gente se seca sola!”, contestó Baldomero, manoteando el aguacero.\n\nTodos corrieron adentro. Cuando él llegó al corredor techado, la libreta ya iba empapada. “Déjenla, que la plancha no resucita tinta”, cortó Ofelia, con toallas. “El agua ya hizo lo suyo.” “Ya lo sé”, dijo él. La rueda se desinfló sola.\n\nLa tinta se soltó del papel hoja por hoja: el pescado gigante, el tren amarillo, la boda. Todo vuelto agua sucia entre los dedos. “Cuarenta años de carreta mojada”, dijo Baldomero. Puso las hojas a secar, piedritas encima, una por una, sin decir palabra.\n\nA la hora de cerrar no hubo bulla, y el silencio de Baldomero, descubrió Ofelia, era peor que sus cuentos. “Mañana me cuenta una de memoria, de las suyas”, le dijo al apagar. “Invita la casa, cuentero.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "aguacero",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Sudden tropical downpour that arrives without any warning at all."
+      },
+      {
+        "type": "noun",
+        "word": "bulla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Noise, happy racket; the Colombian coast word for it."
+      },
+      {
+        "type": "adjective",
+        "word": "empapado",
+        "surface": "empapada",
+        "definition": "Soaked through, wet down to the very last layer."
+      },
+      {
+        "type": "verb",
+        "word": "manotear",
+        "surface": "manoteando",
+        "definition": "To flail your hands at something you cannot stop."
+      },
+      {
+        "type": "noun",
+        "word": "toalla",
+        "surface": "toallas",
+        "definition": "Towel; the cloth that drinks the water up."
+      },
+      {
+        "type": "noun",
+        "word": "plancha",
+        "definition": "Iron; the hot flat tool that presses and dries."
+      },
+      {
+        "type": "noun",
+        "word": "piedrita",
+        "surface": "piedritas",
+        "definition": "Little stone; a small weight to hold paper down."
+      },
+      {
+        "type": "adjective",
+        "word": "gigante",
+        "definition": "Giant, far bigger than anything real should ever be."
+      },
+      {
+        "type": "verb",
+        "word": "resucitar",
+        "surface": "resucita",
+        "definition": "To bring something back to life after it died."
+      },
+      {
+        "type": "adjective",
+        "word": "techado",
+        "definition": "Roofed, covered so that the rain stays outside it."
+      },
+      {
+        "type": "adjective",
+        "word": "armado",
+        "surface": "armada",
+        "definition": "Set up, put together and ready to start."
+      },
+      {
+        "type": "noun",
+        "word": "rueda",
+        "register": "cultural",
+        "definition": "Circle of listeners; the ring a storyteller gathers."
+      },
+      {
+        "type": "expression",
+        "word": "vuelto agua",
+        "surface": "vuelto agua",
+        "definition": "Turned into plain water, dissolved beyond any possible repair."
+      },
+      {
+        "type": "expression",
+        "word": "hacer lo suyo",
+        "surface": "hizo lo suyo",
+        "definition": "To do its work, cause the damage it causes."
+      },
+      {
+        "type": "expression",
+        "word": "poner a secar",
+        "surface": "a secar",
+        "definition": "To lay something out so the air dries it."
+      },
+      {
+        "type": "expression",
+        "word": "de las suyas",
+        "definition": "One of your own; the kind only you make."
+      },
+      {
+        "type": "expression",
+        "word": "hoja por hoja",
+        "definition": "Page by page, one page after the other one."
+      },
+      {
+        "type": "expression",
+        "word": "una por una",
+        "definition": "One by one, each taken separately in its turn."
+      },
+      {
+        "type": "expression",
+        "word": "sin decir palabra",
+        "definition": "Without saying a single word, in complete silence."
+      },
+      {
+        "type": "expression",
+        "word": "invita la casa",
+        "surface": "Invita la casa",
+        "register": "cultural",
+        "definition": "It is on the house; the owner treats you today."
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 2
+  },
+  {
+    "slug": "la-historia-sin-agrandar",
+    "title": "La historia sin agrandar",
+    "synopsis": "Without his notebook, Baldomero doubts his own stories, and the porch misses him. Going through the guesthouse's old album, Ofelia finds a yellowed photograph: the yellow train loaded with fish, exactly as he always told it. She brings it out in front of everyone, opens the inside porch she once bet against him, and asks him for the one story nobody has ever told: the story of the guesthouse.",
+    "text": "Sin libreta, el cuentero contaba poco y dudaba mucho. Baldomero se frenaba a media historia: los cuentos, sin papel, no se desempolvaban.\n\nOfelia hojeó el álbum del hospedaje y encontró lo que no buscaba: un retrato amarillento, pegado con esquinas negras. Un tren amarillo, cargado de pescado, y un hombre sonriendo al lado.\n\nLo sacó una tarde llena, a plena luz. “Cuente la del tren”, pidió, y levantó el retrato para que lo vieran. Baldomero le sostuvo la mirada.\n\n“¿Tal cual, o mejorada?”, preguntó. “Tal cual la contaba usted”, contestó Ofelia. “Salió cierta, al pie de la letra.” “La apuesta es suya. Bienvenido al corredor de adentro.”\n\nBaldomero recibió la foto, la miró largo y, en vez de decir se lo dije, preguntó si se la podía quedar. Se hizo un silencio bueno.\n\n“Con una condición”, dejó caer ella. “La próxima historia es la de este hospedaje. Sin agrandar.” “La verdad también necesita quien la cuente bonito”, contestó el cuentero, y arrastró la mecedora puerta adentro.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "álbum",
+        "definition": "Album; the book where old photographs sleep for years."
+      },
+      {
+        "type": "noun",
+        "word": "retrato",
+        "definition": "Portrait, photograph; an image that holds a moment still."
+      },
+      {
+        "type": "adjective",
+        "word": "amarillento",
+        "definition": "Yellowed; aged into the colour old paper takes."
+      },
+      {
+        "type": "expression",
+        "word": "tal cual",
+        "surface": "Tal cual",
+        "definition": "Exactly like that, without changing a single detail."
+      },
+      {
+        "type": "expression",
+        "word": "al pie de la letra",
+        "definition": "To the letter, exactly as it was said."
+      },
+      {
+        "type": "verb",
+        "word": "frenarse",
+        "surface": "se frenaba",
+        "definition": "To stop yourself short in the middle of something."
+      },
+      {
+        "type": "noun",
+        "word": "esquina",
+        "surface": "esquinas",
+        "definition": "Corner; here, the little holders that keep photos in albums."
+      },
+      {
+        "type": "adjective",
+        "word": "cargado",
+        "definition": "Loaded, filled up to the very top with something."
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonriendo",
+        "definition": "To smile; to let the face say it is happy."
+      },
+      {
+        "type": "verb",
+        "word": "levantar",
+        "surface": "levantó",
+        "definition": "To lift, raise something for everyone to see."
+      },
+      {
+        "type": "verb",
+        "word": "recibir",
+        "surface": "recibió",
+        "definition": "To receive, take what is being handed over."
+      },
+      {
+        "type": "noun",
+        "word": "condición",
+        "definition": "Condition; the requirement that comes attached to an agreement."
+      },
+      {
+        "type": "verb",
+        "word": "arrastrar",
+        "surface": "arrastró",
+        "definition": "To drag something heavy across the floor behind you."
+      },
+      {
+        "type": "expression",
+        "word": "mirar largo",
+        "surface": "miró largo",
+        "definition": "To look at something long and slowly, taking it in."
+      },
+      {
+        "type": "expression",
+        "word": "en vez de",
+        "definition": "Instead of, choosing one thing over the other."
+      },
+      {
+        "type": "expression",
+        "word": "se lo dije",
+        "definition": "I told you so; the small victory nobody should say."
+      },
+      {
+        "type": "expression",
+        "word": "puerta adentro",
+        "definition": "Through the door and inside, into the house."
+      },
+      {
+        "type": "expression",
+        "word": "a media historia",
+        "definition": "Halfway through the story, before reaching the end."
+      },
+      {
+        "type": "expression",
+        "word": "quedarse con",
+        "surface": "se la podía quedar",
+        "definition": "To keep something for yourself from then on."
+      },
+      {
+        "type": "expression",
+        "word": "a plena luz",
+        "definition": "In full daylight, where everyone can see it clearly."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 3
+  }
+]

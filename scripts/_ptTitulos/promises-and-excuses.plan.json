@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "B1",
+  "variante": "LATAM",
+  "registro": "seco y de finca: poda, plazos y frases dichas sin levantar la vista",
+  "espina": "una promesa dicha en voz alta que ya no se puede deshacer",
+  "recursos": "imagen concreta, contraste con pero, causalidad explicita, reversa cosida, cambio de ritmo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "cerrar la poda del cuartel antes de la helada y no perder el trabajo",
+      "impide": "no ha contado las hileras y le pusieron el ojo en vez de medirlas",
+      "cuesta": "el hombro lastimado, que no dice y que no se le cura solo",
+      "cambia": "pasa de calcular por encima a comprometerse con una fecha",
+      "emocion": "miedo a no llegar, que tapa con seguridad; se ve en que guarda la tijera con lentitud y no mira las hileras que faltan"
+    },
+    {
+      "slot": "2",
+      "quiere": "llegar tarde sin que se note y sin dar explicaciones",
+      "impide": "la camioneta tiene las llaves puestas y el pretexto se cae solo",
+      "cuesta": "media jornada de trabajo, que se descuenta y no vuelve",
+      "cambia": "descubre que lo que se reclama no es la tarea sino el aviso",
+      "emocion": "verguenza defensiva porque la excusa no se sostiene; se ve en que repite el motor y mira la madera en vez de la cara"
+    },
+    {
+      "slot": "3",
+      "quiere": "cumplir tarde y que el atraso quede en nada",
+      "impide": "Damian ya contrato a dos changarines y el cuartel esta podado",
+      "cuesta": "el cuartel entero, que era suyo esta temporada y ya no lo es",
+      "cambia": "deja de justificar y dice lo que le pasaba de verdad",
+      "emocion": "alivio incomodo porque el no se lo reclama; se ve en que confiesa lo del hombro y le cuesta mas que cualquier excusa"
+    }
+  ]
+}

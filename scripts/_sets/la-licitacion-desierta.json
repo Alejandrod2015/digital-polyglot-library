@@ -1,0 +1,432 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "papeleo,trámite,constancia,en blanco",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "papeleo",
+          "answer": "pile of forms",
+          "options": [
+            "pile of forms",
+            "official procedure",
+            "written record",
+            "left blank"
+          ]
+        },
+        {
+          "word": "trámite",
+          "answer": "official procedure",
+          "options": [
+            "pile of forms",
+            "official procedure",
+            "written record",
+            "left blank"
+          ]
+        },
+        {
+          "word": "constancia",
+          "answer": "written record",
+          "options": [
+            "pile of forms",
+            "official procedure",
+            "written record",
+            "left blank"
+          ]
+        },
+        {
+          "word": "en blanco",
+          "answer": "left blank",
+          "options": [
+            "pile of forms",
+            "official procedure",
+            "written record",
+            "left blank"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "licitación",
+    "sentence": "El encargo soñado era la [[licitación]] de la estación.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "public tender",
+      "options": [
+        "public tender",
+        "tax refund",
+        "job interview",
+        "building permit"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "El encargo soñado era la licitación de la estación.",
+        "targetWord": "licitación",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "postular",
+    "sentence": "¿Y vas a [[postular]]?, preguntó él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to apply",
+      "options": [
+        "to apply",
+        "to give up",
+        "to complain",
+        "to vote"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "¿Y vas a postular?, preguntó él.",
+        "targetWord": "postular",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "capa",
+    "sentence": "La pared seguía manchada, así que le pusimos otra _____ de pintura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "capa",
+      "options": [
+        "capa",
+        "gota",
+        "tapa",
+        "mancha"
+      ],
+      "translation": "The wall was still stained, so we gave it another _____ of paint.",
+      "optionTranslations": [
+        "coat",
+        "drop",
+        "lid",
+        "stain"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "La pared seguía manchada, así que le pusimos otra capa de pintura.",
+        "targetWord": "capa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secreto a voces",
+    "sentence": "La falla era un [[secreto a voces]] y la firma era otra cosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open secret",
+      "options": [
+        "open secret",
+        "false rumour",
+        "old legend",
+        "private joke"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "La falla era un secreto a voces y la firma era otra cosa.",
+        "targetWord": "secreto a voces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letra chica",
+    "sentence": "El trámite traía [[letra chica]] y papeleo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fine print",
+      "options": [
+        "fine print",
+        "big headline",
+        "bad handwriting",
+        "short summary"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "El trámite traía letra chica y papeleo.",
+        "targetWord": "letra chica",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "presupuesto",
+    "sentence": "Puso en la mesa el [[presupuesto]] por capas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cost estimate",
+      "options": [
+        "cost estimate",
+        "signed contract",
+        "paint sample",
+        "work schedule"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Puso en la mesa el presupuesto por capas.",
+        "targetWord": "presupuesto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "la vista gorda",
+    "sentence": "El portero hizo _____ y nos dejó entrar sin boleto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la vista gorda",
+      "options": [
+        "la vista gorda",
+        "la maleta",
+        "la cama",
+        "la fila"
+      ],
+      "translation": "The doorman _____ and let us in without a ticket.",
+      "optionTranslations": [
+        "turned a blind eye",
+        "packed his bag",
+        "made the bed",
+        "queued up"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "El portero hizo la vista gorda y nos dejó entrar sin boleto.",
+        "targetWord": "la vista gorda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desierto",
+    "sentence": "Sin falla declarada, la licitación quedaba [[desierta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "declared void",
+      "options": [
+        "declared void",
+        "fully booked",
+        "put on hold",
+        "easily won"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Sin falla declarada, la licitación quedaba desierta.",
+        "targetWord": "desierta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar el paso",
+    "sentence": "No [[dio el paso]]; entregó en blanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take the step",
+      "options": [
+        "to take the step",
+        "to lose the way",
+        "to keep the pace",
+        "to walk away"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "No dio el paso; entregó en blanco.",
+        "targetWord": "dio el paso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "harto",
+    "sentence": "El último viaje subió con [[harto]] pasaje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lot of",
+      "options": [
+        "a lot of",
+        "hardly any",
+        "fed up",
+        "the same"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "El último viaje subió con harto pasaje.",
+        "targetWord": "harto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no más",
+    "sentence": "Haz la vista gorda, [[no más]], pidió él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just (softener)",
+      "options": [
+        "just (softener)",
+        "no more",
+        "not yet",
+        "never again"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Haz la vista gorda, no más, pidió él.",
+        "targetWord": "no más",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adjudicar",
+    "sentence": "La obra [[se adjudicaba]] con la mantención.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to award",
+      "options": [
+        "to award",
+        "to cancel",
+        "to advertise",
+        "to inspect"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "La obra se adjudicaba con la mantención.",
+        "targetWord": "se adjudicaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "falla",
+    "sentence": "Piden [[fallas]] declaradas, con nombre y firma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fault",
+      "options": [
+        "fault",
+        "payment",
+        "request",
+        "delay"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Piden fallas declaradas, con nombre y firma.",
+        "targetWord": "fallas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arder",
+    "sentence": "Entregó en blanco, y la palabra le [[ardió]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to burn",
+      "options": [
+        "to burn",
+        "to freeze",
+        "to heal",
+        "to vanish"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Entregó en blanco, y la palabra le ardió.",
+        "targetWord": "ardió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar fuera",
+    "sentence": "Ella [[quedó fuera]] igual.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left out",
+      "options": [
+        "to be left out",
+        "to be let in",
+        "to be paid off",
+        "to be caught out"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "Ella quedó fuera igual.",
+        "targetWord": "quedó fuera",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "valió la pena",
+    "sentence": "El viaje fue largo y caro, pero el paisaje _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "valió la pena",
+      "options": [
+        "valió la pena",
+        "dio la lata",
+        "tuvo la culpa",
+        "perdió la gracia"
+      ],
+      "translation": "The trip was long and expensive, but the scenery _____.",
+      "optionTranslations": [
+        "was worth it",
+        "was a pain",
+        "was to blame",
+        "lost its charm"
+      ],
+      "audioClip": {
+        "storySlug": "la-licitacion-desierta",
+        "storySource": "user",
+        "sentence": "El viaje fue largo y caro, pero el paisaje valió la pena.",
+        "targetWord": "valió la pena",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

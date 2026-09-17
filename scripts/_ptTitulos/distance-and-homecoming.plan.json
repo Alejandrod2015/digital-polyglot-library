@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "B1",
+  "variante": "LATAM",
+  "registro": "quieto y cortes, de casa con horarios: pasos, puertas y trato de usted",
+  "espina": "una casa que siguio funcionando sin ella y no le guardo sitio",
+  "recursos": "imagen concreta, espejo concreto, flashback marcado, contraste con pero, causalidad explicita, repeticion ritmica, cambio de ritmo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "entrar en la casa y encontrar cada cosa donde la dejo hace ocho anos",
+      "impide": "la cocina cambio de sitio y su cuarto es ahora la despensa",
+      "cuesta": "la primera noche, que duerme en el sofa y no se la devuelve nadie",
+      "cambia": "deja de creer que vuelve y empieza a entender que visita",
+      "emocion": "desconcierto que tapa con cortesia; se ve en que pide permiso para abrir su propia alacena"
+    },
+    {
+      "slot": "2",
+      "quiere": "servir para algo en esa casa, aunque sea haciendo la comida del domingo",
+      "impide": "Wilson tiene un metodo y cada cosa ya tiene su hora y su lugar",
+      "cuesta": "el sitio en la cocina, que ya no le devuelven ese viaje",
+      "cambia": "entiende que estorba con la mejor intencion del mundo",
+      "emocion": "humillacion pequena porque le corrigen la sal delante de todos; se ve en que deja la cuchara y se sienta a mirar"
+    },
+    {
+      "slot": "3",
+      "quiere": "irse sin escena y sin prometer que vuelve pronto",
+      "impide": "Wilson le pide que se quede con la llave de la casa",
+      "cuesta": "la llave, que deja igual, y con ella el derecho a entrar sin avisar",
+      "cambia": "acepta en voz alta que es visita, y deja de pelearlo",
+      "emocion": "pena serena porque la casa esta bien sin ella; se ve en que deja la llave en la mesa y cierra la puerta despacio"
+    }
+  ]
+}

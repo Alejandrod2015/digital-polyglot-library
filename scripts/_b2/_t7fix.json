@@ -1,0 +1,381 @@
+[
+  {
+    "slug": "de-medio-metro-y-gracias",
+    "title": "De medio metro, y gracias",
+    "synopsis": "Every evening the porch of Ofelia's guesthouse in Aracataca fills with backpackers, and Baldomero tells them about the two-metre fish of the marsh. Ofelia corrects him with the exact figures, the travellers keep buying the tale anyway, and the evening ends with a bet that costs the storyteller his roofed corner.",
+    "text": "Una tarde cualquiera, el corredor se llenó solo: mochileros, guarapo frío con hielo y Baldomero, el cuentero de Aracataca, Colombia, en la mecedora.\n\nPresumía de cuarenta años agrandando el pueblo. Ofelia era la dueña del hospedaje y ponía el orden: paciencia en otra parte, y con los cuentos no hacía la vista gorda.\n\n“De la ciénaga sacaban pescados gigantes, de dos metros”, arrancó él. “Los cargaban entre cuatro.” “De medio metro”, corrigió Ofelia. “Medio metro, y gracias.” “Por eso el cuento no es suyo”, contestó Baldomero, y agrandó el pescado medio metro más, como si la retara.\n\nLos mochileros se rieron y pidieron ronda: nadie viajaría hasta acá por medio metro de pescado. “Vamos a subir la apuesta”, dijo Ofelia. “La historia que salga cierta le abre el de adentro. Mientras tanto, me cuenta afuera.” “Apostado”, dijo él, sin saber qué firmaba.\n\nEsa noche contó desde el andén, sin techo, libreta en rodilla. Echar carreta afuera también era arte; el cielo no avisaba.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cuentero",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Storyteller; the town voice that keeps its legends alive."
+      },
+      {
+        "type": "noun",
+        "word": "hospedaje",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Guesthouse; simple lodging travellers find in Colombian towns."
+      },
+      {
+        "type": "noun",
+        "word": "ciénaga",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Marsh; the great shallow water beside Caribbean towns."
+      },
+      {
+        "type": "noun",
+        "word": "mochilero",
+        "anchor": true,
+        "surface": "mochileros",
+        "register": "cultural",
+        "definition": "Backpacker; the traveller who arrives with everything on their back."
+      },
+      {
+        "type": "noun",
+        "word": "guarapo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Cool sugarcane drink served on hot Colombian afternoons."
+      },
+      {
+        "type": "noun",
+        "word": "mecedora",
+        "definition": "Rocking chair; where Caribbean porches do their thinking."
+      },
+      {
+        "type": "verb",
+        "word": "agrandar",
+        "surface": "agrandando",
+        "definition": "To make something bigger each time it gets told."
+      },
+      {
+        "type": "expression",
+        "word": "echar carreta",
+        "surface": "Echar carreta",
+        "register": "cultural",
+        "definition": "To spin yarns, talk long and entertainingly about anything."
+      },
+      {
+        "type": "verb",
+        "word": "firmar",
+        "surface": "firmaba",
+        "definition": "To sign, formally agreeing to something with your name."
+      },
+      {
+        "type": "verb",
+        "word": "corregir",
+        "surface": "corrigió",
+        "definition": "To correct someone, put the exact fact on the table."
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "cargaban",
+        "definition": "To carry something heavy between several people at once."
+      },
+      {
+        "type": "verb",
+        "word": "apostar",
+        "surface": "Apostado",
+        "definition": "To bet, put something at stake on a result."
+      },
+      {
+        "type": "noun",
+        "word": "rodilla",
+        "definition": "Knee; where a notebook rests when you sit."
+      },
+      {
+        "type": "noun",
+        "word": "techo",
+        "definition": "Roof; what stands between you and the rain."
+      },
+      {
+        "type": "noun",
+        "word": "cielo",
+        "definition": "Sky; where the weather decides things without asking anyone."
+      },
+      {
+        "type": "verb",
+        "word": "avisar",
+        "surface": "avisaba",
+        "definition": "To give warning before something is going to happen."
+      },
+      {
+        "type": "expression",
+        "word": "salir cierto",
+        "surface": "salga cierta",
+        "definition": "To turn out true after all, against every doubt."
+      },
+      {
+        "type": "expression",
+        "word": "mientras tanto",
+        "surface": "Mientras tanto",
+        "definition": "Meanwhile, in the time until the other thing happens."
+      },
+      {
+        "type": "expression",
+        "word": "y gracias",
+        "definition": "And that is being generous; and nothing more."
+      },
+      {
+        "type": "expression",
+        "word": "en otra parte",
+        "definition": "Somewhere else, not in the place you are looking."
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 1
+  },
+  {
+    "slug": "la-carreta-mojada",
+    "title": "La carreta mojada",
+    "synopsis": "The rain arrives without warning, as it always does in town, and it catches Baldomero telling stories outside, where the bet has left him. The notebook with forty years of tales gets soaked through, the ink lets go of the paper page by page, and for the first time anyone can remember, the porch spends the whole evening in silence.",
+    "text": "El aguacero llegó sin aviso. Baldomero estaba en el andén, con la rueda de mochileros armada y la libreta; Ofelia miraba el cielo. “¡Adentro, Baldomero, que se moja!”, gritó Ofelia. “¡Primero las hojas, que la gente se seca sola!”, contestó Baldomero, manoteando el aguacero.\n\nTodos corrieron adentro. Cuando él llegó al corredor techado, la libreta ya iba empapada. “Déjenla, que la plancha no resucita tinta”, cortó Ofelia, con toallas. “El agua ya hizo lo suyo.” “Ya lo sé”, dijo él. La rueda se desinfló sola.\n\nLa tinta se soltó del papel hoja por hoja: el pescado gigante, el tren amarillo, la boda. Todo vuelto agua sucia entre los dedos. “Cuarenta años de carreta mojada”, dijo Baldomero. Puso las hojas a secar, piedritas encima, una por una, sin decir palabra.\n\nA la hora de cerrar no hubo bulla, y el silencio de Baldomero, descubrió Ofelia, era peor que sus cuentos. “Mañana me cuenta una de memoria, de las suyas”, le dijo al apagar. “Invita la casa, cuentero.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "aguacero",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Sudden tropical downpour that arrives without any warning at all."
+      },
+      {
+        "type": "noun",
+        "word": "bulla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Noise, happy racket; the Colombian coast word for it."
+      },
+      {
+        "type": "adjective",
+        "word": "empapado",
+        "surface": "empapada",
+        "definition": "Soaked through, wet down to the very last layer."
+      },
+      {
+        "type": "verb",
+        "word": "manotear",
+        "surface": "manoteando",
+        "definition": "To flail your hands at something you cannot stop."
+      },
+      {
+        "type": "noun",
+        "word": "toalla",
+        "surface": "toallas",
+        "definition": "Towel; the cloth that drinks the water up."
+      },
+      {
+        "type": "noun",
+        "word": "plancha",
+        "definition": "Iron; the hot flat tool that presses and dries."
+      },
+      {
+        "type": "noun",
+        "word": "piedrita",
+        "surface": "piedritas",
+        "definition": "Little stone; a small weight to hold paper down."
+      },
+      {
+        "type": "adjective",
+        "word": "gigante",
+        "definition": "Giant, far bigger than anything real should ever be."
+      },
+      {
+        "type": "verb",
+        "word": "resucitar",
+        "surface": "resucita",
+        "definition": "To bring something back to life after it died."
+      },
+      {
+        "type": "adjective",
+        "word": "techado",
+        "definition": "Roofed, covered so that the rain stays outside it."
+      },
+      {
+        "type": "adjective",
+        "word": "armado",
+        "surface": "armada",
+        "definition": "Set up, put together and ready to start."
+      },
+      {
+        "type": "noun",
+        "word": "rueda",
+        "register": "cultural",
+        "definition": "Circle of listeners; the ring a storyteller gathers."
+      },
+      {
+        "type": "expression",
+        "word": "vuelto agua",
+        "surface": "vuelto agua",
+        "definition": "Turned into plain water, dissolved beyond any possible repair."
+      },
+      {
+        "type": "expression",
+        "word": "hacer lo suyo",
+        "surface": "hizo lo suyo",
+        "definition": "To do its work, cause the damage it causes."
+      },
+      {
+        "type": "expression",
+        "word": "poner a secar",
+        "surface": "a secar",
+        "definition": "To lay something out so the air dries it."
+      },
+      {
+        "type": "expression",
+        "word": "de las suyas",
+        "definition": "One of your own; the kind only you make."
+      },
+      {
+        "type": "expression",
+        "word": "hoja por hoja",
+        "definition": "Page by page, one page after the other one."
+      },
+      {
+        "type": "expression",
+        "word": "una por una",
+        "definition": "One by one, each taken separately in its turn."
+      },
+      {
+        "type": "expression",
+        "word": "sin decir palabra",
+        "definition": "Without saying a single word, in complete silence."
+      },
+      {
+        "type": "expression",
+        "word": "invita la casa",
+        "surface": "Invita la casa",
+        "register": "cultural",
+        "definition": "It is on the house; the owner treats you today."
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 2
+  },
+  {
+    "slug": "la-historia-sin-agrandar",
+    "title": "La historia sin agrandar",
+    "synopsis": "Without his notebook, Baldomero doubts his own stories, and the porch misses him. Going through the guesthouse's old album, Ofelia finds a yellowed photograph: the yellow train loaded with fish, exactly as he always told it. She brings it out in front of everyone, opens the inside porch she once bet against him, and asks him for the one story nobody has ever told: the story of the guesthouse.",
+    "text": "Sin libreta, el cuentero contaba poco y dudaba mucho. Baldomero se frenaba a media historia: los cuentos, sin papel, no se desempolvaban.\n\nOfelia hojeó el álbum del hospedaje y encontró lo que no buscaba: un retrato amarillento, pegado con esquinas negras. Un tren amarillo, cargado de pescado, y un hombre sonriendo al lado.\n\nLo sacó una tarde llena, a plena luz. “Cuente la del tren”, pidió, y levantó el retrato para que lo vieran. Baldomero le sostuvo la mirada.\n\n“¿Tal cual, o mejorada?”, preguntó. “Tal cual la contaba usted”, contestó Ofelia. “Salió cierta, al pie de la letra.” “La apuesta es suya. Bienvenido al corredor de adentro.”\n\nBaldomero recibió la foto, la miró largo y, en vez de decir se lo dije, preguntó si se la podía quedar. Se hizo un silencio bueno.\n\n“Con una condición”, dejó caer ella. “La próxima historia es la de este hospedaje. Sin agrandar.” “La verdad también necesita quien la cuente bonito”, contestó el cuentero, y arrastró la mecedora puerta adentro.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "álbum",
+        "definition": "Album; the book where old photographs sleep for years."
+      },
+      {
+        "type": "noun",
+        "word": "retrato",
+        "definition": "Portrait, photograph; an image that holds a moment still."
+      },
+      {
+        "type": "adjective",
+        "word": "amarillento",
+        "definition": "Yellowed; aged into the colour old paper takes."
+      },
+      {
+        "type": "expression",
+        "word": "tal cual",
+        "surface": "Tal cual",
+        "definition": "Exactly like that, without changing a single detail."
+      },
+      {
+        "type": "expression",
+        "word": "al pie de la letra",
+        "definition": "To the letter, exactly as it was said."
+      },
+      {
+        "type": "verb",
+        "word": "frenarse",
+        "surface": "se frenaba",
+        "definition": "To stop yourself short in the middle of something."
+      },
+      {
+        "type": "noun",
+        "word": "esquina",
+        "surface": "esquinas",
+        "definition": "Corner; here, the little holders that keep photos in albums."
+      },
+      {
+        "type": "adjective",
+        "word": "cargado",
+        "definition": "Loaded, filled up to the very top with something."
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonriendo",
+        "definition": "To smile; to let the face say it is happy."
+      },
+      {
+        "type": "verb",
+        "word": "levantar",
+        "surface": "levantó",
+        "definition": "To lift, raise something for everyone to see."
+      },
+      {
+        "type": "verb",
+        "word": "recibir",
+        "surface": "recibió",
+        "definition": "To receive, take what is being handed over."
+      },
+      {
+        "type": "noun",
+        "word": "condición",
+        "definition": "Condition; the requirement that comes attached to an agreement."
+      },
+      {
+        "type": "verb",
+        "word": "arrastrar",
+        "surface": "arrastró",
+        "definition": "To drag something heavy across the floor behind you."
+      },
+      {
+        "type": "expression",
+        "word": "mirar largo",
+        "surface": "miró largo",
+        "definition": "To look at something long and slowly, taking it in."
+      },
+      {
+        "type": "expression",
+        "word": "en vez de",
+        "definition": "Instead of, choosing one thing over the other."
+      },
+      {
+        "type": "expression",
+        "word": "se lo dije",
+        "definition": "I told you so; the small victory nobody should say."
+      },
+      {
+        "type": "expression",
+        "word": "puerta adentro",
+        "definition": "Through the door and inside, into the house."
+      },
+      {
+        "type": "expression",
+        "word": "a media historia",
+        "definition": "Halfway through the story, before reaching the end."
+      },
+      {
+        "type": "expression",
+        "word": "quedarse con",
+        "surface": "se la podía quedar",
+        "definition": "To keep something for yourself from then on."
+      },
+      {
+        "type": "expression",
+        "word": "a plena luz",
+        "definition": "In full daylight, where everyone can see it clearly."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "topic": "tales-and-tall-stories",
+    "slotIndex": 3
+  }
+]

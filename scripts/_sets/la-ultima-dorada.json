@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "campanita,cartera,vuelto,saludo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "campanita",
+          "answer": "little bell",
+          "options": [
+            "little bell",
+            "handbag",
+            "change (money)",
+            "greeting"
+          ]
+        },
+        {
+          "word": "cartera",
+          "answer": "handbag",
+          "options": [
+            "little bell",
+            "handbag",
+            "change (money)",
+            "greeting"
+          ]
+        },
+        {
+          "word": "vuelto",
+          "answer": "change (money)",
+          "options": [
+            "little bell",
+            "handbag",
+            "change (money)",
+            "greeting"
+          ]
+        },
+        {
+          "word": "saludo",
+          "answer": "greeting",
+          "options": [
+            "little bell",
+            "handbag",
+            "change (money)",
+            "greeting"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "a cargo",
+    "sentence": "Antes de viajar, la dueña lo dejó _____ de la tienda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a cargo",
+      "options": [
+        "a cargo",
+        "a bordo",
+        "a salvo",
+        "a cambio"
+      ],
+      "translation": "Before travelling, the owner left him _____ the shop.",
+      "optionTranslations": [
+        "in charge of",
+        "on board of",
+        "safe from",
+        "in exchange for"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Antes de viajar, la dueña lo dejó a cargo de la tienda.",
+        "targetWord": "a cargo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desatarse",
+    "sentence": "Ella [[se desató]] el delantal a media mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to untie",
+      "options": [
+        "to untie",
+        "to fold",
+        "to tighten",
+        "to stain"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Ella se desató el delantal a media mañana.",
+        "targetWord": "se desató",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cualquier cosa",
+    "sentence": "[[Cualquier cosa]], me llamás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "if anything comes up",
+      "options": [
+        "if anything comes up",
+        "whenever you like",
+        "just to say hi",
+        "before you close"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Cualquier cosa, me llamás.",
+        "targetWord": "Cualquier cosa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "parados",
+    "sentence": "No había sillas, así que comieron _____ junto a la barra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parados",
+      "options": [
+        "parados",
+        "sentados",
+        "acostados",
+        "arrodillados"
+      ],
+      "translation": "There were no chairs, so they ate _____ at the bar.",
+      "optionTranslations": [
+        "standing",
+        "sitting",
+        "lying down",
+        "kneeling"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "No había sillas, así que comieron parados junto a la barra.",
+        "targetWord": "parados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse vuelta",
+    "sentence": "Y se fue sin [[darse vuelta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn around",
+      "options": [
+        "to turn around",
+        "to say goodbye",
+        "to slow down",
+        "to stop talking"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Y se fue sin darse vuelta.",
+        "targetWord": "darse vuelta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobró",
+    "sentence": "El taxista le _____ el viaje en efectivo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobró",
+      "options": [
+        "cobró",
+        "pagó",
+        "perdonó",
+        "explicó"
+      ],
+      "translation": "The taxi driver _____ the ride in cash.",
+      "optionTranslations": [
+        "charged for",
+        "paid for",
+        "let off",
+        "explained"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "El taxista le cobró el viaje en efectivo.",
+        "targetWord": "cobró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganarse",
+    "sentence": "Le llevó semanas [[ganarse]] el saludo de los clientes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to earn",
+      "options": [
+        "to earn",
+        "to lose",
+        "to return",
+        "to ignore"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Le llevó semanas ganarse el saludo de los clientes.",
+        "targetWord": "ganarse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapado",
+    "sentence": "En el mostrador había una milanesa [[tapada]] con una servilleta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covered",
+      "options": [
+        "covered",
+        "sliced",
+        "reheated",
+        "half-eaten"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "En el mostrador había una milanesa tapada con una servilleta.",
+        "targetWord": "tapada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tibio",
+    "sentence": "Envolvió el pan recién hecho en un paño para que siguiera _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tibio",
+      "options": [
+        "tibio",
+        "frío",
+        "duro",
+        "crudo"
+      ],
+      "translation": "She wrapped the fresh bread in a cloth so it would stay _____.",
+      "optionTranslations": [
+        "lukewarm",
+        "cold",
+        "hard",
+        "raw"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Envolvió el pan recién hecho en un paño para que siguiera tibio.",
+        "targetWord": "tibio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "de noche",
+    "sentence": "Las estrellas solo se ven _____, con el cielo oscuro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "de noche",
+      "options": [
+        "de noche",
+        "de frente",
+        "de pie",
+        "de repente"
+      ],
+      "translation": "The stars can only be seen _____, with a dark sky.",
+      "optionTranslations": [
+        "at night",
+        "head-on",
+        "standing up",
+        "suddenly"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Las estrellas solo se ven de noche, con el cielo oscuro.",
+        "targetWord": "de noche",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la vuelta",
+    "sentence": "[[A la vuelta]], ya de noche, ella encontró el local cerrado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on coming back",
+      "options": [
+        "on coming back",
+        "before leaving",
+        "on the way there",
+        "in the morning"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "A la vuelta, ya de noche, ella encontró el local cerrado.",
+        "targetWord": "A la vuelta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contado",
+    "sentence": "La plata estaba [[contada]], con el vuelto listo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "counted",
+      "options": [
+        "counted",
+        "hidden",
+        "borrowed",
+        "spent"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "La plata estaba contada, con el vuelto listo.",
+        "targetWord": "contada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por primera vez",
+    "sentence": "Hoy me voy de franco yo, [[por primera vez]] en años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for the first time",
+      "options": [
+        "for the first time",
+        "for the last time",
+        "once again",
+        "as always"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Hoy me voy de franco yo, por primera vez en años.",
+        "targetWord": "por primera vez",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar a cargo",
+    "sentence": "Vos [[quedás a cargo]] del negocio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay in charge",
+      "options": [
+        "to stay in charge",
+        "to take a day off",
+        "to close up early",
+        "to wait outside"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Vos quedás a cargo del negocio.",
+        "targetWord": "quedás a cargo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al hombro",
+    "sentence": "Se fue sin darse vuelta, cartera [[al hombro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "over the shoulder",
+      "options": [
+        "over the shoulder",
+        "under the arm",
+        "in the hand",
+        "on the back"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Se fue sin darse vuelta, cartera al hombro.",
+        "targetWord": "al hombro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con llave",
+    "sentence": "Ella encontró el local cerrado [[con llave]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "locked",
+      "options": [
+        "locked",
+        "for good",
+        "by mistake",
+        "too early"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-dorada",
+        "storySource": "user",
+        "sentence": "Ella encontró el local cerrado con llave.",
+        "targetWord": "con llave",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

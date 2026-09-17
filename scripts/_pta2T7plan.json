@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "cálido y de despedida, sin sentimentalismo",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella. Aquí la espina se cierra: en la última historia dice en voz alta lo que en Salvador no habría sabido decir.",
+  "recursos": "A2: símil simple y espejo concreto, ya permitido otra vez tras dos temas sin él (el suéter prestado del primer día vuelve doblado en el brazo el último, y no se devuelve). Heredados: repetición rítmica en la receta del frío dicha en tres frases, contraste con pero, imagen concreta de remate. Nada de B1 o superior: el cierre del journey no queda abierto, se dice con todas las letras.",
+  "historias": [
+    {
+      "slot": "gramado#0",
+      "quiere": "Renata quiere no pasar frío en su primera noche en el sur.",
+      "impide": "Llega con la maleta de dos meses de playa y todo lo que trae está mojado.",
+      "cuesta": "Aceptar ropa de una caja de olvidados sin poder pagar por ella.",
+      "cambia": "Se pone un suéter que no es suyo y acepta además una invitación a tomar té; deja de resolverlo sola.",
+      "emocion": "vergüenza que se deja ayudar"
+    },
+    {
+      "slot": "gramado#1",
+      "quiere": "Renata quiere pasar la noche sin congelarse en un cuarto que no tiene nada.",
+      "impide": "Una sola bombilla, una cortina que no cierra y una cómoda vacía.",
+      "cuesta": "Bajar a preguntar en vez de aguantarse, que es lo que habría hecho en Salvador.",
+      "cambia": "Se lleva una receta de tres frases que no se compra en ninguna parte y duerme bien; escribe la receta en el caderno.",
+      "emocion": "desamparo que se vuelve calma"
+    },
+    {
+      "slot": "gramado#2",
+      "quiere": "Renata quiere devolver el suéter antes de irse.",
+      "impide": "Nadie se lo acepta: aquí las cosas no se devuelven.",
+      "cuesta": "Aceptar que se va con algo prestado y con una promesa que tendrá que cumplir.",
+      "cambia": "Escribe dos líneas en portugués sin buscar las palabras y dice en voz alta que quiere volver; el primer día señalaba, ahora pide, discute y agradece.",
+      "emocion": "despedida contenta"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   {
     "topic": "secrets-and-silences",
     "slotIndex": 1,
-    "title": "Un chirrido nuevo",
-    "slug": "un-chirrido-nuevo",
+    "title": "La once con chirrido",
+    "slug": "la-once-con-chirrido",
     "arcType": "daily-encounter",
     "synopsis": "Marcela has spent weeks on a scaffold painting the station of one of Valparaíso's hill lifts, and she knows the machine by ear. One morning there is a thin new squeal in the axle, Ignacio the operator swears the maintenance is up to date, and they drink their afternoon once talking about everything except the noise. From that day on she walks down the hill.",
-    "text": "Marcela, la mujer que pinta la fachada de la estación, lleva semanas colgada de un andamio en un cerro de Valparaíso, Chile. Conoce la máquina de memoria: el engranaje suena a reloj.\n\nIgnacio, el maquinista, tiene la libreta al día y saluda desde la caseta. Hoy hay un chirrido fino que el eje no tenía ayer.\n\n“¿Y ese ruido nuevo, maestro?”, pregunta Marcela desde arriba.\n\n“Fierro viejo que conversa. Al tiro le pongo grasa, no te preocupes”, contesta Ignacio.\n\nMarcela no contesta enseguida. La mantención, por la rejilla, se ve así: al engranaje le falta grasa.\n\n“¿Y esa parte gastada?”, insiste ella. “Yo cacho de fachadas y eso se ve cansado.”\n\n“Y yo cacho de esta máquina”, corta Ignacio. “Quédate a tomar once: hay pan amasado.”\n\nEl desgaste salta a simple vista.\n\nToman once. Marcela está por preguntar de frente y se queda callada: acusar sin saber sería peor. Deja la mano en la mesa, que vibra bajito.\n\n“Mañana le pongo grasa”, promete Ignacio al despedirse. “Eso dijiste hoy”, contesta Marcela, escalera abajo.\n\nMarcela ahora baja a pie: se le quitaron las ganas de colgar de un cable cansado.",
+    "text": "Marcela, la mujer que pintaba la estación, llevaba semanas colgada de un andamio en un cerro de Valparaíso, Chile. Conocía la máquina de memoria: el engranaje sonaba a reloj. Ignacio, el maquinista, tenía la libreta al día y saludaba desde la caseta. El eje tenía un chirrido fino.\n\n“¿Y ese ruido nuevo, maestro?”, preguntó Marcela. “Fierro viejo que conversa. Al tiro le pongo grasa”, contestó Ignacio.\n\nMarcela no contestó enseguida: esperaba que él mirara. Por la rejilla se veía la mantención: al engranaje le faltaba grasa. “¿Y esa parte gastada?”, insistió ella. “Yo cacho de fachadas y eso se ve cansado.”\n\n“Y yo cacho de esta máquina”, cortó Ignacio. “Quédate a tomar once: hay pan amasado.” El desgaste saltaba a simple vista. Marcela estuvo por preguntar y se quedó callada: acusar sin saber era peor. Dejó la mano en la mesa, que vibraba.\n\n“Mañana le pongo grasa”, prometió Ignacio. “Eso dijiste hoy”, contestó Marcela, y bajó a pie: ya no quería colgar de un cable cansado.",
     "vocab": [
       {
         "word": "maestro",
@@ -83,7 +83,7 @@
       },
       {
         "word": "vibrar",
-        "surface": "vibra",
+        "surface": "vibraba",
         "type": "verb",
         "definition": "To vibrate, tremble with a small constant movement."
       },
@@ -114,7 +114,7 @@
       },
       {
         "word": "quedarse callado",
-        "surface": "se queda callada",
+        "surface": "se quedó callada",
         "type": "expression",
         "definition": "To stay silent, hold back what you meant to say."
       },
@@ -128,11 +128,11 @@
   {
     "topic": "secrets-and-silences",
     "slotIndex": 2,
-    "title": "La vista gorda",
-    "slug": "la-vista-gorda",
+    "title": "La licitación desierta",
+    "slug": "la-licitacion-desierta",
     "arcType": "mini-cliffhanger",
     "synopsis": "The city is about to put the full repainting of the station out to tender, and Marcela applies; the fine print says maintenance only gets moved up if someone files a fault report. Everyone on the hill knows about the worn gear, nobody puts their name to it, and Marcela hands in the form blank. A month later the tender is declared void and she is out without ever competing.",
-    "text": "El encargo soñado espera arriba: la licitación de la estación entera, pintura pagada. Marcela postula esa semana.\n\nEl trámite trae letra chica y papeleo.\n\nLa obra se adjudica con la mantención, y esta solo se adelanta si alguien deja constancia de una falla.\n\nLa falla es un secreto a voces y la firma es otra cosa.\n\n“¿Y vas a postular, al final?”, pregunta Ignacio.\n\n“Ya postulé, claro. Piden fallas declaradas, con nombre y firma”, contesta Marcela, y pone en la mesa el presupuesto por capas.\n\nIgnacio no lo agarra. “Fierro viejo que conversa”, repite, más bajo.\n\n“Si la declaro yo, la revisión llega con tu nombre”, dice ella. “Y si no, me quedo esperando andamios que no llegan.”\n\n“Haz la vista gorda, no más. Como todos”, pide él, y acerca el pan amasado como quien cierra un trato.\n\nNo da el paso: entrega en blanco, y la palabra le arde sin saber si valió la pena.\n\nDuerme poco.\n\nUn mes después, la licitación se declara desierta. Marcela queda fuera sin competir.\n\nEl último viaje sube con harto pasaje y el chirrido ya no suena fino.",
+    "text": "El encargo soñado de Marcela era la licitación de la estación de Ignacio. El trámite traía letra chica y papeleo.\n\nLa obra se adjudicaba con la mantención, que no se adelantaba sin que alguien dejara constancia de una falla. La falla era un secreto a voces y la firma era otra cosa.\n\n“¿Y vas a postular?”, preguntó Ignacio. “Ya postulé. Piden fallas declaradas, con nombre y firma”, contestó Marcela, y puso en la mesa el presupuesto por capas. “Fierro viejo que conversa”, repitió Ignacio.\n\n“Si la declaro yo, la revisión llega con tu nombre”, dijo ella. “Y si no, me quedo esperando andamios que no llegan.” “Haz la vista gorda, no más”, pidió él, y acercó el pan amasado.\n\nNo dio el paso; entregó en blanco, y la palabra le ardió sin saber si valió la pena.\n\nAl mes avisaron que, sin falla declarada, la licitación quedaba desierta. Marcela quedó fuera igual. El último viaje subió con harto pasaje y el chirrido ya no sonaba fino.",
     "vocab": [
       {
         "word": "harto",
@@ -166,7 +166,7 @@
       },
       {
         "word": "adjudicar",
-        "surface": "se adjudica",
+        "surface": "se adjudicaba",
         "type": "verb",
         "definition": "To award a contract to the winner of a tender."
       },
@@ -182,7 +182,7 @@
       },
       {
         "word": "arder",
-        "surface": "arde",
+        "surface": "ardió",
         "type": "verb",
         "definition": "To burn, sting inside like something you regret."
       },
@@ -209,7 +209,7 @@
       },
       {
         "word": "dar el paso",
-        "surface": "da el paso",
+        "surface": "dio el paso",
         "type": "expression",
         "definition": "To take the step, finally dare to do it."
       },
@@ -225,7 +225,7 @@
       },
       {
         "word": "quedar fuera",
-        "surface": "queda fuera",
+        "surface": "quedó fuera",
         "type": "expression",
         "definition": "To be left out, excluded from something you wanted."
       },
@@ -251,11 +251,11 @@
   {
     "topic": "secrets-and-silences",
     "slotIndex": 3,
-    "title": "La pared que nadie encargó",
-    "slug": "la-pared-que-nadie-encargo",
+    "title": "Tres veces, por escrito",
+    "slug": "tres-veces-por-escrito",
     "arcType": "reframe-turn",
     "synopsis": "Halfway up, the lift jolts and stops with Marcela inside. Ignacio cranks her down by hand, the workshop crew finds the gear about to give, and in a drawer they also find three sealed letters asking for the spare part, one per year, signed by him. The lift finally closes, and when it reopens there is a freshly painted wall in the machine room that nobody ordered.",
-    "text": "A media subida, el ascensor da un salto corto, cruje y se queda quieto, con Marcela adentro. Ignacio corre a la caseta.\n\n“No te muevas, que el freno agarró”, pide Ignacio. “Te bajo a manivela. Un ratito no más, te lo prometo.”\n\n“¿Cuánto es un ratito, exactamente?”, pregunta Marcela, sujeta del pasamanos.\n\nLa manivela rechina, el carro baja de a poco, y todo suena a fierro viejo. Sale con las piernas temblonas y el corazón al trote.\n\nLos del taller abren la caseta: el engranaje está a punto de ceder. En el cajón hay tres cartas selladas de Ignacio pidiendo el repuesto, una por año.\n\n“¿Y por qué no dijiste nada?”, pregunta ella.\n\n“Sí dije. Tres veces, por escrito”, contesta Ignacio. “Lo que no hice fue cerrar: medio cerro sube su mercadería en este fierro.”\n\nMarcela entiende dónde pesaba lo callado: ella guardó el secreto una semana y casi la tumba; Ignacio lo cargó años.\n\nPor fin cierran el ascensor, y un mes después vuelve con engranaje nuevo; y en la caseta hay una pared recién pintada, celeste, que nadie encargó. Ignacio no pregunta quién fue; no hace falta.",
+    "text": "A media subida, el ascensor dio un salto, crujió y se quedó quieto: Marcela adentro, Ignacio en la caseta. “No te muevas, que el freno agarró”, pidió Ignacio. “Te bajo a manivela. Un ratito no más.” “¿Cuánto sería un ratito?”, preguntó Marcela, sujeta del pasamanos.\n\nLa manivela rechinaba, el carro bajó de a poco, y todo sonaba a fierro viejo. Salió con piernas temblonas y el corazón al trote.\n\nEn la caseta, el engranaje estaba a punto de ceder. En el cajón, tres cartas selladas pedían el repuesto. “¿Y por qué no dijiste nada?”, preguntó ella. “Sí dije. Tres veces, por escrito”, contestó Ignacio. “Lo que no hice fue cerrar: medio cerro sube su mercadería en este fierro.”\n\nMarcela entendió dónde pesaba lo callado: ella guardó el secreto una semana y casi la tumba; Ignacio lo cargó años. Por fin cerraron el ascensor; volvió con engranaje nuevo; en la caseta había una pared recién pintada, celeste, que nadie encargó. Ignacio no preguntó; no hacía falta.",
     "vocab": [
       {
         "word": "freno",
@@ -269,7 +269,7 @@
       },
       {
         "word": "rechinar",
-        "surface": "rechina",
+        "surface": "rechinaba",
         "type": "verb",
         "definition": "To grind, screech like dry metal being forced."
       },
@@ -285,7 +285,7 @@
       },
       {
         "word": "crujir",
-        "surface": "cruje",
+        "surface": "crujió",
         "type": "verb",
         "definition": "To creak, make the dry sound of something straining."
       },

@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "chifa,wantán,tela,garabato",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chifa",
+          "answer": "Chinese-Peruvian restaurant",
+          "options": [
+            "Chinese-Peruvian restaurant",
+            "fried wonton",
+            "fabric",
+            "scribble"
+          ]
+        },
+        {
+          "word": "wantán",
+          "answer": "fried wonton",
+          "options": [
+            "Chinese-Peruvian restaurant",
+            "fried wonton",
+            "fabric",
+            "scribble"
+          ]
+        },
+        {
+          "word": "tela",
+          "answer": "fabric",
+          "options": [
+            "Chinese-Peruvian restaurant",
+            "fried wonton",
+            "fabric",
+            "scribble"
+          ]
+        },
+        {
+          "word": "garabato",
+          "answer": "scribble",
+          "options": [
+            "Chinese-Peruvian restaurant",
+            "fried wonton",
+            "fabric",
+            "scribble"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo conversamos",
+    "sentence": "Está lindo, está lindo. [[Lo conversamos]], señora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "we'll talk it over",
+      "options": [
+        "we'll talk it over",
+        "we have a deal",
+        "we'll pay today",
+        "we can't afford it"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Está lindo, está lindo. Lo conversamos, señora.",
+        "targetWord": "Lo conversamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahorita",
+    "sentence": "[[Ahorita]] andamos con campaña, señora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right now",
+      "options": [
+        "right now",
+        "long ago",
+        "next year",
+        "every day"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Ahorita andamos con campaña, señora.",
+        "targetWord": "Ahorita",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "elogio",
+    "sentence": "Después de su gran trabajo, recibió un _____ de su jefa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "elogio",
+      "options": [
+        "elogio",
+        "reclamo",
+        "insulto",
+        "castigo"
+      ],
+      "translation": "After her great work, she got a _____ from her boss.",
+      "optionTranslations": [
+        "compliment",
+        "complaint",
+        "insult",
+        "punishment"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Después de su gran trabajo, recibió un elogio de su jefa.",
+        "targetWord": "elogio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortesía",
+    "sentence": "Pagó el chifa por la [[cortesía]] más cara del mes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "courtesy",
+      "options": [
+        "courtesy",
+        "mistake",
+        "lesson",
+        "bargain"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Pagó el chifa por la cortesía más cara del mes.",
+        "targetWord": "cortesía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muestrario",
+    "sentence": "Lo invitó a un chifa, [[muestrario]] en mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sample book",
+      "options": [
+        "sample book",
+        "price list",
+        "sewing kit",
+        "order form"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Lo invitó a un chifa, muestrario en mano.",
+        "targetWord": "muestrario",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apartó",
+    "sentence": "Sin dinero encima, la vendedora me _____ la chaqueta hasta el sábado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apartó",
+      "options": [
+        "apartó",
+        "vendió",
+        "cobró",
+        "mostró"
+      ],
+      "translation": "With no money on me, the saleswoman _____ the jacket for me until Saturday.",
+      "optionTranslations": [
+        "set aside",
+        "sold",
+        "charged",
+        "showed"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Sin dinero encima, la vendedora me apartó la chaqueta hasta el sábado.",
+        "targetWord": "apartó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ya pues",
+    "sentence": "Pero lo conversamos, [[ya pues]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alright then",
+      "options": [
+        "alright then",
+        "no way",
+        "not yet",
+        "never mind"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Pero lo conversamos, ya pues.",
+        "targetWord": "ya pues",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "directorio",
+    "sentence": "La que viene tengo [[directorio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "board meeting",
+      "options": [
+        "board meeting",
+        "day off",
+        "business trip",
+        "doctor's visit"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "La que viene tengo directorio.",
+        "targetWord": "directorio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "combi",
+    "sentence": "En la [[combi]], a la altura del mercado, cayó en cuenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "minibus",
+      "options": [
+        "minibus",
+        "taxi",
+        "train",
+        "ferry"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "En la combi, a la altura del mercado, cayó en cuenta.",
+        "targetWord": "combi",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jirón",
+    "sentence": "Pidió wantán de memoria, en un chifa del [[jirón]] Ucayali.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "street",
+      "options": [
+        "street",
+        "market",
+        "square",
+        "district"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Pidió wantán de memoria, en un chifa del jirón Ucayali.",
+        "targetWord": "jirón",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "almorzamos",
+    "sentence": "Ayer desayunamos temprano, _____ al mediodía y cenamos tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "almorzamos",
+      "options": [
+        "almorzamos",
+        "merendamos",
+        "trasnochamos",
+        "madrugamos"
+      ],
+      "translation": "Yesterday we had breakfast early, _____ at noon and had dinner late.",
+      "optionTranslations": [
+        "had lunch",
+        "had an afternoon snack",
+        "stayed up all night",
+        "got up early"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Ayer desayunamos temprano, almorzamos al mediodía y cenamos tarde.",
+        "targetWord": "almorzamos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palillo",
+    "sentence": "Esto en vitrina se vende solo, soltó, con los [[palillos]] en alto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chopstick",
+      "options": [
+        "chopstick",
+        "napkin",
+        "teacup",
+        "soup bowl"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Esto en vitrina se vende solo, soltó, con los palillos en alto.",
+        "targetWord": "palillos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar en nada",
+    "sentence": "Nadie apuntó ni un garabato; nadie [[quedó en nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to agree to nothing",
+      "options": [
+        "to agree to nothing",
+        "to promise everything",
+        "to pay for everything",
+        "to write everything down"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Nadie apuntó ni un garabato; nadie quedó en nada.",
+        "targetWord": "quedó en nada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "costura",
+    "sentence": "Tomó un curso de _____ y ahora arregla su propia ropa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "costura",
+      "options": [
+        "costura",
+        "cocina",
+        "pintura",
+        "música"
+      ],
+      "translation": "She took a course in _____ and now mends her own clothes.",
+      "optionTranslations": [
+        "sewing",
+        "cooking",
+        "painting",
+        "music"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Tomó un curso de costura y ahora arregla su propia ropa.",
+        "targetWord": "costura",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desinflarse",
+    "sentence": "Para que las manos trabajaran mientras el orgullo [[se desinflaba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to deflate",
+      "options": [
+        "to deflate",
+        "to swell",
+        "to harden",
+        "to spread"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Para que las manos trabajaran mientras el orgullo se desinflaba.",
+        "targetWord": "se desinflaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "a la altura del",
+    "sentence": "Me bajé del bus _____ mercado, justo frente a la iglesia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a la altura del",
+      "options": [
+        "a la altura del",
+        "a pesar del",
+        "a causa del",
+        "en contra del"
+      ],
+      "translation": "I got off the bus _____ the market, right across from the church.",
+      "optionTranslations": [
+        "level with",
+        "despite",
+        "because of",
+        "against"
+      ],
+      "audioClip": {
+        "storySlug": "la-cortesia-mas-cara",
+        "storySource": "user",
+        "sentence": "Me bajé del bus a la altura del mercado, justo frente a la iglesia.",
+        "targetWord": "a la altura del",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

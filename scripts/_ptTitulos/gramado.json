@@ -1,0 +1,387 @@
+[
+  {
+    "slug": "nada-aqui-serve",
+    "topic": "gramado",
+    "slotIndex": 0,
+    "title": "Nada, minha filha",
+    "synopsis": "Desce do ônibus no sul com a mala de dois meses de praia e uma jaqueta que não segura nada do frio daqui. Quem lava a roupa da rua inteira guarda uma caixa de peças que ninguém veio buscar, e o que sai dessa caixa não se vende nem se empresta.",
+    "text": "Em Gramado faz frio de verdade, e Renata, uma professora em viagem, chega com roupa de praia. A jaqueta dela é fina. Tudo na mala está molhado da chuva do ônibus.\n\nQuem lava é Neuza. Atende de portas abertas, na esquina da rua. “Isso aqui seca amanhã”, diz ela, e pendura as peças numa vara. “A senhora vai vestir o quê hoje?”\n\nNão tem resposta: trouxe duas camisetas e uma saia. Neuza leva uma caixa marrom para o balcão. Dentro há um suéter, um cachecol e uma luva sem par.\n\n“Gente esquece e não volta buscar”, explica. “Faz três invernos que isso está aqui.” “Quanto custa?” “Nada, minha filha. De repente aparece o dono.”\n\nRenata despe a jaqueta fina e veste o suéter ali mesmo. “Vem tomar um chá depois”, convida Neuza. “Sozinha aqui, congelada, não dá. Depois das seis eu fecho.”\n\nAs meias secam na vara até de noite. Cansa mais chegar com frio do que viajar doze horas.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "roupa",
+        "anchor": true,
+        "definition": "Clothes, everything you wear on your body outside."
+      },
+      {
+        "type": "noun",
+        "word": "jaqueta",
+        "anchor": true,
+        "definition": "Jacket, the short coat you put on outdoors."
+      },
+      {
+        "type": "noun",
+        "word": "suéter",
+        "anchor": true,
+        "definition": "Jumper, the warm woollen top you pull on."
+      },
+      {
+        "type": "noun",
+        "word": "cachecol",
+        "anchor": true,
+        "definition": "Scarf, the long strip you wind round your neck."
+      },
+      {
+        "type": "noun",
+        "word": "luva",
+        "anchor": true,
+        "definition": "Glove, what you put on a cold hand."
+      },
+      {
+        "type": "noun",
+        "word": "meia",
+        "anchor": true,
+        "surface": "meias",
+        "definition": "Sock, the soft thing you wear inside a shoe."
+      },
+      {
+        "type": "verb",
+        "word": "vestir",
+        "definition": "To put clothes on, or to get somebody dressed."
+      },
+      {
+        "type": "verb",
+        "word": "despir",
+        "surface": "despe",
+        "definition": "To take a piece of clothing off your body."
+      },
+      {
+        "type": "verb",
+        "word": "pendurar",
+        "surface": "pendura",
+        "definition": "To hang something up so that it stays there."
+      },
+      {
+        "type": "verb",
+        "word": "levar",
+        "surface": "leva",
+        "definition": "To carry something over to some other place."
+      },
+      {
+        "type": "verb",
+        "word": "convidar",
+        "surface": "convida",
+        "definition": "To ask somebody to come and join you."
+      },
+      {
+        "type": "verb",
+        "word": "cansar",
+        "surface": "Cansa",
+        "definition": "To tire somebody out more than they expected."
+      },
+      {
+        "type": "verb",
+        "word": "vir",
+        "surface": "Vem",
+        "definition": "To come towards the place where you are."
+      },
+      {
+        "type": "verb",
+        "word": "fazer",
+        "surface": "Faz",
+        "definition": "To do or make something, or to mark time passing."
+      },
+      {
+        "type": "adjective",
+        "word": "molhado",
+        "definition": "Wet, with water still soaked right into it."
+      },
+      {
+        "type": "adjective",
+        "word": "seco",
+        "surface": "seca",
+        "definition": "Dry, with no water left in it now."
+      },
+      {
+        "type": "adjective",
+        "word": "fino",
+        "surface": "fina",
+        "definition": "Thin, with little thickness to keep you warm."
+      },
+      {
+        "type": "adjective",
+        "word": "marrom",
+        "definition": "Brown, the colour of cardboard or of earth."
+      },
+      {
+        "type": "adjective",
+        "word": "congelado",
+        "surface": "congelada",
+        "definition": "Frozen, so cold that you cannot warm up."
+      },
+      {
+        "type": "expression",
+        "word": "de repente",
+        "definition": "Suddenly; in Brazil it can also mean maybe."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "uma-lampada-so",
+    "topic": "gramado",
+    "slotIndex": 1,
+    "title": "A fronha gelada",
+    "synopsis": "Ninguém lhe explicou como se passa uma noite de inverno num quarto que não tem nada dentro, e ela chegou do calor há quatro dias. A receita não se compra em lugar nenhum e cabe em três frases ditas entre duas canecas de chá, antes das seis.",
+    "text": "O quarto alugado tem uma lâmpada só, no teto. A cortina é fina e o tapete não chega até a cama. Às seis Renata desce a pé até a lavanderia.\n\nNeuza serve chá numa caneca macia de tanto uso. “Como é que vocês vivem com esse frio?”, pergunta Renata. “A gente veste tudo o que tem”, responde Neuza.\n\n“Pijama por baixo, suéter grosso por cima.” “E o tapete em cima dos pés.” “A senhora mora aqui há muito tempo?”\n\n“Nasci nesta rua”, diz Neuza. “Já pensei em ir embora, mas aqui eu sei onde tudo está.” Renata anota a receita do frio no caderno.\n\nDe volta, acende a luz e abre a cômoda: não há nada dentro. A fronha está gelada. Ela dobra o tapete azul em dois e põe por cima dos pés.\n\nPermanece assim, sem se mexer, até esquentar. Apaga a luz às nove. No escuro a janela amarela deixa passar uma faixa roxa. Ela olha a faixa até dormir, com o nariz vivo de frio.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "lâmpada",
+        "anchor": true,
+        "definition": "Light bulb, the glass ball that gives the light."
+      },
+      {
+        "type": "noun",
+        "word": "cortina",
+        "anchor": true,
+        "definition": "Curtain, the cloth you pull across a window."
+      },
+      {
+        "type": "noun",
+        "word": "tapete",
+        "anchor": true,
+        "definition": "Rug, the piece of cloth lying on the floor."
+      },
+      {
+        "type": "noun",
+        "word": "cômoda",
+        "anchor": true,
+        "definition": "Chest of drawers where clothes are put away."
+      },
+      {
+        "type": "noun",
+        "word": "fronha",
+        "anchor": true,
+        "definition": "Pillowcase, the cloth cover you slip over a pillow."
+      },
+      {
+        "type": "noun",
+        "word": "pijama",
+        "anchor": true,
+        "definition": "Pyjamas, the loose clothes you wear to sleep in."
+      },
+      {
+        "type": "verb",
+        "word": "acender",
+        "surface": "acende",
+        "definition": "To switch a light on, or to light a fire."
+      },
+      {
+        "type": "verb",
+        "word": "apagar",
+        "surface": "Apaga",
+        "definition": "To switch a light off, or to put it out."
+      },
+      {
+        "type": "verb",
+        "word": "morar",
+        "surface": "mora",
+        "definition": "To live in a place, to have your home there."
+      },
+      {
+        "type": "verb",
+        "word": "permanecer",
+        "surface": "Permanece",
+        "definition": "To stay just as you are without moving at all."
+      },
+      {
+        "type": "verb",
+        "word": "viver",
+        "surface": "vivem",
+        "definition": "To live, to get through your days somehow."
+      },
+      {
+        "type": "verb",
+        "word": "pensar",
+        "surface": "pensei",
+        "definition": "To think, turn something over in your head."
+      },
+      {
+        "type": "verb",
+        "word": "alugar",
+        "surface": "alugado",
+        "definition": "To rent a room or a place for money."
+      },
+      {
+        "type": "adjective",
+        "word": "grosso",
+        "definition": "Thick, with plenty of material to keep heat in."
+      },
+      {
+        "type": "adjective",
+        "word": "macio",
+        "surface": "macia",
+        "definition": "Soft, pleasant against your skin when you touch it."
+      },
+      {
+        "type": "adjective",
+        "word": "amarelo",
+        "surface": "amarela",
+        "definition": "Yellow, the colour of a lemon or the sun."
+      },
+      {
+        "type": "adjective",
+        "word": "roxo",
+        "surface": "roxa",
+        "definition": "Purple, the colour between red and dark blue."
+      },
+      {
+        "type": "adjective",
+        "word": "azul",
+        "definition": "Blue, the colour of the sky on a clear day."
+      },
+      {
+        "type": "adjective",
+        "word": "vivo",
+        "surface": "vivo",
+        "definition": "Alive, and feeling everything more sharply than usual."
+      },
+      {
+        "type": "expression",
+        "word": "a pé",
+        "definition": "On foot, walking instead of taking any transport."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "slug": "a-ultima-pagina",
+    "topic": "gramado",
+    "slotIndex": 2,
+    "title": "O desfile na última manhã",
+    "synopsis": "A rua ensaia o desfile de inverno na manhã em que ela vai embora, e ninguém tem pressa de nada. Tem duas horas livres, um caderno quase cheio e uma coisa para dizer que dois meses atrás não teria sabido dizer nem devagar nem com alguém ajudando do lado.",
+    "text": "Na última manhã a rua ensaia o desfile e o barulho começa cedo. Passeia gente de saia comprida. Passa um vestido verde e uma gravata larga.\n\nUm homem de boné dança sozinho na esquina. Renata leva o suéter até a lavanderia de Neuza. “Fica com ele”, diz Neuza, rindo. “Aqui ninguém devolve nada, minha filha.”\n\nRenata olha a saia comprida que passa lá fora. “A senhora escreveu tudo?” “Quase tudo”, responde Renata. “O resto eu já sei de cabeça, que é melhor.” “Eu volto e visito a senhora”, promete ela. “Então volta em junho”, diz Neuza. “Em junho é pior: chove todo dia. Mas volta.” Elas brincam com isso um tempo. Do lado de fora alguém canta desafinado.\n\nUma mulher de sapato colorido pula a poça. Renata sorri e filma dez segundos da rua. Escreve duas linhas na última página.\n\nOutra passa de tênis vermelhos com um balão que voa. No primeiro dia ela apontava; agora pede e agradece. Deseja voltar em junho, e ama esta rua como quem já esteve aqui.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "sapato",
+        "anchor": true,
+        "definition": "Shoe, the closed one you wear on the street."
+      },
+      {
+        "type": "noun",
+        "word": "tênis",
+        "anchor": true,
+        "definition": "Trainers, the soft shoes you walk or run in."
+      },
+      {
+        "type": "noun",
+        "word": "boné",
+        "anchor": true,
+        "definition": "Cap with a peak that keeps the sun off."
+      },
+      {
+        "type": "noun",
+        "word": "saia",
+        "anchor": true,
+        "definition": "Skirt, the piece of clothing hanging from the waist."
+      },
+      {
+        "type": "noun",
+        "word": "vestido",
+        "anchor": true,
+        "definition": "Dress, one piece covering body and legs together."
+      },
+      {
+        "type": "noun",
+        "word": "gravata",
+        "anchor": true,
+        "definition": "Tie, the strip of cloth knotted at the neck."
+      },
+      {
+        "type": "verb",
+        "word": "rir",
+        "surface": "rindo",
+        "definition": "To laugh out loud at something you find funny."
+      },
+      {
+        "type": "verb",
+        "word": "cantar",
+        "surface": "canta",
+        "definition": "To sing, make music with your own voice."
+      },
+      {
+        "type": "verb",
+        "word": "dançar",
+        "surface": "dança",
+        "definition": "To dance, move your body along with the music."
+      },
+      {
+        "type": "verb",
+        "word": "brincar",
+        "surface": "brincam",
+        "definition": "To play, or to joke about something with somebody."
+      },
+      {
+        "type": "verb",
+        "word": "visitar",
+        "surface": "visito",
+        "definition": "To go and see somebody where they live."
+      },
+      {
+        "type": "verb",
+        "word": "desejar",
+        "surface": "Deseja",
+        "definition": "To want something enough to say it out loud."
+      },
+      {
+        "type": "verb",
+        "word": "passear",
+        "surface": "Passeia",
+        "definition": "To walk about with no hurry and no errand."
+      },
+      {
+        "type": "verb",
+        "word": "pular",
+        "surface": "pula",
+        "definition": "To jump over something with both feet together."
+      },
+      {
+        "type": "verb",
+        "word": "filmar",
+        "surface": "filma",
+        "definition": "To film something so you can watch it later."
+      },
+      {
+        "type": "verb",
+        "word": "voar",
+        "surface": "voa",
+        "definition": "To fly through the air without touching the ground."
+      },
+      {
+        "type": "verb",
+        "word": "amar",
+        "surface": "ama",
+        "definition": "To love a person or a place very much."
+      },
+      {
+        "type": "adjective",
+        "word": "colorido",
+        "definition": "Colourful, with several bright colours all at once."
+      },
+      {
+        "type": "adjective",
+        "word": "verde",
+        "definition": "Green, the colour of grass and of leaves."
+      },
+      {
+        "type": "adjective",
+        "word": "vermelho",
+        "surface": "vermelhos",
+        "definition": "Red, the colour of blood or of a tomato."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

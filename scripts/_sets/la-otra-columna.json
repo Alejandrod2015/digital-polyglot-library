@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "pizarrón,lapicera,medialuna,nivel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pizarrón",
+          "answer": "a blackboard",
+          "options": [
+            "a blackboard",
+            "a pen",
+            "a croissant",
+            "a level"
+          ]
+        },
+        {
+          "word": "lapicera",
+          "answer": "a pen",
+          "options": [
+            "a blackboard",
+            "a pen",
+            "a croissant",
+            "a level"
+          ]
+        },
+        {
+          "word": "medialuna",
+          "answer": "a croissant",
+          "options": [
+            "a blackboard",
+            "a pen",
+            "a croissant",
+            "a level"
+          ]
+        },
+        {
+          "word": "nivel",
+          "answer": "a level",
+          "options": [
+            "a blackboard",
+            "a pen",
+            "a croissant",
+            "a level"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "profesora",
+    "sentence": "Era la [[profesora]] de los cuentos en un instituto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "teacher",
+      "options": [
+        "teacher",
+        "director",
+        "librarian",
+        "secretary"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Era la profesora de los cuentos en un instituto.",
+        "targetWord": "profesora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alumno",
+    "sentence": "Sus [[alumnos]] extranjeros no aprendían con listas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "student",
+      "options": [
+        "student",
+        "tourist",
+        "coworker",
+        "customer"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Sus alumnos extranjeros no aprendían con listas.",
+        "targetWord": "alumnos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aula",
+    "sentence": "En un [[aula]] que olía a café con medialunas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "classroom",
+      "options": [
+        "classroom",
+        "office",
+        "kitchen",
+        "hallway"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "En un aula que olía a café con medialunas.",
+        "targetWord": "aula",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "repaso",
+    "sentence": "Antes del examen, la maestra hizo un _____ de todo el tema.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repaso",
+      "options": [
+        "repaso",
+        "recreo",
+        "regalo",
+        "paseo"
+      ],
+      "translation": "Before the exam, the teacher did a _____ of the whole topic.",
+      "optionTranslations": [
+        "review",
+        "break",
+        "gift",
+        "walk"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Antes del examen, la maestra hizo un repaso de todo el tema.",
+        "targetWord": "repaso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rendir",
+    "sentence": "Tu grupo [[rinde]] menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to perform",
+      "options": [
+        "to perform",
+        "to attend",
+        "to spend",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Tu grupo rinde menos.",
+        "targetWord": "rinde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "laburo",
+    "sentence": "Mi grupo llega después del [[laburo]] y no falta nunca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "work",
+      "options": [
+        "work",
+        "school",
+        "lunch",
+        "practice"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Mi grupo llega después del laburo y no falta nunca.",
+        "targetWord": "laburo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "promedio",
+    "sentence": "Sumó las notas de todos y sacó el _____ de la clase.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "promedio",
+      "options": [
+        "promedio",
+        "horario",
+        "recibo",
+        "folleto"
+      ],
+      "translation": "He added up everyone's marks and worked out the class _____.",
+      "optionTranslations": [
+        "average",
+        "timetable",
+        "receipt",
+        "leaflet"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Sumó las notas de todos y sacó el promedio de la clase.",
+        "targetWord": "promedio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar la vista",
+    "sentence": "Los viernes hay módulo de repaso, contestó él, sin [[levantar la vista]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look up",
+      "options": [
+        "to look up",
+        "to stand up",
+        "to speak up",
+        "to slow down"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Los viernes hay módulo de repaso, contestó él, sin levantar la vista.",
+        "targetWord": "levantar la vista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "peleó",
+    "sentence": "No estaba de acuerdo con el precio y _____ con el vendedor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "peleó",
+      "options": [
+        "peleó",
+        "bailó",
+        "cenó",
+        "brindó"
+      ],
+      "translation": "He did not agree with the price and _____ with the seller.",
+      "optionTranslations": [
+        "fought",
+        "danced",
+        "had dinner",
+        "made a toast"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "No estaba de acuerdo con el precio y peleó con el vendedor.",
+        "targetWord": "peleó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "subte",
+    "sentence": "Los lunes bajaba del [[subte]] con el promedio de cada grupo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "subway",
+      "options": [
+        "subway",
+        "bus",
+        "ferry",
+        "taxi"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Los lunes bajaba del subte con el promedio de cada grupo.",
+        "targetWord": "subte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "extranjero",
+    "sentence": "Él es _____: nació en otro país y habla con acento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "extranjero",
+      "options": [
+        "extranjero",
+        "soltero",
+        "famoso",
+        "simpático"
+      ],
+      "translation": "He is _____: he was born in another country and speaks with an accent.",
+      "optionTranslations": [
+        "foreign",
+        "single",
+        "famous",
+        "friendly"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Él es extranjero: nació en otro país y habla con acento.",
+        "targetWord": "extranjero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "dictar",
+    "sentence": "Aprendían con historias que [[dictaba]] despacio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to read aloud",
+      "options": [
+        "to read aloud",
+        "to write down",
+        "to translate",
+        "to make up"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Aprendían con historias que dictaba despacio.",
+        "targetWord": "dictaba",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "tildar",
+    "sentence": "Con el promedio de cada grupo [[tildado]] en rojo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tick",
+      "options": [
+        "to tick",
+        "to underline",
+        "to cross out",
+        "to circle"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Con el promedio de cada grupo tildado en rojo.",
+        "targetWord": "tildado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "adelante",
+    "sentence": "Estudiaba tanto que siempre iba _____ del resto de la clase.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "adelante",
+      "options": [
+        "adelante",
+        "atrás",
+        "cerca",
+        "abajo"
+      ],
+      "translation": "She studied so much that she was always _____ of the rest of the class.",
+      "optionTranslations": [
+        "ahead",
+        "behind",
+        "close",
+        "below"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Estudiaba tanto que siempre iba adelante del resto de la clase.",
+        "targetWord": "adelante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "acá",
+    "sentence": "[[Acá]] se paga con niveles, no con cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "here",
+      "options": [
+        "here",
+        "there",
+        "today",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Acá se paga con niveles, no con cariño.",
+        "targetWord": "Acá",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "tragarse el orgullo",
+    "sentence": "Se [[tragó el orgullo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to swallow your pride",
+      "options": [
+        "to swallow your pride",
+        "to lose your temper",
+        "to hide your fear",
+        "to break your promise"
+      ],
+      "audioClip": {
+        "storySlug": "la-otra-columna",
+        "storySource": "user",
+        "sentence": "Se tragó el orgullo.",
+        "targetWord": "tragó el orgullo",
+        "language": "spanish"
+      }
+    }
+  }
+]

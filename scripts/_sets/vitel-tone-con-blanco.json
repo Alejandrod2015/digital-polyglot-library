@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "rotisería,botella,anillo,nene",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "rotisería",
+          "answer": "deli",
+          "options": [
+            "deli",
+            "bottle",
+            "ring",
+            "kid"
+          ]
+        },
+        {
+          "word": "botella",
+          "answer": "bottle",
+          "options": [
+            "deli",
+            "bottle",
+            "ring",
+            "kid"
+          ]
+        },
+        {
+          "word": "anillo",
+          "answer": "ring",
+          "options": [
+            "deli",
+            "bottle",
+            "ring",
+            "kid"
+          ]
+        },
+        {
+          "word": "nene",
+          "answer": "kid",
+          "options": [
+            "deli",
+            "bottle",
+            "ring",
+            "kid"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vitel toné",
+    "sentence": "Acá el [[vitel toné]] se lleva con blanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold veal in tuna sauce",
+      "options": [
+        "cold veal in tuna sauce",
+        "roast chicken with potatoes",
+        "beef stew in red wine",
+        "fried fish with lemon"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Acá el vitel toné se lleva con blanco.",
+        "targetWord": "vitel toné",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grave",
+    "sentence": "El problema era tan _____ que llamaron a la policía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grave",
+      "options": [
+        "grave",
+        "leve",
+        "simple",
+        "breve"
+      ],
+      "translation": "The problem was so _____ that they called the police.",
+      "optionTranslations": [
+        "serious",
+        "minor",
+        "simple",
+        "brief"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "El problema era tan grave que llamaron a la policía.",
+        "targetWord": "grave",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "novia",
+    "sentence": "Venía a conocer a la familia de la [[novia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "girlfriend",
+      "options": [
+        "girlfriend",
+        "cousin",
+        "neighbour",
+        "colleague"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Venía a conocer a la familia de la novia.",
+        "targetWord": "novia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lustrados",
+    "sentence": "Para la boda llevaba los zapatos _____, brillantes como un espejo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lustrados",
+      "options": [
+        "lustrados",
+        "gastados",
+        "rayados",
+        "manchados"
+      ],
+      "translation": "For the wedding he wore his shoes _____, shiny as a mirror.",
+      "optionTranslations": [
+        "polished",
+        "worn out",
+        "scratched",
+        "stained"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Para la boda llevaba los zapatos lustrados, brillantes como un espejo.",
+        "targetWord": "lustrados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se agradece",
+    "sentence": "Lo guardó abajo. Pero [[se agradece]], nene.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "much appreciated",
+      "options": [
+        "much appreciated",
+        "never mind",
+        "not needed",
+        "what a shame"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Lo guardó abajo. Pero se agradece, nene.",
+        "targetWord": "se agradece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "entrevista",
+    "sentence": "Llegó nervioso a la _____ y respondió todas las preguntas del jefe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entrevista",
+      "options": [
+        "entrevista",
+        "mudanza",
+        "carrera",
+        "cosecha"
+      ],
+      "translation": "He arrived nervous at the _____ and answered all the boss's questions.",
+      "optionTranslations": [
+        "interview",
+        "house move",
+        "race",
+        "harvest"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Llegó nervioso a la entrevista y respondió todas las preguntas del jefe.",
+        "targetWord": "entrevista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fijarse",
+    "sentence": "Él [[se fijó]] en todo: el anillo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to notice",
+      "options": [
+        "to notice",
+        "to insist",
+        "to complain",
+        "to rely"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Él se fijó en todo: el anillo.",
+        "targetWord": "se fijó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de allá",
+    "sentence": "Traje un vino [[de allá]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from back home",
+      "options": [
+        "from back home",
+        "from around here",
+        "from the market",
+        "from last year"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Traje un vino de allá.",
+        "targetWord": "de allá",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meter la pata",
+    "sentence": "[[Meter la pata]] no fue grave.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make a blunder",
+      "options": [
+        "to make a blunder",
+        "to arrive late",
+        "to trip on a step",
+        "to lose your nerve"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Meter la pata no fue grave.",
+        "targetWord": "Meter la pata",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muchacho",
+    "sentence": "Miró la botella antes que al [[muchacho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young man",
+      "options": [
+        "young man",
+        "old man",
+        "little boy",
+        "waiter"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Miró la botella antes que al muchacho.",
+        "targetWord": "muchacho",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer girar",
+    "sentence": "El anillo que ella [[hacía girar]] cuando dudaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to spin",
+      "options": [
+        "to spin",
+        "to polish",
+        "to take off",
+        "to squeeze"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "El anillo que ella hacía girar cuando dudaba.",
+        "targetWord": "hacía girar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "de los buenos",
+    "sentence": "Para la cena compró un vino _____, caro y premiado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "de los buenos",
+      "options": [
+        "de los buenos",
+        "de los baratos",
+        "de los malos",
+        "de los flojos"
+      ],
+      "translation": "For dinner he bought a _____ wine, expensive and award-winning.",
+      "optionTranslations": [
+        "really good",
+        "cheap",
+        "bad",
+        "weak"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Para la cena compró un vino de los buenos, caro y premiado.",
+        "targetWord": "de los buenos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobre todo",
+    "sentence": "La familia de la novia era [[sobre todo]] la dueña.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "above all",
+      "options": [
+        "above all",
+        "at first",
+        "as usual",
+        "hardly ever"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "La familia de la novia era sobre todo la dueña.",
+        "targetWord": "sobre todo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lavar los platos",
+    "sentence": "Después de la cena, él ayudó a _____ con agua y jabón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lavar los platos",
+      "options": [
+        "lavar los platos",
+        "secar los vasos",
+        "barrer los pisos",
+        "ordenar los libros"
+      ],
+      "translation": "After dinner, he helped _____ with soap and water.",
+      "optionTranslations": [
+        "wash the dishes",
+        "dry the glasses",
+        "sweep the floors",
+        "tidy the books"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Después de la cena, él ayudó a lavar los platos con agua y jabón.",
+        "targetWord": "lavar los platos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como nadie",
+    "sentence": "Sé lavar los platos [[como nadie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "better than anyone",
+      "options": [
+        "better than anyone",
+        "just like everyone",
+        "when nobody looks",
+        "without any help"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "Sé lavar los platos como nadie.",
+        "targetWord": "como nadie",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en la puerta",
+    "sentence": "El sábado vengo a ayudar, prometió [[en la puerta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the door",
+      "options": [
+        "at the door",
+        "at the table",
+        "on the train",
+        "in the kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "vitel-tone-con-blanco",
+        "storySource": "user",
+        "sentence": "El sábado vengo a ayudar, prometió en la puerta.",
+        "targetWord": "en la puerta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
