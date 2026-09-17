@@ -39,10 +39,12 @@ import { PrismaClient } from "../src/generated/prisma";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
+import { isWhQuestion } from "../src/lib/whQuestions";
 
 const prisma = new PrismaClient();
 let VOICE = "";
 let FRAME: Framing;
+let LANGUAGE = "";
 const MODEL = "eleven_multilingual_v2"; // frase completa: v2, no turbo (ver _genPracticeClips.ts)
 const CACHE_VERSION = "fb1";
 const MAX_TRIES = 6;
@@ -71,7 +73,13 @@ function resolveFraming(language: string | null | undefined): Framing {
   if (!f) throw new Error(`idioma no soportado aun: ${language} (añade su encuadre a FRAMING)`);
   return f;
 }
-const isQuestion = (s: string) => s.trim().endsWith("?");
+// Una wh-question ("Où est...?", "Combien coûte...?") termina cayendo por
+// naturaleza; solo una pregunta de sí/no exige la subida final del gate F0
+// (ver src/lib/whQuestions.ts, compartido con _genPracticeClips.ts). Sin esto
+// "Où est la bibliothèque près d'ici?" (la-chaise-du-jeudi) agotaba los 6
+// intentos del gate: no hay entonación que la haga subir sin sonar rara,
+// porque no debe subir.
+const isQuestion = (s: string) => s.trim().endsWith("?") && !isWhQuestion(LANGUAGE, s);
 const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
 
 function ff(args: string[]): Promise<void> {
@@ -167,6 +175,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   const apiKey = process.env.ELEVENLABS_API_KEY; if (!apiKey) throw new Error("no ELEVENLABS_API_KEY");
   VOICE = voice;
   FRAME = framing;
+  LANGUAGE = story.journey?.language ?? "";
   console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} | ${targets.length} fill_blank`);
   const outDir = mkdtempSync(join(tmpdir(), "fbout-"));
   let ok = 0;

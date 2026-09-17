@@ -38,6 +38,7 @@ import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage
 import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { F0GateUnavailable, preflightF0Gate, runF0Gate } from "./_f0gateClient"; // gate F0 (_f0gate.py), cerrado
+import { WH_QUESTION_PATTERNS } from "../src/lib/whQuestions";
 
 const prisma = new PrismaClient();
 // Voice is resolved per story (the story's narrator); see practiceVoice.ts.
@@ -64,7 +65,7 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     prevQ: "Él tiene una duda y pregunta:",
     nextQ: "Ella le responde enseguida.",
     whisper: "es", scribe: "spa",
-    wh: /(qué|quién|quiénes|cómo|cuándo|dónde|adónde|cuál|cuáles|cuánto|cuánta|cuántos|cuántas)/i,
+    wh: WH_QUESTION_PATTERNS.spanish,
   },
   de: {
     prev: "Hör dir diesen Satz an.",
@@ -72,9 +73,7 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     prevQ: "Er hat eine Frage und fragt:",
     nextQ: "Sie antwortet ihm sofort.",
     whisper: "de", scribe: "deu",
-    // W-Fragen terminan cayendo por naturaleza (como las wh españolas);
-    // solo las ja/nein-Fragen exigen subida final.
-    wh: /(\bwer\b|\bwen\b|\bwem\b|\bwessen\b|\bwas\b|\bwie\b|\bwieso\b|\bweshalb\b|\bwarum\b|\bwann\b|\bwo\b|\bwohin\b|\bwoher\b|\bwelch)/i,
+    wh: WH_QUESTION_PATTERNS.german,
   },
   // Portugués de Brasil (2026-08-12, journey Traveler PT-BR A0). El framing va
   // en el idioma de la historia a propósito: es lo que le da a ElevenLabs el
@@ -86,9 +85,7 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     prevQ: "Ele tem uma dúvida e pergunta:",
     nextQ: "Ela responde na hora.",
     whisper: "pt", scribe: "por",
-    // Como en español y alemán, las interrogativas con partícula caen solas;
-    // solo las de sí/no exigen subida final.
-    wh: /(\bo que\b|\bque\b|\bquem\b|\bcomo\b|\bquando\b|\bonde\b|\baonde\b|\bqual\b|\bquais\b|\bquanto\b|\bquanta\b|\bquantos\b|\bquantas\b|\bpor que\b)/i,
+    wh: WH_QUESTION_PATTERNS.portuguese,
   },
   // Italiano (2026-08-13, journey Traveler IT A0). Mismo criterio que arriba:
   // el framing va en italiano para que ElevenLabs no arrastre el acento de
@@ -99,8 +96,7 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     prevQ: "Lui ha un dubbio e domanda:",
     nextQ: "Lei risponde subito.",
     whisper: "it", scribe: "ita",
-    // Las interrogativas con partícula caen solas; solo las de sí/no suben.
-    wh: /(\bche cosa\b|\bche\b|\bchi\b|\bcome\b|\bquando\b|\bdove\b|\bquale\b|\bquali\b|\bquanto\b|\bquanta\b|\bquanti\b|\bquante\b|\bperché\b)/i,
+    wh: WH_QUESTION_PATTERNS.italian,
   },
   // Francés (2026-09-16, Friends FR A2 Nantes). Mismo criterio que arriba: el
   // framing va en francés para que ElevenLabs no arrastre el acento de otra

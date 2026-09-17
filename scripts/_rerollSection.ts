@@ -42,6 +42,7 @@ import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { coerceFragments, replaceSectionAndRebuild } from "../src/lib/audioEditorSections";
 import { checkMasterCoverage } from "./coverageWhisperCheck";
 import { boundariesOnVoice, measureMaster } from "../src/lib/audioSilenceBoundaries";
+import { rerollFragmentSource } from "../src/lib/rerollFragmentSource";
 
 const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
@@ -163,18 +164,18 @@ async function main() {
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) throw new Error("ELEVENLABS_API_KEY missing");
 
-  // El fragmento 0 ES el título, así que su fuente de verdad es
-  // `story.title`, no el texto congelado en `audioFragments`. Si el título
-  // cambió después de renderizar, el fragmento guardado es el viejo y
-  // re-tirarlo tal cual volvería a narrar el título anterior. Al pasar
-  // `newText` en el empalme, el fragmento queda además sincronizado.
-  const storedText = String(frag.text).trim();
-  const source = index === 0 ? String(story.title).trim() : storedText;
-  const retitled = index === 0 && source !== storedText;
+  // La fuente de verdad NO es el texto congelado en `audioFragments`: el
+  // fragmento 0 sale de `story.title` y los del cuerpo del párrafo de
+  // `story.text` (ver src/lib/rerollFragmentSource.ts, que tira si no casa).
+  // Si cambió después de renderizar, se narra lo nuevo y se pasa `newText` al
+  // empalme para que el fragmento quede sincronizado.
+  const { source, stored: storedText, changed: retitled } = rerollFragmentSource({
+    title: story.title, text: story.text, fragments: frags, index,
+  });
   // Title fragment: a bare noun phrase reads better with a terminal period.
   const raw = source;
   const ttsText = index === 0 && !/[.!?…:]$/.test(raw) ? `${raw}.` : raw;
-  if (retitled) console.log(`título    CAMBIÓ: "${storedText}" -> "${source}"`);
+  if (retitled) console.log(`${index === 0 ? "título" : "párrafo"}   CAMBIÓ: "${storedText}" -> "${source}"`);
   const spanSec = Number(frag.endSec) - Number(frag.startSec);
 
   console.log(`story    "${story.title}" (${slug})`);

@@ -2946,21 +2946,21 @@
     }
   },
   "cmtwz1iop000l32jybeo2jg4x#circles-and-introductions": {
-    "cerrado": "2026-09-12T08:41:18.527Z",
-    "hash": "fae2ecdbc206372b",
+    "cerrado": "2026-09-13T08:20:34.248Z",
+    "hash": "04e6852e94729f22",
     "historias": [
       "circles-and-introductions#0 le-nom-du-cercle",
       "circles-and-introductions#1 la-table-loin",
       "circles-and-introductions#2 le-mercredi-ouvert"
     ],
     "checks": [
-      "plan del tema completo (registro \"cierre social optimista, con autonomia visible y pertenencia tranquila\", espina \"Amelie termina dentro del circulo, pero ya no entra por la voz de Marc.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"entrada social concreta, presentaciones breves, pequenas renuncias y un cierre mas abierto que celebratorio\", espina \"Amélie quiere entrar en un circulo nuevo sin usar a Marc como voz prestada ni quedarse pegada a una sola etiqueta.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"répond\" 38%)",
       "arranques de parrafo variados (mas repetido \"baptiste\", 19%)",
-      "densidad 7.2 palabras por oracion (techo 11 en a1)",
+      "densidad 7.1 palabras por oracion (techo 11 en a1)",
       "seguidilla 18/49 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
@@ -2970,7 +2970,7 @@
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.95 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -2979,53 +2979,53 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "cierre social optimista, con autonomia visible y pertenencia tranquila",
-      "espina": "Amelie termina dentro del circulo, pero ya no entra por la voz de Marc.",
-      "recursos": "presentacion, mesa lejos, calendario abierto, pequenas perdidas que ganan autonomia",
+      "registro": "entrada social concreta, presentaciones breves, pequenas renuncias y un cierre mas abierto que celebratorio",
+      "espina": "Amélie quiere entrar en un circulo nuevo sin usar a Marc como voz prestada ni quedarse pegada a una sola etiqueta.",
+      "recursos": "A1 narrado con presente, parce que, mais, quand, pouvoir, vouloir, il faut, preguntas cortas, presentaciones con etre para variar la forma, habla citada en banda 25-35%, una ancla sensorial por historia y vocabulario concreto de circulos, ropa, objetos y pequenos gestos sociales.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "presentarse en el circulo con una frase propia",
-          "impide": "Marc trae una frase demasiado perfecta",
-          "cuesta": "pierde la presentacion brillante",
-          "cambia": "usa una frase pequena y verdadera",
-          "emocion": "voz pequena pero sostenida ante todos"
+          "quiere": "Amélie quiere presentarse en un cercle de quartier sin sonar como una ficha.",
+          "impide": "Baptiste pide una presentacion corta y Marc esta listo para completarla por ella.",
+          "cuesta": "Pierde la presentacion perfecta que Marc le ofrece.",
+          "cambia": "Elige decir una frase simple y propia, aunque sea menos brillante.",
+          "emocion": "La luz del café cae sobre sa manche y ella mira la chaise libre antes de hablar."
         },
         {
           "slot": "2",
-          "quiere": "sentarse lejos de Marc en una comida",
-          "impide": "la silla familiar no esta libre",
-          "cuesta": "pierde la place voisine",
-          "cambia": "saluda y escucha por su cuenta",
-          "emocion": "mano apretada, luego calma con el primer bonjour"
+          "quiere": "Amélie quiere sentarse con dos personas nuevas sin quedar atada a Marc.",
+          "impide": "La mesa conocida esta llena y el asiento libre queda lejos de el.",
+          "cuesta": "Pierde el refugio de la place junto a Marc.",
+          "cambia": "Acepta una place separada y conserva un saludo claro.",
+          "emocion": "Aprieta sa bague, cuenta las tasses y suelta una respiracion pequena."
         },
         {
           "slot": "3",
-          "quiere": "aceptar el grupo sin aceptar todos los planes",
-          "impide": "el calendario se llena rapido",
-          "cuesta": "pierde el si facil",
-          "cambia": "propone miercoles como limite propio",
-          "emocion": "espera la respuesta del grupo sin retirar su limite"
+          "quiere": "Amélie quiere invitar al grupo a un plan pequeno.",
+          "impide": "El cercle propone otro horario y ella teme parecer dificil.",
+          "cuesta": "Pierde la idea de que entrar significa decir siempre que si.",
+          "cambia": "Propone una alternativa concreta y espera la respuesta sin corregirse.",
+          "emocion": "Guarda la tarjeta, mira la ombre de la porte y deja la frase en la mesa."
         }
       ]
     }
   },
   "cmtwz1iop000l32jybeo2jg4x#group-notes-and-plans": {
-    "cerrado": "2026-09-12T08:30:01.055Z",
-    "hash": "c3a6630bdd07ff50",
+    "cerrado": "2026-09-13T07:58:37.437Z",
+    "hash": "6a0c245f4d085d51",
     "historias": [
       "group-notes-and-plans#0 le-papier-bleu",
       "group-notes-and-plans#1 le-dossier-gros",
       "group-notes-and-plans#2 la-ligne-corrigee"
     ],
     "checks": [
-      "plan del tema completo (registro \"social, cercano y ligero, con pequenos roces de autonomia dentro del grupo\", espina \"Amelie aprende a hablar al grupo con su propia voz, sin que Marc ordene sus relaciones por ella.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"practico y contenido, con papeles, mostradores y ayuda que Amélie aprende a aceptar solo cuando la pide\", espina \"Amélie quiere entrar en un circulo nuevo de Paris sin depender de Marc para entender cada paso practico.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dit\" 25%)",
       "arranques de parrafo variados (mas repetido \"amélie\", 47%)",
-      "densidad 7.7 palabras por oracion (techo 11 en a1)",
+      "densidad 7.8 palabras por oracion (techo 11 en a1)",
       "seguidilla 21/50 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
@@ -3035,7 +3035,7 @@
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 52/61 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: group-notes-and-plans (Marc, Amélie)"
@@ -3044,33 +3044,33 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "social, cercano y ligero, con pequenos roces de autonomia dentro del grupo",
-      "espina": "Amelie aprende a hablar al grupo con su propia voz, sin que Marc ordene sus relaciones por ella.",
-      "recursos": "dialogo breve, objetos concretos de portada, frases A1, giro social pequeno al final",
+      "registro": "practico y contenido, con papeles, mostradores y ayuda que Amélie aprende a aceptar solo cuando la pide",
+      "espina": "Amélie quiere entrar en un circulo nuevo de Paris sin depender de Marc para entender cada paso practico.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, il faut, pouvoir, vouloir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario administrativo usado como accion.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "mandar una nota azul para organizar un cumpleanos sorpresa",
-          "impide": "Marc intenta corregir cada frase para ayudar",
-          "cuesta": "pierde la comodidad de dejar que Marc hable por ella",
-          "cambia": "envia una frase simple y propia",
-          "emocion": "nervios visibles en la respiracion y alivio cuando Marc se calla"
+          "quiere": "Amélie quiere confirmar sola una cita municipal para demostrar que puede manejar el tramite sin Marc.",
+          "impide": "El formulario pide un justificatif y Amélie no entiende que documento sirve.",
+          "cuesta": "Pierde la comodidad de dejar que Marc traduzca y acepta quedar como principiante delante de Nadine.",
+          "cambia": "Pregunta ella misma y obtiene una respuesta clara a su nombre.",
+          "emocion": "Siente verguenza porque Marc la mira con ganas de ayudar; baja el movil, respira y pregunta ella."
         },
         {
           "slot": "2",
-          "quiere": "convertir un dossier enorme de planes en una invitacion calida",
-          "impide": "Nadine y Marc lo hacen demasiado serio",
-          "cuesta": "renuncia a controlar todos los detalles del plan",
-          "cambia": "elige solo lo necesario y deja espacio a la amistad",
-          "emocion": "se siente pequena ante la lista, luego se rie al cerrarla"
+          "quiere": "Amélie quiere llevar el dossier correcto para no retrasar el plan de la tarde.",
+          "impide": "Marc anade papeles de mas y Nadine cambia la hora de la cita.",
+          "cuesta": "Pierde una caminata que queria hacer con Marc junto al canal.",
+          "cambia": "Aprende a elegir lo necesario y deja fuera un papel inutil aunque Marc insista.",
+          "emocion": "Se enfada porque la ayuda de Marc la hace sentir pequena; alinea los papeles y le dice que espere."
         },
         {
           "slot": "3",
-          "quiere": "corregir una linea de invitacion para incluir a Camille",
-          "impide": "Marc propone volver a escribirlo todo y retrasar el envio",
-          "cuesta": "acepta mandar una invitacion imperfecta esa noche",
-          "cambia": "elige una palabra mas generosa y firma ella",
-          "emocion": "miedo de equivocarse, sostenido por un gesto firme con el stylo noir"
+          "quiere": "Amélie quiere salir del guichet con una respuesta simple y volver tranquila.",
+          "impide": "El agente encuentra un error minimo en la direccion y Marc propone volver otro dia.",
+          "cuesta": "Pierde el tren comodo y paga mas por terminar el tramite ella misma.",
+          "cambia": "Corrige la linea, firma y acepta el coste de terminar sin esconderse.",
+          "emocion": "Le tiembla la mano al escribir porque teme fallar otra vez; mira a Marc, sonríe poco y corrige la linea."
         }
       ]
     },
@@ -3079,16 +3079,16 @@
     ]
   },
   "cmtwz1iop000l32jybeo2jg4x#hosting-and-care": {
-    "cerrado": "2026-09-12T08:32:05.508Z",
-    "hash": "5e7d0cf10ad9ad49",
+    "cerrado": "2026-09-13T08:16:33.626Z",
+    "hash": "cd9f1b4521bac8be",
     "historias": [
       "hosting-and-care#0 chez-camille",
       "hosting-and-care#1 la-tasse-prete",
       "hosting-and-care#2 la-clef-dedans"
     ],
     "checks": [
-      "plan del tema completo (registro \"hospitalidad amistosa, con humor suave y cuidado practico\", espina \"Amelie aprende a aceptar cuidado de una amiga sin convertir cada gesto en una deuda.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"intimo y practico, con incomodidad de sofa cama y bromas pequenas para no decir gracias demasiado pronto\", espina \"Amélie quiere aceptar un lugar en la vida de Camille en Paris sin convertirse en una invitada que molesta.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"répond\" 36%)",
@@ -3103,7 +3103,7 @@
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.16 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 51/61 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: hosting-and-care (Camille, Amélie)"
@@ -3112,33 +3112,33 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "hospitalidad amistosa, con humor suave y cuidado practico",
-      "espina": "Amelie aprende a aceptar cuidado de una amiga sin convertir cada gesto en una deuda.",
-      "recursos": "casa como espacio social, objetos de portada, dialogo corto, tension de gratitud y limite",
+      "registro": "intimo y practico, con incomodidad de sofa cama y bromas pequenas para no decir gracias demasiado pronto",
+      "espina": "Amélie quiere aceptar un lugar en la vida de Camille en Paris sin convertirse en una invitada que molesta.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de casa usado como situacion, no como inventario.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "aceptar quedarse en casa de Camille antes de un plan de grupo",
-          "impide": "cada detalle preparado le parece demasiado",
-          "cuesta": "deja de esconder la incomodidad con bromas",
-          "cambia": "pide solo la clef y acepta el resto",
-          "emocion": "vergüenza en la mano que aprieta la serviette, alivio cuando recibe la clef"
+          "quiere": "Amélie quiere aceptar dormir en casa de Camille para no depender del sofa de Marc.",
+          "impide": "Camille prepara demasiadas cosas y Amélie siente que cada gesto aumenta la deuda.",
+          "cuesta": "Pierde la comodidad de decir que no y pagar un hotel; acepta una ayuda concreta que no controla.",
+          "cambia": "Nombra una sola necesidad, la llave, y acepta el resto como cuidado adulto.",
+          "emocion": "Se le aprieta el pecho porque teme molestar; dobla la servilleta, mira la llave y dice gracias sin hacer chiste."
         },
         {
           "slot": "2",
-          "quiere": "ayudar en la cocina para no sentirse invitada pasiva",
-          "impide": "Camille y Marc ya prepararon todo",
-          "cuesta": "renuncia a demostrar utilidad todo el tiempo",
-          "cambia": "elige una tarea pequena y propia: preparar el cafe",
-          "emocion": "inutilidad junto a la taza, luego orgullo pequeno al servir tres tasses"
+          "quiere": "Amélie quiere ayudar en el piso de Camille para equilibrar la hospitalidad.",
+          "impide": "Marc y Camille le dicen que descanse, y cada tarea que intenta ya esta hecha.",
+          "cuesta": "Pierde la fantasia de pagar la ayuda con utilidad inmediata; se queda un rato sin papel claro.",
+          "cambia": "Encuentra una tarea pequena, preparar el cafe de la manana, y la hace sin pedir permiso tres veces.",
+          "emocion": "Se siente inutil porque todos la cuidan; deja la taza quieta, respira y pregunta una vez donde esta el cafe."
         },
         {
           "slot": "3",
-          "quiere": "salir limpia de casa de Camille hacia el almuerzo del grupo",
-          "impide": "deja la clef dentro",
-          "cuesta": "pierde el plan facil de la manana",
-          "cambia": "pide perdon una vez y se queda a comer",
-          "emocion": "culpa contenida, reparada por espera compartida en el banc"
+          "quiere": "Amélie quiere salir de la casa de Camille dejando una buena impresion.",
+          "impide": "Olvida la llave dentro y el grupo debe cambiar el plan de la manana.",
+          "cuesta": "Pierde la salida limpia que queria y obliga a Marc a llegar tarde a una comida.",
+          "cambia": "Acepta disculparse sin exagerar, espera al cerrajero con Camille y se queda a comer despues.",
+          "emocion": "Tiene calor de verguenza porque el error confirma su miedo; aprieta el abrigo, luego abre la mano y se disculpa claro."
         }
       ]
     },
@@ -3279,16 +3279,16 @@
     }
   },
   "cmtwz1iop000l32jybeo2jg4x#invites-and-boundaries": {
-    "cerrado": "2026-09-12T08:38:31.674Z",
-    "hash": "edb324ae0a17bda3",
+    "cerrado": "2026-09-13T08:17:20.820Z",
+    "hash": "be40c9bd83bc881f",
     "historias": [
       "invites-and-boundaries#0 une-fete-courte",
       "invites-and-boundaries#1 un-the-possible",
       "invites-and-boundaries#2 le-pantalon-noir"
     ],
     "checks": [
-      "plan del tema completo (registro \"invitaciones sociales con limites claros y una tension romantica ligera\", espina \"Amelie aprende a aceptar planes sin entregar todo su tiempo ni su comodidad.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"amistad adulta, invitaciones concretas, limites dichos con calma y pequenas decisiones sociales en Paris\", espina \"Amélie quiere entrar en planes nuevos sin decir si a todo ni dejar que Marc decida su lugar.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"amélie\", 19%)",
@@ -3301,8 +3301,8 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.12 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 54/60 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.13 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: invites-and-boundaries (Amélie, Mathieu)"
@@ -3311,33 +3311,33 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "invitaciones sociales con limites claros y una tension romantica ligera",
-      "espina": "Amelie aprende a aceptar planes sin entregar todo su tiempo ni su comodidad.",
-      "recursos": "fiesta corta, te posible, ropa para salir, respuestas breves y limites visibles",
+      "registro": "amistad adulta, invitaciones concretas, limites dichos con calma y pequenas decisiones sociales en Paris",
+      "espina": "Amélie quiere entrar en planes nuevos sin decir si a todo ni dejar que Marc decida su lugar.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario social usado en accion.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "aceptar una fiesta sin quedarse todo el dia",
-          "impide": "Marc responde demasiado rapido por ella",
-          "cuesta": "pierde el si facil que agradaba a todos",
-          "cambia": "da una hora de salida clara",
-          "emocion": "silencio largo, luego alivio al mirar la montre"
+          "quiere": "Amélie quiere aceptar una invitacion de Mathieu sin quedarse toda la tarde.",
+          "impide": "Mathieu presenta el plan como si todos fueran a quedarse hasta el final.",
+          "cuesta": "Pierde la comodidad de decir si para caer bien y debe marcar una hora de salida.",
+          "cambia": "Acepta el principio de la fiesta y nombra su limite sin disculparse demasiado.",
+          "emocion": "Siente presion en la garganta, mira la luz de la sala y habla antes de que Marc responda."
         },
         {
           "slot": "2",
-          "quiere": "invitar a Mathieu a tomar te sin obligarlo",
-          "impide": "Marc agranda la invitacion",
-          "cuesta": "acepta que Mathieu puede decir no",
-          "cambia": "hace una invitacion pequena y abierta",
-          "emocion": "olvida las palabras, respira y recupera la frase"
+          "quiere": "Amélie quiere invitar a Mathieu a un cafe sin que parezca una obligacion.",
+          "impide": "Marc empuja la invitacion con entusiasmo y vuelve el gesto demasiado grande.",
+          "cuesta": "Pierde el refugio de dejar que Marc traduzca sus intenciones sociales.",
+          "cambia": "Reformula la invitacion como una opcion simple y deja espacio a un no.",
+          "emocion": "Se tensa cuando Marc habla antes; toca su montre y recupera la frase."
         },
         {
           "slot": "3",
-          "quiere": "salir con ropa propia, no para agradar",
-          "impide": "las opiniones del grupo empujan la eleccion",
-          "cuesta": "renuncia al disfraz social perfecto",
-          "cambia": "elige el pantalon negro por comodidad",
-          "emocion": "duda ante el espejo, calma al nombrar su limite"
+          "quiere": "Amélie quiere rechazar una segunda invitacion para proteger su noche.",
+          "impide": "El grupo insiste con amabilidad y Mathieu cree que ella solo duda.",
+          "cuesta": "Pierde una imagen de persona siempre disponible y acepta parecer menos facil.",
+          "cambia": "Dice no a la segunda parte, propone otro dia y se queda en la amistad.",
+          "emocion": "Tiene miedo de enfriar el ambiente, pero la luz de la calle le da una salida clara."
         }
       ]
     }
@@ -3411,22 +3411,22 @@
     ]
   },
   "cmtwz1iop000l32jybeo2jg4x#plans-and-timing": {
-    "cerrado": "2026-09-12T08:35:07.899Z",
-    "hash": "c9af735fd08dfb6f",
+    "cerrado": "2026-09-13T08:16:50.252Z",
+    "hash": "d5dc047377bf2d63",
     "historias": [
       "plans-and-timing#0 le-mardi-choisi",
       "plans-and-timing#1 l-appel-court",
       "plans-and-timing#2 avant-le-retour"
     ],
     "checks": [
-      "plan del tema completo (registro \"planes de grupo con tension afectiva ligera y decisiones pequenas\", espina \"Amelie aprende a decir que dia, que retraso y que cambio necesita sin esconderse detras de Marc.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"urgente pero sobrio, con relojes, mensajes cortos y una presion adulta que no se resuelve con correr\", espina \"Amélie quiere decidir si la vida nueva de Marc en Paris puede tener un ritmo compartido con ella sin perder su propio calendario en Marseille.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 92% (solo avisa)",
-      "acotacion dominante bajo tope (\"répond\" 29%)",
+      "acotacion dominante bajo tope (\"répond\" 25%)",
       "arranques de parrafo variados (mas repetido \"olivier\", 13%)",
-      "densidad 8.0 palabras por oracion (techo 11 en a1)",
-      "seguidilla 18/46 oraciones cortas narradas",
+      "densidad 8.3 palabras por oracion (techo 11 en a1)",
+      "seguidilla 14/46 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -3434,8 +3434,8 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.23 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 46/61 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.21 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 48/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: plans-and-timing (Amélie, Olivier, Marc) · presentados tarde: Marc (aparece en la 2a de plans-and-timing)"
@@ -3444,48 +3444,48 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "planes de grupo con tension afectiva ligera y decisiones pequenas",
-      "espina": "Amelie aprende a decir que dia, que retraso y que cambio necesita sin esconderse detras de Marc.",
-      "recursos": "calendario social, llamada breve, regla compartida, frases directas A1",
+      "registro": "urgente pero sobrio, con relojes, mensajes cortos y una presion adulta que no se resuelve con correr",
+      "espina": "Amélie quiere decidir si la vida nueva de Marc en Paris puede tener un ritmo compartido con ella sin perder su propio calendario en Marseille.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, devoir, vouloir, preguntas de hora y dia, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de fechas usado como coste real.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "elegir un dia para cenar con el grupo",
-          "impide": "cada opcion rompe una promesa pequena",
-          "cuesta": "pierde una tarde libre",
-          "cambia": "elige martes sin venderlo como perfecto",
-          "emocion": "tension en la nuca, alivio cuando Olivier no exige explicacion"
+          "quiere": "Amélie quiere fijar con Olivier una fecha simple para volver a Paris sin que Marc organice todo.",
+          "impide": "Olivier solo tiene dos horarios posibles y ambos rompen algo que Amélie ya prometio en Marseille.",
+          "cuesta": "Pierde la comodidad de decir que el problema es Paris; cancela una tarde libre que esperaba para si misma.",
+          "cambia": "Elige una fecha imperfecta y pide que Marc no la venda como plan bonito.",
+          "emocion": "Siente presion en la nuca porque el calendario parece decidir por ella; dobla el papel, mira la hora y responde claro."
         },
         {
           "slot": "2",
-          "quiere": "llegar a tiempo a una reunion de amigos",
-          "impide": "el metro se para",
-          "cuesta": "pierde la primera impresion tranquila",
-          "cambia": "llama ella misma y entra tarde sin esconderse",
-          "emocion": "calor en la mejilla, gesto de guardar el telefono"
+          "quiere": "Amélie quiere llegar a tiempo a una reunion de barrio para conocer el ritmo de Marc.",
+          "impide": "El metro se retrasa y Marc propone avisar por ella para evitar el mal momento.",
+          "cuesta": "Pierde la primera impresion tranquila que queria dar; entra tarde y todos la ven llegar.",
+          "cambia": "Manda ella misma el mensaje corto y entra sin disculparse diez veces.",
+          "emocion": "Tiene calor porque llegar tarde confirma su miedo de no encajar; guarda el telefono, respira y saluda una sola vez."
         },
         {
           "slot": "3",
-          "quiere": "cerrar un plan antes del regreso de Olivier",
-          "impide": "Marc cambia una hora demasiado tarde",
-          "cuesta": "pierde el plan facil",
-          "cambia": "pone una regla: los cambios se dicen antes",
-          "emocion": "ganas de protestar contenidas, mano que detiene la salida"
+          "quiere": "Amélie quiere cerrar el fin de semana con un plan claro antes de volver a Marseille.",
+          "impide": "Marc cambia una hora para ayudar a Olivier y deja el regreso de Amélie apretado.",
+          "cuesta": "Pierde el tren comodo y acepta una espera mas larga para no convertir el favor en reproche.",
+          "cambia": "Propone una regla simple para futuros viajes: cambiar planes si ambos lo dicen antes.",
+          "emocion": "Le pica la garganta porque quiere protestar y cuidar la amistad a la vez; toca el billete, mira a Marc y negocia sin sonrisa."
         }
       ]
     }
   },
   "cmtwz1iop000l32jybeo2jg4x#seats-and-tables": {
-    "cerrado": "2026-09-12T08:37:20.060Z",
-    "hash": "7d531b72b47b3dae",
+    "cerrado": "2026-09-13T08:17:05.542Z",
+    "hash": "3781fdcdb6134174",
     "historias": [
       "seats-and-tables#0 la-boite-du-hall",
       "seats-and-tables#1 la-chaise-du-jeudi",
       "seats-and-tables#2 une-carte-calme"
     ],
     "checks": [
-      "plan del tema completo (registro \"pertenencia social cotidiana, con gestos pequenos en espacios compartidos\", espina \"Amelie deja de ser la invitada de Marc y empieza a ocupar un lugar propio en la mesa.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"calmo y domestico, con objetos de edificio, pequenas rutinas y pertenencia que aparece sin anuncio\", espina \"Amélie quiere sentir que Paris tambien puede ser suyo sin convertir cada gesto nuevo en una prueba.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"la\", 20%)",
@@ -3499,7 +3499,7 @@
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 57/61 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -3508,33 +3508,33 @@
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "pertenencia social cotidiana, con gestos pequenos en espacios compartidos",
-      "espina": "Amelie deja de ser la invitada de Marc y empieza a ocupar un lugar propio en la mesa.",
-      "recursos": "hall, silla, tarjeta, objetos concretos de grupo, frases breves de limite",
+      "registro": "calmo y domestico, con objetos de edificio, pequenas rutinas y pertenencia que aparece sin anuncio",
+      "espina": "Amélie quiere sentir que Paris tambien puede ser suyo sin convertir cada gesto nuevo en una prueba.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de instalacion usado como accion cotidiana.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "dejar una nota en el hall para encontrar al grupo",
-          "impide": "Marc quiere colocarla por ella",
-          "cuesta": "pierde la comodidad de esconderse detras de Marc",
-          "cambia": "escribe ella la nota bajo el cuatro",
-          "emocion": "mano lenta antes del trazo, alivio cuando nadie habla por ella"
+          "quiere": "Amélie quiere poner su nombre en la boite del edificio sin pedirle a Marc que lo haga.",
+          "impide": "Inès le muestra una regla informal del hall que Amélie no conocia.",
+          "cuesta": "Pierde la comodidad de quedar de paso y acepta que una vecina ya la vea como parte del lugar.",
+          "cambia": "Escribe su nombre pequeno y acepta usar el mismo codigo que los vecinos.",
+          "emocion": "Siente calor en la cara porque el nombre parece definitivo; mira la etiqueta, pega el papel y no lo arranca."
         },
         {
           "slot": "2",
-          "quiere": "sentarse en una mesa donde no conoce a todos",
-          "impide": "la silla guardada la hace sentirse observada",
-          "cuesta": "renuncia a irse al parque",
-          "cambia": "hace una pregunta en voz alta y se queda",
-          "emocion": "toca la madera para calmarse, luego acepta la place"
+          "quiere": "Amélie quiere adoptar una rutina simple de jueves para no depender siempre de invitaciones.",
+          "impide": "La silla que Inès le guarda esta en medio de un grupo que ya tiene costumbres.",
+          "cuesta": "Pierde la salida facil de mirar desde fuera y debe quedarse aunque no sepa cuando hablar.",
+          "cambia": "Hace una pregunta breve, espera su turno y vuelve la semana siguiente.",
+          "emocion": "Se tensa porque todos parecen conocer el ritmo; toca el borde de la silla y levanta la vista."
         },
         {
           "slot": "3",
-          "quiere": "caminar con Marc sin que el nombre del lugar pese demasiado",
-          "impide": "Marc usa una palabra grande demasiado pronto",
-          "cuesta": "corrige a un amigo que quiere cuidarla",
-          "cambia": "elige una palabra mas pequena: carte calme",
-          "emocion": "garganta cerrada, mano sobre la carte"
+          "quiere": "Amélie quiere decir que el barrio empieza a sentirse suyo sin sonar exagerada.",
+          "impide": "Marc usa la palabra casa demasiado pronto y ella se cierra.",
+          "cuesta": "Pierde una tarde tranquila con Marc porque necesita nombrar el limite.",
+          "cambia": "Corrige la palabra y propone una version mas pequena: un repere.",
+          "emocion": "Le pesa el pecho porque teme herir a Marc; toca la llave, respira y elige una palabra menos grande."
         }
       ]
     },
@@ -3740,21 +3740,21 @@
     }
   },
   "cmtwz1iop000l32jybeo2jg4x#trust-and-doubts": {
-    "cerrado": "2026-09-12T08:40:21.215Z",
-    "hash": "9f60ee289970ed21",
+    "cerrado": "2026-09-13T08:20:16.051Z",
+    "hash": "689724fcb596f039",
     "historias": [
       "trust-and-doubts#0 le-cahier-ouvert",
       "trust-and-doubts#1 dix-minutes",
       "trust-and-doubts#2 la-carte-du-doute"
     ],
     "checks": [
-      "plan del tema completo (registro \"confianza entre amigos, con reparaciones pequenas y calma explicita\", espina \"Amelie aprende a pedir seguridad concreta sin entregar su voz ni exigir una promesa enorme.\")",
-      "validador canonico: 3/3",
+      "plan del tema completo (registro \"confianza tranquila, dudas pequenas, apoyo entre adultos y frases claras que no prometen demasiado\", espina \"Amélie quiere pedir seguridad sin convertir a sus amigos en salvavidas ni borrar su propia voz.\")",
+      "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"marc\", 25%)",
-      "densidad 8.4 palabras por oracion (techo 11 en a1)",
-      "seguidilla 16/46 oraciones cortas narradas",
+      "densidad 8.8 palabras por oracion (techo 11 en a1)",
+      "seguidilla 17/46 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -3762,43 +3762,43 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.03 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 58/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: trust-and-doubts (Sophie, Amélie)"
     ],
     "plan": {
       "tipo": "Friends",
       "nivel": "a1",
       "variante": "france",
-      "registro": "confianza entre amigos, con reparaciones pequenas y calma explicita",
-      "espina": "Amelie aprende a pedir seguridad concreta sin entregar su voz ni exigir una promesa enorme.",
-      "recursos": "cuaderno, espera de diez minutos, tarjeta de duda, gestos fisicos simples",
+      "registro": "confianza tranquila, dudas pequenas, apoyo entre adultos y frases claras que no prometen demasiado",
+      "espina": "Amélie quiere pedir seguridad sin convertir a sus amigos en salvavidas ni borrar su propia voz.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario concreto de estudio, cuerpo y ciudad.",
       "historias": [
         {
           "slot": "1",
-          "quiere": "enviar una frase al grupo y saber si se entiende",
-          "impide": "Marc quiere corregirlo todo",
-          "cuesta": "renuncia a la version perfecta",
-          "cambia": "pide una comprobacion limitada a Sophie",
-          "emocion": "nervios ante el cahier, alivio al guardar la frase"
+          "quiere": "Amélie quiere comprobar un mensaje dificil sin que Marc lo corrija entero.",
+          "impide": "Sophie le ofrece ayuda muy directa y Amélie teme desaparecer de la frase.",
+          "cuesta": "Pierde la seguridad de una version perfecta y conserva una frase imperfecta suya.",
+          "cambia": "Pide una confirmacion limitada: solo si se entiende.",
+          "emocion": "Siente la mano tensa sobre el cahier, mira la luz de la mesa y sostiene la pregunta."
         },
         {
           "slot": "2",
-          "quiere": "tener apoyo antes de entrar a hablar",
-          "impide": "Marc ofrece demasiado apoyo",
-          "cuesta": "entra sola despues de diez minutos",
-          "cambia": "pide una ayuda pequena y medible",
-          "emocion": "cuerpo tenso, mano que se abre cuando acepta el limite"
+          "quiere": "Amélie quiere confiar en que Marc la espere sin pedir una promesa grande.",
+          "impide": "Marc ofrece quedarse todo el dia y eso vuelve la ayuda demasiado pesada.",
+          "cuesta": "Pierde la fantasia de apoyo total y acepta una ayuda mas pequena.",
+          "cambia": "Pide que la espere diez minutos, no que cargue con toda la tarde.",
+          "emocion": "Se le aprieta el pecho, pero habla antes de asentir por miedo."
         },
         {
           "slot": "3",
-          "quiere": "nombrar una duda sin romper la amistad",
-          "impide": "la tarjeta hace visible lo que queria callar",
-          "cuesta": "pierde la apariencia de tranquilidad",
-          "cambia": "usa la carte para pedir una respuesta honesta",
-          "emocion": "duda en la mano, calma cuando el grupo no se rompe"
+          "quiere": "Amélie quiere decir una duda delante de Sophie y Mathieu.",
+          "impide": "La sala esta amable, pero todos parecen seguros y ella no.",
+          "cuesta": "Pierde la imagen de alumna facil y acepta necesitar repeticion.",
+          "cambia": "Pide una segunda explicacion sin pedir perdon.",
+          "emocion": "Nota la luz blanca en los papeles y deja de esconder el cahier."
         }
       ]
     }

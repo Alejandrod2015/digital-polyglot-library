@@ -22672,5 +22672,71 @@
    "g": "wound it up (enrollar)",
    "t": "verb"
   }
+ },
+ "french-friends-france-a1": {
+  "souvent": {
+   "g": "often, many times",
+   "t": "adverb"
+  },
+  "murmure-t-elle": {
+   "g": "she whispers (murmurer)",
+   "t": "verb"
+  },
+  "proche": {
+   "g": "near, close",
+   "t": "adjective"
+  },
+  "message": {
+   "g": "message (le message)",
+   "t": "noun"
+  },
+  "perdre": {
+   "g": "to lose",
+   "t": "verb"
+  },
+  "gâteau": {
+   "g": "cake (le gâteau)",
+   "t": "noun"
+  },
+  "organisé": {
+   "g": "organised, good at planning",
+   "t": "adjective"
+  },
+  "mal": {
+   "g": "badly, the wrong way",
+   "t": "adverb"
+  },
+  "envoie": {
+   "g": "send (envoyer)",
+   "t": "verb"
+  },
+  "idées": {
+   "g": "ideas (une idée)",
+   "t": "noun"
+  },
+  "annonce-t-il": {
+   "g": "he announces (annoncer)",
+   "t": "verb"
+  },
+  "décident": {
+   "g": "they decide (décider)",
+   "t": "verb"
+  },
+  "oublier": {
+   "g": "to forget",
+   "t": "verb"
+  },
+  "recommence": {
+   "g": "starts again (recommencer)",
+   "t": "verb"
+  },
+  "traverse": {
+   "g": "goes through, crosses (traverser)",
+   "t": "verb"
+  },
+  "côté": {
+   "g": "side; à côté de: next to (le côté)",
+   "t": "noun"
+  }
  }
 }
