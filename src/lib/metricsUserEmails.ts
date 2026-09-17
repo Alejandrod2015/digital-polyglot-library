@@ -78,25 +78,35 @@ export async function resolveUserIdentities(
   await Promise.all(
     chunk(pendientes, BATCH).map(async (lote) => {
       try {
-        const user = await getClerkClient().users.getUser(userId);
-        const identity: MetricsUserIdentity = {
-          name: [user.firstName, user.lastName].filter(Boolean).join(" ") || null,
-          email: user.emailAddresses[0]?.emailAddress ?? null,
-        };
-        userCache.set(userId, identity);
-        byUserId.set(userId, identity);
+        const list = await getClerkClient().users.getUserList({ userId: lote, limit: BATCH });
+        const vistos = new Set<string>();
+        for (const user of list.data) {
+          vistos.add(user.id);
+          const identity: MetricsUserIdentity = {
+            name: [user.firstName, user.lastName].filter(Boolean).join(" ") || null,
+            email:
+              user.primaryEmailAddress?.emailAddress ??
+              user.emailAddresses[0]?.emailAddress ??
+              null,
+            status: "ok",
+          };
+          userCache.set(user.id, identity);
+          byUserId.set(user.id, identity);
+        }
+        // Lo que el lote no trajo, Clerk no lo tiene. Es una cuenta borrada
+        // que aún conserva sus filas de métricas: no es un fallo del que
+        // avisar, es historia, y se cachea porque no va a volver.
+        for (const userId of lote) {
+          if (vistos.has(userId)) continue;
+          const borrada: MetricsUserIdentity = { name: null, email: null, status: "deleted" };
+          userCache.set(userId, borrada);
+          byUserId.set(userId, borrada);
+        }
       } catch (error) {
-        const status =
-          typeof error === "object" &&
-          error !== null &&
-          "status" in error &&
-          typeof (error as { status?: unknown }).status === "number"
-            ? (error as { status: number }).status
-            : null;
-        // El 404 es una cuenta borrada que aún tiene filas de métricas: no es
-        // un fallo del que avisar, es historia.
-        if (status !== 404) {
-          console.warn("resolveUserIdentities: failed to resolve Clerk user", userId, error);
+        console.warn("resolveUserIdentities: no se pudo preguntar a Clerk", lote.length, error);
+        // A propósito SIN cachear: la siguiente petición lo reintenta.
+        for (const userId of lote) {
+          byUserId.set(userId, { name: null, email: null, status: "unavailable" });
         }
       }
     }),

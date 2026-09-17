@@ -8,6 +8,7 @@ import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
 import { buildSentenceTranslationMap } from "@/lib/sentenceTranslation";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 type FavoriteBody = {
   word: string;
