@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "hospitalidad amistosa, con humor suave y cuidado practico",
+  "espina": "Amelie aprende a aceptar cuidado de una amiga sin convertir cada gesto en una deuda.",
+  "recursos": "casa como espacio social, objetos de portada, dialogo corto, tension de gratitud y limite",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "aceptar quedarse en casa de Camille antes de un plan de grupo",
+      "impide": "cada detalle preparado le parece demasiado",
+      "cuesta": "deja de esconder la incomodidad con bromas",
+      "cambia": "pide solo la clef y acepta el resto",
+      "emocion": "vergüenza en la mano que aprieta la serviette, alivio cuando recibe la clef"
+    },
+    {
+      "slot": "2",
+      "quiere": "ayudar en la cocina para no sentirse invitada pasiva",
+      "impide": "Camille y Marc ya prepararon todo",
+      "cuesta": "renuncia a demostrar utilidad todo el tiempo",
+      "cambia": "elige una tarea pequena y propia: preparar el cafe",
+      "emocion": "inutilidad junto a la taza, luego orgullo pequeno al servir tres tasses"
+    },
+    {
+      "slot": "3",
+      "quiere": "salir limpia de casa de Camille hacia el almuerzo del grupo",
+      "impide": "deja la clef dentro",
+      "cuesta": "pierde el plan facil de la manana",
+      "cambia": "pide perdon una vez y se queda a comer",
+      "emocion": "culpa contenida, reparada por espera compartida en el banc"
+    }
+  ]
+}

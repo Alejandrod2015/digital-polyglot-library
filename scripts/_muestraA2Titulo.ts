@@ -30,13 +30,27 @@ import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez: se amplia el script
 // en un commit, no se clona): --journey b1-latam usa su journey y su mapa de
 // voces; sin flag, el A2 de siempre.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string> }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM },
+const PERFILES: Record<string, { journey: string; language: string; voces: Record<string, string> }> = {
+  a2: { journey: "cmtgelq560007j84n3ujx9bpd", language: "spanish", voces: VOZ_POR_TEMA },
+  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", language: "spanish", voces: VOZ_POR_TEMA_B1_LATAM },
+  "fr-a1-friends": {
+    journey: "cmtwz1iop000l32jybeo2jg4x",
+    language: "french",
+    voces: {
+      "circles-and-introductions": "ucMmKRQbfDEYyb2IIGax",
+      "group-notes-and-plans": "ucMmKRQbfDEYyb2IIGax",
+      "hosting-and-care": "ucMmKRQbfDEYyb2IIGax",
+      "invites-and-boundaries": "ucMmKRQbfDEYyb2IIGax",
+      "plans-and-timing": "ucMmKRQbfDEYyb2IIGax",
+      "seats-and-tables": "ucMmKRQbfDEYyb2IIGax",
+      "trust-and-reassurance": "ucMmKRQbfDEYyb2IIGax",
+      "trust-and-doubts": "ucMmKRQbfDEYyb2IIGax",
+    },
+  },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a1-friends");
 const JOURNEY = PERFIL.journey;
 const REGISTRO = path.join(__dirname, "a2-muestras.json");
 
@@ -63,7 +77,7 @@ const prisma = new PrismaClient();
     title: s.title,
     storyText: parrafo,
     voiceMap: { narrator: voiceId },
-    language: "spanish",
+    language: PERFIL.language,
     antiUptalkGate: true,
     contentGate: true,
   });

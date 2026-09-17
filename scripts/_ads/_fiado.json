@@ -1,0 +1,147 @@
+[
+ {
+  "topic": "games-and-bets",
+  "slotIndex": 1,
+  "title": "El gallo colorado",
+  "slug": "el-gallo-colorado",
+  "synopsis": "Hugo sells hats from a stall at the fair in Aguascalientes and is two hundred short of the permit he has to pay on the last day. He has spent the whole week telling Brenda, who takes the bets at the door of the cockfighting ring, that he does not gamble. Then the man calling the odds offers to lend him the two hundred in front of her; refusing out loud would cost him more than saying yes. He takes the ticket and folds it into four.",
+  "text": "Hugo vende sombreros en un puesto de la feria de Aguascalientes, México. El permiso se paga el domingo y a él le faltan doscientos. Esa cuenta le da vueltas.\n\nDesde la puerta del palenque llega el pregón del corredor, que canta las apuestas del gallo colorado.\n\n“Yo no juego, y no voy a empezar ahora”, le repite Hugo a Brenda cada noche.\n\nBrenda cobra las apuestas ahí y se lo ha oído toda la semana.\n\n“Métase, don Hugo”, le suelta el corredor. “Yo le fío los doscientos y me paga el domingo.”\n\n“¿Y me lo dice delante de ella?”, contesta Hugo.\n\n“Delante de quien sea, aquí nadie se esconde”, responde el corredor.\n\n“¿Y si pierdo?”, pregunta Hugo.\n\n“Si pierde, me paga igual”, aclara el corredor.\n\nHugo entra, y siente el ruido como una mano en la espalda.\n\nToma el boleto y lo dobla en cuatro.\n\nNo lo suelta en toda la pelea.\n\nEl gallo colorado gana, y desde esa noche Hugo ya no puede decir que él no juega.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "permiso",
+    "anchor": false,
+    "definition": "The paper you pay for so that you can sell in a place."
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "anchor": false,
+    "surface": "faltan",
+    "definition": "To be missing, when you do not have enough of something yet."
+   },
+   {
+    "type": "expression",
+    "word": "dar fiado",
+    "anchor": false,
+    "surface": "fío",
+    "definition": "To lend it now and be paid back later, on trust."
+   },
+   {
+    "type": "verb",
+    "word": "meterse",
+    "anchor": false,
+    "surface": "Métase",
+    "definition": "To go into something risky that you were only watching before."
+   },
+   {
+    "type": "noun",
+    "word": "boleto",
+    "anchor": false,
+    "definition": "The small paper that proves you put money on a bet."
+   },
+   {
+    "type": "verb",
+    "word": "doblar",
+    "anchor": false,
+    "surface": "dobla",
+    "definition": "To bend a paper so that one half lies over the other."
+   },
+   {
+    "type": "verb",
+    "word": "soltar",
+    "anchor": false,
+    "surface": "suelta",
+    "definition": "To open your hand and let the thing go free again."
+   },
+   {
+    "type": "noun",
+    "word": "pelea",
+    "anchor": false,
+    "definition": "The fight between two animals that people put money on."
+   },
+   {
+    "type": "noun",
+    "word": "espalda",
+    "anchor": false,
+    "definition": "The back part of your body, from the neck down to the waist."
+   },
+   {
+    "type": "noun",
+    "word": "ruido",
+    "anchor": false,
+    "definition": "Loud sound made by many people or many things together."
+   },
+   {
+    "type": "verb",
+    "word": "esconderse",
+    "anchor": false,
+    "surface": "esconde",
+    "definition": "To go where nobody can see you or find you."
+   },
+   {
+    "type": "verb",
+    "word": "repetir",
+    "anchor": false,
+    "surface": "repite",
+    "definition": "To say the same words again, one time after another."
+   },
+   {
+    "type": "noun",
+    "word": "deuda",
+    "anchor": false,
+    "surface": "cuenta",
+    "definition": "The money you still have to find or to give back."
+   },
+   {
+    "type": "verb",
+    "word": "empezar",
+    "anchor": false,
+    "definition": "To do a thing for the first time and go on from there."
+   },
+   {
+    "type": "noun",
+    "word": "feria",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "The yearly town fair, with rides, food stalls and betting."
+   },
+   {
+    "type": "noun",
+    "word": "puesto",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "The small stall where one person sells things at the fair."
+   },
+   {
+    "type": "noun",
+    "word": "palenque",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "The round ring where the cockfights are held at the fair."
+   },
+   {
+    "type": "noun",
+    "word": "gallo",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "A male chicken, and the animal that fights in the palenque."
+   },
+   {
+    "type": "noun",
+    "word": "corredor",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "The man who takes the bets and shouts the odds out loud."
+   },
+   {
+    "type": "adjective",
+    "word": "colorado",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "Red, said of an animal in the Mexican countryside."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ }
+]

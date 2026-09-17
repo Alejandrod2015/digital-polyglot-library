@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "donner,fin,rester,près",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "donner",
+     "answer": "to put something in another person's hand for them",
+     "options": [
+      "to put something in another person's hand for them",
+      "thin and not thick from side to side",
+      "to stay in the same place for some time",
+      "near someone or something, not far away from it"
+     ]
+    },
+    {
+     "word": "fin",
+     "answer": "thin and not thick from side to side",
+     "options": [
+      "to put something in another person's hand for them",
+      "thin and not thick from side to side",
+      "to stay in the same place for some time",
+      "near someone or something, not far away from it"
+     ]
+    },
+    {
+     "word": "rester",
+     "answer": "to stay in the same place for some time",
+     "options": [
+      "to put something in another person's hand for them",
+      "thin and not thick from side to side",
+      "to stay in the same place for some time",
+      "near someone or something, not far away from it"
+     ]
+    },
+    {
+     "word": "près",
+     "answer": "near someone or something, not far away from it",
+     "options": [
+      "to put something in another person's hand for them",
+      "thin and not thick from side to side",
+      "to stay in the same place for some time",
+      "near someone or something, not far away from it"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "attendre",
+  "sentence": "quelqu'un reste près de la sortie, et quelqu'un [[attend]] derrière.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay in a place until someone comes",
+   "options": [
+    "to stay in a place until someone comes",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "quelqu'un reste près de la sortie, et quelqu'un attend derrière.",
+    "targetWord": "attend",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdre",
+  "sentence": "Elle ne [[perd]] pas son calme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to no longer have something you had before",
+   "options": [
+    "to no longer have something you had before",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Elle ne perd pas son calme.",
+    "targetWord": "perd",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "froid",
+  "sentence": "quelqu'un a la main [[froide]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold, with little or no heat in it",
+   "options": [
+    "cold, with little or no heat in it",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "quelqu'un a la main froide.",
+    "targetWord": "froide",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "train",
+  "sentence": "Le [[train]] part dans une heure, murmure quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long vehicle that travels on rails between places",
+   "options": [
+    "long vehicle that travels on rails between places",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Le train part dans une heure, murmure quelqu'un.",
+    "targetWord": "train",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heure",
+  "sentence": "Le train part dans une [[heure]], murmure quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "time unit of sixty minutes on a clock",
+   "options": [
+    "time unit of sixty minutes on a clock",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Le train part dans une heure, murmure quelqu'un.",
+    "targetWord": "heure",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sembler",
+  "sentence": "La gare [[semble]] loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to appear to be a certain way to someone",
+   "options": [
+    "to appear to be a certain way to someone",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "La gare semble loin.",
+    "targetWord": "semble",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "revenir",
+  "sentence": "On peut [[revenir]] demain.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back to a place another time",
+   "options": [
+    "to come back to a place another time",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "On peut revenir demain.",
+    "targetWord": "revenir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tête",
+  "sentence": "quelqu'un secoue la [[tête]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of the body above the neck and face",
+   "options": [
+    "part of the body above the neck and face",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "quelqu'un secoue la tête.",
+    "targetWord": "tête",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vouloir",
+  "sentence": "Elle [[veut]] une réponse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want something or want to do something",
+   "options": [
+    "to want something or want to do something",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Elle veut une réponse.",
+    "targetWord": "veut",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "réponse",
+  "sentence": "Elle veut une [[réponse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "words or action that come after a question",
+   "options": [
+    "words or action that come after a question",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Elle veut une réponse.",
+    "targetWord": "réponse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stylo",
+  "sentence": "Passe-moi le [[stylo]] noir, demande quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pen used to make words on paper with ink",
+   "options": [
+    "pen used to make words on paper with ink",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Passe-moi le stylo noir, demande quelqu'un.",
+    "targetWord": "stylo",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noir",
+  "sentence": "Passe-moi le stylo [[noir]], demande quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having the color of night, ink, or dark coffee",
+   "options": [
+    "having the color of night, ink, or dark coffee",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Passe-moi le stylo noir, demande quelqu'un.",
+    "targetWord": "noir",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "porter",
+  "sentence": "quelqu'un [[porte]] le sac et promet: Je reste ici, promis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry something with your hands or body",
+   "options": [
+    "to carry something with your hands or body",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "quelqu'un porte le sac et promet: Je reste ici, promis.",
+    "targetWord": "porte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nuit",
+  "sentence": "Le train de [[nuit]] coûte plus cher, mais quelqu'un sort droite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark time after evening and before morning comes",
+   "options": [
+    "dark time after evening and before morning comes",
+    "to put something in another person's hand for them",
+    "thin and not thick from side to side",
+    "to stay in the same place for some time"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Le train de nuit coûte plus cher, mais quelqu'un sort droite.",
+    "targetWord": "nuit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cher",
+  "sentence": "Le train de nuit coûte plus _____, mais quelqu'un sort droite.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cher",
+   "options": [
+    "cher",
+    "fin",
+    "froide",
+    "noir"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "costing a lot of money, not cheap at all",
+    "thin and not thick from side to side",
+    "cold, with little or no heat in it",
+    "having the color of night, ink, or dark coffee"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Le train de nuit coûte plus cher, mais quelqu'un sort droite.",
+    "targetWord": "cher",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "accepté",
+  "sentence": "Le dossier est _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "accepté",
+   "options": [
+    "accepté",
+    "donne",
+    "reste",
+    "attend"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to say yes to something or let it happen",
+    "to put something in another person's hand for them",
+    "to stay in the same place for some time",
+    "to stay in a place until someone comes"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "Le dossier est accepté.",
+    "targetWord": "accepté",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sort",
+  "sentence": "_____ compte ici.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sort",
+   "options": [
+    "sort",
+    "donne",
+    "reste",
+    "attend"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to go out of a place or room",
+    "to put something in another person's hand for them",
+    "to stay in the same place for some time",
+    "to stay in a place until someone comes"
+   ],
+   "audioClip": {
+    "storySlug": "la-ligne-corrigee",
+    "storySource": "user",
+    "sentence": "sort compte ici.",
+    "targetWord": "sort",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

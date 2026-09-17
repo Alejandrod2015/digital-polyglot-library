@@ -1,22 +1,22 @@
 import { config } from "dotenv";
 config({ path: ".env.local" });
+import { writeFileSync } from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
-import { getTesterState } from "../src/lib/appStoreConnect";
 const p = new PrismaClient();
-
+const OUT = process.argv[2];
+const borrar = process.argv.includes("--borrar");
 async function main() {
-  const rows = await p.betaSignup.findMany({
-    where: { platform: "ios", ascTesterId: { not: null }, status: { in: ["invited", "accepted"] } },
-    select: { email: true, status: true, ascTesterId: true },
+  const s = await p.betaSignup.findFirst({
+    where: { email: "thepelly1@gmail.com" },
+    select: { id: true, notes: true },
   });
-  const cuenta: Record<string, number> = {};
-  for (const r of rows) {
-    const st = (await getTesterState(r.ascTesterId!)) ?? "null";
-    const k = `${r.status} -> apple:${st}`;
-    cuenta[k] = (cuenta[k] ?? 0) + 1;
-    if (r.email.includes("benjihar")) console.log(`BEN: nuestro=${r.status}  apple=${st}`);
-  }
-  console.log("");
-  for (const [k, v] of Object.entries(cuenta).sort()) console.log(`  ${k}: ${v}`);
+  if (!s) return console.log("no row");
+  const n = s.notes ?? "";
+  console.log(`notes: ${n.length} caracteres, ${n.split("\n").length} lineas`);
+  if (OUT && n) { writeFileSync(OUT, n); console.log(`copia -> ${OUT}`); }
+  if (!borrar) return console.log("(nada borrado, add --borrar)");
+  await p.betaSignup.update({ where: { id: s.id }, data: { notes: null } });
+  const after = await p.betaSignup.findUnique({ where: { id: s.id }, select: { notes: true } });
+  console.log(`despues: ${after?.notes === null ? "null (vacio)" : `${after?.notes?.length} caracteres`}`);
 }
 main().finally(() => p.$disconnect());

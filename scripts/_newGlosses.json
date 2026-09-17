@@ -6781,6 +6781,14 @@
     "preguntaras": {
       "g": "you asked (preguntar)",
       "t": "verb"
+    },
+    "sumar": {
+      "g": "to add to it (sumar)",
+      "t": "verb"
+    },
+    "quitárselo": {
+      "g": "to take it away from her (quitar + se + lo)",
+      "t": "verb"
     }
   },
   "spanish-traveler-spain-b2": {
@@ -10994,6 +11002,1528 @@
     },
     "conferem": {
       "g": "They check it together (conferir).",
+      "t": "verb"
+    }
+  },
+  "french-friends-france-a1": {
+    "aide": {
+      "g": "help, the act of helping",
+      "t": "noun"
+    },
+    "accueil": {
+      "g": "welcome or reception",
+      "t": "noun"
+    },
+    "accepté": {
+      "g": "accepted, approved",
+      "t": "adjective"
+    },
+    "agenda": {
+      "g": "planner or appointment book",
+      "t": "noun"
+    },
+    "agent": {
+      "g": "staff member at a counter",
+      "t": "noun"
+    },
+    "amitié": {
+      "g": "friendship",
+      "t": "noun"
+    },
+    "annonce-t-elle": {
+      "g": "she announces it",
+      "t": "verb"
+    },
+    "apprends": {
+      "g": "I learn or you learn (apprendre)",
+      "t": "verb"
+    },
+    "appelait": {
+      "g": "was calling or used to call",
+      "t": "verb"
+    },
+    "association": {
+      "g": "community association",
+      "t": "noun"
+    },
+    "attendre": {
+      "g": "to wait for",
+      "t": "verb"
+    },
+    "attends": {
+      "g": "wait, or I wait",
+      "t": "verb"
+    },
+    "avoir": {
+      "g": "to have",
+      "t": "verb"
+    },
+    "banane": {
+      "g": "banana",
+      "t": "noun"
+    },
+    "banque": {
+      "g": "bank",
+      "t": "noun"
+    },
+    "barre": {
+      "g": "bar or rail",
+      "t": "noun"
+    },
+    "bâtiment": {
+      "g": "building",
+      "t": "noun"
+    },
+    "besoin": {
+      "g": "need",
+      "t": "noun"
+    },
+    "bibliothèque": {
+      "g": "library",
+      "t": "noun"
+    },
+    "blague": {
+      "g": "joke",
+      "t": "noun"
+    },
+    "boisson": {
+      "g": "drink",
+      "t": "noun"
+    },
+    "bol": {
+      "g": "bowl",
+      "t": "noun"
+    },
+    "bonne": {
+      "g": "good, feminine form",
+      "t": "adjective"
+    },
+    "boucherie": {
+      "g": "butcher shop",
+      "t": "noun"
+    },
+    "bouge": {
+      "g": "moves (bouger)",
+      "t": "verb"
+    },
+    "bras": {
+      "g": "arm",
+      "t": "noun"
+    },
+    "brillante": {
+      "g": "bright or brilliant, feminine form",
+      "t": "adjective"
+    },
+    "bruit": {
+      "g": "noise",
+      "t": "noun"
+    },
+    "cacher": {
+      "g": "to hide",
+      "t": "verb"
+    },
+    "cachette": {
+      "g": "hiding place",
+      "t": "noun"
+    },
+    "calendrier": {
+      "g": "calendar",
+      "t": "noun"
+    },
+    "calmes": {
+      "g": "calm, plural form",
+      "t": "adjective"
+    },
+    "canal": {
+      "g": "canal",
+      "t": "noun"
+    },
+    "carnet": {
+      "g": "small notebook",
+      "t": "noun"
+    },
+    "carafe": {
+      "g": "water carafe",
+      "t": "noun"
+    },
+    "case": {
+      "g": "box on a form",
+      "t": "noun"
+    },
+    "ceinture": {
+      "g": "belt",
+      "t": "noun"
+    },
+    "cercle": {
+      "g": "circle or group",
+      "t": "noun"
+    },
+    "ces": {
+      "g": "these or those",
+      "t": "adjective"
+    },
+    "champ": {
+      "g": "field",
+      "t": "noun"
+    },
+    "change": {
+      "g": "changes (changer)",
+      "t": "verb"
+    },
+    "changement": {
+      "g": "change, a difference",
+      "t": "noun"
+    },
+    "changements": {
+      "g": "changes, differences",
+      "t": "noun"
+    },
+    "changer": {
+      "g": "to change",
+      "t": "verb"
+    },
+    "changes": {
+      "g": "you change (changer)",
+      "t": "verb"
+    },
+    "chapeau": {
+      "g": "hat",
+      "t": "noun"
+    },
+    "chaussures": {
+      "g": "shoes",
+      "t": "noun"
+    },
+    "chef": {
+      "g": "boss or head person",
+      "t": "noun"
+    },
+    "chemin": {
+      "g": "path or way",
+      "t": "noun"
+    },
+    "chemise": {
+      "g": "shirt",
+      "t": "noun"
+    },
+    "chiffre": {
+      "g": "digit or number",
+      "t": "noun"
+    },
+    "choisi": {
+      "g": "chosen (choisir)",
+      "t": "adjective"
+    },
+    "claire": {
+      "g": "clear, feminine form",
+      "t": "adjective"
+    },
+    "clair": {
+      "g": "clear",
+      "t": "adjective"
+    },
+    "clef": {
+      "g": "key",
+      "t": "noun"
+    },
+    "collègue": {
+      "g": "colleague or coworker",
+      "t": "noun"
+    },
+    "comprends": {
+      "g": "I understand, or you understand",
+      "t": "verb"
+    },
+    "connais": {
+      "g": "I know or you know",
+      "t": "verb"
+    },
+    "copie": {
+      "g": "copy",
+      "t": "noun"
+    },
+    "coeur": {
+      "g": "heart",
+      "t": "noun"
+    },
+    "cœur": {
+      "g": "heart",
+      "t": "noun"
+    },
+    "corrigée": {
+      "g": "corrected, feminine form",
+      "t": "adjective"
+    },
+    "cou": {
+      "g": "neck",
+      "t": "noun"
+    },
+    "couleur": {
+      "g": "color",
+      "t": "noun"
+    },
+    "courte": {
+      "g": "short, feminine form",
+      "t": "adjective"
+    },
+    "courage": {
+      "g": "courage",
+      "t": "noun"
+    },
+    "courageuse": {
+      "g": "brave, feminine form",
+      "t": "adjective"
+    },
+    "couverture": {
+      "g": "blanket or cover",
+      "t": "noun"
+    },
+    "cravate": {
+      "g": "tie",
+      "t": "noun"
+    },
+    "craie": {
+      "g": "chalk",
+      "t": "noun"
+    },
+    "danser": {
+      "g": "to dance",
+      "t": "verb"
+    },
+    "dangereux": {
+      "g": "dangerous",
+      "t": "adjective"
+    },
+    "décide": {
+      "g": "decides (décider)",
+      "t": "verb"
+    },
+    "demander": {
+      "g": "to ask",
+      "t": "verb"
+    },
+    "dent": {
+      "g": "tooth",
+      "t": "noun"
+    },
+    "déjeuner": {
+      "g": "lunch",
+      "t": "noun"
+    },
+    "dessinée": {
+      "g": "drawn, feminine form",
+      "t": "adjective"
+    },
+    "désolée": {
+      "g": "sorry, feminine form",
+      "t": "adjective"
+    },
+    "dimanche": {
+      "g": "Sunday",
+      "t": "noun"
+    },
+    "doigt": {
+      "g": "finger",
+      "t": "noun"
+    },
+    "doigts": {
+      "g": "fingers",
+      "t": "noun"
+    },
+    "dors": {
+      "g": "I sleep or you sleep (dormir)",
+      "t": "verb"
+    },
+    "doute": {
+      "g": "doubt",
+      "t": "noun"
+    },
+    "droite": {
+      "g": "right side",
+      "t": "noun"
+    },
+    "écrire": {
+      "g": "to write",
+      "t": "verb"
+    },
+    "église": {
+      "g": "church",
+      "t": "noun"
+    },
+    "employée": {
+      "g": "female employee",
+      "t": "noun"
+    },
+    "enveloppes": {
+      "g": "envelopes",
+      "t": "noun"
+    },
+    "entier": {
+      "g": "whole, complete",
+      "t": "adjective"
+    },
+    "entres": {
+      "g": "you come in (entrer)",
+      "t": "verb"
+    },
+    "entrer": {
+      "g": "to enter",
+      "t": "verb"
+    },
+    "es": {
+      "g": "you are (être)",
+      "t": "verb"
+    },
+    "estomac": {
+      "g": "stomach",
+      "t": "noun"
+    },
+    "étudie": {
+      "g": "studies (étudier)",
+      "t": "verb"
+    },
+    "eux": {
+      "g": "them, masculine or mixed group",
+      "t": "pronoun"
+    },
+    "facture": {
+      "g": "bill or invoice",
+      "t": "noun"
+    },
+    "faire": {
+      "g": "to do, to make",
+      "t": "verb"
+    },
+    "fais": {
+      "g": "I do or you do (faire)",
+      "t": "verb"
+    },
+    "fait": {
+      "g": "does, makes, or done",
+      "t": "verb"
+    },
+    "faible": {
+      "g": "weak or faint",
+      "t": "adjective"
+    },
+    "fermer": {
+      "g": "to close",
+      "t": "verb"
+    },
+    "feuille": {
+      "g": "sheet of paper",
+      "t": "noun"
+    },
+    "fin": {
+      "g": "end",
+      "t": "noun"
+    },
+    "finir": {
+      "g": "to finish",
+      "t": "verb"
+    },
+    "finit": {
+      "g": "finishes (finir)",
+      "t": "verb"
+    },
+    "fleur": {
+      "g": "flower",
+      "t": "noun"
+    },
+    "fleuve": {
+      "g": "large river",
+      "t": "noun"
+    },
+    "forêt": {
+      "g": "forest",
+      "t": "noun"
+    },
+    "forme": {
+      "g": "form or shape",
+      "t": "noun"
+    },
+    "fourchette": {
+      "g": "fork",
+      "t": "noun"
+    },
+    "fraîche": {
+      "g": "fresh or cool, feminine form",
+      "t": "adjective"
+    },
+    "gagne": {
+      "g": "wins (gagner)",
+      "t": "verb"
+    },
+    "gant": {
+      "g": "glove",
+      "t": "noun"
+    },
+    "garder": {
+      "g": "to keep",
+      "t": "verb"
+    },
+    "gêner": {
+      "g": "to bother or embarrass",
+      "t": "verb"
+    },
+    "genou": {
+      "g": "knee",
+      "t": "noun"
+    },
+    "glisse-t-elle": {
+      "g": "she slips it in or says softly",
+      "t": "verb"
+    },
+    "gomme": {
+      "g": "eraser",
+      "t": "noun"
+    },
+    "gorge": {
+      "g": "throat",
+      "t": "noun"
+    },
+    "grimace": {
+      "g": "grimace or makes a face",
+      "t": "noun"
+    },
+    "guichet": {
+      "g": "service counter",
+      "t": "noun"
+    },
+    "hall": {
+      "g": "entrance hall",
+      "t": "noun"
+    },
+    "histoire": {
+      "g": "story",
+      "t": "noun"
+    },
+    "hoche": {
+      "g": "nods (hocher)",
+      "t": "verb"
+    },
+    "horaire": {
+      "g": "schedule or timetable",
+      "t": "noun"
+    },
+    "hôtel": {
+      "g": "hotel",
+      "t": "noun"
+    },
+    "immobile": {
+      "g": "still, not moving",
+      "t": "adjective"
+    },
+    "instant": {
+      "g": "moment",
+      "t": "noun"
+    },
+    "invitée": {
+      "g": "female guest",
+      "t": "noun"
+    },
+    "invitation": {
+      "g": "invitation",
+      "t": "noun"
+    },
+    "journal": {
+      "g": "newspaper or journal",
+      "t": "noun"
+    },
+    "journaliste": {
+      "g": "journalist",
+      "t": "noun"
+    },
+    "joué": {
+      "g": "played (jouer)",
+      "t": "verb"
+    },
+    "jupe": {
+      "g": "skirt",
+      "t": "noun"
+    },
+    "langue": {
+      "g": "tongue or language",
+      "t": "noun"
+    },
+    "laver": {
+      "g": "to wash",
+      "t": "verb"
+    },
+    "laisse-moi": {
+      "g": "let me",
+      "t": "expression"
+    },
+    "lait": {
+      "g": "milk",
+      "t": "noun"
+    },
+    "lac": {
+      "g": "lake",
+      "t": "noun"
+    },
+    "leçon": {
+      "g": "lesson",
+      "t": "noun"
+    },
+    "lentement": {
+      "g": "slowly",
+      "t": "adverb"
+    },
+    "lettre": {
+      "g": "letter",
+      "t": "noun"
+    },
+    "lèvre": {
+      "g": "lip",
+      "t": "noun"
+    },
+    "libraire": {
+      "g": "bookseller",
+      "t": "noun"
+    },
+    "librairie": {
+      "g": "bookshop",
+      "t": "noun"
+    },
+    "ligne": {
+      "g": "line",
+      "t": "noun"
+    },
+    "limonade": {
+      "g": "lemonade",
+      "t": "noun"
+    },
+    "lis": {
+      "g": "I read or you read (lire)",
+      "t": "verb"
+    },
+    "lit": {
+      "g": "bed",
+      "t": "noun"
+    },
+    "livre": {
+      "g": "book",
+      "t": "noun"
+    },
+    "lunettes": {
+      "g": "glasses",
+      "t": "noun"
+    },
+    "machine": {
+      "g": "machine",
+      "t": "noun"
+    },
+    "madame": {
+      "g": "madam, polite address",
+      "t": "noun"
+    },
+    "mai": {
+      "g": "May",
+      "t": "noun"
+    },
+    "maison": {
+      "g": "house or home",
+      "t": "noun"
+    },
+    "manche": {
+      "g": "sleeve",
+      "t": "noun"
+    },
+    "manger": {
+      "g": "to eat",
+      "t": "verb"
+    },
+    "manteau": {
+      "g": "coat",
+      "t": "noun"
+    },
+    "marche": {
+      "g": "walk or market",
+      "t": "noun"
+    },
+    "mardi": {
+      "g": "Tuesday",
+      "t": "noun"
+    },
+    "matière": {
+      "g": "subject or material",
+      "t": "noun"
+    },
+    "matinée": {
+      "g": "morning period",
+      "t": "noun"
+    },
+    "mélange": {
+      "g": "mixture",
+      "t": "noun"
+    },
+    "menu": {
+      "g": "menu",
+      "t": "noun"
+    },
+    "mercredi": {
+      "g": "Wednesday",
+      "t": "noun"
+    },
+    "minutes": {
+      "g": "minutes",
+      "t": "noun"
+    },
+    "miracle": {
+      "g": "miracle",
+      "t": "noun"
+    },
+    "monsieur": {
+      "g": "sir, polite address",
+      "t": "noun"
+    },
+    "montagne": {
+      "g": "mountain",
+      "t": "noun"
+    },
+    "mouchoir": {
+      "g": "handkerchief or tissue",
+      "t": "noun"
+    },
+    "mug": {
+      "g": "mug",
+      "t": "noun"
+    },
+    "murmure": {
+      "g": "whispers (murmurer)",
+      "t": "verb"
+    },
+    "murmure-t-il": {
+      "g": "he whispers",
+      "t": "verb"
+    },
+    "musée": {
+      "g": "museum",
+      "t": "noun"
+    },
+    "nerveuse": {
+      "g": "nervous, feminine form",
+      "t": "adjective"
+    },
+    "noir": {
+      "g": "black",
+      "t": "adjective"
+    },
+    "notre": {
+      "g": "our",
+      "t": "adjective"
+    },
+    "nuque": {
+      "g": "back of the neck",
+      "t": "noun"
+    },
+    "œil": {
+      "g": "eye",
+      "t": "noun"
+    },
+    "œuf": {
+      "g": "egg",
+      "t": "noun"
+    },
+    "oreille": {
+      "g": "ear",
+      "t": "noun"
+    },
+    "pâle": {
+      "g": "pale",
+      "t": "adjective"
+    },
+    "pantalon": {
+      "g": "trousers",
+      "t": "noun"
+    },
+    "papiers": {
+      "g": "papers or documents",
+      "t": "noun"
+    },
+    "parc": {
+      "g": "park",
+      "t": "noun"
+    },
+    "parfois": {
+      "g": "sometimes",
+      "t": "adverb"
+    },
+    "parler": {
+      "g": "to speak",
+      "t": "verb"
+    },
+    "part": {
+      "g": "leaves (partir)",
+      "t": "verb"
+    },
+    "pas": {
+      "g": "not, in a negative phrase",
+      "t": "adverb"
+    },
+    "passe": {
+      "g": "passes or works (passer)",
+      "t": "verb"
+    },
+    "passe-moi": {
+      "g": "pass me",
+      "t": "expression"
+    },
+    "passent": {
+      "g": "pass by (passer)",
+      "t": "verb"
+    },
+    "peau": {
+      "g": "skin",
+      "t": "noun"
+    },
+    "peur": {
+      "g": "fear",
+      "t": "noun"
+    },
+    "pied": {
+      "g": "foot",
+      "t": "noun"
+    },
+    "pierre": {
+      "g": "stone",
+      "t": "noun"
+    },
+    "pierres": {
+      "g": "stones",
+      "t": "noun"
+    },
+    "pique": {
+      "g": "stings or pricks (piquer)",
+      "t": "verb"
+    },
+    "placard": {
+      "g": "cupboard",
+      "t": "noun"
+    },
+    "places": {
+      "g": "places or seats",
+      "t": "noun"
+    },
+    "plafond": {
+      "g": "ceiling",
+      "t": "noun"
+    },
+    "plaisir": {
+      "g": "pleasure",
+      "t": "noun"
+    },
+    "plaît": {
+      "g": "pleases, as in s'il te plaît",
+      "t": "verb"
+    },
+    "pli": {
+      "g": "fold or crease",
+      "t": "noun"
+    },
+    "plié": {
+      "g": "folded",
+      "t": "adjective"
+    },
+    "plie": {
+      "g": "folds (plier)",
+      "t": "verb"
+    },
+    "plus": {
+      "g": "more, no longer, or plus",
+      "t": "adverb"
+    },
+    "poire": {
+      "g": "pear",
+      "t": "noun"
+    },
+    "poli": {
+      "g": "polite",
+      "t": "adjective"
+    },
+    "pomme": {
+      "g": "apple",
+      "t": "noun"
+    },
+    "portable": {
+      "g": "mobile phone",
+      "t": "noun"
+    },
+    "poste": {
+      "g": "post office",
+      "t": "noun"
+    },
+    "pouce": {
+      "g": "thumb",
+      "t": "noun"
+    },
+    "pourrait": {
+      "g": "could (pouvoir)",
+      "t": "verb"
+    },
+    "préféré": {
+      "g": "preferred",
+      "t": "adjective"
+    },
+    "préfère": {
+      "g": "prefers (préférer)",
+      "t": "verb"
+    },
+    "préparer": {
+      "g": "to prepare",
+      "t": "verb"
+    },
+    "prête": {
+      "g": "ready, feminine form",
+      "t": "adjective"
+    },
+    "prise": {
+      "g": "plug socket",
+      "t": "noun"
+    },
+    "prochain": {
+      "g": "next",
+      "t": "adjective"
+    },
+    "prof": {
+      "g": "teacher, informal short form",
+      "t": "noun"
+    },
+    "protester": {
+      "g": "to protest or object",
+      "t": "verb"
+    },
+    "pousse": {
+      "g": "pushes or grows (pousser)",
+      "t": "verb"
+    },
+    "quartier": {
+      "g": "neighborhood",
+      "t": "noun"
+    },
+    "quitter": {
+      "g": "to leave",
+      "t": "verb"
+    },
+    "rapide": {
+      "g": "fast, quick",
+      "t": "adjective"
+    },
+    "rapport": {
+      "g": "report",
+      "t": "noun"
+    },
+    "rater": {
+      "g": "to miss or fail",
+      "t": "verb"
+    },
+    "raisins": {
+      "g": "grapes",
+      "t": "noun"
+    },
+    "raisin": {
+      "g": "grape",
+      "t": "noun"
+    },
+    "recule": {
+      "g": "steps back (reculer)",
+      "t": "verb"
+    },
+    "refuse": {
+      "g": "refuses (refuser)",
+      "t": "verb"
+    },
+    "règle": {
+      "g": "rule",
+      "t": "noun"
+    },
+    "rend": {
+      "g": "gives back or returns",
+      "t": "verb"
+    },
+    "rendre": {
+      "g": "to return or hand in",
+      "t": "verb"
+    },
+    "rendez-vous": {
+      "g": "appointment",
+      "t": "noun"
+    },
+    "répéter": {
+      "g": "to repeat",
+      "t": "verb"
+    },
+    "répond-elle": {
+      "g": "she answers",
+      "t": "verb"
+    },
+    "rester": {
+      "g": "to stay",
+      "t": "verb"
+    },
+    "reste": {
+      "g": "stays or remains",
+      "t": "verb"
+    },
+    "retard": {
+      "g": "delay or lateness",
+      "t": "noun"
+    },
+    "retour": {
+      "g": "return",
+      "t": "noun"
+    },
+    "revenir": {
+      "g": "to come back",
+      "t": "verb"
+    },
+    "reviens": {
+      "g": "I come back or come back",
+      "t": "verb"
+    },
+    "rien": {
+      "g": "nothing",
+      "t": "pronoun"
+    },
+    "rivière": {
+      "g": "river",
+      "t": "noun"
+    },
+    "robe": {
+      "g": "dress",
+      "t": "noun"
+    },
+    "rougit": {
+      "g": "blushes (rougir)",
+      "t": "verb"
+    },
+    "route": {
+      "g": "road or route",
+      "t": "noun"
+    },
+    "samedi": {
+      "g": "Saturday",
+      "t": "noun"
+    },
+    "salade": {
+      "g": "salad",
+      "t": "noun"
+    },
+    "salon": {
+      "g": "living room",
+      "t": "noun"
+    },
+    "savon": {
+      "g": "soap",
+      "t": "noun"
+    },
+    "semaine": {
+      "g": "week",
+      "t": "noun"
+    },
+    "seconde": {
+      "g": "second, a short moment",
+      "t": "noun"
+    },
+    "seulement": {
+      "g": "only",
+      "t": "adverb"
+    },
+    "seule": {
+      "g": "alone, feminine form",
+      "t": "adjective"
+    },
+    "semblent": {
+      "g": "seem (sembler)",
+      "t": "verb"
+    },
+    "serre": {
+      "g": "squeezes or tightens (serrer)",
+      "t": "verb"
+    },
+    "serrurier": {
+      "g": "locksmith",
+      "t": "noun"
+    },
+    "silence": {
+      "g": "silence",
+      "t": "noun"
+    },
+    "soleil": {
+      "g": "sun",
+      "t": "noun"
+    },
+    "sombre": {
+      "g": "dark",
+      "t": "adjective"
+    },
+    "sortie": {
+      "g": "exit or outing",
+      "t": "noun"
+    },
+    "souffle-t-elle": {
+      "g": "she whispers or breathes out",
+      "t": "verb"
+    },
+    "station": {
+      "g": "station or stop",
+      "t": "noun"
+    },
+    "sympathique": {
+      "g": "nice, friendly",
+      "t": "adjective"
+    },
+    "ta": {
+      "g": "your, informal feminine",
+      "t": "adjective"
+    },
+    "tableau": {
+      "g": "board or painting",
+      "t": "noun"
+    },
+    "tait": {
+      "g": "keeps quiet (se taire)",
+      "t": "verb"
+    },
+    "tampon": {
+      "g": "stamp",
+      "t": "noun"
+    },
+    "taxi": {
+      "g": "taxi",
+      "t": "noun"
+    },
+    "texte": {
+      "g": "text",
+      "t": "noun"
+    },
+    "théâtre": {
+      "g": "theater",
+      "t": "noun"
+    },
+    "timide": {
+      "g": "shy",
+      "t": "adjective"
+    },
+    "tomate": {
+      "g": "tomato",
+      "t": "noun"
+    },
+    "tomber": {
+      "g": "to fall",
+      "t": "verb"
+    },
+    "tour": {
+      "g": "turn, tower, or tour",
+      "t": "noun"
+    },
+    "trait": {
+      "g": "line or stroke",
+      "t": "noun"
+    },
+    "train": {
+      "g": "train",
+      "t": "noun"
+    },
+    "tramway": {
+      "g": "tram",
+      "t": "noun"
+    },
+    "tranche-t-elle": {
+      "g": "she decides firmly",
+      "t": "verb"
+    },
+    "tremble": {
+      "g": "trembles (trembler)",
+      "t": "verb"
+    },
+    "ventre": {
+      "g": "belly",
+      "t": "noun"
+    },
+    "verre": {
+      "g": "glass",
+      "t": "noun"
+    },
+    "version": {
+      "g": "version",
+      "t": "noun"
+    },
+    "vert": {
+      "g": "green",
+      "t": "adjective"
+    },
+    "veste": {
+      "g": "jacket",
+      "t": "noun"
+    },
+    "visage": {
+      "g": "face",
+      "t": "noun"
+    },
+    "vis": {
+      "g": "I live or you live (vivre)",
+      "t": "verb"
+    },
+    "visite": {
+      "g": "visit",
+      "t": "noun"
+    },
+    "vitre": {
+      "g": "windowpane",
+      "t": "noun"
+    },
+    "voisins": {
+      "g": "neighbors",
+      "t": "noun"
+    },
+    "voyage": {
+      "g": "trip or journey",
+      "t": "noun"
+    },
+    "vraie": {
+      "g": "true or real, feminine form",
+      "t": "adjective"
+    },
+    "vrai": {
+      "g": "true or real",
+      "t": "adjective"
+    },
+    "wagon": {
+      "g": "train car",
+      "t": "noun"
+    },
+    "week-end": {
+      "g": "weekend",
+      "t": "noun"
+    },
+    "yeux": {
+      "g": "eyes",
+      "t": "noun"
+    },
+    "acheter": {
+      "g": "to buy",
+      "t": "verb"
+    },
+    "adulte": {
+      "g": "adult",
+      "t": "noun"
+    },
+    "aéroport": {
+      "g": "airport",
+      "t": "noun"
+    },
+    "assieds-toi": {
+      "g": "sit down",
+      "t": "expression"
+    },
+    "au": {
+      "g": "at the or to the",
+      "t": "expression"
+    },
+    "autrement": {
+      "g": "differently, another way",
+      "t": "adverb"
+    },
+    "avenue": {
+      "g": "avenue",
+      "t": "noun"
+    },
+    "bas": {
+      "g": "low or down",
+      "t": "adjective"
+    },
+    "bizarre": {
+      "g": "strange",
+      "t": "adjective"
+    },
+    "boire": {
+      "g": "to drink",
+      "t": "verb"
+    },
+    "bouteille": {
+      "g": "bottle",
+      "t": "noun"
+    },
+    "chambre": {
+      "g": "bedroom",
+      "t": "noun"
+    },
+    "château": {
+      "g": "castle",
+      "t": "noun"
+    },
+    "chanter": {
+      "g": "to sing",
+      "t": "verb"
+    },
+    "choisie": {
+      "g": "chosen, feminine form",
+      "t": "adjective"
+    },
+    "chose": {
+      "g": "thing",
+      "t": "noun"
+    },
+    "cinéma": {
+      "g": "cinema or movie theater",
+      "t": "noun"
+    },
+    "citron": {
+      "g": "lemon",
+      "t": "noun"
+    },
+    "classe": {
+      "g": "classroom or class",
+      "t": "noun"
+    },
+    "clavier": {
+      "g": "keyboard",
+      "t": "noun"
+    },
+    "coordinateur": {
+      "g": "coordinator",
+      "t": "noun"
+    },
+    "couteau": {
+      "g": "knife",
+      "t": "noun"
+    },
+    "cuillère": {
+      "g": "spoon",
+      "t": "noun"
+    },
+    "courir": {
+      "g": "to run",
+      "t": "verb"
+    },
+    "donner": {
+      "g": "to give",
+      "t": "verb"
+    },
+    "écrite": {
+      "g": "written, feminine form",
+      "t": "adjective"
+    },
+    "enseignante": {
+      "g": "female teacher",
+      "t": "noun"
+    },
+    "expliquer": {
+      "g": "to explain",
+      "t": "verb"
+    },
+    "fois": {
+      "g": "time, as in once or many times",
+      "t": "noun"
+    },
+    "formulaire": {
+      "g": "form, paperwork page",
+      "t": "noun"
+    },
+    "froid": {
+      "g": "cold",
+      "t": "adjective"
+    },
+    "fromage": {
+      "g": "cheese",
+      "t": "noun"
+    },
+    "j": {
+      "g": "short form of je before a vowel",
+      "t": "pronoun"
+    },
+    "journée": {
+      "g": "day, from morning to evening",
+      "t": "noun"
+    },
+    "justificatif": {
+      "g": "supporting document or proof",
+      "t": "noun"
+    },
+    "long": {
+      "g": "long",
+      "t": "adjective"
+    },
+    "lundi": {
+      "g": "Monday",
+      "t": "noun"
+    },
+    "manque": {
+      "g": "is missing (manquer)",
+      "t": "verb"
+    },
+    "marine": {
+      "g": "navy blue",
+      "t": "adjective"
+    },
+    "minute": {
+      "g": "minute",
+      "t": "noun"
+    },
+    "ne": {
+      "g": "negative marker used with pas",
+      "t": "adverb"
+    },
+    "ni": {
+      "g": "nor",
+      "t": "conjunction"
+    },
+    "nuit": {
+      "g": "night",
+      "t": "noun"
+    },
+    "pain": {
+      "g": "bread",
+      "t": "noun"
+    },
+    "parfaite": {
+      "g": "perfect, feminine form",
+      "t": "adjective"
+    },
+    "patron": {
+      "g": "boss",
+      "t": "noun"
+    },
+    "perdu": {
+      "g": "lost",
+      "t": "adjective"
+    },
+    "personnes": {
+      "g": "people",
+      "t": "noun"
+    },
+    "plat": {
+      "g": "dish or plate",
+      "t": "noun"
+    },
+    "pliée": {
+      "g": "folded, feminine form",
+      "t": "adjective"
+    },
+    "pochette": {
+      "g": "folder or small pouch",
+      "t": "noun"
+    },
+    "pont": {
+      "g": "bridge",
+      "t": "noun"
+    },
+    "portefeuille": {
+      "g": "wallet",
+      "t": "noun"
+    },
+    "prendre": {
+      "g": "to take",
+      "t": "verb"
+    },
+    "presse": {
+      "g": "presses (presser)",
+      "t": "verb"
+    },
+    "promenade": {
+      "g": "walk, stroll",
+      "t": "noun"
+    },
+    "pull": {
+      "g": "sweater",
+      "t": "noun"
+    },
+    "pyjama": {
+      "g": "pajamas",
+      "t": "noun"
+    },
+    "recevoir": {
+      "g": "to receive",
+      "t": "verb"
+    },
+    "réussit": {
+      "g": "succeeds (réussir)",
+      "t": "verb"
+    },
+    "rose": {
+      "g": "pink",
+      "t": "adjective"
+    },
+    "sait": {
+      "g": "knows (savoir)",
+      "t": "verb"
+    },
+    "savent": {
+      "g": "know (savoir), plural",
+      "t": "verb"
+    },
+    "semble": {
+      "g": "seems (sembler)",
+      "t": "verb"
+    },
+    "soir": {
+      "g": "evening",
+      "t": "noun"
+    },
+    "suivant": {
+      "g": "next or following",
+      "t": "adjective"
+    },
+    "téléphoner": {
+      "g": "to phone",
+      "t": "verb"
+    },
+    "tee-shirt": {
+      "g": "T-shirt",
+      "t": "noun"
+    },
+    "tend": {
+      "g": "holds out or stretches (tendre)",
+      "t": "verb"
+    },
+    "temps": {
+      "g": "time",
+      "t": "noun"
+    },
+    "travail": {
+      "g": "work",
+      "t": "noun"
+    },
+    "vacances": {
+      "g": "vacation",
+      "t": "noun"
+    },
+    "vélo": {
+      "g": "bicycle",
+      "t": "noun"
+    },
+    "venir": {
+      "g": "to come",
+      "t": "verb"
+    },
+    "vérité": {
+      "g": "truth",
+      "t": "noun"
+    },
+    "vitrée": {
+      "g": "glazed, with glass",
+      "t": "adjective"
+    },
+    "voulait": {
+      "g": "wanted (vouloir)",
+      "t": "verb"
+    },
+    "arbre": {
+      "g": "tree",
+      "t": "noun"
+    },
+    "avoue": {
+      "g": "admits (avouer)",
+      "t": "verb"
+    },
+    "gris": {
+      "g": "gray",
+      "t": "adjective"
+    },
+    "nettoyer": {
+      "g": "to clean",
       "t": "verb"
     }
   }

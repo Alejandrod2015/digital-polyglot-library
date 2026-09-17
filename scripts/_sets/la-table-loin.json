@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "repas,bouteille,bol,là-bas",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "repas",
+     "answer": "time when people eat food together today today",
+     "options": [
+      "time when people eat food together today today",
+      "tall thing that holds water or drinks today",
+      "round dish used for soup or food today",
+      "in that place away from here today today"
+     ]
+    },
+    {
+     "word": "bouteille",
+     "answer": "tall thing that holds water or drinks today",
+     "options": [
+      "time when people eat food together today today",
+      "tall thing that holds water or drinks today",
+      "round dish used for soup or food today",
+      "in that place away from here today today"
+     ]
+    },
+    {
+     "word": "bol",
+     "answer": "round dish used for soup or food today",
+     "options": [
+      "time when people eat food together today today",
+      "tall thing that holds water or drinks today",
+      "round dish used for soup or food today",
+      "in that place away from here today today"
+     ]
+    },
+    {
+     "word": "là-bas",
+     "answer": "in that place away from here today today",
+     "options": [
+      "time when people eat food together today today",
+      "tall thing that holds water or drinks today",
+      "round dish used for soup or food today",
+      "in that place away from here today today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "changer",
+  "sentence": "Je peux [[changer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make or become different today today today",
+   "options": [
+    "to make or become different today today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Je peux changer.",
+    "targetWord": "changer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serrer",
+  "sentence": "quelqu'un [[serre]] fort.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold something tightly today today today today",
+   "options": [
+    "to hold something tightly today today today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "quelqu'un serre fort.",
+    "targetWord": "serre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nappe",
+  "sentence": "Sur la [[nappe]], il y a une carafe, une cuillère et une fourchette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cloth put on a table for eating today",
+   "options": [
+    "cloth put on a table for eating today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Sur la nappe, il y a une carafe, une cuillère et une fourchette.",
+    "targetWord": "nappe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carafe",
+  "sentence": "Sur la nappe, il y a une [[carafe]], une cuillère et une fourchette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open bottle used for water at a table",
+   "options": [
+    "open bottle used for water at a table",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Sur la nappe, il y a une carafe, une cuillère et une fourchette.",
+    "targetWord": "carafe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuillère",
+  "sentence": "Sur la nappe, il y a une carafe, une [[cuillère]] et une fourchette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small tool used to eat soup or food",
+   "options": [
+    "small tool used to eat soup or food",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Sur la nappe, il y a une carafe, une cuillère et une fourchette.",
+    "targetWord": "cuillère",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fourchette",
+  "sentence": "Sur la nappe, il y a une carafe, une cuillère et une [[fourchette]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tool with points used to eat food today",
+   "options": [
+    "tool with points used to eat food today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Sur la nappe, il y a une carafe, une cuillère et une fourchette.",
+    "targetWord": "fourchette",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "couteau",
+  "sentence": "Le menu propose un [[couteau]] propre, un plat, une salade et une limonade.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tool used to cut food today today today",
+   "options": [
+    "tool used to cut food today today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le menu propose un couteau propre, un plat, une salade et une limonade.",
+    "targetWord": "couteau",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "menu",
+  "sentence": "Le [[menu]] propose un couteau propre, un plat, une salade et une limonade.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "list of food in a café or restaurant",
+   "options": [
+    "list of food in a café or restaurant",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le menu propose un couteau propre, un plat, une salade et une limonade.",
+    "targetWord": "menu",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plat",
+  "sentence": "Le menu propose un couteau propre, un [[plat]], une salade et une limonade.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "food served as part of a meal today",
+   "options": [
+    "food served as part of a meal today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le menu propose un couteau propre, un plat, une salade et une limonade.",
+    "targetWord": "plat",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salade",
+  "sentence": "Le menu propose un couteau propre, un plat, une [[salade]] et une limonade.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold food often made with green leaves today",
+   "options": [
+    "cold food often made with green leaves today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le menu propose un couteau propre, un plat, une salade et une limonade.",
+    "targetWord": "salade",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "limonade",
+  "sentence": "Le menu propose un couteau propre, un plat, une salade et une [[limonade]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet cold drink with lemon today today today",
+   "options": [
+    "sweet cold drink with lemon today today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le menu propose un couteau propre, un plat, une salade et une limonade.",
+    "targetWord": "limonade",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mug",
+  "sentence": "quelqu'un répond: Je garde ton [[mug]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "large cup used for hot drinks today today",
+   "options": [
+    "large cup used for hot drinks today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: Je garde ton mug.",
+    "targetWord": "mug",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poire",
+  "sentence": "Elle prend une [[poire]], une banane et un peu de raisin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet fruit with a round bottom today today",
+   "options": [
+    "sweet fruit with a round bottom today today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Elle prend une poire, une banane et un peu de raisin.",
+    "targetWord": "poire",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "banane",
+  "sentence": "Elle prend une poire, une _____ et un peu de raisin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "banane",
+   "options": [
+    "banane",
+    "repas",
+    "bouteille",
+    "bol"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "long yellow fruit with a soft inside today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Elle prend une poire, une banane et un peu de raisin.",
+    "targetWord": "banane",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "raisin",
+  "sentence": "Elle prend une poire, une banane et un peu de _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "raisin",
+   "options": [
+    "raisin",
+    "repas",
+    "bouteille",
+    "bol"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "small sweet fruit used to make wine today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Elle prend une poire, une banane et un peu de raisin.",
+    "targetWord": "raisin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "citron",
+  "sentence": "Le _____ reste dans la boisson.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "citron",
+   "options": [
+    "citron",
+    "repas",
+    "bouteille",
+    "bol"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "yellow fruit with a strong sour taste today",
+    "time when people eat food together today today",
+    "tall thing that holds water or drinks today",
+    "round dish used for soup or food today"
+   ],
+   "audioClip": {
+    "storySlug": "la-table-loin",
+    "storySource": "user",
+    "sentence": "Le citron reste dans la boisson.",
+    "targetWord": "citron",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

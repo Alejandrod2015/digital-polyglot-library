@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "arriver,petit,grand,tenir",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "arriver",
+     "answer": "to come to a place after moving or traveling",
+     "options": [
+      "to come to a place after moving or traveling",
+      "small in size, not big, long, or tall",
+      "big in size, age, height, or personal importance",
+      "to hold something in your hand for a while"
+     ]
+    },
+    {
+     "word": "petit",
+     "answer": "small in size, not big, long, or tall",
+     "options": [
+      "to come to a place after moving or traveling",
+      "small in size, not big, long, or tall",
+      "big in size, age, height, or personal importance",
+      "to hold something in your hand for a while"
+     ]
+    },
+    {
+     "word": "grand",
+     "answer": "big in size, age, height, or personal importance",
+     "options": [
+      "to come to a place after moving or traveling",
+      "small in size, not big, long, or tall",
+      "big in size, age, height, or personal importance",
+      "to hold something in your hand for a while"
+     ]
+    },
+    {
+     "word": "tenir",
+     "answer": "to hold something in your hand for a while",
+     "options": [
+      "to come to a place after moving or traveling",
+      "small in size, not big, long, or tall",
+      "big in size, age, height, or personal importance",
+      "to hold something in your hand for a while"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaud",
+  "sentence": "Dans la rue froide, quelqu'un tient un café [[chaud]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm or hot when you touch or drink it",
+   "options": [
+    "warm or hot when you touch or drink it",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Dans la rue froide, quelqu'un tient un café chaud.",
+    "targetWord": "chaud",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ouvrir",
+  "sentence": "quelqu'un [[ouvre]] la porte vitrée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a door or closed thing open",
+   "options": [
+    "to make a door or closed thing open",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un ouvre la porte vitrée.",
+    "targetWord": "ouvre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parler",
+  "sentence": "quelqu'un veut [[parler]] seule devant la mairie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use words with another person out loud",
+   "options": [
+    "to use words with another person out loud",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un veut parler seule devant la mairie.",
+    "targetWord": "parler",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voir",
+  "sentence": "Sur le formulaire, elle [[voit]] une case bleu clair.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to notice something with your eyes in front of you",
+   "options": [
+    "to notice something with your eyes in front of you",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Sur le formulaire, elle voit une case bleu clair.",
+    "targetWord": "voit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bleu",
+  "sentence": "Sur le formulaire, elle voit une case [[bleu]] clair.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having the color of the sky or sea",
+   "options": [
+    "having the color of the sky or sea",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Sur le formulaire, elle voit une case bleu clair.",
+    "targetWord": "bleu",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clair",
+  "sentence": "Sur le formulaire, elle voit une case bleu [[clair]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light in color, or easy to see and understand",
+   "options": [
+    "light in color, or easy to see and understand",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Sur le formulaire, elle voit une case bleu clair.",
+    "targetWord": "clair",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comprendre",
+  "sentence": "Je ne [[comprends]] pas ce papier, avoue quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know the meaning of words or a situation",
+   "options": [
+    "to know the meaning of words or a situation",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Je ne comprends pas ce papier, avoue quelqu'un.",
+    "targetWord": "comprends",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bouger",
+  "sentence": "quelqu'un [[bouge]] la main, prêt à aider.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move your body or one part of it",
+   "options": [
+    "to move your body or one part of it",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un bouge la main, prêt à aider.",
+    "targetWord": "bouge",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aider",
+  "sentence": "quelqu'un murmure: Je peux [[aider]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make something easier for another person to do",
+   "options": [
+    "to make something easier for another person to do",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un murmure: Je peux aider.",
+    "targetWord": "aider",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lundi",
+  "sentence": "quelqu'un confirme: [[lundi]], à ton nom.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the day of the week after Sunday morning",
+   "options": [
+    "the day of the week after Sunday morning",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un confirme: lundi, à ton nom.",
+    "targetWord": "lundi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respirer",
+  "sentence": "Elle baisse les yeux, [[respire]] et cherche dans sa pochette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take air into your body and let it out",
+   "options": [
+    "to take air into your body and let it out",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Elle baisse les yeux, respire et cherche dans sa pochette.",
+    "targetWord": "respire",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chercher",
+  "sentence": "Ici, [[cherche]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to try to find something that you need",
+   "options": [
+    "to try to find something that you need",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Ici, cherche compte vraiment.",
+    "targetWord": "cherche",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demander",
+  "sentence": "Vous pouvez répéter lentement, s'il vous plaît?, [[demande]] quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask a question or ask for help",
+   "options": [
+    "to ask a question or ask for help",
+    "to come to a place after moving or traveling",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Vous pouvez répéter lentement, s'il vous plaît?, demande quelqu'un.",
+    "targetWord": "demande",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lentement",
+  "sentence": "Vous pouvez répéter _____, s'il vous plaît?, demande quelqu'un.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lentement",
+   "options": [
+    "lentement",
+    "petit",
+    "grand",
+    "chaud"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "slow, or done in a way that is not fast",
+    "small in size, not big, long, or tall",
+    "big in size, age, height, or personal importance",
+    "warm or hot when you touch or drink it"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "Vous pouvez répéter lentement, s'il vous plaît?, demande quelqu'un.",
+    "targetWord": "lentement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "trouve",
+  "sentence": "quelqu'un _____ la facture et la pose sur le bureau.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trouve",
+   "options": [
+    "trouve",
+    "arrive",
+    "tient",
+    "ouvre"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to find something after looking or waiting for it",
+    "to come to a place after moving or traveling",
+    "to hold something in your hand for a while",
+    "to make a door or closed thing open"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un trouve la facture et la pose sur le bureau.",
+    "targetWord": "trouve",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ferme",
+  "sentence": "quelqu'un _____ la bouche, puis souffle: C'est ton rendez-vous.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ferme",
+   "options": [
+    "ferme",
+    "arrive",
+    "tient",
+    "ouvre"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to close a door, mouth, box, or thing",
+    "to come to a place after moving or traveling",
+    "to hold something in your hand for a while",
+    "to make a door or closed thing open"
+   ],
+   "audioClip": {
+    "storySlug": "le-papier-bleu",
+    "storySource": "user",
+    "sentence": "quelqu'un ferme la bouche, puis souffle: C'est ton rendez-vous.",
+    "targetWord": "ferme",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

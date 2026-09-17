@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "cierre social optimista, con autonomia visible y pertenencia tranquila",
+  "espina": "Amelie termina dentro del circulo, pero ya no entra por la voz de Marc.",
+  "recursos": "presentacion, mesa lejos, calendario abierto, pequenas perdidas que ganan autonomia",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "presentarse en el circulo con una frase propia",
+      "impide": "Marc trae una frase demasiado perfecta",
+      "cuesta": "pierde la presentacion brillante",
+      "cambia": "usa una frase pequena y verdadera",
+      "emocion": "voz pequena pero sostenida ante todos"
+    },
+    {
+      "slot": "2",
+      "quiere": "sentarse lejos de Marc en una comida",
+      "impide": "la silla familiar no esta libre",
+      "cuesta": "pierde la place voisine",
+      "cambia": "saluda y escucha por su cuenta",
+      "emocion": "mano apretada, luego calma con el primer bonjour"
+    },
+    {
+      "slot": "3",
+      "quiere": "aceptar el grupo sin aceptar todos los planes",
+      "impide": "el calendario se llena rapido",
+      "cuesta": "pierde el si facil",
+      "cambia": "propone miercoles como limite propio",
+      "emocion": "espera la respuesta del grupo sin retirar su limite"
+    }
+  ]
+}

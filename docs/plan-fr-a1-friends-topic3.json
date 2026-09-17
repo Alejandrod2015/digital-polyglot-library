@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "urgente pero sobrio, con relojes, mensajes cortos y una presion adulta que no se resuelve con correr",
+  "espina": "Amélie quiere decidir si la vida nueva de Marc en Paris puede tener un ritmo compartido con ella sin perder su propio calendario en Marseille.",
+  "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, devoir, vouloir, preguntas de hora y dia, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de fechas usado como coste real.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Amélie quiere fijar con Olivier una fecha simple para volver a Paris sin que Marc organice todo.",
+      "impide": "Olivier solo tiene dos horarios posibles y ambos rompen algo que Amélie ya prometio en Marseille.",
+      "cuesta": "Pierde la comodidad de decir que el problema es Paris; cancela una tarde libre que esperaba para si misma.",
+      "cambia": "Elige una fecha imperfecta y pide que Marc no la venda como plan bonito.",
+      "emocion": "Siente presion en la nuca porque el calendario parece decidir por ella; dobla el papel, mira la hora y responde claro."
+    },
+    {
+      "slot": "2",
+      "quiere": "Amélie quiere llegar a tiempo a una reunion de barrio para conocer el ritmo de Marc.",
+      "impide": "El metro se retrasa y Marc propone avisar por ella para evitar el mal momento.",
+      "cuesta": "Pierde la primera impresion tranquila que queria dar; entra tarde y todos la ven llegar.",
+      "cambia": "Manda ella misma el mensaje corto y entra sin disculparse diez veces.",
+      "emocion": "Tiene calor porque llegar tarde confirma su miedo de no encajar; guarda el telefono, respira y saluda una sola vez."
+    },
+    {
+      "slot": "3",
+      "quiere": "Amélie quiere cerrar el fin de semana con un plan claro antes de volver a Marseille.",
+      "impide": "Marc cambia una hora para ayudar a Olivier y deja el regreso de Amélie apretado.",
+      "cuesta": "Pierde el tren comodo y acepta una espera mas larga para no convertir el favor en reproche.",
+      "cambia": "Propone una regla simple para futuros viajes: cambiar planes si ambos lo dicen antes.",
+      "emocion": "Le pica la garganta porque quiere protestar y cuidar la amistad a la vez; toca el billete, mira a Marc y negocia sin sonrisa."
+    }
+  ]
+}

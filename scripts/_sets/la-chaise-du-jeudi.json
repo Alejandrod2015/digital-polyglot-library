@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "jeudi,chaise,rouge,soleil",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "jeudi",
+     "answer": "day of the week after Wednesday and before Friday",
+     "options": [
+      "day of the week after Wednesday and before Friday",
+      "seat with a back for one person only",
+      "having the color of blood or red tomatoes",
+      "bright star that gives daylight and warm light"
+     ]
+    },
+    {
+     "word": "chaise",
+     "answer": "seat with a back for one person only",
+     "options": [
+      "day of the week after Wednesday and before Friday",
+      "seat with a back for one person only",
+      "having the color of blood or red tomatoes",
+      "bright star that gives daylight and warm light"
+     ]
+    },
+    {
+     "word": "rouge",
+     "answer": "having the color of blood or red tomatoes",
+     "options": [
+      "day of the week after Wednesday and before Friday",
+      "seat with a back for one person only",
+      "having the color of blood or red tomatoes",
+      "bright star that gives daylight and warm light"
+     ]
+    },
+    {
+     "word": "soleil",
+     "answer": "bright star that gives daylight and warm light",
+     "options": [
+      "day of the week after Wednesday and before Friday",
+      "seat with a back for one person only",
+      "having the color of blood or red tomatoes",
+      "bright star that gives daylight and warm light"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "six",
+  "sentence": "[[six]] personnes parlent bas dans la lumière du soleil.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the number after five and before seven today",
+   "options": [
+    "the number after five and before seven today",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "six personnes parlent bas dans la lumière du soleil.",
+    "targetWord": "six",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "personne",
+  "sentence": "Six [[personnes]] parlent bas dans la lumière du soleil.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "human being, or no one in negative sentences",
+   "options": [
+    "human being, or no one in negative sentences",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Six personnes parlent bas dans la lumière du soleil.",
+    "targetWord": "personnes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bois",
+  "sentence": "quelqu'un touche le [[bois]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard material from trees used for tables today",
+   "options": [
+    "hard material from trees used for tables today",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "quelqu'un touche le bois.",
+    "targetWord": "bois",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pomme",
+  "sentence": "quelqu'un montre une [[pomme]] et du fromage, puis il se tait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "round fruit that is often red or green",
+   "options": [
+    "round fruit that is often red or green",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "quelqu'un montre une pomme et du fromage, puis il se tait.",
+    "targetWord": "pomme",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fromage",
+  "sentence": "quelqu'un montre une pomme et du [[fromage]], puis il se tait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "food made from milk, often yellow or white",
+   "options": [
+    "food made from milk, often yellow or white",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "quelqu'un montre une pomme et du fromage, puis il se tait.",
+    "targetWord": "fromage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lait",
+  "sentence": "Sur la table, il y a du [[lait]] et un œuf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white drink that comes from cows or plants",
+   "options": [
+    "white drink that comes from cows or plants",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Sur la table, il y a du lait et un œuf.",
+    "targetWord": "lait",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "œuf",
+  "sentence": "Ici, [[œuf]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "oval food with a shell, often from chickens",
+   "options": [
+    "oval food with a shell, often from chickens",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Ici, œuf compte vraiment.",
+    "targetWord": "œuf",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marché",
+  "sentence": "Ici, [[marché]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people buy food from small stalls",
+   "options": [
+    "place where people buy food from small stalls",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Ici, marché compte vraiment.",
+    "targetWord": "marché",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "samedi",
+  "sentence": "Tout le monde prépare le marché du [[samedi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "day of the week after Friday and before Sunday",
+   "options": [
+    "day of the week after Friday and before Sunday",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Tout le monde prépare le marché du samedi.",
+    "targetWord": "samedi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parc",
+  "sentence": "quelqu'un pourrait partir au [[parc]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green public place where people walk or rest",
+   "options": [
+    "green public place where people walk or rest",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "quelqu'un pourrait partir au parc.",
+    "targetWord": "parc",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "magasin",
+  "sentence": "Elle regarde le [[magasin]] puis la boutique, comme si la sortie appelait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people buy things they need today",
+   "options": [
+    "place where people buy things they need today",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Elle regarde le magasin puis la boutique, comme si la sortie appelait.",
+    "targetWord": "magasin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boutique",
+  "sentence": "Elle regarde le magasin puis la [[boutique]], comme si la sortie appelait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small shop, often for special things or clothes",
+   "options": [
+    "small shop, often for special things or clothes",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Elle regarde le magasin puis la boutique, comme si la sortie appelait.",
+    "targetWord": "boutique",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "homme",
+  "sentence": "Un [[homme]] pose une tomate.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "adult male person, not a boy or child",
+   "options": [
+    "adult male person, not a boy or child",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Un homme pose une tomate.",
+    "targetWord": "homme",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tomate",
+  "sentence": "Un homme pose une _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tomate",
+   "options": [
+    "tomate",
+    "jeudi",
+    "chaise",
+    "soleil"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "red fruit used like a vegetable in food",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "bright star that gives daylight and warm light"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Un homme pose une tomate.",
+    "targetWord": "tomate",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bibliothèque",
+  "sentence": "Où est la _____ près d'ici?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bibliothèque",
+   "options": [
+    "bibliothèque",
+    "jeudi",
+    "chaise",
+    "soleil"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "place with books people can read or borrow",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "bright star that gives daylight and warm light"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Où est la bibliothèque près d'ici?",
+    "targetWord": "bibliothèque",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vend",
+  "sentence": "Elle ne _____ rien, mais elle achète sa place du jeudi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vend",
+   "options": [
+    "vend",
+    "jeudi",
+    "chaise",
+    "rouge"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to give something to someone for money today",
+    "day of the week after Wednesday and before Friday",
+    "seat with a back for one person only",
+    "having the color of blood or red tomatoes"
+   ],
+   "audioClip": {
+    "storySlug": "la-chaise-du-jeudi",
+    "storySource": "user",
+    "sentence": "Elle ne vend rien, mais elle achète sa place du jeudi.",
+    "targetWord": "vend",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

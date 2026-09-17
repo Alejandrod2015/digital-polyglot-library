@@ -1,0 +1,153 @@
+[
+  {
+    "topic": "circles-and-introductions",
+    "slotIndex": 0,
+    "title": "Le nom du cercle",
+    "slug": "le-nom-du-cercle",
+    "synopsis": "Baptiste asks each person to give one simple sentence at the café circle, and Marc prepares a polished introduction for Amélie. She wants to enter the group with her own voice, so she drops the perfect sentence and keeps a smaller one in front of everyone.",
+    "text": "Dans un café de Paris, Amélie porte un manteau rouge. Marc porte une veste bleu marine. Baptiste est un patron de café.\n\nUne lumière tombe sur une écharpe rose, un tee-shirt blanc, une jupe noire et une ceinture. Baptiste montre le cercle. “Une phrase suffit. Pas plus.”\n\nMarc prend une feuille. “Je peux préparer une belle forme.” Un monsieur écoute. Amélie veut dire la vérité, pas une couleur choisie par un autre.\n\n“Non, je vais parler”, répond Amélie. Sa voix reste petite. “Je suis courageuse ce soir. Je cherche une place simple ici. Je garde ces mots.” Baptiste ajoute: “C’est sympathique.”\n\nMadame Moreau garde sa cravate drôle et un gant dans son sac. Marc ferme la feuille. “Ton nom suffit”, répond-il. Amélie perd la phrase brillante, mais le groupe connaît son nom entier.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "veste",
+        "surface": "veste",
+        "register": "neutral",
+        "definition": "short coat worn over other clothes today today"
+      },
+      {
+        "type": "noun",
+        "word": "patron",
+        "surface": "patron",
+        "register": "neutral",
+        "definition": "person who owns or leads a place today"
+      },
+      {
+        "type": "noun",
+        "word": "écharpe",
+        "surface": "écharpe",
+        "register": "neutral",
+        "definition": "long cloth worn around the neck today today"
+      },
+      {
+        "type": "adjective",
+        "word": "rose",
+        "surface": "rose",
+        "register": "neutral",
+        "definition": "light red color, like some flowers today today"
+      },
+      {
+        "type": "noun",
+        "word": "tee-shirt",
+        "surface": "tee-shirt",
+        "register": "neutral",
+        "definition": "simple shirt with short sleeves today today today"
+      },
+      {
+        "type": "noun",
+        "word": "jupe",
+        "surface": "jupe",
+        "register": "neutral",
+        "definition": "clothing worn from the waist down today today"
+      },
+      {
+        "type": "noun",
+        "word": "cercle",
+        "surface": "cercle",
+        "register": "neutral",
+        "definition": "group of people who meet for an interest"
+      },
+      {
+        "type": "adjective",
+        "word": "beau",
+        "surface": "belle",
+        "register": "neutral",
+        "definition": "nice to see or hear today today today"
+      },
+      {
+        "type": "noun",
+        "word": "monsieur",
+        "surface": "monsieur",
+        "register": "neutral",
+        "definition": "polite word for an adult man today today"
+      },
+      {
+        "type": "noun",
+        "word": "forme",
+        "surface": "forme",
+        "register": "neutral",
+        "definition": "way something looks or is made today today"
+      },
+      {
+        "type": "noun",
+        "word": "vérité",
+        "surface": "vérité",
+        "register": "neutral",
+        "definition": "what is true and not false today today"
+      },
+      {
+        "type": "noun",
+        "word": "couleur",
+        "surface": "couleur",
+        "register": "neutral",
+        "definition": "red, blue, green, or another kind people see"
+      },
+      {
+        "type": "adjective",
+        "word": "courageux",
+        "surface": "courageuse",
+        "register": "neutral",
+        "definition": "able to act even with fear today today"
+      },
+      {
+        "type": "adjective",
+        "word": "sympathique",
+        "surface": "sympathique",
+        "register": "neutral",
+        "definition": "kind and pleasant with other people today today"
+      },
+      {
+        "type": "noun",
+        "word": "madame",
+        "surface": "Madame",
+        "register": "neutral",
+        "definition": "polite word for an adult woman today today"
+      },
+      {
+        "type": "noun",
+        "word": "ceinture",
+        "surface": "ceinture",
+        "register": "neutral",
+        "definition": "strip worn around the waist today today today"
+      },
+      {
+        "type": "noun",
+        "word": "cravate",
+        "surface": "cravate",
+        "register": "neutral",
+        "definition": "long cloth worn at the neck today today"
+      },
+      {
+        "type": "adjective",
+        "word": "drôle",
+        "surface": "drôle",
+        "register": "neutral",
+        "definition": "strange or funny in a simple way today"
+      },
+      {
+        "type": "noun",
+        "word": "gant",
+        "surface": "gant",
+        "register": "neutral",
+        "definition": "clothing worn on the hand today today today"
+      },
+      {
+        "type": "adjective",
+        "word": "brillant",
+        "surface": "brillante",
+        "register": "neutral",
+        "definition": "very good, bright, or impressive in this moment"
+      }
+    ],
+    "arcType": "reframe-turn"
+  }
+]

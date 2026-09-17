@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "mettre,poser,gros,trop",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mettre",
+     "answer": "to put something in one place with your hand",
+     "options": [
+      "to put something in one place with your hand",
+      "to put something down on a flat surface",
+      "large, thick, heavy, or too big to use",
+      "more than is good, useful, wanted, or needed"
+     ]
+    },
+    {
+     "word": "poser",
+     "answer": "to put something down on a flat surface",
+     "options": [
+      "to put something in one place with your hand",
+      "to put something down on a flat surface",
+      "large, thick, heavy, or too big to use",
+      "more than is good, useful, wanted, or needed"
+     ]
+    },
+    {
+     "word": "gros",
+     "answer": "large, thick, heavy, or too big to use",
+     "options": [
+      "to put something in one place with your hand",
+      "to put something down on a flat surface",
+      "large, thick, heavy, or too big to use",
+      "more than is good, useful, wanted, or needed"
+     ]
+    },
+    {
+     "word": "trop",
+     "answer": "more than is good, useful, wanted, or needed",
+     "options": [
+      "to put something in one place with your hand",
+      "to put something down on a flat surface",
+      "large, thick, heavy, or too big to use",
+      "more than is good, useful, wanted, or needed"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "appeler",
+  "sentence": "quelqu'un [[appelle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to phone someone or say their name out loud",
+   "options": [
+    "to phone someone or say their name out loud",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "quelqu'un appelle.",
+    "targetWord": "appelle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quinze",
+  "sentence": "La réunion passe à [[quinze]] heures, annonce-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the number fifteen, coming after fourteen and before sixteen",
+   "options": [
+    "the number fifteen, coming after fourteen and before sixteen",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "La réunion passe à quinze heures, annonce-t-elle.",
+    "targetWord": "quinze",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partir",
+  "sentence": "Le bus [[part]] sans nous, souffle quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave or go away from a place",
+   "options": [
+    "to leave or go away from a place",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Le bus part sans nous, souffle quelqu'un.",
+    "targetWord": "part",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout",
+  "sentence": "On prend [[tout]], propose quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all of something, with nothing left out at all",
+   "options": [
+    "all of something, with nothing left out at all",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "On prend tout, propose quelqu'un.",
+    "targetWord": "tout",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prendre",
+  "sentence": "On [[prend]] tout, propose quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take something with your hand or choice",
+   "options": [
+    "to take something with your hand or choice",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "On prend tout, propose quelqu'un.",
+    "targetWord": "prend",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentir",
+  "sentence": "Elle se [[sent]] petite, parce que quelqu'un décide encore pour elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to feel something in your body or mind",
+   "options": [
+    "to feel something in your body or mind",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Elle se sent petite, parce que quelqu'un décide encore pour elle.",
+    "targetWord": "sent",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bus",
+  "sentence": "Le [[bus]] part sans nous, souffle quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "large road vehicle that carries many people through town",
+   "options": [
+    "large road vehicle that carries many people through town",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Le bus part sans nous, souffle quelqu'un.",
+    "targetWord": "bus",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "décider",
+  "sentence": "Elle se sent petite, parce que quelqu'un [[décide]] encore pour elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose what will happen or what to do",
+   "options": [
+    "to choose what will happen or what to do",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Elle se sent petite, parce que quelqu'un décide encore pour elle.",
+    "targetWord": "décide",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apporter",
+  "sentence": "Le serveur [[apporte]] de l'eau fraîche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring something to another person or place",
+   "options": [
+    "to bring something to another person or place",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Le serveur apporte de l'eau fraîche.",
+    "targetWord": "apporte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boire",
+  "sentence": "quelqu'un [[boit]] une minute calme et lit la liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take water or another drink into your mouth",
+   "options": [
+    "to take water or another drink into your mouth",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "quelqu'un boit une minute calme et lit la liste.",
+    "targetWord": "boit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "minute",
+  "sentence": "quelqu'un boit une [[minute]] calme et lit la liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short unit of time, equal to sixty seconds",
+   "options": [
+    "short unit of time, equal to sixty seconds",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "quelqu'un boit une minute calme et lit la liste.",
+    "targetWord": "minute",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lire",
+  "sentence": "quelqu'un boit une minute calme et [[lit]] la liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to understand written words with your eyes and mind",
+   "options": [
+    "to understand written words with your eyes and mind",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "quelqu'un boit une minute calme et lit la liste.",
+    "targetWord": "lit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "choisir",
+  "sentence": "Je [[choisis]] maintenant, pas toi, tranche-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pick one thing from several possible things",
+   "options": [
+    "to pick one thing from several possible things",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "large, thick, heavy, or too big to use"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Je choisis maintenant, pas toi, tranche-t-elle.",
+    "targetWord": "choisis",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "préfère",
+  "sentence": "Elle _____ la copie, la photo et l'adresse.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "préfère",
+   "options": [
+    "préfère",
+    "met",
+    "pose",
+    "appelle"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to like or choose one thing more than another",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "to phone someone or say their name out loud"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Elle préfère la copie, la photo et l'adresse.",
+    "targetWord": "préfère",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "laisse",
+  "sentence": "Elle _____ les enveloppes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laisse",
+   "options": [
+    "laisse",
+    "met",
+    "pose",
+    "appelle"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to leave something where it is or let it stay",
+    "to put something in one place with your hand",
+    "to put something down on a flat surface",
+    "to phone someone or say their name out loud"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "Elle laisse les enveloppes.",
+    "targetWord": "laisse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "peu",
+  "sentence": "quelqu'un rit un _____ et ferme le dossier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "peu",
+   "options": [
+    "peu",
+    "trop",
+    "tout",
+    "met"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "a small amount, not a lot of something",
+    "more than is good, useful, wanted, or needed",
+    "all of something, with nothing left out at all",
+    "to put something in one place with your hand"
+   ],
+   "audioClip": {
+    "storySlug": "le-dossier-gros",
+    "storySource": "user",
+    "sentence": "quelqu'un rit un peu et ferme le dossier.",
+    "targetWord": "peu",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

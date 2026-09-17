@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "appel,avec,station,métro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "appel",
+     "answer": "phone talk with another person far away today",
+     "options": [
+      "phone talk with another person far away today",
+      "together with another person or thing nearby today",
+      "place where trains or metros stop for people",
+      "city train that travels under the streets nearby"
+     ]
+    },
+    {
+     "word": "avec",
+     "answer": "together with another person or thing nearby today",
+     "options": [
+      "phone talk with another person far away today",
+      "together with another person or thing nearby today",
+      "place where trains or metros stop for people",
+      "city train that travels under the streets nearby"
+     ]
+    },
+    {
+     "word": "station",
+     "answer": "place where trains or metros stop for people",
+     "options": [
+      "phone talk with another person far away today",
+      "together with another person or thing nearby today",
+      "place where trains or metros stop for people",
+      "city train that travels under the streets nearby"
+     ]
+    },
+    {
+     "word": "métro",
+     "answer": "city train that travels under the streets nearby",
+     "options": [
+      "phone talk with another person far away today",
+      "together with another person or thing nearby today",
+      "place where trains or metros stop for people",
+      "city train that travels under the streets nearby"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "réunion",
+  "sentence": "[[réunion]] compte ici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "time when people meet to talk together today",
+   "options": [
+    "time when people meet to talk together today",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "réunion compte ici.",
+    "targetWord": "réunion",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quartier",
+  "sentence": "[[quartier]] compte ici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of a city where people live nearby",
+   "options": [
+    "part of a city where people live nearby",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "quartier compte ici.",
+    "targetWord": "quartier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lumière",
+  "sentence": "Le wagon reste immobile, et la [[lumière]] blanche tremble au-dessus d'eux.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brightness that lets people see things clearly now",
+   "options": [
+    "brightness that lets people see things clearly now",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Le wagon reste immobile, et la lumière blanche tremble au-dessus d'eux.",
+    "targetWord": "lumière",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ici",
+  "sentence": "quelqu'un répond: [[Ici]], Paris est parfois bizarre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in this place, not another place nearby today",
+   "options": [
+    "in this place, not another place nearby today",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: Ici, Paris est parfois bizarre.",
+    "targetWord": "Ici",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "là",
+  "sentence": "Ici, [[Là]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in that place or at that moment now",
+   "options": [
+    "in that place or at that moment now",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Ici, Là compte vraiment.",
+    "targetWord": "Là",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "être",
+  "sentence": "Ici, [[est]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to exist or have a state right now",
+   "options": [
+    "to exist or have a state right now",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Ici, est compte vraiment.",
+    "targetWord": "est",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contre",
+  "sentence": "Elle range le téléphone [[contre]] son sac.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "touching or very near another thing nearby now",
+   "options": [
+    "touching or very near another thing nearby now",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Elle range le téléphone contre son sac.",
+    "targetWord": "contre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parce que",
+  "sentence": "Sa joue chauffe [[parce que]] tout le monde va la voir entrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "words that give the reason for something now",
+   "options": [
+    "words that give the reason for something now",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Sa joue chauffe parce que tout le monde va la voir entrer.",
+    "targetWord": "parce que",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saluer",
+  "sentence": "quelqu'un entre et [[salue]] une fois.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say hello to someone politely once there",
+   "options": [
+    "to say hello to someone politely once there",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "quelqu'un entre et salue une fois.",
+    "targetWord": "salue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "court",
+  "sentence": "Merci pour l'appel [[court]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short, not long in time, size, or words",
+   "options": [
+    "short, not long in time, size, or words",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Merci pour l'appel court.",
+    "targetWord": "court",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aujourd'hui",
+  "sentence": "C'est moi qui arrive tard [[aujourd'hui]], répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on this exact day, not yesterday or tomorrow",
+   "options": [
+    "on this exact day, not yesterday or tomorrow",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "C'est moi qui arrive tard aujourd'hui, répond-elle.",
+    "targetWord": "aujourd'hui",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tard",
+  "sentence": "C'est moi qui arrive [[tard]] aujourd'hui, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late, after the planned or expected time today",
+   "options": [
+    "late, after the planned or expected time today",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "C'est moi qui arrive tard aujourd'hui, répond-elle.",
+    "targetWord": "tard",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maintenant",
+  "sentence": "Elle ne veut pas cacher son heure, [[maintenant]] ni toujours.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this time, not before or later today",
+   "options": [
+    "at this time, not before or later today",
+    "phone talk with another person far away today",
+    "together with another person or thing nearby today",
+    "place where trains or metros stop for people"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Elle ne veut pas cacher son heure, maintenant ni toujours.",
+    "targetWord": "maintenant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "toujours",
+  "sentence": "Elle ne veut pas cacher son heure, maintenant ni _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toujours",
+   "options": [
+    "toujours",
+    "Ici",
+    "Là",
+    "aujourd'hui"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "always, or every single time something happens now",
+    "in this place, not another place nearby today",
+    "in that place or at that moment now",
+    "on this exact day, not yesterday or tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Elle ne veut pas cacher son heure, maintenant ni toujours.",
+    "targetWord": "toujours",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "parfois",
+  "sentence": "quelqu'un répond: Ici, Paris est _____ bizarre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parfois",
+   "options": [
+    "parfois",
+    "Ici",
+    "Là",
+    "aujourd'hui"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "sometimes, but not all of the time today",
+    "in this place, not another place nearby today",
+    "in that place or at that moment now",
+    "on this exact day, not yesterday or tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: Ici, Paris est parfois bizarre.",
+    "targetWord": "parfois",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "plus",
+  "sentence": "Là, quelqu'un souffle: Tu as fait _____ court.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "plus",
+   "options": [
+    "plus",
+    "Ici",
+    "Là",
+    "aujourd'hui"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "more, or used with ne to mean no more",
+    "in this place, not another place nearby today",
+    "in that place or at that moment now",
+    "on this exact day, not yesterday or tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "l-appel-court",
+    "storySource": "user",
+    "sentence": "Là, quelqu'un souffle: Tu as fait plus court.",
+    "targetWord": "plus",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

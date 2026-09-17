@@ -30,13 +30,28 @@ import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
 // usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string>; bundle: string }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
+const PERFILES: Record<string, { journey: string; language: string; voces: Record<string, string>; bundle: string }> = {
+  a2: { journey: "cmtgelq560007j84n3ujx9bpd", language: "spanish", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
+  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", language: "spanish", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
+  "fr-a1-friends": {
+    journey: "cmtwz1iop000l32jybeo2jg4x",
+    language: "french",
+    voces: {
+      "circles-and-introductions": "ucMmKRQbfDEYyb2IIGax",
+      "group-notes-and-plans": "ucMmKRQbfDEYyb2IIGax",
+      "hosting-and-care": "ucMmKRQbfDEYyb2IIGax",
+      "invites-and-boundaries": "ucMmKRQbfDEYyb2IIGax",
+      "plans-and-timing": "ucMmKRQbfDEYyb2IIGax",
+      "seats-and-tables": "ucMmKRQbfDEYyb2IIGax",
+      "trust-and-doubts": "ucMmKRQbfDEYyb2IIGax",
+      "trust-and-reassurance": "ucMmKRQbfDEYyb2IIGax",
+    },
+    bundle: "french-friends-france-a1",
+  },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a1-friends");
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
@@ -67,20 +82,21 @@ const prisma = new PrismaClient();
   const muestras = fs.existsSync(REGISTRO)
     ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
     : {};
-  if (s.slotIndex === 1 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+  const primeraDelTema = await prisma.journeyStory.findFirst({
+    where: { journeyId: JOURNEY, topic: s.topic },
+    select: { slug: true, audioUrl: true, slotIndex: true },
+    orderBy: { slotIndex: "asc" },
+  });
+  if (s.slug === primeraDelTema?.slug && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
     throw new Error(
       `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
       `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}`
     );
   }
-  if (s.slotIndex > 1) {
-    const primera = await prisma.journeyStory.findFirst({
-      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
-      select: { slug: true, audioUrl: true },
-    });
-    if (!primera?.audioUrl) {
+  if (s.slug !== primeraDelTema?.slug) {
+    if (!primeraDelTema?.audioUrl) {
       throw new Error(
-        `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
+        `la primera de este tema (${primeraDelTema?.slug}) todavia no esta narrada.\n` +
         `  El orden es: muestra, primera entera, y luego el resto.`
       );
     }
@@ -111,7 +127,7 @@ const prisma = new PrismaClient();
 
   const result = await generateAndUploadMultiVoiceAudio({
     storyText: s.text, title: s.title, voiceMap: { narrator: voiceId },
-    language: "spanish", disableStitching: true, antiUptalkGate: true, contentGate: true,
+    language: PERFIL.language, disableStitching: true, antiUptalkGate: true, contentGate: true,
   } as any);
   if (!result) throw new Error("el render devolvio null");
 

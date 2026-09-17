@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "social, cercano y ligero, con pequenos roces de autonomia dentro del grupo",
+  "espina": "Amelie aprende a hablar al grupo con su propia voz, sin que Marc ordene sus relaciones por ella.",
+  "recursos": "dialogo breve, objetos concretos de portada, frases A1, giro social pequeno al final",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "mandar una nota azul para organizar un cumpleanos sorpresa",
+      "impide": "Marc intenta corregir cada frase para ayudar",
+      "cuesta": "pierde la comodidad de dejar que Marc hable por ella",
+      "cambia": "envia una frase simple y propia",
+      "emocion": "nervios visibles en la respiracion y alivio cuando Marc se calla"
+    },
+    {
+      "slot": "2",
+      "quiere": "convertir un dossier enorme de planes en una invitacion calida",
+      "impide": "Nadine y Marc lo hacen demasiado serio",
+      "cuesta": "renuncia a controlar todos los detalles del plan",
+      "cambia": "elige solo lo necesario y deja espacio a la amistad",
+      "emocion": "se siente pequena ante la lista, luego se rie al cerrarla"
+    },
+    {
+      "slot": "3",
+      "quiere": "corregir una linea de invitacion para incluir a Camille",
+      "impide": "Marc propone volver a escribirlo todo y retrasar el envio",
+      "cuesta": "acepta mandar una invitacion imperfecta esa noche",
+      "cambia": "elige una palabra mas generosa y firma ella",
+      "emocion": "miedo de equivocarse, sostenido por un gesto firme con el stylo noir"
+    }
+  ]
+}

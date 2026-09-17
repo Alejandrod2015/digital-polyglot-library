@@ -71,6 +71,46 @@
         "trois"
       ]
     },
+    "french-friends-france-a1": {
+      "articles": [
+        "ce",
+        "cette",
+        "des",
+        "du",
+        "l",
+        "la",
+        "le",
+        "les",
+        "un",
+        "une"
+      ],
+      "characterNames": [
+        "amelie",
+        "amélie",
+        "baptiste",
+        "camille",
+        "caron",
+        "ines",
+        "inès",
+        "marc",
+        "mathieu",
+        "moreau",
+        "nadine",
+        "olivier",
+        "sophie"
+      ],
+      "numerals": [
+        "deux",
+        "cinq",
+        "dix",
+        "quinze",
+        "quatre",
+        "six",
+        "trois",
+        "vingt",
+        "mille"
+      ]
+    },
     "german-expat": {
       "articles": [
         "das",

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "rendez-vous,avril,calendrier,ombre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "rendez-vous",
+     "answer": "planned time to meet someone today today today",
+     "options": [
+      "planned time to meet someone today today today",
+      "fourth month of the year today today today",
+      "page or book showing days and months today",
+      "dark shape made when light is blocked today"
+     ]
+    },
+    {
+     "word": "avril",
+     "answer": "fourth month of the year today today today",
+     "options": [
+      "planned time to meet someone today today today",
+      "fourth month of the year today today today",
+      "page or book showing days and months today",
+      "dark shape made when light is blocked today"
+     ]
+    },
+    {
+     "word": "calendrier",
+     "answer": "page or book showing days and months today",
+     "options": [
+      "planned time to meet someone today today today",
+      "fourth month of the year today today today",
+      "page or book showing days and months today",
+      "dark shape made when light is blocked today"
+     ]
+    },
+    {
+     "word": "ombre",
+     "answer": "dark shape made when light is blocked today",
+     "options": [
+      "planned time to meet someone today today today",
+      "fourth month of the year today today today",
+      "page or book showing days and months today",
+      "dark shape made when light is blocked today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mai",
+  "sentence": "En [[mai]] aussi?, propose quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fifth month of the year today today today",
+   "options": [
+    "fifth month of the year today today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "En mai aussi?, propose quelqu'un.",
+    "targetWord": "mai",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mercredi",
+  "sentence": "quelqu'un voit le [[mercredi]] libre, le week-end plein et les vacances loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "day of the week after Tuesday today today",
+   "options": [
+    "day of the week after Tuesday today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un voit le mercredi libre, le week-end plein et les vacances loin.",
+    "targetWord": "mercredi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "week-end",
+  "sentence": "quelqu'un voit le mercredi libre, le [[week-end]] plein et les vacances loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Saturday and Sunday together today today today today",
+   "options": [
+    "Saturday and Sunday together today today today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un voit le mercredi libre, le week-end plein et les vacances loin.",
+    "targetWord": "week-end",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vacances",
+  "sentence": "quelqu'un voit le mercredi libre, le week-end plein et les [[vacances]] loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "days away from work or study today today",
+   "options": [
+    "days away from work or study today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un voit le mercredi libre, le week-end plein et les vacances loin.",
+    "targetWord": "vacances",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "horaire",
+  "sentence": "Cet [[horaire]] demande une phrase courte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "time chosen for work or an activity today",
+   "options": [
+    "time chosen for work or an activity today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Cet horaire demande une phrase courte.",
+    "targetWord": "horaire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "année",
+  "sentence": "Mais un oui trop rapide ferme son [[année]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "period of twelve months today today today today",
+   "options": [
+    "period of twelve months today today today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Mais un oui trop rapide ferme son année.",
+    "targetWord": "année",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rapport",
+  "sentence": "Elle a déjà du travail, un [[rapport]] à finir, un ordinateur à rendre et.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "work paper that gives information about something today",
+   "options": [
+    "work paper that gives information about something today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Elle a déjà du travail, un rapport à finir, un ordinateur à rendre et.",
+    "targetWord": "rapport",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ordinateur",
+  "sentence": "Elle a déjà du travail, un rapport à finir, un [[ordinateur]] à rendre et.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "machine used for work, writing, or the internet",
+   "options": [
+    "machine used for work, writing, or the internet",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Elle a déjà du travail, un rapport à finir, un ordinateur à rendre et.",
+    "targetWord": "ordinateur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clavier",
+  "sentence": "Le [[clavier]] reste sur le bureau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part with keys used to type words today",
+   "options": [
+    "part with keys used to type words today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Le clavier reste sur le bureau.",
+    "targetWord": "clavier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nettoyer",
+  "sentence": "Il faut [[nettoyer]] le bureau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make something clean today today today today",
+   "options": [
+    "to make something clean today today today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Il faut nettoyer le bureau.",
+    "targetWord": "nettoyer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prochain",
+  "sentence": "Le [[prochain]] mercredi marche aussi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coming after this one in time today today",
+   "options": [
+    "coming after this one in time today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Le prochain mercredi marche aussi.",
+    "targetWord": "prochain",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "écran",
+  "sentence": "Ici, [[écran]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flat part that shows words or pictures today",
+   "options": [
+    "flat part that shows words or pictures today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Ici, écran compte vraiment.",
+    "targetWord": "écran",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "imprimante",
+  "sentence": "quelqu'un regarde l’écran de l’[[imprimante]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "machine that puts computer words on paper today",
+   "options": [
+    "machine that puts computer words on paper today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde l’écran de l’imprimante.",
+    "targetWord": "imprimante",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "quatre",
+  "sentence": "Elle compte _____ places, puis cinq, près du mur blanc.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quatre",
+   "options": [
+    "quatre",
+    "rendez-vous",
+    "avril",
+    "calendrier"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "the number after three and before five today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Elle compte quatre places, puis cinq, près du mur blanc.",
+    "targetWord": "quatre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cinq",
+  "sentence": "Elle compte quatre places, puis _____, près du mur blanc.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cinq",
+   "options": [
+    "cinq",
+    "rendez-vous",
+    "avril",
+    "calendrier"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "the number after four and before six today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today",
+    "page or book showing days and months today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Elle compte quatre places, puis cinq, près du mur blanc.",
+    "targetWord": "cinq",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "suivant",
+  "sentence": "Le _____ reste ouvert ce soir encore.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suivant",
+   "options": [
+    "suivant",
+    "prochain",
+    "rendez-vous",
+    "avril"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "coming after another thing today today today today",
+    "coming after this one in time today today",
+    "planned time to meet someone today today today",
+    "fourth month of the year today today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-mercredi-ouvert",
+    "storySource": "user",
+    "sentence": "Le suivant reste ouvert ce soir encore.",
+    "targetWord": "suivant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

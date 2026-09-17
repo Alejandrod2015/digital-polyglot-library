@@ -1,0 +1,4 @@
+verification_code	{{otp_code}} is your Digital Polyglot code
+reset_password_code	{{otp_code}} is your password reset code
+magic_link_sign_in	Your Digital Polyglot sign in link
+invitation	You're invited to Digital Polyglot

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "ville,bâtiment,gris,bas",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "ville",
+     "answer": "large place with many streets and many buildings inside",
+     "options": [
+      "large place with many streets and many buildings inside",
+      "large place with walls, rooms, and a roof",
+      "having the color between black and white today",
+      "low, or not high above the ground today"
+     ]
+    },
+    {
+     "word": "bâtiment",
+     "answer": "large place with walls, rooms, and a roof",
+     "options": [
+      "large place with many streets and many buildings inside",
+      "large place with walls, rooms, and a roof",
+      "having the color between black and white today",
+      "low, or not high above the ground today"
+     ]
+    },
+    {
+     "word": "gris",
+     "answer": "having the color between black and white today",
+     "options": [
+      "large place with many streets and many buildings inside",
+      "large place with walls, rooms, and a roof",
+      "having the color between black and white today",
+      "low, or not high above the ground today"
+     ]
+    },
+    {
+     "word": "bas",
+     "answer": "low, or not high above the ground today",
+     "options": [
+      "large place with many streets and many buildings inside",
+      "large place with walls, rooms, and a roof",
+      "having the color between black and white today",
+      "low, or not high above the ground today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voisin",
+  "sentence": "Inès, une [[voisine]] de Paris, tient une boîte ouverte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "person living near another person in the same area",
+   "options": [
+    "person living near another person in the same area",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Inès, une voisine de Paris, tient une boîte ouverte.",
+    "targetWord": "voisine",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escalier",
+  "sentence": "Inès Caron attend près de l'[[escalier]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steps used to go up or down inside",
+   "options": [
+    "steps used to go up or down inside",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Inès Caron attend près de l'escalier.",
+    "targetWord": "escalier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boîte",
+  "sentence": "Inès, une voisine de Paris, tient une [[boîte]] ouverte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small thing used to hold letters or other things",
+   "options": [
+    "small thing used to hold letters or other things",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Inès, une voisine de Paris, tient une boîte ouverte.",
+    "targetWord": "boîte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ouvert",
+  "sentence": "Inès, une voisine de Paris, tient une boîte [[ouverte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not closed, so people can see or go inside",
+   "options": [
+    "not closed, so people can see or go inside",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Inès, une voisine de Paris, tient une boîte ouverte.",
+    "targetWord": "ouverte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plafond",
+  "sentence": "La lumière du [[plafond]] reste pâle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "upper inside part of a room above people",
+   "options": [
+    "upper inside part of a room above people",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "La lumière du plafond reste pâle.",
+    "targetWord": "plafond",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sol",
+  "sentence": "quelqu'un regarde le [[sol]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flat lower part of a room people walk on",
+   "options": [
+    "flat lower part of a room people walk on",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde le sol.",
+    "targetWord": "sol",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ascenseur",
+  "sentence": "Elle sort un papier de son sac vert près de l'[[ascenseur]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "machine that carries people up and down floors",
+   "options": [
+    "machine that carries people up and down floors",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Elle sort un papier de son sac vert près de l'ascenseur.",
+    "targetWord": "ascenseur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mur",
+  "sentence": "quelqu'un reste devant le [[mur]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "side of a room or building around people",
+   "options": [
+    "side of a room or building around people",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "quelqu'un reste devant le mur.",
+    "targetWord": "mur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "derrière",
+  "sentence": "quelqu'un aime être [[derrière]] lui quand Paris va trop vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the back of someone or something nearby",
+   "options": [
+    "at the back of someone or something nearby",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "quelqu'un aime être derrière lui quand Paris va trop vite.",
+    "targetWord": "derrière",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sac",
+  "sentence": "Elle sort un papier de son [[sac]] vert près de l'ascenseur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thing used to carry objects by hand outside",
+   "options": [
+    "thing used to carry objects by hand outside",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Elle sort un papier de son sac vert près de l'ascenseur.",
+    "targetWord": "sac",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vert",
+  "sentence": "Ici, [[vert]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having the color of grass or green leaves",
+   "options": [
+    "having the color of grass or green leaves",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Ici, vert compte vraiment.",
+    "targetWord": "vert",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "placer",
+  "sentence": "Tu veux que je le [[place]]?, propose quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put someone or something in one exact spot",
+   "options": [
+    "to put someone or something in one exact spot",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Tu veux que je le place?, propose quelqu'un.",
+    "targetWord": "place",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sous",
+  "sentence": "[[Sous]] le chiffre quatre, elle écrit quelqu'un Moreau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a lower place than someone or something",
+   "options": [
+    "in a lower place than someone or something",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "having the color between black and white today"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Sous le chiffre quatre, elle écrit quelqu'un Moreau.",
+    "targetWord": "Sous",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chiffre",
+  "sentence": "Sous le _____ quatre, elle écrit quelqu'un Moreau.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiffre",
+   "options": [
+    "chiffre",
+    "ville",
+    "bâtiment",
+    "voisine"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "written sign used to show a number clearly",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "person living near another person in the same area"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "Sous le chiffre quatre, elle écrit quelqu'un Moreau.",
+    "targetWord": "chiffre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "appartement",
+  "sentence": "quelqu'un perd une cachette, mais gagne une adresse d'_____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "appartement",
+   "options": [
+    "appartement",
+    "ville",
+    "bâtiment",
+    "voisine"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "home with rooms inside a larger building today",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "person living near another person in the same area"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "quelqu'un perd une cachette, mais gagne une adresse d'appartement.",
+    "targetWord": "appartement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "adresse",
+  "sentence": "quelqu'un perd une cachette, mais gagne une _____ d'appartement.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "adresse",
+   "options": [
+    "adresse",
+    "ville",
+    "bâtiment",
+    "voisine"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "words and numbers that show where someone lives",
+    "large place with many streets and many buildings inside",
+    "large place with walls, rooms, and a roof",
+    "person living near another person in the same area"
+   ],
+   "audioClip": {
+    "storySlug": "la-boite-du-hall",
+    "storySource": "user",
+    "sentence": "quelqu'un perd une cachette, mais gagne une adresse d'appartement.",
+    "targetWord": "adresse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

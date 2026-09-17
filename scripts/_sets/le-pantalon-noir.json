@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "terminer,sombre,chaussure,bar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "terminer",
+     "answer": "to finish doing something completely at the end",
+     "options": [
+      "to finish doing something completely at the end",
+      "dark, with little light around people today today",
+      "thing worn on a foot outside the home",
+      "place where people drink with other people today"
+     ]
+    },
+    {
+     "word": "sombre",
+     "answer": "dark, with little light around people today today",
+     "options": [
+      "to finish doing something completely at the end",
+      "dark, with little light around people today today",
+      "thing worn on a foot outside the home",
+      "place where people drink with other people today"
+     ]
+    },
+    {
+     "word": "chaussure",
+     "answer": "thing worn on a foot outside the home",
+     "options": [
+      "to finish doing something completely at the end",
+      "dark, with little light around people today today",
+      "thing worn on a foot outside the home",
+      "place where people drink with other people today"
+     ]
+    },
+    {
+     "word": "bar",
+     "answer": "place where people drink with other people today",
+     "options": [
+      "to finish doing something completely at the end",
+      "dark, with little light around people today today",
+      "thing worn on a foot outside the home",
+      "place where people drink with other people today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "danser",
+  "sentence": "On va [[danser]] là-bas?, demande Mathieu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move the body to music today today",
+   "options": [
+    "to move the body to music today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "On va danser là-bas?, demande Mathieu.",
+    "targetWord": "danser",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "content",
+  "sentence": "Elle est [[contente]], mais fatiguée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy or pleased about something right now today",
+   "options": [
+    "happy or pleased about something right now today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Elle est contente, mais fatiguée.",
+    "targetWord": "contente",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fatigué",
+  "sentence": "Elle est contente, mais [[fatiguée]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "needing rest because the body has little energy",
+   "options": [
+    "needing rest because the body has little energy",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Elle est contente, mais fatiguée.",
+    "targetWord": "fatiguée",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cœur",
+  "sentence": "Son [[cœur]] veut le salon tranquille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part inside the chest, or deep feelings today",
+   "options": [
+    "part inside the chest, or deep feelings today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Son cœur veut le salon tranquille.",
+    "targetWord": "cœur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salon",
+  "sentence": "Son cœur veut le [[salon]] tranquille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "room in a home where people sit today",
+   "options": [
+    "room in a home where people sit today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Son cœur veut le salon tranquille.",
+    "targetWord": "salon",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tranquille",
+  "sentence": "Son cœur veut le salon [[tranquille]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm and quiet, without worry or hurry today",
+   "options": [
+    "calm and quiet, without worry or hurry today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Son cœur veut le salon tranquille.",
+    "targetWord": "tranquille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gentil",
+  "sentence": "Mathieu veut être [[gentil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind and pleasant with other people today today",
+   "options": [
+    "kind and pleasant with other people today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Mathieu veut être gentil.",
+    "targetWord": "gentil",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chanter",
+  "sentence": "Tu peux [[chanter]], ou seulement jouer avec nous.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make music with the voice today today",
+   "options": [
+    "to make music with the voice today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Tu peux chanter, ou seulement jouer avec nous.",
+    "targetWord": "chanter",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jouer",
+  "sentence": "Tu peux chanter, ou seulement [[jouer]] avec nous.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to play a game, sport, or music today",
+   "options": [
+    "to play a game, sport, or music today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Tu peux chanter, ou seulement jouer avec nous.",
+    "targetWord": "jouer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lit",
+  "sentence": "quelqu'un pense à son [[lit]], à son pyjama et à sa chambre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "furniture where a person sleeps at night today",
+   "options": [
+    "furniture where a person sleeps at night today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "quelqu'un pense à son lit, à son pyjama et à sa chambre.",
+    "targetWord": "lit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pyjama",
+  "sentence": "quelqu'un pense à son lit, à son [[pyjama]] et à sa chambre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clothes worn for sleeping at night today today",
+   "options": [
+    "clothes worn for sleeping at night today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "quelqu'un pense à son lit, à son pyjama et à sa chambre.",
+    "targetWord": "pyjama",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chambre",
+  "sentence": "quelqu'un pense à son lit, à son pyjama et à sa [[chambre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "room where a person usually sleeps today today",
+   "options": [
+    "room where a person usually sleeps today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "quelqu'un pense à son lit, à son pyjama et à sa chambre.",
+    "targetWord": "chambre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "joli",
+  "sentence": "Il montre le bar, puis le [[joli]] pantalon de quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice or pretty to look at today today",
+   "options": [
+    "nice or pretty to look at today today",
+    "to finish doing something completely at the end",
+    "dark, with little light around people today today",
+    "thing worn on a foot outside the home"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Il montre le bar, puis le joli pantalon de quelqu'un.",
+    "targetWord": "joli",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "courir",
+  "sentence": "Mais samedi, je peux _____ au parc avec vous.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "courir",
+   "options": [
+    "courir",
+    "finit",
+    "danser",
+    "chanter"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to move fast on foot with steps today",
+    "to finish doing something completely at the end",
+    "to move the body to music today today",
+    "to make music with the voice today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Mais samedi, je peux courir au parc avec vous.",
+    "targetWord": "courir",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "amitié",
+  "sentence": "Elle garde l'_____ pour plus tard.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amitié",
+   "options": [
+    "amitié",
+    "chaussures",
+    "bar",
+    "cœur"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "friendly relationship between people who like each other",
+    "thing worn on a foot outside the home",
+    "place where people drink with other people today",
+    "part inside the chest, or deep feelings today"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Elle garde l'amitié pour plus tard.",
+    "targetWord": "amitié",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "musique",
+  "sentence": "Elle laisse un bar, pas l’amitié, et garde la _____ pour plus.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "musique",
+   "options": [
+    "musique",
+    "chaussures",
+    "bar",
+    "cœur"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "sounds that people sing, play, or enjoy today",
+    "thing worn on a foot outside the home",
+    "place where people drink with other people today",
+    "part inside the chest, or deep feelings today"
+   ],
+   "audioClip": {
+    "storySlug": "le-pantalon-noir",
+    "storySource": "user",
+    "sentence": "Elle laisse un bar, pas l’amitié, et garde la musique pour plus.",
+    "targetWord": "musique",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

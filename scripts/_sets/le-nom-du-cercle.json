@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "veste,patron,écharpe,rose",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "veste",
+     "answer": "short coat worn over other clothes today today",
+     "options": [
+      "short coat worn over other clothes today today",
+      "person who owns or leads a place today",
+      "long cloth worn around the neck today today",
+      "light red color, like some flowers today today"
+     ]
+    },
+    {
+     "word": "patron",
+     "answer": "person who owns or leads a place today",
+     "options": [
+      "short coat worn over other clothes today today",
+      "person who owns or leads a place today",
+      "long cloth worn around the neck today today",
+      "light red color, like some flowers today today"
+     ]
+    },
+    {
+     "word": "écharpe",
+     "answer": "long cloth worn around the neck today today",
+     "options": [
+      "short coat worn over other clothes today today",
+      "person who owns or leads a place today",
+      "long cloth worn around the neck today today",
+      "light red color, like some flowers today today"
+     ]
+    },
+    {
+     "word": "rose",
+     "answer": "light red color, like some flowers today today",
+     "options": [
+      "short coat worn over other clothes today today",
+      "person who owns or leads a place today",
+      "long cloth worn around the neck today today",
+      "light red color, like some flowers today today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tee-shirt",
+  "sentence": "Une lumière tombe sur une écharpe rose, un [[tee-shirt]] blanc, une jupe noire et.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "simple shirt with short sleeves today today today",
+   "options": [
+    "simple shirt with short sleeves today today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Une lumière tombe sur une écharpe rose, un tee-shirt blanc, une jupe noire et.",
+    "targetWord": "tee-shirt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jupe",
+  "sentence": "Une lumière tombe sur une écharpe rose, un tee-shirt blanc, une [[jupe]] noire et.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clothing worn from the waist down today today",
+   "options": [
+    "clothing worn from the waist down today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Une lumière tombe sur une écharpe rose, un tee-shirt blanc, une jupe noire et.",
+    "targetWord": "jupe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cercle",
+  "sentence": "quelqu'un montre le [[cercle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "group of people who meet for an interest",
+   "options": [
+    "group of people who meet for an interest",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "quelqu'un montre le cercle.",
+    "targetWord": "cercle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beau",
+  "sentence": "Je peux préparer une [[belle]] forme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice to see or hear today today today",
+   "options": [
+    "nice to see or hear today today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Je peux préparer une belle forme.",
+    "targetWord": "belle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "monsieur",
+  "sentence": "Un [[monsieur]] écoute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite word for an adult man today today",
+   "options": [
+    "polite word for an adult man today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Un monsieur écoute.",
+    "targetWord": "monsieur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forme",
+  "sentence": "Je peux préparer une belle [[forme]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "way something looks or is made today today",
+   "options": [
+    "way something looks or is made today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Je peux préparer une belle forme.",
+    "targetWord": "forme",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vérité",
+  "sentence": "Ici, [[vérité]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what is true and not false today today",
+   "options": [
+    "what is true and not false today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Ici, vérité compte vraiment.",
+    "targetWord": "vérité",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "couleur",
+  "sentence": "quelqu'un veut dire la vérité, pas une [[couleur]] choisie par un autre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red, blue, green, or another kind people see",
+   "options": [
+    "red, blue, green, or another kind people see",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "quelqu'un veut dire la vérité, pas une couleur choisie par un autre.",
+    "targetWord": "couleur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "courageux",
+  "sentence": "Je suis [[courageuse]] ce soir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "able to act even with fear today today",
+   "options": [
+    "able to act even with fear today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Je suis courageuse ce soir.",
+    "targetWord": "courageuse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sympathique",
+  "sentence": "quelqu'un ajoute: C’est [[sympathique]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind and pleasant with other people today today",
+   "options": [
+    "kind and pleasant with other people today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "quelqu'un ajoute: C’est sympathique.",
+    "targetWord": "sympathique",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madame",
+  "sentence": "[[Madame]] Moreau garde sa cravate drôle et un gant dans son sac.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite word for an adult woman today today",
+   "options": [
+    "polite word for an adult woman today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Madame Moreau garde sa cravate drôle et un gant dans son sac.",
+    "targetWord": "Madame",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ceinture",
+  "sentence": "La [[ceinture]] reste sur la table.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strip worn around the waist today today today",
+   "options": [
+    "strip worn around the waist today today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "La ceinture reste sur la table.",
+    "targetWord": "ceinture",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cravate",
+  "sentence": "Madame Moreau garde sa [[cravate]] drôle et un gant dans son sac.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long cloth worn at the neck today today",
+   "options": [
+    "long cloth worn at the neck today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Madame Moreau garde sa cravate drôle et un gant dans son sac.",
+    "targetWord": "cravate",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "drôle",
+  "sentence": "Madame Moreau garde sa cravate _____ et un gant dans son sac.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drôle",
+   "options": [
+    "drôle",
+    "rose",
+    "belle",
+    "courageuse"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "strange or funny in a simple way today",
+    "light red color, like some flowers today today",
+    "nice to see or hear today today today",
+    "able to act even with fear today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Madame Moreau garde sa cravate drôle et un gant dans son sac.",
+    "targetWord": "drôle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gant",
+  "sentence": "Madame Moreau garde sa cravate drôle et un _____ dans son sac.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gant",
+   "options": [
+    "gant",
+    "veste",
+    "patron",
+    "écharpe"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "clothing worn on the hand today today today",
+    "short coat worn over other clothes today today",
+    "person who owns or leads a place today",
+    "long cloth worn around the neck today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "Madame Moreau garde sa cravate drôle et un gant dans son sac.",
+    "targetWord": "gant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "brillante",
+  "sentence": "quelqu'un perd la phrase _____, mais le groupe connaît son nom entier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "brillante",
+   "options": [
+    "brillante",
+    "rose",
+    "belle",
+    "courageuse"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "very good, bright, or impressive in this moment",
+    "light red color, like some flowers today today",
+    "nice to see or hear today today today",
+    "able to act even with fear today today"
+   ],
+   "audioClip": {
+    "storySlug": "le-nom-du-cercle",
+    "storySource": "user",
+    "sentence": "quelqu'un perd la phrase brillante, mais le groupe connaît son nom entier.",
+    "targetWord": "brillante",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

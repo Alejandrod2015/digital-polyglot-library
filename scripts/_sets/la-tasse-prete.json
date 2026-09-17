@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cuisine,entrer,pain,ranger",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cuisine",
+     "answer": "room where people prepare and cook simple food",
+     "options": [
+      "room where people prepare and cook simple food",
+      "to go inside a room or building now",
+      "food made from flour and baked in an oven",
+      "to put things in their correct place again"
+     ]
+    },
+    {
+     "word": "entrer",
+     "answer": "to go inside a room or building now",
+     "options": [
+      "room where people prepare and cook simple food",
+      "to go inside a room or building now",
+      "food made from flour and baked in an oven",
+      "to put things in their correct place again"
+     ]
+    },
+    {
+     "word": "pain",
+     "answer": "food made from flour and baked in an oven",
+     "options": [
+      "room where people prepare and cook simple food",
+      "to go inside a room or building now",
+      "food made from flour and baked in an oven",
+      "to put things in their correct place again"
+     ]
+    },
+    {
+     "word": "ranger",
+     "answer": "to put things in their correct place again",
+     "options": [
+      "room where people prepare and cook simple food",
+      "to go inside a room or building now",
+      "food made from flour and baked in an oven",
+      "to put things in their correct place again"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "assiette",
+  "sentence": "quelqu'un coupe du pain, et quelqu'un range trois [[assiettes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flat dish used for eating food at a table",
+   "options": [
+    "flat dish used for eating food at a table",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un coupe du pain, et quelqu'un range trois assiettes.",
+    "targetWord": "assiettes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'asseoir",
+  "sentence": "[[Assieds-toi]] près de la fenêtre, répond quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put your body on a chair or seat",
+   "options": [
+    "to put your body on a chair or seat",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Assieds-toi près de la fenêtre, répond quelqu'un.",
+    "targetWord": "Assieds-toi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fenêtre",
+  "sentence": "Assieds-toi près de la [[fenêtre]], répond quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glass opening in a wall for daylight inside",
+   "options": [
+    "glass opening in a wall for daylight inside",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Assieds-toi près de la fenêtre, répond quelqu'un.",
+    "targetWord": "fenêtre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encore",
+  "sentence": "quelqu'un dit: Tu peux dormir [[encore]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again, or still happening at this time now",
+   "options": [
+    "again, or still happening at this time now",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un dit: Tu peux dormir encore.",
+    "targetWord": "encore",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "déjà",
+  "sentence": "Ici, [[déjà]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "already, before this moment or earlier than expected",
+   "options": [
+    "already, before this moment or earlier than expected",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Ici, déjà compte vraiment.",
+    "targetWord": "déjà",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "penser",
+  "sentence": "Elle [[pense]] qu'elle ne sert à rien parce que tout est déjà prêt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use your mind about something or someone",
+   "options": [
+    "to use your mind about something or someone",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Elle pense qu'elle ne sert à rien parce que tout est déjà prêt.",
+    "targetWord": "pense",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servir",
+  "sentence": "Elle pense qu'elle ne [[sert]] à rien parce que tout est déjà prêt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be useful or helpful for a person",
+   "options": [
+    "to be useful or helpful for a person",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Elle pense qu'elle ne sert à rien parce que tout est déjà prêt.",
+    "targetWord": "sert",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rien",
+  "sentence": "Elle pense qu'elle ne sert à [[rien]] parce que tout est déjà prêt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nothing, not one thing in a place now",
+   "options": [
+    "nothing, not one thing in a place now",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Elle pense qu'elle ne sert à rien parce que tout est déjà prêt.",
+    "targetWord": "rien",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tasse",
+  "sentence": "quelqu'un regarde l'évier vide et garde sa [[tasse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small cup with a handle for hot drinks",
+   "options": [
+    "small cup with a handle for hot drinks",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde l'évier vide et garde sa tasse.",
+    "targetWord": "tasse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "café",
+  "sentence": "Ici, [[café]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot dark drink many adults drink in the morning",
+   "options": [
+    "hot dark drink many adults drink in the morning",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Ici, café compte vraiment.",
+    "targetWord": "café",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "préparer",
+  "sentence": "quelqu'un [[prépare]] le café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make something ready before it is needed",
+   "options": [
+    "to make something ready before it is needed",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un prépare le café.",
+    "targetWord": "prépare",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allumer",
+  "sentence": "Elle met l'eau, [[allume]] la petite machine et attend.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn on a light or small machine",
+   "options": [
+    "to turn on a light or small machine",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Elle met l'eau, allume la petite machine et attend.",
+    "targetWord": "allume",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apprendre",
+  "sentence": "quelqu'un répond: J'[[apprends]] vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get new knowledge or a new skill",
+   "options": [
+    "to get new knowledge or a new skill",
+    "room where people prepare and cook simple food",
+    "to go inside a room or building now",
+    "food made from flour and baked in an oven"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: J'apprends vite.",
+    "targetWord": "apprends",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "travail",
+  "sentence": "C'est mon _____ ici.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "travail",
+   "options": [
+    "travail",
+    "cuisine",
+    "pain",
+    "assiettes"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "task or job that a person does now",
+    "room where people prepare and cook simple food",
+    "food made from flour and baked in an oven",
+    "flat dish used for eating food at a table"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "C'est mon travail ici.",
+    "targetWord": "travail",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "laver",
+  "sentence": "Je peux _____ après.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laver",
+   "options": [
+    "laver",
+    "entre",
+    "range",
+    "Assieds-toi"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to clean something with water and soap now",
+    "to go inside a room or building now",
+    "to put things in their correct place again",
+    "to put your body on a chair or seat"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "Je peux laver après.",
+    "targetWord": "laver",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "goûte",
+  "sentence": "quelqu'un _____ et grimace: Travail dangereux.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "goûte",
+   "options": [
+    "goûte",
+    "entre",
+    "range",
+    "Assieds-toi"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to try food or drink with your mouth",
+    "to go inside a room or building now",
+    "to put things in their correct place again",
+    "to put your body on a chair or seat"
+   ],
+   "audioClip": {
+    "storySlug": "la-tasse-prete",
+    "storySource": "user",
+    "sentence": "quelqu'un goûte et grimace: Travail dangereux.",
+    "targetWord": "goûte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

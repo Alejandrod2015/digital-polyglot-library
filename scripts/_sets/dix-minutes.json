@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "corps,bras,doigt,œil",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "corps",
+     "answer": "whole physical part of a person today today",
+     "options": [
+      "whole physical part of a person today today",
+      "body part between the shoulder and hand today",
+      "one of the parts at the end of a hand",
+      "body part used for seeing things today today"
+     ]
+    },
+    {
+     "word": "bras",
+     "answer": "body part between the shoulder and hand today",
+     "options": [
+      "whole physical part of a person today today",
+      "body part between the shoulder and hand today",
+      "one of the parts at the end of a hand",
+      "body part used for seeing things today today"
+     ]
+    },
+    {
+     "word": "doigt",
+     "answer": "one of the parts at the end of a hand",
+     "options": [
+      "whole physical part of a person today today",
+      "body part between the shoulder and hand today",
+      "one of the parts at the end of a hand",
+      "body part used for seeing things today today"
+     ]
+    },
+    {
+     "word": "œil",
+     "answer": "body part used for seeing things today today",
+     "options": [
+      "whole physical part of a person today today",
+      "body part between the shoulder and hand today",
+      "one of the parts at the end of a hand",
+      "body part used for seeing things today today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bouche",
+  "sentence": "Sophie regarde sa [[bouche]], puis son oreille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of the face used to speak or eat",
+   "options": [
+    "part of the face used to speak or eat",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Sophie regarde sa bouche, puis son oreille.",
+    "targetWord": "bouche",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oreille",
+  "sentence": "Sophie regarde sa bouche, puis son [[oreille]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "body part used for hearing sounds today today",
+   "options": [
+    "body part used for hearing sounds today today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Sophie regarde sa bouche, puis son oreille.",
+    "targetWord": "oreille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ventre",
+  "sentence": "Son [[ventre]] est lourd, et son dos touche le mur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "front middle part of the body below the chest",
+   "options": [
+    "front middle part of the body below the chest",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Son ventre est lourd, et son dos touche le mur.",
+    "targetWord": "ventre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos",
+  "sentence": "Son ventre est lourd, et son [[dos]] touche le mur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back part of the body from neck to waist",
+   "options": [
+    "back part of the body from neck to waist",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Son ventre est lourd, et son dos touche le mur.",
+    "targetWord": "dos",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lèvre",
+  "sentence": "Elle pense à sa [[lèvre]] qui cherche les mots.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one of the two soft edges of the mouth",
+   "options": [
+    "one of the two soft edges of the mouth",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Elle pense à sa lèvre qui cherche les mots.",
+    "targetWord": "lèvre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dent",
+  "sentence": "Tu peux attendre dix minutes avec ma [[dent]] et ma langue?, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard white part in the mouth used for eating",
+   "options": [
+    "hard white part in the mouth used for eating",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Tu peux attendre dix minutes avec ma dent et ma langue?, demande-t-elle.",
+    "targetWord": "dent",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "langue",
+  "sentence": "Tu peux attendre dix minutes avec ma dent et ma [[langue]]?, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part inside the mouth used for speech and taste",
+   "options": [
+    "part inside the mouth used for speech and taste",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Tu peux attendre dix minutes avec ma dent et ma langue?, demande-t-elle.",
+    "targetWord": "langue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dix",
+  "sentence": "Tu veux [[dix]] minutes, pas plus?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the number after nine and before eleven today",
+   "options": [
+    "the number after nine and before eleven today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Tu veux dix minutes, pas plus?",
+    "targetWord": "dix",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "épaule",
+  "sentence": "Ici, [[épaule]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "body part between the arm and neck today",
+   "options": [
+    "body part between the arm and neck today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Ici, épaule compte vraiment.",
+    "targetWord": "épaule",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "genou",
+  "sentence": "quelqu'un touche son épaule, puis son [[genou]] bouge vers la sortie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "middle part of the leg that bends today",
+   "options": [
+    "middle part of the leg that bends today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "quelqu'un touche son épaule, puis son genou bouge vers la sortie.",
+    "targetWord": "genou",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sortie",
+  "sentence": "quelqu'un touche son épaule, puis son genou bouge vers la [[sortie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "way or moment for leaving a place today",
+   "options": [
+    "way or moment for leaving a place today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "quelqu'un touche son épaule, puis son genou bouge vers la sortie.",
+    "targetWord": "sortie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peau",
+  "sentence": "Sa [[peau]] reste calme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outer part that covers a person’s body today",
+   "options": [
+    "outer part that covers a person’s body today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Sa peau reste calme.",
+    "targetWord": "peau",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pied",
+  "sentence": "quelqu'un veut parler seule, et son [[pied]] faible bouge.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "body part at the end of a leg",
+   "options": [
+    "body part at the end of a leg",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "quelqu'un veut parler seule, et son pied faible bouge.",
+    "targetWord": "pied",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "faible",
+  "sentence": "quelqu'un veut parler seule, et son pied _____ bouge.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "faible",
+   "options": [
+    "faible",
+    "corps",
+    "bras",
+    "doigt"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "not strong, or with little force today today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "quelqu'un veut parler seule, et son pied faible bouge.",
+    "targetWord": "faible",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "estomac",
+  "sentence": "La main d’quelqu'un s’ouvre, et son _____ se serre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "estomac",
+   "options": [
+    "estomac",
+    "corps",
+    "bras",
+    "doigt"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "body part inside where food goes today today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "La main d’quelqu'un s’ouvre, et son estomac se serre.",
+    "targetWord": "estomac",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aide",
+  "sentence": "Cette petite _____ suffit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aide",
+   "options": [
+    "aide",
+    "corps",
+    "bras",
+    "doigt"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "support that makes something easier to do today",
+    "whole physical part of a person today today",
+    "body part between the shoulder and hand today",
+    "one of the parts at the end of a hand"
+   ],
+   "audioClip": {
+    "storySlug": "dix-minutes",
+    "storySource": "user",
+    "sentence": "Cette petite aide suffit.",
+    "targetWord": "aide",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

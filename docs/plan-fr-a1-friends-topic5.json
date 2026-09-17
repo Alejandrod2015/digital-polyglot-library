@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "amistad adulta, invitaciones concretas, limites dichos con calma y pequenas decisiones sociales en Paris",
+  "espina": "Amélie quiere entrar en planes nuevos sin decir si a todo ni dejar que Marc decida su lugar.",
+  "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario social usado en accion.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Amélie quiere aceptar una invitacion de Mathieu sin quedarse toda la tarde.",
+      "impide": "Mathieu presenta el plan como si todos fueran a quedarse hasta el final.",
+      "cuesta": "Pierde la comodidad de decir si para caer bien y debe marcar una hora de salida.",
+      "cambia": "Acepta el principio de la fiesta y nombra su limite sin disculparse demasiado.",
+      "emocion": "Siente presion en la garganta, mira la luz de la sala y habla antes de que Marc responda."
+    },
+    {
+      "slot": "2",
+      "quiere": "Amélie quiere invitar a Mathieu a un cafe sin que parezca una obligacion.",
+      "impide": "Marc empuja la invitacion con entusiasmo y vuelve el gesto demasiado grande.",
+      "cuesta": "Pierde el refugio de dejar que Marc traduzca sus intenciones sociales.",
+      "cambia": "Reformula la invitacion como una opcion simple y deja espacio a un no.",
+      "emocion": "Se tensa cuando Marc habla antes; toca su montre y recupera la frase."
+    },
+    {
+      "slot": "3",
+      "quiere": "Amélie quiere rechazar una segunda invitacion para proteger su noche.",
+      "impide": "El grupo insiste con amabilidad y Mathieu cree que ella solo duda.",
+      "cuesta": "Pierde una imagen de persona siempre disponible y acepta parecer menos facil.",
+      "cambia": "Dice no a la segunda parte, propone otro dia y se queda en la amistad.",
+      "emocion": "Tiene miedo de enfriar el ambiente, pero la luz de la calle le da una salida clara."
+    }
+  ]
+}

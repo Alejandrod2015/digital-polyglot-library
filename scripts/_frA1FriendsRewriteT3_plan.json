@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "planes de grupo con tension afectiva ligera y decisiones pequenas",
+  "espina": "Amelie aprende a decir que dia, que retraso y que cambio necesita sin esconderse detras de Marc.",
+  "recursos": "calendario social, llamada breve, regla compartida, frases directas A1",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "elegir un dia para cenar con el grupo",
+      "impide": "cada opcion rompe una promesa pequena",
+      "cuesta": "pierde una tarde libre",
+      "cambia": "elige martes sin venderlo como perfecto",
+      "emocion": "tension en la nuca, alivio cuando Olivier no exige explicacion"
+    },
+    {
+      "slot": "2",
+      "quiere": "llegar a tiempo a una reunion de amigos",
+      "impide": "el metro se para",
+      "cuesta": "pierde la primera impresion tranquila",
+      "cambia": "llama ella misma y entra tarde sin esconderse",
+      "emocion": "calor en la mejilla, gesto de guardar el telefono"
+    },
+    {
+      "slot": "3",
+      "quiere": "cerrar un plan antes del regreso de Olivier",
+      "impide": "Marc cambia una hora demasiado tarde",
+      "cuesta": "pierde el plan facil",
+      "cambia": "pone una regla: los cambios se dicen antes",
+      "emocion": "ganas de protestar contenidas, mano que detiene la salida"
+    }
+  ]
+}

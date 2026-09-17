@@ -140,6 +140,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY; if (!apiKey) throw new Error("no ELEVENLABS_API_KEY");
+  VOICE = voice;
   console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} | ${targets.length} fill_blank`);
   const outDir = mkdtempSync(join(tmpdir(), "fbout-"));
   let ok = 0;
