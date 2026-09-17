@@ -62,15 +62,16 @@ HEAD = ("LOCK: The image provided is the cast sheet for this story. KEEP every c
 # Anclas de lugar, sin bandera ni nombre escrito: se reconocen por la escena.
 LAPAZ = "a steep street of La Paz in January, red-brick houses climbing the hillside behind, the snow-capped peak of Illimani white against a deep blue sky"
 ALASITA = "a canvas-roofed stall of the Alasita fair in La Paz, its table covered with tiny miniature objects: little houses, little cars, little sacks and little suitcases, none with any writing"
-GALPON = "the inside of a candombe comparsa's shed in Barrio Sur, Montevideo, brick walls, a small open fire on the concrete floor, a row of barrel-shaped tamboril drums with worn hides leaning against the wall"
+GALPON = "a candombe comparsa's shed in Barrio Sur, Montevideo, brick walls, a small open fire on the concrete floor, a row of barrel-shaped tamboril drums with worn hides leaning against the wall"
 ANTIGUA_PATIO = "an open patio in Antigua Guatemala, ochre-yellow colonial walls with a terracotta tile roof, tin buckets of dyed sawdust in bright red, green, purple and yellow, the green cone of Volcan de Agua rising behind the wall"
 ANTIGUA_STREET = "a cobbled street in Antigua Guatemala with ochre-yellow and deep-red colonial facades, the yellow stone arch of Santa Catalina spanning the street in the distance"
 SANTA_ELENA = "a green hillside above Medellin in Santa Elena, a low greenhouse of white plastic, rows of carnations and gladioli in red, white and pink, blue mountains in the distance"
 RAMADA = "a fonda tent in a Santiago park in September, a roof of dry branches over wooden posts, colourful plain paper garlands with no writing, a smoking grill, a plain wooden table"
 CERRO = "a grassy hilltop above Santiago in September, the snow-topped Andes along the horizon, a bright blue windy sky full of small diamond-shaped paper kites in red, yellow, blue and white"
-VECINDAD = "the central courtyard of a vecindad in Mexico City in December, pink and ochre walls with iron railings on the upper floor, strings of cut paper flags in bright colours with no writing, a few star-shaped seven-pointed pinatas hanging from a rope"
+VECINDAD = "the central courtyard of a vecindad in Mexico City in December, pink and ochre walls with iron railings on the upper floor, strings of small rectangular sheets of perforated coloured tissue paper hung across the courtyard with no writing, a few star-shaped seven-pointed pinatas hanging from a rope"
 PERLA_TALLER = "Perla's pinata workshop in Mexico City, shelves of clay pots, rolls of tissue paper in bright colours, three finished seven-pointed star pinatas hanging from the ceiling"
 GUAYAQUIL = "a warm street of Guayaquil on the last night of the year, pastel painted houses with balconies, palm trees, the colourful hillside houses of Cerro Santa Ana behind, a dark sky with small fireworks"
+GUAYAQUIL_DAY = "a warm street of Guayaquil in the late afternoon, pastel painted houses with balconies, palm trees, the colourful hillside houses of Cerro Santa Ana behind under a clear warm sky"
 
 T = [
  ("wishes-and-bargaining", "Wishes & Bargaining", "La Paz, Bolivia", ["ALONDRA", "ULISES", "YATIRI"], [
@@ -89,8 +90,8 @@ T = [
    f"Inside {GALPON}, evening, warm flat firelight. MAYRA crouches by the small fire holding a barrel-shaped tamboril drum tilted towards the flames to warm its hide, not looking up; ALONDRA stands right beside her with one hand resting on the worn hide of another drum in the row, asking, leaning in. Medium shot, both waist up or fuller.",
    "ULISES no sale en esta historia. La comparsa que se viste no sale: solo ALONDRA y MAYRA."),
   ("lo-que-se-tira-cada-verano", "Lo que se tira cada verano", 2,
-   f"Inside {GALPON}, daytime, flat light from a wide open door. MAYRA stands at a wooden workbench cutting the worn old hide off a drum with a small thin knife, focused; ALONDRA stands next to her holding out a folded wad of banknotes turned face down so nothing on it is readable, firm; ULISES stands on the other side of ALONDRA with his arms at his sides, one hand half raised, about to warn her and thinking better of it. Medium shot, all three waist up.",
-   "Tres en cuadro. Los billetes van boca abajo, sin caras ni numeros."),
+   f"Inside {GALPON}, daytime, flat light from a wide open door. MAYRA stands at a wooden workbench cutting the worn old hide off a drum with a small thin knife, focused; ALONDRA stands next to her holding out a small closed plain paper envelope in one hand, firm; ULISES stands on the other side of ALONDRA with his arms at his sides, one hand half raised, about to warn her and thinking better of it. Medium shot, all three waist up.",
+   "Tres en cuadro. El pago va en un sobre de papel liso y cerrado, no en billetes: el LOCK prohibe banknotes."),
   ("un-tambor-frio-no-suena", "Un tambor frío no suena", 3,
    f"A cobbled street of Barrio Sur, Montevideo, at night, low old painted houses in ochre and pale blue, warm street lamps. ALONDRA stands with a tamboril drum hanging from a strap over her shoulder, one hand flat on its hide, her face fallen after a dead thud; MAYRA stands beside her with her own drum hung at her hip, one stick in her hand, looking at ALONDRA without contempt, explaining. Medium shot, both waist up or fuller.",
    "ULISES no sale en esta historia. La cuerda de tambores y los tamborileros que se dan vuelta no salen: solo ALONDRA y MAYRA."),
@@ -141,7 +142,7 @@ T = [
  ]),
  ("endings-and-forgiveness", "Endings & Forgiveness", "Guayaquil, Ecuador", ["ALONDRA", "ULISES", "ALDO"], [
   ("aldo-se-lo-vende-sin-mas", "Aldo se lo vende sin más", 1,
-   f"On the pavement of {GUAYAQUIL} in the late afternoon, flat warm light, a life-size straw-stuffed effigy of a man in old clothes seated on a plain wooden chair. ALDO sits on a low stool stuffing straw into the effigy's sleeve, not looking up, calm; ALONDRA stands beside him hugging a large painted papier-mache mask of a grinning face against her chest with both arms, its weight pulling her forward, her face confused. Medium shot, both waist up or fuller.",
+   f"On the pavement of {GUAYAQUIL_DAY}, flat warm light, a life-size straw-stuffed effigy of a man in old clothes seated on a plain wooden chair. ALDO sits on a low stool stuffing straw into the effigy's sleeve, not looking up, calm; ALONDRA stands beside him hugging a large painted papier-mache mask of a grinning face against her chest with both arms, its weight pulling her forward, her face confused. Medium shot, both waist up or fuller.",
    "ULISES no sale en esta escena. La mascara es una cara pintada sin letras, no un personaje real."),
   ("el-testamento-la-nombra", "El testamento la nombra", 2,
    f"On {GUAYAQUIL} at eleven at night, warm lamp light, the straw effigy with its grinning mask propped on a chair between them. ALONDRA stands with both hands raised mid-clap, laughing openly; ULISES stands beside her leaning towards her ear with one hand cupped to explain, grinning. Medium shot, both waist up or fuller.",
