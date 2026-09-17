@@ -87,5 +87,12 @@ const prisma = new PrismaClient();
   reg[slug] = { url: res.url, fecha: new Date().toISOString(), voiceId };
   fs.writeFileSync(REGISTRO, JSON.stringify(reg, null, 1) + "\n");
 
+  // Los gateFlags del render se imprimian solo al narrar la historia entera,
+  // asi que de una muestra se perdian: el pipeline los calcula, nadie los mira
+  // y se informa "sin flags" sin haberlo comprobado. Aqui no se re-tira nada
+  // (2026-09-16, la narracion ya no re-tira sola): se dicen y decide el usuario.
+  const flags = res.gateFlags ?? [];
+  console.log(flags.length ? `gateFlags: ${JSON.stringify(flags)}` : "gateFlags: ninguno");
+
   console.log("\nURL:", res.url);
 })().finally(() => prisma.$disconnect());
