@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "A2",
+  "variante": "italy",
+  "registro": "cotidiano, claro, práctico",
+  "espina": "Teo y Rosa aprenden que caminar en Italia no es llegar rápido, sino leer el ritmo del lugar.",
+  "recursos": "sentiero, nebbia, fattoria, lago, rifugio, pausa con panini",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "llegar rápido al rifugio",
+      "impide": "el sentiero pide un ritmo más lento",
+      "cuesta": "Teo debe soltar la prisa familiar",
+      "cambia": "acepta caminar paso a paso",
+      "emocion": "alivio"
+    },
+    {
+      "slot": "2",
+      "quiere": "seguir la ruta sin perderse",
+      "impide": "la nebbia hace que el camino parezca menos claro",
+      "cuesta": "Teo debe confiar en señales simples",
+      "cambia": "la paura se vuelve pequeña y casi cómica",
+      "emocion": "humor"
+    },
+    {
+      "slot": "3",
+      "quiere": "comer apenas llega al rifugio",
+      "impide": "la cucina todavía no está lista",
+      "cuesta": "Teo espera sin convertirlo en problema",
+      "cambia": "entiende que la pausa también es parte del viaje",
+      "emocion": "calma"
+    }
+  ]
+}

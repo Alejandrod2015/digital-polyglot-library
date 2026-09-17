@@ -126,6 +126,7 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
       "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
+  IT: "dice|chiede|risponde|domanda|spiega|aggiunge|ripete|chiama|scrive|racconta|ride|corregge|decide|promette|indica",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -259,11 +260,21 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
+const NUC_IT = "(?:[a-zà-ù']+\\s+){0,3}[a-zà-ù']+";
+const VERBO_SER_IT =
+  "(?:è|era|fa|lavora|vende|vive|studia|guida|prepara|serve|scrive|porta|tiene|aiuta)";
+const FORMAS_IT: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|una|il|la|l')\\s*${NUC_IT}`, "iu")],
+  ["chi", (n) => new RegExp(`\\bChi\\s+[a-zà-ù']+(?:\\s+[a-zà-ù']+){0,3}\\s+è\\s+${n}(?!\\p{L})`, "iu")],
+  ["nome e ruolo", (n) => new RegExp(`(?<!\\p{L})${n}\\s+(?:${VERBO_SER_IT})(?!\\p{L})`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
   FR: FORMAS_FR,
   ES: FORMAS_ES,
+  IT: FORMAS_IT,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -313,6 +324,21 @@ function openingShapeES(text: string): string {
   if (/^Quien\b/.test(f)) return "quien + verbo";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
+}
+
+function openingShapeIT(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(Il|Lo|La|I|Gli|Le|L')/.test(w)) return "articolo definito + sostantivo";
+  if (/^(Un|Uno|Una)$/.test(w)) return "articolo indefinito + sostantivo";
+  if (/^(Suo|Sua|Suoi|Sue|Mio|Mia|Nostro|Nostra)$/.test(w)) return "possessivo + sostantivo";
+  if (/^(A|Al|Alla|All'|Alle|Agli|In|Nel|Nella|Sul|Sulla|Sotto|Sopra|Davanti|Dietro|Vicino|Dopo|Prima|Durante|Verso|Fuori|Dentro|Qui|Oggi|Ieri|Domani)$/.test(w)) return "luogo o tempo davanti";
+  if (/^(Quando|Mentre|Se|Anche|Appena)$/.test(w)) return "subordinata davanti";
+  if (/^(Nessuno|Qualcuno|Tutti|Tutte|Ogni|Due|Tre|Quattro|Cinque|Sei|Sette|Otto|Nove|Dieci|Quindici|Venti|Mezza|Mezzo)$/.test(w)) return "quantita o pronome";
+  if (/^Chi\b/.test(f)) return "chi + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sostantivo o nome nudo";
+  return "altra";
 }
 
 function openingShape(text: string): string {
@@ -450,14 +476,17 @@ export function validateJourneyStories(
       const f = lang === "PT" ? openingShapePT(s.text)
         : lang === "FR" ? openingShapeFR(s.text)
         : lang === "ES" ? openingShapeES(s.text)
+        : lang === "IT" ? openingShapeIT(s.text)
         : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
     const pasadas = [...porForma].filter(([, v]) => v.length > tope);
+    const peor = Math.max(0, ...[...porForma.values()].map((v) => v.length));
     push("journey-opening-shape", `Ninguna forma de apertura en mas de ${tope} historias`,
       pasadas.length === 0,
       pasadas.map(([k, v]) => `${k}: ${v.length} (${v.slice(0, 4).join(", ")}...)`).join(" · "));
+    out[out.length - 1].magnitud = { valor: peor, mejor: "baja" };
   }
 
   // ── 5. Cierres a solas ──────────────────────────────────────

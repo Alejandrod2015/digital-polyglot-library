@@ -514,6 +514,7 @@ const PREVIEW_JOURNEY_IDS = [
   "cmtpls1l20007j8epwgcs6e1h", // Traveler ES B2 latam (en obra, 2026-09)
   "cmtrcpgso00073232h8vaf7na", // Traveler PT-BR B1 (en obra, 2026-09)
   "cmrqn1s5s000032tj3kq0gykb", // Friends ES C1 argentina (en obra, 2026-08)
+  "cmt5wqsf7000032ghesowd0jy", // Traveler IT A2 italy (en obra, 2026-09)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
