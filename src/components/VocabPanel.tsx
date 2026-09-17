@@ -473,7 +473,10 @@ export default function VocabPanel({
                   {glossEntry.f.mood}
                 </span>
               ) : null}
-              {glossEntry?.gm ? (
+              {/* Mismo candado que en `TapGlossLayer`: el `gm` es marca de
+                  sustantivo, y junto a un distintivo VERB o EXPRESSION seria
+                  una contradiccion. */}
+              {glossEntry?.gm && selectedType === "noun" ? (
                 <span
                   className="text-[var(--muted)]"
                   style={{ fontSize: 14, fontWeight: 600, fontStyle: "italic" }}

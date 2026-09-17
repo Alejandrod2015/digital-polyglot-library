@@ -276,7 +276,11 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
                 {selected.forms.lemma}
               </span>
             ) : null}
-            {selected.genderMark ? (
+            {/* El genero SOLO se pinta sobre un sustantivo. En un homografo
+                (`porta` = puerta / lleva) el `gm` es del sentido nominal y la
+                historia usa el verbal: la cabecera decia "porta portare f."
+                con el distintivo VERB debajo. */}
+            {selected.genderMark && selected.type === "noun" ? (
               <span
                 className="text-[var(--muted)]"
                 style={{ fontSize: 13, fontWeight: 600, fontStyle: "italic" }}
