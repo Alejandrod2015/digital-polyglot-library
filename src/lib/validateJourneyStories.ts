@@ -145,10 +145,19 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
       "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
   // Italiano (2026-09-14, Friends IT A0 de Genova; ampliado 2026-09-17 con el
-  // IT A2). Sin esta lista castOf caia en la alemana y el reparto salia
-  // VACIO, el mismo fallo de PT, FR y ES. Union de los verbos de habla del A0
-  // (presente, suelo A0) y los que anadio el A2 (corregge, decide, indica).
-  IT: "dice|chiede|domanda|risponde|aggiunge|spiega|ripete|grida|urla|scrive|racconta|promette|ride|chiama|propone|legge|sussurra|continua|conferma|saluta|corregge|decide|indica",
+  // IT A2 y el IT A1 de Milano). Sin esta lista castOf caia en la alemana y
+  // el reparto salia VACIO, el mismo fallo de PT, FR y ES. Union de los
+  // verbos de habla del A0 (presente, suelo A0), los que anadio el A2
+  // (corregge, decide, indica) y el passato prossimo del A1 (una historia con
+  // "ha detto" no casaba con nada y dejaba el reparto vacio otra vez, con los
+  // checks de reparto pasando sin medir; mismos veinte verbos, avere en
+  // singular y plural).
+  IT: "dice|chiede|domanda|risponde|aggiunge|spiega|ripete|grida|urla|scrive|racconta|promette|ride|chiama|propone|legge|sussurra|continua|conferma|saluta|corregge|decide|indica|" +
+      "ha detto|hanno detto|ha chiesto|hanno chiesto|ha domandato|hanno domandato|ha risposto|hanno risposto|" +
+      "ha aggiunto|hanno aggiunto|ha spiegato|hanno spiegato|ha ripetuto|hanno ripetuto|ha gridato|hanno gridato|" +
+      "ha urlato|hanno urlato|ha scritto|hanno scritto|ha raccontato|hanno raccontato|ha promesso|hanno promesso|" +
+      "ha riso|hanno riso|ha chiamato|hanno chiamato|ha proposto|hanno proposto|ha letto|hanno letto|" +
+      "ha sussurrato|hanno sussurrato|ha continuato|hanno continuato|ha confermato|hanno confermato|ha salutato|hanno salutato",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;

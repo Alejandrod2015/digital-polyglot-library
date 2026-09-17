@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "work-and-shifts",
+    "slotIndex": 0,
+    "title": "Quattro sabati per Nicola",
+    "arcType": "late-reveal",
+    "synopsis": "The new shift calendar arrives, and one day a week Elisa flies at six and Davide works at six. Nobody is free for the dog. Nicola, a colleague of Davide, offers to do his round that day, and only at the end does Elisa hear the price Davide agreed to pay.",
+    "text": "Oggi è arrivato il nuovo calendario dei turni. Elisa lo legge tre volte. Adesso aspetta Davide all'ombra, davanti alle Poste, con il cane legato alla borsa.\n\nDavide esce tardi dopo il giro, con Nicola, un suo collega. Nicola è gentile e ha un gilet giallo. “Martedì io volo alle sette, e tu lavori alle sei,” dice Elisa, preoccupata. “Chi resta con il cane?”\n\nDavide conta i martedì sulle dita. “Io faccio il tuo giro del martedì, se vuoi,” propone Nicola. “Grazie!” risponde subito Davide, davvero felice.\n\nNicola sale in bicicletta per partire, ma prima si gira. “Allora, quattro sabati tuoi per quattro martedì miei,” aggiunge con un sorriso.\n\nElisa guarda Davide, perché lui non ha detto niente del prezzo. “Non è giusto. Il sabato è il tuo unico giorno libero!” dice lei. Ha le guance calde, perché il prezzo è per lei. “Il cane ha scelto anche me. Lo teniamo insieme,” risponde piano Davide.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il calendario",
+        "surface": "calendario",
+        "definition": "A calendar; here, the list of work days and times.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "arrivare",
+        "surface": "arrivato",
+        "definition": "To arrive; to come to a person or a place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "aspettare",
+        "surface": "aspetta",
+        "definition": "To wait for someone who is coming later.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "davanti",
+        "surface": "davanti",
+        "definition": "In front of; before the door of a place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "uscire",
+        "surface": "esce",
+        "definition": "To go out; to leave a building through the door.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "tardi",
+        "surface": "tardi",
+        "definition": "Late; after the usual or planned time of the day.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "dopo",
+        "surface": "dopo",
+        "definition": "After; later, when something else is already finished.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "insieme",
+        "surface": "insieme",
+        "definition": "Together; with another person at the same time.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "gentile",
+        "surface": "gentile",
+        "definition": "Kind; nice, friendly and good with other people.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "giallo",
+        "surface": "giallo",
+        "definition": "Yellow; the colour of the sun and of lemons.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "fare",
+        "surface": "faccio",
+        "definition": "To do; here, I will do your round for you.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "volere",
+        "surface": "vuoi",
+        "definition": "To want; here, Nicola asks if Davide wants this.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "davvero",
+        "surface": "davvero",
+        "definition": "Really; very, truly, more than just a little bit.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "felice",
+        "surface": "felice",
+        "definition": "Happy; full of good feeling, with a big smile.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "prima",
+        "surface": "prima",
+        "definition": "Before; earlier than another thing that happens next.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "partire",
+        "surface": "partire",
+        "definition": "To leave; to go away from a place.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "libero",
+        "surface": "libero",
+        "definition": "Free; a day when you do not work.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "caldo",
+        "surface": "calde",
+        "definition": "Warm or hot; here, her cheeks feel hot.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "piano",
+        "surface": "piano",
+        "definition": "Quietly; in a low and gentle voice, not loud.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "martedì",
+        "surface": "martedì",
+        "definition": "Tuesday; the day of the week after Monday.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "work-and-shifts",
+    "slotIndex": 1,
+    "title": "Otto ore da solo",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Davide leaves the dog in Elisa's flat very early, sure that she is at home. But her flight did not leave and her phone is dead. The dog stays alone for eight hours, and a neighbour leaves an angry note. When Elisa comes home, she and Davide both feel guilty.",
+    "text": "Davide gira la chiave nella porta del terzo piano. È presto, e la casa è vuota. Davide lascia il cane con la ciotola piena e corre al giro delle sei.\n\nAll'una Davide chiama Elisa tre volte. “Ancora niente?” chiede Nicola. “Il telefono è morto, e il volo non è arrivato,” risponde Davide, nervoso.\n\nDavide pensa al cane, torna velocemente ed entra nel portone. Già sulle scale sente il cane. Davide legge il biglietto della vicina: “Il vostro cane abbaia da sei ore.”\n\nAlle due arriva Elisa, stanca, con la divisa sporca. “Il volo non è partito, e ho dimenticato il caricatore,” spiega.\n\nSubito il cane corre da Elisa. Elisa pensa alle otto ore da solo, si siede per terra e lo abbraccia. Contento, il cane salta sulle loro gambe. “Scusa. Chi ti ha lasciato qui da solo?” chiede piano Elisa. “Noi due,” risponde Davide, triste.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la chiave",
+        "surface": "chiave",
+        "definition": "A key; you use it to open a door.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "presto",
+        "surface": "presto",
+        "definition": "Early; before the usual time in the morning.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "vuoto",
+        "surface": "vuota",
+        "definition": "Empty; with nobody and nothing inside the place.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pieno",
+        "surface": "piena",
+        "definition": "Full; with no more space inside, up to the top.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "correre",
+        "surface": "corre",
+        "definition": "To run; to move fast on your feet.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "chiamare",
+        "surface": "chiama",
+        "definition": "To call someone on the phone to talk to them.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "pensare",
+        "surface": "pensa",
+        "definition": "To think about someone or something in your head.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "nervoso",
+        "surface": "nervoso",
+        "definition": "Nervous; worried, tense and not calm at all.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "velocemente",
+        "surface": "velocemente",
+        "definition": "Quickly; in a fast way, with no time to lose.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "entrare",
+        "surface": "entra",
+        "definition": "To enter; to go into a building or a room.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "stanco",
+        "surface": "stanca",
+        "definition": "Tired; you need to rest or to sleep.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la divisa",
+        "surface": "divisa",
+        "definition": "A uniform; the special clothes you wear for work.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "sporco",
+        "surface": "sporca",
+        "definition": "Dirty; not clean, so it needs a good wash.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dimenticare",
+        "surface": "dimenticato",
+        "definition": "To forget; to not remember to take something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "morire",
+        "surface": "morto",
+        "definition": "To die; here, the phone battery is completely empty.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "spiegare",
+        "surface": "spiega",
+        "definition": "To explain; to tell someone why something happened.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "saltare",
+        "surface": "salta",
+        "definition": "To jump; to push up from the ground with your legs.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "contento",
+        "surface": "Contento",
+        "definition": "Happy; pleased and glad about something that happens.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "abbracciare",
+        "surface": "abbraccia",
+        "definition": "To hug; to hold someone close in your arms.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "triste",
+        "surface": "triste",
+        "definition": "Sad; not happy about something that has happened.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "work-and-shifts",
+    "slotIndex": 2,
+    "title": "Il calendario sul frigo",
+    "arcType": "reframe-turn",
+    "synopsis": "The next morning Davide and Elisa both say that it is their fault. Davide writes a big calendar for the fridge, in red and in blue. Elisa decides to ask her boss for fewer night flights, even if it means less money in her salary every month.",
+    "text": "“È colpa mia. Ho solo aperto la porta,” dice Davide la mattina dopo, con la voce bassa. Elisa non ha dormito bene, e ricorda il biglietto della vicina.\n\n“No, è colpa mia,” risponde Elisa. “Il telefono deve essere sempre carico.” Davide ha portato in cucina un foglio grande e due pennarelli.\n\nIn cucina c'è silenzio, ed Elisa sente solo il frigo. Davide scrive i giorni della settimana: il rosso è per lui, il blu per Elisa.\n\n“E i voli di notte?” chiede Davide. Elisa guarda il foglio a lungo, perché quei soldi sono nel suo stipendio. Poi decide, e risponde forte: “Domani chiamo il mio capo e chiedo un cambio.”\n\n“Ma i voli di notte pagano di più,” dice Davide, sorpreso. “Lo so. Ma è meglio così,” risponde Elisa. Davide capisce e sorride.\n\nMettono il foglio sul frigo con due calamite. Per la prima volta da ieri, Davide è tranquillo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la mattina",
+        "surface": "mattina",
+        "definition": "Morning; the first part of the day, before lunch.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "grande",
+        "surface": "grande",
+        "definition": "Big; large, not small, with a lot of space.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "rosso",
+        "surface": "rosso",
+        "definition": "Red; the colour of tomatoes and of blood.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "blu",
+        "surface": "blu",
+        "definition": "Blue; the colour of the sea and the sky.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "bene",
+        "surface": "bene",
+        "definition": "Well; in a good way, the way it should be.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ricordare",
+        "surface": "ricorda",
+        "definition": "To remember something that happened some time before.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "basso",
+        "surface": "bassa",
+        "definition": "Low; here, a quiet voice that is not loud.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dovere",
+        "surface": "deve",
+        "definition": "Must; to need to do something, with no choice.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "sempre",
+        "surface": "sempre",
+        "definition": "Always; every time, at every moment, with no exception.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il frigo",
+        "surface": "frigo",
+        "definition": "The fridge; the cold box for food in the kitchen.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "lungo",
+        "surface": "lungo",
+        "definition": "Long; here, a lungo means for a long time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "lo stipendio",
+        "surface": "stipendio",
+        "definition": "A salary; the money you get every month for work.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "decidere",
+        "surface": "decide",
+        "definition": "To decide; to choose what to do after thinking.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "forte",
+        "surface": "forte",
+        "definition": "Loud or strong; here, she speaks with a strong voice.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il cambio",
+        "surface": "cambio",
+        "definition": "A change; here, a change of work shifts.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "meglio",
+        "surface": "meglio",
+        "definition": "Better; more good than the other choice or way.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "capire",
+        "surface": "capisce",
+        "definition": "To understand what someone means, thinks or feels.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mettere",
+        "surface": "Mettono",
+        "definition": "To put something in a place, for example on a door.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la calamita",
+        "surface": "calamite",
+        "definition": "A magnet; it holds paper on the fridge door.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "tranquillo",
+        "surface": "tranquillo",
+        "definition": "Calm; quiet and relaxed, with no worry at all.",
+        "anchor": false
+      }
+    ]
+  }
+]

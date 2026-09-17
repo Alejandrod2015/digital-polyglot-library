@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "italy",
+  "registro": "nocturno y seco: una noche de lluvia, un perro que nadie reclama y dos amigos que no quieren decir que ya lo quieren",
+  "espina": "Elisa y Davide, amigos desde el liceo en la misma casa di ringhiera de via Padova, encuentran un perro y lo comparten metà e metà; cada tema lleva el trato a un terreno nuevo y le cuesta algo a uno de los dos, hasta que en el tema 7 la mitad de Davide se acaba.",
+  "recursos": "A1: causalidad explicita con perche, humor de situacion (las ciabatte nuevas, Biscotto? Mai), gancho final literal (el foulard rovinato, el perro sin nombre). Passato prossimo para lo que paso antes de la escena. Parrafos 5, 4 y 6.",
+  "historias": [
+    { "slot": "0", "quiere": "Elisa vuelve de un vuelo y quiere dormir", "impide": "un cane magro atado a la ringhiera del cortile, sin collar, y Davide que trabaja a las seis", "cuesta": "el foulard de la divisa, que usa para secar al perro y queda rovinato", "cambia": "el perro duerme en el sofa de Davide: solo por esta noche", "emocion": "compasion: siente un nodo en la garganta porque el perro tiene frio como ella, y se quita el foulard" },
+    { "slot": "1", "quiere": "encontrar al dueno del perro", "impide": "nadie en el condominio ni en el bar lo conoce, y la unica llamada es la vecina que se queja de los ladridos", "cuesta": "las ciabatte nuevas de Davide, mordidas", "cambia": "Davide, que no queria un perro, lo acaricia: el perro lo ha elegido", "emocion": "ternura contra su voluntad: a Davide le dan ganas de reir porque el perro lo mira como un viejo amigo, y le acaricia la cabeza" },
+    { "slot": "2", "quiere": "que el perro no vaya al canile el lunes", "impide": "Elisa vuela y duerme fuera, Davide trabaja a las seis, y un perro es para muchos anos", "cuesta": "el fin de semana de Elisa en Como, con tren y hotel ya pagados", "cambia": "trato metà e metà, una ciotola y un collare rojo; el perro sigue sin nombre", "emocion": "miedo a comprometerse: tiene miedo porque un perro es para muchos anos, y se muerde el labio mirando el billete" }
+  ]
+}

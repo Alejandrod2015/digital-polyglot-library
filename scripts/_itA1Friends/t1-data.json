@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "pets-and-strays",
+    "slotIndex": 0,
+    "title": "Un cane alla ringhiera",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Elisa, a flight attendant, comes home late after a flight. In the courtyard of her old building she finds a thin wet dog tied to the railing, with no collar. She wakes up Davide, her best friend on the first floor. He starts work at six and has no time for a dog.",
+    "text": "Nel cortile della casa di ringhiera cade la pioggia. Elisa, un'hostess di Linate, è appena tornata da un volo. Vuole dormire subito.\n\nVicino alle scale qualcosa trema. È un cane magro, legato alla ringhiera. Non ha il collare e nessuno lo cerca.\n\nElisa suona al primo piano. Davide è un postino di via Padova, il suo migliore amico. Apre in pigiama. “Sono le due! Che cosa è successo?” chiede lui. “Guarda giù. Chi ha lasciato un cane così?” risponde Elisa.\n\nDavide scende e slega il cane. “Io domani lavoro alle sei. Non ho tempo per un cane,” spiega Davide. “Ha freddo, come me,” dice piano Elisa, e sente la pioggia sul collo. Si toglie il foulard della divisa e lo asciuga.\n\n“Solo per stanotte, per favore,” dice Elisa. Davide sospira. “Va bene. Solo per stanotte.” Il cane dorme sul piccolo divano di Davide, sopra il foulard blu. Il foulard è rovinato.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la casa di ringhiera",
+        "surface": "casa di ringhiera",
+        "definition": "An old Milan building with long shared balconies on every floor.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la pioggia",
+        "surface": "pioggia",
+        "definition": "Rain; the water that falls from the sky on grey days.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "appena",
+        "surface": "appena",
+        "definition": "Just; something happened a very short time ago.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tornare",
+        "surface": "tornata",
+        "definition": "To come back to a place, for example to your home.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dormire",
+        "surface": "dormire",
+        "definition": "To sleep; to rest in bed with your eyes closed.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "magro",
+        "surface": "magro",
+        "definition": "Thin; with very little fat on the body.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "legare",
+        "surface": "legato",
+        "definition": "To tie something to another thing with a rope.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il collare",
+        "surface": "collare",
+        "definition": "A collar; a band that a dog wears around its neck.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "lasciare",
+        "surface": "lasciato",
+        "definition": "To leave someone or something in a place and go away.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "suonare",
+        "surface": "suona",
+        "definition": "To ring a doorbell so that someone opens the door.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "giù",
+        "surface": "giù",
+        "definition": "Down; downstairs, on a lower floor of the building.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cercare",
+        "surface": "cerca",
+        "definition": "To look for someone or something that you want to find.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "scendere",
+        "surface": "scende",
+        "definition": "To go down, for example the stairs of a building.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "domani",
+        "surface": "domani",
+        "definition": "Tomorrow; the day that comes right after today.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "lavorare",
+        "surface": "lavoro",
+        "definition": "To work; here, the speaker says when he starts work.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sentire",
+        "surface": "sente",
+        "definition": "To feel something, like a feeling inside your body.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "togliere",
+        "surface": "toglie",
+        "definition": "To take off something you wear, like a scarf.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "solo",
+        "surface": "Solo",
+        "definition": "Only; just this one thing and nothing more.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "piccolo",
+        "surface": "piccolo",
+        "definition": "Small; not big, like a sofa for one or two people.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "sopra",
+        "surface": "sopra",
+        "definition": "On top of; on the surface of something.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "pets-and-strays",
+    "slotIndex": 1,
+    "title": "Due ciabatte in meno",
+    "arcType": "reframe-turn",
+    "synopsis": "Elisa and Davide try to find the owner of the dog. Elisa sends a photo to the group chat of the building and Davide asks at the bar, but nobody knows the dog. The only phone call is an angry neighbour. Meanwhile the dog finds Davide's new slippers and chooses him.",
+    "text": "“Come ti chiami? Dov'è la tua casa?” chiede Davide al cane. Il cane mangia dalla mano di Elisa. “Ha fame, povero cane,” dice Elisa. Davide è tornato dal giro, ed Elisa oggi è libera.\n\nElisa manda una foto del cane nel gruppo del condominio. Davide chiede al bar. “Nel gruppo nessuno ha risposto,” spiega Elisa. “Al bar nessuno lo conosce,” risponde Davide.\n\nIl telefono suona ed Elisa risponde subito. “Pronto? Ha perso un cane?” chiede lei. No: è la vicina del terzo piano, arrabbiata, perché il cane abbaia di notte. “Sono preoccupata. Questo cane non ha una casa,” sussurra Elisa.\n\nIntanto il cane ha trovato le ciabatte nuove di Davide. Una è rotta. “Le mie ciabatte!” grida Davide. Il cane si siede sui suoi piedi, caldo. Davide ha voglia di ridere, perché il cane guarda Davide come un vecchio amico. “Sei un disastro,” dice Davide, e gli accarezza la testa. “Ti ha scelto,” ride Elisa.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "mangiare",
+        "surface": "mangia",
+        "definition": "To eat; to put food in your mouth.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "oggi",
+        "surface": "oggi",
+        "definition": "Today; on this day, not yesterday and not tomorrow.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il giro",
+        "surface": "giro",
+        "definition": "A round; the usual route a postman walks every day.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "mandare",
+        "surface": "manda",
+        "definition": "To send something, like a message or a photo.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il condominio",
+        "surface": "condominio",
+        "definition": "The block of flats and all the people who live there.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "chiedere",
+        "surface": "chiede",
+        "definition": "To ask; to say a question to someone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "rispondere",
+        "surface": "risposto",
+        "definition": "To answer a question, a message or the phone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "conoscere",
+        "surface": "conosce",
+        "definition": "To know a person or an animal because you met them.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "subito",
+        "surface": "subito",
+        "definition": "Immediately; right now, at once, without waiting at all.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "perdere",
+        "surface": "perso",
+        "definition": "To lose something and not know where it is.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "terzo",
+        "surface": "terzo",
+        "definition": "Third; number three in a list or a building.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "arrabbiato",
+        "surface": "arrabbiata",
+        "definition": "Angry; not happy with someone because of a problem.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "abbaiare",
+        "surface": "abbaia",
+        "definition": "To bark; to make the loud sound that dogs make.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "preoccupato",
+        "surface": "preoccupata",
+        "definition": "Worried; you think that something bad can happen soon.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "trovare",
+        "surface": "trovato",
+        "definition": "To find something, sometimes without looking for it.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "nuovo",
+        "surface": "nuove",
+        "definition": "New; bought or made a very short time ago.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sedersi",
+        "surface": "siede",
+        "definition": "To sit down on a chair, the floor or someone's feet.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "vecchio",
+        "surface": "vecchio",
+        "definition": "Old; here, a friend you have known for many years.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "scegliere",
+        "surface": "scelto",
+        "definition": "To choose one person or thing from many.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "povero",
+        "surface": "povero",
+        "definition": "Poor; here, you feel sorry for the hungry dog.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "pets-and-strays",
+    "slotIndex": 2,
+    "title": "Metà e metà",
+    "arcType": "harmonic-close",
+    "synopsis": "The dog shelter opens at the start of the week, and Davide wants to do the sensible thing. Elisa does not want to give the dog away, but she flies all the time and has a paid weekend in Como. Davide has a plan: half and half. It costs Elisa her weekend.",
+    "text": "Il canile apre lunedì. Elisa legge l'indirizzo e guarda il cane. È ancora sul divano di Davide, nella luce del mattino.\n\n“Io lo porto al canile. È giusto così,” dice Davide. “Non puoi. Ha già scelto te,” risponde Elisa.\n\nDavide conta sulle dita. “Io lavoro alle sei. Tu dormi fuori. Chi resta con lui?” chiede lui.\n\nElisa ha paura, perché un cane è per tanti anni. E sabato c'è il suo weekend a Como: ha già pagato il treno e l'albergo. Guarda il biglietto e morde il labbro.\n\n“Ho fatto un piano,” dice Davide. “Metà e metà. Io lunedì, mercoledì e venerdì. Tu il resto.” “Il resto è il weekend!” risponde Elisa. Poi scrive all'albergo: non vengo.\n\nNel negozio sotto casa comprano una ciotola e un collare rosso. “Adesso serve un nome,” dice Elisa. “Biscotto?” prova Davide. “Mai,” risponde lei. Il cane mangia dalla ciotola nuova, ancora senza nome.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il canile",
+        "surface": "canile",
+        "definition": "A dog shelter; a place for dogs that have no home.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "aprire",
+        "surface": "apre",
+        "definition": "To open; a shop or an office starts to work.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "leggere",
+        "surface": "legge",
+        "definition": "To read; to look at words and understand them.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "portare",
+        "surface": "porto",
+        "definition": "To take someone or something with you to a place.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "giusto",
+        "surface": "giusto",
+        "definition": "Right; the correct and fair thing to do.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "potere",
+        "surface": "puoi",
+        "definition": "Can; to be able or allowed to do something.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "già",
+        "surface": "già",
+        "definition": "Already; it happened before now, earlier than you think.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "contare",
+        "surface": "conta",
+        "definition": "To count; to say numbers one after the other.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "restare",
+        "surface": "resta",
+        "definition": "To stay; to remain in a place and not leave.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "pagare",
+        "surface": "pagato",
+        "definition": "To pay; to give money for something you buy.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "metà e metà",
+        "surface": "Metà e metà",
+        "definition": "Half and half; two people share something in equal parts.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "scrivere",
+        "surface": "scrive",
+        "definition": "To write; to put words in a message or letter.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "venire",
+        "surface": "vengo",
+        "definition": "To come; here, she tells the hotel she is not coming.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "comprare",
+        "surface": "comprano",
+        "definition": "To buy; to get something in a shop for money.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la ciotola",
+        "surface": "ciotola",
+        "definition": "A bowl; a small round dish for food or water.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "servire",
+        "surface": "serve",
+        "definition": "To be needed; here, the dog needs a name.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "adesso",
+        "surface": "Adesso",
+        "definition": "Now; at this moment, not before and not later.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "mai",
+        "surface": "Mai",
+        "definition": "Never; not one time, not in any case.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "ancora",
+        "surface": "ancora",
+        "definition": "Still; something is the same, it has not changed yet.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "sotto",
+        "surface": "sotto",
+        "definition": "Under; here, downstairs in the same building as you.",
+        "anchor": false
+      }
+    ]
+  }
+]

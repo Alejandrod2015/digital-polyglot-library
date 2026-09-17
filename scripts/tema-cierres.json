@@ -7289,5 +7289,4520 @@
         }
       ]
     }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#bills-and-expenses": {
+    "cerrado": "2026-09-14T16:12:57.732Z",
+    "hash": "da132bc4ccaedfe6",
+    "historias": [
+      "bills-and-expenses#0 chi-paga-il-calzino",
+      "bills-and-expenses#1 anche-il-caffe",
+      "bills-and-expenses#2 davide-vende-la-bici"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de dinero y orgullo: una noche de urgencia, un cuaderno de cuentas que duele y una bici que se va\", espina \"El trato metà e metà llega al dinero: el perro se traga un calcetin, Elisa paga lo que Davide no puede, el cuaderno de gastos pone numeros entre dos amigos, y Davide vende la bici del liceo para quedar pari.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"elisa\", 20%)",
+      "densidad 8.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 14/41 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 56 plazas · 51 salen una sola vez | ancladas: 4/60 (7%) | cola: 51/56 portables con un solo encuentro (91%, tope 70%) | de un solo encuentro: cena, dura, Manca, studio, visita, successo, Forse, pericoloso, seria, tirato, salva, riceve, Costa, cara, speso, matita, elenco, intero, calcola, parti, Dividiamo, uguali, presti, segnato, attenzione, bevuto, importo, inutile, sbagliata, cancellare…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: bills-and-expenses (Elisa, Davide)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de dinero y orgullo: una noche de urgencia, un cuaderno de cuentas que duele y una bici que se va",
+      "espina": "El trato metà e metà llega al dinero: el perro se traga un calcetin, Elisa paga lo que Davide no puede, el cuaderno de gastos pone numeros entre dos amigos, y Davide vende la bici del liceo para quedar pari.",
+      "recursos": "A1: causalidad explicita, humor de situacion (Scrivi anche il caffe?), gancho literal (la pagina arrancada). Passato prossimo 3-4 por historia. Parrafos 4, 5 y 6. Titulos sin la formula X del Y: pregunta, pregunta y frase entera.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "salvar al perro, que se ha tragado un calcetin",
+          "impide": "es de noche y la urgencia de la veterinaria cuesta trescientos ochenta euros que Davide no tiene",
+          "cuesta": "el dinero del abrigo nuevo de Elisa",
+          "cambia": "el perro esta bien y Elisa paga la mitad de Davide",
+          "emocion": "nudo en el estomago porque se ha gastado el dinero del abrigo, y luego sonrie mirando al perro"
+        },
+        {
+          "slot": "1",
+          "quiere": "Elisa quiere que las cuentas sean justas",
+          "impide": "Davide se siente un deudor cuando ve apuntado hasta un cafe",
+          "cuesta": "la ligereza entre los dos: por primera vez hay numeros",
+          "cambia": "Davide se enfada, se esconde y pide perdon por mensaje; Elisa no contesta enseguida",
+          "emocion": "rabia y verguenza: habla con la voz fuerte porque no es un banco, y cierra el cuaderno"
+        },
+        {
+          "slot": "2",
+          "quiere": "Davide quiere devolver su mitad",
+          "impide": "no tiene dinero hasta final de mes",
+          "cuesta": "su bici vieja, un recuerdo del liceo, vendida por cien euros",
+          "cambia": "Elisa arranca la pagina de los gastos: solo apuntaran las cosas grandes",
+          "emocion": "despedida: acepta con valor, toca la bici y la saluda; Elisa se pone triste al ver el patio vacio"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "ae404383",
+        "palabras": [
+          "affare",
+          "attenzione",
+          "calcolare",
+          "cambiare",
+          "cancellare",
+          "coraggio",
+          "costare",
+          "differenza",
+          "elenco",
+          "girare",
+          "grave",
+          "importo",
+          "intero",
+          "inutile",
+          "nascondere",
+          "pari",
+          "parte",
+          "pericoloso",
+          "prezioso",
+          "provare",
+          "ricordo",
+          "ridere",
+          "salvare",
+          "segnare",
+          "semplice",
+          "serio",
+          "spendere",
+          "studio",
+          "succedere",
+          "toccare",
+          "trattare",
+          "uguale",
+          "valere"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-3 que vuelven en el cuerpo del tema 4; sin reensenanza como plaza",
+        "portables_previas": 160,
+        "vuelven": 26,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": []
+          },
+          {
+            "surface": "tornata",
+            "en": []
+          },
+          {
+            "surface": "dormire",
+            "en": []
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": []
+          },
+          {
+            "surface": "lasciato",
+            "en": []
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": []
+          },
+          {
+            "surface": "cerca",
+            "en": []
+          },
+          {
+            "surface": "scende",
+            "en": []
+          },
+          {
+            "surface": "domani",
+            "en": []
+          },
+          {
+            "surface": "lavoro",
+            "en": []
+          },
+          {
+            "surface": "sente",
+            "en": []
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": []
+          },
+          {
+            "surface": "sopra",
+            "en": []
+          },
+          {
+            "surface": "mangia",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "manda",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "conosce",
+            "en": []
+          },
+          {
+            "surface": "subito",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "perso",
+            "en": []
+          },
+          {
+            "surface": "terzo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "arrabbiata",
+            "en": []
+          },
+          {
+            "surface": "abbaia",
+            "en": []
+          },
+          {
+            "surface": "preoccupata",
+            "en": []
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": []
+          },
+          {
+            "surface": "vecchio",
+            "en": []
+          },
+          {
+            "surface": "scelto",
+            "en": []
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "legge",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": []
+          },
+          {
+            "surface": "puoi",
+            "en": []
+          },
+          {
+            "surface": "già",
+            "en": []
+          },
+          {
+            "surface": "conta",
+            "en": []
+          },
+          {
+            "surface": "resta",
+            "en": []
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": []
+          },
+          {
+            "surface": "vengo",
+            "en": []
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": []
+          },
+          {
+            "surface": "adesso",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": []
+          },
+          {
+            "surface": "ancora",
+            "en": []
+          },
+          {
+            "surface": "sotto",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "arrivato",
+            "en": []
+          },
+          {
+            "surface": "aspetta",
+            "en": []
+          },
+          {
+            "surface": "davanti",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "esce",
+            "en": []
+          },
+          {
+            "surface": "tardi",
+            "en": []
+          },
+          {
+            "surface": "dopo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "insieme",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "gentile",
+            "en": []
+          },
+          {
+            "surface": "giallo",
+            "en": []
+          },
+          {
+            "surface": "faccio",
+            "en": []
+          },
+          {
+            "surface": "vuoi",
+            "en": []
+          },
+          {
+            "surface": "davvero",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "felice",
+            "en": []
+          },
+          {
+            "surface": "prima",
+            "en": []
+          },
+          {
+            "surface": "partire",
+            "en": []
+          },
+          {
+            "surface": "libero",
+            "en": []
+          },
+          {
+            "surface": "calde",
+            "en": []
+          },
+          {
+            "surface": "piano",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "martedì",
+            "en": []
+          },
+          {
+            "surface": "chiave",
+            "en": []
+          },
+          {
+            "surface": "presto",
+            "en": []
+          },
+          {
+            "surface": "vuota",
+            "en": []
+          },
+          {
+            "surface": "piena",
+            "en": []
+          },
+          {
+            "surface": "corre",
+            "en": []
+          },
+          {
+            "surface": "chiama",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pensa",
+            "en": []
+          },
+          {
+            "surface": "nervoso",
+            "en": []
+          },
+          {
+            "surface": "velocemente",
+            "en": []
+          },
+          {
+            "surface": "entra",
+            "en": []
+          },
+          {
+            "surface": "stanca",
+            "en": []
+          },
+          {
+            "surface": "sporca",
+            "en": []
+          },
+          {
+            "surface": "dimenticato",
+            "en": []
+          },
+          {
+            "surface": "morto",
+            "en": []
+          },
+          {
+            "surface": "spiega",
+            "en": []
+          },
+          {
+            "surface": "salta",
+            "en": []
+          },
+          {
+            "surface": "contento",
+            "en": []
+          },
+          {
+            "surface": "abbraccia",
+            "en": []
+          },
+          {
+            "surface": "triste",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "mattina",
+            "en": []
+          },
+          {
+            "surface": "grande",
+            "en": []
+          },
+          {
+            "surface": "rosso",
+            "en": []
+          },
+          {
+            "surface": "blu",
+            "en": []
+          },
+          {
+            "surface": "bene",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "ricorda",
+            "en": []
+          },
+          {
+            "surface": "bassa",
+            "en": []
+          },
+          {
+            "surface": "deve",
+            "en": []
+          },
+          {
+            "surface": "sempre",
+            "en": []
+          },
+          {
+            "surface": "lungo",
+            "en": []
+          },
+          {
+            "surface": "stipendio",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "decide",
+            "en": []
+          },
+          {
+            "surface": "forte",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "cambio",
+            "en": []
+          },
+          {
+            "surface": "meglio",
+            "en": []
+          },
+          {
+            "surface": "capisce",
+            "en": []
+          },
+          {
+            "surface": "mettono",
+            "en": []
+          },
+          {
+            "surface": "tranquillo",
+            "en": []
+          },
+          {
+            "surface": "lunedì",
+            "en": []
+          },
+          {
+            "surface": "studia",
+            "en": []
+          },
+          {
+            "surface": "pace",
+            "en": []
+          },
+          {
+            "surface": "comincia",
+            "en": []
+          },
+          {
+            "surface": "brutta",
+            "en": []
+          },
+          {
+            "surface": "parla",
+            "en": []
+          },
+          {
+            "surface": "alta",
+            "en": []
+          },
+          {
+            "surface": "scusate",
+            "en": []
+          },
+          {
+            "surface": "difficile",
+            "en": []
+          },
+          {
+            "surface": "chiuso",
+            "en": []
+          },
+          {
+            "surface": "finita",
+            "en": []
+          },
+          {
+            "surface": "ragione",
+            "en": []
+          },
+          {
+            "surface": "sguardo",
+            "en": []
+          },
+          {
+            "surface": "educata",
+            "en": []
+          },
+          {
+            "surface": "canta",
+            "en": []
+          },
+          {
+            "surface": "tempo",
+            "en": []
+          },
+          {
+            "surface": "ascoltano",
+            "en": []
+          },
+          {
+            "surface": "troppo",
+            "en": []
+          },
+          {
+            "surface": "male",
+            "en": []
+          },
+          {
+            "surface": "rispetto",
+            "en": []
+          },
+          {
+            "surface": "alzato",
+            "en": []
+          },
+          {
+            "surface": "colpa",
+            "en": []
+          },
+          {
+            "surface": "promesso",
+            "en": []
+          },
+          {
+            "surface": "discutono",
+            "en": []
+          },
+          {
+            "surface": "votano",
+            "en": []
+          },
+          {
+            "surface": "fuori",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ultima",
+            "en": []
+          },
+          {
+            "surface": "spaventa",
+            "en": []
+          },
+          {
+            "surface": "facile",
+            "en": []
+          },
+          {
+            "surface": "ormai",
+            "en": []
+          },
+          {
+            "surface": "lontano",
+            "en": []
+          },
+          {
+            "surface": "dentro",
+            "en": []
+          },
+          {
+            "surface": "giovedì",
+            "en": []
+          },
+          {
+            "surface": "aiuto",
+            "en": []
+          },
+          {
+            "surface": "prossimi",
+            "en": []
+          },
+          {
+            "surface": "messaggio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "gruppo",
+            "en": []
+          },
+          {
+            "surface": "gioca",
+            "en": []
+          },
+          {
+            "surface": "calcio",
+            "en": []
+          },
+          {
+            "surface": "squadra",
+            "en": []
+          },
+          {
+            "surface": "vince",
+            "en": []
+          },
+          {
+            "surface": "scuro",
+            "en": []
+          },
+          {
+            "surface": "strano",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "aperta",
+            "en": []
+          },
+          {
+            "surface": "bravo",
+            "en": []
+          },
+          {
+            "surface": "salito",
+            "en": []
+          },
+          {
+            "surface": "simpatica",
+            "en": []
+          },
+          {
+            "surface": "tenere",
+            "en": []
+          },
+          {
+            "surface": "propone",
+            "en": []
+          },
+          {
+            "surface": "rifiutare",
+            "en": []
+          },
+          {
+            "surface": "prende",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "bella",
+            "en": []
+          }
+        ]
+      }
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#couples-and-living-together": {
+    "cerrado": "2026-09-14T16:05:36.069Z",
+    "hash": "e0d99351c3efd0e9",
+    "historias": [
+      "couples-and-living-together#0 arianna-starnutisce",
+      "couples-and-living-together#1 davide-dorme-sulle-scale",
+      "couples-and-living-together#2 si-chiama-biscotto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de pareja nueva en la casa de ringhiera: una mudanza, estornudos, una mentira por amor y una decision que cierra el trato\", espina \"El trato metà e metà se acaba: Arianna, la persona que Davide conocio en Puglia, se muda con el y es alergica al perro; Davide intenta sostener su mitad sin decirlo y duerme en la escalera; Elisa lo descubre y decide ella: se queda el perro entero. La mitad se acaba; la amistad no.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"arianna\", 27%)",
+      "densidad 9.0 palabras por oracion (techo 11 en a1)",
+      "seguidilla 12/41 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 53 plazas · 50 salen una sola vez | ancladas: 7/60 (12%) | cola: 50/53 portables con un solo encuentro (94%, tope 70%) | de un solo encuentro: settembre, guarda, insegnante, timida, Piacere, pentola, padella, usa, Condividiamo, dentifricio, coppia, cucina, pepe, Salute, medicina, lava, mentito, spera, magari, Purtroppo, soffre, secca, medico, ama, scelta, dietro, fredde, domanda, cattivo, finalmente…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: couples-and-living-together (Elisa, Davide)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de pareja nueva en la casa de ringhiera: una mudanza, estornudos, una mentira por amor y una decision que cierra el trato",
+      "espina": "El trato metà e metà se acaba: Arianna, la persona que Davide conocio en Puglia, se muda con el y es alergica al perro; Davide intenta sostener su mitad sin decirlo y duerme en la escalera; Elisa lo descubre y decide ella: se queda el perro entero. La mitad se acaba; la amistad no.",
+      "recursos": "A1: humor de situacion (Salute! E il pepe; Sei un cattivo attore), revelacion tardia de la alergia, callback al nombre rechazado en el tema 1 (Biscotto), cierre agridulce sin gancho. Passato prossimo 3 por historia. Parrafos 6, 5 y 4. Titulos sin X del Y.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Arianna quiere empezar bien su vida con Davide y caerle bien a Elisa y al perro",
+          "impide": "estornuda desde el primer momento, y Davide lo atribuye a la pimienta",
+          "cuesta": "el primer dia tranquilo en la casa nueva: Arianna tiene que tomar una medicina y confesar",
+          "cambia": "Arianna dice en voz baja que es alergica a los perros, aunque este le gusta",
+          "emocion": "ternura con inquietud: Arianna sonrie y acaricia al perro, y la confesion sale bajito porque no quiere estropear la cena; Davide friega los platos en silencio"
+        },
+        {
+          "slot": "1",
+          "quiere": "Davide quiere proteger a Arianna sin romper el trato con Elisa",
+          "impide": "la tos de Arianna y el medico, que culpa al perro",
+          "cuesta": "sus noches: duerme en la escalera fria con el perro, y miente a Elisa una semana",
+          "cambia": "Elisa lo descubre en la escalera y no se cree su excusa; invita a la pareja a comer",
+          "emocion": "culpa y cariño: Davide dice que el resto no le importa porque no quiere fallar el trato, y al final se rie cuando Elisa le dice que es mal actor"
+        },
+        {
+          "slot": "2",
+          "quiere": "Elisa quiere que nadie pierda la casa ni el perro",
+          "impide": "el trato a medias ya no funciona con Arianna en casa de Davide",
+          "cuesta": "Davide renuncia a su mitad y Elisa a su sabado libre",
+          "cambia": "Elisa adopta el perro entero y le pone nombre: Biscotto, el que rechazo el primer dia; Davide pasa a ser el paseo del domingo",
+          "emocion": "agridulce: Elisa mira desde arriba con su cafe porque ya no es metà e metà, pero es la vida"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "dcf8fcb1",
+        "palabras": [
+          "compagno",
+          "condividere",
+          "coppia",
+          "decisione",
+          "finalmente",
+          "guardare",
+          "magari",
+          "medico",
+          "pronto",
+          "purtroppo",
+          "ringraziare",
+          "scelta",
+          "scoprire",
+          "soffrire",
+          "sperare"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-6 que vuelven en el cuerpo del tema 7; las 24 del tema 6 con un solo encuentro vuelven todas; sin reensenanza como plaza",
+        "portables_previas": 305,
+        "vuelven": 51,
+        "detalle": [
+          {
+            "surface": "dormire",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "giù",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "scende",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "domani",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "solo",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              0,
+              2
+            ]
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "siede",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "già",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "ancora",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "tardi",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "insieme",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "faccio",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "libero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "piano",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "corre",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "chiama",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "bassa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "deve",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "cambio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "difficile",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "colpa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ride",
+            "en": [
+              0,
+              1
+            ]
+          },
+          {
+            "surface": "sveglia",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "tiepido",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "nuoto",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "bianca",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "preferisce",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dolce",
+            "en": [
+              0,
+              2
+            ]
+          },
+          {
+            "surface": "regalo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "vive",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "invito",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "credo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "settimana",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "viaggia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "chiamata",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ragazza",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "seguente",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "veloce",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "grigio",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "patto",
+            "en": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "vita",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "prepara",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "nero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "veste",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "interessa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "gioia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sogno",
+            "en": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#neighbours-and-noise": {
+    "cerrado": "2026-09-14T16:12:34.233Z",
+    "hash": "c3c89dd810aee517",
+    "historias": [
+      "neighbours-and-noise#0 concerto-al-secondo-piano",
+      "neighbours-and-noise#1 le-regole-del-cortile",
+      "neighbours-and-noise#2 giovedi-senza-calcetto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia de vecindad con verguenza: un perro que canta, una vecina con razon y una asamblea en el patio\", espina \"El trato metà e metà sale del piso al edificio: el perro solo aulla, Serena pierde su reunion, el condominio pone una regla, y Davide paga con su calcetto de los jueves; el perro encuentra en Serena una tercera casa.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"elisa\", 13%)",
+      "densidad 9.1 palabras por oracion (techo 11 en a1)",
+      "seguidilla 9/38 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 52 plazas · 47 salen una sola vez | ancladas: 8/60 (13%) | cola: 47/52 portables con un solo encuentro (90%, tope 70%) | de un solo encuentro: lunedì, studia, pace, comincia, brutta, parla, Scusate, difficile, chiuso, finita, sguardo, educata, canta, tempo, ascoltano, troppo, rispetto, alzato, colpa, Promesso, discutono, votano, fuori, ultima, spaventa, facile, ormai, lontano, dentro, prossimi…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: neighbours-and-noise (Serena, Davide)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "comedia de vecindad con verguenza: un perro que canta, una vecina con razon y una asamblea en el patio",
+      "espina": "El trato metà e metà sale del piso al edificio: el perro solo aulla, Serena pierde su reunion, el condominio pone una regla, y Davide paga con su calcetto de los jueves; el perro encuentra en Serena una tercera casa.",
+      "recursos": "A1: humor de situacion (Scusate, al terzo piano c'e un concerto), causalidad explicita con perche, gancho literal (la foto del equipo sin el). Passato prossimo 3 por historia. Parrafos 5, 6 y 4. Sin reensenanza como plaza: la cola baja con reencuentros en el texto.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Serena quiere trabajar en paz y hacer su reunion desde casa",
+          "impide": "el perro, solo en el tercer piso, aulla toda la manana",
+          "cuesta": "la reunion de Serena, que termina mal, y la verguenza de Davide delante de ella",
+          "cambia": "Serena va a escribir al amministratore",
+          "emocion": "verguenza: Davide tiene las orejas calientes porque Serena tiene razon, y baja la mirada"
+        },
+        {
+          "slot": "1",
+          "quiere": "Elisa y Davide quieren que el condominio no les quite el perro",
+          "impide": "la nota de Serena y los vecinos, que votan una regla",
+          "cuesta": "la ultima oportunidad: si el perro ladra otra vez, se va",
+          "cambia": "Davide promete que el perro no se queda nunca solo y tiene una idea que no cuenta",
+          "emocion": "miedo: la regla asusta a Elisa porque el perro ya es suyo"
+        },
+        {
+          "slot": "2",
+          "quiere": "Davide quiere cumplir la promesa de los jueves",
+          "impide": "su calcetto de los jueves, desde hace diez anos",
+          "cuesta": "su sitio en el equipo, que esa noche gana sin el",
+          "cambia": "Serena se queda el perro los jueves a cambio de la compra",
+          "emocion": "alivio y perdida: le da risa porque el perro esta tranquilo con Serena, y coge al perro en brazos; en la foto del equipo el ya no esta"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "88b5ccda",
+        "palabras": [
+          "bravo",
+          "calcio",
+          "colpa",
+          "concerto",
+          "discutere",
+          "gruppo",
+          "messaggio",
+          "ormai",
+          "pace",
+          "promettere",
+          "proporre",
+          "ragione",
+          "ricercatore",
+          "rispetto",
+          "scusare",
+          "sguardo",
+          "squadra",
+          "strano",
+          "votare"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-2 que vuelven en el cuerpo del tema 3; sin reensenanza como plaza",
+        "portables_previas": 108,
+        "vuelven": 43,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "tornata",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "dormire",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": []
+          },
+          {
+            "surface": "lasciato",
+            "en": []
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "cerca",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "scende",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "domani",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "sente",
+            "en": []
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sopra",
+            "en": []
+          },
+          {
+            "surface": "mangia",
+            "en": []
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "manda",
+            "en": []
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": []
+          },
+          {
+            "surface": "conosce",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "subito",
+            "en": []
+          },
+          {
+            "surface": "perso",
+            "en": []
+          },
+          {
+            "surface": "terzo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "arrabbiata",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "abbaia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "preoccupata",
+            "en": []
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": []
+          },
+          {
+            "surface": "vecchio",
+            "en": []
+          },
+          {
+            "surface": "scelto",
+            "en": []
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": []
+          },
+          {
+            "surface": "legge",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": []
+          },
+          {
+            "surface": "puoi",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "già",
+            "en": []
+          },
+          {
+            "surface": "conta",
+            "en": []
+          },
+          {
+            "surface": "resta",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "vengo",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "adesso",
+            "en": []
+          },
+          {
+            "surface": "mai",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "ancora",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sotto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "arrivato",
+            "en": []
+          },
+          {
+            "surface": "aspetta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "davanti",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "esce",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "tardi",
+            "en": []
+          },
+          {
+            "surface": "dopo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "insieme",
+            "en": []
+          },
+          {
+            "surface": "gentile",
+            "en": []
+          },
+          {
+            "surface": "giallo",
+            "en": []
+          },
+          {
+            "surface": "faccio",
+            "en": []
+          },
+          {
+            "surface": "vuoi",
+            "en": []
+          },
+          {
+            "surface": "davvero",
+            "en": []
+          },
+          {
+            "surface": "felice",
+            "en": []
+          },
+          {
+            "surface": "prima",
+            "en": []
+          },
+          {
+            "surface": "partire",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "libero",
+            "en": []
+          },
+          {
+            "surface": "calde",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "piano",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "martedì",
+            "en": []
+          },
+          {
+            "surface": "chiave",
+            "en": []
+          },
+          {
+            "surface": "presto",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "vuota",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "piena",
+            "en": []
+          },
+          {
+            "surface": "corre",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "chiama",
+            "en": []
+          },
+          {
+            "surface": "pensa",
+            "en": []
+          },
+          {
+            "surface": "nervoso",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "velocemente",
+            "en": []
+          },
+          {
+            "surface": "entra",
+            "en": []
+          },
+          {
+            "surface": "stanca",
+            "en": []
+          },
+          {
+            "surface": "sporca",
+            "en": []
+          },
+          {
+            "surface": "dimenticato",
+            "en": []
+          },
+          {
+            "surface": "morto",
+            "en": []
+          },
+          {
+            "surface": "spiega",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "salta",
+            "en": []
+          },
+          {
+            "surface": "contento",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "abbraccia",
+            "en": []
+          },
+          {
+            "surface": "triste",
+            "en": []
+          },
+          {
+            "surface": "mattina",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "grande",
+            "en": []
+          },
+          {
+            "surface": "rosso",
+            "en": []
+          },
+          {
+            "surface": "blu",
+            "en": []
+          },
+          {
+            "surface": "bene",
+            "en": []
+          },
+          {
+            "surface": "ricorda",
+            "en": []
+          },
+          {
+            "surface": "bassa",
+            "en": []
+          },
+          {
+            "surface": "deve",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "sempre",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "lungo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "stipendio",
+            "en": []
+          },
+          {
+            "surface": "decide",
+            "en": []
+          },
+          {
+            "surface": "forte",
+            "en": []
+          },
+          {
+            "surface": "cambio",
+            "en": []
+          },
+          {
+            "surface": "meglio",
+            "en": []
+          },
+          {
+            "surface": "capisce",
+            "en": []
+          },
+          {
+            "surface": "mettono",
+            "en": []
+          },
+          {
+            "surface": "tranquillo",
+            "en": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#pets-and-strays": {
+    "cerrado": "2026-09-14T16:12:04.064Z",
+    "hash": "f61ee52c07e6428b",
+    "historias": [
+      "pets-and-strays#0 un-cane-alla-ringhiera",
+      "pets-and-strays#1 due-ciabatte-in-meno",
+      "pets-and-strays#2 meta-e-meta"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"nocturno y seco: una noche de lluvia, un perro que nadie reclama y dos amigos que no quieren decir que ya lo quieren\", espina \"Elisa y Davide, amigos desde el liceo en la misma casa di ringhiera de via Padova, encuentran un perro y lo comparten metà e metà; cada tema lleva el trato a un terreno nuevo y le cuesta algo a uno de los dos, hasta que en el tema 7 la mitad de Davide se acaba.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"elisa\", 20%)",
+      "densidad 6.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 28/56 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.15 sobre 52 plazas · 45 salen una sola vez | ancladas: 8/60 (13%) | cola: 45/52 portables con un solo encuentro (87%, tope 70%) | de un solo encuentro: appena, tornata, dormire, magro, legato, lasciato, giù, cerca, scende, domani, sente, toglie, Solo, piccolo, sopra, oggi, manda, risposto, conosce, perso, terzo, arrabbiata, abbaia, preoccupata, trovato, nuove, siede, vecchio, povero, legge…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: pets-and-strays (Elisa, Davide)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "nocturno y seco: una noche de lluvia, un perro que nadie reclama y dos amigos que no quieren decir que ya lo quieren",
+      "espina": "Elisa y Davide, amigos desde el liceo en la misma casa di ringhiera de via Padova, encuentran un perro y lo comparten metà e metà; cada tema lleva el trato a un terreno nuevo y le cuesta algo a uno de los dos, hasta que en el tema 7 la mitad de Davide se acaba.",
+      "recursos": "A1: causalidad explicita con perche, humor de situacion (las ciabatte nuevas, Biscotto? Mai), gancho final literal (el foulard rovinato, el perro sin nombre). Passato prossimo para lo que paso antes de la escena. Parrafos 5, 4 y 6.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Elisa vuelve de un vuelo y quiere dormir",
+          "impide": "un cane magro atado a la ringhiera del cortile, sin collar, y Davide que trabaja a las seis",
+          "cuesta": "el foulard de la divisa, que usa para secar al perro y queda rovinato",
+          "cambia": "el perro duerme en el sofa de Davide: solo por esta noche",
+          "emocion": "compasion: siente un nodo en la garganta porque el perro tiene frio como ella, y se quita el foulard"
+        },
+        {
+          "slot": "1",
+          "quiere": "encontrar al dueno del perro",
+          "impide": "nadie en el condominio ni en el bar lo conoce, y la unica llamada es la vecina que se queja de los ladridos",
+          "cuesta": "las ciabatte nuevas de Davide, mordidas",
+          "cambia": "Davide, que no queria un perro, lo acaricia: el perro lo ha elegido",
+          "emocion": "ternura contra su voluntad: a Davide le dan ganas de reir porque el perro lo mira como un viejo amigo, y le acaricia la cabeza"
+        },
+        {
+          "slot": "2",
+          "quiere": "que el perro no vaya al canile el lunes",
+          "impide": "Elisa vuela y duerme fuera, Davide trabaja a las seis, y un perro es para muchos anos",
+          "cuesta": "el fin de semana de Elisa en Como, con tren y hotel ya pagados",
+          "cambia": "trato metà e metà, una ciotola y un collare rojo; el perro sigue sin nombre",
+          "emocion": "miedo a comprometerse: tiene miedo porque un perro es para muchos anos, y se muerde el labio mirando el billete"
+        }
+      ]
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#repairs-and-diy": {
+    "cerrado": "2026-09-14T16:13:19.492Z",
+    "hash": "db01a3ba95eda907",
+    "historias": [
+      "repairs-and-diy#0 tre-gambe-e-mezzo",
+      "repairs-and-diy#1 davide-prende-il-trapano",
+      "repairs-and-diy#2 una-gamba-diversa"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de manos y orgullo: una silla con memoria, un arreglo casero que empeora todo y una leccion de taller\", espina \"El trato metà e metà llega a la casa: el perro muerde la silla de la madre de Elisa, Davide quiere arreglarla solo y la rompe del todo, y Tommaso les ensena a hacer una pata nueva que ya no es la original.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"elisa\", 19%)",
+      "densidad 7.8 palabras por oracion (techo 11 en a1)",
+      "seguidilla 17/47 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 55 plazas · 54 salen una sola vez | ancladas: 5/60 (8%) | cola: 54/55 portables con un solo encuentro (98%, tope 70%) | de un solo encuentro: accende, lampada, rotta, cade, esperto, sicuro, debole, aggiusto, capace, passano, consiglio, antico, strumenti, metro, fortuna, pesante, unico, video, segue, punto, mostra, spinge, corta, morbido, stretto, largo, attento, peggio, lentamente, riesce…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: repairs-and-diy (Tommaso, Davide, Elisa)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de manos y orgullo: una silla con memoria, un arreglo casero que empeora todo y una leccion de taller",
+      "espina": "El trato metà e metà llega a la casa: el perro muerde la silla de la madre de Elisa, Davide quiere arreglarla solo y la rompe del todo, y Tommaso les ensena a hacer una pata nueva que ya no es la original.",
+      "recursos": "A1: humor de situacion (Un cane o un postino?), causalidad explicita, imagen final concreta (tres patas marrones y una clara). Passato prossimo 3 por historia. Parrafos 5, 6 y 5. Titulos sin X del Y.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Davide quiere arreglar solo la silla de la madre de Elisa",
+          "impide": "la pata esta rota y es madera antigua; no sabe hacerlo",
+          "cuesta": "rechaza el consejo de Tommaso",
+          "cambia": "Elisa confia en el aunque tiene miedo por la silla",
+          "emocion": "miedo a perder un recuerdo: Elisa tiene el corazon pesado porque es el unico recuerdo de su madre, y sonrie igual"
+        },
+        {
+          "slot": "1",
+          "quiere": "arreglar la silla con el taladro y un video",
+          "impide": "no mide, la vite es corta, el agujero se abre",
+          "cuesta": "la pata original, rota en dos piezas",
+          "cambia": "Davide acepta que necesita ayuda y bajan a la bottega",
+          "emocion": "verguenza y risa: Elisa rie y llora a la vez porque el video era inutil; Davide se sienta en el suelo"
+        },
+        {
+          "slot": "2",
+          "quiere": "que la silla vuelva a estar en pie",
+          "impide": "la pata vieja esta perdida",
+          "cuesta": "la silla ya no es igual: una pata es de otra madera",
+          "cambia": "Tommaso les ensena y la silla aguanta, con la historia de los dos",
+          "emocion": "sorpresa y aceptacion: Elisa dice Che sorpresa al ver la pata clara, y se sienta en la silla"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "ba924ee1",
+        "palabras": [
+          "antico",
+          "attento",
+          "capace",
+          "consiglio",
+          "costruire",
+          "diverso",
+          "esperto",
+          "fortuna",
+          "funzionare",
+          "leggero",
+          "maestro",
+          "metro",
+          "passare",
+          "pesante",
+          "punto",
+          "riuscire",
+          "seguire",
+          "strumento",
+          "unico",
+          "video",
+          "vivo"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-4 que vuelven en el cuerpo del tema 5; sin reensenanza como plaza",
+        "portables_previas": 216,
+        "vuelven": 43,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "tornata",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dormire",
+            "en": []
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": []
+          },
+          {
+            "surface": "lasciato",
+            "en": []
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": []
+          },
+          {
+            "surface": "cerca",
+            "en": []
+          },
+          {
+            "surface": "scende",
+            "en": []
+          },
+          {
+            "surface": "domani",
+            "en": []
+          },
+          {
+            "surface": "lavoro",
+            "en": []
+          },
+          {
+            "surface": "sente",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": []
+          },
+          {
+            "surface": "sopra",
+            "en": []
+          },
+          {
+            "surface": "mangia",
+            "en": []
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "manda",
+            "en": []
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": []
+          },
+          {
+            "surface": "conosce",
+            "en": []
+          },
+          {
+            "surface": "subito",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "perso",
+            "en": []
+          },
+          {
+            "surface": "terzo",
+            "en": []
+          },
+          {
+            "surface": "arrabbiata",
+            "en": []
+          },
+          {
+            "surface": "abbaia",
+            "en": []
+          },
+          {
+            "surface": "preoccupata",
+            "en": []
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "scelto",
+            "en": []
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": []
+          },
+          {
+            "surface": "legge",
+            "en": []
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": []
+          },
+          {
+            "surface": "puoi",
+            "en": []
+          },
+          {
+            "surface": "già",
+            "en": []
+          },
+          {
+            "surface": "conta",
+            "en": []
+          },
+          {
+            "surface": "resta",
+            "en": []
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": []
+          },
+          {
+            "surface": "vengo",
+            "en": []
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "adesso",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": []
+          },
+          {
+            "surface": "ancora",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sotto",
+            "en": []
+          },
+          {
+            "surface": "arrivato",
+            "en": []
+          },
+          {
+            "surface": "aspetta",
+            "en": []
+          },
+          {
+            "surface": "davanti",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "esce",
+            "en": []
+          },
+          {
+            "surface": "tardi",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dopo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "insieme",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "gentile",
+            "en": []
+          },
+          {
+            "surface": "giallo",
+            "en": []
+          },
+          {
+            "surface": "faccio",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "vuoi",
+            "en": []
+          },
+          {
+            "surface": "davvero",
+            "en": []
+          },
+          {
+            "surface": "felice",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "prima",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "partire",
+            "en": []
+          },
+          {
+            "surface": "libero",
+            "en": []
+          },
+          {
+            "surface": "calde",
+            "en": []
+          },
+          {
+            "surface": "piano",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "martedì",
+            "en": []
+          },
+          {
+            "surface": "chiave",
+            "en": []
+          },
+          {
+            "surface": "presto",
+            "en": []
+          },
+          {
+            "surface": "vuota",
+            "en": []
+          },
+          {
+            "surface": "piena",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "corre",
+            "en": []
+          },
+          {
+            "surface": "chiama",
+            "en": []
+          },
+          {
+            "surface": "pensa",
+            "en": []
+          },
+          {
+            "surface": "nervoso",
+            "en": []
+          },
+          {
+            "surface": "velocemente",
+            "en": []
+          },
+          {
+            "surface": "entra",
+            "en": []
+          },
+          {
+            "surface": "stanca",
+            "en": []
+          },
+          {
+            "surface": "sporca",
+            "en": []
+          },
+          {
+            "surface": "dimenticato",
+            "en": []
+          },
+          {
+            "surface": "morto",
+            "en": []
+          },
+          {
+            "surface": "spiega",
+            "en": []
+          },
+          {
+            "surface": "salta",
+            "en": []
+          },
+          {
+            "surface": "contento",
+            "en": []
+          },
+          {
+            "surface": "abbraccia",
+            "en": []
+          },
+          {
+            "surface": "triste",
+            "en": []
+          },
+          {
+            "surface": "mattina",
+            "en": []
+          },
+          {
+            "surface": "grande",
+            "en": []
+          },
+          {
+            "surface": "rosso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "blu",
+            "en": []
+          },
+          {
+            "surface": "bene",
+            "en": []
+          },
+          {
+            "surface": "ricorda",
+            "en": []
+          },
+          {
+            "surface": "bassa",
+            "en": []
+          },
+          {
+            "surface": "deve",
+            "en": []
+          },
+          {
+            "surface": "sempre",
+            "en": []
+          },
+          {
+            "surface": "lungo",
+            "en": []
+          },
+          {
+            "surface": "stipendio",
+            "en": []
+          },
+          {
+            "surface": "decide",
+            "en": []
+          },
+          {
+            "surface": "forte",
+            "en": []
+          },
+          {
+            "surface": "cambio",
+            "en": []
+          },
+          {
+            "surface": "meglio",
+            "en": []
+          },
+          {
+            "surface": "capisce",
+            "en": []
+          },
+          {
+            "surface": "mettono",
+            "en": []
+          },
+          {
+            "surface": "tranquillo",
+            "en": []
+          },
+          {
+            "surface": "lunedì",
+            "en": []
+          },
+          {
+            "surface": "studia",
+            "en": []
+          },
+          {
+            "surface": "pace",
+            "en": []
+          },
+          {
+            "surface": "comincia",
+            "en": []
+          },
+          {
+            "surface": "brutta",
+            "en": []
+          },
+          {
+            "surface": "parla",
+            "en": []
+          },
+          {
+            "surface": "alta",
+            "en": []
+          },
+          {
+            "surface": "scusate",
+            "en": []
+          },
+          {
+            "surface": "difficile",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "chiuso",
+            "en": []
+          },
+          {
+            "surface": "finita",
+            "en": []
+          },
+          {
+            "surface": "ragione",
+            "en": []
+          },
+          {
+            "surface": "sguardo",
+            "en": []
+          },
+          {
+            "surface": "educata",
+            "en": []
+          },
+          {
+            "surface": "canta",
+            "en": []
+          },
+          {
+            "surface": "tempo",
+            "en": []
+          },
+          {
+            "surface": "ascoltano",
+            "en": []
+          },
+          {
+            "surface": "troppo",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "male",
+            "en": []
+          },
+          {
+            "surface": "rispetto",
+            "en": []
+          },
+          {
+            "surface": "alzato",
+            "en": []
+          },
+          {
+            "surface": "colpa",
+            "en": []
+          },
+          {
+            "surface": "promesso",
+            "en": []
+          },
+          {
+            "surface": "discutono",
+            "en": []
+          },
+          {
+            "surface": "votano",
+            "en": []
+          },
+          {
+            "surface": "fuori",
+            "en": []
+          },
+          {
+            "surface": "ultima",
+            "en": []
+          },
+          {
+            "surface": "spaventa",
+            "en": []
+          },
+          {
+            "surface": "facile",
+            "en": []
+          },
+          {
+            "surface": "ormai",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "lontano",
+            "en": []
+          },
+          {
+            "surface": "dentro",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "giovedì",
+            "en": []
+          },
+          {
+            "surface": "aiuto",
+            "en": []
+          },
+          {
+            "surface": "prossimi",
+            "en": []
+          },
+          {
+            "surface": "messaggio",
+            "en": []
+          },
+          {
+            "surface": "gruppo",
+            "en": []
+          },
+          {
+            "surface": "gioca",
+            "en": []
+          },
+          {
+            "surface": "calcio",
+            "en": []
+          },
+          {
+            "surface": "squadra",
+            "en": []
+          },
+          {
+            "surface": "vince",
+            "en": []
+          },
+          {
+            "surface": "scuro",
+            "en": []
+          },
+          {
+            "surface": "strano",
+            "en": []
+          },
+          {
+            "surface": "aperta",
+            "en": []
+          },
+          {
+            "surface": "bravo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "salito",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "simpatica",
+            "en": []
+          },
+          {
+            "surface": "tenere",
+            "en": []
+          },
+          {
+            "surface": "propone",
+            "en": []
+          },
+          {
+            "surface": "rifiutare",
+            "en": []
+          },
+          {
+            "surface": "prende",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "bella",
+            "en": []
+          },
+          {
+            "surface": "cena",
+            "en": []
+          },
+          {
+            "surface": "dura",
+            "en": []
+          },
+          {
+            "surface": "manca",
+            "en": []
+          },
+          {
+            "surface": "studio",
+            "en": []
+          },
+          {
+            "surface": "visita",
+            "en": []
+          },
+          {
+            "surface": "successo",
+            "en": []
+          },
+          {
+            "surface": "forse",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "pericoloso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "seria",
+            "en": []
+          },
+          {
+            "surface": "grave",
+            "en": []
+          },
+          {
+            "surface": "tirato",
+            "en": []
+          },
+          {
+            "surface": "salva",
+            "en": []
+          },
+          {
+            "surface": "riceve",
+            "en": []
+          },
+          {
+            "surface": "euro",
+            "en": []
+          },
+          {
+            "surface": "costa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "cara",
+            "en": []
+          },
+          {
+            "surface": "speso",
+            "en": []
+          },
+          {
+            "surface": "vale",
+            "en": []
+          },
+          {
+            "surface": "matita",
+            "en": []
+          },
+          {
+            "surface": "elenco",
+            "en": []
+          },
+          {
+            "surface": "intero",
+            "en": []
+          },
+          {
+            "surface": "calcola",
+            "en": []
+          },
+          {
+            "surface": "parti",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "semplice",
+            "en": []
+          },
+          {
+            "surface": "dividiamo",
+            "en": []
+          },
+          {
+            "surface": "uguali",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "presti",
+            "en": []
+          },
+          {
+            "surface": "differenza",
+            "en": []
+          },
+          {
+            "surface": "segnato",
+            "en": []
+          },
+          {
+            "surface": "attenzione",
+            "en": [
+              1,
+              3
+            ]
+          },
+          {
+            "surface": "bevuto",
+            "en": []
+          },
+          {
+            "surface": "importo",
+            "en": []
+          },
+          {
+            "surface": "inutile",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sbagliata",
+            "en": []
+          },
+          {
+            "surface": "cancellare",
+            "en": []
+          },
+          {
+            "surface": "gomma",
+            "en": []
+          },
+          {
+            "surface": "nasconde",
+            "en": []
+          },
+          {
+            "surface": "ricordo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "preziosa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pulita",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "pomeriggio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "giovane",
+            "en": []
+          },
+          {
+            "surface": "ricco",
+            "en": []
+          },
+          {
+            "surface": "prova",
+            "en": []
+          },
+          {
+            "surface": "gira",
+            "en": []
+          },
+          {
+            "surface": "trattano",
+            "en": []
+          },
+          {
+            "surface": "affare",
+            "en": []
+          },
+          {
+            "surface": "accetta",
+            "en": []
+          },
+          {
+            "surface": "coraggio",
+            "en": []
+          },
+          {
+            "surface": "tocca",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "saluta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pari",
+            "en": []
+          },
+          {
+            "surface": "venduto",
+            "en": []
+          },
+          {
+            "surface": "cambia",
+            "en": []
+          },
+          {
+            "surface": "offro",
+            "en": []
+          },
+          {
+            "surface": "ride",
+            "en": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#summer-and-holidays": {
+    "cerrado": "2026-09-14T16:13:48.885Z",
+    "hash": "847f731f1c201ff3",
+    "historias": [
+      "summer-and-holidays#0 milano-e-vuota",
+      "summer-and-holidays#1 gabriele-non-chiude-mai",
+      "summer-and-holidays#2 davide-torna-prima"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de verano solo en la ciudad: calor, una heladeria abierta y un tren de noche que cuesta el mar\", espina \"El trato metà e metà llega a las vacaciones: Davide se va al sur y Elisa se queda sola con el perro y el calor; Gabriele, el heladero, le hace compania; cuando el vuelo de Elisa cambia, Davide vuelve antes y pierde dos dias de mar, y cuenta que ha conocido a alguien.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"la\", 13%)",
+      "densidad 8.1 palabras por oracion (techo 11 en a1)",
+      "seguidilla 15/44 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.21 sobre 34 plazas · 27 salen una sola vez | ancladas: 26/60 (43%) | cola: 27/34 portables con un solo encuentro (79%, tope 70%) | de un solo encuentro: sveglia, tiepido, nuoto, bianca, preferisce, dolce, regalo, dà, vive, invito, Credo, settimana, buona, viaggia, chiamata, ragazza, seguente, veloce, grigio, patto, vita, prepara, nero, veste, interessa, gioia, sogno; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de verano solo en la ciudad: calor, una heladeria abierta y un tren de noche que cuesta el mar",
+      "espina": "El trato metà e metà llega a las vacaciones: Davide se va al sur y Elisa se queda sola con el perro y el calor; Gabriele, el heladero, le hace compania; cuando el vuelo de Elisa cambia, Davide vuelve antes y pierde dos dias de mar, y cuenta que ha conocido a alguien.",
+      "recursos": "A1: humor de situacion (Io voglio la neve; Per lui fragola, senza zucchero), causalidad explicita, gancho literal suave (ha conosciuto una persona) sin cliffhanger. Passato prossimo 3 por historia. Parrafos 4, 5 y 6. Titulos sin X del Y.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Elisa quiere pasar agosto tranquila con el perro",
+          "impide": "el calor, la ciudad vacia y un vuelo cancelado; Davide esta en el mar",
+          "cuesta": "sus dias de trabajo y la cena normal: dos huevos, una manzana y una galleta",
+          "cambia": "la unica tienda abierta es la heladeria de Gabriele",
+          "emocion": "soledad con humor: se despierta con la sabana tibia porque hace calor, y le dice al perro que quiere nieve"
+        },
+        {
+          "slot": "1",
+          "quiere": "que el perro no sufra el calor",
+          "impide": "el sol del mediodia y la fuente tibia",
+          "cuesta": "la soledad de la semana, que Elisa cuenta en voz alta",
+          "cambia": "Gabriele le regala un helado y la invita a la cena de los vecinos que se quedan",
+          "emocion": "alivio: sonrie porque alguien la escucha, y dice Che sorpresa"
+        },
+        {
+          "slot": "2",
+          "quiere": "Elisa necesita a alguien para el perro el sabado sin pedirselo a Davide",
+          "impide": "Davide esta de vacaciones en Puglia",
+          "cuesta": "dos dias de mar y la fiesta de Ferragosto de Davide",
+          "cambia": "Davide vuelve en tren de noche y cumple el patto; cuenta que ha conocido a una persona",
+          "emocion": "gratitud y alegria compartida: Elisa le prepara un cafe porque no sabe como darle las gracias, y sonrie cuando el habla de la persona"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "38815247",
+        "palabras": [
+          "arrivo",
+          "bisogno",
+          "dolce",
+          "notizia",
+          "partenza",
+          "patto",
+          "piastrella",
+          "ritorno",
+          "sud"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-5 que vuelven en el cuerpo del tema 6; sin reensenanza como plaza",
+        "portables_previas": 271,
+        "vuelven": 30,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": []
+          },
+          {
+            "surface": "tornata",
+            "en": []
+          },
+          {
+            "surface": "dormire",
+            "en": []
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": []
+          },
+          {
+            "surface": "lasciato",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": []
+          },
+          {
+            "surface": "cerca",
+            "en": []
+          },
+          {
+            "surface": "scende",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "domani",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "sente",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": []
+          },
+          {
+            "surface": "sopra",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "mangia",
+            "en": []
+          },
+          {
+            "surface": "oggi",
+            "en": []
+          },
+          {
+            "surface": "manda",
+            "en": []
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": []
+          },
+          {
+            "surface": "conosce",
+            "en": []
+          },
+          {
+            "surface": "subito",
+            "en": []
+          },
+          {
+            "surface": "perso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "terzo",
+            "en": []
+          },
+          {
+            "surface": "arrabbiata",
+            "en": []
+          },
+          {
+            "surface": "abbaia",
+            "en": []
+          },
+          {
+            "surface": "preoccupata",
+            "en": []
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": []
+          },
+          {
+            "surface": "scelto",
+            "en": []
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "legge",
+            "en": []
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": []
+          },
+          {
+            "surface": "puoi",
+            "en": []
+          },
+          {
+            "surface": "già",
+            "en": []
+          },
+          {
+            "surface": "conta",
+            "en": []
+          },
+          {
+            "surface": "resta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": []
+          },
+          {
+            "surface": "vengo",
+            "en": []
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": []
+          },
+          {
+            "surface": "adesso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": []
+          },
+          {
+            "surface": "ancora",
+            "en": []
+          },
+          {
+            "surface": "sotto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "arrivato",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "aspetta",
+            "en": []
+          },
+          {
+            "surface": "davanti",
+            "en": []
+          },
+          {
+            "surface": "esce",
+            "en": []
+          },
+          {
+            "surface": "tardi",
+            "en": []
+          },
+          {
+            "surface": "dopo",
+            "en": []
+          },
+          {
+            "surface": "insieme",
+            "en": []
+          },
+          {
+            "surface": "gentile",
+            "en": []
+          },
+          {
+            "surface": "giallo",
+            "en": []
+          },
+          {
+            "surface": "faccio",
+            "en": []
+          },
+          {
+            "surface": "vuoi",
+            "en": []
+          },
+          {
+            "surface": "davvero",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "felice",
+            "en": []
+          },
+          {
+            "surface": "prima",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "partire",
+            "en": []
+          },
+          {
+            "surface": "libero",
+            "en": []
+          },
+          {
+            "surface": "calde",
+            "en": []
+          },
+          {
+            "surface": "piano",
+            "en": []
+          },
+          {
+            "surface": "martedì",
+            "en": []
+          },
+          {
+            "surface": "chiave",
+            "en": []
+          },
+          {
+            "surface": "presto",
+            "en": []
+          },
+          {
+            "surface": "vuota",
+            "en": []
+          },
+          {
+            "surface": "piena",
+            "en": []
+          },
+          {
+            "surface": "corre",
+            "en": []
+          },
+          {
+            "surface": "chiama",
+            "en": []
+          },
+          {
+            "surface": "pensa",
+            "en": []
+          },
+          {
+            "surface": "nervoso",
+            "en": []
+          },
+          {
+            "surface": "velocemente",
+            "en": []
+          },
+          {
+            "surface": "entra",
+            "en": []
+          },
+          {
+            "surface": "stanca",
+            "en": []
+          },
+          {
+            "surface": "sporca",
+            "en": []
+          },
+          {
+            "surface": "dimenticato",
+            "en": []
+          },
+          {
+            "surface": "morto",
+            "en": []
+          },
+          {
+            "surface": "spiega",
+            "en": []
+          },
+          {
+            "surface": "salta",
+            "en": []
+          },
+          {
+            "surface": "contento",
+            "en": []
+          },
+          {
+            "surface": "abbraccia",
+            "en": []
+          },
+          {
+            "surface": "triste",
+            "en": []
+          },
+          {
+            "surface": "mattina",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "grande",
+            "en": []
+          },
+          {
+            "surface": "rosso",
+            "en": []
+          },
+          {
+            "surface": "blu",
+            "en": []
+          },
+          {
+            "surface": "bene",
+            "en": []
+          },
+          {
+            "surface": "ricorda",
+            "en": []
+          },
+          {
+            "surface": "bassa",
+            "en": []
+          },
+          {
+            "surface": "deve",
+            "en": []
+          },
+          {
+            "surface": "sempre",
+            "en": []
+          },
+          {
+            "surface": "lungo",
+            "en": []
+          },
+          {
+            "surface": "stipendio",
+            "en": []
+          },
+          {
+            "surface": "decide",
+            "en": []
+          },
+          {
+            "surface": "forte",
+            "en": []
+          },
+          {
+            "surface": "cambio",
+            "en": []
+          },
+          {
+            "surface": "meglio",
+            "en": []
+          },
+          {
+            "surface": "capisce",
+            "en": []
+          },
+          {
+            "surface": "mettono",
+            "en": []
+          },
+          {
+            "surface": "tranquillo",
+            "en": []
+          },
+          {
+            "surface": "lunedì",
+            "en": []
+          },
+          {
+            "surface": "studia",
+            "en": []
+          },
+          {
+            "surface": "pace",
+            "en": []
+          },
+          {
+            "surface": "comincia",
+            "en": []
+          },
+          {
+            "surface": "brutta",
+            "en": []
+          },
+          {
+            "surface": "parla",
+            "en": []
+          },
+          {
+            "surface": "alta",
+            "en": []
+          },
+          {
+            "surface": "scusate",
+            "en": []
+          },
+          {
+            "surface": "difficile",
+            "en": []
+          },
+          {
+            "surface": "chiuso",
+            "en": []
+          },
+          {
+            "surface": "finita",
+            "en": []
+          },
+          {
+            "surface": "ragione",
+            "en": []
+          },
+          {
+            "surface": "sguardo",
+            "en": []
+          },
+          {
+            "surface": "educata",
+            "en": []
+          },
+          {
+            "surface": "canta",
+            "en": []
+          },
+          {
+            "surface": "tempo",
+            "en": []
+          },
+          {
+            "surface": "ascoltano",
+            "en": []
+          },
+          {
+            "surface": "troppo",
+            "en": []
+          },
+          {
+            "surface": "male",
+            "en": []
+          },
+          {
+            "surface": "rispetto",
+            "en": []
+          },
+          {
+            "surface": "alzato",
+            "en": []
+          },
+          {
+            "surface": "colpa",
+            "en": []
+          },
+          {
+            "surface": "promesso",
+            "en": []
+          },
+          {
+            "surface": "discutono",
+            "en": []
+          },
+          {
+            "surface": "votano",
+            "en": []
+          },
+          {
+            "surface": "fuori",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ultima",
+            "en": []
+          },
+          {
+            "surface": "spaventa",
+            "en": []
+          },
+          {
+            "surface": "facile",
+            "en": []
+          },
+          {
+            "surface": "ormai",
+            "en": []
+          },
+          {
+            "surface": "lontano",
+            "en": []
+          },
+          {
+            "surface": "dentro",
+            "en": []
+          },
+          {
+            "surface": "giovedì",
+            "en": []
+          },
+          {
+            "surface": "aiuto",
+            "en": []
+          },
+          {
+            "surface": "prossimi",
+            "en": []
+          },
+          {
+            "surface": "messaggio",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "gruppo",
+            "en": []
+          },
+          {
+            "surface": "gioca",
+            "en": []
+          },
+          {
+            "surface": "calcio",
+            "en": []
+          },
+          {
+            "surface": "squadra",
+            "en": []
+          },
+          {
+            "surface": "vince",
+            "en": []
+          },
+          {
+            "surface": "scuro",
+            "en": []
+          },
+          {
+            "surface": "strano",
+            "en": []
+          },
+          {
+            "surface": "aperta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "bravo",
+            "en": []
+          },
+          {
+            "surface": "salito",
+            "en": []
+          },
+          {
+            "surface": "simpatica",
+            "en": []
+          },
+          {
+            "surface": "tenere",
+            "en": []
+          },
+          {
+            "surface": "propone",
+            "en": []
+          },
+          {
+            "surface": "rifiutare",
+            "en": []
+          },
+          {
+            "surface": "prende",
+            "en": []
+          },
+          {
+            "surface": "bella",
+            "en": []
+          },
+          {
+            "surface": "cena",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dura",
+            "en": []
+          },
+          {
+            "surface": "manca",
+            "en": []
+          },
+          {
+            "surface": "studio",
+            "en": []
+          },
+          {
+            "surface": "visita",
+            "en": []
+          },
+          {
+            "surface": "successo",
+            "en": []
+          },
+          {
+            "surface": "forse",
+            "en": []
+          },
+          {
+            "surface": "pericoloso",
+            "en": []
+          },
+          {
+            "surface": "seria",
+            "en": []
+          },
+          {
+            "surface": "grave",
+            "en": []
+          },
+          {
+            "surface": "tirato",
+            "en": []
+          },
+          {
+            "surface": "salva",
+            "en": []
+          },
+          {
+            "surface": "riceve",
+            "en": []
+          },
+          {
+            "surface": "euro",
+            "en": []
+          },
+          {
+            "surface": "costa",
+            "en": []
+          },
+          {
+            "surface": "cara",
+            "en": []
+          },
+          {
+            "surface": "speso",
+            "en": []
+          },
+          {
+            "surface": "vale",
+            "en": []
+          },
+          {
+            "surface": "matita",
+            "en": []
+          },
+          {
+            "surface": "elenco",
+            "en": []
+          },
+          {
+            "surface": "intero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "calcola",
+            "en": []
+          },
+          {
+            "surface": "parti",
+            "en": []
+          },
+          {
+            "surface": "semplice",
+            "en": []
+          },
+          {
+            "surface": "dividiamo",
+            "en": []
+          },
+          {
+            "surface": "uguali",
+            "en": []
+          },
+          {
+            "surface": "presti",
+            "en": []
+          },
+          {
+            "surface": "differenza",
+            "en": []
+          },
+          {
+            "surface": "segnato",
+            "en": []
+          },
+          {
+            "surface": "attenzione",
+            "en": []
+          },
+          {
+            "surface": "bevuto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "importo",
+            "en": []
+          },
+          {
+            "surface": "inutile",
+            "en": []
+          },
+          {
+            "surface": "sbagliata",
+            "en": []
+          },
+          {
+            "surface": "cancellare",
+            "en": []
+          },
+          {
+            "surface": "gomma",
+            "en": []
+          },
+          {
+            "surface": "nasconde",
+            "en": []
+          },
+          {
+            "surface": "ricordo",
+            "en": []
+          },
+          {
+            "surface": "preziosa",
+            "en": []
+          },
+          {
+            "surface": "pulita",
+            "en": []
+          },
+          {
+            "surface": "pomeriggio",
+            "en": []
+          },
+          {
+            "surface": "giovane",
+            "en": []
+          },
+          {
+            "surface": "ricco",
+            "en": []
+          },
+          {
+            "surface": "prova",
+            "en": []
+          },
+          {
+            "surface": "gira",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "trattano",
+            "en": []
+          },
+          {
+            "surface": "affare",
+            "en": []
+          },
+          {
+            "surface": "accetta",
+            "en": []
+          },
+          {
+            "surface": "coraggio",
+            "en": []
+          },
+          {
+            "surface": "tocca",
+            "en": []
+          },
+          {
+            "surface": "saluta",
+            "en": []
+          },
+          {
+            "surface": "pari",
+            "en": []
+          },
+          {
+            "surface": "venduto",
+            "en": []
+          },
+          {
+            "surface": "cambia",
+            "en": []
+          },
+          {
+            "surface": "offro",
+            "en": []
+          },
+          {
+            "surface": "ride",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "accende",
+            "en": []
+          },
+          {
+            "surface": "lampada",
+            "en": []
+          },
+          {
+            "surface": "gamba",
+            "en": []
+          },
+          {
+            "surface": "rotta",
+            "en": []
+          },
+          {
+            "surface": "cade",
+            "en": []
+          },
+          {
+            "surface": "esperto",
+            "en": []
+          },
+          {
+            "surface": "sicuro",
+            "en": []
+          },
+          {
+            "surface": "debole",
+            "en": []
+          },
+          {
+            "surface": "aggiusto",
+            "en": []
+          },
+          {
+            "surface": "capace",
+            "en": []
+          },
+          {
+            "surface": "passano",
+            "en": []
+          },
+          {
+            "surface": "consiglio",
+            "en": []
+          },
+          {
+            "surface": "antico",
+            "en": []
+          },
+          {
+            "surface": "strumenti",
+            "en": []
+          },
+          {
+            "surface": "metro",
+            "en": []
+          },
+          {
+            "surface": "fortuna",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pesante",
+            "en": []
+          },
+          {
+            "surface": "unico",
+            "en": []
+          },
+          {
+            "surface": "video",
+            "en": []
+          },
+          {
+            "surface": "segue",
+            "en": []
+          },
+          {
+            "surface": "punto",
+            "en": []
+          },
+          {
+            "surface": "mostra",
+            "en": []
+          },
+          {
+            "surface": "spinge",
+            "en": []
+          },
+          {
+            "surface": "corta",
+            "en": []
+          },
+          {
+            "surface": "morbido",
+            "en": []
+          },
+          {
+            "surface": "stretto",
+            "en": []
+          },
+          {
+            "surface": "largo",
+            "en": []
+          },
+          {
+            "surface": "attento",
+            "en": []
+          },
+          {
+            "surface": "peggio",
+            "en": []
+          },
+          {
+            "surface": "lentamente",
+            "en": []
+          },
+          {
+            "surface": "riesce",
+            "en": []
+          },
+          {
+            "surface": "muove",
+            "en": []
+          },
+          {
+            "surface": "pulita",
+            "en": []
+          },
+          {
+            "surface": "funziona",
+            "en": []
+          },
+          {
+            "surface": "quasi",
+            "en": []
+          },
+          {
+            "surface": "abbastanza",
+            "en": []
+          },
+          {
+            "surface": "invece",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "costruiamo",
+            "en": []
+          },
+          {
+            "surface": "riparo",
+            "en": []
+          },
+          {
+            "surface": "maestro",
+            "en": []
+          },
+          {
+            "surface": "impara",
+            "en": []
+          },
+          {
+            "surface": "tagliare",
+            "en": []
+          },
+          {
+            "surface": "coltello",
+            "en": []
+          },
+          {
+            "surface": "lezione",
+            "en": []
+          },
+          {
+            "surface": "lenta",
+            "en": []
+          },
+          {
+            "surface": "chiara",
+            "en": []
+          },
+          {
+            "surface": "diversa",
+            "en": []
+          },
+          {
+            "surface": "liscio",
+            "en": []
+          },
+          {
+            "surface": "leggero",
+            "en": []
+          },
+          {
+            "surface": "ruvido",
+            "en": []
+          },
+          {
+            "surface": "marroni",
+            "en": []
+          },
+          {
+            "surface": "sorpresa",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "momento",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "insegna",
+            "en": []
+          },
+          {
+            "surface": "vivo",
+            "en": []
+          }
+        ]
+      }
+    }
+  },
+  "cmu1bfmb3000732wxuuwj7j2a#work-and-shifts": {
+    "cerrado": "2026-09-14T16:12:18.977Z",
+    "hash": "5df8842d28969be8",
+    "historias": [
+      "work-and-shifts#0 quattro-sabati-per-nicola",
+      "work-and-shifts#1 otto-ore-da-solo",
+      "work-and-shifts#2 il-calendario-sul-frigo"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"practico y culpable: horarios que no encajan, un trato que alguien paga en silencio y una manana de perro solo\", espina \"El trato metà e metà choca con los turnos: Davide paga un mes de sabados para cubrir un martes, un fallo deja al perro ocho horas solo (y la vecina ya escribe), y Elisa renuncia a parte de su sueldo para que el trato funcione.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"davide\", 25%)",
+      "densidad 8.8 palabras por oracion (techo 11 en a1)",
+      "seguidilla 15/45 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 56 plazas · 52 salen una sola vez | ancladas: 4/60 (7%) | cola: 52/56 portables con un solo encuentro (93%, tope 70%) | de un solo encuentro: aspetta, davanti, esce, tardi, insieme, gentile, giallo, faccio, vuoi, davvero, felice, partire, libero, calde, martedì, chiave, presto, vuota, piena, corre, chiama, pensa, nervoso, velocemente, entra, stanca, sporca, dimenticato, morto, spiega…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: work-and-shifts (Davide, Elisa, Nicola)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "practico y culpable: horarios que no encajan, un trato que alguien paga en silencio y una manana de perro solo",
+      "espina": "El trato metà e metà choca con los turnos: Davide paga un mes de sabados para cubrir un martes, un fallo deja al perro ocho horas solo (y la vecina ya escribe), y Elisa renuncia a parte de su sueldo para que el trato funcione.",
+      "recursos": "A1: causalidad explicita con perche, humor de situacion (la vecina que cuenta las horas), gancho literal (Noi due). Passato prossimo 3, 6 y 3. Oraciones narradas mas largas que en el tema 1 (acotacion con accion, acotacion delante de la cita). Parrafos 5, 5 y 6.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "que alguien se quede con el perro el martes, cuando Elisa vuela a las seis y Davide trabaja a las seis",
+          "impide": "el calendario nuevo de turnos: ninguno de los dos esta libre",
+          "cuesta": "Davide regala a Nicola cuatro sabados libres, sin decirlo",
+          "cambia": "el martes queda cubierto por Nicola y Elisa descubre el precio",
+          "emocion": "culpa: tiene las mejillas calientes porque el precio lo paga Davide por su turno, y mira a Davide"
+        },
+        {
+          "slot": "1",
+          "quiere": "Davide quiere dejar al perro con Elisa e ir a su giro",
+          "impide": "el vuelo de Elisa no sale y su telefono esta muerto: el perro queda solo",
+          "cuesta": "ocho horas de perro solo y la paciencia de la vecina, que deja una nota",
+          "cambia": "los dos entienden que el trato puede fallar, y que el fallo es de los dos",
+          "emocion": "culpa: Elisa tiene un peso en el estomago porque el perro estuvo solo ocho horas, y se sienta en el suelo a abrazarlo"
+        },
+        {
+          "slot": "2",
+          "quiere": "que no vuelva a pasar",
+          "impide": "los vuelos de noche de Elisa, que pagan mas",
+          "cuesta": "Elisa pide un cambio y renuncia al dinero de los vuelos de noche",
+          "cambia": "un calendario rojo y azul en el frigo, y el perro duerme tranquilo entre los dos",
+          "emocion": "decision que duele: mira el papel mucho rato porque ese dinero es parte de su sueldo, y luego responde fuerte"
+        }
+      ],
+      "reencuentro": {
+        "regla": "surface exacta de las portables del tema 1 que vuelven en el cuerpo del tema 2 (el gate cuenta tokens exactos en minusculas)",
+        "portables_tema1": 52,
+        "vuelven": 22,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": []
+          },
+          {
+            "surface": "tornata",
+            "en": []
+          },
+          {
+            "surface": "dormire",
+            "en": []
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lasciato",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": []
+          },
+          {
+            "surface": "cerca",
+            "en": []
+          },
+          {
+            "surface": "scende",
+            "en": []
+          },
+          {
+            "surface": "domani",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": []
+          },
+          {
+            "surface": "sente",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": []
+          },
+          {
+            "surface": "sopra",
+            "en": []
+          },
+          {
+            "surface": "mangia",
+            "en": []
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "manda",
+            "en": []
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": []
+          },
+          {
+            "surface": "conosce",
+            "en": []
+          },
+          {
+            "surface": "subito",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "perso",
+            "en": []
+          },
+          {
+            "surface": "terzo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "arrabbiata",
+            "en": []
+          },
+          {
+            "surface": "abbaia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "preoccupata",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": []
+          },
+          {
+            "surface": "scelto",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": []
+          },
+          {
+            "surface": "legge",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "puoi",
+            "en": []
+          },
+          {
+            "surface": "già",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "conta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "resta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "vengo",
+            "en": []
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": []
+          },
+          {
+            "surface": "adesso",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": []
+          },
+          {
+            "surface": "ancora",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sotto",
+            "en": [
+              3
+            ]
+          }
+        ]
+      }
+    }
   }
 }

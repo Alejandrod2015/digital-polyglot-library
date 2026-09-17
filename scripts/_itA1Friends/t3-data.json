@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "neighbours-and-noise",
+    "slotIndex": 0,
+    "title": "Concerto al secondo piano",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Elisa and Davide are at work, and the dog howls all morning in the empty flat. Serena, a researcher who works from home on the second floor, loses an important online meeting. When Davide comes back, she is waiting for him on the balcony, and she is not happy at all.",
+    "text": "La casa di ringhiera è vuota, e lunedì mattina il quartiere è tranquillo. Al secondo piano c'è Serena, una ricercatrice del Politecnico, che studia e lavora da casa, in pace.\n\nElisa deve partire presto per Palermo, e Davide esce per il giro alle sei. Al terzo piano, il cane aspetta davanti alla porta. Poi comincia a ululare, e il rumore non smette.\n\nAlle dieci Serena è al computer e parla a voce alta: “Buongiorno a tutti. Scusate, al terzo piano c'è un concerto.”\n\nMa è difficile lavorare così, e dopo cinque minuti Serena ha chiuso il computer. All'una Davide la trova sulla ringhiera. “La mia riunione è finita male. Il vostro cane canta da ore,” dice lei. “Mi dispiace. È una brutta giornata: Elisa è partita,” risponde Davide, nervoso.\n\nDavide abbassa lo sguardo: Serena ha ragione. “Sono una persona educata, ma domani chiamo l'amministratore,” dice lei, e scende giù.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il quartiere",
+        "surface": "quartiere",
+        "definition": "A neighbourhood; the part of the city where you live.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "lunedì",
+        "surface": "lunedì",
+        "definition": "Monday; the first day of the working week.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il ricercatore",
+        "surface": "ricercatrice",
+        "definition": "A researcher; a person who studies new things at a university.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "studiare",
+        "surface": "studia",
+        "definition": "To study; to learn and read about a subject.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la pace",
+        "surface": "pace",
+        "definition": "Peace; a calm and quiet time with no noise.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cominciare",
+        "surface": "comincia",
+        "definition": "To start; to begin to do something new or different.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ululare",
+        "surface": "ululare",
+        "definition": "To howl; to make a long, sad and very loud cry.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "brutto",
+        "surface": "brutta",
+        "definition": "Bad or ugly; not nice at all, not a good time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "parlare",
+        "surface": "parla",
+        "definition": "To speak; to say words to other people.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "alto",
+        "surface": "alta",
+        "definition": "High or loud; here, a voce alta means in a loud voice.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "scusare",
+        "surface": "Scusate",
+        "definition": "To excuse; here, she says sorry to everyone for the noise.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il concerto",
+        "surface": "concerto",
+        "definition": "A concert; here, a joke about the noise of the dog.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "difficile",
+        "surface": "difficile",
+        "definition": "Difficult; not easy, it needs a lot of effort.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "chiudere",
+        "surface": "chiuso",
+        "definition": "To close; here, she closes her computer and stops.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "finire",
+        "surface": "finita",
+        "definition": "To end; here, her meeting ended in a bad way.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la ragione",
+        "surface": "ragione",
+        "definition": "Reason; avere ragione means that you are right.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "lo sguardo",
+        "surface": "sguardo",
+        "definition": "A look; the way your eyes look at something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "educato",
+        "surface": "educata",
+        "definition": "Polite; a person who is kind and has good manners.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "amministratore",
+        "surface": "amministratore",
+        "definition": "The building manager; the person who runs the block of flats.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "cantare",
+        "surface": "canta",
+        "definition": "To sing; here, a joke about the dog that howls.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "neighbours-and-noise",
+    "slotIndex": 1,
+    "title": "Le regole del cortile",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Elisa comes back just in time for the building meeting in the courtyard. Serena reads her complaint, and Davide says the neighbours are right. The manager writes a new rule for the dog, and it scares Elisa. Davide has an idea, but he does not explain it yet.",
+    "text": "Elisa è tornata da Palermo appena in tempo per la riunione del condominio. Trenta vicini ascoltano in silenzio.\n\nL'amministratore legge ad alta voce il bigliettino di Serena. Sotto la sedia di Davide, piccolo e tranquillo, il cane dorme. “Quando è solo, abbaia troppo, e io lavoro male. Chiedo solo un po' di rispetto,” dice Serena, arrabbiata.\n\nDavide si è alzato. “Serena ha ragione. È colpa nostra: abbiamo sbagliato noi,” dice lui. “Da oggi il cane non resta mai solo. Promesso.”\n\nI vicini discutono a lungo, poi votano una regola: se il cane abbaia ancora, va fuori. È l'ultima volta, e questo spaventa Elisa.\n\nNon è facile, perché il cane ormai è anche suo. Lo sentono da lontano, dentro ogni casa. “Serena conosce il cane. Ma noi due lavoriamo sempre,” dice Elisa. “Ti aiuto io,” risponde Davide.\n\n“Una soluzione c'è,” dice Davide, ma non spiega niente. Il giovedì lui ha il calcetto, da dieci anni.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il tempo",
+        "surface": "tempo",
+        "definition": "Time; here, in tempo means that she is not late.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ascoltare",
+        "surface": "ascoltano",
+        "definition": "To listen; to pay attention to what someone says.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il bigliettino",
+        "surface": "bigliettino",
+        "definition": "A short note written on a small piece of paper.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "troppo",
+        "surface": "troppo",
+        "definition": "Too much; more than is good or possible.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "male",
+        "surface": "male",
+        "definition": "Badly; not in a good way, not well at all.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il rispetto",
+        "surface": "rispetto",
+        "definition": "Respect; you think about other people and their needs.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "alzarsi",
+        "surface": "alzato",
+        "definition": "To stand up from a chair to speak or leave.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la colpa",
+        "surface": "colpa",
+        "definition": "Fault; the reason why something bad happened to someone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "promettere",
+        "surface": "Promesso",
+        "definition": "To promise; to say you will really do something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "discutere",
+        "surface": "discutono",
+        "definition": "To discuss; to talk about a problem with other people.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "votare",
+        "surface": "votano",
+        "definition": "To vote; to choose something together with a hand up.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "fuori",
+        "surface": "fuori",
+        "definition": "Out; outside, away from a building or a place.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "ultimo",
+        "surface": "ultima",
+        "definition": "Last; there is no other one after this.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "spaventare",
+        "surface": "spaventa",
+        "definition": "To scare; to make someone feel afraid or worried.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "facile",
+        "surface": "facile",
+        "definition": "Easy; not difficult to do or to accept.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "ormai",
+        "surface": "ormai",
+        "definition": "By now; after all this time, it is already true.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "lontano",
+        "surface": "lontano",
+        "definition": "Far away; at a long distance from here.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "dentro",
+        "surface": "dentro",
+        "definition": "Inside; in a room, a flat or a building.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "giovedì",
+        "surface": "giovedì",
+        "definition": "Thursday; the day of the week after Wednesday.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "aiutare",
+        "surface": "aiuto",
+        "definition": "To help; here, I will help you with the dog.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "neighbours-and-noise",
+    "slotIndex": 2,
+    "title": "Giovedì senza calcetto",
+    "arcType": "harmonic-close",
+    "synopsis": "Davide tells his five-a-side football group that he will not come to the weekly game any more. Then the dog disappears from the flat. Davide finds it asleep and happy with Serena, who works from home, and the two neighbours make a small deal for the dog.",
+    "text": "“Stasera non vengo, e neanche i prossimi giovedì.” Davide scrive questo messaggio nel gruppo del calcetto.\n\nDa dieci anni Davide gioca a calcio. Alle nove il cortile è scuro, e c'è un silenzio strano: il cane è sparito. Preoccupato, Davide corre giù per le scale e cerca il cane in cortile, poi sulla ringhiera.\n\nAl secondo piano la porta di Serena è aperta. Sul tappeto, vicino al computer, c'è il cane, contento. “È salito da solo. Bravo cane: con me è sempre tranquillo,” dice Serena, simpatica. “Io lavoro e lui vuole solo dormire.”\n\n“Allora il giovedì puoi tenere il cane?” chiede Davide. Serena propone: “Il giovedì sì. Ma se ti serve aiuto, mi porti la spesa.” Davide ha capito: non può rifiutare. Prende il cane in braccio e ride. Sul telefono c'è la foto della squadra, bella e contenta: stasera vince senza di lui.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "prossimo",
+        "surface": "prossimi",
+        "definition": "Next; the ones that come after this one.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il messaggio",
+        "surface": "messaggio",
+        "definition": "A message; a short text you send with your phone.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il gruppo",
+        "surface": "gruppo",
+        "definition": "A group; here, a chat with all the players.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il calcetto",
+        "surface": "calcetto",
+        "definition": "Five-a-side football, often played with friends in the evening.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "giocare",
+        "surface": "gioca",
+        "definition": "To play a game or a sport with other people.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il calcio",
+        "surface": "calcio",
+        "definition": "Football; the sport where you kick a ball into a goal.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la squadra",
+        "surface": "squadra",
+        "definition": "A team; a group of people who play together.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "vincere",
+        "surface": "vince",
+        "definition": "To win; to finish first in a game or a match.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "scuro",
+        "surface": "scuro",
+        "definition": "Dark; with very little light, like the night outside.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "strano",
+        "surface": "strano",
+        "definition": "Strange; not normal, a little surprising and odd.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "aperto",
+        "surface": "aperta",
+        "definition": "Open; not closed, so you can go in.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il tappeto",
+        "surface": "tappeto",
+        "definition": "A rug; a soft piece of cloth on the floor.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "bravo",
+        "surface": "Bravo",
+        "definition": "Good or clever; you say it to praise someone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "salire",
+        "surface": "salito",
+        "definition": "To go up, for example the stairs of a building.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "simpatico",
+        "surface": "simpatica",
+        "definition": "Nice and friendly; a person who is easy to like.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tenere",
+        "surface": "tenere",
+        "definition": "To keep; to take care of something for some time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "proporre",
+        "surface": "propone",
+        "definition": "To suggest; to say an idea for other people to accept.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "rifiutare",
+        "surface": "rifiutare",
+        "definition": "To refuse; to say no to something or someone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "prendere",
+        "surface": "Prende",
+        "definition": "To take; to pick up something with your hands.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "bello",
+        "surface": "bella",
+        "definition": "Beautiful or good; here, a nice happy team.",
+        "anchor": false
+      }
+    ]
+  }
+]

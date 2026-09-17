@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "couples-and-living-together",
+    "slotIndex": 0,
+    "title": "Arianna starnutisce",
+    "arcType": "late-reveal",
+    "synopsis": "Arianna, a shy yoga teacher from Puglia, moves in with Davide. Elisa comes down with the dog, and Arianna likes him at once, but she keeps sneezing all day. At dinner Davide blames the pepper in the sauce. Then Arianna quietly tells them the truth: she is allergic to dogs, but she likes this one.",
+    "text": "Un sabato di settembre Elisa si sveglia e guarda il cortile pieno di scatoloni. Da oggi Davide non vive più da solo: è arrivata Arianna, la ragazza di Puglia.\n\nArianna è un'insegnante di yoga, timida e con una maglietta bianca. “Piacere. Lui è il cane del patto,” dice Elisa con un sorriso.\n\nArianna lascia la pentola e la padella sulle scale e accarezza il cane. “Che dolce! Faccio yoga e nuoto, ma non ho mai avuto un cane,” dice, e poi starnutisce due volte. Per tutto il giorno, ogni tanto usa un fazzoletto.\n\n“Condividiamo tutto, anche il dentifricio,” dice Davide. Elisa sorride: “Siete già una coppia vera.”\n\nLa sera Arianna cucina per tre e prepara il sugo con molto pepe. Poi starnutisce ancora, e Davide ride: “Salute! È il pepe.”\n\nArianna ha preso una medicina, e dice piano: “Sono allergica ai cani. Ma questo mi piace.” Davide lava i piatti in silenzio.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "settembre",
+        "surface": "settembre",
+        "definition": "September, the ninth month of the year, when summer ends.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "guardare",
+        "surface": "guarda",
+        "definition": "To look at something or someone with your eyes, on purpose.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "lo scatolone",
+        "surface": "scatoloni",
+        "definition": "A big cardboard box that people use when they move house.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "insegnante",
+        "surface": "insegnante",
+        "definition": "A teacher; a person whose job is to teach a subject.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "timido",
+        "surface": "timida",
+        "definition": "Shy; quiet and a little nervous with people you do not know.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "piacere",
+        "surface": "Piacere",
+        "definition": "Nice to meet you; people say it when they meet someone new.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la pentola",
+        "surface": "pentola",
+        "definition": "A deep cooking pot, good for pasta, soup or boiling water.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la padella",
+        "surface": "padella",
+        "definition": "A frying pan; a wide flat pan for cooking on the stove.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "ogni tanto",
+        "surface": "ogni tanto",
+        "definition": "Sometimes; now and then, but not all the time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "usare",
+        "surface": "usa",
+        "definition": "To use something; to do a job with an object or tool.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "condividere",
+        "surface": "Condividiamo",
+        "definition": "To share; two or more people have or use the same thing.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il dentifricio",
+        "surface": "dentifricio",
+        "definition": "Toothpaste; the paste you put on a toothbrush to clean teeth.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la coppia",
+        "surface": "coppia",
+        "definition": "A couple; two people who love each other and are together.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cucinare",
+        "surface": "cucina",
+        "definition": "To cook; to make food ready to eat, usually with heat.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il sugo",
+        "surface": "sugo",
+        "definition": "Pasta sauce, often made with tomatoes and cooked slowly in a pan.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il pepe",
+        "surface": "pepe",
+        "definition": "Pepper; a hot black spice that can make people sneeze.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la salute",
+        "surface": "Salute",
+        "definition": "Health; Italians also say Salute! after a sneeze or as a toast.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la medicina",
+        "surface": "medicina",
+        "definition": "Medicine; something you take to feel better when you are ill.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "allergico",
+        "surface": "allergica",
+        "definition": "Allergic; your body reacts badly to something, like animal hair.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "lavare",
+        "surface": "lava",
+        "definition": "To wash; to clean something with water and a little soap.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "couples-and-living-together",
+    "slotIndex": 1,
+    "title": "Davide dorme sulle scale",
+    "arcType": "reframe-turn",
+    "synopsis": "For a week Davide lies to Elisa and leaves the dog with her on his days too. Arianna has a dry cough, and the doctor blames the dog. One night Elisa finds Davide on the cold stairs with the dog, so Arianna can sleep. He says the deal is the deal, but Elisa does not believe him and invites the couple to lunch.",
+    "text": "Per una settimana Davide ha mentito per amore. Porta il cane da Elisa anche nei suoi giorni. Spera: magari l'allergia passa.\n\nOgni sera Davide fa una chiamata veloce. “Arianna lavora fino a tardi, e il cane preferisce te,” dice. Purtroppo Arianna soffre di tosse secca, e per il medico è colpa del cane.\n\nDavide ama Arianna, e ama anche il cane: è una scelta difficile. Una notte Elisa ha sentito un rumore dietro la porta. Sulle scale fredde scopre Davide, con il cane e un maglione grigio.\n\n“Che cosa fai qui?” domanda Elisa a bassa voce. “Arianna deve dormire,” risponde Davide, e accarezza il pelo tiepido del cane.\n\nElisa si siede sul primo gradino. “Perché non hai detto niente?” chiede. “Il patto è metà e metà. Il resto non mi interessa,” risponde lui. “Non ti credo. Sei un cattivo attore. Domani invito te e Arianna a pranzo,” dice Elisa, e finalmente Davide ride.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "mentire",
+        "surface": "mentito",
+        "definition": "To lie; to say something that you know is not true.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "amore",
+        "surface": "amore",
+        "definition": "Love; the strong feeling you have for a partner or family.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sperare",
+        "surface": "spera",
+        "definition": "To hope; to want something good to happen in the future.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "magari",
+        "surface": "magari",
+        "definition": "Maybe; perhaps, often said when you hope something good happens.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "purtroppo",
+        "surface": "Purtroppo",
+        "definition": "Unfortunately; it comes before bad news that nobody can change.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "soffrire",
+        "surface": "soffre",
+        "definition": "To suffer; to feel pain or be ill, often for some time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la tosse",
+        "surface": "tosse",
+        "definition": "A cough; the short hard noise your throat makes when you are ill.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "secco",
+        "surface": "secca",
+        "definition": "Dry; with no water. A dry cough is short and hard.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il medico",
+        "surface": "medico",
+        "definition": "A doctor; the person who helps you when you are ill.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "amare",
+        "surface": "ama",
+        "definition": "To love someone very much, like a partner, a friend or a pet.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la scelta",
+        "surface": "scelta",
+        "definition": "A choice; you must take one thing and leave the other.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "dietro",
+        "surface": "dietro",
+        "definition": "Behind; at the back of something, on its other side.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "freddo",
+        "surface": "fredde",
+        "definition": "Cold; with a low temperature, the opposite of warm or hot.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "domandare",
+        "surface": "domanda",
+        "definition": "To ask; to say a question because you want to know something.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il pelo",
+        "surface": "pelo",
+        "definition": "The hair or fur of an animal, like the coat of a dog.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "primo",
+        "surface": "primo",
+        "definition": "First; number one in order, before all the others.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "cattivo",
+        "surface": "cattivo",
+        "definition": "Bad; not good at something, or not kind to other people.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "finalmente",
+        "surface": "finalmente",
+        "definition": "Finally; at last, after a long wait or a hard moment.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il pranzo",
+        "surface": "pranzo",
+        "definition": "Lunch; the meal people eat in the middle of the day.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "scoprire",
+        "surface": "scopre",
+        "definition": "To discover; to find something or someone you did not expect.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "couples-and-living-together",
+    "slotIndex": 2,
+    "title": "Si chiama Biscotto",
+    "arcType": "harmonic-close",
+    "synopsis": "The next day Davide and Arianna come up with a pink cake. Elisa has decided to adopt the dog on her own: Davide gives up his half, and she gives up her free weekends. The tag on the collar says Biscotto, the name she refused on the first day. In autumn Davide calls the dog from the courtyard, and Elisa watches from above.",
+    "text": "Il giorno seguente Davide e la sua compagna sono saliti con un regalo, un dolce rosa.\n\nElisa viaggia per lavoro, ma ha preso una decisione. “Da oggi adotto io il cane,” dice. Davide non è pronto. “E il nostro patto?” chiede. “Il patto cresce, come l'amore. Tu rinunci alla tua metà, e io al sabato libero,” risponde Elisa.\n\nArianna piange di felicità e ringrazia. “Sei coraggiosa, e una vera amica,” dice. “No. Un cane è un vecchio sogno,” risponde Elisa, e consegna a Davide un collare. La targhetta lo sorprende: “Biscotto? Il nome che hai rifiutato il primo giorno?” “Ogni tanto cambio idea,” dice Elisa.\n\nUna domenica di ottobre Davide si veste in fretta e scende nel cortile. “Biscotto!” chiama. Biscotto, il cane più famoso di via Padova, corre giù, e insieme camminano verso i giardini. Dall'alto Elisa mescola il caffè nero con gioia: non è più metà e metà, ma è la vita.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il compagno",
+        "surface": "compagna",
+        "definition": "Partner; the person you live with and love, married or not.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "rosa",
+        "surface": "rosa",
+        "definition": "Pink; the light red colour of many flowers and sweets.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la decisione",
+        "surface": "decisione",
+        "definition": "A decision; what you choose to do after thinking about it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "adottare",
+        "surface": "adotto",
+        "definition": "To adopt; to take an animal or a child as your own.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "crescere",
+        "surface": "cresce",
+        "definition": "To grow; to become bigger or stronger as time goes by.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "rinunciare",
+        "surface": "rinunci",
+        "definition": "To give up something you want or have, like your free time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la felicità",
+        "surface": "felicità",
+        "definition": "Happiness; the feeling of being very happy and full of joy.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ringraziare",
+        "surface": "ringrazia",
+        "definition": "To thank someone; to say thank you for something they did.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "coraggioso",
+        "surface": "coraggiosa",
+        "definition": "Brave; not afraid to do something difficult or scary.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "amica",
+        "surface": "amica",
+        "definition": "A female friend; a woman you like, trust and spend time with.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "consegnare",
+        "surface": "consegna",
+        "definition": "To hand over; to give something to someone directly.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la targhetta",
+        "surface": "targhetta",
+        "definition": "A small name tag, like the metal one on a dog's collar.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "sorprendere",
+        "surface": "sorprende",
+        "definition": "To surprise; to make someone feel something they did not expect.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "ottobre",
+        "surface": "ottobre",
+        "definition": "October, the tenth month of the year, in the middle of autumn.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "in fretta",
+        "surface": "in fretta",
+        "definition": "In a hurry; quickly, because there is not much time.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "famoso",
+        "surface": "famoso",
+        "definition": "Famous; known by many people, in a town or in the world.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "camminare",
+        "surface": "camminano",
+        "definition": "To walk; to go somewhere on foot, step by step.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il giardino",
+        "surface": "giardini",
+        "definition": "A garden; in a city, i giardini can be a public park.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "mescolare",
+        "surface": "mescola",
+        "definition": "To stir or mix, like turning a spoon in a cup of coffee.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pronto",
+        "surface": "pronto",
+        "definition": "Ready; prepared for something that is about to happen.",
+        "anchor": false
+      }
+    ]
+  }
+]
