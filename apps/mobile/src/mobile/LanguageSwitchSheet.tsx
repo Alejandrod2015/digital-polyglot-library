@@ -3,11 +3,14 @@ import {
   Alert,
   Animated,
   Easing,
+  LayoutAnimation,
   PanResponder,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
   Text,
+  UIManager,
   View,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -97,6 +100,13 @@ type Props = {
 // for the translateY Animated.Value (see "3-tap bug" note below).
 const SHEET_TRAVEL = 720;
 
+// Android on the old architecture needs this opt-in before
+// LayoutAnimation does anything; without it the rows below a removed
+// journey jump up instead of sliding.
+if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
+
 export function LanguageSwitchSheet({
   open,
   onClose,
@@ -128,6 +138,10 @@ export function LanguageSwitchSheet({
   const dragY = useRef(new Animated.Value(0)).current;
   const [mounted, setMounted] = useState(open);
   const [switchingTo, setSwitchingTo] = useState<string | null>(null);
+  // Row being removed: it slides out and fades before the list drops
+  // it, so the journey doesn't just vanish.
+  const [removingId, setRemovingId] = useState<string | null>(null);
+  const removeAnim = useRef(new Animated.Value(0)).current;
 
   // Sync mount: keep the tree alive during the exit animation so the
   // slide-down has time to play before unmount.
@@ -242,10 +256,34 @@ export function LanguageSwitchSheet({
         {
           text: "Remove",
           style: "destructive",
-          onPress: () => void onDeleteJourney(journey.id),
+          onPress: () => animateRemoval(journey.id),
         },
       ]
     );
+  }
+
+  function animateRemoval(id: string) {
+    if (!onDeleteJourney || removingId) return;
+    setRemovingId(id);
+    removeAnim.setValue(0);
+    Animated.timing(removeAnim, {
+      toValue: 1,
+      duration: 240,
+      easing: Easing.in(Easing.cubic),
+      useNativeDriver: true,
+    }).start(async () => {
+      // The remaining rows close the gap with a layout animation
+      // instead of snapping into place.
+      LayoutAnimation.configureNext(
+        LayoutAnimation.create(220, LayoutAnimation.Types.easeInEaseOut, LayoutAnimation.Properties.opacity)
+      );
+      try {
+        await onDeleteJourney(id);
+      } finally {
+        setRemovingId(null);
+        removeAnim.setValue(0);
+      }
+    });
   }
 
   const headerCount = journeys.length;
@@ -344,9 +382,24 @@ export function LanguageSwitchSheet({
           {journeys.map((journey) => {
             const isSwitching = switchingTo === journey.id;
             const disabled = Boolean(switchingTo) && !isSwitching;
+            const isRemoving = removingId === journey.id;
             return (
-              <Pressable
+              <Animated.View
                 key={journey.id}
+                pointerEvents={isRemoving ? "none" : "auto"}
+                style={
+                  isRemoving
+                    ? {
+                        opacity: removeAnim.interpolate({ inputRange: [0, 1], outputRange: [1, 0] }),
+                        transform: [
+                          { translateX: removeAnim.interpolate({ inputRange: [0, 1], outputRange: [0, -60] }) },
+                          { scale: removeAnim.interpolate({ inputRange: [0, 1], outputRange: [1, 0.96] }) },
+                        ],
+                      }
+                    : undefined
+                }
+              >
+              <Pressable
                 disabled={disabled || isSwitching}
                 onPress={() => void handleSelect(journey.id)}
                 style={[
@@ -446,6 +499,7 @@ export function LanguageSwitchSheet({
                   </Pressable>
                 ) : null}
               </Pressable>
+              </Animated.View>
             );
           })}
         </ScrollView>
