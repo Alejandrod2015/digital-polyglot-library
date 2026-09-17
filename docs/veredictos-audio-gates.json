@@ -1,0 +1,20 @@
+{
+  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
+  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo.",
+  "_resumen": "12 juzgados: 11 falsos positivos, 1 defecto real. Todos del Friends DE A1.",
+  "veredictos": [
+    { "fragmento": "alle-3", "gate": "uptalk +6,6 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "fleck-0", "gate": "titulo, toma 2", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "fleck-5", "gate": "toma 3", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "jacke-0", "gate": "titulo re-tirado", "veredicto": "defecto_real", "fecha": "2026-09-16" },
+    { "fragmento": "lieber-1", "gate": "contenido", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "luft-1", "gate": "uptalk +4,4 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "luft-5", "gate": "uptalk +5,4 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "musk-2", "gate": "re-tirado", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "musk-5", "gate": "re-tirado", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "tee-1", "gate": "uptalk +6,0 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "zehn-5", "gate": "toma 2", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
+    { "fragmento": "zwei-0", "gate": "candado de cobertura", "veredicto": "falso_positivo", "fecha": "2026-09-16" }
+  ],
+  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. Once de doce marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
+}
