@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import landing from "@/components/marketing/LandingPage.module.css";
-import MarketingNav from "@/components/marketing/MarketingNav";
 import BetaFeedbackForm from "./BetaFeedbackForm";
 
 export const metadata: Metadata = {
@@ -19,10 +18,12 @@ export default async function BetaFeedbackPage({
 
   return (
     <main className={landing.page}>
-      <MarketingNav />
       <div className={landing.frame}>
         <div className="mx-auto max-w-xl pb-20 pt-12 sm:pt-16">
-          <BetaFeedbackForm token={params.token ?? ""} initialKind={params.kind ?? "bug"} />
+          <BetaFeedbackForm
+            token={params.token ?? ""}
+            initialKind={params.kind ?? "bug"}
+          />
         </div>
       </div>
     </main>

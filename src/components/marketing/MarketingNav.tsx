@@ -1,6 +1,6 @@
 "use client";
 
-// Single source of truth for the marketing-area nav (landing, /beta, /blog,
+// Single source of truth for the marketing-area nav (landing, /blog,
 // /blog/[slug]). Each route used to render its own copy of the same nav
 // markup, which drifted (Blog vs Features) and read as "two separate sites"
 // once /blog moved off WordPress. This component is rendered everywhere so
@@ -18,30 +18,43 @@ import styles from "./LandingPage.module.css";
 const LINKS: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/blog", label: "Blog" },
   { href: "/beta", label: "Beta" },
-  { href: "https://shop.digitalpolyglot.com?utm_source=digitalpolyglot.com&utm_medium=nav&utm_campaign=site-nav", label: "Shop", external: true },
+  {
+    href: "https://shop.digitalpolyglot.com?utm_source=digitalpolyglot.com&utm_medium=nav&utm_campaign=site-nav",
+    label: "Shop",
+    external: true,
+  },
 ];
 
 function track(cta: string) {
   trackGa4Event("landing_cta_click", { cta });
 }
 
+// `/beta` y `/beta/feedback` NO renderizan esta nav: son paginas cerradas
+// de la beta de las apps y cada enlace de aqui (home, Blog, Shop, Sign in,
+// Get started) acababa en el lector web, que es justo lo que no hay que
+// probar. Vacia se veia rara, asi que ahi no hay nav (2026-09-17).
+
+/* El logo real, nunca el nombre escrito a mano: la marca es la marca en
+   todas partes (2026-08-23). El fichero blanco es el que va sobre el azul de
+   esta nav; `-light.png` es el de fondo claro. */
+const LOGO = (
+  <Image
+    src="/digital-polyglot-logo.png"
+    alt="Digital Polyglot"
+    width={904}
+    height={437}
+    priority
+    className={styles.brandLogo}
+  />
+);
+
 export default function MarketingNav() {
   const pathname = usePathname() ?? "/";
   return (
     <nav className={styles.nav}>
       <div className={`${styles.frame} ${styles.navInner}`}>
-        {/* El logo real, nunca el nombre escrito a mano: la marca es la marca
-            en todas partes (2026-08-23). El fichero blanco es el que va sobre
-            el azul de esta nav; `-light.png` es el de fondo claro. */}
         <Link href="/" className={styles.brand} aria-label="Digital Polyglot">
-          <Image
-            src="/digital-polyglot-logo.png"
-            alt="Digital Polyglot"
-            width={904}
-            height={437}
-            priority
-            className={styles.brandLogo}
-          />
+          {LOGO}
         </Link>
         <div className={styles.navLinks}>
           {LINKS.map((l) => {

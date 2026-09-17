@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import BetaSignupForm from "./BetaSignupForm";
 import landing from "@/components/marketing/LandingPage.module.css";
-import MarketingNav from "@/components/marketing/MarketingNav";
 
 export const metadata: Metadata = {
   title: "Join the beta · Digital Polyglot",
-  description: "Apply for early access to the Digital Polyglot app on iPhone and Android.",
+  description:
+    "Apply for early access to the Digital Polyglot app on iPhone and Android.",
   robots: { index: true, follow: true },
 };
 
@@ -24,7 +24,6 @@ const SCREENSHOTS = [
 export default function BetaPage() {
   return (
     <main className={landing.page}>
-      <MarketingNav />
       <div className={landing.frame}>
         <div className="mx-auto max-w-3xl pb-20 pt-12 sm:pt-16">
           <header className="mb-10 flex flex-col items-center text-center">
