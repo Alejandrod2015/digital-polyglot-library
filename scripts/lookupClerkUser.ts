@@ -8,6 +8,8 @@ async function run() {
     const u = await clerk.users.getUser(userId);
     const emails = u.emailAddresses.map(e => e.emailAddress).join(", ");
     console.log(`${u.id}  ${emails}`);
+    console.log(`creado: ${new Date(u.createdAt).toISOString()}`);
+    console.log(`publicMetadata: ${JSON.stringify(u.publicMetadata ?? {}, null, 1)}`);
   } catch (err: any) {
     console.error(`Lookup failed: ${err.message ?? err}`);
   }

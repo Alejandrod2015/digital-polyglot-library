@@ -155,3 +155,19 @@ When an audit discovers a new class of issue, add it here following this format:
 Categories: USR (user state), API (security), ERR (error handling), NAV (navigation), BILL (billing), CNT (content), UX (user experience).
 
 Increment the number within each category.
+
+### API-006: Studio route gated only by `auth()` (any Clerk user passes)
+**Severity**: CRITICAL
+**What to look for**: `src/app/api/studio/**` handlers that check `auth().userId` but never call `isStudioMember` / `getStudioMember` / `requireBetaAdmin`. A free signup is a Clerk user, so `auth()` alone grants the whole Studio API. Found 2026-09-18 in journey-builder, journey-stories, validar/*, vocabulary/canonical.
+
+### API-007: Ownership decided from a client-writable row
+**Severity**: CRITICAL
+**What to look for**: a content route that grants access because a row exists (`LibraryBook`, `LibraryStory`, favorites) when another route lets the same user create that row with an arbitrary id. Ownership must come from a server-only source (`publicMetadata.books` set by the claim flow, `BillingEntitlement`). Found 2026-09-18: `/api/mobile/library` POST + `/api/mobile/book/[slug]`.
+
+### API-008: Paid third-party call reachable without a session
+**Severity**: CRITICAL
+**What to look for**: any handler that reaches OpenAI, ElevenLabs, Flux or Modal (`openai.chat`, `generateAndUploadAudio`, `/v1/text-to-speech`) without `auth()` / mobile session / studio member check first. `Access-Control-Allow-Origin: *` on such a route makes it worse. Found 2026-09-18: generate-text (incl. `?withAudio=true`), generate-title, generate-synopsis, generate-vocab, validate-vocab, translate, cultural-note.
+
+### API-009: Unauthenticated listing that returns other users' ids
+**Severity**: CRITICAL
+**What to look for**: `findMany()` without a `where: { userId }` in a route with no auth, returning `userId` or emails. Found 2026-09-18: `/api/studio/create-stories`.

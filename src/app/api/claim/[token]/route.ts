@@ -7,42 +7,68 @@ import { getCatalogBookMeta } from "@/lib/catalog";
 import { revalidateTag } from "next/cache";
 import { prisma } from "@/lib/prisma";
 
+const METADATA_ATTEMPTS = 4;
+const METADATA_BACKOFF_MS = [0, 500, 1500, 3000];
+
 /**
- * Actualiza los metadatos públicos del usuario en Clerk con sus nuevos libros.
+ * Actualiza publicMetadata.books del usuario en Clerk. Devuelve true solo si
+ * Clerk confirmó la escritura.
+ *
+ * WHY (2026-09-18): la web decide el acceso a un libro por
+ * publicMetadata.books, no por la fila LibraryBook. El 16/09 un comprador
+ * canjeó su enlace UN SEGUNDO después de crear la cuenta; esta función falló
+ * (probablemente Clerk aún no servía la cuenta), el error se tragó en el
+ * catch, la fila se escribió igual y la respuesta dijo "entregado". Resultado:
+ * cliente con el libro en la base y el muro de pago en la web. Ahora reintenta
+ * con espera, y si aun así falla lo dice, para que el canje NO se dé por
+ * entregado y el comprador pueda reintentar.
+ *
+ * `updateUserMetadata` fusiona por clave: las otras claves (plan,
+ * signupSource, signupPlatform) se conservan sin releerlas ni reenviarlas, así
+ * que tampoco puede pisar una escritura concurrente del sello de plataforma.
  */
-async function patchUserMetadata(userId: string, books: string[]): Promise<void> {
+async function patchUserMetadata(userId: string, books: string[]): Promise<boolean> {
   const clerkSecret = process.env.CLERK_SECRET_KEY;
   if (!clerkSecret) {
     console.error("❌ Falta CLERK_SECRET_KEY");
-    return;
+    return false;
   }
 
   const clerkClient = createClerkClient({ secretKey: clerkSecret });
+  let lastError = "";
 
-  try {
-    // 1) Lee el metadata actual
-    const user = await clerkClient.users.getUser(userId);
-    const existingMeta = (user.publicMetadata ?? {}) as Record<string, unknown>;
+  for (let attempt = 0; attempt < METADATA_ATTEMPTS; attempt += 1) {
+    if (METADATA_BACKOFF_MS[attempt]) {
+      await new Promise((resolve) => setTimeout(resolve, METADATA_BACKOFF_MS[attempt]));
+    }
+    try {
+      const user = await clerkClient.users.getUser(userId);
+      const existingMeta = (user.publicMetadata ?? {}) as Record<string, unknown>;
+      const currentBooks = Array.isArray(existingMeta.books)
+        ? (existingMeta.books as unknown[]).filter((b): b is string => typeof b === "string")
+        : [];
+      const updatedBooks = Array.from(new Set([...currentBooks, ...books]));
 
-    const currentBooks = Array.isArray(existingMeta.books)
-      ? (existingMeta.books as string[])
-      : [];
+      await clerkClient.users.updateUserMetadata(userId, {
+        publicMetadata: { books: updatedBooks },
+      });
 
-    // 2) Fusiona libros sin perder otras claves (plan/membership/etc.)
-    const updatedBooks = Array.from(new Set([...currentBooks, ...books]));
-    const newMeta: Record<string, unknown> = {
-      ...existingMeta,
-      books: updatedBooks,
-    };
-
-    // 3) Actualiza Clerk preservando el resto de publicMetadata
-    await clerkClient.users.updateUser(userId, { publicMetadata: newMeta });
-
-    console.log("✅ Clerk metadata fusionada para:", userId, newMeta);
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err);
-    console.error("💥 Error actualizando metadata en Clerk:", msg);
+      console.log("✅ Clerk metadata fusionada para:", userId, updatedBooks);
+      return true;
+    } catch (err: unknown) {
+      lastError = err instanceof Error ? err.message : String(err);
+      console.warn(
+        `⚠️ Clerk metadata intento ${attempt + 1}/${METADATA_ATTEMPTS} falló para ${userId}: ${lastError}`
+      );
+    }
   }
+
+  console.error(
+    `🚨 CLAIM SIN METADATA; userId=${userId} libros=${JSON.stringify(books)} ` +
+      `error=${lastError}; el comprador NO ve estos libros en la web. ` +
+      `Reparar con scripts/_repairClaimBooks.ts <userId> --apply.`
+  );
+  return false;
 }
 
 /**
@@ -183,14 +209,22 @@ export async function GET(
           const ownedBefore = new Set(preexisting.map((row) => row.bookId));
           alreadyOwned = ownedBefore.size === resolved.length;
 
-          await patchUserMetadata(
+          const metadataOk = await patchUserMetadata(
             userId,
             resolved.map((r) => r.bookId)
           );
 
+          // Sin metadata no hay libro en la web, así que tampoco se escribe
+          // la fila: un "entregado" a medias es justo lo que pasó el 16/09.
+          // El canje queda asignado al usuario y la ruta lo reintenta entera
+          // en la siguiente visita al enlace.
+          if (!metadataOk) {
+            for (const r of resolved) failedBookIds.push(r.bookId);
+          }
+
           // Un libro que falla no puede impedir la entrega de los demás: cada
           // upsert va aislado y se contabiliza por separado.
-          for (const r of resolved) {
+          for (const r of metadataOk ? resolved : []) {
             try {
               await prisma.libraryBook.upsert({
                 where: { userId_bookId: { userId, bookId: r.bookId } },
