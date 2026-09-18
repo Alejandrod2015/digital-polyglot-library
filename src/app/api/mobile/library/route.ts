@@ -37,9 +37,18 @@ export async function GET(req: NextRequest): Promise<Response> {
  * "polyglot" para historias generadas por el usuario, "standalone" para las
  * sueltas y las de journey, y el id real del libro para las del catálogo.
  */
-type MobileLibraryBody =
-  | { type: "book"; bookId: string; title: string; coverUrl: string }
-  | { type: "story"; storyId: string; bookId: string; title: string; coverUrl: string };
+// Solo historias. La fila de LibraryBook (un libro comprado) la escribe el
+// servidor en el claim, nunca el cliente: aceptar `type: "book"` aqui dejaba
+// que cualquier sesion movil se diera de alta un libro de pago y luego lo
+// abriera entero por `/api/mobile/book/[slug]` (auditoria 2026-09-18, #2).
+// Ningun build de la app lo enviaba; el DELETE de libro sigue igual.
+type MobileLibraryBody = {
+  type: "story";
+  storyId: string;
+  bookId: string;
+  title: string;
+  coverUrl: string;
+};
 
 function parseLibraryBody(value: unknown): MobileLibraryBody | null {
   if (!value || typeof value !== "object") return null;
@@ -49,15 +58,10 @@ function parseLibraryBody(value: unknown): MobileLibraryBody | null {
   const bookId = typeof body.bookId === "string" ? body.bookId.trim() : "";
   if (!bookId) return null;
 
-  if (body.type === "story") {
-    const storyId = typeof body.storyId === "string" ? body.storyId.trim() : "";
-    if (!storyId) return null;
-    return { type: "story", storyId, bookId, title, coverUrl };
-  }
-  if (body.type === "book") {
-    return { type: "book", bookId, title, coverUrl };
-  }
-  return null;
+  if (body.type !== "story") return null;
+  const storyId = typeof body.storyId === "string" ? body.storyId.trim() : "";
+  if (!storyId) return null;
+  return { type: "story", storyId, bookId, title, coverUrl };
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
@@ -72,46 +76,25 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 
   try {
-    if (body.type === "story") {
-      const existing = await prisma.libraryStory.findFirst({
-        where: { userId: session.sub, storyId: body.storyId },
-      });
-      const story = existing
-        ? await prisma.libraryStory.update({
-            where: { id: existing.id },
-            data: { title: body.title, coverUrl: body.coverUrl, bookId: body.bookId },
-          })
-        : await prisma.libraryStory.create({
-            data: {
-              userId: session.sub,
-              storyId: body.storyId,
-              title: body.title,
-              coverUrl: body.coverUrl,
-              bookId: body.bookId,
-            },
-          });
-      revalidateTag("library-by-user");
-      return NextResponse.json(story, { status: 201 });
-    }
-
-    const existing = await prisma.libraryBook.findFirst({
-      where: { userId: session.sub, bookId: body.bookId },
+    const existing = await prisma.libraryStory.findFirst({
+      where: { userId: session.sub, storyId: body.storyId },
     });
-    const book = existing
-      ? await prisma.libraryBook.update({
+    const story = existing
+      ? await prisma.libraryStory.update({
           where: { id: existing.id },
-          data: { title: body.title, coverUrl: body.coverUrl },
+          data: { title: body.title, coverUrl: body.coverUrl, bookId: body.bookId },
         })
-      : await prisma.libraryBook.create({
+      : await prisma.libraryStory.create({
           data: {
             userId: session.sub,
-            bookId: body.bookId,
+            storyId: body.storyId,
             title: body.title,
             coverUrl: body.coverUrl,
+            bookId: body.bookId,
           },
         });
     revalidateTag("library-by-user");
-    return NextResponse.json(book, { status: 201 });
+    return NextResponse.json(story, { status: 201 });
   } catch (err: unknown) {
     console.error("POST /api/mobile/library:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });

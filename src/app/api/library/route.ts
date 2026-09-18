@@ -8,34 +8,28 @@ import { unstable_cache, revalidateTag } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { loadLibraryRows, type LibraryType } from "@/lib/libraryRows";
 
-type LibraryBody =
-  | { type: "book"; bookId: string; title: string; coverUrl: string }
-  | {
-      type: "story";
-      storyId: string;
-      title: string;
-      coverUrl: string;
-      bookId: string;
-    };
+// Solo historias. La fila de LibraryBook (un libro comprado) la escribe el
+// servidor en el claim, nunca el cliente: aceptar `type: "book"` aqui dejaba
+// que cualquier cuenta se diera de alta un libro de pago (auditoria
+// 2026-09-18, #2). MyLibraryClient solo usa `type: "book"` en el DELETE.
+type LibraryBody = {
+  type: "story";
+  storyId: string;
+  title: string;
+  coverUrl: string;
+  bookId: string;
+};
 
 function isLibraryBody(x: unknown): x is LibraryBody {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
-  const type = o.type;
-  if (type === "book")
-    return (
-      typeof o.bookId === "string" &&
-      typeof o.title === "string" &&
-      typeof o.coverUrl === "string"
-    );
-  if (type === "story")
-    return (
-      typeof o.storyId === "string" &&
-      typeof o.bookId === "string" &&
-      typeof o.title === "string" &&
-      typeof o.coverUrl === "string"
-    );
-  return false;
+  return (
+    o.type === "story" &&
+    typeof o.storyId === "string" &&
+    typeof o.bookId === "string" &&
+    typeof o.title === "string" &&
+    typeof o.coverUrl === "string"
+  );
 }
 
 // ✅ cache por usuario + tipo
@@ -74,50 +68,29 @@ export async function POST(req: NextRequest): Promise<Response> {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
   try {
-    if (json.type === "story") {
-      const existing = await prisma.libraryStory.findFirst({
-        where: { userId, storyId: json.storyId },
-      });
-      const story = existing
-        ? await prisma.libraryStory.update({
-            where: { id: existing.id },
-            data: {
-              title: json.title,
-              coverUrl: json.coverUrl,
-              bookId: json.bookId,
-            },
-          })
-        : await prisma.libraryStory.create({
-            data: {
-              userId,
-              storyId: json.storyId,
-              title: json.title,
-              coverUrl: json.coverUrl,
-              bookId: json.bookId,
-            },
-          });
-      revalidateTag("library-by-user");
-      return NextResponse.json(story, { status: 201 });
-    }
-
-    const existing = await prisma.libraryBook.findFirst({
-      where: { userId, bookId: json.bookId },
+    const existing = await prisma.libraryStory.findFirst({
+      where: { userId, storyId: json.storyId },
     });
-    const book = existing
-      ? await prisma.libraryBook.update({
+    const story = existing
+      ? await prisma.libraryStory.update({
           where: { id: existing.id },
-          data: { title: json.title, coverUrl: json.coverUrl },
-        })
-      : await prisma.libraryBook.create({
           data: {
-            userId,
-            bookId: json.bookId,
             title: json.title,
             coverUrl: json.coverUrl,
+            bookId: json.bookId,
+          },
+        })
+      : await prisma.libraryStory.create({
+          data: {
+            userId,
+            storyId: json.storyId,
+            title: json.title,
+            coverUrl: json.coverUrl,
+            bookId: json.bookId,
           },
         });
     revalidateTag("library-by-user");
-    return NextResponse.json(book, { status: 201 });
+    return NextResponse.json(story, { status: 201 });
   } catch (err: unknown) {
     console.error("❌ Error en POST /api/library:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });

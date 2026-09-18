@@ -1,9 +1,15 @@
 export const runtime = "nodejs";
 
+import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { getCatalogBooksBySlugs } from "@/lib/catalog";
+import { decideMobileBookAccess } from "@/lib/mobileBookAccess";
 import { prisma } from "@/lib/prisma";
+
+const clerkClient = createClerkClient({
+  secretKey: process.env.CLERK_SECRET_KEY!,
+});
 
 // Serves a full catalog book (with its stories) to the app.
 //
@@ -13,8 +19,10 @@ import { prisma } from "@/lib/prisma";
 // rows from server-resolved metadata; this route is how the app actually
 // opens them.
 //
-// Access is gated on ownership: the caller must have the LibraryBook row.
-// This route exists to open what you bought, not to browse the catalog.
+// Access is gated on what the claim wrote (publicMetadata.books) or on an
+// entitled plan, the same rule the web reader applies. It used to trust the
+// LibraryBook row, which any mobile session could create for any bookId
+// (security audit 2026-09-18, critical finding #2).
 export async function GET(
   req: NextRequest,
   context: { params: Promise<{ slug: string }> }
@@ -29,11 +37,18 @@ export async function GET(
     return NextResponse.json({ error: "Missing book slug" }, { status: 400 });
   }
 
-  const owned = await prisma.libraryBook.findFirst({
-    where: { userId: session.sub, bookId: slug },
-    select: { id: true },
+  const [entitlement, user] = await Promise.all([
+    prisma.billingEntitlement.findUnique({ where: { userId: session.sub } }),
+    clerkClient.users.getUser(session.sub).catch(() => null),
+  ]);
+
+  const allowed = decideMobileBookAccess({
+    publicMetadata: user?.publicMetadata ?? {},
+    entitlement,
+    userCreatedAtMs: typeof user?.createdAt === "number" ? user.createdAt : null,
+    bookSlug: slug,
   });
-  if (!owned) {
+  if (!allowed) {
     return NextResponse.json({ error: "Not in your library" }, { status: 403 });
   }
 
