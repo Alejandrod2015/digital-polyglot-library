@@ -201,6 +201,30 @@ function bullets(items: string[], tone: "gold" | "sky" | "green" = "gold"): stri
   </table>`;
 }
 
+/**
+ * Numbered steps, for the one email where the ORDER is the instruction. Items
+ * are html, not text, so a step can carry a link or a highlighted phrase;
+ * callers escape their own strings.
+ *
+ * WHY: hasta el 2026-09-18 los pasos de Android iban como viñetas, y una
+ * tester (Karen, Calgary) abrió el enlace de Play sin pasar por el grupo. Con
+ * viñetas nada dice que el segundo paso no funciona sin el primero.
+ */
+function numbered(items: string[]): string {
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+    ${items
+      .map(
+        (html, i) => `<tr>
+      <td width="26" valign="top" style="padding:0 10px 0 0;">
+        <div style="width:24px;height:24px;border-radius:50%;background:${DPE.gold};color:${DPE.goldInk};font-family:${DPE.font};font-weight:900;font-size:13px;line-height:24px;text-align:center;">${i + 1}</div>
+      </td>
+      <td style="padding:0 0 12px 0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.55;color:${DPE.fgSoft};">${html}</td>
+    </tr>`,
+      )
+      .join("")}
+  </table>`;
+}
+
 function card(inner: string, accent: string = DPE.cardLine): string {
   return `<div style="background:${DPE.screen};border:1px solid ${accent};border-radius:18px;padding:22px;text-align:left;box-shadow:0 20px 44px -22px rgba(0,0,0,0.7);">${inner}</div>`;
 }
@@ -465,24 +489,49 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
   const joinUrl = data?.playGroupJoinUrl ?? null;
   const optInUrl = data?.playOptInUrl ?? null;
 
+  // Plain-text steps; the html version below adds the tester link inline so
+  // the email needs ONE button. Two buttons side by side read as two doors,
+  // and the second one only opens for people who went through the first.
+  const inChrome =
+    "in Chrome, not inside the Gmail or Facebook app. If it opens the Play Store app and shows an empty grey card, copy the link and paste it into Chrome.";
   const stepList = [
     ...(joinUrl
-      ? ["Join the testers group with the Google account you use on your phone. One tap, no forms."]
+      ? [
+          "Join the testers group with the Google account you use on your phone. One tap, no forms. Play refuses anyone who skips this step.",
+        ]
       : []),
-    "Open the tester link in Chrome. If tapping it opens the Play Store app and you get an empty grey card, copy the link and paste it into Chrome instead.",
+    `${joinUrl ? "Then open" : "Open"} the tester link ${inChrome}`,
     "Tap Become a tester, then Download it on Google Play. The first time it can take a few minutes to appear.",
     "Sign in to the app with this email address.",
   ];
+  const stepHtml = [
+    ...(joinUrl
+      ? [
+          `Join the testers group with the Google account you use on your phone. One tap, no forms. ${hi("Play refuses anyone who skips this step.")}`,
+        ]
+      : []),
+    `${joinUrl ? "Then open" : "Open"} ${
+      optInUrl
+        ? `<a href="${optInUrl}" style="color:${DPE.sky};font-weight:800;">the tester link</a>`
+        : "the tester link"
+    } ${esc(inChrome)}`,
+    esc(stepList[stepList.length - 2]),
+    esc(stepList[stepList.length - 1]),
+  ];
 
-  const steps = card(`${cardTitle("Getting in takes three minutes")}${bullets(stepList)}`);
+  const steps = card(`${cardTitle("Getting in takes three minutes, in this order")}${numbered(stepHtml)}`);
 
-  // The single most common failure is an account mismatch, and it produces no
-  // error message at all: the page just says the app is not available. Naming
-  // it up front is cheaper than answering the same email five times.
+  // "The app is not available" has no error code and two causes, and both
+  // come down to the same thing: Play does not see this account in the group.
+  // Naming only the account mismatch sent one tester with a single account
+  // looking for a second one; the check has to be "open the group link again".
   const accountWarning = card(
-    `${cardTitle("The one thing that goes wrong", DPE.sky)}
+    `${cardTitle("If Play says the app is not available", DPE.sky)}
+    <p style="margin:0 0 10px;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+      It means Play does not see your account in the testers group yet. Either you opened the tester link before step 1, or Chrome is signed in to a different Google account than the one that joined.
+    </p>
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      If the page says the app is not available, you are almost certainly signed in with a different Google account than the one that joined the group. Check the avatar at the top right of Chrome, switch accounts, and open the link again.
+      The check is the same for both: open the group link again. If it still offers ${hi("Join group")}, you were not in yet; join, wait a few minutes and open the tester link again. If it says you are already a member, check the avatar at the top right of Chrome and switch to that account.
     </p>`,
     "rgba(125,211,252,0.3)",
   );
@@ -526,10 +575,13 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
     ),
     ...(personal ? [block(personal, "26px 24px 0", false)] : []),
     block(steps, "28px 24px 0", false),
-    ...(joinUrl ? [block(cta("Join the testers group", joinUrl), "24px 24px 0")] : []),
-    ...(optInUrl
-      ? [block(joinUrl ? ctaSecondary("Open the tester link", optInUrl) : cta("Open the tester link", optInUrl), "12px 24px 0")]
-      : []),
+    // One button, and it is step 1. The tester link lives inside step 2, after
+    // the word "then", where it cannot be tapped before the group.
+    ...(joinUrl
+      ? [block(cta("Step 1: Join the testers group", joinUrl), "24px 24px 0")]
+      : optInUrl
+        ? [block(cta("Open the tester link", optInUrl), "24px 24px 0")]
+        : []),
     block(accountWarning, "24px 24px 0", false),
     block(perks, "16px 24px 0", false),
     block(ask, "16px 24px 0", false),
@@ -557,13 +609,13 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       "",
       "Google does not send an invite of its own, so everything you need is in this email.",
       "",
-      "Getting in takes three minutes:",
+      "Getting in takes three minutes, in this order:",
       ...stepList.map((s, i) => `  ${i + 1}. ${s}`),
       "",
-      ...(joinUrl ? [`Testers group: ${joinUrl}`] : []),
-      ...(optInUrl ? [`Tester link: ${optInUrl}`] : []),
+      ...(joinUrl ? [`Step 1, testers group: ${joinUrl}`] : []),
+      ...(optInUrl ? [`Step 2, tester link: ${optInUrl}`] : []),
       "",
-      "The one thing that goes wrong: if the page says the app is not available, you are signed in with a different Google account than the one that joined the group. Check the avatar at the top right of Chrome and switch.",
+      "If Play says the app is not available, it does not see your account in the testers group yet: either you opened the tester link before step 1, or Chrome is signed in to a different Google account than the one that joined. Open the group link again. If it still offers Join group, join, wait a few minutes and open the tester link again. If you are already a member, check the avatar at the top right of Chrome and switch to that account.",
       "",
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
