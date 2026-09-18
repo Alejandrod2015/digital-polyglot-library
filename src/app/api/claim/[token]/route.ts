@@ -58,13 +58,13 @@ async function patchUserMetadata(userId: string, books: string[]): Promise<boole
     } catch (err: unknown) {
       lastError = err instanceof Error ? err.message : String(err);
       console.warn(
-        `⚠️ Clerk metadata intento ${attempt + 1}/${METADATA_ATTEMPTS} falló para ${userId}: ${lastError}`
+        `Clerk metadata intento ${attempt + 1}/${METADATA_ATTEMPTS} falló para ${userId}: ${lastError}`
       );
     }
   }
 
   console.error(
-    `🚨 CLAIM SIN METADATA; userId=${userId} libros=${JSON.stringify(books)} ` +
+    `CLAIM SIN METADATA; userId=${userId} libros=${JSON.stringify(books)} ` +
       `error=${lastError}; el comprador NO ve estos libros en la web. ` +
       `Reparar con scripts/_repairClaimBooks.ts <userId> --apply.`
   );
