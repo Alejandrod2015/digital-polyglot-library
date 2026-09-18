@@ -1,4 +1,5 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { isStudioMember } from "@/lib/studio-access";
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
@@ -39,6 +40,11 @@ export async function GET() {
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
 
   const plans = await listJourneyVariantPlansForStudio();
   return NextResponse.json({ plans });
@@ -48,6 +54,11 @@ export async function POST(req: Request) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   try {

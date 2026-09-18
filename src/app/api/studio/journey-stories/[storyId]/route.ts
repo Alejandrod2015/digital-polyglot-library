@@ -1,4 +1,5 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { isStudioMember } from "@/lib/studio-access";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import {
@@ -18,6 +19,11 @@ export async function GET(_req: NextRequest, context: RouteContext) {
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
 
   const { storyId } = await context.params;
   const story = await getStudioJourneyStory(storyId);
@@ -31,6 +37,11 @@ export async function PATCH(req: NextRequest, context: RouteContext) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   const { storyId } = await context.params;
@@ -50,6 +61,11 @@ export async function POST(req: NextRequest, context: RouteContext) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   const action = req.nextUrl.searchParams.get("action");
@@ -73,6 +89,11 @@ export async function DELETE(_req: NextRequest, context: RouteContext) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const user = await currentUser();
+  const email = user?.primaryEmailAddress?.emailAddress;
+  if (!email || !(await isStudioMember(email))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   const { storyId } = await context.params;
