@@ -193,6 +193,7 @@ import {
   buildMixedPracticeSession,
   buildPracticeSession,
   MIXED_PRACTICE_PLAN,
+  withSpeakingSlot,
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
@@ -8721,9 +8722,16 @@ export function MobileLibraryShell(args: {
     // both the order and the distractors stay stable across runs.
     // Fall back to building exercises from the raw items pool when no
     // set exists for this story.
+    //
+    // Los sets curados no traen speaking (se generaron sin el piloto), asi
+    // que el turno hablado no salia NUNCA al terminar una historia. Con el
+    // plan que lo habilita, el slot 8 del set se sustituye por un speaking de
+    // la misma historia; para el resto el set llega intacto.
     const exercises =
       persistedExercises && persistedExercises.length > 0
-        ? persistedExercises.map(mapSharedExerciseToMobile)
+        ? withSpeakingSlot(persistedExercises, items, onboardingPracticePrefs).map(
+            mapSharedExerciseToMobile
+          )
         : buildMixedPracticeExercisesFromItems(items, false, onboardingPracticePrefs);
     if (exercises.length === 0) {
       setPracticeLoadError("This story does not have practice items yet.");
@@ -10002,13 +10010,39 @@ export function MobileLibraryShell(args: {
         const index = current.findIndex((ex) => ex.id === exercise.id);
         if (index < 0) return current;
         const next = [...current];
-        if (replacement) next[index] = replacement;
+        // Si la sesion ya tiene ese mismo ejercicio (misma palabra en el
+        // mismo modo), el slot se quita en vez de duplicarlo: dos slots con
+        // el mismo id confunden a los efectos que se apoyan en el id.
+        const duplicate =
+          replacement && current.some((ex, i) => i !== index && ex.id === replacement.id);
+        if (replacement && !duplicate) next[index] = replacement;
         else next.splice(index, 1);
         return next;
       });
     },
     [journeyScopedFavoriteWords, onboardingPracticePrefs, practiceSeedItems]
   );
+
+  /**
+   * "Can't speak now". El usuario no puede hablar en ese momento y eso no es
+   * un fallo suyo, asi que el turno NO se resuelve: ni nota de SRS, ni
+   * marcador, ni racha, ni sonido. El slot se cambia por un `context` de la
+   * MISMA palabra (el mismo camino que cuando el telefono no reconoce el
+   * idioma), de modo que la sesion sigue siendo de 10, el total del
+   * resultado no se infla y la palabra recibe una nota real.
+   */
+  function skipSpeakingTurn(exercise: PracticeSpeakingExercise) {
+    if (isSpeakingTurnAlreadyResolved(speakingResolvedForRef.current, exercise.id)) return;
+    speakingResolvedForRef.current = exercise.id;
+    setSpeakingCountdownRunning(false);
+    speakingRecorder.cancel();
+    void trackPracticeMetric("speaking_skipped_by_user", {
+      mode: "speaking",
+      word: exercise.word,
+      phase: speakingPhase,
+    });
+    replaceSpeakingWithContext(exercise);
+  }
 
   // Estado limpio al entrar en cada turno hablado.
   useEffect(() => {
@@ -10203,13 +10237,15 @@ export function MobileLibraryShell(args: {
         },
         onFailure: (code) => {
           if (code === "not-allowed" || code === "service-not-allowed") {
-            // Permiso denegado: el ejercicio se salta SIN nota y la sesion
-            // sigue. No es un fallo del usuario.
+            // Permiso denegado: no es un fallo del usuario. Antes se
+            // avanzaba dejando el slot sin resolver, y el total del
+            // resultado (aciertos / ejercicios) lo contaba como fallado.
+            // Ahora el slot se cambia por un `context` de la misma palabra.
             void trackPracticeMetric("speaking_skipped_no_mic", {
               mode: "speaking",
               word: exercise.word,
             });
-            advancePractice();
+            replaceSpeakingWithContext(exercise);
             return;
           }
           if (code === "language-not-supported") {
@@ -10237,7 +10273,7 @@ export function MobileLibraryShell(args: {
           mode: "speaking",
           word: exercise.word,
         });
-        advancePractice();
+        replaceSpeakingWithContext(exercise);
         return;
       }
       if (result.reason === "unavailable") {
@@ -12647,7 +12683,11 @@ export function MobileLibraryShell(args: {
       // porque el dispositivo no reconoce ese idioma. Son problemas distintos
       // y se miden por separado.
       | "speaking_skipped_no_mic"
-      | "speaking_skipped_no_recognizer",
+      | "speaking_skipped_no_recognizer"
+      // Y el tercero: el usuario no puede hablar en ese momento (transporte,
+      // oficina) y pulsa "Can't speak now". Tampoco puntua; se mide aparte
+      // porque dice cuanto estorba el turno hablado en la vida real.
+      | "speaking_skipped_by_user",
     extra?: Record<string, unknown>
   ) {
     if (!sessionToken || !activePracticeSeedFavorite) return;
@@ -15880,6 +15920,21 @@ export function MobileLibraryShell(args: {
                             ? "TAP WHEN YOU ARE DONE"
                             : "TAP AND SAY THE WHOLE SENTENCE"}
                         </Text>
+                        {/* No todo el mundo puede hablar en todo momento. Se
+                            ofrece hasta que el micro esta abierto; a partir de
+                            ahi el usuario ya ha decidido hablar. */}
+                        {!speakingRecorder.isRecording && speakingPhase !== "listening" ? (
+                          <Pressable
+                            onPress={() => skipSpeakingTurn(ex)}
+                            accessibilityRole="button"
+                            accessibilityLabel="Can't speak now, practice this word another way"
+                            testID="qa-speaking-skip"
+                            hitSlop={12}
+                            style={styles.speakingSkipButton}
+                          >
+                            <Text style={styles.speakingSkipText}>CAN'T SPEAK NOW</Text>
+                          </Pressable>
+                        ) : null}
                       </View>
                     )}
 
@@ -28102,6 +28157,18 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: "800",
     letterSpacing: 1.3,
+  },
+  speakingSkipButton: {
+    marginTop: 14,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  speakingSkipText: {
+    color: "#6f8199",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+    textDecorationLine: "underline",
   },
   speakingAnswerCard: {
     marginTop: 14,

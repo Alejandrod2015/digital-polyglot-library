@@ -7,8 +7,13 @@ import {
   normalizeForSpeaking,
 } from "../speakingGrading";
 import {
+  buildMixedPracticeSession,
   buildPracticeSession,
   createSpeakingExercise,
+  MIXED_PRACTICE_PLAN,
+  SPEAKING_SLOT_INDEX,
+  SPEAKING_SLOT_INDEXES,
+  withSpeakingSlot,
   type PracticeFavoriteItem,
 } from "../practiceExercises";
 import {
@@ -314,6 +319,87 @@ describe("createSpeakingExercise", () => {
 
   it("devuelve null sin traduccion, que es la pista en pantalla", () => {
     expect(createSpeakingExercise(favorito({ translation: "" }), pool())).toBeNull();
+  });
+});
+
+describe("withSpeakingSlot: el set curado recupera el turno hablado", () => {
+  // Una historia con vocabulario de verdad (12 palabras), para que el set
+  // curado llegue a los diez slots y el 8 exista.
+  const historia = (): PracticeFavoriteItem[] => [
+    ...pool(),
+    favorito({ word: "el buzon", surface: "buzon", translation: "the mailbox", exampleSentence: "El buzon esta lleno de cartas viejas." }),
+    favorito({ word: "la persiana", surface: "persiana", translation: "the blind", exampleSentence: "La persiana baja con un ruido seco." }),
+    favorito({ word: "el timbre", surface: "timbre", translation: "the doorbell", exampleSentence: "El timbre suena dos veces por la tarde." }),
+    favorito({ word: "la llave", surface: "llave", translation: "the key", exampleSentence: "La llave gira mal en la cerradura nueva." }),
+    favorito({ word: "el ascensor", surface: "ascensor", translation: "the elevator", exampleSentence: "El ascensor se para en el tercer piso." }),
+    favorito({ word: "la alfombra", surface: "alfombra", translation: "the rug", exampleSentence: "La alfombra roja cubre todo el pasillo." }),
+  ];
+  const piloto = (speakingEnabled: boolean) => ({
+    interests: [],
+    learningGoal: null,
+    dailyMinutes: null,
+    speakingEnabled,
+  });
+  // Un set como los guardados en la base: armado SIN speakingEnabled, asi que
+  // los diez slots salen de los cuatro modos de siempre.
+  const curado = () => buildMixedPracticeSession(historia(), MIXED_PRACTICE_PLAN, 10);
+
+  it("sin el piloto el set vuelve intacto", () => {
+    const set = curado();
+    expect(set.some((ex) => ex.type === "speaking")).toBe(false);
+    expect(withSpeakingSlot(set, historia())).toBe(set);
+    expect(withSpeakingSlot(set, historia(), piloto(false))).toBe(set);
+  });
+
+  it("el plan lleva 2 hablados de 10, en los slots 5 y 8, no consecutivos", () => {
+    expect(SPEAKING_SLOT_INDEXES).toEqual([4, 7]);
+    expect(MIXED_PRACTICE_PLAN.filter((m) => m === "speaking")).toHaveLength(2);
+  });
+
+  it("con el piloto ocupa los slots del plan y la sesion sigue teniendo el mismo tamano", () => {
+    const set = curado();
+    const out = withSpeakingSlot(set, historia(), piloto(true));
+    expect(out).toHaveLength(set.length);
+    expect(out.filter((ex) => ex.type === "speaking")).toHaveLength(SPEAKING_SLOT_INDEXES.length);
+    for (const i of SPEAKING_SLOT_INDEXES) expect(out[i].type).toBe("speaking");
+    // Los demas slots no se tocan.
+    out.forEach((ex, i) => {
+      if (!SPEAKING_SLOT_INDEXES.includes(i)) expect(ex).toBe(set[i]);
+    });
+    // Y los dos hablados son de palabras distintas.
+    const words = out.filter((ex) => ex.type === "speaking").map((ex) => (ex as { word: string }).word);
+    expect(new Set(words).size).toBe(words.length);
+  });
+
+  it("la palabra del hablado no repite el ancla de otro ejercicio del set", () => {
+    const set = curado();
+    const out = withSpeakingSlot(set, historia(), piloto(true));
+    const speaking = out[SPEAKING_SLOT_INDEX];
+    if (speaking.type !== "speaking") throw new Error("sin speaking en el slot");
+    const otros = out.filter((_, i) => i !== SPEAKING_SLOT_INDEX);
+    for (const ex of otros) {
+      if (ex.type === "fill_blank" || ex.type === "listen_choose") {
+        expect(ex.answer.toLowerCase()).not.toBe(speaking.word.toLowerCase());
+      }
+      if (ex.type === "meaning_in_context") {
+        expect(ex.word.toLowerCase()).not.toBe(speaking.word.toLowerCase());
+      }
+    }
+  });
+
+  it("no anade mas hablados si el set ya trae los del plan", () => {
+    const set = withSpeakingSlot(curado(), historia(), piloto(true));
+    expect(withSpeakingSlot(set, historia(), piloto(true))).toBe(set);
+  });
+
+  it("con un set corto lo anade al final en vez de perder un ejercicio", () => {
+    const set = curado().slice(0, 3);
+    const out = withSpeakingSlot(set, historia(), piloto(true));
+    // Ninguno de los slots del plan existe en un set de 3: los dos hablados
+    // van al final, y el set sigue siendo de 5.
+    expect(out).toHaveLength(5);
+    expect(out[3].type).toBe("speaking");
+    expect(out[4].type).toBe("speaking");
   });
 });
 

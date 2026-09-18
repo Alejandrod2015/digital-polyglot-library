@@ -40,6 +40,10 @@ const ALLOWED_EVENT_TYPES = new Set([
   // telefono no sabe reconocer, y solo el segundo se arregla desde aqui.
   "speaking_skipped_no_mic",
   "speaking_skipped_no_recognizer",
+  // Y el tercero, el que decide el usuario: "Can't speak now". Tampoco
+  // puntua (el slot pasa a `context` de la misma palabra); se mide porque
+  // dice cuanto estorba el turno hablado fuera de casa.
+  "speaking_skipped_by_user",
   "reminder_scheduled",
   "reminder_tapped",
   "reminder_destination_opened",

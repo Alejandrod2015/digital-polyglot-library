@@ -16,6 +16,7 @@ import { buildPracticeSession, mergePracticeItemsByWord, type PracticeExercise, 
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import type { AudioWordTimingsPayload } from "@domain";
 import { signAudioUrlsDeep } from "@/lib/mediaSigning";
+import { buildSentenceTranslationMap } from "@/lib/sentenceTranslation";
 
 /**
  * Aeneas word-level alignment for a story. Tries JourneyStory first
@@ -203,7 +204,15 @@ export async function GET(request: NextRequest) {
     voiceId: storyVoiceId,
   }));
 
-  const items = mergePracticeItemsByWord([...storyItems, ...savedItems]);
+  // Traducciones de frase de la historia, el MAPA entero en cada item, igual
+  // que en /api/mobile/favorites: el cliente no sabe aqui que frase acabara
+  // pintando el ejercicio hablado, y sin el mapa el resultado sale sin
+  // `MEANING` aunque la tanda de traducciones exista.
+  const sentenceTranslations = await loadSentenceTranslations(storySlug);
+  const items = mergePracticeItemsByWord([...storyItems, ...savedItems]).map((item) => ({
+    ...item,
+    sentenceTranslations,
+  }));
 
   // If an editorially curated practice set exists for this journey
   // story, surface its exercises in the response. The mobile client
@@ -443,6 +452,23 @@ function derangeMeanings(answersInRowOrder: string[], seedStr: string): string[]
     guard++;
   }
   return order;
+}
+
+async function loadSentenceTranslations(storySlug: string): Promise<Record<string, string>> {
+  if (!storySlug) return {};
+  const set = await prisma.storyPracticeSet
+    .findFirst({
+      where: { story: { slug: storySlug, status: "published" } },
+      select: {
+        sentenceTranslations: true,
+        exercises: { select: { type: true, word: true, payload: true } },
+      },
+    })
+    .catch(() => null);
+  if (!set) return {};
+  return Object.fromEntries(
+    buildSentenceTranslationMap({ column: set.sentenceTranslations, exercises: set.exercises })
+  );
 }
 
 async function loadPersistedExercises(

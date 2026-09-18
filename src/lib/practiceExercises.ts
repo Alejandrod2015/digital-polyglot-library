@@ -1214,24 +1214,27 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
 }
 
 /**
- * Reparto canónico de una sesión MIXTA: 3 contexto, 3 significado, 2 escucha,
- * 1 emparejar y 1 hablado. Es el plan que ya servía el set curado de cada
+ * Reparto canónico de una sesión MIXTA: 3 contexto, 2 significado, 2 escucha,
+ * 1 emparejar y 2 hablado. Es el plan que ya servía el set curado de cada
  * historia; vive aquí para que el móvil pueda usar el mismo sin importar
  * `storyPracticeSets` (que arrastra prisma) y para que los dos no puedan
  * derivar.
  *
- * El slot 8 era el TERCER contexto y ahora es el de speaking (piloto,
- * 2026-09-14). Cuando el cliente no habilita speaking, `buildPracticeSession`
- * devuelve cero ejercicios para ese modo y el relleno del final de
- * `buildMixedPracticeSession` recupera el hueco con los cuatro modos de
- * siempre: la sesión de quien no tiene el piloto sigue siendo de 10.
+ * El slot 8 era el TERCER contexto y pasó a speaking (piloto, 2026-09-14);
+ * el 2026-09-18 el slot 5 (un significado) pasó también a speaking, en dos
+ * posiciones no consecutivas. Hablar es la habilidad que ningún otro modo
+ * trabaja y la que más nombran los beta ("never feel comfortable speaking").
+ * Cuando el cliente no habilita speaking, `buildPracticeSession` devuelve
+ * cero ejercicios para ese modo y el relleno del final de
+ * `buildMixedPracticeSession` recupera los huecos con los cuatro modos de
+ * siempre: la sesión de quien no lo tiene sigue siendo de 10.
  */
 export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
   "context",
   "meaning",
   "listening",
   "context",
-  "meaning",
+  "speaking",
   "listening",
   "match",
   "speaking",
@@ -1290,6 +1293,84 @@ export function buildMixedPracticeSession(
   }
 
   return exercises;
+}
+
+/**
+ * Mete los turnos hablados en un set CURADO. Los sets guardados en la base se
+ * generaron sin `speakingEnabled` (storyPracticeSets.ts), asi que los slots
+ * de speaking los ocupa otro modo y hablar salia CERO veces al terminar una
+ * historia, que es donde mas se practica. En vez de rehacer los 567 sets, el
+ * cliente sustituye esos slots por speaking de la misma historia cuando el
+ * plan lo habilita: la sesion sigue siendo de 10 y con el mismo reparto que
+ * MIXED_PRACTICE_PLAN.
+ *
+ * Prioridad de la palabra en cada slot: la del ejercicio que se sustituye
+ * (asi el vocabulario de la sesion no cambia, cambia el formato); si esa no
+ * da frase limpia, otra del set que no este ya anclada por otro ejercicio; y
+ * en ultimo caso cualquiera que no sea la del ejercicio de al lado. Repetir
+ * una palabra en otro formato es mejor que cero hablado, que es lo que habia.
+ * Si ninguna sirve, ese slot se queda como estaba.
+ */
+export const SPEAKING_SLOT_INDEXES = MIXED_PRACTICE_PLAN.flatMap((mode, index) =>
+  mode === "speaking" ? [index] : []
+);
+export const SPEAKING_SLOT_INDEX = SPEAKING_SLOT_INDEXES[0];
+
+export function withSpeakingSlot(
+  exercises: PracticeExercise[],
+  items: PracticeFavoriteItem[],
+  prefs?: OnboardingPracticePrefs
+): PracticeExercise[] {
+  if (!prefs?.speakingEnabled) return exercises;
+  if (exercises.length === 0 || items.length === 0) return exercises;
+  const wanted = SPEAKING_SLOT_INDEXES.length;
+  let have = exercises.filter((exercise) => exercise.type === "speaking").length;
+  if (have >= wanted) return exercises;
+
+  const source = uniqueByWord(items);
+  const pool = uniqueByWord([...source, ...catalogPool]);
+  const next = [...exercises];
+
+  for (const slotIndex of SPEAKING_SLOT_INDEXES) {
+    if (have >= wanted) break;
+    const replaceIndex = next.length > slotIndex ? slotIndex : -1;
+    const replaced = replaceIndex >= 0 ? next[replaceIndex] : null;
+    if (replaced?.type === "speaking") continue;
+    const others = next.filter((exercise) => exercise !== replaced);
+    const usedAnchors = new Set(others.map(getExerciseAnchor));
+    const slotAt = replaceIndex >= 0 ? replaceIndex : next.length;
+    const neighbourAnchors = new Set(
+      [next[slotAt - 1], next[slotAt + 1]]
+        .filter((exercise): exercise is PracticeExercise => Boolean(exercise) && exercise !== replaced)
+        .map(getExerciseAnchor)
+    );
+    const replacedAnchor = replaced ? getExerciseAnchor(replaced) : "";
+    const candidates = [
+      ...source.filter((item) => normalizeKey(item.word) === replacedAnchor),
+      ...source.filter((item) => normalizeKey(item.word) !== replacedAnchor),
+    ];
+
+    let placed = false;
+    for (const strict of [true, false]) {
+      if (placed) break;
+      for (const item of candidates) {
+        const anchor = normalizeKey(item.word);
+        if (strict ? usedAnchors.has(anchor) : neighbourAnchors.has(anchor)) continue;
+        // Nunca dos hablados sobre la misma palabra.
+        if (next.some((exercise) => exercise.type === "speaking" && getExerciseAnchor(exercise) === anchor)) {
+          continue;
+        }
+        const speaking = createSpeakingExercise(item, pool);
+        if (!speaking) continue;
+        if (replaceIndex >= 0) next[replaceIndex] = speaking;
+        else next.push(speaking);
+        have += 1;
+        placed = true;
+        break;
+      }
+    }
+  }
+  return have > exercises.filter((exercise) => exercise.type === "speaking").length ? next : exercises;
 }
 
 export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[]): PracticeExercise[] {
