@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import Svg, { Circle, G } from "react-native-svg";
+import Svg, { Circle, Defs, G, Path, RadialGradient, Stop } from "react-native-svg";
 
 /**
  * PracticeOrbit; pantalla "Practice" rediseñada.
@@ -276,6 +276,220 @@ const SkillCard = memo(function SkillCard({
   );
 });
 
+
+// Rejilla "abrazo" para cinco habilidades (2026-09-17).
+// Con Speaking la rejilla 2x2 dejaba la quinta tarjeta huerfana en una
+// tercera fila y ya no cabia sin scroll. Aqui las cuatro de siempre se
+// recortan con un arco concavo hacia el centro y Speaking, el unico circulo,
+// flota en el hueco que dejan, con aire alrededor: nada se monta sobre nada.
+// Las cuatro formas son trazados SVG (react-native-svg ya esta aqui por el
+// anillo); encima van Pressables transparentes con el contenido, y el
+// circulo central es una View normal.
+const HUG_HEIGHT = 212;
+const HUG_GAP = 10;
+const HUG_CORNER = 26;
+// Radio del hueco: circulo de 104 (52) + 18 de aire.
+const HUG_NOTCH_R = 70;
+const HUG_CIRCLE = 104;
+
+type HugCorner = "tl" | "tr" | "bl" | "br";
+const HUG_SLOTS: Array<{ mode: PracticeModeKey; corner: HugCorner }> = [
+  { mode: "meaning", corner: "tl" },
+  { mode: "context", corner: "tr" },
+  { mode: "listening", corner: "bl" },
+  { mode: "match", corner: "br" },
+];
+
+/** Rectangulo redondeado con la esquina interior sustituida por un arco
+ *  concavo de radio HUG_NOTCH_R centrado en (cx, cy). `corner` es la
+ *  posicion de la tarjeta en el bloque, asi que la esquina recortada es la
+ *  opuesta (la que mira al centro). */
+function hugPath(x0: number, y0: number, w: number, h: number, corner: HugCorner, cx: number, cy: number) {
+  const r = HUG_CORNER;
+  const R = HUG_NOTCH_R;
+  const x1 = x0 + w;
+  const y1 = y0 + h;
+  const yAt = (x: number) => Math.sqrt(Math.max(0, R * R - (x - cx) * (x - cx)));
+  const xAt = (y: number) => Math.sqrt(Math.max(0, R * R - (y - cy) * (y - cy)));
+  const f = (n: number) => n.toFixed(1);
+  switch (corner) {
+    case "tl": {
+      // recorte abajo-derecha
+      const py = cy - yAt(x1);
+      const px = cx - xAt(y1);
+      return `M${x0 + r},${y0} H${x1 - r} A${r},${r} 0 0 1 ${x1},${y0 + r} V${f(py)} A${R},${R} 0 0 0 ${f(px)},${y1} H${x0 + r} A${r},${r} 0 0 1 ${x0},${y1 - r} V${y0 + r} A${r},${r} 0 0 1 ${x0 + r},${y0} Z`;
+    }
+    case "tr": {
+      // recorte abajo-izquierda
+      const py = cy - yAt(x0);
+      const px = cx + xAt(y1);
+      return `M${x0},${f(py)} V${y0 + r} A${r},${r} 0 0 1 ${x0 + r},${y0} H${x1 - r} A${r},${r} 0 0 1 ${x1},${y0 + r} V${y1 - r} A${r},${r} 0 0 1 ${x1 - r},${y1} H${f(px)} A${R},${R} 0 0 0 ${x0},${f(py)} Z`;
+    }
+    case "bl": {
+      // recorte arriba-derecha
+      const py = cy + yAt(x1);
+      const px = cx - xAt(y0);
+      return `M${x0 + r},${y0} H${f(px)} A${R},${R} 0 0 0 ${x1},${f(py)} V${y1 - r} A${r},${r} 0 0 1 ${x1 - r},${y1} H${x0 + r} A${r},${r} 0 0 1 ${x0},${y1 - r} V${y0 + r} A${r},${r} 0 0 1 ${x0 + r},${y0} Z`;
+    }
+    case "br":
+    default: {
+      // recorte arriba-izquierda
+      const py = cy + yAt(x0);
+      const px = cx + xAt(y0);
+      return `M${f(px)},${y0} H${x1 - r} A${r},${r} 0 0 1 ${x1},${y0 + r} V${y1 - r} A${r},${r} 0 0 1 ${x1 - r},${y1} H${x0 + r} A${r},${r} 0 0 1 ${x0},${y1 - r} V${f(py)} A${R},${R} 0 0 0 ${f(px)},${y0} Z`;
+    }
+  }
+}
+
+const HugLabel = memo(function HugLabel({
+  mode,
+  count,
+  corner,
+  onPress,
+  x,
+  y,
+  w,
+  h,
+}: {
+  mode: PracticeModeKey;
+  count: number;
+  corner: HugCorner;
+  onPress: () => void;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}) {
+  const color = MODE_COLORS[mode];
+  const animatedCount = useRollup(count, 700);
+  const right = corner === "tr" || corner === "br";
+  const bottom = corner === "bl" || corner === "br";
+  // El contenido se apoya en el lado exterior de la tarjeta (lejos del
+  // circulo): icono y numero en la fila del borde, nombre en la otra.
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={`qa-practice-skill-${mode}`}
+      testID={`qa-practice-skill-${mode}`}
+      style={({ pressed }) => [
+        styles.hugSlot,
+        { left: x, top: y, width: w, height: h },
+        right ? styles.hugSlotRight : null,
+        bottom ? styles.hugSlotBottom : null,
+        pressed ? styles.skillCardPressed : null,
+      ]}
+    >
+      <View style={[styles.hugRow, right ? styles.hugRowRight : null]}>
+        <View style={[styles.hugIconChip, { backgroundColor: `${color}40` }]}>
+          <Feather name={MODE_ICONS[mode]} size={15} color={color} />
+        </View>
+        <Text style={styles.skillCount}>{animatedCount}</Text>
+      </View>
+      <Text style={styles.hugLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
+    </Pressable>
+  );
+});
+
+const SkillHug = memo(function SkillHug({
+  breakdown,
+  onPick,
+}: {
+  breakdown: Record<PracticeModeKey, number>;
+  onPick: (mode: PracticeModeKey) => void;
+}) {
+  const [width, setWidth] = useState(0);
+  const speakingCount = useRollup(breakdown.speaking ?? 0, 700);
+  const speakingColor = MODE_COLORS.speaking;
+  const tileW = Math.max(0, (width - HUG_GAP) / 2);
+  const tileH = (HUG_HEIGHT - HUG_GAP) / 2;
+  const cx = width / 2;
+  const cy = HUG_HEIGHT / 2;
+  const slots = HUG_SLOTS.map(({ mode, corner }) => {
+    const x = corner === "tl" || corner === "bl" ? 0 : tileW + HUG_GAP;
+    const y = corner === "tl" || corner === "tr" ? 0 : tileH + HUG_GAP;
+    return { mode, corner, x, y };
+  });
+  return (
+    <View
+      style={styles.hug}
+      onLayout={(e) => setWidth(Math.round(e.nativeEvent.layout.width))}
+    >
+      {width > 0 ? (
+        <Svg width={width} height={HUG_HEIGHT} style={StyleSheet.absoluteFill}>
+          <Defs>
+            {slots.map(({ mode, corner, x, y }) => (
+              <RadialGradient
+                key={`g-${mode}`}
+                id={`hug-${mode}`}
+                gradientUnits="userSpaceOnUse"
+                cx={corner === "tl" || corner === "bl" ? x : x + tileW}
+                cy={corner === "tl" || corner === "tr" ? y : y + tileH}
+                r={120}
+              >
+                <Stop offset="0" stopColor={MODE_COLORS[mode]} stopOpacity={0.22} />
+                <Stop offset="1" stopColor={MODE_COLORS[mode]} stopOpacity={0} />
+              </RadialGradient>
+            ))}
+          </Defs>
+          {slots.map(({ mode, corner, x, y }) => {
+            const d = hugPath(x, y, tileW, tileH, corner, cx, cy);
+            return (
+              <G key={mode}>
+                <Path d={d} fill={SKILL_CARD_BG} />
+                <Path
+                  d={d}
+                  fill={`url(#hug-${mode})`}
+                  stroke={MODE_COLORS[mode]}
+                  strokeOpacity={0.7}
+                  strokeWidth={1.5}
+                />
+              </G>
+            );
+          })}
+        </Svg>
+      ) : null}
+      {width > 0
+        ? slots.map(({ mode, corner, x, y }) => (
+            <HugLabel
+              key={mode}
+              mode={mode}
+              corner={corner}
+              count={breakdown[mode] ?? 0}
+              onPress={() => onPick(mode)}
+              x={x}
+              y={y}
+              w={tileW}
+              h={tileH}
+            />
+          ))
+        : null}
+      <Pressable
+        onPress={() => onPick("speaking")}
+        accessibilityRole="button"
+        accessibilityLabel="qa-practice-skill-speaking"
+        testID="qa-practice-skill-speaking"
+        style={({ pressed }) => [
+          styles.hugCircle,
+          {
+            left: cx - HUG_CIRCLE / 2,
+            top: cy - HUG_CIRCLE / 2,
+            borderColor: speakingColor,
+            shadowColor: speakingColor,
+          },
+          pressed ? styles.skillCardPressed : null,
+        ]}
+      >
+        <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
+        <Text style={styles.hugCircleCount}>{speakingCount}</Text>
+        <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
+          {MODE_LABELS.speaking.toUpperCase()}
+        </Text>
+      </Pressable>
+    </View>
+  );
+});
+
 export function PracticeOrbit({
   topicLabel,
   totalDue,
@@ -504,16 +718,22 @@ export function PracticeOrbit({
           vistazo que la card amarilla corresponde al arco amarillo,
           la verde al verde, etc. Reemplaza al row horizontal de
           tarjetitas chiquitas que se cortaba bajo la tab bar. */}
-      <View style={styles.skillGrid}>
-        {visibleModes.map((mode) => (
-          <SkillCard
-            key={mode}
-            mode={mode}
-            count={modeBreakdown[mode] ?? 0}
-            onPress={() => handleSkillPress(mode)}
-          />
-        ))}
-      </View>
+      {speakingEnabled ? (
+        // Cinco habilidades: las cuatro de siempre abrazan al circulo de
+        // Speaking. Ver SkillHug.
+        <SkillHug breakdown={modeBreakdown} onPick={handleSkillPress} />
+      ) : (
+        <View style={styles.skillGrid}>
+          {visibleModes.map((mode) => (
+            <SkillCard
+              key={mode}
+              mode={mode}
+              count={modeBreakdown[mode] ?? 0}
+              onPress={() => handleSkillPress(mode)}
+            />
+          ))}
+        </View>
+      )}
     </View>
   );
 }
@@ -724,6 +944,78 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1.2,
     marginTop: 6,
+  },
+  // Bloque "abrazo" (cinco habilidades). Mismo margen superior que la
+  // rejilla 2x2 para que el anillo no se mueva entre planes.
+  hug: {
+    marginTop: 16,
+    height: HUG_HEIGHT,
+    width: "100%",
+  },
+  hugSlot: {
+    position: "absolute",
+    paddingVertical: 11,
+    paddingHorizontal: 12,
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  hugSlotRight: {
+    alignItems: "flex-end",
+  },
+  hugSlotBottom: {
+    flexDirection: "column-reverse",
+  },
+  hugRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  hugRowRight: {
+    flexDirection: "row-reverse",
+  },
+  hugIconChip: {
+    width: 30,
+    height: 30,
+    borderRadius: 9,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  hugLabel: {
+    color: "#ffffff",
+    fontSize: 10.5,
+    fontWeight: "900",
+    letterSpacing: 1.2,
+    // La etiqueta no puede invadir el hueco del centro: el ancho util es
+    // la mitad exterior de la tarjeta.
+    maxWidth: 96,
+  },
+  hugCircle: {
+    position: "absolute",
+    width: HUG_CIRCLE,
+    height: HUG_CIRCLE,
+    borderRadius: HUG_CIRCLE / 2,
+    borderWidth: 1.5,
+    backgroundColor: "rgba(248,193,92,0.10)",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 1,
+    shadowOpacity: 0.35,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 8 },
+    ...Platform.select({ android: { elevation: 0 }, default: { elevation: 3 } }),
+  },
+  hugCircleCount: {
+    color: "#ffffff",
+    fontSize: 26,
+    fontWeight: "900",
+    lineHeight: 30,
+    marginTop: 2,
+  },
+  hugCircleLabel: {
+    fontSize: 9,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+    marginTop: 1,
   },
   emptyCard: {
     marginTop: 30,
