@@ -69,17 +69,39 @@ function genId(p: string, i: number): string {
     if (story.status !== "published") console.log(`  (${slug} is ${story.status}; seeding anyway, no publish needed)`);
     if (!apply) { console.log(`[dry] ${slug}: ${exs.length} ex`); ok++; continue; }
     const setIds = await prisma.$queryRawUnsafe<{ id: string }[]>(`SELECT id FROM dp_story_practice_sets_v1 WHERE "storyId" = $1`, story.id);
+    // Preserve wordClipUrl/wordVoiceId before wiping: _genWordClips.ts writes
+    // those fields straight to the DB row's payload and NEVER touches this
+    // JSON, so a delete-and-reinsert from the JSON silently zeroed out 273
+    // word-clip pointers on 2026-09-18 (the R2 audio itself was untouched,
+    // but every practice card lost its word audio until reconstructed from
+    // generation logs). Carry forward any wordClipUrl the JSON doesn't have.
+    const existingWordClips = new Map<string, { wordClipUrl?: string; wordVoiceId?: string }>();
+    for (const s of setIds) {
+      const rows = await prisma.$queryRawUnsafe<{ word: string | null; payload: any }[]>(
+        `SELECT word, payload FROM dp_story_practice_exercises_v1 WHERE "setId" = $1 AND type = 'meaning_in_context'`, s.id);
+      for (const r of rows) {
+        const ac = r.payload?.audioClip;
+        if (r.word && ac?.wordClipUrl) existingWordClips.set(r.word, { wordClipUrl: ac.wordClipUrl, wordVoiceId: ac.wordVoiceId });
+      }
+    }
     for (const s of setIds) await prisma.$executeRawUnsafe(`DELETE FROM dp_story_practice_exercises_v1 WHERE "setId" = $1`, s.id);
     await prisma.$executeRawUnsafe(`DELETE FROM dp_story_practice_sets_v1 WHERE "storyId" = $1`, story.id);
     const setId = genId("sps_", 0);
     await prisma.$executeRawUnsafe(`INSERT INTO dp_story_practice_sets_v1 (id, "storyId", locked, "createdAt", "updatedAt") VALUES ($1,$2,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`, setId, story.id);
+    let carried = 0;
     for (let i = 0; i < exs.length; i++) {
       const e = exs[i];
       const featured = e.featured !== false; // default featured unless explicitly false
+      let payload = e.payload;
+      if (e.type === "meaning_in_context" && e.word && !payload?.audioClip?.wordClipUrl) {
+        const prev = existingWordClips.get(e.word);
+        if (prev?.wordClipUrl) { payload = { ...payload, audioClip: { ...payload?.audioClip, ...prev } }; carried++; }
+      }
       await prisma.$executeRawUnsafe(
         `INSERT INTO dp_story_practice_exercises_v1 (id,"setId","orderIndex",type,word,sentence,payload,"audioUrl",featured,language,"createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7::jsonb,NULL,$8,$9,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`,
-        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(e.payload), featured, language);
+        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(payload), featured, language);
     }
+    if (carried) console.log(`  (${slug}: carried forward ${carried} wordClipUrl not present in the JSON)`);
     const featCount = exs.filter((e: any) => e.featured !== false).length;
     console.log(`✓ ${slug}: ${exs.length} ex (${featCount} featured) (set ${setId})`);
     ok++;
