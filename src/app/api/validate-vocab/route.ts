@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { buildApiCorsHeaders } from "@/lib/apiCors";
+import { isStudioRequest } from "@/lib/studioRequestAuth";
 import {
   computeDynamicVocabRange,
   computeSoftMinimum,
@@ -94,6 +95,12 @@ function mergeRepairedVocab(original: unknown, repaired: VocabItem[]): unknown[]
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
   const corsHeaders = buildApiCorsHeaders(origin);
+
+  // Gate (auditoria 2026-09-18): esta ruta paga OpenAI en cada POST y salia
+  // a produccion sin autenticacion. Ver src/lib/studioRequestAuth.ts.
+  if (!(await isStudioRequest(req))) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401, headers: corsHeaders });
+  }
 
   try {
     let body: ValidateVocabBody = {};

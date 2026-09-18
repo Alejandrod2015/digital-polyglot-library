@@ -4,6 +4,7 @@
 // /api/generate-synopsis pipeline. Inherits language/region/level/topic
 // from the parent CatalogBook when the story-level overrides are null.
 
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { auth, currentUser } from "@clerk/nextjs/server";
@@ -52,7 +53,7 @@ export async function POST(req: NextRequest, { params }: Params) {
     const origin = new URL(req.url).origin;
     const res = await fetch(`${origin}/api/generate-synopsis`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Origin: "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         title: story.title,
         language,

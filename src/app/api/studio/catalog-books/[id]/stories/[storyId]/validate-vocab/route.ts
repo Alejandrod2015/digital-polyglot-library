@@ -8,6 +8,7 @@
 //     are null.
 //   - Persists as JSON column (not stringified `vocabRaw`).
 
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { auth, currentUser } from "@clerk/nextjs/server";
@@ -54,7 +55,7 @@ export async function POST(req: NextRequest, { params }: Params) {
     const origin = new URL(req.url).origin;
     const res = await fetch(`${origin}/api/validate-vocab`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Origin: "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         text: story.text,
         language,

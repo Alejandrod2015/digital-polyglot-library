@@ -1,3 +1,4 @@
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
@@ -229,7 +230,7 @@ export async function POST(request: Request) {
     const origin = new URL(request.url).origin;
     const vocabRes = await fetch(`${origin}/api/generate-vocab`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         text: bestText,
         language,

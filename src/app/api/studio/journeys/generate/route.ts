@@ -1,3 +1,4 @@
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
@@ -139,7 +140,7 @@ export async function POST(request: Request) {
 
     const titleRes = await fetch(`${origin}/api/generate-title`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         language: story.journey.language,
         region: detailedRegion || story.journey.variant,
@@ -166,7 +167,7 @@ export async function POST(request: Request) {
       try {
         const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
           method: "POST",
-          headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+          headers: studioInternalHeaders(),
           body: JSON.stringify({
             title,
             language: story.journey.language,

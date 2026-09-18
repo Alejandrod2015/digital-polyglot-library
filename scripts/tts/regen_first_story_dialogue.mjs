@@ -189,8 +189,8 @@ async function regenerateVocab(text, language, variant, cefrLevel, topic) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // generate-vocab gates on Origin via buildSanityCorsHeaders; sanity.io is allowed.
-      "Origin": "https://www.sanity.io",
+      // generate-vocab exige sesion de Studio o el secreto compartido (2026-09-18).
+      "x-dpl-cron-secret": process.env.CRON_SECRET ?? "",
     },
     body: JSON.stringify({
       text, language, variant, cefrLevel, topic,

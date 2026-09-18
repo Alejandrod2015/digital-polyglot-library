@@ -1,3 +1,4 @@
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
     const origin = new URL(request.url).origin;
     const res = await fetch(`${origin}/api/validate-vocab`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         text: story.text,
         language: story.journey.language,

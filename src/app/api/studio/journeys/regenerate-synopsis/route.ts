@@ -1,3 +1,4 @@
+import { studioInternalHeaders } from "@/lib/studioRequestAuth";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
@@ -34,7 +35,7 @@ export async function POST(request: Request) {
     const broadLevel = broadLevelFromCefr(story.level) ?? "intermediate";
     const res = await fetch(`${origin}/api/generate-synopsis`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      headers: studioInternalHeaders(),
       body: JSON.stringify({
         title: story.title,
         language: story.journey.language,
