@@ -70,9 +70,13 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Historias terminadas, de la mas reciente a la mas antigua (el Set conserva
   // el orden de insercion y getCompletedJourneyStoryKeys recorre por fecha desc).
   const completedKeys = await getCompletedJourneyStoryKeys(userId);
-  const completedSlugs = [...completedKeys]
-    .filter((k) => k.startsWith("standalone:"))
-    .map((k) => k.slice("standalone:".length));
+  // Las claves de journey son `standalone:<slug>`; las builds anteriores del
+  // movil mandaban `bookSlug = "standalone-stories"`, que da
+  // `standalone-stories:<slug>`. Las dos son la misma historia.
+  const completedSlugs = [...completedKeys].flatMap((k) => {
+    const m = /^standalone(?:-stories)?:(.+)$/.exec(k);
+    return m ? [m[1]] : [];
+  });
 
   const stories = completedSlugs.length
     ? await prisma.journeyStory.findMany({
