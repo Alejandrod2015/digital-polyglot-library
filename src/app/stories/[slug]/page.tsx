@@ -186,6 +186,23 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
     (polyglotStory ? await getCreateStoryMirrorByStoryIdFresh(polyglotStory.id) : null) ??
     (await getCreateStoryMirrorBySlugFresh(slug));
 
+  // Una historia de Create marcada `public: false` solo la ve su dueño. Hasta
+  // el 2026-09-18 esta página la servía entera a cualquiera que tuviera el
+  // slug (la API `?id=` sí lo comprobaba). La fila se resuelve por slug o,
+  // si solo hay espejo, por el id de Create que guarda el espejo.
+  const ownership =
+    polyglotStory ??
+    (polyglotStoryMirror
+      ? await prisma.userStory.findUnique({
+          where: { id: polyglotStoryMirror.createStoryId },
+          select: { public: true, userId: true },
+        })
+      : null);
+  if (ownership && !ownership.public) {
+    const { userId: viewerId } = await auth();
+    if (!viewerId || viewerId !== ownership.userId) return null;
+  }
+
   if (polyglotStory && polyglotStoryMirror?.slug && polyglotStoryMirror.slug !== slug) {
     return {
       id: polyglotStory.id,
