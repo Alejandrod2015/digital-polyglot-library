@@ -383,7 +383,7 @@ export default function MetricsDashboard() {
   }
 
   function renderActiveSection() {
-    if (section === "overview") return <ResumenView data={data} cohort={cohort} />;
+    if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} />;
     if (section === "engagement") return <EngagementView data={data} />;
     if (section === "funnels") return <FunnelsView data={data} />;
 
@@ -567,6 +567,7 @@ export default function MetricsDashboard() {
   return (
     <StudioShell
       title="Métricas"
+      tone="warm"
       headerAside={filtersForm}
       breadcrumbs={[
         { label: "Studio", href: "/studio" },

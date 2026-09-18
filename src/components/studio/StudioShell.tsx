@@ -12,6 +12,8 @@ type StudioShellProps = {
   breadcrumbs?: { label: string; href?: string }[];
   /** Controles a la derecha del título (filtros de Métricas, por ejemplo). */
   headerAside?: React.ReactNode;
+  /** "warm": paleta ambar de Métricas en la columna de contenido (la barra lateral no cambia). */
+  tone?: "warm";
 };
 
 /* ── Sidebar sections ── */
@@ -179,7 +181,9 @@ export default function StudioShell({
   description,
   breadcrumbs,
   headerAside,
+  tone,
 }: StudioShellProps) {
+  const warm = tone === "warm";
   const pathname = usePathname() ?? "";
   const [testMode, setTestMode] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -433,7 +437,10 @@ export default function StudioShell({
       </button>
 
       {/* ── Main area ── */}
-      <div style={{ marginLeft: sidebarWidth, flex: 1, minWidth: 0, transition: "margin-left 0.18s ease" }}>
+      <div
+        className={warm ? "mx-warm" : undefined}
+        style={{ marginLeft: sidebarWidth, flex: 1, minWidth: 0, transition: "margin-left 0.18s ease" }}
+      >
         {/* Test mode banner */}
         {testMode && (
           <div style={{
@@ -457,24 +464,24 @@ export default function StudioShell({
         <header
           style={{
             padding: "24px 32px 20px",
-            borderBottom: "1px solid var(--card-border)",
+            borderBottom: `1px solid ${warm ? "var(--mx-border)" : "var(--card-border)"}`,
           }}
         >
           {breadcrumbs && breadcrumbs.length > 0 && (
             <div style={{ display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
               {breadcrumbs.map((crumb, i) => (
                 <span key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  {i > 0 && <span style={{ color: "var(--muted)", opacity: 0.5, margin: "0 2px" }}>/</span>}
+                  {i > 0 && <span style={{ color: warm ? "var(--mx-muted-soft)" : "var(--muted)", opacity: 0.5, margin: "0 2px" }}>/</span>}
                   {crumb.href ? (
                     <StudioActionLink
                       href={crumb.href}
                       pendingLabel="Abriendo..."
-                      style={{ fontSize: 13, color: ACCENT, background: "none", border: "none", padding: 0, fontWeight: 500 }}
+                      style={{ fontSize: 13, color: warm ? "var(--mx-accent)" : ACCENT, background: "none", border: "none", padding: 0, fontWeight: 500 }}
                     >
                       {crumb.label}
                     </StudioActionLink>
                   ) : (
-                    <span style={{ fontSize: 13, color: "var(--muted)" }}>{crumb.label}</span>
+                    <span style={{ fontSize: 13, color: warm ? "var(--mx-muted)" : "var(--muted)" }}>{crumb.label}</span>
                   )}
                 </span>
               ))}
@@ -482,7 +489,13 @@ export default function StudioShell({
           )}
           <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
             <div>
-              <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--foreground)" }}>
+              <h1
+                style={
+                  warm
+                    ? { fontSize: 30, fontWeight: 600, margin: 0, color: "var(--mx-fg)", fontFamily: "var(--mx-serif)", letterSpacing: "-0.01em" }
+                    : { fontSize: 22, fontWeight: 700, margin: 0, color: "var(--foreground)" }
+                }
+              >
                 {title}
               </h1>
               {description && (

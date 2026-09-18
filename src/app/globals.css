@@ -1295,6 +1295,105 @@ body {
 .mx-kpi[data-accent="gold"]::before { background: linear-gradient(90deg, var(--mx-gold) 0%, transparent 80%); }
 .mx-kpi[data-accent="gems"]::before { background: linear-gradient(90deg, var(--mx-gems) 0%, transparent 80%); }
 
+/* =========================================================
+ * Tono calido de /studio/metrics (.mx-warm). Redefine los tokens --mx-*
+ * SOLO dentro de la columna de contenido de Metricas; los .jm-* del
+ * Journey Manager y el resto del Studio siguen con el navy/teal de :root.
+ * =======================================================*/
+.mx-warm {
+  --mx-bg-0: #0a0807;
+  --mx-bg-1: #100c0a;
+  --mx-bg-2: #16110d;
+  --mx-bg-3: #241a12;
+  --mx-bg-panel: rgba(255, 255, 255, 0.028);
+  --mx-bg-panel-hi: rgba(255, 255, 255, 0.045);
+  --mx-bg-input: rgba(255, 255, 255, 0.035);
+  --mx-border: rgba(242, 177, 85, 0.12);
+  --mx-border-strong: rgba(242, 177, 85, 0.28);
+  --mx-border-soft: rgba(242, 177, 85, 0.07);
+  --mx-grid: rgba(255, 255, 255, 0.05);
+  --mx-fg: #f2ece5;
+  --mx-fg-soft: #c9b195;
+  --mx-muted: #a68f78;
+  --mx-muted-soft: #6b5c4c;
+  --mx-brand: #f2b155;
+  --mx-accent: #f2b155;
+  --mx-cyan: #fb7185;
+  --mx-xp: #8fd3c1;
+  --mx-gold: #e9c46a;
+  --mx-gems: #8b9dfb;
+  --mx-purple: #8b9dfb;
+  --mx-mint: #8fd3c1;
+  --mx-pos: #8fd3c1;
+  --mx-neg: #fb7185;
+  --mx-warn: #e9c46a;
+  --mx-info: #8b9dfb;
+  --mx-serif: var(--font-fraunces), Georgia, serif;
+  color: var(--mx-fg);
+  background: radial-gradient(90% 60% at 70% -10%, #1c150f 0%, #100c0a 45%, #0c0a09 100%);
+  min-height: 100vh;
+}
+.mx-warm .mx-root { background: transparent; }
+.mx-warm .mx-panel__title { font-family: var(--mx-serif); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.mx-warm .mx-panel__eyebrow,
+.mx-warm .mx-kpi__label,
+.mx-warm .mx-filters__label,
+.mx-warm .mx-fold__eyebrow { font-family: var(--mx-mono); letter-spacing: 0.14em; font-weight: 700; }
+.mx-warm .mx-kpi--hero .mx-kpi__label { color: var(--mx-fg-soft); }
+.mx-warm .mx-kpi { border-radius: 14px; }
+.mx-warm .mx-kpi--hero::before { left: 0; right: 0; opacity: 1; }
+.mx-warm .mx-segmented { border-radius: 9px; padding: 3px; gap: 2px; }
+.mx-warm .mx-segmented__btn { border-radius: 7px; }
+.mx-warm .mx-segmented__btn--active {
+  background: linear-gradient(180deg, #4a3420, #382916);
+  color: var(--mx-fg);
+}
+.mx-warm .mx-btn--primary { color: #1c1410; }
+.mx-warm .mx-live {
+  color: #b9e6da;
+  background: rgba(143, 211, 193, 0.08);
+  border-color: rgba(143, 211, 193, 0.22);
+}
+.mx-warm .mx-live__dot { box-shadow: 0 0 8px var(--mx-pos); }
+.mx-warm .mx-delta { border-radius: 6px; }
+.mx-warm .mx-fold { border-radius: 14px; }
+
+/* Chips de la cabecera de retencion: valor del hito + tooltip al pasar el cursor. */
+.mx-rchip {
+  position: relative; cursor: default;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 9px;
+  background: color-mix(in srgb, var(--rchip) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--rchip) 25%, transparent);
+}
+.mx-rchip__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rchip); }
+.mx-rchip__label { font-size: 11.5px; font-weight: 600; color: color-mix(in srgb, var(--rchip) 70%, var(--mx-fg)); }
+.mx-rchip__value { font-family: var(--mx-mono); font-size: 13px; font-weight: 700; color: var(--mx-fg); }
+.mx-rchip__tip {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 5;
+  width: 260px; padding: 9px 11px; border-radius: 8px;
+  background: var(--mx-bg-3); border: 1px solid color-mix(in srgb, var(--rchip) 50%, transparent);
+  font-size: 11px; line-height: 1.45; color: var(--mx-fg-soft);
+  opacity: 0; pointer-events: none; transition: opacity 0.12s ease;
+}
+.mx-rchip:hover .mx-rchip__tip { opacity: 1; }
+@keyframes mx-rt-pulse {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  70%  { transform: scale(2.8); opacity: 0; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+.mx-rt-pulse { transform-origin: center; transform-box: fill-box; animation: mx-rt-pulse 2.6s ease-out infinite; }
+
+/* Retencion + top de contenido en una fila: el panel a media pantalla y
+ * los plegables a su derecha, en vez de dejar media pantalla vacia. */
+.mx-retention-row { display: flex; gap: 18px; align-items: flex-start; }
+.mx-retention-row > .mx-panel { flex: 0 0 50%; max-width: 50%; min-width: 420px; }
+.mx-retention-row > .mx-fold-row { flex: 1; min-width: 0; grid-template-columns: 1fr; }
+@media (max-width: 1100px) {
+  .mx-retention-row { flex-direction: column; }
+  .mx-retention-row > .mx-panel { flex: none; max-width: none; min-width: 0; width: 100%; }
+}
+
 /* ── Live pill (period range chip in header) ── */
 .mx-live {
   display: inline-flex; align-items: center; gap: 8px;

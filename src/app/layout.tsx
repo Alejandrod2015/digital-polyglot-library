@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
-import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono, Nunito } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
@@ -45,6 +45,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+// Fraunces: serif de los titulos de /studio/metrics (tono calido).
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -102,7 +109,7 @@ export default async function RootLayout({
     >
       <html
         lang="en"
-        className={`${nunito.variable} ${inter.variable} ${jetbrainsMono.variable} bg-[var(--bg-content)]`}
+        className={`${nunito.variable} ${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable} bg-[var(--bg-content)]`}
       >
         <head>
           <meta name="theme-color" content="#0b1e36" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   BarRow,
   EmptyPanel,
@@ -9,74 +9,11 @@ import {
   LangTag,
   fmt,
 } from "./MetricsPrimitives";
-import { deriveInsights } from "./deriveInsights";
 import { RatingsPanel } from "./RatingsPanel";
-import { sparkSeries, toAreaChartData } from "./dailyHelpers";
+import { RetentionPanel } from "./RetentionPanel";
+import { sparkSeries } from "./dailyHelpers";
 import type { DashboardData } from "./types";
 import type { MetricsCohort } from "@/lib/metricsCohort";
-
-/**
- * Una cohorte diaria de altas tal como la trae `/api/metrics/acquisition`
- * en `retentionDaily`. Solo se toman los campos que este archivo usa; el
- * tipo completo (con nombres, ids retenidos, etc.) vive en la página de
- * Adquisición, que es donde se necesitan para el hover de la tabla.
- */
-type RetentionDailyCohort = {
-  start: string;
-  users: number;
-  cells: Array<{ retained: number; pct: number; partial: boolean }>;
-};
-
-/** Un punto de la curva D1/D3/D7, agregado por semana de alta. */
-type RetentionWeekPoint = {
-  weekStart: string;
-  users: number;
-  d1: number | null;
-  d3: number | null;
-  d7: number | null;
-};
-
-/**
- * Agrupa las cohortes DIARIAS de alta por semana (lunes) y calcula el % de
- * cada hito sumando retenidos/elegibles en vez de promediar porcentajes:
- * con cohortes de un puñado de personas, un promedio de promedios deja que
- * un día de una sola alta pese lo mismo que uno de quince.
- */
-function aggregateWeeklyRetention(
-  cohorts: RetentionDailyCohort[]
-): RetentionWeekPoint[] {
-  function mondayOf(iso: string): string {
-    const d = new Date(`${iso}T00:00:00Z`);
-    const day = d.getUTCDay() || 7;
-    d.setUTCDate(d.getUTCDate() - (day - 1));
-    return d.toISOString().slice(0, 10);
-  }
-  const weeks = new Map<
-    string,
-    { users: number; d1u: number; d1r: number; d3u: number; d3r: number; d7u: number; d7r: number }
-  >();
-  for (const c of cohorts) {
-    const week = mondayOf(c.start);
-    const w = weeks.get(week) ?? { users: 0, d1u: 0, d1r: 0, d3u: 0, d3r: 0, d7u: 0, d7r: 0 };
-    w.users += c.users;
-    const d1 = c.cells[1];
-    const d3 = c.cells[3];
-    const d7 = c.cells[7];
-    if (d1 && !d1.partial) { w.d1u += c.users; w.d1r += d1.retained; }
-    if (d3 && !d3.partial) { w.d3u += c.users; w.d3r += d3.retained; }
-    if (d7 && !d7.partial) { w.d7u += c.users; w.d7r += d7.retained; }
-    weeks.set(week, w);
-  }
-  return [...weeks.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([weekStart, w]) => ({
-      weekStart,
-      users: w.users,
-      d1: w.d1u > 0 ? Math.round((w.d1r / w.d1u) * 1000) / 10 : null,
-      d3: w.d3u > 0 ? Math.round((w.d3r / w.d3u) * 1000) / 10 : null,
-      d7: w.d7u > 0 ? Math.round((w.d7r / w.d7u) * 1000) / 10 : null,
-    }));
-}
 
 /**
  * The three primary views (Resumen, Engagement, Funnels) of the
@@ -90,9 +27,11 @@ function aggregateWeeklyRetention(
 export function ResumenView({
   data,
   cohort,
+  rangeLabel,
 }: {
   data: DashboardData;
   cohort: MetricsCohort;
+  rangeLabel: string;
 }) {
   const k = data.kpis;
   const p = data.prevKpis;
@@ -107,41 +46,6 @@ export function ResumenView({
   const sparkCr = useMemo(
     () => sparkSeries(data.daily, "completionRate"),
     [data.daily]
-  );
-
-  const days = data.range.days;
-  const [retentionDaily, setRetentionDaily] = useState<RetentionDailyCohort[] | null>(null);
-  const [retentionLoading, setRetentionLoading] = useState(true);
-  const [retentionError, setRetentionError] = useState<string | null>(null);
-  const [retentionPlatform, setRetentionPlatform] = useState<"all" | "web" | "ios" | "android">("all");
-  const [retentionOpen, setRetentionOpen] = useState(true);
-
-  useEffect(() => {
-    let cancelled = false;
-    setRetentionLoading(true);
-    setRetentionError(null);
-    fetch(`/api/metrics/acquisition?days=${days}&cohort=${cohort}&platform=${retentionPlatform}`)
-      .then(async (r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then((j: { retentionDaily?: { cohorts: RetentionDailyCohort[] } }) => {
-        if (!cancelled) setRetentionDaily(j.retentionDaily?.cohorts ?? []);
-      })
-      .catch((e) => {
-        if (!cancelled) setRetentionError(e instanceof Error ? e.message : "error");
-      })
-      .finally(() => {
-        if (!cancelled) setRetentionLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [days, cohort, retentionPlatform]);
-
-  const weeklyRetention = useMemo(
-    () => (retentionDaily ? aggregateWeeklyRetention(retentionDaily) : []),
-    [retentionDaily]
   );
 
   const maxStoryMinutes =
@@ -257,89 +161,8 @@ export function ResumenView({
         />
       </div>
 
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div
-            onClick={() => setRetentionOpen((v) => !v)}
-            style={{ display: "flex", alignItems: "flex-start", gap: 8, cursor: "pointer" }}
-          >
-            <span
-              style={{
-                color: "var(--mx-muted)",
-                fontSize: 10,
-                marginTop: 5,
-                transform: retentionOpen ? "rotate(90deg)" : undefined,
-                transition: "transform 0.15s",
-              }}
-            >
-              ▸
-            </span>
-            <div>
-              <div className="mx-panel__eyebrow">Retención total</div>
-              <h3 className="mx-panel__title">Vuelven, por semana de alta</h3>
-            </div>
-          </div>
-          <div className="mx-legend">
-            <div className="mx-segmented">
-              {(
-                [
-                  { key: "all" as const, label: "Todos" },
-                  { key: "web" as const, label: "Web" },
-                  { key: "ios" as const, label: "iOS" },
-                  { key: "android" as const, label: "Android" },
-                ]
-              ).map((option) => (
-                <button
-                  type="button"
-                  key={option.key}
-                  onClick={() => setRetentionPlatform(option.key)}
-                  className={
-                    retentionPlatform === option.key
-                      ? "mx-segmented__btn mx-segmented__btn--active"
-                      : "mx-segmented__btn"
-                  }
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-            <span className="mx-legend__divider" />
-            <span className="mx-legend__item">
-              <span className="mx-legend__dot" style={{ background: "var(--mx-accent)" }} />{" "}
-              D1
-            </span>
-            <span className="mx-legend__item">
-              <span className="mx-legend__dot" style={{ background: "var(--mx-cyan)" }} />{" "}
-              D3
-            </span>
-            <span className="mx-legend__item">
-              <span className="mx-legend__dot" style={{ background: "var(--mx-gems)" }} />{" "}
-              D7
-            </span>
-            <span className="mx-legend__divider" />
-            <span className="mx-panel__hint">
-              {retentionError
-                ? `error: ${retentionError}`
-                : retentionLoading
-                  ? "cargando…"
-                  : `cohortes: altas en ${days}d`}
-            </span>
-          </div>
-        </div>
-        {retentionOpen && (
-          <>
-            <RetentionTrendChart weeks={weeklyRetention} height={280} />
-            <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)", lineHeight: 1.5 }}>
-              Cada punto es el % de esa cohorte semanal que seguía dando señal
-              el día 1, 3 o 7 (o después). El tamaño del punto crece con el
-              número de altas de esa semana; un hito solo se pinta cuando toda
-              la cohorte ya tuvo tiempo de cumplirlo. Detalle completo, con el
-              desglose diario y quién compone cada porcentaje, en la pestaña
-              Adquisición.
-            </p>
-          </>
-        )}
-      </div>
+      <div className="mx-retention-row">
+        <RetentionPanel days={data.range.days} cohort={cohort} rangeLabel={rangeLabel} />
 
       <div className="mx-fold-row">
         <details className="mx-fold">
@@ -422,138 +245,8 @@ export function ResumenView({
           </div>
         </details>
       </div>
-    </div>
-  );
-}
-
-/**
- * Curva D1/D3/D7 por semana de alta. Mismo trazado suave que `AreaChart`
- * (curvas de Bézier entre puntos, viewBox de 1000 de ancho) pero con tres
- * series en vez de dos y sin relleno de área: con cohortes de un puñado de
- * personas por semana, tres áreas superpuestas se leen peor que tres líneas.
- * El radio de cada punto crece con las altas de esa semana para no esconder
- * que una cohorte de una persona pesa lo mismo en el trazo que una de quince.
- */
-function RetentionTrendChart({
-  weeks,
-  height = 280,
-}: {
-  weeks: RetentionWeekPoint[];
-  height?: number;
-}) {
-  if (weeks.length < 2) {
-    return (
-      <div
-        style={{
-          height,
-          display: "grid",
-          placeItems: "center",
-          color: "var(--mx-muted)",
-          fontSize: 12,
-        }}
-      >
-        Todavía no hay suficientes semanas de altas para trazar la curva.
       </div>
-    );
-  }
-
-  const padding = { top: 16, right: 16, bottom: 28, left: 36 };
-  const w = 1000;
-  const h = height;
-  const innerW = w - padding.left - padding.right;
-  const innerH = h - padding.top - padding.bottom;
-  const stepX = innerW / (weeks.length - 1 || 1);
-  const maxUsers = Math.max(...weeks.map((wk) => wk.users), 1);
-
-  const xAt = (i: number) => padding.left + i * stepX;
-  const yAt = (pct: number) => padding.top + innerH - (pct / 100) * innerH;
-  const radiusAt = (users: number) => 3 + Math.sqrt(users / maxUsers) * 4;
-
-  const series: Array<{ key: "d1" | "d3" | "d7"; color: string }> = [
-    { key: "d1", color: "var(--mx-accent)" },
-    { key: "d3", color: "var(--mx-cyan)" },
-    { key: "d7", color: "var(--mx-gems)" },
-  ];
-
-  const yTicks = [0, 25, 50, 75, 100];
-  const xTickEvery = Math.max(1, Math.floor(weeks.length / 7));
-
-  return (
-    <svg
-      viewBox={`0 0 ${w} ${h}`}
-      width="100%"
-      height={h}
-      preserveAspectRatio="none"
-      style={{ display: "block" }}
-      role="img"
-      aria-label="Retención D1, D3 y D7 por semana de alta"
-    >
-      {yTicks.map((v) => (
-        <g key={v}>
-          <line
-            x1={padding.left}
-            x2={w - padding.right}
-            y1={yAt(v)}
-            y2={yAt(v)}
-            stroke="var(--mx-border, rgba(255,255,255,0.10))"
-          />
-          <text
-            x={padding.left - 8}
-            y={yAt(v) + 3}
-            textAnchor="end"
-            fontSize={10}
-            fill="var(--mx-muted)"
-          >
-            {v}%
-          </text>
-        </g>
-      ))}
-
-      {weeks.map((wk, i) =>
-        i % xTickEvery === 0 ? (
-          <text
-            key={wk.weekStart}
-            x={xAt(i)}
-            y={h - 8}
-            textAnchor="middle"
-            fontSize={10}
-            fill="var(--mx-muted)"
-          >
-            {wk.weekStart.slice(5)}
-          </text>
-        ) : null
-      )}
-
-      {series.map(({ key, color }) => {
-        const pts = weeks
-          .map((wk, i) => ({ i, v: wk[key] }))
-          .filter((p): p is { i: number; v: number } => p.v !== null);
-        if (pts.length === 0) return null;
-        let path = `M${xAt(pts[0].i)},${yAt(pts[0].v)}`;
-        for (let j = 0; j < pts.length - 1; j++) {
-          const a = pts[j];
-          const b = pts[j + 1];
-          const mx = (xAt(a.i) + xAt(b.i)) / 2;
-          path += ` C${mx},${yAt(a.v)} ${mx},${yAt(b.v)} ${xAt(b.i)},${yAt(b.v)}`;
-        }
-        return (
-          <g key={key}>
-            {pts.length > 1 && (
-              <path d={path} fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" />
-            )}
-            {pts.map((p) => (
-              <circle
-                key={p.i}
-                cx={xAt(p.i)}
-                cy={yAt(p.v)}
-                r={radiusAt(weeks[p.i].users)}
-                fill={color}
-              />
-            ))}
-          </g>
-        );
-      })}
-    </svg>
+    </div>
   );
 }
 
