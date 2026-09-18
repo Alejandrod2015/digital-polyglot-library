@@ -170,6 +170,7 @@ import {
   saveLocalFavorites,
   syncFavoritesFromServer,
   updateFavoriteReviewOnServer,
+  fetchPracticePoolFromServer,
   type MobileFavoriteItem,
 } from "./vocabFavorites";
 import {
@@ -5889,9 +5890,46 @@ export function MobileLibraryShell(args: {
     );
   }, [favoriteWords, activeJourneyLanguage, activeJourney]);
 
+  // Pool de practica que NO depende de guardar palabras (2026-09-18): el
+  // vocabulario de las ultimas historias terminadas del idioma, mas las
+  // palabras de historia que ya llevan repaso. Los favoritos van por delante
+  // y ganan por palabra. Antes el hub solo practicaba favoritos y la mitad de
+  // los lectores no guarda ninguno (scripts/_practiceFunnel.ts).
+  const [curriculumWords, setCurriculumWords] = useState<MobileFavoriteItem[]>([]);
+  const [curriculumRefresh, setCurriculumRefresh] = useState(0);
+  const poolLanguage = (activeJourneyLanguage ?? activeJourney?.language ?? "").trim();
+  useEffect(() => {
+    if (!sessionToken || !poolLanguage) {
+      setCurriculumWords([]);
+      return;
+    }
+    let cancelled = false;
+    fetchPracticePoolFromServer(sessionToken, poolLanguage)
+      .then((items) => {
+        if (!cancelled) setCurriculumWords(items);
+      })
+      .catch(() => {
+        // Sin red: el hub sigue con los favoritos, como siempre.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionToken, poolLanguage, curriculumRefresh, favoriteWords.length]);
+
+  const practicePoolWords = useMemo(() => {
+    const saved = new Set(journeyScopedFavoriteWords.map((w) => normalizePracticeWord(w.word)));
+    const lang = poolLanguage.toLowerCase();
+    const extra = curriculumWords.filter(
+      (w) =>
+        !saved.has(normalizePracticeWord(w.word)) &&
+        (!lang || (w.language ?? "").trim().toLowerCase() === lang)
+    );
+    return [...journeyScopedFavoriteWords, ...extra];
+  }, [journeyScopedFavoriteWords, curriculumWords, poolLanguage]);
+
   const duePracticeItems = useMemo(
-    () => sortPracticeItemsByOnboarding(getDuePracticeItems(buildPracticeFavorites(journeyScopedFavoriteWords)), onboardingPracticePrefs, true),
-    [journeyScopedFavoriteWords, onboardingPracticePrefs]
+    () => sortPracticeItemsByOnboarding(getDuePracticeItems(buildPracticeFavorites(practicePoolWords)), onboardingPracticePrefs, true),
+    [practicePoolWords, onboardingPracticePrefs]
   );
 
   // Words scheduled to come back within the next hour (a just-failed word is
@@ -5903,7 +5941,7 @@ export function MobileLibraryShell(args: {
     const windowMs = 60 * 60 * 1000;
     let count = 0;
     let soonest = Infinity;
-    for (const w of journeyScopedFavoriteWords) {
+    for (const w of practicePoolWords) {
       if (!w.nextReviewAt) continue;
       const t = Date.parse(w.nextReviewAt);
       if (!Number.isFinite(t) || t <= now || t - now > windowMs) continue;
@@ -5912,17 +5950,17 @@ export function MobileLibraryShell(args: {
     }
     const minutes = soonest === Infinity ? null : Math.max(1, Math.round((soonest - now) / 60000));
     return { count, minutes };
-  }, [journeyScopedFavoriteWords]);
+  }, [practicePoolWords]);
 
   const recommendedPracticeMode = useMemo<PracticeModeKey>(() => {
-    const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(journeyScopedFavoriteWords));
+    const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(practicePoolWords));
     const personalized = getRecommendedPracticeModeFromOnboarding(
-      buildPracticeFavorites(journeyScopedFavoriteWords),
+      buildPracticeFavorites(practicePoolWords),
       base,
       onboardingPracticePrefs
     );
     return personalized;
-  }, [journeyScopedFavoriteWords, onboardingPracticePrefs]);
+  }, [practicePoolWords, onboardingPracticePrefs]);
 
   const recommendedPracticeLabel =
     PRACTICE_MODE_CARDS.find((card) => card.key === recommendedPracticeMode)?.title ?? "Meaning";
@@ -8506,7 +8544,7 @@ export function MobileLibraryShell(args: {
     }
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
-    const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+    const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(practicePoolWords);
     // Si el usuario pidió un session de review (review=true) pero los
     // dues actuales no son suficientes para construir ejercicios de
     // este modo (ej.: match necesita 4 candidatos y solo hay 3 dues,
@@ -8543,7 +8581,7 @@ export function MobileLibraryShell(args: {
     // palabras de la ronda solo para que haya distractores.
     if (exercises.length === 0 && overrideItems && overrideItems.length > 0) {
       const distractorPool =
-        practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+        practiceSeedItems ?? buildPracticeFavorites(practicePoolWords);
       const withPool = buildExercisesWithDistractors(
         overrideItems,
         distractorPool,
@@ -9994,7 +10032,7 @@ export function MobileLibraryShell(args: {
    */
   const replaceSpeakingWithContext = useCallback(
     (exercise: PracticeSpeakingExercise) => {
-      const pool = practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+      const pool = practiceSeedItems ?? buildPracticeFavorites(practicePoolWords);
       const target = pool.find(
         (item) => normalizePracticeWord(item.word) === normalizePracticeWord(exercise.word)
       );
@@ -10020,7 +10058,7 @@ export function MobileLibraryShell(args: {
         return next;
       });
     },
-    [journeyScopedFavoriteWords, onboardingPracticePrefs, practiceSeedItems]
+    [practicePoolWords, onboardingPracticePrefs, practiceSeedItems]
   );
 
   /**
@@ -12828,6 +12866,8 @@ export function MobileLibraryShell(args: {
       // refetch is only for instant visual feedback.
       if (eventType === "audio_complete" && activeJourneyLanguage) {
         void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
+        // Y el pool del hub: la historia recien terminada entra en Practice.
+        setCurriculumRefresh((n) => n + 1);
       }
     } catch (error) {
       console.error("[mobile reader] failed to track reader event", error);
@@ -13044,6 +13084,65 @@ export function MobileLibraryShell(args: {
                 lastReviewedAt: nowIso,
                 streak: next.streak,
               };
+              try {
+                await updateFavoriteReviewOnServer(sessionToken, payload);
+              } catch {
+                unsent.push(payload);
+              }
+            })
+          );
+          if (unsent.length > 0 && sessionUserId) {
+            await enqueuePendingReviews(sessionUserId, unsent);
+          }
+        }
+      }
+
+      // Palabras del pool de historias terminadas (no guardadas): mismo repaso
+      // que un favorito, pero la fila del servidor nace aqui, en el primer
+      // repaso, con origen "curriculum". El estado local se actualiza igual
+      // para que el anillo baje al momento y no espere a la siguiente carga.
+      const savedKeys = new Set(favoriteWords.map((item) => normalizePracticeWord(item.word)));
+      const reviewableCurriculum = curriculumWords.filter(
+        (item) =>
+          !savedKeys.has(normalizePracticeWord(item.word)) &&
+          Object.prototype.hasOwnProperty.call(practiceReviewScores, normalizePracticeWord(item.word))
+      );
+      if (reviewableCurriculum.length > 0) {
+        const nowIso = new Date().toISOString();
+        const reviewed = new Map<string, MobileFavoriteItem>();
+        const payloads: PendingReview[] = [];
+        for (const item of reviewableCurriculum) {
+          const reviewScore = practiceReviewScores[normalizePracticeWord(item.word)];
+          if (!reviewScore) continue;
+          const next = computeNextReview(reviewScore, item.streak ?? 0);
+          const nextReviewAt = new Date(next.nextReviewAt).toISOString();
+          reviewed.set(normalizePracticeWord(item.word), {
+            ...item,
+            nextReviewAt,
+            lastReviewedAt: nowIso,
+            streak: next.streak,
+          });
+          payloads.push({
+            word: item.word,
+            nextReviewAt,
+            lastReviewedAt: nowIso,
+            streak: next.streak,
+            translation: item.translation,
+            wordType: item.wordType ?? null,
+            exampleSentence: item.exampleSentence ?? null,
+            storySlug: item.storySlug ?? null,
+            storyTitle: item.storyTitle ?? null,
+            sourcePath: item.sourcePath ?? null,
+            language: item.language ?? null,
+          });
+        }
+        setCurriculumWords((current) =>
+          current.map((item) => reviewed.get(normalizePracticeWord(item.word)) ?? item)
+        );
+        if (sessionToken) {
+          const unsent: PendingReview[] = [];
+          await Promise.all(
+            payloads.map(async (payload) => {
               try {
                 await updateFavoriteReviewOnServer(sessionToken, payload);
               } catch {
@@ -14544,7 +14643,10 @@ export function MobileLibraryShell(args: {
   // necesita metadata de cada Favorite (storySlug → topic). Se va a
   // resolver en una iteración siguiente; por ahora "Your saved words"
   // funciona como fallback honesto.
-  const orbitTopicLabel = "Your saved words";
+  // Con palabras de historias terminadas en el pool, "Your saved words" ya no
+  // describe de donde sale la sesion.
+  const orbitTopicLabel =
+    practicePoolWords.length > journeyScopedFavoriteWords.length ? "Your stories" : "Your saved words";
 
   // `orbitUpNextWords` removido: el card "Up Next" se sacó de la
   // pantalla Practice para que todo el contenido entre sin scroll.
@@ -14640,7 +14742,7 @@ export function MobileLibraryShell(args: {
             </View>
           ) : null}
           <PracticeOrbit
-            topicLabel={favoriteWords.length === 0 ? null : orbitTopicLabel}
+            topicLabel={practicePoolWords.length === 0 ? null : orbitTopicLabel}
             totalDue={duePracticeItems.length}
             xpReward={12}
             modeBreakdown={orbitModeBreakdown}
@@ -14652,7 +14754,7 @@ export function MobileLibraryShell(args: {
             hasProgressData={Boolean(remoteProgress?.gamification)}
             onStart={() => void openPracticeMode("mixed", true)}
             onPickSkill={(mode) => void openPracticeMode(mode, true)}
-            emptyState={favoriteWords.length === 0}
+            emptyState={practicePoolWords.length === 0}
             onEmptyTap={() => setSaveWordsHintVisible(true)}
             reviewSoonCount={reviewSoon.count}
             reviewSoonMinutes={reviewSoon.minutes}
@@ -22093,11 +22195,11 @@ export function MobileLibraryShell(args: {
             />
             <View style={styles.tourTitleRow}>
               <JourneyIcon size={20} color="#f8c15c" />
-              <Text style={styles.tourTitle}>No saved words yet</Text>
+              <Text style={styles.tourTitle}>Nothing to practice yet</Text>
             </View>
             <Text style={styles.tourBody}>
-              On the Journey tab, open a story, listen, and tap a word to save it. Your
-              saved words show up in Favorites and Practice.
+              On the Journey tab, open a story and listen to the end: its words come here
+              to practice. Tap any word while reading to save it to Favorites too.
             </Text>
             <View style={styles.tourActionsRow}>
               <Pressable onPress={() => setSaveWordsHintVisible(false)} hitSlop={8}>

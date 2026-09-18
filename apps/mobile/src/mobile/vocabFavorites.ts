@@ -121,6 +121,24 @@ export async function syncFavoritesFromServer(
   });
 }
 
+/**
+ * El pool de practica que no depende de guardar: vocabulario de las ultimas
+ * historias TERMINADAS del idioma, mas las palabras de historia que ya llevan
+ * repaso. Nunca trae favoritos de verdad; esos vienen de syncFavoritesFromServer
+ * y van por delante. Ver /api/mobile/practice/pool.
+ */
+export async function fetchPracticePoolFromServer(
+  sessionToken: string,
+  language: string
+): Promise<MobileFavoriteItem[]> {
+  const payload = await apiFetch<{ items: MobileFavoriteItem[] }>({
+    baseUrl: mobileConfig.apiBaseUrl,
+    path: `/api/mobile/practice/pool?language=${encodeURIComponent(language)}`,
+    token: sessionToken,
+  });
+  return Array.isArray(payload.items) ? payload.items : [];
+}
+
 export async function addFavoriteOnServer(
   sessionToken: string,
   item: MobileFavoriteItem
@@ -154,6 +172,15 @@ export async function updateFavoriteReviewOnServer(
     nextReviewAt: string;
     lastReviewedAt: string;
     streak: number;
+    /** Para una palabra del pool de historias (sin fila todavia): con esto el
+     *  servidor crea la fila "curriculum" que lleva su repaso. */
+    translation?: string | null;
+    wordType?: string | null;
+    exampleSentence?: string | null;
+    storySlug?: string | null;
+    storyTitle?: string | null;
+    sourcePath?: string | null;
+    language?: string | null;
   }
 ): Promise<void> {
   await apiFetch({

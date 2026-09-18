@@ -297,7 +297,7 @@ export async function GET(
       }),
       prisma.billingEntitlement.findUnique({ where: { userId } }),
       prisma.favorite.findMany({
-        where: { userId },
+        where: { userId, origin: "user" },
         orderBy: { createdAt: "desc" },
         take: 12,
         select: {
@@ -310,7 +310,7 @@ export async function GET(
           streak: true,
         },
       }),
-      prisma.favorite.count({ where: { userId } }),
+      prisma.favorite.count({ where: { userId, origin: "user" } }),
       prisma.favoriteCollection.count({ where: { userId } }),
       prisma.libraryStory.count({ where: { userId } }),
       prisma.libraryBook.count({ where: { userId } }),

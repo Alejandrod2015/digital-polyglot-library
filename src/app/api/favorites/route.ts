@@ -105,7 +105,9 @@ function isFavoriteReviewBody(x: unknown): x is FavoriteReviewBody {
 const getFavoritesCached = unstable_cache(
   async (userId: string) =>
     prisma.favorite.findMany({
-      where: { userId },
+      // Solo lo que el usuario guardo: las filas "curriculum" llevan el repaso
+      // de palabras de historias terminadas y no son favoritos.
+      where: { userId, origin: "user" },
       orderBy: { createdAt: "desc" },
     }),
   ["favorites-by-user"],
@@ -279,6 +281,9 @@ export async function POST(req: NextRequest): Promise<Response> {
             storyTitle: storyTitle ?? null,
             sourcePath: sourcePath ?? null,
             language: language ?? null,
+            // Guardar a mano una palabra que solo llevaba repaso de historia
+            // la convierte en favorito de verdad; el repaso se conserva.
+            origin: "user",
           },
         })
       : await prisma.favorite.create({

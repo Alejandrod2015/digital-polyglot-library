@@ -351,7 +351,7 @@ export const getProgressPayloadCached = unstable_cache(
       safeQuery(
         "favorite",
         prisma.favorite.count({
-          where: { userId },
+          where: { userId, origin: "user" },
         }),
         0
       ),
@@ -371,6 +371,7 @@ export const getProgressPayloadCached = unstable_cache(
         prisma.favorite.count({
           where: {
             userId,
+            origin: "user",
             createdAt: {
               gte: dayStart,
             },

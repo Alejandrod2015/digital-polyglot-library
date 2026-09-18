@@ -506,9 +506,15 @@ model Favorite {
   nextReviewAt    DateTime?
   lastReviewedAt  DateTime?
   streak          Int       @default(0)
+  // "user": la guardo el usuario tocando la palabra (sale en Favorites).
+  // "curriculum": vocabulario de una historia TERMINADA que el usuario
+  // practico sin guardarla; la fila existe solo para llevar su repaso (FSRS)
+  // y no aparece en Favorites. Guardarla a mano la pasa a "user".
+  origin          String    @default("user")
 
   @@unique([userId, word], name: "userId_word")
   @@index([userId])
+  @@index([userId, origin])
 }
 
 // User-defined favorite collections. Same shape as the mobile-side

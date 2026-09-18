@@ -23,6 +23,15 @@ export type PendingReview = {
   /** Momento REAL del repaso. Es la clave del orden de reproducción. */
   lastReviewedAt: string;
   streak: number;
+  /** Solo en palabras del pool de historias (sin fila en el servidor): con
+   *  esto el servidor crea la fila "curriculum" que lleva el repaso. */
+  translation?: string | null;
+  wordType?: string | null;
+  exampleSentence?: string | null;
+  storySlug?: string | null;
+  storyTitle?: string | null;
+  sourcePath?: string | null;
+  language?: string | null;
 };
 
 function queuePath(userId: string): string {

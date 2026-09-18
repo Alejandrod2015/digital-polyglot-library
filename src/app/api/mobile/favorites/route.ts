@@ -26,6 +26,15 @@ type FavoriteReviewBody = {
   nextReviewAt: string;
   lastReviewedAt: string;
   streak: number;
+  /** Solo para palabras de historia (pool) que aun no tienen fila: con estos
+   *  campos se crea una fila `origin = "curriculum"` que lleve su repaso. */
+  translation?: string | null;
+  wordType?: string | null;
+  exampleSentence?: string | null;
+  storySlug?: string | null;
+  storyTitle?: string | null;
+  sourcePath?: string | null;
+  language?: string | null;
 };
 
 function isFavoriteBody(value: unknown): value is FavoriteBody {
@@ -65,7 +74,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const favorites = await prisma.favorite.findMany({
-    where: { userId: session.sub },
+    // Solo lo guardado a mano. Las filas "curriculum" (repaso de palabras de
+    // historias terminadas) las sirve /api/mobile/practice/pool.
+    where: { userId: session.sub, origin: "user" },
     orderBy: [{ createdAt: "desc" }],
     select: {
       word: true,
@@ -317,6 +328,9 @@ export async function POST(req: NextRequest): Promise<Response> {
           storyTitle: json.storyTitle ?? null,
           sourcePath: json.sourcePath ?? null,
           language: json.language ?? null,
+          // Guardar a mano una palabra que solo llevaba repaso de historia
+          // la convierte en favorito de verdad; el repaso se conserva.
+          origin: "user",
         },
       })
     : await prisma.favorite.create({
@@ -378,7 +392,33 @@ export async function PATCH(req: NextRequest): Promise<Response> {
   });
 
   if (!existing) {
-    return NextResponse.json({ error: "Favorite not found" }, { status: 404 });
+    // Palabra del pool de historias terminadas que se practica por primera
+    // vez: nace una fila "curriculum" para llevar su repaso. No es un
+    // favorito y no sale en Favorites. Sin traduccion no hay con que crearla.
+    if (typeof json.translation !== "string" || !json.translation.trim()) {
+      return NextResponse.json({ error: "Favorite not found" }, { status: 404 });
+    }
+    const created = await prisma.favorite.create({
+      data: {
+        userId: session.sub,
+        word: json.word,
+        translation: json.translation,
+        wordType: normalizeVocabType(json.wordType ?? null, {
+          word: json.word,
+          definition: json.translation,
+        }),
+        exampleSentence: extractExampleSentence(json.exampleSentence ?? null, json.word),
+        storySlug: json.storySlug ?? null,
+        storyTitle: json.storyTitle ?? null,
+        sourcePath: json.sourcePath ?? null,
+        language: json.language ?? null,
+        origin: "curriculum",
+        nextReviewAt: parsedNext,
+        lastReviewedAt: parsedLast,
+        streak: Math.max(0, Math.floor(json.streak)),
+      },
+    });
+    return NextResponse.json(created);
   }
 
   const favorite = await prisma.favorite.update({

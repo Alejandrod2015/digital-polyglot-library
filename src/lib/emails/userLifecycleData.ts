@@ -93,7 +93,7 @@ async function resolveLanguageCandidates(userId: string): Promise<string[]> {
   // 2. By saved-word language.
   try {
     const rows = await prisma.favorite.findMany({
-      where: { userId, language: { not: null } },
+      where: { userId, origin: "user", language: { not: null } },
       select: { language: true },
     });
     const counts = new Map<string, number>();
@@ -116,7 +116,7 @@ async function resolveVocab(
 ): Promise<{ all: VocabItem[]; weekWords: string[] }> {
   try {
     const rows = await prisma.favorite.findMany({
-      where: { userId },
+      where: { userId, origin: "user" },
       select: { word: true, translation: true, createdAt: true },
       orderBy: { createdAt: "desc" },
       take: 30,
