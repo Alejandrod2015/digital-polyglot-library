@@ -58,6 +58,17 @@ export default function AppShell({
     return <>{children}</>;
   }
 
+  // Version poller on EVERY branch, not only the signed-in shell (2026-09-18).
+  // The landing and /sign-in are exactly the pages a tab sits on across a
+  // deploy. Signing in from a stale bundle calls Clerk's server action
+  // `invalidateCacheAction` with an action id the new build no longer has,
+  // Next throws UnrecognizedActionError and the user lands on the "Application
+  // error" screen on /auth/post-login; a manual refresh fixed it every time.
+  // Reloading the stale tab before the user acts removes the failure.
+  const versionRefresh = (
+    <ServiceWorkerBootstrap currentVersion={currentVersion} sidebarOffset={false} />
+  );
+
   if (isMarketingView) {
     // Marketing views (guest home, /beta, /blog/*) render their own chrome
     // and skip the app shell. They still need analytics + the consent
@@ -67,6 +78,7 @@ export default function AppShell({
     return (
       <>
         {children}
+        {versionRefresh}
         <Suspense fallback={null}>
           <GA4Tracker requiresConsentOptIn={requiresConsentOptIn} />
         </Suspense>
@@ -80,9 +92,12 @@ export default function AppShell({
 
   if (isAuthFlowView) {
     return (
-      <main className="no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 px-1 py-6 overflow-y-auto bg-[var(--bg-content)]">
-        {children}
-      </main>
+      <>
+        {versionRefresh}
+        <main className="no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 px-1 py-6 overflow-y-auto bg-[var(--bg-content)]">
+          {children}
+        </main>
+      </>
     );
   }
 
