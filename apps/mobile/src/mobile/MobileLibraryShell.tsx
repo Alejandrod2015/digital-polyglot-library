@@ -12646,7 +12646,12 @@ export function MobileLibraryShell(args: {
       if (preferences.preferredRegion && bookRegion === preferences.preferredRegion) score += 2;
       if (
         preferences.preferredVariant &&
-        (bookRegion === formatVariantLabel(preferences.preferredVariant) ||
+        // Comparado por FAMILIA de region (regionFamily), no por label
+        // formateada: comparar labels se rompio en silencio el 2026-09-19
+        // cuando "latam" paso de mostrar "LATAM" a "Latam (Neutral)"
+        // (TAXONOMIA_variantes_latam). regionFamily pliega "latam"/
+        // "latam-multi"/paises igual que el filtro real de variante.
+        (regionFamily(book.variant ?? book.region ?? "") === regionFamily(preferences.preferredVariant) ||
           String(book.variant ?? "").toLowerCase() === preferences.preferredVariant.toLowerCase())
       ) {
         score += 2;

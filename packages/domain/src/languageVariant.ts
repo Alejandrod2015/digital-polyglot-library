@@ -137,6 +137,17 @@ const LATAM_TOPIC_COUNTRY: Record<string, LanguageVariant> = {
   "fluency-and-forgetting": "colombia",
   "partners-and-in-laws": "argentina",
   "tales-and-tall-stories": "colombia",
+  // Cultural (A0): siete festividades, un pais por tema, leido de las
+  // historias (confirmado por el planificador, TAXONOMIA_variantes_latam,
+  // 2026-09-19). "christmas-and-posadas" repite CDMX con
+  // "valentines-and-romance"; no es error de tipeo.
+  "carnival-and-parades": "colombia", // Barranquilla
+  "valentines-and-romance": "mexico", // CDMX
+  "easter-and-processions": "peru", // Ayacucho
+  "solstice-and-sun": "peru", // Cusco
+  "day-of-the-dead": "mexico", // Oaxaca
+  "christmas-and-posadas": "mexico", // CDMX
+  "new-year-and-goodbyes": "colombia", // Medellín
 };
 
 /**
@@ -148,11 +159,15 @@ export function topicCountryVariant(
   journeyVariant?: string | null,
   topicSlug?: string | null
 ): LanguageVariant | null {
-  // 2026-09-19: el badge de pais por tema es cosa de los tours pan-regionales
-  // ("latam-multi"), no de "latam" neutral. Los 6 journeys que llevaban este
-  // mapa hoy migran su Journey.variant a "latam-multi"; ver
-  // TAXONOMIA_variantes_latam.
-  if ((journeyVariant ?? "").trim().toLowerCase() !== "latam-multi") return null;
+  // 2026-09-19 (TAXONOMIA_variantes_latam): el badge de pais por tema es cosa
+  // de los tours pan-regionales. Durante la TRANSICION acepta "latam" Y
+  // "latam-multi": los 6 journeys siguen con Journey.variant="latam" en BD
+  // hasta el flip (scripts/migrateLatamMulti.ts --post-deploy), y nada debe
+  // depender de en que orden se comitea esto contra journeyTopicOrder.ts. En
+  // el flip, quitar "latam" de esta condicion (el sentido neutro no lleva
+  // badge de pais).
+  const v = (journeyVariant ?? "").trim().toLowerCase();
+  if (v !== "latam" && v !== "latam-multi") return null;
   const key = (topicSlug ?? "").trim().toLowerCase();
   return LATAM_TOPIC_COUNTRY[key] ?? null;
 }
