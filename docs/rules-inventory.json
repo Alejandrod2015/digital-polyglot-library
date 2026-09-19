@@ -411,6 +411,13 @@
       "source": "memory:project_reader_rechunks_narrator_prose.md"
     },
     {
+      "id": "project_seed_all_sets_wipes_catalog",
+      "domain": "audio",
+      "rule": "\"_seedAllSets --apply sin --only resiembra TODO el catalogo desde los JSON del worktree y borro clips de practica de 4 journeys live el 2026-09-18; siempre --only=<slug>, una historia a la vez\"",
+      "gate": "none",
+      "source": "memory:project_seed_all_sets_wipes_catalog.md"
+    },
+    {
       "id": "project_spain_voice_bank",
       "domain": "audio",
       "rule": "\"Banco PROVISIONAL de voces español de España (Traveler ES Spain) + feedback \\\"sobreactuadas\\\"\"",
@@ -679,7 +686,7 @@
     {
       "id": "feedback_cover_prompt_closed_before_first_render",
       "domain": "cover",
-      "rule": "El prompt de portadas se cierra ANTES de la primera tirada (ficha, registro, reparto descrito, sin texto); tope 2 tiradas por portada",
+      "rule": "\"El prompt de portadas se cierra ANTES de la primera tirada (ficha, registro, reparto descrito, sin texto); tope 2 tiradas por portada\"",
       "gate": "pre-bash-guard.sh",
       "source": "memory:feedback_cover_prompt_closed_before_first_render.md"
     },
@@ -754,6 +761,13 @@
       "source": "memory:feedback_one_journey_per_chat.md"
     },
     {
+      "id": "index_artifacts_de_trabajo",
+      "domain": "cover",
+      "rule": "\"Enlaces de los artifacts de trabajo del proyecto (veredictos de audio, fragmentos, talleres de portadas); ninguno se encontraba desde memoria hasta el 2026-09-17\"",
+      "gate": "process",
+      "source": "memory:index_artifacts_de_trabajo.md"
+    },
+    {
       "id": "project_cover_style_lock",
       "domain": "cover",
       "rule": "\"Candado de estilo de covers: estilo B aprobado en scripts/cover-style.json; SIEMPRE generar covers con scripts/generateCover.ts; el hook bloquea cualquier otro path\"",
@@ -780,6 +794,13 @@
       "rule": "\"Friends IT A0: el de julio (Elena, 7 ciudades) ARCHIVADO el 2026-09-14; el vigente es el de Genova (cmu0dpa3i0007j80ugstn0jf0), 21/21 en draft, sin audio/portadas/glosas/practica\"",
       "gate": "process",
       "source": "memory:project_journey_it_a0_friends.md"
+    },
+    {
+      "id": "project_journey_pipeline_five_phases",
+      "domain": "cover",
+      "rule": "\"La cadena para crear un journey: texto, glosas y practica, portadas, audio, publicar; que cierra cada fase, que necesita la siguiente y las tres trampas que ya se pagaron\"",
+      "gate": "process",
+      "source": "memory:project_journey_pipeline_five_phases.md"
     },
     {
       "id": "project_planning_handoff_2026_09_15",
@@ -1200,6 +1221,13 @@
       "rule": "Velocidad de las palabras de práctica medida en sílabas por segundo; duración NO es velocidad",
       "gate": "none",
       "source": "memory:project_practice_word_speed.md"
+    },
+    {
+      "id": "project_speaking_pilot_state",
+      "domain": "practice",
+      "rule": "\"Estado del piloto de speaking (quinto ejercicio de práctica) al 2026-09-15: rama, decisiones cerradas, qué falta antes de testers y cómo se prueba\"",
+      "gate": "process",
+      "source": "memory:project_speaking_pilot_state.md"
     },
     {
       "id": "sentence-translations-canonical",
@@ -1731,6 +1759,13 @@
       "domain": "story",
       "rule": "Body uses colloquial idioms not in the vocab list",
       "gate": "src/lib/validateGeneratedStory.ts#body-idiomatic-untaught",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-immediate-repeat",
+      "domain": "story",
+      "rule": "Body has no phrase pasted twice in a row",
+      "gate": "src/lib/validateGeneratedStory.ts#body-immediate-repeat",
       "source": "validator:src/lib/validateGeneratedStory.ts"
     },
     {

@@ -22,6 +22,7 @@
  *   --typography-only   migración de comillas
  *   --title-only        acortar un título que se corta en la tarjeta
  *   --definition-only   corregir la definición de una entrada de vocabulario
+ *   --dedupe-only       quitar una frase pegada dos veces seguidas en el cuerpo
  *
  * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
  * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
@@ -48,7 +49,7 @@ try {
 import * as fs from "fs";
 import { variantPool } from "@domain/languageVariant";
 import { PrismaClient } from "../src/generated/prisma";
-import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
+import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, findImmediateRepeat, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
@@ -126,6 +127,15 @@ function slugify(s: string): string {
   // RESTO de la historia cumpla el estandar de hoy, deuda anterior y ajena al
   // cambio. Ver el bloque `definitionOnly`.
   const definitionOnly = flag("definition-only");
+  // MODO SOLO-DESPEGAR (2026-09-19). Un tester encontro "Sobre las luces de
+  // Buenos Aires, Sobre las luces de Buenos Aires" en una historia live de
+  // junio; el gate de hoy la rechaza por deuda ajena (frase larga, vocabulario
+  // ya enseñado). Quitar la copia sobrante no es contenido nuevo, asi que aqui
+  // manda una comprobacion MECANICA mas estricta que el gate: el texto nuevo
+  // tiene que ser exactamente el de la base menos UNA copia de la frase que
+  // `findImmediateRepeat` señala, y no puede quedar ninguna otra. Todo lo
+  // demas (titulo, sinopsis, vocab, arcType, slug) llega identico o no escribe.
+  const dedupeOnly = flag("dedupe-only");
   // TRINQUETE (2026-08-26). El gate de conjunto es absoluto: exige que las 21
   // historias cumplan el estandar de HOY. Un journey escrito antes de una
   // regla queda congelado para siempre, sin poder recibir ni la correccion de
@@ -561,6 +571,64 @@ function slugify(s: string): string {
         console.log(`  ✓ ${p.slug}`);
       }
       console.log(`[definition-only] ${total} definición(es) actualizadas.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  if (dedupeOnly) {
+    if (!journeyId) { console.error("FAIL: --dedupe-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; text: string; frase: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true, arcType: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["title", "synopsis", "vocab", "arcType"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --dedupe-only solo quita una frase repetida`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) problemas.push(`${nombre}: el slug cambiaría`);
+        const antes = String(slot.text ?? "");
+        const frase = findImmediateRepeat(antes);
+        if (!frase) { problemas.push(`${nombre}: la base no tiene ninguna frase pegada dos veces`); continue; }
+        // La unica edicion admitida: borrar una de las dos copias, conservando
+        // la puntuacion que las separaba. Se reconstruye desde la base y se
+        // compara con lo que trae el archivo; si difieren en algo, no escribe.
+        const m = antes.match(/((?:\b[\p{L}\p{M}'’]+\b[ ,;:]+){3,10})\1/iu)!;
+        const esperado = antes.slice(0, m.index!) + antes.slice(m.index! + m[1].length);
+        if (String(d.text) !== esperado) {
+          problemas.push(`${nombre}: el texto cambia en algo mas que quitar "${frase}"`);
+          continue;
+        }
+        const resto = findImmediateRepeat(esperado);
+        if (resto) { problemas.push(`${nombre}: aun queda otra frase pegada: "${resto}"`); continue; }
+        plan.push({ id: slot.id, slug: nombre, text: esperado, frase });
+      }
+      if (problemas.length) {
+        console.error(`✗ [dedupe-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[dedupe-only] ${plan.length} historia(s) con una frase pegada que quitar.`);
+      for (const p of plan) console.log(`  · ${p.slug}: "${p.frase}" (una copia fuera)`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({
+          where: { id: p.id },
+          data: { text: p.text, wordCount: p.text.split(/\s+/).filter(Boolean).length },
+        });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[dedupe-only] ${plan.length} historia(s) actualizadas. Si tiene audio, ahora toca cortar el mp3 y realinear.`);
     } finally {
       await prisma.$disconnect();
     }
