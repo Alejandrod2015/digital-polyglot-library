@@ -414,7 +414,7 @@
       "id": "project_seed_all_sets_wipes_catalog",
       "domain": "audio",
       "rule": "\"_seedAllSets --apply sin --only resiembra TODO el catalogo desde los JSON del worktree y borro clips de practica de 4 journeys live el 2026-09-18; siempre --only=<slug>, una historia a la vez\"",
-      "gate": "none",
+      "gate": "scripts/_seedAllSets.ts",
       "source": "memory:project_seed_all_sets_wipes_catalog.md"
     },
     {
@@ -887,6 +887,13 @@
       "source": "memory:feedback_no_external_ai_at_runtime.md"
     },
     {
+      "id": "feedback_single_country_journey_is_not_latam",
+      "domain": "journey",
+      "rule": "\"Un journey ambientado en un solo pais lleva la variante de ese pais (chile, colombia...), nunca latam; latam es solo para journeys multi-pais con un tema por pais\"",
+      "gate": "process",
+      "source": "memory:feedback_single_country_journey_is_not_latam.md"
+    },
+    {
       "id": "feedback_stories_need_stakes",
       "domain": "journey",
       "rule": "\"Una historia donde el protagonista solo aprende una costumbre no tiene arco, tiene temario. Hace falta deseo, obstáculo y coste, y una espina que atraviese el journey\"",
@@ -1053,6 +1060,13 @@
       "rule": "\"Journey alemán C1 Expat de Hamburgo (era name='Hanseat', renombrado 2026-08-21): scaffold 21 slots archived; spine=reserva hanseática (no burocracia); cast Nora/Ole/Herr Carstens/Wiebke; piloto T1...",
       "gate": "none",
       "source": "memory:project_journey_de_c1_hamburg.md"
+    },
+    {
+      "id": "project_journey_es_a1_friends_latam_neutral",
+      "domain": "journey",
+      "rule": "\"Friends ES latam NEUTRAL A1 (cmu8gjgax0007j8yhcnsrr2wl): primer journey sin ciudad ni pais, lexico neutro con lint propio, texto cerrado 2026-09-19 en rama claude/es-a1-friends-latam-neutral sin p...",
+      "gate": "journey-cast-fixed-max-two",
+      "source": "memory:project_journey_es_a1_friends_latam_neutral.md"
     },
     {
       "id": "project_journey_fr_a0_expat_lyon",
