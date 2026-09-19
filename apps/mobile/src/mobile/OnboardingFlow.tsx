@@ -829,9 +829,16 @@ export function OnboardingFlow({
             // result directly since setTestedLevel hasn't flushed yet.
             setTestedLevel(result.level);
             setLevelTestOpen(false);
+            // `cefrLevel` is where the user starts (one step below what they
+            // showed); `demonstratedLevel` and the score are logged too, or
+            // there is no way to judge the test afterwards. Until
+            // 2026-09-19 only the level was saved.
             trackEvent?.("onboarding_level_test_completed", {
               language,
               cefrLevel: result.level,
+              demonstratedLevel: result.demonstrated,
+              correct: result.correct,
+              total: result.total,
             });
             await submit({ testedLevelOverride: result.level, levelFallback: "Some" });
           }}
