@@ -37,7 +37,7 @@ const card: React.CSSProperties = {
 };
 
 const btnPrimary: React.CSSProperties = {
-  background: "#14b8a6",
+  background: "#f2b155",
   color: "white",
   border: "none",
   borderRadius: 6,
@@ -337,10 +337,10 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
         <div
           style={{
             padding: "8px 14px",
-            background: "rgba(20, 184, 166, 0.1)",
-            border: "1px solid rgba(20, 184, 166, 0.3)",
+            background: "rgba(242, 177, 85, 0.1)",
+            border: "1px solid rgba(242, 177, 85, 0.3)",
             borderRadius: 6,
-            color: "#14b8a6",
+            color: "#f2b155",
             fontSize: 12,
             marginBottom: 14,
           }}

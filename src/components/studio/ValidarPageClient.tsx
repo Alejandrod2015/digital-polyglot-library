@@ -904,11 +904,11 @@ function SelectPill({
         className="mt-0.5 w-full bg-transparent text-[13px] font-bold text-neutral-100 outline-none disabled:cursor-not-allowed"
         style={{ appearance: "none" }}
       >
-        <option value="" className="bg-[#0b1e36]">
+        <option value="" className="bg-[#16110d]">
           {placeholder}
         </option>
         {options.map((o) => (
-          <option key={o.value} value={o.value} className="bg-[#0b1e36]">
+          <option key={o.value} value={o.value} className="bg-[#16110d]">
             {o.label}
           </option>
         ))}

@@ -18,7 +18,7 @@ import {
 import type { BetaSourceGroup } from "@/lib/betaSource";
 import { canonicalVariantLabel, hasVariantOptions, targetVariantLabel } from "@/lib/targetVariants";
 
-const ACCENT = "#14b8a6";
+const ACCENT = "#f2b155";
 
 type Tab = "review" | "demand" | "origin" | "testers" | "feedback" | "releases" | "rules" | "duplicates";
 

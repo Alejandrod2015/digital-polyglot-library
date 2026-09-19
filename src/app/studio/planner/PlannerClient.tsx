@@ -94,9 +94,9 @@ type AgentRun = {
 const pill = (active: boolean): React.CSSProperties => ({
   padding: "4px 10px",
   borderRadius: 99,
-  border: `1px solid ${active ? "var(--studio-accent, #14b8a6)" : "var(--card-border)"}`,
-  backgroundColor: active ? "var(--studio-accent-soft, rgba(20,184,166,0.15))" : "transparent",
-  color: active ? "var(--studio-accent, #14b8a6)" : "var(--muted)",
+  border: `1px solid ${active ? "var(--studio-accent, #f2b155)" : "var(--card-border)"}`,
+  backgroundColor: active ? "var(--studio-accent-soft, rgba(242, 177, 85,0.15))" : "transparent",
+  color: active ? "var(--studio-accent, #f2b155)" : "var(--muted)",
   fontSize: 11,
   fontWeight: active ? 700 : 500,
   cursor: "pointer",
@@ -186,7 +186,7 @@ function BriefLevelGroup({ level, briefs, router }: { level: string; briefs: Pla
         }}
       >
         <span style={{ fontSize: 9, color: "var(--muted)", transition: "transform 0.15s", transform: open ? "rotate(90deg)" : "rotate(0)" }}>&#9654;</span>
-        <span style={{ fontSize: 12, fontWeight: 700, color: "var(--studio-accent, #14b8a6)" }}>{level.toUpperCase()}</span>
+        <span style={{ fontSize: 12, fontWeight: 700, color: "var(--studio-accent, #f2b155)" }}>{level.toUpperCase()}</span>
         <span style={{ fontSize: 11, color: "var(--muted)" }}>{briefs.length} brief{briefs.length !== 1 ? "s" : ""}</span>
         <span style={{ fontSize: 10, color: "var(--muted)", marginLeft: "auto" }}>{summary}</span>
       </button>
@@ -194,7 +194,7 @@ function BriefLevelGroup({ level, briefs, router }: { level: string; briefs: Pla
         <div style={{ display: "flex", flexDirection: "column", gap: 2, padding: "2px 4px 4px" }}>
           {briefs.map((brief) => (
             <div key={brief.id} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11 }}>
-              <span style={statusPill("rgba(20,184,166,0.12)", "var(--studio-accent, #14b8a6)")}>{brief.status}</span>
+              <span style={statusPill("rgba(242, 177, 85,0.12)", "var(--studio-accent, #f2b155)")}>{brief.status}</span>
               <span style={{ flex: 1, color: "var(--foreground)", fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{brief.title}</span>
               <span style={{ color: "var(--muted)", whiteSpace: "nowrap" }}>{brief.language} S{brief.storySlot}</span>
               <button onClick={() => router.push("/studio/journey-stories")} style={{ ...btnGhost, height: 20, fontSize: 10, padding: "0 6px" }}>
@@ -549,8 +549,8 @@ export default function PlannerClient() {
             <Collapsible title={`Propuestas (${agentRun.output.proposals.length})`} defaultOpen>
               <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
                 {agentRun.output.proposals.map((p, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11, borderLeft: "2px solid var(--studio-accent, #14b8a6)" }}>
-                    <span style={statusPill("rgba(20,184,166,0.12)", "var(--studio-accent, #14b8a6)")}>Propuesta</span>
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11, borderLeft: "2px solid var(--studio-accent, #f2b155)" }}>
+                    <span style={statusPill("rgba(242, 177, 85,0.12)", "var(--studio-accent, #f2b155)")}>Propuesta</span>
                     <span style={{ color: "var(--foreground)", fontWeight: 600 }}>{p.topicLabel}</span>
                     <span style={{ color: "var(--muted)" }}>{p.language} {p.variant.toUpperCase()}</span>
                     <span style={{ color: "var(--muted)", marginLeft: "auto" }}>{p.levels.join(",").toUpperCase()} x{p.storiesPerLevel}</span>

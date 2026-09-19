@@ -23,8 +23,8 @@ type ConfigResponse = {
 };
 
 /* ── Constants ───────────────────────────────────────────── */
-const ACCENT = "#14b8a6";
-const ACCENT_SOFT = "rgba(20, 184, 166, 0.15)";
+const ACCENT = "#f2b155";
+const ACCENT_SOFT = "rgba(242, 177, 85, 0.15)";
 const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"] as const;
 
 const LEVEL_COLORS: Record<string, string> = {
@@ -265,9 +265,9 @@ export default function ConfigClient() {
           borderRadius: 8,
           fontSize: 13,
           fontWeight: 500,
-          backgroundColor: message.type === "ok" ? "rgba(20, 184, 166, 0.12)" : "rgba(239, 68, 68, 0.12)",
+          backgroundColor: message.type === "ok" ? "rgba(242, 177, 85, 0.12)" : "rgba(239, 68, 68, 0.12)",
           color: message.type === "ok" ? ACCENT : "#ef4444",
-          border: `1px solid ${message.type === "ok" ? "rgba(20, 184, 166, 0.3)" : "rgba(239, 68, 68, 0.3)"}`,
+          border: `1px solid ${message.type === "ok" ? "rgba(242, 177, 85, 0.3)" : "rgba(239, 68, 68, 0.3)"}`,
         }}>
           {message.text}
         </div>

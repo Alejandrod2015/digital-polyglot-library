@@ -10,8 +10,8 @@ import {
   type PlanPhase,
 } from "@/lib/onboardingPlan";
 
-const ACCENT = "#14b8a6";
-const ACCENT_SOFT = "rgba(20, 184, 166, 0.12)";
+const ACCENT = "#f2b155";
+const ACCENT_SOFT = "rgba(242, 177, 85, 0.12)";
 const CARD_BG = "rgba(255, 255, 255, 0.02)";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
 const TEXT_MUTED = "var(--muted)";
@@ -149,7 +149,7 @@ function FlowRow({ step, last }: { step: FlowStep; last: boolean }) {
 }
 
 const EMAIL_KIND_COLOR: Record<EmailRow["kind"], string> = {
-  welcome: "#14b8a6",
+  welcome: "#f2b155",
   activation: "#f59e0b",
   celebration: "#10b981",
   educational: "#60a5fa",
@@ -256,8 +256,8 @@ export default async function StudioOnboardingPage() {
         {/* North star */}
         <section
           style={{
-            background: "linear-gradient(135deg, rgba(20,184,166,0.10), rgba(20,184,166,0.02))",
-            border: `1px solid rgba(20,184,166,0.28)`,
+            background: "linear-gradient(135deg, rgba(242, 177, 85,0.10), rgba(242, 177, 85,0.02))",
+            border: `1px solid rgba(242, 177, 85,0.28)`,
             borderRadius: 12,
             padding: "16px 18px",
           }}

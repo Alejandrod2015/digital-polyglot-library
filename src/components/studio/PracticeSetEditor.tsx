@@ -924,7 +924,7 @@ const btnChip: React.CSSProperties = {
 };
 const btnChipActive: React.CSSProperties = {
   background: "var(--primary)",
-  color: "#0b1e36",
+  color: "#16110d",
   border: "1px solid var(--primary)",
   padding: "5px 12px",
   borderRadius: 999,

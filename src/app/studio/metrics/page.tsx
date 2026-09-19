@@ -567,7 +567,6 @@ export default function MetricsDashboard() {
   return (
     <StudioShell
       title="Métricas"
-      tone="warm"
       headerAside={filtersForm}
       breadcrumbs={[
         { label: "Studio", href: "/studio" },

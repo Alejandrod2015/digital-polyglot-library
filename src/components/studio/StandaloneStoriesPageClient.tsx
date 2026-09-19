@@ -15,7 +15,7 @@ const input: React.CSSProperties = {
 };
 
 const btnPrimary: React.CSSProperties = {
-  background: "#14b8a6",
+  background: "#f2b155",
   color: "white",
   border: "none",
   borderRadius: 6,
@@ -185,7 +185,7 @@ export default function StandaloneStoriesPageClient() {
                     <td style={td}>
                       <Link
                         href={`/studio/standalone-stories/${encodeURIComponent(s.id)}`}
-                        style={{ color: "#14b8a6", textDecoration: "none", fontWeight: 500 }}
+                        style={{ color: "#f2b155", textDecoration: "none", fontWeight: 500 }}
                       >
                         {s.title}
                       </Link>
