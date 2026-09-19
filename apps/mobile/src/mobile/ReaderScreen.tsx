@@ -28,6 +28,8 @@ import {
   getVocabTypeLabel,
   normalizeVocabRegister,
   normalizeVocabType,
+  topicCountryIso,
+  topicCountryLabel,
   type AudioWordTimingsPayload,
   type Book,
   type Story,
@@ -35,6 +37,7 @@ import {
   type VocabItem,
   type VocabTypeKey,
 } from "@digital-polyglot/domain";
+import { LanguageFlag } from "./LanguageFlag";
 import * as Application from "expo-application";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
@@ -1427,6 +1430,10 @@ export function ReaderScreen(args: {
   } = args;
   const blocks = useMemo(() => toBlocks(story.text), [story.text]);
   const vocab = story.vocab ?? [];
+  // Solo devuelve algo para journeys `latam` multi-pais; null en cualquier
+  // otro caso (journey de un solo pais, otra variante del idioma).
+  const topicCountry = topicCountryLabel(story.variant, story.topic);
+  const topicCountryFlagIso = topicCountryIso(story.variant, story.topic);
   // If a `file://` audio URL was provided but it fails to play (e.g. the
   // downloaded file was truncated), this state lets us fall back to the
   // remote story.audio on a retry pass. Reset whenever the story changes.
@@ -2851,6 +2858,15 @@ export function ReaderScreen(args: {
           <Text style={styles.storyTitle}>
             {renderTappableTitle(story.title, tapGlosses, handleQuickLookup)}
           </Text>
+          {/* Solo pinta en journeys `latam` multi-pais (ver
+              LATAM_TOPIC_COUNTRY en packages/domain/src/languageVariant.ts):
+              null en cualquier otro journey, sin banner ni tooltip. */}
+          {topicCountry ? (
+            <View style={styles.topicCountryPill}>
+              <LanguageFlag language="Spanish" variant={topicCountryFlagIso ?? undefined} size={14} />
+              <Text style={styles.topicCountryPillText}>{topicCountry}</Text>
+            </View>
+          ) : null}
         </View>
 
         {coverUrl ? (
@@ -3665,6 +3681,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 8,
     marginTop: 4,
+  },
+  topicCountryPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    marginTop: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#3d5470",
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    backgroundColor: "rgba(21, 37, 58, 0.55)",
+  },
+  topicCountryPillText: {
+    color: "#d7e2f1",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.2,
   },
   storyTitle: {
     color: "#ffffff",
