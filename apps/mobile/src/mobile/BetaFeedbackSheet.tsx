@@ -42,6 +42,26 @@ const PLACEHOLDERS: Record<Kind, string> = {
   praise: "The tap-to-translate is the reason I kept going.",
 };
 
+/**
+ * Where the tester WAS when they wrote. `screen` alone ("story complete")
+ * says which surface, never which story: triaging "the audio started late"
+ * meant crossing UserMetric by hand to guess the story. The Studio Feedback
+ * tab reads `context.storySlug` (see `src/lib/betaFeedbackProfile.ts`) and
+ * resolves the journey, level and title from it; the rest is what the app
+ * knew at that moment, so the row still reads on its own if the slug ever
+ * stops resolving. Filled by the app, never typed.
+ */
+export type BetaFeedbackContext = {
+  storySlug: string;
+  /** Studio `Journey.id` (the track id in the journey payload); null for a
+   *  story opened outside a journey (book catalog, created stories). */
+  journeyId: string | null;
+  level: string | null;
+  variant: string | null;
+  /** Audio position in seconds when the sheet opened, only from the reader. */
+  progressSec?: number;
+};
+
 export type BetaFeedbackSheetProps = {
   visible: boolean;
   onClose: () => void;
@@ -49,6 +69,8 @@ export type BetaFeedbackSheetProps = {
   token: string | null;
   /** Screen the user was on when they opened this. Pure context, never typed. */
   screen?: string | null;
+  /** Story the tester was in (or last read). Null when the app does not know. */
+  context?: BetaFeedbackContext | null;
 };
 
 export default function BetaFeedbackSheet({
@@ -57,6 +79,7 @@ export default function BetaFeedbackSheet({
   baseUrl,
   token,
   screen,
+  context,
 }: BetaFeedbackSheetProps) {
   const [kind, setKind] = useState<Kind>("bug");
   const [message, setMessage] = useState("");
@@ -154,6 +177,7 @@ export default function BetaFeedbackSheet({
           kind,
           message: message.trim(),
           screen: screen ?? null,
+          context: context ?? null,
           platform: Platform.OS,
           ...build,
         },

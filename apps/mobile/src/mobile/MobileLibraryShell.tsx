@@ -98,7 +98,7 @@ import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchS
 import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
 import { OnboardingHandoff } from "./OnboardingHandoff";
 import { PracticeCelebration } from "./PracticeCelebration";
-import BetaFeedbackSheet from "./BetaFeedbackSheet";
+import BetaFeedbackSheet, { type BetaFeedbackContext } from "./BetaFeedbackSheet";
 import { PracticeExitSheet } from "./PracticeExitSheet";
 import { PracticeCountdown } from "./PracticeCountdown";
 import { ReaderSkeleton } from "./ReaderSkeleton";
@@ -2561,6 +2561,15 @@ export function MobileLibraryShell(args: {
   // "esto falla al practicar" sin preguntarle nada a nadie.
   const [feedbackScreen, setFeedbackScreen] = useState<string | null>(null);
   const canSendPracticeFeedback = Boolean(mobileConfig.apiBaseUrl && sessionToken);
+  // La ULTIMA historia abierta en el lector, con su journey, para que el
+  // feedback diga donde estaba el tester. `screen` solo decia "story complete";
+  // encontrar la historia detras de una queja era cruzar UserMetric a mano.
+  // Se rellena en `openSelection` (todos los caminos al lector pasan por ahi)
+  // y sobrevive a cerrar el lector, asi que Ajustes puede mandarla tambien.
+  const [lastReadContext, setLastReadContext] = useState<BetaFeedbackContext | null>(null);
+  // Posicion del audio cuando se abrio la hoja desde el lector; null desde
+  // Ajustes, donde ya no hay audio sonando.
+  const [feedbackProgressSec, setFeedbackProgressSec] = useState<number | null>(null);
 
   // Story ID that should wear the "next up" glow on the topic / book list
   // after a story-based practice session completes. Cleared after a few
@@ -6868,6 +6877,31 @@ export function MobileLibraryShell(args: {
     preferencesLoading,
   ]);
 
+  /** `Journey.id` del track que contiene esta historia, o null si no es de
+   *  un journey (catalogo de libros, historias creadas). El track del payload
+   *  lleva el id del Studio, el mismo que usan las notificaciones. */
+  function journeyIdForStorySlug(slug: string | null | undefined): string | null {
+    if (!slug || !remoteJourney) return null;
+    for (const track of remoteJourney.tracks) {
+      for (const level of track.levels) {
+        for (const topic of level.topics) {
+          if (topic.stories.some((story) => story.storySlug === slug)) return track.id;
+        }
+      }
+    }
+    return null;
+  }
+
+  function feedbackContextFor(selection: ReaderSelection): BetaFeedbackContext {
+    const { story, book } = selection;
+    return {
+      storySlug: story.slug,
+      journeyId: journeyIdForStorySlug(story.slug),
+      level: story.cefrLevel ?? book.cefrLevel ?? story.level ?? book.level ?? null,
+      variant: story.variant ?? book.variant ?? story.region ?? book.region ?? null,
+    };
+  }
+
   function openSelection(selection: ReaderSelection) {
     // Muro 2026-09: el catalogo de libros (empaquetado en el binario) es
     // contenido premium. Las historias que vienen del servidor llegan ya
@@ -6892,6 +6926,7 @@ export function MobileLibraryShell(args: {
     }
     setSelection(selection);
     storyOpenedAtRef.current = Date.now();
+    setLastReadContext(feedbackContextFor(selection));
     // Warm up the practice items in the background so that hitting
     // "Start practice" at the end of the story is instant. The fetch
     // happens once per slug per session; result lives in a ref.
@@ -14526,10 +14561,20 @@ export function MobileLibraryShell(args: {
   const feedbackSheet = canSendPracticeFeedback ? (
     <BetaFeedbackSheet
       visible={feedbackScreen !== null}
-      onClose={() => setFeedbackScreen(null)}
+      onClose={() => {
+        setFeedbackScreen(null);
+        setFeedbackProgressSec(null);
+      }}
       baseUrl={mobileConfig.apiBaseUrl}
       token={sessionToken ?? null}
       screen={feedbackScreen}
+      context={
+        lastReadContext
+          ? feedbackProgressSec === null
+            ? lastReadContext
+            : { ...lastReadContext, progressSec: feedbackProgressSec }
+          : null
+      }
     />
   ) : null;
 
@@ -17013,6 +17058,7 @@ export function MobileLibraryShell(args: {
       sessionEmail={sessionEmail}
       apiBaseUrl={mobileConfig.apiBaseUrl}
       sessionToken={sessionToken}
+      feedbackContext={lastReadContext}
       personalizationRows={[
         {
           id: "language",
@@ -20580,7 +20626,12 @@ export function MobileLibraryShell(args: {
           onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
           onOpenPractice={() => void openStoryPractice(selection)}
           onOpenFeedback={
-            canSendPracticeFeedback ? () => setFeedbackScreen("story complete") : undefined
+            canSendPracticeFeedback
+              ? ({ progressSec }) => {
+                  setFeedbackProgressSec(progressSec);
+                  setFeedbackScreen("story complete");
+                }
+              : undefined
           }
           isFavoriteWord={isFavoriteWord}
           onToggleFavoriteWord={(item, contextSentence, desiredSaved) =>
