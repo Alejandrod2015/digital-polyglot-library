@@ -1,5 +1,6 @@
 export type LanguageVariant =
   | "latam"
+  | "latam-multi"
   | "spain"
   | "mexico"
   | "colombia"
@@ -18,7 +19,13 @@ export type LanguageVariant =
   | "south-korea";
 
 export const VARIANT_LABELS: Record<LanguageVariant, string> = {
-  latam: "LATAM",
+  // 2026-09-19: split de la variante latam en tres familias (decision del
+  // usuario, ver TAXONOMIA_variantes_latam). "latam" pasa a ser el sentido
+  // NEUTRO (una sola voz peruana, sin ciudad ni pais en el texto); los tours
+  // pan-regionales existentes (un pais por tema) pasan al codigo NUEVO
+  // "latam-multi". Los paises (chile, mexico, colombia...) no cambian.
+  latam: "Latam (Neutral)",
+  "latam-multi": "Latam (Multi-Country)",
   spain: "Spain",
   mexico: "Mexico",
   colombia: "Colombia",
@@ -141,7 +148,11 @@ export function topicCountryVariant(
   journeyVariant?: string | null,
   topicSlug?: string | null
 ): LanguageVariant | null {
-  if ((journeyVariant ?? "").trim().toLowerCase() !== "latam") return null;
+  // 2026-09-19: el badge de pais por tema es cosa de los tours pan-regionales
+  // ("latam-multi"), no de "latam" neutral. Los 6 journeys que llevaban este
+  // mapa hoy migran su Journey.variant a "latam-multi"; ver
+  // TAXONOMIA_variantes_latam.
+  if ((journeyVariant ?? "").trim().toLowerCase() !== "latam-multi") return null;
   const key = (topicSlug ?? "").trim().toLowerCase();
   return LATAM_TOPIC_COUNTRY[key] ?? null;
 }
@@ -164,7 +175,7 @@ export function buildVariantPromptClause(language?: string | null, variant?: str
 
   const normalizedLanguage = (language ?? "").trim().toLowerCase();
   if (normalizedLanguage === "spanish" || normalizedLanguage === "español") {
-    if (normalizedVariant === "latam") {
+    if (normalizedVariant === "latam" || normalizedVariant === "latam-multi") {
       return "Use a Latin American Spanish baseline unless the region implies something more specific.";
     }
     if (normalizedVariant === "spain") {
@@ -243,6 +254,14 @@ function poolOf(pool: string, spellings: readonly string[]): Record<string, stri
 
 const SPANISH_LATAM_POOL = [
   "latam",
+  // "latam-multi" comparte pool de vocabulario con "latam" y los paises: al
+  // learner que pidio LATAM se le sigue mostrando (decision del usuario,
+  // TAXONOMIA_variantes_latam 2026-09-19). Sin esta linea,
+  // variantPool("latam-multi") devuelve null y variantMatchesPreference lo
+  // trata como "sin preferencia, mostrar siempre a todos": la preferencia de
+  // variante deja de filtrar estos 6 journeys y vuelve la regresion del caso
+  // Vincent Pearson (2026-08-20).
+  "latam-multi",
   "mexico",
   "colombia",
   "argentina",

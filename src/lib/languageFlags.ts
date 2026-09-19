@@ -24,6 +24,9 @@ const DEFAULT_FLAG_BY_LANGUAGE: Record<string, string> = {
 
 const FLAG_BY_VARIANT: Record<string, string> = {
   latam: "🇨🇴",
+  // "latam-multi": los 6 journeys tour pan-regional (2026-09-19, ver
+  // TAXONOMIA_variantes_latam). Misma bandera de siempre.
+  "latam-multi": "🇨🇴",
   spain: "🇪🇸",
   mexico: "🇲🇽",
   colombia: "🇨🇴",
@@ -50,7 +53,7 @@ const FLAG_BY_VARIANT: Record<string, string> = {
 // LANGUAGE, to avoid surfacing them in settings/onboarding pickers). We still
 // honor them for flag rendering.
 const EXTRA_FLAG_VARIANTS: Record<string, Set<string>> = {
-  spanish: new Set(["mexico", "colombia", "argentina"]),
+  spanish: new Set(["mexico", "colombia", "argentina", "latam-multi"]),
 };
 function variantAllowedForFlag(variant: string, language: string): boolean {
   if (isVariantValidForLanguage(variant, language)) return true;
@@ -74,7 +77,7 @@ export function getLanguageFlag(language: string, variant?: string | null): stri
 // Parallel to the emoji maps above, but returns a country code instead of an
 // emoji so flags render on every device (emoji flags break on Windows etc.).
 const COUNTRY_BY_VARIANT: Record<string, string> = {
-  latam: "CO", spain: "ES", mexico: "MX", colombia: "CO", argentina: "AR",
+  latam: "CO", "latam-multi": "CO", spain: "ES", mexico: "MX", colombia: "CO", argentina: "AR",
   us: "US", uk: "GB", brazil: "BR", portugal: "PT",
   germany: "DE", austria: "AT", france: "FR", "canada-fr": "CA", italy: "IT",
   "south-korea": "KR",
