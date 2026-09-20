@@ -319,12 +319,12 @@ export function OnboardingFlow({
     if (step === 1) return selectedKeys.length > 0;
     if (step === 2) return whys.size > 0;
     if (step === 3) return dailyMinutes !== null;
-    // Step 4 (level): need a level pick OR a test result. Languages with
-    // the listening test have no self-pick: the test (or its "brand new"
-    // shortcut) is the only way through, and it submits on its own.
-    if (hasListeningLevelTest(language)) return testedLevel !== null;
+    // Step 4 (level): need a level pick OR a test result. The pick is
+    // always available (2026-09-20, second decision of the day: making the
+    // listening test the only way through put three minutes in front of
+    // every Spanish sign-up); the test is the optional, more accurate path.
     return level !== null || testedLevel !== null;
-  }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes, language]);
+  }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes]);
 
   async function handleContinue() {
     if (!canContinue) return;
@@ -698,15 +698,11 @@ export function OnboardingFlow({
             </Text>
             <Text style={styles.subtitle}>
               {language && hasListeningLevelTest(language)
-                ? "Listen to a few short clips from real stories and we'll pick a level that feels comfortable. About 3 minutes."
+                ? "Pick the closest match. Or read and listen to a few short story clips and we'll pick a level that feels comfortable."
                 : "Pick the closest match. Or take a 1-minute level test for a more accurate placement."}
             </Text>
 
-            {/* Self-assessment chips. Hidden for languages with the listening
-                test (2026-09-20): "I have some" sent people to B1 and the
-                stories were too hard; the test places one rung below what
-                it hears, with a "brand new" shortcut inside. */}
-            <View style={language && hasListeningLevelTest(language) ? styles.hidden : styles.levelList}>
+            <View style={styles.levelList}>
               {LEVEL_OPTIONS.map((option) => {
                 const selected = level === option.key && !testedLevel;
                 return (
@@ -782,14 +778,14 @@ export function OnboardingFlow({
                     {testedLevel
                       ? `Tested level: ${formatCefrDisplay(testedLevel)}`
                       : hasListeningLevelTest(language)
-                        ? "Take the listening test"
+                        ? "Take the story test"
                         : "Take the level test"}
                   </Text>
                   <Text style={styles.levelTestCtaHint}>
                     {testedLevel
                       ? "Tap to retake the test"
                       : hasListeningLevelTest(language)
-                        ? "Short story clips · about 3 minutes"
+                        ? "Read and listen · about 3 minutes"
                         : "10 quick questions · ~1 minute"}
                   </Text>
                 </View>
@@ -907,9 +903,6 @@ export function OnboardingFlow({
 }
 
 const styles = StyleSheet.create({
-  hidden: {
-    display: "none",
-  },
   container: {
     flex: 1,
     backgroundColor: "#0c1626",

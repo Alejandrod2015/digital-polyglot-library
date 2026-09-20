@@ -300,18 +300,17 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
 
         {phase === "intro" ? (
           <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-            <Text style={styles.eyebrow}>LISTEN AND ANSWER</Text>
+            <Text style={styles.eyebrow}>READ, LISTEN AND ANSWER</Text>
             <Text style={styles.introTitle}>Short clips from real stories</Text>
             <Text style={styles.introBody}>
-              You&apos;ll hear {stations.length} clips, each a little harder than
-              the last, and answer two quick questions about each one. About{" "}
-              {minutes} minutes.
-            </Text>
+              You&apos;ll read and hear {stations.length} short passages, each a
+              little harder than the last, and answer two quick questions about
+              each one. About {minutes} minutes.</Text>
             <View style={styles.tipCard}>
               <Feather name="headphones" size={16} color={tokenColor.cyan} />
               <Text style={styles.tipText}>
-                Each clip plays once, and you can replay it one time. Don&apos;t
-                worry about catching every word.
+                The text stays on screen while the audio plays, and you can
+                replay it once. Don&apos;t worry about catching every word.
               </Text>
             </View>
           </ScrollView>
@@ -360,6 +359,17 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
                 <Feather name="rotate-ccw" size={16} color="#ffffff" />
                 <Text style={styles.replayText}>{replaysLeft > 0 ? "Replay" : "Used"}</Text>
               </Pressable>
+            </View>
+
+            {/* The clip's own text, on screen while it plays and after: the
+                test is reading and listening together, like the reader, not
+                a blind dictation (user, 2026-09-20). */}
+            <View style={styles.transcript}>
+              {station.clips.map((clip, index) => (
+                <Text key={`${station.id}-t-${index}`} style={styles.transcriptText}>
+                  {clip.text}
+                </Text>
+              ))}
             </View>
 
             {questionsVisible(state) ? (
@@ -638,6 +648,17 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 12,
     fontWeight: "800",
+  },
+  transcript: {
+    gap: 10,
+    paddingHorizontal: 4,
+    paddingVertical: 6,
+  },
+  transcriptText: {
+    color: "rgba(255,255,255,0.88)",
+    fontSize: 17,
+    lineHeight: 26,
+    fontWeight: "500",
   },
   waitingHint: {
     color: "rgba(255,255,255,0.45)",
