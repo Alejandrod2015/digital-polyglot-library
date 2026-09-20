@@ -90,6 +90,10 @@ type Props = {
   unavailableVariants?: ReadonlySet<string>;
   onComplete: (payload: OnboardingPayload) => Promise<void> | void;
   onCancel?: () => void;
+  /** Answers to come back to, opened at step 4: the shell passes them when
+   *  the learner left the story test without a result, so they pick a level
+   *  by hand instead of landing on a journey they never chose. */
+  resumeFrom?: OnboardingPayload | null;
   /** Fire-and-forget tracker injected by the shell so OnboardingFlow
    *  stays unaware of session/auth details. Used to record funnel
    *  events (started / step_completed / finished / abandoned /
@@ -239,6 +243,7 @@ export function OnboardingFlow({
   onComplete,
   onCancel,
   trackEvent,
+  resumeFrom = null,
 }: Props) {
   // 4-step flow:
   //   1. Languages
@@ -246,11 +251,21 @@ export function OnboardingFlow({
   //   3. Daily goal + reminders
   //   4. Level (with optional level test for accuracy); last step so
   //      the test result, when taken, lands right before submit.
-  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(resumeFrom ? 4 : 1);
   // We track selection by option *key*, not language name, so the two
   // English rows (English|us / English|uk) can coexist in the catalog
   // without collapsing to the same selection bucket.
-  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(() =>
+    resumeFrom
+      ? resumeFrom.selections
+          .map((sel) =>
+            LANGUAGE_OPTIONS.find(
+              (o) => o.name === sel.language && (o.variantCode ?? null) === (sel.variant ?? null)
+            )?.key
+          )
+          .filter((key): key is string => Boolean(key))
+      : []
+  );
   const selectedOptions = useMemo(
     () =>
       selectedKeys
@@ -261,7 +276,7 @@ export function OnboardingFlow({
   // Convenience shortcut for places that only care about the
   // first/active language (greeting examples, summary copy, etc.).
   const language = selectedOptions[0]?.name ?? null;
-  const [whys, setWhys] = useState<Set<string>>(new Set());
+  const [whys, setWhys] = useState<Set<string>>(() => new Set(resumeFrom?.whys ?? []));
   const [level, setLevel] = useState<OnboardingLevel | null>(null);
   // CEFR level produced by the level test, if the user took it. null
   // means they skipped the test (we'll persist the self-reported
@@ -271,10 +286,14 @@ export function OnboardingFlow({
   // the onboarding flow. The runner is full-screen and self-handles
   // its lifecycle; we just gate it with this flag.
   const [levelTestOpen, setLevelTestOpen] = useState(false);
-  const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(15);
-  const [remindersEnabled, setRemindersEnabled] = useState(true);
-  const [reminderHour, setReminderHour] = useState<number | null>(19);
-  const [reminderMinute, setReminderMinute] = useState<number | null>(0);
+  const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(resumeFrom?.dailyMinutes ?? 15);
+  const [remindersEnabled, setRemindersEnabled] = useState(resumeFrom?.remindersEnabled ?? true);
+  const [reminderHour, setReminderHour] = useState<number | null>(
+    resumeFrom ? resumeFrom.reminderHour : 19
+  );
+  const [reminderMinute, setReminderMinute] = useState<number | null>(
+    resumeFrom ? resumeFrom.reminderMinute ?? 0 : 0
+  );
   const [timePickerOpen, setTimePickerOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   // Optional first name (step 1). Seed from the session name when we
@@ -287,7 +306,8 @@ export function OnboardingFlow({
   // de pila mas "del Carpio" de apellido daba "Alejandro del Carpio del
   // Carpio" en pantalla, y guardarlo lo dejaba asi en la cuenta.
   const [firstName, setFirstName] = useState(
-    typeof userName === "string" && userName.trim() ? userName.trim().split(/\s+/)[0] : ""
+    resumeFrom?.firstName ??
+      (typeof userName === "string" && userName.trim() ? userName.trim().split(/\s+/)[0] : "")
   );
 
   // Fire onboarding_started exactly once per mount. The ref guard
@@ -302,7 +322,17 @@ export function OnboardingFlow({
   // Slide animation between steps. translateX 24→0 + fade-in.
   const slide = useRef(new Animated.Value(0)).current;
   const fade = useRef(new Animated.Value(1)).current;
+  // Coming back from the story test the flow mounts straight on step 4:
+  // it is already in view, so it must not start invisible and wait for an
+  // animation (on Android the resumed step showed empty, 2026-09-20).
+  const skipEntranceRef = useRef(Boolean(resumeFrom));
   useEffect(() => {
+    if (skipEntranceRef.current) {
+      skipEntranceRef.current = false;
+      slide.setValue(0);
+      fade.setValue(1);
+      return;
+    }
     slide.setValue(24);
     fade.setValue(0);
     Animated.parallel([

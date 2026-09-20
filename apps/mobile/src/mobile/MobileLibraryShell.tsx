@@ -1791,7 +1791,7 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         mode: "listening",
         kind: "multiple-choice",
         prompt: exercise.prompt,
-        helper: "Press play, then choose the word you hear.",
+        helper: "Press play, then choose what you hear.",
         sentence: null,
         options: exercise.options,
         answer: exercise.answer,
@@ -3565,9 +3565,42 @@ export function MobileLibraryShell(args: {
     total: number;
   } | null>(null);
   const [levelTestBusy, setLevelTestBusy] = useState(false);
-  // Set by the onboarding when the user asked for the story test; consumed
-  // once the hand-off curtain lifts, so the session opens on a ready shell.
-  const pendingLevelTestRef = useRef<{ language: string; variant: string | null } | null>(null);
+  // The onboarding is parked while the story test runs BEFORE the journey
+  // is built: its answers wait here and the shell renders the practice
+  // screen instead of the flow. The result card finishes the onboarding.
+  const [levelTestBeforeOnboarding, setLevelTestBeforeOnboarding] = useState(false);
+  // The tour waits this long after the curtain lifts, so the learner sees
+  // the journey clean before the first bubble dims it (user, 2026-09-20).
+  const TOUR_DELAY_AFTER_CURTAIN_MS = 2500;
+  const [tourHeldAfterCurtain, setTourHeldAfterCurtain] = useState(false);
+  const tourHoldTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onboardingAfterLevelTestRef = useRef<OnboardingPayload | null>(null);
+  // Answers the flow reopens with (at step 4) when the learner leaves the
+  // story test without a result: they pick a level by hand.
+  const [onboardingResume, setOnboardingResume] = useState<OnboardingPayload | null>(null);
+  // True only while finishLevelTestStation closes the session with a result
+  // card on its way, so closePracticeSession can tell that from an X tap.
+  const levelTestFinishingRef = useRef(false);
+  /** Every exercise of the running level test as it was answered, for the
+   *  completion event: the per-item pass rate is what tells which items
+   *  are too easy or too hard once real learners have taken it
+   *  (user, 2026-09-20). Reset when a test opens. */
+  const levelTestItemsRef = useRef<Array<{ id: string; level: LevelTestRung; correct: boolean; timedOut: boolean; ms: number | null }>>([]);
+  const levelTestItemShownAtRef = useRef<number | null>(null);
+  function recordLevelTestItem(exerciseId: string, correct: boolean, timedOut: boolean) {
+    if (practiceLaunchContext.source !== "level-test") return;
+    const station = practiceLaunchContext.stations[practiceLaunchContext.stationIndex];
+    if (!station) return;
+    const shownAt = levelTestItemShownAtRef.current;
+    levelTestItemsRef.current.push({
+      id: exerciseId,
+      level: station.level,
+      correct,
+      timedOut,
+      ms: shownAt ? Date.now() - shownAt : null,
+    });
+    levelTestItemShownAtRef.current = null;
+  }
 
   // ── Android hardware / edge-swipe back ─────────────────────────────
   // Navigation here is custom (activeScreen + overlay booleans), not
@@ -6897,13 +6930,23 @@ export function MobileLibraryShell(args: {
     didHydratePreferences &&
     !preferencesLoading &&
     !preferences.onboardingSurveyCompletedAt;
+  // The story level test (queued, loading, running or showing its result)
+  // owns the screen; the tour waits for it. Its step effect below forces
+  // the Journey screen, which on 2026-09-20 kicked the test out mid-session.
+  const levelTestInProgress =
+    tourHeldAfterCurtain ||
+    levelTestBeforeOnboarding ||
+    levelTestBusy ||
+    levelTestOutcome !== null ||
+    (activePracticeMode !== null && practiceLaunchContext.source === "level-test");
   const shouldShowOnboardingTour =
     isSignedIn &&
     didHydratePreferences &&
     !preferencesLoading &&
     Boolean(preferences.onboardingSurveyCompletedAt) &&
     !preferences.onboardingTourCompletedAt &&
-    onboardingTourStep !== null;
+    onboardingTourStep !== null &&
+    !levelTestInProgress;
   // Preview path (Replay tour) bypasses the survey/tourDone gate.
   const tourVisible = (forceTourPreview || shouldShowOnboardingTour) && onboardingTourStep !== null;
   const activeOnboardingTourMessage =
@@ -9227,6 +9270,11 @@ export function MobileLibraryShell(args: {
     setSpeakingPracticePromptId(null);
     setPracticeExercises(exercises);
     setPracticeIndex(0);
+    // The timer is re-armed HERE, like advancePractice does, not left to the
+    // reset effect: with a leftover 0 (a station that ended by timeout, or a
+    // previous run) the timeout effect reads the old value in the same pass
+    // and fails the first exercise before it is even shown (2026-09-20).
+    setPracticeTimerRemaining(exercises[0]?.kind === "match" ? 20 : 15);
     setPracticeScore(0);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
@@ -9239,12 +9287,68 @@ export function MobileLibraryShell(args: {
     practiceSessionStartedAtRef.current = Date.now();
   }
 
+  type PreparedLevelTest = {
+    language: string;
+    variant: string | null;
+    ladder: LevelTestRung[];
+    stations: Array<{ id: string; level: LevelTestRung; storySlug: string; exercises: PracticeExercise[] }>;
+  };
+
   /**
-   * The story level test (2026-09-20): fetch the ladder, pick one station
-   * per rung and run it as a practice session. Everything the learner sees
-   * is the practice screen they will use after every story; only the
-   * climb between stations and the result card are specific to the test.
+   * The story level test (2026-09-20): fetch the ladder and pick one station
+   * per rung, mapped with the same function end-of-story practice uses.
+   * Kept apart from opening the session so the onboarding can load it
+   * BEHIND its hand-off curtain and open it the instant the curtain lifts.
    */
+  async function prepareLevelTest(language: string, variant: string | null): Promise<PreparedLevelTest> {
+    const query = new URLSearchParams({ language, ...(variant ? { variant } : {}) });
+    const data = await apiFetch<LevelTestPayload>({
+      baseUrl: mobileConfig.apiBaseUrl,
+      path: `/api/mobile/level-test?${query.toString()}`,
+      token: sessionToken,
+      timeoutMs: 15000,
+    });
+    const stations = pickStations(data)
+      .map((station) => ({
+        id: station.id,
+        level: station.level,
+        storySlug: station.story.slug,
+        exercises: (station.exercises as unknown as ReturnType<typeof buildPracticeSession>).map(
+          mapSharedExerciseToMobile
+        ),
+      }))
+      .filter((station) => station.exercises.length > 0);
+    if (stations.length === 0) throw new Error("level test has no stations");
+    return { language, variant, ladder: data.ladder, stations };
+  }
+
+  /** Runs a prepared test as a practice session, station by station. */
+  function openLevelTestSession(prepared: PreparedLevelTest, origin: "onboarding" | "library") {
+    levelTestItemsRef.current = [];
+    void stopAllPracticeAudio();
+    setPracticeSeedItems(null);
+    setPracticeReturnSelection(null);
+    setPracticePreviousScreen(activeScreen);
+    setPracticeLoadError(null);
+    setPracticeReviewScores({});
+    setPracticeLaunchContext({
+      source: "level-test",
+      language: prepared.language,
+      variant: prepared.variant,
+      origin,
+      ladder: prepared.ladder,
+      stations: prepared.stations,
+      stationIndex: 0,
+      results: [],
+      correct: 0,
+      answered: 0,
+    });
+    setActivePracticeMode("mixed");
+    loadLevelTestStation(prepared.stations[0].exercises);
+    setActiveScreen("practice");
+  }
+
+  /** Fetch and open in one go (locked-story path). */
   async function startLevelTestSession(
     language: string,
     variant: string | null,
@@ -9253,46 +9357,7 @@ export function MobileLibraryShell(args: {
     if (levelTestBusy) return;
     setLevelTestBusy(true);
     try {
-      const query = new URLSearchParams({ language, ...(variant ? { variant } : {}) });
-      const data = await apiFetch<LevelTestPayload>({
-        baseUrl: mobileConfig.apiBaseUrl,
-        path: `/api/mobile/level-test?${query.toString()}`,
-        token: sessionToken,
-        timeoutMs: 15000,
-      });
-      const picked = pickStations(data);
-      const stations = picked
-        .map((station) => ({
-          id: station.id,
-          level: station.level,
-          storySlug: station.story.slug,
-          exercises: (station.exercises as unknown as ReturnType<typeof buildPracticeSession>).map(
-            mapSharedExerciseToMobile
-          ),
-        }))
-        .filter((station) => station.exercises.length > 0);
-      if (stations.length === 0) throw new Error("level test has no stations");
-      void stopAllPracticeAudio();
-      setPracticeSeedItems(null);
-      setPracticeReturnSelection(null);
-      setPracticePreviousScreen(activeScreen);
-      setPracticeLoadError(null);
-      setPracticeReviewScores({});
-      setPracticeLaunchContext({
-        source: "level-test",
-        language,
-        variant,
-        origin,
-        ladder: data.ladder,
-        stations,
-        stationIndex: 0,
-        results: [],
-        correct: 0,
-        answered: 0,
-      });
-      setActivePracticeMode("mixed");
-      loadLevelTestStation(stations[0].exercises);
-      setActiveScreen("practice");
+      openLevelTestSession(await prepareLevelTest(language, variant), origin);
     } catch (err) {
       console.warn("[level-test] could not start", err);
       setLockedStoryHint("The level test is not available right now. Try again in a moment.");
@@ -9301,12 +9366,61 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  /** Opens the story test the onboarding asked for, once, after the curtain. */
-  function startPendingLevelTest() {
-    const pending = pendingLevelTestRef.current;
-    if (!pending) return;
-    pendingLevelTestRef.current = null;
-    void startLevelTestSession(pending.language, pending.variant, "onboarding");
+  /**
+   * The end of the onboarding: raise the curtain, commit the answers and
+   * land on the Journey path. Called straight from the flow, or after the
+   * story level test with the placed level baked into `testedLevel`.
+   */
+  async function finishOnboarding(payload: OnboardingPayload) {
+    // Raise the curtain FIRST, before any state change: from here on every
+    // write and fetch happens behind it, so the user does not watch the
+    // journey assemble itself.
+    onboardingHandoffLanguageRef.current = payload.selections[0]?.language ?? null;
+    setOnboardingHandoffStep(0);
+    setOnboardingHandoffDone(false);
+    setOnboardingHandoff(true);
+    // Hold the tour from now until a moment after the curtain lifts.
+    setTourHeldAfterCurtain(true);
+    // Set activeScreen BEFORE the await: when the gate flips
+    // (onboardingSurveyCompletedAt set inside commitOnboarding) and the shell
+    // re-renders without the onboarding overlay, activeScreen is already set;
+    // so the user lands directly there without a one-frame Home flash.
+    setActiveScreen("home");
+    setOnboardingOverride(null);
+    // Land on the Journey path (not the reader): the product tour runs here
+    // next; its step 1 points the user at their first story.
+    await commitOnboarding(payload);
+  }
+
+  /** Lets the tour in a moment after the curtain, never before. */
+  function releaseTourAfterCurtain() {
+    if (tourHoldTimerRef.current) clearTimeout(tourHoldTimerRef.current);
+    tourHoldTimerRef.current = setTimeout(releaseTourNow, TOUR_DELAY_AFTER_CURTAIN_MS);
+  }
+
+  /** The hold ends early on the first touch: a learner who taps the journey
+   *  before the delay was slipping under the tour and never saw its first
+   *  bubble (user, 2026-09-20). That first touch only lets the tour in. */
+  function releaseTourNow() {
+    if (tourHoldTimerRef.current) clearTimeout(tourHoldTimerRef.current);
+    tourHoldTimerRef.current = null;
+    setTourHeldAfterCurtain(false);
+  }
+
+  /** After the story test taken from the onboarding: finish it at the placed
+   *  level. Without a result (the learner left the test) the flow reopens
+   *  at step 4 with the answers kept, so the level is theirs to pick. */
+  function finishOnboardingAfterLevelTest(level: LevelTestLevel | null) {
+    const payload = onboardingAfterLevelTestRef.current;
+    onboardingAfterLevelTestRef.current = null;
+    setLevelTestBeforeOnboarding(false);
+    if (!payload) return;
+    if (level === null) {
+      setOnboardingResume({ ...payload, startLevelTest: false });
+      return;
+    }
+    setOnboardingResume(null);
+    void finishOnboarding({ ...payload, testedLevel: level });
   }
 
   /**
@@ -9341,11 +9455,16 @@ export function MobileLibraryShell(args: {
       origin: ctx.origin,
       format: "practice",
       stations: results,
+      items: levelTestItemsRef.current,
       skipped: false,
     });
-    void applyLevelTestPlacement(level);
+    // From a parked onboarding the placement travels in the payload that
+    // finishes it (see the result card); otherwise persist it right away.
+    if (!onboardingAfterLevelTestRef.current) void applyLevelTestPlacement(level);
+    // The practice screen stays mounted under the (opaque) result card:
+    // closing it here let the Journey show for a frame before the card.
+    void stopAllPracticeAudio();
     setLevelTestOutcome({ language: ctx.language, origin: ctx.origin, level, demonstrated, correct, total: answered });
-    closePracticeSession();
   }
 
   function closePracticeSession() {
@@ -9385,6 +9504,11 @@ export function MobileLibraryShell(args: {
       setActiveScreen("home");
     } else if (practiceLaunchContext.source === "level-test") {
       setActiveScreen(practicePreviousScreen ?? "home");
+      // Abandoned mid-test from the onboarding (no result card coming):
+      // finish the onboarding with the provisional pick.
+      if (onboardingAfterLevelTestRef.current && !levelTestFinishingRef.current) {
+        finishOnboardingAfterLevelTest(null);
+      }
     }
     setPracticeSeedItems(null);
     setPracticeLaunchContext({ source: "favorites" });
@@ -9529,6 +9653,7 @@ export function MobileLibraryShell(args: {
     if (!current) return;
     const seconds = current.kind === "match" ? 20 : 15;
     setPracticeTimerRemaining(seconds);
+    levelTestItemShownAtRef.current = Date.now();
   }, [practiceIndex, activePracticeMode, practiceCountdownActive, practiceExercises]);
 
   // (2) Tick del timer. Solo decrementa cuando hay ejercicio activo,
@@ -9618,6 +9743,7 @@ export function MobileLibraryShell(args: {
       // border on the "Time's up" frame, which looked broken to the
       // user). matchedWords stays untouched so locked-correct pairs
       // keep their green treatment.
+      recordLevelTestItem(current.id, false, true);
       setPracticeRevealed(true);
       setPracticeTimedOut(true);
       setPracticeLastResult("wrong");
@@ -9644,6 +9770,7 @@ export function MobileLibraryShell(args: {
       resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption, true);
       return;
     }
+    recordLevelTestItem(current.id, false, true);
     revealedSlotIdRef.current = current.id;
     if (PRACTICE_REVEAL_DELAY_MS > 0) {
       setTimeout(() => setPracticeRevealed(true), PRACTICE_REVEAL_DELAY_MS);
@@ -10247,6 +10374,7 @@ export function MobileLibraryShell(args: {
     setSpeakingPracticePromptId(null);
 
     const isCorrect = option === current.answer;
+    recordLevelTestItem(current.id, isCorrect, timedOut);
     practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
     if (PRACTICE_REVEAL_DELAY_MS > 0) {
@@ -10607,6 +10735,8 @@ export function MobileLibraryShell(args: {
 
 
   function triggerPracticeComboToast(nextStreak: number) {
+    // The level test rewards nothing, not even a combo (user, 2026-09-20).
+    if (practiceLaunchContext.source === "level-test") return;
     const tier = getPracticeComboTier(nextStreak);
     if (tier === 0) return;
     setPracticeComboToast({
@@ -12528,6 +12658,7 @@ export function MobileLibraryShell(args: {
       if (!matchHadErrorRef.current) {
         setPracticeScore((value) => value + 1);
       }
+      recordLevelTestItem(current.id, !matchHadErrorRef.current, false);
       setPracticeRevealed(true);
       setPracticeLastResult(matchHadErrorRef.current ? "wrong" : "correct");
       // maxStreak + combo toast se derivan del cambio en sessionStreak
@@ -15779,6 +15910,9 @@ export function MobileLibraryShell(args: {
                             : activePracticeCard.eyebrow) || "Word quest"}
                       </Text>
                     </View>
+                    {/* No XP or gems during the level test: it measures,
+                        it does not reward (user, 2026-09-20). */}
+                    {practiceLaunchContext.source !== "level-test" ? (
                     <View style={styles.practiceMeaningStatsRight}>
                       <View
                         style={[
@@ -15799,6 +15933,7 @@ export function MobileLibraryShell(args: {
                         <Text style={styles.practiceMeaningGemText}>{Math.max(1, practiceSessionStreak)}</Text>
                       </View>
                     </View>
+                    ) : null}
                   </View>
                 </View>
 
@@ -21203,9 +21338,74 @@ export function MobileLibraryShell(args: {
     );
   }
 
+  /* Result of the story level test: our estimate, with the way out to
+     other levels spelled out (decided 2026-09-19). Built once and rendered
+     from BOTH returns below: the practice session returns early, and it
+     stays mounted under this card on purpose, so a Modal that only lived
+     in the main return never showed and Finish looked dead (2026-09-20). */
+  const levelTestResultModal = (
+    <Modal
+      visible={Boolean(levelTestOutcome)}
+      animationType="fade"
+      transparent
+      onRequestClose={() => setLevelTestOutcome(null)}
+    >
+      {/* Opaque ground: the journey must not show behind the suggested
+          level (user, 2026-09-20); it is built after this card. */}
+      <View style={[styles.levelTestOfferBackdrop, { backgroundColor: "#0c1626", paddingBottom: androidBottomInset }]}>
+        <View style={styles.levelTestOfferCard}>
+          <View style={styles.levelTestOfferIcon}>
+            <Feather name="zap" size={20} color={tokenColor.gold} />
+          </View>
+          <Text style={styles.levelTestOfferTitle}>
+            {levelTestOutcome?.origin === "onboarding"
+              ? `We think you're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`
+              : `You're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`}
+          </Text>
+          <Text style={styles.levelTestOfferBody}>
+            {levelTestOutcome
+              ? `${levelTestOutcome.correct} of ${levelTestOutcome.total} right. ${
+                  levelTestOutcome.origin === "onboarding"
+                    ? `Your ${levelTestOutcome.language} journey starts here. Too easy or too hard? You can add another level anytime from your journeys.`
+                    : `${cefrDisplayLabel(levelTestOutcome.level) ?? levelTestOutcome.level} stories are unlocked; earlier levels stay available too.`
+                }`
+              : ""}
+          </Text>
+          <View style={styles.levelTestOfferActions}>
+            <Pressable
+              onPress={() => {
+                const level = levelTestOutcome?.level ?? null;
+                levelTestFinishingRef.current = true;
+                closePracticeSession();
+                levelTestFinishingRef.current = false;
+                if (onboardingAfterLevelTestRef.current) {
+                  finishOnboardingAfterLevelTest(level);
+                } else {
+                  setActiveScreen("home");
+                }
+                setLevelTestOutcome(null);
+              }}
+              style={[styles.levelTestOfferButton, styles.levelTestOfferButtonPrimary]}
+            >
+              <Feather name="arrow-right" size={14} color={tokenBg[1]} />
+              <Text style={styles.levelTestOfferButtonPrimaryText}>
+                {levelTestOutcome?.origin === "onboarding" ? "Start journey" : "Unlock level"}
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+
   const practiceSessionRendered = renderPracticeSessionView();
   if (practiceSessionRendered) {
-    return practiceSessionRendered;
+    return (
+      <>
+        {practiceSessionRendered}
+        {levelTestResultModal}
+      </>
+    );
   }
 
   /**
@@ -21362,11 +21562,13 @@ export function MobileLibraryShell(args: {
   // completed the survey yet; or when an override (polyglot test or
   // a tap on the empty flag chip) asked for it. Replaces the old
   // Modal-based survey.
-  const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingProper;
+  const showOnboarding = (shouldShowOnboardingSurvey || forceOnboardingProper) && !levelTestBeforeOnboarding;
   if (showOnboarding) {
     return (
       <View style={styles.onboardingRoot}>
         <OnboardingFlow
+          key={onboardingResume ? "resume" : "fresh"}
+          resumeFrom={onboardingResume}
           userName={sessionName ?? null}
           // Always persist now: the previous test-mode "throw away
           // selections" path is gone; Test mode in the polyglot menu
@@ -21378,33 +21580,30 @@ export function MobileLibraryShell(args: {
             void trackOnboardingMetric(eventType, metadata);
           }}
           onComplete={async (payload) => {
-            // The story test runs in the practice session once the shell
-            // is up: remembered here, started when the curtain lifts.
-            pendingLevelTestRef.current =
-              payload.startLevelTest && payload.selections[0]
-                ? {
-                    language: payload.selections[0].language,
-                    variant: payload.selections[0].variant ?? null,
-                  }
-                : null;
-            // Raise the curtain FIRST, before any state change: from
-            // here on every write and fetch happens behind it, so the
-            // user does not watch the journey assemble itself.
-            onboardingHandoffLanguageRef.current =
-              payload.selections[0]?.language ?? null;
-            setOnboardingHandoffStep(0);
-            setOnboardingHandoffDone(false);
-            setOnboardingHandoff(true);
-            // Set activeScreen BEFORE the await: when the gate flips
-            // (onboardingSurveyCompletedAt set inside commitOnboarding)
-            // and the shell re-renders without the onboarding overlay,
-            // activeScreen is already set; so the user lands directly
-            // there without a one-frame Home flash.
-            setActiveScreen("home");
-            setOnboardingOverride(null);
-            // Land on the Journey path (not the reader): the product tour runs
-            // here next; its step 1 points the user at their first story.
-            await commitOnboarding(payload);
+            // "Take the story test": the test runs BEFORE the journey is
+            // built (user, 2026-09-20). The onboarding stays parked with its
+            // answers in `onboardingAfterLevelTestRef`; the practice screen
+            // takes over; the result card then finishes the onboarding at
+            // the placed level, and only then the curtain builds the journey.
+            setOnboardingResume(null);
+            const primary = payload.selections[0];
+            if (payload.startLevelTest && primary) {
+              try {
+                const prepared = await prepareLevelTest(primary.language, primary.variant ?? null);
+                onboardingAfterLevelTestRef.current = payload;
+                setLevelTestBeforeOnboarding(true);
+                openLevelTestSession(prepared, "onboarding");
+                return;
+              } catch (err) {
+                // No test to run (offline, no stations): stay on step 4 with
+                // the answers and say so; never build a journey the learner
+                // did not choose.
+                console.warn("[level-test] could not start from onboarding", err);
+                setLockedStoryHint("The level test is not available right now. Pick a level to continue.");
+                return;
+              }
+            }
+            await finishOnboarding(payload);
           }}
           onCancel={
             forceOnboardingProper ? () => setOnboardingOverride(null) : undefined
@@ -21421,7 +21620,7 @@ export function MobileLibraryShell(args: {
               setOnboardingHandoff(false);
               setOnboardingHandoffDone(false);
               setOnboardingHandoffStep(0);
-              startPendingLevelTest();
+              releaseTourAfterCurtain();
             }}
           />
         ) : null}
@@ -21441,7 +21640,7 @@ export function MobileLibraryShell(args: {
             setOnboardingHandoff(false);
             setOnboardingHandoffDone(false);
             setOnboardingHandoffStep(0);
-            startPendingLevelTest();
+            releaseTourAfterCurtain();
           }}
         />
       </View>
@@ -21596,7 +21795,17 @@ export function MobileLibraryShell(args: {
   }
 
   return (
-    <View style={styles.shell}>
+    <View
+      style={styles.shell}
+      onStartShouldSetResponderCapture={
+        tourHeldAfterCurtain
+          ? () => {
+              releaseTourNow();
+              return true;
+            }
+          : undefined
+      }
+    >
       {/* DEBUG OVERLAY (temporal): traza de eventos audio. Quitar tras
           encontrar el bug; DEBUG_TRACE_ON=false desactiva. */}
       {debugTrace.length > 0 ? (
@@ -22255,50 +22464,7 @@ export function MobileLibraryShell(args: {
         />
       ) : null}
 
-      {/* Result of the story level test: our estimate, with the way out
-          to other levels spelled out (decided 2026-09-19). */}
-      <Modal
-        visible={Boolean(levelTestOutcome)}
-        animationType="fade"
-        transparent
-        onRequestClose={() => setLevelTestOutcome(null)}
-      >
-        <View style={[styles.levelTestOfferBackdrop, { paddingBottom: androidBottomInset }]}>
-          <View style={styles.levelTestOfferCard}>
-            <View style={styles.levelTestOfferIcon}>
-              <Feather name="zap" size={20} color={tokenColor.gold} />
-            </View>
-            <Text style={styles.levelTestOfferTitle}>
-              {levelTestOutcome?.origin === "onboarding"
-                ? `We think you're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`
-                : `You're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`}
-            </Text>
-            <Text style={styles.levelTestOfferBody}>
-              {levelTestOutcome
-                ? `${levelTestOutcome.correct} of ${levelTestOutcome.total} right. ${
-                    levelTestOutcome.origin === "onboarding"
-                      ? `Your ${levelTestOutcome.language} journey starts here. Too easy or too hard? You can add another level anytime from your journeys.`
-                      : `${cefrDisplayLabel(levelTestOutcome.level) ?? levelTestOutcome.level} stories are unlocked; earlier levels stay available too.`
-                  }`
-                : ""}
-            </Text>
-            <View style={styles.levelTestOfferActions}>
-              <Pressable
-                onPress={() => {
-                  setLevelTestOutcome(null);
-                  setActiveScreen("home");
-                }}
-                style={[styles.levelTestOfferButton, styles.levelTestOfferButtonPrimary]}
-              >
-                <Feather name="arrow-right" size={14} color={tokenBg[1]} />
-                <Text style={styles.levelTestOfferButtonPrimaryText}>
-                  {levelTestOutcome?.origin === "onboarding" ? "Start journey" : "Unlock level"}
-                </Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      </Modal>
+      {levelTestResultModal}
 
       {lockedStoryHint ? (
         <Animated.View
@@ -22366,7 +22532,11 @@ export function MobileLibraryShell(args: {
         </Animated.View>
       ) : null}
 
-      <Modal visible={shouldShowOnboardingSurvey} transparent animationType="fade">
+      {/* Legacy modal survey. Normally never reached (OnboardingFlow renders
+          instead of the shell), but while the story level test runs with the
+          onboarding parked the shell IS on screen, and this popped over the
+          test's result card (2026-09-20). */}
+      <Modal visible={shouldShowOnboardingSurvey && !levelTestBeforeOnboarding} transparent animationType="fade">
         <View style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]}>
           <View style={styles.onboardingModal} testID="qa-onboarding-survey">
             <View style={styles.onboardingProgressRow}>
