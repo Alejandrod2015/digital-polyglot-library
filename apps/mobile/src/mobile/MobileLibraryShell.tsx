@@ -21037,14 +21037,17 @@ export function MobileLibraryShell(args: {
             : "General";
     // If the user took the level test, its CEFR result wins over the
     // self-reported level; the test is a more accurate placement
-    // signal. Otherwise fall back to the coarse self-pick mapping.
+    // signal. Otherwise the self-pick lands ONE RUNG BELOW what it names
+    // (user, 2026-09-20): "A few words" (Elementary) starts at A0 and
+    // "I have some" (Intermediate) at A2. Stories with narration ask more
+    // than the level a learner would claim; the rung above is one tap away.
     const placement = payload.testedLevel
       ? payload.testedLevel
       : payload.level === "Brand new"
         ? "A0"
         : payload.level === "A few words"
-          ? "A1"
-          : "B1";
+          ? "A0"
+          : "A2";
     const preferredLevel = payload.testedLevel
       ? payload.testedLevel === "B2" || payload.testedLevel === "C1"
         ? "Advanced"

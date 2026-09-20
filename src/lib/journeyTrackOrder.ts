@@ -31,8 +31,11 @@ export function placementForLanding(
   const placement = normalizeJourneyPlacementLevel(journeyPlacementLevel);
   if (placement) return placement;
   const coarse = typeof preferredLevel === "string" ? preferredLevel.trim().toLowerCase() : "";
-  if (coarse === "intermediate") return "b1";
-  if (coarse === "advanced") return "c1";
+  // Un peldano por debajo de lo que dice el cubo (usuario, 2026-09-20): las
+  // historias narradas piden mas que el nivel que uno se atribuye, y el de
+  // arriba esta a un toque. Intermediate aterriza en A2 y Advanced en B2.
+  if (coarse === "intermediate") return "a2";
+  if (coarse === "advanced") return "b2";
   return null;
 }
 

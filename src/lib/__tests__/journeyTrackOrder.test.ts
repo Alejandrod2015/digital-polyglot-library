@@ -81,9 +81,9 @@ describe("placementForLanding", () => {
     expect(placementForLanding("B2", "Beginner")).toBe("b2");
   });
 
-  it("sin placement, Intermediate y Advanced sirven de reserva", () => {
-    expect(placementForLanding(null, "Intermediate")).toBe("b1");
-    expect(placementForLanding(undefined, " advanced ")).toBe("c1");
+  it("sin placement, Intermediate y Advanced sirven de reserva, un peldano por debajo", () => {
+    expect(placementForLanding(null, "Intermediate")).toBe("a2");
+    expect(placementForLanding(undefined, " advanced ")).toBe("b2");
   });
 
   it("Beginner o nada no mueven al alumno del suelo", () => {
