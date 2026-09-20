@@ -181,6 +181,26 @@ export function topicCountryLabel(
   return variant ? VARIANT_LABELS[variant] : null;
 }
 
+// ISO 3166-1 alpha-2 code for the countries `topicCountryVariant` can return.
+// Shared by web (`Flag.tsx`, ISO-keyed) and mobile (`LanguageFlag.tsx`,
+// variant-keyed) so both readers draw the SAME flag for the SAME topic.
+const TOPIC_COUNTRY_ISO: Partial<Record<LanguageVariant, string>> = {
+  mexico: "MX",
+  colombia: "CO",
+  argentina: "AR",
+  peru: "PE",
+  chile: "CL",
+};
+
+/** ISO alpha-2 code ("MX", "CO", …) for a topic's country, or null. */
+export function topicCountryIso(
+  journeyVariant?: string | null,
+  topicSlug?: string | null
+): string | null {
+  const variant = topicCountryVariant(journeyVariant, topicSlug);
+  return variant ? (TOPIC_COUNTRY_ISO[variant] ?? null) : null;
+}
+
 export function buildVariantPromptClause(language?: string | null, variant?: string | null): string {
   const normalizedVariant = normalizeVariant(variant);
   if (!normalizedVariant) return "";

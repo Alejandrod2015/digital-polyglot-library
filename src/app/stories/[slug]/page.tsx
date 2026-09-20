@@ -38,6 +38,8 @@ import { canAccessStoryContent, resolveEffectivePlan } from "@domain/access";
 import StoryClientGate from "@/app/books/[bookSlug]/[storySlug]/StoryClientGate";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import GetAppCta from "@/components/GetAppCta";
+import TopicCountryBadge from "@/components/TopicCountryBadge";
+import { topicCountryIso, topicCountryLabel } from "@domain/languageVariant";
 import OnboardingPlayCoachmark from "@/components/OnboardingPlayCoachmark";
 
 export const dynamic = "force-dynamic";
@@ -73,6 +75,11 @@ type StoryPayload = {
    *  the journey IS the library). */
   isJourney: boolean;
   audioSegments: unknown;
+  /** Topic slug + journey variant, only set for journey stories. Feed
+   *  `topicCountryLabel`/`topicCountryIso` to show which country a `latam`
+   *  journey's topic is set in (see TopicCountryBadge). */
+  topic: string | null;
+  variant: string | null;
 };
 
 function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
@@ -175,6 +182,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
         source: "standalone",
         isJourney: true,
         audioSegments: null,
+        topic: journeyStory.topic,
+        variant: journeyStory.variant,
       };
     }
   }
@@ -219,6 +228,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       source: "polyglot",
       isJourney: false,
       audioSegments: polyglotStory.audioSegments,
+      topic: null,
+      variant: null,
     };
   }
 
@@ -238,6 +249,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       source: "polyglot",
       isJourney: false,
       audioSegments: polyglotStory.audioSegments,
+      topic: null,
+      variant: null,
     };
   }
 
@@ -257,6 +270,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       source: "polyglot",
       isJourney: false,
       audioSegments: null,
+      topic: null,
+      variant: null,
     };
   }
 
@@ -278,6 +293,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       source: "standalone",
       isJourney: true,
       audioSegments: null,
+      topic: journeyStory.topic,
+      variant: journeyStory.variant,
     };
   }
 
@@ -300,6 +317,8 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
     source: "standalone",
     isJourney: false,
     audioSegments: getStandaloneStoryAudioSegments(standaloneStory.slug),
+    topic: null,
+    variant: null,
   };
 }
 
@@ -455,6 +474,12 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
   const practiceHref = `/practice?${practiceParams.toString()}`;
 
+  // Solo journeys `latam` multi-país tienen un país por tema (ver
+  // packages/domain/src/languageVariant.ts, LATAM_TOPIC_COUNTRY); para
+  // cualquier otro journey o variante esto es null y el badge no pinta nada.
+  const topicCountry = topicCountryLabel(resolvedStory.variant, resolvedStory.topic);
+  const topicCountryFlagIso = topicCountryIso(resolvedStory.variant, resolvedStory.topic);
+
   const resolvedStoryCover =
     typeof resolvedStory.coverUrl === "string" && resolvedStory.coverUrl.trim() !== ""
       ? resolvePublicMediaUrl(resolvedStory.coverUrl) ?? resolvedStory.coverUrl
@@ -494,6 +519,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       level={resolvedStory.level ?? undefined}
       language={resolvedStory.language ?? undefined}
       region={resolvedStory.region ?? undefined}
+      extraBadges={<TopicCountryBadge iso={topicCountryFlagIso} label={topicCountry} />}
       cover={
         storyCoverUrl
           ? {
