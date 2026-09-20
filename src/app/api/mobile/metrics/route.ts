@@ -44,6 +44,10 @@ const ALLOWED_EVENT_TYPES = new Set([
   // puntua (el slot pasa a `context` de la misma palabra); se mide porque
   // dice cuanto estorba el turno hablado fuera de casa.
   "speaking_skipped_by_user",
+  // Descarga para offline, que hasta el 2026-09-20 no dejaba rastro: el
+  // snapshot vive en el telefono y nadie contaba cuantos usuarios lo usan.
+  // `metadata.scope` dice si salio de una historia suelta o de un tema entero.
+  "offline_download",
   "reminder_scheduled",
   "reminder_tapped",
   "reminder_destination_opened",
