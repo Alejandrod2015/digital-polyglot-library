@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp, Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
 import { resolveGloss } from "@/lib/tapGlossKey";
+import { chunkCoversTap } from "@/lib/tapGlossChunk";
 import {
   getVocabTypeLabel,
   getVocabRegisterLabel,
@@ -73,6 +74,15 @@ export type TapGlossLayerProps = {
   glosses: Record<string, TapGloss>;
   story?: { slug: string; title: string; language?: string | null };
 };
+
+/** Dónde empieza `el` dentro del texto de `container`, en caracteres. */
+function offsetWithin(container: HTMLElement | null, el: HTMLElement): number | undefined {
+  if (!container) return undefined;
+  const range = document.createRange();
+  range.setStart(container, 0);
+  range.setEnd(el, 0);
+  return range.toString().length;
+}
 
 function contextSentence(node: HTMLElement | null, word: string): string | undefined {
   const raw = node?.textContent?.replace(/\s+/g, " ").trim();
@@ -182,13 +192,22 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         return;
       }
       const word = (el.textContent ?? token).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
+      const block = el.closest("p, blockquote, h1, h2") as HTMLElement | null;
+      // El trozo se escribió para UNA aparición de la palabra; en otra, la
+      // tarjeta enseñaba la frase equivocada. Solo entra si cubre el span
+      // tocado (ver `chunkCoversTap`).
+      const chunk =
+        entry.c &&
+        chunkCoversTap(entry.c.es, block?.textContent ?? undefined, offsetWithin(block, el), (el.textContent ?? "").length)
+          ? entry.c
+          : undefined;
       setSelected({
         word,
         gloss: entry.g,
         type: normalizeVocabType(entry.t, { word, definition: entry.g }) ?? "other",
         register: normalizeVocabRegister(entry.r),
-        sentence: contextSentence(el.closest("p, blockquote"), word),
-        chunk: entry.c,
+        sentence: contextSentence(block, word),
+        chunk,
         genderMark: entry.gm,
         forms: entry.f,
       });
@@ -394,6 +413,8 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           {selected.gloss}
         </p>
       ) : null}
+      {/* Sin trozo no hay segunda línea: la glosa ya va arriba, y aquí
+          salía repetida ("that" en negrita y "that" debajo). */}
       {selected.chunk ? (
         <p
           className={selected.forms ? "mt-1.5 text-[var(--foreground)]" : "mt-1 text-[var(--foreground)]"}
@@ -403,14 +424,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           <span style={{ opacity: 0.55, padding: "0 6px" }}>→</span>
           <span style={{ opacity: 0.9 }}>{selected.chunk.en}</span>
         </p>
-      ) : (
-        <p
-          className="mt-1.5 text-[var(--foreground)]"
-          style={{ fontSize: 15, lineHeight: "22px", opacity: 0.9 }}
-        >
-          {selected.gloss}
-        </p>
-      )}
+      ) : null}
       {/* El PAR, siempre a la vista y sin desplegar nada: la forma que el
           lector ya conoce y la que tiene delante, cada una con el nombre de su
           tiempo. El azul marca cual sale en la historia, asi que ninguna celda

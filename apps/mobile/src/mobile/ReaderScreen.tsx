@@ -1,3 +1,4 @@
+import { chunkCoversTap } from "@/lib/tapGlossChunk";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
@@ -142,18 +143,21 @@ const TITLE_WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
 function renderTappableTitle(
   title: string,
   glosses: Record<string, TapGloss>,
-  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => void
 ): React.ReactNode {
   const parts = title.split(TITLE_WORD_SPLIT);
   if (parts.length === 1) return title;
+  let at = 0;
   return parts.map((part, i) => {
+    const here = at;
+    at += part.length;
     if (i % 2 === 1) {
       const hit = lookupGloss(glosses, part);
       const token = hit?.token ?? "";
       const gloss = hit?.gloss;
       if (gloss) {
         return (
-          <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title)}>
+          <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title, here)}>
             {part}
           </Text>
         );
@@ -838,7 +842,7 @@ function renderKaraokeParagraph(args: {
   activeWordIndex: number | null;
   vocabLookup: Map<string, VocabItem>;
   paragraphKey: string;
-  onWordPress: (item: VocabItem, contextSentence?: string, tapped?: string) => void;
+  onWordPress: (item: VocabItem, contextSentence?: string, tapped?: string, at?: number) => void;
   variant: "paragraph" | "quote";
   // Shared across all paragraphs of the story: a vocab word only renders
   // as a pill the first time it shows up. Mirrors the legacy reader's
@@ -849,7 +853,7 @@ function renderKaraokeParagraph(args: {
   // curado). Cualquier palabra NO-vocab cuyo token esté en `glosses` se
   // vuelve tapeable y dispara `onQuickLookup` con su traducción.
   glosses: Record<string, TapGloss>;
-  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void;
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => void;
 }) {
   const {
     paragraph,
@@ -972,7 +976,7 @@ function renderKaraokeParagraph(args: {
           textColor = "#ffffff";
           bold = true;
         }
-        onPress = () => onWordPress(phrase.item, paragraph.text);
+        onPress = () => onWordPress(phrase.item, paragraph.text, undefined, w.charStart - paragraph.charStart);
       } else {
         const isActive = activeWordIndex === iA;
         const vocabItem = lookupVocabToken(vocabLookup, w.text);
@@ -992,12 +996,12 @@ function renderKaraokeParagraph(args: {
           bg = "#f8c15c";
           textColor = "#0e1727";
         }
-        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text, w.text);
+        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text, w.text, w.charStart - paragraph.charStart);
         else {
           const hit = lookupGloss(glosses, w.text);
           const glossToken = hit?.token ?? "";
           const gloss = hit?.gloss;
-          if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
+          if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text, w.charStart - paragraph.charStart);
         }
       }
 
@@ -1177,7 +1181,7 @@ function renderKaraokeParagraph(args: {
             key={`${paragraphKey}-ph-${i}`}
             style={styles.karaokeWordOuter}
             hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            onPress={() => onWordPress(phrase.item, paragraph.text)}
+            onPress={() => onWordPress(phrase.item, paragraph.text, undefined, firstTok.charStart - paragraph.charStart)}
           >
             <View
               style={
@@ -1263,7 +1267,7 @@ function renderKaraokeParagraph(args: {
           key={`${paragraphKey}-w-${i}`}
           style={styles.karaokeWordOuter}
           hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-          onPress={() => onWordPress(vocabItem, paragraph.text, w.text)}
+          onPress={() => onWordPress(vocabItem, paragraph.text, w.text, w.charStart - paragraph.charStart)}
         >
           <View style={containerStyle}>
             <Text style={wordTextStyle}>{w.text}</Text>
@@ -1285,7 +1289,7 @@ function renderKaraokeParagraph(args: {
             key={`${paragraphKey}-w-${i}`}
             style={styles.karaokeWordOuter}
             hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            onPress={() => onQuickLookup(w.text, gloss, paragraph.text)}
+            onPress={() => onQuickLookup(w.text, gloss, paragraph.text, w.charStart - paragraph.charStart)}
           >
             <View style={containerStyle}>
               <Text style={wordTextStyle}>{w.text}</Text>
@@ -1548,10 +1552,11 @@ export function ReaderScreen(args: {
   // Abre el popup de quick lookup. Extraído de los args de
   // renderKaraokeParagraph porque ahora lo comparten el cuerpo y el TÍTULO.
   const handleQuickLookup = useCallback(
-    (word: string, gloss: TapGloss, contextSentence?: string) => {
+    (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => {
       // Reusa el mismo popup del vocab curado, marcado como quickLookup para
       // mostrar el chip "Quick lookup" y NO el de tipo curado. La traducción
-      // vive en gloss.g.
+      // vive en gloss.g. El trozo solo entra si describe ESTA aparición de la
+      // palabra (ver `chunkCoversTap`): se escribió para una sola.
       setSelectedVocab({
         word,
         definition: gloss.g,
@@ -1559,7 +1564,8 @@ export function ReaderScreen(args: {
         register: gloss.r,
         note: contextSentence,
         quickLookup: true,
-        chunk: gloss.c,
+        chunk:
+          gloss.c && chunkCoversTap(gloss.c.es, contextSentence, at, word.length) ? gloss.c : undefined,
         forms: gloss.f,
       });
       setFormsOpen(false);
@@ -2596,7 +2602,7 @@ export function ReaderScreen(args: {
           activeWordIndex,
           vocabLookup: karaokeVocabLookup,
           paragraphKey: `${story.id}-k-${index}`,
-          onWordPress: (item, contextSentence, tapped) => {
+          onWordPress: (item, contextSentence, tapped, at) => {
             // El trozo se busca por la palabra TOCADA, no por el lema del
             // vocabulario. "esperar" no aparece en el texto y "espera" sí, y es
             // esa ocurrencia la que el trozo describe. Buscando por lema se
@@ -2610,9 +2616,13 @@ export function ReaderScreen(args: {
             const gloss =
               (tapped ? lookupGloss(tapGlosses, tapped)?.gloss : undefined) ??
               (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss : undefined);
-            const chunk =
+            const candidato =
               (tapped ? lookupGloss(tapGlosses, tapped)?.gloss.c : undefined) ??
               (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss.c : undefined);
+            const chunk =
+              candidato && chunkCoversTap(candidato.es, contextSentence, at, (tapped ?? item.surface ?? "").length)
+                ? candidato
+                : undefined;
             const base = contextSentence ? { ...item, note: contextSentence } : item;
             setSelectedVocab({
               ...base,

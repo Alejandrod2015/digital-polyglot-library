@@ -1,5 +1,6 @@
 "use client";
 
+import { chunkCoversTap } from "@/lib/tapGlossChunk";
 import { useState, useEffect, useCallback } from "react";
 import { BookOpen, ChevronDown, ChevronUp, Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
@@ -113,6 +114,9 @@ export default function VocabPanel({
   // forma del texto ("espera"): dos tarjetas, dos cabeceras distintas para la
   // misma palabra. Manda siempre la del texto, que es la que la alumna ve.
   const [surfaceWord, setSurfaceWord] = useState<string | null>(null);
+  // El bloque tocado y dónde cae la pill dentro de él, para comprobar que el
+  // trozo de contexto describe ESTA aparición y no otra (ver `chunkCoversTap`).
+  const [tapAt, setTapAt] = useState<{ text: string; at: number; length: number } | null>(null);
   const [selectedSentence, setSelectedSentence] = useState<string | undefined>(undefined);
   const [selectedSourcePath, setSelectedSourcePath] = useState<string | undefined>(undefined);
   const [isFav, setIsFav] = useState(false);
@@ -252,6 +256,18 @@ export default function VocabPanel({
       setSurfaceWord(
         (el.textContent ?? word).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "").trim() || word
       );
+      if (sentenceNode) {
+        const range = document.createRange();
+        range.setStart(sentenceNode, 0);
+        range.setEnd(el, 0);
+        setTapAt({
+          text: sentenceNode.textContent ?? "",
+          at: range.toString().length,
+          length: (el.textContent ?? "").length,
+        });
+      } else {
+        setTapAt(null);
+      }
       setDefinition(item?.definition ?? null);
       setFormsOpen(false);
       setSelectedSentence(sentence);
@@ -385,7 +401,10 @@ export default function VocabPanel({
       .map((x) => x.trim().toLowerCase());
     for (const clave of claves) {
       const hit = mapa[clave];
-      if (hit?.c) return hit;
+      if (hit?.c) {
+        if (!tapAt || chunkCoversTap(hit.c.es, tapAt.text, tapAt.at, tapAt.length)) return hit;
+        return { ...hit, c: undefined };
+      }
     }
     return null;
   })();
