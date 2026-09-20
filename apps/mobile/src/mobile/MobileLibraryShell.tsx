@@ -71,7 +71,18 @@ import { JourneyIcon } from "./JourneyIcon";
 import { LegalSheet } from "./LegalSheet";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { LevelTestRunner } from "./LevelTestRunner";
-import { ListeningLevelTest, hasListeningLevelTest } from "./ListeningLevelTest";
+import { hasStoryLevelTest } from "./levelTestAvailability";
+import {
+  demonstratedLevelFromStations,
+  pickStations,
+  placementFromDemonstrated,
+  shouldStopLadder,
+  stationPassed,
+  type LevelTestLevel,
+  type LevelTestPayload,
+  type LevelTestRung,
+  type LevelTestStationResult,
+} from "@digital-polyglot/domain";
 import { hasLevelTest } from "./levelTest";
 import { ExtendedSplash } from "./ExtendedSplash";
 import { TopicPreviewSheet } from "./TopicPreviewSheet";
@@ -1115,6 +1126,24 @@ type PracticeLaunchContext =
       reviewFocus?: boolean;
       reviewDueCount?: number;
       focusWords?: string[];
+    }
+  | {
+      /** The story level test (2026-09-20): one station per rung, four
+       *  curated practice exercises each, run in this same session. The
+       *  climb (which station is on, what was passed) lives here so the
+       *  regular practice state stays untouched. */
+      source: "level-test";
+      language: string;
+      variant: string | null;
+      /** Where it was launched from: onboarding places one rung below
+       *  what was demonstrated; a locked story unlocks the level itself. */
+      origin: "onboarding" | "library";
+      ladder: LevelTestRung[];
+      stations: Array<{ id: string; level: LevelTestRung; storySlug: string; exercises: PracticeExercise[] }>;
+      stationIndex: number;
+      results: LevelTestStationResult[];
+      correct: number;
+      answered: number;
     };
 
 type JourneyReviewMeta = {
@@ -2429,14 +2458,6 @@ const NextStoryGlowOverlay = memo(function NextStoryGlowOverlay({
   return <Animated.View pointerEvents="none" style={style} />;
 });
 
-/** Picks the runner for the language; both share the `LevelTestRunner` props. */
-function LevelTestSurface({
-  listening,
-  ...props
-}: { listening: boolean } & React.ComponentProps<typeof LevelTestRunner>) {
-  return listening ? <ListeningLevelTest {...props} /> : <LevelTestRunner {...props} />;
-}
-
 export function MobileLibraryShell(args: {
   sessionToken?: string | null;
   sessionUserId?: string | null;
@@ -3532,6 +3553,21 @@ export function MobileLibraryShell(args: {
     language: string;
     source: "onboarding" | "locked-story";
   } | null>(null);
+  // The story test's result card ("We think you're at..."), shown once the
+  // climb ends; null while nothing is pending. `busy` covers the fetch
+  // between tapping the test and the first station.
+  const [levelTestOutcome, setLevelTestOutcome] = useState<{
+    language: string;
+    origin: "onboarding" | "library";
+    level: LevelTestLevel;
+    demonstrated: LevelTestLevel;
+    correct: number;
+    total: number;
+  } | null>(null);
+  const [levelTestBusy, setLevelTestBusy] = useState(false);
+  // Set by the onboarding when the user asked for the story test; consumed
+  // once the hand-off curtain lifts, so the session opens on a ready shell.
+  const pendingLevelTestRef = useRef<{ language: string; variant: string | null } | null>(null);
 
   // ── Android hardware / edge-swipe back ─────────────────────────────
   // Navigation here is custom (activeScreen + overlay booleans), not
@@ -9158,6 +9194,160 @@ export function MobileLibraryShell(args: {
     closePracticeSession();
   }
 
+  /**
+   * Persist a level test placement the same way the locked-story runner
+   * always did: coarse `preferredLevel` for the legacy backend plus the
+   * fine `journeyPlacementLevel` the journey unlocks by.
+   */
+  async function applyLevelTestPlacement(level: LevelTestLevel) {
+    const newPreferredLevel =
+      level === "B2" || level === "C1" ? "Advanced" : level === "B1" ? "Intermediate" : "Beginner";
+    setPreferences((current) => ({
+      ...current,
+      preferredLevel: newPreferredLevel,
+      journeyPlacementLevel: level,
+    }));
+    if (!sessionToken) return;
+    try {
+      await apiFetch({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/preferences",
+        token: sessionToken,
+        method: "POST",
+        body: { preferredLevel: newPreferredLevel, journeyPlacementLevel: level },
+      });
+    } catch (err) {
+      console.warn("[level-test] failed to persist", err);
+    }
+  }
+
+  /** Reset the per-round practice state and load a station's exercises. */
+  function loadLevelTestStation(exercises: PracticeExercise[]) {
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+    setPracticeExercises(exercises);
+    setPracticeIndex(0);
+    setPracticeScore(0);
+    setPracticeSelectedOption(null);
+    setPracticeRevealed(false);
+    setPracticeTimedOut(false);
+    setPracticeComplete(false);
+    setPracticeLastResult(null);
+    setPracticeSessionStreak(0);
+    setPracticeMaxStreak(0);
+    setPracticeSessionDurationMs(null);
+    practiceSessionStartedAtRef.current = Date.now();
+  }
+
+  /**
+   * The story level test (2026-09-20): fetch the ladder, pick one station
+   * per rung and run it as a practice session. Everything the learner sees
+   * is the practice screen they will use after every story; only the
+   * climb between stations and the result card are specific to the test.
+   */
+  async function startLevelTestSession(
+    language: string,
+    variant: string | null,
+    origin: "onboarding" | "library"
+  ) {
+    if (levelTestBusy) return;
+    setLevelTestBusy(true);
+    try {
+      const query = new URLSearchParams({ language, ...(variant ? { variant } : {}) });
+      const data = await apiFetch<LevelTestPayload>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: `/api/mobile/level-test?${query.toString()}`,
+        token: sessionToken,
+        timeoutMs: 15000,
+      });
+      const picked = pickStations(data);
+      const stations = picked
+        .map((station) => ({
+          id: station.id,
+          level: station.level,
+          storySlug: station.story.slug,
+          exercises: (station.exercises as unknown as ReturnType<typeof buildPracticeSession>).map(
+            mapSharedExerciseToMobile
+          ),
+        }))
+        .filter((station) => station.exercises.length > 0);
+      if (stations.length === 0) throw new Error("level test has no stations");
+      void stopAllPracticeAudio();
+      setPracticeSeedItems(null);
+      setPracticeReturnSelection(null);
+      setPracticePreviousScreen(activeScreen);
+      setPracticeLoadError(null);
+      setPracticeReviewScores({});
+      setPracticeLaunchContext({
+        source: "level-test",
+        language,
+        variant,
+        origin,
+        ladder: data.ladder,
+        stations,
+        stationIndex: 0,
+        results: [],
+        correct: 0,
+        answered: 0,
+      });
+      setActivePracticeMode("mixed");
+      loadLevelTestStation(stations[0].exercises);
+      setActiveScreen("practice");
+    } catch (err) {
+      console.warn("[level-test] could not start", err);
+      setLockedStoryHint("The level test is not available right now. Try again in a moment.");
+    } finally {
+      setLevelTestBusy(false);
+    }
+  }
+
+  /** Opens the story test the onboarding asked for, once, after the curtain. */
+  function startPendingLevelTest() {
+    const pending = pendingLevelTestRef.current;
+    if (!pending) return;
+    pendingLevelTestRef.current = null;
+    void startLevelTestSession(pending.language, pending.variant, "onboarding");
+  }
+
+  /**
+   * Called when the last exercise of a station is answered: records the
+   * rung, climbs to the next station or ends the test. `scoreNow` is the
+   * station's correct count including the exercise just answered.
+   */
+  function finishLevelTestStation(scoreNow: number) {
+    if (practiceLaunchContext.source !== "level-test") return;
+    const ctx = practiceLaunchContext;
+    const station = ctx.stations[ctx.stationIndex];
+    if (!station) return;
+    const total = station.exercises.length;
+    const results = [...ctx.results, { level: station.level, passed: stationPassed(scoreNow, total) }];
+    const correct = ctx.correct + scoreNow;
+    const answered = ctx.answered + total;
+    const last = ctx.stationIndex >= ctx.stations.length - 1;
+    if (!shouldStopLadder(results) && !last) {
+      const nextIndex = ctx.stationIndex + 1;
+      setPracticeLaunchContext({ ...ctx, stationIndex: nextIndex, results, correct, answered });
+      loadLevelTestStation(ctx.stations[nextIndex].exercises);
+      return;
+    }
+    const demonstrated = demonstratedLevelFromStations(results, ctx.ladder);
+    const level = ctx.origin === "onboarding" ? placementFromDemonstrated(demonstrated) : demonstrated;
+    void trackOnboardingMetric("onboarding_level_test_completed", {
+      language: ctx.language,
+      cefrLevel: level,
+      demonstratedLevel: demonstrated,
+      correct,
+      total: answered,
+      origin: ctx.origin,
+      format: "practice",
+      stations: results,
+      skipped: false,
+    });
+    void applyLevelTestPlacement(level);
+    setLevelTestOutcome({ language: ctx.language, origin: ctx.origin, level, demonstrated, correct, total: answered });
+    closePracticeSession();
+  }
+
   function closePracticeSession() {
     void stopAllPracticeAudio();
     getOptionalSpeechModule()?.stop();
@@ -9193,6 +9383,8 @@ export function MobileLibraryShell(args: {
       }
     } else if (practiceLaunchContext.source === "journey") {
       setActiveScreen("home");
+    } else if (practiceLaunchContext.source === "level-test") {
+      setActiveScreen(practicePreviousScreen ?? "home");
     }
     setPracticeSeedItems(null);
     setPracticeLaunchContext({ source: "favorites" });
@@ -9243,6 +9435,12 @@ export function MobileLibraryShell(args: {
     setContextAudioFinishedFor(null);
     setLoadingPracticeAudioId(null);
     if (practiceIndex >= practiceExercises.length - 1) {
+      // The story level test climbs to the next rung or ends with its own
+      // result card; it never shows the round's celebration.
+      if (practiceLaunchContext.source === "level-test") {
+        finishLevelTestStation(practiceScore);
+        return;
+      }
       // Ronda terminada: se descarta la guardada para que la proxima entrada
       // reparta de nuevo. Sin esto te quedarias atrapado en la misma mano.
       void clearPendingMatchSession(sessionUserId);
@@ -15576,7 +15774,9 @@ export function MobileLibraryShell(args: {
                       <Text style={styles.practiceMeaningTopicText}>
                         {(practiceLaunchContext.source === "journey"
                           ? practiceLaunchContext.topicLabel
-                          : activePracticeCard.eyebrow) || "Word quest"}
+                          : practiceLaunchContext.source === "level-test"
+                            ? `Level test · ${practiceLaunchContext.stationIndex + 1} of ${practiceLaunchContext.stations.length}`
+                            : activePracticeCard.eyebrow) || "Word quest"}
                       </Text>
                     </View>
                     <View style={styles.practiceMeaningStatsRight}>
@@ -21178,6 +21378,15 @@ export function MobileLibraryShell(args: {
             void trackOnboardingMetric(eventType, metadata);
           }}
           onComplete={async (payload) => {
+            // The story test runs in the practice session once the shell
+            // is up: remembered here, started when the curtain lifts.
+            pendingLevelTestRef.current =
+              payload.startLevelTest && payload.selections[0]
+                ? {
+                    language: payload.selections[0].language,
+                    variant: payload.selections[0].variant ?? null,
+                  }
+                : null;
             // Raise the curtain FIRST, before any state change: from
             // here on every write and fetch happens behind it, so the
             // user does not watch the journey assemble itself.
@@ -21212,6 +21421,7 @@ export function MobileLibraryShell(args: {
               setOnboardingHandoff(false);
               setOnboardingHandoffDone(false);
               setOnboardingHandoffStep(0);
+              startPendingLevelTest();
             }}
           />
         ) : null}
@@ -21231,6 +21441,7 @@ export function MobileLibraryShell(args: {
             setOnboardingHandoff(false);
             setOnboardingHandoffDone(false);
             setOnboardingHandoffStep(0);
+            startPendingLevelTest();
           }}
         />
       </View>
@@ -21936,9 +22147,11 @@ export function MobileLibraryShell(args: {
               This story is at level {levelTestOfferOpen?.targetLevel}
             </Text>
             <Text style={styles.levelTestOfferBody}>
-              {levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage)
-                ? "Take a 1-minute level test to unlock it without finishing the earlier levels."
-                : "Complete the previous level to unlock this one."}
+              {levelTestOfferOpen && hasStoryLevelTest(levelTestOfferOpen.targetLanguage)
+                ? "Try a few story exercises to unlock it without finishing the earlier levels."
+                : levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage)
+                  ? "Take a 1-minute level test to unlock it without finishing the earlier levels."
+                  : "Complete the previous level to unlock this one."}
             </Text>
             <View style={styles.levelTestOfferActions}>
               {levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage) ? (
@@ -21947,6 +22160,10 @@ export function MobileLibraryShell(args: {
                     if (!levelTestOfferOpen) return;
                     const lang = levelTestOfferOpen.targetLanguage;
                     setLevelTestOfferOpen(null);
+                    if (hasStoryLevelTest(lang)) {
+                      void startLevelTestSession(lang, preferences.preferredVariant ?? null, "library");
+                      return;
+                    }
                     setLevelTestActive({ language: lang, source: "locked-story" });
                   }}
                   style={[styles.levelTestOfferButton, styles.levelTestOfferButtonPrimary]}
@@ -21976,11 +22193,10 @@ export function MobileLibraryShell(args: {
           Onboarding has its own runner mounted inside OnboardingFlow,
           so this one is only for post-onboarding usage. */}
       {levelTestActive ? (
-        // Spanish gets the listening test (clips from real stories); the
-        // other languages keep the bundled grammar quiz until they have
-        // stations of their own. Same props and the same callback.
-        <LevelTestSurface
-          listening={hasListeningLevelTest(levelTestActive.language)}
+        // The bundled grammar quiz, for the languages without the story
+        // test (German, Italian). Spanish goes through
+        // `startLevelTestSession` above.
+        <LevelTestRunner
           open={Boolean(levelTestActive)}
           language={levelTestActive.language}
           variant={preferences.preferredVariant}
@@ -22002,7 +22218,7 @@ export function MobileLibraryShell(args: {
               correct: result.correct,
               total: result.total,
               origin: "library",
-              format: hasListeningLevelTest(language) ? "listening" : "grammar",
+              format: "grammar",
             });
             // Map CEFR level to legacy preferredLevel for backend
             // compatibility, AND store the placement directly so
@@ -22038,6 +22254,51 @@ export function MobileLibraryShell(args: {
           onCancel={() => setLevelTestActive(null)}
         />
       ) : null}
+
+      {/* Result of the story level test: our estimate, with the way out
+          to other levels spelled out (decided 2026-09-19). */}
+      <Modal
+        visible={Boolean(levelTestOutcome)}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setLevelTestOutcome(null)}
+      >
+        <View style={[styles.levelTestOfferBackdrop, { paddingBottom: androidBottomInset }]}>
+          <View style={styles.levelTestOfferCard}>
+            <View style={styles.levelTestOfferIcon}>
+              <Feather name="zap" size={20} color={tokenColor.gold} />
+            </View>
+            <Text style={styles.levelTestOfferTitle}>
+              {levelTestOutcome?.origin === "onboarding"
+                ? `We think you're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`
+                : `You're at ${formatCefrDisplay(levelTestOutcome?.level ?? "A0")}`}
+            </Text>
+            <Text style={styles.levelTestOfferBody}>
+              {levelTestOutcome
+                ? `${levelTestOutcome.correct} of ${levelTestOutcome.total} right. ${
+                    levelTestOutcome.origin === "onboarding"
+                      ? `Your ${levelTestOutcome.language} journey starts here. Too easy or too hard? You can add another level anytime from your journeys.`
+                      : `${cefrDisplayLabel(levelTestOutcome.level) ?? levelTestOutcome.level} stories are unlocked; earlier levels stay available too.`
+                  }`
+                : ""}
+            </Text>
+            <View style={styles.levelTestOfferActions}>
+              <Pressable
+                onPress={() => {
+                  setLevelTestOutcome(null);
+                  setActiveScreen("home");
+                }}
+                style={[styles.levelTestOfferButton, styles.levelTestOfferButtonPrimary]}
+              >
+                <Feather name="arrow-right" size={14} color={tokenBg[1]} />
+                <Text style={styles.levelTestOfferButtonPrimaryText}>
+                  {levelTestOutcome?.origin === "onboarding" ? "Start journey" : "Unlock level"}
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       {lockedStoryHint ? (
         <Animated.View
