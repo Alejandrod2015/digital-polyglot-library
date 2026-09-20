@@ -140,8 +140,8 @@ export default async function StudioVisitsPage({
                   padding: "4px 10px",
                   borderRadius: 999,
                   border: "1px solid var(--mx-border, #d4d4d8)",
-                  background: d === days ? "var(--mx-accent, #fcd34d)" : "transparent",
-                  color: d === days ? "#16110d" : "inherit",
+                  background: d === days ? "var(--mx-accent, var(--studio-accent))" : "transparent",
+                  color: d === days ? "var(--mx-bg-2)" : "inherit",
                   textDecoration: "none",
                   fontWeight: d === days ? 700 : 500,
                 }}
@@ -178,7 +178,7 @@ export default async function StudioVisitsPage({
             <div style={{ overflowX: "auto", border: "1px solid var(--mx-border, #e5e7eb)", borderRadius: 8 }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
                 <thead>
-                  <tr style={{ background: "var(--mx-row-alt, #f8fafc)", textAlign: "left" }}>
+                  <tr style={{ background: "var(--mx-row-alt)", textAlign: "left" }}>
                     <Th>When</Th>
                     <Th>Path</Th>
                     <Th>From</Th>

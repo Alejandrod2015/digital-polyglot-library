@@ -20,10 +20,10 @@ type NotificationType = {
   hasRow: boolean;
 };
 
-const ACCENT = "#fcd34d";
-const CARD_BG = "#0f1f34";
+const ACCENT = "var(--studio-accent)";
+const CARD_BG = "var(--mx-bg-2)";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
-const INPUT_BG = "#100c0a";
+const INPUT_BG = "var(--mx-bg-1)";
 
 const CHANNEL_LABEL: Record<NotificationChannel, string> = {
   local: "Local (agendada en el móvil)",
@@ -145,7 +145,7 @@ export default function NotificacionesClient() {
             onClick={() => setTab(key)}
             style={{
               background: tab === key ? ACCENT : INPUT_BG,
-              color: tab === key ? "#100c0a" : "var(--muted)",
+              color: tab === key ? "var(--mx-bg-1)" : "var(--muted)",
               border: `1px solid ${tab === key ? ACCENT : CARD_BORDER}`,
               borderRadius: 8,
               padding: "7px 14px",
@@ -322,7 +322,7 @@ function TypesEditor({ types, error, savingKey, savedKey, update, save }: TypesE
                 disabled={savingKey === t.key}
                 style={{
                   background: ACCENT,
-                  color: "#100c0a",
+                  color: "var(--mx-bg-1)",
                   border: "none",
                   borderRadius: 8,
                   padding: "8px 16px",
@@ -567,7 +567,7 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
             disabled={!canCreate || busyId === "create"}
             style={{
               background: ACCENT,
-              color: "#100c0a",
+              color: "var(--mx-bg-1)",
               border: "none",
               borderRadius: 8,
               padding: "8px 16px",
@@ -660,7 +660,7 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
                     disabled={busyId === c.id}
                     style={{
                       background: ACCENT,
-                      color: "#100c0a",
+                      color: "var(--mx-bg-1)",
                       border: "none",
                       borderRadius: 8,
                       padding: "6px 14px",
@@ -834,7 +834,7 @@ function EffectivenessPanel() {
             onClick={() => setRange(r)}
             style={{
               background: range === r ? ACCENT : INPUT_BG,
-              color: range === r ? "#100c0a" : "var(--muted)",
+              color: range === r ? "var(--mx-bg-1)" : "var(--muted)",
               border: `1px solid ${range === r ? ACCENT : CARD_BORDER}`,
               borderRadius: 8,
               padding: "5px 12px",

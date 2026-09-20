@@ -120,7 +120,7 @@ function Badge({ children, color }: { children: React.ReactNode; color: string }
         borderRadius: 6,
         fontSize: 12,
         fontWeight: 600,
-        backgroundColor: `${color}20`,
+        backgroundColor: `color-mix(in srgb, ${color} 13%, transparent)`,
         color,
       }}
     >

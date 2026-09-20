@@ -37,7 +37,7 @@ const card: React.CSSProperties = {
   marginBottom: 16,
 };
 const btnPrimary: React.CSSProperties = {
-  background: "#f2b155",
+  background: "var(--studio-accent)",
   color: "white",
   border: "none",
   borderRadius: 6,
@@ -408,7 +408,7 @@ export default function CatalogBookEditorClient({ id }: Props) {
                     <td style={{ padding: "6px 4px", fontSize: 13 }}>
                       <Link
                         href={`/studio/catalog-books/${encodeURIComponent(id)}/stories/${encodeURIComponent(s.id)}`}
-                        style={{ color: "#f2b155", textDecoration: "none" }}
+                        style={{ color: "var(--studio-accent)", textDecoration: "none" }}
                       >
                         {s.title || "(sin título)"}
                       </Link>

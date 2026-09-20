@@ -85,7 +85,7 @@
   font-family: var(--mx-font);
 }
 .covers-v2 .covers-segmented__btn--active {
-  background: rgba(242, 177, 85, 0.12);
+  background: color-mix(in srgb, var(--studio-accent) 12%, transparent);
   color: var(--mx-accent);
 }
 
@@ -162,8 +162,8 @@
 }
 .covers-v2 .cl-row:hover { background: rgba(255, 255, 255, 0.025); }
 .covers-v2 .cl-row--active {
-  background: rgba(242, 177, 85, 0.06);
-  border-color: rgba(242, 177, 85, 0.30);
+  background: color-mix(in srgb, var(--studio-accent) 6%, transparent);
+  border-color: color-mix(in srgb, var(--studio-accent) 30%, transparent);
 }
 
 .covers-v2 .cl-thumb {
@@ -227,7 +227,7 @@
   min-height: 0;
   overflow-y: auto;
   background:
-    radial-gradient(800px 400px at 80% 0%, rgba(242, 177, 85, 0.04), transparent),
+    radial-gradient(800px 400px at 80% 0%, color-mix(in srgb, var(--studio-accent) 4%, transparent), transparent),
     var(--mx-bg-1);
 }
 .covers-v2 .covers-studio::-webkit-scrollbar { width: 8px; }
@@ -486,7 +486,7 @@
   border-radius: 4px;
 }
 .covers-v2 .qty-group__btn--active {
-  background: rgba(242, 177, 85, 0.12);
+  background: color-mix(in srgb, var(--studio-accent) 12%, transparent);
   color: var(--mx-accent);
 }
 
@@ -509,7 +509,7 @@
 }
 .covers-v2 .ar-seg__btn + .ar-seg__btn { border-left: 1px solid var(--mx-border); }
 .covers-v2 .ar-seg__btn--active {
-  background: rgba(242, 177, 85, 0.12);
+  background: color-mix(in srgb, var(--studio-accent) 12%, transparent);
   color: var(--mx-accent);
 }
 
@@ -636,7 +636,7 @@
 .covers-v2 .variant-card--loading .variant-card__img {
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #16110d 0%, #241a12 100%);
+  background: linear-gradient(135deg, var(--mx-bg-2) 0%, var(--mx-bg-3) 100%);
 }
 .covers-v2 .variant-card--loading .variant-card__img::after {
   content: "";

@@ -107,11 +107,12 @@ const NAV_SECTIONS = [
 */
 
 /* ── Colors (aligned with the landing + iOS app palette) ── */
-const ACCENT = "#f2b155"; // ambar; acento del Studio
-const ACCENT_SOFT = "rgba(242, 177, 85, 0.14)";
+// Todo desde tokens: el tema (navy o calido) lo decide data-theme en la raiz.
+const ACCENT = "var(--studio-nav-accent)";
+const ACCENT_SOFT = "color-mix(in srgb, var(--studio-nav-accent) 14%, transparent)";
 // Navy editorial palette (mismas vars `--mx-*` que /studio/metrics).
-const SIDEBAR_BG = "#0a0807";
-const SIDEBAR_BORDER = "rgba(242, 177, 85, 0.10)";
+const SIDEBAR_BG = "var(--studio-sidebar-bg)";
+const SIDEBAR_BORDER = "var(--studio-sidebar-border)";
 
 /* ── Nav icons ──
   REGLA: un icono = un item del sidebar. Ningún glifo se repite entre
@@ -172,6 +173,8 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
 const SIDEBAR_WIDTH_EXPANDED = 240;
 const SIDEBAR_WIDTH_COLLAPSED = 64;
 const SIDEBAR_COLLAPSED_KEY = "dp-studio-sidebar-collapsed";
+const THEME_KEY = "dp-studio-theme";
+type StudioTheme = "warm" | "navy";
 
 export default function StudioShell({
   children,
@@ -183,6 +186,18 @@ export default function StudioShell({
   const pathname = usePathname() ?? "";
   const [testMode, setTestMode] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
+  const [theme, setTheme] = useState<StudioTheme>("warm");
+  useEffect(() => {
+    const stored = window.localStorage.getItem(THEME_KEY);
+    if (stored === "navy" || stored === "warm") setTheme(stored);
+  }, []);
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next: StudioTheme = prev === "warm" ? "navy" : "warm";
+      window.localStorage.setItem(THEME_KEY, next);
+      return next;
+    });
+  };
   // null = either still loading or admin (admin → see all). When the
   // current user is a non-admin team member, allowedHrefs is the Set of
   // routes they can reach.
@@ -230,15 +245,13 @@ export default function StudioShell({
   return (
     <div
       className="studio-shell-root"
+      data-theme={theme}
       style={{
         display: "flex",
         minHeight: "100vh",
-        color: "#ffffff",
-        // Paleta calida (ambar sobre carbon) de todo el Studio, la misma
-        // que estreno /studio/metrics; los tokens viven en .studio-shell-root.
-        backgroundColor: "#100c0a",
-        backgroundImage:
-          "radial-gradient(90% 60% at 70% -10%, #1c150f 0%, #100c0a 45%, #0c0a09 100%)",
+        color: "var(--foreground)",
+        backgroundColor: "var(--studio-bg)",
+        backgroundImage: "var(--studio-bg-image)",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -388,6 +401,22 @@ export default function StudioShell({
             );
           })}
         </nav>
+        <div style={{ padding: collapsed ? "10px 8px" : "10px 12px", borderTop: `1px solid ${SIDEBAR_BORDER}` }}>
+          <button
+            type="button"
+            className="studio-theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === "warm" ? "Cambiar al tema azul marino" : "Cambiar al tema cálido"}
+            title={theme === "warm" ? "Cambiar al tema azul marino" : "Cambiar al tema cálido"}
+            style={{ width: "100%", justifyContent: collapsed ? "center" : "flex-start" }}
+          >
+            <span
+              className="studio-theme-toggle__swatch"
+              style={{ background: theme === "warm" ? "#0a1628" : "#f2b155" }}
+            />
+            {!collapsed && (theme === "warm" ? "Tema azul marino" : "Tema cálido")}
+          </button>
+        </div>
       </aside>
 
       {/* Collapse toggle. Renderizado FUERA del aside (que tiene
@@ -458,24 +487,24 @@ export default function StudioShell({
         <header
           style={{
             padding: "24px 32px 20px",
-            borderBottom: "1px solid var(--mx-border)",
+            borderBottom: "1px solid var(--card-border)",
           }}
         >
           {breadcrumbs && breadcrumbs.length > 0 && (
             <div style={{ display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
               {breadcrumbs.map((crumb, i) => (
                 <span key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  {i > 0 && <span style={{ color: "var(--mx-muted-soft)", opacity: 0.5, margin: "0 2px" }}>/</span>}
+                  {i > 0 && <span style={{ color: "var(--muted)", opacity: 0.5, margin: "0 2px" }}>/</span>}
                   {crumb.href ? (
                     <StudioActionLink
                       href={crumb.href}
                       pendingLabel="Abriendo..."
-                      style={{ fontSize: 13, color: "var(--mx-accent)", background: "none", border: "none", padding: 0, fontWeight: 500 }}
+                      style={{ fontSize: 13, color: ACCENT, background: "none", border: "none", padding: 0, fontWeight: 500 }}
                     >
                       {crumb.label}
                     </StudioActionLink>
                   ) : (
-                    <span style={{ fontSize: 13, color: "var(--mx-muted)" }}>{crumb.label}</span>
+                    <span style={{ fontSize: 13, color: "var(--muted)" }}>{crumb.label}</span>
                   )}
                 </span>
               ))}
@@ -484,7 +513,14 @@ export default function StudioShell({
           <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
             <div>
               <h1
-                style={{ fontSize: 30, fontWeight: 600, margin: 0, color: "var(--mx-fg)", fontFamily: "var(--mx-serif)", letterSpacing: "-0.01em" }}
+                style={{
+                  fontSize: "var(--studio-title-size)",
+                  fontWeight: "var(--studio-title-weight)" as unknown as number,
+                  margin: 0,
+                  color: "var(--foreground)",
+                  fontFamily: "var(--studio-title-font)",
+                  letterSpacing: "-0.01em",
+                }}
               >
                 {title}
               </h1>

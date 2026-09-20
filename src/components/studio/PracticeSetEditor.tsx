@@ -818,9 +818,9 @@ function TypeBadge({ color, children }: { color: string; children: React.ReactNo
         borderRadius: 999,
         fontSize: 11,
         fontWeight: 600,
-        background: `${color}1f`,
+        background: `color-mix(in srgb, ${color} 12%, transparent)`,
         color,
-        border: `1px solid ${color}33`,
+        border: `1px solid color-mix(in srgb, ${color} 20%, transparent)`,
         whiteSpace: "nowrap",
       }}
     >
@@ -924,7 +924,7 @@ const btnChip: React.CSSProperties = {
 };
 const btnChipActive: React.CSSProperties = {
   background: "var(--primary)",
-  color: "#16110d",
+  color: "var(--mx-bg-2)",
   border: "1px solid var(--primary)",
   padding: "5px 12px",
   borderRadius: 999,

@@ -57,9 +57,9 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
       onClick={onClick}
       style={{
         fontSize: 11, fontWeight: active ? 600 : 500, padding: "2px 10px", borderRadius: 4,
-        border: `1px solid ${active ? "var(--studio-accent, #f2b155)" : "var(--card-border)"}`,
-        backgroundColor: active ? "var(--studio-accent-soft, rgba(242, 177, 85,0.15))" : "transparent",
-        color: active ? "var(--studio-accent, #f2b155)" : "var(--muted)", cursor: "pointer",
+        border: `1px solid ${active ? "var(--studio-accent, var(--studio-accent))" : "var(--card-border)"}`,
+        backgroundColor: active ? "var(--studio-accent-soft, color-mix(in srgb, var(--studio-accent) 15%, transparent))" : "transparent",
+        color: active ? "var(--studio-accent, var(--studio-accent))" : "var(--muted)", cursor: "pointer",
       }}
     >
       {children}
@@ -108,7 +108,7 @@ function IssueRow({ issue }: { issue: QAIssue }) {
       </div>
       {open && (
         <div style={{ marginTop: 6, paddingTop: 6, borderTop: "1px solid var(--card-border)", lineHeight: 1.4, display: "flex", flexDirection: "column", gap: 4 }}>
-          <p style={{ margin: 0, fontFamily: "monospace", color: "var(--studio-accent, #f2b155)", fontSize: 11, wordBreak: "break-all" }}>{issue.file}</p>
+          <p style={{ margin: 0, fontFamily: "monospace", color: "var(--studio-accent, var(--studio-accent))", fontSize: 11, wordBreak: "break-all" }}>{issue.file}</p>
           <p style={{ margin: 0, color: "var(--foreground)" }}>{issue.description}</p>
           <p style={{ margin: 0, color: "#a78bfa", fontSize: 11 }}><strong style={{ color: "#7c3aed" }}>Afecta a: </strong>{issue.affected}</p>
           <div style={{ color: "#7dd3a0", backgroundColor: "rgba(125,211,160,0.06)", border: "1px solid rgba(125,211,160,0.15)", borderRadius: 4, padding: "4px 8px", fontSize: 11 }}>
@@ -221,7 +221,7 @@ export default function QAClient() {
       {/* QA Agent Section */}
       <section style={{ padding: "10px 14px", borderRadius: 8, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 8 }}>
         <div>
-          <p style={{ margin: 0, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--studio-accent, #f2b155)" }}>Primer agent real</p>
+          <p style={{ margin: 0, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--studio-accent, var(--studio-accent))" }}>Primer agent real</p>
           <h3 style={{ margin: "4px 0 2px", fontSize: 16, color: "var(--foreground)" }}>QA Agent de historias del Journey</h3>
           <p style={{ margin: 0, fontSize: 12, color: "var(--muted)", lineHeight: 1.4 }}>
             Selecciona una historia, se ejecutan checks y recibes un resultado revisable.

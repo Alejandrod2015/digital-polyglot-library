@@ -13,10 +13,10 @@ import {
   type SmartNotification,
 } from "@/lib/smartNotificationPlan";
 
-const ACCENT = "#fcd34d";
-const CARD_BG = "#0f1f34";
+const ACCENT = "var(--studio-accent)";
+const CARD_BG = "var(--mx-bg-2)";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
-const INPUT_BG = "#100c0a";
+const INPUT_BG = "var(--mx-bg-1)";
 
 const STATUS_COLOR: Record<PlanStatus, string> = {
   live: "#4ade80",
@@ -35,8 +35,8 @@ function StatusPill({ status }: { status: PlanStatus }) {
         fontSize: 11,
         fontWeight: 700,
         color,
-        background: `${color}1a`,
-        border: `1px solid ${color}55`,
+        background: `color-mix(in srgb, ${color} 10%, transparent)`,
+        border: `1px solid color-mix(in srgb, ${color} 33%, transparent)`,
         borderRadius: 999,
         padding: "2px 8px",
         whiteSpace: "nowrap",
@@ -127,7 +127,7 @@ function BannerPreview({ item }: { item: SmartNotification }) {
           height: 26,
           borderRadius: 7,
           background: ACCENT,
-          color: "#100c0a",
+          color: "var(--mx-bg-1)",
           fontSize: 13,
           fontWeight: 800,
           display: "flex",
@@ -229,7 +229,7 @@ export default function PlanPanel() {
                   key={item.id}
                   style={{
                     background: CARD_BG,
-                    border: `1px solid ${item.status === "live" ? `${STATUS_COLOR.live}44` : CARD_BORDER}`,
+                    border: `1px solid ${item.status === "live" ? `color-mix(in srgb, ${STATUS_COLOR.live} 27%, transparent)` : CARD_BORDER}`,
                     borderRadius: 12,
                     padding: 16,
                     display: "flex",
@@ -327,8 +327,8 @@ export default function PlanPanel() {
             gap: 12,
           }}
         >
-          <div style={{ background: CARD_BG, border: `1px solid ${STATUS_COLOR.live}33`, borderRadius: 12, overflow: "hidden" }}>
-            <p style={{ margin: 0, padding: "8px 14px", fontSize: 11.5, fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase", color: STATUS_COLOR.live, background: `${STATUS_COLOR.live}12` }}>
+          <div style={{ background: CARD_BG, border: `1px solid color-mix(in srgb, ${STATUS_COLOR.live} 20%, transparent)`, borderRadius: 12, overflow: "hidden" }}>
+            <p style={{ margin: 0, padding: "8px 14px", fontSize: 11.5, fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase", color: STATUS_COLOR.live, background: `color-mix(in srgb, ${STATUS_COLOR.live} 7%, transparent)` }}>
               Así sí
             </p>
             {PLAN_COPY_VOICE.map((rule, i) => (

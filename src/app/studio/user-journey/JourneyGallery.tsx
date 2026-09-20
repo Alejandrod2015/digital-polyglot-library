@@ -2,13 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-const ACCENT = "#fcd34d";
+const ACCENT = "var(--studio-accent)";
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 // Verde solo para la subsección de beta: marca lo que NO es el recorrido.
 const FB_ACCENT = "#34d399";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
 const TEXT_MUTED = "var(--muted)";
-const BEZEL = "#05080d";
+const BEZEL = "var(--mx-bg-0)";
 
 type Phase = {
   n: string;

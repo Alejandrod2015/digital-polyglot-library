@@ -495,7 +495,7 @@ export default function StudioAudioClient() {
                           </div>
                           {s.audioUrlPreview && (
                             <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                              <span style={{ fontSize: 10, color: "#f2b155", fontWeight: 700, minWidth: 56 }}>preview</span>
+                              <span style={{ fontSize: 10, color: "var(--studio-accent)", fontWeight: 700, minWidth: 56 }}>preview</span>
                               <audio src={s.audioUrlPreview} controls style={{ height: 28, maxWidth: 220 }} />
                             </div>
                           )}
@@ -512,7 +512,7 @@ export default function StudioAudioClient() {
                           <button
                             onClick={() => void promotePreview(s.id)}
                             disabled={isBusy}
-                            style={{ ...btnSmall, backgroundColor: "#f2b155", color: "#fff", borderColor: "transparent", opacity: isBusy ? 0.5 : 1 }}
+                            style={{ ...btnSmall, backgroundColor: "var(--studio-accent)", color: "#fff", borderColor: "transparent", opacity: isBusy ? 0.5 : 1 }}
                           >
                             Usar preview
                           </button>
@@ -538,7 +538,7 @@ export default function StudioAudioClient() {
                   </tr>
                   {expandedDialogue[s.id] && (
                     <tr>
-                      <td colSpan={9} style={{ padding: "12px 16px", backgroundColor: "rgba(242, 177, 85,0.04)", borderTop: "1px dashed var(--card-border)" }}>
+                      <td colSpan={9} style={{ padding: "12px 16px", backgroundColor: "color-mix(in srgb, var(--studio-accent) 4%, transparent)", borderTop: "1px dashed var(--card-border)" }}>
                         <DialoguePanel
                           story={s}
                           voices={voices.filter((v) => v.language === s.journey.language.toLowerCase())}
@@ -585,7 +585,7 @@ const btnPrimary: React.CSSProperties = {
   padding: "0 14px",
   borderRadius: 6,
   border: "none",
-  backgroundColor: "#f2b155",
+  backgroundColor: "var(--studio-accent)",
   color: "#fff",
   fontSize: 13,
   fontWeight: 600,
@@ -1032,7 +1032,7 @@ function VoiceGallerySection({
           <VoiceSubsection
             title="Internas (TTS local)"
             description="Voces que corren on-prem (Piper / Bark / Coqui). Costo cero por uso."
-            color="#f2b155"
+            color="var(--studio-accent)"
             voices={internalApproved}
             clonedVoices={[]}
             emptyMsg="Aún no hay voces internas aprobadas."
@@ -1231,7 +1231,7 @@ function EnginesLegend({ voices }: { voices: VoiceEntry[] }) {
         <div style={{ marginTop: 6, display: "flex", flexDirection: "column", gap: 8 }}>
           {enginesPresent.map((e) => {
             const info = ENGINE_INFO[e];
-            const archColor = info.architecture === "non-AR" ? "#f2b155" : "#eab308";
+            const archColor = info.architecture === "non-AR" ? "var(--studio-accent)" : "#eab308";
             return (
               <div key={e} style={{ display: "flex", flexDirection: "column", gap: 3, paddingLeft: 6, borderLeft: `2px solid ${archColor}` }}>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 6, flexWrap: "wrap" }}>
@@ -1267,7 +1267,7 @@ function EnginesLegend({ voices }: { voices: VoiceEntry[] }) {
 // without becoming a rainbow. Falls back to neutral for unknown regions.
 const REGION_PILL_BG: Record<string, string> = {
   ES: "rgba(245, 158, 11, 0.18)",   // amber (España)
-  LATAM: "rgba(242, 177, 85, 0.18)", // teal
+  LATAM: "color-mix(in srgb, var(--studio-accent) 18%, transparent)", // teal
   MX: "rgba(132, 204, 22, 0.18)",    // lime
   CO: "rgba(59, 130, 246, 0.18)",    // blue
   AR: "rgba(168, 85, 247, 0.18)",    // violet
@@ -1283,7 +1283,7 @@ const REGION_PILL_BG: Record<string, string> = {
   US: "rgba(148, 163, 184, 0.18)",   // slate
 };
 const REGION_PILL_FG: Record<string, string> = {
-  ES: "#fbbf24", LATAM: "#f6cd97", MX: "#a3e635", CO: "#60a5fa",
+  ES: "#fbbf24", LATAM: "var(--studio-accent-light)", MX: "#a3e635", CO: "#60a5fa",
   AR: "#c084fc", PE: "#f9a8d4", CL: "#f87171", VE: "#facc15",
   PR: "#38bdf8", BR: "#4ade80", PT: "#e879f9", IT: "#34d399",
   DE: "#818cf8", FR: "#7dd3fc", US: "#cbd5e1",
@@ -1529,7 +1529,7 @@ function DialoguePanel({
                 <div style={{ marginTop: 6, maxHeight: 240, overflowY: "auto", padding: 8, borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
                   {detection.segments.map((seg, i) => (
                     <div key={i} style={{ marginBottom: 4, fontSize: 12 }}>
-                      <strong style={{ color: seg.speaker === "?" ? "#ef4444" : "#f2b155" }}>{seg.speaker}:</strong>
+                      <strong style={{ color: seg.speaker === "?" ? "#ef4444" : "var(--studio-accent)" }}>{seg.speaker}:</strong>
                       {" "}{seg.text.length > 120 ? seg.text.slice(0, 120) + "…" : seg.text}
                     </div>
                   ))}
@@ -1545,7 +1545,7 @@ function DialoguePanel({
                 )}
                 <button
                   onClick={onApplyCasting}
-                  style={{ ...btnSmall, backgroundColor: "#f2b155", color: "#fff", borderColor: "transparent" }}
+                  style={{ ...btnSmall, backgroundColor: "var(--studio-accent)", color: "#fff", borderColor: "transparent" }}
                 >
                   Guardar casting
                 </button>
@@ -1581,7 +1581,7 @@ function DialoguePanel({
           />
           <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
             <button onClick={onClose} style={btnSmall}>Cerrar</button>
-            <button onClick={onSaveJson} style={{ ...btnSmall, backgroundColor: "#f2b155", color: "#fff", borderColor: "transparent" }}>
+            <button onClick={onSaveJson} style={{ ...btnSmall, backgroundColor: "var(--studio-accent)", color: "#fff", borderColor: "transparent" }}>
               Guardar JSON
             </button>
           </div>

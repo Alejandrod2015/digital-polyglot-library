@@ -984,7 +984,7 @@ function UserTypeBadge({
   type: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
 }) {
   const tone: Record<string, string> = {
-    beta: "#fcd34d",
+    beta: "var(--studio-accent)",
     audiolibro: "#5ad19a",
     app: "#6ea8fe",
     web: "#94a3b8",
@@ -1010,8 +1010,8 @@ function UserTypeBadge({
         textTransform: "uppercase",
         whiteSpace: "nowrap",
         color,
-        backgroundColor: unknown ? "transparent" : `${color}22`,
-        border: `1px solid ${unknown ? "transparent" : `${color}4d`}`,
+        backgroundColor: unknown ? "transparent" : `color-mix(in srgb, ${color} 13%, transparent)`,
+        border: `1px solid ${unknown ? "transparent" : `color-mix(in srgb, ${color} 30%, transparent)`}`,
         opacity: unknown ? 0.55 : 1,
       }}
     >
@@ -1593,8 +1593,8 @@ function RetentionPanel({
             borderRadius: 8,
             fontSize: 12,
             lineHeight: 1.45,
-            color: "var(--mx-text, #e2e8f0)",
-            background: "var(--mx-panel, #0f172a)",
+            color: "var(--mx-fg)",
+            background: "var(--mx-bg-3)",
             border: "1px solid var(--mx-border, rgba(255,255,255,0.16))",
             boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
           }}
