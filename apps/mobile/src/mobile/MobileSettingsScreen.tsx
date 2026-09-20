@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from "react-native";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
-import BetaFeedbackSheet from "./BetaFeedbackSheet";
+import BetaFeedbackSheet, { type BetaFeedbackContext } from "./BetaFeedbackSheet";
 
 type AchievementSummary = {
   totalXp: number;
@@ -99,6 +99,9 @@ type Props = {
    *  missing the sheet is not offered and Support stays the only route out. */
   apiBaseUrl?: string;
   sessionToken?: string | null;
+  /** Last story the user read, so a report filed from here still names it.
+   *  Null when nothing has been opened this session. */
+  feedbackContext?: BetaFeedbackContext | null;
   pickerVisible: boolean;
   pickerTitle: string;
   onClosePicker: () => void;
@@ -165,6 +168,7 @@ export function MobileSettingsScreen({
   onPressSupport,
   apiBaseUrl,
   sessionToken,
+  feedbackContext,
   pickerVisible,
   pickerTitle,
   onClosePicker,
@@ -690,6 +694,7 @@ export function MobileSettingsScreen({
           baseUrl={apiBaseUrl as string}
           token={sessionToken ?? null}
           screen="Settings"
+          context={feedbackContext ?? null}
         />
       ) : null}
     </>

@@ -1373,9 +1373,10 @@ export function ReaderScreen(args: {
    * Abre el panel de feedback beta. Se ofrece al pie de una historia YA
    * terminada: es el otro momento (además del final de una práctica) en el
    * que la persona acaba de vivir algo y todavía lo tiene fresco. Ausente
-   * para quien no puede enviar (sin sesión o sin API).
+   * para quien no puede enviar (sin sesión o sin API). Lleva la posición del
+   * audio en segundos para que el reporte diga en qué punto estaba.
    */
-  onOpenFeedback?: () => void;
+  onOpenFeedback?: (details: { progressSec: number }) => void;
   isFavoriteWord: (word: string) => boolean;
   onToggleFavoriteWord: (item: VocabItem, contextSentence?: string, desiredSaved?: boolean) => void;
   onTrackReaderEvent?: (
@@ -2321,6 +2322,9 @@ export function ReaderScreen(args: {
     });
   }, [story.id, story.slug, book.slug, onTrackReaderEvent]);
   const lastPersistedProgressSecRef = useRef<number | null>(null);
+  // Ultima posicion del audio, en cada tick, sin la cadencia de persistencia
+  // de arriba: es lo que viaja con el feedback beta como `progressSec`.
+  const lastPositionSecRef = useRef(0);
   const lastPersistedAtRef = useRef<number>(0);
   const scrollViewRef = useRef<ScrollView | null>(null);
   const contentHeightRef = useRef(0);
@@ -2517,6 +2521,7 @@ export function ReaderScreen(args: {
   useEffect(() => {
     lastPersistedProgressSecRef.current = null;
     lastPersistedAtRef.current = 0;
+    lastPositionSecRef.current = 0;
   }, [story.id]);
 
   function trackReadingPosition(progressRatio: number, nextBlockIndex: number) {
@@ -2962,7 +2967,7 @@ export function ReaderScreen(args: {
               debajo, para no disputarle el sitio a "Start practice". */}
           {onOpenFeedback && storyCompleted ? (
             <Pressable
-              onPress={onOpenFeedback}
+              onPress={() => onOpenFeedback({ progressSec: Math.round(lastPositionSecRef.current) })}
               style={styles.readerFeedbackLink}
               accessibilityRole="button"
               accessibilityLabel="Tell us about this story"
@@ -3493,6 +3498,7 @@ export function ReaderScreen(args: {
             }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
+              lastPositionSecRef.current = progressSec;
               const durationSec = playback.durationMillis / 1000;
               const ratio = durationSec > 0 ? progressSec / durationSec : 0;
               const shouldPersist =
