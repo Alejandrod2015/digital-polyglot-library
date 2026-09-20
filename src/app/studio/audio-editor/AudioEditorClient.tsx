@@ -2271,7 +2271,7 @@ function ConfirmModal({
             style={{
               height: 36, padding: "0 18px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer",
               background: danger ? DANGER : ACCENT,
-              color: danger ? "#fff" : "#0a1628",
+              color: danger ? "#fff" : "#100c0a",
               border: `1px solid ${danger ? DANGER : ACCENT}`,
             }}
           >
@@ -2300,7 +2300,7 @@ function btnStyle(
     return {
       ...base,
       background: ACCENT,
-      color: "#0a1628",
+      color: "#100c0a",
       border: `1px solid ${ACCENT}`,
     };
   }

@@ -11,7 +11,7 @@ type Member = {
   createdAt: string;
 };
 
-const ACCENT = "#14b8a6";
+const ACCENT = "#f2b155";
 const ROLES: { value: StudioRole; label: string; description: string }[] = [
   { value: "admin", label: "Admin", description: "Full access including team management" },
   { value: "manager", label: "Manager", description: "Metrics, QA, Sanity, and content creation" },
@@ -73,13 +73,13 @@ const roleBadge = (role: StudioRole): React.CSSProperties => ({
       ? "rgba(239, 68, 68, 0.15)"
       : role === "manager"
         ? "rgba(59, 130, 246, 0.15)"
-        : "rgba(20, 184, 166, 0.15)",
+        : "rgba(242, 177, 85, 0.15)",
   color:
     role === "admin"
       ? "#f87171"
       : role === "manager"
         ? "#60a5fa"
-        : "#2dd4bf",
+        : "#f6cd97",
 });
 
 export default function TeamClient({ currentRole }: { currentRole: StudioRole }) {
@@ -280,7 +280,7 @@ export default function TeamClient({ currentRole }: { currentRole: StudioRole })
                 width: 36,
                 height: 36,
                 borderRadius: "50%",
-                backgroundColor: "rgba(20, 184, 166, 0.15)",
+                backgroundColor: "rgba(242, 177, 85, 0.15)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

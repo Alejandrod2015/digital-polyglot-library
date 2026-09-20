@@ -516,6 +516,13 @@ export function extractStoryMotifs(text: string): string[] {
 // avoid pulling server-only deps into Client Components. Re-exported at
 // top of file.
 
+/** Primera secuencia de 3+ palabras que aparece dos veces seguidas en el
+ *  texto (solo puntuacion y espacios entre las dos copias), o null. */
+export function findImmediateRepeat(text: string): string | null {
+  const m = text.match(/((?:\b[\p{L}\p{M}'’]+\b[ ,;:]+){3,10})\1/iu);
+  return m ? m[1].trim().replace(/[ ,;:]+$/, "") : null;
+}
+
 export async function validateGeneratedStory(
   input: string | StoryPayload,
   context: ValidationContext = {}
@@ -946,6 +953,20 @@ export async function validateGeneratedStory(
     id: "body-narrator-opening",
     label: "Body opens with a narrator paragraph (full sentence)",
     status: hasNarratorOpening(parsed.text) ? "pass" : "fail",
+  });
+
+  // Frase pegada dos veces seguidas (2026-09-19). "Sobre las luces de Buenos
+  // Aires, Sobre las luces de Buenos Aires, Pablo sonrie" vivio tres meses en
+  // el Traveler latam A0, se narro asi y lo encontro un tester, no el gate.
+  // Ningun check miraba el cuerpo a nivel de frase: los de repeticion son
+  // entre historias (motivos, aperturas, vocabulario). Tres palabras
+  // consecutivas repetidas al instante nunca son estilo; son un pegado doble.
+  const pegada = findImmediateRepeat(parsed.text);
+  checks.push({
+    id: "body-immediate-repeat",
+    label: "Body has no phrase pasted twice in a row",
+    status: pegada ? "fail" : "pass",
+    detail: pegada ? `Repeated back to back: "${pegada}". Delete one copy.` : undefined,
   });
 
   const bodyWords = countWords(parsed.text);

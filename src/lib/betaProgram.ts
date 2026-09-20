@@ -19,6 +19,7 @@ import {
   getTesterState,
   getTesterEmail,
   sendTesterInvitation,
+  listGroupTesterStates,
 } from "@/lib/appStoreConnect";
 import {
   getPlayBetaState,
@@ -766,6 +767,47 @@ export async function backfillBetaTesterLinks(
       }
     }
   }
+
+  // Second pass, for the rows no address will ever resolve (relay emails).
+  // The candidates are the accounts that have produced iOS events and belong
+  // to no signup: only TestFlight testers can produce those, so the set is
+  // small and every member is someone we invited. One Clerk read per
+  // candidate, and the same one-name-one-INSTALLED rule as the session path.
+  repaired += await backfillRelayLinks().catch((err) => {
+    console.error("backfillRelayLinks failed:", err);
+    return 0;
+  });
+  return repaired;
+}
+
+async function backfillRelayLinks(): Promise<number> {
+  // No early exit on "no orphans left": a linked row can still be missing its
+  // tester's SECOND account (web first, then iOS with a relay email).
+  const rows = await prisma.betaSignup.findMany({
+    where: { clerkUserId: { not: null } },
+    select: { clerkUserId: true, altClerkUserIds: true },
+  });
+  const linkedIds = rows.flatMap((r) => [r.clerkUserId as string, ...r.altClerkUserIds]);
+
+  const iosUsers = await prisma.userMetric.groupBy({
+    by: ["userId"],
+    where: {
+      userId: { notIn: linkedIds },
+      metadata: { path: ["platform"], equals: "ios" },
+    },
+  });
+
+  let repaired = 0;
+  for (const { userId } of iosUsers) {
+    try {
+      const user = await getClerkClient().users.getUser(userId);
+      const email = user.primaryEmailAddress?.emailAddress ?? null;
+      const ok = await reconcileBetaTesterLinkByInstall({ userId, email, firstName: user.firstName });
+      if (ok) repaired += 1;
+    } catch (err) {
+      console.error(`backfillRelayLinks failed for ${userId}:`, err);
+    }
+  }
   return repaired;
 }
 
@@ -880,6 +922,91 @@ export async function sendPersonalNote(args: {
 }
 
 /**
+ * The link for testers whose Clerk email matches NOTHING we hold.
+ *
+ * WHY THIS EXISTS: Sign in with Apple offers "Hide My Email", and iCloud hands
+ * out throwaway aliases; both produce an address nobody typed on the form. On
+ * 2026-09-19 two testers Apple reported as INSTALLED were reading stories under
+ * `…@privaterelay.appleid.com` and a second iCloud alias, while the Studio
+ * counted them as "has not signed in" and the lifecycle cron was lining up an
+ * install nudge for people who had already installed.
+ *
+ * The match is deliberately narrow, and every leg of it is a hard fact rather
+ * than a guess: the session comes from the iOS app (only TestFlight testers
+ * have it), Apple says that tester INSTALLED the build, this account is not
+ * on the row yet, and the first name matches. It links only when EXACTLY one
+ * row satisfies all four; two Franks and it stays out. Costs one App Store
+ * Connect round trip, paid only on the rare session that the email lookup
+ * could not resolve, and never again once the account is on the row.
+ *
+ * A row that is ALREADY linked still counts (2026-09-20): David signed in on
+ * the web with the email he applied with, got linked and premium, and two
+ * weeks later opened the iOS app with "Hide My Email". Same tester, second
+ * Clerk account, and `basic` on the phone: he wrote in asking whether his
+ * account was locked. The first account keeps `clerkUserId`; the second goes
+ * to `altClerkUserIds` and gets the same plan.
+ */
+export async function reconcileBetaTesterLinkByInstall(args: {
+  userId: string;
+  email: string | null | undefined;
+  firstName: string | null | undefined;
+}): Promise<boolean> {
+  const firstName = args.firstName?.trim().split(/\s+/)[0]?.toLowerCase();
+  if (!firstName) return false;
+
+  const linked = await prisma.betaSignup.findFirst({
+    where: { OR: [{ clerkUserId: args.userId }, { altClerkUserIds: { has: args.userId } }] },
+    select: { id: true },
+  });
+  if (linked) return false;
+
+  const orphans = await prisma.betaSignup.findMany({
+    where: {
+      platform: "ios",
+      status: { in: ACTIVE_STATUSES },
+      ascTesterId: { not: null },
+      ...NOT_A_TEST_ROW,
+    },
+    select: { id: true, email: true, firstName: true, ascTesterId: true, clerkUserId: true },
+  });
+  const byName = orphans.filter(
+    (o) => o.firstName?.trim().split(/\s+/)[0]?.toLowerCase() === firstName,
+  );
+  if (byName.length === 0) return false;
+
+  const states = await listGroupTesterStates();
+  if (states.size === 0) return false;
+  const installed = byName.filter(
+    (o) => o.ascTesterId && states.get(o.ascTesterId)?.state === "INSTALLED",
+  );
+  if (installed.length !== 1) {
+    if (installed.length > 1) {
+      console.warn(
+        `Beta: ${installed.length} INSTALLED testers named "${firstName}" without a Clerk link; not guessing.`,
+      );
+    }
+    return false;
+  }
+
+  const row = installed[0];
+  await grantBetaPlan(args.userId);
+  const second = row.clerkUserId !== null;
+  await prisma.betaSignup.update({
+    where: { id: row.id },
+    data: {
+      ...(second
+        ? { altClerkUserIds: { push: args.userId } }
+        : { clerkUserId: args.userId, status: "accepted", planGrantedAt: new Date(), planRevokedAt: null }),
+      lastActiveAt: new Date(),
+    },
+  });
+  console.log(
+    `🔗 Beta: linked ${row.email} to ${args.userId}${second ? " as a second account" : ""} by Apple INSTALLED state (signed in as ${args.email ?? "unknown"})`,
+  );
+  return true;
+}
+
+/**
  * Records that a tester used the app today. Called from the mobile session
  * endpoint and the web platform ping, and it is the only engagement signal in
  * the program that does not depend on Apple telling us anything.
@@ -887,17 +1014,32 @@ export async function sendPersonalNote(args: {
  * Reconciles the Clerk link first when an email is supplied: the update below
  * matches on `clerkUserId`, so before the link exists it silently touches zero
  * rows, which is exactly how every tester stayed at "has not signed in".
+ *
+ * `ios` carries the iOS app's fallback for relay addresses; see
+ * reconcileBetaTesterLinkByInstall. The web ping passes nothing and keeps the
+ * email-only path.
  */
 export async function touchTesterActivity(
   userId: string,
   email?: string | null,
+  ios?: { firstName: string | null | undefined },
 ): Promise<void> {
   if (email) {
     await reconcileBetaTesterLink({ userId, email }).catch((err) => {
       console.error("reconcileBetaTesterLink failed:", err);
     });
   }
+  if (ios) {
+    await reconcileBetaTesterLinkByInstall({ userId, email, firstName: ios.firstName }).catch(
+      (err) => {
+        console.error("reconcileBetaTesterLinkByInstall failed:", err);
+      },
+    );
+  }
   await prisma.betaSignup
-    .updateMany({ where: { clerkUserId: userId }, data: { lastActiveAt: new Date() } })
+    .updateMany({
+      where: { OR: [{ clerkUserId: userId }, { altClerkUserIds: { has: userId } }] },
+      data: { lastActiveAt: new Date() },
+    })
     .catch(() => undefined);
 }

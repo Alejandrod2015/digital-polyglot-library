@@ -16,7 +16,7 @@ import {
 const ACCENT = "#fcd34d";
 const CARD_BG = "#0f1f34";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
-const INPUT_BG = "#0a1628";
+const INPUT_BG = "#100c0a";
 
 const STATUS_COLOR: Record<PlanStatus, string> = {
   live: "#4ade80",
@@ -127,7 +127,7 @@ function BannerPreview({ item }: { item: SmartNotification }) {
           height: 26,
           borderRadius: 7,
           background: ACCENT,
-          color: "#0a1628",
+          color: "#100c0a",
           fontSize: 13,
           fontWeight: 800,
           display: "flex",

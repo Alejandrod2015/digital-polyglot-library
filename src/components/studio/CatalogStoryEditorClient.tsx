@@ -34,7 +34,7 @@ const card: React.CSSProperties = {
   marginBottom: 16,
 };
 const btnPrimary: React.CSSProperties = {
-  background: "#14b8a6",
+  background: "#f2b155",
   color: "white",
   border: "none",
   borderRadius: 6,

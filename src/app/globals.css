@@ -120,7 +120,7 @@
   --mx-muted: #7d8aa3;
   --mx-muted-soft: #56627a;
   --mx-brand: #fcd34d;
-  --mx-accent: #14b8a6;
+  --mx-accent: #f2b155;
   --mx-cyan: #7dd3fc;
   --mx-xp: #a3e635;
   --mx-gold: #fcd34d;
@@ -833,7 +833,7 @@ body {
    * <main> del shell (24px arriba, 32px laterales, 48px abajo) para
    * que el dark llegue a los bordes visibles del área de contenido. */
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(20, 184, 166, 0.06), transparent),
+    radial-gradient(1200px 600px at 80% -10%, rgba(242, 177, 85, 0.06), transparent),
     var(--mx-bg-1);
   margin: -24px -32px -48px;
   padding: 24px 32px 48px;
@@ -1274,7 +1274,7 @@ body {
 }
 .mx-table__bar-fill {
   position: absolute; inset: 0 auto 0 0;
-  background: linear-gradient(90deg, var(--mx-accent) 0%, rgba(20,184,166,0.6) 100%);
+  background: linear-gradient(90deg, var(--mx-accent) 0%, rgba(242, 177, 85,0.6) 100%);
   border-radius: 4px;
 }
 .mx-table__bar-value {
@@ -1300,7 +1300,22 @@ body {
  * SOLO dentro de la columna de contenido de Metricas; los .jm-* del
  * Journey Manager y el resto del Studio siguen con el navy/teal de :root.
  * =======================================================*/
+.studio-shell-root,
 .mx-warm {
+  --studio-accent: #f2b155;
+  --studio-accent-hover: #e0a04a;
+  --studio-accent-soft: rgba(242, 177, 85, 0.15);
+  --studio-accent-glow: rgba(242, 177, 85, 0.3);
+  --studio-sidebar-bg: #0a0807;
+  --studio-sidebar-border: rgba(242, 177, 85, 0.10);
+  --foreground: #f2ece5;
+  --muted: #a68f78;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-bg-hover: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(242, 177, 85, 0.14);
+  --chip-bg: rgba(242, 177, 85, 0.08);
+  --chip-border: rgba(242, 177, 85, 0.24);
+  --chip-text: #e9dfd2;
   --mx-bg-0: #0a0807;
   --mx-bg-1: #100c0a;
   --mx-bg-2: #16110d;
@@ -1330,33 +1345,31 @@ body {
   --mx-info: #8b9dfb;
   --mx-serif: var(--font-fraunces), Georgia, serif;
   color: var(--mx-fg);
-  background: radial-gradient(90% 60% at 70% -10%, #1c150f 0%, #100c0a 45%, #0c0a09 100%);
-  min-height: 100vh;
 }
-.mx-warm .mx-root { background: transparent; }
-.mx-warm .mx-panel__title { font-family: var(--mx-serif); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
-.mx-warm .mx-panel__eyebrow,
-.mx-warm .mx-kpi__label,
-.mx-warm .mx-filters__label,
-.mx-warm .mx-fold__eyebrow { font-family: var(--mx-mono); letter-spacing: 0.14em; font-weight: 700; }
-.mx-warm .mx-kpi--hero .mx-kpi__label { color: var(--mx-fg-soft); }
-.mx-warm .mx-kpi { border-radius: 14px; }
-.mx-warm .mx-kpi--hero::before { left: 0; right: 0; opacity: 1; }
-.mx-warm .mx-segmented { border-radius: 9px; padding: 3px; gap: 2px; }
-.mx-warm .mx-segmented__btn { border-radius: 7px; }
-.mx-warm .mx-segmented__btn--active {
+.studio-shell-root .mx-root { background: transparent; }
+.studio-shell-root .mx-panel__title { font-family: var(--mx-serif); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.studio-shell-root .mx-panel__eyebrow,
+.studio-shell-root .mx-kpi__label,
+.studio-shell-root .mx-filters__label,
+.studio-shell-root .mx-fold__eyebrow { font-family: var(--mx-mono); letter-spacing: 0.14em; font-weight: 700; }
+.studio-shell-root .mx-kpi--hero .mx-kpi__label { color: var(--mx-fg-soft); }
+.studio-shell-root .mx-kpi { border-radius: 14px; }
+.studio-shell-root .mx-kpi--hero::before { left: 0; right: 0; opacity: 1; }
+.studio-shell-root .mx-segmented { border-radius: 9px; padding: 3px; gap: 2px; }
+.studio-shell-root .mx-segmented__btn { border-radius: 7px; }
+.studio-shell-root .mx-segmented__btn--active {
   background: linear-gradient(180deg, #4a3420, #382916);
   color: var(--mx-fg);
 }
-.mx-warm .mx-btn--primary { color: #1c1410; }
-.mx-warm .mx-live {
+.studio-shell-root .mx-btn--primary { color: #1c1410; }
+.studio-shell-root .mx-live {
   color: #b9e6da;
   background: rgba(143, 211, 193, 0.08);
   border-color: rgba(143, 211, 193, 0.22);
 }
-.mx-warm .mx-live__dot { box-shadow: 0 0 8px var(--mx-pos); }
-.mx-warm .mx-delta { border-radius: 6px; }
-.mx-warm .mx-fold { border-radius: 14px; }
+.studio-shell-root .mx-live__dot { box-shadow: 0 0 8px var(--mx-pos); }
+.studio-shell-root .mx-delta { border-radius: 6px; }
+.studio-shell-root .mx-fold { border-radius: 14px; }
 
 /* Chips de la cabecera de retencion: valor del hito + tooltip al pasar el cursor. */
 .mx-rchip {
@@ -1399,14 +1412,14 @@ body {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; color: var(--mx-muted);
   padding: 6px 12px;
-  background: rgba(74, 222, 128, 0.06);
-  border: 1px solid rgba(74, 222, 128, 0.18);
+  background: rgba(143, 211, 193, 0.06);
+  border: 1px solid rgba(143, 211, 193, 0.18);
   border-radius: 999px;
 }
 .mx-live__dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--mx-pos);
-  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.20);
+  box-shadow: 0 0 0 3px rgba(143, 211, 193, 0.20);
 }
 
 /* ── Filas clicables (tabla de altas -> ficha de usuario) ── */
@@ -1827,14 +1840,14 @@ main.dp-app-canvas:has(.dp-journey-page) {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; color: var(--mx-fg-soft);
   padding: 5px 11px;
-  background: rgba(74, 222, 128, 0.06);
-  border: 1px solid rgba(74, 222, 128, 0.18);
+  background: rgba(143, 211, 193, 0.06);
+  border: 1px solid rgba(143, 211, 193, 0.18);
   border-radius: 999px;
 }
 .jm-live__dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--mx-pos);
-  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.20);
+  box-shadow: 0 0 0 3px rgba(143, 211, 193, 0.20);
 }
 
 /* Panel */
@@ -1920,12 +1933,12 @@ main.dp-app-canvas:has(.dp-journey-page) {
 
 .jm-btn-tone-teal {
   color: var(--mx-accent);
-  border-color: rgba(20, 184, 166, 0.28);
-  background: rgba(20, 184, 166, 0.06);
+  border-color: rgba(242, 177, 85, 0.28);
+  background: rgba(242, 177, 85, 0.06);
 }
 .jm-btn-tone-teal:hover:not(:disabled) {
-  background: rgba(20, 184, 166, 0.12);
-  border-color: rgba(20, 184, 166, 0.50);
+  background: rgba(242, 177, 85, 0.12);
+  border-color: rgba(242, 177, 85, 0.50);
 }
 
 .jm-btn-tone-amber {
@@ -2000,10 +2013,10 @@ main.dp-app-canvas:has(.dp-journey-page) {
   font-family: var(--mx-font);
 }
 .jm-chip--mono { font-family: var(--mx-mono); letter-spacing: -0.01em; }
-.jm-chip--teal { color: var(--mx-accent); background: rgba(20, 184, 166, 0.10); border-color: rgba(20, 184, 166, 0.28); }
+.jm-chip--teal { color: var(--mx-accent); background: rgba(242, 177, 85, 0.10); border-color: rgba(242, 177, 85, 0.28); }
 .jm-chip--amber { color: var(--mx-warn); background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.28); }
 .jm-chip--red { color: var(--mx-neg); background: rgba(248, 113, 113, 0.10); border-color: rgba(248, 113, 113, 0.28); }
-.jm-chip--green { color: var(--mx-pos); background: rgba(74, 222, 128, 0.10); border-color: rgba(74, 222, 128, 0.28); }
+.jm-chip--green { color: var(--mx-pos); background: rgba(143, 211, 193, 0.10); border-color: rgba(143, 211, 193, 0.28); }
 .jm-chip--purple { color: var(--mx-purple); background: rgba(167, 139, 250, 0.10); border-color: rgba(167, 139, 250, 0.28); }
 .jm-chip--brand { color: #1a1404; background: var(--mx-brand); border-color: rgba(252, 211, 77, 0.7); }
 
@@ -2018,8 +2031,8 @@ main.dp-app-canvas:has(.dp-journey-page) {
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.10);
-  border: 1px solid rgba(20, 184, 166, 0.28);
+  background: rgba(242, 177, 85, 0.10);
+  border: 1px solid rgba(242, 177, 85, 0.28);
 }
 
 /* Level code chip (A1 B2 etc) */
@@ -2033,8 +2046,8 @@ main.dp-app-canvas:has(.dp-journey-page) {
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.10);
-  border: 1px solid rgba(20, 184, 166, 0.30);
+  background: rgba(242, 177, 85, 0.10);
+  border: 1px solid rgba(242, 177, 85, 0.30);
 }
 
 /* Status badge; published / review / missing / stale. Used by Covers
@@ -2053,8 +2066,8 @@ main.dp-app-canvas:has(.dp-journey-page) {
   letter-spacing: -0.005em;
 }
 .jm-status-badge--published {
-  background: rgba(74, 222, 128, 0.10);
-  border-color: rgba(74, 222, 128, 0.34);
+  background: rgba(143, 211, 193, 0.10);
+  border-color: rgba(143, 211, 193, 0.34);
   color: var(--mx-pos);
 }
 .jm-status-badge--review {
@@ -2090,7 +2103,7 @@ main.dp-app-canvas:has(.dp-journey-page) {
 }
 .jm-input:focus {
   border-color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.04);
+  background: rgba(242, 177, 85, 0.04);
 }
 .jm-input--mono { font-family: var(--mx-mono); font-size: 11.5px; }
 .jm-input--inline {
@@ -2138,7 +2151,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 }
 .jm-segmented__btn:hover { color: var(--mx-fg); }
 .jm-segmented__btn--active {
-  background: rgba(20, 184, 166, 0.14);
+  background: rgba(242, 177, 85, 0.14);
   color: var(--mx-accent);
 }
 
@@ -2184,7 +2197,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   color: var(--mx-fg-soft);
 }
 .jm-select__option:hover { background: var(--mx-bg-panel-hi); color: var(--mx-fg); }
-.jm-select__option--selected { background: rgba(20, 184, 166, 0.10); color: var(--mx-accent); }
+.jm-select__option--selected { background: rgba(242, 177, 85, 0.10); color: var(--mx-accent); }
 .jm-select__option--disabled { opacity: 0.35; pointer-events: none; }
 .jm-select__option-mark {
   width: 12px; height: 12px;
@@ -2225,8 +2238,8 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   font-size: 10px;
   font-weight: 600;
   color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.14);
-  border: 1px solid rgba(20, 184, 166, 0.30);
+  background: rgba(242, 177, 85, 0.14);
+  border: 1px solid rgba(242, 177, 85, 0.30);
 }
 .jm-multi__pill-x {
   cursor: pointer;
@@ -2245,7 +2258,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   transition: border-color 0.12s, background 0.12s;
 }
 .jm-journey:hover { border-color: var(--mx-border-strong); }
-.jm-journey--open { border-color: rgba(20, 184, 166, 0.30); }
+.jm-journey--open { border-color: rgba(242, 177, 85, 0.30); }
 .jm-j-head {
   display: flex; align-items: center; gap: 10px;
   padding: 12px 16px;
@@ -2368,7 +2381,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 .jm-level-editor {
   border-top: 1px solid var(--mx-border);
   padding: 10px 16px;
-  background: rgba(20, 184, 166, 0.03);
+  background: rgba(242, 177, 85, 0.03);
   display: flex; align-items: center; gap: 8px;
   flex-wrap: wrap;
 }
@@ -2388,7 +2401,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 }
 .jm-level-head__rule {
   flex: 1; height: 1px;
-  background: rgba(20, 184, 166, 0.18);
+  background: rgba(242, 177, 85, 0.18);
 }
 
 /* Topic row */
@@ -2400,7 +2413,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   transition: background 0.12s;
 }
 .jm-topic-row:hover { background: var(--mx-bg-panel); }
-.jm-topic-row--open { background: rgba(20, 184, 166, 0.04); }
+.jm-topic-row--open { background: rgba(242, 177, 85, 0.04); }
 .jm-topic-row__label {
   font-size: 13px;
   font-weight: 500;
@@ -2419,7 +2432,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
 }
-.jm-sdot--published { background: var(--mx-pos); box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.20); }
+.jm-sdot--published { background: var(--mx-pos); box-shadow: 0 0 0 2px rgba(143, 211, 193, 0.20); }
 .jm-sdot--partial { background: #86efac; }
 .jm-sdot--generated { background: var(--mx-info); }
 .jm-sdot--draft { background: rgba(255, 255, 255, 0.15); }
@@ -2481,7 +2494,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   border-top: 1px solid var(--mx-border-soft);
   border-left: 2px solid var(--mx-accent);
   margin-left: 14px;
-  background: rgba(20, 184, 166, 0.025);
+  background: rgba(242, 177, 85, 0.025);
   display: flex; flex-direction: column;
   gap: 10px;
 }
@@ -2579,8 +2592,8 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   padding: 2px 7px;
   border-radius: 3px;
   font-size: 10.5px;
-  background: rgba(20, 184, 166, 0.08);
-  border: 1px solid rgba(20, 184, 166, 0.20);
+  background: rgba(242, 177, 85, 0.08);
+  border: 1px solid rgba(242, 177, 85, 0.20);
   color: var(--mx-fg-soft);
 }
 .jm-vocab strong { color: var(--mx-fg); font-weight: 600; }
@@ -2746,7 +2759,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 .jm-ex-table tbody tr:hover td { background: var(--mx-bg-panel); }
 .jm-ex-row--editing td {
   border-bottom: none !important;
-  background: rgba(20, 184, 166, 0.04);
+  background: rgba(242, 177, 85, 0.04);
 }
 .jm-ex-table__num {
   font-family: var(--mx-mono);
@@ -2770,7 +2783,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 
 .jm-ex-edit-cell {
   padding: 0 !important;
-  background: rgba(20, 184, 166, 0.025) !important;
+  background: rgba(242, 177, 85, 0.025) !important;
   border-left: 2px solid var(--mx-accent) !important;
 }
 .jm-ex-edit {
@@ -2830,12 +2843,12 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 }
 .jm-upload-zone[data-drag-over] {
   border-color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.06);
+  background: rgba(242, 177, 85, 0.06);
 }
 .jm-upload-zone[data-uploading] {
   border-style: solid;
   border-color: var(--mx-accent);
-  background: rgba(20, 184, 166, 0.04);
+  background: rgba(242, 177, 85, 0.04);
 }
 
 .jm-upload-progress {

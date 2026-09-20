@@ -696,6 +696,9 @@ model BetaSignup {
   // we control. `planRevokedAt` is stamped when the beta closes and the
   // temporary premium grant is taken back. ──
   clerkUserId   String?
+  // Segundas cuentas del mismo tester (web con su correo + app iOS con
+  // "Hide My Email"). El plan beta y la actividad cuentan en todas.
+  altClerkUserIds String[] @default([])
   planGrantedAt DateTime?
   planRevokedAt DateTime?
   lastActiveAt  DateTime?

@@ -81,8 +81,8 @@ export default function DirectivePanel() {
       {/* Header row */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#14b8a6" }}>Directriz</p>
-          <label style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 11, color: active ? "#14b8a6" : "var(--muted)", cursor: "pointer" }}>
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#f2b155" }}>Directriz</p>
+          <label style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 11, color: active ? "#f2b155" : "var(--muted)", cursor: "pointer" }}>
             <input type="checkbox" checked={active} onChange={(e) => setActive(e.target.checked)} style={{ cursor: "pointer" }} />
             {active ? "Activa" : "Inactiva"}
           </label>
@@ -90,7 +90,7 @@ export default function DirectivePanel() {
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           {message && <span style={{ fontSize: 11, color: message.type === "success" ? "#22c55e" : "#ef4444" }}>{message.text}</span>}
           <button onClick={() => void handleSave()} disabled={saving || languages.length === 0 || levels.length === 0}
-            style={{ height: 28, padding: "0 14px", borderRadius: 6, border: "none", backgroundColor: saving || languages.length === 0 ? "var(--muted)" : "#14b8a6", color: "#fff", fontWeight: 700, fontSize: 11, cursor: saving ? "not-allowed" : "pointer", opacity: saving ? 0.6 : 1 }}>
+            style={{ height: 28, padding: "0 14px", borderRadius: 6, border: "none", backgroundColor: saving || languages.length === 0 ? "var(--muted)" : "#f2b155", color: "#fff", fontWeight: 700, fontSize: 11, cursor: saving ? "not-allowed" : "pointer", opacity: saving ? 0.6 : 1 }}>
             {saving ? "..." : "Guardar"}
           </button>
         </div>
@@ -107,7 +107,7 @@ export default function DirectivePanel() {
               return (
                 <button key={code} onClick={() => setLanguages(selected ? languages.filter((l) => l !== code) : [...languages, code])}
                   title={LANGUAGE_LABELS[code]}
-                  style={{ padding: "3px 8px", borderRadius: 4, border: `1px solid ${selected ? "#14b8a6" : "var(--card-border)"}`, backgroundColor: selected ? "rgba(20,184,166,0.15)" : "transparent", color: selected ? "#14b8a6" : "var(--muted)", fontSize: 10, fontWeight: 700, cursor: "pointer" }}>
+                  style={{ padding: "3px 8px", borderRadius: 4, border: `1px solid ${selected ? "#f2b155" : "var(--card-border)"}`, backgroundColor: selected ? "rgba(242, 177, 85,0.15)" : "transparent", color: selected ? "#f2b155" : "var(--muted)", fontSize: 10, fontWeight: 700, cursor: "pointer" }}>
                   {short}
                 </button>
               );
@@ -123,7 +123,7 @@ export default function DirectivePanel() {
               const selected = levels.includes(level);
               return (
                 <button key={level} onClick={() => setLevels(selected ? levels.filter((l) => l !== level) : [...levels, level])}
-                  style={{ padding: "3px 8px", borderRadius: 4, border: `1px solid ${selected ? "#14b8a6" : "var(--card-border)"}`, backgroundColor: selected ? "rgba(20,184,166,0.15)" : "transparent", color: selected ? "#14b8a6" : "var(--muted)", fontSize: 10, fontWeight: 700, cursor: "pointer", textTransform: "uppercase" }}>
+                  style={{ padding: "3px 8px", borderRadius: 4, border: `1px solid ${selected ? "#f2b155" : "var(--card-border)"}`, backgroundColor: selected ? "rgba(242, 177, 85,0.15)" : "transparent", color: selected ? "#f2b155" : "var(--muted)", fontSize: 10, fontWeight: 700, cursor: "pointer", textTransform: "uppercase" }}>
                   {level}
                 </button>
               );

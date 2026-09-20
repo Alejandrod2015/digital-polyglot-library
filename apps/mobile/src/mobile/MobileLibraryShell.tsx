@@ -7487,6 +7487,27 @@ export function MobileLibraryShell(args: {
     setCustomInterestInput("");
   }
 
+  // Deja constancia de cada descarga offline. Fuego y olvido: la descarga ya
+  // termino cuando se llama y una metrica perdida no debe estorbarla.
+  function trackOfflineDownload(
+    storySlug: string,
+    scope: "story" | "topic",
+    extra?: Record<string, unknown>
+  ) {
+    if (!sessionToken) return;
+    void apiFetch<{ success: true }>({
+      baseUrl: mobileConfig.apiBaseUrl,
+      path: "/api/mobile/metrics",
+      token: sessionToken,
+      method: "POST",
+      body: {
+        storySlug,
+        eventType: "offline_download",
+        metadata: { scope, ...extra },
+      },
+    }).catch(() => {});
+  }
+
   async function downloadStoryOffline(book: Book, story: Story) {
     if (!canDownloadOffline) {
       void openPlans();
@@ -7525,6 +7546,7 @@ export function MobileLibraryShell(args: {
         (r) => setOfflineProgress(story.id, r)
       );
       setOfflineSnapshot(nextSnapshot);
+      trackOfflineDownload(story.slug, "story", { bookSlug: book.slug });
     } finally {
       setOfflineStoryIdInFlight(null);
       clearOfflineProgress(story.id);
@@ -7533,7 +7555,8 @@ export function MobileLibraryShell(args: {
 
   async function downloadJourneyStoryOffline(
     story: MobileJourneyTopicSummary["stories"][number],
-    onProgress?: (ratio: number) => void
+    onProgress?: (ratio: number) => void,
+    scope: "story" | "topic" = "story"
   ) {
     if (!canDownloadOffline) {
       void openPlans();
@@ -7600,6 +7623,8 @@ export function MobileLibraryShell(args: {
         setLockedStoryHint(
           `Download incomplete (${missing} could not be saved). Check your connection and try again.`
         );
+      } else {
+        trackOfflineDownload(standalone.slug, scope);
       }
     } catch (error) {
       console.error("[mobile journey] failed to download journey story offline", error);
@@ -7632,12 +7657,16 @@ export function MobileLibraryShell(args: {
     try {
       for (let i = 0; i < pending.length; i += 1) {
         const story = pending[i];
-        await downloadJourneyStoryOffline(story, (r) => {
-          const agg = (i + r) / pending.length;
-          setOfflineTopicProgress((prev) =>
-            agg < 1 && Math.abs(agg - prev) < 0.02 ? prev : agg
-          );
-        });
+        await downloadJourneyStoryOffline(
+          story,
+          (r) => {
+            const agg = (i + r) / pending.length;
+            setOfflineTopicProgress((prev) =>
+              agg < 1 && Math.abs(agg - prev) < 0.02 ? prev : agg
+            );
+          },
+          "topic"
+        );
         setOfflineTopicProgress((i + 1) / pending.length);
       }
     } finally {

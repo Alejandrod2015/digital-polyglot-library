@@ -94,7 +94,7 @@ export default async function StudioPedidosPage({
                   borderRadius: 999,
                   border: "1px solid var(--mx-border, #d4d4d8)",
                   background: d === days ? "var(--mx-accent, #fcd34d)" : "transparent",
-                  color: d === days ? "#0b1e36" : "inherit",
+                  color: d === days ? "#16110d" : "inherit",
                   textDecoration: "none",
                   fontWeight: d === days ? 700 : 500,
                 }}
