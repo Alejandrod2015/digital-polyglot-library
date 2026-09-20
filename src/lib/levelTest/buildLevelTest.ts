@@ -1,6 +1,4 @@
-import { prisma } from "@/lib/prisma";
-import type { PracticeExercise } from "@/lib/practiceExercises";
-import { loadPersistedExercisesForSlugs } from "@/lib/persistedPracticeExercises";
+import type { PracticeAudioClip, PracticeExercise } from "@/lib/practiceExercises";
 import {
   LEVEL_TEST_STATION_SIZE,
   type LevelTestExercise,
@@ -8,75 +6,141 @@ import {
   type LevelTestRung,
   type LevelTestStation,
 } from "@domain/levelTest";
+import { shuffleIndices, shuffleOptionsDeterministic } from "@/lib/practiceShuffle";
+import { SPANISH_LEVEL_TEST_BANK, type BankStation } from "./bank.es";
+import SPANISH_LEVEL_TEST_AUDIO from "./bank.es.audio.json";
 
 /**
- * The level test, built from the live catalogue: for each rung, the first
- * live stories of that level (for the learner's variant) whose curated
- * practice set has enough usable exercises. Nothing is authored by hand:
- * the test is made of the same `StoryPracticeSet` exercises the learner
- * will practise with after every story (user, 2026-09-20: "use the
- * formats we already have, so they get used to them").
+ * The level test, from a bank written FOR the test (2026-09-20, user:
+ * "quiero que tengamos ejercicios dedicados para cada test de cada idioma",
+ * one bank per language, the same for every variant). Until then it took
+ * curated story exercises, which assumed the story had been read and mixed
+ * in slang; both are wrong for a placement.
  *
- * A station takes four exercises, one of each format first (listen,
- * meaning, context, fill-the-gap) and then more of the same until four.
- * `match_meaning` and `speaking` stay out: match is a multi-pair board
- * that does not score as one answer, and speaking needs a microphone.
+ * Each rung has two stations of four exercises, one of each practice
+ * format (listen, meaning, fill, match), with the test's own audio. The
+ * app picks one station per rung at random.
  */
 
-/** Languages with a level test. Mobile sends the display name. */
-const LANGUAGE_BY_DISPLAY: Record<string, string> = { spanish: "spanish" };
+const BANKS: Record<string, { language: string; bank: Record<LevelTestRung, BankStation[]> }> = {
+  spanish: { language: "spanish", bank: SPANISH_LEVEL_TEST_BANK },
+};
 
 export function hasListeningLevelTest(language: string | null | undefined): boolean {
-  return Boolean(language && LANGUAGE_BY_DISPLAY[language.toLowerCase()]);
+  return Boolean(language && BANKS[language.toLowerCase()]);
 }
 
-/** Variant pools, in the keys the app sends (`es`/`spain`, `latam`, ...). */
-const SPAIN_VARIANTS = ["spain"];
-const LATAM_VARIANTS = ["latam", "mexico", "colombia", "argentina", "chile", "peru"];
+/** Rungs served: the bank's rungs that have at least one full station. */
+export const LADDER: LevelTestRung[] = ["A1", "A2", "B1", "B2", "C1"];
 
-const LADDER_LATAM: LevelTestRung[] = ["A1", "A2", "B1", "B2", "C1"];
-const LADDER_SPAIN: LevelTestRung[] = ["A1", "A2", "B1", "B2"];
-
-/** Stories per rung offered to the app, which picks one at random. */
-const STORIES_PER_RUNG = 2;
-
-const FORMAT_ORDER: PracticeExercise["type"][] = [
-  "listen_choose",
-  "meaning_in_context",
-  "fill_blank",
-];
-
-function resolveVariant(variant: string | null | undefined): { key: "spain" | "latam"; pool: string[]; ladder: LevelTestRung[] } {
-  const key = (variant ?? "").trim().toLowerCase();
-  return key === "spain" || key === "es"
-    ? { key: "spain", pool: SPAIN_VARIANTS, ladder: LADDER_SPAIN }
-    : { key: "latam", pool: LATAM_VARIANTS, ladder: LADDER_LATAM };
+/** Exercises per station: four, or `LEVEL_TEST_EXERCISES_PER_STATION` on a
+ *  local server to walk the flow quickly (1 while testing, 2026-09-20).
+ *  The app scores whatever size it gets (`stationPassed`). */
+function stationSize(): number {
+  const raw = Number(process.env.LEVEL_TEST_EXERCISES_PER_STATION ?? "");
+  return Number.isInteger(raw) && raw >= 1 && raw <= 10 ? raw : LEVEL_TEST_STATION_SIZE;
 }
 
-/** The three single-answer formats. `listen_choose` carries no clip in the
- *  set: the app fetches the word's pre-baked ElevenLabs clip from the
- *  practice audio route, exactly as it does after a story. */
-function usable(exercise: PracticeExercise): boolean {
-  return FORMAT_ORDER.includes(exercise.type);
+/** The test's own clips (`scripts/_genLevelTestClips.ts`): sentence and
+ *  word text to public URL. Missing entries fall back to runtime TTS. */
+type BankAudio = { sentences: Record<string, string>; words: Record<string, string> };
+const AUDIO: Record<string, BankAudio> = { spanish: SPANISH_LEVEL_TEST_AUDIO as BankAudio };
+
+function sentenceClip(language: string, sentence: string): PracticeAudioClip | null {
+  const url = AUDIO[language]?.sentences[sentence];
+  return url ? { storySlug: "", sentence, storySource: "standalone", language, cachedUrl: url, clipUrl: url } : null;
 }
 
-/**
- * Four exercises for a station: one per format in `FORMAT_ORDER`, then the
- * remaining slots with whatever formats are left, keeping the set's order.
- * Null when the story cannot fill four.
- */
-export function pickStationExercises(exercises: PracticeExercise[]): PracticeExercise[] | null {
-  const pool = exercises.filter(usable);
-  const picked: PracticeExercise[] = [];
-  for (const type of FORMAT_ORDER) {
-    const next = pool.find((e) => e.type === type && !picked.includes(e));
-    if (next) picked.push(next);
-  }
-  for (const e of pool) {
-    if (picked.length >= LEVEL_TEST_STATION_SIZE) break;
-    if (!picked.includes(e)) picked.push(e);
-  }
-  return picked.length >= LEVEL_TEST_STATION_SIZE ? picked.slice(0, LEVEL_TEST_STATION_SIZE) : null;
+function wordClip(language: string, word: string, sentence: string): PracticeAudioClip | null {
+  const url = AUDIO[language]?.words[word];
+  return url ? { storySlug: "", sentence, storySource: "standalone", language, targetWord: word, wordClipUrl: url } : null;
+}
+
+/** The plain sentence of a `[[...]]`-marked one. */
+const unmark = (s: string) => s.replace(/\[\[(.+?)\]\]/g, "$1");
+
+/** The four exercises of a station, in the shape `/api/story-practice`
+ *  serves, so the app renders them with the very components it uses after
+ *  a story. The bank keeps the right answer first (easy to author and to
+ *  lint); the clients render options in array order, so shuffle here,
+ *  seeded by the exercise id like the curated sets are. */
+export function stationExercises(station: BankStation, id: string, language: string): PracticeExercise[] {
+  const listenOrder = shuffleIndices(4, `${id}-listen`);
+  const listen: PracticeExercise = {
+    id: `listen_choose:${id}-listen`,
+    type: "listen_choose",
+    prompt: "Which sentence did you hear?",
+    speechText: station.listen.sentence,
+    language,
+    options: listenOrder.map((i) => station.listen.options[i]),
+    optionTranslations: listenOrder.map((i) => station.listen.translations[i]),
+    audioClip: sentenceClip(language, station.listen.sentence),
+    answer: station.listen.sentence,
+  };
+  const meaningSentence = unmark(station.meaning.sentence);
+  const meaning: PracticeExercise = {
+    id: `meaning_in_context:${id}-meaning`,
+    type: "meaning_in_context",
+    prompt: "Choose the meaning in context.",
+    word: station.meaning.word,
+    sentence: meaningSentence,
+    storySlug: null,
+    audioClip: wordClip(language, station.meaning.word, meaningSentence),
+    options: shuffleOptionsDeterministic([...station.meaning.options], `${id}-meaning`),
+    answer: station.meaning.options[0],
+  };
+  const fillSentence = unmark(station.fill.sentence);
+  const fillOrder = shuffleIndices(4, `${id}-fill`);
+  const fill: PracticeExercise = {
+    id: `fill_blank:${id}-fill`,
+    type: "fill_blank",
+    prompt: "Complete the sentence.",
+    sentence: station.fill.sentence.replace(/\[\[.+?\]\]/, "_____"),
+    translation: station.fill.translation,
+    optionTranslations: fillOrder.map((i) => station.fill.optionTranslations[i]),
+    storySlug: null,
+    audioClip: sentenceClip(language, fillSentence),
+    options: fillOrder.map((i) => station.fill.options[i]),
+    answer: station.fill.options[0],
+  };
+  const meanings = station.match.pairs.map((p) => p.meaning);
+  const match: PracticeExercise = {
+    id: `match_meaning:${id}-match`,
+    type: "match_meaning",
+    prompt: "Match each word with its meaning.",
+    pairs: station.match.pairs.map((pair, i) => ({
+      word: pair.word,
+      answer: pair.meaning,
+      options: shuffleOptionsDeterministic([...meanings], `${id}-match-${i}`),
+      language,
+      wordClipUrl: AUDIO[language]?.words[pair.word] ?? null,
+    })),
+  };
+  return [listen, meaning, fill, match];
+}
+
+/** The rung's stations, one exercise of each format. With the local size
+ *  override under four, each station keeps `size` formats, rotating so a
+ *  walk through the ladder still shows every format. */
+export function stationsForRung(
+  stations: BankStation[],
+  level: LevelTestRung,
+  language: string,
+  rungIndex: number
+): LevelTestStation[] {
+  const size = stationSize();
+  return stations.map((station, n) => {
+    const id = `${language}-${level.toLowerCase()}-${n}`;
+    const all = stationExercises(station, id, language);
+    const start = (rungIndex * stations.length + n) % all.length;
+    const exercises = size >= all.length ? all : Array.from({ length: size }, (_, i) => all[(start + i) % all.length]);
+    return {
+      id,
+      level,
+      story: { slug: "", title: "" },
+      exercises: exercises as unknown as LevelTestExercise[],
+    };
+  });
 }
 
 export type StationProblem = { level: LevelTestRung; reason: string };
@@ -85,64 +149,23 @@ export async function buildLevelTest(
   language: string,
   variant: string | null | undefined
 ): Promise<{ payload: LevelTestPayload; problems: StationProblem[] } | null> {
-  const dbLanguage = LANGUAGE_BY_DISPLAY[language.toLowerCase()];
-  if (!dbLanguage) return null;
-  const { key, pool, ladder } = resolveVariant(variant);
-
+  const entry = BANKS[language.toLowerCase()];
+  if (!entry) return null;
+  // One bank per language: the variant is accepted for compatibility with
+  // the app's call and ignored on purpose (user, 2026-09-20).
+  void variant;
   const stations: LevelTestStation[] = [];
   const problems: StationProblem[] = [];
-
-  // One query for the candidate stories of every rung, one for their
-  // exercises, instead of two per story: this route answers the app before
-  // the onboarding curtain lifts, so it has to be quick.
-  const candidates = await prisma.journeyStory.findMany({
-    where: {
-      status: "published",
-      level: { in: ladder.map((l) => l.toLowerCase()) },
-      audioUrl: { not: null },
-      journey: { status: "active", language: dbLanguage, variant: { in: pool } },
-      practiceSet: { isNot: null },
-    },
-    orderBy: [{ journey: { variant: "asc" } }, { topic: "asc" }, { slotIndex: "asc" }],
-    select: { slug: true, title: true, level: true },
+  LADDER.forEach((level, rungIndex) => {
+    const built = stationsForRung(entry.bank[level] ?? [], level, entry.language, rungIndex);
+    if (built.length === 0) problems.push({ level, reason: `bank has no full station for ${level}` });
+    stations.push(...built);
   });
-  // Only the first few stories per rung go to the exercises query: every
-  // candidate would drag ~20 exercise rows with their payload each.
-  const CANDIDATES_PER_RUNG = 4;
-  const shortlist: string[] = [];
-  for (const level of ladder) {
-    candidates
-      .filter((c) => c.slug && c.level.toLowerCase() === level.toLowerCase())
-      .slice(0, CANDIDATES_PER_RUNG)
-      .forEach((c) => shortlist.push(c.slug as string));
-  }
-  const exercisesBySlug = await loadPersistedExercisesForSlugs(shortlist);
-
-  for (const level of ladder) {
-    let found = 0;
-    for (const story of candidates) {
-      if (found >= STORIES_PER_RUNG) break;
-      if (!story.slug || story.level.toLowerCase() !== level.toLowerCase()) continue;
-      const picked = pickStationExercises(exercisesBySlug.get(story.slug) ?? []);
-      if (!picked) continue;
-      stations.push({
-        id: `${key}-${level.toLowerCase()}-${story.slug}`,
-        level,
-        story: { slug: story.slug, title: story.title ?? "" },
-        exercises: picked as unknown as LevelTestExercise[],
-      });
-      found++;
-    }
-    if (found === 0) {
-      problems.push({ level, reason: `no live ${level} story with four usable curated exercises (${key})` });
-    }
-  }
-
   return {
     payload: {
       language,
-      variant: key,
-      ladder: ladder.filter((level) => stations.some((s) => s.level === level)),
+      variant: "all",
+      ladder: LADDER.filter((level) => stations.some((s) => s.level === level)),
       stations,
     },
     problems,

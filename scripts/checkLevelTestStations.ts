@@ -1,47 +1,36 @@
 /**
- * Checks the level test against the live catalogue: every rung of both
- * Spanish variants has at least one live story with four usable curated
- * exercises (listen with its clip, meaning, context, fill-the-gap), and
- * prints one table per variant with the stories and formats each station
- * serves, to read the ladder as the learner will get it.
+ * Prints the level test as the app receives it (one table per language:
+ * rung, station, formats, words) and fails if a rung has no full station.
+ * The bank itself is linted by `scripts/checkLevelTestBank.ts`; this one
+ * checks the assembly (`buildLevelTest`).
  *
  *   npx tsx scripts/checkLevelTestStations.ts
- *
- * Exits 1 when a rung has no station. Nothing is authored by hand: if a
- * rung goes red, the fix is a curated set with audio for a story of that
- * level, not an edit here.
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
-
-// `server-only` throws outside Next; the prisma helper imports it.
-import { createRequire } from "module";
-const req = createRequire(__filename);
-try {
-  const q = req.resolve("server-only");
-  (req as unknown as { cache: Record<string, unknown> }).cache[q] = {
-    id: q, filename: q, loaded: true, exports: {},
-  };
-} catch {}
+import { buildLevelTest } from "../src/lib/levelTest/buildLevelTest";
 
 async function main() {
-  // Imported here, after the cache trick above, because `@/lib/prisma`
-  // seals itself with `server-only` and static imports are hoisted.
-  const { buildLevelTest } = await import("../src/lib/levelTest/buildLevelTest");
   let failed = false;
-  for (const variant of ["latam", "spain"]) {
-    const built = await buildLevelTest("Spanish", variant);
-    if (!built) throw new Error("Spanish has no level test");
-    console.log(`\n## Spanish / ${variant}: ladder ${built.payload.ladder.join(" > ")}`);
-    console.log("| rung | story | formats |");
+  for (const language of ["Spanish"]) {
+    const built = await buildLevelTest(language, null);
+    if (!built) throw new Error(`${language} has no level test`);
+    console.log(`\n## ${language}: ladder ${built.payload.ladder.join(" > ")}`);
+    console.log("| rung | station | exercises |");
     console.log("| --- | --- | --- |");
     for (const s of built.payload.stations) {
-      const formats = s.exercises.map((e) => String(e.type).replace("_", " ")).join(", ");
-      console.log(`| ${s.level} | ${s.story.slug} | ${formats} |`);
+      const items = s.exercises.map((e) => {
+        const ex = e as { type: string; word?: string; speechText?: string; answer?: string; pairs?: Array<{ word: string }> };
+        if (ex.type === "listen_choose") return `listen:${ex.speechText}`;
+        if (ex.type === "meaning_in_context") return `meaning:${ex.word}`;
+        if (ex.type === "fill_blank") return `fill:${ex.answer}`;
+        return `match:${(ex.pairs ?? []).map((p) => p.word).join("/")}`;
+      });
+      console.log(`| ${s.level} | ${s.id} | ${items.join(", ")} |`);
     }
     for (const p of built.problems) {
-      console.log(`PROBLEM ${variant}/${p.level}: ${p.reason}`);
+      console.log(`PROBLEM ${language}/${p.level}: ${p.reason}`);
       failed = true;
     }
   }
@@ -52,12 +41,7 @@ async function main() {
   console.log("\nlevel-test stations: ok");
 }
 
-main()
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  })
-  .finally(async () => {
-    const { prisma } = await import("../src/lib/prisma");
-    await prisma.$disconnect();
-  });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
