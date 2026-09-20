@@ -47,11 +47,13 @@ function esReplicaDeUnaPalabra(palabra: string, texto: string): boolean {
   // una sola palabra, la puntuacion de apertura no es parte de ella. No se
   // ablanda nada mas: la palabra sigue teniendo que cerrar con [.!?].
   //
-  // Entre dos replicas de dialogo hay una comilla de CIERRE, un espacio y una
-  // de APERTURA ("¿Y si no vengo?” “Vienes."), asi que se admiten hasta dos
-  // comillas con espacios entre ellas (2026-09-20: "Vienes." en el Friends
-  // latam A1 era una replica real y salia como palabra sola).
-  const re = new RegExp(`(^|[.!?]\\s*(?:["'\`»“”]\\s*){0,2})[¿¡]?${p}[.!?]`, "iu");
+  // Dos replicas de una palabra seguidas, de hablantes distintos, pegan un
+  // cierre y una apertura con un espacio en medio ("?” “Vienes."): antes solo
+  // se aceptaba UNA comilla tras el cierre, asi que ese hueco entre las dos
+  // nunca coincidia y la replica se daba por no encontrada (2026-09-19).
+  // Ahora se aceptan CERO O MAS comillas, cada una con su espacio opcional
+  // delante: ensancha lo que ya aceptaba, nunca lo estrecha.
+  const re = new RegExp(`(^|[.!?](?:\\s*["'\`»“”])*\\s*)[¿¡]?${p}[.!?]`, "iu");
   return re.test(texto);
 }
 
