@@ -1302,6 +1302,14 @@ body {
  * =======================================================*/
 .studio-shell-root,
 .mx-warm {
+  /* Tokens globales del lector que el Studio tambien usa en estilos inline:
+   * dentro del shell pasan a la paleta calida. */
+  --background: #100c0a;
+  --surface: #16110d;
+  --card-background: rgba(255, 255, 255, 0.04);
+  --fg: #f2ece5;
+  --primary: #f2b155;
+  --primary-hover: #e0a04a;
   --studio-accent: #f2b155;
   --studio-accent-hover: #e0a04a;
   --studio-accent-soft: rgba(242, 177, 85, 0.15);

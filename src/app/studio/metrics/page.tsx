@@ -984,7 +984,7 @@ function UserTypeBadge({
   type: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
 }) {
   const tone: Record<string, string> = {
-    beta: "#fcd34d",
+    beta: "#f2b155",
     audiolibro: "#5ad19a",
     app: "#6ea8fe",
     web: "#94a3b8",

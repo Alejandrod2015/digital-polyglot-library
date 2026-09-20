@@ -140,7 +140,7 @@ export default async function StudioVisitsPage({
                   padding: "4px 10px",
                   borderRadius: 999,
                   border: "1px solid var(--mx-border, #d4d4d8)",
-                  background: d === days ? "var(--mx-accent, #fcd34d)" : "transparent",
+                  background: d === days ? "var(--mx-accent, #f2b155)" : "transparent",
                   color: d === days ? "#16110d" : "inherit",
                   textDecoration: "none",
                   fontWeight: d === days ? 700 : 500,

@@ -193,11 +193,11 @@ function Pill({ text, tone }: { text: string; tone: "green" | "blue" | "amber" |
 
 const shell: React.CSSProperties = { maxWidth: 1100, margin: "0 auto", padding: "20px 16px 64px", color: "#e5edf7" };
 const statsRow: React.CSSProperties = { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 12, marginBottom: 24 };
-const statCard: React.CSSProperties = { background: "#0f1e34", border: "1px solid rgba(148,163,184,0.18)", borderRadius: 10, padding: "12px 14px" };
+const statCard: React.CSSProperties = { background: "#16110d", border: "1px solid rgba(148,163,184,0.18)", borderRadius: 10, padding: "12px 14px" };
 const langSection: React.CSSProperties = { marginBottom: 32 };
 const langTitle: React.CSSProperties = { fontSize: 18, fontWeight: 800, color: "#facc15", marginBottom: 14, paddingBottom: 6, borderBottom: "1px solid rgba(148,163,184,0.2)" };
 const levelTitle: React.CSSProperties = { fontSize: 13, fontWeight: 700, color: "#94a3b8", marginBottom: 8, letterSpacing: 0.5, textTransform: "uppercase" };
-const tableWrap: React.CSSProperties = { background: "#0f1e34", border: "1px solid rgba(148,163,184,0.18)", borderRadius: 10, overflow: "hidden" };
+const tableWrap: React.CSSProperties = { background: "#16110d", border: "1px solid rgba(148,163,184,0.18)", borderRadius: 10, overflow: "hidden" };
 const tableHeader: React.CSSProperties = { display: "flex", alignItems: "center", gap: 16, padding: "10px 14px", background: "rgba(148,163,184,0.06)", borderBottom: "1px solid rgba(148,163,184,0.18)" };
 const tableRow: React.CSSProperties = { display: "flex", alignItems: "center", gap: 16, padding: "12px 14px", borderBottom: "1px solid rgba(148,163,184,0.10)" };
 const colTitle: React.CSSProperties = { fontSize: 11, fontWeight: 600, color: "#94a3b8", textTransform: "uppercase", letterSpacing: 0.5, width: 96 };

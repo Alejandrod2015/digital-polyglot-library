@@ -13,8 +13,8 @@ import {
   type SmartNotification,
 } from "@/lib/smartNotificationPlan";
 
-const ACCENT = "#fcd34d";
-const CARD_BG = "#0f1f34";
+const ACCENT = "#f2b155";
+const CARD_BG = "#16110d";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
 const INPUT_BG = "#100c0a";
 

@@ -5,7 +5,7 @@ import {
   TASK_STATUS_META,
 } from "@/lib/blackFridayPlan";
 
-const ACCENT = "#fcd34d"; // gold
+const ACCENT = "#f2b155"; // gold
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 const CARD_BG = "rgba(255, 255, 255, 0.02)";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
@@ -124,7 +124,7 @@ export default async function StudioBlackFridayPage() {
             <object data={P.pdfHref} type="application/pdf" width="100%" style={{ height: 560, display: "block" }}>
               <div style={{ padding: 24, color: "#1a1a1a", fontSize: 13 }}>
                 Tu navegador no puede mostrar el PDF embebido.{" "}
-                <a href={P.pdfHref} target="_blank" rel="noreferrer" style={{ color: "#0D1B2A", fontWeight: 700 }}>
+                <a href={P.pdfHref} target="_blank" rel="noreferrer" style={{ color: "#16110d", fontWeight: 700 }}>
                   Ábrelo en una pestaña nueva
                 </a>
                 .
@@ -142,7 +142,7 @@ export default async function StudioBlackFridayPage() {
                 <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                   <span
                     style={{
-                      background: "#0D1B2A",
+                      background: "#16110d",
                       color: "#fff",
                       width: 18,
                       height: 18,

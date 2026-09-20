@@ -79,7 +79,7 @@ type StoryDetail = EligibleStory & {
   serverCanSplice: boolean;
 };
 
-const ACCENT = "#fcd34d";
+const ACCENT = "#f2b155";
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 const CARD_BG = "rgba(255,255,255,0.03)";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
@@ -88,7 +88,7 @@ const SUCCESS = "#22c55e";
 
 // Stable color palette for speaker badges. Cycles by speaker name.
 const SPEAKER_COLORS = [
-  "#fcd34d", // gold (narrator default)
+  "#f2b155", // gold (narrator default)
   "#60a5fa", // blue
   "#f472b6", // pink
   "#34d399", // emerald
@@ -2241,7 +2241,7 @@ function ConfirmModal({
         aria-modal="true"
         style={{
           width: "min(440px, 100%)",
-          background: "#0f1729",
+          background: "#16110d",
           border: `1px solid ${CARD_BORDER}`,
           borderRadius: 14,
           padding: 22,

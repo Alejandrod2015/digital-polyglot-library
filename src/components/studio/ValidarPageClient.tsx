@@ -845,7 +845,7 @@ function StepCard({
 }) {
   const circle =
     state === "current"
-      ? "bg-emerald-500 text-[#062148]"
+      ? "bg-emerald-500 text-[#241a12]"
       : state === "done"
         ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
         : "bg-neutral-800 text-neutral-400 border border-neutral-700";

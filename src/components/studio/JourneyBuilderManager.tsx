@@ -10,7 +10,7 @@ import StudioToast, { showToast } from "@/components/studio/StudioToast";
 type JourneyTypeOption = { id: string; slug: string; label: string };
 type Props = { plans: JourneyVariantPlan[] };
 
-const COLORS = ["#2563eb", "#7c3aed", "#059669", "#d97706", "#ec4899", "#0ea5e9"];
+const COLORS = ["#f2b155", "#7c3aed", "#059669", "#d97706", "#ec4899", "#0ea5e9"];
 const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"];
 const LANGUAGES = ["Spanish", "Portuguese", "French", "Italian", "German", "Korean", "English"];
 

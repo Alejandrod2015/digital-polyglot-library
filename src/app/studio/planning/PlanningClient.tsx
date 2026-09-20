@@ -85,7 +85,7 @@ export default function PlanningClient() {
         <select autoFocus value={topic.defaultLevel ?? ""}
           onChange={(e) => { void api("/api/studio/topics", "PATCH", { id: topic.id, defaultLevel: e.target.value || null }); setLevelEditId(null); }}
           onBlur={() => setLevelEditId(null)}
-          style={{ fontSize: 9, padding: "0 1px", borderRadius: 3, border: "1px solid #f2b155", backgroundColor: "#0d1520", color: "#f2b155", fontWeight: 700, width: 36 }}>
+          style={{ fontSize: 9, padding: "0 1px", borderRadius: 3, border: "1px solid #f2b155", backgroundColor: "#100c0a", color: "#f2b155", fontWeight: 700, width: 36 }}>
           {LEVEL_OPTIONS.map((l) => <option key={l} value={l}>{l.toUpperCase()}</option>)}
         </select>
       );
