@@ -1593,8 +1593,8 @@ function RetentionPanel({
             borderRadius: 8,
             fontSize: 12,
             lineHeight: 1.45,
-            color: "var(--mx-text, #e2e8f0)",
-            background: "var(--mx-panel, #0f172a)",
+            color: "var(--mx-fg)",
+            background: "var(--mx-bg-3)",
             border: "1px solid var(--mx-border, rgba(255,255,255,0.16))",
             boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
           }}

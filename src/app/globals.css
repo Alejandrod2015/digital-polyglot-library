@@ -1344,6 +1344,12 @@ body {
   --mx-warn: #e9c46a;
   --mx-info: #8b9dfb;
   --mx-serif: var(--font-fraunces), Georgia, serif;
+  /* Alias de tokens que algunos componentes nombran y nunca existieron; sin
+   * ellos caian al fallback navy (#0f172a) o a una fila clara (#f8fafc). */
+  --mx-panel: var(--mx-bg-3);
+  --mx-text: var(--mx-fg);
+  --mx-track: rgba(255, 255, 255, 0.06);
+  --mx-row-alt: rgba(255, 255, 255, 0.03);
   color: var(--mx-fg);
 }
 .studio-shell-root .mx-root { background: transparent; }
