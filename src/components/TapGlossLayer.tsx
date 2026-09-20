@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
 import { resolveGloss } from "@/lib/tapGlossKey";
-import { chunkCoversTap } from "@/lib/tapGlossChunk";
+import { chunkForTap } from "@/lib/tapGlossChunk";
 import {
   getVocabTypeLabel,
   getVocabRegisterLabel,
@@ -196,11 +196,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
       // El trozo se escribió para UNA aparición de la palabra; en otra, la
       // tarjeta enseñaba la frase equivocada. Solo entra si cubre el span
       // tocado (ver `chunkCoversTap`).
-      const chunk =
-        entry.c &&
-        chunkCoversTap(entry.c.es, block?.textContent ?? undefined, offsetWithin(block, el), (el.textContent ?? "").length)
-          ? entry.c
-          : undefined;
+      const chunk = chunkForTap(entry, block?.textContent ?? undefined, offsetWithin(block, el), (el.textContent ?? "").length);
       setSelected({
         word,
         gloss: entry.g,

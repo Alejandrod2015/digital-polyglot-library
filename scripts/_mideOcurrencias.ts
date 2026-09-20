@@ -7,7 +7,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { extractStoryPlainText } from "../src/lib/storyPlainText";
 
 const prisma = new PrismaClient();
-type Entry = { c?: { es: string; en: string } };
+type Entry = { c?: { es: string; en: string }; t?: string };
 
 const norm = (s: string) => s.toLowerCase().normalize("NFC");
 const sentencesOf = (t: string) =>
@@ -25,6 +25,8 @@ async function main() {
   let totalC = 0, repetidas = 0, colision = 0, historiasConCapa = 0, historiasAfectadas = 0;
   const porBundle: Record<string, { hist: number; afect: number; c: number; rep: number; col: number; status: string }> = {};
   const ejemplos: string[] = [];
+  const porTipo: Record<string, number> = {};
+  const porTipoLive: Record<string, number> = {};
 
   for (const f of filas) {
     const st = bySlug.get(f.slug);
@@ -50,6 +52,8 @@ async function main() {
       const ajenas = frases.filter((s) => !s.includes(cEs));
       if (ajenas.length) {
         colision++; b.col++; afectada = true;
+        porTipo[e.t ?? "?"] = (porTipo[e.t ?? "?"] ?? 0) + 1;
+        if (st.status === "active") porTipoLive[e.t ?? "?"] = (porTipoLive[e.t ?? "?"] ?? 0) + 1;
         if (ejemplos.length < 8) ejemplos.push(`${f.slug} | ${w} x${n} | c="${e.c!.es}" | ajena: "${ajenas[0].slice(0, 70)}"`);
       }
     }
@@ -61,6 +65,8 @@ async function main() {
   console.log("\nbundle | status | historias | afectadas | c | repetidas | colision");
   for (const [k, v] of Object.entries(porBundle).sort())
     console.log(`${k} | ${v.status} | ${v.hist} | ${v.afect} | ${v.c} | ${v.rep} | ${v.col}`);
+  console.log("\ncolisiones por tipo (todas | solo live):");
+  for (const [k, v] of Object.entries(porTipo).sort((a, b) => b[1] - a[1])) console.log(`  ${k}: ${v} | ${porTipoLive[k] ?? 0}`);
   console.log("\nejemplos:"); ejemplos.forEach((e) => console.log("  " + e));
   await prisma.$disconnect();
 }

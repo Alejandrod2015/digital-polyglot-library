@@ -1,6 +1,6 @@
 "use client";
 
-import { chunkCoversTap } from "@/lib/tapGlossChunk";
+import { chunkForTap } from "@/lib/tapGlossChunk";
 import { useState, useEffect, useCallback } from "react";
 import { BookOpen, ChevronDown, ChevronUp, Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
@@ -402,8 +402,8 @@ export default function VocabPanel({
     for (const clave of claves) {
       const hit = mapa[clave];
       if (hit?.c) {
-        if (!tapAt || chunkCoversTap(hit.c.es, tapAt.text, tapAt.at, tapAt.length)) return hit;
-        return { ...hit, c: undefined };
+        if (!tapAt) return hit;
+        return { ...hit, c: chunkForTap(hit, tapAt.text, tapAt.at, tapAt.length) };
       }
     }
     return null;

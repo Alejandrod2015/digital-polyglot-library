@@ -1,4 +1,4 @@
-import { chunkCoversTap } from "@/lib/tapGlossChunk";
+import { chunkForTap } from "@/lib/tapGlossChunk";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
@@ -95,6 +95,7 @@ type TapGloss = {
   t?: string;
   r?: string;
   c?: { es: string; en: string };
+  cs?: { es: string; en: string }[];
   gm?: string;
   f?: TapGlossForms;
 };
@@ -1564,8 +1565,7 @@ export function ReaderScreen(args: {
         register: gloss.r,
         note: contextSentence,
         quickLookup: true,
-        chunk:
-          gloss.c && chunkCoversTap(gloss.c.es, contextSentence, at, word.length) ? gloss.c : undefined,
+        chunk: chunkForTap(gloss, contextSentence, at, word.length),
         forms: gloss.f,
       });
       setFormsOpen(false);
@@ -2616,13 +2616,9 @@ export function ReaderScreen(args: {
             const gloss =
               (tapped ? lookupGloss(tapGlosses, tapped)?.gloss : undefined) ??
               (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss : undefined);
-            const candidato =
-              (tapped ? lookupGloss(tapGlosses, tapped)?.gloss.c : undefined) ??
-              (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss.c : undefined);
             const chunk =
-              candidato && chunkCoversTap(candidato.es, contextSentence, at, (tapped ?? item.surface ?? "").length)
-                ? candidato
-                : undefined;
+              (tapped ? chunkForTap(lookupGloss(tapGlosses, tapped)?.gloss, contextSentence, at, tapped.length) : undefined) ??
+              (item.surface ? chunkForTap(lookupGloss(tapGlosses, item.surface)?.gloss, contextSentence, at, item.surface.length) : undefined);
             const base = contextSentence ? { ...item, note: contextSentence } : item;
             setSelectedVocab({
               ...base,

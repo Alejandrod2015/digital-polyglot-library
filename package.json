@@ -28,6 +28,7 @@
     "lint:karaoke-fresh": "tsx scripts/checkKaraokeFresh.ts",
     "lint:gloss-context": "tsx scripts/checkGlossContext.ts",
     "lint:gloss-context-real": "tsx scripts/checkGlossContextReal.ts",
+    "lint:gloss-occurrences": "tsx scripts/checkGlossOccurrences.ts",
     "lint:no-emdash:db": "tsx scripts/checkNoEmDashDb.ts",
     "lint:gloss-variants": "tsx scripts/checkGlossVariants.ts",
     "lint:gloss-moods": "tsx scripts/checkGlossMoods.ts",
