@@ -1,5 +1,5 @@
 import "./src/polyfills";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import * as SplashScreen from "expo-splash-screen";
@@ -32,7 +32,18 @@ SplashScreen.preventAutoHideAsync().catch(() => {
   // The promise rejects when called too late (already hidden); safe
   // to ignore. The fallback is the default auto-hide behavior.
 });
+
+// Margen para renovar el JWT movil ANTES de que caduque: con 24 h de vida y
+// una hora de margen, una sesion de lectura larga no se corta a mitad.
+const MOBILE_TOKEN_RENEW_MARGIN_SECONDS = 60 * 60;
+
+function isMobileTokenStale(token: string): boolean {
+  const decoded = decodeMobileSessionToken(token);
+  if (!decoded) return true;
+  return decoded.exp <= Math.floor(Date.now() / 1000) + MOBILE_TOKEN_RENEW_MARGIN_SECONDS;
+}
 import {
+  AppState,
   Image,
   Linking,
   Platform,
@@ -278,14 +289,45 @@ function MobileAppRoot() {
     setSessionAnchor((current) => current ?? anchor);
   }, [sessionToken]);
 
-  // Auto-sync existing Clerk session into a mobile session token
-  useEffect(() => {
-    if (!clerkLoaded || !isClerkSignedIn || sessionToken || loadingSession) return;
-
-    void handleNativeSessionSync().catch((error) => {
+  // Renovar el JWT movil con la sesion de Clerk. Cubre tres casos: no hay
+  // token (primer arranque tras el login), el token caduco, o esta a punto.
+  //
+  // Hasta el 2026-09-20 solo cubria el primero: el JWT movil dura 24 h
+  // (src/lib/mobileSession.ts) y nadie lo renovaba, asi que al dia siguiente
+  // la primera peticion daba 401 y el Shell cerraba la sesion ENTERA, Clerk
+  // incluida. Susan (tester iOS) tenia 8 sesiones de Clerk en 14 dias, todas
+  // en estado "removed" y ninguna caducada: un login por dia de uso. La sesion
+  // de Clerk sigue viva 7 dias, asi que basta con volver a pedirle un token.
+  const renewingRef = useRef(false);
+  const renewMobileSession = useCallback(async () => {
+    if (renewingRef.current) return;
+    renewingRef.current = true;
+    try {
+      await handleNativeSessionSync();
+    } catch (error) {
       console.error("[mobile-auth] Failed to sync Clerk session", error);
+    } finally {
+      renewingRef.current = false;
+    }
+  }, [handleNativeSessionSync]);
+
+  useEffect(() => {
+    if (!clerkLoaded || !isClerkSignedIn || loadingSession) return;
+    if (sessionToken && !isMobileTokenStale(sessionToken)) return;
+    void renewMobileSession();
+  }, [clerkLoaded, isClerkSignedIn, loadingSession, renewMobileSession, sessionToken]);
+
+  // Al volver a primer plano, si el token caduco mientras la app dormia, se
+  // renueva antes de que el Shell dispare la primera peticion.
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", (state) => {
+      if (state !== "active") return;
+      if (!clerkLoaded || !isClerkSignedIn) return;
+      if (sessionToken && !isMobileTokenStale(sessionToken)) return;
+      void renewMobileSession();
     });
-  }, [clerkLoaded, handleNativeSessionSync, isClerkSignedIn, loadingSession, sessionToken]);
+    return () => subscription.remove();
+  }, [clerkLoaded, isClerkSignedIn, renewMobileSession, sessionToken]);
 
   // Handle deep-link auth tokens
   useEffect(() => {
@@ -442,6 +484,25 @@ function MobileAppRoot() {
     void handleSignOut();
   }, [handleSignOut]);
 
+  // Un 401 del API no es "el usuario quiere salir": casi siempre es el JWT
+  // movil de 24 h caducado. Se intenta renovar con Clerk y solo si Clerk ya no
+  // tiene sesion (o el intercambio falla) se cierra de verdad.
+  const handleUnauthorized = useCallback(async () => {
+    if (isClerkSignedIn) {
+      try {
+        const renewed = await handleNativeSessionSync();
+        if (renewed) return;
+      } catch (error) {
+        console.error("[mobile-auth] Renewal after 401 failed", error);
+      }
+    }
+    await handleSignOut();
+  }, [handleNativeSessionSync, handleSignOut, isClerkSignedIn]);
+
+  const handleUnauthorizedSync = useCallback(() => {
+    void handleUnauthorized();
+  }, [handleUnauthorized]);
+
   const handleRequestSignIn = useCallback(() => {
     setPreviewModeOnly(false);
     // Clear the offline anchor so the AuthScreen actually renders.
@@ -551,6 +612,7 @@ function MobileAppRoot() {
         pendingReminderNavigation={pendingReminderNavigation}
         onHandledReminderNavigation={handleHandledReminderNavigation}
         onSignOut={handleSignOutSync}
+        onUnauthorized={handleUnauthorizedSync}
         onRequestSignIn={handleRequestSignIn}
       />
     </SafeAreaView>

@@ -2441,6 +2441,8 @@ export function MobileLibraryShell(args: {
   pendingReminderNavigation?: { key: string; target: ReminderDestination } | null;
   onHandledReminderNavigation?: () => void;
   onSignOut?: () => void;
+  // Un 401 del API. Si no se pasa, cae en onSignOut (comportamiento antiguo).
+  onUnauthorized?: () => void;
   onRequestSignIn?: () => void;
 }) {
   const {
@@ -2456,6 +2458,7 @@ export function MobileLibraryShell(args: {
     pendingReminderNavigation,
     onHandledReminderNavigation,
     onSignOut,
+    onUnauthorized,
     onRequestSignIn,
   } = args;
   const isSignedIn = Boolean(sessionToken);
@@ -4688,16 +4691,23 @@ export function MobileLibraryShell(args: {
     );
   }, [didHydrateState, readingProgress, savedBookIds, savedStoryIds, savedStoryAt, sessionUserId]);
 
-  const handleUnauthorizedSession = useCallback(
-    (message = "Your session expired. Please sign in again.") => {
-      setRemoteError(message);
-      setPreferencesStatus("error");
-      setPreferencesHint(message);
-      setOnboardingError(message);
-      onSignOut?.();
-    },
-    [onSignOut]
-  );
+  // Un 401 casi siempre es el JWT movil de 24 h caducado, no una sesion
+  // perdida: el padre intenta renovarlo con Clerk y solo cierra si no puede.
+  // Por eso aqui ya no se pintan errores: si la renovacion funciona, el
+  // cambio de `sessionToken` vuelve a lanzar la hidratacion y el usuario no
+  // ve nada; si falla, el padre cierra sesion y se va al AuthScreen.
+  const handleUnauthorizedSession = useCallback(() => {
+    if (onUnauthorized) {
+      onUnauthorized();
+      return;
+    }
+    const message = "Your session expired. Please sign in again.";
+    setRemoteError(message);
+    setPreferencesStatus("error");
+    setPreferencesHint(message);
+    setOnboardingError(message);
+    onSignOut?.();
+  }, [onSignOut, onUnauthorized]);
 
   // Keep a stable ref to the latest handler so effects that depend on it do
   // not refire every time the parent produces a new onSignOut identity (this
