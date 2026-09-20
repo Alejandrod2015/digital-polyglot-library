@@ -103,10 +103,14 @@ export async function POST(req: NextRequest) {
     // failure can never cost someone their session.
     //
     // The email is passed so this also repairs the Clerk link when the
-    // `user.created` webhook never fired. See reconcileBetaTesterLink.
+    // `user.created` webhook never fired. See reconcileBetaTesterLink. On iOS
+    // the first name goes too: "Hide My Email" hands Clerk a relay address
+    // that matches nothing, and the fallback links by Apple's INSTALLED state
+    // instead. See reconcileBetaTesterLinkByInstall.
     void touchTesterActivity(
       userId,
       user.primaryEmailAddress?.emailAddress ?? user.emailAddresses?.[0]?.emailAddress ?? null,
+      mobilePlatform === "ios" ? { firstName: user.firstName } : undefined,
     ).catch((err) => {
       console.error("touchTesterActivity failed:", err);
     });
