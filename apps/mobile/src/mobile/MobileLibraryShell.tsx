@@ -5880,10 +5880,11 @@ export function MobileLibraryShell(args: {
       interests: preferences.interests,
       learningGoal: preferences.learningGoal,
       dailyMinutes: preferences.dailyMinutes,
-      // Piloto: solo el plan `polyglot`. Es la capa de CLIENTE del gate; la
-      // ruta ademas devuelve 403 a cualquier otro plan. Sin esto el slot
-      // entraria en la sesion mixta de gente que no puede resolverlo.
-      speakingEnabled: effectivePlan === "polyglot",
+      // Speaking para `premium` y `polyglot` (decision del usuario, 2026-09-20;
+      // el piloto era solo `polyglot`). Es la unica capa del gate: el servidor
+      // no lo comprueba, `practiceExercises.ts` solo respeta este flag. Sin el,
+      // el slot entraria en la sesion mixta de gente que no puede resolverlo.
+      speakingEnabled: effectivePlan === "premium" || effectivePlan === "polyglot",
     }),
     [effectivePlan, preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
@@ -14769,7 +14770,7 @@ export function MobileLibraryShell(args: {
             reviewSoonMinutes={reviewSoon.minutes}
             // Misma condicion que abre el slot de la sesion mixta: el piloto
             // hablado es del plan `polyglot` y de nadie mas.
-            speakingEnabled={effectivePlan === "polyglot"}
+            speakingEnabled={effectivePlan === "premium" || effectivePlan === "polyglot"}
           />
         </>
       )}
