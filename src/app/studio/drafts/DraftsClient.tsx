@@ -25,7 +25,7 @@ const STATUS_LABELS: Record<Status, string> = {
 
 const STATUS_COLORS: Record<Status, string> = {
   all: "#6b7280", draft: "#6b7280", generated: "#3b82f6", qa_pass: "#10b981",
-  qa_fail: "#f59e0b", needs_review: "#f59e0b", approved: "#f2b155", published: "#10b981",
+  qa_fail: "#f59e0b", needs_review: "#f59e0b", approved: "var(--studio-accent)", published: "#10b981",
 };
 
 const EMPTY_MSG: Record<Status, string> = {
@@ -39,13 +39,13 @@ const STATUSES: Status[] = ["all", "draft", "generated", "qa_pass", "qa_fail", "
 const pill = (active: boolean): React.CSSProperties => ({
   padding: "3px 8px", borderRadius: 99, border: "none", fontSize: 11, fontWeight: active ? 700 : 500,
   color: active ? "#fff" : "var(--muted)", cursor: "pointer",
-  backgroundColor: active ? "var(--studio-accent, #f2b155)" : "rgba(127,127,127,0.1)",
+  backgroundColor: active ? "var(--studio-accent, var(--studio-accent))" : "rgba(127,127,127,0.1)",
   transition: "all 0.12s",
 });
 
 const actionBtn = (color: string, disabled: boolean): React.CSSProperties => ({
   padding: "2px 8px", borderRadius: 4, border: "none", fontSize: 11, fontWeight: 600,
-  color: "#fff", backgroundColor: disabled ? color + "60" : color,
+  color: "#fff", backgroundColor: disabled ? `color-mix(in srgb, ${color} 38%, transparent)` : color,
   cursor: disabled ? "not-allowed" : "pointer",
 });
 
@@ -188,7 +188,7 @@ export default function DraftsClient() {
         ))}
         <div style={{ flex: 1 }} />
         <button onClick={handleAutoPromote} disabled={promoting}
-          style={{ ...actionBtn("#f2b155", promoting), fontSize: 11, padding: "3px 10px" }}>
+          style={{ ...actionBtn("var(--studio-accent)", promoting), fontSize: 11, padding: "3px 10px" }}>
           {promoting ? "..." : "Auto-aprobar"}
         </button>
         {promoteResult && <span style={{ fontSize: 10, color: "var(--muted)" }}>{promoteResult}</span>}
@@ -226,7 +226,7 @@ export default function DraftsClient() {
                   fontSize: 12, borderBottom: "1px solid var(--card-border)",
                   transition: "background 0.1s",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(242, 177, 85,0.04)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "color-mix(in srgb, var(--studio-accent) 4%, transparent)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
               >
                 <span style={{
@@ -243,7 +243,7 @@ export default function DraftsClient() {
                 }}>
                   {d.title || "Sin titulo"}
                   {langLevel(d.metadata) && (
-                    <span style={{ marginLeft: 4, fontSize: 10, color: "#f2b155", fontWeight: 600 }}>
+                    <span style={{ marginLeft: 4, fontSize: 10, color: "var(--studio-accent)", fontWeight: 600 }}>
                       {langLevel(d.metadata)}
                     </span>
                   )}

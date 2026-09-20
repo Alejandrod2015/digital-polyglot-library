@@ -234,7 +234,7 @@ export default function JourneyStoryEditor({ story }: Props) {
           <h2 style={{ fontSize: 16, fontWeight: 700, color: "var(--foreground)", margin: 0 }}>
             {form.title || "Historia sin título"}
           </h2>
-          <span style={{ display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 6, fontSize: 12, fontWeight: 600, backgroundColor: `${statusColor}20`, color: statusColor }}>
+          <span style={{ display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 6, fontSize: 12, fontWeight: 600, backgroundColor: `color-mix(in srgb, ${statusColor} 13%, transparent)`, color: statusColor }}>
             {statusLabel}
           </span>
           {dirty && autoSaveStatus === "idle" && (

@@ -62,9 +62,9 @@ function Badge({ status }: { status: string }) {
         letterSpacing: "0.05em",
         padding: "1px 6px",
         borderRadius: 4,
-        backgroundColor: `${c}14`,
+        backgroundColor: `color-mix(in srgb, ${c} 8%, transparent)`,
         color: c,
-        border: `1px solid ${c}4d`,
+        border: `1px solid color-mix(in srgb, ${c} 30%, transparent)`,
         whiteSpace: "nowrap",
       }}
     >
@@ -170,10 +170,10 @@ export default function ContentClient() {
     return (
       <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, color: "var(--foreground)" }}>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <span><Lbl>Draft ID</Lbl>{" "}<code style={{ color: "var(--studio-accent, #f2b155)" }}>{run.output.draftId}</code></span>
+          <span><Lbl>Draft ID</Lbl>{" "}<code style={{ color: "var(--studio-accent, var(--studio-accent))" }}>{run.output.draftId}</code></span>
           <span><Lbl>Slug</Lbl>{" "}<code>{run.output.slug}</code></span>
-          <span><Lbl>Palabras</Lbl>{" "}<strong style={{ color: "var(--studio-accent, #f2b155)" }}>{run.output.wordCount}</strong></span>
-          <span><Lbl>Vocab</Lbl>{" "}<strong style={{ color: "var(--studio-accent, #f2b155)" }}>{run.output.vocabItemCount}</strong></span>
+          <span><Lbl>Palabras</Lbl>{" "}<strong style={{ color: "var(--studio-accent, var(--studio-accent))" }}>{run.output.wordCount}</strong></span>
+          <span><Lbl>Vocab</Lbl>{" "}<strong style={{ color: "var(--studio-accent, var(--studio-accent))" }}>{run.output.vocabItemCount}</strong></span>
         </div>
         <div style={{ lineHeight: 1.5 }}>
           <Lbl>Sinopsis</Lbl>{" "}{run.output.synopsis}
@@ -234,7 +234,7 @@ export default function ContentClient() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--studio-accent, #f2b155)" }}>
+          <span style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--studio-accent, var(--studio-accent))" }}>
             Generador de borradores
           </span>
           <span style={{ fontSize: 12, color: "var(--muted)" }}>

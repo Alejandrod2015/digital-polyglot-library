@@ -8,11 +8,11 @@ const card: React.CSSProperties = {
   border: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 6,
 };
 const sectionLabel: React.CSSProperties = {
-  margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#f2b155",
+  margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--studio-accent)",
 };
 const btnAdd: React.CSSProperties = {
   height: 22, padding: "0 8px", borderRadius: 4, border: "none",
-  backgroundColor: "#f2b155", color: "#fff", fontWeight: 700, fontSize: 11, cursor: "pointer",
+  backgroundColor: "var(--studio-accent)", color: "#fff", fontWeight: 700, fontSize: 11, cursor: "pointer",
 };
 const deleteX: React.CSSProperties = {
   background: "none", border: "none", cursor: "pointer", padding: 0, fontSize: 9,
@@ -32,7 +32,7 @@ const chipItem: React.CSSProperties = {
 };
 const variantChip: React.CSSProperties = {
   display: "inline-flex", alignItems: "center", gap: 3, padding: "2px 6px", borderRadius: 3,
-  backgroundColor: "rgba(242, 177, 85,0.08)", border: "1px solid rgba(242, 177, 85,0.15)", fontSize: 11,
+  backgroundColor: "color-mix(in srgb, var(--studio-accent) 8%, transparent)", border: "1px solid color-mix(in srgb, var(--studio-accent) 15%, transparent)", fontSize: 11,
 };
 
 // ── Types ──
@@ -85,7 +85,7 @@ export default function PlanningClient() {
         <select autoFocus value={topic.defaultLevel ?? ""}
           onChange={(e) => { void api("/api/studio/topics", "PATCH", { id: topic.id, defaultLevel: e.target.value || null }); setLevelEditId(null); }}
           onBlur={() => setLevelEditId(null)}
-          style={{ fontSize: 9, padding: "0 1px", borderRadius: 3, border: "1px solid #f2b155", backgroundColor: "#100c0a", color: "#f2b155", fontWeight: 700, width: 36 }}>
+          style={{ fontSize: 9, padding: "0 1px", borderRadius: 3, border: "1px solid var(--studio-accent)", backgroundColor: "var(--mx-bg-1)", color: "var(--studio-accent)", fontWeight: 700, width: 36 }}>
           {LEVEL_OPTIONS.map((l) => <option key={l} value={l}>{l.toUpperCase()}</option>)}
         </select>
       );
@@ -93,7 +93,7 @@ export default function PlanningClient() {
 
     return (
       <span onClick={(e) => { e.stopPropagation(); setLevelEditId(topic.id); }}
-        style={{ fontSize: 9, fontWeight: 700, color: "#f2b155", backgroundColor: "rgba(242, 177, 85,0.12)", borderRadius: 3, padding: "0 4px", cursor: "pointer", lineHeight: "16px" }}
+        style={{ fontSize: 9, fontWeight: 700, color: "var(--studio-accent)", backgroundColor: "color-mix(in srgb, var(--studio-accent) 12%, transparent)", borderRadius: 3, padding: "0 4px", cursor: "pointer", lineHeight: "16px" }}
         title="Clic para cambiar nivel">
         {lvl}
       </span>
@@ -133,7 +133,7 @@ export default function PlanningClient() {
                 <input autoFocus value={editValue} onChange={(e) => setEditValue(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter") { void api("/api/studio/languages", "PATCH", { id: lang.id, label: editValue }); cancelEdit(); } if (e.key === "Escape") cancelEdit(); }}
                   onBlur={() => { void api("/api/studio/languages", "PATCH", { id: lang.id, label: editValue }); cancelEdit(); }}
-                  style={{ ...inputSm, fontSize: 13, width: 90, border: "1px solid #f2b155" }} />
+                  style={{ ...inputSm, fontSize: 13, width: 90, border: "1px solid var(--studio-accent)" }} />
               ) : (
                 <span style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)", minWidth: 80, cursor: "pointer" }} onClick={() => startEdit(`l-${lang.id}`, lang.label)}>{lang.label}</span>
               )}
@@ -143,7 +143,7 @@ export default function PlanningClient() {
                     <input autoFocus value={editValue} onChange={(e) => setEditValue(e.target.value)}
                       onKeyDown={(e) => { if (e.key === "Enter") { void api("/api/studio/languages", "PATCH", { id: lang.id, renameVariant: { id: v.id, label: editValue } }); cancelEdit(); } if (e.key === "Escape") cancelEdit(); }}
                       onBlur={() => { void api("/api/studio/languages", "PATCH", { id: lang.id, renameVariant: { id: v.id, label: editValue } }); cancelEdit(); }}
-                      style={{ ...inputSm, fontSize: 10, padding: "1px 4px", width: 55, border: "1px solid #f2b155" }} />
+                      style={{ ...inputSm, fontSize: 10, padding: "1px 4px", width: 55, border: "1px solid var(--studio-accent)" }} />
                   ) : (
                     <span onClick={() => startEdit(`v-${v.id}`, v.label)} style={{ cursor: "pointer", color: "var(--foreground)" }}>{v.label}</span>
                   )}
@@ -155,7 +155,7 @@ export default function PlanningClient() {
                   onKeyDown={(e) => { if (e.key === "Enter" && newVariant.trim()) { void api("/api/studio/languages", "PATCH", { id: lang.id, addVariant: newVariant }); setAddVariantId(null); setNewVariant(""); } if (e.key === "Escape") setAddVariantId(null); }}
                   style={{ ...inputSm, fontSize: 10, padding: "2px 4px", width: 60 }} />
               ) : (
-                <button onClick={() => { setAddVariantId(lang.id); setNewVariant(""); }} style={{ ...editPen, fontSize: 10, color: "#f2b155" }}>+ región</button>
+                <button onClick={() => { setAddVariantId(lang.id); setNewVariant(""); }} style={{ ...editPen, fontSize: 10, color: "var(--studio-accent)" }}>+ región</button>
               )}
               <span style={{ flex: 1 }} />
               <button onClick={() => setConfirmAction({ message: `Eliminar "${lang.label}"?`, onConfirm: () => api("/api/studio/languages", "DELETE", { id: lang.id }) })} style={deleteX}>✖</button>
@@ -182,7 +182,7 @@ export default function PlanningClient() {
                 <input autoFocus value={editValue} onChange={(e) => setEditValue(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter") { void api("/api/studio/journey-types", "PATCH", { id: jt.id, label: editValue }); cancelEdit(); } if (e.key === "Escape") cancelEdit(); }}
                   onBlur={() => { void api("/api/studio/journey-types", "PATCH", { id: jt.id, label: editValue }); cancelEdit(); }}
-                  style={{ ...inputSm, fontSize: 12, padding: "2px 6px", width: 130, border: "1px solid #f2b155" }} />
+                  style={{ ...inputSm, fontSize: 12, padding: "2px 6px", width: 130, border: "1px solid var(--studio-accent)" }} />
               ) : (
                 <span onClick={() => startEdit(`jt-${jt.id}`, jt.label)} style={{ cursor: "pointer" }}>{jt.label}</span>
               )}
@@ -210,7 +210,7 @@ export default function PlanningClient() {
                 <input autoFocus value={editValue} onChange={(e) => setEditValue(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter") { void api("/api/studio/topics", "PATCH", { id: t.id, label: editValue }); cancelEdit(); } if (e.key === "Escape") cancelEdit(); }}
                   onBlur={() => { void api("/api/studio/topics", "PATCH", { id: t.id, label: editValue }); cancelEdit(); }}
-                  style={{ ...inputSm, fontSize: 12, padding: "2px 6px", width: 130, border: "1px solid #f2b155" }} />
+                  style={{ ...inputSm, fontSize: 12, padding: "2px 6px", width: 130, border: "1px solid var(--studio-accent)" }} />
               ) : (
                 <span onClick={() => startEdit(`t-${t.id}`, t.label)} style={{ cursor: "pointer" }}>{t.label}</span>
               )}
@@ -237,10 +237,10 @@ export default function PlanningClient() {
             const unassignedSpecialized = topics.filter((t) => !t.isUniversal && !t.journeyTypes.some((j) => j.slug === jt.slug));
             return (
               <div key={jt.id} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-                <span style={{ fontSize: 12, fontWeight: 600, color: "#f2b155", minWidth: 110, paddingTop: 2 }}>{jt.label}</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "var(--studio-accent)", minWidth: 110, paddingTop: 2 }}>{jt.label}</span>
                 <div style={{ display: "flex", gap: 4, flexWrap: "wrap", flex: 1, alignItems: "center" }}>
                   {jtTopics.map((t) => (
-                    <span key={t.id} style={{ ...chipItem, backgroundColor: "rgba(242, 177, 85,0.06)", border: "1px solid rgba(242, 177, 85,0.15)" }}>
+                    <span key={t.id} style={{ ...chipItem, backgroundColor: "color-mix(in srgb, var(--studio-accent) 6%, transparent)", border: "1px solid color-mix(in srgb, var(--studio-accent) 15%, transparent)" }}>
                       <LevelBadge topic={t} />
                       <span onClick={() => startEdit(`t-${t.id}`, t.label)} style={{ cursor: "pointer" }}>{t.label}</span>
                       <button onClick={() => void api("/api/studio/journey-types", "PATCH", { id: jt.id, unassignTopicId: t.id })} style={deleteX} title="Quitar de este journey">✖</button>
@@ -275,9 +275,9 @@ export default function PlanningClient() {
                     </select>
                   ) : (
                     <span style={{ display: "inline-flex", gap: 3 }}>
-                      <button onClick={() => { setAddTopicForJt(jt.id); setNewSpecializedTopic(""); }} style={{ ...editPen, fontSize: 10, color: "#f2b155" }} title="Crear tema nuevo">+ nuevo</button>
+                      <button onClick={() => { setAddTopicForJt(jt.id); setNewSpecializedTopic(""); }} style={{ ...editPen, fontSize: 10, color: "var(--studio-accent)" }} title="Crear tema nuevo">+ nuevo</button>
                       {unassignedSpecialized.length > 0 && (
-                        <button onClick={() => setAssignDropdownJt(jt.id)} style={{ ...editPen, fontSize: 10, color: "#f2b155" }} title="Asignar tema existente">+ existente</button>
+                        <button onClick={() => setAssignDropdownJt(jt.id)} style={{ ...editPen, fontSize: 10, color: "var(--studio-accent)" }} title="Asignar tema existente">+ existente</button>
                       )}
                     </span>
                   )}

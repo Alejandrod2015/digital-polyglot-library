@@ -14,9 +14,9 @@ const card: React.CSSProperties = {
 };
 
 const pill = (active: boolean): React.CSSProperties => ({
-  padding: "3px 10px", borderRadius: 5, border: `1px solid ${active ? "#f2b155" : "var(--card-border)"}`,
-  backgroundColor: active ? "rgba(242, 177, 85,0.15)" : "transparent",
-  color: active ? "#f2b155" : "var(--muted)", fontSize: 11, fontWeight: 700, cursor: "pointer",
+  padding: "3px 10px", borderRadius: 5, border: `1px solid ${active ? "var(--studio-accent)" : "var(--card-border)"}`,
+  backgroundColor: active ? "color-mix(in srgb, var(--studio-accent) 15%, transparent)" : "transparent",
+  color: active ? "var(--studio-accent)" : "var(--muted)", fontSize: 11, fontWeight: 700, cursor: "pointer",
 });
 
 const fieldLabel: React.CSSProperties = {
@@ -25,7 +25,7 @@ const fieldLabel: React.CSSProperties = {
 
 const btnPrimary = (disabled?: boolean): React.CSSProperties => ({
   height: 32, padding: "0 16px", borderRadius: 7, border: "none",
-  backgroundColor: "#f2b155", color: "#fff", fontWeight: 700, fontSize: 12,
+  backgroundColor: "var(--studio-accent)", color: "#fff", fontWeight: 700, fontSize: 12,
   cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
 });
 

@@ -29,7 +29,7 @@ export default function MetricsOverviewChart({ data }: Props) {
           contentStyle={{ backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", borderRadius: 8, fontSize: 13, color: "var(--foreground)" }}
           labelStyle={{ color: "var(--muted)", fontWeight: 600 }}
         />
-        <Line type="monotone" dataKey="plays" stroke="#f2b155" strokeWidth={2} dot={false} activeDot={{ r: 4, fill: "#f2b155" }} />
+        <Line type="monotone" dataKey="plays" stroke="var(--studio-accent)" strokeWidth={2} dot={false} activeDot={{ r: 4, fill: "var(--studio-accent)" }} />
         <Line type="monotone" dataKey="completions" stroke="#10b981" strokeWidth={2} dot={false} activeDot={{ r: 4, fill: "#10b981" }} />
       </LineChart>
     </ResponsiveContainer>

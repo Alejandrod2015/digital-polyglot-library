@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 // ── Styles ──
 
-const ACCENT = "#f2b155"; // gold, matches landing + iOS
+const ACCENT = "var(--studio-accent)"; // gold, matches landing + iOS
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 
 const card: React.CSSProperties = {
@@ -16,7 +16,7 @@ const sectionLabel: React.CSSProperties = {
 };
 const btnPrimary: React.CSSProperties = {
   height: 28, padding: "0 14px", borderRadius: 6, border: "none",
-  backgroundColor: ACCENT, color: "#241a12", fontWeight: 800, fontSize: 11, cursor: "pointer",
+  backgroundColor: ACCENT, color: "var(--mx-bg-3)", fontWeight: 800, fontSize: 11, cursor: "pointer",
 };
 
 // ── Types ──

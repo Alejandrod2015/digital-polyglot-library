@@ -18,7 +18,7 @@ import {
 import type { BetaSourceGroup } from "@/lib/betaSource";
 import { canonicalVariantLabel, hasVariantOptions, targetVariantLabel } from "@/lib/targetVariants";
 
-const ACCENT = "#f2b155";
+const ACCENT = "var(--studio-accent)";
 
 type Tab = "review" | "demand" | "origin" | "testers" | "feedback" | "releases" | "rules" | "duplicates";
 
@@ -336,7 +336,7 @@ function pill(value: string): React.CSSProperties {
     borderRadius: 20,
     fontSize: 11,
     fontWeight: 600,
-    backgroundColor: `${color}26`,
+    backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
     color,
     whiteSpace: "nowrap",
   };
@@ -386,7 +386,7 @@ function playPillStyle(play: PlayState | null): React.CSSProperties {
     borderRadius: 20,
     fontSize: 11,
     fontWeight: 600,
-    backgroundColor: `${color}26`,
+    backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
     color,
     whiteSpace: "nowrap",
   };
@@ -400,7 +400,7 @@ function applePill(state: string | undefined): React.CSSProperties {
     borderRadius: 20,
     fontSize: 11,
     fontWeight: 600,
-    backgroundColor: `${color}26`,
+    backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
     color,
     whiteSpace: "nowrap",
   };
@@ -1373,7 +1373,7 @@ export default function BetaProgramClient() {
             onClick={() => setTab(t.key)}
             style={{
               ...ghostBtn,
-              backgroundColor: tab === t.key ? `${ACCENT}22` : "transparent",
+              backgroundColor: tab === t.key ? `color-mix(in srgb, ${ACCENT} 13%, transparent)` : "transparent",
               borderColor: tab === t.key ? ACCENT : "var(--card-border)",
               color: tab === t.key ? ACCENT : "var(--muted)",
             }}
@@ -1770,7 +1770,7 @@ function FilterChip({
         ...ghostBtn,
         height: 28,
         fontSize: 12,
-        backgroundColor: active ? `${ACCENT}22` : "transparent",
+        backgroundColor: active ? `color-mix(in srgb, ${ACCENT} 13%, transparent)` : "transparent",
         borderColor: active ? ACCENT : "var(--card-border)",
         color: active ? ACCENT : "var(--muted)",
       }}

@@ -10,8 +10,8 @@ import {
   type WorkLogEntry,
 } from "@/lib/assetRoadmap";
 
-const ACCENT = "#f2b155";
-const ACCENT_SOFT = "rgba(242, 177, 85, 0.12)";
+const ACCENT = "var(--studio-accent)";
+const ACCENT_SOFT = "color-mix(in srgb, var(--studio-accent) 12%, transparent)";
 const CARD_BG = "rgba(255, 255, 255, 0.02)";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
 const TEXT_MUTED = "var(--muted)";

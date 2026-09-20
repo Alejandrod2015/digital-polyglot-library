@@ -845,7 +845,7 @@ function StepCard({
 }) {
   const circle =
     state === "current"
-      ? "bg-emerald-500 text-[#241a12]"
+      ? "bg-emerald-500 text-[var(--mx-bg-3)]"
       : state === "done"
         ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
         : "bg-neutral-800 text-neutral-400 border border-neutral-700";
@@ -904,11 +904,11 @@ function SelectPill({
         className="mt-0.5 w-full bg-transparent text-[13px] font-bold text-neutral-100 outline-none disabled:cursor-not-allowed"
         style={{ appearance: "none" }}
       >
-        <option value="" className="bg-[#16110d]">
+        <option value="" className="bg-[var(--mx-bg-2)]">
           {placeholder}
         </option>
         {options.map((o) => (
-          <option key={o.value} value={o.value} className="bg-[#16110d]">
+          <option key={o.value} value={o.value} className="bg-[var(--mx-bg-2)]">
             {o.label}
           </option>
         ))}

@@ -36,7 +36,7 @@ export default function MetricsEngagementChart({ data }: Props) {
           contentStyle={{ backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", borderRadius: 8, fontSize: 13, color: "var(--foreground)" }}
           labelStyle={{ color: "var(--muted)", fontWeight: 600 }}
         />
-        <Bar dataKey="plays" fill="#f2b155" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="plays" fill="var(--studio-accent)" radius={[4, 4, 0, 0]} />
         <Bar dataKey="completions" fill="#10b981" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>

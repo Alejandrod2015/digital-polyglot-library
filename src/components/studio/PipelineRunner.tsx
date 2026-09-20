@@ -46,7 +46,7 @@ function MiniBar({ done, total }: { done: number; total: number }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 80 }}>
       <div style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.08)" }}>
-        <div style={{ height: "100%", borderRadius: 2, backgroundColor: pct === 100 ? "#22c55e" : "#f2b155", width: `${pct}%`, transition: "width 0.3s" }} />
+        <div style={{ height: "100%", borderRadius: 2, backgroundColor: pct === 100 ? "#22c55e" : "var(--studio-accent)", width: `${pct}%`, transition: "width 0.3s" }} />
       </div>
       <span style={{ fontSize: 10, color: "var(--muted)", whiteSpace: "nowrap" }}>{done}/{total}</span>
     </div>
@@ -216,7 +216,7 @@ export default function PipelineRunner() {
       {/* ── Header ── */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#f2b155" }}>Pipeline</p>
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--studio-accent)" }}>Pipeline</p>
           {(phase === "planned" || phase === "generating") && (
             <span style={{ fontSize: 12, color: "var(--muted)" }}>
               {topicsDone}/{topics.length} topics; {totalDone}/{totalAll} historias
@@ -265,7 +265,7 @@ export default function PipelineRunner() {
                 {/* Level header; clickable to collapse */}
                 <div
                   onClick={() => toggleLevel(level)}
-                  style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 8px", cursor: "pointer", borderRadius: 6, backgroundColor: hasActive ? "rgba(242, 177, 85, 0.04)" : "transparent", userSelect: "none" }}
+                  style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 8px", cursor: "pointer", borderRadius: 6, backgroundColor: hasActive ? "color-mix(in srgb, var(--studio-accent) 4%, transparent)" : "transparent", userSelect: "none" }}
                 >
                   <span style={{ fontSize: 10, color: "var(--muted)", width: 12, textAlign: "center" }}>{isCollapsed ? "▸" : "▾"}</span>
                   <span style={{ display: "inline-block", padding: "1px 6px", borderRadius: 4, fontSize: 10, fontWeight: 700, color: "#fff", backgroundColor: LEVEL_COLORS[level.toLowerCase()] ?? "#6b7280", textTransform: "uppercase" }}>{level}</span>
@@ -285,7 +285,7 @@ export default function PipelineRunner() {
                         <div key={key}>
                           <div style={{
                             display: "flex", alignItems: "center", gap: 8, padding: "4px 8px", borderRadius: 4,
-                            backgroundColor: isActive ? "rgba(242, 177, 85, 0.06)" : "transparent",
+                            backgroundColor: isActive ? "color-mix(in srgb, var(--studio-accent) 6%, transparent)" : "transparent",
                             fontSize: 12,
                           }}>
                             {/* Status indicator */}
@@ -305,7 +305,7 @@ export default function PipelineRunner() {
                               disabled={phase === "generating" || isDone || topic.draft === 0}
                               style={{
                                 padding: "2px 10px", borderRadius: 4, border: "none", fontSize: 10, fontWeight: 600, cursor: phase === "generating" || isDone || topic.draft === 0 ? "not-allowed" : "pointer", flexShrink: 0,
-                                backgroundColor: isDone || topic.draft === 0 ? "transparent" : phase === "generating" ? "rgba(255,255,255,0.05)" : "#f2b155",
+                                backgroundColor: isDone || topic.draft === 0 ? "transparent" : phase === "generating" ? "rgba(255,255,255,0.05)" : "var(--studio-accent)",
                                 color: isDone || topic.draft === 0 ? "var(--muted)" : phase === "generating" && !isActive ? "var(--muted)" : "#fff",
                                 opacity: phase === "generating" && !isActive ? 0.4 : 1,
                               }}

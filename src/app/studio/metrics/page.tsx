@@ -984,7 +984,7 @@ function UserTypeBadge({
   type: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
 }) {
   const tone: Record<string, string> = {
-    beta: "#f2b155",
+    beta: "var(--studio-accent)",
     audiolibro: "#5ad19a",
     app: "#6ea8fe",
     web: "#94a3b8",
@@ -1010,8 +1010,8 @@ function UserTypeBadge({
         textTransform: "uppercase",
         whiteSpace: "nowrap",
         color,
-        backgroundColor: unknown ? "transparent" : `${color}22`,
-        border: `1px solid ${unknown ? "transparent" : `${color}4d`}`,
+        backgroundColor: unknown ? "transparent" : `color-mix(in srgb, ${color} 13%, transparent)`,
+        border: `1px solid ${unknown ? "transparent" : `color-mix(in srgb, ${color} 30%, transparent)`}`,
         opacity: unknown ? 0.55 : 1,
       }}
     >

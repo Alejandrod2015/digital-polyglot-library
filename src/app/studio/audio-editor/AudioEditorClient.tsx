@@ -79,7 +79,7 @@ type StoryDetail = EligibleStory & {
   serverCanSplice: boolean;
 };
 
-const ACCENT = "#f2b155";
+const ACCENT = "var(--studio-accent)";
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 const CARD_BG = "rgba(255,255,255,0.03)";
 const CARD_BORDER = "rgba(255,255,255,0.08)";
@@ -88,7 +88,7 @@ const SUCCESS = "#22c55e";
 
 // Stable color palette for speaker badges. Cycles by speaker name.
 const SPEAKER_COLORS = [
-  "#f2b155", // gold (narrator default)
+  "var(--studio-accent)", // gold (narrator default)
   "#60a5fa", // blue
   "#f472b6", // pink
   "#34d399", // emerald
@@ -1739,8 +1739,8 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
               <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                 <div
                   style={{
-                    background: `${ACCENT}22`,
-                    border: `1px solid ${ACCENT}55`,
+                    background: `color-mix(in srgb, ${ACCENT} 13%, transparent)`,
+                    border: `1px solid color-mix(in srgb, ${ACCENT} 33%, transparent)`,
                     color: ACCENT,
                     borderRadius: 4,
                     padding: "4px 8px",
@@ -1943,8 +1943,8 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                     onClick={() => blockStart !== null && seekTo(blockStart)}
                     title={blockStart !== null ? `Saltar a ${formatTime(blockStart)}` : ""}
                     style={{
-                      background: `${color}22`,
-                      border: `1px solid ${color}55`,
+                      background: `color-mix(in srgb, ${color} 13%, transparent)`,
+                      border: `1px solid color-mix(in srgb, ${color} 33%, transparent)`,
                       color,
                       borderRadius: 4,
                       padding: "4px 8px",
@@ -2077,7 +2077,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                             onMouseEnter={(e) => {
                               e.currentTarget.style.opacity = "1";
                               e.currentTarget.style.color = ACCENT;
-                              e.currentTarget.style.borderColor = `${ACCENT}66`;
+                              e.currentTarget.style.borderColor = `color-mix(in srgb, ${ACCENT} 40%, transparent)`;
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.opacity = "0.55";
@@ -2241,7 +2241,7 @@ function ConfirmModal({
         aria-modal="true"
         style={{
           width: "min(440px, 100%)",
-          background: "#16110d",
+          background: "var(--mx-bg-2)",
           border: `1px solid ${CARD_BORDER}`,
           borderRadius: 14,
           padding: 22,
@@ -2271,7 +2271,7 @@ function ConfirmModal({
             style={{
               height: 36, padding: "0 18px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer",
               background: danger ? DANGER : ACCENT,
-              color: danger ? "#fff" : "#100c0a",
+              color: danger ? "#fff" : "var(--mx-bg-1)",
               border: `1px solid ${danger ? DANGER : ACCENT}`,
             }}
           >
@@ -2300,7 +2300,7 @@ function btnStyle(
     return {
       ...base,
       background: ACCENT,
-      color: "#100c0a",
+      color: "var(--mx-bg-1)",
       border: `1px solid ${ACCENT}`,
     };
   }
@@ -2438,7 +2438,7 @@ function TransportButton(props: {
       onMouseEnter={(e) => {
         if (disabled) return;
         e.currentTarget.style.opacity = "1";
-        e.currentTarget.style.borderColor = `${ACCENT}55`;
+        e.currentTarget.style.borderColor = `color-mix(in srgb, ${ACCENT} 33%, transparent)`;
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.opacity = disabled ? "0.4" : "0.85";
@@ -2573,7 +2573,7 @@ function IconButton(props: {
     icon === "play" ? <PlayIcon /> : icon === "pause" ? <PauseIcon /> : icon === "upload" ? <UploadIcon /> : icon === "revert" ? <RevertIcon /> : icon === "comment" ? <CommentIcon /> : <RegenIcon />;
   const baseOpacity = active ? 1 : disabled ? 0.25 : 0.55;
   const baseColor = active ? ACCENT : "var(--muted)";
-  const baseBorder = active ? `${ACCENT}66` : CARD_BORDER;
+  const baseBorder = active ? `color-mix(in srgb, ${ACCENT} 40%, transparent)` : CARD_BORDER;
   return (
     <button
       type="button"
@@ -2586,7 +2586,7 @@ function IconButton(props: {
         height: 26,
         padding: 0,
         borderRadius: 6,
-        background: active ? `${ACCENT}11` : "transparent",
+        background: active ? `color-mix(in srgb, ${ACCENT} 7%, transparent)` : "transparent",
         border: `1px solid ${baseBorder}`,
         color: baseColor,
         cursor: disabled ? "not-allowed" : "pointer",
@@ -2600,7 +2600,7 @@ function IconButton(props: {
         if (disabled) return;
         e.currentTarget.style.opacity = "1";
         e.currentTarget.style.color = ACCENT;
-        e.currentTarget.style.borderColor = `${ACCENT}66`;
+        e.currentTarget.style.borderColor = `color-mix(in srgb, ${ACCENT} 40%, transparent)`;
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.opacity = String(baseOpacity);

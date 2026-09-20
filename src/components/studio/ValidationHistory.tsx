@@ -401,7 +401,7 @@ function TabButton({
         border: active
           ? `1px solid ${toneColor}`
           : "1px solid var(--mx-border-soft)",
-        background: active ? `${toneColor}22` : "var(--mx-bg-panel)",
+        background: active ? `color-mix(in srgb, ${toneColor} 13%, transparent)` : "var(--mx-bg-panel)",
         color: active ? toneColor : "var(--mx-fg)",
         cursor: "pointer",
         display: "inline-flex",

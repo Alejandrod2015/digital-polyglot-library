@@ -37,7 +37,7 @@ const card: React.CSSProperties = {
 };
 
 const btnPrimary: React.CSSProperties = {
-  background: "#f2b155",
+  background: "var(--studio-accent)",
   color: "white",
   border: "none",
   borderRadius: 6,
@@ -337,10 +337,10 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
         <div
           style={{
             padding: "8px 14px",
-            background: "rgba(242, 177, 85, 0.1)",
-            border: "1px solid rgba(242, 177, 85, 0.3)",
+            background: "color-mix(in srgb, var(--studio-accent) 10%, transparent)",
+            border: "1px solid color-mix(in srgb, var(--studio-accent) 30%, transparent)",
             borderRadius: 6,
-            color: "#f2b155",
+            color: "var(--studio-accent)",
             fontSize: 12,
             marginBottom: 14,
           }}
