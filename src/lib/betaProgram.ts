@@ -1001,7 +1001,7 @@ export async function reconcileBetaTesterLinkByInstall(args: {
     },
   });
   console.log(
-    `🔗 Beta: linked ${row.email} to ${args.userId}${second ? " as a second account" : ""} by Apple INSTALLED state (signed in as ${args.email ?? "unknown"})`,
+    `[beta] linked ${row.email} to ${args.userId}${second ? " as a second account" : ""} by Apple INSTALLED state (signed in as ${args.email ?? "unknown"})`,
   );
   return true;
 }
