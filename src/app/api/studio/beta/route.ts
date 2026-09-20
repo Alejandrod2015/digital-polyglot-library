@@ -12,6 +12,7 @@ import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
 import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
 import { attachTesterGroup, getPlayBetaState } from "@/lib/googlePlayBeta";
 import { backfillBetaTesterLinks, countActiveTesters, TEST_ROW_EMAIL } from "@/lib/betaProgram";
+import { loadMetrics, loadStoryIndex, usageFor, whereFor } from "@/lib/betaFeedbackProfile";
 
 export const dynamic = "force-dynamic";
 
@@ -64,7 +65,20 @@ export async function GET(req: NextRequest) {
     prisma.betaFeedback.findMany({
       orderBy: { createdAt: "desc" },
       take: FEEDBACK_LIMIT,
-      include: { signup: { select: { id: true, firstName: true, email: true } } },
+      include: {
+        signup: {
+          select: {
+            id: true,
+            firstName: true,
+            email: true,
+            targetLanguage: true,
+            targetVariant: true,
+            currentLevel: true,
+            platform: true,
+            clerkUserId: true,
+          },
+        },
+      },
     }),
     prisma.betaRelease.findMany({ orderBy: { createdAt: "desc" }, take: 50 }),
     getBetaRules(),
@@ -148,6 +162,27 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // Where each tester WAS when they wrote, and what they had done before.
+  // Same module as scripts/feedbackTable.ts, so the tab and the script tell
+  // the same story. Before this the tab showed the message and the screen name
+  // only, and finding the story behind a complaint meant crossing UserMetric
+  // by hand.
+  const feedbackUserIds = feedback
+    .map((f) => f.userId ?? f.signup?.clerkUserId ?? null)
+    .filter((id): id is string => Boolean(id));
+  const [feedbackMetrics, storyIndex] = await Promise.all([
+    loadMetrics(prisma, feedbackUserIds),
+    feedbackUserIds.length > 0 || feedback.some((f) => f.context) ? loadStoryIndex(prisma) : Promise.resolve(new Map()),
+  ]);
+  const feedbackRows = feedback.map((f) => {
+    const userId = f.userId ?? f.signup?.clerkUserId ?? null;
+    return {
+      ...f,
+      tester: userId ? usageFor(feedbackMetrics, userId, storyIndex) : null,
+      where: whereFor(f.context, feedbackMetrics, userId, f.createdAt, storyIndex),
+    };
+  });
+
   // An empty map means Apple could not be reached, not that nobody is a
   // tester. Distinguishing the two matters: "unknown" is a prompt to look,
   // while a blank state next to `invited` reads as confirmation.
@@ -166,7 +201,7 @@ export async function GET(req: NextRequest) {
     appleReachable,
     play,
     hiddenTestRows,
-    feedback,
+    feedback: feedbackRows,
     releases,
     rules,
     stats: {
