@@ -21884,7 +21884,23 @@ export function MobileLibraryShell(args: {
           variant={preferences.preferredVariant}
           source={levelTestActive.source}
           onComplete={async (result) => {
+            const language = levelTestActive.language;
             setLevelTestActive(null);
+            // Same event OnboardingFlow fires for its own runner
+            // (onboarding_level_test_completed), so both attempts land
+            // in the same query. `origin: "library"` tells this one
+            // apart: from here the test unlocks a level, it does not
+            // place the whole journey, so `cefrLevel` is the level
+            // demonstrated, not one step below it (see `resultLevel` in
+            // LevelTestRunner).
+            void trackOnboardingMetric("onboarding_level_test_completed", {
+              language,
+              cefrLevel: result.level,
+              demonstratedLevel: result.demonstrated,
+              correct: result.correct,
+              total: result.total,
+              origin: "library",
+            });
             // Map CEFR level to legacy preferredLevel for backend
             // compatibility, AND store the placement directly so
             // the journey can unlock content up to that level.

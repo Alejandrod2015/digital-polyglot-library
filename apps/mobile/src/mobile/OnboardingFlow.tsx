@@ -832,13 +832,16 @@ export function OnboardingFlow({
             // `cefrLevel` is where the user starts (one step below what they
             // showed); `demonstratedLevel` and the score are logged too, or
             // there is no way to judge the test afterwards. Until
-            // 2026-09-19 only the level was saved.
+            // 2026-09-19 only the level was saved. `origin` tells this
+            // attempt apart from the same test taken from a locked story
+            // (MobileLibraryShell), which fires the same event.
             trackEvent?.("onboarding_level_test_completed", {
               language,
               cefrLevel: result.level,
               demonstratedLevel: result.demonstrated,
               correct: result.correct,
               total: result.total,
+              origin: "onboarding",
             });
             await submit({ testedLevelOverride: result.level, levelFallback: "Some" });
           }}
