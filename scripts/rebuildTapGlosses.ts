@@ -77,6 +77,11 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-latam-b2",
     "spanish-traveler-spain-b2",
     "spanish-cultural-latam-b1",
+    // Mismo bug (2026-09-20): faltaba el a0 real (el b1 de arriba no existe
+    // en la base). Sin esta fila, el retitulado de es-a0-cultural se
+    // encontro los 21/35 numeros y nombres del journey "SIN CUBRIR" aun
+    // estando ya glosados en los hermanos latam.
+    "spanish-cultural-latam-a0",
   ],
   german: ["german-expat", "german-friends", "german-friends-a0", "german-friends-a1", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
   french: ["french-traveler", "french-expat-lyon", "french-friends-a0", "french-friends-france-a1", "french-friends-france-a2", "french-friends-france-b1"],
