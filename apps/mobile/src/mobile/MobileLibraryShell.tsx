@@ -71,6 +71,7 @@ import { JourneyIcon } from "./JourneyIcon";
 import { LegalSheet } from "./LegalSheet";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { LevelTestRunner } from "./LevelTestRunner";
+import { ListeningLevelTest, hasListeningLevelTest } from "./ListeningLevelTest";
 import { hasLevelTest } from "./levelTest";
 import { ExtendedSplash } from "./ExtendedSplash";
 import { TopicPreviewSheet } from "./TopicPreviewSheet";
@@ -2427,6 +2428,14 @@ const NextStoryGlowOverlay = memo(function NextStoryGlowOverlay({
   );
   return <Animated.View pointerEvents="none" style={style} />;
 });
+
+/** Picks the runner for the language; both share the `LevelTestRunner` props. */
+function LevelTestSurface({
+  listening,
+  ...props
+}: { listening: boolean } & React.ComponentProps<typeof LevelTestRunner>) {
+  return listening ? <ListeningLevelTest {...props} /> : <LevelTestRunner {...props} />;
+}
 
 export function MobileLibraryShell(args: {
   sessionToken?: string | null;
@@ -21878,7 +21887,11 @@ export function MobileLibraryShell(args: {
           Onboarding has its own runner mounted inside OnboardingFlow,
           so this one is only for post-onboarding usage. */}
       {levelTestActive ? (
-        <LevelTestRunner
+        // Spanish gets the listening test (clips from real stories); the
+        // other languages keep the bundled grammar quiz until they have
+        // stations of their own. Same props and the same callback.
+        <LevelTestSurface
+          listening={hasListeningLevelTest(levelTestActive.language)}
           open={Boolean(levelTestActive)}
           language={levelTestActive.language}
           variant={preferences.preferredVariant}
@@ -21900,6 +21913,7 @@ export function MobileLibraryShell(args: {
               correct: result.correct,
               total: result.total,
               origin: "library",
+              format: hasListeningLevelTest(language) ? "listening" : "grammar",
             });
             // Map CEFR level to legacy preferredLevel for backend
             // compatibility, AND store the placement directly so

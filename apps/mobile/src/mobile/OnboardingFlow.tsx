@@ -13,8 +13,10 @@ import {
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import { LevelTestRunner } from "./LevelTestRunner";
+import { ListeningLevelTest, hasListeningLevelTest } from "./ListeningLevelTest";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { type CEFRLevel, hasLevelTest } from "./levelTest";
+import { formatCefrDisplay } from "@digital-polyglot/domain";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
@@ -317,9 +319,12 @@ export function OnboardingFlow({
     if (step === 1) return selectedKeys.length > 0;
     if (step === 2) return whys.size > 0;
     if (step === 3) return dailyMinutes !== null;
-    // Step 4 (level): need a level pick OR a test result.
+    // Step 4 (level): need a level pick OR a test result. Languages with
+    // the listening test have no self-pick: the test (or its "brand new"
+    // shortcut) is the only way through, and it submits on its own.
+    if (hasListeningLevelTest(language)) return testedLevel !== null;
     return level !== null || testedLevel !== null;
-  }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes]);
+  }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes, language]);
 
   async function handleContinue() {
     if (!canContinue) return;
@@ -692,11 +697,16 @@ export function OnboardingFlow({
               Where are you starting with {language ?? "this language"}?
             </Text>
             <Text style={styles.subtitle}>
-              Pick the closest match. Or take a 1-minute level test for a more
-              accurate placement.
+              {language && hasListeningLevelTest(language)
+                ? "Listen to a few short clips from real stories and we'll pick a level that feels comfortable. About 3 minutes."
+                : "Pick the closest match. Or take a 1-minute level test for a more accurate placement."}
             </Text>
 
-            <View style={styles.levelList}>
+            {/* Self-assessment chips. Hidden for languages with the listening
+                test (2026-09-20): "I have some" sent people to B1 and the
+                stories were too hard; the test places one rung below what
+                it hears, with a "brand new" shortcut inside. */}
+            <View style={language && hasListeningLevelTest(language) ? styles.hidden : styles.levelList}>
               {LEVEL_OPTIONS.map((option) => {
                 const selected = level === option.key && !testedLevel;
                 return (
@@ -753,7 +763,7 @@ export function OnboardingFlow({
             {/* Level test offer; only shown for languages where we
                 have authored test content (Spanish, German). The test
                 runner is a full-screen modal that overlays this flow. */}
-            {language && hasLevelTest(language) ? (
+            {language && (hasLevelTest(language) || hasListeningLevelTest(language)) ? (
               <Pressable
                 onPress={() => {
                   trackEvent?.("onboarding_level_test_started", {
@@ -770,13 +780,17 @@ export function OnboardingFlow({
                 <View style={styles.levelTestCtaText}>
                   <Text style={styles.levelTestCtaTitle}>
                     {testedLevel
-                      ? `Tested level: ${testedLevel}`
-                      : "Take the level test"}
+                      ? `Tested level: ${formatCefrDisplay(testedLevel)}`
+                      : hasListeningLevelTest(language)
+                        ? "Take the listening test"
+                        : "Take the level test"}
                   </Text>
                   <Text style={styles.levelTestCtaHint}>
                     {testedLevel
                       ? "Tap to retake the test"
-                      : "10 quick questions · ~1 minute"}
+                      : hasListeningLevelTest(language)
+                        ? "Short story clips · about 3 minutes"
+                        : "10 quick questions · ~1 minute"}
                   </Text>
                 </View>
                 <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.55)" />
@@ -787,7 +801,7 @@ export function OnboardingFlow({
               <View style={styles.testedLevelCard}>
                 <Feather name="check-circle" size={14} color={tokenColor.xp} />
                 <Text style={styles.testedLevelText}>
-                  We&apos;ll start your journey at {testedLevel}.
+                  We&apos;ll start your journey at {formatCefrDisplay(testedLevel)}.
                 </Text>
               </View>
             ) : null}
@@ -815,7 +829,34 @@ export function OnboardingFlow({
           when the user taps "Take the level test". Self-contained;
           calls back with a CEFR level which we store as `testedLevel`
           and surface as the placement when the user submits. */}
-      {language ? (
+      {language && hasListeningLevelTest(language) ? (
+        <ListeningLevelTest
+          open={levelTestOpen}
+          language={language}
+          variant={selectedOptions[0]?.variantCode ?? null}
+          source="onboarding"
+          onComplete={async (result) => {
+            setTestedLevel(result.level);
+            setLevelTestOpen(false);
+            // Same event as the grammar quiz below, plus what only the
+            // listening test knows: which rungs were attempted and
+            // whether the learner took the "brand new" shortcut.
+            trackEvent?.("onboarding_level_test_completed", {
+              language,
+              cefrLevel: result.level,
+              demonstratedLevel: result.demonstrated,
+              correct: result.correct,
+              total: result.total,
+              origin: "onboarding",
+              format: "listening",
+              stations: result.stations,
+              skipped: result.skipped,
+            });
+            await submit({ testedLevelOverride: result.level, levelFallback: "Brand new" });
+          }}
+          onCancel={() => setLevelTestOpen(false)}
+        />
+      ) : language ? (
         <LevelTestRunner
           open={levelTestOpen}
           language={language}
@@ -842,6 +883,7 @@ export function OnboardingFlow({
               correct: result.correct,
               total: result.total,
               origin: "onboarding",
+              format: "grammar",
             });
             await submit({ testedLevelOverride: result.level, levelFallback: "Some" });
           }}
@@ -865,6 +907,9 @@ export function OnboardingFlow({
 }
 
 const styles = StyleSheet.create({
+  hidden: {
+    display: "none",
+  },
   container: {
     flex: 1,
     backgroundColor: "#0c1626",
