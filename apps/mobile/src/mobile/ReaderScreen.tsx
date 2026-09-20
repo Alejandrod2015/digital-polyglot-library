@@ -1,4 +1,4 @@
-import { chunkForTap } from "@/lib/tapGlossChunk";
+import { chunkForTap } from "../../../../src/lib/tapGlossChunk";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
