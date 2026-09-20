@@ -111,6 +111,7 @@ checkVoicesPublished db
 checkKaraokeFresh    db
 checkGlossContext    db
 checkGlossContextReal db
+checkGlossOccurrences db
 checkGlossesReviewed db
 checkHardRules       memoria
 checkRulesInventory  -
