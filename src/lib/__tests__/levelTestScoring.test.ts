@@ -3,6 +3,7 @@ import {
   demonstratedLevelFromStations,
   pickStations,
   placementFromDemonstrated,
+  shouldStopLadder,
   type LevelTestRung,
   type LevelTestStation,
 } from "@domain/levelTest";
@@ -32,7 +33,7 @@ describe("demonstratedLevelFromStations", () => {
     ).toBe("A2");
   });
 
-  it("ignores a pass above a failure (the climb stops at the first failure)", () => {
+  it("does not count a pass whose rung below failed (one lucky clip is not a level)", () => {
     expect(
       demonstratedLevelFromStations(
         [
@@ -43,6 +44,20 @@ describe("demonstratedLevelFromStations", () => {
         LATAM
       )
     ).toBe("A1");
+  });
+
+  it("forgives one slip low on the ladder when the rungs above confirm each other", () => {
+    expect(
+      demonstratedLevelFromStations(
+        [
+          { level: "A1", passed: false },
+          { level: "A2", passed: true },
+          { level: "B1", passed: true },
+          { level: "B2", passed: false },
+        ],
+        LATAM
+      )
+    ).toBe("B1");
   });
 
   it("reaches the top rung when everything passes", () => {
@@ -60,7 +75,7 @@ describe("demonstratedLevelFromStations", () => {
     ).toBe("B2");
   });
 
-  it("stops at a rung that has no result", () => {
+  it("needs the rung below to confirm a rung with no result in between", () => {
     expect(
       demonstratedLevelFromStations(
         [
@@ -70,6 +85,27 @@ describe("demonstratedLevelFromStations", () => {
         LATAM
       )
     ).toBe("A1");
+  });
+});
+
+describe("shouldStopLadder", () => {
+  it("stops only after two failures in a row", () => {
+    expect(shouldStopLadder([])).toBe(false);
+    expect(shouldStopLadder([{ level: "A1", passed: false }])).toBe(false);
+    expect(
+      shouldStopLadder([
+        { level: "A1", passed: false },
+        { level: "A2", passed: true },
+        { level: "B1", passed: false },
+      ])
+    ).toBe(false);
+    expect(
+      shouldStopLadder([
+        { level: "A1", passed: true },
+        { level: "A2", passed: false },
+        { level: "B1", passed: false },
+      ])
+    ).toBe(true);
   });
 });
 
@@ -94,9 +130,10 @@ describe("placementFromDemonstrated", () => {
 
 describe("guessing", () => {
   // A station has one 3-option and one 4-option question and needs both
-  // right, so a guess passes it 1/12 of the time. Over the latam ladder
-  // that means a guesser is placed at A0 about 92% of the time and above
-  // A1 well under 1%. The old test sent 47% of guessers to A2.
+  // right, so a guess passes it 1/12 of the time, and a rung only counts
+  // with the rung below passed too. A guesser is placed at A0 about 98%
+  // of the time and above A1 well under 1%. The old test sent 47% of
+  // guessers to A2.
   it("sends almost every guesser to A0", () => {
     let seed = 7;
     const random = () => {
@@ -106,14 +143,15 @@ describe("guessing", () => {
     const runs = 20000;
     const placed: Record<string, number> = {};
     for (let i = 0; i < runs; i++) {
-      const results = LATAM.map((level) => ({
-        level,
-        passed: random() < 1 / 3 && random() < 1 / 4,
-      }));
+      const results: { level: LevelTestRung; passed: boolean }[] = [];
+      for (const level of LATAM) {
+        results.push({ level, passed: random() < 1 / 3 && random() < 1 / 4 });
+        if (shouldStopLadder(results)) break;
+      }
       const placement = placementFromDemonstrated(demonstratedLevelFromStations(results, LATAM));
       placed[placement] = (placed[placement] ?? 0) + 1;
     }
-    expect((placed.A0 ?? 0) / runs).toBeGreaterThan(0.9);
+    expect((placed.A0 ?? 0) / runs).toBeGreaterThan(0.95);
     expect(((placed.A2 ?? 0) + (placed.B1 ?? 0) + (placed.B2 ?? 0)) / runs).toBeLessThan(0.01);
   });
 });

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Animated,
@@ -12,15 +12,18 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { Audio, InterruptionModeIOS } from "expo-av";
 import {
+  LEVEL_TEST_INITIAL_STATE,
+  canReplay,
   cefrDisplayLabel,
-  demonstratedLevelFromStations,
+  currentQuestion,
+  currentStation,
   formatCefrDisplay,
-  pickStations,
-  placementFromDemonstrated,
-  type LevelTestLevel,
+  levelTestOutcome,
+  levelTestSessionReducer,
+  questionsVisible,
+  type LevelTestOutcome,
   type LevelTestPayload,
   type LevelTestStation,
-  type LevelTestStationResult,
 } from "@digital-polyglot/domain";
 import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
@@ -32,9 +35,11 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  * the languages that have it (`hasListeningLevelTest`): the learner
  * climbs a ladder of STATIONS, one per level, each a clip of real story
  * audio followed by a comprehension question and a vocabulary question
- * from that same story. Both right = the rung is passed; the first
- * failure ends the test. Scoring lives in `@digital-polyglot/domain`
- * (`levelTest.ts`), with the two biases towards placing low.
+ * from that same story. Both right = the rung is passed; two failures in
+ * a row end the test. Every decision (what shows when, what a tap does,
+ * the result) lives in `levelTestSessionReducer` in
+ * `@digital-polyglot/domain`, unit-tested there; this file only plays
+ * the audio and renders the state.
  *
  * Same contract as `LevelTestRunner` so the two call sites (onboarding
  * and the locked-story path) do not care which runner they got:
@@ -53,16 +58,7 @@ export function hasListeningLevelTest(language: string | null | undefined): bool
   return Boolean(language && LISTENING_LEVEL_TEST_LANGUAGES.has(language));
 }
 
-export type ListeningLevelTestResult = {
-  level: LevelTestLevel;
-  demonstrated: LevelTestLevel;
-  correct: number;
-  total: number;
-  /** Rungs attempted, in order, with whether each was passed. */
-  stations: LevelTestStationResult[];
-  /** True when the learner chose "I'm brand new" instead of listening. */
-  skipped: boolean;
-};
+export type ListeningLevelTestResult = LevelTestOutcome;
 
 type Props = {
   open: boolean;
@@ -73,43 +69,21 @@ type Props = {
   onCancel: () => void;
 };
 
-type Phase = "loading" | "error" | "intro" | "station" | "result";
-type AudioState = "idle" | "playing" | "done" | "failed";
-
 const PANEL_TRAVEL = 1100;
-const MAX_REPLAYS = 1;
 
 export function ListeningLevelTest({ open, language, variant, source, onComplete, onCancel }: Props) {
   const backdrop = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(PANEL_TRAVEL)).current;
   const [mounted, setMounted] = useState(open);
 
-  const [phase, setPhase] = useState<Phase>("loading");
-  const [payload, setPayload] = useState<LevelTestPayload | null>(null);
-  const [stations, setStations] = useState<LevelTestStation[]>([]);
-  const [stationIndex, setStationIndex] = useState(0);
-  const [results, setResults] = useState<LevelTestStationResult[]>([]);
-  const [correctCount, setCorrectCount] = useState(0);
-  const [answeredCount, setAnsweredCount] = useState(0);
-  const [skipped, setSkipped] = useState(false);
-
-  // Per station
-  const [audioState, setAudioState] = useState<AudioState>("idle");
-  const [replaysLeft, setReplaysLeft] = useState(MAX_REPLAYS);
-  const [questionIndex, setQuestionIndex] = useState<0 | 1>(0);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [comprehensionRight, setComprehensionRight] = useState<boolean | null>(null);
+  const [state, dispatch] = useReducer(levelTestSessionReducer, LEVEL_TEST_INITIAL_STATE);
+  const { phase, stations, stationIndex, audio: audioState, replaysLeft, questionIndex, selected, skipped } = state;
+  const station = currentStation(state);
+  const question = currentQuestion(state);
+  const outcome = levelTestOutcome(state, source);
 
   const soundRef = useRef<Audio.Sound | null>(null);
   const playRunRef = useRef(0);
-
-  const station = stations[stationIndex];
-  const demonstrated = useMemo(
-    () => demonstratedLevelFromStations(results, payload?.ladder ?? []),
-    [results, payload]
-  );
-  const resultLevel: LevelTestLevel =
-    source === "onboarding" ? placementFromDemonstrated(demonstrated) : demonstrated;
 
   const stopAudio = useCallback(async () => {
     playRunRef.current += 1;
@@ -129,19 +103,7 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
   useEffect(() => {
     if (!open) return;
     let cancelled = false;
-    setPhase("loading");
-    setPayload(null);
-    setStations([]);
-    setStationIndex(0);
-    setResults([]);
-    setCorrectCount(0);
-    setAnsweredCount(0);
-    setSkipped(false);
-    setAudioState("idle");
-    setReplaysLeft(MAX_REPLAYS);
-    setQuestionIndex(0);
-    setSelected(null);
-    setComprehensionRight(null);
+    dispatch({ type: "reset" });
     (async () => {
       try {
         const query = new URLSearchParams({ language, ...(variant ? { variant } : {}) });
@@ -151,14 +113,10 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
           timeoutMs: 15000,
         });
         if (cancelled) return;
-        const picked = pickStations(data);
-        if (picked.length === 0) throw new Error("no stations");
-        setPayload(data);
-        setStations(picked);
-        setPhase("intro");
+        dispatch({ type: "loaded", payload: data });
       } catch (err) {
         console.warn("[level-test] could not load", err);
-        if (!cancelled) setPhase("error");
+        if (!cancelled) dispatch({ type: "loadFailed" });
       }
     })();
     return () => {
@@ -215,7 +173,7 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
     async (target: LevelTestStation) => {
       await stopAudio();
       const run = playRunRef.current;
-      setAudioState("playing");
+      dispatch({ type: "audioStarted" });
       try {
         await Audio.setAudioModeAsync({
           allowsRecordingIOS: false,
@@ -240,20 +198,20 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
           soundRef.current = null;
           await sound.unloadAsync();
         }
-        if (playRunRef.current === run) setAudioState("done");
+        if (playRunRef.current === run) dispatch({ type: "audioDone" });
       } catch (err) {
         console.warn("[level-test] clip failed", err);
-        if (playRunRef.current === run) setAudioState("failed");
+        if (playRunRef.current === run) dispatch({ type: "audioFailed" });
       }
     },
     [stopAudio]
   );
 
-  // Auto-play when a station comes on screen.
+  // Auto-play when a station comes on screen (audio is "idle" only then).
   useEffect(() => {
-    if (phase !== "station" || !station) return;
+    if (phase !== "station" || !station || audioState !== "idle") return;
     void playStation(station);
-  }, [phase, station, playStation]);
+  }, [phase, station, audioState, playStation]);
 
   useEffect(() => {
     return () => {
@@ -264,70 +222,28 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
   if (!mounted) return null;
 
   function startTest() {
-    setStationIndex(0);
-    setResults([]);
-    setAudioState("idle");
-    setReplaysLeft(MAX_REPLAYS);
-    setQuestionIndex(0);
-    setSelected(null);
-    setComprehensionRight(null);
-    setPhase("station");
+    dispatch({ type: "start" });
   }
 
   function replay() {
-    if (!station || replaysLeft <= 0 || audioState === "playing") return;
-    setReplaysLeft((n) => n - 1);
+    if (!station || !canReplay(state)) return;
+    dispatch({ type: "replay" });
     void playStation(station);
   }
 
-  function finishStation(passed: boolean) {
-    if (!station) return;
-    const next = [...results, { level: station.level, passed }];
-    setResults(next);
-    void stopAudio();
-    if (!passed || stationIndex >= stations.length - 1) {
-      setPhase("result");
-      return;
-    }
-    setStationIndex((i) => i + 1);
-    setAudioState("idle");
-    setReplaysLeft(MAX_REPLAYS);
-    setQuestionIndex(0);
-    setSelected(null);
-    setComprehensionRight(null);
-  }
-
   function submitAnswer() {
-    if (!station || selected === null) return;
-    const question = questionIndex === 0 ? station.comprehension : station.vocab;
-    const right = selected === question.answerIndex;
-    setAnsweredCount((n) => n + 1);
-    if (right) setCorrectCount((n) => n + 1);
-    if (questionIndex === 0) {
-      setComprehensionRight(right);
-      setQuestionIndex(1);
-      setSelected(null);
-      return;
-    }
-    finishStation(Boolean(comprehensionRight) && right);
+    const wasLastQuestion = questionIndex === 1;
+    dispatch({ type: "submit" });
+    if (wasLastQuestion) void stopAudio();
   }
 
   function skipAsBrandNew() {
     void stopAudio();
-    setSkipped(true);
-    setResults([]);
-    setPhase("result");
+    dispatch({ type: "skipBrandNew" });
   }
 
   function claimResult() {
-    onComplete({
-      level: skipped ? "A0" : resultLevel,
-      demonstrated: skipped ? "A0" : demonstrated,
-      correct: correctCount,
-      total: answeredCount,
-      stations: results,
-      skipped,
-    });
+    onComplete(outcome);
   }
 
   function handleCancel() {
@@ -339,7 +255,6 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
     stations.length === 0
       ? 0
       : Math.round(((stationIndex + (questionIndex === 1 ? 0.5 : 0)) / stations.length) * 100);
-  const question = station ? (questionIndex === 0 ? station.comprehension : station.vocab) : null;
   const minutes = Math.max(2, Math.ceil(stations.length * 0.6));
 
   return (
@@ -438,19 +353,16 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
               </View>
               <Pressable
                 onPress={replay}
-                disabled={replaysLeft <= 0 || audioState === "playing"}
+                disabled={!canReplay(state)}
                 hitSlop={8}
-                style={[
-                  styles.replayButton,
-                  replaysLeft <= 0 || audioState === "playing" ? styles.replayButtonDisabled : null,
-                ]}
+                style={[styles.replayButton, !canReplay(state) ? styles.replayButtonDisabled : null]}
               >
                 <Feather name="rotate-ccw" size={16} color="#ffffff" />
                 <Text style={styles.replayText}>{replaysLeft > 0 ? "Replay" : "Used"}</Text>
               </Pressable>
             </View>
 
-            {audioState === "done" || audioState === "failed" ? (
+            {questionsVisible(state) ? (
               <>
                 <Text style={styles.questionPrompt}>
                   {questionIndex === 0 ? "What happened?" : "One word from the clip"}
@@ -462,7 +374,7 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
                     return (
                       <Pressable
                         key={`${station.id}-${questionIndex}-${index}`}
-                        onPress={() => setSelected(index)}
+                        onPress={() => dispatch({ type: "select", index })}
                         style={[styles.option, isSelected ? styles.optionSelected : null]}
                       >
                         <Text style={styles.optionText}>{option}</Text>
@@ -480,7 +392,7 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
         {phase === "result" ? (
           <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
             {(() => {
-              const levelCode = skipped ? "A0" : resultLevel;
+              const levelCode = outcome.level;
               const levelName = cefrDisplayLabel(levelCode) ?? levelCode;
               const levelDisplay = formatCefrDisplay(levelCode);
               return (
@@ -493,7 +405,7 @@ export function ListeningLevelTest({ open, language, variant, source, onComplete
                   </Text>
                   {!skipped ? (
                     <Text style={styles.resultBody}>
-                      {correctCount} of {answeredCount} answers right.
+                      {outcome.correct} of {outcome.total} answers right.
                     </Text>
                   ) : null}
                   <Text style={styles.resultDescription}>

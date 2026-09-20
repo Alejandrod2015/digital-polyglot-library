@@ -5,8 +5,15 @@
  * The test is a ladder. Each rung (A1, A2, B1, B2, C1) is one STATION: a
  * clip of real story audio at that level, one comprehension question and
  * one vocabulary question from that same story. A station is PASSED only
- * when both answers are right. The learner climbs from the lowest rung and
- * the first station they fail ends the test.
+ * when both answers are right. The learner climbs from the lowest rung;
+ * the test ends after two failed stations in a row (`shouldStopLadder`).
+ *
+ * A rung counts as DEMONSTRATED only when the rung below it was passed
+ * too (A1 stands alone). One slip on an easy clip therefore does not end
+ * the test, and one lucky pass on a hard clip does not count. Simulated
+ * on 2026-09-20 with a "first failure ends the test" rule, a B2 learner
+ * with an ordinary ear landed on A0 18% of the time; with this rule, 7%,
+ * while a guesser still lands on A0 98% of the time.
  *
  * Two deliberate biases towards placing LOW (decided 2026-09-20):
  *
@@ -40,23 +47,31 @@ export type LevelTestStationResult = {
 };
 
 /**
- * The highest rung the learner actually demonstrated: every station from
- * the bottom of the ladder up to it was passed. `ladder` is the order the
- * stations were offered in (lowest first); results are matched by level so
- * the caller can pass them in any order. A0 when the first rung failed or
- * nothing was answered.
+ * The highest rung the learner actually demonstrated: passed, with the
+ * rung below it passed as well (the first rung needs no confirmation).
+ * `ladder` is the order the stations were offered in (lowest first);
+ * results are matched by level so the caller can pass them in any order.
+ * A0 when nothing qualifies.
  */
 export function demonstratedLevelFromStations(
   results: readonly LevelTestStationResult[],
   ladder: readonly LevelTestRung[]
 ): LevelTestLevel {
+  const passed = (level: LevelTestRung) => results.some((r) => r.level === level && r.passed);
   let reached: LevelTestLevel = "A0";
-  for (const level of ladder) {
-    const station = results.find((r) => r.level === level);
-    if (!station || !station.passed) break;
-    reached = level;
-  }
+  ladder.forEach((level, index) => {
+    if (passed(level) && (index === 0 || passed(ladder[index - 1]))) reached = level;
+  });
   return reached;
+}
+
+/**
+ * Whether the climb is over: two failed stations in a row. `results` must
+ * be in the order they were answered.
+ */
+export function shouldStopLadder(results: readonly LevelTestStationResult[]): boolean {
+  const n = results.length;
+  return n >= 2 && !results[n - 1].passed && !results[n - 2].passed;
 }
 
 /**
