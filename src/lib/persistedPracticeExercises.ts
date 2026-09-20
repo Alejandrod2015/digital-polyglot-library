@@ -87,6 +87,24 @@ export async function loadSentenceTranslations(storySlug: string): Promise<Recor
   );
 }
 
+type PersistedExerciseRow = {
+  id: string;
+  type: string;
+  word: string;
+  sentence: string;
+  payload: unknown;
+  audioUrl: string | null;
+};
+
+const EXERCISE_ROW_SELECT = {
+  id: true,
+  type: true,
+  word: true,
+  sentence: true,
+  payload: true,
+  audioUrl: true,
+} as const;
+
 export async function loadPersistedExercises(
   storySlug: string,
   featuredOnly: boolean
@@ -108,14 +126,7 @@ export async function loadPersistedExercises(
         // yet, so an `include` (which selects every scalar) throws "column
         // cefr does not exist". Scoping the select keeps this route working
         // on the un-migrated DB and after the migration alike.
-        select: {
-          id: true,
-          type: true,
-          word: true,
-          sentence: true,
-          payload: true,
-          audioUrl: true,
-        },
+        select: EXERCISE_ROW_SELECT,
       },
     },
   });
@@ -137,8 +148,50 @@ export async function loadPersistedExercises(
   // fonetica ajena (2026-09-17). El mobile ya mandaba el idioma del journey.
   const storyLanguage = journeyVoice?.journey?.language ?? null;
 
+  return mapPersistedExercises(storySlug, set.exercises, storyVoiceId, storyLanguage);
+}
+
+/**
+ * The same exercises for MANY published stories in two queries instead of
+ * two per story: sets with every exercise (featured first, then the pool)
+ * and the narrator voice per story. Added for the level test (2026-09-20),
+ * which reads a dozen stories per call; one call went from ~45 queries to 3.
+ */
+export async function loadPersistedExercisesForSlugs(
+  storySlugs: string[]
+): Promise<Map<string, PracticeExercise[]>> {
+  const out = new Map<string, PracticeExercise[]>();
+  if (storySlugs.length === 0) return out;
+  const sets = await prisma.storyPracticeSet.findMany({
+    where: { story: { slug: { in: storySlugs }, status: "published" } },
+    select: {
+      story: {
+        select: { slug: true, voiceId: true, practiceVoiceId: true, journey: { select: { language: true } } },
+      },
+      exercises: {
+        orderBy: [{ featured: "desc" }, { orderIndex: "asc" }],
+        select: EXERCISE_ROW_SELECT,
+      },
+    },
+  });
+  for (const set of sets) {
+    const slug = set.story.slug;
+    if (!slug || set.exercises.length === 0) continue;
+    const voice = set.story.practiceVoiceId?.trim() || set.story.voiceId || null;
+    out.set(slug, mapPersistedExercises(slug, set.exercises, voice, set.story.journey?.language ?? null));
+  }
+  return out;
+}
+
+/** Rows of one set, in the shape the clients consume (pure). */
+function mapPersistedExercises(
+  storySlug: string,
+  rows: PersistedExerciseRow[],
+  storyVoiceId: string | null,
+  storyLanguage: string | null
+): PracticeExercise[] {
   const out: PracticeExercise[] = [];
-  for (const row of set.exercises) {
+  for (const row of rows) {
     const payload = (row.payload ?? {}) as Record<string, unknown>;
     const prompt = typeof payload.prompt === "string" ? payload.prompt : "";
     // Inject the persisted R2 mp3 url into the audioClip so the mobile

@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import type { PracticeExercise } from "@/lib/practiceExercises";
-import { loadPersistedExercises } from "@/lib/persistedPracticeExercises";
+import { loadPersistedExercisesForSlugs } from "@/lib/persistedPracticeExercises";
 import {
   LEVEL_TEST_STATION_SIZE,
   type LevelTestExercise,
@@ -91,27 +91,39 @@ export async function buildLevelTest(
 
   const stations: LevelTestStation[] = [];
   const problems: StationProblem[] = [];
+
+  // One query for the candidate stories of every rung, one for their
+  // exercises, instead of two per story: this route answers the app before
+  // the onboarding curtain lifts, so it has to be quick.
+  const candidates = await prisma.journeyStory.findMany({
+    where: {
+      status: "published",
+      level: { in: ladder.map((l) => l.toLowerCase()) },
+      audioUrl: { not: null },
+      journey: { status: "active", language: dbLanguage, variant: { in: pool } },
+      practiceSet: { isNot: null },
+    },
+    orderBy: [{ journey: { variant: "asc" } }, { topic: "asc" }, { slotIndex: "asc" }],
+    select: { slug: true, title: true, level: true },
+  });
+  // Only the first few stories per rung go to the exercises query: every
+  // candidate would drag ~20 exercise rows with their payload each.
+  const CANDIDATES_PER_RUNG = 4;
+  const shortlist: string[] = [];
   for (const level of ladder) {
-    const stories = await prisma.journeyStory.findMany({
-      where: {
-        status: "published",
-        level: level.toLowerCase(),
-        audioUrl: { not: null },
-        journey: { status: "active", language: dbLanguage, variant: { in: pool } },
-        practiceSet: { isNot: null },
-      },
-      orderBy: [{ journey: { variant: "asc" } }, { topic: "asc" }, { slotIndex: "asc" }],
-      select: { slug: true, title: true },
-      take: 12,
-    });
+    candidates
+      .filter((c) => c.slug && c.level.toLowerCase() === level.toLowerCase())
+      .slice(0, CANDIDATES_PER_RUNG)
+      .forEach((c) => shortlist.push(c.slug as string));
+  }
+  const exercisesBySlug = await loadPersistedExercisesForSlugs(shortlist);
+
+  for (const level of ladder) {
     let found = 0;
-    for (const story of stories) {
-      if (found >= STORIES_PER_RUNG || !story.slug) continue;
-      // Featured (end-of-story) exercises first, then the pool, so a set
-      // whose featured ten have no listen or fill-the-gap still gets one.
-      const featured = (await loadPersistedExercises(story.slug, true)) ?? [];
-      const pool = (await loadPersistedExercises(story.slug, false)) ?? [];
-      const picked = pickStationExercises([...featured, ...pool]);
+    for (const story of candidates) {
+      if (found >= STORIES_PER_RUNG) break;
+      if (!story.slug || story.level.toLowerCase() !== level.toLowerCase()) continue;
+      const picked = pickStationExercises(exercisesBySlug.get(story.slug) ?? []);
       if (!picked) continue;
       stations.push({
         id: `${key}-${level.toLowerCase()}-${story.slug}`,

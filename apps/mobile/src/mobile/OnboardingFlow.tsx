@@ -403,7 +403,9 @@ export function OnboardingFlow({
     const effectiveTested =
       opts && "testedLevelOverride" in opts ? opts.testedLevelOverride ?? null : testedLevel;
     if (selectedOptions.length === 0 || !dailyMinutes) return;
-    if (!level && !effectiveTested) return;
+    // The story test may start with no pick at all: `levelFallback` then
+    // carries the provisional level until the test places the learner.
+    if (!level && !effectiveTested && !opts?.startLevelTest) return;
     setSubmitting(true);
     try {
       await onComplete({
