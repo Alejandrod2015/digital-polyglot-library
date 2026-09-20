@@ -216,7 +216,10 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
           title: `Historia del Journey: ${topicLabel}`,
           language: draft.language.toLowerCase(),
           variant: draft.variantId,
-          region: draft.variantId === "latam" ? "colombia" : draft.variantId,
+          region:
+            draft.variantId === "latam" || draft.variantId === "latam-multi"
+              ? "colombia"
+              : draft.variantId,
           cefrLevel: levelId,
           topic: topicLabel,
           journeyTopic: topicSlug,

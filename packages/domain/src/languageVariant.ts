@@ -1,5 +1,6 @@
 export type LanguageVariant =
   | "latam"
+  | "latam-multi"
   | "spain"
   | "mexico"
   | "colombia"
@@ -18,7 +19,13 @@ export type LanguageVariant =
   | "south-korea";
 
 export const VARIANT_LABELS: Record<LanguageVariant, string> = {
-  latam: "LATAM",
+  // 2026-09-19: split de la variante latam en tres familias (decision del
+  // usuario, ver TAXONOMIA_variantes_latam). "latam" pasa a ser el sentido
+  // NEUTRO (una sola voz peruana, sin ciudad ni pais en el texto); los tours
+  // pan-regionales existentes (un pais por tema) pasan al codigo NUEVO
+  // "latam-multi". Los paises (chile, mexico, colombia...) no cambian.
+  latam: "Latam (Neutral)",
+  "latam-multi": "Latam (Multi-Country)",
   spain: "Spain",
   mexico: "Mexico",
   colombia: "Colombia",
@@ -130,6 +137,17 @@ const LATAM_TOPIC_COUNTRY: Record<string, LanguageVariant> = {
   "fluency-and-forgetting": "colombia",
   "partners-and-in-laws": "argentina",
   "tales-and-tall-stories": "colombia",
+  // Cultural (A0): siete festividades, un pais por tema, leido de las
+  // historias (confirmado por el planificador, TAXONOMIA_variantes_latam,
+  // 2026-09-19). "christmas-and-posadas" repite CDMX con
+  // "valentines-and-romance"; no es error de tipeo.
+  "carnival-and-parades": "colombia", // Barranquilla
+  "valentines-and-romance": "mexico", // CDMX
+  "easter-and-processions": "peru", // Ayacucho
+  "solstice-and-sun": "peru", // Cusco
+  "day-of-the-dead": "mexico", // Oaxaca
+  "christmas-and-posadas": "mexico", // CDMX
+  "new-year-and-goodbyes": "colombia", // Medellín
 };
 
 /**
@@ -141,7 +159,15 @@ export function topicCountryVariant(
   journeyVariant?: string | null,
   topicSlug?: string | null
 ): LanguageVariant | null {
-  if ((journeyVariant ?? "").trim().toLowerCase() !== "latam") return null;
+  // 2026-09-19 (TAXONOMIA_variantes_latam): el badge de pais por tema es cosa
+  // de los tours pan-regionales. Durante la TRANSICION acepta "latam" Y
+  // "latam-multi": los 6 journeys siguen con Journey.variant="latam" en BD
+  // hasta el flip (scripts/migrateLatamMulti.ts --post-deploy), y nada debe
+  // depender de en que orden se comitea esto contra journeyTopicOrder.ts. En
+  // el flip, quitar "latam" de esta condicion (el sentido neutro no lleva
+  // badge de pais).
+  const v = (journeyVariant ?? "").trim().toLowerCase();
+  if (v !== "latam" && v !== "latam-multi") return null;
   const key = (topicSlug ?? "").trim().toLowerCase();
   return LATAM_TOPIC_COUNTRY[key] ?? null;
 }
@@ -164,7 +190,7 @@ export function buildVariantPromptClause(language?: string | null, variant?: str
 
   const normalizedLanguage = (language ?? "").trim().toLowerCase();
   if (normalizedLanguage === "spanish" || normalizedLanguage === "español") {
-    if (normalizedVariant === "latam") {
+    if (normalizedVariant === "latam" || normalizedVariant === "latam-multi") {
       return "Use a Latin American Spanish baseline unless the region implies something more specific.";
     }
     if (normalizedVariant === "spain") {
@@ -243,6 +269,14 @@ function poolOf(pool: string, spellings: readonly string[]): Record<string, stri
 
 const SPANISH_LATAM_POOL = [
   "latam",
+  // "latam-multi" comparte pool de vocabulario con "latam" y los paises: al
+  // learner que pidio LATAM se le sigue mostrando (decision del usuario,
+  // TAXONOMIA_variantes_latam 2026-09-19). Sin esta linea,
+  // variantPool("latam-multi") devuelve null y variantMatchesPreference lo
+  // trata como "sin preferencia, mostrar siempre a todos": la preferencia de
+  // variante deja de filtrar estos 6 journeys y vuelve la regresion del caso
+  // Vincent Pearson (2026-08-20).
+  "latam-multi",
   "mexico",
   "colombia",
   "argentina",

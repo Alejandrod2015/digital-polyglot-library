@@ -123,7 +123,7 @@ const SPECS: Record<string, FlagSpec> = {
  * resolves to the right flag.
  */
 const LATAM_REGION_CODES = new Set<string>([
-  "latam", "es-la", "es-419",
+  "latam", "latam-multi", "es-la", "es-419",
   // Country codes (lowercase) that imply LATAM Spanish.
   "mx", "co", "ar", "pe", "cl", "ec", "ve", "uy", "py", "bo", "cr", "pa", "do", "cu", "gt", "hn", "sv", "ni", "pr",
   // Spanish country names spelled out (some legacy data does this).
