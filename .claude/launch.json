@@ -282,6 +282,19 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/5013d473-2516-4de7-9d36-d31ed4d46b1f/scratchpad/muestra7"
       ],
       "port": 8925
+    },
+    {
+      "_comment": "La prueba de nivel de escucha (ES), estacion por estacion con sus clips. Borrar al cerrar la prueba.",
+      "name": "prueba-nivel-8926",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8926",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-ecstatic-dubinsky-9e6d06/785b2761-a150-4249-8edf-23f3370896cd/scratchpad/prueba"
+      ],
+      "port": 8926
     }
   ]
 }
