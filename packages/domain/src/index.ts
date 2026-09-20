@@ -5,7 +5,6 @@ export * from "./cefr";
 export * from "./displayFormat";
 export * from "./languageVariant";
 export * from "./levelTest";
-export * from "./levelTestSession";
 export * from "./lockedStoryPreview";
 export * from "./storyLength";
 export * from "./storySource";

@@ -2,10 +2,12 @@
  * Listening level test: the shared pieces between the API that serves the
  * stations and the mobile runner that plays them.
  *
- * The test is a ladder. Each rung (A1, A2, B1, B2, C1) is one STATION: a
- * clip of real story audio at that level, one comprehension question and
- * one vocabulary question from that same story. A station is PASSED only
- * when both answers are right. The learner climbs from the lowest rung;
+ * The test is a ladder. Each rung (A1, A2, B1, B2, C1) is one STATION: four
+ * curated practice exercises from one live story at that level (listen,
+ * meaning, context, fill-the-gap), the very formats the learner will
+ * practise with afterwards, so the test also teaches the app (user,
+ * 2026-09-20: "use what we already have"). A station is PASSED with three
+ * of four right (`stationPassed`). The learner climbs from the lowest rung;
  * the test ends after two failed stations in a row (`shouldStopLadder`).
  *
  * A rung counts as DEMONSTRATED only when the rung below it was passed
@@ -17,8 +19,8 @@
  *
  * Two deliberate biases towards placing LOW (decided 2026-09-20):
  *
- *  1. Both answers must be right. With 3 and 4 options, guessing passes a
- *     station about 8% of the time, so a rung is rarely won by luck.
+ *  1. Three of four right per station. With four options each, guessing
+ *     passes a station about 5% of the time, so a rung is rarely won by luck.
  *  2. The learner STARTS one rung below what they demonstrated
  *     (`placementFromDemonstrated`). Learning with narrated stories asks
  *     for more than the grammar level a language school certifies: the
@@ -85,26 +87,34 @@ export function placementFromDemonstrated(level: LevelTestLevel): LevelTestLevel
   return LEVEL_TEST_SCALE[Math.max(0, index - 1)];
 }
 
-/** One clip of the station: a story paragraph with its own mp3. */
-export type LevelTestClip = {
-  url: string;
-  text: string;
-  durationSec: number;
-};
+/**
+ * One practice exercise as `/api/story-practice` serves it (`PracticeExercise`
+ * in `src/lib/practiceExercises.ts`). The domain package does not import the
+ * web types, so the shape is opaque here; the app maps it with the same
+ * function it uses for end-of-story practice.
+ */
+export type LevelTestExercise = { id: string; type: string } & Record<string, unknown>;
 
-export type LevelTestChoiceQuestion = {
-  question: string;
-  options: string[];
-  answerIndex: number;
-};
+/** Exercises per station and how many must be right to pass the rung. */
+export const LEVEL_TEST_STATION_SIZE = 4;
+export const LEVEL_TEST_STATION_PASS = 3;
+
+/** A rung is passed with 3 of its 4 exercises right. With four options per
+ *  exercise, guessing passes a station about 5% of the time. Sizes other
+ *  than 4 scale the bar to three quarters, rounded up. */
+export function stationPassed(correct: number, total: number): boolean {
+  if (total <= 0) return false;
+  const needed = total === LEVEL_TEST_STATION_SIZE ? LEVEL_TEST_STATION_PASS : Math.ceil((total * 3) / 4);
+  return correct >= needed;
+}
 
 export type LevelTestStation = {
   id: string;
   level: LevelTestRung;
   story: { slug: string; title: string };
-  clips: LevelTestClip[];
-  comprehension: LevelTestChoiceQuestion;
-  vocab: LevelTestChoiceQuestion & { word: string };
+  /** Four curated exercises of that story: listen, meaning, context and
+   *  fill-the-gap, the same formats the learner will practise with. */
+  exercises: LevelTestExercise[];
 };
 
 /** What `GET /api/mobile/level-test` returns. */

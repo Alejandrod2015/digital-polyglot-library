@@ -1,14 +1,15 @@
 /**
- * Checks every authored station of the listening level test against the
- * live catalogue: story live with audio, fragment indexes present, vocab
- * word in the clip and in the story's glosses, three distractors
- * available, and the right answer no longer than the distractors. Prints one table per variant with the clip length and text,
- * so the stations can be read as the learner will hear them.
+ * Checks the level test against the live catalogue: every rung of both
+ * Spanish variants has at least one live story with four usable curated
+ * exercises (listen with its clip, meaning, context, fill-the-gap), and
+ * prints one table per variant with the stories and formats each station
+ * serves, to read the ladder as the learner will get it.
  *
  *   npx tsx scripts/checkLevelTestStations.ts
  *
- * Exits 1 on any problem. Run it after editing
- * `src/lib/levelTest/stations.es.ts` and before shipping.
+ * Exits 1 when a rung has no station. Nothing is authored by hand: if a
+ * rung goes red, the fix is a curated set with audio for a story of that
+ * level, not an edit here.
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
@@ -24,55 +25,23 @@ try {
   };
 } catch {}
 
-import { SPANISH_LEVEL_TEST } from "../src/lib/levelTest/stations.es";
-
 async function main() {
   // Imported here, after the cache trick above, because `@/lib/prisma`
   // seals itself with `server-only` and static imports are hoisted.
   const { buildLevelTest } = await import("../src/lib/levelTest/buildLevelTest");
   let failed = false;
-  for (const variant of Object.keys(SPANISH_LEVEL_TEST)) {
+  for (const variant of ["latam", "spain"]) {
     const built = await buildLevelTest("Spanish", variant);
     if (!built) throw new Error("Spanish has no level test");
-    const authored = SPANISH_LEVEL_TEST[variant as keyof typeof SPANISH_LEVEL_TEST];
     console.log(`\n## Spanish / ${variant}: ladder ${built.payload.ladder.join(" > ")}`);
-    console.log("| rung | station | story | clip | s | vocab | answer |");
-    console.log("| --- | --- | --- | --- | --- | --- | --- |");
+    console.log("| rung | story | formats |");
+    console.log("| --- | --- | --- |");
     for (const s of built.payload.stations) {
-      const seconds = s.clips.reduce((a, c) => a + c.durationSec, 0).toFixed(0);
-      const text = s.clips.map((c) => c.text).join(" ");
-      console.log(
-        `| ${s.level} | ${s.id} | ${s.story.slug} | ${text.replace(/\|/g, "/")} | ${seconds} | ${s.vocab.word} | ${s.comprehension.options[s.comprehension.answerIndex]} |`
-      );
-      // A test-wise guesser picks the longest option. On 2026-09-20 the
-      // right answer was the longest in 17 of 18 stations; keep it within
-      // 15% of the longest distractor.
-      const lengths = s.comprehension.options.map((o) => o.length);
-      const right = lengths[s.comprehension.answerIndex];
-      const longestOther = Math.max(...lengths.filter((_, i) => i !== s.comprehension.answerIndex));
-      if (right > longestOther * 1.15) {
-        console.log(`  PROBLEM ${s.id}: right answer ${right} chars vs longest distractor ${longestOther}`);
-        failed = true;
-      }
-      if (s.vocab.answerIndex < 0) {
-        console.log(`  PROBLEM ${s.id}: vocab answer not among options`);
-        failed = true;
-      }
+      const formats = s.exercises.map((e) => String(e.type).replace("_", " ")).join(", ");
+      console.log(`| ${s.level} | ${s.story.slug} | ${formats} |`);
     }
     for (const p of built.problems) {
-      console.log(`PROBLEM ${p.stationId}: ${p.reason}`);
-      failed = true;
-    }
-    for (const level of authored.ladder) {
-      const n = built.payload.stations.filter((s) => s.level === level).length;
-      if (n < 2) {
-        console.log(`PROBLEM ${variant}/${level}: ${n} station(s), need 2`);
-        failed = true;
-      }
-    }
-    const missing = authored.ladder.filter((l) => !built.payload.ladder.includes(l));
-    if (missing.length) {
-      console.log(`PROBLEM ${variant}: rungs without any station: ${missing.join(", ")}`);
+      console.log(`PROBLEM ${variant}/${p.level}: ${p.reason}`);
       failed = true;
     }
   }

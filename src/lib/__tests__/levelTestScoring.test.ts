@@ -4,6 +4,7 @@ import {
   pickStations,
   placementFromDemonstrated,
   shouldStopLadder,
+  stationPassed,
   type LevelTestRung,
   type LevelTestStation,
 } from "@domain/levelTest";
@@ -128,11 +129,22 @@ describe("placementFromDemonstrated", () => {
   });
 });
 
+describe("stationPassed", () => {
+  it("needs three of four, and three quarters of any other size", () => {
+    expect(stationPassed(3, 4)).toBe(true);
+    expect(stationPassed(2, 4)).toBe(false);
+    expect(stationPassed(4, 4)).toBe(true);
+    expect(stationPassed(2, 3)).toBe(false);
+    expect(stationPassed(3, 3)).toBe(true);
+    expect(stationPassed(0, 0)).toBe(false);
+  });
+});
+
 describe("guessing", () => {
-  // A station has one 3-option and one 4-option question and needs both
-  // right, so a guess passes it 1/12 of the time, and a rung only counts
-  // with the rung below passed too. A guesser is placed at A0 about 98%
-  // of the time and above A1 well under 1%. The old test sent 47% of
+  // A station is four exercises with four options each and needs three
+  // right, so a guess passes it about 5% of the time, and a rung only
+  // counts with the rung below passed too. A guesser is placed at A0 about
+  // 98% of the time and above A1 well under 1%. The old test sent 47% of
   // guessers to A2.
   it("sends almost every guesser to A0", () => {
     let seed = 7;
@@ -145,7 +157,9 @@ describe("guessing", () => {
     for (let i = 0; i < runs; i++) {
       const results: { level: LevelTestRung; passed: boolean }[] = [];
       for (const level of LATAM) {
-        results.push({ level, passed: random() < 1 / 3 && random() < 1 / 4 });
+        let right = 0;
+        for (let k = 0; k < 4; k++) if (random() < 1 / 4) right++;
+        results.push({ level, passed: stationPassed(right, 4) });
         if (shouldStopLadder(results)) break;
       }
       const placement = placementFromDemonstrated(demonstratedLevelFromStations(results, LATAM));
@@ -161,9 +175,7 @@ describe("pickStations", () => {
     id,
     level,
     story: { slug: id, title: id },
-    clips: [],
-    comprehension: { question: "", options: [], answerIndex: 0 },
-    vocab: { word: "", question: "", options: [], answerIndex: 0 },
+    exercises: [],
   });
 
   it("takes one station per rung, in ladder order, chosen by the random source", () => {
