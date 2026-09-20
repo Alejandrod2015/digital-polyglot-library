@@ -32,11 +32,12 @@ vi.mock("@clerk/backend", () => ({
 
 import { reconcileBetaTesterLinkByInstall } from "@/lib/betaProgram";
 
-const orphan = (id: string, firstName: string, ascTesterId: string) => ({
+const orphan = (id: string, firstName: string, ascTesterId: string, clerkUserId: string | null = null) => ({
   id,
   email: `${id}@example.org`,
   firstName,
   ascTesterId,
+  clerkUserId,
 });
 
 beforeEach(() => {
@@ -97,5 +98,29 @@ describe("reconcileBetaTesterLinkByInstall", () => {
     asc.states.set("asc_1", { state: "INSTALLED", group: "External", isInternal: false });
     expect(await reconcileBetaTesterLinkByInstall({ userId: "u", email: null, firstName: "Steven" })).toBe(false);
     expect(db.update).not.toHaveBeenCalled();
+  });
+
+  // 2026-09-20: David entro por web con su correo (enlazado, premium) y dos
+  // semanas despues por la app iOS con "Hide My Email". Misma persona, segunda
+  // cuenta, plan basic en el movil.
+  it("una fila ya enlazada recibe la segunda cuenta en altClerkUserIds sin perder la primera", async () => {
+    db.findMany.mockResolvedValue([orphan("d1", "David", "asc_1", "user_web")]);
+    asc.states.set("asc_1", { state: "INSTALLED", group: "External", isInternal: false });
+
+    const ok = await reconcileBetaTesterLinkByInstall({
+      userId: "user_relay",
+      email: "xyz@privaterelay.appleid.com",
+      firstName: "David Jouannet",
+    });
+
+    expect(ok).toBe(true);
+    expect(db.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: { id: "d1" },
+        data: expect.objectContaining({ altClerkUserIds: { push: "user_relay" } }),
+      }),
+    );
+    const data = db.update.mock.calls[0][0].data;
+    expect(data.clerkUserId).toBeUndefined();
   });
 });
