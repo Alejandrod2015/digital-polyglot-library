@@ -2,7 +2,7 @@
  * Checks every authored station of the listening level test against the
  * live catalogue: story live with audio, fragment indexes present, vocab
  * word in the clip and in the story's glosses, three distractors
- * available. Prints one table per variant with the clip length and text,
+ * available, and the right answer no longer than the distractors. Prints one table per variant with the clip length and text,
  * so the stations can be read as the learner will hear them.
  *
  *   npx tsx scripts/checkLevelTestStations.ts
@@ -44,6 +44,16 @@ async function main() {
       console.log(
         `| ${s.level} | ${s.id} | ${s.story.slug} | ${text.replace(/\|/g, "/")} | ${seconds} | ${s.vocab.word} | ${s.comprehension.options[s.comprehension.answerIndex]} |`
       );
+      // A test-wise guesser picks the longest option. On 2026-09-20 the
+      // right answer was the longest in 17 of 18 stations; keep it within
+      // 15% of the longest distractor.
+      const lengths = s.comprehension.options.map((o) => o.length);
+      const right = lengths[s.comprehension.answerIndex];
+      const longestOther = Math.max(...lengths.filter((_, i) => i !== s.comprehension.answerIndex));
+      if (right > longestOther * 1.15) {
+        console.log(`  PROBLEM ${s.id}: right answer ${right} chars vs longest distractor ${longestOther}`);
+        failed = true;
+      }
       if (s.vocab.answerIndex < 0) {
         console.log(`  PROBLEM ${s.id}: vocab answer not among options`);
         failed = true;

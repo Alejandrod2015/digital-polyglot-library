@@ -43,9 +43,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "What does Jorge say in the voice note?",
         options: [
-          "He is coming the week of the 15th and bringing his guitar.",
-          "He cannot make it to the wedding this year.",
-          "He wants Lucía to call her mother right away.",
+          "He is coming the week of the 15th, guitar and all.",
+          "He is skipping the wedding, but sending a gift.",
+          "He wants Lucía to call her mother before the 15th.",
         ],
         answerIndex: 0,
       },
@@ -59,9 +59,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "Why does Camilo knock on Alveiro's door?",
         options: [
-          "To ask him to sign the building's list.",
+          "To ask him to sign the building's list of names.",
           "The power is out and he needs a socket for his flashlight.",
-          "To complain about noise from upstairs.",
+          "To warn him that the hallway light bulb has burnt out.",
         ],
         answerIndex: 1,
       },
@@ -75,9 +75,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "Why can't Percy cross today?",
         options: [
-          "The canoe is not ready yet.",
-          "The officer's shift has already ended.",
-          "The date on his permit is written wrong.",
+          "The canoe is not tied up in the right place.",
+          "The officer's shift ended before he arrived.",
+          "The date written on his permit is wrong.",
         ],
         answerIndex: 2,
       },
@@ -91,9 +91,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "What is Percy about to do when he turns and sees Karina?",
         options: [
-          "Pay a man on the shore to fix his paper the quick way.",
-          "Buy a ticket for the raft.",
-          "Ask her to sign the permit herself.",
+          "Pay a man on the shore to fix his paper the fast way.",
+          "Buy a raft ticket in somebody else's name.",
+          "Ask Karina to sign the permit even though she is off duty.",
         ],
         answerIndex: 0,
       },
@@ -107,8 +107,8 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "What does Esteban think about taking the tables out?",
         options: [
-          "It would make the cafe look newer.",
-          "She should do it before December.",
+          "It would make the cafe look newer and bring in younger people.",
+          "She should do it, but only after December when it is quieter.",
           "She would lose the customers who sit for an hour over a coffee.",
         ],
         answerIndex: 2,
@@ -124,8 +124,8 @@ const LATAM: AuthoredVariant = {
         question: "According to Esteban, what did Rocío do wrong?",
         options: [
           "She raised the price and put up the sign on the same day.",
-          "She put the sign where nobody could see it.",
-          "She kept the old price for too long.",
+          "She put the sign where the regular customers cannot see it.",
+          "She kept the old price too long and now the sign is useless.",
         ],
         answerIndex: 0,
       },
@@ -139,9 +139,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "How does Griselda defend her group?",
         options: [
-          "Her students score higher than the app groups.",
-          "Her students come after work and never miss a class.",
-          "She promises to add a review module on Fridays.",
+          "Her students score higher than the app groups on the tests.",
+          "Her students come after work and never miss a single class.",
+          "She promises to add a review module to the Friday schedule.",
         ],
         answerIndex: 1,
       },
@@ -155,8 +155,8 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "How does Ariel bring the story hour back?",
         options: [
-          "He apologises to Griselda in front of the students.",
-          "He asks the students to vote on it.",
+          "He apologises to Griselda in front of her six students.",
+          "He asks the night students to vote on a weekly reading hour.",
           "He presents it as his own idea: a weekly reading hour.",
         ],
         answerIndex: 2,
@@ -171,9 +171,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "Why does Valeria stop Marina's story?",
         options: [
-          "She has already heard it from a neighbour.",
+          "She has already heard it from a neighbour in the building.",
           "The man in the gossip is her cousin and the party was at her house.",
-          "Julián is getting bored and wants to leave.",
+          "Julián is bored, and she wants to hear the ending from him instead.",
         ],
         answerIndex: 1,
       },
@@ -187,9 +187,9 @@ const LATAM: AuthoredVariant = {
       comprehension: {
         question: "What does Marina reveal when Julián confesses?",
         options: [
-          "The secret was invented to test whether he could keep it.",
-          "She had already forgiven him days ago.",
-          "The whole group had agreed to keep him quiet.",
+          "The secret was invented on purpose to test whether he could keep it.",
+          "She had already forgiven him days ago, before he called her.",
+          "The whole group had agreed to keep him quiet at the party.",
         ],
         answerIndex: 0,
       },
@@ -209,9 +209,9 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "Why doesn't Irene get a menu?",
         options: [
-          "The kitchen has closed for the night.",
+          "The kitchen closed for the night a few minutes ago.",
           "In this bar there is no menu: you order at the counter.",
-          "The owner did not hear her.",
+          "The owner did not hear her over the noise of the bar.",
         ],
         answerIndex: 1,
       },
@@ -225,9 +225,9 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "Why does Irene get a plate she did not order?",
         options: [
-          "Here a beer always comes with some food.",
-          "The owner mixed up her order with another one.",
-          "The man with the newspaper sent it over.",
+          "Here a beer always comes with some food on the side.",
+          "The owner mixed up her order with another customer's.",
+          "The man with the newspaper sent it over to her table.",
         ],
         answerIndex: 0,
       },
@@ -241,9 +241,9 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "What does Quique teach Irene?",
         options: [
-          "Squid is ordered by weight, not by pieces.",
+          "At the fish stall squid is sold by weight, never by pieces.",
           "She should say the number out loud instead of using her hands.",
-          "Here you start counting on a different finger, and depth is shown with the hands.",
+          "You count from a different finger, and depth is shown by hand.",
         ],
         answerIndex: 2,
       },
@@ -257,9 +257,9 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "Why does Rocío touch Irene's arm when she talks about the flat?",
         options: [
-          "She wants Irene to speak more quietly.",
+          "She wants Irene to speak more quietly in the queue.",
           "Someone else in the building wants that flat too.",
-          "She is warning her that the rent will go up.",
+          "She is warning her that the rent goes up in winter.",
         ],
         answerIndex: 1,
       },
@@ -274,8 +274,8 @@ const SPAIN: AuthoredVariant = {
         question: "Why is the other company's estimate cheaper?",
         options: [
           "It only covers half the roof, not the whole thing.",
-          "They use cheaper bricks and cement.",
-          "They give a discount for paying in cash.",
+          "They use cheaper bricks and cement than Toño does.",
+          "They give a discount when the work is paid in cash.",
         ],
         answerIndex: 0,
       },
@@ -289,9 +289,9 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "Why does Celia turn down the cheaper deal?",
         options: [
-          "She thinks the work would take too long.",
-          "She would rather hire Toño's company.",
-          "The money belongs to three neighbours and she must be able to show them what she signs.",
+          "She thinks a job that starts next week will be rushed and done badly.",
+          "She would rather hire Toño, whose estimate covers the whole roof.",
+          "The money is the three neighbours' and they must see what she signs.",
         ],
         answerIndex: 2,
       },
@@ -306,8 +306,8 @@ const SPAIN: AuthoredVariant = {
         question: "What stops Claudia at the box of books?",
         options: [
           "The books carry her club's crest stamped inside the cover.",
-          "The bookseller says they are not for sale.",
-          "They are the novels she came in looking for.",
+          "The bookseller tells her the whole box is not for sale.",
+          "They are the very novels she came into the shop looking for.",
         ],
         answerIndex: 0,
       },
@@ -321,7 +321,7 @@ const SPAIN: AuthoredVariant = {
       comprehension: {
         question: "On what condition will Martina sell the books?",
         options: [
-          "Only if the club pays the full price at once.",
+          "Only if the club pays the full price at once, in cash.",
           "Only if they go back on display where people can see them.",
           "Only if they stay in her shop until the new premises open.",
         ],
