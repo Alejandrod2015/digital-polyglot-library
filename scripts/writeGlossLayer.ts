@@ -59,9 +59,13 @@ async function main() {
   if (!global) { console.error(`el bundle ${bundle} no existe en la base`); process.exit(1); }
   const plana = global.glosses as Record<string, { g: string; t: string }>;
 
-  const faltan = Object.keys(trozos).filter((w) => !plana[w]);
+  const fila = await prisma.tapGlossSet.findUnique({ where: { bundle_slug: { bundle, slug } } });
+  const capa = (fila?.glosses as Record<string, Record<string, unknown>>) ?? {};
+  // Una expresion de varias palabras ("vitel toné") vive solo en la capa de
+  // la historia; vale si ya esta ahi aunque el mapa global no la tenga.
+  const faltan = Object.keys(trozos).filter((w) => !plana[w] && !capa[w]);
   if (faltan.length) {
-    console.error("no estan en la glosa global, no escribo:", faltan.join(", "));
+    console.error("no estan en la glosa global ni en la capa, no escribo:", faltan.join(", "));
     process.exit(1);
   }
 
@@ -76,13 +80,11 @@ async function main() {
     process.exit(1);
   }
 
-  const fila = await prisma.tapGlossSet.findUnique({ where: { bundle_slug: { bundle, slug } } });
-  const capa = (fila?.glosses as Record<string, Record<string, unknown>>) ?? {};
   for (const [w, entrada] of Object.entries(trozos)) {
     const t = primero(entrada);
     const e = capa[w] ?? { g: plana[w].g, t: plana[w].t };
-    e.g ??= plana[w].g;
-    e.t ??= plana[w].t;
+    e.g ??= plana[w]?.g;
+    e.t ??= plana[w]?.t;
     e.c = { es: t.es, en: t.en };
     if (Array.isArray(entrada)) {
       const resto = entrada.slice(1).map((x) => ({ es: x.es, en: x.en }));
