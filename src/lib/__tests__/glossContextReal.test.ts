@@ -44,6 +44,26 @@ describe("evaluarEntradaGlossContext", () => {
     expect(v.ok).toBe(true);
   });
 
+  it("pasa una replica de una palabra entre dos replicas de dialogo (?” “Vienes.)", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "vienes",
+      c: { es: "Vienes.", en: "You'll come." },
+      g: "you come",
+      texto: "“Me pagas el viernes”, propone Patricia. “¿Y si no vengo?” “Vienes. Ustedes son las de la escuela de baile, ¿no?”",
+    });
+    expect(v.ok).toBe(true);
+  });
+
+  it("sigue cazando la palabra sola cuando no cierra una frase", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "vienes",
+      c: { es: "Vienes.", en: "You'll come." },
+      g: "you come",
+      texto: "“¿Y si no vengo?” “Si vienes mañana, te pago el viernes.”",
+    });
+    expect(v.ok).toBe(false);
+  });
+
   it("falla si c.es no aparece literal en el texto de la historia", () => {
     const v = evaluarEntradaGlossContext({
       palabra: "horno",
