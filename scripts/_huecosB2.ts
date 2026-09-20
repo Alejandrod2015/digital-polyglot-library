@@ -8,15 +8,16 @@ import { extractStoryPlainText } from "../src/lib/storyPlainText";
 import { uncoveredOccurrences, glossChunks, type GlossChunk } from "../src/lib/tapGlossChunk";
 const prisma = new PrismaClient();
 const CONTENIDO = new Set(["noun", "verb", "adjective", "adverb", "expression"]);
-const [bundle, outDir] = process.argv.slice(2);
+const [bundle, outDir, journeyId] = process.argv.slice(2);
 (async () => {
   const rows = await prisma.tapGlossSet.findMany({ where: { bundle, NOT: { slug: "" } } });
-  const stories = await prisma.journeyStory.findMany({ where: { slug: { in: rows.map((r) => r.slug) } }, select: { slug: true, title: true, text: true } });
+  const stories = await prisma.journeyStory.findMany({ where: { slug: { in: rows.map((r) => r.slug) } }, select: { slug: true, title: true, text: true, journeyId: true } });
   const bySlug = new Map(stories.map((s) => [s.slug, s]));
   let total = 0;
   const resumen: string[] = [];
   for (const r of rows) {
     const st = bySlug.get(r.slug)!;
+    if (journeyId && st.journeyId !== journeyId) continue;
     const texto = `${st.title}\n${extractStoryPlainText(st.text)}`;
     const g = r.glosses as Record<string, { g: string; t: string; c?: GlossChunk; cs?: GlossChunk[] }>;
     const out: Record<string, unknown> = {};
