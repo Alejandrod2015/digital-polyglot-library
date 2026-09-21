@@ -14713,7 +14713,10 @@ export function MobileLibraryShell(args: {
     // la app), se dejan los de antes y el rollup los lleva a los nuevos;
     // vaciarlos un segundo era el parpadeo que se veia al entrar en Practice
     // recien abierta la app.
-    if (!done) setOrbitBreakdownPending(true);
+    // Un recuento anterior de pool VACIO no cuenta como "numeros en
+    // pantalla": son ceros, y al arrancar en frio el pool local esta vacio
+    // hasta que llega el del servidor. Sin esto el hub decia "0 skills".
+    if (!done || done.items.length === 0) setOrbitBreakdownPending(true);
     // Un modo por tanda, con un frame entre medias, en vez de los cinco de
     // golpe: con el pool del iPhone (unas 40 palabras) los cinco juntos
     // bloqueaban el hilo JS mas de un segundo, y de paso el `onLayout` del
