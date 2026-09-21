@@ -316,6 +316,22 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "schachtel","notfall","genug","zurück","achten","achtet","geachtet","schein",
   "gemütlich","gesicht","gesichter","streichholz","streichhölzer","verkaufen","verkauft",
   "kunde","kunden","vorne","golden","schön","dicht","kreis","lachen","lacht","warm",
+
+  // ── Batch 9 (2026-09-21) for the German "Friends" A2 (Hannover): renting,
+  //    moving, second-hand, job hunting, match days, sick days. Two kinds of
+  //    entry, the same two the earlier batches already mix: Goethe A1/A2
+  //    Wortliste words the list simply lacked ("miete", "vertrag", "sauber"),
+  //    and the journey's own realia anchors ("schufa", "maklerin", "bürge"),
+  //    which are rare in ANY frequency corpus by definition and are exactly
+  //    what the journey exists to teach. Same criterion as batches 1-8; the
+  //    0/1-2/3+ threshold of vocab-level-frequency is untouched.
+  "bewerber","bewerberin","mappe","maklerin","maklerbüro","schufa","winzig",
+  "miete","mieten","bürgersteig","zugeben","gibt zu","zugegeben","bisher",
+  "sortieren","sortiert","staub","staubig","arbeitsvertrag","bürge","bürgin",
+  "schütteln","schüttelt","zucken","zuckt","wortlos","stolz","wiegen","wiegt",
+  "brett","waschsalon","waschpulver","brummen","brummt","streifen",
+  "vormieter","vormieterin","nachmieter","nachmieterin","kleben","klebt",
+  "viereck","vierecke","zittern","zittert","hinterhof",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

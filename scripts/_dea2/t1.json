@@ -1,0 +1,405 @@
+[
+ {
+  "topic": "flats-and-viewings",
+  "slotIndex": 0,
+  "title": "Die Mappe auf dem Sofa",
+  "slug": "die-mappe-auf-dem-sofa",
+  "arcType": "reframe-turn",
+  "synopsis": "Thirty people are queueing on the stairs for the same tiny flat in Hannover. When Britta reaches the front, the estate agent asks for papers that are still lying at Malte's place. Out on the pavement she has to call him, and he asks for something in return.",
+  "text": "Britta, eine Floristin ohne Stelle, wartet seit einer Stunde im Treppenhaus. Es riecht nach nassen Jacken, und irgendwo tropft ein Wasserhahn. Dreißig Bewerber wollen dieselbe Wohnung, jeder mit einer dicken Mappe.\n\nMalte, ein alter Freund aus der Schule, lässt sie seit Wochen auf seinem Sofa schlafen, aber zugegeben hat sie das bisher niemandem. Die Maklerin fragt sie nach der Schufa und den letzten Gehaltszetteln. “Die habe ich leider nicht dabei, aber ich schicke Ihnen alles heute Abend”, erklärt Britta.\n\nSie spürt, wie ihr Hals heiß wird. Die Wohnung ist winzig, das Bad hat kein Fenster, die Miete ist hoch. Trotzdem will Britta sie sofort haben, weil sie endlich eine eigene Tür braucht.\n\nUnten auf dem Bürgersteig ruft sie Malte an. “Bringst du mir bitte meine Mappe und fragst nicht, warum sie bei dir liegt?”, fragt sie leise. “Umsonst bringe ich gar nichts, denn heute erzählst du mir wirklich, wie es dir geht”, antwortet Malte.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "nass",
+    "surface": "nassen",
+    "definition": "Wet; covered in water, like a coat after walking through rain."
+   },
+   {
+    "type": "noun",
+    "word": "der Wasserhahn",
+    "surface": "Wasserhahn",
+    "definition": "A tap; the metal piece you turn to let water run out."
+   },
+   {
+    "type": "noun",
+    "word": "der Bewerber",
+    "anchor": true,
+    "surface": "Bewerber",
+    "definition": "An applicant; one of the people asking to get the flat or job."
+   },
+   {
+    "type": "adjective",
+    "word": "dick",
+    "surface": "dicke",
+    "definition": "Thick; with a lot of paper inside, not thin and light."
+   },
+   {
+    "type": "noun",
+    "word": "die Mappe",
+    "anchor": true,
+    "surface": "Mappe",
+    "definition": "A folder; the flat case where you keep all your papers together."
+   },
+   {
+    "type": "noun",
+    "word": "die Maklerin",
+    "anchor": true,
+    "surface": "Maklerin",
+    "definition": "A woman who shows flats to people and chooses the new tenant."
+   },
+   {
+    "type": "noun",
+    "word": "die Schufa",
+    "anchor": true,
+    "surface": "Schufa",
+    "definition": "The German credit record that every landlord asks a tenant for."
+   },
+   {
+    "type": "noun",
+    "word": "der Gehaltszettel",
+    "surface": "Gehaltszetteln",
+    "definition": "A payslip; the paper that shows how much you earn each month."
+   },
+   {
+    "type": "verb",
+    "word": "spüren",
+    "surface": "spürt",
+    "definition": "To feel something in your body, like heat or a fast heart."
+   },
+   {
+    "type": "adjective",
+    "word": "heiß",
+    "surface": "heiß",
+    "definition": "Hot; here the warm feeling in your neck when you are ashamed."
+   },
+   {
+    "type": "adjective",
+    "word": "winzig",
+    "surface": "winzig",
+    "definition": "Tiny; much smaller than you hoped, with almost no space inside."
+   },
+   {
+    "type": "noun",
+    "word": "die Miete",
+    "anchor": true,
+    "surface": "Miete",
+    "definition": "The rent; the money you pay your landlord at the start of each month."
+   },
+   {
+    "type": "adverb",
+    "word": "trotzdem",
+    "surface": "Trotzdem",
+    "definition": "All the same; even though everything speaks against doing it."
+   },
+   {
+    "type": "adjective",
+    "word": "eigen",
+    "surface": "eigene",
+    "definition": "Your own; belonging only to you and to nobody else at all."
+   },
+   {
+    "type": "noun",
+    "word": "der Bürgersteig",
+    "surface": "Bürgersteig",
+    "definition": "The pavement; the part of the street where people walk, not cars."
+   },
+   {
+    "type": "verb",
+    "word": "zugeben",
+    "surface": "zugegeben",
+    "definition": "To admit; to say out loud a thing you would rather keep hidden."
+   },
+   {
+    "type": "adverb",
+    "word": "bisher",
+    "surface": "bisher",
+    "definition": "Until now; in all the time from the beginning up to this moment."
+   },
+   {
+    "type": "adverb",
+    "word": "leise",
+    "surface": "leise",
+    "definition": "Quietly; with a soft voice that other people can hardly hear."
+   },
+   {
+    "type": "adverb",
+    "word": "umsonst",
+    "surface": "Umsonst",
+    "definition": "For free; without wanting money or anything else back for it."
+   },
+   {
+    "type": "adverb",
+    "word": "wirklich",
+    "surface": "wirklich",
+    "definition": "Really; the way a thing truly is and not the way you show it."
+   }
+  ]
+ },
+ {
+  "topic": "flats-and-viewings",
+  "slotIndex": 1,
+  "title": "Zwei Namen im Vertrag",
+  "slug": "zwei-namen-im-vertrag",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "At the second viewing Britta brings every paper with her, sorted and clean, but the landlord asks for a work contract she does not have yet. In front of everybody Malte offers to sign as her guarantor, and Britta says a polite no. That evening the rejection arrives, and she has kept one thing and lost another.",
+  "text": "Die zweite Wohnung liegt in der Südstadt, mit einem schmalen Balkon. Unten klopft jemand einen Teppich aus, und der Staub steht in der Sonne. Diesmal hat Britta alles dabei, sauber sortiert und ohne einen Fleck.\n\nDer Vermieter blättert langsam durch die Seiten und fragt nach dem Arbeitsvertrag. “Den bekomme ich erst, wenn ich eine Stelle habe, und das dauert leider noch”, antwortet Britta. Der Mann schaut auf und wirkt nicht mehr zufrieden.\n\nMalte antwortet schneller als sie. “Ich unterschreibe einfach als Bürge, und das ist für mich wirklich überhaupt kein Problem”, meint er. “Danke, aber ich will die Wohnung nicht geschenkt bekommen, nicht einmal von dir”, sagt Britta höflich und schüttelt den Kopf.\n\nDer Vermieter zuckt mit den Schultern. Am Abend kommt die Absage, und Malte stellt ihr wortlos eine Tasse hin. Britta hat den Stolz behalten und die Wohnung verloren, und heute wiegt beides gleich schwer.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "schmal",
+    "surface": "schmalen",
+    "definition": "Narrow; with very little space from one side to the other."
+   },
+   {
+    "type": "verb",
+    "word": "klopfen",
+    "surface": "klopft",
+    "definition": "To beat or knock; here to hit a carpet hard to get dust out."
+   },
+   {
+    "type": "noun",
+    "word": "der Staub",
+    "surface": "Staub",
+    "definition": "Dust; the fine grey powder that sits on old things and flies up."
+   },
+   {
+    "type": "adjective",
+    "word": "sauber",
+    "surface": "sauber",
+    "definition": "Clean; with no dirt and nothing out of place at all."
+   },
+   {
+    "type": "verb",
+    "word": "sortieren",
+    "surface": "sortiert",
+    "definition": "To sort; to put papers or things into a clear, useful order."
+   },
+   {
+    "type": "noun",
+    "word": "der Vermieter",
+    "anchor": true,
+    "surface": "Vermieter",
+    "definition": "The landlord; the man who owns the flat and rents it to you."
+   },
+   {
+    "type": "verb",
+    "word": "blättern",
+    "surface": "blättert",
+    "definition": "To leaf through; to turn one page after another without hurrying."
+   },
+   {
+    "type": "noun",
+    "word": "der Arbeitsvertrag",
+    "anchor": true,
+    "surface": "Arbeitsvertrag",
+    "definition": "A work contract; the signed paper that proves you really have a job."
+   },
+   {
+    "type": "verb",
+    "word": "dauern",
+    "surface": "dauert",
+    "definition": "To take time; to go on longer than you would like it to."
+   },
+   {
+    "type": "adjective",
+    "word": "zufrieden",
+    "surface": "zufrieden",
+    "definition": "Satisfied; happy with what you see and not asking for more."
+   },
+   {
+    "type": "verb",
+    "word": "unterschreiben",
+    "surface": "unterschreibe",
+    "definition": "To sign; to write your own name under a paper to agree."
+   },
+   {
+    "type": "noun",
+    "word": "der Bürge",
+    "anchor": true,
+    "surface": "Bürge",
+    "definition": "A guarantor; the person who promises to pay if you cannot pay."
+   },
+   {
+    "type": "verb",
+    "word": "schenken",
+    "surface": "geschenkt",
+    "definition": "To give as a present, without asking for any money in return."
+   },
+   {
+    "type": "adjective",
+    "word": "höflich",
+    "surface": "höflich",
+    "definition": "Polite; friendly and correct, even when the answer is a hard no."
+   },
+   {
+    "type": "verb",
+    "word": "schütteln",
+    "surface": "schüttelt",
+    "definition": "To shake; here to move your head from side to side for no."
+   },
+   {
+    "type": "verb",
+    "word": "zucken",
+    "surface": "zuckt",
+    "definition": "To twitch; here to lift the shoulders quickly to show you do not mind."
+   },
+   {
+    "type": "adverb",
+    "word": "wortlos",
+    "surface": "wortlos",
+    "definition": "Without a word; doing something for somebody and saying nothing."
+   },
+   {
+    "type": "noun",
+    "word": "der Stolz",
+    "surface": "Stolz",
+    "definition": "Pride; the feeling inside you that makes asking for help hard."
+   },
+   {
+    "type": "verb",
+    "word": "behalten",
+    "surface": "behalten",
+    "definition": "To keep; to still have a thing after everything else is gone."
+   },
+   {
+    "type": "verb",
+    "word": "wiegen",
+    "surface": "wiegt",
+    "definition": "To weigh; to be heavy, here as a feeling inside your chest."
+   }
+  ]
+ },
+ {
+  "topic": "flats-and-viewings",
+  "slotIndex": 2,
+  "title": "Der Zettel im Waschsalon",
+  "slug": "der-zettel-im-waschsalon",
+  "arcType": "late-reveal",
+  "synopsis": "A small ad at the launderette offers two rooms in the List district from October. The woman who is leaving shows Britta an almost empty flat full of boxes. Only at the door does she say why she is going, and Britta hears her own words coming back.",
+  "text": "Am schwarzen Brett im Waschsalon hängt ein Zettel: zwei Zimmer in der List. Die Maschinen brummen warm, und der ganze Raum riecht nach Seife. “Die nehme ich, bevor sie mir jemand anders wegschnappt”, murmelt Britta und zieht den letzten Streifen ab.\n\nDie Vormieterin öffnet in Jacke und zeigt ihr die halb leeren Räume. Überall stehen Kartons, und an der Wand kleben helle Vierecke von alten Bildern. “Ein Hinterhof mit drei Fahrrädern, das reicht mir vollkommen”, sagt Britta leise.\n\n“Dünne Wände stören mich nicht, das merke ich abends sowieso kaum”, erzählt sie weiter. Dann erzählt die Vormieterin ganz ruhig, warum sie nach sechs Jahren auszieht. Sie fängt in ihrer alten Stadt noch einmal an.\n\nBritta lacht kurz auf, weil sie diesen Satz selbst schon gesagt hat. Auf der Treppe ruft sie Malte an, und ihre Hand zittert ein bisschen. “Ich habe eine Wohnung gefunden, und diesmal schaffe ich das ganz allein”, sagt sie zu ihm.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Brett",
+    "surface": "Brett",
+    "definition": "A board; here the wall board where people pin up small ads."
+   },
+   {
+    "type": "noun",
+    "word": "der Waschsalon",
+    "anchor": true,
+    "surface": "Waschsalon",
+    "definition": "A launderette; a shop full of washing machines that anyone may use."
+   },
+   {
+    "type": "verb",
+    "word": "brummen",
+    "surface": "brummen",
+    "definition": "To hum; to make a low, deep sound, like a working machine."
+   },
+   {
+    "type": "noun",
+    "word": "die Seife",
+    "surface": "Seife",
+    "definition": "Soap; what you wash with, here the smell of clean warm clothes."
+   },
+   {
+    "type": "noun",
+    "word": "der Streifen",
+    "surface": "Streifen",
+    "definition": "A strip; the thin piece of paper with a number that you tear off."
+   },
+   {
+    "type": "noun",
+    "word": "die Vormieterin",
+    "anchor": true,
+    "surface": "Vormieterin",
+    "definition": "The woman who lives in the flat before you move into it."
+   },
+   {
+    "type": "noun",
+    "word": "der Karton",
+    "surface": "Kartons",
+    "definition": "A cardboard box, the kind you fill when you pack up a home."
+   },
+   {
+    "type": "verb",
+    "word": "kleben",
+    "surface": "kleben",
+    "definition": "To stick; to stay fixed on a wall and not come off."
+   },
+   {
+    "type": "noun",
+    "word": "das Viereck",
+    "surface": "Vierecke",
+    "definition": "A square; here the pale mark a picture leaves on an old wall."
+   },
+   {
+    "type": "noun",
+    "word": "der Hinterhof",
+    "surface": "Hinterhof",
+    "definition": "A back yard; the closed space behind a house in a city."
+   },
+   {
+    "type": "adjective",
+    "word": "dünn",
+    "surface": "Dünne",
+    "definition": "Thin; here so thin that you hear the neighbours through them."
+   },
+   {
+    "type": "verb",
+    "word": "merken",
+    "surface": "merke",
+    "definition": "To notice; to know something at once without thinking about it."
+   },
+   {
+    "type": "adjective",
+    "word": "ruhig",
+    "surface": "ruhig",
+    "definition": "Calm; speaking slowly and without any sign of worry."
+   },
+   {
+    "type": "verb",
+    "word": "ausziehen",
+    "surface": "auszieht",
+    "definition": "To move out; to leave a flat for good and give back the keys."
+   },
+   {
+    "type": "verb",
+    "word": "anfangen",
+    "surface": "fängt",
+    "definition": "To begin; to start a thing again from the very first step."
+   },
+   {
+    "type": "noun",
+    "word": "der Satz",
+    "surface": "Satz",
+    "definition": "A sentence; the words somebody puts together and says out loud."
+   },
+   {
+    "type": "adverb",
+    "word": "selbst",
+    "surface": "selbst",
+    "definition": "Herself; the same person and nobody else, said with weight."
+   },
+   {
+    "type": "verb",
+    "word": "zittern",
+    "surface": "zittert",
+    "definition": "To shake; to move a little when you are nervous or cold."
+   },
+   {
+    "type": "verb",
+    "word": "schaffen",
+    "surface": "schaffe",
+    "definition": "To manage; to get a hard thing done, even on your own."
+   },
+   {
+    "type": "adverb",
+    "word": "allein",
+    "surface": "allein",
+    "definition": "Alone; with nobody helping you and nobody standing next to you."
+   }
+  ]
+ }
+]

@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "seco y practico, humor de cola de escalera; frases cortas de gente que espera de pie y cuenta el dinero",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "la primera vivienda propia desde que volvio a Hannover", "impide": "la carpeta con la Schufa y las nominas se quedo en casa de Malte", "cuesta": "tiene que llamarlo y dejar de disimular que duerme en su sofa", "cambia": "pasa de aparentar a pedir, aunque sea a una sola persona", "emocion": "verguenza caliente en el cuello delante de treinta desconocidos" },
+  { "slot": "2", "quiere": "el piso de la Suedstadt, esta vez con todo el papeleo en regla", "impide": "el casero pide un contrato de trabajo que ella todavia no tiene", "cuesta": "rechaza el aval de Malte en voz alta y pierde el piso esa misma noche", "cambia": "descubre que su orgullo tiene precio y que lo acaba de pagar", "emocion": "el peso igualado de haber ganado una cosa y perdido otra" },
+  { "slot": "3", "quiere": "una vivienda que no dependa de nadie", "impide": "solo queda un anuncio en el tablon de una lavanderia", "cuesta": "tiene que oir su propia frase en boca de la inquilina que se va", "cambia": "dice en voz alta que empieza de cero, y esta vez sin adornos", "emocion": "el reconocimiento incomodo de verse desde fuera" }
+ ]
+}
