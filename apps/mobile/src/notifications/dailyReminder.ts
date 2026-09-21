@@ -30,6 +30,9 @@ export function parseReminderDestination(value: unknown): ReminderDestination | 
   if (!value || typeof value !== "object") return null;
   const record = value as Record<string, unknown>;
   if (record.kind === "practiceDue") return { kind: "practiceDue" };
+  if (record.kind === "journeyStory" && typeof record.storySlug === "string" && record.storySlug.trim()) {
+    return { kind: "journeyStory", storySlug: record.storySlug.trim() };
+  }
   if (record.kind === "journey") return { kind: "journey" };
   if (
     record.kind === "resumeStory" &&

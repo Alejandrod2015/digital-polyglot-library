@@ -236,6 +236,7 @@ import {
   REMINDER_MINUTE_OPTIONS,
   normalizeRemindersEnabled,
 } from "../../../../src/lib/reminders";
+import type { DailyReminderContext } from "../../../../src/lib/reminders";
 import {
   normalizeNotificationPrefs,
   type NotificationTypeKey,
@@ -7263,22 +7264,7 @@ export function MobileLibraryShell(args: {
         hour: normalized.reminderHour,
         learningGoal: normalized.learningGoal,
         dailyMinutes: normalized.dailyMinutes,
-        context:
-          continueReading.length > 0
-            ? {
-                continueStoryTitle: continueReading[0]?.story.title,
-                continueBookTitle: continueReading[0]?.book.title,
-                continueBookSlug: continueReading[0]?.book.slug,
-                continueStorySlug: continueReading[0]?.story.slug,
-              }
-            : dueFavoritesCount > 0
-              ? { dueReviewCount: dueFavoritesCount }
-              : activeJourneyPrimaryAction
-                ? {
-                    journeyActionTitle: activeJourneyPrimaryAction.title,
-                    journeyActionBody: activeJourneyPrimaryAction.body,
-                  }
-                : null,
+        context: dailyReminderContext,
         activeToday: hasDailyLoopActivityToday,
         requestPermissions: normalized.remindersEnabled,
       });
@@ -7287,22 +7273,7 @@ export function MobileLibraryShell(args: {
         const reminderTarget = buildDailyReminderCopy({
           learningGoal: normalized.learningGoal,
           dailyMinutes: normalized.dailyMinutes,
-          context:
-            continueReading.length > 0
-              ? {
-                  continueStoryTitle: continueReading[0]?.story.title,
-                  continueBookTitle: continueReading[0]?.book.title,
-                  continueBookSlug: continueReading[0]?.book.slug,
-                  continueStorySlug: continueReading[0]?.story.slug,
-                }
-              : dueFavoritesCount > 0
-                ? { dueReviewCount: dueFavoritesCount }
-                : activeJourneyPrimaryAction
-                  ? {
-                      journeyActionTitle: activeJourneyPrimaryAction.title,
-                      journeyActionBody: activeJourneyPrimaryAction.body,
-                    }
-                  : null,
+          context: dailyReminderContext,
         }).target;
         void trackReminderMetric("reminder_scheduled", {
           targetKind: reminderTarget.kind,
@@ -16977,6 +16948,10 @@ export function MobileLibraryShell(args: {
     </>
   );
 
+  // Vista previa de la pantalla de ajustes. NO lee `dailyReminderContext`: ese
+  // memo se declara mas abajo, junto a los datos del recorrido, y aqui todavia
+  // no existe. Se queda como estaba, con las dos ramas que no dependen del
+  // journey.
   const reminderPreview = buildDailyReminderCopy({
     learningGoal: preferences.learningGoal,
     dailyMinutes: preferences.dailyMinutes,
@@ -17923,6 +17898,25 @@ export function MobileLibraryShell(args: {
   // busca esa historia y se abre. Sin esto el aviso deja al alumno en la
   // portada del recorrido y la historia que le prometía el texto la tiene que
   // encontrar él solo.
+  /**
+   * Abre una historia del recorrido por su slug. Devuelve false cuando el
+   * track cargado no la tiene (todavia no ha llegado, u otro idioma), para que
+   * quien llame decida si la deja apuntada o se rinde.
+   */
+  function openJourneyStoryBySlug(slug: string): boolean {
+    if (!activeJourneyTrack) return false;
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        const story = topic.stories.find((entry) => entry.storySlug === slug);
+        if (story) {
+          void openJourneyStory(story);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   useEffect(() => {
     const pending = pendingPushStoryRef.current;
     if (!pending || !activeJourneyTrack) return;
@@ -17932,15 +17926,8 @@ export function MobileLibraryShell(args: {
       pendingPushStoryRef.current = null;
       return;
     }
-    for (const level of activeJourneyTrack.levels) {
-      for (const topic of level.topics) {
-        const story = topic.stories.find((entry) => entry.storySlug === pending.slug);
-        if (story) {
-          pendingPushStoryRef.current = null;
-          void openJourneyStory(story);
-          return;
-        }
-      }
+    if (openJourneyStoryBySlug(pending.slug)) {
+      pendingPushStoryRef.current = null;
     }
   }, [activeJourneyTrack]);
 
@@ -18242,28 +18229,70 @@ export function MobileLibraryShell(args: {
         }),
     };
   }, [activeJourneyLevel, activeJourneyNextStory, activeJourneyNextTopic, activeJourneyTopic, activeJourneyTrack]);
+
+  /**
+   * De que habla el recordatorio diario. UNA sola vez, y la leen los cuatro
+   * sitios que lo necesitan (guardar preferencias, la metrica de programado,
+   * la vista previa de ajustes y el re-programado al arrancar).
+   *
+   * El orden de preferencia es el de siempre, con un cambio en la tercera
+   * rama. Antes miraba `activeJourneyPrimaryAction`, que es la accion del TEMA
+   * ABIERTO en pantalla; sin tema elegido eso cae al primero desbloqueado, y
+   * ademas solo da una historia por vista cuando tiene el checkpoint del tema
+   * aprobado. Un alumno que no haya hecho ningun checkpoint (lo normal al
+   * principio) no tiene NINGUNA historia "completa", asi que el aviso le
+   * nombraba la primera del primer tema para siempre, por muchas que
+   * escuchara. Se cambia por `tourNextStory`, el puntero global del track: el
+   * mismo que la pantalla del recorrido marca con el circulo de "empieza
+   * aqui", que recorre todos los niveles y salta lo ya escuchado.
+   * (Feedback beta del 2026-09-21: "I get notifications about the very first
+   * story rather than the next story on my journey".)
+   */
+  const dailyReminderContext = useMemo<DailyReminderContext | null>(() => {
+    if (continueReading.length > 0) {
+      return {
+        continueStoryTitle: continueReading[0]?.story.title,
+        continueBookTitle: continueReading[0]?.book.title,
+        continueBookSlug: continueReading[0]?.book.slug,
+        continueStorySlug: continueReading[0]?.story.slug,
+      };
+    }
+    if (dueFavoritesCount > 0) return { dueReviewCount: dueFavoritesCount };
+    if (tourNextStory?.storySlug && tourNextStory.title) {
+      let topicLabel: string | null = null;
+      for (const level of activeJourneyTrack?.levels ?? []) {
+        for (const topic of level.topics) {
+          if (topic.stories.some((entry) => entry.id === tourNextStory.id)) {
+            topicLabel = topic.label;
+            break;
+          }
+        }
+        if (topicLabel) break;
+      }
+      return {
+        journeyStoryTitle: tourNextStory.title,
+        journeyStorySlug: tourNextStory.storySlug,
+        journeyStoryTopicLabel: topicLabel,
+      };
+    }
+    // Sin historia por delante (recorrido terminado, o track sin cargar) el
+    // aviso sigue teniendo algo que decir: repaso, practica o checkpoint.
+    if (activeJourneyPrimaryAction) {
+      return {
+        journeyActionTitle: activeJourneyPrimaryAction.title,
+        journeyActionBody: activeJourneyPrimaryAction.body,
+      };
+    }
+    return null;
+  }, [activeJourneyPrimaryAction, activeJourneyTrack, continueReading, dueFavoritesCount, tourNextStory]);
   const reminderContentPreview = useMemo(
     () =>
       buildDailyReminderCopy({
         learningGoal: preferences.learningGoal,
         dailyMinutes: preferences.dailyMinutes,
-        context: continueReading.length > 0
-          ? {
-              continueStoryTitle: continueReading[0]?.story.title,
-              continueBookTitle: continueReading[0]?.book.title,
-              continueBookSlug: continueReading[0]?.book.slug,
-              continueStorySlug: continueReading[0]?.story.slug,
-            }
-          : dueFavoritesCount > 0
-            ? { dueReviewCount: dueFavoritesCount }
-            : activeJourneyPrimaryAction
-              ? {
-                  journeyActionTitle: activeJourneyPrimaryAction.title,
-                  journeyActionBody: activeJourneyPrimaryAction.body,
-                }
-              : null,
+        context: dailyReminderContext,
       }),
-    [activeJourneyPrimaryAction, continueReading, dueFavoritesCount, preferences.dailyMinutes, preferences.learningGoal]
+    [dailyReminderContext, preferences.dailyMinutes, preferences.learningGoal]
   );
 
   // Cuando llega un payload NUEVO del servidor, una eleccion AUTOMATICA de track
@@ -18352,6 +18381,24 @@ export function MobileLibraryShell(args: {
       return;
     }
 
+    // El recordatorio que nombra una historia del recorrido la abre. Si el
+    // track todavia no ha llegado (arranque en frio), se deja apuntada en la
+    // misma cola que usan los avisos del servidor y la abre el efecto de
+    // arriba en cuanto llega.
+    if (target.kind === "journeyStory") {
+      setActiveScreen("home");
+      setJourneyDetailTopicId(null);
+      if (!openJourneyStoryBySlug(target.storySlug)) {
+        pendingPushStoryRef.current = { slug: target.storySlug, atMs: Date.now() };
+      }
+      void trackReminderMetric("reminder_destination_opened", {
+        targetKind: target.kind,
+        storySlug: target.storySlug,
+      });
+      onHandledReminderNavigation?.();
+      return;
+    }
+
     if (target.kind === "practiceDue") {
       setActiveScreen("practice");
       void openPracticeMode("mixed", true, undefined, "due");
@@ -18387,22 +18434,7 @@ export function MobileLibraryShell(args: {
         minute: preferences.reminderMinute ?? 0,
         learningGoal: preferences.learningGoal,
         dailyMinutes: preferences.dailyMinutes,
-        context:
-          continueReading.length > 0
-            ? {
-                continueStoryTitle: continueReading[0]?.story.title,
-                continueBookTitle: continueReading[0]?.book.title,
-                continueBookSlug: continueReading[0]?.book.slug,
-                continueStorySlug: continueReading[0]?.story.slug,
-              }
-            : dueFavoritesCount > 0
-              ? { dueReviewCount: dueFavoritesCount }
-              : activeJourneyPrimaryAction
-                ? {
-                    journeyActionTitle: activeJourneyPrimaryAction.title,
-                    journeyActionBody: activeJourneyPrimaryAction.body,
-                  }
-                : null,
+        context: dailyReminderContext,
         activeToday: hasDailyLoopActivityToday,
         requestPermissions: false,
       });
@@ -18418,9 +18450,7 @@ export function MobileLibraryShell(args: {
       cancelled = true;
     };
   }, [
-    activeJourneyPrimaryAction,
-    continueReading,
-    dueFavoritesCount,
+    dailyReminderContext,
     preferences.dailyMinutes,
     preferences.learningGoal,
     preferences.reminderHour,
