@@ -56,13 +56,13 @@
     "word": "tramontare",
     "sentence": "Il sole [[tramonta]] e il cielo è rosa.",
     "payload": {
-      "answer": "to set (the sun)",
+      "answer": "to set",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to set (the sun)",
+        "to set",
         "to rise",
-        "to disappear behind clouds",
-        "to shine brighter"
+        "to hide",
+        "to shine"
       ],
       "audioClip": {
         "language": "italian",
@@ -248,13 +248,13 @@
     "word": "in quattro",
     "sentence": "Il tovagliolo è piegato [[in quattro]].",
     "payload": {
-      "answer": "in four (folded)",
+      "answer": "in four",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "in four (folded)",
-        "cut in half",
-        "rolled up",
-        "thrown away"
+        "in four",
+        "in half",
+        "in a roll",
+        "in a ball"
       ],
       "audioClip": {
         "language": "italian",

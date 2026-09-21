@@ -80,10 +80,10 @@
     "word": "tifare",
     "sentence": "Loro [[tifano]] per la stessa squadra.",
     "payload": {
-      "answer": "to support (a team)",
+      "answer": "to support",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to support (a team)",
+        "to support",
         "to coach",
         "to referee",
         "to sell"
@@ -156,7 +156,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "near",
-        "far",
+        "under",
         "above",
         "behind"
       ],
@@ -176,10 +176,10 @@
     "word": "avere caldo in faccia",
     "sentence": "Quando si arrabbia, [[ha caldo in faccia]].",
     "payload": {
-      "answer": "your face goes hot (anger)",
+      "answer": "your face goes hot",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "your face goes hot (anger)",
+        "your face goes hot",
         "you feel sleepy",
         "you feel hungry",
         "you get a headache"

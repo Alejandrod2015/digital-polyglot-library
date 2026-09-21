@@ -152,11 +152,11 @@
     "word": "buono",
     "sentence": "Il pesto è molto [[buono]].",
     "payload": {
-      "answer": "good (to eat)",
+      "answer": "tasty",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "good (to eat)",
-        "bad",
+        "tasty",
+        "salty",
         "cold",
         "spicy"
       ],
@@ -318,13 +318,13 @@
     "word": "l'appetito",
     "sentence": "Ha un grande [[appetito]] da marinaio.",
     "payload": {
-      "answer": "appetite",
+      "answer": "an appetite",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "appetite",
-        "a big secret",
-        "a bad memory",
-        "a strong voice"
+        "an appetite",
+        "a secret",
+        "a memory",
+        "a voice"
       ],
       "audioClip": {
         "language": "italian",

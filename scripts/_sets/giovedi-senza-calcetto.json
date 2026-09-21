@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "messaggio,gruppo,calcetto,calcio",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "messaggio",
-     "answer": "a message",
-     "options": [
-      "a message",
-      "a group",
-      "five-a-side football",
-      "football"
-     ]
-    },
-    {
-     "word": "gruppo",
-     "answer": "a group",
-     "options": [
-      "a message",
-      "a group",
-      "five-a-side football",
-      "football"
-     ]
-    },
-    {
-     "word": "calcetto",
-     "answer": "five-a-side football",
-     "options": [
-      "a message",
-      "a group",
-      "five-a-side football",
-      "football"
-     ]
-    },
-    {
-     "word": "calcio",
-     "answer": "football",
-     "options": [
-      "a message",
-      "a group",
-      "five-a-side football",
-      "football"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "messaggio,gruppo,calcetto,calcio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "messaggio",
+          "answer": "a message",
+          "options": [
+            "a message",
+            "a group",
+            "five-a-side football",
+            "football"
+          ]
+        },
+        {
+          "word": "gruppo",
+          "answer": "a group",
+          "options": [
+            "a message",
+            "a group",
+            "five-a-side football",
+            "football"
+          ]
+        },
+        {
+          "word": "calcetto",
+          "answer": "five-a-side football",
+          "options": [
+            "a message",
+            "a group",
+            "five-a-side football",
+            "football"
+          ]
+        },
+        {
+          "word": "calcio",
+          "answer": "football",
+          "options": [
+            "a message",
+            "a group",
+            "five-a-side football",
+            "football"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "vince",
-  "sentence": "La squadra segna più gol e alla fine _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vince",
-   "options": [
-    "vince",
-    "perde",
-    "scende",
-    "prende"
-   ],
-   "translation": "The team scores more goals and in the end _____.",
-   "optionTranslations": [
-    "to win",
-    "loses",
-    "goes down",
-    "takes"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "La squadra segna più gol e alla fine vince.",
-    "targetWord": "vince",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "aperta",
-  "sentence": "La porta non è chiusa a chiave: è _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "aperta",
-   "options": [
-    "aperta",
-    "chiusa",
-    "vecchia",
-    "piccola"
-   ],
-   "translation": "The door isn't locked: it's _____.",
-   "optionTranslations": [
-    "open",
-    "closed",
-    "old",
-    "small"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "La porta non è chiusa a chiave: è aperta.",
-    "targetWord": "aperta",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "simpatica",
-  "sentence": "Sorride sempre e a tutti piace molto: è davvero _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "simpatica",
-   "options": [
-    "simpatica",
-    "timida",
-    "arrabbiata",
-    "preoccupata"
-   ],
-   "translation": "She always smiles and everyone likes her a lot: she's really _____.",
-   "optionTranslations": [
-    "nice and friendly",
-    "shy",
-    "angry",
-    "worried"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Sorride sempre e a tutti piace molto: è davvero simpatica.",
-    "targetWord": "simpatica",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "prossimo",
-  "sentence": "Stasera non vengo, e neanche i [[prossimi]] giovedì.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next",
-   "options": [
-    "next",
-    "sweet",
-    "free",
-    "famous"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Stasera non vengo, e neanche i prossimi giovedì.",
-    "targetWord": "prossimi",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "giocare",
-  "sentence": "Da dieci anni Davide [[gioca]] a calcio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to play",
-   "options": [
-    "to play",
-    "to wake up",
-    "to give up",
-    "to clean"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Da dieci anni Davide gioca a calcio.",
-    "targetWord": "gioca",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "squadra",
-  "sentence": "Sul telefono c'è la foto della [[squadra]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a team",
-   "options": [
-    "a team",
-    "august",
-    "a star",
-    "a piece of news"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Sul telefono c'è la foto della squadra,",
-    "targetWord": "squadra",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "scuro",
-  "sentence": "Alle nove il cortile è [[scuro]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dark",
-   "options": [
-    "dark",
-    "light",
-    "heavy",
-    "bad"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Alle nove il cortile è scuro,",
-    "targetWord": "scuro",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "strano",
-  "sentence": "e c'è un silenzio [[strano]]:",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "strange",
-   "options": [
-    "strange",
-    "able",
-    "warm",
-    "third"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "e c'è un silenzio strano:",
-    "targetWord": "strano",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tappeto",
-  "sentence": "Sul [[tappeto]], vicino al computer, c'è il cane,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a rug",
-   "options": [
-    "a rug",
-    "a drill",
-    "an animal's fur",
-    "a phone call"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Sul tappeto, vicino al computer, c'è il cane,",
-    "targetWord": "tappeto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bravo",
-  "sentence": "[[Bravo]] cane: con me è sempre tranquillo,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "good or clever",
-   "options": [
-    "good or clever",
-    "red",
-    "clean",
-    "empty"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Bravo cane: con me è sempre tranquillo,",
-    "targetWord": "Bravo",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "salire",
-  "sentence": "È [[salito]] da solo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to go up",
-   "options": [
-    "to go up",
-    "to excuse",
-    "to move",
-    "to be missing"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "È salito da solo.",
-    "targetWord": "salito",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "vince",
+    "sentence": "La squadra segna più gol e alla fine _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vince",
+      "options": [
+        "vince",
+        "dorme",
+        "scende",
+        "prende"
+      ],
+      "translation": "The team scores more goals and in the end _____.",
+      "optionTranslations": [
+        "wins",
+        "sleeps",
+        "goes down",
+        "takes"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "La squadra segna più gol e alla fine vince.",
+        "targetWord": "vince",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tenere",
-  "sentence": "Allora il giovedì puoi [[tenere]] il cane?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to keep",
-   "options": [
-    "to keep",
-    "to see",
-    "to touch",
-    "to greet"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Allora il giovedì puoi tenere il cane?",
-    "targetWord": "tenere",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "aperta",
+    "sentence": "La porta non è chiusa a chiave: è _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aperta",
+      "options": [
+        "aperta",
+        "rotta",
+        "vecchia",
+        "piccola"
+      ],
+      "translation": "The door isn't locked: it's _____.",
+      "optionTranslations": [
+        "open",
+        "broken",
+        "old",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "La porta non è chiusa a chiave: è aperta.",
+        "targetWord": "aperta",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "proporre",
-  "sentence": "Serena [[propone]]: “Il giovedì sì.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to suggest",
-   "options": [
-    "to suggest",
-    "to get dressed",
-    "to tell",
-    "to count"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Serena propone: “Il giovedì sì.",
-    "targetWord": "propone",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "simpatica",
+    "sentence": "Sorride sempre e a tutti piace molto: è davvero _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "simpatica",
+      "options": [
+        "simpatica",
+        "timida",
+        "arrabbiata",
+        "preoccupata"
+      ],
+      "translation": "She always smiles and everyone likes her a lot: she's really _____.",
+      "optionTranslations": [
+        "nice and friendly",
+        "shy",
+        "angry",
+        "worried"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Sorride sempre e a tutti piace molto: è davvero simpatica.",
+        "targetWord": "simpatica",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "rifiutare",
-  "sentence": "Davide ha capito: non può [[rifiutare]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to refuse",
-   "options": [
-    "to refuse",
-    "to fall down",
-    "to leave",
-    "to stand up"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Davide ha capito: non può rifiutare.",
-    "targetWord": "rifiutare",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "prossimo",
+    "sentence": "Stasera non vengo, e neanche i [[prossimi]] giovedì.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "sweet",
+        "free",
+        "famous"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Stasera non vengo, e neanche i prossimi giovedì.",
+        "targetWord": "prossimi",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "prendere",
-  "sentence": "[[Prende]] il cane in braccio e ride.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to take",
-   "options": [
-    "to take",
-    "to wait for",
-    "to erase",
-    "to start"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "Prende il cane in braccio e ride.",
-    "targetWord": "Prende",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "giocare",
+    "sentence": "Da dieci anni Davide [[gioca]] a calcio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to play",
+      "options": [
+        "to play",
+        "to wake up",
+        "to give up",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Da dieci anni Davide gioca a calcio.",
+        "targetWord": "gioca",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bello",
-  "sentence": "[[bella]] e contenta: stasera vince senza di lui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "beautiful or good",
-   "options": [
-    "beautiful or good",
-    "rough",
-    "whole",
-    "ready"
-   ],
-   "audioClip": {
-    "storySlug": "giovedi-senza-calcetto",
-    "storySource": "user",
-    "sentence": "bella e contenta: stasera vince senza di lui.",
-    "targetWord": "bella",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "squadra",
+    "sentence": "Sul telefono c'è la foto della [[squadra]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a team",
+      "options": [
+        "a team",
+        "august",
+        "a star",
+        "a piece of news"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Sul telefono c'è la foto della squadra,",
+        "targetWord": "squadra",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "scuro",
+    "sentence": "Alle nove il cortile è [[scuro]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark",
+      "options": [
+        "dark",
+        "light",
+        "heavy",
+        "bad"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Alle nove il cortile è scuro,",
+        "targetWord": "scuro",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "strano",
+    "sentence": "e c'è un silenzio [[strano]]:",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": [
+        "strange",
+        "able",
+        "warm",
+        "third"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "e c'è un silenzio strano:",
+        "targetWord": "strano",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tappeto",
+    "sentence": "Sul [[tappeto]], vicino al computer, c'è il cane,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rug",
+      "options": [
+        "a rug",
+        "a drill",
+        "an animal's fur",
+        "a phone call"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Sul tappeto, vicino al computer, c'è il cane,",
+        "targetWord": "tappeto",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bravo",
+    "sentence": "[[Bravo]] cane: con me è sempre tranquillo,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "good or clever",
+      "options": [
+        "good or clever",
+        "red",
+        "clean",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Bravo cane: con me è sempre tranquillo,",
+        "targetWord": "Bravo",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salire",
+    "sentence": "È [[salito]] da solo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go up",
+      "options": [
+        "to go up",
+        "to excuse",
+        "to move",
+        "to be missing"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "È salito da solo.",
+        "targetWord": "salito",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tenere",
+    "sentence": "Allora il giovedì puoi [[tenere]] il cane?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep",
+      "options": [
+        "to keep",
+        "to see",
+        "to touch",
+        "to greet"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Allora il giovedì puoi tenere il cane?",
+        "targetWord": "tenere",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proporre",
+    "sentence": "Serena [[propone]]: “Il giovedì sì.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suggest",
+      "options": [
+        "to suggest",
+        "to get dressed",
+        "to tell",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Serena propone: “Il giovedì sì.",
+        "targetWord": "propone",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rifiutare",
+    "sentence": "Davide ha capito: non può [[rifiutare]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to refuse",
+      "options": [
+        "to refuse",
+        "to fall down",
+        "to leave",
+        "to stand up"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Davide ha capito: non può rifiutare.",
+        "targetWord": "rifiutare",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prendere",
+    "sentence": "[[Prende]] il cane in braccio e ride.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": [
+        "to take",
+        "to wait for",
+        "to erase",
+        "to start"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "Prende il cane in braccio e ride.",
+        "targetWord": "Prende",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bello",
+    "sentence": "[[bella]] e contenta: stasera vince senza di lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful or good",
+      "options": [
+        "beautiful or good",
+        "rough",
+        "whole",
+        "ready"
+      ],
+      "audioClip": {
+        "storySlug": "giovedi-senza-calcetto",
+        "storySource": "user",
+        "sentence": "bella e contenta: stasera vince senza di lui.",
+        "targetWord": "bella",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

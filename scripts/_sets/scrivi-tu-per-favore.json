@@ -60,7 +60,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to go up",
-        "to go down",
+        "to run",
         "to fall",
         "to stop"
       ],
@@ -204,7 +204,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "inside",
-        "outside",
+        "again",
         "above",
         "later"
       ],

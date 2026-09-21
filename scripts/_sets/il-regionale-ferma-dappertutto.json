@@ -59,7 +59,7 @@
       "answer": "cheap",
       "options": [
         "cheap",
-        "expensive",
+        "quiet",
         "fast",
         "empty"
       ],
@@ -304,7 +304,7 @@
       "answer": "fast",
       "options": [
         "fast",
-        "slow",
+        "red",
         "late",
         "empty"
       ],

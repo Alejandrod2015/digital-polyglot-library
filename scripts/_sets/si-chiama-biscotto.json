@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "compagno,decisione,felicità,amica",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "compagno",
-     "answer": "partner",
-     "options": [
-      "partner",
-      "a decision",
-      "happiness",
-      "a female friend"
-     ]
-    },
-    {
-     "word": "decisione",
-     "answer": "a decision",
-     "options": [
-      "partner",
-      "a decision",
-      "happiness",
-      "a female friend"
-     ]
-    },
-    {
-     "word": "felicità",
-     "answer": "happiness",
-     "options": [
-      "partner",
-      "a decision",
-      "happiness",
-      "a female friend"
-     ]
-    },
-    {
-     "word": "amica",
-     "answer": "a female friend",
-     "options": [
-      "partner",
-      "a decision",
-      "happiness",
-      "a female friend"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "compagno,decisione,felicità,amica",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "compagno",
+          "answer": "partner",
+          "options": [
+            "partner",
+            "a decision",
+            "happiness",
+            "a female friend"
+          ]
+        },
+        {
+          "word": "decisione",
+          "answer": "a decision",
+          "options": [
+            "partner",
+            "a decision",
+            "happiness",
+            "a female friend"
+          ]
+        },
+        {
+          "word": "felicità",
+          "answer": "happiness",
+          "options": [
+            "partner",
+            "a decision",
+            "happiness",
+            "a female friend"
+          ]
+        },
+        {
+          "word": "amica",
+          "answer": "a female friend",
+          "options": [
+            "partner",
+            "a decision",
+            "happiness",
+            "a female friend"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "adotto",
-  "sentence": "Questo gatto non ha una casa, così lo _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "adotto",
-   "options": [
-    "adotto",
-    "lascio",
-    "cerco",
-    "porto"
-   ],
-   "translation": "This cat has no home, so I _____ it.",
-   "optionTranslations": [
-    "to adopt",
-    "leave",
-    "look for",
-    "carry"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Questo gatto non ha una casa, così lo adotto.",
-    "targetWord": "adotto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "coraggiosa",
-  "sentence": "Non ha mai paura di niente: è davvero _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "coraggiosa",
-   "options": [
-    "coraggiosa",
-    "timida",
-    "arrabbiata",
-    "stanca"
-   ],
-   "translation": "She's never afraid of anything: she's really _____.",
-   "optionTranslations": [
-    "brave",
-    "shy",
-    "angry",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Non ha mai paura di niente: è davvero coraggiosa.",
-    "targetWord": "coraggiosa",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "famoso",
-  "sentence": "Tutti in città conoscono il suo nome: è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "famoso",
-   "options": [
-    "famoso",
-    "ricco",
-    "giovane",
-    "stanco"
-   ],
-   "translation": "Everyone in the city knows his name: he's very _____.",
-   "optionTranslations": [
-    "famous",
-    "rich",
-    "young",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Tutti in città conoscono il suo nome: è molto famoso.",
-    "targetWord": "famoso",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rosa",
-  "sentence": "un dolce [[rosa]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pink",
-   "options": [
-    "pink",
-    "poor",
-    "allergic",
-    "green"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "un dolce rosa.",
-    "targetWord": "rosa",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "crescere",
-  "sentence": "Il patto [[cresce]], come l'amore.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to grow",
-   "options": [
-    "to grow",
-    "to promise",
-    "to save",
-    "to calculate"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Il patto cresce, come l'amore.",
-    "targetWord": "cresce",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rinunciare",
-  "sentence": "Tu [[rinunci]] alla tua metà,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to give up",
-   "options": [
-    "to give up",
-    "to lend",
-    "to play",
-    "to receive"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Tu rinunci alla tua metà,",
-    "targetWord": "rinunci",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ringraziare",
-  "sentence": "Arianna piange di felicità e [[ringrazia]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to thank someone",
-   "options": [
-    "to thank someone",
-    "to examine",
-    "to die",
-    "to eat"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Arianna piange di felicità e ringrazia.",
-    "targetWord": "ringrazia",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "consegnare",
-  "sentence": "risponde Elisa, e [[consegna]] a Davide un collare.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hand over",
-   "options": [
-    "to hand over",
-    "to end",
-    "to jump",
-    "to live"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "risponde Elisa, e consegna a Davide un collare.",
-    "targetWord": "consegna",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "targhetta",
-  "sentence": "La [[targhetta]] lo sorprende: “Biscotto?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a name tag",
-   "options": [
-    "a name tag",
-    "a sheet",
-    "peace",
-    "a week"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "La targhetta lo sorprende: “Biscotto?",
-    "targetWord": "targhetta",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sorprendere",
-  "sentence": "La targhetta lo [[sorprende]]: “Biscotto?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to surprise",
-   "options": [
-    "to surprise",
-    "to read",
-    "to manage",
-    "to hope"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "La targhetta lo sorprende: “Biscotto?",
-    "targetWord": "sorprende",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ottobre",
-  "sentence": "Una domenica di [[ottobre]]",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "October",
-   "options": [
-    "October",
-    "a message",
-    "grass",
-    "the building manager"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Una domenica di ottobre",
-    "targetWord": "ottobre",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "adotto",
+    "sentence": "Questo gatto non ha una casa, così lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "adotto",
+      "options": [
+        "adotto",
+        "lascio",
+        "cerco",
+        "porto"
+      ],
+      "translation": "This cat has no home, so I _____ it.",
+      "optionTranslations": [
+        "adopt",
+        "leave",
+        "look for",
+        "carry"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Questo gatto non ha una casa, così lo adotto.",
+        "targetWord": "adotto",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "in fretta",
-  "sentence": "Davide si veste [[in fretta]]",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in a hurry",
-   "options": [
-    "in a hurry",
-    "before",
-    "almost",
-    "out"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Davide si veste in fretta",
-    "targetWord": "in fretta",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "coraggiosa",
+    "sentence": "Non ha mai paura di niente: è davvero _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "coraggiosa",
+      "options": [
+        "coraggiosa",
+        "timida",
+        "arrabbiata",
+        "stanca"
+      ],
+      "translation": "She's never afraid of anything: she's really _____.",
+      "optionTranslations": [
+        "brave",
+        "shy",
+        "angry",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Non ha mai paura di niente: è davvero coraggiosa.",
+        "targetWord": "coraggiosa",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "camminare",
-  "sentence": "corre giù, e insieme [[camminano]] verso i giardini.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to walk",
-   "options": [
-    "to walk",
-    "to sleep",
-    "to win",
-    "to divide"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "corre giù, e insieme camminano verso i giardini.",
-    "targetWord": "camminano",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "famoso",
+    "sentence": "Tutti in città conoscono il suo nome: è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "famoso",
+      "options": [
+        "famoso",
+        "ricco",
+        "giovane",
+        "stanco"
+      ],
+      "translation": "Everyone in the city knows his name: he's very _____.",
+      "optionTranslations": [
+        "famous",
+        "rich",
+        "young",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Tutti in città conoscono il suo nome: è molto famoso.",
+        "targetWord": "famoso",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "giardino",
-  "sentence": "corre giù, e insieme camminano verso i [[giardini]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a garden",
-   "options": [
-    "a garden",
-    "afternoon",
-    "a couple",
-    "thursday"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "corre giù, e insieme camminano verso i giardini.",
-    "targetWord": "giardini",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "rosa",
+    "sentence": "un dolce [[rosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pink",
+      "options": [
+        "pink",
+        "poor",
+        "allergic",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "un dolce rosa.",
+        "targetWord": "rosa",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mescolare",
-  "sentence": "Dall'alto Elisa [[mescola]] il caffè nero con gioia:",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stir",
-   "options": [
-    "to stir",
-    "to tie up",
-    "to write down",
-    "to lie"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Dall'alto Elisa mescola il caffè nero con gioia:",
-    "targetWord": "mescola",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "crescere",
+    "sentence": "Il patto [[cresce]], come l'amore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grow",
+      "options": [
+        "to grow",
+        "to promise",
+        "to save",
+        "to calculate"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Il patto cresce, come l'amore.",
+        "targetWord": "cresce",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pronto",
-  "sentence": "Davide non è [[pronto]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ready",
-   "options": [
-    "ready",
-    "soft",
-    "precious",
-    "equal"
-   ],
-   "audioClip": {
-    "storySlug": "si-chiama-biscotto",
-    "storySource": "user",
-    "sentence": "Davide non è pronto.",
-    "targetWord": "pronto",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "rinunciare",
+    "sentence": "Tu [[rinunci]] alla tua metà,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give up",
+      "options": [
+        "to give up",
+        "to lend",
+        "to play",
+        "to receive"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Tu rinunci alla tua metà,",
+        "targetWord": "rinunci",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "ringraziare",
+    "sentence": "Arianna piange di felicità e [[ringrazia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to thank someone",
+      "options": [
+        "to thank someone",
+        "to examine",
+        "to die",
+        "to eat"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Arianna piange di felicità e ringrazia.",
+        "targetWord": "ringrazia",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "consegnare",
+    "sentence": "risponde Elisa, e [[consegna]] a Davide un collare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hand over",
+      "options": [
+        "to hand over",
+        "to end",
+        "to jump",
+        "to live"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "risponde Elisa, e consegna a Davide un collare.",
+        "targetWord": "consegna",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "targhetta",
+    "sentence": "La [[targhetta]] lo sorprende: “Biscotto?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a name tag",
+      "options": [
+        "a name tag",
+        "a sheet",
+        "peace",
+        "a week"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "La targhetta lo sorprende: “Biscotto?",
+        "targetWord": "targhetta",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendere",
+    "sentence": "La targhetta lo [[sorprende]]: “Biscotto?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to surprise",
+      "options": [
+        "to surprise",
+        "to read",
+        "to manage",
+        "to hope"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "La targhetta lo sorprende: “Biscotto?",
+        "targetWord": "sorprende",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ottobre",
+    "sentence": "Una domenica di [[ottobre]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "October",
+      "options": [
+        "October",
+        "January",
+        "April",
+        "July"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Una domenica di ottobre",
+        "targetWord": "ottobre",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "in fretta",
+    "sentence": "Davide si veste [[in fretta]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a hurry",
+      "options": [
+        "in a hurry",
+        "before",
+        "almost",
+        "out"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Davide si veste in fretta",
+        "targetWord": "in fretta",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camminare",
+    "sentence": "corre giù, e insieme [[camminano]] verso i giardini.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to walk",
+      "options": [
+        "to walk",
+        "to sleep",
+        "to win",
+        "to divide"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "corre giù, e insieme camminano verso i giardini.",
+        "targetWord": "camminano",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giardino",
+    "sentence": "corre giù, e insieme camminano verso i [[giardini]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a garden",
+      "options": [
+        "a garden",
+        "afternoon",
+        "a couple",
+        "thursday"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "corre giù, e insieme camminano verso i giardini.",
+        "targetWord": "giardini",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mescolare",
+    "sentence": "Dall'alto Elisa [[mescola]] il caffè nero con gioia:",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stir",
+      "options": [
+        "to stir",
+        "to tie up",
+        "to write down",
+        "to lie"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Dall'alto Elisa mescola il caffè nero con gioia:",
+        "targetWord": "mescola",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pronto",
+    "sentence": "Davide non è [[pronto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready",
+      "options": [
+        "ready",
+        "soft",
+        "precious",
+        "equal"
+      ],
+      "audioClip": {
+        "storySlug": "si-chiama-biscotto",
+        "storySource": "user",
+        "sentence": "Davide non è pronto.",
+        "targetWord": "pronto",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

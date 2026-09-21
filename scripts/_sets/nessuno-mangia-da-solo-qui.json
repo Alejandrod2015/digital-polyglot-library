@@ -369,7 +369,7 @@
       "answer": "closed",
       "options": [
         "closed",
-        "open",
+        "torn",
         "wet",
         "lost"
       ],

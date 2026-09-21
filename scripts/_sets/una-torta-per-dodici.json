@@ -252,7 +252,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "empty",
-        "full",
+        "warm",
         "clean",
         "broken"
       ],
@@ -345,7 +345,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to sit down",
-        "to stand up",
+        "to lie down",
         "to run away",
         "to wash his hands"
       ],

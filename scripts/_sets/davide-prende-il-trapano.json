@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "trapano,vite,video,punto",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "trapano",
-     "answer": "a drill",
-     "options": [
-      "a drill",
-      "a screw",
-      "a video",
-      "a point"
-     ]
-    },
-    {
-     "word": "vite",
-     "answer": "a screw",
-     "options": [
-      "a drill",
-      "a screw",
-      "a video",
-      "a point"
-     ]
-    },
-    {
-     "word": "video",
-     "answer": "a video",
-     "options": [
-      "a drill",
-      "a screw",
-      "a video",
-      "a point"
-     ]
-    },
-    {
-     "word": "punto",
-     "answer": "a point",
-     "options": [
-      "a drill",
-      "a screw",
-      "a video",
-      "a point"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "trapano,vite,video,punto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "trapano",
+          "answer": "a drill",
+          "options": [
+            "a drill",
+            "a screw",
+            "a video",
+            "a point"
+          ]
+        },
+        {
+          "word": "vite",
+          "answer": "a screw",
+          "options": [
+            "a drill",
+            "a screw",
+            "a video",
+            "a point"
+          ]
+        },
+        {
+          "word": "video",
+          "answer": "a video",
+          "options": [
+            "a drill",
+            "a screw",
+            "a video",
+            "a point"
+          ]
+        },
+        {
+          "word": "punto",
+          "answer": "a point",
+          "options": [
+            "a drill",
+            "a screw",
+            "a video",
+            "a point"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "morbido",
-  "sentence": "Questo tipo di legno è molto _____ da lavorare.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "morbido",
-   "options": [
-    "morbido",
-    "duro",
-    "pesante",
-    "vecchio"
-   ],
-   "translation": "This type of wood is very _____ to work with.",
-   "optionTranslations": [
-    "soft",
-    "hard",
-    "heavy",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Questo tipo di legno è molto morbido da lavorare.",
-    "targetWord": "morbido",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "stretto",
-  "sentence": "Il buco è troppo _____ e la vite non entra.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "stretto",
-   "options": [
-    "stretto",
-    "largo",
-    "morbido",
-    "corto"
-   ],
-   "translation": "The hole is too _____ and the screw doesn't fit in.",
-   "optionTranslations": [
-    "narrow",
-    "wide",
-    "soft",
-    "short"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Il buco è troppo stretto e la vite non entra.",
-    "targetWord": "stretto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "attento",
-  "sentence": "Guida in centro, così deve stare molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "attento",
-   "options": [
-    "attento",
-    "stanco",
-    "libero",
-    "sicuro"
-   ],
-   "translation": "He's driving downtown, so he needs to be very _____.",
-   "optionTranslations": [
-    "careful",
-    "tired",
-    "free",
-    "sure"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Guida in centro, così deve stare molto attento.",
-    "targetWord": "attento",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "seguire",
-  "sentence": "Guarda un video sul telefono e lo [[segue]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to follow",
-   "options": [
-    "to follow",
-    "to erase",
-    "to invite",
-    "to cut"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Guarda un video sul telefono e lo segue,",
-    "targetWord": "segue",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mostrare",
-  "sentence": "Il video [[mostra]] tutto,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to show",
-   "options": [
-    "to show",
-    "to discover",
-    "to discuss",
-    "to pull"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Il video mostra tutto,",
-    "targetWord": "mostra",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "spingere",
-  "sentence": "Poi [[spinge]] una vite corta nel legno morbido.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to push",
-   "options": [
-    "to push",
-    "to arrive",
-    "to cost",
-    "to close"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Poi spinge una vite corta nel legno morbido.",
-    "targetWord": "spinge",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "corto",
-  "sentence": "Poi spinge una vite [[corta]] nel legno morbido.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "short",
-   "options": [
-    "short",
-    "high or loud",
-    "kind",
-    "equal"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Poi spinge una vite corta nel legno morbido.",
-    "targetWord": "corta",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "largo",
-  "sentence": "poi è troppo [[largo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "wide",
-   "options": [
-    "wide",
-    "grey",
-    "good",
-    "easy"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "poi è troppo largo.",
-    "targetWord": "largo",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "peggio",
-  "sentence": "Adesso è [[peggio]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "worse",
-   "options": [
-    "worse",
-    "before",
-    "in front of",
-    "unfortunately"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Adesso è peggio,",
-    "targetWord": "peggio",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lentamente",
-  "sentence": "dice Elisa, [[lentamente]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slowly",
-   "options": [
-    "slowly",
-    "by now",
-    "just",
-    "after"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "dice Elisa, lentamente.",
-    "targetWord": "lentamente",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "riuscire",
-  "sentence": "ma non [[riesce]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to manage",
-   "options": [
-    "to manage",
-    "to suffer",
-    "to speak",
-    "to believe or think"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "ma non riesce.",
-    "targetWord": "riesce",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "morbido",
+    "sentence": "Questo tipo di legno è molto _____ da lavorare.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "morbido",
+      "options": [
+        "morbido",
+        "duro",
+        "pesante",
+        "vecchio"
+      ],
+      "translation": "This type of wood is very _____ to work with.",
+      "optionTranslations": [
+        "soft",
+        "hard",
+        "heavy",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Questo tipo di legno è molto morbido da lavorare.",
+        "targetWord": "morbido",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "muovere",
-  "sentence": "La gamba si [[muove]] ancora,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to move",
-   "options": [
-    "to move",
-    "to want",
-    "to break",
-    "to howl"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "La gamba si muove ancora,",
-    "targetWord": "muove",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "stretto",
+    "sentence": "Il buco è troppo _____ e la vite non entra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stretto",
+      "options": [
+        "stretto",
+        "sporco",
+        "morbido",
+        "corto"
+      ],
+      "translation": "The hole is too _____ and the screw doesn't fit in.",
+      "optionTranslations": [
+        "narrow",
+        "dirty",
+        "soft",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Il buco è troppo stretto e la vite non entra.",
+        "targetWord": "stretto",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pulito",
-  "sentence": "e la cucina [[pulita]] è piena di polvere.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clean",
-   "options": [
-    "clean",
-    "bad",
-    "whole",
-    "first"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "e la cucina pulita è piena di polvere.",
-    "targetWord": "pulita",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "attento",
+    "sentence": "Guida in centro, così deve stare molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "attento",
+      "options": [
+        "attento",
+        "stanco",
+        "libero",
+        "sicuro"
+      ],
+      "translation": "He's driving downtown, so he needs to be very _____.",
+      "optionTranslations": [
+        "careful",
+        "tired",
+        "free",
+        "sure"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Guida in centro, così deve stare molto attento.",
+        "targetWord": "attento",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "funzionare",
-  "sentence": "Non [[funziona]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to work",
-   "options": [
-    "to work",
-    "to give",
-    "to explain",
-    "to understand"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Non funziona.",
-    "targetWord": "funziona",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "seguire",
+    "sentence": "Guarda un video sul telefono e lo [[segue]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to follow",
+      "options": [
+        "to follow",
+        "to erase",
+        "to invite",
+        "to cut"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Guarda un video sul telefono e lo segue,",
+        "targetWord": "segue",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "quasi",
-  "sentence": "È [[quasi]] impossibile,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "almost",
-   "options": [
-    "almost",
-    "far away",
-    "quickly",
-    "immediately"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "È quasi impossibile,",
-    "targetWord": "quasi",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "mostrare",
+    "sentence": "Il video [[mostra]] tutto,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show",
+      "options": [
+        "to show",
+        "to discover",
+        "to discuss",
+        "to pull"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Il video mostra tutto,",
+        "targetWord": "mostra",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "abbastanza",
-  "sentence": "Forse non sono [[abbastanza]] bravo,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "enough",
-   "options": [
-    "enough",
-    "together",
-    "only",
-    "instead"
-   ],
-   "audioClip": {
-    "storySlug": "davide-prende-il-trapano",
-    "storySource": "user",
-    "sentence": "Forse non sono abbastanza bravo,",
-    "targetWord": "abbastanza",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "spingere",
+    "sentence": "Poi [[spinge]] una vite corta nel legno morbido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to push",
+      "options": [
+        "to push",
+        "to arrive",
+        "to cost",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Poi spinge una vite corta nel legno morbido.",
+        "targetWord": "spinge",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "corto",
+    "sentence": "Poi spinge una vite [[corta]] nel legno morbido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "high or loud",
+        "kind",
+        "equal"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Poi spinge una vite corta nel legno morbido.",
+        "targetWord": "corta",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "poi è troppo [[largo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide",
+      "options": [
+        "wide",
+        "grey",
+        "good",
+        "easy"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "poi è troppo largo.",
+        "targetWord": "largo",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peggio",
+    "sentence": "Adesso è [[peggio]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worse",
+      "options": [
+        "worse",
+        "before",
+        "in front of",
+        "unfortunately"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Adesso è peggio,",
+        "targetWord": "peggio",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lentamente",
+    "sentence": "dice Elisa, [[lentamente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "by now",
+        "just",
+        "after"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "dice Elisa, lentamente.",
+        "targetWord": "lentamente",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "riuscire",
+    "sentence": "ma non [[riesce]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to manage",
+      "options": [
+        "to manage",
+        "to suffer",
+        "to speak",
+        "to believe or think"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "ma non riesce.",
+        "targetWord": "riesce",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muovere",
+    "sentence": "La gamba si [[muove]] ancora,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move",
+      "options": [
+        "to move",
+        "to want",
+        "to break",
+        "to howl"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "La gamba si muove ancora,",
+        "targetWord": "muove",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pulito",
+    "sentence": "e la cucina [[pulita]] è piena di polvere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clean",
+      "options": [
+        "clean",
+        "bad",
+        "whole",
+        "first"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "e la cucina pulita è piena di polvere.",
+        "targetWord": "pulita",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "funzionare",
+    "sentence": "Non [[funziona]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work",
+      "options": [
+        "to work",
+        "to give",
+        "to explain",
+        "to understand"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Non funziona.",
+        "targetWord": "funziona",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quasi",
+    "sentence": "È [[quasi]] impossibile,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "almost",
+      "options": [
+        "almost",
+        "far away",
+        "quickly",
+        "immediately"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "È quasi impossibile,",
+        "targetWord": "quasi",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abbastanza",
+    "sentence": "Forse non sono [[abbastanza]] bravo,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enough",
+      "options": [
+        "enough",
+        "together",
+        "only",
+        "instead"
+      ],
+      "audioClip": {
+        "storySlug": "davide-prende-il-trapano",
+        "storySource": "user",
+        "sentence": "Forse non sono abbastanza bravo,",
+        "targetWord": "abbastanza",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

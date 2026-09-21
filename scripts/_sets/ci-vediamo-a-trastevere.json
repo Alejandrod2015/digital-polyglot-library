@@ -410,7 +410,7 @@
       "answer": "wide",
       "options": [
         "wide",
-        "narrow",
+        "sad",
         "short",
         "cold"
       ],
@@ -530,14 +530,14 @@
       "answer": "piene",
       "options": [
         "piene",
-        "vuote",
+        "buie",
         "chiuse",
         "strette"
       ],
       "translation": "The squares are _____ of people at this hour.",
       "optionTranslations": [
         "full",
-        "empty",
+        "dark",
         "closed",
         "narrow"
       ],

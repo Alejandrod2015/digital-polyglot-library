@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "ricordo,liceo,pomeriggio,affare",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "ricordo",
-     "answer": "a memory",
-     "options": [
-      "a memory",
-      "high school",
-      "afternoon",
-      "a deal"
-     ]
-    },
-    {
-     "word": "liceo",
-     "answer": "high school",
-     "options": [
-      "a memory",
-      "high school",
-      "afternoon",
-      "a deal"
-     ]
-    },
-    {
-     "word": "pomeriggio",
-     "answer": "afternoon",
-     "options": [
-      "a memory",
-      "high school",
-      "afternoon",
-      "a deal"
-     ]
-    },
-    {
-     "word": "affare",
-     "answer": "a deal",
-     "options": [
-      "a memory",
-      "high school",
-      "afternoon",
-      "a deal"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "ricordo,liceo,pomeriggio,affare",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ricordo",
+          "answer": "a memory",
+          "options": [
+            "a memory",
+            "high school",
+            "afternoon",
+            "a deal"
+          ]
+        },
+        {
+          "word": "liceo",
+          "answer": "high school",
+          "options": [
+            "a memory",
+            "high school",
+            "afternoon",
+            "a deal"
+          ]
+        },
+        {
+          "word": "pomeriggio",
+          "answer": "afternoon",
+          "options": [
+            "a memory",
+            "high school",
+            "afternoon",
+            "a deal"
+          ]
+        },
+        {
+          "word": "affare",
+          "answer": "a deal",
+          "options": [
+            "a memory",
+            "high school",
+            "afternoon",
+            "a deal"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "pulita",
-  "sentence": "Ha lavato bene la bici: adesso è _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pulita",
-   "options": [
-    "pulita",
-    "vecchia",
-    "rotta",
-    "cara"
-   ],
-   "translation": "He washed the bike well: now it's _____.",
-   "optionTranslations": [
-    "to clean",
-    "old",
-    "broken",
-    "expensive"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Ha lavato bene la bici: adesso è pulita.",
-    "targetWord": "pulita",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "ricco",
-  "sentence": "Ha molti soldi e una casa enorme: è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ricco",
-   "options": [
-    "ricco",
-    "povero",
-    "giovane",
-    "stanco"
-   ],
-   "translation": "He has a lot of money and a huge house: he's very _____.",
-   "optionTranslations": [
-    "rich",
-    "poor",
-    "young",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Ha molti soldi e una casa enorme: è molto ricco.",
-    "targetWord": "ricco",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "venduto",
-  "sentence": "Ha bisogno di soldi, così ha _____ il vecchio televisore.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "venduto",
-   "options": [
-    "venduto",
-    "comprato",
-    "rotto",
-    "trovato"
-   ],
-   "translation": "He needs money, so he _____ the old television.",
-   "optionTranslations": [
-    "to sell",
-    "bought",
-    "broken",
-    "found"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Ha bisogno di soldi, così ha venduto il vecchio televisore.",
-    "targetWord": "venduto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "prezioso",
-  "sentence": "Per lui è [[preziosa]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "precious",
-   "options": [
-    "precious",
-    "warm or hot",
-    "wide",
-    "short"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Per lui è preziosa.",
-    "targetWord": "preziosa",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "giovane",
-  "sentence": "Nel pomeriggio arriva un ragazzo [[giovane]] e ricco.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "young",
-   "options": [
-    "young",
-    "shy",
-    "nice and friendly",
-    "long"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Nel pomeriggio arriva un ragazzo giovane e ricco.",
-    "targetWord": "giovane",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "provare",
-  "sentence": "[[Prova]] la bici davanti a Davide.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to try",
-   "options": [
-    "to try",
-    "to stand up",
-    "to grow",
-    "to get dressed"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Prova la bici davanti a Davide.",
-    "targetWord": "Prova",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "girare",
-  "sentence": "[[Gira]] in cortile, nella luce del sole.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to go around",
-   "options": [
-    "to go around",
-    "to write",
-    "to find",
-    "to be missing"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Gira in cortile, nella luce del sole.",
-    "targetWord": "gira",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "trattare",
-  "sentence": "Poi [[trattano]] sul prezzo:",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to negotiate",
-   "options": [
-    "to negotiate",
-    "to vote",
-    "to fix",
-    "to build"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Poi trattano sul prezzo:",
-    "targetWord": "trattano",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "accettare",
-  "sentence": "Davide [[accetta]] con coraggio,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to accept",
-   "options": [
-    "to accept",
-    "to thank someone",
-    "to swim",
-    "to move"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Davide accetta con coraggio,",
-    "targetWord": "accetta",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "coraggio",
-  "sentence": "Davide accetta con [[coraggio]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "courage",
-   "options": [
-    "courage",
-    "an egg",
-    "a look",
-    "glue"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Davide accetta con coraggio,",
-    "targetWord": "coraggio",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "toccare",
-  "sentence": "[[tocca]] la bici e la saluta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to touch",
-   "options": [
-    "to touch",
-    "to invite",
-    "to wash",
-    "to hide"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "tocca la bici e la saluta.",
-    "targetWord": "tocca",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "pulita",
+    "sentence": "Ha lavato bene la bici: adesso è _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pulita",
+      "options": [
+        "pulita",
+        "vecchia",
+        "rotta",
+        "cara"
+      ],
+      "translation": "He washed the bike well: now it's _____.",
+      "optionTranslations": [
+        "clean",
+        "old",
+        "broken",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Ha lavato bene la bici: adesso è pulita.",
+        "targetWord": "pulita",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "salutare",
-  "sentence": "tocca la bici e la [[saluta]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to greet",
-   "options": [
-    "to greet",
-    "to save",
-    "to write down",
-    "to tie up"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "tocca la bici e la saluta.",
-    "targetWord": "saluta",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "ricco",
+    "sentence": "Ha molti soldi e una casa enorme: è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ricco",
+      "options": [
+        "ricco",
+        "alto",
+        "giovane",
+        "stanco"
+      ],
+      "translation": "He has a lot of money and a huge house: he's very _____.",
+      "optionTranslations": [
+        "rich",
+        "tall",
+        "young",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Ha molti soldi e una casa enorme: è molto ricco.",
+        "targetWord": "ricco",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pari",
-  "sentence": "Adesso siamo [[pari]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "even",
-   "options": [
-    "even",
-    "ready",
-    "alive",
-    "tanned"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Adesso siamo pari,",
-    "targetWord": "pari",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "venduto",
+    "sentence": "Ha bisogno di soldi, così ha _____ il vecchio televisore.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "venduto",
+      "options": [
+        "venduto",
+        "pulito",
+        "rotto",
+        "trovato"
+      ],
+      "translation": "He needs money, so he _____ the old television.",
+      "optionTranslations": [
+        "sold",
+        "cleaned",
+        "broken",
+        "found"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Ha bisogno di soldi, così ha venduto il vecchio televisore.",
+        "targetWord": "venduto",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cambiare",
-  "sentence": "Il cane [[cambia]] tutto,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to change",
-   "options": [
-    "to change",
-    "to happen",
-    "to study",
-    "to start"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Il cane cambia tutto,",
-    "targetWord": "cambia",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "prezioso",
+    "sentence": "Per lui è [[preziosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "precious",
+      "options": [
+        "precious",
+        "warm or hot",
+        "wide",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Per lui è preziosa.",
+        "targetWord": "preziosa",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "offrire",
-  "sentence": "E il caffè lo [[offro]] io,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to offer",
-   "options": [
-    "to offer",
-    "to learn",
-    "to surprise",
-    "to cost"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "E il caffè lo offro io,",
-    "targetWord": "offro",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "giovane",
+    "sentence": "Nel pomeriggio arriva un ragazzo [[giovane]] e ricco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young",
+      "options": [
+        "young",
+        "shy",
+        "nice and friendly",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Nel pomeriggio arriva un ragazzo giovane e ricco.",
+        "targetWord": "giovane",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ridere",
-  "sentence": "Davide [[ride]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to laugh",
-   "options": [
-    "to laugh",
-    "to push",
-    "to lose",
-    "to discover"
-   ],
-   "audioClip": {
-    "storySlug": "davide-vende-la-bici",
-    "storySource": "user",
-    "sentence": "Davide ride,",
-    "targetWord": "ride",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "provare",
+    "sentence": "[[Prova]] la bici davanti a Davide.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to try",
+      "options": [
+        "to try",
+        "to stand up",
+        "to grow",
+        "to get dressed"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Prova la bici davanti a Davide.",
+        "targetWord": "Prova",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "girare",
+    "sentence": "[[Gira]] in cortile, nella luce del sole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go around",
+      "options": [
+        "to go around",
+        "to write",
+        "to find",
+        "to be missing"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Gira in cortile, nella luce del sole.",
+        "targetWord": "gira",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trattare",
+    "sentence": "Poi [[trattano]] sul prezzo:",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to negotiate",
+      "options": [
+        "to negotiate",
+        "to vote",
+        "to fix",
+        "to build"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Poi trattano sul prezzo:",
+        "targetWord": "trattano",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "accettare",
+    "sentence": "Davide [[accetta]] con coraggio,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to accept",
+      "options": [
+        "to accept",
+        "to thank someone",
+        "to swim",
+        "to move"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Davide accetta con coraggio,",
+        "targetWord": "accetta",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coraggio",
+    "sentence": "Davide accetta con [[coraggio]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "courage",
+      "options": [
+        "courage",
+        "an egg",
+        "a look",
+        "glue"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Davide accetta con coraggio,",
+        "targetWord": "coraggio",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toccare",
+    "sentence": "[[tocca]] la bici e la saluta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to touch",
+      "options": [
+        "to touch",
+        "to invite",
+        "to wash",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "tocca la bici e la saluta.",
+        "targetWord": "tocca",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salutare",
+    "sentence": "tocca la bici e la [[saluta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to greet",
+      "options": [
+        "to greet",
+        "to save",
+        "to write down",
+        "to tie up"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "tocca la bici e la saluta.",
+        "targetWord": "saluta",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pari",
+    "sentence": "Adesso siamo [[pari]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even",
+      "options": [
+        "even",
+        "ready",
+        "alive",
+        "tanned"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Adesso siamo pari,",
+        "targetWord": "pari",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiare",
+    "sentence": "Il cane [[cambia]] tutto,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to change",
+      "options": [
+        "to change",
+        "to happen",
+        "to study",
+        "to start"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Il cane cambia tutto,",
+        "targetWord": "cambia",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "offrire",
+    "sentence": "E il caffè lo [[offro]] io,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to offer",
+      "options": [
+        "to offer",
+        "to learn",
+        "to surprise",
+        "to cost"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "E il caffè lo offro io,",
+        "targetWord": "offro",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ridere",
+    "sentence": "Davide [[ride]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to push",
+        "to lose",
+        "to discover"
+      ],
+      "audioClip": {
+        "storySlug": "davide-vende-la-bici",
+        "storySource": "user",
+        "sentence": "Davide ride,",
+        "targetWord": "ride",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -108,7 +108,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "full",
-        "empty",
+        "wet",
         "clean",
         "narrow"
       ],
@@ -228,7 +228,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "warm",
-        "cold",
+        "wet",
         "sharp",
         "heavy"
       ],
@@ -276,7 +276,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "alive",
-        "dead",
+        "green",
         "dry",
         "broken"
       ],
@@ -322,7 +322,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "below",
-        "above",
+        "outside",
         "beside",
         "behind"
       ],

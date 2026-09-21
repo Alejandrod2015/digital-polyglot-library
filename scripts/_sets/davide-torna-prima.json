@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "chiamata,bisogno,ragazza,ritorno",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "chiamata",
-     "answer": "a phone call",
-     "options": [
-      "a phone call",
-      "need",
-      "a young woman",
-      "the return"
-     ]
-    },
-    {
-     "word": "bisogno",
-     "answer": "need",
-     "options": [
-      "a phone call",
-      "need",
-      "a young woman",
-      "the return"
-     ]
-    },
-    {
-     "word": "ragazza",
-     "answer": "a young woman",
-     "options": [
-      "a phone call",
-      "need",
-      "a young woman",
-      "the return"
-     ]
-    },
-    {
-     "word": "ritorno",
-     "answer": "the return",
-     "options": [
-      "a phone call",
-      "need",
-      "a young woman",
-      "the return"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "chiamata,bisogno,ragazza,ritorno",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chiamata",
+          "answer": "a phone call",
+          "options": [
+            "a phone call",
+            "need",
+            "a young woman",
+            "the return"
+          ]
+        },
+        {
+          "word": "bisogno",
+          "answer": "need",
+          "options": [
+            "a phone call",
+            "need",
+            "a young woman",
+            "the return"
+          ]
+        },
+        {
+          "word": "ragazza",
+          "answer": "a young woman",
+          "options": [
+            "a phone call",
+            "need",
+            "a young woman",
+            "the return"
+          ]
+        },
+        {
+          "word": "ritorno",
+          "answer": "the return",
+          "options": [
+            "a phone call",
+            "need",
+            "a young woman",
+            "the return"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "veloce",
-  "sentence": "Il treno arriva in pochissimo tempo: è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "veloce",
-   "options": [
-    "veloce",
-    "vecchio",
-    "grigio",
-    "pesante"
-   ],
-   "translation": "The train arrives in very little time: it's very _____.",
-   "optionTranslations": [
-    "fast",
-    "old",
-    "grey",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Il treno arriva in pochissimo tempo: è molto veloce.",
-    "targetWord": "veloce",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "abbronzato",
-  "sentence": "Dopo giorni al sole, ha la pelle scura: è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "abbronzato",
-   "options": [
-    "abbronzato",
-    "stanco",
-    "magro",
-    "sporco"
-   ],
-   "translation": "After days in the sun, his skin is dark: he's very _____.",
-   "optionTranslations": [
-    "tanned",
-    "tired",
-    "thin",
-    "dirty"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Dopo giorni al sole, ha la pelle scura: è molto abbronzato.",
-    "targetWord": "abbronzato",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "interessa",
-  "sentence": "Non gli importa d'altro: solo questo gli _____ davvero.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "interessa",
-   "options": [
-    "interessa",
-    "spera",
-    "ricorda",
-    "spiega"
-   ],
-   "translation": "He doesn't care about anything else: only this really _____ him.",
-   "optionTranslations": [
-    "to interest",
-    "hopes",
-    "remembers",
-    "explains"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Non gli importa d'altro: solo questo gli interessa davvero.",
-    "targetWord": "interessa",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "viaggiare",
-  "sentence": "Gabriele lavora, e la vicina [[viaggia]] in montagna.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to travel",
-   "options": [
-    "to travel",
-    "to ring",
-    "to go out",
-    "to jump"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Gabriele lavora, e la vicina viaggia in montagna.",
-    "targetWord": "viaggia",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "seguente",
-  "sentence": "Il giorno [[seguente]] è arrivato un messaggio:",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next",
-   "options": [
-    "next",
-    "difficult",
-    "useless",
-    "pink"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Il giorno seguente è arrivato un messaggio:",
-    "targetWord": "seguente",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "arrivo",
-  "sentence": "L'[[arrivo]] è alle cinque.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "arrival",
-   "options": [
-    "arrival",
-    "glue",
-    "a female friend",
-    "an ice cream shop"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "L'arrivo è alle cinque.",
-    "targetWord": "arrivo",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Ferragosto",
-  "sentence": "la festa di [[Ferragosto]]",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the August holiday",
-   "options": [
-    "the August holiday",
-    "a calendar",
-    "a bee",
-    "grass"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "la festa di Ferragosto",
-    "targetWord": "Ferragosto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "grigio",
-  "sentence": "Davide scende dal treno [[grigio]], abbronzato.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grey",
-   "options": [
-    "grey",
-    "blue",
-    "dangerous",
-    "narrow"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Davide scende dal treno grigio, abbronzato.",
-    "targetWord": "grigio",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "patto",
-  "sentence": "Il [[patto]] è il patto.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a deal",
-   "options": [
-    "a deal",
-    "the south",
-    "attention",
-    "a dog shelter"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Il patto è il patto.",
-    "targetWord": "patto",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vita",
-  "sentence": "È la [[vita]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "life",
-   "options": [
-    "life",
-    "pepper",
-    "dry dog food",
-    "a part"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "È la vita,",
-    "targetWord": "vita",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "preparare",
-  "sentence": "A casa Elisa gli [[prepara]] un caffè nero,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to prepare",
-   "options": [
-    "to prepare",
-    "to stay",
-    "to pay",
-    "to play"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "A casa Elisa gli prepara un caffè nero,",
-    "targetWord": "prepara",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "veloce",
+    "sentence": "Il treno arriva in pochissimo tempo: è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "veloce",
+      "options": [
+        "veloce",
+        "vecchio",
+        "grigio",
+        "pesante"
+      ],
+      "translation": "The train arrives in very little time: it's very _____.",
+      "optionTranslations": [
+        "fast",
+        "old",
+        "grey",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Il treno arriva in pochissimo tempo: è molto veloce.",
+        "targetWord": "veloce",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nero",
-  "sentence": "A casa Elisa gli prepara un caffè [[nero]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "black",
-   "options": [
-    "black",
-    "cold",
-    "very old",
-    "calm"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "A casa Elisa gli prepara un caffè nero,",
-    "targetWord": "nero",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "abbronzato",
+    "sentence": "Dopo giorni al sole, ha la pelle scura: è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abbronzato",
+      "options": [
+        "abbronzato",
+        "stanco",
+        "magro",
+        "sporco"
+      ],
+      "translation": "After days in the sun, his skin is dark: he's very _____.",
+      "optionTranslations": [
+        "tanned",
+        "tired",
+        "thin",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Dopo giorni al sole, ha la pelle scura: è molto abbronzato.",
+        "targetWord": "abbronzato",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "vestirsi",
-  "sentence": "e lui si [[veste]] per il lavoro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get dressed",
-   "options": [
-    "to get dressed",
-    "to read",
-    "to leave behind",
-    "to take"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "e lui si veste per il lavoro.",
-    "targetWord": "veste",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "interessa",
+    "sentence": "Non gli importa d'altro: solo questo gli _____ davvero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "interessa",
+      "options": [
+        "interessa",
+        "spera",
+        "ricorda",
+        "spiega"
+      ],
+      "translation": "He doesn't care about anything else: only this really _____ him.",
+      "optionTranslations": [
+        "interests",
+        "hopes",
+        "remembers",
+        "explains"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Non gli importa d'altro: solo questo gli interessa davvero.",
+        "targetWord": "interessa",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "gioia",
-  "sentence": "racconta lui, con [[gioia]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "joy",
-   "options": [
-    "joy",
-    "a knife",
-    "departure",
-    "august"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "racconta lui, con gioia.",
-    "targetWord": "gioia",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "viaggiare",
+    "sentence": "Gabriele lavora, e la vicina [[viaggia]] in montagna.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to travel",
+      "options": [
+        "to travel",
+        "to ring",
+        "to go out",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Gabriele lavora, e la vicina viaggia in montagna.",
+        "targetWord": "viaggia",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sogno",
-  "sentence": "Sembra un [[sogno]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a dream",
-   "options": [
-    "a dream",
-    "a point",
-    "September",
-    "a cardboard box"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "Sembra un sogno,",
-    "targetWord": "sogno",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "seguente",
+    "sentence": "Il giorno [[seguente]] è arrivato un messaggio:",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "difficult",
+        "useless",
+        "pink"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Il giorno seguente è arrivato un messaggio:",
+        "targetWord": "seguente",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "raccontare",
-  "sentence": "[[racconta]] lui, con gioia.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to tell",
-   "options": [
-    "to tell",
-    "to adopt",
-    "to give",
-    "to see"
-   ],
-   "audioClip": {
-    "storySlug": "davide-torna-prima",
-    "storySource": "user",
-    "sentence": "racconta lui, con gioia.",
-    "targetWord": "racconta",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "arrivo",
+    "sentence": "L'[[arrivo]] è alle cinque.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrival",
+      "options": [
+        "arrival",
+        "glue",
+        "a female friend",
+        "an ice cream shop"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "L'arrivo è alle cinque.",
+        "targetWord": "arrivo",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Ferragosto",
+    "sentence": "la festa di [[Ferragosto]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the August holiday",
+      "options": [
+        "the August holiday",
+        "the spring fair",
+        "the winter market",
+        "the school year"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "la festa di Ferragosto",
+        "targetWord": "Ferragosto",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grigio",
+    "sentence": "Davide scende dal treno [[grigio]], abbronzato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grey",
+      "options": [
+        "grey",
+        "blue",
+        "dangerous",
+        "narrow"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Davide scende dal treno grigio, abbronzato.",
+        "targetWord": "grigio",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patto",
+    "sentence": "Il [[patto]] è il patto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a deal",
+      "options": [
+        "a deal",
+        "the south",
+        "attention",
+        "a dog shelter"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Il patto è il patto.",
+        "targetWord": "patto",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vita",
+    "sentence": "È la [[vita]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "life",
+      "options": [
+        "life",
+        "pepper",
+        "dry dog food",
+        "a part"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "È la vita,",
+        "targetWord": "vita",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preparare",
+    "sentence": "A casa Elisa gli [[prepara]] un caffè nero,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to prepare",
+      "options": [
+        "to prepare",
+        "to stay",
+        "to pay",
+        "to play"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "A casa Elisa gli prepara un caffè nero,",
+        "targetWord": "prepara",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nero",
+    "sentence": "A casa Elisa gli prepara un caffè [[nero]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "black",
+      "options": [
+        "black",
+        "cold",
+        "very old",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "A casa Elisa gli prepara un caffè nero,",
+        "targetWord": "nero",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestirsi",
+    "sentence": "e lui si [[veste]] per il lavoro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get dressed",
+      "options": [
+        "to get dressed",
+        "to read",
+        "to leave behind",
+        "to take"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "e lui si veste per il lavoro.",
+        "targetWord": "veste",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gioia",
+    "sentence": "racconta lui, con [[gioia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "joy",
+      "options": [
+        "joy",
+        "a knife",
+        "departure",
+        "august"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "racconta lui, con gioia.",
+        "targetWord": "gioia",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sogno",
+    "sentence": "Sembra un [[sogno]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dream",
+      "options": [
+        "a dream",
+        "a point",
+        "September",
+        "a cardboard box"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "Sembra un sogno,",
+        "targetWord": "sogno",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raccontare",
+    "sentence": "[[racconta]] lui, con gioia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": [
+        "to tell",
+        "to adopt",
+        "to give",
+        "to see"
+      ],
+      "audioClip": {
+        "storySlug": "davide-torna-prima",
+        "storySource": "user",
+        "sentence": "racconta lui, con gioia.",
+        "targetWord": "racconta",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

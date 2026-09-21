@@ -253,7 +253,7 @@
       "options": [
         "never",
         "today",
-        "always",
+        "twice",
         "soon"
       ],
       "audioClip": {
@@ -322,7 +322,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "narrow",
-        "wide",
+        "slow",
         "tall",
         "clean"
       ],

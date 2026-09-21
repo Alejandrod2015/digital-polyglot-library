@@ -297,7 +297,7 @@
       "answer": "full",
       "options": [
         "full",
-        "empty",
+        "warm",
         "broken",
         "cold"
       ],
@@ -369,7 +369,7 @@
       "answer": "long",
       "options": [
         "long",
-        "short",
+        "salty",
         "wide",
         "round"
       ],
