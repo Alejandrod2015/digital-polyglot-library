@@ -13,6 +13,7 @@ import {
   useWindowDimensions,
   Easing,
   findNodeHandle,
+  InteractionManager,
   Keyboard,
   KeyboardAvoidingView,
   Linking,
@@ -14673,60 +14674,76 @@ export function MobileLibraryShell(args: {
   // hilo JS bloqueado: el countdown saltaba de 1 s a 4 s y cada cambio de
   // ejercicio se trababa. Desde el pool de historias terminadas (09-18) el
   // pool es diez veces mayor que cuando solo eran las guardadas. Ahora se
-  // calcula en un efecto, fuera del repintado, y solo cuando el hub esta a la
-  // vista: durante una ronda o en Journey nadie lo mira.
+  // calcula en un efecto, fuera del repintado, un modo por tanda y nunca
+  // durante una ronda ni con el lector abierto (ver el efecto de abajo).
   const ORBIT_BREAKDOWN_ZERO: Record<OrbitModeKey, number> = useMemo(
     () => ({ meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 }),
     []
   );
   const [orbitModeBreakdown, setOrbitModeBreakdown] =
     useState<Record<OrbitModeKey, number>>(ORBIT_BREAKDOWN_ZERO);
-  // true desde que cambia el pool hasta que llega su recuento. Con el pool
-  // del iPhone (unas 40 palabras) el calculo tarda mas de un segundo, y ese
-  // segundo el hub decia "0 skills" con las tarjetas a cero. Mientras se
-  // calcula, la orbita no ensena numeros; y al recalcular se conserva el
-  // recuento anterior en vez de volver a cero.
+  // true desde que cambia el pool hasta que llega su recuento. Mientras se
+  // calcula, la orbita no ensena numeros (ceros leen como "no hay nada"); y al
+  // recalcular se conserva el recuento anterior en vez de volver a cero.
   const [orbitBreakdownPending, setOrbitBreakdownPending] = useState(true);
+  // Para que pool y prefs se cuentan ya. Sin esto, cada entrada en Practice
+  // recalculaba lo mismo (la dependencia de `activeScreen` relanzaba el
+  // efecto) y los numeros desaparecian un segundo cada vez.
+  const orbitBreakdownForRef = useRef<{
+    items: typeof duePracticeItems;
+    prefs: typeof onboardingPracticePrefs;
+  } | null>(null);
   useEffect(() => {
-    if (activeScreen !== "practice" || activePracticeMode) return;
+    // Se calcula en cualquier pestana, no solo con el hub a la vista, para
+    // que al entrar en Practice los numeros ya esten. Lo que se evita es
+    // pisar algo que se esta viendo moverse: una ronda (su reloj saltaba de
+    // 1 s a 4 s con este calculo dentro) y el lector con karaoke.
+    if (activePracticeMode || selection || talkingReader) return;
+    const done = orbitBreakdownForRef.current;
+    if (done && done.items === duePracticeItems && done.prefs === onboardingPracticePrefs) return;
     if (duePracticeItems.length === 0) {
+      orbitBreakdownForRef.current = { items: duePracticeItems, prefs: onboardingPracticePrefs };
       setOrbitModeBreakdown(ORBIT_BREAKDOWN_ZERO);
       setOrbitBreakdownPending(false);
       return;
     }
     let cancelled = false;
     setOrbitBreakdownPending(true);
-    // Un frame de margen ANTES del calculo: el `setTimeout(0)` a secas
-    // bloqueaba el hilo JS antes de que llegara el `onLayout` del hub, y la
-    // pantalla entraba con el bloque de habilidades vacio hasta que el
-    // recuento terminaba. Con el frame pintado, el calculo ya solo congela
-    // los numeros, no la disposicion.
+    // Un modo por tanda, con un frame entre medias, en vez de los cinco de
+    // golpe: con el pool del iPhone (unas 40 palabras) los cinco juntos
+    // bloqueaban el hilo JS mas de un segundo, y de paso el `onLayout` del
+    // hub, que entraba en pantalla sin el bloque de habilidades.
+    // `runAfterInteractions` ademas deja terminar la transicion de pestana.
+    const modes: OrbitModeKey[] = ["meaning", "context", "listening", "match", "speaking"];
+    const partial: Record<OrbitModeKey, number> = { ...ORBIT_BREAKDOWN_ZERO };
+    let index = 0;
     let handle: ReturnType<typeof setTimeout> | null = null;
-    const frame = requestAnimationFrame(() => {
-      handle = setTimeout(() => {
-        if (cancelled) return;
-        const sizeFor = (mode: OrbitModeKey) =>
-          buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
-        setOrbitModeBreakdown({
-          meaning: sizeFor("meaning"),
-          context: sizeFor("context"),
-          listening: sizeFor("listening"),
-          match: sizeFor("match"),
-          // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
-          // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
-          // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
-          // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
-          speaking: sizeFor("speaking"),
-        });
-        setOrbitBreakdownPending(false);
-      }, 0);
+    const step = () => {
+      if (cancelled) return;
+      const mode = modes[index];
+      index += 1;
+      // Con el plan `polyglot` speaking cuenta como cualquier otra skill. Sin
+      // el sale CERO por partida doble: `speakingEnabled` es false en las
+      // prefs, asi que el builder ya devuelve 0, y ademas la orbita no pinta
+      // su tarjeta. Nadie que no pueda resolverlo lo ve en el anillo.
+      partial[mode] = buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
+      if (index < modes.length) {
+        handle = setTimeout(step, 16);
+        return;
+      }
+      orbitBreakdownForRef.current = { items: duePracticeItems, prefs: onboardingPracticePrefs };
+      setOrbitModeBreakdown({ ...partial });
+      setOrbitBreakdownPending(false);
+    };
+    const task = InteractionManager.runAfterInteractions(() => {
+      handle = setTimeout(step, 0);
     });
     return () => {
       cancelled = true;
-      cancelAnimationFrame(frame);
+      task.cancel();
       if (handle) clearTimeout(handle);
     };
-  }, [activeScreen, activePracticeMode, duePracticeItems, onboardingPracticePrefs, ORBIT_BREAKDOWN_ZERO]);
+  }, [activePracticeMode, selection, talkingReader, duePracticeItems, onboardingPracticePrefs, ORBIT_BREAKDOWN_ZERO]);
 
   // Topic label: por ahora fijo. El campo "From {topic}" del mockup
   // requiere saber el topic dominante de las palabras due, lo cual

@@ -222,6 +222,20 @@ const HeaderChips = memo(function HeaderChips({
  * con setState; para 4-5 contadores simultáneos a 60fps no es
  * problema. Cuando cambia el target arranca una nueva animación.
  */
+/** Opacidad 0 -> 1 cuando `visible` pasa a true. Los numeros del hub entran
+ *  con esto en cuanto llega el recuento, en vez de aparecer de golpe. */
+function useFadeIn(visible: boolean, durationMs = 350): Animated.Value {
+  const value = useRef(new Animated.Value(visible ? 1 : 0)).current;
+  useEffect(() => {
+    Animated.timing(value, {
+      toValue: visible ? 1 : 0,
+      duration: durationMs,
+      useNativeDriver: true,
+    }).start();
+  }, [value, visible, durationMs]);
+  return value;
+}
+
 function useRollup(target: number, durationMs = 700): number {
   const [value, setValue] = useState(0);
   const startRef = useRef<number | null>(null);
@@ -269,6 +283,7 @@ const SkillCard = memo(function SkillCard({
   // segment, etc. Counts hacen rollup de 0 → N al montar.
   const color = MODE_COLORS[mode];
   const animatedCount = useRollup(count, 700);
+  const countOpacity = useFadeIn(!pending);
   return (
     <Pressable
       onPress={onPress}
@@ -289,7 +304,9 @@ const SkillCard = memo(function SkillCard({
         <View style={[styles.skillIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={18} color={color} />
         </View>
-        <Text style={styles.skillCount}>{pending ? "" : animatedCount}</Text>
+        <Animated.Text style={[styles.skillCount, { opacity: countOpacity }]}>
+          {pending ? "" : animatedCount}
+        </Animated.Text>
       </View>
       <Text style={styles.skillCardLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -384,6 +401,7 @@ const HugLabel = memo(function HugLabel({
 }) {
   const color = MODE_COLORS[mode];
   const animatedCount = useRollup(count, 700);
+  const countOpacity = useFadeIn(!pending);
   const right = corner === "tr" || corner === "br";
   const bottom = corner === "bl" || corner === "br";
   // El contenido se apoya en el lado exterior de la tarjeta (lejos del
@@ -406,7 +424,9 @@ const HugLabel = memo(function HugLabel({
         <View style={[styles.hugIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={15} color={color} />
         </View>
-        <Text style={styles.skillCount}>{pending ? "" : animatedCount}</Text>
+        <Animated.Text style={[styles.skillCount, { opacity: countOpacity }]}>
+          {pending ? "" : animatedCount}
+        </Animated.Text>
       </View>
       <Text style={styles.hugLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -424,6 +444,7 @@ const SkillHug = memo(function SkillHug({
 }) {
   const [width, setWidth] = useState(0);
   const speakingCount = useRollup(breakdown.speaking ?? 0, 700);
+  const speakingOpacity = useFadeIn(!pending);
   const speakingColor = MODE_COLORS.speaking;
   const tileW = Math.max(0, (width - HUG_GAP) / 2);
   const tileH = (HUG_HEIGHT - HUG_GAP) / 2;
@@ -510,7 +531,9 @@ const SkillHug = memo(function SkillHug({
           ]}
         >
           <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
-          <Text style={styles.hugCircleCount}>{pending ? "" : speakingCount}</Text>
+          <Animated.Text style={[styles.hugCircleCount, { opacity: speakingOpacity }]}>
+            {pending ? "" : speakingCount}
+          </Animated.Text>
           <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
             {MODE_LABELS.speaking.toUpperCase()}
           </Text>
