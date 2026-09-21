@@ -1,0 +1,399 @@
+[
+ {
+  "topic": "second-hand-and-bargains",
+  "slotIndex": 0,
+  "title": "Achtzig für drei Beine",
+  "slug": "achtzig-fuer-drei-beine",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Saturday at the flea market by the river, Britta has two hundred euros for a table and a bed. She walks past the same wooden table three times and cannot get the question about the price out of her throat. She pays what the sign says, and finds out at home what eighty euros bought her.",
+  "text": "Ein grauer Nebel hängt über der Leine, und auf dem Flohmarkt riecht es nach nassem Holz. Kerstin ist eine Händlerin mit einem Wagen voller Möbel. Britta braucht einen Tisch, ein Bett und hat zweihundert Euro.\n\nSie geht dreimal am Holztisch vorbei und streicht über die glatte Platte. Auf dem Schild stehen achtzig Euro, und für Britta ist das zu teuer. “Nehmen Sie ihn ruhig, der ist massiv und hält noch zwanzig gute Jahre”, sagt Kerstin.\n\n“Achtzig sind mein letztes Wort, aber die zwei Klappstühle lege ich dazu”, meint Kerstin. Britta will unbedingt handeln, doch die Frage bleibt ihr im Hals stecken. Sie zahlt mit vier Geldscheinen und schiebt den Tisch nach Hause.\n\nErst in der Küche merkt sie, dass ein Bein deutlich kürzer ist. Der Tisch wackelt, und sie legt ein Stück Pappe darunter. “Achtzig Euro für einen Tisch mit drei guten Beinen, und ich habe nicht einmal gefragt”, erzählt sie Malte.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Flohmarkt",
+    "anchor": true,
+    "surface": "Flohmarkt",
+    "definition": "A flea market; a street market where people sell used things."
+   },
+   {
+    "type": "noun",
+    "word": "der Nebel",
+    "surface": "Nebel",
+    "definition": "Fog; thick grey air that you cannot see far through."
+   },
+   {
+    "type": "adjective",
+    "word": "grau",
+    "surface": "grauer",
+    "definition": "Grey; the colour of a sky full of rain clouds."
+   },
+   {
+    "type": "noun",
+    "word": "die Händlerin",
+    "anchor": true,
+    "surface": "Händlerin",
+    "definition": "A woman who buys and sells things, here old furniture."
+   },
+   {
+    "type": "noun",
+    "word": "das Möbel",
+    "surface": "Möbel",
+    "definition": "Furniture; tables, beds and cupboards inside a home."
+   },
+   {
+    "type": "verb",
+    "word": "streichen",
+    "surface": "streicht",
+    "definition": "To stroke; to move your hand slowly over a surface."
+   },
+   {
+    "type": "adjective",
+    "word": "glatt",
+    "surface": "glatte",
+    "definition": "Smooth; with no rough places under your fingers at all."
+   },
+   {
+    "type": "noun",
+    "word": "die Platte",
+    "surface": "Platte",
+    "definition": "The top; the flat board of a table that you eat on."
+   },
+   {
+    "type": "adjective",
+    "word": "teuer",
+    "surface": "teuer",
+    "definition": "Expensive; costing more money than you want to pay."
+   },
+   {
+    "type": "adjective",
+    "word": "massiv",
+    "surface": "massiv",
+    "definition": "Solid; made of heavy wood all through, not thin boards."
+   },
+   {
+    "type": "noun",
+    "word": "der Klappstuhl",
+    "surface": "Klappstühle",
+    "definition": "A folding chair; a chair you can close flat and carry away."
+   },
+   {
+    "type": "adverb",
+    "word": "unbedingt",
+    "surface": "unbedingt",
+    "definition": "Absolutely; wanting it very much and with no doubt."
+   },
+   {
+    "type": "verb",
+    "word": "handeln",
+    "anchor": true,
+    "surface": "handeln",
+    "definition": "To haggle; to ask a seller for a lower price than the sign says."
+   },
+   {
+    "type": "noun",
+    "word": "der Geldschein",
+    "surface": "Geldscheinen",
+    "definition": "A banknote; the paper money you pay with, not coins."
+   },
+   {
+    "type": "verb",
+    "word": "schieben",
+    "surface": "schiebt",
+    "definition": "To push; to move a thing in front of you without lifting it."
+   },
+   {
+    "type": "verb",
+    "word": "wackeln",
+    "surface": "wackelt",
+    "definition": "To wobble; to move a little from side to side and not stand still."
+   },
+   {
+    "type": "adjective",
+    "word": "kurz",
+    "surface": "kürzer",
+    "definition": "Short; here shorter than the other legs, so nothing stands straight."
+   },
+   {
+    "type": "adverb",
+    "word": "deutlich",
+    "surface": "deutlich",
+    "definition": "Clearly; so much that anybody can see it at once."
+   },
+   {
+    "type": "noun",
+    "word": "die Pappe",
+    "surface": "Pappe",
+    "definition": "Cardboard; the thick paper that boxes are made of."
+   },
+   {
+    "type": "noun",
+    "word": "das Bein",
+    "surface": "Bein",
+    "definition": "A leg; here one of the four legs a table stands on."
+   }
+  ]
+ },
+ {
+  "topic": "second-hand-and-bargains",
+  "slotIndex": 1,
+  "title": "Der Zettel am Bett",
+  "slug": "der-zettel-am-bett",
+  "arcType": "late-reveal",
+  "synopsis": "Kerstin calls on Wednesday: a second hand bed has come into the store, without a mattress. Britta drives over, hears her own voice offer eighty and is surprised by it. She haggles for the first time in her life, and on the way home she sees something taped to the bed frame.",
+  "text": "Das Handy klingelt am Mittwoch, und Kerstin ruft aus ihrem Lager an. Sie hat ein gebrauchtes Bett mit Lattenrost bekommen, ohne einen Kratzer und ohne Matratze. Hundert Euro soll es kosten, und Britta hat noch hundertzwanzig.\n\nAm Nachmittag steht sie davor und atmet einmal tief durch. “Achtzig, und ich hole es heute noch mit einem geliehenen Anhänger bei Ihnen ab”, sagt sie schnell. Die eigene Stimme klingt ihr fremd, fast wie die von jemand anderem.\n\nKerstin wischt die Hände ab und mustert sie kurz. “Fünfzig, und Sie bringen mir bei Gelegenheit einfach zwei Kaffee vorbei”, antwortet Kerstin ruhig. Britta hat zum ersten Mal erfolgreich gehandelt, und das fühlt sich seltsam an.\n\nAuf dem Rückweg sieht sie den Zettel, der noch am Bett klebt. Darauf stehen in krummen Buchstaben ihr Vorname und das Datum vom Samstag. “Sie hat mir das Bett schon seit Samstag zurückgelegt, bevor ich überhaupt gefragt habe”, erzählt Britta abends Malte.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Lager",
+    "surface": "Lager",
+    "definition": "A store room; the big room where a seller keeps her goods."
+   },
+   {
+    "type": "adjective",
+    "word": "gebraucht",
+    "surface": "gebrauchtes",
+    "definition": "Second hand; used by somebody else before you buy it."
+   },
+   {
+    "type": "noun",
+    "word": "der Lattenrost",
+    "surface": "Lattenrost",
+    "definition": "A slatted frame; the wooden base a mattress lies on."
+   },
+   {
+    "type": "noun",
+    "word": "der Kratzer",
+    "surface": "Kratzer",
+    "definition": "A scratch; a thin line where something sharp hurt the surface."
+   },
+   {
+    "type": "noun",
+    "word": "die Matratze",
+    "surface": "Matratze",
+    "definition": "A mattress; the soft thick part of a bed you lie on."
+   },
+   {
+    "type": "verb",
+    "word": "atmen",
+    "surface": "atmet",
+    "definition": "To breathe; to take air in and let it out again."
+   },
+   {
+    "type": "adverb",
+    "word": "tief",
+    "surface": "tief",
+    "definition": "Deeply; here taking a lot of air before saying something hard."
+   },
+   {
+    "type": "noun",
+    "word": "der Anhänger",
+    "surface": "Anhänger",
+    "definition": "A trailer; the open box on wheels you pull behind a car."
+   },
+   {
+    "type": "verb",
+    "word": "klingen",
+    "surface": "klingt",
+    "definition": "To sound; to be heard in a certain way by other people."
+   },
+   {
+    "type": "adjective",
+    "word": "fremd",
+    "surface": "fremd",
+    "definition": "Strange; belonging to somebody you do not know at all."
+   },
+   {
+    "type": "verb",
+    "word": "wischen",
+    "surface": "wischt",
+    "definition": "To wipe; to clean or dry something with a quick movement."
+   },
+   {
+    "type": "verb",
+    "word": "mustern",
+    "surface": "mustert",
+    "definition": "To look somebody up and down, slowly and with attention."
+   },
+   {
+    "type": "noun",
+    "word": "die Gelegenheit",
+    "surface": "Gelegenheit",
+    "definition": "An occasion; a good moment that comes along some day."
+   },
+   {
+    "type": "adverb",
+    "word": "erfolgreich",
+    "surface": "erfolgreich",
+    "definition": "Successfully; getting what you wanted from what you tried."
+   },
+   {
+    "type": "adjective",
+    "word": "seltsam",
+    "surface": "seltsam",
+    "definition": "Strange; not the way you expected it to feel or look."
+   },
+   {
+    "type": "noun",
+    "word": "der Rückweg",
+    "surface": "Rückweg",
+    "definition": "The way back; the trip home after you did something."
+   },
+   {
+    "type": "adjective",
+    "word": "krumm",
+    "surface": "krummen",
+    "definition": "Crooked; not straight, like letters written in a hurry."
+   },
+   {
+    "type": "noun",
+    "word": "der Vorname",
+    "surface": "Vorname",
+    "definition": "A first name; the name your friends call you by."
+   },
+   {
+    "type": "noun",
+    "word": "das Datum",
+    "surface": "Datum",
+    "definition": "The date; the day, month and year something happened."
+   },
+   {
+    "type": "adverb",
+    "word": "überhaupt",
+    "surface": "überhaupt",
+    "definition": "At all; used to say that a thing never even happened."
+   }
+  ]
+ },
+ {
+  "topic": "second-hand-and-bargains",
+  "slotIndex": 2,
+  "title": "Zwei Stühle, ein Teller",
+  "slug": "zwei-stuehle-ein-teller",
+  "arcType": "reframe-turn",
+  "synopsis": "By Friday the flat is full and nothing matches: the table wobbles, the chairs squeak, the cupboard has a dent. Malte laughs and says it looks like a flea market. Britta names where every piece came from, and hears herself finish the list without a single apology.",
+  "text": "Ihre Wohnung ist am Freitagabend endlich voll, aber nichts passt zusammen. Der Holztisch wackelt, die Klappstühle quietschen, und der Schrank hat eine tiefe Delle. Trotzdem riecht die Wohnung nach Suppe, und die Lampe wirft einen warmen Kreis auf den Boden.\n\nMalte kommt mit einer Flasche Rotwein und geht langsam durch die zwei Zimmer. “Kein Stück passt hier zum anderen, ehrlich gesagt sieht das aus wie ein Flohmarkt”, lacht er. Britta stellt zwei verschiedene Teller hin und grinst einfach mit.\n\nFrüher hat sie sich für jedes alte Ding entschuldigt. Heute erklärt sie jedes Stück: das Bett von Kerstin, den Tisch mit der Pappe, die Lampe vom Sperrmüll. Kein einziges davon kommt aus Münster.\n\n“Das grüne Sofa aus Münster fehlt dir kein bisschen, oder?”, fragt Malte vorsichtig. Britta überlegt einen Moment und schüttelt dann den Kopf. “Schön ist die Wohnung nicht, aber zum ersten Mal gehört jedes Ding darin mir”, antwortet sie ohne Neid.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "voll",
+    "surface": "voll",
+    "definition": "Full; with nothing missing and no empty corner left."
+   },
+   {
+    "type": "verb",
+    "word": "quietschen",
+    "surface": "quietschen",
+    "definition": "To squeak; to make a high thin noise when something moves."
+   },
+   {
+    "type": "noun",
+    "word": "die Delle",
+    "surface": "Delle",
+    "definition": "A dent; a small hollow where something hard hit the surface."
+   },
+   {
+    "type": "verb",
+    "word": "werfen",
+    "surface": "wirft",
+    "definition": "To throw; here a lamp throws a circle of light on the floor."
+   },
+   {
+    "type": "adjective",
+    "word": "warm",
+    "surface": "warmen",
+    "definition": "Warm; pleasantly hot, the way a lamp or a kitchen feels."
+   },
+   {
+    "type": "noun",
+    "word": "der Rotwein",
+    "surface": "Rotwein",
+    "definition": "Red wine; the dark wine people bring when they visit friends."
+   },
+   {
+    "type": "adjective",
+    "word": "ehrlich",
+    "surface": "ehrlich",
+    "definition": "Honest; saying the true thing even when it sounds rude."
+   },
+   {
+    "type": "adjective",
+    "word": "verschieden",
+    "surface": "verschiedene",
+    "definition": "Different; not the same as each other in colour or shape."
+   },
+   {
+    "type": "adverb",
+    "word": "einfach",
+    "surface": "einfach",
+    "definition": "Simply; without making a problem out of it at all."
+   },
+   {
+    "type": "verb",
+    "word": "grinsen",
+    "surface": "grinst",
+    "definition": "To grin; to smile widely, often when something is a bit funny."
+   },
+   {
+    "type": "adverb",
+    "word": "früher",
+    "surface": "Früher",
+    "definition": "Before; at an earlier time in your life, not any more."
+   },
+   {
+    "type": "verb",
+    "word": "entschuldigen",
+    "surface": "entschuldigt",
+    "definition": "To apologise; to say sorry for something you think is wrong."
+   },
+   {
+    "type": "verb",
+    "word": "erklären",
+    "surface": "erklärt",
+    "definition": "To explain; to tell somebody where a thing comes from."
+   },
+   {
+    "type": "noun",
+    "word": "der Sperrmüll",
+    "anchor": true,
+    "surface": "Sperrmüll",
+    "definition": "Bulky waste; the big things Germans leave on the street for free."
+   },
+   {
+    "type": "noun",
+    "word": "das Ding",
+    "surface": "Ding",
+    "definition": "A thing; any object when you do not name it exactly."
+   },
+   {
+    "type": "adverb",
+    "word": "vorsichtig",
+    "surface": "vorsichtig",
+    "definition": "Carefully; asking softly so the question does not hurt."
+   },
+   {
+    "type": "verb",
+    "word": "überlegen",
+    "surface": "überlegt",
+    "definition": "To think about it; to take a moment before you answer."
+   },
+   {
+    "type": "adjective",
+    "word": "schön",
+    "surface": "Schön",
+    "definition": "Beautiful; nice to look at, which this flat is not."
+   },
+   {
+    "type": "noun",
+    "word": "der Neid",
+    "surface": "Neid",
+    "definition": "Envy; the sour feeling when somebody else has more."
+   },
+   {
+    "type": "noun",
+    "word": "der Moment",
+    "surface": "Moment",
+    "definition": "A moment; a very short piece of time, a few seconds."
+   }
+  ]
+ }
+]

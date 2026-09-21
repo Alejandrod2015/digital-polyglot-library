@@ -339,6 +339,13 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "flach","bedanken","bedankt","schief","hausordnung","tonne","tonnen","gefallen",
   "irgendwann","umdrehen","umgedreht","waschmaschine","maschine","fensterbank",
   "leihen","geliehen","pizza","klemmen","klemmt","seil","seile",
+  // Batch 9c (2026-09-21), same journey, tema 3 (second-hand-and-bargains).
+  "händler","händlerin","streichen","streicht","platte","massiv","handeln","handelt",
+  "gehandelt","pappe","deutlich","lager","lattenrost","kratzer","matratze","anhänger",
+  "klingen","klingt","wischen","wischt","mustern","mustert","gelegenheit","seltsam",
+  "krumm","datum","überhaupt","quietschen","quietscht","delle","grinsen","grinst",
+  "gebraucht","entschuldigen","entschuldigt","ding","dinge","überlegen","überlegt","neid",
+  "werfen","wirft","geworfen",
 ]);
 
 export function isGermanA1A2(word: string): boolean {
