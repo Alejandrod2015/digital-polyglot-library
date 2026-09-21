@@ -2632,32 +2632,16 @@ export function MobileLibraryShell(args: {
   //   - `pendingPairings` holds the user-built pairs that have NOT been
   //     validated yet (word → meaning). The user is free to undo any of
   //     these by tapping either side again.
-  //   - `matchedWords` is the set of pairs that have ALREADY been
-  //     validated as correct (after pressing Check). They lock and stay
-  //     pinned with the green "correct" treatment.
-  //   - `wrongMatchWords` is the list of words flagged red during the
-  //     post-Check flash; cleared after ~900 ms when those pairings are
-  //     broken so the user can retry.
+  //   - `matchedWords` is the set of pairs validated as correct. They
+  //     lock and stay pinned with the green "correct" treatment.
+  //   - `wrongMatchWords` is the list of words validated as wrong. They
+  //     stay red until the auto-advance moves to the next exercise; a
+  //     wrong round ends the exercise, there is no retry.
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [activeMatchMeaning, setActiveMatchMeaning] = useState<string | null>(null);
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
   const [pendingPairings, setPendingPairings] = useState<Record<string, string>>({});
   const [wrongMatchWords, setWrongMatchWords] = useState<string[]>([]);
-  /**
-   * ¿Este match ha tenido ALGÚN fallo? Decide si suma punto.
-   *
-   * El ejercicio bloquea los aciertos y borra los fallos a los 900 ms, así que
-   * se puede reintentar: bien pedagógicamente, mal para el marcador, porque
-   * `setPracticeScore(+1)` se disparaba en la validación limpia FINAL sin mirar
-   * lo anterior. Se podía fallar seis veces y llevarse el punto, y con cuatro
-   * pares acertar tres fuerza la cuarta. Un 10/10 dejaba de significar nada, y
-   * con él el sonido de victoria.
-   *
-   * No se penaliza el reintento ni se rompe el bloqueo de aciertos: solo deja
-   * de contar como acierto lo que no se acertó a la primera. El repaso
-   * espaciado ya era honesto (una palabra marcada `again` se queda en `again`).
-   */
-  const matchHadErrorRef = useRef(false);
   const [practiceLaunchContext, setPracticeLaunchContext] = useState<PracticeLaunchContext>({
     source: "favorites",
   });
@@ -6048,14 +6032,6 @@ export function MobileLibraryShell(args: {
   }, [dueFavoritesCount, preferredPracticeMinutes, recommendedPracticeLabel]);
   const visiblePracticeCards = PRACTICE_MODE_CARDS;
   const currentPracticeExercise = practiceExercises[practiceIndex] ?? null;
-
-  // La bandera de "este match tuvo fallos" se limpia al cambiar de ejercicio, y
-  // AQUI y no en cada sitio que resetea el match: hay seis (arranque, reinicio,
-  // avance, checkpoint, journey, retry) y parchearlos uno a uno es pedir que el
-  // septimo se olvide. Atado al id del ejercicio, cualquier camino lo cubre.
-  useEffect(() => {
-    matchHadErrorRef.current = false;
-  }, [currentPracticeExercise?.id]);
 
   // Persiste la ronda de MATCH a medida que avanza (ejercicio en curso, parejas
   // ya resueltas y marcador), para que salir y volver la devuelva tal cual.
@@ -12112,10 +12088,9 @@ export function MobileLibraryShell(args: {
   // pending pair if the opposite side already has a half-selection,
   // or (c) breaks an existing pending pair if the tapped item is
   // already paired. Once all `pairs.length` slots are filled the
-  // Check button appears; pressing it locks the correct pairs as
-  // matched, flashes the wrong ones red briefly, then releases the
-  // wrong ones so the user can retry. The exercise completes when
-  // every pair has been validated as correct.
+  // auto-validate effect runs the verdict: all correct locks green and
+  // scores; any wrong pair ends the round as wrong, with the correct
+  // ones green and the wrong ones red until the auto-advance.
   function tapMatchWord(word: string) {
     if (practiceComplete) return;
     if (practiceRevealed) return;
@@ -12275,28 +12250,15 @@ export function MobileLibraryShell(args: {
       setPendingPairings({});
       setActiveMatchWord(null);
       setActiveMatchMeaning(null);
-      // Solo puntúa si se resolvió a la primera. Ver `matchHadErrorRef`.
-      if (!matchHadErrorRef.current) {
-        setPracticeScore((value) => value + 1);
-      }
+      setPracticeScore((value) => value + 1);
       setPracticeRevealed(true);
-      setPracticeLastResult(matchHadErrorRef.current ? "wrong" : "correct");
+      setPracticeLastResult("correct");
       // maxStreak + combo toast se derivan del cambio en sessionStreak
       // vía useEffect (mismo path que multiple-choice). Antes lo
       // hacíamos dentro del updater, lo cual fallaba en sesiones de
       // puro match porque el side-effect anidado podía perderse y la
       // result card mostraba combo=0.
-      //
-      // La racha sigue al mismo criterio que el marcador: un match resuelto
-      // DESPUÉS de fallar no encadena. Antes subía igual, así que bastaba con
-      // fallar y reintentar para llegar al combo, que es la misma trampa que
-      // ya cerramos en la puntuación.
-      const cleanSolve = !matchHadErrorRef.current;
-      if (cleanSolve) {
-        setPracticeSessionStreak((value) => value + 1);
-      } else {
-        setPracticeSessionStreak(0);
-      }
+      setPracticeSessionStreak((value) => value + 1);
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
@@ -12307,29 +12269,28 @@ export function MobileLibraryShell(args: {
         }
         return nextScores;
       });
-      void playPracticeFeedbackSound(
-        true,
-        cleanSolve && getPracticeComboTier(practiceSessionStreak + 1) >= 1
-      );
+      void playPracticeFeedbackSound(true, getPracticeComboTier(practiceSessionStreak + 1) >= 1);
       return;
     }
 
-    // Partial: lock the correct ones, flash the wrong ones red,
-    // then break those pending pairings so the user can retry.
+    // Wrong: the round is over, like in every other mode and like the
+    // webapp. The correct pairs lock green, the wrong ones stay red, and
+    // the auto-advance effect moves on after its 2200 ms beat. Until
+    // 2026-09-21 the wrong ones flashed for 900 ms and were released to
+    // retry until the timer ran out; the user read that as "a wrong
+    // answer never moves to the next exercise".
     setMatchedWords((curr) => [...curr, ...newlyCorrect]);
-    matchHadErrorRef.current = true;
     setWrongMatchWords(newlyWrong);
-    // Promote-then-prune in the same render: pull the correct entries
-    // out of pendingPairings immediately so the counter doesn't
-    // double-count them while the wrong flash plays (matchedWords
-    // already has them; pendings should only retain wrong entries to
-    // keep the red highlight rendering until the 900 ms timer breaks
-    // them).
+    // Keep only the wrong entries pending: matchedWords already holds the
+    // correct ones, and a pending wrong pair is what paints the red row.
     setPendingPairings((curr) => {
       const next = { ...curr };
       for (const word of newlyCorrect) delete next[word];
       return next;
     });
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
+    setPracticeRevealed(true);
     setPracticeSessionStreak(0);
     setPracticeLastResult("wrong");
     setPracticeReviewScores((currentScores) => {
@@ -12337,19 +12298,13 @@ export function MobileLibraryShell(args: {
       for (const word of newlyWrong) {
         next[normalizePracticeWord(word)] = "again";
       }
+      for (const word of newlyCorrect) {
+        const key = normalizePracticeWord(word);
+        if (next[key] !== "again") next[key] = "good";
+      }
       return next;
     });
     void playPracticeFeedbackSound(false);
-    setTimeout(() => {
-      setPendingPairings((curr) => {
-        const next = { ...curr };
-        for (const word of newlyWrong) delete next[word];
-        return next;
-      });
-      setWrongMatchWords([]);
-      setActiveMatchWord(null);
-      setActiveMatchMeaning(null);
-    }, 900);
   }
 
   async function openFeedback() {
@@ -16405,17 +16360,14 @@ export function MobileLibraryShell(args: {
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const filled = Object.keys(pendingPairings).length + matchedWords.length;
                   const allFilled = filled >= totalPairs;
-                  const flashing = wrongMatchWords.length > 0;
-                  if (allFilled && !flashing) {
+                  if (allFilled) {
                     return (
                       <Text style={styles.practiceFooterHint}>Checking…</Text>
                     );
                   }
                   return (
                     <Text style={styles.practiceFooterHint}>
-                      {flashing
-                        ? "Some pairs were wrong; try again."
-                        : activeMatchWord
+                      {activeMatchWord
                           ? "Now choose the matching meaning."
                           : activeMatchMeaning
                             ? "Now choose the matching word."
