@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Ella aprieta el bolígrafo con fuerza y le tiembla la mano.",
         "targetWord": "aprieta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a703a583776721f9.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Tras la segunda explicación, por fin lo comprende todo.",
         "targetWord": "comprende",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa4fcade7e0de8c1.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Oye su nombre a la espalda y se gira para mirar.",
         "targetWord": "se gira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/224a925499aa924c.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Es su primer día y camina insegura, sin saber dónde ir.",
         "targetWord": "insegura",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49df64155a9d07c4.mp3"
       }
     },
     "featured": false

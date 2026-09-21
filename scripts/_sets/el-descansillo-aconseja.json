@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Le han mentido tantas veces que empieza a desconfiar de todos.",
         "targetWord": "desconfiar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cabea09ab88288e.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Con la foto del sello demuestra que llegó a tiempo.",
         "targetWord": "demuestra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9af04381c4f6031e.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Sin haberlo leído, no puedes criticar el libro.",
         "targetWord": "criticar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b21647a1a3df1e1.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "La respuesta llega seca pero correcta, sin ningún error.",
         "targetWord": "correcta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3566c2bc831723d1.mp3"
       }
     },
     "featured": false

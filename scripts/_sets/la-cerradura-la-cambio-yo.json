@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Ya no vive aquí: se ha mudado a otra ciudad el mes pasado.",
         "targetWord": "se ha mudado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/926c49fe195bf405.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Le ofrecen el trabajo y ella lo acepta sin pensarlo.",
         "targetWord": "acepta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37918924c213d1f6.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "El autobús tarda media hora en llegar.",
         "targetWord": "tarda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce023e55409ef78e.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "La almohada es tan blanda que se hunde la cabeza.",
         "targetWord": "blanda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6b2d5b65bfc570c.mp3"
       }
     },
     "featured": false

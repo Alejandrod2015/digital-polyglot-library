@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Tiene tanto frío que le tiembla la mano.",
         "targetWord": "tiembla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7aeda3ded1f4e253.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Corta la tarta y la reparte entre los invitados.",
         "targetWord": "reparte",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e27d91556c5fc30.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Termina la carta y se la pasa a la siguiente persona.",
         "targetWord": "pasa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/982337987e46dbd6.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Somos tres y las partes son iguales: cien cada uno.",
         "targetWord": "iguales",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2db047bf9b3e8229.mp3"
       }
     },
     "featured": false

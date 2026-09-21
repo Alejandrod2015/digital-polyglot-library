@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Antes de enviarlo, revisa el texto en busca de errores.",
         "targetWord": "revisa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2c2c9d1f47b32be.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Ve que ella no tiene silla y le ofrece la suya.",
         "targetWord": "ofrece",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fe64d9b66026e03.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Para pedir la palabra, ella levanta la mano.",
         "targetWord": "levanta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a584d75101fbb88.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Sin pilas, la linterna es inútil: no da luz.",
         "targetWord": "inútil",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df07fa99db738784.mp3"
       }
     },
     "featured": false

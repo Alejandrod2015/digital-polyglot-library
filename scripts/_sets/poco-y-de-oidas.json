@@ -178,14 +178,15 @@
         "storySource": "user",
         "sentence": "Es un secreto: no se lo cuento a nadie.",
         "targetWord": "cuento",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd0b61150495dc97.mp3"
       }
     }
   },
   {
     "type": "fill_blank",
     "word": "trabajas",
-    "sentence": "¿Tú _____ en esa oficina o solo vas de visita?",
+    "sentence": "Tú _____ en esa oficina y conoces a todos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "trabajas",
@@ -195,7 +196,7 @@
         "cantas",
         "cocinas"
       ],
-      "translation": "Do you _____ in that office or are you just visiting?",
+      "translation": "You _____ in that office and you know everyone.",
       "optionTranslations": [
         "work",
         "sleep",
@@ -205,9 +206,10 @@
       "audioClip": {
         "storySlug": "poco-y-de-oidas",
         "storySource": "user",
-        "sentence": "¿Tú trabajas en esa oficina o solo vas de visita?",
+        "sentence": "Tú trabajas en esa oficina y conoces a todos.",
         "targetWord": "trabajas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b724038f42d885d.mp3"
       }
     }
   },
@@ -379,7 +381,8 @@
         "storySource": "user",
         "sentence": "Ayer vino a verme y se quedó a cenar.",
         "targetWord": "vino",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b2942a786ae19b6.mp3"
       }
     },
     "featured": false
@@ -409,7 +412,8 @@
         "storySource": "user",
         "sentence": "Vive en el quinto y baja por las escaleras cada mañana.",
         "targetWord": "baja",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5872f2b2d63682f.mp3"
       }
     },
     "featured": false
@@ -439,7 +443,8 @@
         "storySource": "user",
         "sentence": "El examen era fácil y lo terminó en diez minutos.",
         "targetWord": "fácil",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f11fb93fdfc5042.mp3"
       }
     },
     "featured": false

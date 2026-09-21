@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "La reunión comienza a las nueve y acaba a las diez.",
         "targetWord": "comienza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86fb90d2648ea153.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Ella termina el informe y lo entrega el viernes.",
         "targetWord": "termina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/485ae01dc4752bc1.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Al entrar, saluda a todos y dice buenos días.",
         "targetWord": "saluda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38261f8e556a3564.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Su letra es tan parecida a la mía que las confundo.",
         "targetWord": "parecida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c91ac79e313a5f98.mp3"
       }
     },
     "featured": false

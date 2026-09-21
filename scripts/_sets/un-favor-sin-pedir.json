@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "El suelo está sucio y ella lo friega con agua y jabón.",
         "targetWord": "friega",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9a799742e0e06d1.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "No tengo dinero; voy a pedir ayuda a mi hermana.",
         "targetWord": "pedir",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c21dd99b958faa06.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Hace frío: cierra la ventana, por favor.",
         "targetWord": "cierra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86021eecda800cef.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Se comió la tarta entera, sin dejar ni un trozo.",
         "targetWord": "entera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c56ccda781492f1.mp3"
       }
     },
     "featured": false

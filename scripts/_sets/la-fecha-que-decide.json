@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Coge el teléfono y marca el número para llamar a su madre.",
         "targetWord": "marca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0cf3e38e5075eef.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Hay mucho ruido, así que grita para que la oigan.",
         "targetWord": "grita",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f99c20cff8b7ff5a.mp3"
       }
     }
   },
@@ -379,7 +381,8 @@
         "storySource": "user",
         "sentence": "El coche viejo falla cada vez que llueve.",
         "targetWord": "falla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e328b3412fe568e4.mp3"
       }
     },
     "featured": false
@@ -409,7 +412,8 @@
         "storySource": "user",
         "sentence": "El agua de la ducha sale fría y ella grita.",
         "targetWord": "fría",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28cb5813e2b521cb.mp3"
       }
     },
     "featured": false

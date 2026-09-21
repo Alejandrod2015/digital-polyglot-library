@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Ve su letra en la nota y la reconoce enseguida.",
         "targetWord": "reconoce",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6dd5c54339380f3.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Para abrir, hay que girar la llave dos veces.",
         "targetWord": "girar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49c7b4df64945a0c.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Recoge las piezas del suelo y las junta en una caja.",
         "targetWord": "junta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d624b4556d67d475.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Come demasiado y se siente pesado, sin ganas de moverse.",
         "targetWord": "pesado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/598477c4fae7754b.mp3"
       }
     },
     "featured": false

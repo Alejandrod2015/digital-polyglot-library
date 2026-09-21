@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "El nudo está muy apretado; afloja un poco la cuerda.",
         "targetWord": "afloja",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/080e0b131909297a.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Llega a la puerta y llama al timbre dos veces.",
         "targetWord": "llama",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1e24e1d7be9dbd3.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Está en el sexto: mejor coger el ascensor.",
         "targetWord": "coger",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef489c9ff692ce61.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "La respuesta es tan rápida que casi no la entiendo.",
         "targetWord": "rápida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c53637bbbc9aea61.mp3"
       }
     },
     "featured": false

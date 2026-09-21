@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "No entiende la palabra, así que le pregunta al profesor.",
         "targetWord": "pregunta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d55f45e5279b0e44.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Nadie le dijo nada: se enteró de la boda por el periódico.",
         "targetWord": "se enteró",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd65231cb4416554.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "No la oyen bien, así que lo repite más alto.",
         "targetWord": "repite",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a425757f680e16f1.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Habla con todos y siempre sonríe: es muy simpático.",
         "targetWord": "simpático",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40849c96101d3c1d.mp3"
       }
     },
     "featured": false

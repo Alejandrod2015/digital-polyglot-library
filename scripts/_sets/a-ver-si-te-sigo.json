@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Te oigo bien, pero vas rápido y no te sigo.",
         "targetWord": "sigo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01fbe768bfaead74.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "La explicación es larga y ella se pierde a la mitad.",
         "targetWord": "se pierde",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b62be4ead983ec69.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Le hacen una pregunta y ella contesta enseguida.",
         "targetWord": "contesta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dd81e61f1ac8112.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "El sofá nuevo es muy cómodo: te duermes en él.",
         "targetWord": "cómodo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4896d2c26574aa16.mp3"
       }
     },
     "featured": false

@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Antes de dar la mala noticia, respira hondo una vez.",
         "targetWord": "respira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7182506b293e35e.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "No le gustó la oferta y decidió rechazar el trato.",
         "targetWord": "rechazar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd4beff57cbadf15.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Guarda el ticket para poder enseñar el precio si se lo piden.",
         "targetWord": "enseñar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0eb109b45eeb6f7c.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Yo no firmo ningún contrato sin leerlo entero antes.",
         "targetWord": "firmo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec8c73f57252bb0a.mp3"
       }
     },
     "featured": false

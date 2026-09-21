@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Nadie paga tanto: tendrás que rebajar el precio.",
         "targetWord": "rebajar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb7ed3d8d2468eb3.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Para estar seguro, el cliente confirma la hora por correo.",
         "targetWord": "confirma",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/742415ca4bc8b7ed.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Cada enero la empresa aumenta los precios un poco.",
         "targetWord": "aumenta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6ab1a763a4ade85.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Aunque todos gritan, ella sigue calmada, sin nervios.",
         "targetWord": "calmada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c178a79c8afa3000.mp3"
       }
     },
     "featured": false

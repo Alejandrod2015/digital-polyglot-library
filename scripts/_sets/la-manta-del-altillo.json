@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Si no tienes paraguas, te presto el mío hasta mañana.",
         "targetWord": "presto",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a966a43f10f7d77.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Le dejo el libro con la condición de que me lo devuelva.",
         "targetWord": "devuelva",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13efbf6cab43795c.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Él promete llegar a tiempo, pero nunca lo cumple.",
         "targetWord": "promete",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40d5ffaf383c73e9.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Ha llovido y el suelo del balcón está mojado.",
         "targetWord": "mojado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a87a0c28c1a528be.mp3"
       }
     },
     "featured": false

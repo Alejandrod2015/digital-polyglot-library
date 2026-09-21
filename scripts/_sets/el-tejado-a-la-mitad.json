@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Aparca la furgoneta y descarga las cajas en la acera.",
         "targetWord": "descarga",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff716b8f61709401.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Si divides la cuenta entre cuatro, tocamos a diez euros.",
         "targetWord": "divides",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7fa26540d995f77.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Este piso es barato: cuesta la mitad que el otro.",
         "targetWord": "barato",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/615ea506f6dc3be0.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Pon los dos precios juntos para comparar mejor.",
         "targetWord": "comparar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57e880e878ead92b.mp3"
       }
     },
     "featured": false

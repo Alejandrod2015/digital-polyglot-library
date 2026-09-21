@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "El ruido de la obra le molesta y no puede dormir.",
         "targetWord": "molesta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5297364d57c88801.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "El autobús se para en cada esquina del barrio.",
         "targetWord": "se para",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c572d262ac5465b9.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Termina de leer y guarda el libro en la estantería.",
         "targetWord": "guarda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73c9cf25677d2ef9.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Coge un lápiz y escribe su nombre en la hoja.",
         "targetWord": "escribe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba06b933da8d77e7.mp3"
       }
     },
     "featured": false

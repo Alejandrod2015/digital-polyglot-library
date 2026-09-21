@@ -178,7 +178,8 @@
         "storySource": "user",
         "sentence": "Antes de que pase nada, ella nos advierte del peligro.",
         "targetWord": "advierte",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/310744e062770bd0.mp3"
       }
     }
   },
@@ -207,7 +208,8 @@
         "storySource": "user",
         "sentence": "Discutimos una hora y al final cedí yo, para acabar.",
         "targetWord": "cedí",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43c67321c8464ebc.mp3"
       }
     }
   },
@@ -402,7 +404,8 @@
         "storySource": "user",
         "sentence": "Corta el papel en dos y separa las partes.",
         "targetWord": "separa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd20a5625a2f3508.mp3"
       }
     },
     "featured": false
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Es tarde; pon la mesa, que vamos a cenar.",
         "targetWord": "cenar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ea87824039d0c0c.mp3"
       }
     },
     "featured": false
