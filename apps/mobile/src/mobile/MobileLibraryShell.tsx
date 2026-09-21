@@ -260,7 +260,7 @@ import {
   ONBOARDING_LEVEL_OPTIONS,
   normalizeJourneyFocus,
   pickOnboardingTopicPreference,
-  PRODUCT_TOUR_MESSAGES,
+  MOBILE_PRODUCT_TOUR_MESSAGES,
   scoreReadTimeFit,
   sortPracticeItemsByOnboarding,
   scoreTopicLabelAgainstOnboarding,
@@ -3619,6 +3619,10 @@ export function MobileLibraryShell(args: {
   // height once after first paint and never re-fire.
   const [journeyTopBarHeight, setJourneyTopBarHeight] = useState(66);
   const topBarMeasuredRef = useRef(false);
+  // Screen x of the flag badge's centre, so the "level" tour step can point
+  // its arrow at it. The strip spans the full width, so the badge's layout x
+  // is already a screen coordinate.
+  const [journeyFlagCenterX, setJourneyFlagCenterX] = useState(70);
   // Scroll-to-top floating arrow on the journey screen. Shows once
   // the user has scrolled far enough that returning to the start of
   // the path is a meaningful action (one full topic-block down,
@@ -6839,7 +6843,7 @@ export function MobileLibraryShell(args: {
   // Preview path (Replay tour) bypasses the survey/tourDone gate.
   const tourVisible = (forceTourPreview || shouldShowOnboardingTour) && onboardingTourStep !== null;
   const activeOnboardingTourMessage =
-    tourVisible && onboardingTourStep !== null ? PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
+    tourVisible && onboardingTourStep !== null ? MOBILE_PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
   const activeOnboardingTourTarget = activeOnboardingTourMessage?.target ?? null;
   const tourOnTabStep =
     tourVisible &&
@@ -6848,6 +6852,10 @@ export function MobileLibraryShell(args: {
       activeOnboardingTourTarget === "practice" ||
       activeOnboardingTourTarget === "favorites" ||
       activeOnboardingTourTarget === "menu");
+  // Last step points UP at the flag in the journey's top strip instead of
+  // down at a tab: the strip is lifted above the scrim like the nav is, and
+  // the card sits right under it.
+  const tourOnLevelStep = tourVisible && activeOnboardingTourTarget === "level";
 
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
@@ -19348,10 +19356,15 @@ export function MobileLibraryShell(args: {
         accessibilityLabel="Choose journey language"
         testID="qa-journey-language-switch"
         hitSlop={12}
+        onLayout={(e) => {
+          const { x, width } = e.nativeEvent.layout;
+          if (width > 0) setJourneyFlagCenterX(x + width / 2);
+        }}
         style={({ pressed }) => [
           styles.journeyHeaderFlagBadge,
           styles.favoritesHeroFlagWrap,
           pressed ? styles.journeyHeaderFlagBadgePressed : null,
+          tourOnLevelStep ? styles.journeyHeaderFlagBadgeTour : null,
         ]}
       >
         <LanguageFlag
@@ -21377,6 +21390,7 @@ export function MobileLibraryShell(args: {
               setJourneyTopBarHeight(h);
             }
           }}
+          style={tourOnLevelStep ? styles.journeyTopBarAboveTour : null}
         >
           {journeyPathTopBar}
         </View>
@@ -22122,7 +22136,7 @@ export function MobileLibraryShell(args: {
         ? (() => {
             const step = onboardingTourStep ?? 0;
             const isFirst = step === 0;
-            const isLast = step >= PRODUCT_TOUR_MESSAGES.length - 1;
+            const isLast = step >= MOBILE_PRODUCT_TOUR_MESSAGES.length - 1;
             const tabIndex = bottomTabs.findIndex((t) => tourTargetMatchesTab(t.key));
             const tabCount = bottomTabs.length || 5;
             const GOLD = "#f8c15c";
@@ -22137,9 +22151,15 @@ export function MobileLibraryShell(args: {
                       ? "star"
                       : activeOnboardingTourTarget === "menu"
                         ? "menu"
-                        : "book-open";
+                        : activeOnboardingTourTarget === "level"
+                          ? "flag"
+                          : "book-open";
             // Tab steps point a down-arrow at the (evenly spaced) target tab.
             const tabCenterX = (viewportWidth * (tabIndex + 0.5)) / tabCount;
+            // The level step hangs under the top strip and points up at the
+            // flag; the card's left edge is 16, so subtract it from the
+            // flag's screen x (and half the arrow's 14px).
+            const onLevelStep = activeOnboardingTourTarget === "level";
             return (
               <View
                 pointerEvents="box-none"
@@ -22147,13 +22167,20 @@ export function MobileLibraryShell(args: {
                 testID="qa-onboarding-tour"
               >
                 <Pressable onPress={() => {}} style={styles.tourScrim} />
-                <View style={[styles.tourCard, { bottom: 96 }]}>
-                  {tabIndex >= 0 ? (
+                <View
+                  style={[
+                    styles.tourCard,
+                    onLevelStep ? { top: journeyTopBarHeight + 10 } : { bottom: 96 },
+                  ]}
+                >
+                  {onLevelStep ? (
+                    <View style={[styles.tourArrowUp, { left: journeyFlagCenterX - 16 - 7 }]} />
+                  ) : tabIndex >= 0 ? (
                     <View style={[styles.tourArrowDown, { left: tabCenterX - 23 }]} />
                   ) : null}
                   <View style={styles.tourTopRow}>
                     <View style={styles.tourDotsRow}>
-                      {PRODUCT_TOUR_MESSAGES.map((m, i) => (
+                      {MOBILE_PRODUCT_TOUR_MESSAGES.map((m, i) => (
                         <View key={m.id} style={[styles.tourDot, i === step ? styles.tourDotActive : null]} />
                       ))}
                     </View>
@@ -24686,6 +24713,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.04)",
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyHeaderFlagBadgeTour: {
+    backgroundColor: "rgba(248, 193, 92, 0.14)",
+    borderColor: "#f8c15c",
   },
   journeyHeaderFlagBadgePressed: {
     backgroundColor: "rgba(255,255,255,0.08)",
@@ -29673,6 +29704,22 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "rgba(248, 193, 92, 0.5)",
     transform: [{ rotate: "45deg" }],
+  },
+  tourArrowUp: {
+    position: "absolute",
+    top: -7,
+    width: 14,
+    height: 14,
+    backgroundColor: "#17304b",
+    borderLeftWidth: 1,
+    borderTopWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.5)",
+    transform: [{ rotate: "45deg" }],
+  },
+  // The journey's top strip, lifted above the tour scrim on the "level"
+  // step the same way `bottomNavAboveTour` lifts the nav on tab steps.
+  journeyTopBarAboveTour: {
+    zIndex: 80,
   },
   tourTopRow: {
     flexDirection: "row",
