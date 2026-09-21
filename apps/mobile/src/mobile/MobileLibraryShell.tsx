@@ -14708,7 +14708,12 @@ export function MobileLibraryShell(args: {
       return;
     }
     let cancelled = false;
-    setOrbitBreakdownPending(true);
+    // Sin numeros solo la PRIMERA vez. Cuando el pool cambia con un recuento
+    // ya en pantalla (el del servidor llega encima del local nada mas abrir
+    // la app), se dejan los de antes y el rollup los lleva a los nuevos;
+    // vaciarlos un segundo era el parpadeo que se veia al entrar en Practice
+    // recien abierta la app.
+    if (!done) setOrbitBreakdownPending(true);
     // Un modo por tanda, con un frame entre medias, en vez de los cinco de
     // golpe: con el pool del iPhone (unas 40 palabras) los cinco juntos
     // bloqueaban el hilo JS mas de un segundo, y de paso el `onLayout` del
