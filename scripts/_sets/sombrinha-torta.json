@@ -56,9 +56,9 @@
     "sentence": "As [[varetas]] são desiguais e a cor está gasta pelo sol.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a rib of an umbrella",
+      "answer": "an umbrella rib",
       "options": [
-        "a rib of an umbrella",
+        "an umbrella rib",
         "a rope",
         "a nail",
         "a wire"

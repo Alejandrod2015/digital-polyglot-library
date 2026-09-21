@@ -204,7 +204,7 @@
       "answer": "first",
       "options": [
         "first",
-        "last",
+        "third",
         "only",
         "next"
       ],
@@ -441,7 +441,7 @@
       "answer": "to open",
       "options": [
         "to open",
-        "to close",
+        "to burn",
         "to clean",
         "to build"
       ],

@@ -110,7 +110,7 @@ const HINT = /\b(mexican|chilean|argentin(e|ian)|colombian|peruvian|spanish|spai
 // ── D6 forma ────────────────────────────────────────────────────────
 const INFINITIVE: Record<string, RegExp> = {
   spanish: /(ar|er|ir|arse|erse|irse)$/,
-  portuguese: /(ar|er|ir|or)$/,
+  portuguese: /(ar|er|ir)$/,
   italian: /(are|ere|ire|arsi|ersi|irsi)$/,
   // Frances sin -re: ouvre, entre, prefere y montre son formas conjugadas.
   french: /(er|ir|oir)$/,
@@ -122,8 +122,8 @@ const INFINITIVE: Record<string, RegExp> = {
 // conjugadas o nombres). Lista corta a proposito: lo que importa es el cruce
 // infinitivo / conjugado en el MISMO set, y ahi el error es visible.
 const NOT_INF: Record<string, RegExp> = {
-  spanish: /^(ayer|mujer|lugar|mar|azucar|bar|par|hogar|taller|quehacer|papel|hotel|cualquier|mejor|peor|mayor|menor|alrededor|calor|color|dolor|flor|senor|senora|amor|sabor|olor)$/,
-  portuguese: /^(mulher|lugar|mar|acucar|bar|par|lar|melhor|pior|maior|menor|calor|cor|dor|flor|senhor|amor|sabor)$/,
+  spanish: /^(ayer|mujer|lugar|mar|azucar|bar|par|hogar|taller|quehacer|familiar|regular|popular|escolar|similar|particular|singular|vulgar|solar|polar|lunar|celular|militar|espectacular|circular|titular|ejemplar|pilar|collar|altar|azar|bienestar|malestar|hangar|nectar|caviar|dolar|cesar|alcazar|hogar|papel|hotel|cualquier|mejor|peor|mayor|menor|alrededor|calor|color|dolor|flor|senor|senora|amor|sabor|olor)$/,
+  portuguese: /^(mulher|lugar|mar|acucar|bar|par|lar|melhor|apesar|devagar|familiar|regular|popular|escolar|similar|particular|singular|vulgar|solar|polar|lunar|celular|militar|espetacular|circular|titular|exemplar|pilar|colar|altar|azar|bem-estar|pomar|luar|paladar|pior|maior|menor|calor|cor|dor|flor|senhor|amor|sabor)$/,
   italian: /^(mare|pane|cane|sale|sole|fiore|nome|cuore|madre|padre|notte|arte|parte|gente|mese|paese|piede|pesce|carne|latte|mente|volte|forse|sempre|mentre|oltre|altre|molte|tante|quante|poche|dolce|verde|grande|forte|felice|semplice|difficile|facile|giovane|insieme|niente|lontane|vicine|tre|re|sere|ore|sedie|frontiere)$/,
   french: /^(hier|cher|fier|mer|fer|hiver|cahier|papier|quartier|premier|dernier|entier|calendrier|escalier|panier|clavier|pompier|boulanger|fermier|policier|ouvrier|infirmier|cuisinier|janvier|fevrier|dossier|courrier|metier|rocher|verger|potager|atelier|chantier|sentier|pommier|cerisier|oranger|rosier|olivier|collier|soulier|tablier|oreiller|palier|passager|etranger|leger|amer|plaisir|loisir|avenir|souvenir|soir|noir|bonsoir|espoir|devoir|pouvoir|savoir|vouloir|voir|miroir|mouchoir|couloir|trottoir|livre|libre|propre|pauvre|autre|notre|votre|quatre|entre|contre|arbre|ombre|nombre|chambre|septembre|octobre|novembre|decembre|lettre|fenetre|maitre|ventre|centre|theatre|ordre|cadre|verre|terre|guerre|pierre|mere|pere|frere|derriere|premiere|derniere|lumiere|riviere|maniere|matiere|colere|biere|carriere|frontiere|sur|pour|jour|tour|amour|toujours|bonjour|leur|coeur|soeur|fleur|couleur|heure|peur|meilleur)$/,
 };
@@ -131,7 +131,7 @@ const NOT_INF: Record<string, RegExp> = {
 // la regla de formas mezcladas se salta cuando aparece uno.
 const AMBIG_INF: Record<string, RegExp> = {
   spanish: /^(amanecer|anochecer|atardecer|poder|deber|placer|parecer|haber|querer|pesar|andar|cantar|saber|sentir)$/,
-  portuguese: /^(amanhecer|anoitecer|entardecer|poder|dever|prazer|parecer|saber|jantar|almocar|andar)$/,
+  portuguese: /^(amanhecer|anoitecer|entardecer|poder|dever|prazer|parecer|saber|jantar|almocar|andar|olhar|jogar)$/,
   italian: /^(potere|dovere|piacere|sapere|essere|avere|parere|dispiacere)$/,
   french: /^(pouvoir|devoir|savoir|avoir|plaisir|souvenir|loisir|diner|dejeuner|gouter|baiser|rire|sourire|devenir)$/,
 };
@@ -285,6 +285,8 @@ const FEM_EL_ES = new Set(["agua", "alma", "hambre", "aguila", "águila", "aula"
 // Masculinos en -a (dia, problema, mapa...): la desinencia miente.
 const MASC_A_ES = new Set(["dia", "día", "mediodia", "mediodía", "mapa", "problema", "programa", "sistema", "clima", "tema", "idioma", "planeta", "poema", "drama", "sofa", "sofá", "tranvia", "tranvía", "pijama", "aroma", "fantasma", "diploma", "esquema", "sintoma", "síntoma", "dilema", "panorama", "cometa", "telegrama", "diagrama", "trauma", "coma", "enigma", "lema", "teorema", "axioma", "carisma", "estigma", "dogma", "magma", "prisma", "sofa"]);
 
+const MASC_A_PT = new Set(["dia", "mapa", "problema", "programa", "sistema", "clima", "tema", "idioma", "planeta", "poema", "drama", "sofa", "sofá", "cinema", "telefonema", "esquema", "sintoma", "dilema", "panorama", "cometa", "telegrama", "diagrama", "trauma", "coma", "enigma", "lema", "teorema", "carisma", "dogma", "fantasma", "diploma", "aroma", "pijama", "guarana", "guaraná", "samba", "grama"]);
+
 /** Desinencia, solo para las tres lenguas donde es regular y como ultimo recurso. */
 function genderFromEnding(word: string, lang: string): GN | null {
   if (!/^(spanish|portuguese|italian)$/.test(lang)) return null;
@@ -299,6 +301,9 @@ function genderFromEnding(word: string, lang: string): GN | null {
   // lema ya plural (gafas). Sin corpus no se dice nada.
   if (/s$/.test(w)) return null;
   if (lang === "spanish" && MASC_A_ES.has(w)) return { g: "m", n: "s" };
+  if (lang === "portuguese" && MASC_A_PT.has(w)) return { g: "m", n: "s" };
+  // -ão portugues: canção y televisão son femeninas, coração masculino; sin corpus no se sabe.
+  if (lang === "portuguese" && /(ao|ão)$/.test(w)) return null;
   if (/o$/.test(w)) return { g: "m", n: "s" };
   if (/a$/.test(w)) return { g: "f", n: "s" };
   return null;

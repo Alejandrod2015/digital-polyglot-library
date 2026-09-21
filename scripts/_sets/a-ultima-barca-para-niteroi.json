@@ -386,14 +386,14 @@
       "answer": "vazio",
       "options": [
         "vazio",
-        "cheio",
+        "sujo",
         "quente",
         "novo"
       ],
       "translation": "Nobody is sitting there, the bench is _____.",
       "optionTranslations": [
         "empty",
-        "full",
+        "dirty",
         "hot",
         "new"
       ],
@@ -520,7 +520,7 @@
       "answer": "to go up",
       "options": [
         "to go up",
-        "to go down",
+        "to wash",
         "to sit",
         "to stop"
       ],

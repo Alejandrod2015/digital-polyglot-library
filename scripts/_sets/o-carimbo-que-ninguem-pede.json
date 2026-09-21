@@ -303,9 +303,9 @@
       "answer": "silence",
       "options": [
         "silence",
-        "a hurry",
-        "a smile",
-        "a queue"
+        "haste",
+        "anger",
+        "boredom"
       ],
       "audioClip": {
         "storySlug": "o-carimbo-que-ninguem-pede",

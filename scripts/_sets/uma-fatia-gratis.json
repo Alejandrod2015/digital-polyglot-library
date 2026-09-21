@@ -151,14 +151,14 @@
       "answer": "cara",
       "options": [
         "cara",
-        "barata",
+        "vermelha",
         "doce",
         "verde"
       ],
       "translation": "Imported fruit is very _____ in this market.",
       "optionTranslations": [
         "expensive",
-        "cheap",
+        "red",
         "sweet",
         "green"
       ],
@@ -321,9 +321,9 @@
       "answer": "the same",
       "options": [
         "the same",
-        "different",
-        "broken",
-        "small"
+        "the broken",
+        "the thick",
+        "the small"
       ],
       "audioClip": {
         "storySlug": "uma-fatia-gratis",
@@ -369,7 +369,7 @@
       "answer": "big",
       "options": [
         "big",
-        "small",
+        "odd",
         "round",
         "short"
       ],

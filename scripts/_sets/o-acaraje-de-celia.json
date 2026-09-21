@@ -240,9 +240,9 @@
       "answer": "devagar",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "forte",
-        "acarajé",
         "devagar",
+        "longe",
+        "cedo",
         "perto"
       ],
       "audioClip": {
@@ -261,7 +261,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "slowly",
+        "far",
+        "early",
+        "close"
+      ]
     },
     "featured": true
   },
@@ -705,10 +711,10 @@
       "answer": "the option a person picks",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "near, at a short distance",
-        "red palm oil, the base of Bahian cooking",
         "the option a person picks",
-        "one of several things you can choose"
+        "the price a person pays",
+        "the plate a person washes",
+        "the song a person sings"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7603ee81e3d69d87.mp3",

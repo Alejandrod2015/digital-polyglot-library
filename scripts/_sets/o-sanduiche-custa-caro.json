@@ -174,14 +174,14 @@
       "answer": "salgado",
       "options": [
         "salgado",
-        "doce",
+        "azedo",
         "frio",
         "leve"
       ],
       "translation": "The salt cod pastry is very _____, not sweet.",
       "optionTranslations": [
         "salty",
-        "sweet",
+        "sour",
         "cold",
         "light"
       ],
@@ -318,12 +318,12 @@
     "sentence": "Ela desce a [[escada]] para o andar de baixo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "stairs",
+      "answer": "the stairs",
       "options": [
-        "stairs",
-        "a door",
-        "a bridge",
-        "a window"
+        "the stairs",
+        "the door",
+        "the bridge",
+        "the window"
       ],
       "audioClip": {
         "storySlug": "o-sanduiche-custa-caro",

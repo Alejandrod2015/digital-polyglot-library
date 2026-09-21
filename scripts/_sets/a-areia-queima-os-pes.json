@@ -59,7 +59,7 @@
       "answer": "hot",
       "options": [
         "hot",
-        "cold",
+        "dark",
         "wet",
         "soft"
       ],
@@ -228,14 +228,14 @@
       "answer": "fria",
       "options": [
         "fria",
-        "quente",
+        "suja",
         "doce",
         "funda"
       ],
       "translation": "The sea water is _____ and takes the heat out of your feet.",
       "optionTranslations": [
         "cold",
-        "hot",
+        "dirty",
         "sweet",
         "deep"
       ],
@@ -384,7 +384,7 @@
       "answer": "to laugh",
       "options": [
         "to laugh",
-        "to cry",
+        "to shout",
         "to sing",
         "to wait"
       ],
@@ -525,9 +525,9 @@
     "sentence": "As ondas voltam para o [[fundo]] do mar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "deep water",
+      "answer": "the deep water",
       "options": [
-        "deep water",
+        "the deep water",
         "the shore",
         "the sky",
         "the sand"

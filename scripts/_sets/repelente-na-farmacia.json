@@ -220,9 +220,9 @@
       "answer": "advice",
       "options": [
         "advice",
-        "a discount",
-        "a warning",
-        "a promise"
+        "money",
+        "silence",
+        "luck"
       ],
       "audioClip": {
         "storySlug": "repelente-na-farmacia",
@@ -266,9 +266,9 @@
       "answer": "doubt",
       "options": [
         "doubt",
-        "a hurry",
-        "a debt",
-        "a habit"
+        "haste",
+        "debt",
+        "sleep"
       ],
       "audioClip": {
         "storySlug": "repelente-na-farmacia",
@@ -338,14 +338,14 @@
       "answer": "barato",
       "options": [
         "barato",
-        "caro",
+        "verde",
         "forte",
         "novo"
       ],
       "translation": "The yellow cream costs little: it is the _____ one.",
       "optionTranslations": [
         "cheap",
-        "expensive",
+        "green",
         "strong",
         "new"
       ],

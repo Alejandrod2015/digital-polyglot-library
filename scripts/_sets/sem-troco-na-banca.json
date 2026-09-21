@@ -82,9 +82,9 @@
       "answer": "change",
       "options": [
         "change",
-        "a receipt",
-        "a bag",
-        "a price"
+        "paper",
+        "bread",
+        "salt"
       ],
       "audioClip": {
         "storySlug": "sem-troco-na-banca",
@@ -321,7 +321,7 @@
       "answer": "to close",
       "options": [
         "to close",
-        "to open",
+        "to paint",
         "to fill",
         "to move"
       ],
