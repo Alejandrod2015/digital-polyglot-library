@@ -109,6 +109,7 @@ checkNoEmDash        -
 checkNoEmojis        -
 checkVoicesPublished db
 checkKaraokeFresh    db
+checkDistractors     db
 checkGlossContext    db
 checkGlossContextReal db
 checkGlossOccurrences db
@@ -371,6 +372,25 @@ EOM
 
 EOM
       ;;
+    checkDistractors)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: un journey tiene mas ejercicios que se aciertan sin saber
+  la palabra que en su linea base
+
+  Arriba sale el journey y cuantos fallan el gate de distractores
+  (scripts/distractorGate.ts: respuesta con estilo o longitud distinta,
+  par de antonimos, formas mezcladas, pista de lugar...). La deuda vieja
+  no bloquea; lo que bloquea es EMPEORAR.
+
+  Lista los fallos:   npm run lint:distractors -- --journey=<id>
+  Journey nuevo con deuda heredada, registrado en un commit visible:
+                      npm run lint:distractors -- --apretar
+======================================================================
+
+EOM
+      ;;
     checkReleaseReadiness)
       cat >&2 <<'EOM'
 
@@ -408,6 +428,11 @@ EOM
 #   checkKaraokeFresh    El karaoke pinta desde una COPIA del texto guardada
 #                        al alinear; editar el texto despues deja la pantalla
 #                        con la forma vieja y nada avisa.
+#   checkDistractors     Un ejercicio de practica que se acierta sin saber la
+#                        palabra (la respuesta es la unica glosa larga con
+#                        mayuscula, par de antonimos, infinitivo entre formas
+#                        conjugadas). Trinquete por journey en
+#                        scripts/distractors-baseline.json.
 #   checkGlossContext    Palabra tocable sin la frase donde cae: la tarjeta
 #                        repite la definicion dos veces.
 #   checkGlossContextReal Contexto FALSO aunque `c` exista: la palabra sola,
