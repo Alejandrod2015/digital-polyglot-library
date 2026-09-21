@@ -477,28 +477,33 @@ const SkillHug = memo(function SkillHug({
             />
           ))
         : null}
-      <Pressable
-        onPress={() => onPick("speaking")}
-        accessibilityRole="button"
-        accessibilityLabel="qa-practice-skill-speaking"
-        testID="qa-practice-skill-speaking"
-        style={({ pressed }) => [
-          styles.hugCircle,
-          {
-            left: cx - HUG_CIRCLE / 2,
-            top: cy - HUG_CIRCLE / 2,
-            borderColor: speakingColor,
-            shadowColor: speakingColor,
-          },
-          pressed ? styles.skillCardPressed : null,
-        ]}
-      >
-        <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
-        <Text style={styles.hugCircleCount}>{speakingCount}</Text>
-        <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
-          {MODE_LABELS.speaking.toUpperCase()}
-        </Text>
-      </Pressable>
+      {/* Mismo candado que las cuatro tarjetas: hasta que onLayout mide el
+          ancho, cx vale 0 y el circulo se pintaba medio fuera por la
+          izquierda durante el primer frame. */}
+      {width > 0 ? (
+        <Pressable
+          onPress={() => onPick("speaking")}
+          accessibilityRole="button"
+          accessibilityLabel="qa-practice-skill-speaking"
+          testID="qa-practice-skill-speaking"
+          style={({ pressed }) => [
+            styles.hugCircle,
+            {
+              left: cx - HUG_CIRCLE / 2,
+              top: cy - HUG_CIRCLE / 2,
+              borderColor: speakingColor,
+              shadowColor: speakingColor,
+            },
+            pressed ? styles.skillCardPressed : null,
+          ]}
+        >
+          <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
+          <Text style={styles.hugCircleCount}>{speakingCount}</Text>
+          <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
+            {MODE_LABELS.speaking.toUpperCase()}
+          </Text>
+        </Pressable>
+      ) : null}
     </View>
   );
 });
