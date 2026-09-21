@@ -14681,32 +14681,50 @@ export function MobileLibraryShell(args: {
   );
   const [orbitModeBreakdown, setOrbitModeBreakdown] =
     useState<Record<OrbitModeKey, number>>(ORBIT_BREAKDOWN_ZERO);
+  // true desde que cambia el pool hasta que llega su recuento. Con el pool
+  // del iPhone (unas 40 palabras) el calculo tarda mas de un segundo, y ese
+  // segundo el hub decia "0 skills" con las tarjetas a cero. Mientras se
+  // calcula, la orbita no ensena numeros; y al recalcular se conserva el
+  // recuento anterior en vez de volver a cero.
+  const [orbitBreakdownPending, setOrbitBreakdownPending] = useState(true);
   useEffect(() => {
     if (activeScreen !== "practice" || activePracticeMode) return;
     if (duePracticeItems.length === 0) {
       setOrbitModeBreakdown(ORBIT_BREAKDOWN_ZERO);
+      setOrbitBreakdownPending(false);
       return;
     }
     let cancelled = false;
-    const handle = setTimeout(() => {
-      if (cancelled) return;
-      const sizeFor = (mode: OrbitModeKey) =>
-        buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
-      setOrbitModeBreakdown({
-        meaning: sizeFor("meaning"),
-        context: sizeFor("context"),
-        listening: sizeFor("listening"),
-        match: sizeFor("match"),
-        // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
-        // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
-        // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
-        // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
-        speaking: sizeFor("speaking"),
-      });
-    }, 0);
+    setOrbitBreakdownPending(true);
+    // Un frame de margen ANTES del calculo: el `setTimeout(0)` a secas
+    // bloqueaba el hilo JS antes de que llegara el `onLayout` del hub, y la
+    // pantalla entraba con el bloque de habilidades vacio hasta que el
+    // recuento terminaba. Con el frame pintado, el calculo ya solo congela
+    // los numeros, no la disposicion.
+    let handle: ReturnType<typeof setTimeout> | null = null;
+    const frame = requestAnimationFrame(() => {
+      handle = setTimeout(() => {
+        if (cancelled) return;
+        const sizeFor = (mode: OrbitModeKey) =>
+          buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
+        setOrbitModeBreakdown({
+          meaning: sizeFor("meaning"),
+          context: sizeFor("context"),
+          listening: sizeFor("listening"),
+          match: sizeFor("match"),
+          // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
+          // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
+          // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
+          // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
+          speaking: sizeFor("speaking"),
+        });
+        setOrbitBreakdownPending(false);
+      }, 0);
+    });
     return () => {
       cancelled = true;
-      clearTimeout(handle);
+      cancelAnimationFrame(frame);
+      if (handle) clearTimeout(handle);
     };
   }, [activeScreen, activePracticeMode, duePracticeItems, onboardingPracticePrefs, ORBIT_BREAKDOWN_ZERO]);
 
@@ -14833,6 +14851,7 @@ export function MobileLibraryShell(args: {
             // Misma condicion que abre el slot de la sesion mixta: el piloto
             // hablado es del plan `polyglot` y de nadie mas.
             speakingEnabled={effectivePlan === "polyglot"}
+            breakdownPending={orbitBreakdownPending}
             missedWords={missedPracticeWords}
             onRetryMissed={() => {
               const round = missedPracticeItems.slice(0, MISSED_ROUND_SIZE);

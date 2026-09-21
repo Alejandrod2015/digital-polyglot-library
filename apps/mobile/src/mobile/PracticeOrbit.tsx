@@ -61,6 +61,11 @@ export type PracticeOrbitProps = {
    *  tarjeta no se pinta y el modo no cuenta como skill, igual que su slot no
    *  entra en la sesion mixta. */
   speakingEnabled?: boolean;
+  /** true mientras el shell calcula cuantos ejercicios hay por habilidad (es
+   *  caro: monta cinco sesiones sobre todo el pool y tarda mas de un segundo
+   *  con un pool grande). Mientras tanto no se ensenan ceros, que leen como
+   *  "no hay nada": las tarjetas van sin numero y la tagline sin "0 skills". */
+  breakdownPending?: boolean;
   /** Palabras falladas y aun no recuperadas (racha 0 tras un repaso), la mas
    *  reciente primero. Con alguna, bajo las habilidades sale la franja
    *  "N words you missed · RETRY"; vacia, no se pinta nada. Pedido por una
@@ -249,10 +254,12 @@ function useRollup(target: number, durationMs = 700): number {
 const SkillCard = memo(function SkillCard({
   mode,
   count,
+  pending = false,
   onPress,
 }: {
   mode: PracticeModeKey;
   count: number;
+  pending?: boolean;
   onPress: () => void;
 }) {
   // Card de "skill drill" con look videogame: bg tinteado del color
@@ -282,7 +289,7 @@ const SkillCard = memo(function SkillCard({
         <View style={[styles.skillIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={18} color={color} />
         </View>
-        <Text style={styles.skillCount}>{animatedCount}</Text>
+        <Text style={styles.skillCount}>{pending ? "" : animatedCount}</Text>
       </View>
       <Text style={styles.skillCardLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -357,6 +364,7 @@ function hugPath(x0: number, y0: number, w: number, h: number, corner: HugCorner
 const HugLabel = memo(function HugLabel({
   mode,
   count,
+  pending = false,
   corner,
   onPress,
   x,
@@ -366,6 +374,7 @@ const HugLabel = memo(function HugLabel({
 }: {
   mode: PracticeModeKey;
   count: number;
+  pending?: boolean;
   corner: HugCorner;
   onPress: () => void;
   x: number;
@@ -397,7 +406,7 @@ const HugLabel = memo(function HugLabel({
         <View style={[styles.hugIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={15} color={color} />
         </View>
-        <Text style={styles.skillCount}>{animatedCount}</Text>
+        <Text style={styles.skillCount}>{pending ? "" : animatedCount}</Text>
       </View>
       <Text style={styles.hugLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -406,9 +415,11 @@ const HugLabel = memo(function HugLabel({
 
 const SkillHug = memo(function SkillHug({
   breakdown,
+  pending = false,
   onPick,
 }: {
   breakdown: Record<PracticeModeKey, number>;
+  pending?: boolean;
   onPick: (mode: PracticeModeKey) => void;
 }) {
   const [width, setWidth] = useState(0);
@@ -469,6 +480,7 @@ const SkillHug = memo(function SkillHug({
               mode={mode}
               corner={corner}
               count={breakdown[mode] ?? 0}
+              pending={pending}
               onPress={() => onPick(mode)}
               x={x}
               y={y}
@@ -498,7 +510,7 @@ const SkillHug = memo(function SkillHug({
           ]}
         >
           <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
-          <Text style={styles.hugCircleCount}>{speakingCount}</Text>
+          <Text style={styles.hugCircleCount}>{pending ? "" : speakingCount}</Text>
           <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
             {MODE_LABELS.speaking.toUpperCase()}
           </Text>
@@ -523,6 +535,7 @@ export function PracticeOrbit({
   reviewSoonCount = 0,
   reviewSoonMinutes,
   speakingEnabled = false,
+  breakdownPending = false,
   missedWords = [],
   onRetryMissed,
 }: PracticeOrbitProps) {
@@ -726,8 +739,9 @@ export function PracticeOrbit({
         ) : (
           <>
             ~{estimateSessionMinutes(totalDue)} min
-            {" · "}
-            {visibleModes.filter((m) => modeBreakdown[m] > 0).length} skills
+            {breakdownPending
+              ? ""
+              : ` · ${visibleModes.filter((m) => modeBreakdown[m] > 0).length} skills`}
             {" · +"}{xpReward} XP
           </>
         )}
@@ -741,7 +755,7 @@ export function PracticeOrbit({
       {speakingEnabled ? (
         // Cinco habilidades: las cuatro de siempre abrazan al circulo de
         // Speaking. Ver SkillHug.
-        <SkillHug breakdown={modeBreakdown} onPick={handleSkillPress} />
+        <SkillHug breakdown={modeBreakdown} pending={breakdownPending} onPick={handleSkillPress} />
       ) : (
         <View style={styles.skillGrid}>
           {visibleModes.map((mode) => (
@@ -749,6 +763,7 @@ export function PracticeOrbit({
               key={mode}
               mode={mode}
               count={modeBreakdown[mode] ?? 0}
+              pending={breakdownPending}
               onPress={() => handleSkillPress(mode)}
             />
           ))}
