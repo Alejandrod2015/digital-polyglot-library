@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "modo",
+    "sentence": "Desde el lunes la miran de un [[modo]] raro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "way",
+      "options": [
+        "way",
+        "day",
+        "place",
+        "voice"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Desde el lunes la miran de un modo raro.",
+        "targetWord": "modo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adornar",
+    "sentence": "¿Tú te vas en junio o no?, pregunta, sin [[adornarlo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dress up",
+      "options": [
+        "to dress up",
+        "to think over",
+        "to write down",
+        "to laugh off"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "¿Tú te vas en junio o no?, pregunta, sin adornarlo.",
+        "targetWord": "adornarlo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acabarse",
+    "sentence": "Dije que en junio [[se me acaba]] el contrato, y ya está.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to run out",
+      "options": [
+        "to run out",
+        "to begin",
+        "to change",
+        "to double"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Dije que en junio se me acaba el contrato, y ya está.",
+        "targetWord": "se me acaba",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "Desde el lunes la miran de un modo [[raro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": [
+        "strange",
+        "kind",
+        "quick",
+        "sad"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Desde el lunes la miran de un modo raro.",
+        "targetWord": "raro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a medio girar",
+    "sentence": "Se queda con la llave [[a medio girar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half turned",
+      "options": [
+        "half turned",
+        "in her hand",
+        "on the floor",
+        "in the lock"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Se queda con la llave a medio girar.",
+        "targetWord": "a medio girar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palabra por palabra",
+    "sentence": "Lo dije yo, [[palabra por palabra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "word for word",
+      "options": [
+        "word for word",
+        "more or less",
+        "in a whisper",
+        "on the phone"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Lo dije yo, palabra por palabra.",
+        "targetWord": "palabra por palabra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al final",
+    "sentence": "[[Al final]] todo sale de un comentario suyo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the end",
+      "options": [
+        "in the end",
+        "by chance",
+        "on purpose",
+        "as usual"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Al final todo sale de un comentario suyo.",
+        "targetWord": "Al final",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reconoce",
+    "sentence": "Ve su letra en la nota y la _____ enseguida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reconoce",
+      "options": [
+        "reconoce",
+        "borra",
+        "copia",
+        "pierde"
+      ],
+      "translation": "She sees her handwriting on the note and _____ it at once.",
+      "optionTranslations": [
+        "recognises",
+        "erases",
+        "copies",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Ve su letra en la nota y la reconoce enseguida.",
+        "targetWord": "reconoce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "girar",
+    "sentence": "Para abrir, hay que _____ la llave dos veces.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "girar",
+      "options": [
+        "girar",
+        "doblar",
+        "perder",
+        "comprar"
+      ],
+      "translation": "To open it, you have to _____ the key twice.",
+      "optionTranslations": [
+        "turn",
+        "fold",
+        "lose",
+        "buy"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Para abrir, hay que girar la llave dos veces.",
+        "targetWord": "girar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "comentario,excusa,junio,bajo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "comentario",
+          "answer": "a remark",
+          "options": [
+            "a remark",
+            "an excuse",
+            "June",
+            "ground floor"
+          ]
+        },
+        {
+          "word": "excusa",
+          "answer": "an excuse",
+          "options": [
+            "a remark",
+            "an excuse",
+            "June",
+            "ground floor"
+          ]
+        },
+        {
+          "word": "junio",
+          "answer": "June",
+          "options": [
+            "a remark",
+            "an excuse",
+            "June",
+            "ground floor"
+          ]
+        },
+        {
+          "word": "bajo",
+          "answer": "ground floor",
+          "options": [
+            "a remark",
+            "an excuse",
+            "June",
+            "ground floor"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repasar",
+    "sentence": "Lo dije yo, palabra por palabra, [[repasa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go over",
+      "options": [
+        "to go over",
+        "to admit",
+        "to lie",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Lo dije yo, palabra por palabra, repasa.",
+        "targetWord": "repasa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "La miran de un modo raro y nadie le [[explica]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to explain",
+      "options": [
+        "to explain",
+        "to sell",
+        "to lend",
+        "to owe"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "La miran de un modo raro y nadie le explica nada.",
+        "targetWord": "explica",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entero",
+    "sentence": "Junta quién ha hablado con quién y le lleva la tarde [[entera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "next",
+        "free",
+        "same"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Junta quién ha hablado con quién y le lleva la tarde entera.",
+        "targetWord": "entera",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "debajo de",
+    "sentence": "Se le queda algo pesado [[debajo del]] estómago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "under",
+      "options": [
+        "under",
+        "around",
+        "beside",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Se le queda algo pesado debajo del estómago.",
+        "targetWord": "debajo del",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hace dos semanas",
+    "sentence": "Se lo dije a alguien en la escalera, [[hace dos semanas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "two weeks ago",
+      "options": [
+        "two weeks ago",
+        "twice a week",
+        "in two weeks",
+        "every fortnight"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Se lo dije a alguien en la escalera, hace dos semanas.",
+        "targetWord": "hace dos semanas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "junta",
+    "sentence": "Recoge las piezas del suelo y las _____ en una caja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "junta",
+      "options": [
+        "junta",
+        "cuenta",
+        "pesa",
+        "dobla"
+      ],
+      "translation": "She picks the pieces up off the floor and _____ them in a box.",
+      "optionTranslations": [
+        "puts together",
+        "counts",
+        "weighs",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Recoge las piezas del suelo y las junta en una caja.",
+        "targetWord": "junta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesado",
+    "sentence": "Come demasiado y se siente _____, sin ganas de moverse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesado",
+      "options": [
+        "pesado",
+        "limpio",
+        "alto",
+        "feliz"
+      ],
+      "translation": "He eats too much and feels _____, with no wish to move.",
+      "optionTranslations": [
+        "heavy",
+        "clean",
+        "tall",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "palabra-por-palabra",
+        "storySource": "user",
+        "sentence": "Come demasiado y se siente pesado, sin ganas de moverse.",
+        "targetWord": "pesado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

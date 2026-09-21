@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "alrededor",
+    "sentence": "Hay tres personas [[alrededor]] de un papel, encima del buzón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "around",
+      "options": [
+        "around",
+        "behind",
+        "inside",
+        "beyond"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Hay tres personas alrededor de un papel, encima del buzón.",
+        "targetWord": "alrededor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Yo pago mi [[parte]] el día uno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "share",
+      "options": [
+        "share",
+        "rent",
+        "fine",
+        "debt"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Yo pago mi parte el día uno.",
+        "targetWord": "parte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por escrito",
+    "sentence": "Lo pongo [[por escrito]] aquí mismo, en el margen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in writing",
+      "options": [
+        "in writing",
+        "in pencil",
+        "out loud",
+        "in secret"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Lo pongo por escrito aquí mismo, en el margen.",
+        "targetWord": "por escrito",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en tres partes",
+    "sentence": "Reparte el resto [[en tres partes]] iguales.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "into three parts",
+      "options": [
+        "into three parts",
+        "in three days",
+        "at three o'clock",
+        "on three pages"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Reparte el resto en tres partes iguales.",
+        "targetWord": "en tres partes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aquí mismo",
+    "sentence": "Lo pongo por escrito [[aquí mismo]], en el margen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right here",
+      "options": [
+        "right here",
+        "right now",
+        "later on",
+        "somewhere else"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Lo pongo por escrito aquí mismo, en el margen.",
+        "targetWord": "aquí mismo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el último",
+    "sentence": "Uno firma después y el del tercero [[el último]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the last one",
+      "options": [
+        "the last one",
+        "the only one",
+        "the same one",
+        "the other one"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Uno firma después y el del tercero el último.",
+        "targetWord": "el último",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo el que entra",
+    "sentence": "El papel acaba en el tablón, donde lo ve [[todo el que entra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everyone who comes in",
+      "options": [
+        "everyone who comes in",
+        "nobody at all",
+        "only the neighbours",
+        "the person upstairs"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "El papel acaba en el tablón, donde lo ve todo el que entra.",
+        "targetWord": "todo el que entra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tiembla",
+    "sentence": "Tiene tanto frío que le _____ la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tiembla",
+      "options": [
+        "tiembla",
+        "duele",
+        "sangra",
+        "brilla"
+      ],
+      "translation": "He is so cold that his hand _____.",
+      "optionTranslations": [
+        "shakes",
+        "hurts",
+        "bleeds",
+        "shines"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Tiene tanto frío que le tiembla la mano.",
+        "targetWord": "tiembla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reparte",
+    "sentence": "Corta la tarta y la _____ entre los invitados.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reparte",
+      "options": [
+        "reparte",
+        "esconde",
+        "pesa",
+        "enfría"
+      ],
+      "translation": "She cuts the cake and _____ it among the guests.",
+      "optionTranslations": [
+        "shares out",
+        "hides",
+        "weighs",
+        "cools"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Corta la tarta y la reparte entre los invitados.",
+        "targetWord": "reparte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuello,margen,letra,persona",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cuello",
+          "answer": "a neck",
+          "options": [
+            "a neck",
+            "a margin",
+            "a letter",
+            "a person"
+          ]
+        },
+        {
+          "word": "margen",
+          "answer": "a margin",
+          "options": [
+            "a neck",
+            "a margin",
+            "a letter",
+            "a person"
+          ]
+        },
+        {
+          "word": "letra",
+          "answer": "a letter",
+          "options": [
+            "a neck",
+            "a margin",
+            "a letter",
+            "a person"
+          ]
+        },
+        {
+          "word": "persona",
+          "answer": "a person",
+          "options": [
+            "a neck",
+            "a margin",
+            "a letter",
+            "a person"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocarse",
+    "sentence": "No los tenía pensados, admite, y [[se toca]] el cuello.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to touch",
+      "options": [
+        "to touch",
+        "to scratch",
+        "to cover",
+        "to stretch"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "No los tenía pensados, admite, y se toca el cuello.",
+        "targetWord": "se toca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nunca",
+    "sentence": "[[Nunca]] ha firmado nada por otros dos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never",
+      "options": [
+        "never",
+        "already",
+        "only once",
+        "recently"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Nunca ha firmado nada por otros dos.",
+        "targetWord": "Nunca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuatrocientos",
+    "sentence": "[[Cuatrocientos]] más entre tres son ciento treinta y tres cada uno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "four hundred",
+      "options": [
+        "four hundred",
+        "four thousand",
+        "forty",
+        "fourteen"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Cuatrocientos más entre tres son ciento treinta y tres cada uno.",
+        "targetWord": "Cuatrocientos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el día uno",
+    "sentence": "Yo pago mi parte [[el día uno]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the first",
+      "options": [
+        "on the first",
+        "on the tenth",
+        "on Monday",
+        "at noon"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Yo pago mi parte el día uno.",
+        "targetWord": "el día uno",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encima de",
+    "sentence": "Hay tres personas alrededor de un papel, [[encima del]] buzón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on top of",
+      "options": [
+        "on top of",
+        "next to",
+        "in front of",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Hay tres personas alrededor de un papel, encima del buzón.",
+        "targetWord": "encima del",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasa",
+    "sentence": "Termina la carta y se la _____ a la siguiente persona.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pasa",
+      "options": [
+        "pasa",
+        "cobra",
+        "quema",
+        "borra"
+      ],
+      "translation": "She finishes the letter and _____ it to the next person.",
+      "optionTranslations": [
+        "hands",
+        "charges",
+        "burns",
+        "erases"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Termina la carta y se la pasa a la siguiente persona.",
+        "targetWord": "pasa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "iguales",
+    "sentence": "Somos tres y las partes son _____: cien cada uno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "iguales",
+      "options": [
+        "iguales",
+        "grandes",
+        "raras",
+        "nuevas"
+      ],
+      "translation": "There are three of us and the shares are _____: a hundred each.",
+      "optionTranslations": [
+        "equal",
+        "big",
+        "odd",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "lo-pongo-por-escrito",
+        "storySource": "user",
+        "sentence": "Somos tres y las partes son iguales: cien cada uno.",
+        "targetWord": "iguales",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "alquiler",
+    "sentence": "El [[alquiler]] es de mes en mes, y el primero por adelantado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rent",
+      "options": [
+        "the rent",
+        "the deposit",
+        "the contract",
+        "the bill"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El alquiler es de mes en mes, y el primero por adelantado.",
+        "targetWord": "alquiler",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casero",
+    "sentence": "El [[casero]] la espera en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the landlord",
+      "options": [
+        "the landlord",
+        "the plumber",
+        "the neighbour",
+        "the postman"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El casero la espera en la puerta.",
+        "targetWord": "casero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprobar",
+    "sentence": "Ella [[ha comprobado]] el armario: no cierra a la primera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to check",
+      "options": [
+        "to check",
+        "to paint",
+        "to move",
+        "to empty"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Ella ha comprobado el armario: no cierra a la primera.",
+        "targetWord": "ha comprobado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callar",
+    "sentence": "Ella [[calla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go quiet",
+      "options": [
+        "to go quiet",
+        "to walk in",
+        "to sit down",
+        "to sign"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Ella calla.",
+        "targetWord": "calla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de mes en mes",
+    "sentence": "El alquiler es [[de mes en mes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "month by month",
+      "options": [
+        "month by month",
+        "for a whole year",
+        "twice a week",
+        "at the weekend"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El alquiler es de mes en mes.",
+        "targetWord": "de mes en mes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por adelantado",
+    "sentence": "El primero se paga [[por adelantado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in advance",
+      "options": [
+        "in advance",
+        "in cash",
+        "in secret",
+        "in full"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El primero se paga por adelantado.",
+        "targetWord": "por adelantado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la primera",
+    "sentence": "Ha comprobado el armario: no cierra [[a la primera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first time",
+      "options": [
+        "first time",
+        "at night",
+        "by itself",
+        "with a key"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Ha comprobado el armario: no cierra a la primera.",
+        "targetWord": "a la primera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se ha mudado",
+    "sentence": "Ya no vive aquí: _____ a otra ciudad el mes pasado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se ha mudado",
+      "options": [
+        "se ha mudado",
+        "se ha dormido",
+        "se ha reído",
+        "se ha duchado"
+      ],
+      "translation": "She doesn't live here any more: she _____ to another city last month.",
+      "optionTranslations": [
+        "moved",
+        "fell asleep",
+        "laughed",
+        "showered"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Ya no vive aquí: se ha mudado a otra ciudad el mes pasado.",
+        "targetWord": "se ha mudado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acepta",
+    "sentence": "Le ofrecen el trabajo y ella lo _____ sin pensarlo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acepta",
+      "options": [
+        "acepta",
+        "olvida",
+        "esconde",
+        "quema"
+      ],
+      "translation": "They offer her the job and she _____ it without thinking.",
+      "optionTranslations": [
+        "accepts",
+        "forgets",
+        "hides",
+        "burns"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Le ofrecen el trabajo y ella lo acepta sin pensarlo.",
+        "targetWord": "acepta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cerradura,colchón,enchufe,ascensor",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cerradura",
+          "answer": "a lock",
+          "options": [
+            "a lock",
+            "a mattress",
+            "a socket",
+            "a lift"
+          ]
+        },
+        {
+          "word": "colchón",
+          "answer": "a mattress",
+          "options": [
+            "a lock",
+            "a mattress",
+            "a socket",
+            "a lift"
+          ]
+        },
+        {
+          "word": "enchufe",
+          "answer": "a socket",
+          "options": [
+            "a lock",
+            "a mattress",
+            "a socket",
+            "a lift"
+          ]
+        },
+        {
+          "word": "ascensor",
+          "answer": "a lift",
+          "options": [
+            "a lock",
+            "a mattress",
+            "a socket",
+            "a lift"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "habitación",
+    "sentence": "La [[habitación]] está en un cuarto sin ascensor, sobre una tienda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the room",
+      "options": [
+        "the room",
+        "the shop",
+        "the office",
+        "the garage"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "La habitación está en un cuarto sin ascensor, sobre una tienda.",
+        "targetWord": "habitación",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encender",
+    "sentence": "El colchón huele a nuevo, aunque el interruptor no [[encienda]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to switch on",
+      "options": [
+        "to switch on",
+        "to warm up",
+        "to open",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El colchón huele a nuevo, aunque el interruptor no encienda nada.",
+        "targetWord": "encienda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de todo",
+    "sentence": "Y arriba se oye [[de todo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all sorts",
+      "options": [
+        "all sorts",
+        "nothing at all",
+        "the radio",
+        "the rain"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Y arriba se oye de todo.",
+        "targetWord": "de todo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin decir nada",
+    "sentence": "Baja [[sin decir nada]] más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without a word",
+      "options": [
+        "without a word",
+        "without a coat",
+        "without hurry",
+        "without help"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "Baja sin decir nada más.",
+        "targetWord": "sin decir nada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "El colchón huele a [[nuevo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "clean",
+        "damp",
+        "burnt"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El colchón huele a nuevo.",
+        "targetWord": "nuevo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tarda",
+    "sentence": "El autobús _____ media hora en llegar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tarda",
+      "options": [
+        "tarda",
+        "cuesta",
+        "pasa",
+        "sube"
+      ],
+      "translation": "The bus _____ half an hour to arrive.",
+      "optionTranslations": [
+        "takes",
+        "costs",
+        "spends",
+        "goes up"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "El autobús tarda media hora en llegar.",
+        "targetWord": "tarda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "blanda",
+    "sentence": "La almohada es tan _____ que se hunde la cabeza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "blanda",
+      "options": [
+        "blanda",
+        "cara",
+        "roja",
+        "larga"
+      ],
+      "translation": "The pillow is so _____ that your head sinks into it.",
+      "optionTranslations": [
+        "soft",
+        "expensive",
+        "red",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "la-cerradura-la-cambio-yo",
+        "storySource": "user",
+        "sentence": "La almohada es tan blanda que se hunde la cabeza.",
+        "targetWord": "blanda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

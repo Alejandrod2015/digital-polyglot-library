@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "rato",
+    "sentence": "No contesta nadie durante un [[rato]] largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a while",
+      "options": [
+        "a while",
+        "a week",
+        "a call",
+        "a break"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "No contesta nadie durante un rato largo.",
+        "targetWord": "rato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahorrarse",
+    "sentence": "Así [[te ahorrarías]] un buen dinero, y empezamos la semana que viene.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to save",
+      "options": [
+        "to save",
+        "to borrow",
+        "to owe",
+        "to earn"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Así te ahorrarías un buen dinero, y empezamos la semana que viene.",
+        "targetWord": "te ahorrarías",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrado",
+    "sentence": "Aunque el precio ya estaba [[cerrado]], llama con una rebaja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "settled",
+      "options": [
+        "settled",
+        "printed",
+        "doubled",
+        "hidden"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Aunque el precio ya estaba cerrado, llama con una rebaja.",
+        "targetWord": "cerrado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "firme",
+    "sentence": "Lo tengo que poder enseñar a los otros dos, añade, ya más [[firme]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "steady",
+      "options": [
+        "steady",
+        "nervous",
+        "quiet",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Lo tengo que poder enseñar a los otros dos, añade, ya más firme.",
+        "targetWord": "firme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en mano",
+    "sentence": "Sale más barato [[en mano]], sin papel de por medio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in cash",
+      "options": [
+        "in cash",
+        "on credit",
+        "by card",
+        "on paper"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Sale más barato en mano, sin papel de por medio.",
+        "targetWord": "en mano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de por medio",
+    "sentence": "Sale más barato en mano, sin papel [[de por medio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in between",
+      "options": [
+        "in between",
+        "on top",
+        "at the end",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Sale más barato en mano, sin papel de por medio.",
+        "targetWord": "de por medio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al otro lado",
+    "sentence": "[[Al otro lado]] no contesta nadie durante un rato largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the other end",
+      "options": [
+        "at the other end",
+        "at the front door",
+        "in the next room",
+        "on the top floor"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Al otro lado no contesta nadie durante un rato largo.",
+        "targetWord": "Al otro lado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "respira",
+    "sentence": "Antes de dar la mala noticia, _____ hondo una vez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "respira",
+      "options": [
+        "respira",
+        "grita",
+        "corre",
+        "duerme"
+      ],
+      "translation": "Before giving the bad news, she _____ deeply once.",
+      "optionTranslations": [
+        "breathes",
+        "shouts",
+        "runs",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Antes de dar la mala noticia, respira hondo una vez.",
+        "targetWord": "respira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rechazar",
+    "sentence": "No le gustó la oferta y decidió _____ el trato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rechazar",
+      "options": [
+        "rechazar",
+        "cobrar",
+        "copiar",
+        "firmar"
+      ],
+      "translation": "She did not like the offer and decided to _____ the deal.",
+      "optionTranslations": [
+        "turn down",
+        "charge for",
+        "copy",
+        "sign"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "No le gustó la oferta y decidió rechazar el trato.",
+        "targetWord": "rechazar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "dinero,copia,empresa,rebaja",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "dinero",
+          "answer": "money",
+          "options": [
+            "money",
+            "a copy",
+            "a company",
+            "a discount"
+          ]
+        },
+        {
+          "word": "copia",
+          "answer": "a copy",
+          "options": [
+            "money",
+            "a copy",
+            "a company",
+            "a discount"
+          ]
+        },
+        {
+          "word": "empresa",
+          "answer": "a company",
+          "options": [
+            "money",
+            "a copy",
+            "a company",
+            "a discount"
+          ]
+        },
+        {
+          "word": "rebaja",
+          "answer": "a discount",
+          "options": [
+            "money",
+            "a copy",
+            "a company",
+            "a discount"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decisión",
+    "sentence": "La [[decisión]] es de los tres, no solo suya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the decision",
+      "options": [
+        "the decision",
+        "the discussion",
+        "the invoice",
+        "the discount"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "La decisión es de los tres, no solo suya.",
+        "targetWord": "decisión",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proponer",
+    "sentence": "Empezamos ya la semana que viene, sin esperas, [[propone]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to propose",
+      "options": [
+        "to propose",
+        "to promise",
+        "to repeat",
+        "to admit"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Empezamos ya la semana que viene, sin esperas, propone.",
+        "targetWord": "propone",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Dice que lo [[mira]] y que llama mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look into",
+      "options": [
+        "to look into",
+        "to give up",
+        "to pay off",
+        "to write down"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Dice que lo mira y que llama mañana.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "No contesta nadie durante un rato [[largo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "strange",
+        "quiet",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "No contesta nadie durante un rato largo.",
+        "targetWord": "largo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la semana que viene",
+    "sentence": "Empezamos ya [[la semana que viene]], sin esperas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next week",
+      "options": [
+        "next week",
+        "next month",
+        "this afternoon",
+        "next year"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Empezamos ya la semana que viene, sin esperas.",
+        "targetWord": "la semana que viene",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enseñar",
+    "sentence": "Guarda el ticket para poder _____ el precio si se lo piden.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enseñar",
+      "options": [
+        "enseñar",
+        "esconder",
+        "calcular",
+        "olvidar"
+      ],
+      "translation": "She keeps the receipt so she can _____ the price if they ask.",
+      "optionTranslations": [
+        "show",
+        "hide",
+        "calculate",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Guarda el ticket para poder enseñar el precio si se lo piden.",
+        "targetWord": "enseñar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "firmo",
+    "sentence": "Yo no _____ ningún contrato sin leerlo entero antes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firmo",
+      "options": [
+        "firmo",
+        "borro",
+        "pierdo",
+        "cuelgo"
+      ],
+      "translation": "I don't _____ any contract without reading all of it first.",
+      "optionTranslations": [
+        "sign",
+        "erase",
+        "lose",
+        "hang up"
+      ],
+      "audioClip": {
+        "storySlug": "la-rebaja-en-mano",
+        "storySource": "user",
+        "sentence": "Yo no firmo ningún contrato sin leerlo entero antes.",
+        "targetWord": "firmo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

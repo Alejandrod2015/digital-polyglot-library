@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "encargado",
+    "sentence": "La [[encargada]] la hace pasar sin levantarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a manager",
+      "options": [
+        "a manager",
+        "a cleaner",
+        "a customer",
+        "a lawyer"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La encargada la hace pasar sin levantarse.",
+        "targetWord": "encargada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compromiso",
+    "sentence": "El plazo son dos semanas y el [[compromiso]] va firmado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a commitment",
+      "options": [
+        "a commitment",
+        "a complaint",
+        "a receipt",
+        "a budget"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "El plazo son dos semanas y el compromiso va firmado.",
+        "targetWord": "compromiso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calidad",
+    "sentence": "La [[calidad]] tampoco le aumenta el precio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the quality",
+      "options": [
+        "the quality",
+        "the quantity",
+        "the distance",
+        "the weather"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La calidad tampoco le aumenta el precio.",
+        "targetWord": "calidad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negociar",
+    "sentence": "La tarifa no se [[negocia]], es la misma para todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to negotiate",
+      "options": [
+        "to negotiate",
+        "to publish",
+        "to remember",
+        "to translate"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La tarifa no se negocia, es la misma para todos.",
+        "targetWord": "negocia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "competir",
+    "sentence": "Esto no es Madrid y aquí [[competimos]] con menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to compete",
+      "options": [
+        "to compete",
+        "to complain",
+        "to complete",
+        "to survive"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Esto no es Madrid y aquí competimos con menos.",
+        "targetWord": "competimos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "capaz",
+    "sentence": "Se queda calmada, [[capaz]] de decir un número y callarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "able",
+      "options": [
+        "able",
+        "afraid",
+        "sorry",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Se queda calmada, capaz de decir un número y callarse.",
+        "targetWord": "capaz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahora bien",
+    "sentence": "[[Ahora bien]], esto no es Madrid y aquí competimos con menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that said",
+      "options": [
+        "that said",
+        "in the end",
+        "for example",
+        "by the way"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Ahora bien, esto no es Madrid y aquí competimos con menos.",
+        "targetWord": "Ahora bien",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rebajar",
+    "sentence": "Nadie paga tanto: tendrás que _____ el precio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rebajar",
+      "options": [
+        "rebajar",
+        "copiar",
+        "escribir",
+        "leer"
+      ],
+      "translation": "Nobody pays that much: you will have to _____ the price.",
+      "optionTranslations": [
+        "lower",
+        "copy",
+        "write",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Nadie paga tanto: tendrás que rebajar el precio.",
+        "targetWord": "rebajar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "confirma",
+    "sentence": "Para estar seguro, el cliente _____ la hora por correo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "confirma",
+      "options": [
+        "confirma",
+        "discute",
+        "pierde",
+        "oculta"
+      ],
+      "translation": "To be sure, the client _____ the time by email.",
+      "optionTranslations": [
+        "confirms",
+        "argues about",
+        "loses",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Para estar seguro, el cliente confirma la hora por correo.",
+        "targetWord": "confirma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tarifa,cliente,plazo,oficio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tarifa",
+          "answer": "a rate",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "cliente",
+          "answer": "a client",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "plazo",
+          "answer": "a deadline",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "oficio",
+          "answer": "a trade",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cargo",
+    "sentence": "El [[cargo]] de la oficina sale de ese número.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the charge",
+      "options": [
+        "the charge",
+        "the cargo",
+        "the address",
+        "the schedule"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "El cargo de la oficina sale de ese número.",
+        "targetWord": "cargo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "afirmar",
+    "sentence": "Es la misma para todos los clientes, [[afirma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to state",
+      "options": [
+        "to state",
+        "to ask",
+        "to whisper",
+        "to repeat"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Es la misma para todos los clientes, afirma.",
+        "targetWord": "afirma",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aconsejar",
+    "sentence": "Nadie le [[aconseja]] rebajar su trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to advise",
+      "options": [
+        "to advise",
+        "to force",
+        "to pay",
+        "to teach"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Nadie le aconseja rebajar su trabajo.",
+        "targetWord": "aconseja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "admitir",
+    "sentence": "[[Admite]] que en Madrid tampoco era distinto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to admit",
+      "options": [
+        "to admit",
+        "to forget",
+        "to promise",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Admite que en Madrid tampoco era distinto.",
+        "targetWord": "Admite",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corregir",
+    "sentence": "Este oficio se aprende [[corrigiendo]], no discutiendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to correct",
+      "options": [
+        "to correct",
+        "to copy",
+        "to collect",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Este oficio se aprende corrigiendo, no discutiendo.",
+        "targetWord": "corrigiendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aumenta",
+    "sentence": "Cada enero la empresa _____ los precios un poco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aumenta",
+      "options": [
+        "aumenta",
+        "limpia",
+        "pierde",
+        "cierra"
+      ],
+      "translation": "Every January the company _____ its prices a little.",
+      "optionTranslations": [
+        "raises",
+        "cleans",
+        "loses",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Cada enero la empresa aumenta los precios un poco.",
+        "targetWord": "aumenta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calmada",
+    "sentence": "Aunque todos gritan, ella sigue _____, sin nervios.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calmada",
+      "options": [
+        "calmada",
+        "cansada",
+        "mojada",
+        "perdida"
+      ],
+      "translation": "Even though everyone is shouting, she stays _____, with no nerves.",
+      "optionTranslations": [
+        "calm",
+        "tired",
+        "wet",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Aunque todos gritan, ella sigue calmada, sin nervios.",
+        "targetWord": "calmada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

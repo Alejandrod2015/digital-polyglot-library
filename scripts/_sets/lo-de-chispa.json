@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "gracia",
+    "sentence": "El hombre saluda a todo el mundo y tiene [[gracia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wit",
+      "options": [
+        "wit",
+        "money",
+        "time",
+        "patience"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "El hombre saluda a todo el mundo y tiene gracia.",
+        "targetWord": "gracia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deducir",
+    "sentence": "Ella lo [[deduce]] en la cabeza, sin preguntar a nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work out",
+      "options": [
+        "to work out",
+        "to write down",
+        "to give up",
+        "to look up"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Ella lo deduce en la cabeza, sin preguntar a nadie.",
+        "targetWord": "deduce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aclarar",
+    "sentence": "De que dejó el portal a oscuras dos días, [[aclara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clear up",
+      "options": [
+        "to clear up",
+        "to insist",
+        "to lie",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "De que dejó el portal a oscuras dos días, aclara.",
+        "targetWord": "aclara",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfadarse",
+    "sentence": "Levanta la mano, sin [[enfadarse]], como quien se enteró hace años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get angry",
+      "options": [
+        "to get angry",
+        "to get up",
+        "to get lost",
+        "to get wet"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Levanta la mano, sin enfadarse, como quien se enteró hace años.",
+        "targetWord": "enfadarse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plano",
+    "sentence": "Le sale [[plana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flat",
+      "options": [
+        "flat",
+        "loud",
+        "late",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Le sale plana.",
+        "targetWord": "plana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a oscuras",
+    "sentence": "Dejó el portal [[a oscuras]] dos días, en agosto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the dark",
+      "options": [
+        "in the dark",
+        "wide open",
+        "in a mess",
+        "on fire"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Dejó el portal a oscuras dos días, en agosto.",
+        "targetWord": "a oscuras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin rodeos",
+    "sentence": "Pregunta por fin, ya [[sin rodeos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight out",
+      "options": [
+        "straight out",
+        "in a whisper",
+        "with a smile",
+        "by letter"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Pregunta por fin, ya sin rodeos.",
+        "targetWord": "sin rodeos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pregunta",
+    "sentence": "No entiende la palabra, así que le _____ al profesor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pregunta",
+      "options": [
+        "pregunta",
+        "paga",
+        "canta",
+        "cocina"
+      ],
+      "translation": "She doesn't understand the word, so she _____ the teacher.",
+      "optionTranslations": [
+        "asks",
+        "pays",
+        "sings",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "No entiende la palabra, así que le pregunta al profesor.",
+        "targetWord": "pregunta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se enteró",
+    "sentence": "Nadie le dijo nada: _____ de la boda por el periódico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se enteró",
+      "options": [
+        "se enteró",
+        "se cayó",
+        "se duchó",
+        "se rio"
+      ],
+      "translation": "Nobody told her anything: she _____ about the wedding from the newspaper.",
+      "optionTranslations": [
+        "found out",
+        "fell",
+        "showered",
+        "laughed"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Nadie le dijo nada: se enteró de la boda por el periódico.",
+        "targetWord": "se enteró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "electricista,cabeza,agosto,mote",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "electricista",
+          "answer": "an electrician",
+          "options": [
+            "an electrician",
+            "a head",
+            "August",
+            "a nickname"
+          ]
+        },
+        {
+          "word": "cabeza",
+          "answer": "a head",
+          "options": [
+            "an electrician",
+            "a head",
+            "August",
+            "a nickname"
+          ]
+        },
+        {
+          "word": "agosto",
+          "answer": "August",
+          "options": [
+            "an electrician",
+            "a head",
+            "August",
+            "a nickname"
+          ]
+        },
+        {
+          "word": "mote",
+          "answer": "a nickname",
+          "options": [
+            "an electrician",
+            "a head",
+            "August",
+            "a nickname"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chispa",
+    "sentence": "¿De dónde viene lo de [[Chispa]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spark",
+      "options": [
+        "a spark",
+        "a wire",
+        "a bulb",
+        "a fuse"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "¿De dónde viene lo de Chispa?",
+        "targetWord": "Chispa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "broma",
+    "sentence": "El jueves repite ella la [[broma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the joke",
+      "options": [
+        "the joke",
+        "the order",
+        "the visit",
+        "the recipe"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "El jueves repite ella la broma.",
+        "targetWord": "broma",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Se le sube el [[color]] a la cara, así que se ríe ella primero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the colour",
+      "options": [
+        "the colour",
+        "the sweat",
+        "the smile",
+        "the hair"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Se le sube el color a la cara, así que se ríe ella primero.",
+        "targetWord": "color",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por fin",
+    "sentence": "Pregunta [[por fin]], ya sin rodeos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "at once",
+        "by chance",
+        "out loud"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Pregunta por fin, ya sin rodeos.",
+        "targetWord": "por fin",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo el mundo",
+    "sentence": "El hombre saluda a [[todo el mundo]] y tiene gracia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everybody",
+      "options": [
+        "everybody",
+        "the landlord",
+        "his neighbour",
+        "the postman"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "El hombre saluda a todo el mundo y tiene gracia.",
+        "targetWord": "todo el mundo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "repite",
+    "sentence": "No la oyen bien, así que lo _____ más alto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repite",
+      "options": [
+        "repite",
+        "borra",
+        "cocina",
+        "esconde"
+      ],
+      "translation": "They can't hear her well, so she _____ it louder.",
+      "optionTranslations": [
+        "repeats",
+        "erases",
+        "cooks",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "No la oyen bien, así que lo repite más alto.",
+        "targetWord": "repite",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "simpático",
+    "sentence": "Habla con todos y siempre sonríe: es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "simpático",
+      "options": [
+        "simpático",
+        "alto",
+        "rico",
+        "lento"
+      ],
+      "translation": "He talks to everyone and always smiles: he is very _____.",
+      "optionTranslations": [
+        "friendly",
+        "tall",
+        "rich",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "lo-de-chispa",
+        "storySource": "user",
+        "sentence": "Habla con todos y siempre sonríe: es muy simpático.",
+        "targetWord": "simpático",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

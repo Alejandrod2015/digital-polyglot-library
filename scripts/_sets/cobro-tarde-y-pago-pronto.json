@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cuota",
+    "sentence": "Aquí se paga la [[cuota]] antes de ingresar el primer euro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a monthly fee",
+      "options": [
+        "a monthly fee",
+        "a parking fine",
+        "a train ticket",
+        "a phone bill"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Aquí se paga la cuota antes de ingresar el primer euro.",
+        "targetWord": "cuota",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahorro",
+    "sentence": "El [[ahorro]] es corto y la deuda es cercana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "savings",
+      "options": [
+        "savings",
+        "salary",
+        "rent",
+        "tax"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "El ahorro es corto y la deuda es cercana.",
+        "targetWord": "ahorro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "certeza",
+    "sentence": "El último día del mes lo ve con [[certeza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "certainty",
+      "options": [
+        "certainty",
+        "sadness",
+        "surprise",
+        "difficulty"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "El último día del mes lo ve con certeza.",
+        "targetWord": "certeza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingresar",
+    "sentence": "Se paga la cuota antes de [[ingresar]] el primer euro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take in",
+      "options": [
+        "to take in",
+        "to spend",
+        "to lend",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Se paga la cuota antes de ingresar el primer euro.",
+        "targetWord": "ingresar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cercano",
+    "sentence": "El ahorro es corto y la deuda es [[cercana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "close",
+      "options": [
+        "close",
+        "small",
+        "old",
+        "fair"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "El ahorro es corto y la deuda es cercana.",
+        "targetWord": "cercana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciente",
+    "sentence": "Ella es [[paciente]] con los números.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "patient",
+      "options": [
+        "patient",
+        "careless",
+        "clever",
+        "strict"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Ella es paciente con los números.",
+        "targetWord": "paciente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer falta",
+    "sentence": "Le [[hace falta]] un mes de aire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be needed",
+      "options": [
+        "to be needed",
+        "to be over",
+        "to be left",
+        "to be late"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Le hace falta un mes de aire.",
+        "targetWord": "hace falta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "advierte",
+    "sentence": "Antes de que pase nada, ella nos _____ del peligro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "advierte",
+      "options": [
+        "advierte",
+        "olvida",
+        "paga",
+        "cura"
+      ],
+      "translation": "Before anything happens, she _____ us about the danger.",
+      "optionTranslations": [
+        "warns",
+        "forgets",
+        "pays",
+        "cures"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Antes de que pase nada, ella nos advierte del peligro.",
+        "targetWord": "advierte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cedí",
+    "sentence": "Discutimos una hora y al final _____ yo, para acabar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cedí",
+      "options": [
+        "cedí",
+        "corrí",
+        "cené",
+        "dormí"
+      ],
+      "translation": "We argued for an hour and in the end I _____, to finish it.",
+      "optionTranslations": [
+        "gave in",
+        "ran",
+        "had dinner",
+        "slept"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Discutimos una hora y al final cedí yo, para acabar.",
+        "targetWord": "cedí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "impuesto,deuda,contrato,calendario",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "impuesto",
+          "answer": "a tax",
+          "options": [
+            "a tax",
+            "a debt",
+            "a contract",
+            "a calendar"
+          ]
+        },
+        {
+          "word": "deuda",
+          "answer": "a debt",
+          "options": [
+            "a tax",
+            "a debt",
+            "a contract",
+            "a calendar"
+          ]
+        },
+        {
+          "word": "contrato",
+          "answer": "a contract",
+          "options": [
+            "a tax",
+            "a debt",
+            "a contract",
+            "a calendar"
+          ]
+        },
+        {
+          "word": "calendario",
+          "answer": "a calendar",
+          "options": [
+            "a tax",
+            "a debt",
+            "a contract",
+            "a calendar"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "causa",
+    "sentence": "La [[causa]] no está en lo que gana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cause",
+      "options": [
+        "the cause",
+        "the solution",
+        "the mistake",
+        "the surprise"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "La causa no está en lo que gana.",
+        "targetWord": "causa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agendar",
+    "sentence": "Ella [[agenda]] los pagos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to schedule",
+      "options": [
+        "to schedule",
+        "to cancel",
+        "to double",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Ella agenda los pagos.",
+        "targetWord": "agenda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "declarar",
+    "sentence": "Ella [[declara]] su trabajo y guarda el contrato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to declare",
+      "options": [
+        "to declare",
+        "to quit",
+        "to enjoy",
+        "to change"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Ella declara su trabajo y guarda el contrato.",
+        "targetWord": "declara",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alertar",
+    "sentence": "Ahora [[alerto]] a todo el mundo, aunque sea breve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to alert",
+      "options": [
+        "to alert",
+        "to invite",
+        "to ignore",
+        "to thank"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Ahora alerto a todo el mundo, aunque sea breve.",
+        "targetWord": "alerto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "breve",
+    "sentence": "Ahora alerto a todo el mundo, aunque sea [[breve]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brief",
+      "options": [
+        "brief",
+        "late",
+        "loud",
+        "rude"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Ahora alerto a todo el mundo, aunque sea breve.",
+        "targetWord": "breve",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "separa",
+    "sentence": "Corta el papel en dos y _____ las partes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "separa",
+      "options": [
+        "separa",
+        "firma",
+        "lee",
+        "borra"
+      ],
+      "translation": "She cuts the paper in two and _____ the parts.",
+      "optionTranslations": [
+        "separates",
+        "signs",
+        "reads",
+        "erases"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Corta el papel en dos y separa las partes.",
+        "targetWord": "separa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cenar",
+    "sentence": "Es tarde; pon la mesa, que vamos a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cenar",
+      "options": [
+        "cenar",
+        "pagar",
+        "firmar",
+        "salir"
+      ],
+      "translation": "It's late; set the table, we're going to _____.",
+      "optionTranslations": [
+        "have dinner",
+        "pay",
+        "sign",
+        "go out"
+      ],
+      "audioClip": {
+        "storySlug": "cobro-tarde-y-pago-pronto",
+        "storySource": "user",
+        "sentence": "Es tarde; pon la mesa, que vamos a cenar.",
+        "targetWord": "cenar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

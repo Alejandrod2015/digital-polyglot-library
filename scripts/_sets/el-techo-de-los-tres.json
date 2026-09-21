@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "anuncio",
+    "sentence": "El [[anuncio]] de la reunión lleva tres días en el portal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the notice",
+      "options": [
+        "the notice",
+        "the smell",
+        "the bell",
+        "the key"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "El anuncio de la reunión lleva tres días en el portal.",
+        "targetWord": "anuncio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mayoría",
+    "sentence": "Y saldrá o no saldrá por [[mayoría]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "majority",
+      "options": [
+        "majority",
+        "surprise",
+        "accident",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Y saldrá o no saldrá por mayoría.",
+        "targetWord": "mayoría",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "resumir",
+    "sentence": "Al final llega el sello, y les [[resume]] el acta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sum up",
+      "options": [
+        "to sum up",
+        "to read out",
+        "to hand out",
+        "to sign off"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Al final llega el sello, y les resume el acta.",
+        "targetWord": "resume",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapar",
+    "sentence": "[[Taparlo]] con plástico es inútil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cover",
+      "options": [
+        "to cover",
+        "to wash",
+        "to weigh",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Taparlo con plástico es inútil.",
+        "targetWord": "Taparlo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz alta",
+    "sentence": "Luego lo revisa [[en voz alta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": [
+        "out loud",
+        "in a hurry",
+        "by heart",
+        "with a pen"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Luego lo revisa en voz alta.",
+        "targetWord": "en voz alta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de una vez",
+    "sentence": "Hay que firmar los tres y [[de una vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "once and for all",
+      "options": [
+        "once and for all",
+        "one at a time",
+        "for a change",
+        "in a week"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Hay que firmar los tres y de una vez.",
+        "targetWord": "de una vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por su cuenta",
+    "sentence": "La obra ya no depende de ella ni de él [[por su cuenta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on their own",
+      "options": [
+        "on their own",
+        "by mistake",
+        "in the end",
+        "for a while"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "La obra ya no depende de ella ni de él por su cuenta.",
+        "targetWord": "por su cuenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "revisa",
+    "sentence": "Antes de enviarlo, _____ el texto en busca de errores.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "revisa",
+      "options": [
+        "revisa",
+        "borra",
+        "firma",
+        "pierde"
+      ],
+      "translation": "Before sending it, she _____ the text looking for mistakes.",
+      "optionTranslations": [
+        "goes over",
+        "erases",
+        "signs",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Antes de enviarlo, revisa el texto en busca de errores.",
+        "targetWord": "revisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ofrece",
+    "sentence": "Ve que ella no tiene silla y le _____ la suya.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ofrece",
+      "options": [
+        "ofrece",
+        "esconde",
+        "quita",
+        "cobra"
+      ],
+      "translation": "He sees that she has no chair and _____ her his.",
+      "optionTranslations": [
+        "offers",
+        "hides",
+        "takes away",
+        "charges for"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Ve que ella no tiene silla y le ofrece la suya.",
+        "targetWord": "ofrece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "acta,sello,portátil,firma",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "acta",
+          "answer": "minutes",
+          "options": [
+            "minutes",
+            "a stamp",
+            "a laptop",
+            "a signature"
+          ]
+        },
+        {
+          "word": "sello",
+          "answer": "a stamp",
+          "options": [
+            "minutes",
+            "a stamp",
+            "a laptop",
+            "a signature"
+          ]
+        },
+        {
+          "word": "portátil",
+          "answer": "a laptop",
+          "options": [
+            "minutes",
+            "a stamp",
+            "a laptop",
+            "a signature"
+          ]
+        },
+        {
+          "word": "firma",
+          "answer": "a signature",
+          "options": [
+            "minutes",
+            "a stamp",
+            "a laptop",
+            "a signature"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reunión",
+    "sentence": "El anuncio de la [[reunión]] lleva tres días en el portal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the meeting",
+      "options": [
+        "the meeting",
+        "the wedding",
+        "the concert",
+        "the sale"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "El anuncio de la reunión lleva tres días en el portal.",
+        "targetWord": "reunión",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voto",
+    "sentence": "Recuerda que ya ha pedido que conste su [[voto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "vote",
+      "options": [
+        "vote",
+        "name",
+        "address",
+        "fee"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Recuerda que ya ha pedido que conste su voto.",
+        "targetWord": "voto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corto",
+    "sentence": "El orden del día es [[corto]]: el techo y poco más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "new",
+        "strange",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "El orden del día es corto: el techo y poco más.",
+        "targetWord": "corto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco más",
+    "sentence": "El orden del día es corto: el techo y [[poco más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little else",
+      "options": [
+        "little else",
+        "much more",
+        "no one",
+        "some money"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "El orden del día es corto: el techo y poco más.",
+        "targetWord": "poco más",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apuntar",
+    "sentence": "Ella [[apunta]] la fecha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to write down",
+      "options": [
+        "to write down",
+        "to change",
+        "to forget",
+        "to ask about"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Ella apunta la fecha.",
+        "targetWord": "apunta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Para pedir la palabra, ella _____ la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "cierra",
+        "dobla",
+        "suelta"
+      ],
+      "translation": "To ask to speak, she _____ her hand.",
+      "optionTranslations": [
+        "raises",
+        "closes",
+        "folds",
+        "lets go of"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Para pedir la palabra, ella levanta la mano.",
+        "targetWord": "levanta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "inútil",
+    "sentence": "Sin pilas, la linterna es _____: no da luz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "inútil",
+      "options": [
+        "inútil",
+        "nueva",
+        "cara",
+        "azul"
+      ],
+      "translation": "Without batteries, the torch is _____: it gives no light.",
+      "optionTranslations": [
+        "useless",
+        "new",
+        "expensive",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "el-techo-de-los-tres",
+        "storySource": "user",
+        "sentence": "Sin pilas, la linterna es inútil: no da luz.",
+        "targetWord": "inútil",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

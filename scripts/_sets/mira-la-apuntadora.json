@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "permiso",
+    "sentence": "No le suena a burla, aunque se lo pusieran sin [[permiso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "permission",
+      "options": [
+        "permission",
+        "reason",
+        "warning",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "No le suena a burla, aunque se lo pusieran sin permiso.",
+        "targetWord": "permiso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por lo de",
+    "sentence": "Se lo he puesto yo, [[por lo del]] cuaderno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "because of",
+      "options": [
+        "because of",
+        "instead of",
+        "in spite of",
+        "on top of"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Se lo he puesto yo, por lo del cuaderno.",
+        "targetWord": "por lo del",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asomar",
+    "sentence": "Dice [[asomando]] la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lean out",
+      "options": [
+        "to lean out",
+        "to shake",
+        "to lower",
+        "to scratch"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Dice asomando la cabeza.",
+        "targetWord": "asomando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poner",
+    "sentence": "El nombre de uno aquí lo [[ponen]] los demás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give",
+      "options": [
+        "to give",
+        "to forget",
+        "to repeat",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "El nombre de uno aquí lo ponen los demás.",
+        "targetWord": "ponen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "averiguar",
+    "sentence": "Contesta enseguida, sin [[averiguar]] quién se lo puso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find out",
+      "options": [
+        "to find out",
+        "to care",
+        "to mind",
+        "to guess"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Contesta enseguida, sin averiguar quién se lo puso.",
+        "targetWord": "averiguar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "medio año",
+    "sentence": "Ya lleva [[medio año]] viviendo aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half a year",
+      "options": [
+        "half a year",
+        "half a day",
+        "a whole life",
+        "a few hours"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Ya lleva medio año viviendo aquí.",
+        "targetWord": "medio año",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enseguida",
+    "sentence": "Contesta ella [[enseguida]], sin averiguar quién se lo puso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight away",
+      "options": [
+        "straight away",
+        "much later",
+        "in writing",
+        "with a laugh"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Contesta ella enseguida, sin averiguar quién se lo puso.",
+        "targetWord": "enseguida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "molesta",
+    "sentence": "El ruido de la obra le _____ y no puede dormir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "molesta",
+      "options": [
+        "molesta",
+        "gusta",
+        "ayuda",
+        "cuesta"
+      ],
+      "translation": "The noise from the building work _____ her and she can't sleep.",
+      "optionTranslations": [
+        "bothers",
+        "pleases",
+        "helps",
+        "costs"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "El ruido de la obra le molesta y no puede dormir.",
+        "targetWord": "molesta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se para",
+    "sentence": "El autobús _____ en cada esquina del barrio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se para",
+      "options": [
+        "se para",
+        "se lava",
+        "se pierde",
+        "se rompe"
+      ],
+      "translation": "The bus _____ at every corner of the neighbourhood.",
+      "optionTranslations": [
+        "stops",
+        "gets washed",
+        "gets lost",
+        "breaks down"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "El autobús se para en cada esquina del barrio.",
+        "targetWord": "se para",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "escalón,cuaderno,sobre,año",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "escalón",
+          "answer": "a step",
+          "options": [
+            "a step",
+            "a notebook",
+            "an envelope",
+            "a year"
+          ]
+        },
+        {
+          "word": "cuaderno",
+          "answer": "a notebook",
+          "options": [
+            "a step",
+            "a notebook",
+            "an envelope",
+            "a year"
+          ]
+        },
+        {
+          "word": "sobre",
+          "answer": "an envelope",
+          "options": [
+            "a step",
+            "a notebook",
+            "an envelope",
+            "a year"
+          ]
+        },
+        {
+          "word": "año",
+          "answer": "a year",
+          "options": [
+            "a step",
+            "a notebook",
+            "an envelope",
+            "a year"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivir",
+    "sentence": "Ya lleva medio año [[viviendo]] aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to live",
+      "options": [
+        "to live",
+        "to work",
+        "to wait",
+        "to study"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Ya lleva medio año viviendo aquí.",
+        "targetWord": "viviendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "Mira, la Apuntadora, que ya [[viene]] con su cuaderno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": [
+        "to come",
+        "to write",
+        "to sleep",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Mira, la Apuntadora, que ya viene con su cuaderno.",
+        "targetWord": "viene",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdad",
+    "sentence": "Es [[verdad]]: anota horas, fechas y motes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "truth",
+      "options": [
+        "truth",
+        "luck",
+        "pity",
+        "habit"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Es verdad: anota horas, fechas y motes.",
+        "targetWord": "verdad",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nada más",
+    "sentence": "Allí tenía su nombre y [[nada más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing more",
+      "options": [
+        "nothing more",
+        "much more",
+        "no one",
+        "everything"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Allí tenía su nombre y nada más.",
+        "targetWord": "nada más",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al lado",
+    "sentence": "Luego lo guarda, con la fecha [[al lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beside it",
+      "options": [
+        "beside it",
+        "on top",
+        "underneath",
+        "in red"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Luego lo guarda, con la fecha al lado.",
+        "targetWord": "al lado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Termina de leer y _____ el libro en la estantería.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guarda",
+      "options": [
+        "guarda",
+        "pierde",
+        "quema",
+        "dobla"
+      ],
+      "translation": "She finishes reading and _____ the book on the shelf.",
+      "optionTranslations": [
+        "puts away",
+        "loses",
+        "burns",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Termina de leer y guarda el libro en la estantería.",
+        "targetWord": "guarda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escribe",
+    "sentence": "Coge un lápiz y _____ su nombre en la hoja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escribe",
+      "options": [
+        "escribe",
+        "come",
+        "canta",
+        "cuenta"
+      ],
+      "translation": "She picks up a pencil and _____ her name on the sheet.",
+      "optionTranslations": [
+        "writes",
+        "eats",
+        "sings",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "mira-la-apuntadora",
+        "storySource": "user",
+        "sentence": "Coge un lápiz y escribe su nombre en la hoja.",
+        "targetWord": "escribe",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

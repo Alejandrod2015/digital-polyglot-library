@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "comunicar",
+    "sentence": "Pedir lo tuyo no es criticar a nadie, [[comunica]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": [
+        "to tell",
+        "to shout",
+        "to guess",
+        "to lie"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Pedir lo tuyo no es criticar a nadie, comunica.",
+        "targetWord": "comunica",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "defender",
+    "sentence": "Demuestra la fecha y ya está, y no [[defiendas]] nada más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to defend",
+      "options": [
+        "to defend",
+        "to deliver",
+        "to describe",
+        "to delete"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Demuestra la fecha y ya está, y no defiendas nada más.",
+        "targetWord": "defiendas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprovechar",
+    "sentence": "[[Aprovecha]] que aún es pronto para ser razonable.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make the most of",
+      "options": [
+        "to make the most of",
+        "to keep in mind",
+        "to be aware",
+        "to get used to"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Aprovecha que aún es pronto para ser razonable.",
+        "targetWord": "Aprovecha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuestionar",
+    "sentence": "Ella [[cuestiona]] dos frases y las quita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to question",
+      "options": [
+        "to question",
+        "to copy",
+        "to underline",
+        "to translate"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Ella cuestiona dos frases y las quita.",
+        "targetWord": "cuestiona",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "confiar",
+    "sentence": "Cuatro líneas y la fecha, dice, y [[confía]] en que baste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to trust",
+      "options": [
+        "to trust",
+        "to insist",
+        "to pretend",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Cuatro líneas y la fecha, dice, y confía en que baste.",
+        "targetWord": "confía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "razonable",
+    "sentence": "Aprovecha que aún es pronto para ser [[razonable]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reasonable",
+      "options": [
+        "reasonable",
+        "generous",
+        "famous",
+        "careful"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Aprovecha que aún es pronto para ser razonable.",
+        "targetWord": "razonable",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo tuyo",
+    "sentence": "Pedir [[lo tuyo]] no es criticar a nadie, es tu trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what is yours",
+      "options": [
+        "what is yours",
+        "what is fair",
+        "what is left",
+        "what is new"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Pedir lo tuyo no es criticar a nadie, es tu trabajo.",
+        "targetWord": "lo tuyo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "desconfiar",
+    "sentence": "Le han mentido tantas veces que empieza a _____ de todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desconfiar",
+      "options": [
+        "desconfiar",
+        "depender",
+        "hablar",
+        "reírse"
+      ],
+      "translation": "They have lied to her so many times that she starts to _____ everyone.",
+      "optionTranslations": [
+        "distrust",
+        "depend on",
+        "talk about",
+        "laugh at"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Le han mentido tantas veces que empieza a desconfiar de todos.",
+        "targetWord": "desconfiar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "demuestra",
+    "sentence": "Con la foto del sello _____ que llegó a tiempo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "demuestra",
+      "options": [
+        "demuestra",
+        "olvida",
+        "canta",
+        "borra"
+      ],
+      "translation": "With the photo of the stamp she _____ that it arrived on time.",
+      "optionTranslations": [
+        "proves",
+        "forgets",
+        "sings",
+        "erases"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Con la foto del sello demuestra que llegó a tiempo.",
+        "targetWord": "demuestra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "empleo,trato,descansillo,obra",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "empleo",
+          "answer": "a job",
+          "options": [
+            "a job",
+            "a deal",
+            "a landing",
+            "building work"
+          ]
+        },
+        {
+          "word": "trato",
+          "answer": "a deal",
+          "options": [
+            "a job",
+            "a deal",
+            "a landing",
+            "building work"
+          ]
+        },
+        {
+          "word": "descansillo",
+          "answer": "a landing",
+          "options": [
+            "a job",
+            "a deal",
+            "a landing",
+            "building work"
+          ]
+        },
+        {
+          "word": "obra",
+          "answer": "building work",
+          "options": [
+            "a job",
+            "a deal",
+            "a landing",
+            "building work"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mundo",
+    "sentence": "Quien no lo hace, en este [[mundo]] cobra el último.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "world",
+      "options": [
+        "world",
+        "office",
+        "street",
+        "month"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Quien no lo hace, en este mundo cobra el último.",
+        "targetWord": "mundo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "analizar",
+    "sentence": "Ella [[analiza]] el correo que tiene a medias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look closely at",
+      "options": [
+        "to look closely at",
+        "to throw away",
+        "to send off",
+        "to print out"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Ella analiza el correo que tiene a medias.",
+        "targetWord": "analiza",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colaborar",
+    "sentence": "[[Colaboró]] llamando cada lunes, sin desconfiar de nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to help",
+      "options": [
+        "to help",
+        "to complain",
+        "to insist",
+        "to rest"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Colaboró llamando cada lunes, sin desconfiar de nadie.",
+        "targetWord": "Colaboró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "concluir",
+    "sentence": "Aprovecha que aún es pronto para ser razonable, [[concluye]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to conclude",
+      "options": [
+        "to conclude",
+        "to interrupt",
+        "to confess",
+        "to continue"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Aprovecha que aún es pronto para ser razonable, concluye.",
+        "targetWord": "concluye",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a media mañana",
+    "sentence": "La llama [[a media mañana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mid morning",
+      "options": [
+        "mid morning",
+        "at midnight",
+        "after lunch",
+        "on Sunday"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "La llama a media mañana.",
+        "targetWord": "a media mañana",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "criticar",
+    "sentence": "Sin haberlo leído, no puedes _____ el libro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "criticar",
+      "options": [
+        "criticar",
+        "abrir",
+        "comprar",
+        "prestar"
+      ],
+      "translation": "Without having read it, you can't _____ the book.",
+      "optionTranslations": [
+        "criticise",
+        "open",
+        "buy",
+        "lend"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "Sin haberlo leído, no puedes criticar el libro.",
+        "targetWord": "criticar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "correcta",
+    "sentence": "La respuesta llega seca pero _____, sin ningún error.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "correcta",
+      "options": [
+        "correcta",
+        "mojada",
+        "larga",
+        "rota"
+      ],
+      "translation": "The reply arrives curt but _____, without a single mistake.",
+      "optionTranslations": [
+        "correct",
+        "wet",
+        "long",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "el-descansillo-aconseja",
+        "storySource": "user",
+        "sentence": "La respuesta llega seca pero correcta, sin ningún error.",
+        "targetWord": "correcta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
