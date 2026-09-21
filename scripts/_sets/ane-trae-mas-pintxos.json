@@ -304,7 +304,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "narrow",
-        "wide",
+        "dark",
         "dirty",
         "empty"
       ],
@@ -329,7 +329,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "small",
-        "big",
+        "round",
         "tall",
         "heavy"
       ],
@@ -404,7 +404,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "full",
-        "empty",
+        "hot",
         "clean",
         "dark"
       ],

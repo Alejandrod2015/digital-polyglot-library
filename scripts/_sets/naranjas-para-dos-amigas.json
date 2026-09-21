@@ -8,7 +8,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to arrive",
-        "to leave",
+        "to run",
         "to sleep",
         "to pay"
       ],
@@ -254,7 +254,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "happy",
-        "sad",
+        "loud",
         "sick",
         "tired"
       ],

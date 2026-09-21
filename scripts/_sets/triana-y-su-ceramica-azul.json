@@ -122,7 +122,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to buy",
-        "to sell",
+        "to paint",
         "to break",
         "to clean"
       ],
@@ -436,7 +436,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to sit down",
-        "to stand up",
+        "to swim",
         "to lie down",
         "to walk"
       ],
@@ -652,7 +652,7 @@
       "answer": "sit down",
       "options": [
         "sit down",
-        "stand up",
+        "swim",
         "walk away",
         "lie down"
       ],

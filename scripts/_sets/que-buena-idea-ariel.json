@@ -131,14 +131,14 @@
       "answer": "acordó",
       "options": [
         "acordó",
-        "olvidó",
+        "rio",
         "quejó",
         "burló"
       ],
       "translation": "Luckily he _____ the keys before closing the door.",
       "optionTranslations": [
         "remembered",
-        "forgot",
+        "laughed",
         "complained about",
         "made fun of"
       ],
@@ -408,7 +408,7 @@
       "options": [
         "to stand",
         "to knock",
-        "to sit",
+        "to lean",
         "to trip"
       ],
       "audioClip": {

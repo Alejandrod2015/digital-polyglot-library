@@ -315,9 +315,9 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "news",
-        "a joke",
-        "a song",
-        "a lie"
+        "joke",
+        "song",
+        "lie"
       ],
       "audioClip": {
         "language": "spanish",
@@ -336,10 +336,10 @@
     "word": "sacar",
     "sentence": "Ella [[saca]] una foto del lugar.",
     "payload": {
-      "answer": "to take (a photo)",
+      "answer": "to take",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to take (a photo)",
+        "to take",
         "to hide",
         "to send",
         "to buy"

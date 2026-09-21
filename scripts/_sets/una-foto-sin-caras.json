@@ -56,9 +56,9 @@
     "sentence": "Un perfil en una [[red social]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "social media",
+      "answer": "a social network",
       "options": [
-        "social media",
+        "a social network",
         "a newspaper",
         "a bank account",
         "a phone call"
@@ -166,12 +166,12 @@
     "sentence": "¡Yo estuve en las [[Ferias]] de 2012!",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Salamanca's September festival",
+      "answer": "a town festival",
       "options": [
-        "Salamanca's September festival",
+        "a town festival",
         "a football match",
         "a wedding",
-        "a concert in Madrid"
+        "a rock concert"
       ],
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
@@ -191,7 +191,7 @@
       "answer": "old",
       "options": [
         "old",
-        "new",
+        "red",
         "broken",
         "expensive"
       ],

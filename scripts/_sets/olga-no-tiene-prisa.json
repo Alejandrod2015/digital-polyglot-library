@@ -103,7 +103,7 @@
       "answer": "full",
       "options": [
         "full",
-        "empty",
+        "dark",
         "clean",
         "closed"
       ],
@@ -254,9 +254,9 @@
     "sentence": "Aparca en la [[zona azul]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "blue zone (paid parking)",
+      "answer": "a paid parking zone",
       "options": [
-        "blue zone (paid parking)",
+        "a paid parking zone",
         "a private garage",
         "a bus lane",
         "a pedestrian street"
@@ -312,14 +312,14 @@
         "Siéntate",
         "Date prisa",
         "Cállate",
-        "Levántate"
+        "Corre"
       ],
       "translation": "_____ and get comfortable, this is going to take a while.",
       "optionTranslations": [
         "Sit down",
         "Hurry up",
         "Be quiet",
-        "Stand up"
+        "Run"
       ],
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
@@ -430,14 +430,14 @@
       "answer": "lento",
       "options": [
         "lento",
-        "rápido",
+        "raro",
         "ruidoso",
         "ordenado"
       ],
       "translation": "The traffic was so _____ that it took us an hour to cross.",
       "optionTranslations": [
         "slow",
-        "fast",
+        "odd",
         "noisy",
         "orderly"
       ],

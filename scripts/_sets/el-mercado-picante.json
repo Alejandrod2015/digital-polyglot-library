@@ -213,14 +213,14 @@
       "answer": "feliz",
       "options": [
         "feliz",
-        "triste",
+        "mojada",
         "alta",
         "fría"
       ],
       "translation": "It is her birthday and she is very _____.",
       "optionTranslations": [
         "happy",
-        "sad",
+        "wet",
         "tall",
         "cold"
       ],
@@ -339,7 +339,7 @@
       "answer": "to laugh",
       "options": [
         "to laugh",
-        "to cry",
+        "to sleep",
         "to run",
         "to pay"
       ],

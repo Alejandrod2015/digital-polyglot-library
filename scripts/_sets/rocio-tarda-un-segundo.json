@@ -342,7 +342,7 @@
       "answer": "light",
       "options": [
         "light",
-        "heavy",
+        "wet",
         "dirty",
         "full"
       ],
@@ -390,7 +390,7 @@
       "answer": "cold",
       "options": [
         "cold",
-        "warm",
+        "smooth",
         "wet",
         "loose"
       ],

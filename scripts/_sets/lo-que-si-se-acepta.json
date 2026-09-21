@@ -149,14 +149,14 @@
       "answer": "lleno",
       "options": [
         "lleno",
-        "vacío",
+        "frío",
         "roto",
         "limpio"
       ],
       "translation": "Not one more drop fits: the glass is _____.",
       "optionTranslations": [
         "full",
-        "empty",
+        "cold",
         "broken",
         "clean"
       ],
@@ -414,7 +414,7 @@
       "answer": "new",
       "options": [
         "new",
-        "old",
+        "red",
         "white",
         "narrow"
       ],

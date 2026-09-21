@@ -151,14 +151,14 @@
         "vacía",
         "mojada",
         "rota",
-        "llena"
+        "sucia"
       ],
       "translation": "She took all the fruit away and the table was left _____.",
       "optionTranslations": [
         "empty",
         "wet",
         "broken",
-        "full"
+        "dirty"
       ],
       "audioClip": {
         "storySlug": "el-turno-que-le-tocaba",
@@ -414,7 +414,7 @@
       "answer": "first",
       "options": [
         "first",
-        "last",
+        "same",
         "whole",
         "wrong"
       ],
@@ -438,7 +438,7 @@
       "answer": "last",
       "options": [
         "last",
-        "first",
+        "same",
         "next",
         "longest"
       ],

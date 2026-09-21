@@ -5,9 +5,9 @@
     "sentence": "A todos les daba [[hueva]] soltar la lana.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the reluctance to do something",
+      "answer": "a lazy reluctance",
       "options": [
-        "the reluctance to do something",
+        "a lazy reluctance",
         "a sudden hurry",
         "a bad temper",
         "a good excuse"
@@ -125,9 +125,9 @@
     "sentence": "Pura [[mamada]], y nadie le creyó una palabra.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "nonsense, bullshit",
+      "answer": "a load of nonsense",
       "options": [
-        "nonsense, bullshit",
+        "a load of nonsense",
         "a fair point",
         "a good joke",
         "an old story"

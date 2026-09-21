@@ -56,9 +56,9 @@
     "sentence": "Entra [[a por]] una barra y no le da tiempo a saludar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to fetch",
+      "answer": "in search of",
       "options": [
-        "to fetch",
+        "in search of",
         "instead of",
         "along with",
         "in front of"
@@ -486,7 +486,7 @@
       "answer": "better",
       "options": [
         "better",
-        "worse",
+        "taller",
         "older",
         "busier"
       ],

@@ -134,9 +134,9 @@
     "sentence": "Jorge [[toca]] la guitarra por teléfono.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to play (music)",
+      "answer": "to play an instrument",
       "options": [
-        "to play (music)",
+        "to play an instrument",
         "to break",
         "to wash",
         "to sell"
@@ -286,14 +286,14 @@
         "hora",
         "casa",
         "luna",
-        "mano"
+        "mesa"
       ],
       "translation": "One _____ has sixty minutes.",
       "optionTranslations": [
         "hour",
         "house",
         "moon",
-        "hand"
+        "table"
       ],
       "audioClip": {
         "storySlug": "la-llamada",

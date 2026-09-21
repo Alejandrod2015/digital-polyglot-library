@@ -56,9 +56,9 @@
     "sentence": "Trae [[algo de picar]], mujer, que aquí nadie mira.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "nibbles",
+      "answer": "a few nibbles",
       "options": [
-        "nibbles",
+        "a few nibbles",
         "a full meal",
         "a bottle",
         "a chair"
@@ -363,9 +363,9 @@
     "sentence": "Otra dice que ella pone las [[servilletas]] y ya está.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "napkins",
+      "answer": "the napkins",
       "options": [
-        "napkins",
+        "the napkins",
         "the music",
         "the chairs",
         "the lights"
@@ -507,9 +507,9 @@
     "sentence": "No [[te compliques]], que aquí nadie mira eso.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to make it hard for yourself",
+      "answer": "to overthink it",
       "options": [
-        "to make it hard for yourself",
+        "to overthink it",
         "to hurry yourself",
         "to excuse yourself",
         "to help yourself"

@@ -122,15 +122,34 @@ const INFINITIVE: Record<string, RegExp> = {
 // conjugadas o nombres). Lista corta a proposito: lo que importa es el cruce
 // infinitivo / conjugado en el MISMO set, y ahi el error es visible.
 const NOT_INF: Record<string, RegExp> = {
-  spanish: /^(ayer|mujer|lugar|mar|azucar|bar|par|hogar|taller|papel|hotel|cualquier|mejor|peor|mayor|menor|alrededor|calor|color|dolor|flor|senor|senora|amor|sabor|olor)$/,
+  spanish: /^(ayer|mujer|lugar|mar|azucar|bar|par|hogar|taller|quehacer|papel|hotel|cualquier|mejor|peor|mayor|menor|alrededor|calor|color|dolor|flor|senor|senora|amor|sabor|olor)$/,
   portuguese: /^(mulher|lugar|mar|acucar|bar|par|lar|melhor|pior|maior|menor|calor|cor|dor|flor|senhor|amor|sabor)$/,
   italian: /^(mare|pane|cane|sale|sole|fiore|nome|cuore|madre|padre|notte|arte|parte|gente|mese|paese|piede|pesce|carne|latte|mente|volte|forse|sempre|mentre|oltre|altre|molte|tante|quante|poche|dolce|verde|grande|forte|felice|semplice|difficile|facile|giovane|insieme|niente|lontane|vicine|tre|re|sere|ore|sedie|frontiere)$/,
   french: /^(hier|cher|fier|mer|fer|hiver|cahier|papier|quartier|premier|dernier|entier|calendrier|escalier|panier|clavier|pompier|boulanger|fermier|policier|ouvrier|infirmier|cuisinier|janvier|fevrier|dossier|courrier|metier|rocher|verger|potager|atelier|chantier|sentier|pommier|cerisier|oranger|rosier|olivier|collier|soulier|tablier|oreiller|palier|passager|etranger|leger|amer|plaisir|loisir|avenir|souvenir|soir|noir|bonsoir|espoir|devoir|pouvoir|savoir|vouloir|voir|miroir|mouchoir|couloir|trottoir|livre|libre|propre|pauvre|autre|notre|votre|quatre|entre|contre|arbre|ombre|nombre|chambre|septembre|octobre|novembre|decembre|lettre|fenetre|maitre|ventre|centre|theatre|ordre|cadre|verre|terre|guerre|pierre|mere|pere|frere|derriere|premiere|derniere|lumiere|riviere|maniere|matiere|colere|biere|carriere|frontiere|sur|pour|jour|tour|amour|toujours|bonjour|leur|coeur|soeur|fleur|couleur|heure|peur|meilleur)$/,
 };
+// Verbo y sustantivo a la vez (al amanecer / van a amanecer): no se juzgan, y
+// la regla de formas mezcladas se salta cuando aparece uno.
+const AMBIG_INF: Record<string, RegExp> = {
+  spanish: /^(amanecer|anochecer|atardecer|poder|deber|placer|parecer|haber|querer|pesar|andar|cantar|saber|sentir)$/,
+  portuguese: /^(amanhecer|anoitecer|entardecer|poder|dever|prazer|parecer|saber|jantar|almocar|andar)$/,
+  italian: /^(potere|dovere|piacere|sapere|essere|avere|parere|dispiacere)$/,
+  french: /^(pouvoir|devoir|savoir|avoir|plaisir|souvenir|loisir|diner|dejeuner|gouter|baiser|rire|sourire|devenir)$/,
+};
 function isInfinitive(w: string, lang: string): boolean | null {
   const re = INFINITIVE[lang];
   if (!re) return null;
-  const t = norm(w).split(/\s+/)[0] ?? "";
+  if (AMBIG_INF[lang]?.test(norm(w).split(/\s+/)[0] ?? "")) return null;
+  let t = norm(w).split(/\s+/)[0] ?? "";
+  // Encliticos (cobrarla, vestirse, dar-lhe): se quitan para mirar la desinencia.
+  if (/^(spanish|portuguese)$/.test(lang)) {
+    // Sin -te ni -me: fuerte, muerte, parte, advierte no llevan clitico y
+    // caian como infinitivo ("advier" + "te"). Un "ayudarte" entre infinitivos
+    // se escribe como "ayudar".
+    // Y solo con raiz de 5+ letras (o dar/ver/ser/ir): "charla" y "perla" no
+    // son "char" + "la" ni "per" + "la".
+    const m = /^(.+?(?:ar|er|ir))(se|nos|lo|la|los|las|le|les|lhe|lhes)$/.exec(t);
+    if (m && (m[1].length >= 5 || /^(dar|ver|ser|ir|oir)$/.test(m[1]))) t = m[1];
+  }
   // Cortos que SI son infinitivo (dar, ser, ver, ir); el resto de 3 letras no.
   if (t === "ir") return true;
   if (!t || t.length < 3) return false;
@@ -252,12 +271,19 @@ export function genderFromCorpus(word: string, corpus: string, lang: string): GN
   }
   const keys = Object.keys(votes);
   if (!keys.length) return null;
+  // agua, hambre, aula...: llevan "el/un" por la a- tonica y siguen siendo
+  // femeninas; el voto masculino de esos articulos no cuenta.
+  if (lang === "spanish" && FEM_EL_ES.has(w)) return { g: "f", n: keys.some((k) => k[1] === "p") && !keys.some((k) => k[1] === "s") ? "p" : "s" };
   const tally = (pos: 0 | 1, vals: string[]) => {
     const c = vals.map((v) => [v, keys.filter((k) => k[pos] === v).reduce((a, k) => a + votes[k], 0)] as const).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
     return c.length && (c.length === 1 || c[0][1] > c[1][1]) ? c[0][0] : null;
   };
   return { g: tally(0, ["m", "f", "n"]) as GN["g"], n: tally(1, ["s", "p"]) as GN["n"] };
 }
+
+const FEM_EL_ES = new Set(["agua", "alma", "hambre", "aguila", "águila", "aula", "area", "área", "arma", "ala", "hacha", "hada", "ancla", "asma", "ave", "habla", "acta", "alba", "ama", "arca", "aya", "ansia", "asa", "aspa", "haba", "hampa", "ánfora", "anfora", "águila"]);
+// Masculinos en -a (dia, problema, mapa...): la desinencia miente.
+const MASC_A_ES = new Set(["dia", "día", "mediodia", "mediodía", "mapa", "problema", "programa", "sistema", "clima", "tema", "idioma", "planeta", "poema", "drama", "sofa", "sofá", "tranvia", "tranvía", "pijama", "aroma", "fantasma", "diploma", "esquema", "sintoma", "síntoma", "dilema", "panorama", "cometa", "telegrama", "diagrama", "trauma", "coma", "enigma", "lema", "teorema", "axioma", "carisma", "estigma", "dogma", "magma", "prisma", "sofa"]);
 
 /** Desinencia, solo para las tres lenguas donde es regular y como ultimo recurso. */
 function genderFromEnding(word: string, lang: string): GN | null {
@@ -272,6 +298,7 @@ function genderFromEnding(word: string, lang: string): GN | null {
   // En -s no hay desinencia fiable: plural, invariable (paraguas, crisis) o
   // lema ya plural (gafas). Sin corpus no se dice nada.
   if (/s$/.test(w)) return null;
+  if (lang === "spanish" && MASC_A_ES.has(w)) return { g: "m", n: "s" };
   if (/o$/.test(w)) return { g: "m", n: "s" };
   if (/a$/.test(w)) return { g: "f", n: "s" };
   return null;
@@ -318,7 +345,8 @@ export function distractorIssues(ex: any, ctx: GateCtx): GateResult {
   // D1 relleno
   for (const o of opts) {
     if (!o.trim()) issues.push(`${tag} D1 opcion vacia`);
-    if (/\b(\w+)\s+\1\b/i.test(o)) issues.push(`${tag} D1 glosa con relleno repetido: "${o}"`);
+    // La propia palabra puede repetir token ("luego luego"): solo se mira el relleno en glosas.
+    if (norm(o) !== norm(word) && /\b(\w+)\s+\1\b/i.test(o)) issues.push(`${tag} D1 glosa con relleno repetido: "${o}"`);
     if (o !== answer && norm(o) === norm(word)) issues.push(`${tag} D1 distractor igual a la palabra`);
   }
   if (glosses && glosses !== opts) for (const g of glosses) if (/\b(\w+)\s+\1\b/i.test(g)) issues.push(`${tag} D1 traduccion con relleno repetido: "${g}"`);
@@ -368,6 +396,8 @@ export function distractorIssues(ex: any, ctx: GateCtx): GateResult {
       if (ansGN) {
         const bad: string[] = [];
         for (const o of opts) {
+          // "el agua", "un hambre": articulo masculino singular legitimo.
+          if (lang === "spanish" && FEM_EL_ES.has(norm(o)) && /^(el|un|del|al)$/.test(before)) continue;
           const gn = (ctx.corpus ? genderFromCorpus(o, ctx.corpus, lang) : null) ?? genderFromEnding(o, lang);
           if (gn && !compatible(det, gn)) bad.push(`${o}(${gn.g ?? "?"}${gn.n ?? "?"})`);
         }

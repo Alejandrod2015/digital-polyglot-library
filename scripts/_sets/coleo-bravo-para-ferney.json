@@ -6,9 +6,9 @@
     "sentence": "El polvo cubría la [[manga de coleo]] llena de jinetes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the fenced track where riders chase the bull",
+      "answer": "a fenced track for cattle chasing",
       "options": [
-        "the fenced track where riders chase the bull",
+        "a fenced track for cattle chasing",
         "a bullring for matadors",
         "a horse stable",
         "a market square"
@@ -181,9 +181,9 @@
     "sentence": "Manu sintió un [[nudo en la garganta]] por el miedo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a tight lump in your throat from fear",
+      "answer": "a lump in your throat",
       "options": [
-        "a tight lump in your throat from fear",
+        "a lump in your throat",
         "a sudden sharp headache",
         "a burst of happiness",
         "a loud angry shout"

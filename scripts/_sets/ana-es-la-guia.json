@@ -466,14 +466,14 @@
       "answer": "primera",
       "options": [
         "primera",
-        "última",
+        "tercera",
         "verde",
         "fría"
       ],
       "translation": "The letter A is the _____ of the alphabet.",
       "optionTranslations": [
         "first",
-        "last",
+        "third",
         "green",
         "cold"
       ],

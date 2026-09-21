@@ -125,9 +125,9 @@
     "sentence": "[[El de al lado]] siempre resulta ser algo de alguien.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "whoever is next to you",
+      "answer": "the one next door",
       "options": [
-        "whoever is next to you",
+        "the one next door",
         "the one from before",
         "the oldest one",
         "the newest one"
@@ -414,9 +414,9 @@
       "answer": "family ties",
       "options": [
         "family ties",
-        "a old quarrel",
-        "a shared job",
-        "a street name"
+        "old quarrels",
+        "shared jobs",
+        "street names"
       ],
       "audioClip": {
         "storySlug": "media-calle-comparte-apellido",

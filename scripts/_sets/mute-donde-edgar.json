@@ -317,9 +317,9 @@
     "sentence": "La [[franqueza]] de Édgar a veces incomoda a Manu.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the habit of speaking openly and directly",
+      "answer": "a habit of speaking bluntly",
       "options": [
-        "the habit of speaking openly and directly",
+        "a habit of speaking bluntly",
         "a shy and quiet nature",
         "a talent for telling jokes",
         "a habit of flattering people"
@@ -467,9 +467,9 @@
     "sentence": "Le montaron una [[carrilla]] tremenda por el acento.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "relentless playful teasing",
+      "answer": "a round of playful teasing",
       "options": [
-        "relentless playful teasing",
+        "a round of playful teasing",
         "a serious formal warning",
         "a small paid favor",
         "a plate of leftovers"

@@ -119,14 +119,14 @@
       "answer": "encontró",
       "options": [
         "encontró",
-        "perdió",
+        "rompió",
         "vendió",
         "escribió"
       ],
       "translation": "She opened the book and what she _____ was not hers.",
       "optionTranslations": [
         "found",
-        "lost",
+        "broke",
         "sold",
         "wrote"
       ],
@@ -149,14 +149,14 @@
       "answer": "peor",
       "options": [
         "peor",
-        "mejor",
+        "distinto",
         "igual",
         "raro"
       ],
       "translation": "She does not shout, she serves her more rice, and that is _____.",
       "optionTranslations": [
         "worse",
-        "better",
+        "different",
         "the same",
         "odd"
       ],

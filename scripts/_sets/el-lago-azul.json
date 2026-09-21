@@ -8,7 +8,7 @@
       "answer": "to arrive",
       "options": [
         "to arrive",
-        "to leave",
+        "to swim",
         "to pay",
         "to sing"
       ],
@@ -253,7 +253,7 @@
       "answer": "a day",
       "options": [
         "a day",
-        "a night",
+        "a week",
         "a month",
         "a year"
       ],
@@ -277,14 +277,14 @@
       "answer": "último",
       "options": [
         "último",
-        "primero",
+        "quinto",
         "pequeño",
         "verde"
       ],
       "translation": "December is the _____ month of the year.",
       "optionTranslations": [
         "last",
-        "first",
+        "fifth",
         "small",
         "green"
       ],

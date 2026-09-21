@@ -169,9 +169,9 @@
       "answer": "the Roman bridge",
       "options": [
         "the Roman bridge",
-        "a new highway",
-        "a wooden bridge",
-        "a train station"
+        "the new highway",
+        "the wooden bridge",
+        "the train station"
       ],
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
@@ -210,9 +210,9 @@
     "sentence": "Todo sonaba sobre las [[piedras]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "stones",
+      "answer": "the stones",
       "options": [
-        "stones",
+        "the stones",
         "the grass",
         "the water",
         "the sand"
@@ -257,7 +257,7 @@
       "answer": "open",
       "options": [
         "open",
-        "closed",
+        "green",
         "broken",
         "painted"
       ],

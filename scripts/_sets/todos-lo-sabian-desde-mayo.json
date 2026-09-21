@@ -414,7 +414,7 @@
       "answer": "still",
       "options": [
         "still",
-        "already",
+        "only",
         "hardly",
         "almost"
       ],
@@ -486,7 +486,7 @@
       "answer": "to remember",
       "options": [
         "to remember",
-        "to forget",
+        "to talk about",
         "to explain",
         "to doubt"
       ],

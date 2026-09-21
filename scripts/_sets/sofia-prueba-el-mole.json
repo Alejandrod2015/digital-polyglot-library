@@ -208,7 +208,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "comprar",
-        "vender",
+        "leer",
         "tirar",
         "abrir"
       ],
@@ -224,7 +224,7 @@
       "translation": "I have no money to _____ that book.",
       "optionTranslations": [
         "buy",
-        "sell",
+        "read",
         "throw away",
         "open"
       ]
@@ -641,9 +641,9 @@
       "answer": "ingredients",
       "options": [
         "ingredients",
-        "the chairs",
-        "the windows",
-        "the shoes"
+        "windows",
+        "shoes",
+        "chairs"
       ],
       "audioClip": {
         "storySlug": "sofia-prueba-el-mole",

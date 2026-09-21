@@ -165,9 +165,9 @@
       "prompt": "Complete the sentence.",
       "options": [
         "lluvia",
-        "sol",
-        "viento",
-        "calor"
+        "arena",
+        "hierba",
+        "basura"
       ],
       "audioClip": {
         "language": "spanish",
@@ -181,9 +181,9 @@
       "translation": "The gray clouds bring a lot of _____ today.",
       "optionTranslations": [
         "rain",
-        "sun",
-        "wind",
-        "heat"
+        "sand",
+        "grass",
+        "rubbish"
       ]
     },
     "featured": true
@@ -247,7 +247,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "largo",
-        "corto",
+        "verde",
         "limpio",
         "nuevo"
       ],
@@ -263,7 +263,7 @@
       "translation": "You walk for hours because the road is very _____.",
       "optionTranslations": [
         "long",
-        "short",
+        "green",
         "clean",
         "new"
       ]

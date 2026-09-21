@@ -286,7 +286,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "narrow",
-        "wide",
+        "dark",
         "tall",
         "clean"
       ],
@@ -311,7 +311,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "small",
-        "big",
+        "round",
         "long",
         "heavy"
       ],
@@ -461,7 +461,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "triste",
-        "feliz",
+        "lento",
         "listo",
         "lleno"
       ],
@@ -477,7 +477,7 @@
       "translation": "When something bad happens, I am very _____.",
       "optionTranslations": [
         "sad",
-        "happy",
+        "slow",
         "ready",
         "full"
       ]
@@ -518,9 +518,9 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "people",
-        "a child",
-        "a house",
-        "a street"
+        "traffic",
+        "noise",
+        "music"
       ],
       "audioClip": {
         "language": "spanish",
@@ -539,10 +539,10 @@
     "word": "regalar",
     "sentence": "Ella le [[regala]] otro dulce contenta.",
     "payload": {
-      "answer": "to give as a gift",
+      "answer": "to gift",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to give as a gift",
+        "to gift",
         "to sell",
         "to buy",
         "to hide"

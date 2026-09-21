@@ -53,9 +53,9 @@
     "sentence": "Así funcionaba, como una [[guelaguetza]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "spirit of mutual giving",
+      "answer": "a spirit of mutual giving",
       "options": [
-        "spirit of mutual giving",
+        "a spirit of mutual giving",
         "a paid contract",
         "a strict rule",
         "a lucky accident"

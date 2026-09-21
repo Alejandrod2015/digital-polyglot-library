@@ -347,7 +347,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "triste",
-        "feliz",
+        "alta",
         "cansada",
         "ocupada"
       ],
@@ -363,7 +363,7 @@
       "translation": "She cries because she is very _____.",
       "optionTranslations": [
         "sad",
-        "happy",
+        "tall",
         "tired",
         "busy"
       ]

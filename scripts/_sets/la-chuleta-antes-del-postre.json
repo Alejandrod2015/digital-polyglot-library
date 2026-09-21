@@ -245,10 +245,10 @@
     "sentence": "Ernesto [[gana]] poco, y esa noche lo llaman.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to win",
+      "answer": "to earn",
       "options": [
-        "to win",
-        "to lose",
+        "to earn",
+        "to spend",
         "to pay",
         "to owe"
       ],
@@ -271,7 +271,7 @@
       "answer": "to lose",
       "options": [
         "to lose",
-        "to gain",
+        "to keep",
         "to save",
         "to spend"
       ],
@@ -438,7 +438,7 @@
       "answer": "long",
       "options": [
         "long",
-        "short",
+        "late",
         "cheap",
         "cold"
       ],

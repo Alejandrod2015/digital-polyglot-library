@@ -56,9 +56,9 @@
     "sentence": "El garaje estaba en el [[Barrio del Oeste]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a Salamanca neighbourhood",
+      "answer": "a western neighbourhood",
       "options": [
-        "a Salamanca neighbourhood",
+        "a western neighbourhood",
         "the city centre",
         "a nearby village",
         "the train station"

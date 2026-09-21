@@ -247,7 +247,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "caliente",
-        "fría",
+        "verde",
         "dulce",
         "salada"
       ],
@@ -263,7 +263,7 @@
       "translation": "Do not touch the soup because it is very _____.",
       "optionTranslations": [
         "hot",
-        "cold",
+        "green",
         "sweet",
         "salty"
       ]
@@ -518,7 +518,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "thick",
-        "thin",
+        "sweet",
         "clear",
         "cold"
       ],
@@ -892,9 +892,9 @@
     "sentence": "Sofía prueba el mole con una [[tortilla]] caliente.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "corn flatbread",
+      "answer": "a corn flatbread",
       "options": [
-        "corn flatbread",
+        "a corn flatbread",
         "a spoon",
         "a chair",
         "a window"

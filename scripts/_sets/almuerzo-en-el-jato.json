@@ -245,12 +245,12 @@
     "sentence": "Nada [[del otro mundo]], sin planes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "nothing out of this world",
+      "answer": "nothing special",
       "options": [
-        "nothing out of this world",
-        "the best day ever",
-        "a total disaster",
-        "a huge surprise"
+        "nothing special",
+        "really something",
+        "utterly terrible",
+        "hugely surprising"
       ],
       "audioClip": {
         "storySlug": "almuerzo-en-el-jato",

@@ -54,14 +54,14 @@
       "answer": "gente",
       "options": [
         "gente",
-        "agua",
+        "arena",
         "fruta",
         "ropa"
       ],
       "translation": "There are a lot of _____ at the concert.",
       "optionTranslations": [
         "people",
-        "water",
+        "sand",
         "fruit",
         "clothes"
       ],
@@ -339,14 +339,14 @@
       "answer": "llenas",
       "options": [
         "llenas",
-        "vacías",
+        "grandes",
         "rotas",
         "frías"
       ],
       "translation": "The bottles are _____ of water up to the top.",
       "optionTranslations": [
         "full",
-        "empty",
+        "big",
         "broken",
         "cold"
       ],

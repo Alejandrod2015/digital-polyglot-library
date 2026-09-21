@@ -120,14 +120,14 @@
       "options": [
         "temprano",
         "despacio",
-        "tarde",
+        "sola",
         "lejos"
       ],
       "translation": "He gets up very _____ and arrives before anybody else.",
       "optionTranslations": [
         "early",
         "slowly",
-        "late",
+        "alone",
         "far"
       ],
       "audioClip": {
@@ -342,7 +342,7 @@
       "answer": "to leave",
       "options": [
         "to leave",
-        "to arrive",
+        "to sit down",
         "to answer",
         "to wait"
       ],
@@ -366,7 +366,7 @@
       "answer": "different",
       "options": [
         "different",
-        "the same",
+        "normal",
         "easy",
         "useless"
       ],

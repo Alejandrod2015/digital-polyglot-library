@@ -280,14 +280,14 @@
       "answer": "cierra",
       "options": [
         "cierra",
-        "abre",
+        "sube",
         "rompe",
         "brilla"
       ],
       "translation": "The window doesn't _____ properly: there's always a gap left open.",
       "optionTranslations": [
         "close",
-        "open",
+        "go up",
         "break",
         "shine"
       ],

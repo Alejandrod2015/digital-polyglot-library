@@ -165,7 +165,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "comprar",
-        "vender",
+        "cortar",
         "tirar",
         "lavar"
       ],
@@ -181,7 +181,7 @@
       "translation": "I need money to _____ the bread.",
       "optionTranslations": [
         "buy",
-        "sell",
+        "cut",
         "throw away",
         "wash"
       ]
@@ -670,9 +670,9 @@
       "answer": "attention",
       "options": [
         "attention",
-        "a corner",
-        "a smell",
-        "a coin"
+        "money",
+        "time",
+        "luck"
       ],
       "audioClip": {
         "storySlug": "la-talavera-azul",

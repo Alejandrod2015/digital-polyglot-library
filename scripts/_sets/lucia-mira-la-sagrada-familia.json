@@ -83,9 +83,9 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "people",
-        "a family",
-        "a house",
-        "a friend"
+        "smoke",
+        "water",
+        "music"
       ],
       "audioClip": {
         "language": "spanish",
@@ -343,7 +343,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "inside",
-        "outside",
+        "behind",
         "above",
         "near"
       ],
@@ -468,8 +468,8 @@
       "prompt": "Complete the sentence.",
       "options": [
         "alta",
-        "baja",
-        "corta",
+        "roja",
+        "verde",
         "ancha"
       ],
       "audioClip": {
@@ -484,8 +484,8 @@
       "translation": "The mountain is very _____.",
       "optionTranslations": [
         "tall",
-        "low",
-        "short",
+        "red",
+        "green",
         "wide"
       ]
     },
@@ -532,7 +532,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "arriba",
-        "abajo",
+        "limpio",
         "cerca",
         "afuera"
       ],
@@ -548,7 +548,7 @@
       "translation": "The cat went up and now it is _____.",
       "optionTranslations": [
         "up",
-        "down",
+        "clean",
         "near",
         "outside"
       ]

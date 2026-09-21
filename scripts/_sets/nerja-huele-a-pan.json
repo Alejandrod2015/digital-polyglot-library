@@ -146,14 +146,14 @@
       "answer": "comprar",
       "options": [
         "comprar",
-        "vender",
+        "regalar",
         "guardar",
         "cortar"
       ],
       "translation": "She goes to the bakery to _____ bread for dinner.",
       "optionTranslations": [
         "to buy",
-        "to sell",
+        "to give away",
         "to keep",
         "to cut"
       ],
@@ -431,7 +431,7 @@
       "answer": "new",
       "options": [
         "new",
-        "old",
+        "red",
         "difficult",
         "short"
       ],

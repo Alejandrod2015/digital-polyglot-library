@@ -294,9 +294,9 @@
       "answer": "the landlady",
       "options": [
         "the landlady",
-        "a lodger",
-        "a neighbour",
-        "a cleaner"
+        "the lodger",
+        "the neighbour",
+        "the cleaner"
       ],
       "audioClip": {
         "storySlug": "la-pregunta-que-no-se-hace",

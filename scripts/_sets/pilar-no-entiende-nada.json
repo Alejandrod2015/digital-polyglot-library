@@ -221,9 +221,9 @@
     "sentence": "De pronto [[se le prendió el foco]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a bright idea struck",
+      "answer": "inspiration struck her",
       "options": [
-        "a bright idea struck",
+        "inspiration struck her",
         "her mind went blank",
         "she lost all hope",
         "she fell asleep"

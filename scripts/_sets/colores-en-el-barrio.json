@@ -442,14 +442,14 @@
       "answer": "lleno",
       "options": [
         "lleno",
-        "vacío",
+        "roto",
         "limpio",
         "nuevo"
       ],
       "translation": "There is no more space; the bus is _____.",
       "optionTranslations": [
         "full",
-        "empty",
+        "broken",
         "clean",
         "new"
       ],

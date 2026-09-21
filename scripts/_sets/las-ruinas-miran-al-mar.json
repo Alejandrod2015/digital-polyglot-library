@@ -311,7 +311,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to sell",
-        "to buy",
+        "to wash",
         "to grow",
         "to eat"
       ],
@@ -436,7 +436,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "better",
-        "worse",
+        "faster",
         "equal",
         "smaller"
       ],
@@ -652,9 +652,9 @@
       "answer": "fruit",
       "options": [
         "fruit",
-        "a chair",
-        "a river",
-        "a shoe"
+        "paper",
+        "glass",
+        "sand"
       ],
       "audioClip": {
         "storySlug": "las-ruinas-miran-al-mar",

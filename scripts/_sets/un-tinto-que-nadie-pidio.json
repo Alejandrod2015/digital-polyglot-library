@@ -220,9 +220,9 @@
     "sentence": "Lleva tres semanas dándole [[vueltas]] al mismo cambio.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "going over it again and again",
+      "answer": "mulling it over",
       "options": [
-        "going over it again and again",
+        "mulling it over",
         "finishing it quickly",
         "paying for it",
         "forgetting it"

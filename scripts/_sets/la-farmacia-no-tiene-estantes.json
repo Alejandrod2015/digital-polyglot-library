@@ -366,7 +366,7 @@
       "answer": "long",
       "options": [
         "long",
-        "short",
+        "strange",
         "funny",
         "quiet"
       ],

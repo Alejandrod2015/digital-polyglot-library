@@ -61,7 +61,7 @@
       "answer": "to take",
       "options": [
         "to take",
-        "to give",
+        "to hide",
         "to lose",
         "to break"
       ],
@@ -339,14 +339,14 @@
       "answer": "nuevo",
       "options": [
         "nuevo",
-        "viejo",
+        "rojo",
         "lento",
         "sucio"
       ],
       "translation": "My car is _____; it is one week old.",
       "optionTranslations": [
         "new",
-        "old",
+        "red",
         "slow",
         "dirty"
       ],

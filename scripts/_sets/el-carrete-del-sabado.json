@@ -197,9 +197,9 @@
     "sentence": "El carrete estaba [[a un pelo]] del fracaso.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a hair away from",
+      "answer": "one hair away from",
       "options": [
-        "a hair away from",
+        "one hair away from",
         "miles away from",
         "right on top of",
         "safe and far from"
@@ -273,14 +273,14 @@
       "answer": "llegái",
       "options": [
         "llegái",
-        "salís",
+        "comés",
         "dormís",
         "cantás"
       ],
       "translation": "Watch out, if you _____ with nothing, we shame you.",
       "optionTranslations": [
         "arrive",
-        "leave",
+        "eat",
         "sleep",
         "sing"
       ],

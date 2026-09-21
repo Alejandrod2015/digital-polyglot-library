@@ -537,9 +537,9 @@
     "sentence": "Presumía de las [[casetas]] de salsa de Cali.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "open-air salsa dance hall",
+      "answer": "an open-air salsa hall",
       "options": [
-        "open-air salsa dance hall",
+        "an open-air salsa hall",
         "a small food stall",
         "a beach cabin",
         "a record shop"
@@ -562,9 +562,9 @@
     "sentence": "Le pidió bajarle a esa [[bulla]] de discoteca.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "loud noise, racket",
+      "answer": "a loud racket",
       "options": [
-        "loud noise, racket",
+        "a loud racket",
         "a slow sad song",
         "a bad smell",
         "an empty street"

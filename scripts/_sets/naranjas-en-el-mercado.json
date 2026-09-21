@@ -8,7 +8,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to buy",
-        "to sell",
+        "to smell",
         "to wash",
         "to open"
       ],
@@ -222,7 +222,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "grande",
-        "pequeño",
+        "rojo",
         "rápido",
         "limpio"
       ],
@@ -238,7 +238,7 @@
       "translation": "An elephant is a very _____ animal.",
       "optionTranslations": [
         "big",
-        "small",
+        "red",
         "fast",
         "clean"
       ]
@@ -255,7 +255,7 @@
       "options": [
         "happy",
         "tired",
-        "sad",
+        "busy",
         "sick"
       ],
       "audioClip": {
@@ -404,7 +404,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "best",
-        "worst",
+        "biggest",
         "cheapest",
         "newest"
       ],
@@ -461,7 +461,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to laugh",
-        "to cry",
+        "to sigh",
         "to shout",
         "to sing"
       ],

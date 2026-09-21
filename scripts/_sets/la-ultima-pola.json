@@ -368,15 +368,15 @@
       "options": [
         "aguardiente",
         "guayabo",
-        "tregua",
-        "angustia"
+        "susto",
+        "regaño"
       ],
       "translation": "Camilo passed out the ____ amid laughter.",
       "optionTranslations": [
         "anise liquor",
         "hangover",
-        "break",
-        "anguish"
+        "scare",
+        "scolding"
       ],
       "audioClip": {
         "storySlug": "la-ultima-pola",

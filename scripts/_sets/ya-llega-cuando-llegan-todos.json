@@ -79,9 +79,9 @@
     "sentence": "[[Es que]] nadie me ha dicho nunca a qué hora abre.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the thing is",
+      "answer": "it's just that",
       "options": [
-        "the thing is",
+        "it's just that",
         "even so",
         "from now on",
         "as always"
@@ -125,12 +125,12 @@
     "sentence": "Nadie le ha dicho a qué [[hora]] se hace nada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "time of day",
+      "answer": "time",
       "options": [
-        "time of day",
-        "a price",
-        "a place",
-        "a reason"
+        "time",
+        "price",
+        "place",
+        "reason"
       ],
       "audioClip": {
         "storySlug": "ya-llega-cuando-llegan-todos",
@@ -462,7 +462,7 @@
       "answer": "to laugh",
       "options": [
         "to laugh",
-        "to cry",
+        "to sigh",
         "to shout",
         "to whisper"
       ],

@@ -8,7 +8,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to sell",
-        "to buy",
+        "to wash",
         "to cook",
         "to give"
       ],
@@ -133,7 +133,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to finish",
-        "to start",
+        "to share",
         "to buy",
         "to serve"
       ],
@@ -255,7 +255,7 @@
       "options": [
         "hambre",
         "sed",
-        "sueño",
+        "fiebre",
         "prisa"
       ],
       "audioClip": {
@@ -271,7 +271,7 @@
       "optionTranslations": [
         "hungry",
         "thirsty",
-        "sleepy",
+        "feverish",
         "in a hurry"
       ]
     },
@@ -286,7 +286,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "early",
-        "late",
+        "loudly",
         "slowly",
         "always"
       ],
@@ -518,7 +518,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "grande",
-        "pequeño",
+        "rápido",
         "corto",
         "bajo"
       ],
@@ -534,7 +534,7 @@
       "translation": "The elephant is a very _____ animal.",
       "optionTranslations": [
         "big",
-        "small",
+        "fast",
         "short",
         "low"
       ]

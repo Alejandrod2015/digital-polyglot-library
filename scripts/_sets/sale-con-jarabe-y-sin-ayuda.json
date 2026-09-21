@@ -220,7 +220,7 @@
       "answer": "open",
       "options": [
         "open",
-        "closed",
+        "torn",
         "new",
         "lost"
       ],

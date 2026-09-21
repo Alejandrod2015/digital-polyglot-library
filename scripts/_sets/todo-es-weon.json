@@ -29,9 +29,9 @@
     "sentence": "Explícate bien, [[po]], que no se entiende.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a Chilean emphasis filler",
+      "answer": "a filler word for emphasis",
       "options": [
-        "a Chilean emphasis filler",
+        "a filler word for emphasis",
         "a rude big insult",
         "a formal polite title",
         "a sad long sigh"
@@ -125,9 +125,9 @@
     "sentence": "Dejaban la conversación [[como las pelotas]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a total mess",
+      "answer": "in a total mess",
       "options": [
-        "a total mess",
+        "in a total mess",
         "perfectly clear",
         "really elegant",
         "quite funny"

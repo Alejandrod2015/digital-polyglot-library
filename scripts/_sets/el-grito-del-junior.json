@@ -157,9 +157,9 @@
     "sentence": "Todo el [[parche]] estaba pendiente del televisor.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "group of friends",
+      "answer": "a group of friends",
       "options": [
-        "group of friends",
+        "a group of friends",
         "a small patch",
         "a loud song",
         "a cold drink"
