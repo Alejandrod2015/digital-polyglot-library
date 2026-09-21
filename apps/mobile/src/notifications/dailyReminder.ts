@@ -8,6 +8,13 @@ import type { OnboardingGoal } from "@/lib/onboarding";
 export type { ReminderDestination } from "@/lib/reminders";
 
 const DAILY_LOOP_REMINDER_TAG = "daily-loop-reminder";
+// Identificador FIJO del unico recordatorio diario. Sin el, cada
+// `scheduleNotificationAsync` recibia un UUID nuevo (expo hace
+// `request.identifier ?? uuid.v4()`), asi que dos llamadas solapadas
+// dejaban DOS entradas programadas y el usuario recibia el mismo aviso
+// dos veces cada dia. Con un id fijo, el store nativo REEMPLAZA la
+// entrada en vez de anadir otra, pase lo que pase con las carreras.
+const DAILY_LOOP_REMINDER_ID = "daily-loop-reminder";
 
 export type ReminderScheduleState =
   | { status: "disabled"; message: string }
@@ -49,14 +56,39 @@ export function parseReminderDestination(value: unknown): ReminderDestination | 
 }
 
 async function clearExistingReminderSchedules(
-  Notifications: typeof import("expo-notifications")
+  Notifications: typeof import("expo-notifications"),
+  /** Deja viva la entrada con el id fijo cuando vamos a reprogramarla. */
+  keepCanonical: boolean
 ) {
   const scheduled = await Notifications.getAllScheduledNotificationsAsync();
   await Promise.all(
     scheduled
-      .filter((request) => request.content.data?.tag === DAILY_LOOP_REMINDER_TAG)
+      .filter((request) => {
+        const isOurs =
+          request.identifier === DAILY_LOOP_REMINDER_ID ||
+          request.content.data?.tag === DAILY_LOOP_REMINDER_TAG;
+        if (!isOurs) return false;
+        // Las entradas viejas con UUID aleatorio (las que duplicaban el
+        // aviso) se borran siempre; la canonica solo cuando apagamos.
+        if (keepCanonical && request.identifier === DAILY_LOOP_REMINDER_ID) return false;
+        return true;
+      })
       .map((request) => Notifications.cancelScheduledNotificationAsync(request.identifier))
   );
+}
+
+// Cola de un solo carril. `syncDailyReminderSchedule` se llama desde tres
+// sitios (hidratacion de preferencias, guardado, y un efecto que depende de
+// `dailyReminderContext`, que cambia de identidad mientras carga el track), y
+// nada impedia que se solaparan: dos limpiezas leian la lista ANTES de que la
+// otra programara, ninguna cancelaba a la otra, y quedaban dos o tres avisos
+// identicos. Serializar las llamadas hace que cada una vea el estado real.
+let reminderSyncChain: Promise<unknown> = Promise.resolve();
+
+function runSerialized<T>(task: () => Promise<T>): Promise<T> {
+  const next = reminderSyncChain.then(task, task);
+  reminderSyncChain = next.catch(() => undefined);
+  return next;
 }
 
 function formatHM(hour: number, minute: number): string {
@@ -97,8 +129,9 @@ export async function syncDailyReminderSchedule(args: {
     };
   }
 
+  return runSerialized(async (): Promise<ReminderScheduleState> => {
   try {
-    await clearExistingReminderSchedules(Notifications);
+    await clearExistingReminderSchedules(Notifications, enabled && hour !== null);
 
     if (!enabled || hour === null) {
       return { status: "disabled", message: "Daily reminders are off." };
@@ -127,6 +160,9 @@ export async function syncDailyReminderSchedule(args: {
     // repeats: true }` iOS programa una entrada que dispara cada día a la
     // hora local del device.
     await Notifications.scheduleNotificationAsync({
+      // Id fijo: reprogramar REEMPLAZA la entrada anterior en vez de
+      // anadir otra. Es lo que impide que un solape deje dos avisos.
+      identifier: DAILY_LOOP_REMINDER_ID,
       content: {
         title: copy.title,
         body: copy.body,
@@ -148,4 +184,5 @@ export async function syncDailyReminderSchedule(args: {
       message: error instanceof Error ? error.message : "Could not schedule daily reminders.",
     };
   }
+  });
 }

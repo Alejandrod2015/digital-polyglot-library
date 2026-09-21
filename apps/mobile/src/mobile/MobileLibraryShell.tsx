@@ -7239,6 +7239,12 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        // El minuto se caia aqui: sin esta linea, guardar preferencias
+        // devolvia un objeto SIN `reminderMinute`, el estado perdia el
+        // :15/:30/:45 elegido y el recordatorio se reprogramaba en punto.
+        reminderMinute: normalizeReminderMinute(
+          (next as { reminderMinute?: unknown }).reminderMinute
+        ),
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
@@ -7262,6 +7268,7 @@ export function MobileLibraryShell(args: {
       const reminderState = await syncDailyReminderSchedule({
         enabled: normalized.remindersEnabled,
         hour: normalized.reminderHour,
+        minute: normalized.reminderMinute ?? 0,
         learningGoal: normalized.learningGoal,
         dailyMinutes: normalized.dailyMinutes,
         context: dailyReminderContext,
@@ -7352,6 +7359,12 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        // El minuto se caia aqui: sin esta linea, guardar preferencias
+        // devolvia un objeto SIN `reminderMinute`, el estado perdia el
+        // :15/:30/:45 elegido y el recordatorio se reprogramaba en punto.
+        reminderMinute: normalizeReminderMinute(
+          (next as { reminderMinute?: unknown }).reminderMinute
+        ),
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
@@ -18454,6 +18467,7 @@ export function MobileLibraryShell(args: {
     preferences.dailyMinutes,
     preferences.learningGoal,
     preferences.reminderHour,
+    preferences.reminderMinute,
     preferences.remindersEnabled,
   ]);
 
