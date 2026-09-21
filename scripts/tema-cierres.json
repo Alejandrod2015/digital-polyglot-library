@@ -12348,5 +12348,74 @@
     "avisos": [
       "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
+  },
+  "cmubidgaf0007j8np6g7n89iu#moving-and-helping-out": {
+    "cerrado": "2026-09-21T17:41:32.192Z",
+    "hash": "81dee8c19f4e74af",
+    "historias": [
+      "moving-and-helping-out#0 drei-stunden-transporter",
+      "moving-and-helping-out#1 das-sofa-aus-muenster",
+      "moving-and-helping-out#2 pizza-auf-den-kartons"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"fisico y con prisa; frases cortas de gente que carga cosas y mira el reloj\", espina \"Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"meint\" 33%)",
+      "arranques de parrafo variados (mas repetido \"das\", 17%)",
+      "densidad 12.3 palabras por oracion (techo 13 en a2)",
+      "seguidilla 9/36 oraciones cortas narradas",
+      "banda gramatical: sin banda medida para a2 (pretérito 0 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 56 plazas · 50 salen una sola vez | ancladas: 4/60 (7%) | cola: 50/56 portables con un solo encuentro (89%, tope 80%) | de un solo encuentro: gepackt, Klebeband, Nachbar, hebt, stöhnt, Gang, weh, plötzlich, doppelt, zögert, trägt, schweren, enge, nirgendwo, warnt, mitten, grün, breit, Knick, Rahmen, stecken, Seil, klemmt, kaputte, Möbelstück, müdes, geliehenes, Filzstift, Schild, trocken…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en DE A2 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "germany",
+      "registro": "fisico y con prisa; frases cortas de gente que carga cosas y mira el reloj",
+      "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+      "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "hacer la mudanza solo con Malte, sin deber nada a nadie",
+          "impide": "la furgoneta se acaba a las tres y a Malte se le rompe la espalda al tercer viaje",
+          "cuesta": "tiene que dejar entrar en su vida a medio empaquetar a un vecino que no conoce",
+          "cambia": "acepta por calculo, no por confianza, y eso ya es un cambio",
+          "emocion": "la prisa que tapa la verguenza de no poder sola"
+        },
+        {
+          "slot": "2",
+          "quiere": "subir a casa el sofa que trajo de Muenster",
+          "impide": "el codo de la escalera; el sofa no pasa de ninguna manera",
+          "cuesta": "regala el ultimo mueble de su vida anterior y lo ve irse en un carro",
+          "cambia": "deja de cargar con Muenster, literalmente",
+          "emocion": "el desapego seco de quien ya no puede permitirse la nostalgia"
+        },
+        {
+          "slot": "3",
+          "quiere": "saldar la cuenta del dia y quedar en paz",
+          "impide": "aqui los favores no se pagan en euros y preguntarlo suena mal",
+          "cuesta": "se queda debiendo un favor abierto, que es justo lo que evitaba",
+          "cambia": "el orgullo no desaparece, pero deja de mandar en la escena",
+          "emocion": "la incomodidad que afloja al final de la noche"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }

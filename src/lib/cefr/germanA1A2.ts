@@ -332,6 +332,13 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "brett","waschsalon","waschpulver","brummen","brummt","streifen",
   "vormieter","vormieterin","nachmieter","nachmieterin","kleben","klebt",
   "viereck","vierecke","zittern","zittert","hinterhof",
+  // Batch 9b (2026-09-21), same journey, tema 2 (moving-and-helping-out).
+  "transporter","deckel","klebeband","stöhnen","stöhnt","gang","weh","doppelt",
+  "rechnung","nicken","nickt","eng","warnen","warnt","nirgendwo","mitten",
+  "knick","rahmen","rechnen","rechnet","kaputt","lehne","filzstift","pappteller",
+  "flach","bedanken","bedankt","schief","hausordnung","tonne","tonnen","gefallen",
+  "irgendwann","umdrehen","umgedreht","waschmaschine","maschine","fensterbank",
+  "leihen","geliehen","pizza","klemmen","klemmt","seil","seile",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

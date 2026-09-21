@@ -1,0 +1,399 @@
+[
+ {
+  "topic": "moving-and-helping-out",
+  "slotIndex": 0,
+  "title": "Drei Stunden Transporter",
+  "slug": "drei-stunden-transporter",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "The hired van is Malte's only until three in the afternoon, and Britta insists the two of them can manage the whole move alone. After three trips up the stairs Malte's back gives out and half the boxes are still down in the yard. A neighbour from the ground floor turns up with work gloves.",
+  "text": "Am Samstagmorgen gehört der Transporter Malte nur bis drei Uhr. Britta hat alles selbst gepackt und jeden Deckel mit Klebeband zugemacht. Ingo ist ein Nachbar aus dem Erdgeschoss und wartet unten im Hinterhof, wo es nach Regen riecht.\n\n“Wir schaffen das gut zu zweit, so haben wir das früher immer gemacht”, meint Britta. Malte hebt die erste Kiste und stöhnt leise. Nach dem dritten Gang tut ihm der Rücken weh, und unten steht noch die Hälfte.\n\nPlötzlich steht Ingo mit dicken Handschuhen neben dem Transporter. “Ich habe heute sowieso Zeit, und zu dritt geht das doppelt so schnell”, bietet er an. Britta zögert, denkt an die Rechnung und nickt dann doch.\n\nIngo trägt den schweren Schrank allein durch das enge Treppenhaus. Um Viertel vor drei steht der letzte Karton in der Küche. “Morgen kommt noch dein Sofa, und das passt hier nirgendwo durch”, warnt Malte.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Transporter",
+    "anchor": true,
+    "surface": "Transporter",
+    "definition": "A hired van; the small truck people rent for one day to move."
+   },
+   {
+    "type": "verb",
+    "word": "packen",
+    "surface": "gepackt",
+    "definition": "To pack; to put all your things into boxes before a move."
+   },
+   {
+    "type": "noun",
+    "word": "der Deckel",
+    "surface": "Deckel",
+    "definition": "A lid; the flap or top that closes a box or a pot."
+   },
+   {
+    "type": "noun",
+    "word": "das Klebeband",
+    "surface": "Klebeband",
+    "definition": "Sticky tape; the roll you use to close a cardboard box."
+   },
+   {
+    "type": "noun",
+    "word": "der Nachbar",
+    "surface": "Nachbar",
+    "definition": "A neighbour; a person who lives in the same house as you."
+   },
+   {
+    "type": "verb",
+    "word": "heben",
+    "surface": "hebt",
+    "definition": "To lift; to take something heavy up from the floor."
+   },
+   {
+    "type": "verb",
+    "word": "stöhnen",
+    "surface": "stöhnt",
+    "definition": "To groan; to make a low sound when something hurts you."
+   },
+   {
+    "type": "noun",
+    "word": "der Gang",
+    "surface": "Gang",
+    "definition": "A trip on foot; one walk up and down carrying something."
+   },
+   {
+    "type": "adverb",
+    "word": "weh",
+    "surface": "weh",
+    "definition": "Painfully; a part of your body hurts when you say this."
+   },
+   {
+    "type": "adverb",
+    "word": "plötzlich",
+    "surface": "plötzlich",
+    "definition": "Suddenly; from one moment to the next, with no warning."
+   },
+   {
+    "type": "adverb",
+    "word": "doppelt",
+    "surface": "doppelt",
+    "definition": "Twice as much; two times the speed, the size or the price."
+   },
+   {
+    "type": "verb",
+    "word": "zögern",
+    "surface": "zögert",
+    "definition": "To hesitate; to wait a moment because you are not sure."
+   },
+   {
+    "type": "noun",
+    "word": "die Rechnung",
+    "anchor": true,
+    "surface": "Rechnung",
+    "definition": "The bill; the paper that says how much you have to pay."
+   },
+   {
+    "type": "verb",
+    "word": "nicken",
+    "surface": "nickt",
+    "definition": "To nod; to move your head down once to say yes."
+   },
+   {
+    "type": "verb",
+    "word": "tragen",
+    "surface": "trägt",
+    "definition": "To carry; to hold something heavy in your arms and walk."
+   },
+   {
+    "type": "adjective",
+    "word": "schwer",
+    "surface": "schweren",
+    "definition": "Heavy; hard to lift, so you need both arms for it."
+   },
+   {
+    "type": "adjective",
+    "word": "eng",
+    "surface": "enge",
+    "definition": "Narrow; with so little room that big things get stuck."
+   },
+   {
+    "type": "verb",
+    "word": "passen",
+    "surface": "passt",
+    "definition": "To fit; to go through a door or into a space without trouble."
+   },
+   {
+    "type": "adverb",
+    "word": "nirgendwo",
+    "surface": "nirgendwo",
+    "definition": "Nowhere; in no place at all, however hard you try."
+   },
+   {
+    "type": "verb",
+    "word": "warnen",
+    "surface": "warnt",
+    "definition": "To warn; to tell somebody early that a problem is coming."
+   }
+  ]
+ },
+ {
+  "topic": "moving-and-helping-out",
+  "slotIndex": 1,
+  "title": "Das Sofa aus Münster",
+  "slug": "das-sofa-aus-muenster",
+  "arcType": "reframe-turn",
+  "synopsis": "The green sofa Britta brought from Münster stands in the yard getting wet. The stairwell has a bend and the thing sticks halfway up. Ingo talks about ropes and windows, Malte says nothing, and Britta does the sums in her head before she writes two words on a cardboard sign.",
+  "text": "Das Sofa aus Münster steht mitten im Hinterhof und wird langsam nass. Es ist grün, viel zu breit und riecht noch nach der alten Wohnung. Zu dritt heben sie es bis zum ersten Stock, dann klemmt es.\n\nDas Treppenhaus macht dort einen Knick, und der Rahmen bleibt stecken. “Mit einem Seil und dem Fenster im zweiten Stock geht das ganz leicht”, meint Ingo. Malte sagt nichts und schaut Britta nur an.\n\nBritta rechnet kurz im Kopf: ein geliehenes Seil, zwei Stunden, drei kaputte Rücken. Das Sofa stand sechs Jahre in Münster und war ihr erstes Möbelstück. Jetzt sieht es im Regen aus wie ein nasses, müdes Tier.\n\nSie holt einen dicken Filzstift und schreibt zwei Wörter auf ein Schild. “Das war das letzte Stück Münster, und hier kommt es sowieso nicht rein”, sagt sie trocken. “Dann stelle ich es an die Lehne, damit man es von der Straße sieht”, antwortet Ingo und verschwindet.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "mitten",
+    "surface": "mitten",
+    "definition": "Right in the middle; in the centre, where everybody sees it."
+   },
+   {
+    "type": "adjective",
+    "word": "grün",
+    "surface": "grün",
+    "definition": "Green; the colour of grass and of most garden plants."
+   },
+   {
+    "type": "adjective",
+    "word": "breit",
+    "surface": "breit",
+    "definition": "Wide; large from one side to the other, hard to carry."
+   },
+   {
+    "type": "verb",
+    "word": "riechen",
+    "surface": "riecht",
+    "definition": "To smell; to give off a smell that reaches your nose."
+   },
+   {
+    "type": "adverb",
+    "word": "langsam",
+    "surface": "langsam",
+    "definition": "Slowly; little by little, taking a long time to happen."
+   },
+   {
+    "type": "noun",
+    "word": "der Knick",
+    "surface": "Knick",
+    "definition": "A bend; the place where stairs or a road turn sharply."
+   },
+   {
+    "type": "noun",
+    "word": "der Rahmen",
+    "surface": "Rahmen",
+    "definition": "A frame; the hard outer edge of a sofa, a window or a door."
+   },
+   {
+    "type": "verb",
+    "word": "stecken",
+    "surface": "stecken",
+    "definition": "To be stuck; to sit tight in a place and not move."
+   },
+   {
+    "type": "noun",
+    "word": "das Seil",
+    "surface": "Seil",
+    "definition": "A rope; a long thick cord for pulling heavy things."
+   },
+   {
+    "type": "verb",
+    "word": "klemmen",
+    "surface": "klemmt",
+    "definition": "To jam; to get caught tight and go neither up nor down."
+   },
+   {
+    "type": "verb",
+    "word": "rechnen",
+    "surface": "rechnet",
+    "definition": "To work out numbers; to count the cost or the hours in your head."
+   },
+   {
+    "type": "adjective",
+    "word": "kaputt",
+    "surface": "kaputte",
+    "definition": "Broken; here so tired and sore that it hardly works."
+   },
+   {
+    "type": "noun",
+    "word": "das Möbelstück",
+    "surface": "Möbelstück",
+    "definition": "A piece of furniture, like a bed, a table or a sofa."
+   },
+   {
+    "type": "adjective",
+    "word": "müde",
+    "surface": "müdes",
+    "definition": "Tired; with no strength left after a long hard day."
+   },
+   {
+    "type": "verb",
+    "word": "leihen",
+    "surface": "geliehenes",
+    "definition": "To borrow or lend; to use a thing that belongs to somebody else."
+   },
+   {
+    "type": "noun",
+    "word": "der Filzstift",
+    "surface": "Filzstift",
+    "definition": "A marker pen; the thick pen you use for signs and boxes."
+   },
+   {
+    "type": "noun",
+    "word": "das Schild",
+    "surface": "Schild",
+    "definition": "A sign; a board with a few words written on it for others."
+   },
+   {
+    "type": "adverb",
+    "word": "trocken",
+    "surface": "trocken",
+    "definition": "Drily; saying a hard thing calmly, with no feeling in the voice."
+   },
+   {
+    "type": "noun",
+    "word": "die Lehne",
+    "surface": "Lehne",
+    "definition": "The back of a seat; the part you lean against when sitting."
+   },
+   {
+    "type": "verb",
+    "word": "verschwinden",
+    "surface": "verschwindet",
+    "definition": "To disappear; to go away so nobody can see you any more."
+   }
+  ]
+ },
+ {
+  "topic": "moving-and-helping-out",
+  "slotIndex": 2,
+  "title": "Pizza auf den Kartons",
+  "slug": "pizza-auf-den-kartons",
+  "arcType": "harmonic-close",
+  "synopsis": "Three people eat pizza sitting on upside down boxes in an empty kitchen. Britta tries to thank the two men and it comes out as a question about money. Ingo explains how the house works instead, and by the end of the evening something inside her has moved a little further away.",
+  "text": "Drei Leute sitzen am Abend auf umgedrehten Kartons in der leeren Küche. Die Pizza kommt in flachen Schachteln, und der Käse klebt noch am Deckel. Britta hat drei Pappteller und keinen einzigen Stuhl.\n\nSie will sich bedanken, aber es kommt schief heraus. “Sagt mir einfach, was ich euch für den ganzen Tag schulde”, sagt sie. Malte lacht, und in der leeren Küche klingt das viel zu laut.\n\n“In diesem Haus rechnet niemand einen Umzug in Euro ab, das ist nicht üblich”, antwortet Ingo. Er erklärt ihr die Hausordnung, den Keller und die drei Tonnen im Hof. Britta merkt, dass sie gerade einen Gefallen angenommen hat.\n\n“Und irgendwann klingelt jemand bei dir, weil seine Waschmaschine nicht durch die Tür passt”, meint er. Sie nickt langsam, und diesmal fühlt es sich nicht peinlich an. Der Stolz sitzt noch da, aber er sitzt weiter weg als heute Morgen.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "umdrehen",
+    "surface": "umgedrehten",
+    "definition": "To turn over; to put a box upside down and sit on it."
+   },
+   {
+    "type": "adjective",
+    "word": "flach",
+    "surface": "flachen",
+    "definition": "Flat; low and wide, with almost no height at all."
+   },
+   {
+    "type": "noun",
+    "word": "die Schachtel",
+    "surface": "Schachteln",
+    "definition": "A box; the flat cardboard box that food comes in."
+   },
+   {
+    "type": "noun",
+    "word": "der Pappteller",
+    "surface": "Pappteller",
+    "definition": "A paper plate; the plate you throw away after eating."
+   },
+   {
+    "type": "adjective",
+    "word": "einzig",
+    "surface": "einzigen",
+    "definition": "Single; not even one of the thing you are talking about."
+   },
+   {
+    "type": "noun",
+    "word": "die Pizza",
+    "surface": "Pizza",
+    "definition": "Pizza; the flat round food that comes in a wide cardboard box."
+   },
+   {
+    "type": "verb",
+    "word": "bedanken",
+    "surface": "bedanken",
+    "definition": "To thank somebody; to tell a person that you are grateful."
+   },
+   {
+    "type": "adjective",
+    "word": "schief",
+    "surface": "schief",
+    "definition": "Crooked; here coming out wrong and sounding worse than you meant."
+   },
+   {
+    "type": "verb",
+    "word": "schulden",
+    "surface": "schulde",
+    "definition": "To owe; to still have to give somebody money or a favour."
+   },
+   {
+    "type": "verb",
+    "word": "lachen",
+    "surface": "lacht",
+    "definition": "To laugh; to make a happy sound because something is funny."
+   },
+   {
+    "type": "adjective",
+    "word": "üblich",
+    "surface": "üblich",
+    "definition": "Usual; the way people normally do it in that place."
+   },
+   {
+    "type": "noun",
+    "word": "die Hausordnung",
+    "anchor": true,
+    "surface": "Hausordnung",
+    "definition": "The house rules; the written list of what tenants may and may not do."
+   },
+   {
+    "type": "noun",
+    "word": "der Keller",
+    "surface": "Keller",
+    "definition": "The cellar; the rooms under a German house where tenants keep things."
+   },
+   {
+    "type": "noun",
+    "word": "die Tonne",
+    "surface": "Tonnen",
+    "definition": "A bin; the big round thing in the yard where rubbish goes."
+   },
+   {
+    "type": "noun",
+    "word": "der Gefallen",
+    "anchor": true,
+    "surface": "Gefallen",
+    "definition": "A favour; help somebody gives you without asking for money."
+   },
+   {
+    "type": "adverb",
+    "word": "irgendwann",
+    "surface": "irgendwann",
+    "definition": "Some day; at a time nobody can say yet, but it comes."
+   },
+   {
+    "type": "noun",
+    "word": "die Waschmaschine",
+    "surface": "Waschmaschine",
+    "definition": "A washing machine; the machine in the kitchen that washes clothes."
+   },
+   {
+    "type": "verb",
+    "word": "fühlen",
+    "surface": "fühlt",
+    "definition": "To feel; to have a feeling inside about what just happened."
+   },
+   {
+    "type": "adjective",
+    "word": "peinlich",
+    "surface": "peinlich",
+    "definition": "Embarrassing; it makes you want to look at the floor."
+   },
+   {
+    "type": "adverb",
+    "word": "weg",
+    "surface": "weg",
+    "definition": "Away; at a distance from you, further off than before."
+   }
+  ]
+ }
+]
