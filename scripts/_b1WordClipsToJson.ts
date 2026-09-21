@@ -12,7 +12,7 @@ config({ path: ".env", quiet: true });
 import * as fs from "fs";
 import { PrismaClient } from "../src/generated/prisma";
 
-const JOURNEY = "cmtmylg7k0007321h6t7njesx";
+const JOURNEY = process.env.DPL_JOURNEY_ID || "cmtmylg7k0007321h6t7njesx";
 const p = new PrismaClient();
 
 (async () => {

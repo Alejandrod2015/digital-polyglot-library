@@ -17,7 +17,9 @@
         "storySource": "user",
         "sentence": "Pregunta lo que falta con seguridad.",
         "targetWord": "seguridad",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/24625103672143e52ece.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -39,7 +41,9 @@
         "storySource": "user",
         "sentence": "La línea se corta antes de la respuesta.",
         "targetWord": "se corta",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1f29273276bf8f86c04e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -61,7 +65,9 @@
         "storySource": "user",
         "sentence": "Apoya la frente en la pared fría.",
         "targetWord": "Apoya",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8e39fc98b4e750040e0f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -83,7 +89,9 @@
         "storySource": "user",
         "sentence": "Contesta desde la calle, donde hace viento, y se oye la mitad.",
         "targetWord": "se oye",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/46078d267ab07b36ee8f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -105,7 +113,9 @@
         "storySource": "user",
         "sentence": "Marca de nuevo, y el minuto que tarda se le hace largo.",
         "targetWord": "de nuevo",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0b597c26ad5895629f21.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -127,7 +137,9 @@
         "storySource": "user",
         "sentence": "Sin dar las gracias dos veces.",
         "targetWord": "dar las gracias",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/96a92809b2644ec2646d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -149,7 +161,9 @@
         "storySource": "user",
         "sentence": "El veinte, sí, a las ocho, y con el portal abierto.",
         "targetWord": "a las ocho",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cbe5e80e189455d9fa81.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     }
   },
@@ -282,7 +296,9 @@
         "storySource": "user",
         "sentence": "Sin dar las gracias dos veces.",
         "targetWord": "veces",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/67fae1d2c4d54b7508e0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     },
     "featured": false
@@ -305,7 +321,9 @@
         "storySource": "user",
         "sentence": "El teléfono suena con un murmullo de fondo.",
         "targetWord": "suena",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e19c255562843759cedb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     },
     "featured": false
@@ -328,7 +346,9 @@
         "storySource": "user",
         "sentence": "¿El veinte o el veintiuno?",
         "targetWord": "veintiuno",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/943506c5bd85c24ad92d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     },
     "featured": false
@@ -351,7 +371,9 @@
         "storySource": "user",
         "sentence": "Contesta él, ya sin viento detrás.",
         "targetWord": "detrás",
-        "language": "spanish"
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/336149f86578e8421718.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
       }
     },
     "featured": false
