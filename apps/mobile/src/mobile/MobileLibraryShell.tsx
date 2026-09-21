@@ -9471,10 +9471,24 @@ export function MobileLibraryShell(args: {
 
     // El turno hablado necesita mas aire que un multiple-choice: en pantalla
     // hay transcripcion, la palabra recien revelada y una linea de feedback.
-    // Con 1,5 s el usuario no llega a leer lo que dijo.
+    // Con 1,5 s el usuario no llega a leer lo que dijo. Y al revelar suena
+    // la frase completa, asi que, igual que en `context`, no se avanza hasta
+    // que termine (`contextAudioFinishedFor`, que `resolveSpeakingAnswer`
+    // vacia porque el mismo id ya quedo publicado por el audio del
+    // enunciado). Antes un reloj fijo de 4 s cortaba el audio a la mitad.
     if (current.kind === "speaking") {
-      const id = setTimeout(() => advancePractice(), 4000);
-      return () => clearTimeout(id);
+      const hasAudio = !!current.audioClip;
+      const audioDone = contextAudioFinishedFor === current.id;
+      if (!hasAudio || audioDone) {
+        // Minimo 4 s desde el reveal para leer, y un beat de 1 s tras el
+        // audio si este duro mas que eso.
+        const elapsed = Date.now() - practiceAnswerT0Ref.current;
+        const id = setTimeout(() => advancePractice(), Math.max(1000, 4000 - elapsed));
+        return () => clearTimeout(id);
+      }
+      // Audio pendiente: mismo cap de 10 s que `context`, por si no llega.
+      const cap = setTimeout(() => advancePractice(), 10000);
+      return () => clearTimeout(cap);
     }
 
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
@@ -10225,6 +10239,10 @@ export function MobileLibraryShell(args: {
 
     practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
+    // El audio del enunciado ya publico este id al terminar (arranca el
+    // reloj de contestar). Se vacia para que el auto-avance espere al audio
+    // del reveal, que es otro play distinto sobre el mismo ejercicio.
+    setContextAudioFinishedFor(null);
     setPracticeRevealed(true);
     setPracticeTimedOut(false);
     setPracticeReviewScores((currentScores) => ({
