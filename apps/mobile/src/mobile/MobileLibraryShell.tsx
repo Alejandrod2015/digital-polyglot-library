@@ -5951,6 +5951,25 @@ export function MobileLibraryShell(args: {
     return { count, minutes };
   }, [practicePoolWords]);
 
+  // Palabras falladas y aun no recuperadas, la mas reciente primero. Un fallo
+  // deja la racha en 0 y sella `lastReviewedAt` (computeNextReview); acertarla
+  // la sube a 1 y la saca de aqui. Una palabra nunca repasada tambien tiene
+  // racha 0, pero sin `lastReviewedAt`, y no cuenta. Es lo que persiste del
+  // "Fix N" de la pantalla de resultado: aquello vive solo en esa ronda.
+  const missedPracticeItems = useMemo(() => {
+    const failed = practicePoolWords
+      .filter((w) => (w.streak ?? 0) === 0 && Boolean(w.lastReviewedAt))
+      .sort((a, b) => Date.parse(b.lastReviewedAt ?? "") - Date.parse(a.lastReviewedAt ?? ""));
+    return buildPracticeFavorites(failed);
+  }, [practicePoolWords]);
+  const missedPracticeWords = useMemo(
+    () => missedPracticeItems.map((item) => item.word),
+    [missedPracticeItems]
+  );
+  // La ronda es de 10, como todas: con mas fallos entran los 10 mas recientes
+  // y el resto se queda en la franja para la siguiente.
+  const MISSED_ROUND_SIZE = 10;
+
   const recommendedPracticeMode = useMemo<PracticeModeKey>(() => {
     const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(practicePoolWords));
     const personalized = getRecommendedPracticeModeFromOnboarding(
@@ -8543,7 +8562,10 @@ export function MobileLibraryShell(args: {
     mode: PracticeSessionMode,
     review = false,
     overrideItems?: PracticeFavoriteItem[] | null,
-    favoriteKind?: "due" | "all" | "related"
+    favoriteKind?: "due" | "all" | "related",
+    // Ejercicios ya construidos (la franja de fallos): se usan tal cual, sin
+    // pasar por los generadores de abajo, que recortan el conjunto.
+    prebuilt?: PracticeExercise[] | null
   ) {
     if (!isSignedIn) {
       onRequestSignIn?.();
@@ -8552,6 +8574,10 @@ export function MobileLibraryShell(args: {
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(practicePoolWords);
+    if (prebuilt && prebuilt.length > 0) {
+      await startPracticeExercises(prebuilt, mode, sourceItems, favoriteKind, null);
+      return;
+    }
     // Si el usuario pidió un session de review (review=true) pero los
     // dues actuales no son suficientes para construir ejercicios de
     // este modo (ej.: match necesita 4 candidatos y solo hay 3 dues,
@@ -8626,6 +8652,19 @@ export function MobileLibraryShell(args: {
         });
       }
     }
+    await startPracticeExercises(exercises, effectiveMode, sourceItems, favoriteKind, matchResume);
+  }
+
+  // Cola comun de openPracticeMode: deja la sesion lista con los ejercicios
+  // que le den. Separada para que la franja de fallos pueda entrar con los
+  // suyos ya hechos.
+  async function startPracticeExercises(
+    exercises: PracticeExercise[],
+    effectiveMode: PracticeSessionMode,
+    sourceItems: PracticeFavoriteItem[],
+    favoriteKind: "due" | "all" | "related" | undefined,
+    matchResume: { index: number; matchedWords: string[]; score: number } | null
+  ) {
     setPracticeSeedItems(sourceItems);
     setPracticeLaunchContext((current) => ({
       source: "favorites",
@@ -12469,7 +12508,7 @@ export function MobileLibraryShell(args: {
             );
           return scoreBook(b) - scoreBook(a) || a.title.localeCompare(b.title);
         })
-        .slice(0, 6)
+        .slice(0, 8)
         .map((book) => ({
         key: `book-${book.id}`,
         title: book.title,
@@ -14080,7 +14119,11 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  const exploreView = (
+  // Solo se construye cuando se ve. Medido el 2026-09-21: montar este arbol
+  // costaba 110-125 ms en CADA repintado del shell, tambien dentro de una
+  // ronda de practica, donde el countdown repinta una vez por segundo; el
+  // segundero iba un 17 % lento solo por esto.
+  const exploreView = activeScreen !== "explore" ? null : (
     <>
       <View style={styles.favoritesHero}>
         <View style={styles.heroHeaderRow}>
@@ -14623,24 +14666,49 @@ export function MobileLibraryShell(args: {
   // que tocaba". Si el usuario igual quiere repaso libre, el card
   // sigue siendo tappeable y `openPracticeMode(mode, true)` cae al
   // pool general cuando dueItems está vacío.
-  const orbitModeBreakdown = useMemo(() => {
+  //
+  // Medido en el Pixel el 2026-09-21: esto tardaba 1,3-2,7 s por recalculo,
+  // porque monta CINCO sesiones completas (distractores incluidos) sobre los
+  // 50-80 items del pool, y se recalculaba dentro de un repintado, con el
+  // hilo JS bloqueado: el countdown saltaba de 1 s a 4 s y cada cambio de
+  // ejercicio se trababa. Desde el pool de historias terminadas (09-18) el
+  // pool es diez veces mayor que cuando solo eran las guardadas. Ahora se
+  // calcula en un efecto, fuera del repintado, y solo cuando el hub esta a la
+  // vista: durante una ronda o en Journey nadie lo mira.
+  const ORBIT_BREAKDOWN_ZERO: Record<OrbitModeKey, number> = useMemo(
+    () => ({ meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 }),
+    []
+  );
+  const [orbitModeBreakdown, setOrbitModeBreakdown] =
+    useState<Record<OrbitModeKey, number>>(ORBIT_BREAKDOWN_ZERO);
+  useEffect(() => {
+    if (activeScreen !== "practice" || activePracticeMode) return;
     if (duePracticeItems.length === 0) {
-      return { meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 };
+      setOrbitModeBreakdown(ORBIT_BREAKDOWN_ZERO);
+      return;
     }
-    const sizeFor = (mode: OrbitModeKey) =>
-      buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
-    return {
-      meaning: sizeFor("meaning"),
-      context: sizeFor("context"),
-      listening: sizeFor("listening"),
-      match: sizeFor("match"),
-      // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
-      // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
-      // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
-      // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
-      speaking: sizeFor("speaking"),
+    let cancelled = false;
+    const handle = setTimeout(() => {
+      if (cancelled) return;
+      const sizeFor = (mode: OrbitModeKey) =>
+        buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
+      setOrbitModeBreakdown({
+        meaning: sizeFor("meaning"),
+        context: sizeFor("context"),
+        listening: sizeFor("listening"),
+        match: sizeFor("match"),
+        // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
+        // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
+        // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
+        // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
+        speaking: sizeFor("speaking"),
+      });
+    }, 0);
+    return () => {
+      cancelled = true;
+      clearTimeout(handle);
     };
-  }, [duePracticeItems, onboardingPracticePrefs]);
+  }, [activeScreen, activePracticeMode, duePracticeItems, onboardingPracticePrefs, ORBIT_BREAKDOWN_ZERO]);
 
   // Topic label: por ahora fijo. El campo "From {topic}" del mockup
   // requiere saber el topic dominante de las palabras due, lo cual
@@ -14765,6 +14833,22 @@ export function MobileLibraryShell(args: {
             // Misma condicion que abre el slot de la sesion mixta: el piloto
             // hablado es del plan `polyglot` y de nadie mas.
             speakingEnabled={effectivePlan === "polyglot"}
+            missedWords={missedPracticeWords}
+            onRetryMissed={() => {
+              const round = missedPracticeItems.slice(0, MISSED_ROUND_SIZE);
+              // UN ejercicio por palabra fallada, garantizado. Pasarlas por un
+              // solo modo las recortaba: context y meaning funden las palabras
+              // que comparten oracion en un ejercicio, y devuelven nada para
+              // la que no trae frase. El 2026-09-21 "7 words you missed" dio
+              // una ronda de 5 y dos palabras se quedaron sin practicar.
+              const exercises = buildExercisesWithDistractors(
+                round,
+                buildPracticeFavorites(practicePoolWords),
+                ["context", "meaning", "listening"],
+                onboardingPracticePrefs
+              );
+              void openPracticeMode("mixed", false, round, "due", exercises);
+            }}
           />
         </>
       )}

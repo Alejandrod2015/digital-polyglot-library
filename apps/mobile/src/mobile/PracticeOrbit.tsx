@@ -61,6 +61,14 @@ export type PracticeOrbitProps = {
    *  tarjeta no se pinta y el modo no cuenta como skill, igual que su slot no
    *  entra en la sesion mixta. */
   speakingEnabled?: boolean;
+  /** Palabras falladas y aun no recuperadas (racha 0 tras un repaso), la mas
+   *  reciente primero. Con alguna, bajo las habilidades sale la franja
+   *  "N words you missed · RETRY"; vacia, no se pinta nada. Pedido por una
+   *  tester el 2026-09-21: el "Fix N" del final de la ronda existia, pero
+   *  moria al salir de esa pantalla y desde Practica no habia camino. */
+  missedWords?: string[];
+  /** Lanza la ronda solo con las falladas. */
+  onRetryMissed?: () => void;
 };
 
 const MODE_COLORS: Record<PracticeModeKey, string> = {
@@ -68,7 +76,10 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   context: "#86efac", // verde menta
   listening: "#f0abfc", // rosa
   match: "#7dd3fc", // cyan
-  speaking: "#f8c15c", // ambar, el color del turno hablado desde el 2026-09-14
+  // Naranja desde el 2026-09-21. Era ambar (#f8c15c), a ojo el mismo amarillo
+  // que Meaning (#facc15) en el anillo y en las tarjetas, y ademas el color
+  // del boton START; el usuario no distinguia las dos habilidades.
+  speaking: "#fb923c",
 };
 
 // Uniform card fill for all four skills. Each card used to fill with
@@ -78,6 +89,8 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
 // neutral fill evens them out; each mode's color still lives in the border,
 // icon chip and glow, so the ring-segment match is preserved.
 const SKILL_CARD_BG = "rgba(255,255,255,0.05)";
+// Rosa de los fallos: el mismo del icono "Fix N" de la pantalla de resultado.
+const MISSED_COLOR = "#fb7185";
 
 const MODE_ICONS: Record<
   PracticeModeKey,
@@ -505,6 +518,8 @@ export function PracticeOrbit({
   reviewSoonCount = 0,
   reviewSoonMinutes,
   speakingEnabled = false,
+  missedWords = [],
+  onRetryMissed,
 }: PracticeOrbitProps) {
   // Una sola lista manda sobre el anillo, el recuento de skills y la rejilla,
   // para que no puedan desincronizarse.
@@ -734,9 +749,66 @@ export function PracticeOrbit({
           ))}
         </View>
       )}
+
+      {missedWords.length > 0 && onRetryMissed ? (
+        <MissedStrip words={missedWords} onRetry={onRetryMissed} />
+      ) : null}
     </View>
   );
 }
+
+// Cuantas palabras enteras caben en la linea de la franja. Se cuenta por
+// caracteres y no midiendo el texto: RN no da el ancho antes de pintar, y una
+// palabra cortada a medias ("parc...") es peor que una menos. Siempre sale al
+// menos una; el resto va como "+K".
+const MISSED_LINE_BUDGET = 30;
+
+function fitMissedWords(words: string[]): { shown: string[]; rest: number } {
+  const shown: string[] = [];
+  let used = 0;
+  for (const word of words) {
+    const cost = word.length + (shown.length > 0 ? 3 : 0);
+    if (shown.length > 0 && used + cost > MISSED_LINE_BUDGET) break;
+    shown.push(word);
+    used += cost;
+  }
+  return { shown, rest: words.length - shown.length };
+}
+
+const MissedStrip = memo(function MissedStrip({
+  words,
+  onRetry,
+}: {
+  words: string[];
+  onRetry: () => void;
+}) {
+  const { shown, rest } = fitMissedWords(words);
+  return (
+    <Pressable
+      onPress={onRetry}
+      accessibilityRole="button"
+      accessibilityLabel={`Retry the ${words.length} ${words.length === 1 ? "word" : "words"} you missed`}
+      testID="qa-practice-missed"
+      style={({ pressed }) => [styles.missedStrip, pressed ? styles.missedStripPressed : null]}
+    >
+      <View style={styles.missedIconWrap}>
+        <Feather name="x-circle" size={14} color={MISSED_COLOR} />
+      </View>
+      <View style={styles.missedText}>
+        <Text style={styles.missedTitle}>
+          {words.length} {words.length === 1 ? "word" : "words"} you missed
+        </Text>
+        <Text style={styles.missedWords} numberOfLines={1}>
+          {shown.join(" · ")}
+          {rest > 0 ? <Text style={styles.missedMore}>{`  +${rest}`}</Text> : null}
+        </Text>
+      </View>
+      <View style={styles.missedCta}>
+        <Text style={styles.missedCtaLabel}>RETRY</Text>
+      </View>
+    </Pressable>
+  );
+});
 
 const styles = StyleSheet.create({
   shell: {
@@ -896,6 +968,62 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 10,
+  },
+  // Franja de fallos bajo las habilidades. Misma anchura que el bloque de
+  // tarjetas (hereda el padding del shell), fondo navy de las tarjetas
+  // flotantes y borde rosa fino: se ve, pero no compite con START.
+  missedStrip: {
+    marginTop: 14,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    backgroundColor: "#151d2e",
+    borderWidth: 1,
+    borderColor: "rgba(251,113,133,0.5)",
+    borderRadius: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  missedStripPressed: {
+    opacity: 0.85,
+  },
+  missedIconWrap: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: "rgba(251,113,133,0.18)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  missedText: {
+    flex: 1,
+    minWidth: 0,
+  },
+  missedTitle: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  missedWords: {
+    color: "#cdd9ec",
+    fontSize: 11,
+    marginTop: 2,
+  },
+  missedMore: {
+    color: MISSED_COLOR,
+    fontWeight: "800",
+  },
+  missedCta: {
+    backgroundColor: MISSED_COLOR,
+    borderRadius: 14,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  missedCtaLabel: {
+    color: "#0e1727",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 0.8,
   },
   skillCard: {
     width: "48%",
