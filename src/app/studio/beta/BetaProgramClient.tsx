@@ -2204,6 +2204,13 @@ function replyDraftFor(f: Feedback): string {
   ].join("\n");
 }
 
+// One line of text, for the closed row and the folded thread. Whitespace
+// collapsed, cut with an ellipsis; the full text is one click away.
+function oneLine(s: string, max: number): string {
+  const t = s.replace(/\s+/g, " ").trim();
+  return t.length > max ? `${t.slice(0, max - 1).trimEnd()}…` : t;
+}
+
 function FeedbackList({
   feedback,
   releases,
@@ -2218,6 +2225,10 @@ function FeedbackList({
   onReply: (id: string, subject: string, body: string) => Promise<boolean>;
 }) {
   const [showAll, setShowAll] = useState(false);
+  // Long messages are cut at three lines; this is the set unfolded by hand.
+  // Everything else on the card is always there: the list is for triage,
+  // and triage needs the words, the story and the controls without a click.
+  const [longOpen, setLongOpen] = useState<Set<string>>(new Set());
   // Which row has its Reply box open, and what is typed in it.
   const [replyOpen, setReplyOpen] = useState<string | null>(null);
   const [replySubject, setReplySubject] = useState("");
@@ -2225,190 +2236,276 @@ function FeedbackList({
   // Diagnosis being typed per row. Saved on blur, so a note is never lost to
   // a click elsewhere and there is no extra button to find.
   const [notes, setNotes] = useState<Record<string, string>>({});
+  const [notesOpen, setNotesOpen] = useState<string | null>(null);
+  const [threadOpen, setThreadOpen] = useState<string | null>(null);
 
   const openReply = (f: Feedback) => {
     setReplyOpen(f.id);
     setReplySubject(f.replySubject ?? "About what you wrote to us");
     setReplyBody(f.replyText ?? replyDraftFor(f));
   };
-  const visible = useMemo(
-    () => (showAll ? feedback : feedback.filter((f) => f.status === "new" || f.status === "triaged" || f.status === "in_progress")),
-    [feedback, showAll],
-  );
+  const toggleLong = (id: string) =>
+    setLongOpen((cur) => {
+      const next = new Set(cur);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  const isOpen = (f: Feedback) => f.status === "new" || f.status === "triaged" || f.status === "in_progress";
+  const visible = useMemo(() => (showAll ? feedback : feedback.filter(isOpen)), [feedback, showAll]);
+  const openCount = feedback.filter(isOpen).length;
   const drafts = releases.filter((r) => r.status === "draft");
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      <button style={ghostBtn} onClick={() => setShowAll((v) => !v)}>
-        {showAll ? "Show only open" : `Show all (${feedback.length})`}
-      </button>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 2 }}>
+        <span style={{ fontSize: 12.5, color: "var(--muted)" }}>
+          {openCount} open · {feedback.length} total
+        </span>
+        <button style={{ ...ghostBtn, height: 28 }} onClick={() => setShowAll((v) => !v)}>
+          {showAll ? "Only open" : "Show all"}
+        </button>
+      </div>
 
       {visible.length === 0 && (
-        <div style={{ ...card, color: "var(--muted)", fontSize: 13 }}>Nothing open.</div>
+        <div style={{ ...feedbackCard, color: "var(--muted)", fontSize: 13 }}>Nothing open.</div>
       )}
 
-      {visible.map((f) => (
-        <div key={f.id} style={card}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-            <div style={{ fontSize: 12, color: "var(--muted)" }}>
-              {f.signup?.firstName ?? f.email} · {f.platform} {f.appVersion ?? ""}
-              {f.buildNumber ? ` (build ${f.buildNumber})` : ""} · {f.screen ?? "unknown screen"} · {ago(f.createdAt)}
+      {visible.map((f) => {
+        const who = f.signup?.firstName ?? f.email;
+        const note = notes[f.id] ?? f.adminNotes ?? "";
+        // Three lines is what fits before the card starts scrolling the
+        // list; a message past that gets a "more" instead of the whole thing.
+        const isLong = f.message.length > 260 || (f.message.match(/\n/g)?.length ?? 0) > 2;
+        const unfolded = longOpen.has(f.id);
+        return (
+          <div key={f.id} style={feedbackCard}>
+            <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "baseline" }}>
+              <div style={{ fontSize: 12.5, color: "var(--muted)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <span style={{ color: "var(--foreground)", fontWeight: 600 }}>{who}</span> · {f.platform} {f.appVersion ?? ""}
+                {f.buildNumber ? ` (${f.buildNumber})` : ""} · {f.screen ?? "unknown screen"} · {ago(f.createdAt)}
+              </div>
+              <div style={{ display: "flex", gap: 5, alignItems: "center", flex: "none" }}>
+                <span style={pill(f.kind)}>{f.kind}</span>
+                {f.rating !== null && <span style={pill("triaged")}>{f.rating}</span>}
+                <span style={pill(f.status)}>{f.status}</span>
+                {f.repliedAt && <span style={pill("fixed")}>replied {ago(f.repliedAt)}</span>}
+              </div>
             </div>
-            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-              <span style={pill(f.kind)}>{f.kind}</span>
-              {f.rating !== null && <span style={pill("triaged")}>{f.rating}</span>}
-              <span style={pill(f.status)}>{f.status}</span>
-            </div>
-          </div>
 
-          {/* Where they were and who they are. The message alone cannot be
-              triaged: "the last paragraph repeats" needs the story, and
-              "the speaker is hard to follow" needs to know they are a
-              beginner who just opened an A0. */}
-          <FeedbackContext f={f} />
+            {/* Where they were and who they are. The message alone cannot be
+                triaged: "the last paragraph repeats" needs the story, and
+                "the speaker is hard to follow" needs to know they are a
+                beginner who just opened an A0. */}
+            <FeedbackContext f={f} />
 
-          <div
-            style={{
-              marginTop: 10,
-              padding: "10px 12px",
-              borderRadius: 8,
-              backgroundColor: "var(--background)",
-              fontSize: 13.5,
-              lineHeight: 1.55,
-              whiteSpace: "pre-wrap",
-            }}
-          >
-            {f.message}
-          </div>
-
-          {/* The thread: what we wrote back, under their words. The model
-              keeps one reply per report (a "Reply again" replaces it), so
-              this is the latest one, dated. */}
-          {f.repliedAt && f.replyText && (
             <div
               style={{
                 marginTop: 8,
-                marginLeft: 18,
                 padding: "8px 12px",
-                borderLeft: "2px solid var(--border)",
-                fontSize: 13,
+                borderRadius: 8,
+                backgroundColor: "var(--background)",
+                fontSize: 13.5,
                 lineHeight: 1.5,
-                color: "var(--muted)",
                 whiteSpace: "pre-wrap",
+                ...(isLong && !unfolded
+                  ? { display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" as const, overflow: "hidden" }
+                  : {}),
               }}
             >
-              <div style={{ fontSize: 11.5, marginBottom: 4 }}>
-                We replied {new Date(f.repliedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
-                {f.replySubject ? ` · ${f.replySubject}` : ""}
-              </div>
-              {f.replyText}
+              {f.message}
             </div>
-          )}
-
-          <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap", alignItems: "center" }}>
-            <select
-              value={f.status}
-              disabled={busy === f.id}
-              onChange={(e) => onPatch(f.id, { status: e.target.value })}
-              style={{ ...inputStyle, width: 150 }}
-            >
-              {FEEDBACK_STATUSES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-
-            {/* Attaching a report to a draft build is what makes the build
-                note tell this tester, by name, that their report shipped. */}
-            <select
-              value={f.releaseId ?? ""}
-              disabled={busy === f.id || drafts.length === 0}
-              onChange={(e) => onPatch(f.id, { releaseId: e.target.value || null })}
-              style={{ ...inputStyle, width: 230 }}
-            >
-              <option value="">Not fixed in a build yet</option>
-              {drafts.map((r) => (
-                <option key={r.id} value={r.id}>
-                  Fixed in build {r.buildNumber}
-                </option>
-              ))}
-            </select>
-
-            {/* A personal note to the person who wrote. Their address, their
-                words quoted, sent as typed. The build note only reaches
-                reports attached to a mobile release; this reaches everyone. */}
-            {replyOpen === f.id ? (
-              <button style={ghostBtn} onClick={() => setReplyOpen(null)}>
-                Close
-              </button>
-            ) : (
-              <button style={f.repliedAt ? ghostBtn : btn} disabled={busy === f.id} onClick={() => openReply(f)}>
-                {f.repliedAt ? "Reply again" : "Reply"}
+            {isLong && (
+              <button
+                onClick={() => toggleLong(f.id)}
+                style={{ ...linkBtn, marginTop: 2, alignSelf: "flex-start" }}
+              >
+                {unfolded ? "Less" : "More"}
               </button>
             )}
-            {f.repliedAt && (
-              <span style={pill("fixed")} title={f.replySubject ?? ""}>
-                replied {ago(f.repliedAt)}
-              </span>
+
+            {/* The thread, folded to its subject line. The model keeps one
+                reply per report (a "Reply again" replaces it), so this is
+                the latest one, dated; click to read it in full. */}
+            {f.repliedAt && f.replyText && (
+              <div
+                onClick={() => setThreadOpen((c) => (c === f.id ? null : f.id))}
+                style={{
+                  marginTop: 6,
+                  marginLeft: 12,
+                  padding: "4px 12px",
+                  borderLeft: "2px solid var(--card-border)",
+                  fontSize: 12.5,
+                  lineHeight: 1.5,
+                  color: "var(--muted)",
+                  cursor: "pointer",
+                  whiteSpace: threadOpen === f.id ? "pre-wrap" : "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                <span style={{ fontSize: 11.5 }}>
+                  {threadOpen === f.id ? "▾" : "▸"} We replied{" "}
+                  {new Date(f.repliedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
+                  {f.replySubject ? ` · ${f.replySubject}` : ""}
+                </span>
+                {threadOpen === f.id ? (
+                  <div style={{ marginTop: 4 }}>{f.replyText}</div>
+                ) : (
+                  <span> · {oneLine(f.replyText, 100)}</span>
+                )}
+              </div>
+            )}
+
+            {/* The diagnosis, one line until you click into it. Lives on the
+                row so the table script regenerates with it and it does not
+                stay behind in a chat. */}
+            {notesOpen === f.id ? (
+              <textarea
+                autoFocus
+                value={note}
+                placeholder="Diagnosis: what is really going on, and what we decided."
+                disabled={busy === f.id}
+                onChange={(e) => setNotes((n) => ({ ...n, [f.id]: e.target.value }))}
+                onBlur={() => {
+                  setNotesOpen(null);
+                  const typed = notes[f.id];
+                  if (typed === undefined || typed === (f.adminNotes ?? "")) return;
+                  void onPatch(f.id, { adminNotes: typed });
+                }}
+                style={{ ...areaStyle, height: 96, marginTop: 8, fontSize: 12.5 }}
+              />
+            ) : (
+              <div
+                onClick={() => setNotesOpen(f.id)}
+                title="Click to edit"
+                style={{
+                  marginTop: 8,
+                  padding: "5px 10px",
+                  borderRadius: 8,
+                  border: "1px dashed var(--card-border)",
+                  fontSize: 12.5,
+                  lineHeight: 1.5,
+                  cursor: "text",
+                  color: note ? "var(--foreground)" : "var(--muted)",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {note ? oneLine(note, 180) : "Diagnosis: what is really going on, and what we decided."}
+              </div>
+            )}
+
+            <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap", alignItems: "center" }}>
+              <select
+                value={f.status}
+                disabled={busy === f.id}
+                onChange={(e) => onPatch(f.id, { status: e.target.value })}
+                style={{ ...inputStyle, width: 140, height: 30 }}
+              >
+                {FEEDBACK_STATUSES.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+
+              {/* Attaching a report to a draft build is what makes the build
+                  note tell this tester, by name, that their report shipped. */}
+              <select
+                value={f.releaseId ?? ""}
+                disabled={busy === f.id || drafts.length === 0}
+                onChange={(e) => onPatch(f.id, { releaseId: e.target.value || null })}
+                style={{ ...inputStyle, width: 210, height: 30 }}
+              >
+                <option value="">Not fixed in a build yet</option>
+                {drafts.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    Fixed in build {r.buildNumber}
+                  </option>
+                ))}
+              </select>
+
+              {/* A personal note to the person who wrote. Their address, their
+                  words quoted, sent as typed. The build note only reaches
+                  reports attached to a mobile release; this reaches everyone. */}
+              {replyOpen === f.id ? (
+                <button style={{ ...ghostBtn, height: 30 }} onClick={() => setReplyOpen(null)}>
+                  Close
+                </button>
+              ) : (
+                <button
+                  style={{ ...(f.repliedAt ? ghostBtn : btn), height: 30 }}
+                  disabled={busy === f.id}
+                  onClick={() => openReply(f)}
+                >
+                  {f.repliedAt ? "Reply again" : "Reply"}
+                </button>
+              )}
+            </div>
+
+            {replyOpen === f.id && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
+                <div style={{ fontSize: 12, color: "var(--muted)" }}>
+                  To {f.email}
+                  {f.signup?.firstName ? ` (opens with "Hi ${f.signup.firstName},")` : " (no first name on file, no greeting)"}
+                  . Plain personal email, signed Alejandro, replies go to support@.
+                </div>
+                <input
+                  value={replySubject}
+                  onChange={(e) => setReplySubject(e.target.value)}
+                  placeholder="Subject"
+                  style={inputStyle}
+                />
+                <textarea
+                  value={replyBody}
+                  onChange={(e) => setReplyBody(e.target.value)}
+                  style={{ ...areaStyle, height: 220 }}
+                />
+                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                  <button
+                    style={btn}
+                    disabled={busy === f.id || replySubject.trim().length === 0 || replyBody.trim().length === 0}
+                    onClick={async () => {
+                      const ok = await onReply(f.id, replySubject, replyBody);
+                      if (ok) setReplyOpen(null);
+                    }}
+                  >
+                    {busy === f.id ? "Sending..." : `Send to ${who}`}
+                  </button>
+                  <span style={{ fontSize: 12, color: "var(--muted)" }}>
+                    Blank lines separate paragraphs. Sends immediately.
+                  </span>
+                </div>
+              </div>
             )}
           </div>
-
-          {/* The diagnosis. Lives on the row so the table script regenerates
-              with it and it does not stay behind in a chat. */}
-          <textarea
-            value={notes[f.id] ?? f.adminNotes ?? ""}
-            placeholder="Diagnosis: what is really going on, and what we decided."
-            disabled={busy === f.id}
-            onChange={(e) => setNotes((n) => ({ ...n, [f.id]: e.target.value }))}
-            onBlur={() => {
-              const typed = notes[f.id];
-              if (typed === undefined || typed === (f.adminNotes ?? "")) return;
-              void onPatch(f.id, { adminNotes: typed });
-            }}
-            style={{ ...areaStyle, height: 56, marginTop: 10, fontSize: 12.5 }}
-          />
-
-          {replyOpen === f.id && (
-            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
-              <div style={{ fontSize: 12, color: "var(--muted)" }}>
-                To {f.email}
-                {f.signup?.firstName ? ` (opens with "Hi ${f.signup.firstName},")` : " (no first name on file, no greeting)"}
-                . Plain personal email, signed Alejandro, replies go to support@.
-              </div>
-              <input
-                value={replySubject}
-                onChange={(e) => setReplySubject(e.target.value)}
-                placeholder="Subject"
-                style={inputStyle}
-              />
-              <textarea
-                value={replyBody}
-                onChange={(e) => setReplyBody(e.target.value)}
-                style={{ ...areaStyle, height: 220 }}
-              />
-              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                <button
-                  style={btn}
-                  disabled={busy === f.id || replySubject.trim().length === 0 || replyBody.trim().length === 0}
-                  onClick={async () => {
-                    const ok = await onReply(f.id, replySubject, replyBody);
-                    if (ok) setReplyOpen(null);
-                  }}
-                >
-                  {busy === f.id ? "Sending..." : `Send to ${f.signup?.firstName ?? f.email}`}
-                </button>
-                <span style={{ fontSize: 12, color: "var(--muted)" }}>
-                  Blank lines separate paragraphs. Sends immediately.
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
+
+// The feedback card has no outline: twenty stacked outlines read as a grid
+// of bright frames, and the tint alone already separates the cards.
+const feedbackCard: React.CSSProperties = {
+  borderRadius: 10,
+  backgroundColor: "var(--card-bg)",
+  padding: "10px 14px 12px",
+  display: "flex",
+  flexDirection: "column",
+};
+
+const linkBtn: React.CSSProperties = {
+  background: "none",
+  border: "none",
+  padding: 0,
+  fontSize: 12,
+  color: "var(--muted)",
+  cursor: "pointer",
+  textDecoration: "underline",
+};
 
 // Two lines under the header: the story they were in, and who they are.
 // Nothing here is typed by anyone; it is what the app, the signup form and
@@ -2418,7 +2515,7 @@ function FeedbackContext({ f }: { f: Feedback }) {
     .filter(Boolean)
     .join(" · ");
   const usage = f.tester
-    ? `${f.tester.opened} stories opened · ${f.tester.audiosDone} audios finished · ${f.tester.practices} practice sessions`
+    ? `${f.tester.opened} opened · ${f.tester.audiosDone} audios · ${f.tester.practices} practices`
     : "no telemetry (not linked to a Clerk user)";
   const lastRead = f.tester?.last.length
     ? f.tester.last.map((s) => (s.journey ? `${s.title ?? s.slug} (${s.journey})` : (s.title ?? s.slug))).join("; ")
@@ -2432,15 +2529,10 @@ function FeedbackContext({ f }: { f: Feedback }) {
     : "no story opened before this message";
 
   return (
-    <div style={{ marginTop: 8, fontSize: 12.5, lineHeight: 1.6, display: "flex", flexDirection: "column", gap: 2 }}>
-      <div>
-        <span style={{ color: "var(--muted)" }}>In </span>
-        <span style={{ fontWeight: 500 }}>{whereText}</span>
-      </div>
-      <div style={{ color: "var(--muted)" }} title={lastRead ? `Last read: ${lastRead}` : undefined}>
-        {profile || "no signup profile"} · {usage}
-        {lastRead ? ` · last: ${lastRead}` : ""}
-      </div>
+    <div style={{ marginTop: 6, fontSize: 12.5, lineHeight: 1.5, color: "var(--muted)" }} title={lastRead ? `Last read: ${lastRead}` : undefined}>
+      <span style={{ color: "var(--foreground)", fontWeight: 500 }}>{whereText}</span>
+      {" · "}
+      {profile || "no signup profile"} · {usage}
     </div>
   );
 }
