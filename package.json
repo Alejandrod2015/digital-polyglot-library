@@ -26,6 +26,7 @@
     "lint:voices-published": "tsx scripts/checkVoicesPublished.ts",
     "lint:glosses-reviewed": "tsx scripts/checkGlossesReviewed.ts",
     "lint:karaoke-fresh": "tsx scripts/checkKaraokeFresh.ts",
+    "lint:distractors": "tsx scripts/checkDistractors.ts",
     "lint:gloss-context": "tsx scripts/checkGlossContext.ts",
     "lint:gloss-context-real": "tsx scripts/checkGlossContextReal.ts",
     "lint:no-emdash:db": "tsx scripts/checkNoEmDashDb.ts",

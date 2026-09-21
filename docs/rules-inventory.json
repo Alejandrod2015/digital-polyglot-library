@@ -1198,7 +1198,7 @@
       "id": "feedback_practice_distractors_must_agree",
       "domain": "practice",
       "rule": "Un distractor de fill_blank tiene que concordar en genero y numero con la respuesta, o el hueco se resuelve sin saber el idioma; y el genero se lee del CORPUS, no de la desinencia",
-      "gate": "none",
+      "gate": "scripts/distractorGate.ts",
       "source": "memory:feedback_practice_distractors_must_agree.md"
     },
     {
@@ -2425,6 +2425,13 @@
       "rule": "Vulgar vocab is marked register vulgar",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-vulgar-register",
       "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "project_distractor_gate",
+      "domain": "practice",
+      "rule": "Gate de distractores (2026-09-21): un ejercicio de practica no se puede acertar sin saber la palabra; reglas D1-D8 en scripts/distractorGate.ts, lint con trinquete por journey y sin --force en el s...",
+      "gate": "scripts/distractorGate.ts",
+      "source": "memory:project_distractor_gate.md"
     }
   ]
 }
