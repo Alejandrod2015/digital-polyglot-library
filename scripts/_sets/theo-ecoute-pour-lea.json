@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "le plateau,le portable,les écouteurs,le tabouret",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "le plateau",
-     "answer": "a tray",
-     "options": [
-      "a tray",
-      "a mobile phone",
-      "earphones",
-      "a high stool"
-     ]
-    },
-    {
-     "word": "le portable",
-     "answer": "a mobile phone",
-     "options": [
-      "a tray",
-      "a mobile phone",
-      "earphones",
-      "a high stool"
-     ]
-    },
-    {
-     "word": "les écouteurs",
-     "answer": "earphones",
-     "options": [
-      "a tray",
-      "a mobile phone",
-      "earphones",
-      "a high stool"
-     ]
-    },
-    {
-     "word": "le tabouret",
-     "answer": "a high stool",
-     "options": [
-      "a tray",
-      "a mobile phone",
-      "earphones",
-      "a high stool"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "le plateau,le portable,les écouteurs,le tabouret",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le plateau",
+          "answer": "a tray",
+          "options": [
+            "a tray",
+            "a mobile phone",
+            "earphones",
+            "a high stool"
+          ]
+        },
+        {
+          "word": "le portable",
+          "answer": "a mobile phone",
+          "options": [
+            "a tray",
+            "a mobile phone",
+            "earphones",
+            "a high stool"
+          ]
+        },
+        {
+          "word": "les écouteurs",
+          "answer": "earphones",
+          "options": [
+            "a tray",
+            "a mobile phone",
+            "earphones",
+            "a high stool"
+          ]
+        },
+        {
+          "word": "le tabouret",
+          "answer": "a high stool",
+          "options": [
+            "a tray",
+            "a mobile phone",
+            "earphones",
+            "a high stool"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le serveur",
-  "sentence": "Le nouveau [[serveur]] court entre les tables.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a waiter",
-   "options": [
-    "a waiter",
-    "a cook",
-    "a customer",
-    "a shop owner"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Le nouveau serveur court entre les tables.",
-    "targetWord": "serveur",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "s'appeler",
-  "sentence": "Comment [[s'appelle]] le nouveau serveur?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be called",
-   "options": [
-    "to be called",
-    "to call someone",
-    "to work somewhere",
-    "to look like"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Comment s'appelle le nouveau serveur?",
-    "targetWord": "s'appelle",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le message vocal",
-  "sentence": "Un [[message vocal]] arrive sur son portable.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a voice message",
-   "options": [
-    "a voice message",
-    "a text message",
-    "a phone call",
-    "a letter"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Un message vocal arrive sur son portable.",
-    "targetWord": "message vocal",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "écouter",
-  "sentence": "Elle [[écoute]], mais il y a trop de bruit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to listen",
-   "options": [
-    "to listen",
-    "to speak",
-    "to wait",
-    "to sing"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Elle écoute, mais il y a trop de bruit.",
-    "targetWord": "écoute",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "entends",
-  "sentence": "Parle plus fort, s'il te plaît. Je _____ mal.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "entends",
-   "options": [
-    "entends",
-    "vois",
-    "dors",
-    "mange"
-   ],
-   "translation": "Speak louder, please. I _____ badly.",
-   "optionTranslations": [
-    "hear",
-    "see",
-    "sleep",
-    "eat"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Parle plus fort, s'il te plaît. Je entends mal.",
-    "targetWord": "entends",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "occupé",
-  "sentence": "Le café est plein, et elle est [[occupée]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "busy",
-   "options": [
-    "busy",
-    "lost",
-    "bored",
-    "sleepy"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Le café est plein, et elle est occupée.",
-    "targetWord": "occupée",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "plein",
-  "sentence": "Le bus est _____: il n'y a pas de place.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "plein",
-   "options": [
-    "plein",
-    "vide",
-    "propre",
-    "lent"
-   ],
-   "translation": "The bus is _____: there is no room.",
-   "optionTranslations": [
-    "full",
-    "empty",
-    "clean",
-    "slow"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Le bus est plein: il n'y a pas de place.",
-    "targetWord": "plein",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "à côté",
-  "sentence": "Il est sur un tabouret, [[à côté]] d'elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next to",
-   "options": [
-    "next to",
-    "far from",
-    "behind",
-    "in front of"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Il est sur un tabouret, à côté d'elle.",
-    "targetWord": "à côté",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "comprendre",
-  "sentence": "Elle écoute et elle [[comprend]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to understand",
-   "options": [
-    "to understand",
-    "to forget",
-    "to repeat",
-    "to answer"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Elle écoute et elle comprend.",
-    "targetWord": "comprend",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "commencer",
-  "sentence": "Il [[commence]] le travail aujourd'hui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to start",
-   "options": [
-    "to start",
-    "to stop",
-    "to rest",
-    "to leave"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Il commence le travail aujourd'hui.",
-    "targetWord": "commence",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dire",
-  "sentence": "“J'oublie toujours où sont les tasses”, [[dit]]-il.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to say",
-   "options": [
-    "to say",
-    "to ask",
-    "to laugh",
-    "to sing"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "“J'oublie toujours où sont les tasses”, dit-il.",
-    "targetWord": "dit",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le serveur",
+    "sentence": "Le nouveau [[serveur]] court entre les tables.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a waiter",
+      "options": [
+        "a waiter",
+        "a cook",
+        "a customer",
+        "a shop owner"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Le nouveau serveur court entre les tables.",
+        "targetWord": "serveur",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pardon",
-  "sentence": "“[[Pardon]], où sont les tasses?”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "excuse me",
-   "options": [
-    "excuse me",
-    "thank you",
-    "see you",
-    "well done"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "“Pardon, où sont les tasses?”",
-    "targetWord": "Pardon",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "s'appeler",
+    "sentence": "Comment [[s'appelle]] le nouveau serveur?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be called",
+      "options": [
+        "to be called",
+        "to call someone",
+        "to work somewhere",
+        "to look like"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Comment s'appelle le nouveau serveur?",
+        "targetWord": "s'appelle",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "quoi",
-  "sentence": "“[[Quoi]]? Je n'entends rien”, crie-t-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "what?",
-   "options": [
-    "what?",
-    "why?",
-    "where?",
-    "who?"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "“Quoi? Je n'entends rien”, crie-t-elle.",
-    "targetWord": "Quoi",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le message vocal",
+    "sentence": "Un [[message vocal]] arrive sur son portable.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a voice message",
+      "options": [
+        "a voice message",
+        "a text message",
+        "a phone call",
+        "a letter"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Un message vocal arrive sur son portable.",
+        "targetWord": "message vocal",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "gentil",
-  "sentence": "Merci, tu es [[gentil]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "kind",
-   "options": [
-    "kind",
-    "funny",
-    "tired",
-    "shy"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Merci, tu es gentil.",
-    "targetWord": "gentil",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "écouter",
+    "sentence": "Elle [[écoute]], mais il y a trop de bruit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to listen",
+      "options": [
+        "to listen",
+        "to speak",
+        "to wait",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Elle écoute, mais il y a trop de bruit.",
+        "targetWord": "écoute",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bien sûr",
-  "sentence": "“[[Bien sûr]]”, sourit-il.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "of course",
-   "options": [
-    "of course",
-    "maybe later",
-    "not at all",
-    "no, thanks"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "“Bien sûr”, sourit-il.",
-    "targetWord": "Bien sûr",
-    "language": "french"
-   }
+  {
+    "type": "fill_blank",
+    "word": "entends",
+    "sentence": "Parle plus fort, s'il te plaît. Je _____ mal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entends",
+      "options": [
+        "entends",
+        "vois",
+        "dors",
+        "mange"
+      ],
+      "translation": "Speak louder, please. I _____ badly.",
+      "optionTranslations": [
+        "hear",
+        "see",
+        "sleep",
+        "eat"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Parle plus fort, s'il te plaît. Je entends mal.",
+        "targetWord": "entends",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "court",
-  "sentence": "Le bus part, alors il _____ vers l'arrêt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "court",
-   "options": [
-    "court",
-    "dort",
-    "lit",
-    "chante"
-   ],
-   "translation": "The bus is leaving, so he _____ to the stop.",
-   "optionTranslations": [
-    "runs",
-    "sleeps",
-    "reads",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "theo-ecoute-pour-lea",
-    "storySource": "user",
-    "sentence": "Le bus part, alors il court vers l'arrêt.",
-    "targetWord": "court",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "occupé",
+    "sentence": "Le café est plein, et elle est [[occupée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "busy",
+      "options": [
+        "busy",
+        "lost",
+        "bored",
+        "sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Le café est plein, et elle est occupée.",
+        "targetWord": "occupée",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "plein",
+    "sentence": "Le bus est _____: il n'y a pas de place.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plein",
+      "options": [
+        "plein",
+        "sale",
+        "propre",
+        "lent"
+      ],
+      "translation": "The bus is _____: there is no room.",
+      "optionTranslations": [
+        "full",
+        "dirty",
+        "clean",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Le bus est plein: il n'y a pas de place.",
+        "targetWord": "plein",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à côté",
+    "sentence": "Il est sur un tabouret, [[à côté]] d'elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next to",
+      "options": [
+        "next to",
+        "far from",
+        "behind",
+        "in front of"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Il est sur un tabouret, à côté d'elle.",
+        "targetWord": "à côté",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprendre",
+    "sentence": "Elle écoute et elle [[comprend]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to forget",
+        "to repeat",
+        "to answer"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Elle écoute et elle comprend.",
+        "targetWord": "comprend",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "commencer",
+    "sentence": "Il [[commence]] le travail aujourd'hui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to start",
+      "options": [
+        "to start",
+        "to stop",
+        "to rest",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Il commence le travail aujourd'hui.",
+        "targetWord": "commence",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dire",
+    "sentence": "“J'oublie toujours où sont les tasses”, [[dit]]-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say",
+      "options": [
+        "to say",
+        "to ask",
+        "to laugh",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "“J'oublie toujours où sont les tasses”, dit-il.",
+        "targetWord": "dit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pardon",
+    "sentence": "“[[Pardon]], où sont les tasses?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "excuse me",
+      "options": [
+        "excuse me",
+        "thank you",
+        "see you",
+        "well done"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "“Pardon, où sont les tasses?”",
+        "targetWord": "Pardon",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quoi",
+    "sentence": "“[[Quoi]]? Je n'entends rien”, crie-t-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what?",
+      "options": [
+        "what?",
+        "why?",
+        "where?",
+        "who?"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "“Quoi? Je n'entends rien”, crie-t-elle.",
+        "targetWord": "Quoi",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gentil",
+    "sentence": "Merci, tu es [[gentil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "funny",
+        "tired",
+        "shy"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Merci, tu es gentil.",
+        "targetWord": "gentil",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bien sûr",
+    "sentence": "“[[Bien sûr]]”, sourit-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of course",
+      "options": [
+        "of course",
+        "maybe later",
+        "not at all",
+        "no, thanks"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "“Bien sûr”, sourit-il.",
+        "targetWord": "Bien sûr",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "court",
+    "sentence": "Le bus part, alors il _____ vers l'arrêt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "court",
+      "options": [
+        "court",
+        "dort",
+        "lit",
+        "chante"
+      ],
+      "translation": "The bus is leaving, so he _____ to the stop.",
+      "optionTranslations": [
+        "runs",
+        "sleeps",
+        "reads",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "theo-ecoute-pour-lea",
+        "storySource": "user",
+        "sentence": "Le bus part, alors il court vers l'arrêt.",
+        "targetWord": "court",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

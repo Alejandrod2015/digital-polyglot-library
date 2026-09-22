@@ -18,7 +18,8 @@
  *
  *   npm run lint:distractors                      (live + draft)
  *   npm run lint:distractors -- --journey=<id>    (uno; imprime cada fallo)
- *   npm run lint:distractors -- --apretar         (reescribe la linea base a lo de hoy)
+ *   npm run lint:distractors -- --apretar         (baja la linea base a lo de hoy)
+ *   npm run lint:distractors -- --rebase          (la reescribe aunque suba: solo tras cambiar reglas del gate)
  *
  * Exit: 0 limpio o dentro de la linea base, 1 si algun journey supera la suya
  * o no tiene linea base.
@@ -45,6 +46,10 @@ async function main() {
   const args = process.argv.slice(2);
   const only = args.find((a) => a.startsWith("--journey="))?.split("=")[1];
   const apretar = args.includes("--apretar");
+  // --rebase: escribe los numeros de HOY aunque suban. Solo cuando cambian las
+  // REGLAS del gate (una regla nueva sube la cuenta sin que los datos empeoren)
+  // y siempre en un commit que lo diga; para datos, --apretar, que solo baja.
+  const rebase = args.includes("--rebase");
   const verbose = !!only || args.includes("--verbose");
 
   const journeys = await prisma.journey.findMany({
@@ -84,7 +89,7 @@ async function main() {
     nueva[j.id] = { label, failing };
     const b = base[j.id];
     const estado = !b ? "SIN LINEA BASE" : failing > b.failing ? `PEOR (base ${b.failing})` : failing < b.failing ? `mejor (base ${b.failing})` : "=";
-    if ((!b || failing > b.failing) && !apretar) peor.push(`${label}: ${failing} fallan${b ? `, base ${b.failing}` : ""}`);
+    if ((!b || failing > b.failing) && !apretar && !rebase) peor.push(`${label}: ${failing} fallan${b ? `, base ${b.failing}` : ""}`);
     const reglas = Object.entries(porRegla).sort((a, b2) => b2[1] - a[1]).map(([k, v]) => `${k}:${v}`).join(" ");
     rows.push(`| ${label} | ${n} | ${failing} (${n ? Math.round((100 * failing) / n) : 0}%) | ${reglas} | ${warn} | ${estado} |`);
   }
@@ -94,11 +99,11 @@ async function main() {
   for (const r of rows) console.log(r);
   console.log(`\n${journeys.length} journeys, ${totalEx} ejercicios, ${totalFail} fallan el gate.`);
 
-  if (apretar) {
+  if (apretar || rebase) {
     const merged: Base = { ...base };
     for (const [id, v] of Object.entries(nueva)) {
       // Solo baja. Subir la linea base es lo que el trinquete impide.
-      if (!merged[id] || v.failing <= merged[id].failing) merged[id] = v;
+      if (rebase || !merged[id] || v.failing <= merged[id].failing) merged[id] = v;
     }
     fs.writeFileSync(BASELINE, JSON.stringify(merged, null, 2) + "\n");
     console.log(`Linea base escrita en ${path.relative(process.cwd(), BASELINE)}.`);

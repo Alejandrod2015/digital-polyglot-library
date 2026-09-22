@@ -1,446 +1,446 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Leuchtturm,das Gitter,die Gummijacke,der Ärmel",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Leuchtturm",
-     "answer": "a lighthouse",
-     "options": [
-      "a lighthouse",
-      "a metal grille",
-      "a rubber jacket",
-      "a sleeve"
-     ]
-    },
-    {
-     "word": "das Gitter",
-     "answer": "a metal grille",
-     "options": [
-      "a lighthouse",
-      "a metal grille",
-      "a rubber jacket",
-      "a sleeve"
-     ]
-    },
-    {
-     "word": "die Gummijacke",
-     "answer": "a rubber jacket",
-     "options": [
-      "a lighthouse",
-      "a metal grille",
-      "a rubber jacket",
-      "a sleeve"
-     ]
-    },
-    {
-     "word": "der Ärmel",
-     "answer": "a sleeve",
-     "options": [
-      "a lighthouse",
-      "a metal grille",
-      "a rubber jacket",
-      "a sleeve"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Leuchtturm,das Gitter,die Gummijacke,der Ärmel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Leuchtturm",
+          "answer": "a lighthouse",
+          "options": [
+            "a lighthouse",
+            "a metal grille",
+            "a rubber jacket",
+            "a sleeve"
+          ]
+        },
+        {
+          "word": "das Gitter",
+          "answer": "a metal grille",
+          "options": [
+            "a lighthouse",
+            "a metal grille",
+            "a rubber jacket",
+            "a sleeve"
+          ]
+        },
+        {
+          "word": "die Gummijacke",
+          "answer": "a rubber jacket",
+          "options": [
+            "a lighthouse",
+            "a metal grille",
+            "a rubber jacket",
+            "a sleeve"
+          ]
+        },
+        {
+          "word": "der Ärmel",
+          "answer": "a sleeve",
+          "options": [
+            "a lighthouse",
+            "a metal grille",
+            "a rubber jacket",
+            "a sleeve"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Regen",
-  "sentence": "Der Boden oben ist nass vom [[Regen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "rain",
-   "options": [
-    "rain",
-    "snow",
-    "wind",
-    "fog"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Der Boden oben ist nass vom Regen.",
-    "targetWord": "Regen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Eisen",
-  "sentence": "Leon legt die Hand auf das kalte [[Eisen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "iron",
-   "options": [
-    "iron",
-    "wood",
-    "glass",
-    "cloth"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Leon legt die Hand auf das kalte Eisen.",
-    "targetWord": "Eisen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Blick",
-  "sentence": "Sein [[Blick]] geht nach unten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a gaze",
-   "options": [
-    "a gaze",
-    "a shout",
-    "a step",
-    "a hand"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Sein Blick geht nach unten.",
-    "targetWord": "Blick",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Winter",
-  "sentence": "Kommst du im [[Winter]] wieder?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "winter",
-   "options": [
-    "winter",
-    "summer",
-    "spring",
-    "autumn"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Kommst du im Winter wieder?",
-    "targetWord": "Winter",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Meer",
-  "sentence": "Sie hört nur das [[Meer]] und den Wind.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the sea",
-   "options": [
-    "the sea",
-    "the town",
-    "the road",
-    "the train"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Sie hört nur das Meer und den Wind.",
-    "targetWord": "Meer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Schuld",
-  "sentence": "Es ist nicht deine [[Schuld]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fault",
-   "options": [
-    "fault",
-    "luck",
-    "turn",
-    "work"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Es ist nicht deine Schuld.",
-    "targetWord": "Schuld",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schweigen",
-  "sentence": "Leon [[schweigt]] seit dem Strand.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to keep silent",
-   "options": [
-    "to keep silent",
-    "to laugh",
-    "to sing",
-    "to answer"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Leon schweigt seit dem Strand.",
-    "targetWord": "schweigt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "nass",
-  "sentence": "Der Boden oben ist _____ vom Regen.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "nass",
-   "options": [
-    "nass",
-    "trocken",
-    "warm",
-    "hart"
-   ],
-   "translation": "The floor up there is _____ from the rain.",
-   "optionTranslations": [
-    "wet",
-    "dry",
-    "warm",
-    "hard"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Der Boden oben ist nass vom Regen.",
-    "targetWord": "nass",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "schreibe",
-  "sentence": "Dann _____ ich dir. Einmal.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schreibe",
-   "options": [
-    "schreibe",
-    "rufe",
-    "besuche",
-    "frage"
-   ],
-   "translation": "Then I will _____ to you. Once.",
-   "optionTranslations": [
-    "write",
-    "call",
-    "visit",
-    "ask"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Dann schreibe ich dir. Einmal.",
-    "targetWord": "schreibe",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Januar",
-  "sentence": "Dann komme ich im [[Januar]]. Eine Woche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "January",
-   "options": [
-    "January",
-    "July",
-    "March",
-    "September"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Dann komme ich im Januar. Eine Woche.",
-    "targetWord": "Januar",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Finger",
-  "sentence": "Ihre [[Finger]] stecken tief in den Ärmeln.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a finger",
-   "options": [
-    "a finger",
-    "a knee",
-    "an ear",
-    "a foot"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Ihre Finger stecken tief in den Ärmeln.",
-    "targetWord": "Finger",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Regen",
+    "sentence": "Der Boden oben ist nass vom [[Regen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rain",
+      "options": [
+        "rain",
+        "snow",
+        "wind",
+        "fog"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Der Boden oben ist nass vom Regen.",
+        "targetWord": "Regen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Mutter",
-  "sentence": "Frag meine [[Mutter]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a mother",
-   "options": [
-    "a mother",
-    "a sister",
-    "a cousin",
-    "a neighbour"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Frag meine Mutter.",
-    "targetWord": "Mutter",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Eisen",
+    "sentence": "Leon legt die Hand auf das kalte [[Eisen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "iron",
+      "options": [
+        "iron",
+        "wood",
+        "glass",
+        "cloth"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Leon legt die Hand auf das kalte Eisen.",
+        "targetWord": "Eisen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Ende",
-  "sentence": "Sie dreht sich ohne [[Ende]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an end",
-   "options": [
-    "an end",
-    "a start",
-    "a rest",
-    "a plan"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Sie dreht sich ohne Ende.",
-    "targetWord": "Ende",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Blick",
+    "sentence": "Sein [[Blick]] geht nach unten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gaze",
+      "options": [
+        "a gaze",
+        "a shout",
+        "a step",
+        "a hand"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Sein Blick geht nach unten.",
+        "targetWord": "Blick",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "stecken",
-  "sentence": "Ihre Finger _____ tief in den Ärmeln.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "stecken",
-   "options": [
-    "stecken",
-    "fallen",
-    "warten",
-    "zeigen"
-   ],
-   "translation": "Her fingers _____ deep in the sleeves.",
-   "optionTranslations": [
-    "are tucked",
-    "fall",
-    "wait",
-    "point"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Ihre Finger stecken tief in den Ärmeln.",
-    "targetWord": "stecken",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Winter",
+    "sentence": "Kommst du im [[Winter]] wieder?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "winter",
+      "options": [
+        "winter",
+        "summer",
+        "spring",
+        "autumn"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Kommst du im Winter wieder?",
+        "targetWord": "Winter",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klein",
-  "sentence": "Das Dorf unten liegt _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klein",
-   "options": [
-    "klein",
-    "groß",
-    "hell",
-    "voll"
-   ],
-   "translation": "The village below lies _____.",
-   "optionTranslations": [
-    "small",
-    "big",
-    "bright",
-    "full"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Das Dorf unten liegt klein.",
-    "targetWord": "klein",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Meer",
+    "sentence": "Sie hört nur das [[Meer]] und den Wind.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sea",
+      "options": [
+        "the sea",
+        "the town",
+        "the road",
+        "the train"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Sie hört nur das Meer und den Wind.",
+        "targetWord": "Meer",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "oben",
-  "sentence": "Der Wind pfeift _____ durch das Gitter.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "oben",
-   "options": [
-    "oben",
-    "unten",
-    "hinten",
-    "drinnen"
-   ],
-   "translation": "The wind whistles _____ through the grille.",
-   "optionTranslations": [
-    "up there",
-    "down",
-    "behind",
-    "inside"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Der Wind pfeift oben durch das Gitter.",
-    "targetWord": "oben",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Schuld",
+    "sentence": "Es ist nicht deine [[Schuld]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fault",
+      "options": [
+        "fault",
+        "luck",
+        "turn",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Es ist nicht deine Schuld.",
+        "targetWord": "Schuld",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "schweigen",
+    "sentence": "Leon [[schweigt]] seit dem Strand.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep silent",
+      "options": [
+        "to keep silent",
+        "to laugh",
+        "to sing",
+        "to answer"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Leon schweigt seit dem Strand.",
+        "targetWord": "schweigt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nass",
+    "sentence": "Der Boden oben ist _____ vom Regen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nass",
+      "options": [
+        "nass",
+        "hell",
+        "warm",
+        "hart"
+      ],
+      "translation": "The floor up there is _____ from the rain.",
+      "optionTranslations": [
+        "wet",
+        "bright",
+        "warm",
+        "hard"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Der Boden oben ist nass vom Regen.",
+        "targetWord": "nass",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schreibe",
+    "sentence": "Dann _____ ich dir. Einmal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schreibe",
+      "options": [
+        "schreibe",
+        "rufe",
+        "besuche",
+        "frage"
+      ],
+      "translation": "Then I will _____ to you. Once.",
+      "optionTranslations": [
+        "write",
+        "call",
+        "visit",
+        "ask"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Dann schreibe ich dir. Einmal.",
+        "targetWord": "schreibe",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Januar",
+    "sentence": "Dann komme ich im [[Januar]]. Eine Woche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "January",
+      "options": [
+        "January",
+        "July",
+        "March",
+        "September"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Dann komme ich im Januar. Eine Woche.",
+        "targetWord": "Januar",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Finger",
+    "sentence": "Ihre [[Finger]] stecken tief in den Ärmeln.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a finger",
+      "options": [
+        "a finger",
+        "a knee",
+        "an ear",
+        "a foot"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Ihre Finger stecken tief in den Ärmeln.",
+        "targetWord": "Finger",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Mutter",
+    "sentence": "Frag meine [[Mutter]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mother",
+      "options": [
+        "a mother",
+        "a sister",
+        "a cousin",
+        "a neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Frag meine Mutter.",
+        "targetWord": "Mutter",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Ende",
+    "sentence": "Sie dreht sich ohne [[Ende]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an end",
+      "options": [
+        "an end",
+        "a start",
+        "a rest",
+        "a plan"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Sie dreht sich ohne Ende.",
+        "targetWord": "Ende",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "stecken",
+    "sentence": "Ihre Finger _____ tief in den Ärmeln.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stecken",
+      "options": [
+        "stecken",
+        "fallen",
+        "warten",
+        "zeigen"
+      ],
+      "translation": "Her fingers _____ deep in the sleeves.",
+      "optionTranslations": [
+        "are tucked",
+        "fall",
+        "wait",
+        "point"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Ihre Finger stecken tief in den Ärmeln.",
+        "targetWord": "stecken",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klein",
+    "sentence": "Das Dorf unten liegt _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klein",
+      "options": [
+        "klein",
+        "grau",
+        "hell",
+        "voll"
+      ],
+      "translation": "The village below lies _____.",
+      "optionTranslations": [
+        "small",
+        "grey",
+        "bright",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Das Dorf unten liegt klein.",
+        "targetWord": "klein",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "oben",
+    "sentence": "Der Wind pfeift _____ durch das Gitter.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oben",
+      "options": [
+        "oben",
+        "unten",
+        "hinten",
+        "drinnen"
+      ],
+      "translation": "The wind whistles _____ through the grille.",
+      "optionTranslations": [
+        "up there",
+        "down",
+        "behind",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "der-leuchtturm-von-kap-arkona",
+        "storySource": "user",
+        "sentence": "Der Wind pfeift oben durch das Gitter.",
+        "targetWord": "oben",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

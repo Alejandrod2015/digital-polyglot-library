@@ -53,9 +53,9 @@
     "sentence": "Der Kater [[frisst]] morgens und abends.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "eats (of animals)",
+      "answer": "eats",
       "options": [
-        "eats (of animals)",
+        "eats",
         "sleeps",
         "hides",
         "plays"

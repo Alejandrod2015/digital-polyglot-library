@@ -146,12 +146,12 @@
     "sentence": "Après cette annonce, il craignait [[le chômage]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "unemployment",
+      "answer": "losing his job",
       "options": [
-        "unemployment",
-        "a promotion",
-        "a vacation",
-        "a raise"
+        "losing his job",
+        "getting a promotion",
+        "taking a vacation",
+        "getting a raise"
       ],
       "audioClip": {
         "language": "french",

@@ -28,9 +28,9 @@
     "sentence": "Es ist keine große [[Wiesn]], nur ein stiller Nachmittag.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the Oktoberfest",
+      "answer": "a beer festival",
       "options": [
-        "the Oktoberfest",
+        "a beer festival",
         "a wedding",
         "a market",
         "a parade"

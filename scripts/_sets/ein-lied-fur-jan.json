@@ -1,455 +1,455 @@
 [
- {
-  "type": "match_meaning",
-  "word": "das Mikrofon,der Schlag,die Melodie,die Straße",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "das Mikrofon",
-     "answer": "a microphone",
-     "options": [
-      "a microphone",
-      "a beat",
-      "a tune",
-      "a street"
-     ]
-    },
-    {
-     "word": "der Schlag",
-     "answer": "a beat",
-     "options": [
-      "a microphone",
-      "a beat",
-      "a tune",
-      "a street"
-     ]
-    },
-    {
-     "word": "die Melodie",
-     "answer": "a tune",
-     "options": [
-      "a microphone",
-      "a beat",
-      "a tune",
-      "a street"
-     ]
-    },
-    {
-     "word": "die Straße",
-     "answer": "a street",
-     "options": [
-      "a microphone",
-      "a beat",
-      "a tune",
-      "a street"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "das Mikrofon,der Schlag,die Melodie,die Straße",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Mikrofon",
+          "answer": "a microphone",
+          "options": [
+            "a microphone",
+            "a beat",
+            "a tune",
+            "a street"
+          ]
+        },
+        {
+          "word": "der Schlag",
+          "answer": "a beat",
+          "options": [
+            "a microphone",
+            "a beat",
+            "a tune",
+            "a street"
+          ]
+        },
+        {
+          "word": "die Melodie",
+          "answer": "a tune",
+          "options": [
+            "a microphone",
+            "a beat",
+            "a tune",
+            "a street"
+          ]
+        },
+        {
+          "word": "die Straße",
+          "answer": "a street",
+          "options": [
+            "a microphone",
+            "a beat",
+            "a tune",
+            "a street"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "brennen",
-  "sentence": "Viele Kerzen [[brennen]] auf dem Kuchen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "burn",
-   "options": [
-    "burn",
-    "shine",
-    "fall",
-    "melt"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Viele Kerzen brennen auf dem Kuchen.",
-    "targetWord": "brennen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fünfunddreißig",
-  "sentence": "Er ist [[fünfunddreißig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thirty-five",
-   "options": [
-    "thirty-five",
-    "thirty",
-    "forty",
-    "twenty-five"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Er ist fünfunddreißig.",
-    "targetWord": "fünfunddreißig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Jemand",
-  "sentence": "[[Jemand]] macht das Licht dunkel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Somebody",
-   "options": [
-    "Somebody",
-    "Nobody",
-    "Everybody",
-    "A friend"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Jemand macht das Licht dunkel.",
-    "targetWord": "Jemand",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "beginnt",
-  "sentence": "Die Musik [[beginnt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "begins",
-   "options": [
-    "begins",
-    "stops",
-    "changes",
-    "waits"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Die Musik beginnt.",
-    "targetWord": "beginnt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mit",
-  "sentence": "Sie hält das Mikrofon [[mit]] beiden Händen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "with",
-   "options": [
-    "with",
-    "without",
-    "under",
-    "near"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Sie hält das Mikrofon mit beiden Händen.",
-    "targetWord": "mit",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dieses",
-  "sentence": "“Hör zu, [[dieses]] Lied ist neu.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "this",
-   "options": [
-    "this",
-    "that",
-    "every",
-    "no"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "“Hör zu, dieses Lied ist neu.",
-    "targetWord": "dieses",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nur",
-  "sentence": "Es ist [[nur]] für dich”, sagt sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "only",
-   "options": [
-    "only",
-    "also",
-    "never",
-    "always"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Es ist nur für dich”, sagt sie.",
-    "targetWord": "nur",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "spielt",
-  "sentence": "Er [[spielt]] leise.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "plays",
-   "options": [
-    "plays",
-    "sings",
-    "listens",
-    "dances"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Er spielt leise.",
-    "targetWord": "spielt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Ärmel",
-  "sentence": "Er wischt sich mit dem [[Ärmel]] über die Augen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sleeve",
-   "options": [
-    "sleeve",
-    "hand",
-    "cloth",
-    "glass"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Er wischt sich mit dem Ärmel über die Augen.",
-    "targetWord": "Ärmel",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "was",
-  "sentence": "Aber [[was]] ist mit dem alten Lied?”, fragt er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "what",
-   "options": [
-    "what",
-    "who",
-    "where",
-    "why"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Aber was ist mit dem alten Lied?”, fragt er.",
-    "targetWord": "was",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "zu",
-  "sentence": "“Das alte Lied gehört [[zu]] früher.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to",
-   "options": [
-    "to",
-    "from",
-    "without",
-    "against"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "“Das alte Lied gehört zu früher.",
-    "targetWord": "zu",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "brennen",
+    "sentence": "Viele Kerzen [[brennen]] auf dem Kuchen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burn",
+      "options": [
+        "burn",
+        "shine",
+        "fall",
+        "melt"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Viele Kerzen brennen auf dem Kuchen.",
+        "targetWord": "brennen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Alle",
-  "sentence": "[[Alle]] klatschen und pfeifen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Everyone",
-   "options": [
-    "Everyone",
-    "Nobody",
-    "Somebody",
-    "A friend"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Alle klatschen und pfeifen.",
-    "targetWord": "Alle",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "fünfunddreißig",
+    "sentence": "Er ist [[fünfunddreißig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thirty-five",
+      "options": [
+        "thirty-five",
+        "thirty",
+        "forty",
+        "twenty-five"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Er ist fünfunddreißig.",
+        "targetWord": "fünfunddreißig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "klatschen",
-  "sentence": "Alle [[klatschen]] und pfeifen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clap",
-   "options": [
-    "clap",
-    "cry",
-    "sing",
-    "whisper"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Alle klatschen und pfeifen.",
-    "targetWord": "klatschen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Jemand",
+    "sentence": "[[Jemand]] macht das Licht dunkel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Somebody",
+      "options": [
+        "Somebody",
+        "Nobody",
+        "Everybody",
+        "A friend"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Jemand macht das Licht dunkel.",
+        "targetWord": "Jemand",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ohne",
-  "sentence": "Sie singt jetzt [[ohne]] Angst.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "without",
-   "options": [
-    "without",
-    "with",
-    "against",
-    "for"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Sie singt jetzt ohne Angst.",
-    "targetWord": "ohne",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "beginnt",
+    "sentence": "Die Musik [[beginnt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "begins",
+      "options": [
+        "begins",
+        "stops",
+        "changes",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Die Musik beginnt.",
+        "targetWord": "beginnt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "wischt",
-  "sentence": "Er _____ sich mit dem Ärmel über die Augen.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wischt",
-   "options": [
-    "wischt",
-    "hält",
-    "zeigt",
-    "sucht"
-   ],
-   "translation": "He _____ his sleeve across his eyes.",
-   "optionTranslations": [
-    "wipes",
-    "holds",
-    "shows",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Er wischt sich mit dem Ärmel über die Augen.",
-    "targetWord": "wischt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "mit",
+    "sentence": "Sie hält das Mikrofon [[mit]] beiden Händen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with",
+      "options": [
+        "with",
+        "without",
+        "under",
+        "near"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Sie hält das Mikrofon mit beiden Händen.",
+        "targetWord": "mit",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "pfeifen",
-  "sentence": "Alle klatschen und _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pfeifen",
-   "options": [
-    "pfeifen",
-    "singen",
-    "tanzen",
-    "weinen"
-   ],
-   "translation": "Everyone claps and _____.",
-   "optionTranslations": [
-    "whistle",
-    "sing",
-    "dance",
-    "cry"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Alle klatschen und pfeifen.",
-    "targetWord": "pfeifen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dieses",
+    "sentence": "“Hör zu, [[dieses]] Lied ist neu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this",
+      "options": [
+        "this",
+        "that",
+        "every",
+        "no"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "“Hör zu, dieses Lied ist neu.",
+        "targetWord": "dieses",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "offen",
-  "sentence": "Die Tür ist noch _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "offen",
-   "options": [
-    "offen",
-    "neu",
-    "kalt",
-    "leer"
-   ],
-   "translation": "The door is still _____.",
-   "optionTranslations": [
-    "open",
-    "new",
-    "cold",
-    "empty"
-   ],
-   "audioClip": {
-    "storySlug": "ein-lied-fur-jan",
-    "storySource": "user",
-    "sentence": "Die Tür ist noch offen.",
-    "targetWord": "offen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "nur",
+    "sentence": "Es ist [[nur]] für dich”, sagt sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": [
+        "only",
+        "also",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Es ist nur für dich”, sagt sie.",
+        "targetWord": "nur",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "spielt",
+    "sentence": "Er [[spielt]] leise.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plays",
+      "options": [
+        "plays",
+        "sings",
+        "listens",
+        "dances"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Er spielt leise.",
+        "targetWord": "spielt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Ärmel",
+    "sentence": "Er wischt sich mit dem [[Ärmel]] über die Augen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleeve",
+      "options": [
+        "sleeve",
+        "hand",
+        "cloth",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Er wischt sich mit dem Ärmel über die Augen.",
+        "targetWord": "Ärmel",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "was",
+    "sentence": "Aber [[was]] ist mit dem alten Lied?”, fragt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what",
+      "options": [
+        "what",
+        "who",
+        "where",
+        "why"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Aber was ist mit dem alten Lied?”, fragt er.",
+        "targetWord": "was",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zu",
+    "sentence": "“Das alte Lied gehört [[zu]] früher.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "part of",
+      "options": [
+        "part of",
+        "far from",
+        "apart from",
+        "against"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "“Das alte Lied gehört zu früher.",
+        "targetWord": "zu",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Alle",
+    "sentence": "[[Alle]] klatschen und pfeifen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Everyone",
+      "options": [
+        "Everyone",
+        "Nobody",
+        "Somebody",
+        "A friend"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Alle klatschen und pfeifen.",
+        "targetWord": "Alle",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "klatschen",
+    "sentence": "Alle [[klatschen]] und pfeifen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clap",
+      "options": [
+        "clap",
+        "cry",
+        "sing",
+        "whisper"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Alle klatschen und pfeifen.",
+        "targetWord": "klatschen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ohne",
+    "sentence": "Sie singt jetzt [[ohne]] Angst.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without",
+      "options": [
+        "without",
+        "with",
+        "against",
+        "for"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Sie singt jetzt ohne Angst.",
+        "targetWord": "ohne",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "wischt",
+    "sentence": "Er _____ sich mit dem Ärmel über die Augen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wischt",
+      "options": [
+        "wischt",
+        "hält",
+        "zeigt",
+        "sucht"
+      ],
+      "translation": "He _____ his sleeve across his eyes.",
+      "optionTranslations": [
+        "wipes",
+        "holds",
+        "shows",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Er wischt sich mit dem Ärmel über die Augen.",
+        "targetWord": "wischt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pfeifen",
+    "sentence": "Alle klatschen und _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pfeifen",
+      "options": [
+        "pfeifen",
+        "singen",
+        "tanzen",
+        "weinen"
+      ],
+      "translation": "Everyone claps and _____.",
+      "optionTranslations": [
+        "whistle",
+        "sing",
+        "dance",
+        "cry"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Alle klatschen und pfeifen.",
+        "targetWord": "pfeifen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "offen",
+    "sentence": "Die Tür ist noch _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "offen",
+      "options": [
+        "offen",
+        "neu",
+        "kalt",
+        "leer"
+      ],
+      "translation": "The door is still _____.",
+      "optionTranslations": [
+        "open",
+        "new",
+        "cold",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "ein-lied-fur-jan",
+        "storySource": "user",
+        "sentence": "Die Tür ist noch offen.",
+        "targetWord": "offen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

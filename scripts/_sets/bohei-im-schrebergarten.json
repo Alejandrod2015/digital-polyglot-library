@@ -97,9 +97,9 @@
     "sentence": "Nimm schon mit, [[poltert]] er.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to bluster, to boom out",
+      "answer": "to bluster",
       "options": [
-        "to bluster, to boom out",
+        "to bluster",
         "to whisper",
         "to giggle",
         "to sing"
@@ -259,12 +259,12 @@
     "sentence": "Bloß kein [[Trara]], brummt er.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "no fuss, no show",
+      "answer": "fuss",
       "options": [
-        "no fuss, no show",
-        "a short break",
-        "a small joke",
-        "a quick goodbye"
+        "fuss",
+        "rest",
+        "noise",
+        "talk"
       ],
       "audioClip": {
         "storySlug": "bohei-im-schrebergarten",
@@ -416,7 +416,7 @@
       ],
       "translation": "The fans sang the song _____ in the stadium.",
       "optionTranslations": [
-        "at the top of their voice",
+        "at full volume",
         "quietly",
         "secretly",
         "slowly"

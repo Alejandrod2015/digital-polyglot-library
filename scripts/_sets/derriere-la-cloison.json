@@ -89,14 +89,14 @@
       "answer": "tièdes",
       "options": [
         "tièdes",
-        "froids",
+        "sucrés",
         "salés",
         "durs"
       ],
       "translation": "These croissants aren't scalding anymore, just still a little _____.",
       "optionTranslations": [
         "warm",
-        "cold",
+        "sweet",
         "salty",
         "hard"
       ],
@@ -379,7 +379,7 @@
       "answer": "first",
       "options": [
         "first",
-        "last",
+        "third",
         "never",
         "twice"
       ],

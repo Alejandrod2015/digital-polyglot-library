@@ -104,9 +104,9 @@
       "answer": "patience",
       "options": [
         "patience",
-        "a stamp",
-        "a number",
-        "a form"
+        "luck",
+        "money",
+        "silence"
       ],
       "audioClip": {
         "storySlug": "die-mit-der-thermoskanne",
@@ -152,9 +152,9 @@
       "answer": "half the battle",
       "options": [
         "half the battle",
-        "the monthly rent",
-        "a waste of time",
-        "a lucky guess"
+        "twice the rent",
+        "all the time",
+        "just a guess"
       ],
       "audioClip": {
         "storySlug": "die-mit-der-thermoskanne",

@@ -81,9 +81,9 @@
       "answer": "Dad",
       "options": [
         "Dad",
-        "the boss",
-        "the neighbor",
-        "the doctor"
+        "Grandma",
+        "Uncle",
+        "Grandpa"
       ],
       "audioClip": {
         "storySlug": "une-flammekueche-maison",
@@ -124,12 +124,12 @@
     "sentence": "Il pense au [[marché de Noël]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Christmas market",
+      "answer": "the Christmas market",
       "options": [
-        "Christmas market",
-        "summer festival",
-        "wedding party",
-        "work meeting"
+        "the Christmas market",
+        "the summer festival",
+        "the wedding party",
+        "the work meeting"
       ],
       "audioClip": {
         "storySlug": "une-flammekueche-maison",
@@ -388,14 +388,14 @@
       "answer": "heureuse",
       "options": [
         "heureuse",
-        "triste",
+        "surprise",
         "fatiguée",
         "malade"
       ],
       "translation": "She smiles, very _____ about the answer.",
       "optionTranslations": [
         "happy",
-        "sad",
+        "surprised",
         "tired",
         "sick"
       ],

@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Vertrag,die Tinte,der Satz,der Magnet",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Vertrag",
-     "answer": "a contract",
-     "options": [
-      "a contract",
-      "ink",
-      "a sentence",
-      "a magnet"
-     ]
-    },
-    {
-     "word": "die Tinte",
-     "answer": "ink",
-     "options": [
-      "a contract",
-      "ink",
-      "a sentence",
-      "a magnet"
-     ]
-    },
-    {
-     "word": "der Satz",
-     "answer": "a sentence",
-     "options": [
-      "a contract",
-      "ink",
-      "a sentence",
-      "a magnet"
-     ]
-    },
-    {
-     "word": "der Magnet",
-     "answer": "a magnet",
-     "options": [
-      "a contract",
-      "ink",
-      "a sentence",
-      "a magnet"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Vertrag,die Tinte,der Satz,der Magnet",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Vertrag",
+          "answer": "a contract",
+          "options": [
+            "a contract",
+            "ink",
+            "a sentence",
+            "a magnet"
+          ]
+        },
+        {
+          "word": "die Tinte",
+          "answer": "ink",
+          "options": [
+            "a contract",
+            "ink",
+            "a sentence",
+            "a magnet"
+          ]
+        },
+        {
+          "word": "der Satz",
+          "answer": "a sentence",
+          "options": [
+            "a contract",
+            "ink",
+            "a sentence",
+            "a magnet"
+          ]
+        },
+        {
+          "word": "der Magnet",
+          "answer": "a magnet",
+          "options": [
+            "a contract",
+            "ink",
+            "a sentence",
+            "a magnet"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "unterschreibt",
-  "sentence": "Sie [[unterschreibt]] den Vertrag mit blauer Tinte.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "signs",
-   "options": [
-    "signs",
-    "reads",
-    "tears",
-    "folds"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Sie unterschreibt den Vertrag mit blauer Tinte.",
-    "targetWord": "unterschreibt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schüttelt",
-  "sentence": "Der Hausbesitzer [[schüttelt]] ihr die Hand.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shakes",
-   "options": [
-    "shakes",
-    "kisses",
-    "waves",
-    "points"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Der Hausbesitzer schüttelt ihr die Hand.",
-    "targetWord": "schüttelt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zufrieden",
-  "sentence": "Er ist [[zufrieden]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "satisfied",
-   "options": [
-    "satisfied",
-    "angry",
-    "tired",
-    "nervous"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Er ist zufrieden.",
-    "targetWord": "zufrieden",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dort",
-  "sentence": "Die erste Postkarte liegt noch [[dort]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "there",
-   "options": [
-    "there",
-    "here",
-    "nowhere",
-    "everywhere"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Die erste Postkarte liegt noch dort.",
-    "targetWord": "dort",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Einer",
-  "sentence": "[[Einer]] ist für den Keller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "One",
-   "options": [
-    "One",
-    "None",
-    "Two",
-    "All"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Einer ist für den Keller.",
-    "targetWord": "Einer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sicher",
-  "sentence": "“Bist du [[sicher]]?”, fragt er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sure",
-   "options": [
-    "sure",
-    "happy",
-    "tired",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "“Bist du sicher?”, fragt er.",
-    "targetWord": "sicher",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Mindestens",
-  "sentence": "[[Mindestens]] zwei Jahre”, antwortet sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "At least",
-   "options": [
-    "At least",
-    "At most",
-    "Never",
-    "Almost"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Mindestens zwei Jahre”, antwortet sie.",
-    "targetWord": "Mindestens",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Tschüss",
-  "sentence": "“München sagt [[Tschüss]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Bye",
-   "options": [
-    "Bye",
-    "Hello",
-    "Thanks",
-    "Sorry"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "“München sagt Tschüss.",
-    "targetWord": "Tschüss",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Dann",
-  "sentence": "“[[Dann]] Prost!”, ruft er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Then",
-   "options": [
-    "Then",
-    "Never",
-    "Also",
-    "Soon"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "“Dann Prost!”, ruft er.",
-    "targetWord": "Dann",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Prost",
-  "sentence": "“Dann [[Prost]]!”, ruft er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Cheers",
-   "options": [
-    "Cheers",
-    "Sorry",
-    "Please",
-    "Goodbye"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "“Dann Prost!”, ruft er.",
-    "targetWord": "Prost",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "krumm",
-  "sentence": "Die Ecken sind [[krumm]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bent",
-   "options": [
-    "bent",
-    "straight",
-    "new",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Die Ecken sind krumm.",
-    "targetWord": "krumm",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "unterschreibt",
+    "sentence": "Sie [[unterschreibt]] den Vertrag mit blauer Tinte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "signs",
+      "options": [
+        "signs",
+        "reads",
+        "tears",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Sie unterschreibt den Vertrag mit blauer Tinte.",
+        "targetWord": "unterschreibt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "darunter",
-  "sentence": "Sie schreibt einen neuen Satz [[darunter]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "underneath",
-   "options": [
-    "underneath",
-    "above it",
-    "next to it",
-    "instead of it"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Sie schreibt einen neuen Satz darunter.",
-    "targetWord": "darunter",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schüttelt",
+    "sentence": "Der Hausbesitzer [[schüttelt]] ihr die Hand.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shakes",
+      "options": [
+        "shakes",
+        "kisses",
+        "waves",
+        "points"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Der Hausbesitzer schüttelt ihr die Hand.",
+        "targetWord": "schüttelt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "beste",
-  "sentence": "“Das ist der [[beste]] Satz auf der Karte.”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "best",
-   "options": [
-    "best",
-    "worst",
-    "longest",
-    "shortest"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "“Das ist der beste Satz auf der Karte.”",
-    "targetWord": "beste",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "zufrieden",
+    "sentence": "Er ist [[zufrieden]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "satisfied",
+      "options": [
+        "satisfied",
+        "angry",
+        "tired",
+        "nervous"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Er ist zufrieden.",
+        "targetWord": "zufrieden",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "tippt",
-  "sentence": "Sie _____ an ihre Chefin: Nein, danke.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tippt",
-   "options": [
-    "tippt",
-    "schreibt",
-    "ruft",
-    "sagt"
-   ],
-   "translation": "She _____ to her boss: No, thanks.",
-   "optionTranslations": [
-    "types",
-    "writes",
-    "calls",
-    "says"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Sie tippt an ihre Chefin: Nein, danke.",
-    "targetWord": "tippt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dort",
+    "sentence": "Die erste Postkarte liegt noch [[dort]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "there",
+      "options": [
+        "there",
+        "here",
+        "nowhere",
+        "everywhere"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Die erste Postkarte liegt noch dort.",
+        "targetWord": "dort",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schluckt",
-  "sentence": "Sie _____ schwer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schluckt",
-   "options": [
-    "schluckt",
-    "lacht",
-    "weint",
-    "atmet"
-   ],
-   "translation": "She _____ hard.",
-   "optionTranslations": [
-    "swallows",
-    "laughs",
-    "cries",
-    "breathes"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Sie schluckt schwer.",
-    "targetWord": "schluckt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Einer",
+    "sentence": "[[Einer]] ist für den Keller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "One",
+      "options": [
+        "One",
+        "None",
+        "Two",
+        "All"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Einer ist für den Keller.",
+        "targetWord": "Einer",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klirren",
-  "sentence": "Die Gläser _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klirren",
-   "options": [
-    "klirren",
-    "fallen",
-    "brechen",
-    "stehen"
-   ],
-   "translation": "The glasses _____.",
-   "optionTranslations": [
-    "clink",
-    "fall",
-    "break",
-    "stand"
-   ],
-   "audioClip": {
-    "storySlug": "die-karte-vom-mai",
-    "storySource": "user",
-    "sentence": "Die Gläser klirren.",
-    "targetWord": "klirren",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "sicher",
+    "sentence": "“Bist du [[sicher]]?”, fragt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sure",
+      "options": [
+        "sure",
+        "happy",
+        "tired",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "“Bist du sicher?”, fragt er.",
+        "targetWord": "sicher",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Mindestens",
+    "sentence": "[[Mindestens]] zwei Jahre”, antwortet sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "At least",
+      "options": [
+        "At least",
+        "At most",
+        "Never",
+        "Almost"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Mindestens zwei Jahre”, antwortet sie.",
+        "targetWord": "Mindestens",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Tschüss",
+    "sentence": "“München sagt [[Tschüss]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Bye",
+      "options": [
+        "Bye",
+        "Hello",
+        "Thanks",
+        "Sorry"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "“München sagt Tschüss.",
+        "targetWord": "Tschüss",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Dann",
+    "sentence": "“[[Dann]] Prost!”, ruft er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Then",
+      "options": [
+        "Then",
+        "Never",
+        "Also",
+        "Soon"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "“Dann Prost!”, ruft er.",
+        "targetWord": "Dann",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Prost",
+    "sentence": "“Dann [[Prost]]!”, ruft er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Cheers",
+      "options": [
+        "Cheers",
+        "Sorry",
+        "Please",
+        "Goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "“Dann Prost!”, ruft er.",
+        "targetWord": "Prost",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "krumm",
+    "sentence": "Die Ecken sind [[krumm]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bent",
+      "options": [
+        "bent",
+        "straight",
+        "new",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Die Ecken sind krumm.",
+        "targetWord": "krumm",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darunter",
+    "sentence": "Sie schreibt einen neuen Satz [[darunter]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "underneath",
+      "options": [
+        "underneath",
+        "above it",
+        "next to it",
+        "instead of it"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Sie schreibt einen neuen Satz darunter.",
+        "targetWord": "darunter",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beste",
+    "sentence": "“Das ist der [[beste]] Satz auf der Karte.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "best",
+      "options": [
+        "best",
+        "oldest",
+        "longest",
+        "shortest"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "“Das ist der beste Satz auf der Karte.”",
+        "targetWord": "beste",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tippt",
+    "sentence": "Sie _____ an ihre Chefin: Nein, danke.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tippt",
+      "options": [
+        "tippt",
+        "schreibt",
+        "ruft",
+        "sagt"
+      ],
+      "translation": "She _____ to her boss: No, thanks.",
+      "optionTranslations": [
+        "types",
+        "writes",
+        "calls",
+        "says"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Sie tippt an ihre Chefin: Nein, danke.",
+        "targetWord": "tippt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schluckt",
+    "sentence": "Sie _____ schwer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schluckt",
+      "options": [
+        "schluckt",
+        "lacht",
+        "weint",
+        "atmet"
+      ],
+      "translation": "She _____ hard.",
+      "optionTranslations": [
+        "swallows",
+        "laughs",
+        "cries",
+        "breathes"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Sie schluckt schwer.",
+        "targetWord": "schluckt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klirren",
+    "sentence": "Die Gläser _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klirren",
+      "options": [
+        "klirren",
+        "fallen",
+        "brechen",
+        "stehen"
+      ],
+      "translation": "The glasses _____.",
+      "optionTranslations": [
+        "clink",
+        "fall",
+        "break",
+        "stand"
+      ],
+      "audioClip": {
+        "storySlug": "die-karte-vom-mai",
+        "storySource": "user",
+        "sentence": "Die Gläser klirren.",
+        "targetWord": "klirren",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

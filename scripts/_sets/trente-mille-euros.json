@@ -59,15 +59,15 @@
       "answer": "emprunter",
       "options": [
         "emprunter",
-        "prêter",
         "compter",
+        "gagner",
         "cacher"
       ],
       "translation": "To buy the house, they had to _____ money.",
       "optionTranslations": [
         "borrow",
-        "lend",
         "count",
+        "earn",
         "hide"
       ],
       "audioClip": {
@@ -149,7 +149,7 @@
       "answer": "closing",
       "options": [
         "closing",
-        "opening",
+        "move",
         "renovation",
         "sale"
       ],

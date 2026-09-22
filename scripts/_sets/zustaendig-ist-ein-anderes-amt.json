@@ -323,14 +323,14 @@
       "answer": "annehmen",
       "options": [
         "annehmen",
-        "ablehnen",
+        "lesen",
         "verlieren",
         "kopieren"
       ],
       "translation": "At the counter nobody wants to _____ the form.",
       "optionTranslations": [
         "accept",
-        "reject",
+        "read",
         "lose",
         "copy"
       ],

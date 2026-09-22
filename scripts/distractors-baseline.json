@@ -5,23 +5,23 @@
   },
   "cmu04ereh000732z7px7naqa2": {
     "label": "french a2 france Friends (active)",
-    "failing": 19
+    "failing": 0
   },
   "cmtwz1iop000l32jybeo2jg4x": {
     "label": "french a1 france Friends (active)",
-    "failing": 140
+    "failing": 138
   },
   "cmtwo6cys0007j8yzg6ni3fsc": {
     "label": "french a0 france Friends (active)",
-    "failing": 29
+    "failing": 0
   },
   "cmt09ehi60000320qf9efrypu": {
     "label": "french a1 france Expat (draft)",
-    "failing": 64
+    "failing": 0
   },
   "cmu0doigc0007j8e292tycths": {
     "label": "french b1 france Friends (active)",
-    "failing": 16
+    "failing": 0
   },
   "cmqfnp3tf000032afygkqp8z2": {
     "label": "german a1 germany Traveler (draft)",
@@ -29,23 +29,23 @@
   },
   "cmt0a8vb1000m32p1x7r5ba28": {
     "label": "german a0 germany Traveler (draft)",
-    "failing": 16
+    "failing": 0
   },
   "cmr92f0qz000032ff1dfd4fgx": {
     "label": "german c1 germany Expat (active)",
-    "failing": 11
+    "failing": 0
   },
   "cmroo4w4v0000324ow1o9qlcp": {
     "label": "german c1 germany Friends (active)",
-    "failing": 16
+    "failing": 0
   },
   "cmu0dqr6y0007j8o52i1s3gf7": {
     "label": "german a1 germany Friends (active)",
-    "failing": 27
+    "failing": 0
   },
   "cmrdbz11t000032asrvo832i9": {
     "label": "german c1 germany Expat (draft)",
-    "failing": 20
+    "failing": 0
   },
   "cmubidgaf0007j8np6g7n89iu": {
     "label": "german a2 germany Friends (draft)",
@@ -53,23 +53,23 @@
   },
   "cmu047bkz0007326jsgeptkox": {
     "label": "german a0 germany Friends (active)",
-    "failing": 36
+    "failing": 0
   },
   "cmt5wqsf7000032ghesowd0jy": {
     "label": "italian a2 italy Traveler (draft)",
-    "failing": 32
+    "failing": 0
   },
   "cmss0fkc40007j8dub1zpa1kc": {
     "label": "italian a1 italy Traveler (active)",
-    "failing": 27
+    "failing": 0
   },
   "cmu0dpa3i0007j80ugstn0jf0": {
     "label": "italian a0 italy Friends (active)",
-    "failing": 40
+    "failing": 0
   },
   "cmu1bfmb3000732wxuuwj7j2a": {
     "label": "italian a1 italy Friends (draft)",
-    "failing": 55
+    "failing": 0
   },
   "cmt5x635e000m32roty396dz9": {
     "label": "korean a0 korea Traveler (draft)",
@@ -85,15 +85,15 @@
   },
   "cmtrcpgso00073232h8vaf7na": {
     "label": "portuguese b1 brazil Traveler (active)",
-    "failing": 32
+    "failing": 0
   },
   "cmsyrge55000732u9oiu8wue3": {
     "label": "portuguese a2 brazil Traveler (active)",
-    "failing": 14
+    "failing": 0
   },
   "cmsou2uk0000732mqa4oatcmn": {
     "label": "portuguese a1 brazil Traveler (active)",
-    "failing": 70
+    "failing": 0
   },
   "cmtvpqsfv000832hgemzk20cl": {
     "label": "portuguese a0 brazil Traveler (draft)",
@@ -101,7 +101,7 @@
   },
   "cmu8cbe0f000732rj3or0lld1": {
     "label": "portuguese a1 brazil Friends (draft)",
-    "failing": 66
+    "failing": 0
   },
   "cmrqn1s5s000032tj3kq0gykb": {
     "label": "spanish c1 argentina Friends (draft)",
@@ -109,7 +109,7 @@
   },
   "cmt5vx8du000732fjgkwi59ks": {
     "label": "spanish a1 argentina Friends (draft)",
-    "failing": 201
+    "failing": 216
   },
   "cmu7f663l0007j87p36m70mp6": {
     "label": "spanish a1 chile Friends (draft)",
@@ -189,6 +189,6 @@
   },
   "cmt70xfyt000l3283gxd70wck": {
     "label": "spanish a2 spain Traveler (active)",
-    "failing": 286
+    "failing": 297
   }
 }

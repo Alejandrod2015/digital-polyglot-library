@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Kaffeemaschine,die Milch,der Morgenmantel,das Kinn",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Kaffeemaschine",
-     "answer": "a coffee machine",
-     "options": [
-      "a coffee machine",
-      "milk",
-      "a dressing gown",
-      "the chin"
-     ]
-    },
-    {
-     "word": "die Milch",
-     "answer": "milk",
-     "options": [
-      "a coffee machine",
-      "milk",
-      "a dressing gown",
-      "the chin"
-     ]
-    },
-    {
-     "word": "der Morgenmantel",
-     "answer": "a dressing gown",
-     "options": [
-      "a coffee machine",
-      "milk",
-      "a dressing gown",
-      "the chin"
-     ]
-    },
-    {
-     "word": "das Kinn",
-     "answer": "the chin",
-     "options": [
-      "a coffee machine",
-      "milk",
-      "a dressing gown",
-      "the chin"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Kaffeemaschine,die Milch,der Morgenmantel,das Kinn",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Kaffeemaschine",
+          "answer": "a coffee machine",
+          "options": [
+            "a coffee machine",
+            "milk",
+            "a dressing gown",
+            "the chin"
+          ]
+        },
+        {
+          "word": "die Milch",
+          "answer": "milk",
+          "options": [
+            "a coffee machine",
+            "milk",
+            "a dressing gown",
+            "the chin"
+          ]
+        },
+        {
+          "word": "der Morgenmantel",
+          "answer": "a dressing gown",
+          "options": [
+            "a coffee machine",
+            "milk",
+            "a dressing gown",
+            "the chin"
+          ]
+        },
+        {
+          "word": "das Kinn",
+          "answer": "the chin",
+          "options": [
+            "a coffee machine",
+            "milk",
+            "a dressing gown",
+            "the chin"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Donnerstagmorgen",
-  "sentence": "Am [[Donnerstagmorgen]] zischt die Kaffeemaschine.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Thursday morning",
-   "options": [
-    "Thursday morning",
-    "Monday evening",
-    "Saturday afternoon",
-    "Sunday night"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Am Donnerstagmorgen zischt die Kaffeemaschine.",
-    "targetWord": "Donnerstagmorgen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gesund",
-  "sentence": "Er sieht nicht [[gesund]] aus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "healthy",
-   "options": [
-    "healthy",
-    "happy",
-    "young",
-    "strong"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Er sieht nicht gesund aus.",
-    "targetWord": "gesund",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nie",
-  "sentence": "Ich erzähle [[nie]] wieder ein Geheimnis.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "never",
-   "options": [
-    "never",
-    "always",
-    "often",
-    "sometimes"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Ich erzähle nie wieder ein Geheimnis.",
-    "targetWord": "nie",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "glatte",
-  "sentence": "Sie stellen die Becher auf die [[glatte]] Treppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "smooth",
-   "options": [
-    "smooth",
-    "warm",
-    "narrow",
-    "broken"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie stellen die Becher auf die glatte Treppe.",
-    "targetWord": "glatte",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "selben",
-  "sentence": "Sie wohnen im [[selben]] Haus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "same",
-   "options": [
-    "same",
-    "new",
-    "old",
-    "next"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie wohnen im selben Haus.",
-    "targetWord": "selben",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "näher",
-  "sentence": "Er rutscht ein bisschen [[näher]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "closer",
-   "options": [
-    "closer",
-    "further",
-    "later",
-    "earlier"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Er rutscht ein bisschen näher.",
-    "targetWord": "näher",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zurückkommen",
-  "sentence": "„Ich will [[zurückkommen]]“, antwortet sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "come back",
-   "options": [
-    "come back",
-    "stay here",
-    "go away",
-    "sleep now"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "„Ich will zurückkommen“, antwortet sie.",
-    "targetWord": "zurückkommen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "wünsche",
-  "sentence": "„Ich [[wünsche]] mir nur eins“, sagt er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "wish",
-   "options": [
-    "wish",
-    "forget",
-    "doubt",
-    "fear"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "„Ich wünsche mir nur eins“, sagt er.",
-    "targetWord": "wünsche",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vorher",
-  "sentence": "„Frag mich das nächste Mal [[vorher]].“",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "beforehand",
-   "options": [
-    "beforehand",
-    "afterwards",
-    "tomorrow",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "„Frag mich das nächste Mal vorher.“",
-    "targetWord": "vorher",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "leuchten",
-  "sentence": "Seine Augen [[leuchten]] vor Freude.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shine",
-   "options": [
-    "shine",
-    "close",
-    "water",
-    "hurt"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Seine Augen leuchten vor Freude.",
-    "targetWord": "leuchten",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "genießen",
-  "sentence": "Sie [[genießen]] den warmen Kaffee.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "enjoy",
-   "options": [
-    "enjoy",
-    "spill",
-    "forget",
-    "share"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie genießen den warmen Kaffee.",
-    "targetWord": "genießen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Donnerstagmorgen",
+    "sentence": "Am [[Donnerstagmorgen]] zischt die Kaffeemaschine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Thursday morning",
+      "options": [
+        "Thursday morning",
+        "Monday evening",
+        "Saturday afternoon",
+        "Sunday night"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Am Donnerstagmorgen zischt die Kaffeemaschine.",
+        "targetWord": "Donnerstagmorgen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mild",
-  "sentence": "Der Kaffee ist warm und [[mild]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "mild",
-   "options": [
-    "mild",
-    "bitter",
-    "cold",
-    "sweet"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Der Kaffee ist warm und mild.",
-    "targetWord": "mild",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "gesund",
+    "sentence": "Er sieht nicht [[gesund]] aus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "healthy",
+      "options": [
+        "healthy",
+        "happy",
+        "young",
+        "strong"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Er sieht nicht gesund aus.",
+        "targetWord": "gesund",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nebeneinander",
-  "sentence": "Sie setzen sich [[nebeneinander]] auf die Treppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next to each other",
-   "options": [
-    "next to each other",
-    "far apart",
-    "one behind the other",
-    "back to back"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie setzen sich nebeneinander auf die Treppe.",
-    "targetWord": "nebeneinander",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "nie",
+    "sentence": "Ich erzähle [[nie]] wieder ein Geheimnis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never",
+      "options": [
+        "never",
+        "again",
+        "often",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Ich erzähle nie wieder ein Geheimnis.",
+        "targetWord": "nie",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "füllt",
-  "sentence": "Sie _____ zwei Becher mit Kaffee.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "füllt",
-   "options": [
-    "füllt",
-    "trinkt",
-    "wäscht",
-    "sucht"
-   ],
-   "translation": "She _____ two cups with coffee.",
-   "optionTranslations": [
-    "fills",
-    "drinks",
-    "washes",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie füllt zwei Becher mit Kaffee.",
-    "targetWord": "füllt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "glatte",
+    "sentence": "Sie stellen die Becher auf die [[glatte]] Treppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smooth",
+      "options": [
+        "smooth",
+        "warm",
+        "narrow",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie stellen die Becher auf die glatte Treppe.",
+        "targetWord": "glatte",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "stellt",
-  "sentence": "Sie _____ die Becher auf die Treppe.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "stellt",
-   "options": [
-    "stellt",
-    "trägt",
-    "wirft",
-    "hält"
-   ],
-   "translation": "She _____ the cups on the stairs.",
-   "optionTranslations": [
-    "puts",
-    "carries",
-    "throws",
-    "holds"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Sie stellt die Becher auf die Treppe.",
-    "targetWord": "stellt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "selben",
+    "sentence": "Sie wohnen im [[selben]] Haus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "same",
+      "options": [
+        "same",
+        "new",
+        "old",
+        "next"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie wohnen im selben Haus.",
+        "targetWord": "selben",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "hebt",
-  "sentence": "Er _____ seinen Becher hoch.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hebt",
-   "options": [
-    "hebt",
-    "trinkt",
-    "füllt",
-    "wäscht"
-   ],
-   "translation": "He _____ his cup up.",
-   "optionTranslations": [
-    "lifts",
-    "drinks",
-    "fills",
-    "washes"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-becher-auf-der-treppe",
-    "storySource": "user",
-    "sentence": "Er hebt seinen Becher hoch.",
-    "targetWord": "hebt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "näher",
+    "sentence": "Er rutscht ein bisschen [[näher]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closer",
+      "options": [
+        "closer",
+        "further",
+        "later",
+        "earlier"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Er rutscht ein bisschen näher.",
+        "targetWord": "näher",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "zurückkommen",
+    "sentence": "„Ich will [[zurückkommen]]“, antwortet sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come back",
+      "options": [
+        "come back",
+        "stay here",
+        "go away",
+        "sleep now"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "„Ich will zurückkommen“, antwortet sie.",
+        "targetWord": "zurückkommen",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wünsche",
+    "sentence": "„Ich [[wünsche]] mir nur eins“, sagt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wish",
+      "options": [
+        "wish",
+        "forget",
+        "doubt",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "„Ich wünsche mir nur eins“, sagt er.",
+        "targetWord": "wünsche",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vorher",
+    "sentence": "„Frag mich das nächste Mal [[vorher]].“",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beforehand",
+      "options": [
+        "beforehand",
+        "afterwards",
+        "tomorrow",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "„Frag mich das nächste Mal vorher.“",
+        "targetWord": "vorher",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leuchten",
+    "sentence": "Seine Augen [[leuchten]] vor Freude.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shine",
+      "options": [
+        "shine",
+        "close",
+        "water",
+        "hurt"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Seine Augen leuchten vor Freude.",
+        "targetWord": "leuchten",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "genießen",
+    "sentence": "Sie [[genießen]] den warmen Kaffee.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enjoy",
+      "options": [
+        "enjoy",
+        "spill",
+        "forget",
+        "share"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie genießen den warmen Kaffee.",
+        "targetWord": "genießen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mild",
+    "sentence": "Der Kaffee ist warm und [[mild]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mild",
+      "options": [
+        "mild",
+        "bitter",
+        "cold",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Der Kaffee ist warm und mild.",
+        "targetWord": "mild",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nebeneinander",
+    "sentence": "Sie setzen sich [[nebeneinander]] auf die Treppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next to each other",
+      "options": [
+        "next to each other",
+        "far apart",
+        "one behind the other",
+        "back to back"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie setzen sich nebeneinander auf die Treppe.",
+        "targetWord": "nebeneinander",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "füllt",
+    "sentence": "Sie _____ zwei Becher mit Kaffee.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "füllt",
+      "options": [
+        "füllt",
+        "trinkt",
+        "wäscht",
+        "sucht"
+      ],
+      "translation": "She _____ two cups with coffee.",
+      "optionTranslations": [
+        "fills",
+        "drinks",
+        "washes",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie füllt zwei Becher mit Kaffee.",
+        "targetWord": "füllt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "stellt",
+    "sentence": "Sie _____ die Becher auf die Treppe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stellt",
+      "options": [
+        "stellt",
+        "trägt",
+        "wirft",
+        "hält"
+      ],
+      "translation": "She _____ the cups on the stairs.",
+      "optionTranslations": [
+        "puts",
+        "carries",
+        "throws",
+        "holds"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Sie stellt die Becher auf die Treppe.",
+        "targetWord": "stellt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hebt",
+    "sentence": "Er _____ seinen Becher hoch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hebt",
+      "options": [
+        "hebt",
+        "trinkt",
+        "füllt",
+        "wäscht"
+      ],
+      "translation": "He _____ his cup up.",
+      "optionTranslations": [
+        "lifts",
+        "drinks",
+        "fills",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-becher-auf-der-treppe",
+        "storySource": "user",
+        "sentence": "Er hebt seinen Becher hoch.",
+        "targetWord": "hebt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

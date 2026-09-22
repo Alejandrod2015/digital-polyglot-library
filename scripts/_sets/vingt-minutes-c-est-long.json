@@ -133,7 +133,7 @@
       "options": [
         "long",
         "far",
-        "short",
+        "hard",
         "slow"
       ],
       "audioClip": {
@@ -154,7 +154,7 @@
       "answer": "early",
       "options": [
         "early",
-        "late",
+        "alone",
         "rarely",
         "quickly"
       ],
@@ -176,7 +176,7 @@
       "answer": "late",
       "options": [
         "late",
-        "early",
+        "twice",
         "alone",
         "slowly"
       ],

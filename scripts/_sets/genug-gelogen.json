@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Gedanke,die Stille,die Idiotin,die Brust",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Gedanke",
-     "answer": "a thought",
-     "options": [
-      "a thought",
-      "silence",
-      "a silly woman",
-      "the chest"
-     ]
-    },
-    {
-     "word": "die Stille",
-     "answer": "silence",
-     "options": [
-      "a thought",
-      "silence",
-      "a silly woman",
-      "the chest"
-     ]
-    },
-    {
-     "word": "die Idiotin",
-     "answer": "a silly woman",
-     "options": [
-      "a thought",
-      "silence",
-      "a silly woman",
-      "the chest"
-     ]
-    },
-    {
-     "word": "die Brust",
-     "answer": "the chest",
-     "options": [
-      "a thought",
-      "silence",
-      "a silly woman",
-      "the chest"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Gedanke,die Stille,die Idiotin,die Brust",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Gedanke",
+          "answer": "a thought",
+          "options": [
+            "a thought",
+            "silence",
+            "a silly woman",
+            "the chest"
+          ]
+        },
+        {
+          "word": "die Stille",
+          "answer": "silence",
+          "options": [
+            "a thought",
+            "silence",
+            "a silly woman",
+            "the chest"
+          ]
+        },
+        {
+          "word": "die Idiotin",
+          "answer": "a silly woman",
+          "options": [
+            "a thought",
+            "silence",
+            "a silly woman",
+            "the chest"
+          ]
+        },
+        {
+          "word": "die Brust",
+          "answer": "the chest",
+          "options": [
+            "a thought",
+            "silence",
+            "a silly woman",
+            "the chest"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Genug",
-  "sentence": "[[Genug]] gelogen, denkt sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "enough",
-   "options": [
-    "enough",
-    "again",
-    "never",
-    "almost"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Genug gelogen, denkt sie.",
-    "targetWord": "Genug",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mutig",
-  "sentence": "Heute will sie [[mutig]] sein.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "brave",
-   "options": [
-    "brave",
-    "quiet",
-    "careful",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Heute will sie mutig sein.",
-    "targetWord": "mutig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "wenigstens",
-  "sentence": "Sie ruft an, [[wenigstens]] einmal.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at least",
-   "options": [
-    "at least",
-    "never",
-    "almost",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Sie ruft an, wenigstens einmal.",
-    "targetWord": "wenigstens",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Manchmal",
-  "sentence": "[[Manchmal]] will ich zurück nach Rostock.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sometimes",
-   "options": [
-    "sometimes",
-    "never",
-    "always",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Manchmal will ich zurück nach Rostock.",
-    "targetWord": "Manchmal",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gemein",
-  "sentence": "Das war [[gemein]] von mir.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "mean",
-   "options": [
-    "mean",
-    "kind",
-    "funny",
-    "strange"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Das war gemein von mir.",
-    "targetWord": "gemein",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tief",
-  "sentence": "Danach schläft sie [[tief]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "deeply",
-   "options": [
-    "deeply",
-    "badly",
-    "late",
-    "alone"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Danach schläft sie tief.",
-    "targetWord": "tief",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Danach",
-  "sentence": "[[Danach]] ist überall Stille.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "after that",
-   "options": [
-    "after that",
-    "before that",
-    "never",
-    "suddenly"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Danach ist überall Stille.",
-    "targetWord": "Danach",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "offen",
-  "sentence": "Das Fenster ist [[offen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "open",
-   "options": [
-    "open",
-    "closed",
-    "broken",
-    "dark"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Das Fenster ist offen.",
-    "targetWord": "offen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "feucht",
-  "sentence": "Die Luft ist [[feucht]] und kühl.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "damp",
-   "options": [
-    "damp",
-    "dry",
-    "warm",
-    "hot"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Die Luft ist feucht und kühl.",
-    "targetWord": "feucht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "spürt",
-  "sentence": "Sie [[spürt]] ihr Herz im Hals.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "feels",
-   "options": [
-    "feels",
-    "hears",
-    "sees",
-    "forgets"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Sie spürt ihr Herz im Hals.",
-    "targetWord": "spürt",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ängstlich",
-  "sentence": "„Hallo?“, fragt sie [[ängstlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "anxiously",
-   "options": [
-    "anxiously",
-    "calmly",
-    "loudly",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "„Hallo?“, fragt sie ängstlich.",
-    "targetWord": "ängstlich",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Genug",
+    "sentence": "[[Genug]] gelogen, denkt sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enough",
+      "options": [
+        "enough",
+        "again",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Genug gelogen, denkt sie.",
+        "targetWord": "Genug",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fehlst",
-  "sentence": "Du [[fehlst]] mir sehr.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "I miss you",
-   "options": [
-    "I miss you",
-    "I hate you",
-    "I know you",
-    "I see you"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Du fehlst mir sehr.",
-    "targetWord": "fehlst",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "mutig",
+    "sentence": "Heute will sie [[mutig]] sein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brave",
+      "options": [
+        "brave",
+        "quiet",
+        "careful",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Heute will sie mutig sein.",
+        "targetWord": "mutig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bald",
-  "sentence": "Komm [[bald]] mal wieder.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "soon",
-   "options": [
-    "soon",
-    "never",
-    "again",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Komm bald mal wieder.",
-    "targetWord": "bald",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "wenigstens",
+    "sentence": "Sie ruft an, [[wenigstens]] einmal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at least",
+      "options": [
+        "at least",
+        "never",
+        "almost",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Sie ruft an, wenigstens einmal.",
+        "targetWord": "wenigstens",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "zögert",
-  "sentence": "Sie _____ lange auf dem Sofa.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zögert",
-   "options": [
-    "zögert",
-    "wartet",
-    "sitzt",
-    "schläft"
-   ],
-   "translation": "She _____ for a long time on the sofa.",
-   "optionTranslations": [
-    "hesitates",
-    "waits",
-    "sits",
-    "sleeps"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Sie zögert lange auf dem Sofa.",
-    "targetWord": "zögert",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Manchmal",
+    "sentence": "[[Manchmal]] will ich zurück nach Rostock.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sometimes",
+      "options": [
+        "sometimes",
+        "never",
+        "always",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Manchmal will ich zurück nach Rostock.",
+        "targetWord": "Manchmal",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "vergessen",
-  "sentence": "Ich habe deinen Geburtstag nicht _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vergessen",
-   "options": [
-    "vergessen",
-    "gesehen",
-    "gehört",
-    "gefunden"
-   ],
-   "translation": "I haven't _____ your birthday.",
-   "optionTranslations": [
-    "forgotten",
-    "seen",
-    "heard",
-    "found"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Ich habe deinen Geburtstag nicht vergessen.",
-    "targetWord": "vergessen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "gemein",
+    "sentence": "Das war [[gemein]] von mir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mean",
+      "options": [
+        "mean",
+        "kind",
+        "funny",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Das war gemein von mir.",
+        "targetWord": "gemein",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klingelt",
-  "sentence": "Um zehn _____ das Handy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klingelt",
-   "options": [
-    "klingelt",
-    "brennt",
-    "schweigt",
-    "wartet"
-   ],
-   "translation": "At ten the phone _____.",
-   "optionTranslations": [
-    "rings",
-    "burns",
-    "stays silent",
-    "waits"
-   ],
-   "audioClip": {
-    "storySlug": "genug-gelogen",
-    "storySource": "user",
-    "sentence": "Um zehn klingelt das Handy.",
-    "targetWord": "klingelt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tief",
+    "sentence": "Danach schläft sie [[tief]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deeply",
+      "options": [
+        "deeply",
+        "badly",
+        "late",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Danach schläft sie tief.",
+        "targetWord": "tief",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Danach",
+    "sentence": "[[Danach]] ist überall Stille.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "after that",
+      "options": [
+        "after that",
+        "before that",
+        "never",
+        "suddenly"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Danach ist überall Stille.",
+        "targetWord": "Danach",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "offen",
+    "sentence": "Das Fenster ist [[offen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "dirty",
+        "broken",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Das Fenster ist offen.",
+        "targetWord": "offen",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feucht",
+    "sentence": "Die Luft ist [[feucht]] und kühl.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "damp",
+      "options": [
+        "damp",
+        "dry",
+        "warm",
+        "hot"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Die Luft ist feucht und kühl.",
+        "targetWord": "feucht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spürt",
+    "sentence": "Sie [[spürt]] ihr Herz im Hals.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "feels",
+      "options": [
+        "feels",
+        "hears",
+        "sees",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Sie spürt ihr Herz im Hals.",
+        "targetWord": "spürt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ängstlich",
+    "sentence": "„Hallo?“, fragt sie [[ängstlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anxiously",
+      "options": [
+        "anxiously",
+        "calmly",
+        "loudly",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "„Hallo?“, fragt sie ängstlich.",
+        "targetWord": "ängstlich",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fehlst",
+    "sentence": "Du [[fehlst]] mir sehr.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I miss you",
+      "options": [
+        "I miss you",
+        "I hate you",
+        "I know you",
+        "I see you"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Du fehlst mir sehr.",
+        "targetWord": "fehlst",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bald",
+    "sentence": "Komm [[bald]] mal wieder.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soon",
+      "options": [
+        "soon",
+        "never",
+        "again",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Komm bald mal wieder.",
+        "targetWord": "bald",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zögert",
+    "sentence": "Sie _____ lange auf dem Sofa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zögert",
+      "options": [
+        "zögert",
+        "wartet",
+        "sitzt",
+        "schläft"
+      ],
+      "translation": "She _____ for a long time on the sofa.",
+      "optionTranslations": [
+        "hesitates",
+        "waits",
+        "sits",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Sie zögert lange auf dem Sofa.",
+        "targetWord": "zögert",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vergessen",
+    "sentence": "Ich habe deinen Geburtstag nicht _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vergessen",
+      "options": [
+        "vergessen",
+        "gesehen",
+        "gehört",
+        "gefunden"
+      ],
+      "translation": "I haven't _____ your birthday.",
+      "optionTranslations": [
+        "forgotten",
+        "seen",
+        "heard",
+        "found"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Ich habe deinen Geburtstag nicht vergessen.",
+        "targetWord": "vergessen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klingelt",
+    "sentence": "Um zehn _____ das Handy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klingelt",
+      "options": [
+        "klingelt",
+        "brennt",
+        "schweigt",
+        "wartet"
+      ],
+      "translation": "At ten the phone _____.",
+      "optionTranslations": [
+        "rings",
+        "burns",
+        "stays silent",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "genug-gelogen",
+        "storySource": "user",
+        "sentence": "Um zehn klingelt das Handy.",
+        "targetWord": "klingelt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

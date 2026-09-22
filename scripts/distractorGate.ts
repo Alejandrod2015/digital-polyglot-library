@@ -139,6 +139,9 @@ function isInfinitive(w: string, lang: string): boolean | null {
   const re = INFINITIVE[lang];
   if (!re) return null;
   if (AMBIG_INF[lang]?.test(norm(w).split(/\s+/)[0] ?? "")) return null;
+  // Frances -re: vendre y lire son infinitivos, ouvre y entre no; sin lexico
+  // no se distingue, asi que no se juzga y la regla se salta en ese set.
+  if (lang === "french" && /re$/.test(norm(w).split(/\s+/)[0] ?? "")) return null;
   let t = norm(w).split(/\s+/)[0] ?? "";
   // Encliticos (cobrarla, vestirse, dar-lhe): se quitan para mirar la desinencia.
   if (/^(spanish|portuguese)$/.test(lang)) {
@@ -395,7 +398,9 @@ export function distractorIssues(ex: any, ctx: GateCtx): GateResult {
     // D6 forma: genero y numero contra el determinante que precede al hueco
     const before = norm(ex.sentence ?? "").match(/(\S+)\s+_{3,}/)?.[1]?.replace(/[^\p{L}']/gu, "") ?? "";
     const det = DETS[lang]?.[before];
-    if (det && (det.g || det.n)) {
+    // Aleman fuera: el adjetivo tras "eine" no dice el genero del hueco y el
+    // corpus vota mal ("eine runde Brille" daba neue(ns)).
+    if (det && (det.g || det.n) && lang !== "german") {
       // Solo cuando la respuesta es un sustantivo segun el corpus (lleva
       // articulo alguna vez); si no, "la"/"lo" son cliticos ante un verbo.
       const ansGN = ctx.corpus ? genderFromCorpus(answer, ctx.corpus, lang) : null;

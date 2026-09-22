@@ -51,9 +51,9 @@
     "sentence": "Dann fällt endlich das [[Tor]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a goal (score)",
+      "answer": "a goal",
       "options": [
-        "a goal (score)",
+        "a goal",
         "a foul",
         "a penalty",
         "a corner"

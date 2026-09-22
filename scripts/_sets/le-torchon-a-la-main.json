@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "l'évier,le torchon,l'étagère,la cafetière",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "l'évier",
-     "answer": "a kitchen sink",
-     "options": [
-      "a kitchen sink",
-      "a tea towel",
-      "a wall shelf",
-      "a coffee pot"
-     ]
-    },
-    {
-     "word": "le torchon",
-     "answer": "a tea towel",
-     "options": [
-      "a kitchen sink",
-      "a tea towel",
-      "a wall shelf",
-      "a coffee pot"
-     ]
-    },
-    {
-     "word": "l'étagère",
-     "answer": "a wall shelf",
-     "options": [
-      "a kitchen sink",
-      "a tea towel",
-      "a wall shelf",
-      "a coffee pot"
-     ]
-    },
-    {
-     "word": "la cafetière",
-     "answer": "a coffee pot",
-     "options": [
-      "a kitchen sink",
-      "a tea towel",
-      "a wall shelf",
-      "a coffee pot"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "l'évier,le torchon,l'étagère,la cafetière",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'évier",
+          "answer": "a kitchen sink",
+          "options": [
+            "a kitchen sink",
+            "a tea towel",
+            "a wall shelf",
+            "a coffee pot"
+          ]
+        },
+        {
+          "word": "le torchon",
+          "answer": "a tea towel",
+          "options": [
+            "a kitchen sink",
+            "a tea towel",
+            "a wall shelf",
+            "a coffee pot"
+          ]
+        },
+        {
+          "word": "l'étagère",
+          "answer": "a wall shelf",
+          "options": [
+            "a kitchen sink",
+            "a tea towel",
+            "a wall shelf",
+            "a coffee pot"
+          ]
+        },
+        {
+          "word": "la cafetière",
+          "answer": "a coffee pot",
+          "options": [
+            "a kitchen sink",
+            "a tea towel",
+            "a wall shelf",
+            "a coffee pot"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la vitrine",
-  "sentence": "La [[vitrine]] est noire.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the shop window",
-   "options": [
-    "the shop window",
-    "the front door",
-    "the kitchen wall",
-    "the menu board"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "La vitrine est noire.",
-    "targetWord": "vitrine",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sécher",
-  "sentence": "Elle [[sèche]] les tasses avec un torchon.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to dry",
-   "options": [
-    "to dry",
-    "to wash",
-    "to fill",
-    "to count"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Elle sèche les tasses avec un torchon.",
-    "targetWord": "sèche",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la sonnette",
-  "sentence": "Elle monte, mais il n'y a pas de [[sonnette]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a doorbell",
-   "options": [
-    "a doorbell",
-    "a door key",
-    "a door handle",
-    "a letterbox"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Elle monte, mais il n'y a pas de sonnette.",
-    "targetWord": "sonnette",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la vue",
-  "sentence": "De la fenêtre, la [[vue]] est belle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the view",
-   "options": [
-    "the view",
-    "the street",
-    "the room",
-    "the weather"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "De la fenêtre, la vue est belle.",
-    "targetWord": "vue",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le métro",
-  "sentence": "Le [[métro]] est en bas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the underground train",
-   "options": [
-    "the underground train",
-    "the bus stop",
-    "the car park",
-    "the post office"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Le métro est en bas.",
-    "targetWord": "métro",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "là-haut",
-  "sentence": "Il monte [[là-haut]], à la maison.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "up there",
-   "options": [
-    "up there",
-    "down there",
-    "over there",
-    "in here"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il monte là-haut, à la maison.",
-    "targetWord": "là-haut",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "frappe",
-  "sentence": "Personne n'ouvre, alors il _____ encore à la porte.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "frappe",
-   "options": [
-    "frappe",
-    "dort",
-    "mange",
-    "chante"
-   ],
-   "translation": "Nobody opens, so he _____ at the door again.",
-   "optionTranslations": [
-    "knocks",
-    "sleeps",
-    "eats",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Personne n'ouvre, alors il frappe encore à la porte.",
-    "targetWord": "frappe",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "heureux",
-  "sentence": "Il sourit et il chante: il est _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "heureux",
-   "options": [
-    "heureux",
-    "triste",
-    "malade",
-    "fâché"
-   ],
-   "translation": "He smiles and he sings: he is _____.",
-   "optionTranslations": [
-    "happy",
-    "sad",
-    "ill",
-    "angry"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il sourit et il chante: il est heureux.",
-    "targetWord": "heureux",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "partout",
-  "sentence": "Il court [[partout]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "everywhere",
-   "options": [
-    "everywhere",
-    "nowhere",
-    "upstairs",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il court partout.",
-    "targetWord": "partout",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "petit",
-  "sentence": "Il est [[petit]], et je paie cher.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "small",
-   "options": [
-    "small",
-    "old",
-    "dark",
-    "noisy"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il est petit, et je paie cher.",
-    "targetWord": "petit",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "grand",
-  "sentence": "Sans lui, le café est [[grand]] et vide.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "big",
-   "options": [
-    "big",
-    "warm",
-    "clean",
-    "quiet"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Sans lui, le café est grand et vide.",
-    "targetWord": "grand",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "la vitrine",
+    "sentence": "La [[vitrine]] est noire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shop window",
+      "options": [
+        "the shop window",
+        "the front door",
+        "the kitchen wall",
+        "the menu board"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "La vitrine est noire.",
+        "targetWord": "vitrine",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tout le temps",
-  "sentence": "Elle parle [[tout le temps]] de lui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "all the time",
-   "options": [
-    "all the time",
-    "only once",
-    "almost never",
-    "last week"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Elle parle tout le temps de lui.",
-    "targetWord": "tout le temps",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "sécher",
+    "sentence": "Elle [[sèche]] les tasses avec un torchon.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dry",
+      "options": [
+        "to dry",
+        "to wash",
+        "to fill",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Elle sèche les tasses avec un torchon.",
+        "targetWord": "sèche",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "parce que",
-  "sentence": "Elle ne veut pas écouter, [[parce que]] c'est triste.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "because",
-   "options": [
-    "because",
-    "but",
-    "so",
-    "if"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Elle ne veut pas écouter, parce que c'est triste.",
-    "targetWord": "parce que",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "la sonnette",
+    "sentence": "Elle monte, mais il n'y a pas de [[sonnette]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a doorbell",
+      "options": [
+        "a doorbell",
+        "a door key",
+        "a door handle",
+        "a letterbox"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Elle monte, mais il n'y a pas de sonnette.",
+        "targetWord": "sonnette",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "moins",
-  "sentence": "Il reste [[moins]] d'une minute.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "less",
-   "options": [
-    "less",
-    "more",
-    "exactly",
-    "nearly"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il reste moins d'une minute.",
-    "targetWord": "moins",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "la vue",
+    "sentence": "De la fenêtre, la [[vue]] est belle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the view",
+      "options": [
+        "the view",
+        "the street",
+        "the room",
+        "the weather"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "De la fenêtre, la vue est belle.",
+        "targetWord": "vue",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "raconter",
-  "sentence": "“Tu [[racontes]]?”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to tell",
-   "options": [
-    "to tell",
-    "to count",
-    "to listen",
-    "to hide"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "“Tu racontes?”, dit-elle.",
-    "targetWord": "racontes",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le métro",
+    "sentence": "Le [[métro]] est en bas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the underground train",
+      "options": [
+        "the underground train",
+        "the bus stop",
+        "the car park",
+        "the post office"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Le métro est en bas.",
+        "targetWord": "métro",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "cher",
-  "sentence": "Il coûte beaucoup d'argent: il est _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cher",
-   "options": [
-    "cher",
-    "vieux",
-    "propre",
-    "lent"
-   ],
-   "translation": "It costs a lot of money: it is _____.",
-   "optionTranslations": [
-    "expensive",
-    "old",
-    "clean",
-    "slow"
-   ],
-   "audioClip": {
-    "storySlug": "le-torchon-a-la-main",
-    "storySource": "user",
-    "sentence": "Il coûte beaucoup d'argent: il est cher.",
-    "targetWord": "cher",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "là-haut",
+    "sentence": "Il monte [[là-haut]], à la maison.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "up there",
+      "options": [
+        "up there",
+        "down there",
+        "over there",
+        "in here"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il monte là-haut, à la maison.",
+        "targetWord": "là-haut",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "frappe",
+    "sentence": "Personne n'ouvre, alors il _____ encore à la porte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frappe",
+      "options": [
+        "frappe",
+        "dort",
+        "mange",
+        "chante"
+      ],
+      "translation": "Nobody opens, so he _____ at the door again.",
+      "optionTranslations": [
+        "knocks",
+        "sleeps",
+        "eats",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Personne n'ouvre, alors il frappe encore à la porte.",
+        "targetWord": "frappe",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "heureux",
+    "sentence": "Il sourit et il chante: il est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "heureux",
+      "options": [
+        "heureux",
+        "seul",
+        "malade",
+        "fâché"
+      ],
+      "translation": "He smiles and he sings: he is _____.",
+      "optionTranslations": [
+        "happy",
+        "alone",
+        "ill",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il sourit et il chante: il est heureux.",
+        "targetWord": "heureux",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "partout",
+    "sentence": "Il court [[partout]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everywhere",
+      "options": [
+        "everywhere",
+        "nowhere",
+        "upstairs",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il court partout.",
+        "targetWord": "partout",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "petit",
+    "sentence": "Il est [[petit]], et je paie cher.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "old",
+        "dark",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il est petit, et je paie cher.",
+        "targetWord": "petit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grand",
+    "sentence": "Sans lui, le café est [[grand]] et vide.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": [
+        "big",
+        "warm",
+        "clean",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Sans lui, le café est grand et vide.",
+        "targetWord": "grand",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout le temps",
+    "sentence": "Elle parle [[tout le temps]] de lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all the time",
+      "options": [
+        "all the time",
+        "only once",
+        "almost never",
+        "last week"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Elle parle tout le temps de lui.",
+        "targetWord": "tout le temps",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parce que",
+    "sentence": "Elle ne veut pas écouter, [[parce que]] c'est triste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "because",
+      "options": [
+        "because",
+        "but",
+        "so",
+        "if"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Elle ne veut pas écouter, parce que c'est triste.",
+        "targetWord": "parce que",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "moins",
+    "sentence": "Il reste [[moins]] d'une minute.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "less",
+      "options": [
+        "less",
+        "about",
+        "exactly",
+        "nearly"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il reste moins d'une minute.",
+        "targetWord": "moins",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raconter",
+    "sentence": "“Tu [[racontes]]?”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": [
+        "to tell",
+        "to count",
+        "to listen",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "“Tu racontes?”, dit-elle.",
+        "targetWord": "racontes",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cher",
+    "sentence": "Il coûte beaucoup d'argent: il est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cher",
+      "options": [
+        "cher",
+        "vieux",
+        "propre",
+        "lent"
+      ],
+      "translation": "It costs a lot of money: it is _____.",
+      "optionTranslations": [
+        "expensive",
+        "old",
+        "clean",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "le-torchon-a-la-main",
+        "storySource": "user",
+        "sentence": "Il coûte beaucoup d'argent: il est cher.",
+        "targetWord": "cher",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

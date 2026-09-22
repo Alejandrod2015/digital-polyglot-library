@@ -28,12 +28,12 @@
     "sentence": "Bene stellt eine große Schüssel mit [[Maultaschen]] in die Mitte.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Swabian filled pasta",
+      "answer": "a filled pasta pocket",
       "options": [
-        "Swabian filled pasta",
-        "fresh salad",
-        "warm soup",
-        "sweet cake"
+        "a filled pasta pocket",
+        "a fresh salad",
+        "a warm soup",
+        "a sweet cake"
       ],
       "audioClip": {
         "storySlug": "maultaschen-nach-dem-kehren",
@@ -97,9 +97,9 @@
     "sentence": "Das warme [[Beisammensein]] hält alle lange am Tisch.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "cosy togetherness",
+      "answer": "a cosy get-together",
       "options": [
-        "cosy togetherness",
+        "a cosy get-together",
         "a boring meeting",
         "a loud party",
         "a long goodbye"
@@ -332,9 +332,9 @@
     "sentence": "Nadia findet diesen Vesperabend [[arg]] gemütlich und schön.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "very, really (southern)",
+      "answer": "very, really",
       "options": [
-        "very, really (southern)",
+        "very, really",
         "hardly at all",
         "far too little",
         "only sometimes"

@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "das Stück,die Ecke,bekommen,gelb",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "das Stück",
-     "answer": "a piece",
-     "options": [
-      "a piece",
-      "a corner",
-      "to get",
-      "yellow"
-     ]
-    },
-    {
-     "word": "die Ecke",
-     "answer": "a corner",
-     "options": [
-      "a piece",
-      "a corner",
-      "to get",
-      "yellow"
-     ]
-    },
-    {
-     "word": "bekommen",
-     "answer": "to get",
-     "options": [
-      "a piece",
-      "a corner",
-      "to get",
-      "yellow"
-     ]
-    },
-    {
-     "word": "gelb",
-     "answer": "yellow",
-     "options": [
-      "a piece",
-      "a corner",
-      "to get",
-      "yellow"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "das Stück,die Ecke,bekommen,gelb",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Stück",
+          "answer": "a piece",
+          "options": [
+            "a piece",
+            "a corner",
+            "to get",
+            "yellow"
+          ]
+        },
+        {
+          "word": "die Ecke",
+          "answer": "a corner",
+          "options": [
+            "a piece",
+            "a corner",
+            "to get",
+            "yellow"
+          ]
+        },
+        {
+          "word": "bekommen",
+          "answer": "to get",
+          "options": [
+            "a piece",
+            "a corner",
+            "to get",
+            "yellow"
+          ]
+        },
+        {
+          "word": "gelb",
+          "answer": "yellow",
+          "options": [
+            "a piece",
+            "a corner",
+            "to get",
+            "yellow"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bald",
-  "sentence": "Der Donnerstag kommt [[bald]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "soon",
-   "options": [
-    "soon",
-    "late",
-    "never",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Der Donnerstag kommt bald.",
-    "targetWord": "bald",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "findet",
-  "sentence": "Er [[findet]] ein altes Heft mit Marken.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "finds",
-   "options": [
-    "finds",
-    "loses",
-    "buys",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Er findet ein altes Heft mit Marken.",
-    "targetWord": "findet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "alte",
-  "sentence": "“Die Marken sind [[alte]] Marken, aber gut”, sagt er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "old",
-   "options": [
-    "old",
-    "new",
-    "cheap",
-    "small"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“Die Marken sind alte Marken, aber gut”, sagt er.",
-    "targetWord": "alte",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Genau",
-  "sentence": "[[Genau]] fünf Marken liegen im Heft.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Exactly",
-   "options": [
-    "Exactly",
-    "Almost",
-    "Maybe",
-    "Never"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Genau fünf Marken liegen im Heft.",
-    "targetWord": "Genau",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zieht",
-  "sentence": "Sie [[zieht]] noch eine Karte aus der Jacke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pulls",
-   "options": [
-    "pulls",
-    "throws",
-    "folds",
-    "sells"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Sie zieht noch eine Karte aus der Jacke.",
-    "targetWord": "zieht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nebeneinander",
-  "sentence": "Sie legt zwei Karten [[nebeneinander]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "side by side",
-   "options": [
-    "side by side",
-    "far apart",
-    "under the table",
-    "in the box"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Sie legt zwei Karten nebeneinander.",
-    "targetWord": "nebeneinander",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "weh",
-  "sentence": "Das tut [[weh]], wenn eine Karte zerreißt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "painful",
-   "options": [
-    "painful",
-    "pleasant",
-    "cheap",
-    "slow"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Das tut weh, wenn eine Karte zerreißt.",
-    "targetWord": "weh",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fallen",
-  "sentence": "Die Stücke [[fallen]] in den Müll.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fall",
-   "options": [
-    "fall",
-    "fly",
-    "swim",
-    "stand"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Die Stücke fallen in den Müll.",
-    "targetWord": "fallen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "letzte",
-  "sentence": "“Die [[letzte]] Marke ist für dich”, sagt sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "last",
-   "options": [
-    "last",
-    "first",
-    "second",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“Die letzte Marke ist für dich”, sagt sie.",
-    "targetWord": "letzte",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "unten",
-  "sentence": "“Ich wohne [[unten]] im Haus!”, lacht er.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "downstairs",
-   "options": [
-    "downstairs",
-    "upstairs",
-    "outside",
-    "far away"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“Ich wohne unten im Haus!”, lacht er.",
-    "targetWord": "unten",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Egal",
-  "sentence": "“[[Egal]]. Du bekommst eine Karte”, antwortet sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "It doesn't matter",
-   "options": [
-    "It doesn't matter",
-    "Impossible",
-    "Wonderful",
-    "Forbidden"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“Egal. Du bekommst eine Karte”, antwortet sie.",
-    "targetWord": "Egal",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "bald",
+    "sentence": "Der Donnerstag kommt [[bald]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soon",
+      "options": [
+        "soon",
+        "late",
+        "never",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Der Donnerstag kommt bald.",
+        "targetWord": "bald",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "legt",
-  "sentence": "Er [[legt]] die Marke auf seine Karte.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "puts",
-   "options": [
-    "puts",
-    "throws",
-    "hides",
-    "sells"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Er legt die Marke auf seine Karte.",
-    "targetWord": "legt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "findet",
+    "sentence": "Er [[findet]] ein altes Heft mit Marken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finds",
+      "options": [
+        "finds",
+        "loses",
+        "buys",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Er findet ein altes Heft mit Marken.",
+        "targetWord": "findet",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "leise",
-  "sentence": "“München oder du”, sagt sie [[leise]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quietly",
-   "options": [
-    "quietly",
-    "loudly",
-    "angrily",
-    "happily"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“München oder du”, sagt sie leise.",
-    "targetWord": "leise",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "alte",
+    "sentence": "“Die Marken sind [[alte]] Marken, aber gut”, sagt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "rare",
+        "cheap",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“Die Marken sind alte Marken, aber gut”, sagt er.",
+        "targetWord": "alte",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "zerreißt",
-  "sentence": "Sie _____ die Karte für München.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zerreißt",
-   "options": [
-    "zerreißt",
-    "liest",
-    "faltet",
-    "sucht"
-   ],
-   "translation": "She _____ the card for Munich.",
-   "optionTranslations": [
-    "tears up",
-    "reads",
-    "folds",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Sie zerreißt die Karte für München.",
-    "targetWord": "zerreißt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Genau",
+    "sentence": "[[Genau]] fünf Marken liegen im Heft.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Exactly",
+      "options": [
+        "Exactly",
+        "Almost",
+        "Maybe",
+        "Never"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Genau fünf Marken liegen im Heft.",
+        "targetWord": "Genau",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "sechs",
-  "sentence": "“Ich habe _____ Karten”, sagt sie.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sechs",
-   "options": [
-    "sechs",
-    "fünf",
-    "sieben",
-    "zehn"
-   ],
-   "translation": "I have _____ cards,\" she says.",
-   "optionTranslations": [
-    "six",
-    "five",
-    "seven",
-    "ten"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "“Ich habe sechs Karten”, sagt sie.",
-    "targetWord": "sechs",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "zieht",
+    "sentence": "Sie [[zieht]] noch eine Karte aus der Jacke.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pulls",
+      "options": [
+        "pulls",
+        "throws",
+        "folds",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Sie zieht noch eine Karte aus der Jacke.",
+        "targetWord": "zieht",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klebt",
-  "sentence": "Er _____ die Marke auf die Karte.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klebt",
-   "options": [
-    "klebt",
-    "zeigt",
-    "findet",
-    "zieht"
-   ],
-   "translation": "He _____ the stamp onto the card.",
-   "optionTranslations": [
-    "sticks",
-    "shows",
-    "finds",
-    "pulls"
-   ],
-   "audioClip": {
-    "storySlug": "funf-marken-am-sonntag",
-    "storySource": "user",
-    "sentence": "Er klebt die Marke auf die Karte.",
-    "targetWord": "klebt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "nebeneinander",
+    "sentence": "Sie legt zwei Karten [[nebeneinander]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "side by side",
+      "options": [
+        "side by side",
+        "far apart",
+        "under the table",
+        "in the box"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Sie legt zwei Karten nebeneinander.",
+        "targetWord": "nebeneinander",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "weh",
+    "sentence": "Das tut [[weh]], wenn eine Karte zerreißt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "painful",
+      "options": [
+        "painful",
+        "pleasant",
+        "cheap",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Das tut weh, wenn eine Karte zerreißt.",
+        "targetWord": "weh",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fallen",
+    "sentence": "Die Stücke [[fallen]] in den Müll.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fall",
+      "options": [
+        "fall",
+        "fly",
+        "swim",
+        "stand"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Die Stücke fallen in den Müll.",
+        "targetWord": "fallen",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letzte",
+    "sentence": "“Die [[letzte]] Marke ist für dich”, sagt sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last",
+      "options": [
+        "last",
+        "third",
+        "second",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“Die letzte Marke ist für dich”, sagt sie.",
+        "targetWord": "letzte",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unten",
+    "sentence": "“Ich wohne [[unten]] im Haus!”, lacht er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downstairs",
+      "options": [
+        "downstairs",
+        "upstairs",
+        "outside",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“Ich wohne unten im Haus!”, lacht er.",
+        "targetWord": "unten",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Egal",
+    "sentence": "“[[Egal]]. Du bekommst eine Karte”, antwortet sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "It doesn't matter",
+      "options": [
+        "It doesn't matter",
+        "Impossible",
+        "Wonderful",
+        "Forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“Egal. Du bekommst eine Karte”, antwortet sie.",
+        "targetWord": "Egal",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "legt",
+    "sentence": "Er [[legt]] die Marke auf seine Karte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "puts",
+      "options": [
+        "puts",
+        "throws",
+        "hides",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Er legt die Marke auf seine Karte.",
+        "targetWord": "legt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leise",
+    "sentence": "“München oder du”, sagt sie [[leise]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quietly",
+      "options": [
+        "quietly",
+        "loudly",
+        "angrily",
+        "happily"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“München oder du”, sagt sie leise.",
+        "targetWord": "leise",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zerreißt",
+    "sentence": "Sie _____ die Karte für München.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zerreißt",
+      "options": [
+        "zerreißt",
+        "liest",
+        "faltet",
+        "sucht"
+      ],
+      "translation": "She _____ the card for Munich.",
+      "optionTranslations": [
+        "tears up",
+        "reads",
+        "folds",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Sie zerreißt die Karte für München.",
+        "targetWord": "zerreißt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sechs",
+    "sentence": "“Ich habe _____ Karten”, sagt sie.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sechs",
+      "options": [
+        "sechs",
+        "fünf",
+        "sieben",
+        "zehn"
+      ],
+      "translation": "I have _____ cards,\" she says.",
+      "optionTranslations": [
+        "six",
+        "five",
+        "seven",
+        "ten"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "“Ich habe sechs Karten”, sagt sie.",
+        "targetWord": "sechs",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klebt",
+    "sentence": "Er _____ die Marke auf die Karte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klebt",
+      "options": [
+        "klebt",
+        "zeigt",
+        "findet",
+        "zieht"
+      ],
+      "translation": "He _____ the stamp onto the card.",
+      "optionTranslations": [
+        "sticks",
+        "shows",
+        "finds",
+        "pulls"
+      ],
+      "audioClip": {
+        "storySlug": "funf-marken-am-sonntag",
+        "storySource": "user",
+        "sentence": "Er klebt die Marke auf die Karte.",
+        "targetWord": "klebt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

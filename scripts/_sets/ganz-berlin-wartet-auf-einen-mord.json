@@ -221,9 +221,9 @@
     "sentence": "Der Lärm von [[neulich]] ist plötzlich vergessen.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the other day",
+      "answer": "recently",
       "options": [
-        "the other day",
+        "recently",
         "next week",
         "long ago",
         "every day"

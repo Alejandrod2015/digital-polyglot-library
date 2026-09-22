@@ -194,9 +194,9 @@
     "sentence": "J'ai tout fait [[de travers]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the wrong way",
+      "answer": "all wrong",
       "options": [
-        "the wrong way",
+        "all wrong",
         "very quickly",
         "on purpose",
         "very well"

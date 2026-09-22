@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Polizistin,die Stoppuhr,die Brücke,der Nebel",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Polizistin",
-     "answer": "a policewoman",
-     "options": [
-      "a policewoman",
-      "a stopwatch",
-      "a bridge",
-      "fog"
-     ]
-    },
-    {
-     "word": "die Stoppuhr",
-     "answer": "a stopwatch",
-     "options": [
-      "a policewoman",
-      "a stopwatch",
-      "a bridge",
-      "fog"
-     ]
-    },
-    {
-     "word": "die Brücke",
-     "answer": "a bridge",
-     "options": [
-      "a policewoman",
-      "a stopwatch",
-      "a bridge",
-      "fog"
-     ]
-    },
-    {
-     "word": "der Nebel",
-     "answer": "fog",
-     "options": [
-      "a policewoman",
-      "a stopwatch",
-      "a bridge",
-      "fog"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Polizistin,die Stoppuhr,die Brücke,der Nebel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Polizistin",
+          "answer": "a policewoman",
+          "options": [
+            "a policewoman",
+            "a stopwatch",
+            "a bridge",
+            "fog"
+          ]
+        },
+        {
+          "word": "die Stoppuhr",
+          "answer": "a stopwatch",
+          "options": [
+            "a policewoman",
+            "a stopwatch",
+            "a bridge",
+            "fog"
+          ]
+        },
+        {
+          "word": "die Brücke",
+          "answer": "a bridge",
+          "options": [
+            "a policewoman",
+            "a stopwatch",
+            "a bridge",
+            "fog"
+          ]
+        },
+        {
+          "word": "der Nebel",
+          "answer": "fog",
+          "options": [
+            "a policewoman",
+            "a stopwatch",
+            "a bridge",
+            "fog"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Morgenluft",
-  "sentence": "Die [[Morgenluft]] am Main ist kühl.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "morning air",
-   "options": [
-    "morning air",
-    "cold water",
-    "warm wind",
-    "fresh rain"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Die Morgenluft am Main ist kühl.",
-    "targetWord": "Morgenluft",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kühl",
-  "sentence": "Die Morgenluft ist noch [[kühl]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cool",
-   "options": [
-    "cool",
-    "hot",
-    "dry",
-    "wet"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Die Morgenluft ist noch kühl.",
-    "targetWord": "kühl",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Uferweg",
-  "sentence": "Am [[Uferweg]] wartet eine kleine Gruppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "riverside path",
-   "options": [
-    "riverside path",
-    "train station",
-    "market square",
-    "school yard"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Am Uferweg wartet eine kleine Gruppe.",
-    "targetWord": "Uferweg",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hinten",
-  "sentence": "Sie will nicht [[hinten]] laufen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at the back",
-   "options": [
-    "at the back",
-    "at the front",
-    "in the middle",
-    "far away"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Sie will nicht hinten laufen.",
-    "targetWord": "hinten",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vorne",
-  "sentence": "Sie läuft ganz [[vorne]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at the front",
-   "options": [
-    "at the front",
-    "at the back",
-    "alone",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Sie läuft ganz vorne.",
-    "targetWord": "vorne",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schwer",
-  "sentence": "Ihre Beine sind [[schwer]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "heavy",
-   "options": [
-    "heavy",
-    "light",
-    "fast",
-    "strong"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Ihre Beine sind schwer.",
-    "targetWord": "schwer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ruhig",
-  "sentence": "Er läuft [[ruhig]] vorbei.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "calmly",
-   "options": [
-    "calmly",
-    "loudly",
-    "quickly",
-    "nervously"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Er läuft ruhig vorbei.",
-    "targetWord": "ruhig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "langsam",
-  "sentence": "Am Anfang ist [[langsam]] besser.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slow",
-   "options": [
-    "slow",
-    "fast",
-    "far",
-    "loud"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Am Anfang ist langsam besser.",
-    "targetWord": "langsam",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "normal",
-  "sentence": "Das ist ganz [[normal]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "normal",
-   "options": [
-    "normal",
-    "strange",
-    "new",
-    "hard"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Das ist ganz normal.",
-    "targetWord": "normal",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Oberschenkel",
-  "sentence": "Sie legt die Hände auf die [[Oberschenkel]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thighs",
-   "options": [
-    "thighs",
-    "shoulders",
-    "knees",
-    "hands"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Sie legt die Hände auf die Oberschenkel.",
-    "targetWord": "Oberschenkel",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "heiß",
-  "sentence": "Ihr Gesicht ist ganz [[heiß]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hot",
-   "options": [
-    "hot",
-    "cold",
-    "pale",
-    "wet"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Ihr Gesicht ist ganz heiß.",
-    "targetWord": "heiß",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Morgenluft",
+    "sentence": "Die [[Morgenluft]] am Main ist kühl.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "morning air",
+      "options": [
+        "morning air",
+        "cold water",
+        "warm wind",
+        "fresh rain"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Die Morgenluft am Main ist kühl.",
+        "targetWord": "Morgenluft",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "einfach",
-  "sentence": "Nächsten Sonntag läufst du [[einfach]] hinten mit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "just",
-   "options": [
-    "just",
-    "never",
-    "already",
-    "almost"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Nächsten Sonntag läufst du einfach hinten mit.",
-    "targetWord": "einfach",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "kühl",
+    "sentence": "Die Morgenluft ist noch [[kühl]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool",
+      "options": [
+        "cool",
+        "hot",
+        "dry",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Die Morgenluft ist noch kühl.",
+        "targetWord": "kühl",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "laut",
-  "sentence": "Ihr Atem ist [[laut]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "loud",
-   "options": [
-    "loud",
-    "quiet",
-    "slow",
-    "deep"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Ihr Atem ist laut.",
-    "targetWord": "laut",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Uferweg",
+    "sentence": "Am [[Uferweg]] wartet eine kleine Gruppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "riverside path",
+      "options": [
+        "riverside path",
+        "train station",
+        "market square",
+        "school yard"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Am Uferweg wartet eine kleine Gruppe.",
+        "targetWord": "Uferweg",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "aufhören",
-  "sentence": "Sie muss jetzt kurz _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "aufhören",
-   "options": [
-    "aufhören",
-    "weiterlaufen",
-    "trinken",
-    "warten"
-   ],
-   "translation": "She has to _____ for a moment now.",
-   "optionTranslations": [
-    "stop",
-    "keep running",
-    "drink",
-    "wait"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Sie muss jetzt kurz aufhören.",
-    "targetWord": "aufhören",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "hinten",
+    "sentence": "Sie will nicht [[hinten]] laufen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the back",
+      "options": [
+        "at the back",
+        "at the front",
+        "in the middle",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Sie will nicht hinten laufen.",
+        "targetWord": "hinten",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "verschwinden",
-  "sentence": "Die anderen _____ im Nebel.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verschwinden",
-   "options": [
-    "verschwinden",
-    "laufen",
-    "warten",
-    "stehen"
-   ],
-   "translation": "The others _____ into the fog.",
-   "optionTranslations": [
-    "disappear",
-    "run",
-    "wait",
-    "stand"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Die anderen verschwinden im Nebel.",
-    "targetWord": "verschwinden",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "vorne",
+    "sentence": "Sie läuft ganz [[vorne]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the front",
+      "options": [
+        "at the front",
+        "at the back",
+        "alone",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Sie läuft ganz vorne.",
+        "targetWord": "vorne",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Kilometern",
-  "sentence": "Nach zehn _____ ist sie ziemlich müde.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Kilometern",
-   "options": [
-    "Kilometern",
-    "Minuten",
-    "Stunden",
-    "Tagen"
-   ],
-   "translation": "After ten _____ she's quite tired.",
-   "optionTranslations": [
-    "kilometres",
-    "minutes",
-    "hours",
-    "days"
-   ],
-   "audioClip": {
-    "storySlug": "zu-schnell-am-main",
-    "storySource": "user",
-    "sentence": "Nach zehn Kilometern ist sie ziemlich müde.",
-    "targetWord": "Kilometern",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schwer",
+    "sentence": "Ihre Beine sind [[schwer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heavy",
+      "options": [
+        "heavy",
+        "long",
+        "fast",
+        "strong"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Ihre Beine sind schwer.",
+        "targetWord": "schwer",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "ruhig",
+    "sentence": "Er läuft [[ruhig]] vorbei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calmly",
+      "options": [
+        "calmly",
+        "loudly",
+        "quickly",
+        "nervously"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Er läuft ruhig vorbei.",
+        "targetWord": "ruhig",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "langsam",
+    "sentence": "Am Anfang ist [[langsam]] besser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slow",
+      "options": [
+        "slow",
+        "late",
+        "far",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Am Anfang ist langsam besser.",
+        "targetWord": "langsam",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "normal",
+    "sentence": "Das ist ganz [[normal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "normal",
+      "options": [
+        "normal",
+        "strange",
+        "new",
+        "hard"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Das ist ganz normal.",
+        "targetWord": "normal",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Oberschenkel",
+    "sentence": "Sie legt die Hände auf die [[Oberschenkel]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thighs",
+      "options": [
+        "thighs",
+        "shoulders",
+        "knees",
+        "hands"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Sie legt die Hände auf die Oberschenkel.",
+        "targetWord": "Oberschenkel",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heiß",
+    "sentence": "Ihr Gesicht ist ganz [[heiß]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hot",
+      "options": [
+        "hot",
+        "round",
+        "pale",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Ihr Gesicht ist ganz heiß.",
+        "targetWord": "heiß",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einfach",
+    "sentence": "Nächsten Sonntag läufst du [[einfach]] hinten mit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just",
+      "options": [
+        "just",
+        "never",
+        "already",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Nächsten Sonntag läufst du einfach hinten mit.",
+        "targetWord": "einfach",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "laut",
+    "sentence": "Ihr Atem ist [[laut]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loud",
+      "options": [
+        "loud",
+        "warm",
+        "slow",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Ihr Atem ist laut.",
+        "targetWord": "laut",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aufhören",
+    "sentence": "Sie muss jetzt kurz _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aufhören",
+      "options": [
+        "aufhören",
+        "weiterlaufen",
+        "trinken",
+        "warten"
+      ],
+      "translation": "She has to _____ for a moment now.",
+      "optionTranslations": [
+        "stop",
+        "keep running",
+        "drink",
+        "wait"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Sie muss jetzt kurz aufhören.",
+        "targetWord": "aufhören",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verschwinden",
+    "sentence": "Die anderen _____ im Nebel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verschwinden",
+      "options": [
+        "verschwinden",
+        "laufen",
+        "warten",
+        "stehen"
+      ],
+      "translation": "The others _____ into the fog.",
+      "optionTranslations": [
+        "disappear",
+        "run",
+        "wait",
+        "stand"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Die anderen verschwinden im Nebel.",
+        "targetWord": "verschwinden",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Kilometern",
+    "sentence": "Nach zehn _____ ist sie ziemlich müde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Kilometern",
+      "options": [
+        "Kilometern",
+        "Minuten",
+        "Stunden",
+        "Tagen"
+      ],
+      "translation": "After ten _____ she's quite tired.",
+      "optionTranslations": [
+        "kilometres",
+        "minutes",
+        "hours",
+        "days"
+      ],
+      "audioClip": {
+        "storySlug": "zu-schnell-am-main",
+        "storySource": "user",
+        "sentence": "Nach zehn Kilometern ist sie ziemlich müde.",
+        "targetWord": "Kilometern",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

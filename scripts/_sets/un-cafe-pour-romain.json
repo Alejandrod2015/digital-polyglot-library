@@ -243,9 +243,9 @@
       "answer": "gained",
       "options": [
         "gained",
-        "lost",
         "sold",
-        "broken"
+        "broken",
+        "hidden"
       ],
       "audioClip": {
         "storySlug": "un-cafe-pour-romain",

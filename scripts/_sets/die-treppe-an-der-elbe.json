@@ -1,446 +1,446 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Gitarre,das Boot,der Zug,das Museum",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Gitarre",
-     "answer": "a guitar",
-     "options": [
-      "a guitar",
-      "a small boat",
-      "a train",
-      "a museum"
-     ]
-    },
-    {
-     "word": "das Boot",
-     "answer": "a small boat",
-     "options": [
-      "a guitar",
-      "a small boat",
-      "a train",
-      "a museum"
-     ]
-    },
-    {
-     "word": "der Zug",
-     "answer": "a train",
-     "options": [
-      "a guitar",
-      "a small boat",
-      "a train",
-      "a museum"
-     ]
-    },
-    {
-     "word": "das Museum",
-     "answer": "a museum",
-     "options": [
-      "a guitar",
-      "a small boat",
-      "a train",
-      "a museum"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Gitarre,das Boot,der Zug,das Museum",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Gitarre",
+          "answer": "a guitar",
+          "options": [
+            "a guitar",
+            "a small boat",
+            "a train",
+            "a museum"
+          ]
+        },
+        {
+          "word": "das Boot",
+          "answer": "a small boat",
+          "options": [
+            "a guitar",
+            "a small boat",
+            "a train",
+            "a museum"
+          ]
+        },
+        {
+          "word": "der Zug",
+          "answer": "a train",
+          "options": [
+            "a guitar",
+            "a small boat",
+            "a train",
+            "a museum"
+          ]
+        },
+        {
+          "word": "das Museum",
+          "answer": "a museum",
+          "options": [
+            "a guitar",
+            "a small boat",
+            "a train",
+            "a museum"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Urlaub",
-  "sentence": "Ich habe [[Urlaub]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "time off work",
-   "options": [
-    "time off work",
-    "a new job",
-    "a long trip",
-    "an old car"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Ich habe Urlaub.",
-    "targetWord": "Urlaub",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Leute",
-  "sentence": "Viele [[Leute]] sitzen überall auf den Stufen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "people",
-   "options": [
-    "people",
-    "birds",
-    "boats",
-    "lamps"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Viele Leute sitzen überall auf den Stufen.",
-    "targetWord": "Leute",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Arbeit",
-  "sentence": "Ich habe zwei Jahre keine [[Arbeit]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "work",
-   "options": [
-    "work",
-    "money",
-    "time",
-    "luck"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Ich habe zwei Jahre keine Arbeit.",
-    "targetWord": "Arbeit",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Juni",
-  "sentence": "Im [[Juni]] fahre ich nach Heidelberg.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "June",
-   "options": [
-    "June",
-    "March",
-    "October",
-    "December"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Im Juni fahre ich nach Heidelberg.",
-    "targetWord": "Juni",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Kusine",
-  "sentence": "Meine [[Kusine]] wohnt dort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a female cousin",
-   "options": [
-    "a female cousin",
-    "an aunt",
-    "a sister",
-    "a daughter"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Meine Kusine wohnt dort.",
-    "targetWord": "Kusine",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Name",
-  "sentence": "Die beiden reden über alte [[Namen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a name",
-   "options": [
-    "a name",
-    "a song",
-    "a street",
-    "a picture"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Die beiden reden über alte Namen.",
-    "targetWord": "Namen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verstehen",
-  "sentence": "Hannah [[versteht]] ihn sofort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to understand",
-   "options": [
-    "to understand",
-    "to answer",
-    "to forget",
-    "to ask"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Hannah versteht ihn sofort.",
-    "targetWord": "versteht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sofort",
-  "sentence": "Sie versteht die Frage _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sofort",
-   "options": [
-    "sofort",
-    "morgen",
-    "später",
-    "nie"
-   ],
-   "translation": "She understands the question _____.",
-   "optionTranslations": [
-    "at once",
-    "tomorrow",
-    "later",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Sie versteht die Frage sofort.",
-    "targetWord": "sofort",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "nichts",
-  "sentence": "Er sagt kein Wort und macht _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "nichts",
-   "options": [
-    "nichts",
-    "alles",
-    "etwas",
-    "viel"
-   ],
-   "translation": "He says no word and does _____.",
-   "optionTranslations": [
-    "nothing",
-    "everything",
-    "something",
-    "a lot"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Er sagt kein Wort und macht nichts.",
-    "targetWord": "nichts",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Schüler",
-  "sentence": "Hannah erzählt von ihren [[Schülern]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a pupil",
-   "options": [
-    "a pupil",
-    "a colleague",
-    "a neighbour",
-    "a guest"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Hannah erzählt von ihren Schülern.",
-    "targetWord": "Schülern",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Morgen",
-  "sentence": "Hannah nimmt am [[Morgen]] den Zug nach Leipzig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the morning",
-   "options": [
-    "the morning",
-    "the evening",
-    "the night",
-    "the weekend"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Hannah nimmt am Morgen den Zug nach Leipzig.",
-    "targetWord": "Morgen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Urlaub",
+    "sentence": "Ich habe [[Urlaub]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time off work",
+      "options": [
+        "time off work",
+        "a new job",
+        "extra work",
+        "night shifts"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Ich habe Urlaub.",
+        "targetWord": "Urlaub",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Stufe",
-  "sentence": "Viele Leute sitzen überall auf den [[Stufen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a step",
-   "options": [
-    "a step",
-    "a bench",
-    "a wall",
-    "a boat"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Viele Leute sitzen überall auf den Stufen.",
-    "targetWord": "Stufen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Leute",
+    "sentence": "Viele [[Leute]] sitzen überall auf den Stufen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "people",
+      "options": [
+        "people",
+        "birds",
+        "boats",
+        "lamps"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Viele Leute sitzen überall auf den Stufen.",
+        "targetWord": "Leute",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "genau",
-  "sentence": "[[Genau]] das ist ein Ja.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "exactly",
-   "options": [
-    "exactly",
-    "almost",
-    "perhaps",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Genau das ist ein Ja.",
-    "targetWord": "Genau",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Arbeit",
+    "sentence": "Ich habe zwei Jahre keine [[Arbeit]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "work",
+      "options": [
+        "work",
+        "money",
+        "time",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Ich habe zwei Jahre keine Arbeit.",
+        "targetWord": "Arbeit",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Stein",
-  "sentence": "Die Wellen kommen langsam gegen den _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Stein",
-   "options": [
-    "Stein",
-    "Baum",
-    "Zaun",
-    "Tisch"
-   ],
-   "translation": "The waves come slowly against the _____.",
-   "optionTranslations": [
-    "stone",
-    "tree",
-    "fence",
-    "table"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Die Wellen kommen langsam gegen den Stein.",
-    "targetWord": "Stein",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Juni",
+    "sentence": "Im [[Juni]] fahre ich nach Heidelberg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "June",
+      "options": [
+        "June",
+        "March",
+        "October",
+        "December"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Im Juni fahre ich nach Heidelberg.",
+        "targetWord": "Juni",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Jahre",
-  "sentence": "Er hat dort zwei _____ gewohnt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Jahre",
-   "options": [
-    "Jahre",
-    "Stunden",
-    "Wochen",
-    "Minuten"
-   ],
-   "translation": "He lived there for two _____.",
-   "optionTranslations": [
-    "years",
-    "hours",
-    "weeks",
-    "minutes"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Er hat dort zwei Jahre gewohnt.",
-    "targetWord": "Jahre",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Kusine",
+    "sentence": "Meine [[Kusine]] wohnt dort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a female cousin",
+      "options": [
+        "a female cousin",
+        "an aunt",
+        "a sister",
+        "a daughter"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Meine Kusine wohnt dort.",
+        "targetWord": "Kusine",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "selten",
-  "sentence": "Wir sehen uns zu _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "selten",
-   "options": [
-    "selten",
-    "oft",
-    "laut",
-    "schnell"
-   ],
-   "translation": "We see each other too _____.",
-   "optionTranslations": [
-    "rarely",
-    "often",
-    "loudly",
-    "quickly"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Wir sehen uns zu selten.",
-    "targetWord": "selten",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Name",
+    "sentence": "Die beiden reden über alte [[Namen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a name",
+      "options": [
+        "a name",
+        "a song",
+        "a street",
+        "a picture"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Die beiden reden über alte Namen.",
+        "targetWord": "Namen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "verstehen",
+    "sentence": "Hannah [[versteht]] ihn sofort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to answer",
+        "to forget",
+        "to ask"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Hannah versteht ihn sofort.",
+        "targetWord": "versteht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sofort",
+    "sentence": "Sie versteht die Frage _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sofort",
+      "options": [
+        "sofort",
+        "morgen",
+        "später",
+        "nie"
+      ],
+      "translation": "She understands the question _____.",
+      "optionTranslations": [
+        "at once",
+        "tomorrow",
+        "later",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Sie versteht die Frage sofort.",
+        "targetWord": "sofort",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nichts",
+    "sentence": "Er sagt kein Wort und macht _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nichts",
+      "options": [
+        "nichts",
+        "alles",
+        "etwas",
+        "viel"
+      ],
+      "translation": "He says no word and does _____.",
+      "optionTranslations": [
+        "nothing",
+        "everything",
+        "something",
+        "a lot"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Er sagt kein Wort und macht nichts.",
+        "targetWord": "nichts",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Schüler",
+    "sentence": "Hannah erzählt von ihren [[Schülern]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a pupil",
+      "options": [
+        "a pupil",
+        "a colleague",
+        "a neighbour",
+        "a guest"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Hannah erzählt von ihren Schülern.",
+        "targetWord": "Schülern",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Morgen",
+    "sentence": "Hannah nimmt am [[Morgen]] den Zug nach Leipzig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the morning",
+      "options": [
+        "the morning",
+        "the afternoon",
+        "the night",
+        "the weekend"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Hannah nimmt am Morgen den Zug nach Leipzig.",
+        "targetWord": "Morgen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Stufe",
+    "sentence": "Viele Leute sitzen überall auf den [[Stufen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a step",
+      "options": [
+        "a step",
+        "a bench",
+        "a wall",
+        "a boat"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Viele Leute sitzen überall auf den Stufen.",
+        "targetWord": "Stufen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "genau",
+    "sentence": "[[Genau]] das ist ein Ja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly",
+      "options": [
+        "exactly",
+        "almost",
+        "perhaps",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Genau das ist ein Ja.",
+        "targetWord": "Genau",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Stein",
+    "sentence": "Die Wellen kommen langsam gegen den _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Stein",
+      "options": [
+        "Stein",
+        "Baum",
+        "Zaun",
+        "Tisch"
+      ],
+      "translation": "The waves come slowly against the _____.",
+      "optionTranslations": [
+        "stone",
+        "tree",
+        "fence",
+        "table"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Die Wellen kommen langsam gegen den Stein.",
+        "targetWord": "Stein",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Jahre",
+    "sentence": "Er hat dort zwei _____ gewohnt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Jahre",
+      "options": [
+        "Jahre",
+        "Stunden",
+        "Wochen",
+        "Minuten"
+      ],
+      "translation": "He lived there for two _____.",
+      "optionTranslations": [
+        "years",
+        "hours",
+        "weeks",
+        "minutes"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Er hat dort zwei Jahre gewohnt.",
+        "targetWord": "Jahre",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "selten",
+    "sentence": "Wir sehen uns zu _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "selten",
+      "options": [
+        "selten",
+        "oft",
+        "laut",
+        "schnell"
+      ],
+      "translation": "We see each other too _____.",
+      "optionTranslations": [
+        "rarely",
+        "often",
+        "loudly",
+        "quickly"
+      ],
+      "audioClip": {
+        "storySlug": "die-treppe-an-der-elbe",
+        "storySource": "user",
+        "sentence": "Wir sehen uns zu selten.",
+        "targetWord": "selten",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

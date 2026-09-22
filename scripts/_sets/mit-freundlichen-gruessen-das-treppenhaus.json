@@ -412,14 +412,14 @@
       "answer": "zurückweisen",
       "options": [
         "zurückweisen",
-        "annehmen",
+        "vergessen",
         "wiederholen",
         "bezahlen"
       ],
       "translation": "She wants to clearly _____ the false accusation.",
       "optionTranslations": [
         "reject",
-        "accept",
+        "forget",
         "repeat",
         "pay"
       ],

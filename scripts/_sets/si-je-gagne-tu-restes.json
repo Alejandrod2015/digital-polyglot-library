@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "la craie,le sac,le chiffon,la ficelle",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "la craie",
-     "answer": "a stick of chalk",
-     "options": [
-      "a stick of chalk",
-      "a carrying bag",
-      "a cleaning cloth",
-      "a thin string"
-     ]
-    },
-    {
-     "word": "le sac",
-     "answer": "a carrying bag",
-     "options": [
-      "a stick of chalk",
-      "a carrying bag",
-      "a cleaning cloth",
-      "a thin string"
-     ]
-    },
-    {
-     "word": "le chiffon",
-     "answer": "a cleaning cloth",
-     "options": [
-      "a stick of chalk",
-      "a carrying bag",
-      "a cleaning cloth",
-      "a thin string"
-     ]
-    },
-    {
-     "word": "la ficelle",
-     "answer": "a thin string",
-     "options": [
-      "a stick of chalk",
-      "a carrying bag",
-      "a cleaning cloth",
-      "a thin string"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "la craie,le sac,le chiffon,la ficelle",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la craie",
+          "answer": "a stick of chalk",
+          "options": [
+            "a stick of chalk",
+            "a carrying bag",
+            "a cleaning cloth",
+            "a thin string"
+          ]
+        },
+        {
+          "word": "le sac",
+          "answer": "a carrying bag",
+          "options": [
+            "a stick of chalk",
+            "a carrying bag",
+            "a cleaning cloth",
+            "a thin string"
+          ]
+        },
+        {
+          "word": "le chiffon",
+          "answer": "a cleaning cloth",
+          "options": [
+            "a stick of chalk",
+            "a carrying bag",
+            "a cleaning cloth",
+            "a thin string"
+          ]
+        },
+        {
+          "word": "la ficelle",
+          "answer": "a thin string",
+          "options": [
+            "a stick of chalk",
+            "a carrying bag",
+            "a cleaning cloth",
+            "a thin string"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "parier",
-  "sentence": "Elle veut [[parier]]: si je gagne, tu restes à Marseille.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to bet",
-   "options": [
-    "to bet",
-    "to cheat",
-    "to give up",
-    "to count"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Elle veut parier: si je gagne, tu restes à Marseille.",
-    "targetWord": "parier",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rester",
-  "sentence": "Tu [[restes]] ici, avec moi.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stay",
-   "options": [
-    "to stay",
-    "to leave",
-    "to sit down",
-    "to come back"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Tu restes ici, avec moi.",
-    "targetWord": "restes",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la partie",
-  "sentence": "C'est la dernière [[partie]] de septembre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a game",
-   "options": [
-    "a game",
-    "a party",
-    "a team",
-    "a trip"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "C'est la dernière partie de septembre.",
-    "targetWord": "partie",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le perdant",
-  "sentence": "“Le [[perdant]] ramasse”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the loser",
-   "options": [
-    "the loser",
-    "the winner",
-    "the referee",
-    "the owner"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "“Le perdant ramasse”, dit-elle.",
-    "targetWord": "perdant",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "espérer",
-  "sentence": "Elle [[espère]], mais ce soir, il joue bien.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hope",
-   "options": [
-    "to hope",
-    "to wait",
-    "to worry",
-    "to watch"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Elle espère, mais ce soir, il joue bien.",
-    "targetWord": "espère",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "oublier",
-  "sentence": "Elle n'[[oublie]] pas le pari.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to forget",
-   "options": [
-    "to forget",
-    "to win",
-    "to explain",
-    "to accept"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Elle n'oublie pas le pari.",
-    "targetWord": "oublie",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fier",
-  "sentence": "Il n'est pas [[fier]], et il comprend.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "proud",
-   "options": [
-    "proud",
-    "angry",
-    "tired",
-    "hungry"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Il n'est pas fier, et il comprend.",
-    "targetWord": "fier",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jamais",
-  "sentence": "Il ne dit [[jamais]] non.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "never",
-   "options": [
-    "never",
-    "often",
-    "always",
-    "sometimes"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Il ne dit jamais non.",
-    "targetWord": "jamais",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "ramasse",
-  "sentence": "Les feuilles sont par terre: il les _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ramasse",
-   "options": [
-    "ramasse",
-    "lit",
-    "écrit",
-    "boit"
-   ],
-   "translation": "The leaves are on the ground: he _____ them.",
-   "optionTranslations": [
-    "picks up",
-    "reads",
-    "writes",
-    "drinks"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Les feuilles sont par terre: il les ramasse.",
-    "targetWord": "ramasse",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rouge",
-  "sentence": "Le ciel est [[rouge]] au-dessus du Panier.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "red",
-   "options": [
-    "red",
-    "grey",
-    "blue",
-    "white"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Le ciel est rouge au-dessus du Panier.",
-    "targetWord": "rouge",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "le gravier",
-  "sentence": "Le [[gravier]] est encore chaud.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the small stones",
-   "options": [
-    "the small stones",
-    "the green grass",
-    "the old wall",
-    "the wet sand"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Le gravier est encore chaud.",
-    "targetWord": "gravier",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "parier",
+    "sentence": "Elle veut [[parier]]: si je gagne, tu restes à Marseille.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bet",
+      "options": [
+        "to bet",
+        "to cheat",
+        "to give up",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Elle veut parier: si je gagne, tu restes à Marseille.",
+        "targetWord": "parier",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sûr",
-  "sentence": "Il n'est pas [[sûr]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sure",
-   "options": [
-    "sure",
-    "ready",
-    "tired",
-    "happy"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Il n'est pas sûr.",
-    "targetWord": "sûr",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "rester",
+    "sentence": "Tu [[restes]] ici, avec moi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay",
+      "options": [
+        "to stay",
+        "to leave",
+        "to sit down",
+        "to come back"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Tu restes ici, avec moi.",
+        "targetWord": "restes",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "le lampadaire",
-  "sentence": "Sous le [[lampadaire]], il mesure avec une ficelle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a street lamp",
-   "options": [
-    "a street lamp",
-    "a tall tree",
-    "a bus stop",
-    "a shop window"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Sous le lampadaire, il mesure avec une ficelle.",
-    "targetWord": "lampadaire",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "la partie",
+    "sentence": "C'est la dernière [[partie]] de septembre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a game",
+      "options": [
+        "a game",
+        "a party",
+        "a team",
+        "a trip"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "C'est la dernière partie de septembre.",
+        "targetWord": "partie",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "une à une",
-  "sentence": "Elle ramasse les boules [[une à une]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "one by one",
-   "options": [
-    "one by one",
-    "all at once",
-    "very quickly",
-    "very slowly"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Elle ramasse les boules une à une.",
-    "targetWord": "une à une",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le perdant",
+    "sentence": "“Le [[perdant]] ramasse”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the loser",
+      "options": [
+        "the loser",
+        "the winner",
+        "the referee",
+        "the owner"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "“Le perdant ramasse”, dit-elle.",
+        "targetWord": "perdant",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "dernière",
-  "sentence": "C'est la _____ page du livre: l'histoire finit.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dernière",
-   "options": [
-    "dernière",
-    "première",
-    "grande",
-    "blanche"
-   ],
-   "translation": "It's the _____ page of the book: the story ends.",
-   "optionTranslations": [
-    "last",
-    "first",
-    "big",
-    "white"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "C'est la dernière page du livre: l'histoire finit.",
-    "targetWord": "dernière",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "espérer",
+    "sentence": "Elle [[espère]], mais ce soir, il joue bien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hope",
+      "options": [
+        "to hope",
+        "to wait",
+        "to worry",
+        "to watch"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Elle espère, mais ce soir, il joue bien.",
+        "targetWord": "espère",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "veut",
-  "sentence": "Il a soif: il _____ un verre d'eau.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "veut",
-   "options": [
-    "veut",
-    "vend",
-    "lave",
-    "casse"
-   ],
-   "translation": "He is thirsty: he _____ a glass of water.",
-   "optionTranslations": [
-    "wants",
-    "sells",
-    "washes",
-    "breaks"
-   ],
-   "audioClip": {
-    "storySlug": "si-je-gagne-tu-restes",
-    "storySource": "user",
-    "sentence": "Il a soif: il veut un verre d'eau.",
-    "targetWord": "veut",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "oublier",
+    "sentence": "Elle n'[[oublie]] pas le pari.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to forget",
+      "options": [
+        "to forget",
+        "to win",
+        "to explain",
+        "to accept"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Elle n'oublie pas le pari.",
+        "targetWord": "oublie",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "fier",
+    "sentence": "Il n'est pas [[fier]], et il comprend.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud",
+      "options": [
+        "proud",
+        "angry",
+        "tired",
+        "hungry"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Il n'est pas fier, et il comprend.",
+        "targetWord": "fier",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jamais",
+    "sentence": "Il ne dit [[jamais]] non.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never",
+      "options": [
+        "never",
+        "often",
+        "twice",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Il ne dit jamais non.",
+        "targetWord": "jamais",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ramasse",
+    "sentence": "Les feuilles sont par terre: il les _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ramasse",
+      "options": [
+        "ramasse",
+        "lit",
+        "écrit",
+        "boit"
+      ],
+      "translation": "The leaves are on the ground: he _____ them.",
+      "optionTranslations": [
+        "picks up",
+        "reads",
+        "writes",
+        "drinks"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Les feuilles sont par terre: il les ramasse.",
+        "targetWord": "ramasse",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rouge",
+    "sentence": "Le ciel est [[rouge]] au-dessus du Panier.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red",
+      "options": [
+        "red",
+        "grey",
+        "blue",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Le ciel est rouge au-dessus du Panier.",
+        "targetWord": "rouge",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le gravier",
+    "sentence": "Le [[gravier]] est encore chaud.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the small stones",
+      "options": [
+        "the small stones",
+        "the green grass",
+        "the old wall",
+        "the wet sand"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Le gravier est encore chaud.",
+        "targetWord": "gravier",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sûr",
+    "sentence": "Il n'est pas [[sûr]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sure",
+      "options": [
+        "sure",
+        "ready",
+        "tired",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Il n'est pas sûr.",
+        "targetWord": "sûr",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le lampadaire",
+    "sentence": "Sous le [[lampadaire]], il mesure avec une ficelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street lamp",
+      "options": [
+        "a street lamp",
+        "a tall tree",
+        "a bus stop",
+        "a shop window"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Sous le lampadaire, il mesure avec une ficelle.",
+        "targetWord": "lampadaire",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "une à une",
+    "sentence": "Elle ramasse les boules [[une à une]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one by one",
+      "options": [
+        "one by one",
+        "all at once",
+        "very quickly",
+        "very slowly"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Elle ramasse les boules une à une.",
+        "targetWord": "une à une",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dernière",
+    "sentence": "C'est la _____ page du livre: l'histoire finit.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dernière",
+      "options": [
+        "dernière",
+        "troisième",
+        "grande",
+        "blanche"
+      ],
+      "translation": "It's the _____ page of the book: the story ends.",
+      "optionTranslations": [
+        "last",
+        "third",
+        "big",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "C'est la dernière page du livre: l'histoire finit.",
+        "targetWord": "dernière",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "veut",
+    "sentence": "Il a soif: il _____ un verre d'eau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "veut",
+      "options": [
+        "veut",
+        "vend",
+        "lave",
+        "casse"
+      ],
+      "translation": "He is thirsty: he _____ a glass of water.",
+      "optionTranslations": [
+        "wants",
+        "sells",
+        "washes",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "si-je-gagne-tu-restes",
+        "storySource": "user",
+        "sentence": "Il a soif: il veut un verre d'eau.",
+        "targetWord": "veut",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

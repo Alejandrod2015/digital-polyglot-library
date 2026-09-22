@@ -263,12 +263,12 @@
     "sentence": "Il offre une bouteille de [[riesling]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Riesling wine",
+      "answer": "a white wine",
       "options": [
-        "Riesling wine",
-        "apple juice",
-        "black coffee",
-        "orange soda"
+        "a white wine",
+        "an apple juice",
+        "a black coffee",
+        "an orange soda"
       ],
       "audioClip": {
         "storySlug": "le-vin-reste-ferme",
@@ -286,12 +286,12 @@
     "sentence": "À table, on boit du [[muscadet]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Muscadet wine",
+      "answer": "a dry white wine",
       "options": [
-        "Muscadet wine",
-        "sparkling water",
-        "hot tea",
-        "fresh milk"
+        "a dry white wine",
+        "a sparkling water",
+        "a hot tea",
+        "a fresh milk"
       ],
       "audioClip": {
         "storySlug": "le-vin-reste-ferme",

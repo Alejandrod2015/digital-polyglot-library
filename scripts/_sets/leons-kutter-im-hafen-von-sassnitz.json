@@ -1,446 +1,446 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Kutter,der Fischer,der Dorsch,das Gummi",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Kutter",
-     "answer": "a fishing cutter",
-     "options": [
-      "a fishing cutter",
-      "a fisherman",
-      "a cod",
-      "rubber"
-     ]
-    },
-    {
-     "word": "der Fischer",
-     "answer": "a fisherman",
-     "options": [
-      "a fishing cutter",
-      "a fisherman",
-      "a cod",
-      "rubber"
-     ]
-    },
-    {
-     "word": "der Dorsch",
-     "answer": "a cod",
-     "options": [
-      "a fishing cutter",
-      "a fisherman",
-      "a cod",
-      "rubber"
-     ]
-    },
-    {
-     "word": "das Gummi",
-     "answer": "rubber",
-     "options": [
-      "a fishing cutter",
-      "a fisherman",
-      "a cod",
-      "rubber"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Kutter,der Fischer,der Dorsch,das Gummi",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Kutter",
+          "answer": "a fishing cutter",
+          "options": [
+            "a fishing cutter",
+            "a fisherman",
+            "a cod",
+            "rubber"
+          ]
+        },
+        {
+          "word": "der Fischer",
+          "answer": "a fisherman",
+          "options": [
+            "a fishing cutter",
+            "a fisherman",
+            "a cod",
+            "rubber"
+          ]
+        },
+        {
+          "word": "der Dorsch",
+          "answer": "a cod",
+          "options": [
+            "a fishing cutter",
+            "a fisherman",
+            "a cod",
+            "rubber"
+          ]
+        },
+        {
+          "word": "das Gummi",
+          "answer": "rubber",
+          "options": [
+            "a fishing cutter",
+            "a fisherman",
+            "a cod",
+            "rubber"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Salz",
-  "sentence": "Der Hafen riecht scharf nach [[Salz]] und Diesel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "salt",
-   "options": [
-    "salt",
-    "sugar",
-    "smoke",
-    "soap"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Hafen riecht scharf nach Salz und Diesel.",
-    "targetWord": "Salz",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Seil",
-  "sentence": "Er bindet das [[Seil]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a rope",
-   "options": [
-    "a rope",
-    "a net",
-    "a chain",
-    "a board"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Er bindet das Seil.",
-    "targetWord": "Seil",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Fang",
-  "sentence": "Der [[Fang]] ist klein.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the catch",
-   "options": [
-    "the catch",
-    "the price",
-    "the boat",
-    "the storm"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Fang ist klein.",
-    "targetWord": "Fang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Mai",
-  "sentence": "Im [[Mai]] verkaufe ich den Kutter.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "May",
-   "options": [
-    "May",
-    "December",
-    "September",
-    "February"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Im Mai verkaufe ich den Kutter.",
-    "targetWord": "Mai",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Leben",
-  "sentence": "Er wohnt sein ganzes [[Leben]] hier.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a life",
-   "options": [
-    "a life",
-    "a year",
-    "a summer",
-    "a week"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Er wohnt sein ganzes Leben hier.",
-    "targetWord": "Leben",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Steg",
-  "sentence": "Leon springt auf den [[Steg]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a jetty",
-   "options": [
-    "a jetty",
-    "a boat",
-    "a beach",
-    "a road"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Leon springt auf den Steg.",
-    "targetWord": "Steg",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "binden",
-  "sentence": "Er [[bindet]] das Seil.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to tie",
-   "options": [
-    "to tie",
-    "to cut",
-    "to throw",
-    "to buy"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Er bindet das Seil.",
-    "targetWord": "bindet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sehen",
-  "sentence": "Er [[sieht]] Hannah, und seine Hand bleibt am Seil.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to see",
-   "options": [
-    "to see",
-    "to call",
-    "to greet",
-    "to follow"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Er sieht Hannah, und seine Hand bleibt am Seil.",
-    "targetWord": "sieht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "klein",
-  "sentence": "Der Fang ist heute sehr _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klein",
-   "options": [
-    "klein",
-    "groß",
-    "teuer",
-    "frisch"
-   ],
-   "translation": "The catch is very _____ today.",
-   "optionTranslations": [
-    "small",
-    "big",
-    "expensive",
-    "fresh"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Fang ist heute sehr klein.",
-    "targetWord": "klein",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Schuppe",
-  "sentence": "Seine Hände sind groß und voller [[Schuppen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a fish scale",
-   "options": [
-    "a fish scale",
-    "a fish bone",
-    "a drop",
-    "a crumb"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Seine Hände sind groß und voller Schuppen.",
-    "targetWord": "Schuppen",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Rest",
-  "sentence": "Möwen streiten hinter ihnen um die [[Reste]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the leftovers",
-   "options": [
-    "the leftovers",
-    "the tickets",
-    "the tools",
-    "the seats"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Möwen streiten hinter ihnen um die Reste.",
-    "targetWord": "Reste",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Salz",
+    "sentence": "Der Hafen riecht scharf nach [[Salz]] und Diesel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "salt",
+      "options": [
+        "salt",
+        "sugar",
+        "smoke",
+        "soap"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Der Hafen riecht scharf nach Salz und Diesel.",
+        "targetWord": "Salz",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Insel",
-  "sentence": "Leon arbeitet als Fischer auf der [[Insel]] Rügen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an island",
-   "options": [
-    "an island",
-    "a river",
-    "a hill",
-    "a farm"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Leon arbeitet als Fischer auf der Insel Rügen.",
-    "targetWord": "Insel",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Seil",
+    "sentence": "Er bindet das [[Seil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rope",
+      "options": [
+        "a rope",
+        "a net",
+        "a chain",
+        "a board"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Er bindet das Seil.",
+        "targetWord": "Seil",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Männer",
-  "sentence": "Zwei _____ warten neben ihm am Steg.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Männer",
-   "options": [
-    "Männer",
-    "Frauen",
-    "Kinder",
-    "Hunde"
-   ],
-   "translation": "Two _____ wait beside him at the jetty.",
-   "optionTranslations": [
-    "men",
-    "women",
-    "children",
-    "dogs"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Zwei Männer warten neben ihm am Steg.",
-    "targetWord": "Männer",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Fang",
+    "sentence": "Der [[Fang]] ist klein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the catch",
+      "options": [
+        "the catch",
+        "the price",
+        "the boat",
+        "the storm"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Der Fang ist klein.",
+        "targetWord": "Fang",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "groß",
-  "sentence": "Seine Hände sind _____ und voller Schuppen.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "groß",
-   "options": [
-    "groß",
-    "klein",
-    "weich",
-    "sauber"
-   ],
-   "translation": "His hands are _____ and full of scales.",
-   "optionTranslations": [
-    "big",
-    "small",
-    "soft",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Seine Hände sind groß und voller Schuppen.",
-    "targetWord": "groß",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Mai",
+    "sentence": "Im [[Mai]] verkaufe ich den Kutter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "May",
+      "options": [
+        "May",
+        "December",
+        "September",
+        "February"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Im Mai verkaufe ich den Kutter.",
+        "targetWord": "Mai",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "scharf",
-  "sentence": "Der Hafen riecht _____ nach Salz und Diesel.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "scharf",
-   "options": [
-    "scharf",
-    "süß",
-    "leise",
-    "warm"
-   ],
-   "translation": "The harbour smells _____ of salt and diesel.",
-   "optionTranslations": [
-    "sharp",
-    "sweet",
-    "quiet",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Hafen riecht scharf nach Salz und Diesel.",
-    "targetWord": "scharf",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Leben",
+    "sentence": "Er wohnt sein ganzes [[Leben]] hier.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a life",
+      "options": [
+        "a life",
+        "a year",
+        "a summer",
+        "a week"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Er wohnt sein ganzes Leben hier.",
+        "targetWord": "Leben",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schlecht",
-  "sentence": "Ich schreibe _____, aber ich koche gut.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schlecht",
-   "options": [
-    "schlecht",
-    "gut",
-    "oft",
-    "laut"
-   ],
-   "translation": "I write _____, but I cook well.",
-   "optionTranslations": [
-    "badly",
-    "well",
-    "often",
-    "loudly"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Ich schreibe schlecht, aber ich koche gut.",
-    "targetWord": "schlecht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Steg",
+    "sentence": "Leon springt auf den [[Steg]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a jetty",
+      "options": [
+        "a jetty",
+        "a boat",
+        "a beach",
+        "a road"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Leon springt auf den Steg.",
+        "targetWord": "Steg",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "binden",
+    "sentence": "Er [[bindet]] das Seil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tie",
+      "options": [
+        "to tie",
+        "to cut",
+        "to throw",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Er bindet das Seil.",
+        "targetWord": "bindet",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sehen",
+    "sentence": "Er [[sieht]] Hannah, und seine Hand bleibt am Seil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to see",
+      "options": [
+        "to see",
+        "to call",
+        "to greet",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Er sieht Hannah, und seine Hand bleibt am Seil.",
+        "targetWord": "sieht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "klein",
+    "sentence": "Der Fang ist heute sehr _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klein",
+      "options": [
+        "klein",
+        "nass",
+        "teuer",
+        "frisch"
+      ],
+      "translation": "The catch is very _____ today.",
+      "optionTranslations": [
+        "small",
+        "wet",
+        "expensive",
+        "fresh"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Der Fang ist heute sehr klein.",
+        "targetWord": "klein",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Schuppe",
+    "sentence": "Seine Hände sind groß und voller [[Schuppen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fish scale",
+      "options": [
+        "a fish scale",
+        "a fish bone",
+        "a drop",
+        "a crumb"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Seine Hände sind groß und voller Schuppen.",
+        "targetWord": "Schuppen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Rest",
+    "sentence": "Möwen streiten hinter ihnen um die [[Reste]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the leftovers",
+      "options": [
+        "the leftovers",
+        "the tickets",
+        "the tools",
+        "the seats"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Möwen streiten hinter ihnen um die Reste.",
+        "targetWord": "Reste",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Insel",
+    "sentence": "Leon arbeitet als Fischer auf der [[Insel]] Rügen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an island",
+      "options": [
+        "an island",
+        "a river",
+        "a hill",
+        "a farm"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Leon arbeitet als Fischer auf der Insel Rügen.",
+        "targetWord": "Insel",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Männer",
+    "sentence": "Zwei _____ warten neben ihm am Steg.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Männer",
+      "options": [
+        "Männer",
+        "Frauen",
+        "Kinder",
+        "Hunde"
+      ],
+      "translation": "Two _____ wait beside him at the jetty.",
+      "optionTranslations": [
+        "men",
+        "women",
+        "children",
+        "dogs"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Zwei Männer warten neben ihm am Steg.",
+        "targetWord": "Männer",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "groß",
+    "sentence": "Seine Hände sind _____ und voller Schuppen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "groß",
+      "options": [
+        "groß",
+        "warm",
+        "weich",
+        "sauber"
+      ],
+      "translation": "His hands are _____ and full of scales.",
+      "optionTranslations": [
+        "big",
+        "warm",
+        "soft",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Seine Hände sind groß und voller Schuppen.",
+        "targetWord": "groß",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "scharf",
+    "sentence": "Der Hafen riecht _____ nach Salz und Diesel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "scharf",
+      "options": [
+        "scharf",
+        "süß",
+        "leise",
+        "warm"
+      ],
+      "translation": "The harbour smells _____ of salt and diesel.",
+      "optionTranslations": [
+        "sharp",
+        "sweet",
+        "quiet",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Der Hafen riecht scharf nach Salz und Diesel.",
+        "targetWord": "scharf",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schlecht",
+    "sentence": "Ich schreibe _____, aber ich koche gut.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schlecht",
+      "options": [
+        "schlecht",
+        "selten",
+        "oft",
+        "laut"
+      ],
+      "translation": "I write _____, but I cook well.",
+      "optionTranslations": [
+        "badly",
+        "rarely",
+        "often",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+        "storySource": "user",
+        "sentence": "Ich schreibe schlecht, aber ich koche gut.",
+        "targetWord": "schlecht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

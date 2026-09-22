@@ -56,9 +56,9 @@
     "sentence": "Wen die Berliner [[Schnauze]] in Ruhe lässt, den lässt sie draußen.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "blunt Berlin banter",
+      "answer": "blunt local banter",
       "options": [
-        "blunt Berlin banter",
+        "blunt local banter",
         "polite small talk",
         "official paperwork",
         "a quiet corner"
