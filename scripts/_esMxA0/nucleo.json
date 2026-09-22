@@ -1,0 +1,20 @@
+{
+  "journey": "cmud5qhu00006j81cmkl4u5ks",
+  "que_es": "El nucleo lexico del Friends ES Mexico A0: las palabras que las siete escenas reusan a proposito para que cada plaza se reencuentre. Declarado el 2026-09-22, ANTES de tocar prosa, por encargo del chat de planificacion.",
+  "por_que": "El gate journey-vocab-recirculation pide media 2,5 en A0. El journey iba en 1,73 porque sus siete temas son siete dominios estancos, elegidos asi para no pisar el pool latam. Medido antes de decidir: el techo SIN tocar prosa, enseñando en cada historia sus 20 palabras mas recurrentes, es 1,86. Asi que la unica via honesta es que el mundo del journey sea compartido, no que las plazas cambien de nombre.",
+  "medida_de_referencia": {
+    "a0_publicados": { "portuguese/brazil Traveler": 2.54, "Cultural spanish/latam": 2.33, "Friends french/france": 2.27, "Friends german/germany": 2.27, "Traveler german/germany": 2.16, "Friends italian/italy": 2.14 },
+    "suelo_del_gate": 2.5,
+    "nota": "De los seis A0 vivos, solo el portugues llega al suelo. La banda real del oro es 2,14 a 2,54."
+  },
+  "el_mundo_compartido": "Un edificio de Guadalajara con azotea, cochera, zaguan y escalera. Todo lo que pasa en los siete temas pasa dentro o en la puerta, y las mismas piezas vuelven: el tendedero, la cuerda, las pinzas, el tinaco, el timbre, la linterna, la cubeta, el bote, el cuaderno, el recibo, el cafe de Bruno y el uniforme de Itzel.",
+  "nucleo": {
+    "el_edificio": ["azotea", "cochera", "zaguan", "escalera", "peldaño", "tendedero", "tinaco", "timbre", "rincon", "banqueta", "fachada"],
+    "las_piezas": ["cuerda", "pinza", "cubeta", "bote", "linterna", "cuaderno", "recibo", "plumon", "caja", "trapo", "jabon"],
+    "la_gente_y_su_dia": ["uniforme", "turno", "cafe", "refrescos", "vecina", "domingo", "martes", "manana", "noche", "rato"],
+    "lo_que_hacen": ["colgar", "tender", "subir", "bajar", "revisar", "apuntar", "prestar", "prender", "tocar", "sacudir", "guardar", "quitar", "señalar", "medir", "avisar"],
+    "como_estan_las_cosas": ["mojado", "seco", "chueco", "derecho", "lleno", "vacio", "viejo", "quieto", "callado", "puntual"]
+  },
+  "regla_de_uso": "Una palabra del nucleo ocupa plaza en UNA historia (el journey no repite plaza) y aparece en otras dos o tres como prosa. Se mete cambiando un sinonimo que ya estaba, nunca añadiendo una frase que no hace falta: si la frase se muere, la palabra no entra. El liston del gato manda sobre el 2,5 (condicion 2 del encargo).",
+  "fuera_del_nucleo_a_proposito": "Los anclajes de cada tema (molcajete, mascara, vendas, broca, enredadera, navaja) se quedan donde estan: son la escena, no el nucleo, y forzarlos a volver seria justo la prosa muerta que el encargo prohibe."
+}
