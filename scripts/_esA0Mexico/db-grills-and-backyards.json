@@ -1,0 +1,357 @@
+[
+ {
+  "topic": "grills-and-backyards",
+  "slotIndex": 0,
+  "slug": "carbon-mojado",
+  "title": "Carbón mojado",
+  "synopsis": "Mauricio promete carne a las dos. El carbón llevó toda la semana bajo la lluvia y nadie lo dice en voz alta.",
+  "text": "Mauricio, el primo de Bruno, llega los domingos con la carne. Hoy trae dos kilos, y detrás de él sube Itzel. En la cochera ya está el asador, con el carbón del costal viejo.\n\n“A las dos comemos,” dice Mauricio. “Yo prendo el asador, tú pones los refrescos.”\n\nEl carbón no prende. Sale un poco de olor, nada más, y la carne sigue cruda encima de la parrilla. “Ese costal se mojó el jueves,” dice Itzel desde la puerta. “Yo lo vi ahí afuera.”\n\n“Está seco,” dice Mauricio. “Yo lo veo seco, y yo sé de carbón.” Bruno sopla con un abanico de cartón, media hora, sin parar. Mauricio sopla con la boca.\n\nA las cuatro sale la primera brasa, y nada está quemado todavía. Comen a las nueve, con la linterna de Bruno colgada del asador.\n\n“Sabe mejor de noche,” dice Mauricio. “Con hambre todo sabe mejor,” contesta Itzel.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "carne",
+    "definition": "Meat; the food that comes from an animal."
+   },
+   {
+    "type": "noun",
+    "word": "kilos",
+    "definition": "Kilos; a way to say how heavy something is."
+   },
+   {
+    "type": "noun",
+    "word": "cochera",
+    "definition": "Garage; the covered place where a car is parked."
+   },
+   {
+    "type": "noun",
+    "word": "asador",
+    "definition": "Grill; the metal box where meat cooks over fire."
+   },
+   {
+    "type": "noun",
+    "word": "carbón",
+    "definition": "Charcoal; the black pieces that burn under the meat."
+   },
+   {
+    "type": "noun",
+    "word": "costal",
+    "definition": "Sack; the big rough bag for charcoal or grain."
+   },
+   {
+    "type": "verb",
+    "word": "prender",
+    "surface": "prendo",
+    "definition": "To light a fire; to start it burning."
+   },
+   {
+    "type": "verb",
+    "word": "soplar",
+    "surface": "sopla",
+    "definition": "To blow air out of your mouth or with a fan."
+   },
+   {
+    "type": "noun",
+    "word": "abanico",
+    "definition": "Fan; the flat thing you move to make air."
+   },
+   {
+    "type": "expression",
+    "word": "sin parar",
+    "definition": "Without stopping; on and on for a long time."
+   },
+   {
+    "type": "noun",
+    "word": "brasa",
+    "definition": "Ember; the red hot piece of charcoal."
+   },
+   {
+    "type": "verb",
+    "word": "saber",
+    "surface": "sabe",
+    "definition": "To taste; to have a flavour of some kind."
+   },
+   {
+    "type": "expression",
+    "word": "a las dos",
+    "definition": "At two; the hour written on a clock."
+   },
+   {
+    "type": "verb",
+    "word": "comer",
+    "surface": "comemos",
+    "definition": "To eat; to put food in your mouth."
+   },
+   {
+    "type": "adjective",
+    "word": "primera",
+    "definition": "First; before all the others."
+   },
+   {
+    "type": "adjective",
+    "word": "quemado",
+    "definition": "Burnt; black and hard from too much fire."
+   },
+   {
+    "type": "noun",
+    "word": "jueves",
+    "definition": "Thursday; the fourth day of the week."
+   },
+   {
+    "type": "adverb",
+    "word": "afuera",
+    "definition": "Outside; not inside the house."
+   },
+   {
+    "type": "noun",
+    "word": "refrescos",
+    "definition": "Fizzy drinks; cold sweet drinks in bottles."
+   },
+   {
+    "type": "noun",
+    "word": "parrilla",
+    "definition": "Grill bars; the metal bars the meat lies on."
+   },
+   {
+    "type": "adjective",
+    "word": "cruda",
+    "definition": "Raw; not cooked yet."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "grills-and-backyards",
+  "slotIndex": 1,
+  "slug": "una-sola-vuelta",
+  "title": "Una sola vuelta",
+  "synopsis": "Bruno tiene teorías sobre la carne. Mauricio tiene el volteador, y esa es toda la discusión.",
+  "text": "El domingo siguiente, la cochera huele a carne y a cebolla. Mauricio pone la carne en la parrilla y se queda parado enfrente, con el volteador en la mano. Bruno mira el asador de cerca.\n\n“Voltéala ya,” dice Bruno. “Se quema abajo, yo veo el humo.” “Se voltea una vez,” dice Mauricio. “Una, y al final.”\n\n“¿Y eso quién lo dice?” pregunta Bruno. “Es la costumbre de la casa,” dice Mauricio, tranquilo.\n\nBruno estira la mano hacia el volteador. Mauricio lo levanta y lo deja fuera de su alcance, sin dejar de mirar la carne.\n\nItzel llega con los refrescos y ve a los dos quietos, frente a frente, como en la arena. “Denle vuelta al asunto, no a la carne,” dice ella. “Yo tengo hambre desde las doce.”\n\nLa carne sale jugosa y blanda. Bruno come tres y no admite nada del método.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "cebolla",
+    "definition": "Onion; the round white vegetable with a strong smell."
+   },
+   {
+    "type": "noun",
+    "word": "parrilla",
+    "definition": "Grill bars; the metal bars the meat lies on."
+   },
+   {
+    "type": "adjective",
+    "word": "parado",
+    "definition": "Standing; on your feet and not moving."
+   },
+   {
+    "type": "noun",
+    "word": "volteador",
+    "definition": "Spatula; the flat tool for turning meat over."
+   },
+   {
+    "type": "verb",
+    "word": "quemarse",
+    "surface": "quema",
+    "definition": "To burn; to go black and hard from too much fire."
+   },
+   {
+    "type": "verb",
+    "word": "estirar",
+    "surface": "estira",
+    "definition": "To reach out; to make your arm long towards a thing."
+   },
+   {
+    "type": "noun",
+    "word": "alcance",
+    "definition": "Reach; the distance your arm can cover."
+   },
+   {
+    "type": "noun",
+    "word": "refrescos",
+    "definition": "Fizzy drinks; cold sweet drinks in bottles."
+   },
+   {
+    "type": "expression",
+    "word": "frente a frente",
+    "definition": "Face to face; one person right in front of the other."
+   },
+   {
+    "type": "adjective",
+    "word": "jugosa",
+    "definition": "Juicy; soft and full of juice, not dry."
+   },
+   {
+    "type": "adjective",
+    "word": "blanda",
+    "definition": "Soft; easy to cut and to bite."
+   },
+   {
+    "type": "noun",
+    "word": "método",
+    "definition": "Method; the fixed way somebody does a thing."
+   },
+   {
+    "type": "expression",
+    "word": "una vez",
+    "definition": "Once; one time and no more."
+   },
+   {
+    "type": "adjective",
+    "word": "siguiente",
+    "definition": "Next; the one that comes after this one."
+   },
+   {
+    "type": "adjective",
+    "word": "cerca",
+    "definition": "Close; with little distance in between."
+   },
+   {
+    "type": "noun",
+    "word": "costumbre",
+    "definition": "Custom; the way a family always does a thing."
+   },
+   {
+    "type": "verb",
+    "word": "admitir",
+    "surface": "admite",
+    "definition": "To say out loud that the other person was right."
+   },
+   {
+    "type": "noun",
+    "word": "mano",
+    "definition": "Hand; the part of your arm with five fingers."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "surface": "mira",
+    "definition": "To look at something for a while."
+   },
+   {
+    "type": "adjective",
+    "word": "tres",
+    "definition": "Three; the number after two."
+   },
+   {
+    "type": "adverb",
+    "word": "abajo",
+    "definition": "Underneath; on the lower side."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "grills-and-backyards",
+  "slotIndex": 2,
+  "slug": "la-salsa-no-se-apunta",
+  "title": "La salsa no se apunta",
+  "synopsis": "La salsa de Mauricio es famosa en el edificio. Itzel quiere la receta y descubre que no existe ninguna.",
+  "text": "En la cochera huele a chile tostado y el molcajete de Mauricio suena duro contra la mesa. Itzel llega con un cuaderno y una pluma.\n\n“Quiero la receta,” dice ella. “La de hoy.” “No hay receta,” dice Mauricio. “Hay molcajete.”\n\nItzel se pone al lado y apunta todo: tres chiles, un aguacate, media cebolla y un limón. Apunta también cuánto de cada cosa.\n\n“¿Y el domingo pasado?” pregunta Itzel. “El domingo pasado había otros chiles,” dice Mauricio. “Y menos limón.”\n\n“Entonces cada salsa es distinta,” dice ella. “Cada salsa es de su domingo,” dice Mauricio, muy serio.\n\nEl siguiente domingo, Itzel hace la salsa con el cuaderno abierto. Sale bien, y nadie quiere más. Mauricio prueba una cucharada. “Le falta domingo,” dice, y esconde el cuaderno arriba del refrigerador.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "molcajete",
+    "definition": "Stone bowl for crushing chillies, used in Mexico."
+   },
+   {
+    "type": "noun",
+    "word": "pluma",
+    "definition": "Pen; you write with it. Mexican word."
+   },
+   {
+    "type": "noun",
+    "word": "chiles",
+    "definition": "Chillies; the small hot green or red peppers."
+   },
+   {
+    "type": "noun",
+    "word": "aguacate",
+    "definition": "Avocado; the green fruit with a big seed inside."
+   },
+   {
+    "type": "noun",
+    "word": "limón",
+    "definition": "Lime; the small green fruit with sour juice."
+   },
+   {
+    "type": "adjective",
+    "word": "distinta",
+    "definition": "Different; not the same as the other one."
+   },
+   {
+    "type": "adjective",
+    "word": "pasado",
+    "definition": "Last; the one before this one in time."
+   },
+   {
+    "type": "adverb",
+    "word": "menos",
+    "definition": "Less; a smaller amount of something."
+   },
+   {
+    "type": "verb",
+    "word": "probar",
+    "surface": "prueba",
+    "definition": "To taste a little of a food or a drink."
+   },
+   {
+    "type": "noun",
+    "word": "cucharada",
+    "definition": "Spoonful; as much as one spoon holds."
+   },
+   {
+    "type": "verb",
+    "word": "esconder",
+    "surface": "esconde",
+    "definition": "To put something where nobody can find it."
+   },
+   {
+    "type": "noun",
+    "word": "refrigerador",
+    "definition": "Fridge; the cold machine that keeps food good."
+   },
+   {
+    "type": "adjective",
+    "word": "tostado",
+    "definition": "Toasted; cooked dry until it turns brown."
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "surface": "falta",
+    "definition": "To be missing; to not be there when it should."
+   },
+   {
+    "type": "adjective",
+    "word": "duro",
+    "definition": "Hard; with force, or not soft."
+   },
+   {
+    "type": "expression",
+    "word": "el domingo pasado",
+    "definition": "Last Sunday; the Sunday before this one."
+   },
+   {
+    "type": "adverb",
+    "word": "entonces",
+    "definition": "So; for that reason."
+   },
+   {
+    "type": "expression",
+    "word": "cuánto de cada cosa",
+    "definition": "How much of each thing goes in."
+   },
+   {
+    "type": "verb",
+    "word": "hacer",
+    "surface": "hace",
+    "definition": "To make something, for example a dish."
+   },
+   {
+    "type": "adjective",
+    "word": "abierto",
+    "definition": "Open; with its pages not closed."
+   }
+  ],
+  "arcType": null
+ }
+]

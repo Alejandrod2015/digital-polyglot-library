@@ -1,0 +1,372 @@
+[
+ {
+  "topic": "lost-and-found",
+  "slotIndex": 0,
+  "slug": "peinate-como-en-la-foto",
+  "title": "Péinate como en la foto",
+  "synopsis": "La credencial de Itzel aparece en dos segundos, pero el encargado no se la entrega: dice que la mujer de la foto es otra.",
+  "text": "La ventanilla de objetos perdidos de la central huele a hule mojado. Omar, el encargado del lugar, apunta cada cosa en su cuaderno. Itzel llega sin credencial y con el turno en una hora.\n\n“Es mía, y está a mi nombre,” dice Itzel. Omar revisa una caja gris y saca la credencial en dos segundos. “Aquí está,” dice él. “Pero no se la puedo entregar.”\n\n“¿Por qué no?” pregunta Itzel, con toda la calma que le queda. “Usted no se parece,” dice Omar. Pone la foto en el mueble, entre los dos.\n\nEn la foto, Itzel tiene el fleco derecho y una trenza. Ella se peina con los dedos, se hace la trenza y levanta la barbilla.\n\n“¿Ahora sí?” pregunta ella. Omar mira la foto, mira a Itzel y firma el cuaderno.\n\n“Ahora sí,” dice Omar. “Y la próxima vez, tráigala en la bolsa, no en la cabeza.”",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "objetos perdidos",
+    "definition": "Lost property; the desk that keeps things people lose."
+   },
+   {
+    "type": "noun",
+    "word": "central",
+    "definition": "Bus station; the big place where buses come and go."
+   },
+   {
+    "type": "noun",
+    "word": "hule",
+    "definition": "Rubber; the soft material of tyres and mats. Mexican word."
+   },
+   {
+    "type": "noun",
+    "word": "encargado",
+    "definition": "The person in charge; the one who takes care of a place."
+   },
+   {
+    "type": "verb",
+    "word": "apuntar",
+    "surface": "apunta",
+    "definition": "To write something down so you do not forget it."
+   },
+   {
+    "type": "noun",
+    "word": "credencial",
+    "definition": "Work card; the one you show to get into your job."
+   },
+   {
+    "type": "verb",
+    "word": "revisar",
+    "surface": "revisa",
+    "definition": "To look at something with care to find a problem."
+   },
+   {
+    "type": "noun",
+    "word": "segundos",
+    "definition": "Seconds; the sixty small parts of one minute."
+   },
+   {
+    "type": "verb",
+    "word": "entregar",
+    "surface": "entregar",
+    "definition": "To give something to the person it belongs to."
+   },
+   {
+    "type": "verb",
+    "word": "poder",
+    "surface": "puedo",
+    "definition": "To be able to do something."
+   },
+   {
+    "type": "noun",
+    "word": "calma",
+    "definition": "Calm; the quiet way you stay when you are angry."
+   },
+   {
+    "type": "pronoun",
+    "word": "usted",
+    "definition": "You; the polite way to speak to a person."
+   },
+   {
+    "type": "verb",
+    "word": "parecerse",
+    "surface": "parece",
+    "definition": "To look like someone or something else."
+   },
+   {
+    "type": "noun",
+    "word": "trenza",
+    "definition": "Braid; hair crossed in three parts and tied."
+   },
+   {
+    "type": "verb",
+    "word": "peinarse",
+    "surface": "peina",
+    "definition": "To put your hair in order with your hand or a comb."
+   },
+   {
+    "type": "noun",
+    "word": "barbilla",
+    "definition": "Chin; the part of your face under your mouth."
+   },
+   {
+    "type": "expression",
+    "word": "¿ahora sí?",
+    "definition": "Is it fine now? Asked after doing what was asked."
+   },
+   {
+    "type": "verb",
+    "word": "firmar",
+    "surface": "firma",
+    "definition": "To write your name to say that you agree."
+   },
+   {
+    "type": "verb",
+    "word": "traer",
+    "surface": "tráigala",
+    "definition": "To bring something with you to a place."
+   },
+   {
+    "type": "noun",
+    "word": "cabeza",
+    "definition": "Head; the top part of your body."
+   },
+   {
+    "type": "expression",
+    "word": "a mi nombre",
+    "definition": "In my name; with my name written on it."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "lost-and-found",
+  "slotIndex": 1,
+  "slug": "puestas-por-fuera",
+  "title": "Puestas por fuera",
+  "synopsis": "Bruno busca sus llaves toda la noche en la azotea. El barrio entero pasa por delante de ellas sin verlas.",
+  "text": "A las nueve ya hace frío en la azotea, y Bruno busca sus llaves por todos lados. Mueve las macetas, revisa dentro de la lavadora y sacude un suéter viejo. Itzel lo ve desde la ventana.\n\n“¿Tú las viste?” pregunta Bruno. “Yo no toco tus cosas,” dice Itzel. “Piensa: ¿dónde estuviste?”\n\n“Aquí, abajo, en la tienda y aquí otra vez,” dice Bruno. Bajan los dos con la linterna y revisan cada rincón, despacio, sin hablar.\n\nA las once, Itzel se para frente a la puerta de Bruno. Se queda callada un momento largo y luego señala con la barbilla.\n\n“Bruno,” dice ella. “Están puestas, por fuera.” Las llaves cuelgan de la cerradura desde las seis de la tarde.\n\nTodo el edificio pasa por ahí, y nadie entra. “O el barrio es muy honrado,” dice Bruno, “o nadie me quiere visitar. Yo vivo solo, y hoy se nota.”",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "llaves",
+    "definition": "Keys; the metal pieces that open a door."
+   },
+   {
+    "type": "noun",
+    "word": "suéter",
+    "definition": "Jumper; warm clothing for the upper body."
+   },
+   {
+    "type": "adverb",
+    "word": "dentro",
+    "definition": "Inside; in the inner part of something."
+   },
+   {
+    "type": "verb",
+    "word": "ver",
+    "surface": "viste",
+    "definition": "To see; to notice with your eyes."
+   },
+   {
+    "type": "verb",
+    "word": "pensar",
+    "surface": "piensa",
+    "definition": "To use your mind to find an answer."
+   },
+   {
+    "type": "verb",
+    "word": "revisar",
+    "surface": "revisan",
+    "definition": "To look at something with care to find a problem."
+   },
+   {
+    "type": "verb",
+    "word": "hablar",
+    "surface": "hablar",
+    "definition": "To say words to another person."
+   },
+   {
+    "type": "noun",
+    "word": "once",
+    "definition": "Eleven; the number after ten."
+   },
+   {
+    "type": "verb",
+    "word": "pararse",
+    "surface": "para",
+    "definition": "To stand; to stay on your feet in one place."
+   },
+   {
+    "type": "adjective",
+    "word": "callada",
+    "definition": "Quiet; saying nothing at all."
+   },
+   {
+    "type": "noun",
+    "word": "barbilla",
+    "definition": "Chin; the part of your face under your mouth."
+   },
+   {
+    "type": "adjective",
+    "word": "puestas",
+    "definition": "In place; put where they go and left there."
+   },
+   {
+    "type": "expression",
+    "word": "por fuera",
+    "definition": "On the outside; on the outer part of something."
+   },
+   {
+    "type": "noun",
+    "word": "cerradura",
+    "definition": "Lock; the part of a door where the key goes."
+   },
+   {
+    "type": "noun",
+    "word": "seis",
+    "definition": "Six; the number after five."
+   },
+   {
+    "type": "adjective",
+    "word": "honrado",
+    "definition": "Honest; a person who never takes what is not theirs."
+   },
+   {
+    "type": "verb",
+    "word": "visitar",
+    "surface": "visitar",
+    "definition": "To go to see a person in their home."
+   },
+   {
+    "type": "adjective",
+    "word": "frío",
+    "definition": "Cold; with a low temperature."
+   },
+   {
+    "type": "noun",
+    "word": "nueve",
+    "definition": "Nine; the number after eight."
+   },
+   {
+    "type": "expression",
+    "word": "por todos lados",
+    "definition": "Everywhere; in every place you can think of."
+   },
+   {
+    "type": "adjective",
+    "word": "solo",
+    "definition": "Alone; with nobody else in the house."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "lost-and-found",
+  "slotIndex": 2,
+  "slug": "tres-duenos-y-un-paraguas",
+  "title": "Tres dueños y un paraguas",
+  "synopsis": "Omar vacía la caja de objetos perdidos y un paraguas rojo se queda sin salir de ella, por una razón que él no quiere decir.",
+  "text": "Fin de mes en la central, con un calor pesado, y la caja de Omar ya no cierra. Itzel y Bruno lo ayudan a vaciarla sobre el mueble. Hay lentes, un guante, una pila y un paraguas rojo.\n\n“Ese paraguas es mío,” dice Bruno. “Tú tienes uno azul,” contesta Itzel. Itzel y Bruno miran a Omar, que no dice nada y sigue apuntando en su cuaderno.\n\nOmar toma el paraguas y lo abre. Adentro, en la tela, hay un nombre escrito con plumón. Dice Omar, con letra grande.\n\nLos tres se quedan quietos. “Lleva dos años en mi propia caja,” dice Omar. “Yo mismo lo apunté en la lista.”\n\n“¿Y por qué no lo sacas?” pregunta Itzel. “Porque aquí nadie reclama nada,” dice Omar, “y yo trabajo aquí.”\n\nEl paraguas regresa a la caja, ahora con etiqueta.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "fin de mes",
+    "definition": "The end of the month; its last days."
+   },
+   {
+    "type": "verb",
+    "word": "ayudar",
+    "surface": "ayudan",
+    "definition": "To do part of the work with another person."
+   },
+   {
+    "type": "verb",
+    "word": "vaciar",
+    "surface": "vaciarla",
+    "definition": "To take everything out of a container."
+   },
+   {
+    "type": "noun",
+    "word": "lentes",
+    "definition": "Glasses; you wear them to see better. Mexican word."
+   },
+   {
+    "type": "noun",
+    "word": "guante",
+    "definition": "Glove; clothing for one hand."
+   },
+   {
+    "type": "noun",
+    "word": "pila",
+    "definition": "Battery; the small thing that gives power to a radio."
+   },
+   {
+    "type": "noun",
+    "word": "paraguas",
+    "definition": "Umbrella; you open it so the rain does not touch you."
+   },
+   {
+    "type": "verb",
+    "word": "escribir",
+    "surface": "escrito",
+    "definition": "To put words on paper with a pen."
+   },
+   {
+    "type": "noun",
+    "word": "plumón",
+    "definition": "Marker pen; the thick pen with strong ink. Mexican word."
+   },
+   {
+    "type": "noun",
+    "word": "letra",
+    "definition": "Handwriting; the way a person forms words with a pen."
+   },
+   {
+    "type": "adjective",
+    "word": "quietos",
+    "definition": "Still; not moving at all."
+   },
+   {
+    "type": "verb",
+    "word": "apuntar",
+    "surface": "apunté",
+    "definition": "To write something down so you do not forget it."
+   },
+   {
+    "type": "verb",
+    "word": "reclamar",
+    "surface": "reclama",
+    "definition": "To ask for something back because it is yours."
+   },
+   {
+    "type": "verb",
+    "word": "trabajar",
+    "surface": "trabajo",
+    "definition": "To do a job for money."
+   },
+   {
+    "type": "adjective",
+    "word": "propia",
+    "definition": "Own; belonging to the person we are talking about."
+   },
+   {
+    "type": "expression",
+    "word": "yo mismo",
+    "definition": "I myself; me and nobody else."
+   },
+   {
+    "type": "expression",
+    "word": "dos años",
+    "definition": "Two years; twenty four months."
+   },
+   {
+    "type": "adjective",
+    "word": "grande",
+    "definition": "Big; larger than normal size."
+   },
+   {
+    "type": "verb",
+    "word": "cerrar",
+    "surface": "cierra",
+    "definition": "To close; to shut something that was open."
+   },
+   {
+    "type": "verb",
+    "word": "seguir",
+    "surface": "sigue",
+    "definition": "To go on doing the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "cuaderno",
+    "definition": "Notebook; the small book with empty pages."
+   }
+  ],
+  "arcType": null
+ }
+]

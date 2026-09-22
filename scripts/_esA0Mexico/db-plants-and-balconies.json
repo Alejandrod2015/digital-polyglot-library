@@ -1,0 +1,386 @@
+[
+ {
+  "topic": "plants-and-balconies",
+  "slotIndex": 0,
+  "slug": "se-muere-de-amor",
+  "title": "Se muere de amor",
+  "synopsis": "Itzel pide una planta imposible de matar y la mata en once días. El problema no es el agua que falta.",
+  "text": "En el vivero de la esquina huele a tierra recién regada. Entre las macetas atiende Fernanda, una muchacha que conoce a todo el barrio. Itzel entra un lunes y pide algo fácil.\n\n“Quiero una planta que no se muera,” dice Itzel. “Trabajo de noche.”\n\n“Llévate esta,” dice Fernanda. “Agua los domingos. Nada más.”\n\nItzel pone la maceta en la ventana. Después le echa agua tres veces al día, con mucho cariño.\n\nA los once días, las hojas están amarillas y la tierra es un charco. Itzel regresa al vivero con la maceta.\n\n“Se murió de sed,” dice Itzel, triste.\n\n“¿Cuánta agua le echas?” pregunta Fernanda. “Tres veces al día,” dice Itzel. Fernanda mete un dedo en la tierra y lo saca con lodo hasta la uña.\n\n“De sed no,” dice Fernanda. “Esta se murió de amor. La ahogaste, con todo el cariño del mundo.”\n\nLe da otra planta y le quita la regadera una semana.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "vivero",
+    "definition": "Garden shop; the place where plants are grown and sold."
+   },
+   {
+    "type": "verb",
+    "word": "conocer",
+    "surface": "conoce",
+    "definition": "To know a person or a place."
+   },
+   {
+    "type": "verb",
+    "word": "pedir",
+    "surface": "pide",
+    "definition": "To ask for something you want."
+   },
+   {
+    "type": "adjective",
+    "word": "fácil",
+    "definition": "Easy; not hard to do."
+   },
+   {
+    "type": "verb",
+    "word": "morirse",
+    "surface": "muera",
+    "definition": "To die; to stop living."
+   },
+   {
+    "type": "noun",
+    "word": "maceta",
+    "definition": "Flowerpot; the pot where a plant grows."
+   },
+   {
+    "type": "noun",
+    "word": "ventana",
+    "definition": "Window; the glass opening in a wall."
+   },
+   {
+    "type": "verb",
+    "word": "echar",
+    "surface": "echa",
+    "definition": "To throw or pour something onto a place."
+   },
+   {
+    "type": "noun",
+    "word": "hojas",
+    "definition": "Leaves; the flat green parts of a plant."
+   },
+   {
+    "type": "adjective",
+    "word": "amarillas",
+    "definition": "Yellow; the colour of a lemon."
+   },
+   {
+    "type": "noun",
+    "word": "tierra",
+    "definition": "Soil; the brown earth where plants grow."
+   },
+   {
+    "type": "noun",
+    "word": "charco",
+    "definition": "Puddle; a small pool of water on the ground."
+   },
+   {
+    "type": "noun",
+    "word": "sed",
+    "definition": "Thirst; the need to drink."
+   },
+   {
+    "type": "adjective",
+    "word": "triste",
+    "definition": "Sad; not happy at all."
+   },
+   {
+    "type": "verb",
+    "word": "sacar",
+    "surface": "saca",
+    "definition": "To take something out of a place."
+   },
+   {
+    "type": "noun",
+    "word": "lodo",
+    "definition": "Mud; soil mixed with a lot of water."
+   },
+   {
+    "type": "noun",
+    "word": "uña",
+    "definition": "Nail; the hard part at the end of a finger."
+   },
+   {
+    "type": "noun",
+    "word": "regadera",
+    "definition": "Watering can; you fill it to give water to plants."
+   },
+   {
+    "type": "expression",
+    "word": "nada más",
+    "definition": "Nothing more; that is all you have to do."
+   },
+   {
+    "type": "verb",
+    "word": "atender",
+    "surface": "atiende",
+    "definition": "To serve the people who come into a shop."
+   },
+   {
+    "type": "noun",
+    "word": "domingos",
+    "definition": "Sundays; the last day of the week."
+   },
+   {
+    "type": "expression",
+    "word": "tres veces al día",
+    "definition": "Three times a day; morning, noon and night."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "plants-and-balconies",
+  "slotIndex": 1,
+  "slug": "verde-en-mi-ventana",
+  "title": "Verde en mi ventana",
+  "synopsis": "Una enredadera tapa la ventana de Itzel y viene del lado de Bruno. Los dos discuten de quién es la culpa y de quién es la planta.",
+  "text": "Del balcón de Bruno baja una enredadera muy larga, verde y oscura. La enredadera cruza y tapa media ventana de Itzel. Bruno riega sus macetas sin prisa.\n\n“Tu planta me quita el sol,” dice Itzel. “Corta un poco, por favor.” “Yo no corto plantas ajenas,” dice Bruno. “Esa no es mía.”\n\n“¿Y de quién es?” pregunta Itzel. Bruno señala hacia abajo, despacio, con el dedo mojado. “Mira bien de dónde sale,” dice él.\n\nLa enredadera sube desde una maceta vieja, olvidada en el suelo del balcón de Itzel. Ella tiene esa maceta ahí desde hace dos años, con tierra pobre y sin nombre.\n\n“Tu planta busca el sol de mi lado,” dice Bruno. “Es lista.” Itzel mira la raíz un rato largo y guarda las tijeras.\n\nAhora la enredadera tiene dos ventanas verdes y dos dueños que discuten por ella.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "enredadera",
+    "definition": "Climbing plant; one that grows up and along walls."
+   },
+   {
+    "type": "adjective",
+    "word": "larga",
+    "definition": "Long; with a lot of distance from end to end."
+   },
+   {
+    "type": "adjective",
+    "word": "oscura",
+    "definition": "Dark; with little light in its colour."
+   },
+   {
+    "type": "verb",
+    "word": "cruzar",
+    "surface": "cruza",
+    "definition": "To go from one side to the other."
+   },
+   {
+    "type": "verb",
+    "word": "regar",
+    "surface": "riega",
+    "definition": "To give water to plants."
+   },
+   {
+    "type": "noun",
+    "word": "macetas",
+    "definition": "Flowerpots; the pots where plants grow."
+   },
+   {
+    "type": "verb",
+    "word": "cortar",
+    "surface": "corta",
+    "definition": "To cut; to take a piece off with a blade."
+   },
+   {
+    "type": "adjective",
+    "word": "ajenas",
+    "definition": "Belonging to other people, not to you."
+   },
+   {
+    "type": "expression",
+    "word": "de quién es",
+    "definition": "Whose it is; the question about the owner."
+   },
+   {
+    "type": "expression",
+    "word": "hacia abajo",
+    "definition": "Downwards; in the direction of the ground."
+   },
+   {
+    "type": "adjective",
+    "word": "mojado",
+    "definition": "Wet; with water on it."
+   },
+   {
+    "type": "verb",
+    "word": "salir",
+    "surface": "sale",
+    "definition": "To come out of a place."
+   },
+   {
+    "type": "verb",
+    "word": "olvidar",
+    "surface": "olvidada",
+    "definition": "To forget; to leave something out of your mind."
+   },
+   {
+    "type": "adjective",
+    "word": "pobre",
+    "definition": "Poor; with very little of what is needed."
+   },
+   {
+    "type": "verb",
+    "word": "buscar",
+    "surface": "busca",
+    "definition": "To look for something you want to find."
+   },
+   {
+    "type": "noun",
+    "word": "raíz",
+    "definition": "Root; the part of a plant under the soil."
+   },
+   {
+    "type": "verb",
+    "word": "guardar",
+    "surface": "guarda",
+    "definition": "To put something away in its place."
+   },
+   {
+    "type": "adjective",
+    "word": "verdes",
+    "definition": "Green; the colour of grass."
+   },
+   {
+    "type": "noun",
+    "word": "dueños",
+    "definition": "Owners; the people a thing belongs to."
+   },
+   {
+    "type": "verb",
+    "word": "discutir",
+    "surface": "discuten",
+    "definition": "To argue; to talk against each other."
+   },
+   {
+    "type": "expression",
+    "word": "un poco",
+    "definition": "A little; a small amount of something."
+   },
+   {
+    "type": "expression",
+    "word": "desde hace dos años",
+    "definition": "For two years; from two years ago until now."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "plants-and-balconies",
+  "slotIndex": 2,
+  "slug": "una-hora-en-el-vivero",
+  "title": "Una hora en el vivero",
+  "synopsis": "Fernanda deja el vivero una hora en manos de dos personas que creen que cuidar una planta es echarle agua.",
+  "text": "Hoy Fernanda tiene que salir dos horas y el vivero no puede cerrar. Itzel y Bruno llegan puntuales, con la regadera llena hasta el borde.\n\n“Solo cobren,” dice Fernanda. “No toquen nada más.” “¿Y si tienen sed?” pregunta Bruno. “Nadie tiene sed,” dice ella. “Yo regué en la mañana.”\n\nFernanda sale. Bruno mira las plantas del aparador: están secas, brillantes, perfectas, sin una gota encima. “Estas llevan horas sin agua,” dice Bruno.\n\n“Pobres,” dice Itzel. “Nadie las ve.” Los dos riegan el aparador entero, planta por planta, durante una hora larga. Las hojas pesan y el agua cae al piso.\n\nFernanda regresa y ve el desastre. Del mueble de la entrada escurre agua hasta la banqueta. “Esas son de plástico,” dice Fernanda. “Son las únicas que nunca se mueren.”\n\nItzel levanta una hoja y la sacude despacio. Suena como una bolsa del mercado.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "puntuales",
+    "definition": "On time; not late and not early."
+   },
+   {
+    "type": "noun",
+    "word": "borde",
+    "definition": "Edge; the line where something ends."
+   },
+   {
+    "type": "verb",
+    "word": "cobrar",
+    "surface": "cobren",
+    "definition": "To take the money a customer has to pay."
+   },
+   {
+    "type": "verb",
+    "word": "tocar",
+    "surface": "toquen",
+    "definition": "To put your hand on something."
+   },
+   {
+    "type": "expression",
+    "word": "nada más",
+    "definition": "Nothing more; that is all there is to do."
+   },
+   {
+    "type": "noun",
+    "word": "aparador",
+    "definition": "Shop window; the glass part where things are shown."
+   },
+   {
+    "type": "adjective",
+    "word": "secas",
+    "definition": "Dry; with no water on them."
+   },
+   {
+    "type": "adjective",
+    "word": "brillantes",
+    "definition": "Shiny; with light coming off them."
+   },
+   {
+    "type": "adjective",
+    "word": "perfectas",
+    "definition": "Perfect; with nothing at all wrong."
+   },
+   {
+    "type": "expression",
+    "word": "planta por planta",
+    "definition": "One plant after another, without skipping any."
+   },
+   {
+    "type": "verb",
+    "word": "caer",
+    "surface": "cae",
+    "definition": "To fall; to go down to the ground."
+   },
+   {
+    "type": "noun",
+    "word": "desastre",
+    "definition": "Disaster; a very bad mess."
+   },
+   {
+    "type": "noun",
+    "word": "mueble",
+    "definition": "Piece of furniture; a table, a shelf or a cupboard."
+   },
+   {
+    "type": "verb",
+    "word": "escurrir",
+    "surface": "escurre",
+    "definition": "To drip; for water to run slowly off something."
+   },
+   {
+    "type": "noun",
+    "word": "banqueta",
+    "definition": "Pavement; the side of the street where people walk. Mexican word."
+   },
+   {
+    "type": "adjective",
+    "word": "únicas",
+    "definition": "The only ones; with no others like them."
+   },
+   {
+    "type": "expression",
+    "word": "nunca se mueren",
+    "definition": "They never die; they stay the same for ever."
+   },
+   {
+    "type": "noun",
+    "word": "plástico",
+    "definition": "The soft light material that cheap things are made of."
+   },
+   {
+    "type": "verb",
+    "word": "levantar",
+    "surface": "levanta",
+    "definition": "To lift; to pick something up."
+   },
+   {
+    "type": "verb",
+    "word": "sacudir",
+    "surface": "sacude",
+    "definition": "To shake something quickly in the air."
+   },
+   {
+    "type": "noun",
+    "word": "bolsa",
+    "definition": "Bag; you put things in it to carry them."
+   },
+   {
+    "type": "verb",
+    "word": "llegar",
+    "surface": "llegan",
+    "definition": "To arrive; to get to a place."
+   }
+  ],
+  "arcType": null
+ }
+]
