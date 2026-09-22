@@ -349,31 +349,30 @@
   {
     "type": "fill_blank",
     "word": "acomodarse",
-    "sentence": "Se _____ el cuello de la camisa antes de hablar.",
+    "sentence": "Antes de hablar, prefirió _____ el cuello de la camisa.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "acomodarse",
       "options": [
         "acomodarse",
-        "quitó",
-        "rompió",
-        "manchó"
+        "quitarse",
+        "romperse",
+        "mancharse"
       ],
-      "translation": "He _____ his shirt collar before speaking.",
+      "translation": "Before speaking, he preferred to _____ his shirt collar.",
       "optionTranslations": [
-        "straightened",
-        "took off",
-        "tore",
-        "stained"
+        "straighten",
+        "take off",
+        "tear",
+        "stain"
       ],
       "audioClip": {
         "storySlug": "el-corte-nuevo-de-andres",
         "storySource": "user",
-        "sentence": "Se acomodarse el cuello de la camisa antes de hablar.",
+        "sentence": "Antes de hablar, prefirió acomodarse el cuello de la camisa.",
         "targetWord": "acomodarse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30d60118a7d20728.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

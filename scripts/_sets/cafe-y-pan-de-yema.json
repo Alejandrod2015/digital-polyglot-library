@@ -267,31 +267,30 @@
   {
     "type": "fill_blank",
     "word": "correr",
-    "sentence": "La habían _____ del trabajo el jueves sin avisar.",
+    "sentence": "La iban a _____ del trabajo el jueves sin avisar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "correr",
       "options": [
         "correr",
-        "ascendido",
-        "llamado",
-        "pagado"
+        "ascender",
+        "llamar",
+        "pagar"
       ],
-      "translation": "They had _____ her from the job on Thursday without warning.",
+      "translation": "They were going to _____ her from the job on Thursday without warning.",
       "optionTranslations": [
-        "fired",
-        "promoted",
-        "called",
-        "paid"
+        "fire",
+        "promote",
+        "call",
+        "pay"
       ],
       "audioClip": {
         "storySlug": "cafe-y-pan-de-yema",
         "storySource": "user",
-        "sentence": "La habían correr del trabajo el jueves sin avisar.",
+        "sentence": "La iban a correr del trabajo el jueves sin avisar.",
         "targetWord": "correr",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba5972d578a23544.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -331,31 +330,30 @@
   {
     "type": "fill_blank",
     "word": "jalar",
-    "sentence": "Uno conocía a alguien que _____ gente para trabajar.",
+    "sentence": "Uno conocía a alguien capaz de _____ gente para trabajar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "jalar",
       "options": [
         "jalar",
-        "despedía",
-        "llamaba",
-        "vendía"
+        "despedir",
+        "llamar",
+        "vender"
       ],
-      "translation": "One knew someone who _____ people in to work.",
+      "translation": "One knew someone able to _____ people in to work.",
       "optionTranslations": [
-        "recruited",
-        "fired",
-        "called",
-        "sold"
+        "recruit",
+        "fire",
+        "call",
+        "sell"
       ],
       "audioClip": {
         "storySlug": "cafe-y-pan-de-yema",
         "storySource": "user",
-        "sentence": "Uno conocía a alguien que jalar gente para trabajar.",
+        "sentence": "Uno conocía a alguien capaz de jalar gente para trabajar.",
         "targetWord": "jalar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/845cd29394c2684f.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

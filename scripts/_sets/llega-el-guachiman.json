@@ -324,31 +324,30 @@
   {
     "type": "fill_blank",
     "word": "rogar",
-    "sentence": "Andrés le _____ con la mirada un minuto más.",
+    "sentence": "Él siguió sin decir nada, dedicado a _____ con la mirada.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rogar",
       "options": [
         "rogar",
-        "gritó",
-        "pagó",
-        "llamó"
+        "gritar",
+        "pagar",
+        "llamar"
       ],
-      "translation": "Andrés _____ him with his eyes for one more minute.",
+      "translation": "He went on saying nothing, busy trying to _____ with his eyes.",
       "optionTranslations": [
-        "begged",
-        "shouted at",
-        "paid",
-        "called"
+        "beg",
+        "shout",
+        "pay",
+        "call"
       ],
       "audioClip": {
         "storySlug": "llega-el-guachiman",
         "storySource": "user",
-        "sentence": "Andrés le rogar con la mirada un minuto más.",
+        "sentence": "Él siguió sin decir nada, dedicado a rogar con la mirada.",
         "targetWord": "rogar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7bd7dc20c6a67bed.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -356,31 +355,30 @@
   {
     "type": "fill_blank",
     "word": "alcanzar",
-    "sentence": "No supo si _____ a agarrar el número a tiempo.",
+    "sentence": "No supo si iba a _____ a agarrar el número a tiempo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "alcanzar",
       "options": [
         "alcanzar",
-        "olvidó",
-        "perdió",
-        "rompió"
+        "olvidar",
+        "perder",
+        "romper"
       ],
-      "translation": "He did not know if he _____ to grab the number in time.",
+      "translation": "He did not know if he was going to _____ to grab the number in time.",
       "optionTranslations": [
-        "managed",
-        "forgot",
-        "lost",
-        "tore"
+        "manage",
+        "forget",
+        "lose",
+        "tear"
       ],
       "audioClip": {
         "storySlug": "llega-el-guachiman",
         "storySource": "user",
-        "sentence": "No supo si alcanzar a agarrar el número a tiempo.",
+        "sentence": "No supo si iba a alcanzar a agarrar el número a tiempo.",
         "targetWord": "alcanzar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1d16991a0a405f0.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

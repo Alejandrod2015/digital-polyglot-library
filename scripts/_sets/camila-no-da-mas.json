@@ -267,31 +267,30 @@
   {
     "type": "fill_blank",
     "word": "largar",
-    "sentence": "Se tiró en la silla y _____ todo de una.",
+    "sentence": "Se tiró en la silla, lista para _____ todo de una.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "largar",
       "options": [
         "largar",
-        "guardó",
-        "escondió",
-        "calló"
+        "guardar",
+        "esconder",
+        "callar"
       ],
-      "translation": "She flopped on the chair and _____ everything at once.",
+      "translation": "She flopped on the chair, ready to _____ everything at once.",
       "optionTranslations": [
-        "blurted out",
-        "kept in",
-        "hid",
-        "hushed"
+        "blurt out",
+        "keep in",
+        "hide",
+        "hush"
       ],
       "audioClip": {
         "storySlug": "camila-no-da-mas",
         "storySource": "user",
-        "sentence": "Se tiró en la silla y largar todo de una.",
+        "sentence": "Se tiró en la silla, lista para largar todo de una.",
         "targetWord": "largar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf8dca4599dfd47d.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -299,31 +298,30 @@
   {
     "type": "fill_blank",
     "word": "renegar",
-    "sentence": "Se quedaba _____ hasta tarde en la oficina.",
+    "sentence": "Prefería _____ hasta tarde en la oficina antes que pedir ayuda.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "renegar",
       "options": [
         "renegar",
-        "durmiendo",
-        "riendo",
-        "cantando"
+        "dormir",
+        "reír",
+        "cantar"
       ],
-      "translation": "She kept _____ late at the office.",
+      "translation": "She preferred to _____ late at the office rather than ask for help.",
       "optionTranslations": [
-        "grumbling away",
-        "sleeping",
-        "laughing",
-        "singing"
+        "grumble",
+        "sleep",
+        "laugh",
+        "sing"
       ],
       "audioClip": {
         "storySlug": "camila-no-da-mas",
         "storySource": "user",
-        "sentence": "Se quedaba renegar hasta tarde en la oficina.",
+        "sentence": "Prefería renegar hasta tarde en la oficina antes que pedir ayuda.",
         "targetWord": "renegar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddaf99de79f4e49c.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -331,17 +329,17 @@
   {
     "type": "fill_blank",
     "word": "bancar",
-    "sentence": "Los amigos siempre te _____ en los malos momentos.",
+    "sentence": "Los amigos están para _____ en los malos momentos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bancar",
       "options": [
         "bancar",
-        "abandonan",
-        "cobran",
-        "critican"
+        "abandonar",
+        "cobrar",
+        "criticar"
       ],
-      "translation": "Friends always _____ you in the bad moments.",
+      "translation": "Friends are there to _____ you in the bad moments.",
       "optionTranslations": [
         "back up",
         "abandon",
@@ -351,11 +349,10 @@
       "audioClip": {
         "storySlug": "camila-no-da-mas",
         "storySource": "user",
-        "sentence": "Los amigos siempre te bancar en los malos momentos.",
+        "sentence": "Los amigos están para bancar en los malos momentos.",
         "targetWord": "bancar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5dd56f10369277e9.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -363,17 +360,17 @@
   {
     "type": "fill_blank",
     "word": "despacharse",
-    "sentence": "Le dijo que _____ con toda confianza.",
+    "sentence": "Le dijo que podía _____ con toda confianza.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "despacharse",
       "options": [
         "despacharse",
-        "se callara",
-        "se fuera",
-        "se durmiera"
+        "callarse",
+        "irse",
+        "dormirse"
       ],
-      "translation": "She told her to _____ with total confidence.",
+      "translation": "She told her she could _____ with total confidence.",
       "optionTranslations": [
         "let it all out",
         "stay quiet",
@@ -383,11 +380,10 @@
       "audioClip": {
         "storySlug": "camila-no-da-mas",
         "storySource": "user",
-        "sentence": "Le dijo que despacharse con toda confianza.",
+        "sentence": "Le dijo que podía despacharse con toda confianza.",
         "targetWord": "despacharse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eed28b4fb9aa3a76.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

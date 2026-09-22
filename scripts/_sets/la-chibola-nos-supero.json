@@ -317,31 +317,30 @@
   {
     "type": "fill_blank",
     "word": "disparar",
-    "sentence": "Cada uno _____ palabras más raras que el otro.",
+    "sentence": "Cada uno quería _____ palabras más raras que el otro.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "disparar",
       "options": [
         "disparar",
-        "guardaba",
-        "escondía",
-        "tragaba"
+        "guardar",
+        "esconder",
+        "tragar"
       ],
-      "translation": "Each one _____ stranger words than the other.",
+      "translation": "Each one wanted to _____ stranger words than the other.",
       "optionTranslations": [
-        "fired off",
-        "kept in",
-        "hid",
-        "swallowed"
+        "fire off",
+        "keep in",
+        "hide",
+        "swallow"
       ],
       "audioClip": {
         "storySlug": "la-chibola-nos-supero",
         "storySource": "user",
-        "sentence": "Cada uno disparar palabras más raras que el otro.",
+        "sentence": "Cada uno quería disparar palabras más raras que el otro.",
         "targetWord": "disparar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b02168d50ca227d.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -381,17 +380,17 @@
   {
     "type": "fill_blank",
     "word": "achorarse",
-    "sentence": "Ganó, pero no se _____ ni un poquito.",
+    "sentence": "Ganó, pero no quiso _____ ni un poquito.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "achorarse",
       "options": [
         "achorarse",
-        "alegró",
-        "cansó",
-        "durmió"
+        "alegrarse",
+        "cansarse",
+        "dormirse"
       ],
-      "translation": "She won, but she did not _____ even a little.",
+      "translation": "She won, but she did not want to _____ even a little.",
       "optionTranslations": [
         "get cocky",
         "cheer up",
@@ -401,11 +400,10 @@
       "audioClip": {
         "storySlug": "la-chibola-nos-supero",
         "storySource": "user",
-        "sentence": "Ganó, pero no se achorarse ni un poquito.",
+        "sentence": "Ganó, pero no quiso achorarse ni un poquito.",
         "targetWord": "achorarse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b72d5e23818019a6.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

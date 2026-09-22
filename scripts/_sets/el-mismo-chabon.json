@@ -242,31 +242,30 @@
   {
     "type": "fill_blank",
     "word": "versear",
-    "sentence": "El pibe las _____ a las dos en paralelo.",
+    "sentence": "El pibe intentaba _____ a las dos en paralelo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "versear",
       "options": [
         "versear",
-        "ayudaba",
-        "respetaba",
-        "invitaba"
+        "ayudar",
+        "respetar",
+        "invitar"
       ],
-      "translation": "The guy _____ both of them at the same time.",
+      "translation": "The guy was trying to _____ both of them at the same time.",
       "optionTranslations": [
-        "fed lies to",
-        "helped",
-        "respected",
-        "invited"
+        "feed lies to",
+        "help",
+        "respect",
+        "invite"
       ],
       "audioClip": {
         "storySlug": "el-mismo-chabon",
         "storySource": "user",
-        "sentence": "El pibe las versear a las dos en paralelo.",
+        "sentence": "El pibe intentaba versear a las dos en paralelo.",
         "targetWord": "versear",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e468fd85a7591ccb.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -274,31 +273,30 @@
   {
     "type": "fill_blank",
     "word": "pincharse",
-    "sentence": "La previa alegre se _____ de golpe.",
+    "sentence": "La previa alegre empezó a _____ de golpe.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pincharse",
       "options": [
         "pincharse",
-        "animó",
-        "llenó",
-        "alargó"
+        "animarse",
+        "llenarse",
+        "alargarse"
       ],
-      "translation": "The cheerful pre party _____ all at once.",
+      "translation": "The cheerful pre party started to _____ all at once.",
       "optionTranslations": [
-        "deflated",
-        "livened up",
-        "filled up",
-        "stretched out"
+        "deflate",
+        "liven up",
+        "fill up",
+        "stretch out"
       ],
       "audioClip": {
         "storySlug": "el-mismo-chabon",
         "storySource": "user",
-        "sentence": "La previa alegre se pincharse de golpe.",
+        "sentence": "La previa alegre empezó a pincharse de golpe.",
         "targetWord": "pincharse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce304564e9467734.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -306,31 +304,30 @@
   {
     "type": "fill_blank",
     "word": "aliarse",
-    "sentence": "En vez de pelearse, se _____ contra el forro.",
+    "sentence": "En vez de pelearse, decidieron _____ contra el forro.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "aliarse",
       "options": [
         "aliarse",
-        "rindieron",
-        "escondieron",
-        "durmieron"
+        "rendirse",
+        "esconderse",
+        "dormirse"
       ],
-      "translation": "Instead of fighting, they _____ against the jerk.",
+      "translation": "Instead of fighting, they decided to _____ against the jerk.",
       "optionTranslations": [
-        "teamed up",
-        "gave up",
-        "hid",
-        "slept"
+        "team up",
+        "give up",
+        "hide",
+        "fall asleep"
       ],
       "audioClip": {
         "storySlug": "el-mismo-chabon",
         "storySource": "user",
-        "sentence": "En vez de pelearse, se aliarse contra el forro.",
+        "sentence": "En vez de pelearse, decidieron aliarse contra el forro.",
         "targetWord": "aliarse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/253c6e8ec460868c.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

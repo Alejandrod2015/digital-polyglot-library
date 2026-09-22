@@ -267,31 +267,30 @@
   {
     "type": "fill_blank",
     "word": "florear",
-    "sentence": "No _____ tanto, que a ti te llena medio plato.",
+    "sentence": "No hace falta _____ tanto, que a ti te llena medio plato.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "florear",
       "options": [
         "florear",
-        "comas",
-        "pagues",
-        "duermas"
+        "comer",
+        "pagar",
+        "dormir"
       ],
-      "translation": "Do not _____ so much, half a plate fills you.",
+      "translation": "No need to _____ so much, half a plate fills you.",
       "optionTranslations": [
-        "lay it on thick",
-        "eat",
-        "pay",
-        "sleep"
+        "talk it up",
+        "eat up",
+        "pay up",
+        "sleep in"
       ],
       "audioClip": {
         "storySlug": "almuerzo-en-el-jato",
         "storySource": "user",
-        "sentence": "No florear tanto, que a ti te llena medio plato.",
+        "sentence": "No hace falta florear tanto, que a ti te llena medio plato.",
         "targetWord": "florear",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c126419ee5c801b.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -299,31 +298,30 @@
   {
     "type": "fill_blank",
     "word": "picar",
-    "sentence": "Pilar lo _____ con una respuesta rapidísima.",
+    "sentence": "Ella no perdió la ocasión de _____ con una respuesta rapidísima.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "picar",
       "options": [
         "picar",
-        "ayudó",
-        "abrazó",
-        "felicitó"
+        "ayudar",
+        "abrazar",
+        "felicitar"
       ],
-      "translation": "Pilar _____ him with a lightning quick reply.",
+      "translation": "She did not miss the chance to _____ him with a lightning quick reply.",
       "optionTranslations": [
-        "needled",
-        "helped",
-        "hugged",
-        "congratulated"
+        "needle",
+        "help",
+        "hug",
+        "congratulate"
       ],
       "audioClip": {
         "storySlug": "almuerzo-en-el-jato",
         "storySource": "user",
-        "sentence": "Pilar lo picar con una respuesta rapidísima.",
+        "sentence": "Ella no perdió la ocasión de picar con una respuesta rapidísima.",
         "targetWord": "picar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8274c8b34dfb9356.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -331,31 +329,30 @@
   {
     "type": "fill_blank",
     "word": "matar el rato",
-    "sentence": "Sin apuro, solo estaban _____ y haciendo hora.",
+    "sentence": "Sin apuro, solo querían _____ y hacer hora.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "matar el rato",
       "options": [
         "matar el rato",
-        "trabajando",
-        "corriendo",
-        "estudiando"
+        "trabajar",
+        "correr",
+        "estudiar"
       ],
-      "translation": "With no rush, they were just _____ and passing time.",
+      "translation": "With no rush, they just wanted to _____ and pass the time.",
       "optionTranslations": [
-        "killing time",
-        "working",
-        "running",
-        "studying"
+        "kill time",
+        "work",
+        "run",
+        "study"
       ],
       "audioClip": {
         "storySlug": "almuerzo-en-el-jato",
         "storySource": "user",
-        "sentence": "Sin apuro, solo estaban matar el rato y haciendo hora.",
+        "sentence": "Sin apuro, solo querían matar el rato y hacer hora.",
         "targetWord": "matar el rato",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc894c5c133270f4.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

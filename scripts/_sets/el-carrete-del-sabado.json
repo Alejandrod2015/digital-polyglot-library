@@ -299,17 +299,17 @@
   {
     "type": "fill_blank",
     "word": "funar",
-    "sentence": "Si llega con las manos vacías, lo _____ delante de todos.",
+    "sentence": "Si llega con las manos vacías, lo vamos a _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "funar",
       "options": [
         "funar",
-        "aplaudimos",
-        "invitamos",
-        "premiamos"
+        "aplaudir",
+        "invitar",
+        "premiar"
       ],
-      "translation": "If he comes empty handed, we _____ him in front of everyone.",
+      "translation": "If he comes empty handed, we are going to _____ him.",
       "optionTranslations": [
         "call out",
         "applaud",
@@ -319,11 +319,10 @@
       "audioClip": {
         "storySlug": "el-carrete-del-sabado",
         "storySource": "user",
-        "sentence": "Si llega con las manos vacías, lo funar delante de todos.",
+        "sentence": "Si llega con las manos vacías, lo vamos a funar.",
         "targetWord": "funar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bec9cea947e13656.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -331,31 +330,30 @@
   {
     "type": "fill_blank",
     "word": "engrupir",
-    "sentence": "Benjamín los _____ jurando que el trago venía.",
+    "sentence": "Se dedicó a _____ a todos jurando que el trago venía.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "engrupir",
       "options": [
         "engrupir",
-        "ayudó",
-        "pagó",
-        "escuchó"
+        "ayudar",
+        "pagar",
+        "escuchar"
       ],
-      "translation": "Benjamín _____ them, swearing the drink was coming.",
+      "translation": "He set about trying to _____ everyone, swearing the drink was coming.",
       "optionTranslations": [
-        "conned",
-        "helped",
-        "paid",
-        "listened"
+        "con",
+        "help",
+        "pay",
+        "listen to"
       ],
       "audioClip": {
         "storySlug": "el-carrete-del-sabado",
         "storySource": "user",
-        "sentence": "Benjamín los engrupir jurando que el trago venía.",
+        "sentence": "Se dedicó a engrupir a todos jurando que el trago venía.",
         "targetWord": "engrupir",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1e1e623e74c33fb.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -395,31 +393,30 @@
   {
     "type": "fill_blank",
     "word": "cagar",
-    "sentence": "\"Este gil nos _____\", reclamó Nico furioso.",
+    "sentence": "Este gil nos acaba de _____, reclamó furioso.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cagar",
       "options": [
         "cagar",
-        "salvó",
-        "llamó",
-        "felicitó"
+        "salvar",
+        "llamar",
+        "felicitar"
       ],
-      "translation": "\"This fool _____ us over\", complained Nico furiously.",
+      "translation": "This fool has just managed to _____ us over, he complained furiously.",
       "optionTranslations": [
-        "screwed",
-        "saved",
-        "called",
-        "congratulated"
+        "screw",
+        "save",
+        "call",
+        "congratulate"
       ],
       "audioClip": {
         "storySlug": "el-carrete-del-sabado",
         "storySource": "user",
-        "sentence": "\"Este gil nos cagar\", reclamó Nico furioso.",
+        "sentence": "Este gil nos acaba de cagar, reclamó furioso.",
         "targetWord": "cagar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff68b451f51b9855.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -427,31 +424,30 @@
   {
     "type": "fill_blank",
     "word": "pintar para",
-    "sentence": "La cosa _____ desastre, y ella ya se imaginaba el ridículo.",
+    "sentence": "La cosa empezaba a _____ desastre, y ella ya lo veía venir.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pintar para",
       "options": [
         "pintar para",
-        "escapaba de",
-        "volvía del",
-        "hablaba del"
+        "escapar de",
+        "volver del",
+        "hablar del"
       ],
-      "translation": "It _____ disaster, and she was already picturing the embarrassment.",
+      "translation": "It was starting to _____ disaster, and she saw it coming.",
       "optionTranslations": [
-        "was heading toward",
-        "was escaping",
-        "was returning",
-        "was talking"
+        "head toward",
+        "escape from",
+        "return from",
+        "talk about"
       ],
       "audioClip": {
         "storySlug": "el-carrete-del-sabado",
         "storySource": "user",
-        "sentence": "La cosa pintar para desastre, y ella ya se imaginaba el ridículo.",
+        "sentence": "La cosa empezaba a pintar para desastre, y ella ya lo veía venir.",
         "targetWord": "pintar para",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6226f91f3108af9c.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

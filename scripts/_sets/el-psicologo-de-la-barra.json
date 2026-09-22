@@ -306,31 +306,30 @@
   {
     "type": "fill_blank",
     "word": "chamuyar",
-    "sentence": "El chabón _____ a otras minas al mismo tiempo.",
+    "sentence": "El chabón solía _____ a varias minas a la vez.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "chamuyar",
       "options": [
         "chamuyar",
-        "ignoraba",
-        "ayudaba",
-        "llamaba"
+        "ignorar",
+        "ayudar",
+        "llamar"
       ],
-      "translation": "The guy _____ other girls at the same time.",
+      "translation": "The guy used to _____ several girls at once.",
       "optionTranslations": [
-        "sweet talked",
-        "ignored",
-        "helped",
-        "called"
+        "sweet talk",
+        "ignore",
+        "help",
+        "call"
       ],
       "audioClip": {
         "storySlug": "el-psicologo-de-la-barra",
         "storySource": "user",
-        "sentence": "El chabón chamuyar a otras minas al mismo tiempo.",
+        "sentence": "El chabón solía chamuyar a varias minas a la vez.",
         "targetWord": "chamuyar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d3587a95f8cb864.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -338,31 +337,30 @@
   {
     "type": "fill_blank",
     "word": "mandarse",
-    "sentence": "El pibe _____ una teoría larguísima sobre el amor.",
+    "sentence": "El pibe empezó a _____ una teoría larguísima sobre el amor.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mandarse",
       "options": [
         "mandarse",
-        "guardó",
-        "calló",
-        "perdió"
+        "guardar",
+        "callar",
+        "perder"
       ],
-      "translation": "The guy _____ a very long theory about love.",
+      "translation": "The guy started to _____ a very long theory about love.",
       "optionTranslations": [
-        "launched into",
-        "kept in",
-        "hushed",
-        "lost"
+        "launch into",
+        "keep in",
+        "hush",
+        "lose"
       ],
       "audioClip": {
         "storySlug": "el-psicologo-de-la-barra",
         "storySource": "user",
-        "sentence": "El pibe mandarse una teoría larguísima sobre el amor.",
+        "sentence": "El pibe empezó a mandarse una teoría larguísima sobre el amor.",
         "targetWord": "mandarse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/688623736ecde8d1.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -370,17 +368,17 @@
   {
     "type": "fill_blank",
     "word": "laburar",
-    "sentence": "Que _____ para conseguirte, no le regales nada.",
+    "sentence": "Que tenga que _____ para conseguirte, no le regales nada.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "laburar",
       "options": [
         "laburar",
-        "descanse",
-        "duerma",
-        "juegue"
+        "descansar",
+        "dormir",
+        "jugar"
       ],
-      "translation": "Let him _____ to win you, do not hand it over free.",
+      "translation": "Make him _____ to win you, do not hand it over free.",
       "optionTranslations": [
         "work hard",
         "rest",
@@ -390,11 +388,10 @@
       "audioClip": {
         "storySlug": "el-psicologo-de-la-barra",
         "storySource": "user",
-        "sentence": "Que laburar para conseguirte, no le regales nada.",
+        "sentence": "Que tenga que laburar para conseguirte, no le regales nada.",
         "targetWord": "laburar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36813bbb8d977cf3.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -402,31 +399,30 @@
   {
     "type": "fill_blank",
     "word": "tirar",
-    "sentence": "Camila _____ el comentario sin filtro.",
+    "sentence": "Ella no dudó en _____ el comentario sin filtro.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tirar",
       "options": [
         "tirar",
-        "guardó",
-        "escribió",
-        "tragó"
+        "guardar",
+        "escribir",
+        "tragar"
       ],
-      "translation": "Camila _____ the comment with no filter.",
+      "translation": "She did not hesitate to _____ the comment with no filter.",
       "optionTranslations": [
-        "tossed out",
-        "kept in",
-        "wrote",
-        "swallowed"
+        "toss out",
+        "keep in",
+        "write",
+        "swallow"
       ],
       "audioClip": {
         "storySlug": "el-psicologo-de-la-barra",
         "storySource": "user",
-        "sentence": "Camila tirar el comentario sin filtro.",
+        "sentence": "Ella no dudó en tirar el comentario sin filtro.",
         "targetWord": "tirar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86054bd0fe03e64a.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

@@ -349,31 +349,30 @@
   {
     "type": "fill_blank",
     "word": "descolocar",
-    "sentence": "Su respuesta lo _____ por completo.",
+    "sentence": "Una pregunta así te puede _____ por completo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "descolocar",
       "options": [
         "descolocar",
-        "ayudó",
-        "llamó",
-        "siguió"
+        "ayudar",
+        "seguir",
+        "llamar"
       ],
-      "translation": "Her answer _____ him completely.",
+      "translation": "A question like that can _____ you completely.",
       "optionTranslations": [
-        "threw off",
-        "helped",
-        "called",
-        "followed"
+        "throw off",
+        "help",
+        "follow",
+        "call"
       ],
       "audioClip": {
         "storySlug": "la-lengua-de-julian",
         "storySource": "user",
-        "sentence": "Su respuesta lo descolocar por completo.",
+        "sentence": "Una pregunta así te puede descolocar por completo.",
         "targetWord": "descolocar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7cb425368b26caf.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -413,17 +412,17 @@
   {
     "type": "fill_blank",
     "word": "cazar",
-    "sentence": "Al mentiroso tarde o temprano lo _____.",
+    "sentence": "Al mentiroso tarde o temprano lo van a _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cazar",
       "options": [
         "cazar",
-        "premian",
-        "saludan",
-        "invitan"
+        "premiar",
+        "saludar",
+        "invitar"
       ],
-      "translation": "Sooner or later they _____ the liar.",
+      "translation": "Sooner or later they are going to _____ the liar.",
       "optionTranslations": [
         "catch out",
         "reward",
@@ -433,11 +432,10 @@
       "audioClip": {
         "storySlug": "la-lengua-de-julian",
         "storySource": "user",
-        "sentence": "Al mentiroso tarde o temprano lo cazar.",
+        "sentence": "Al mentiroso tarde o temprano lo van a cazar.",
         "targetWord": "cazar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edfdb6a4bb072ab9.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

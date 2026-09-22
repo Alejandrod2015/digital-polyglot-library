@@ -356,31 +356,30 @@
   {
     "type": "fill_blank",
     "word": "pillar",
-    "sentence": "Nadie de afuera _____ ese código secreto.",
+    "sentence": "Nadie de afuera logró _____ ese código secreto.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pillar",
       "options": [
         "pillar",
-        "pagaba",
-        "perdía",
-        "gritaba"
+        "pagar",
+        "perder",
+        "gritar"
       ],
-      "translation": "Nobody from outside _____ that secret code.",
+      "translation": "Nobody from outside managed to _____ that secret code.",
       "optionTranslations": [
-        "caught on to",
-        "paid for",
-        "lost",
-        "shouted"
+        "catch on to",
+        "pay for",
+        "lose",
+        "shout"
       ],
       "audioClip": {
         "storySlug": "todo-es-weon",
         "storySource": "user",
-        "sentence": "Nadie de afuera pillar ese código secreto.",
+        "sentence": "Nadie de afuera logró pillar ese código secreto.",
         "targetWord": "pillar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/245b0193eb3c1cfc.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -388,31 +387,30 @@
   {
     "type": "fill_blank",
     "word": "avivarse",
-    "sentence": "Ahí Javiera se _____ de algo bien raro.",
+    "sentence": "Ahí ella empezó a _____ de algo bien raro.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "avivarse",
       "options": [
         "avivarse",
-        "olvidó",
-        "cansó",
-        "durmió"
+        "olvidarse",
+        "cansarse",
+        "dormirse"
       ],
-      "translation": "There Javiera _____ to something really strange.",
+      "translation": "There she started to _____ to something really strange.",
       "optionTranslations": [
-        "wised up",
-        "forgot",
-        "tired",
-        "slept"
+        "wise up",
+        "forget",
+        "get tired",
+        "fall asleep"
       ],
       "audioClip": {
         "storySlug": "todo-es-weon",
         "storySource": "user",
-        "sentence": "Ahí Javiera se avivarse de algo bien raro.",
+        "sentence": "Ahí ella empezó a avivarse de algo bien raro.",
         "targetWord": "avivarse",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/427b3aa632cb886c.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false

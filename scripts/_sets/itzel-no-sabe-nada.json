@@ -225,62 +225,60 @@
   {
     "type": "fill_blank",
     "word": "pescar",
-    "sentence": "Le hizo una seña sin que Itzel lo _____.",
+    "sentence": "Le hizo una seña sin dejar que ella lo pudiera _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pescar",
       "options": [
         "pescar",
-        "pagara",
-        "perdiera",
-        "llamara"
+        "pagar",
+        "perder",
+        "llamar"
       ],
-      "translation": "He signaled without Itzel _____ it.",
+      "translation": "He signaled without letting her _____ it.",
       "optionTranslations": [
-        "catching on to",
-        "paying for",
-        "losing",
-        "calling"
+        "catch on to",
+        "pay for",
+        "lose",
+        "call"
       ],
       "audioClip": {
         "storySlug": "itzel-no-sabe-nada",
         "storySource": "user",
-        "sentence": "Le hizo una seña sin que Itzel lo pescar.",
+        "sentence": "Le hizo una seña sin dejar que ella lo pudiera pescar.",
         "targetWord": "pescar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b79eef5b81444b64.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     }
   },
   {
     "type": "fill_blank",
     "word": "apalabrar",
-    "sentence": "Ya había _____ todo para el viernes en la noche.",
+    "sentence": "Ya se había encargado de _____ todo para el viernes.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "apalabrar",
       "options": [
         "apalabrar",
-        "olvidado",
-        "perdido",
-        "pagado"
+        "olvidar",
+        "perder",
+        "pagar"
       ],
-      "translation": "He had already _____ everything for Friday night.",
+      "translation": "He had already taken care to _____ everything for Friday.",
       "optionTranslations": [
-        "arranged",
-        "forgotten",
-        "lost",
-        "paid"
+        "arrange",
+        "forget",
+        "lose",
+        "pay"
       ],
       "audioClip": {
         "storySlug": "itzel-no-sabe-nada",
         "storySource": "user",
-        "sentence": "Ya había apalabrar todo para el viernes en la noche.",
+        "sentence": "Ya se había encargado de apalabrar todo para el viernes.",
         "targetWord": "apalabrar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9083acbdfa567d83.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
@@ -352,31 +350,30 @@
   {
     "type": "fill_blank",
     "word": "checar",
-    "sentence": "Rodrigo _____ la puerta cada dos minutos.",
+    "sentence": "No paraba de _____ la puerta cada dos minutos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "checar",
       "options": [
         "checar",
-        "abría",
-        "cerraba",
-        "tocaba"
+        "abrir",
+        "pintar",
+        "tocar"
       ],
-      "translation": "Rodrigo _____ the door every two minutes.",
+      "translation": "He would not stop going to _____ the door every two minutes.",
       "optionTranslations": [
-        "kept checking",
-        "opened",
-        "closed",
-        "knocked on"
+        "check",
+        "open",
+        "paint",
+        "knock on"
       ],
       "audioClip": {
         "storySlug": "itzel-no-sabe-nada",
         "storySource": "user",
-        "sentence": "Rodrigo checar la puerta cada dos minutos.",
+        "sentence": "No paraba de checar la puerta cada dos minutos.",
         "targetWord": "checar",
         "language": "spanish",
-        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd2f6d4b9c7890eb.mp3"
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
       }
     },
     "featured": false
