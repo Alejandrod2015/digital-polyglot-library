@@ -43,6 +43,7 @@
  * _a2Tablas y _ptJourneyTable, borrados el 2026-09-05 tras migrarlas aquí.
  */
 import { config } from "dotenv";
+import { cohorteDe, COHORTE_ACTUAL } from "../src/lib/journeyLadder";
 config({ path: ".env.local" }); config({ path: ".env" });
 import { PrismaClient } from "../src/generated/prisma";
 import { APPROVED_VOICES } from "../src/lib/approvedVoices";
@@ -220,7 +221,7 @@ async function main() {
     where: { status: { in: ESTADOS() }, ...filtroIdioma(), ...filtroIds() }, // live + draft; archived solo con --archived
     select: {
       id: true, name: true, language: true, variant: true, status: true, levels: true,
-      topics: true, storiesPerTopic: true,
+      topics: true, storiesPerTopic: true, generationCohort: true,
       stories: {
         select: {
           status: true, audioUrl: true, coverUrl: true, cast: true, text: true,
@@ -261,10 +262,10 @@ async function main() {
     (ids ? ` · filtrado: ${ids.length} journeys por id` : "") + (crudo ? "" : "\n")
   );
   if (crudo) {
-    console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+    console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Molde|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
   } else {
-    console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
-    console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
+    console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Molde | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
+    console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
   }
   const notas: string[] = [];
   for (const j of js) {
@@ -290,6 +291,11 @@ async function main() {
     // Estructura (de _journeysTable2): niveles x temas x historias por tema. Es
     // lo que separa un draft con la forma de hoy (1x7x3) de uno archivado.
     const estructura = `${j.levels.length}x${j.topics.length}x${j.storiesPerTopic}`;
+    // Molde editorial (2026-09-22). La estructura no lo distingue: los Friends
+    // del molde viejo tambien son 1x7x3, pero sus siete temas son siete
+    // ciudades en vez de siete dominios lexicos. Sale de Journey.generationCohort
+    // y decide, ademas, si un borrador sostiene peldano en el porton de escalera.
+    const molde = cohorteDe(j.generationCohort) === COHORTE_ACTUAL ? "dominios" : "ciudades";
     // Ambient (de _journeysTable3): historias con etiqueta de ambiente.
     const amb = S.filter((s) => (s.ambientTag ?? "").trim()).length;
     const nn = nonNative(j.id);
@@ -297,7 +303,7 @@ async function main() {
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
     const campos = [est, j.language, j.variant, j.name, j.levels.join("/") || "-",
-      estructura, estilo, citado, String(nn.n), vname(mode(S.map((s) => s.voiceId))),
+      estructura, molde, estilo, citado, String(nn.n), vname(mode(S.map((s) => s.voiceId))),
       vname(mode(S.map((s) => s.practiceVoiceId))), `${pub}/${S.length}`, String(narr),
       String(cov), `${amb}/${S.length}`, String(clips)];
     console.log(crudo ? campos.join("|") : `| ${campos.join(" | ")} |`);
