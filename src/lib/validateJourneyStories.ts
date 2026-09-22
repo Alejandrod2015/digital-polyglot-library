@@ -959,7 +959,28 @@ export function validateJourneyStories(
   // lo lleva marcado `provisional-b2`. Autorizado por el chat de planificacion
   // el 2026-09-06 con el si literal del usuario ("Sí, aplícalo"); ningun otro
   // suelo se toca.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
+  // A0 remedido el 2026-09-23, con el si literal del usuario ("dale, bajalo a
+  // 2,14"). El 2,5 no salia del catalogo: de los SEIS A0 vivos lo cumple uno
+  // solo, el Traveler PT (2,54); los otros cinco dan 2,33 (Cultural ES latam),
+  // 2,27 (Friends FR), 2,27 (Friends DE), 2,16 (Traveler DE) y 2,14 (Friends
+  // IT). Una vara que suspende a cinco de seis journeys publicados no es la
+  // vara del catalogo, es su mejor caso.
+  //
+  // El suelo pasa a 2,14, que es el PEOR A0 publicado, con el mismo criterio
+  // que el resto de la tabla: la vara se pone en lo que el catalogo ya hace,
+  // nunca en lo que un texto concreto necesita para pasar. El journey que
+  // destapo esto (Friends ES mexico A0) da 2,15 DESPUES de su pasada de
+  // recirculacion; el suelo queda por debajo de el porque tambien queda por
+  // debajo del peor publicado, no al reves. Medido con
+  // `scripts/_esMxA0/mideGold.ts`, que corre esta misma formula sobre los A0
+  // de la base.
+  //
+  // Lo que esto NO autoriza: escribir un A0 sin escalera. El techo medido sin
+  // tocar prosa en aquel journey era 1,86, y hubo que trabajarlo hasta 2,15
+  // (nucleo compartido en prosa, poda de plazas que no vuelven y plazas de
+  // verbo, que cuentan por todas sus formas). Remedir y subir el suelo en
+  // cuanto haya un A0 publicado que lo supere de forma estable.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.14, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
