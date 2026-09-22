@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Platform } from "react-native";
+import * as Sentry from "@sentry/react-native";
 import { Audio, InterruptionModeIOS } from "expo-av";
 import {
   AVAudioSessionCategory,
@@ -50,22 +51,39 @@ import {
  * ...)` es el que se saltaba la llamada. Sin esto, la restauracion del commit
  * 8734c3bb era literalmente una funcion vacia.
  */
-async function restaurarModoDeReproduccion(): Promise<void> {
+/**
+ * Migas para Sentry. El 2026-09-22 la build 340 murio con
+ * `com.apple.coreaudio.avfaudio: Input HW format is invalid` (issue
+ * DIGITAL-POLYGLOT-MOBILE-3) 200 ms despues de cerrarse un turno hablado, y no
+ * habia forma de saber cual de las tres puertas abrio el `routeChange` que hizo
+ * al modulo reconstruir su motor de audio: el `setCategoryIOS` de aqui, el
+ * `setAudioModeAsync` de expo-av, o un cambio de ruta ajeno (unos auriculares).
+ * Cada paso deja su miga, asi que el siguiente evento lo dira.
+ */
+function rastro(paso: string): void {
+  Sentry.addBreadcrumb({ category: "speaking", level: "info", message: paso });
+}
+
+async function restaurarModoDeReproduccion(motivo: string): Promise<void> {
+  rastro(`restaurar(${motivo}): antes de setCategoryIOS`);
   try {
     ExpoSpeechRecognitionModule.setCategoryIOS({
       category: AVAudioSessionCategory.playback,
       categoryOptions: [],
       mode: AVAudioSessionMode.default,
     });
+    rastro(`restaurar(${motivo}): setCategoryIOS hecho`);
   } catch {
     // En Android no existe; en iOS, si la sesion no estaba tocada, no hay nada
     // que devolver. En ninguno de los dos casos es un error.
+    rastro(`restaurar(${motivo}): setCategoryIOS no aplicable`);
   }
   await Audio.setAudioModeAsync({
     playsInSilentModeIOS: true,
     allowsRecordingIOS: false,
     interruptionModeIOS: InterruptionModeIOS.DoNotMix,
   });
+  rastro(`restaurar(${motivo}): setAudioModeAsync hecho`);
 }
 
 const MAX_LISTENING_MS = 15000;
@@ -150,7 +168,7 @@ export function useSpeakingRecorder() {
     // SIEMPRE, y antes de que suene nada: el turno acaba devolviendo la salida
     // al altavoz. Sin esto, la frase del ejercicio siguiente sale por el
     // auricular.
-    restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
+    restauracionRef.current = restaurarModoDeReproduccion("finish").catch(() => {});
   }, [clearAutoStop]);
 
   useSpeechRecognitionEvent("result", (event) => {
@@ -184,6 +202,7 @@ export function useSpeakingRecorder() {
   );
 
   useSpeechRecognitionEvent("error", (event) => {
+    rastro(`evento error: ${event.error ?? "unknown"}`);
     if (settledRef.current) return;
     // Un error tras haber oido algo no tira lo oido: en escucha continua, el
     // "no-speech" del final de una pausa es corriente.
@@ -191,6 +210,7 @@ export function useSpeakingRecorder() {
   });
 
   useSpeechRecognitionEvent("end", () => {
+    rastro("evento end");
     // Fin del turno: por el tope, por `TAP TO SEND` o porque el sistema cerro.
     // Aqui es donde se entrega lo dicho, unido.
     if (settledRef.current) return;
@@ -211,7 +231,7 @@ export function useSpeakingRecorder() {
       } catch {
         // El modulo no estaba escuchando; no hay nada que abortar.
       }
-      void restaurarModoDeReproduccion().catch(() => {});
+      void restaurarModoDeReproduccion("desmontar").catch(() => {});
     };
   }, [clearAutoStop]);
 
@@ -234,6 +254,7 @@ export function useSpeakingRecorder() {
         handlersRef.current = handlers;
         settledRef.current = false;
         finalsRef.current = [];
+        rastro("start: pidiendo micro");
         ExpoSpeechRecognitionModule.start({
           lang: localeForSpeaking(language),
           // Sin parciales: lo que se califica es lo que el usuario acabo
@@ -269,6 +290,7 @@ export function useSpeakingRecorder() {
             mode: AVAudioSessionMode.default,
           },
         });
+        rastro("start: peticion enviada");
         if (mountedRef.current) setIsRecording(true);
 
         clearAutoStop();
@@ -287,7 +309,7 @@ export function useSpeakingRecorder() {
         handlersRef.current = null;
         settledRef.current = true;
         if (mountedRef.current) setIsRecording(false);
-        restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
+        restauracionRef.current = restaurarModoDeReproduccion("start-fallido").catch(() => {});
         return { ok: false, reason: "failed" };
       }
     },
@@ -296,6 +318,7 @@ export function useSpeakingRecorder() {
 
   /** Para y pide el resultado final; llega por `onFinal` o por `onFailure`. */
   const stop = useCallback(() => {
+    rastro("stop a mano");
     clearAutoStop();
     try {
       ExpoSpeechRecognitionModule.stop();
@@ -306,6 +329,7 @@ export function useSpeakingRecorder() {
 
   /** Corta el turno sin resultado (salir del ejercicio, pausar). */
   const cancel = useCallback(() => {
+    rastro("cancel");
     clearAutoStop();
     settledRef.current = true;
     handlersRef.current = null;
@@ -318,7 +342,7 @@ export function useSpeakingRecorder() {
     }
     // Salir del ejercicio o pausar tampoco puede dejar la sesion en modo
     // grabacion: el siguiente sonido de la app sonaria por el auricular.
-    restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
+    restauracionRef.current = restaurarModoDeReproduccion("cancel").catch(() => {});
   }, [clearAutoStop]);
 
   // Memoizado: el objeto entra en las dependencias de effects de la pantalla,
