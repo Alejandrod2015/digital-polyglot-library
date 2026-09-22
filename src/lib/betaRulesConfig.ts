@@ -5,6 +5,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { DEFAULT_BETA_RULES, type BetaRulesConfig } from "@/lib/betaRules";
+import { variantPool } from "@domain/languageVariant";
 
 export const BETA_RULES_CONFIG_KEY = "beta_rules_v1";
 
@@ -56,7 +57,27 @@ export async function getBetaRules(): Promise<BetaRulesConfig> {
 async function withDerivedLanguages(rules: BetaRulesConfig): Promise<BetaRulesConfig> {
   const derived = await deriveAcceptedLanguages();
   if (derived.length === 0) return rules;
-  return { ...rules, acceptedTargetLanguages: derived };
+  return { ...rules, acceptedTargetLanguages: derived, acceptedVariantPools: await deriveAcceptedVariantPools() };
+}
+
+/**
+ * Content pools with a PUBLISHED journey, so the triage can tell "Portuguese"
+ * (recruiting) from "Portuguese for Portugal" (nothing to hand over while only
+ * Brazil is live). A journey whose variant we do not model is skipped rather
+ * than invented; that only loosens the gate, never tightens it.
+ */
+export async function deriveAcceptedVariantPools(): Promise<string[]> {
+  const rows = await prisma.journey.findMany({
+    where: { status: "active" },
+    select: { variant: true },
+    distinct: ["variant"],
+  });
+  const pools = new Set<string>();
+  for (const r of rows) {
+    const pool = variantPool(r.variant);
+    if (pool) pools.add(pool);
+  }
+  return [...pools].sort();
 }
 
 export async function saveBetaRules(

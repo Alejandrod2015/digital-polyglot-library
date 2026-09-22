@@ -6,10 +6,12 @@
 // polite decline; the ambiguous ones queue up for a human. Every threshold
 // lives in StudioConfig so tuning the funnel never needs a deploy.
 //
-// This module is PURE and imports nothing. Acting on a verdict (inviting,
+// This module is PURE: its only import is the variant-pool table from the
+// domain package, which is itself a plain map. Acting on a verdict (inviting,
 // emailing, granting a plan) is betaProgram.ts's job, and loading the config
 // is betaRulesConfig.ts's, so the scoring can be run from a script or a test
 // without a database anywhere near it.
+import { variantPool } from "@domain/languageVariant";
 
 export type BetaRulesConfig = {
   /** Score at or above this is invited without a human ever seeing it. */
@@ -39,6 +41,20 @@ export type BetaRulesConfig = {
    * the stored value is kept only as the fallback for switching to manual.
    */
   acceptedTargetLanguages: string[];
+  /**
+   * Content pools (`variantPool`, e.g. "portuguese-brazil") with at least one
+   * published journey. Derived alongside the language list in auto mode. An
+   * applicant whose language is accepted but whose variant resolves to a pool
+   * missing from here is treated like an unrecruited language: nothing to hand
+   * them. Empty means "no variant restriction", which is what manual mode and
+   * config rows written before this field existed get.
+   *
+   * WHY (2026-09-22): the language gate passed a Portugal applicant with the
+   * full 20 points while the only Portuguese journey live was Brazil. The
+   * variant was collected at signup and used to filter the reader, never to
+   * decide whether there was anything to invite the person to.
+   */
+  acceptedVariantPools: string[];
   /** Master switch. Off = every application queues, nothing is auto-invited. */
   autoInviteEnabled: boolean;
 
@@ -99,6 +115,7 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
+  acceptedVariantPools: [],
   autoInviteEnabled: true,
   betaEndsAt: null,
   launchedAt: null,
@@ -168,6 +185,8 @@ export type BetaApplication = {
   platform?: string | null;
   hasIPhone: boolean;
   targetLanguage: string;
+  /** Variant slug from the form ("portugal", "latam"); null on old rows. */
+  targetVariant?: string | null;
   nativeLanguage: string;
   currentLevel: string;
   weeklyHours?: string | null;
@@ -343,14 +362,23 @@ export function evaluateApplication(
   const hours = scoreWeeklyHours(app.weeklyHours);
   signals.push({ label: `Weekly hours: ${app.weeklyHours ?? "unknown"}`, points: hours });
 
-  const languageAccepted = rules.acceptedTargetLanguages.some(
+  const languageRecruited = rules.acceptedTargetLanguages.some(
     (l) => l.toLowerCase() === app.targetLanguage.trim().toLowerCase(),
   );
+  // A variant we model (Portugal, Quebec) counts only if a journey in its pool
+  // is live. One we do not ("other", a free-typed country, an old null row)
+  // cannot be held against the applicant, so it falls through to the language.
+  const pool = variantPool(app.targetVariant);
+  const variantServed =
+    !pool || rules.acceptedVariantPools.length === 0 || rules.acceptedVariantPools.includes(pool);
+  const languageAccepted = languageRecruited && variantServed;
   const languagePoints = languageAccepted ? 20 : 0;
   signals.push({
-    label: languageAccepted
-      ? `Target language ${app.targetLanguage} is in the beta`
-      : `Target language ${app.targetLanguage} is not being recruited for`,
+    label: !languageRecruited
+      ? `Target language ${app.targetLanguage} is not being recruited for`
+      : !variantServed
+        ? `No published ${app.targetLanguage} journey for ${app.targetVariant} yet`
+        : `Target language ${app.targetLanguage} is in the beta`,
     points: languagePoints,
   });
 
@@ -391,7 +419,9 @@ export function evaluateApplication(
     return {
       decision: "queue",
       score,
-      reason: `Not recruiting ${app.targetLanguage} right now`,
+      reason: languageRecruited
+        ? `No ${app.targetLanguage} (${app.targetVariant}) journey published yet`
+        : `Not recruiting ${app.targetLanguage} right now`,
       signals,
     };
   }

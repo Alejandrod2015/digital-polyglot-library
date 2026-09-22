@@ -302,7 +302,9 @@ const VARIANT_POOL: Record<string, string> = {
   ...poolOf("german-germany", ["germany", "de", "deutschland"]),
   ...poolOf("german-austria", ["austria", "at"]),
   ...poolOf("french-france", ["france", "fr"]),
-  ...poolOf("french-canada", ["canada-fr", "ca-fr", "fr-ca"]),
+  // "quebec" is what the beta form writes (TARGET_VARIANTS); without it the
+  // value resolved to no pool and the triage could not tell it from France.
+  ...poolOf("french-canada", ["canada-fr", "ca-fr", "fr-ca", "quebec"]),
   ...poolOf("italian-italy", ["italy", "it", "italia"]),
   ...poolOf("korean-south-korea", ["south-korea", "kr", "ko-kr"]),
 };

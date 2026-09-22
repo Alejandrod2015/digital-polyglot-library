@@ -281,6 +281,7 @@ export async function processApplication(signupId: string): Promise<ApplicationO
       platform: signup.platform,
       hasIPhone: signup.hasIPhone,
       targetLanguage: signup.targetLanguage,
+      targetVariant: signup.targetVariant,
       nativeLanguage: signup.nativeLanguage,
       currentLevel: signup.currentLevel,
       weeklyHours: signup.weeklyHours,

@@ -240,6 +240,7 @@ type Rules = {
   maxActiveTesters: number;
   acceptedLanguagesMode: "auto" | "manual";
   acceptedTargetLanguages: string[];
+  acceptedVariantPools?: string[];
   autoInviteEnabled: boolean;
   betaEndsAt: string | null;
   launchedAt: string | null;
@@ -2649,7 +2650,14 @@ function RulesPanel({
           // The list is read-only here on purpose: an editable box whose value
           // the server overwrites on the next read is a lie about who is in
           // charge. To pin a language, untick the box first.
-          <div style={{ fontSize: 13, marginTop: 8 }}>{rules.acceptedTargetLanguages.join(", ") || "None"}</div>
+          <div style={{ fontSize: 13, marginTop: 8 }}>
+            {rules.acceptedTargetLanguages.join(", ") || "None"}
+            {rules.acceptedVariantPools && rules.acceptedVariantPools.length > 0 ? (
+              <div style={{ opacity: 0.7, marginTop: 4 }}>
+                Variants with a live journey: {rules.acceptedVariantPools.join(", ")}. An applicant asking for a variant outside this list queues.
+              </div>
+            ) : null}
+          </div>
         ) : (
           <input
             style={{ ...inputStyle, marginTop: 8 }}
