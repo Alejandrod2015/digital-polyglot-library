@@ -5,7 +5,7 @@
   "title": "El timbre sí suena",
   "slug": "el-timbre-si-suena",
   "synopsis": "Citlali lleva veinte minutos tocando un timbre que nadie contesta. Alguien en el edificio lo oye todos los días.",
-  "text": "Citlali reparte paquetes en moto por la colonia. Conoce cada calle de memoria. Hoy espera en la puerta, con el casco puesto y una caja en el hombro, y toca el timbre seis veces.\n\nArriba, en la azotea, Itzel tiende el uniforme y no oye nada.\n\nEn su departamento, Bruno oye un pitido corto. Lo oye desde hace un año, cada dos o tres días, siempre en el mismo rato. “Es la bocina de la calle,” dice cuando alguien pregunta.\n\nItzel baja por los refrescos y encuentra a Citlali en el zaguán, con el recibo en la mano. “Nadie abre nunca aquí,” dice Citlali. “Y el timbre sí suena. Yo lo siento en el botón.”\n\nLas dos suben. El pitido está en el departamento de Bruno, arriba de la puerta, detrás de una caja.\n\n“Ah,” dice Bruno. “Entonces sí era eso. Y yo culpando a la calle todo este tiempo.”",
+  "text": "Citlali reparte paquetes en moto y conoce la colonia de memoria. Hoy espera con el casco puesto y una caja en el hombro.\n\nToca el timbre seis veces.\n\nArriba, en la azotea, Itzel tiende el uniforme y no oye nada. Abajo, Bruno toma café.\n\nBruno oye un pitido corto, ahí dentro. Lo oye desde hace un año, cada dos o tres días, en el mismo rato. “Es la bocina de la calle,” dice cuando alguien pregunta.\n\nItzel baja por los refrescos y encuentra a Citlali en el zaguán, con el recibo en la mano. “Nadie abre nunca aquí,” dice Citlali. “Y el timbre sí suena. Yo lo siento en el botón.”\n\nLas dos suben. El pitido está arriba de su puerta, detrás de una caja. “¿Y esto?” pregunta Itzel.\n\n“Ah,” dice Bruno. “Entonces sí era eso. Y yo culpando a la calle todo este tiempo. Perdón, Citlali.”",
   "arcType": null,
   "vocab": [
    {
@@ -78,11 +78,6 @@
     "definition": "Every second or third day; quite often."
    },
    {
-    "type": "noun",
-    "word": "departamento",
-    "definition": "Flat; one home inside a building. Mexican word."
-   },
-   {
     "type": "verb",
     "word": "culpar",
     "surface": "culpando",
@@ -112,6 +107,11 @@
     "type": "expression",
     "word": "en el mismo rato",
     "definition": "Around the same time of day, more or less."
+   },
+   {
+    "type": "noun",
+    "word": "zaguán",
+    "definition": "Hallway just inside the street door of a building."
    }
   ]
  },
@@ -121,7 +121,7 @@
   "title": "Tu propia firma",
   "slug": "tu-propia-firma",
   "synopsis": "Bruno espera una broca de tres pesos y recibe una caja que no cabe por la puerta. Reclama, con toda la razón del mundo.",
-  "text": "Bruno espera una broca chica para el taladro. Citlali llega con una caja alta como una silla y la deja en el suelo, con cuidado.\n\n“Esa no es mía,” dice Bruno. “Yo pedí una broca.”\n\n“Dice tu nombre,” dice Citlali. “Y tu departamento.”\n\n“Pues está mal,” dice Bruno. “Yo reclamo. Yo pedí una broca de tres pesos.”\n\nCitlali saca el recibo viejo de su cuaderno y lo pone contra la luz. En el papel hay una firma azul, con la B grande y la o cerrada. Es la firma de Bruno.\n\n“Tres meses,” dice Citlali. “Tú la encargaste, en junio.”\n\nBruno mira la caja, mira la firma y no dice nada.\n\nAdentro hay una escalera de aluminio, plegable y alta, la que necesita desde junio para pintar la azotea.\n\n“Gracias,” dice Bruno en voz muy baja. “No digas nada de esto.” Itzel se ríe desde el tercer peldaño.",
+  "text": "Una caja alta como una silla llega al zaguán. Bruno espera una broca chica y Citlali la deja en el suelo, con cuidado.\n\n“Esa no es mía,” dice Bruno. “Yo pedí una broca.”\n\n“Dice tu nombre,” dice Citlali. “Y tu departamento.”\n\n“Pues está mal,” dice Bruno. “Yo reclamo. Yo pedí una broca de tres pesos.”\n\nCitlali saca el recibo viejo de su cuaderno y lo pone contra la luz. En el papel hay una firma azul, con la B grande y la o cerrada. Es la firma de Bruno.\n\n“Tres meses,” dice Citlali. “Tú la encargaste, en junio.”\n\nBruno mira la caja, mira la firma y no dice nada.\n\nAdentro hay una escalera de aluminio, plegable y alta, la que necesita desde junio para pintar la azotea.\n\n“Gracias,” dice Bruno en voz muy baja. “No digas nada de esto.” Itzel se ríe desde el tercer peldaño.",
   "arcType": null,
   "vocab": [
    {
@@ -239,7 +239,7 @@
   "title": "Pintan el 14",
   "slug": "pintan-el-14",
   "synopsis": "El número del edificio se borró hace años y Citlali da tres vueltas cada vez. Itzel y Bruno deciden arreglarlo en una tarde.",
-  "text": "Citlali se para frente a la fachada del edificio, donde el número está borrado. Solo queda una marca clara, con forma de uno y algo más. Itzel y Bruno bajan a verla.\n\n“Doy tres vueltas cada vez,” dice Citlali. “Y luego pregunto en la esquina.” “Hoy lo arreglamos,” dice Itzel. “Tengo pintura blanca de la azotea.”\n\nBruno baja con el bote y una plantilla de cartón. Itzel se sube a la escalera nueva. Los dos miran hacia el edificio de al lado para copiar el estilo del número.\n\n“Catorce,” lee Bruno en voz alta. “Catorce,” repite Itzel, y pinta un catorce grande y derecho.\n\n“Quedó bonito,” dice Bruno. “Se ve desde lejos.” La pintura seca rápido y el número brilla.\n\nEl lunes, Citlali entrega tres paquetes sin dar ni una vuelta. “Ninguno es para ustedes,” dice, y sube al edificio de al lado.",
+  "text": "En la fachada del edificio, el número está borrado. Citlali se para enfrente y lo busca otra vez, despacito. Solo queda una marca clara, con forma de uno y algo más. Itzel y Bruno bajan a verla.\n\n“Doy tres vueltas cada vez,” dice Citlali. “Y luego pregunto en la esquina.” “Hoy lo arreglamos,” dice Itzel. “Tengo pintura blanca de la azotea.”\n\nBruno baja con el bote y una plantilla de cartón. Itzel se sube a la escalera y los dos copian el estilo del edificio de al lado.\n\n“Catorce,” lee Bruno en voz alta. “¿Seguro que es el nuestro?” pregunta Itzel. “Catorce,” repite él. Ella pinta un catorce grande y derecho.\n\n“Quedó bonito,” dice Bruno. “Se ve desde lejos, hasta de noche.” La pintura seca rápido.\n\nEl lunes, Citlali entrega tres paquetes sin dar ni una vuelta. “Ninguno es para ustedes,” dice, y sube al edificio de al lado.",
   "arcType": null,
   "vocab": [
    {
@@ -281,7 +281,7 @@
    {
     "type": "verb",
     "word": "copiar",
-    "surface": "copiar",
+    "surface": "copian",
     "definition": "To make the same thing as the one you see."
    },
    {
@@ -315,11 +315,6 @@
     "definition": "Not one; none of them."
    },
    {
-    "type": "noun",
-    "word": "marca",
-    "definition": "Mark; the sign left on a surface by something."
-   },
-   {
     "type": "adjective",
     "word": "clara",
     "definition": "Light; not dark in colour."
@@ -336,15 +331,19 @@
    },
    {
     "type": "verb",
-    "word": "brillar",
-    "surface": "brilla",
-    "definition": "To shine; to give back a lot of light."
-   },
-   {
-    "type": "verb",
     "word": "pintar",
     "surface": "pinta",
     "definition": "To put colour on a wall with a brush."
+   },
+   {
+    "type": "noun",
+    "word": "cartón",
+    "definition": "Cardboard; the thick brown paper of boxes."
+   },
+   {
+    "type": "adverb",
+    "word": "despacito",
+    "definition": "Slowly and carefully; taking your time."
    }
   ]
  }
