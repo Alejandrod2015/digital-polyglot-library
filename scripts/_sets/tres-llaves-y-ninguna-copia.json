@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llave",
+    "sentence": "Tres [[llaves]] llegan en un sobre pequeño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a key",
+      "options": [
+        "a key",
+        "a coin",
+        "a stamp",
+        "a photo"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Tres llaves llegan en un sobre pequeño.",
+        "targetWord": "llaves",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "candado",
+    "sentence": "Sube con un [[candado]] nuevo para la reja del sótano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a padlock",
+      "options": [
+        "a padlock",
+        "a bucket",
+        "a lamp",
+        "a chain"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Sube con un candado nuevo para la reja del sótano.",
+        "targetWord": "candado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portón",
+    "sentence": "La de arriba es la del [[portón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the main door",
+      "options": [
+        "the main door",
+        "the back room",
+        "the top floor",
+        "the side window"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La de arriba es la del portón.",
+        "targetWord": "portón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alfombrilla",
+    "sentence": "La [[alfombrilla]] del vestíbulo se queda sucia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a doormat",
+      "options": [
+        "a doormat",
+        "a curtain",
+        "a lamp",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La alfombrilla del vestíbulo se queda sucia.",
+        "targetWord": "alfombrilla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diciembre",
+    "sentence": "Se las entrega en el rellano de [[diciembre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "December",
+      "options": [
+        "December",
+        "March",
+        "Sunday",
+        "Easter"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Se las entrega en el rellano de diciembre.",
+        "targetWord": "diciembre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la primera",
+    "sentence": "Mete la llave, la gira y el pestillo entra [[a la primera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the first try",
+      "options": [
+        "at the first try",
+        "at the last minute",
+        "at the same time",
+        "at the back"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Mete la llave, la gira y el pestillo entra a la primera.",
+        "targetWord": "a la primera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fría",
+    "sentence": "Sin calefacción, la casa está muy _____ en invierno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fría",
+      "options": [
+        "fría",
+        "cara",
+        "vieja",
+        "alta"
+      ],
+      "translation": "Without heating, the house is very _____ in winter.",
+      "optionTranslations": [
+        "cold",
+        "expensive",
+        "old",
+        "tall"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Sin calefacción, la casa está muy fría en invierno.",
+        "targetWord": "fría",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "brinda",
+    "sentence": "Levanta la copa y _____ por los novios.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "brinda",
+      "options": [
+        "brinda",
+        "cocina",
+        "paga",
+        "duerme"
+      ],
+      "translation": "He raises his glass and _____ to the bride and groom.",
+      "optionTranslations": [
+        "toasts",
+        "cooks",
+        "pays",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Levanta la copa y brinda por los novios.",
+        "targetWord": "brinda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sótano",
+    "sentence": "Guardan las bicis en el _____, debajo de la casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sótano",
+      "options": [
+        "sótano",
+        "tejado",
+        "balcón",
+        "jardín"
+      ],
+      "translation": "They keep the bikes in the _____, under the house.",
+      "optionTranslations": [
+        "basement",
+        "roof",
+        "balcony",
+        "garden"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Guardan las bicis en el sótano, debajo de la casa.",
+        "targetWord": "sótano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sobre,cadera,pestillo,picaporte",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sobre",
+          "answer": "an envelope",
+          "options": [
+            "an envelope",
+            "a hip",
+            "a bolt",
+            "a door handle"
+          ]
+        },
+        {
+          "word": "cadera",
+          "answer": "a hip",
+          "options": [
+            "an envelope",
+            "a hip",
+            "a bolt",
+            "a door handle"
+          ]
+        },
+        {
+          "word": "pestillo",
+          "answer": "a bolt",
+          "options": [
+            "an envelope",
+            "a hip",
+            "a bolt",
+            "a door handle"
+          ]
+        },
+        {
+          "word": "picaporte",
+          "answer": "a door handle",
+          "options": [
+            "an envelope",
+            "a hip",
+            "a bolt",
+            "a door handle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bisagra",
+    "sentence": "La [[bisagra]] está torcida desde siempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hinge",
+      "options": [
+        "the hinge",
+        "the lamp",
+        "the step",
+        "the pipe"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La bisagra está torcida desde siempre.",
+        "targetWord": "bisagra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde siempre",
+    "sentence": "La bisagra está torcida [[desde siempre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "since forever",
+      "options": [
+        "since forever",
+        "since Monday",
+        "since lunch",
+        "since summer"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La bisagra está torcida desde siempre.",
+        "targetWord": "desde siempre",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verja",
+    "sentence": "La [[verja]] suena abajo, en el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the gate",
+      "options": [
+        "the gate",
+        "the bell",
+        "the radio",
+        "the dog"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La verja suena abajo, en el patio.",
+        "targetWord": "verja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barandal",
+    "sentence": "Todos bajan a lo suyo por el [[barandal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the banister",
+      "options": [
+        "the banister",
+        "the lift",
+        "the alley",
+        "the ladder"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Todos bajan a lo suyo por el barandal.",
+        "targetWord": "barandal",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recibidor",
+    "sentence": "Lo deja en el [[recibidor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the entrance hall",
+      "options": [
+        "the entrance hall",
+        "the back garden",
+        "the top shelf",
+        "the front seat"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Lo deja en el recibidor.",
+        "targetWord": "recibidor",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestíbulo",
+    "sentence": "La alfombrilla del [[vestíbulo]] se queda sucia y torcida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lobby",
+      "options": [
+        "the lobby",
+        "the kitchen",
+        "the bathroom",
+        "the balcony"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "La alfombrilla del vestíbulo se queda sucia y torcida.",
+        "targetWord": "vestíbulo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reja",
+    "sentence": "Pone una _____ de hierro en la ventana para más seguridad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reja",
+      "options": [
+        "reja",
+        "mesa",
+        "manta",
+        "lámpara"
+      ],
+      "translation": "He puts an iron _____ on the window for extra security.",
+      "optionTranslations": [
+        "grille",
+        "table",
+        "blanket",
+        "lamp"
+      ],
+      "audioClip": {
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "storySource": "user",
+        "sentence": "Pone una reja de hierro en la ventana para más seguridad.",
+        "targetWord": "reja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

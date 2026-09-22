@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "botiquín",
+    "sentence": "Hay un [[botiquín]] sin tapa en el suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a first-aid box",
+      "options": [
+        "a first-aid box",
+        "a bread bin",
+        "a flower pot",
+        "a shoe box"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Hay un botiquín sin tapa en el suelo.",
+        "targetWord": "botiquín",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esparadrapo",
+    "sentence": "Saca un tubo de [[esparadrapo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surgical tape",
+      "options": [
+        "surgical tape",
+        "toothpaste",
+        "hand cream",
+        "glue"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Saca un tubo de esparadrapo.",
+        "targetWord": "esparadrapo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordenar",
+    "sentence": "[[Ordena]] las pastillas en el estante de abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tidy",
+      "options": [
+        "to tidy",
+        "to count",
+        "to sell",
+        "to swallow"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Ordena las pastillas en el estante de abajo.",
+        "targetWord": "Ordena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estante",
+    "sentence": "Le sostiene el [[estante]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shelf",
+      "options": [
+        "a shelf",
+        "a ladder",
+        "a mirror",
+        "a curtain"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Le sostiene el estante.",
+        "targetWord": "estante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sostener",
+    "sentence": "Le [[sostiene]] el estante mientras ordena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold up",
+      "options": [
+        "to hold up",
+        "to paint",
+        "to break",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Le sostiene el estante mientras ordena.",
+        "targetWord": "sostiene",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seco",
+    "sentence": "Le sale más [[seco]] de lo que pensaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blunt",
+      "options": [
+        "blunt",
+        "sweet",
+        "loud",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Le sale más seco de lo que pensaba.",
+        "targetWord": "seco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ancho",
+    "sentence": "El río es tan _____ que no se ve la otra orilla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ancho",
+      "options": [
+        "ancho",
+        "frío",
+        "sucio",
+        "verde"
+      ],
+      "translation": "The river is so _____ that you can't see the other bank.",
+      "optionTranslations": [
+        "wide",
+        "cold",
+        "dirty",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "El río es tan ancho que no se ve la otra orilla.",
+        "targetWord": "ancho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "creía",
+    "sentence": "Yo _____ que hoy era domingo, pero es lunes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "creía",
+      "options": [
+        "creía",
+        "vendía",
+        "lavaba",
+        "comía"
+      ],
+      "translation": "I _____ today was Sunday, but it's Monday.",
+      "optionTranslations": [
+        "thought",
+        "sold",
+        "washed",
+        "ate"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Yo creía que hoy era domingo, pero es lunes.",
+        "targetWord": "creía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pastillas",
+    "sentence": "El médico le da unas _____ para el dolor de cabeza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pastillas",
+      "options": [
+        "pastillas",
+        "llaves",
+        "sillas",
+        "cartas"
+      ],
+      "translation": "The doctor gives her some _____ for the headache.",
+      "optionTranslations": [
+        "pills",
+        "keys",
+        "chairs",
+        "letters"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "El médico le da unas pastillas para el dolor de cabeza.",
+        "targetWord": "pastillas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cajón,tapa,venda,tubo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cajón",
+          "answer": "a drawer",
+          "options": [
+            "a drawer",
+            "a lid",
+            "a bandage",
+            "a tube"
+          ]
+        },
+        {
+          "word": "tapa",
+          "answer": "a lid",
+          "options": [
+            "a drawer",
+            "a lid",
+            "a bandage",
+            "a tube"
+          ]
+        },
+        {
+          "word": "venda",
+          "answer": "a bandage",
+          "options": [
+            "a drawer",
+            "a lid",
+            "a bandage",
+            "a tube"
+          ]
+        },
+        {
+          "word": "tubo",
+          "answer": "a tube",
+          "options": [
+            "a drawer",
+            "a lid",
+            "a bandage",
+            "a tube"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repisa",
+    "sentence": "Apunta hacia la [[repisa]] alta de la estantería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wall shelf",
+      "options": [
+        "a wall shelf",
+        "a wall lamp",
+        "a wall clock",
+        "a wall socket"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Apunta hacia la repisa alta de la estantería.",
+        "targetWord": "repisa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde arriba",
+    "sentence": "Dice [[desde arriba]], sin bajarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from above",
+      "options": [
+        "from above",
+        "from behind",
+        "from home",
+        "from afar"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Dice desde arriba, sin bajarse.",
+        "targetWord": "desde arriba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tirita",
+    "sentence": "Le pone dos [[tiritas]] en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a plaster",
+      "options": [
+        "a plaster",
+        "a ring",
+        "a glove",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Le pone dos tiritas en la mano.",
+        "targetWord": "tiritas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobrina",
+    "sentence": "Te sabes los nombres mejor que mi [[sobrina]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a niece",
+      "options": [
+        "a niece",
+        "a boss",
+        "a neighbour",
+        "a teacher"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Te sabes los nombres mejor que mi sobrina.",
+        "targetWord": "sobrina",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como todas",
+    "sentence": "Yo creía que te ibas en octubre, [[como todas]] las de verano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "like all of them",
+      "options": [
+        "like all of them",
+        "like last year",
+        "like a tourist",
+        "like every day"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Yo creía que te ibas en octubre, como todas las de verano.",
+        "targetWord": "como todas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pie",
+    "sentence": "Cierra el último cajón con el [[pie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the foot",
+      "options": [
+        "the foot",
+        "the hip",
+        "the chin",
+        "the thumb"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "Cierra el último cajón con el pie.",
+        "targetWord": "pie",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verano",
+    "sentence": "En _____ hace calor y la gente va a la playa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verano",
+      "options": [
+        "verano",
+        "invierno",
+        "otoño",
+        "agosto"
+      ],
+      "translation": "In _____ it's hot and people go to the beach.",
+      "optionTranslations": [
+        "summer",
+        "winter",
+        "autumn",
+        "August"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-pide-ella",
+        "storySource": "user",
+        "sentence": "En verano hace calor y la gente va a la playa.",
+        "targetWord": "verano",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "vaciar",
+    "sentence": "Lleva dos semanas oyendo cómo se [[vacía]] el pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to empty",
+      "options": [
+        "to empty",
+        "to burn",
+        "to wake",
+        "to grow"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Lleva dos semanas oyendo cómo se vacía el pueblo.",
+        "targetWord": "vacía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canasto",
+    "sentence": "Bájame el [[canasto]] del patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a big basket",
+      "options": [
+        "a big basket",
+        "a big bucket",
+        "a big pot",
+        "a big box"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Bájame el canasto del patio.",
+        "targetWord": "canasto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agacharse",
+    "sentence": "Se [[agacha]] junto al muro y agarra el cesto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bend down",
+      "options": [
+        "to bend down",
+        "to sit down",
+        "to lie down",
+        "to fall down"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Se agacha junto al muro y agarra el cesto.",
+        "targetWord": "agacha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "De un gancho cuelga una cinta y la [[alcanza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to reach",
+      "options": [
+        "to reach",
+        "to cut",
+        "to burn",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "De un gancho cuelga una cinta y la alcanza.",
+        "targetWord": "alcanza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apretar",
+    "sentence": "Sube con las cosas [[apretadas]] contra el pecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to press",
+      "options": [
+        "to press",
+        "to hang",
+        "to wash",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Sube con las cosas apretadas contra el pecho.",
+        "targetWord": "apretadas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "Lo que se le queda es la [[calma]] de la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the calm",
+      "options": [
+        "the calm",
+        "the recipe",
+        "the key",
+        "the coat"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Lo que se le queda es la calma de la vecina.",
+        "targetWord": "calma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "anota",
+    "sentence": "Ella _____ la lista de la compra en un papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "anota",
+      "options": [
+        "anota",
+        "pinta",
+        "quema",
+        "rompe"
+      ],
+      "translation": "She _____ the shopping list on a piece of paper.",
+      "optionTranslations": [
+        "writes down",
+        "paints",
+        "burns",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Ella anota la lista de la compra en un papel.",
+        "targetWord": "anota",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atar",
+    "sentence": "Usa una cuerda para _____ el paquete y que no se abra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atar",
+      "options": [
+        "atar",
+        "pintar",
+        "vender",
+        "mojar"
+      ],
+      "translation": "Use a rope to _____ the parcel so it doesn't open.",
+      "optionTranslations": [
+        "to tie",
+        "to paint",
+        "to sell",
+        "to wet"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Usa una cuerda para atar el paquete y que no se abra.",
+        "targetWord": "atar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "áspero",
+    "sentence": "El papel de lija es _____ y raspa la piel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "áspero",
+      "options": [
+        "áspero",
+        "dulce",
+        "caro",
+        "verde"
+      ],
+      "translation": "Sandpaper is _____ and scrapes the skin.",
+      "optionTranslations": [
+        "rough",
+        "sweet",
+        "expensive",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "El papel de lija es áspero y raspa la piel.",
+        "targetWord": "áspero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuaderno,gancho,cinta,pecho",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cuaderno",
+          "answer": "a notebook",
+          "options": [
+            "a notebook",
+            "a hook",
+            "a ribbon",
+            "a chest"
+          ]
+        },
+        {
+          "word": "gancho",
+          "answer": "a hook",
+          "options": [
+            "a notebook",
+            "a hook",
+            "a ribbon",
+            "a chest"
+          ]
+        },
+        {
+          "word": "cinta",
+          "answer": "a ribbon",
+          "options": [
+            "a notebook",
+            "a hook",
+            "a ribbon",
+            "a chest"
+          ]
+        },
+        {
+          "word": "pecho",
+          "answer": "a chest",
+          "options": [
+            "a notebook",
+            "a hook",
+            "a ribbon",
+            "a chest"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de nuevo",
+    "sentence": "Baja [[de nuevo]] al patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "alone",
+        "early",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Baja de nuevo al patio.",
+        "targetWord": "de nuevo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letra",
+    "sentence": "Le anota seis cosas con [[letra]] fina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "handwriting",
+      "options": [
+        "handwriting",
+        "chalk",
+        "tape",
+        "paint"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Le anota seis cosas con letra fina.",
+        "targetWord": "letra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cordel",
+    "sentence": "El [[cordel]] es áspero y sirve para atar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "string",
+      "options": [
+        "string",
+        "glue",
+        "soap",
+        "paint"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "El cordel es áspero y sirve para atar.",
+        "targetWord": "cordel",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muro",
+    "sentence": "Se agacha junto al [[muro]] y agarra el cesto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wall",
+      "options": [
+        "the wall",
+        "the car",
+        "the tree",
+        "the fire"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Se agacha junto al muro y agarra el cesto.",
+        "targetWord": "muro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrar",
+    "sentence": "[[Agarra]] el cesto por el borde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grab",
+      "options": [
+        "to grab",
+        "to push",
+        "to kick",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Agarra el cesto por el borde.",
+        "targetWord": "Agarra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cesto",
+    "sentence": "Agarra el [[cesto]] por el borde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a basket",
+      "options": [
+        "a basket",
+        "a bottle",
+        "a blanket",
+        "a bucket"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Agarra el cesto por el borde.",
+        "targetWord": "cesto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "borde",
+    "sentence": "Agarra el cesto por el [[borde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the edge",
+      "options": [
+        "the edge",
+        "the strap",
+        "the middle",
+        "the bottom"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Agarra el cesto por el borde.",
+        "targetWord": "borde",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adornar",
+    "sentence": "Esto solo sirve para [[adornar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to decorate",
+      "options": [
+        "to decorate",
+        "to clean",
+        "to cook",
+        "to measure"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Esto solo sirve para adornar.",
+        "targetWord": "adornar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enrollar",
+    "sentence": "Vuelve con el cordel [[enrollado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to roll up",
+      "options": [
+        "to roll up",
+        "to cut up",
+        "to give up",
+        "to wash up"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Vuelve con el cordel enrollado.",
+        "targetWord": "enrollado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esta vez",
+    "sentence": "Sube tres pisos y [[esta vez]] calla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this time",
+      "options": [
+        "this time",
+        "next year",
+        "all day",
+        "at once"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Sube tres pisos y esta vez calla.",
+        "targetWord": "esta vez",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fina",
+    "sentence": "Esta hoja es tan _____ que se ve la luz a través.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fina",
+      "options": [
+        "fina",
+        "roja",
+        "cara",
+        "limpia"
+      ],
+      "translation": "This sheet is so _____ that the light shows through it.",
+      "optionTranslations": [
+        "thin",
+        "red",
+        "expensive",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Esta hoja es tan fina que se ve la luz a través.",
+        "targetWord": "fina",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuelga",
+    "sentence": "Él _____ el abrigo detrás de la puerta al entrar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuelga",
+      "options": [
+        "cuelga",
+        "lava",
+        "vende",
+        "cocina"
+      ],
+      "translation": "He _____ his coat behind the door when he comes in.",
+      "optionTranslations": [
+        "hangs up",
+        "washes",
+        "sells",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "eso-no-es-un-cordel",
+        "storySource": "user",
+        "sentence": "Él cuelga el abrigo detrás de la puerta al entrar.",
+        "targetWord": "cuelga",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "manera",
+    "sentence": "Hay dos [[maneras]] de preguntar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a way",
+      "options": [
+        "a way",
+        "a rule",
+        "a price",
+        "a gift"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Hay dos maneras de preguntar.",
+        "targetWord": "maneras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de lado",
+    "sentence": "Lleva cinco meses preguntando [[de lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sideways",
+      "options": [
+        "sideways",
+        "loudly",
+        "twice",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Lleva cinco meses preguntando de lado.",
+        "targetWord": "de lado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfadar",
+    "sentence": "Contesta él, y no se [[enfada]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get angry",
+      "options": [
+        "to get angry",
+        "to get tired",
+        "to get lost",
+        "to get wet"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Contesta él, y no se enfada nada.",
+        "targetWord": "enfada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "engañar",
+    "sentence": "Nadie [[engaña]] a nadie, nadie se molesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fool",
+      "options": [
+        "to fool",
+        "to pay",
+        "to hug",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Nadie engaña a nadie, nadie se molesta.",
+        "targetWord": "engaña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auténtico",
+    "sentence": "Le sale corta y [[auténtica]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "genuine",
+      "options": [
+        "genuine",
+        "angry",
+        "polite",
+        "clumsy"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Le sale corta y auténtica.",
+        "targetWord": "auténtica",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "sentence": "Se sienta [[junto]] a la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next to",
+      "options": [
+        "next to",
+        "on top of",
+        "in front of",
+        "under"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Se sienta junto a la barra.",
+        "targetWord": "junto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "molestar",
+    "sentence": "Perdona por _____ tan tarde; solo tengo una pregunta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "molestar",
+      "options": [
+        "molestar",
+        "cocinar",
+        "nadar",
+        "correr"
+      ],
+      "translation": "Sorry to _____ you so late; I just have one question.",
+      "optionTranslations": [
+        "bother",
+        "cook",
+        "swim",
+        "run"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Perdona por molestar tan tarde; solo tengo una pregunta.",
+        "targetWord": "molestar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "intenta",
+    "sentence": "Ella _____ abrir la puerta, pero la llave no gira.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "intenta",
+      "options": [
+        "intenta",
+        "vende",
+        "compra",
+        "limpia"
+      ],
+      "translation": "She _____ to open the door, but the key won't turn.",
+      "optionTranslations": [
+        "tries",
+        "sells",
+        "buys",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Ella intenta abrir la puerta, pero la llave no gira.",
+        "targetWord": "intenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "medio",
+    "sentence": "Quiero solo _____ vaso de agua, no uno entero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "medio",
+      "options": [
+        "medio",
+        "otro",
+        "ningún",
+        "cada"
+      ],
+      "translation": "I only want _____ glass of water, not a whole one.",
+      "optionTranslations": [
+        "half a",
+        "another",
+        "no",
+        "each"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Quiero solo medio vaso de agua, no uno entero.",
+        "targetWord": "medio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "palabra,tarde,año,excusas",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "palabra",
+          "answer": "a word",
+          "options": [
+            "a word",
+            "an afternoon",
+            "a year",
+            "excuses"
+          ]
+        },
+        {
+          "word": "tarde",
+          "answer": "an afternoon",
+          "options": [
+            "a word",
+            "an afternoon",
+            "a year",
+            "excuses"
+          ]
+        },
+        {
+          "word": "año",
+          "answer": "a year",
+          "options": [
+            "a word",
+            "an afternoon",
+            "a year",
+            "excuses"
+          ]
+        },
+        {
+          "word": "excusas",
+          "answer": "excuses",
+          "options": [
+            "a word",
+            "an afternoon",
+            "a year",
+            "excuses"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cara",
+    "sentence": "Pregunta a la [[cara]], sin rodeos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the face",
+      "options": [
+        "the face",
+        "the wall",
+        "the phone",
+        "the floor"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Pregunta a la cara, sin rodeos.",
+        "targetWord": "cara",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curiosidad",
+    "sentence": "Su [[curiosidad]] siempre sale envuelta en excusas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "curiosity",
+      "options": [
+        "curiosity",
+        "kindness",
+        "anger",
+        "sadness"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Su curiosidad siempre sale envuelta en excusas.",
+        "targetWord": "curiosidad",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y ya",
+    "sentence": "Pregunta [[y ya]], hombre, que la vuelta larga cansa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "and that's it",
+      "options": [
+        "and that's it",
+        "and then some",
+        "and so on",
+        "and yet"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Pregunta y ya, hombre, que la vuelta larga cansa.",
+        "targetWord": "y ya",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vuelta",
+    "sentence": "La [[vuelta]] larga cansa bastante más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way round",
+      "options": [
+        "the way round",
+        "the way home",
+        "the way back",
+        "the way up"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "La vuelta larga cansa bastante más.",
+        "targetWord": "vuelta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entusiasmo",
+    "sentence": "Con más [[entusiasmo]] del que esperaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enthusiasm",
+      "options": [
+        "enthusiasm",
+        "patience",
+        "sadness",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Con más entusiasmo del que esperaba.",
+        "targetWord": "entusiasmo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todavía",
+    "sentence": "Dice ella [[todavía]], con excusas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "never",
+        "almost",
+        "again"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Dice ella todavía, con excusas.",
+        "targetWord": "todavía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansa",
+    "sentence": "Subir tantas escaleras _____ mucho a la abuela.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cansa",
+      "options": [
+        "cansa",
+        "calienta",
+        "ensucia",
+        "pinta"
+      ],
+      "translation": "Climbing so many stairs _____ grandma a lot.",
+      "optionTranslations": [
+        "tires",
+        "warms",
+        "dirties",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "alvaro-pregunta-y-ya",
+        "storySource": "user",
+        "sentence": "Subir tantas escaleras cansa mucho a la abuela.",
+        "targetWord": "cansa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

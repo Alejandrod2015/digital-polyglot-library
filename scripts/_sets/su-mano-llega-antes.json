@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "delicado",
+    "sentence": "Aparta la mano; el toque es [[delicado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gentle",
+      "options": [
+        "gentle",
+        "quick",
+        "cold",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Aparta la mano; el toque es delicado.",
+        "targetWord": "delicado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en seco",
+    "sentence": "Se para [[en seco]] y voltea la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "slowly",
+        "happily",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Se para en seco y voltea la cabeza.",
+        "targetWord": "en seco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voltear",
+    "sentence": "Se para en seco y [[voltea]] la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn",
+      "options": [
+        "to turn",
+        "to wash",
+        "to cover",
+        "to lower"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Se para en seco y voltea la cabeza.",
+        "targetWord": "voltea",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estantería",
+    "sentence": "Ponlo en el tablón de arriba de la [[estantería]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bookcase",
+      "options": [
+        "the bookcase",
+        "the kitchen",
+        "the doorway",
+        "the balcony"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Ponlo en el tablón de arriba de la estantería.",
+        "targetWord": "estantería",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acomodar",
+    "sentence": "Lo [[acomoda]] en el estante y ajusta el borde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to place",
+      "options": [
+        "to place",
+        "to drop",
+        "to sell",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Lo acomoda en el estante y ajusta el borde.",
+        "targetWord": "acomoda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fijar",
+    "sentence": "[[Fija]] una etiqueta en el cristal frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stick on",
+      "options": [
+        "to stick on",
+        "to tear off",
+        "to read out",
+        "to look for"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Fija una etiqueta en el cristal frío.",
+        "targetWord": "Fija",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "carga",
+    "sentence": "Él _____ las cajas pesadas hasta el camión.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "carga",
+      "options": [
+        "carga",
+        "pinta",
+        "vende",
+        "abre"
+      ],
+      "translation": "He _____ the heavy boxes to the lorry.",
+      "optionTranslations": [
+        "carries",
+        "paints",
+        "sells",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Él carga las cajas pesadas hasta el camión.",
+        "targetWord": "carga",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "entrega",
+    "sentence": "El cartero _____ el paquete en mano a la vecina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entrega",
+      "options": [
+        "entrega",
+        "rompe",
+        "esconde",
+        "cocina"
+      ],
+      "translation": "The postman _____ the parcel to the neighbour by hand.",
+      "optionTranslations": [
+        "hands over",
+        "breaks",
+        "hides",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "El cartero entrega el paquete en mano a la vecina.",
+        "targetWord": "entrega",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuadrado",
+    "sentence": "El cajón no es redondo, es _____ con cuatro lados iguales.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuadrado",
+      "options": [
+        "cuadrado",
+        "blanco",
+        "ligero",
+        "viejo"
+      ],
+      "translation": "The box isn't round, it's _____ with four equal sides.",
+      "optionTranslations": [
+        "square",
+        "white",
+        "light",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "El cajón no es redondo, es cuadrado con cuatro lados iguales.",
+        "targetWord": "cuadrado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "bordillo,tablón,barriga,vibración",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bordillo",
+          "answer": "a kerb",
+          "options": [
+            "a kerb",
+            "a plank",
+            "a belly",
+            "a vibration"
+          ]
+        },
+        {
+          "word": "tablón",
+          "answer": "a plank",
+          "options": [
+            "a kerb",
+            "a plank",
+            "a belly",
+            "a vibration"
+          ]
+        },
+        {
+          "word": "barriga",
+          "answer": "a belly",
+          "options": [
+            "a kerb",
+            "a plank",
+            "a belly",
+            "a vibration"
+          ]
+        },
+        {
+          "word": "vibración",
+          "answer": "a vibration",
+          "options": [
+            "a kerb",
+            "a plank",
+            "a belly",
+            "a vibration"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde ayer",
+    "sentence": "Lo llevo encima [[desde ayer]] y ya ando torcida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "since yesterday",
+      "options": [
+        "since yesterday",
+        "until tomorrow",
+        "every summer",
+        "for a moment"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Lo llevo encima desde ayer y ya ando torcida.",
+        "targetWord": "desde ayer",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puntiagudo",
+    "sentence": "Una punta [[puntiaguda]] se le clava en la barriga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sharp",
+      "options": [
+        "sharp",
+        "soft",
+        "warm",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Una punta puntiaguda se le clava en la barriga.",
+        "targetWord": "puntiaguda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ajustar",
+    "sentence": "[[Ajusta]] el borde contra la pared y espera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to adjust",
+      "options": [
+        "to adjust",
+        "to paint",
+        "to lick",
+        "to throw"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Ajusta el borde contra la pared y espera.",
+        "targetWord": "Ajusta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "golpear",
+    "sentence": "Ese silencio le [[golpea]]: acertar ya no es noticia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hit",
+      "options": [
+        "to hit",
+        "to calm",
+        "to feed",
+        "to warm"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Ese silencio le golpea: acertar ya no es noticia.",
+        "targetWord": "golpea",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noticia",
+    "sentence": "Acertar ya no es [[noticia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "news",
+      "options": [
+        "news",
+        "luck",
+        "work",
+        "fun"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Acertar ya no es noticia.",
+        "targetWord": "noticia",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "punta",
+    "sentence": "Una [[punta]] puntiaguda se le clava en la barriga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a point",
+      "options": [
+        "a point",
+        "a rope",
+        "a stone",
+        "a leaf"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Una punta puntiaguda se le clava en la barriga.",
+        "targetWord": "punta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "junta",
+    "sentence": "Ella _____ las dos manos para aplaudir al final.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "junta",
+      "options": [
+        "junta",
+        "seca",
+        "mira",
+        "esconde"
+      ],
+      "translation": "She _____ her two hands to clap at the end.",
+      "optionTranslations": [
+        "puts together",
+        "dries",
+        "looks at",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "su-mano-llega-antes",
+        "storySource": "user",
+        "sentence": "Ella junta las dos manos para aplaudir al final.",
+        "targetWord": "junta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

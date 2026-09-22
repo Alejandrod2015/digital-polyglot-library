@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "escrita",
+    "sentence": "Lleva la lista [[escrita]] al lado del fregadero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "written",
+      "options": [
+        "written",
+        "folded",
+        "burnt",
+        "torn"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Lleva la lista escrita al lado del fregadero.",
+        "targetWord": "escrita",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rebanar",
+    "sentence": "Añade él mientras [[rebana]] el pan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to slice",
+      "options": [
+        "to slice",
+        "to toast",
+        "to butter",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Añade él mientras rebana el pan.",
+        "targetWord": "rebana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiar",
+    "sentence": "Al final se [[cambia]] lo que haga falta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to change",
+      "options": [
+        "to change",
+        "to weigh",
+        "to throw",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Al final se cambia lo que haga falta.",
+        "targetWord": "cambia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intento",
+    "sentence": "Al tercer [[intento]] el caldo sale sabroso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an attempt",
+      "options": [
+        "an attempt",
+        "a week",
+        "a plate",
+        "a guest"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Al tercer intento el caldo sale sabroso.",
+        "targetWord": "intento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salsa",
+    "sentence": "Se le queda [[salsa]] en la barbilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sauce",
+      "options": [
+        "sauce",
+        "bread",
+        "soap",
+        "flour"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Se le queda salsa en la barbilla.",
+        "targetWord": "salsa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar de menos",
+    "sentence": "Esa noche no la [[echa de menos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to miss",
+      "options": [
+        "to miss",
+        "to find",
+        "to burn",
+        "to lend"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Esa noche no la echa de menos.",
+        "targetWord": "echa de menos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "soso",
+    "sentence": "El arroz está _____; le falta sal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "soso",
+      "options": [
+        "soso",
+        "caro",
+        "frío",
+        "duro"
+      ],
+      "translation": "The rice is _____; it needs salt.",
+      "optionTranslations": [
+        "bland",
+        "expensive",
+        "cold",
+        "hard"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "El arroz está soso; le falta sal.",
+        "targetWord": "soso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mezcla",
+    "sentence": "Ella _____ la harina con los huevos hasta formar una masa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mezcla",
+      "options": [
+        "mezcla",
+        "vende",
+        "rompe",
+        "pinta"
+      ],
+      "translation": "She _____ the flour with the eggs until it forms a dough.",
+      "optionTranslations": [
+        "mixes",
+        "sells",
+        "breaks",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Ella mezcla la harina con los huevos hasta formar una masa.",
+        "targetWord": "mezcla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fríe",
+    "sentence": "Ella _____ las patatas en aceite muy caliente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fríe",
+      "options": [
+        "fríe",
+        "lava",
+        "guarda",
+        "compra"
+      ],
+      "translation": "She _____ the potatoes in very hot oil.",
+      "optionTranslations": [
+        "fries",
+        "washes",
+        "stores",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Ella fríe las patatas en aceite muy caliente.",
+        "targetWord": "fríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tenedor,cuchillo,tazón,número",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tenedor",
+          "answer": "a fork",
+          "options": [
+            "a fork",
+            "a knife",
+            "a bowl",
+            "a number"
+          ]
+        },
+        {
+          "word": "cuchillo",
+          "answer": "a knife",
+          "options": [
+            "a fork",
+            "a knife",
+            "a bowl",
+            "a number"
+          ]
+        },
+        {
+          "word": "tazón",
+          "answer": "a bowl",
+          "options": [
+            "a fork",
+            "a knife",
+            "a bowl",
+            "a number"
+          ]
+        },
+        {
+          "word": "número",
+          "answer": "a number",
+          "options": [
+            "a fork",
+            "a knife",
+            "a bowl",
+            "a number"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de verdad",
+    "sentence": "Está muy correcto, [[de verdad]] que sí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "really",
+      "options": [
+        "really",
+        "hardly",
+        "later",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Está muy correcto, de verdad que sí.",
+        "targetWord": "de verdad",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cocer",
+    "sentence": "Mezcla, [[cuece]] y fríe siguiendo el orden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to boil",
+      "options": [
+        "to boil",
+        "to serve",
+        "to weigh",
+        "to peel"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Mezcla, cuece y fríe siguiendo el orden.",
+        "targetWord": "cuece",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poquito",
+    "sentence": "Echa un [[poquito]] más de sal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tiny bit",
+      "options": [
+        "a tiny bit",
+        "a big pile",
+        "a full cup",
+        "a whole bag"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Echa un poquito más de sal.",
+        "targetWord": "poquito",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ácido",
+    "sentence": "Le encuentra el punto [[ácido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sour",
+      "options": [
+        "sour",
+        "salty",
+        "sweet",
+        "burnt"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "Le encuentra el punto ácido.",
+        "targetWord": "ácido",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabroso",
+    "sentence": "El caldo sale [[sabroso]] y algo picante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tasty",
+      "options": [
+        "tasty",
+        "cold",
+        "thick",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "El caldo sale sabroso y algo picante.",
+        "targetWord": "sabroso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "picante",
+    "sentence": "El caldo sale sabroso y algo [[picante]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spicy",
+      "options": [
+        "spicy",
+        "salty",
+        "watery",
+        "bitter"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "El caldo sale sabroso y algo picante.",
+        "targetWord": "picante",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "equivocado",
+    "sentence": "El número que marcaste está _____; no es mi teléfono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "equivocado",
+      "options": [
+        "equivocado",
+        "limpio",
+        "caro",
+        "nuevo"
+      ],
+      "translation": "The number you dialled is _____; it's not my phone.",
+      "optionTranslations": [
+        "wrong",
+        "clean",
+        "expensive",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "le-sale-soso",
+        "storySource": "user",
+        "sentence": "El número que marcaste está equivocado; no es mi teléfono.",
+        "targetWord": "equivocado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

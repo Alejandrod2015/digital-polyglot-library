@@ -1,0 +1,486 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "empleado",
+    "sentence": "La carpeta la abre una [[empleada]] joven.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an employee",
+      "options": [
+        "an employee",
+        "a customer",
+        "a neighbour",
+        "a tourist"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "La carpeta la abre una empleada joven.",
+        "targetWord": "empleada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "credencial",
+    "sentence": "Deja su [[credencial]] en el escritorio frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an ID card",
+      "options": [
+        "an ID card",
+        "a coat",
+        "a bag",
+        "a coffee"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Deja su credencial en el escritorio frío.",
+        "targetWord": "credencial",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dirección",
+    "sentence": "Aquí falta la [[dirección]] completa, con el número y la letra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the address",
+      "options": [
+        "the address",
+        "the price",
+        "the recipe",
+        "the schedule"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Aquí falta la dirección completa, con el número y la letra.",
+        "targetWord": "dirección",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recibo",
+    "sentence": "Saca el [[recibo]] del banco y lo deja encima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a receipt",
+      "options": [
+        "a receipt",
+        "a passport",
+        "a postcard",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Saca el recibo del banco y lo deja encima.",
+        "targetWord": "recibo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingreso",
+    "sentence": "Hay otra persona con un [[ingreso]] más bajo que el suyo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an income",
+      "options": [
+        "an income",
+        "an age",
+        "a ceiling",
+        "a voice"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Hay otra persona con un ingreso más bajo que el suyo.",
+        "targetWord": "ingreso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "archivador",
+    "sentence": "Saca del [[archivador]] un papel con dos grapas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a filing cabinet",
+      "options": [
+        "a filing cabinet",
+        "a coffee machine",
+        "a shopping bag",
+        "a kitchen drawer"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Saca del archivador un papel con dos grapas.",
+        "targetWord": "archivador",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "firma",
+    "sentence": "Lee el contrato entero y luego lo _____ con su nombre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firma",
+      "options": [
+        "firma",
+        "lava",
+        "cocina",
+        "pinta"
+      ],
+      "translation": "He reads the whole contract and then _____ it with his name.",
+      "optionTranslations": [
+        "signs",
+        "washes",
+        "cooks",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Lee el contrato entero y luego lo firma con su nombre.",
+        "targetWord": "firma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "verifica",
+    "sentence": "Antes de pagar, _____ que la cuenta está bien sumada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verifica",
+      "options": [
+        "verifica",
+        "vende",
+        "rompe",
+        "cocina"
+      ],
+      "translation": "Before paying, _____ that the bill is added up correctly.",
+      "optionTranslations": [
+        "check",
+        "sell",
+        "break",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Antes de pagar, verifica que la cuenta está bien sumada.",
+        "targetWord": "verifica",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fecha",
+    "sentence": "Escribe la _____ de hoy arriba: día, mes y año.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fecha",
+      "options": [
+        "fecha",
+        "mesa",
+        "calle",
+        "puerta"
+      ],
+      "translation": "Write today's _____ at the top: day, month and year.",
+      "optionTranslations": [
+        "date",
+        "table",
+        "street",
+        "door"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Escribe la fecha de hoy arriba: día, mes y año.",
+        "targetWord": "fecha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "bolígrafo,tinta,grapa,escritorio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bolígrafo",
+          "answer": "a pen",
+          "options": [
+            "a pen",
+            "ink",
+            "a staple",
+            "a desk"
+          ]
+        },
+        {
+          "word": "tinta",
+          "answer": "ink",
+          "options": [
+            "a pen",
+            "ink",
+            "a staple",
+            "a desk"
+          ]
+        },
+        {
+          "word": "grapa",
+          "answer": "a staple",
+          "options": [
+            "a pen",
+            "ink",
+            "a staple",
+            "a desk"
+          ]
+        },
+        {
+          "word": "escritorio",
+          "answer": "a desk",
+          "options": [
+            "a pen",
+            "ink",
+            "a staple",
+            "a desk"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sellos",
+    "sentence": "Dentro hay dos papeles con [[sellos]] y poco más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stamps",
+      "options": [
+        "stamps",
+        "stains",
+        "photos",
+        "holes"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Dentro hay dos papeles con sellos y poco más.",
+        "targetWord": "sellos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "informe",
+    "sentence": "Es un [[informe]] corto, con un folleto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a report",
+      "options": [
+        "a report",
+        "a receipt",
+        "a menu",
+        "a map"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Es un informe corto, con un folleto.",
+        "targetWord": "informe",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "folleto",
+    "sentence": "Es un informe corto, con un [[folleto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a leaflet",
+      "options": [
+        "a leaflet",
+        "a ticket",
+        "a stamp",
+        "a photo"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Es un informe corto, con un folleto.",
+        "targetWord": "folleto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "código",
+    "sentence": "Verifique el [[código]] de la cuenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the code",
+      "options": [
+        "the code",
+        "the owner",
+        "the colour",
+        "the weight"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Verifique el código de la cuenta.",
+        "targetWord": "código",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "depósito",
+    "sentence": "Un [[depósito]] ya pagado desde septiembre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a deposit",
+      "options": [
+        "a deposit",
+        "a lunch",
+        "a holiday",
+        "a course"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Un depósito ya pagado desde septiembre.",
+        "targetWord": "depósito",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la vez",
+    "sentence": "No es alguien de Málaga, y lo entiende [[a la vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the same time",
+      "options": [
+        "at the same time",
+        "at the last minute",
+        "at the end",
+        "at first sight"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "No es alguien de Málaga, y lo entiende a la vez.",
+        "targetWord": "a la vez",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de fuera",
+    "sentence": "No es alguien de Málaga ni una oficina [[de fuera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from outside",
+      "options": [
+        "from outside",
+        "from below",
+        "from work",
+        "from home"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "No es alguien de Málaga ni una oficina de fuera.",
+        "targetWord": "de fuera",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oficina",
+    "sentence": "Ni una [[oficina]] de fuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an office",
+      "options": [
+        "an office",
+        "a farm",
+        "a boat",
+        "a church"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Ni una oficina de fuera.",
+        "targetWord": "oficina",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "joven",
+    "sentence": "Es muy _____; todavía va al colegio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "joven",
+      "options": [
+        "joven",
+        "gordo",
+        "rubio",
+        "lento"
+      ],
+      "translation": "He's very _____; he still goes to school.",
+      "optionTranslations": [
+        "young",
+        "fat",
+        "blonde",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "dos-papeles-y-una-firma",
+        "storySource": "user",
+        "sentence": "Es muy joven; todavía va al colegio.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

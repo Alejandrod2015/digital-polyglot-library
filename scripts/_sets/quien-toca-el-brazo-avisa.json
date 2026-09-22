@@ -1,0 +1,440 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "Quien [[apoya]] la mano en su brazo es siempre la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rest",
+      "options": [
+        "to rest",
+        "to hide",
+        "to lift",
+        "to bite"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Quien apoya la mano en su brazo es siempre la vecina.",
+        "targetWord": "apoya",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aviso",
+    "sentence": "Lo tiene guardado como un [[aviso]] de cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a warning",
+      "options": [
+        "a warning",
+        "a present",
+        "a photo",
+        "a recipe"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Lo tiene guardado como un aviso de cariño.",
+        "targetWord": "aviso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tacto",
+    "sentence": "Hoy siente otra vez ese [[tacto]] tibio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a touch",
+      "options": [
+        "a touch",
+        "a smell",
+        "a sound",
+        "a taste"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Hoy siente otra vez ese tacto tibio.",
+        "targetWord": "tacto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de momento",
+    "sentence": "[[De momento]] pienso alquilar el piso de abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for now",
+      "options": [
+        "for now",
+        "at last",
+        "by chance",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "De momento pienso alquilar el piso de abajo.",
+        "targetWord": "De momento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacudida",
+    "sentence": "El tacto vuelve, esta vez con una [[sacudida]] corta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shake",
+      "options": [
+        "a shake",
+        "a laugh",
+        "a cough",
+        "a kiss"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "El tacto vuelve, esta vez con una sacudida corta.",
+        "targetWord": "sacudida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "símbolo",
+    "sentence": "No es lo que creía; es un [[símbolo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a symbol",
+      "options": [
+        "a symbol",
+        "a mistake",
+        "a secret",
+        "a habit"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "No es lo que creía; es un símbolo.",
+        "targetWord": "símbolo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "alquilar",
+    "sentence": "No tengo casa propia, así que voy a _____ un piso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "alquilar",
+      "options": [
+        "alquilar",
+        "vender",
+        "pintar",
+        "limpiar"
+      ],
+      "translation": "I don't have my own house, so I'm going to _____ a flat.",
+      "optionTranslations": [
+        "to rent",
+        "to sell",
+        "to paint",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "No tengo casa propia, así que voy a alquilar un piso.",
+        "targetWord": "alquilar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cariño",
+    "sentence": "Abraza a su abuela con mucho _____ cada domingo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cariño",
+      "options": [
+        "cariño",
+        "miedo",
+        "ruido",
+        "dinero"
+      ],
+      "translation": "She hugs her grandmother with great _____ every Sunday.",
+      "optionTranslations": [
+        "affection",
+        "fear",
+        "noise",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Abraza a su abuela con mucho cariño cada domingo.",
+        "targetWord": "cariño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "traza",
+    "sentence": "Con la regla _____ una raya recta sobre el papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "traza",
+      "options": [
+        "traza",
+        "rompe",
+        "dobla",
+        "cierra"
+      ],
+      "translation": "With the ruler she _____ a straight line on the paper.",
+      "optionTranslations": [
+        "draws",
+        "breaks",
+        "folds",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Con la regla traza una raya recta sobre el papel.",
+        "targetWord": "traza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "uña,cola,línea,vecino",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "uña",
+          "answer": "a fingernail",
+          "options": [
+            "a fingernail",
+            "a queue",
+            "a line",
+            "a neighbour"
+          ]
+        },
+        {
+          "word": "cola",
+          "answer": "a queue",
+          "options": [
+            "a fingernail",
+            "a queue",
+            "a line",
+            "a neighbour"
+          ]
+        },
+        {
+          "word": "línea",
+          "answer": "a line",
+          "options": [
+            "a fingernail",
+            "a queue",
+            "a line",
+            "a neighbour"
+          ]
+        },
+        {
+          "word": "vecino",
+          "answer": "a neighbour",
+          "options": [
+            "a fingernail",
+            "a queue",
+            "a line",
+            "a neighbour"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dibujar",
+    "sentence": "En casa [[dibuja]] el esquema en una carpeta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to draw",
+      "options": [
+        "to draw",
+        "to read",
+        "to burn",
+        "to fold"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "En casa dibuja el esquema en una carpeta.",
+        "targetWord": "dibuja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquema",
+    "sentence": "Dibuja el [[esquema]] con dos siluetas y una línea.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a diagram",
+      "options": [
+        "a diagram",
+        "a letter",
+        "a menu",
+        "a ticket"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Dibuja el esquema con dos siluetas y una línea.",
+        "targetWord": "esquema",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silueta",
+    "sentence": "Dibuja dos [[siluetas]] y una línea.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an outline",
+      "options": [
+        "an outline",
+        "a window",
+        "a candle",
+        "a pillow"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Dibuja dos siluetas y una línea.",
+        "targetWord": "siluetas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en serio",
+    "sentence": "[[En serio]], ¿por qué me tocas el brazo?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seriously",
+      "options": [
+        "seriously",
+        "quietly",
+        "finally",
+        "luckily"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "En serio, ¿por qué me tocas el brazo?",
+        "targetWord": "En serio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "redondo",
+    "sentence": "La vecina se queda con la boca [[redonda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "round",
+      "options": [
+        "round",
+        "dry",
+        "full",
+        "shut"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "La vecina se queda con la boca redonda.",
+        "targetWord": "redonda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ajeno",
+    "sentence": "Hay otra que lo quiere, y no es [[ajena]] a esta escalera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unrelated",
+      "options": [
+        "unrelated",
+        "friendly",
+        "famous",
+        "careful"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Hay otra que lo quiere, y no es ajena a esta escalera.",
+        "targetWord": "ajena",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "detalle",
+    "sentence": "Mira el cuadro de cerca para ver cada pequeño _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "detalle",
+      "options": [
+        "detalle",
+        "camino",
+        "árbol",
+        "sabor"
+      ],
+      "translation": "Look at the painting up close to see every small _____.",
+      "optionTranslations": [
+        "detail",
+        "path",
+        "tree",
+        "flavour"
+      ],
+      "audioClip": {
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "storySource": "user",
+        "sentence": "Mira el cuadro de cerca para ver cada pequeño detalle.",
+        "targetWord": "detalle",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

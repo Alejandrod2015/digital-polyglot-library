@@ -1,0 +1,486 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "butaca",
+    "sentence": "Saca dos [[butacas]] a la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an armchair",
+      "options": [
+        "an armchair",
+        "a table",
+        "a ladder",
+        "a bucket"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Saca dos butacas a la puerta.",
+        "targetWord": "butacas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aburrido",
+    "sentence": "Pasan veinte minutos y ella se siente [[aburrida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bored",
+      "options": [
+        "bored",
+        "cold",
+        "lost",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Pasan veinte minutos y ella se siente aburrida.",
+        "targetWord": "aburrida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsillo",
+    "sentence": "Se mete la libreta en el [[bolsillo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pocket",
+      "options": [
+        "the pocket",
+        "the oven",
+        "the river",
+        "the drawer"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Se mete la libreta en el bolsillo.",
+        "targetWord": "bolsillo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "sentence": "Al principio le [[pesa]]; luego deja de contar las horas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to weigh on",
+      "options": [
+        "to weigh on",
+        "to cheer up",
+        "to warm up",
+        "to call out"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Al principio le pesa; luego deja de contar las horas.",
+        "targetWord": "pesa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por ahora",
+    "sentence": "[[Por ahora]] se aguanta sentada y se acaba sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for now",
+      "options": [
+        "for now",
+        "for free",
+        "for good",
+        "for sure"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Por ahora se aguanta sentada y se acaba sola.",
+        "targetWord": "Por ahora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gusto",
+    "sentence": "Se pone de pie con un [[gusto]] raro en el cuerpo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a pleasant feeling",
+      "options": [
+        "a pleasant feeling",
+        "a small bruise",
+        "a loud noise",
+        "a short break"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Se pone de pie con un gusto raro en el cuerpo.",
+        "targetWord": "gusto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vacía",
+    "sentence": "La botella está _____; no queda ni una gota.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vacía",
+      "options": [
+        "vacía",
+        "cara",
+        "verde",
+        "nueva"
+      ],
+      "translation": "The bottle is _____; there isn't a drop left.",
+      "optionTranslations": [
+        "empty",
+        "expensive",
+        "green",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "La botella está vacía; no queda ni una gota.",
+        "targetWord": "vacía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bosteza",
+    "sentence": "Tiene tanto sueño que _____ sin parar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bosteza",
+      "options": [
+        "bosteza",
+        "canta",
+        "corre",
+        "paga"
+      ],
+      "translation": "He's so sleepy that he _____ non-stop.",
+      "optionTranslations": [
+        "yawns",
+        "sings",
+        "runs",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Tiene tanto sueño que bosteza sin parar.",
+        "targetWord": "bosteza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tibio",
+    "sentence": "El café ya no quema; está _____ y se puede beber.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tibio",
+      "options": [
+        "tibio",
+        "caro",
+        "nuevo",
+        "grande"
+      ],
+      "translation": "The coffee doesn't burn any more; it's _____ and you can drink it.",
+      "optionTranslations": [
+        "lukewarm",
+        "expensive",
+        "new",
+        "big"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "El café ya no quema; está tibio y se puede beber.",
+        "targetWord": "tibio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cojín,libreta,novela,talón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cojín",
+          "answer": "a cushion",
+          "options": [
+            "a cushion",
+            "a notebook",
+            "a novel",
+            "a heel"
+          ]
+        },
+        {
+          "word": "libreta",
+          "answer": "a notebook",
+          "options": [
+            "a cushion",
+            "a notebook",
+            "a novel",
+            "a heel"
+          ]
+        },
+        {
+          "word": "novela",
+          "answer": "a novel",
+          "options": [
+            "a cushion",
+            "a notebook",
+            "a novel",
+            "a heel"
+          ]
+        },
+        {
+          "word": "talón",
+          "answer": "a heel",
+          "options": [
+            "a cushion",
+            "a notebook",
+            "a novel",
+            "a heel"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Llega por la [[calle]] con una libreta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the street",
+      "options": [
+        "the street",
+        "the beach",
+        "the roof",
+        "the stairs"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Llega por la calle con una libreta.",
+        "targetWord": "calle",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terraza",
+    "sentence": "Un martes de septiembre la [[terraza]] del bar está vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the terrace",
+      "options": [
+        "the terrace",
+        "the kitchen",
+        "the toilet",
+        "the cellar"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Un martes de septiembre la terraza del bar está vacía.",
+        "targetWord": "terraza",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callado",
+    "sentence": "Bosteza [[callada]] sobre el cojín.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silent",
+      "options": [
+        "silent",
+        "asleep",
+        "angry",
+        "hungry"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Bosteza callada sobre el cojín.",
+        "targetWord": "callada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mecer",
+    "sentence": "[[Mece]] la butaca con el talón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rock",
+      "options": [
+        "to rock",
+        "to lift",
+        "to clean",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Mece la butaca con el talón.",
+        "targetWord": "Mece",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al fin",
+    "sentence": "Pregunta [[al fin]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "at once",
+        "at home",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Pregunta al fin.",
+        "targetWord": "al fin",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a veces",
+    "sentence": "Esto que ves, y [[a veces]] ni eso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sometimes",
+      "options": [
+        "sometimes",
+        "tomorrow",
+        "nowhere",
+        "already"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Esto que ves, y a veces ni eso.",
+        "targetWord": "a veces",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorbo",
+    "sentence": "Da un [[sorbo]] al café tibio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sip",
+      "options": [
+        "a sip",
+        "a kick",
+        "a look",
+        "a push"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Da un sorbo al café tibio.",
+        "targetWord": "sorbo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mueca",
+    "sentence": "Contesta con una [[mueca]] y tararea algo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a funny face",
+      "options": [
+        "a funny face",
+        "a quick nod",
+        "a big smile",
+        "a loud sigh"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Contesta con una mueca y tararea algo.",
+        "targetWord": "mueca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tararea",
+    "sentence": "Ella _____ una canción en voz baja mientras cocina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tararea",
+      "options": [
+        "tararea",
+        "rompe",
+        "vende",
+        "lava"
+      ],
+      "translation": "She _____ a song quietly while she cooks.",
+      "optionTranslations": [
+        "hums",
+        "breaks",
+        "sells",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-mira-el-reloj",
+        "storySource": "user",
+        "sentence": "Ella tararea una canción en voz baja mientras cocina.",
+        "targetWord": "tararea",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
