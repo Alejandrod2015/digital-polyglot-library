@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "das Thermometer,das Wartezimmer,die Bäckerei,der Krankenschein",
+  "word": "das Thermometer,das Wartezimmer,die Bettruhe,der Krankenschein",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -12,7 +12,7 @@
      "options": [
       "a thermometer",
       "a waiting room",
-      "a bakery",
+      "bed rest",
       "a sick note"
      ]
     },
@@ -22,17 +22,17 @@
      "options": [
       "a thermometer",
       "a waiting room",
-      "a bakery",
+      "bed rest",
       "a sick note"
      ]
     },
     {
-     "word": "die Bäckerei",
-     "answer": "a bakery",
+     "word": "die Bettruhe",
+     "answer": "bed rest",
      "options": [
       "a thermometer",
       "a waiting room",
-      "a bakery",
+      "bed rest",
       "a sick note"
      ]
     },
@@ -42,7 +42,7 @@
      "options": [
       "a thermometer",
       "a waiting room",
-      "a bakery",
+      "bed rest",
       "a sick note"
      ]
     }
@@ -140,22 +140,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Bettruhe",
-  "sentence": "Die Ärztin verschreibt drei Tage [[Bettruhe]].",
+  "word": "frei",
+  "sentence": "Am Montag hat die Ärztin noch einen Termin [[frei]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "bed rest",
+   "answer": "free",
    "options": [
-    "bed rest",
-    "hot tea",
-    "fresh air",
-    "light work"
+    "free",
+    "late",
+    "short",
+    "full"
    ],
    "audioClip": {
     "storySlug": "der-gelbe-zettel",
     "storySource": "user",
-    "sentence": "Die Ärztin verschreibt drei Tage Bettruhe.",
-    "targetWord": "Bettruhe",
+    "sentence": "Am Montag hat die Ärztin noch einen Termin frei.",
+    "targetWord": "frei",
     "language": "german"
    }
   }

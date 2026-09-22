@@ -74,22 +74,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Stille",
-  "sentence": "In der Wohnung liegt eine [[Stille]] wie im Wartezimmer.",
+  "word": "die Welle",
+  "sentence": "Die Grippe kommt in [[Wellen]] und geht wieder.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "silence",
+   "answer": "a wave",
    "options": [
-    "silence",
-    "shadow",
-    "smell",
-    "draught"
+    "a wave",
+    "a storm",
+    "a circle",
+    "a stripe"
    ],
    "audioClip": {
     "storySlug": "drei-tage-ohne-stimme",
     "storySource": "user",
-    "sentence": "In der Wohnung liegt eine Stille wie im Wartezimmer.",
-    "targetWord": "Stille",
+    "sentence": "Die Grippe kommt in Wellen und geht wieder.",
+    "targetWord": "Wellen",
     "language": "german"
    }
   }
@@ -220,22 +220,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Milch",
-  "sentence": "Sie nimmt die Tabletten mit warmer [[Milch]].",
+  "word": "morgens",
+  "sentence": "[[Morgens]] hört sie ein leises Geräusch an der Tür.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "milk",
+   "answer": "in the morning",
    "options": [
-    "milk",
-    "soup",
-    "juice",
-    "tea"
+    "in the morning",
+    "at midday",
+    "at night",
+    "at the weekend"
    ],
    "audioClip": {
     "storySlug": "drei-tage-ohne-stimme",
     "storySource": "user",
-    "sentence": "Sie nimmt die Tabletten mit warmer Milch.",
-    "targetWord": "Milch",
+    "sentence": "Morgens hört sie ein leises Geräusch an der Tür.",
+    "targetWord": "Morgens",
     "language": "german"
    }
   }

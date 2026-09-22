@@ -118,22 +118,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Rahmen",
-  "sentence": "Der [[Rahmen]] ist breiter als die Tür.",
+  "word": "leicht",
+  "sentence": "Mit einem Seil geht das ganz [[leicht]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a frame",
+   "answer": "easily",
    "options": [
-    "a frame",
-    "a mirror",
-    "a curtain",
-    "a carpet"
+    "easily",
+    "slowly",
+    "rarely",
+    "loudly"
    ],
    "audioClip": {
     "storySlug": "das-sofa-aus-muenster",
     "storySource": "user",
-    "sentence": "Der Rahmen ist breiter als die Tür.",
-    "targetWord": "Rahmen",
+    "sentence": "Mit einem Seil geht das ganz leicht.",
+    "targetWord": "leicht",
     "language": "german"
    }
   }

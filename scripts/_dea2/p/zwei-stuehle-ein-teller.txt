@@ -1,4 +1,4 @@
-MATCH|der Rotwein=red wine|der Sperrmüll=bulky waste|die Delle=a dent|das Ding=a thing
+MATCH|die Flasche=a bottle|der Sperrmüll=bulky waste|die Delle=a dent|das Ding=a thing
 M|quietschen|Die alten Stühle [[quietschen]] bei jeder Bewegung.|to squeak|to shine|to break|to fall
 M|der Neid|Sie erzählt es ohne [[Neid]] und lacht dabei.|envy|hunger|fear|shame
 M|entschuldigen|Früher hat sie sich für jedes alte Möbel [[entschuldigt]].|to apologise|to pay|to search|to wait

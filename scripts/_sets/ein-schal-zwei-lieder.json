@@ -74,22 +74,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Strophe",
-  "sentence": "In der ersten [[Strophe]] singt sie fast alles falsch.",
+  "word": "lernen",
+  "sentence": "Den Text [[lernt]] hier jeder auswendig.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a verse",
+   "answer": "to learn",
    "options": [
-    "a verse",
-    "a chorus",
-    "a whistle",
-    "a shout"
+    "to learn",
+    "to shout",
+    "to write",
+    "to change"
    ],
    "audioClip": {
     "storySlug": "ein-schal-zwei-lieder",
     "storySource": "user",
-    "sentence": "In der ersten Strophe singt sie fast alles falsch.",
-    "targetWord": "Strophe",
+    "sentence": "Den Text lernt hier jeder auswendig.",
+    "targetWord": "lernt",
     "language": "german"
    }
   }

@@ -1,4 +1,4 @@
-MATCH|der Schiedsrichter=the referee|der Elfmeter=a penalty|die Brille=glasses|das Radio=a radio
+MATCH|der Schiedsrichter=the referee|der Elfmeter=a penalty|das Foul=a foul|das Radio=a radio
 M|das Derby|Beim [[Derby]] spielen zwei Städte gegeneinander.|a derby|a training|a final|a break
 M|der Gegner|Der [[Gegner]] kommt aus der Nachbarstadt.|the opponent|the referee|the trainer|the reporter
 M|die Nachspielzeit|In der [[Nachspielzeit]] steht das ganze Stadion.|stoppage time|half time|first hour|early morning
@@ -9,9 +9,9 @@ F|heiseres|Sie hat neunzig Minuten geschrien, jetzt bleibt nur ein _____ Flüste
 M|der Lärm|Nach dem Tor bricht der [[Lärm]] sofort ab.|noise|rain|light|smoke
 M|brechen|Der Lärm [[bricht]] nach einer Sekunde ab.|to break off|to build up|to move on|to come back
 M|schreien|Sie [[schreit]] nach dem ersten Tor am lautesten.|to scream|to whisper|to listen|to wait
-M|der Hals|Am nächsten Tag tut ihr der [[Hals]] weh.|the throat|the ankle|the wrist|the knee
+M|kennen|Sie [[kennt]] jetzt beide Lieder auswendig.|to know|to write|to choose|to teach
 M|brennen|Ihr Hals fängt langsam an zu [[brennen]].|to burn|to itch|to swell|to heal
 M|der Heimweg|Auf dem [[Heimweg]] spricht sie kaum noch.|the way home|the front row|the last train|the side street
-M|das Lied|Sie kennt beide [[Lieder]] jetzt ohne Papier.|a song|a rule|a name|a price
+M|alt|Seine Stimme klingt wie ein [[altes]] Radio.|old|loud|foreign|cheap
 M|zweite|Das [[zweite]] Tor fällt in der letzten Minute.|second|whole|free|wrong
 F|Nachbarstadt|Das Derby geht gegen die Mannschaft aus der _____.|The derby is against the team from the _____.|neighbouring town|Bäckerei=bakery|Praxis=surgery|Wohnung=flat

@@ -1,12 +1,12 @@
 MATCH|die Tablette=a tablet|die Nudelsuppe=noodle soup|das Taschentuch=a tissue|der Apfel=an apple
 M|die Grippe|Die [[Grippe]] hält sie drei Tage im Bett.|flu|sunburn|rash|bruise
-M|die Stille|In der Wohnung liegt eine [[Stille]] wie im Wartezimmer.|silence|shadow|smell|draught
+M|die Welle|Die Grippe kommt in [[Wellen]] und geht wieder.|a wave|a storm|a circle|a stripe
 M|aufsetzen|Sobald sie sich [[aufsetzt]], dreht sich das Zimmer.|to sit up|to lie down|to stand still|to walk about
 M|die Handschrift|Auf dem Zettel erkennt sie seine [[Handschrift]].|handwriting|signature|stamp|drawing
 M|der Dienst|Er kommt jeden Morgen vor seinem [[Dienst]] vorbei.|a shift|a holiday|a lesson|a flight
 F|schwitzt|Erst friert sie, und eine Stunde später _____ sie.|First she is cold, and an hour later she _____.|sweats|singt=sings|kocht=cooks|liest=reads
 F|schlucken|Ihr Hals tut so weh, dass sie kaum _____ kann.|Her throat hurts so much that she can hardly _____.|swallow|laufen=walk|hören=hear|sehen=see
-M|die Milch|Sie nimmt die Tabletten mit warmer [[Milch]].|milk|soup|juice|tea
+M|morgens|[[Morgens]] hört sie ein leises Geräusch an der Tür.|in the morning|at midday|at night|at the weekend
 M|niesen|Sie [[niest]] und weiß nie, welcher Tag ist.|to sneeze|to yawn|to snore|to blink
 M|wach|Sie war nie [[wach]], wenn er an der Tür stand.|awake|alone|angry|late
 M|das Geräusch|Am Dienstag hört sie ein leises [[Geräusch]] an der Tür.|a noise|a shadow|a smell|a light

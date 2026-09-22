@@ -118,22 +118,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Keller",
-  "sentence": "Jede Wohnung hat unten einen [[Keller]].",
+  "word": "der Umzug",
+  "sentence": "Für den [[Umzug]] rechnet hier niemand in Euro ab.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a cellar",
+   "answer": "a move",
    "options": [
-    "a cellar",
-    "a garden",
-    "a garage",
-    "a balcony"
+    "a move",
+    "a party",
+    "a repair",
+    "a delivery"
    ],
    "audioClip": {
     "storySlug": "pizza-auf-den-kartons",
     "storySource": "user",
-    "sentence": "Jede Wohnung hat unten einen Keller.",
-    "targetWord": "Keller",
+    "sentence": "Für den Umzug rechnet hier niemand in Euro ab.",
+    "targetWord": "Umzug",
     "language": "german"
    }
   }
@@ -191,18 +191,18 @@
  },
  {
   "type": "fill_blank",
-  "word": "flache",
-  "sentence": "Pizza passt nur in breite und _____ Schachteln, nicht in hohe.",
+  "word": "flachen",
+  "sentence": "Pizza passt nur in die _____ Schachteln, nicht in hohe.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "flache",
+   "answer": "flachen",
    "options": [
-    "flache",
-    "kalte",
-    "neue",
-    "blaue"
+    "flachen",
+    "kalten",
+    "neuen",
+    "blauen"
    ],
-   "translation": "Pizza only fits in wide and _____ boxes, not in tall ones.",
+   "translation": "Pizza only fits in the _____ boxes, not in tall ones.",
    "optionTranslations": [
     "flat",
     "cold",
@@ -212,8 +212,8 @@
    "audioClip": {
     "storySlug": "pizza-auf-den-kartons",
     "storySource": "user",
-    "sentence": "Pizza passt nur in breite und flache Schachteln, nicht in hohe.",
-    "targetWord": "flache",
+    "sentence": "Pizza passt nur in die flachen Schachteln, nicht in hohe.",
+    "targetWord": "flachen",
     "language": "german"
    }
   }

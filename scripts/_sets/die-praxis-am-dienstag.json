@@ -264,22 +264,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Wange",
-  "sentence": "Das Fieber macht ihre [[Wangen]] ganz heiß.",
+  "word": "wiederholen",
+  "sentence": "Die Ärztin [[wiederholt]] den Satz ganz ruhig.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a cheek",
+   "answer": "to repeat",
    "options": [
-    "a cheek",
-    "a thumb",
-    "a shoulder",
-    "an ankle"
+    "to repeat",
+    "to write",
+    "to read",
+    "to sign"
    ],
    "audioClip": {
     "storySlug": "die-praxis-am-dienstag",
     "storySource": "user",
-    "sentence": "Das Fieber macht ihre Wangen ganz heiß.",
-    "targetWord": "Wangen",
+    "sentence": "Die Ärztin wiederholt den Satz ganz ruhig.",
+    "targetWord": "wiederholt",
     "language": "german"
    }
   },
@@ -287,22 +287,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Rücken",
-  "sentence": "Bei jeder Kurve zieht ihr [[Rücken]].",
+  "word": "krank",
+  "sentence": "[[Krank]] sein ist kein Fehler.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the back",
+   "answer": "ill",
    "options": [
-    "the back",
-    "the throat",
-    "the hand",
-    "the foot"
+    "ill",
+    "late",
+    "wrong",
+    "rude"
    ],
    "audioClip": {
     "storySlug": "die-praxis-am-dienstag",
     "storySource": "user",
-    "sentence": "Bei jeder Kurve zieht ihr Rücken.",
-    "targetWord": "Rücken",
+    "sentence": "Krank sein ist kein Fehler.",
+    "targetWord": "Krank",
     "language": "german"
    }
   },
@@ -379,22 +379,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Donnerstagmorgen",
-  "sentence": "Sie schläft bis zum [[Donnerstagmorgen]] durch.",
+  "word": "nehmen",
+  "sentence": "Er [[nimmt]] ihr die Tasche aus der Hand.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "Thursday morning",
+   "answer": "to take",
    "options": [
-    "Thursday morning",
-    "Friday evening",
-    "Sunday night",
-    "Tuesday noon"
+    "to take",
+    "to hide",
+    "to lend",
+    "to fold"
    ],
    "audioClip": {
     "storySlug": "die-praxis-am-dienstag",
     "storySource": "user",
-    "sentence": "Sie schläft bis zum Donnerstagmorgen durch.",
-    "targetWord": "Donnerstagmorgen",
+    "sentence": "Er nimmt ihr die Tasche aus der Hand.",
+    "targetWord": "nimmt",
     "language": "german"
    }
   },

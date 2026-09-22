@@ -1,7 +1,7 @@
-MATCH|der Flohmarkt=a flea market|der Nebel=fog|der Klappstuhl=a folding chair|der Geldschein=a banknote
+MATCH|der Wagen=a cart of goods|die Platte=a table top|der Klappstuhl=a folding chair|der Geldschein=a banknote
 M|handeln|Auf dem Markt darf man immer [[handeln]].|to haggle|to shout|to borrow|to steal
 M|die Händlerin|Die [[Händlerin]] verkauft alte Tische und Betten.|a woman trader|a young nurse|a busy waiter|a tired driver
-M|die Platte|Die [[Platte]] des Tisches ist aus dunklem Holz.|the table top|the front door|the back wall|the small key
+M|brauchen|Für die leere Küche [[braucht]] sie einen Tisch.|to need|to paint|to rent|to sell
 M|wackeln|Der Tisch [[wackelt]] bei jeder Bewegung.|to wobble|to shine|to grow|to close
 M|schieben|Sie [[schiebt]] den Tisch bis nach Hause.|to push|to lift|to throw|to clean
 F|teuer|Achtzig Euro für einen alten Tisch sind zu _____.|Eighty euros for an old table is too _____.|expensive|schwer=heavy|dunkel=dark|klein=small

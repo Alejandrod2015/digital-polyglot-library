@@ -8,10 +8,10 @@ F|wegbleiben|In der Probezeit kann sie nicht einfach _____.|During the trial per
 F|wochenlang|Ohne zwei Tage Ruhe schleppt sie die Grippe _____ mit.|Without two days of rest she carries the flu around _____.|for weeks|gestern=yesterday|sofort=at once|kaum=hardly
 M|der Fehler|Krank sein ist kein [[Fehler]], sagt die Ärztin.|a mistake|a favour|a habit|a secret
 M|der Chef|Ihr [[Chef]] sieht die roten Wangen durch das Fenster.|the boss|the patient|the neighbour|the courier
-M|die Wange|Das Fieber macht ihre [[Wangen]] ganz heiß.|a cheek|a thumb|a shoulder|an ankle
-M|der Rücken|Bei jeder Kurve zieht ihr [[Rücken]].|the back|the throat|the hand|the foot
+M|wiederholen|Die Ärztin [[wiederholt]] den Satz ganz ruhig.|to repeat|to write|to read|to sign
+M|krank|[[Krank]] sein ist kein Fehler.|ill|late|wrong|rude
 M|der Laden|Am Mittwoch soll sie wieder im [[Laden]] stehen.|a shop|a school|a bank|a hall
 M|der Mittwoch|Am [[Mittwoch]] fährt sie trotzdem los.|Wednesday|Saturday|Sunday|Monday
 M|warten|Sie [[wartet]] auf ein schlechtes Gefühl.|to wait|to hope|to search|to repeat
-M|der Donnerstagmorgen|Sie schläft bis zum [[Donnerstagmorgen]] durch.|Thursday morning|Friday evening|Sunday night|Tuesday noon
+M|nehmen|Er [[nimmt]] ihr die Tasche aus der Hand.|to take|to hide|to lend|to fold
 F|zurück|Der Chef schickt sie nach Hause, und sie fährt langsam _____.|The boss sends her home and she drives slowly _____.|back|weiter=onwards|hoch=upstairs|raus=outside

@@ -1,6 +1,6 @@
 MATCH|der Schal=a scarf|der Wurststand=a sausage stall|die Bratwurst=a fried sausage|der Senf=mustard
 M|das Heimspiel|Beim dritten [[Heimspiel]] bringt er einen zweiten Schal mit.|a home game|a long trip|a free drink|a new club
-M|die Strophe|In der ersten [[Strophe]] singt sie fast alles falsch.|a verse|a chorus|a whistle|a shout
+M|lernen|Den Text [[lernt]] hier jeder auswendig.|to learn|to shout|to write|to change
 M|der Text|Den [[Text]] lernt hier jeder auswendig.|the words|the tune|the rule|the price
 M|auswendig|Nach vier Spielen kann sie das Lied [[auswendig]].|by heart|out loud|in tune|by chance
 M|die Kehle|Nach dem Singen ist ihre [[Kehle]] warm.|the throat|the shoulder|the elbow|the wrist

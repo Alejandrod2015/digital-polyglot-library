@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Schiedsrichter,der Elfmeter,die Brille,das Radio",
+  "word": "der Schiedsrichter,der Elfmeter,das Foul,das Radio",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -12,7 +12,7 @@
      "options": [
       "the referee",
       "a penalty",
-      "glasses",
+      "a foul",
       "a radio"
      ]
     },
@@ -22,17 +22,17 @@
      "options": [
       "the referee",
       "a penalty",
-      "glasses",
+      "a foul",
       "a radio"
      ]
     },
     {
-     "word": "die Brille",
-     "answer": "glasses",
+     "word": "das Foul",
+     "answer": "a foul",
      "options": [
       "the referee",
       "a penalty",
-      "glasses",
+      "a foul",
       "a radio"
      ]
     },
@@ -42,7 +42,7 @@
      "options": [
       "the referee",
       "a penalty",
-      "glasses",
+      "a foul",
       "a radio"
      ]
     }
@@ -287,22 +287,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Hals",
-  "sentence": "Am nächsten Tag tut ihr der [[Hals]] weh.",
+  "word": "kennen",
+  "sentence": "Sie [[kennt]] jetzt beide Lieder auswendig.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the throat",
+   "answer": "to know",
    "options": [
-    "the throat",
-    "the ankle",
-    "the wrist",
-    "the knee"
+    "to know",
+    "to write",
+    "to choose",
+    "to teach"
    ],
    "audioClip": {
     "storySlug": "elf-minuten-nachspielzeit",
     "storySource": "user",
-    "sentence": "Am nächsten Tag tut ihr der Hals weh.",
-    "targetWord": "Hals",
+    "sentence": "Sie kennt jetzt beide Lieder auswendig.",
+    "targetWord": "kennt",
     "language": "german"
    }
   },
@@ -356,22 +356,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "das Lied",
-  "sentence": "Sie kennt beide [[Lieder]] jetzt ohne Papier.",
+  "word": "alt",
+  "sentence": "Seine Stimme klingt wie ein [[altes]] Radio.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a song",
+   "answer": "old",
    "options": [
-    "a song",
-    "a rule",
-    "a name",
-    "a price"
+    "old",
+    "loud",
+    "foreign",
+    "cheap"
    ],
    "audioClip": {
     "storySlug": "elf-minuten-nachspielzeit",
     "storySource": "user",
-    "sentence": "Sie kennt beide Lieder jetzt ohne Papier.",
-    "targetWord": "Lieder",
+    "sentence": "Seine Stimme klingt wie ein altes Radio.",
+    "targetWord": "altes",
     "language": "german"
    }
   },

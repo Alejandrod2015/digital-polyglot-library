@@ -287,22 +287,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Boden",
-  "sentence": "Zuerst der [[Boden]], dann die Eimer.",
+  "word": "blau",
+  "sentence": "Er gibt ihr einen [[blauen]] Kittel für die Arbeit.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the floor",
+   "answer": "blue",
    "options": [
-    "the floor",
-    "the shelf",
-    "the window",
-    "the roof"
+    "blue",
+    "clean",
+    "warm",
+    "wide"
    ],
    "audioClip": {
     "storySlug": "probearbeiten-am-freitag",
     "storySource": "user",
-    "sentence": "Zuerst der Boden, dann die Eimer.",
-    "targetWord": "Boden",
+    "sentence": "Er gibt ihr einen blauen Kittel für die Arbeit.",
+    "targetWord": "blauen",
     "language": "german"
    }
   },

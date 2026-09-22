@@ -1,16 +1,16 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Rotwein,der Sperrmüll,die Delle,das Ding",
+  "word": "die Flasche,der Sperrmüll,die Delle,das Ding",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Rotwein",
-     "answer": "red wine",
+     "word": "die Flasche",
+     "answer": "a bottle",
      "options": [
-      "red wine",
+      "a bottle",
       "bulky waste",
       "a dent",
       "a thing"
@@ -20,7 +20,7 @@
      "word": "der Sperrmüll",
      "answer": "bulky waste",
      "options": [
-      "red wine",
+      "a bottle",
       "bulky waste",
       "a dent",
       "a thing"
@@ -30,7 +30,7 @@
      "word": "die Delle",
      "answer": "a dent",
      "options": [
-      "red wine",
+      "a bottle",
       "bulky waste",
       "a dent",
       "a thing"
@@ -40,7 +40,7 @@
      "word": "das Ding",
      "answer": "a thing",
      "options": [
-      "red wine",
+      "a bottle",
       "bulky waste",
       "a dent",
       "a thing"

@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Transporter,der Deckel,das Klebeband,der Nachbar",
+  "word": "der Transporter,das Erdgeschoss,das Klebeband,der Nachbar",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -11,17 +11,17 @@
      "answer": "a hired van",
      "options": [
       "a hired van",
-      "a lid",
+      "the ground floor",
       "sticky tape",
       "a neighbour"
      ]
     },
     {
-     "word": "der Deckel",
-     "answer": "a lid",
+     "word": "das Erdgeschoss",
+     "answer": "the ground floor",
      "options": [
       "a hired van",
-      "a lid",
+      "the ground floor",
       "sticky tape",
       "a neighbour"
      ]
@@ -31,7 +31,7 @@
      "answer": "sticky tape",
      "options": [
       "a hired van",
-      "a lid",
+      "the ground floor",
       "sticky tape",
       "a neighbour"
      ]
@@ -41,7 +41,7 @@
      "answer": "a neighbour",
      "options": [
       "a hired van",
-      "a lid",
+      "the ground floor",
       "sticky tape",
       "a neighbour"
      ]

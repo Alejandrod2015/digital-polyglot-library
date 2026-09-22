@@ -2,16 +2,16 @@ MATCH|der Umzugswagen=a removal van|der Kasten=a crate of bottles|das Geländer=
 M|der Treppenabsatz|Auf dem [[Treppenabsatz]] steht ein Kasten im Weg.|a landing|a cellar|a balcony|a garage
 M|die Farbe|Er hat frische [[Farbe]] an den Händen.|paint|glue|soap|oil
 M|retten|Sie [[rettet]] fremde Leute im Treppenhaus.|to rescue|to avoid|to follow|to count
-M|der Stapel|Unter dem Arm hält er einen [[Stapel]] Kartons.|a pile|a pair|a row|a bunch
+M|suchen|Er [[sucht]] seinen Schlüssel in allen Taschen.|to look for|to lock up|to hand over|to throw away
 M|lehnen|Er [[lehnt]] sich kurz an das Geländer.|to lean|to jump|to kneel|to crawl
 F|leer|Ihre Küche hat kaum Möbel und ist immer noch halb _____.|Her kitchen has hardly any furniture and is still half _____.|empty|warm=warm|dunkel=dark|offen=open
 F|frischer|Der Nachbar hat gerade gestrichen, es riecht nach _____ Wandfarbe.|The neighbour has just painted, it smells of _____ wall paint.|fresh|teurer=expensive|dunkler=dark|alter=old
 M|deuten|Sie [[deutet]] nach oben auf ihre eigene Tür.|to point|to knock|to wave|to reach
 M|egal|Im Februar war ihr so ein Kasten noch [[egal]].|not important|quite new|very heavy|rather cheap
-M|der Montagmorgen|Am [[Montagmorgen]] steht der Wagen vor dem Haus.|Monday morning|Friday night|Sunday noon|Saturday dawn
+M|außerdem|Er hält [[außerdem]] Kartons unter dem Arm.|besides|instead|perhaps|rarely
 M|neu|Der [[neue]] Nachbar sucht seinen Schlüssel.|new|tall|quiet|tired
 M|hoch|Sie nimmt den Kasten mit [[hoch]] in den zweiten Stock.|up|out|across|around
 M|völlig|Das war ihr damals [[völlig]] gleich.|completely|nearly|rarely|briefly
 M|oben|[[Oben]] riecht es nach frischer Farbe.|upstairs|outside|nearby|behind
 M|fröhlich|Sie antwortet [[fröhlich]] und lacht dabei.|cheerfully|angrily|nervously|coldly
-F|Abend|Morgens ist die Tür leer, aber am _____ steht dort eine Flasche.|In the morning the door is bare, but in the _____ a bottle stands there.|evening|Bahnhof=station|Fenster=window|Schrank=cupboard
+F|Wandfarbe|Der Nachbar hat gestrichen, im Haus riecht es nach _____.|The neighbour has painted, the house smells of _____.|wall paint|Seife=soap|Kaffee=coffee|Regen=rain

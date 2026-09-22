@@ -220,44 +220,44 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "das Brett",
-  "sentence": "Am schwarzen [[Brett]] hängen viele kleine Zettel.",
+  "word": "murmeln",
+  "sentence": "Sie [[murmelt]] etwas und liest den Zettel weiter.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a board",
+   "answer": "to mutter",
    "options": [
-    "a board",
-    "a window",
-    "a door",
-    "a shelf"
+    "to mutter",
+    "to shout",
+    "to sing",
+    "to sigh"
    ],
    "audioClip": {
     "storySlug": "der-zettel-im-waschsalon",
     "storySource": "user",
-    "sentence": "Am schwarzen Brett hängen viele kleine Zettel.",
-    "targetWord": "Brett",
+    "sentence": "Sie murmelt etwas und liest den Zettel weiter.",
+    "targetWord": "murmelt",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "der Satz",
-  "sentence": "Diesen [[Satz]] hat sie schon einmal gesagt.",
+  "word": "diesmal",
+  "sentence": "[[Diesmal]] macht sie alles ohne Hilfe.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a sentence",
+   "answer": "this time",
    "options": [
-    "a sentence",
-    "a promise",
-    "a question",
-    "a story"
+    "this time",
+    "last year",
+    "by chance",
+    "at once"
    ],
    "audioClip": {
     "storySlug": "der-zettel-im-waschsalon",
     "storySource": "user",
-    "sentence": "Diesen Satz hat sie schon einmal gesagt.",
-    "targetWord": "Satz",
+    "sentence": "Diesmal macht sie alles ohne Hilfe.",
+    "targetWord": "Diesmal",
     "language": "german"
    }
   }
