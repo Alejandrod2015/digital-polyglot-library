@@ -1,0 +1,11 @@
+{
+  "tipo": "Friends", "nivel": "a0", "variante": "MEXICO",
+  "registro": "ruidoso y ceremonioso: un oficio de espectaculo tratado como un trabajo normal",
+  "espina": "Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+  "recursos": "presente, frases cortas, el conflicto se discute en voz alta, y el giro sale de algo que el lector ya vio (la mascara en la lavadora, el silbido, la venda)",
+  "historias": [
+    { "slot": "0", "quiere": "Valeria quiere lavar su mascara sin que nadie la vea sin ella", "impide": "la lavadora del edificio esta en la azotea y la azotea es de todos", "cuesta": "pierde el secreto delante de Itzel, que la ve a cara limpia", "cambia": "Itzel no pregunta nada y le presta su tendedero del rincon", "emocion": "el alivio de que alguien no haga la pregunta obvia" },
+    { "slot": "1", "quiere": "Bruno quiere gritarle al rudo desde las gradas como todo el mundo", "impide": "el rudo es Valeria y Bruno no sabe insultar a una vecina", "cuesta": "pierde la noche entera callado, con el grito adentro", "cambia": "Valeria le explica que sin gritos no hay funcion, y el ensaya", "emocion": "la incomodidad de tener que ser grosero por educacion" },
+    { "slot": "2", "quiere": "Valeria quiere una venda nueva antes de la funcion del sabado", "impide": "la tienda de deportes cierra y solo hay vendas de hospital", "cuesta": "sale al ring con vendas blancas de enfermeria y todos lo notan", "cambia": "la gente cree que es un personaje nuevo y le funciona", "emocion": "la sorpresa de que un error se lea como una idea" }
+  ]
+}
