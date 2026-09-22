@@ -17082,8 +17082,8 @@ export function MobileLibraryShell(args: {
             continueBookSlug: continueReading[0]?.book.slug,
             continueStorySlug: continueReading[0]?.story.slug,
           }
-        : dueFavoritesCount > 0
-          ? { dueReviewCount: dueFavoritesCount }
+        : duePracticeItems.length > 0
+          ? { dueReviewCount: duePracticeItems.length }
           : null,
   });
 
@@ -18376,7 +18376,13 @@ export function MobileLibraryShell(args: {
         continueStorySlug: continueReading[0]?.story.slug,
       };
     }
-    if (dueFavoritesCount > 0) return { dueReviewCount: dueFavoritesCount };
+    // El numero del aviso es el MISMO que se lee arriba en Practice
+    // (`duePracticeItems.length`), no `dueFavoritesCount`. Ese cuenta
+    // `favoriteWords` entero, que llega de /api/mobile/favorites sin filtro de
+    // idioma, asi que sumaba el aleman, el espanol y el italiano de un usuario
+    // y prometia mas palabras de las que la pantalla luego ensena. El pool de
+    // practica ya va acotado al idioma del journey activo.
+    if (duePracticeItems.length > 0) return { dueReviewCount: duePracticeItems.length };
     if (tourNextStory?.storySlug && tourNextStory.title) {
       let topicLabel: string | null = null;
       for (const level of activeJourneyTrack?.levels ?? []) {
@@ -18403,7 +18409,7 @@ export function MobileLibraryShell(args: {
       };
     }
     return null;
-  }, [activeJourneyPrimaryAction, activeJourneyTrack, continueReading, dueFavoritesCount, tourNextStory]);
+  }, [activeJourneyPrimaryAction, activeJourneyTrack, continueReading, duePracticeItems, tourNextStory]);
   const reminderContentPreview = useMemo(
     () =>
       buildDailyReminderCopy({
