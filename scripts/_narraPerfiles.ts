@@ -24,6 +24,7 @@ import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
 import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
 import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
 import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
+import { VOZ_POR_TEMA_DE_A2_FRIENDS } from "./_deA2FriendsVoces";
 import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
 import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
 import { VOZ_POR_TEMA_ES_A0_CULTURAL } from "./_esA0CulturalVoces";
@@ -54,6 +55,7 @@ export const PERFILES: Record<string, Perfil> = {
   "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, bundle: "french-friends-france-b1", language: "french" },
   "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, bundle: "german-friends-a1", language: "german" },
   "de-a0-friends": { journey: "cmu047bkz0007326jsgeptkox", voces: VOZ_POR_TEMA_DE_A0_FRIENDS, bundle: "german-friends-a0", language: "german" },
+  "de-a2-friends": { journey: "cmubidgaf0007j8np6g7n89iu", voces: VOZ_POR_TEMA_DE_A2_FRIENDS, bundle: "german-friends-a2", language: "german" },
   "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
   "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
   "es-a0-cultural": { journey: "cmu410zep000732szrw94t2sl", voces: VOZ_POR_TEMA_ES_A0_CULTURAL, bundle: "spanish-cultural-latam-a0", language: "spanish" },
@@ -100,9 +102,10 @@ export function pasoDelOrden(
   s: { slug: string | null; slotIndex: number; audioUrl?: string | null },
   muestras: Record<string, unknown>,
   primeraDelTemaNarrada: boolean,
+  slotDeLaPrimera: number,
 ): { paso: "ya narrada" | "muestra" | "primera entera" | "resto del tema"; bloqueo?: string } {
   if (s.audioUrl) return { paso: "ya narrada" };
-  if (s.slotIndex === 1) {
+  if (s.slotIndex === slotDeLaPrimera) {
     return muestras[s.slug ?? ""]
       ? { paso: "primera entera" }
       : { paso: "muestra", bloqueo: "es la PRIMERA de su tema y no tiene muestra" };
