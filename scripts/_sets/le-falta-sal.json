@@ -110,9 +110,9 @@
     "sentence": "Hace un [[gesto]] corto con la boca y no dice nada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a small movement of the face",
+      "answer": "a small facial movement",
       "options": [
-        "a small movement of the face",
+        "a small facial movement",
         "a loud complaint",
         "a long speech",
         "a quick bow"
@@ -325,9 +325,9 @@
     "sentence": "“Es que ahí no calienta [[igual]]”, insiste Wilson.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the same",
+      "answer": "as much",
       "options": [
-        "the same",
+        "as much",
         "enough",
         "today",
         "at all"
@@ -409,7 +409,7 @@
       "answer": "still",
       "options": [
         "still",
-        "already",
+        "only",
         "almost",
         "never"
       ],

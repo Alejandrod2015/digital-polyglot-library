@@ -104,10 +104,10 @@
     "word": "raccontare",
     "sentence": "Lui [[racconta]] storie di mare.",
     "payload": {
-      "answer": "to tell (a story)",
+      "answer": "to tell",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to tell (a story)",
+        "to tell",
         "to sing",
         "to draw",
         "to forget"

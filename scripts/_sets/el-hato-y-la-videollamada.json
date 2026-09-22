@@ -31,9 +31,9 @@
     "sentence": "Wílmer llamó a Manu [[prima]] con mucho cariño.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "cousin, said to a close female friend",
+      "answer": "cousin",
       "options": [
-        "cousin, said to a close female friend",
+        "cousin",
         "aunt",
         "neighbor",
         "boss"
@@ -56,9 +56,9 @@
     "sentence": "Manuela es rola [[de pura cepa]], bogotana total.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "through and through, to the core",
+      "answer": "through and through",
       "options": [
-        "through and through, to the core",
+        "through and through",
         "by pure chance",
         "from far away",
         "only in part"
@@ -81,9 +81,9 @@
     "sentence": "Wílmer dirige el [[trabajo de llano]] en el hato.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the daily cattle work on the plains",
+      "answer": "cattle work on the plains",
       "options": [
-        "the daily cattle work on the plains",
+        "cattle work on the plains",
         "office paperwork",
         "fishing at sea",
         "selling at the market"
@@ -181,9 +181,9 @@
     "sentence": "En el hato todo se basa en [[palabra cumplida]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "keeping your word and doing what you promised",
+      "answer": "a promise you keep",
       "options": [
-        "keeping your word and doing what you promised",
+        "a promise you keep",
         "a long spoken speech",
         "a written contract",
         "a loud argument"
@@ -231,9 +231,9 @@
     "sentence": "El llano exige [[aguante]] para no rendirse nunca.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "endurance, the strength to keep going",
+      "answer": "sheer endurance",
       "options": [
-        "endurance, the strength to keep going",
+        "sheer endurance",
         "sudden luck",
         "good manners",
         "quick money"

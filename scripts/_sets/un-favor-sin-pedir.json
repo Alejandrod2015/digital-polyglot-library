@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "no está el horno para bollos",
+    "sentence": "Hoy [[no está el horno para bollos]], ya te lo digo yo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's not a good moment",
+      "options": [
+        "it's not a good moment",
+        "it's not my problem",
+        "it's not worth it",
+        "it's not a joke"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Hoy no está el horno para bollos, ya te lo digo yo.",
+        "targetWord": "no está el horno para bollos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/27fed2ad8a3c67e533a3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirada",
+    "sentence": "Busca uno con la [[mirada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the gaze",
+      "options": [
+        "the gaze",
+        "the hand",
+        "the torch",
+        "the phone"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Busca uno con la mirada.",
+        "targetWord": "mirada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/21e39384ddb52d7fce3f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vista",
+    "sentence": "Suelta la frase sin levantar la [[vista]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the eyes",
+      "options": [
+        "the eyes",
+        "the voice",
+        "the hand",
+        "the head"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Suelta la frase sin levantar la vista.",
+        "targetWord": "vista",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e072aadb3e5aea04e8fc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercarse",
+    "sentence": "No hay horno, ni bollos, ni nada que se le [[acerque]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come close",
+      "options": [
+        "to come close",
+        "to make sense",
+        "to go away",
+        "to stand out"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "No hay horno, ni bollos, ni nada que se le acerque.",
+        "targetWord": "acerque",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f058c81eee598100a0e3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tal cual",
+    "sentence": "La escribe [[tal cual]] la ha oído.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just as",
+      "options": [
+        "just as",
+        "before",
+        "because",
+        "although"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "La escribe tal cual la ha oído.",
+        "targetWord": "tal cual",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6778b5fe7d2090fd2714.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frase hecha",
+    "sentence": "Anota la [[frase hecha]] entera en el móvil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the set phrase",
+      "options": [
+        "the set phrase",
+        "the phone number",
+        "the shopping list",
+        "the door code"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Anota la frase hecha entera en el móvil.",
+        "targetWord": "frase hecha",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b28715b4a74adfc97df6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no pasa nada",
+    "sentence": "El favor se queda sin pedir y [[no pasa nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it doesn't matter",
+      "options": [
+        "it doesn't matter",
+        "it doesn't work",
+        "it doesn't fit",
+        "it doesn't end"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "El favor se queda sin pedir y no pasa nada.",
+        "targetWord": "no pasa nada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1aaf409f4adf4306d6cb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "friega",
+    "sentence": "El suelo está sucio y ella lo _____ con agua y jabón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "friega",
+      "options": [
+        "friega",
+        "seca",
+        "pesa",
+        "dobla"
+      ],
+      "translation": "The floor is dirty and she _____ it with water and soap.",
+      "optionTranslations": [
+        "mops",
+        "dries",
+        "weighs",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "El suelo está sucio y ella lo friega con agua y jabón.",
+        "targetWord": "friega",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9a799742e0e06d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pedir",
+    "sentence": "No tengo dinero; voy a _____ ayuda a mi hermana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pedir",
+      "options": [
+        "pedir",
+        "dar",
+        "cobrar",
+        "cantar"
+      ],
+      "translation": "I have no money; I'm going to _____ my sister for help.",
+      "optionTranslations": [
+        "ask",
+        "give",
+        "charge",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "No tengo dinero; voy a pedir ayuda a mi hermana.",
+        "targetWord": "pedir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c21dd99b958faa06.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "horno,bollo,llave,labio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "horno",
+          "answer": "an oven",
+          "options": [
+            "an oven",
+            "a bun",
+            "a key",
+            "a lip"
+          ]
+        },
+        {
+          "word": "bollo",
+          "answer": "a bun",
+          "options": [
+            "an oven",
+            "a bun",
+            "a key",
+            "a lip"
+          ]
+        },
+        {
+          "word": "llave",
+          "answer": "a key",
+          "options": [
+            "an oven",
+            "a bun",
+            "a key",
+            "a lip"
+          ]
+        },
+        {
+          "word": "labio",
+          "answer": "a lip",
+          "options": [
+            "an oven",
+            "a bun",
+            "a key",
+            "a lip"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "basura",
+    "sentence": "El del tercero ha vuelto a dejar la [[basura]] fuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rubbish",
+      "options": [
+        "the rubbish",
+        "the bike",
+        "the dog",
+        "the shoes"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "El del tercero ha vuelto a dejar la basura fuera.",
+        "targetWord": "basura",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d3d8db5069c02b8f5605.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "favor",
+    "sentence": "Baja con el [[favor]] preparado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the favour",
+      "options": [
+        "the favour",
+        "the flavour",
+        "the fever",
+        "the letter"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Baja con el favor preparado.",
+        "targetWord": "favor",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b0092f1cd632ff723ff8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Cierra los labios cuando [[entiende]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to arrive",
+        "to finish",
+        "to wake up"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Cierra los labios cuando entiende.",
+        "targetWord": "entiende",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0715d0ba94c83eb52b82.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preparado",
+    "sentence": "Baja con el favor [[preparado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready",
+      "options": [
+        "ready",
+        "hidden",
+        "written",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Baja con el favor preparado.",
+        "targetWord": "preparado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b2b2b2b43ea93f034d0d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una a una",
+    "sentence": "En su cabeza las palabras van [[una a una]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one by one",
+      "options": [
+        "one by one",
+        "in a rush",
+        "back to front",
+        "out of tune"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "En su cabeza las palabras van una a una.",
+        "targetWord": "una a una",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5319f55c40edd0115a57.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cierra",
+    "sentence": "Hace frío: _____ la ventana, por favor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cierra",
+      "options": [
+        "cierra",
+        "mira",
+        "cuenta",
+        "limpia"
+      ],
+      "translation": "It's cold: _____ the window, please.",
+      "optionTranslations": [
+        "close",
+        "look at",
+        "count",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Hace frío: cierra la ventana, por favor.",
+        "targetWord": "cierra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86021eecda800cef.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entera",
+    "sentence": "Se comió la tarta _____, sin dejar ni un trozo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entera",
+      "options": [
+        "entera",
+        "fría",
+        "cara",
+        "nueva"
+      ],
+      "translation": "He ate the _____ cake, without leaving a single piece.",
+      "optionTranslations": [
+        "whole",
+        "cold",
+        "expensive",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "un-favor-sin-pedir",
+        "storySource": "user",
+        "sentence": "Se comió la tarta entera, sin dejar ni un trozo.",
+        "targetWord": "entera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c56ccda781492f1.mp3"
+      }
+    },
+    "featured": false
+  }
+]

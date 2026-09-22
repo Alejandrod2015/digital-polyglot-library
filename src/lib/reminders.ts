@@ -28,6 +28,15 @@ export type DailyReminderContext = {
   continueBookSlug?: string | null;
   continueStorySlug?: string | null;
   dueReviewCount?: number | null;
+  /**
+   * La historia que el alumno tiene DELANTE en su recorrido: la misma que la
+   * pantalla del journey marca con el circulo de "empieza aqui". Sale del
+   * puntero global del track, que recorre todos los niveles y todos los temas
+   * y salta lo ya escuchado.
+   */
+  journeyStoryTitle?: string | null;
+  journeyStorySlug?: string | null;
+  journeyStoryTopicLabel?: string | null;
   journeyActionTitle?: string | null;
   journeyActionBody?: string | null;
 };
@@ -36,6 +45,15 @@ export type ReminderDestination =
   | {
       kind: "resumeStory";
       bookSlug: string;
+      storySlug: string;
+    }
+  | {
+      /**
+       * Una historia del recorrido. Va aparte de `resumeStory` porque aquella
+       * se resuelve contra el catalogo de libros empaquetado en la app, donde
+       * las historias de journey no existen.
+       */
+      kind: "journeyStory";
       storySlug: string;
     }
   | {
@@ -107,6 +125,21 @@ export function buildDailyReminderCopy(args: {
       title: `${context.dueReviewCount} due ${context.dueReviewCount === 1 ? "word" : "words"} waiting`,
       body: `Clear your saved review in ${preferredMinutes} minutes before it starts piling up.`,
       target: { kind: "practiceDue" },
+    };
+  }
+
+  // Antes de cualquier texto generico: si hay una historia concreta por
+  // delante, el aviso la nombra y lleva a ella. Nombrarla y dejar al alumno en
+  // la portada del recorrido es prometer algo que el toque no cumple, asi que
+  // el destino viaja junto al nombre y no por separado.
+  if (context?.journeyStoryTitle && context.journeyStorySlug) {
+    const topic = (context.journeyStoryTopicLabel ?? "").trim();
+    return {
+      title: `${context.journeyStoryTitle} is next`,
+      body: topic
+        ? `Next in ${topic}. ${preferredMinutes} minutes is enough to get through it.`
+        : `Next in your journey. ${preferredMinutes} minutes is enough to get through it.`,
+      target: { kind: "journeyStory", storySlug: context.journeyStorySlug },
     };
   }
 

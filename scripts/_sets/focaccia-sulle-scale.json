@@ -132,9 +132,9 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "a mess",
-        "light",
-        "silence",
-        "food"
+        "a light",
+        "a noise",
+        "a smell"
       ],
       "audioClip": {
         "language": "italian",
@@ -248,13 +248,13 @@
     "word": "la colpa",
     "sentence": "Non è [[colpa]] tua, dice lui.",
     "payload": {
-      "answer": "fault",
+      "answer": "your fault",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "fault",
-        "an idea",
-        "a promise",
-        "a surprise"
+        "your fault",
+        "your idea",
+        "your promise",
+        "your turn"
       ],
       "audioClip": {
         "language": "italian",

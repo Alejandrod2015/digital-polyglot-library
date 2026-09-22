@@ -310,9 +310,9 @@
     "sentence": "Arriba, en la [[terraza]], preparan un trago carísimo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a rooftop or open deck of a bar",
+      "answer": "a rooftop bar deck",
       "options": [
-        "a rooftop or open deck of a bar",
+        "a rooftop bar deck",
         "a dark basement kitchen",
         "a crowded street market",
         "a narrow back alley"

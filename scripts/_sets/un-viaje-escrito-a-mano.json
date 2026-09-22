@@ -179,7 +179,7 @@
       "answer": "full",
       "options": [
         "full",
-        "empty",
+        "wet",
         "torn",
         "clean"
       ],
@@ -225,7 +225,7 @@
       "answer": "to sit down",
       "options": [
         "to sit down",
-        "to stand up",
+        "to look up",
         "to walk off",
         "to lean back"
       ],
@@ -342,7 +342,7 @@
       "answer": "to arrive",
       "options": [
         "to arrive",
-        "to leave",
+        "to phone",
         "to call",
         "to wait"
       ],
@@ -391,7 +391,7 @@
       "options": [
         "still",
         "never",
-        "already",
+        "only",
         "hardly"
       ],
       "audioClip": {

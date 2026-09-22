@@ -191,7 +191,7 @@
       "answer": "long",
       "options": [
         "long",
-        "short",
+        "wet",
         "curly",
         "grey"
       ],
@@ -257,8 +257,8 @@
       "answer": "together",
       "options": [
         "together",
-        "alone",
-        "apart",
+        "quickly",
+        "later",
         "far away"
       ],
       "audioClip": {
@@ -341,14 +341,14 @@
       "options": [
         "hoy",
         "ayer",
-        "mañana",
+        "lunes",
         "nunca"
       ],
       "translation": "_____ is my birthday, not tomorrow.",
       "optionTranslations": [
         "today",
         "yesterday",
-        "tomorrow",
+        "Monday",
         "never"
       ],
       "audioClip": {

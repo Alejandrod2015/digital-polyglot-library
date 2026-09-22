@@ -337,7 +337,7 @@
         "a day",
         "an hour",
         "a season",
-        "a night"
+        "a week"
       ],
       "audioClip": {
         "storySlug": "seis-naranjas-y-un-delantal",
@@ -383,9 +383,9 @@
       "answer": "inside",
       "options": [
         "inside",
-        "outside",
         "upstairs",
-        "nearby"
+        "nearby",
+        "behind"
       ],
       "audioClip": {
         "storySlug": "seis-naranjas-y-un-delantal",
@@ -455,7 +455,7 @@
       "answer": "small",
       "options": [
         "small",
-        "big",
+        "warm",
         "empty",
         "new"
       ],

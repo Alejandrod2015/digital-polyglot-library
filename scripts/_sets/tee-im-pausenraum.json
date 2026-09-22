@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Becher,die Pfefferminze,der Pausenraum,das Heimweh",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Becher",
-     "answer": "a mug",
-     "options": [
-      "a mug",
-      "peppermint",
-      "a break room",
-      "homesickness"
-     ]
-    },
-    {
-     "word": "die Pfefferminze",
-     "answer": "peppermint",
-     "options": [
-      "a mug",
-      "peppermint",
-      "a break room",
-      "homesickness"
-     ]
-    },
-    {
-     "word": "der Pausenraum",
-     "answer": "a break room",
-     "options": [
-      "a mug",
-      "peppermint",
-      "a break room",
-      "homesickness"
-     ]
-    },
-    {
-     "word": "das Heimweh",
-     "answer": "homesickness",
-     "options": [
-      "a mug",
-      "peppermint",
-      "a break room",
-      "homesickness"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Becher,die Pfefferminze,der Pausenraum,das Heimweh",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Becher",
+          "answer": "a mug",
+          "options": [
+            "a mug",
+            "peppermint",
+            "a break room",
+            "homesickness"
+          ]
+        },
+        {
+          "word": "die Pfefferminze",
+          "answer": "peppermint",
+          "options": [
+            "a mug",
+            "peppermint",
+            "a break room",
+            "homesickness"
+          ]
+        },
+        {
+          "word": "der Pausenraum",
+          "answer": "a break room",
+          "options": [
+            "a mug",
+            "peppermint",
+            "a break room",
+            "homesickness"
+          ]
+        },
+        {
+          "word": "das Heimweh",
+          "answer": "homesickness",
+          "options": [
+            "a mug",
+            "peppermint",
+            "a break room",
+            "homesickness"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nett",
-  "sentence": "Alle sind hier sehr [[nett]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nice",
-   "options": [
-    "nice",
-    "strict",
-    "busy",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Alle sind hier sehr nett.",
-    "targetWord": "nett",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schwach",
-  "sentence": "Sie fühlt sich ganz [[schwach]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "weak",
-   "options": [
-    "weak",
-    "hungry",
-    "cold",
-    "bored"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Sie fühlt sich ganz schwach.",
-    "targetWord": "schwach",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zuerst",
-  "sentence": "Sie sagt [[zuerst]] gar nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at first",
-   "options": [
-    "at first",
-    "never",
-    "already",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Sie sagt zuerst gar nichts.",
-    "targetWord": "zuerst",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fremd",
-  "sentence": "Die Stadt ist ihr noch [[fremd]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "strange",
-   "options": [
-    "strange",
-    "familiar",
-    "near",
-    "quiet"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Die Stadt ist ihr noch fremd.",
-    "targetWord": "fremd",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "einsam",
-  "sentence": "Abends ist sie oft [[einsam]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "lonely",
-   "options": [
-    "lonely",
-    "tired",
-    "happy",
-    "busy"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Abends ist sie oft einsam.",
-    "targetWord": "einsam",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Gefühl",
-  "sentence": "Dieses [[Gefühl]] ist wirklich schrecklich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "feeling",
-   "options": [
-    "feeling",
-    "secret",
-    "idea",
-    "question"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Dieses Gefühl ist wirklich schrecklich.",
-    "targetWord": "Gefühl",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schrecklich",
-  "sentence": "Dieses Gefühl ist wirklich [[schrecklich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "terrible",
-   "options": [
-    "terrible",
-    "normal",
-    "funny",
-    "small"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Dieses Gefühl ist wirklich schrecklich.",
-    "targetWord": "schrecklich",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kenne",
-  "sentence": "Ich [[kenne]] dieses Gefühl gut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "know",
-   "options": [
-    "know",
-    "forget",
-    "hate",
-    "fear"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Ich kenne dieses Gefühl gut.",
-    "targetWord": "kenne",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "leicht",
-  "sentence": "Es ist wirklich nicht [[leicht]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "easy",
-   "options": [
-    "easy",
-    "hard",
-    "new",
-    "clear"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Es ist wirklich nicht leicht.",
-    "targetWord": "leicht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "erstaunt",
-  "sentence": "Sie schaut ganz [[erstaunt]] an.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "astonished",
-   "options": [
-    "astonished",
-    "angry",
-    "bored",
-    "sleepy"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Sie schaut ganz erstaunt an.",
-    "targetWord": "erstaunt",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Woher",
-  "sentence": "[[Woher]] kommst du denn?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "where from",
-   "options": [
-    "where from",
-    "how",
-    "why",
-    "when"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Woher kommst du denn?",
-    "targetWord": "Woher",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "nett",
+    "sentence": "Alle sind hier sehr [[nett]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nice",
+      "options": [
+        "nice",
+        "strict",
+        "busy",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Alle sind hier sehr nett.",
+        "targetWord": "nett",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "lächelt",
-  "sentence": "Sie [[lächelt]] freundlich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "smiles",
-   "options": [
-    "smiles",
-    "weeps",
-    "shouts",
-    "sighs"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Sie lächelt freundlich.",
-    "targetWord": "lächelt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schwach",
+    "sentence": "Sie fühlt sich ganz [[schwach]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "weak",
+      "options": [
+        "weak",
+        "hungry",
+        "cold",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Sie fühlt sich ganz schwach.",
+        "targetWord": "schwach",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Früher",
-  "sentence": "[[Früher]] war Frankfurt auch fremd.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "earlier, in the past",
-   "options": [
-    "earlier, in the past",
-    "never before",
-    "right now",
-    "much later"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Früher war Frankfurt auch fremd.",
-    "targetWord": "Früher",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "zuerst",
+    "sentence": "Sie sagt [[zuerst]] gar nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at first",
+      "options": [
+        "at first",
+        "never",
+        "already",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Sie sagt zuerst gar nichts.",
+        "targetWord": "zuerst",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "regnet",
-  "sentence": "Draußen _____ es den ganzen Tag.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "regnet",
-   "options": [
-    "regnet",
-    "scheint",
-    "friert",
-    "donnert"
-   ],
-   "translation": "Outside it's _____ all day.",
-   "optionTranslations": [
-    "raining",
-    "shining",
-    "freezing",
-    "thundering"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Draußen regnet es den ganzen Tag.",
-    "targetWord": "regnet",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "fremd",
+    "sentence": "Die Stadt ist ihr noch [[fremd]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": [
+        "strange",
+        "familiar",
+        "near",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Die Stadt ist ihr noch fremd.",
+        "targetWord": "fremd",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "glaube",
-  "sentence": "Ich _____, das kenne ich gut.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "glaube",
-   "options": [
-    "glaube",
-    "weiß",
-    "höre",
-    "sage"
-   ],
-   "translation": "I _____ I know that well.",
-   "optionTranslations": [
-    "believe",
-    "know",
-    "hear",
-    "say"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Ich glaube, das kenne ich gut.",
-    "targetWord": "glaube",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "einsam",
+    "sentence": "Abends ist sie oft [[einsam]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lonely",
+      "options": [
+        "lonely",
+        "tired",
+        "happy",
+        "busy"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Abends ist sie oft einsam.",
+        "targetWord": "einsam",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "erinnert",
-  "sentence": "Das Gespräch _____ sie an ihr erstes Jahr.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "erinnert",
-   "options": [
-    "erinnert",
-    "fragt",
-    "stört",
-    "freut"
-   ],
-   "translation": "The conversation _____ her of her first year.",
-   "optionTranslations": [
-    "reminds",
-    "asks",
-    "bothers",
-    "pleases"
-   ],
-   "audioClip": {
-    "storySlug": "tee-im-pausenraum",
-    "storySource": "user",
-    "sentence": "Das Gespräch erinnert sie an ihr erstes Jahr.",
-    "targetWord": "erinnert",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Gefühl",
+    "sentence": "Dieses [[Gefühl]] ist wirklich schrecklich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "feeling",
+      "options": [
+        "feeling",
+        "secret",
+        "idea",
+        "question"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Dieses Gefühl ist wirklich schrecklich.",
+        "targetWord": "Gefühl",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "schrecklich",
+    "sentence": "Dieses Gefühl ist wirklich [[schrecklich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "terrible",
+      "options": [
+        "terrible",
+        "normal",
+        "funny",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Dieses Gefühl ist wirklich schrecklich.",
+        "targetWord": "schrecklich",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kenne",
+    "sentence": "Ich [[kenne]] dieses Gefühl gut.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "know",
+      "options": [
+        "know",
+        "forget",
+        "hate",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Ich kenne dieses Gefühl gut.",
+        "targetWord": "kenne",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leicht",
+    "sentence": "Es ist wirklich nicht [[leicht]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "cheap",
+        "new",
+        "clear"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Es ist wirklich nicht leicht.",
+        "targetWord": "leicht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "erstaunt",
+    "sentence": "Sie schaut ganz [[erstaunt]] an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "astonished",
+      "options": [
+        "astonished",
+        "angry",
+        "bored",
+        "sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Sie schaut ganz erstaunt an.",
+        "targetWord": "erstaunt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Woher",
+    "sentence": "[[Woher]] kommst du denn?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "where from",
+      "options": [
+        "where from",
+        "how",
+        "why",
+        "when"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Woher kommst du denn?",
+        "targetWord": "Woher",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lächelt",
+    "sentence": "Sie [[lächelt]] freundlich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smiles",
+      "options": [
+        "smiles",
+        "weeps",
+        "shouts",
+        "sighs"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Sie lächelt freundlich.",
+        "targetWord": "lächelt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Früher",
+    "sentence": "[[Früher]] war Frankfurt auch fremd.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "earlier, in the past",
+      "options": [
+        "earlier, in the past",
+        "never before",
+        "right now",
+        "much later"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Früher war Frankfurt auch fremd.",
+        "targetWord": "Früher",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "regnet",
+    "sentence": "Draußen _____ es den ganzen Tag.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regnet",
+      "options": [
+        "regnet",
+        "scheint",
+        "friert",
+        "donnert"
+      ],
+      "translation": "Outside it's _____ all day.",
+      "optionTranslations": [
+        "raining",
+        "shining",
+        "freezing",
+        "thundering"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Draußen regnet es den ganzen Tag.",
+        "targetWord": "regnet",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "glaube",
+    "sentence": "Ich _____, das kenne ich gut.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "glaube",
+      "options": [
+        "glaube",
+        "weiß",
+        "höre",
+        "sage"
+      ],
+      "translation": "I _____ I know that well.",
+      "optionTranslations": [
+        "believe",
+        "know",
+        "hear",
+        "say"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Ich glaube, das kenne ich gut.",
+        "targetWord": "glaube",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "erinnert",
+    "sentence": "Das Gespräch _____ sie an ihr erstes Jahr.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "erinnert",
+      "options": [
+        "erinnert",
+        "fragt",
+        "stört",
+        "freut"
+      ],
+      "translation": "The conversation _____ her of her first year.",
+      "optionTranslations": [
+        "reminds",
+        "asks",
+        "bothers",
+        "pleases"
+      ],
+      "audioClip": {
+        "storySlug": "tee-im-pausenraum",
+        "storySource": "user",
+        "sentence": "Das Gespräch erinnert sie an ihr erstes Jahr.",
+        "targetWord": "erinnert",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

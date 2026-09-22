@@ -56,12 +56,12 @@
     "sentence": "Las ventanas daban a la [[Plaza Mayor]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Salamanca's main square",
+      "answer": "the main square",
       "options": [
-        "Salamanca's main square",
-        "a small park",
-        "a train station",
-        "a quiet street"
+        "the main square",
+        "the small park",
+        "the train station",
+        "the quiet street"
       ],
       "audioClip": {
         "storySlug": "agua-en-el-local",
@@ -103,7 +103,7 @@
       "answer": "never",
       "options": [
         "never",
-        "always",
+        "twice",
         "sometimes",
         "once"
       ],
@@ -235,7 +235,7 @@
       "answer": "empty",
       "options": [
         "empty",
-        "full",
+        "dark",
         "noisy",
         "wet"
       ],

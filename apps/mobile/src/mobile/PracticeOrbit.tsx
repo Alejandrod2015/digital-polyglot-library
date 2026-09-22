@@ -61,6 +61,19 @@ export type PracticeOrbitProps = {
    *  tarjeta no se pinta y el modo no cuenta como skill, igual que su slot no
    *  entra en la sesion mixta. */
   speakingEnabled?: boolean;
+  /** true mientras el shell calcula cuantos ejercicios hay por habilidad (es
+   *  caro: monta cinco sesiones sobre todo el pool y tarda mas de un segundo
+   *  con un pool grande). Mientras tanto no se ensenan ceros, que leen como
+   *  "no hay nada": las tarjetas van sin numero y la tagline sin "0 skills". */
+  breakdownPending?: boolean;
+  /** Palabras falladas y aun no recuperadas (racha 0 tras un repaso), la mas
+   *  reciente primero. Con alguna, bajo las habilidades sale la franja
+   *  "N words you missed · RETRY"; vacia, no se pinta nada. Pedido por una
+   *  tester el 2026-09-21: el "Fix N" del final de la ronda existia, pero
+   *  moria al salir de esa pantalla y desde Practica no habia camino. */
+  missedWords?: string[];
+  /** Lanza la ronda solo con las falladas. */
+  onRetryMissed?: () => void;
 };
 
 const MODE_COLORS: Record<PracticeModeKey, string> = {
@@ -68,7 +81,10 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   context: "#86efac", // verde menta
   listening: "#f0abfc", // rosa
   match: "#7dd3fc", // cyan
-  speaking: "#f8c15c", // ambar, el color del turno hablado desde el 2026-09-14
+  // Naranja desde el 2026-09-21. Era ambar (#f8c15c), a ojo el mismo amarillo
+  // que Meaning (#facc15) en el anillo y en las tarjetas, y ademas el color
+  // del boton START; el usuario no distinguia las dos habilidades.
+  speaking: "#fb923c",
 };
 
 // Uniform card fill for all four skills. Each card used to fill with
@@ -78,6 +94,8 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
 // neutral fill evens them out; each mode's color still lives in the border,
 // icon chip and glow, so the ring-segment match is preserved.
 const SKILL_CARD_BG = "rgba(255,255,255,0.05)";
+// Rosa de los fallos: el mismo del icono "Fix N" de la pantalla de resultado.
+const MISSED_COLOR = "#fb7185";
 
 const MODE_ICONS: Record<
   PracticeModeKey,
@@ -204,6 +222,20 @@ const HeaderChips = memo(function HeaderChips({
  * con setState; para 4-5 contadores simultáneos a 60fps no es
  * problema. Cuando cambia el target arranca una nueva animación.
  */
+/** Opacidad 0 -> 1 cuando `visible` pasa a true. Los numeros del hub entran
+ *  con esto en cuanto llega el recuento, en vez de aparecer de golpe. */
+function useFadeIn(visible: boolean, durationMs = 350): Animated.Value {
+  const value = useRef(new Animated.Value(visible ? 1 : 0)).current;
+  useEffect(() => {
+    Animated.timing(value, {
+      toValue: visible ? 1 : 0,
+      duration: durationMs,
+      useNativeDriver: true,
+    }).start();
+  }, [value, visible, durationMs]);
+  return value;
+}
+
 function useRollup(target: number, durationMs = 700): number {
   const [value, setValue] = useState(0);
   const startRef = useRef<number | null>(null);
@@ -236,10 +268,12 @@ function useRollup(target: number, durationMs = 700): number {
 const SkillCard = memo(function SkillCard({
   mode,
   count,
+  pending = false,
   onPress,
 }: {
   mode: PracticeModeKey;
   count: number;
+  pending?: boolean;
   onPress: () => void;
 }) {
   // Card de "skill drill" con look videogame: bg tinteado del color
@@ -249,6 +283,7 @@ const SkillCard = memo(function SkillCard({
   // segment, etc. Counts hacen rollup de 0 → N al montar.
   const color = MODE_COLORS[mode];
   const animatedCount = useRollup(count, 700);
+  const countOpacity = useFadeIn(!pending);
   return (
     <Pressable
       onPress={onPress}
@@ -269,7 +304,9 @@ const SkillCard = memo(function SkillCard({
         <View style={[styles.skillIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={18} color={color} />
         </View>
-        <Text style={styles.skillCount}>{animatedCount}</Text>
+        <Animated.Text style={[styles.skillCount, { opacity: countOpacity }]}>
+          {pending ? "" : animatedCount}
+        </Animated.Text>
       </View>
       <Text style={styles.skillCardLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -344,6 +381,7 @@ function hugPath(x0: number, y0: number, w: number, h: number, corner: HugCorner
 const HugLabel = memo(function HugLabel({
   mode,
   count,
+  pending = false,
   corner,
   onPress,
   x,
@@ -353,6 +391,7 @@ const HugLabel = memo(function HugLabel({
 }: {
   mode: PracticeModeKey;
   count: number;
+  pending?: boolean;
   corner: HugCorner;
   onPress: () => void;
   x: number;
@@ -362,6 +401,7 @@ const HugLabel = memo(function HugLabel({
 }) {
   const color = MODE_COLORS[mode];
   const animatedCount = useRollup(count, 700);
+  const countOpacity = useFadeIn(!pending);
   const right = corner === "tr" || corner === "br";
   const bottom = corner === "bl" || corner === "br";
   // El contenido se apoya en el lado exterior de la tarjeta (lejos del
@@ -384,7 +424,9 @@ const HugLabel = memo(function HugLabel({
         <View style={[styles.hugIconChip, { backgroundColor: `${color}40` }]}>
           <Feather name={MODE_ICONS[mode]} size={15} color={color} />
         </View>
-        <Text style={styles.skillCount}>{animatedCount}</Text>
+        <Animated.Text style={[styles.skillCount, { opacity: countOpacity }]}>
+          {pending ? "" : animatedCount}
+        </Animated.Text>
       </View>
       <Text style={styles.hugLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
     </Pressable>
@@ -393,13 +435,16 @@ const HugLabel = memo(function HugLabel({
 
 const SkillHug = memo(function SkillHug({
   breakdown,
+  pending = false,
   onPick,
 }: {
   breakdown: Record<PracticeModeKey, number>;
+  pending?: boolean;
   onPick: (mode: PracticeModeKey) => void;
 }) {
   const [width, setWidth] = useState(0);
   const speakingCount = useRollup(breakdown.speaking ?? 0, 700);
+  const speakingOpacity = useFadeIn(!pending);
   const speakingColor = MODE_COLORS.speaking;
   const tileW = Math.max(0, (width - HUG_GAP) / 2);
   const tileH = (HUG_HEIGHT - HUG_GAP) / 2;
@@ -456,6 +501,7 @@ const SkillHug = memo(function SkillHug({
               mode={mode}
               corner={corner}
               count={breakdown[mode] ?? 0}
+              pending={pending}
               onPress={() => onPick(mode)}
               x={x}
               y={y}
@@ -464,28 +510,35 @@ const SkillHug = memo(function SkillHug({
             />
           ))
         : null}
-      <Pressable
-        onPress={() => onPick("speaking")}
-        accessibilityRole="button"
-        accessibilityLabel="qa-practice-skill-speaking"
-        testID="qa-practice-skill-speaking"
-        style={({ pressed }) => [
-          styles.hugCircle,
-          {
-            left: cx - HUG_CIRCLE / 2,
-            top: cy - HUG_CIRCLE / 2,
-            borderColor: speakingColor,
-            shadowColor: speakingColor,
-          },
-          pressed ? styles.skillCardPressed : null,
-        ]}
-      >
-        <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
-        <Text style={styles.hugCircleCount}>{speakingCount}</Text>
-        <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
-          {MODE_LABELS.speaking.toUpperCase()}
-        </Text>
-      </Pressable>
+      {/* Mismo candado que las cuatro tarjetas: hasta que onLayout mide el
+          ancho, cx vale 0 y el circulo se pintaba medio fuera por la
+          izquierda durante el primer frame. */}
+      {width > 0 ? (
+        <Pressable
+          onPress={() => onPick("speaking")}
+          accessibilityRole="button"
+          accessibilityLabel="qa-practice-skill-speaking"
+          testID="qa-practice-skill-speaking"
+          style={({ pressed }) => [
+            styles.hugCircle,
+            {
+              left: cx - HUG_CIRCLE / 2,
+              top: cy - HUG_CIRCLE / 2,
+              borderColor: speakingColor,
+              shadowColor: speakingColor,
+            },
+            pressed ? styles.skillCardPressed : null,
+          ]}
+        >
+          <Feather name={MODE_ICONS.speaking} size={18} color={speakingColor} />
+          <Animated.Text style={[styles.hugCircleCount, { opacity: speakingOpacity }]}>
+            {pending ? "" : speakingCount}
+          </Animated.Text>
+          <Text style={[styles.hugCircleLabel, { color: speakingColor }]}>
+            {MODE_LABELS.speaking.toUpperCase()}
+          </Text>
+        </Pressable>
+      ) : null}
     </View>
   );
 });
@@ -505,6 +558,9 @@ export function PracticeOrbit({
   reviewSoonCount = 0,
   reviewSoonMinutes,
   speakingEnabled = false,
+  breakdownPending = false,
+  missedWords = [],
+  onRetryMissed,
 }: PracticeOrbitProps) {
   // Una sola lista manda sobre el anillo, el recuento de skills y la rejilla,
   // para que no puedan desincronizarse.
@@ -706,8 +762,9 @@ export function PracticeOrbit({
         ) : (
           <>
             ~{estimateSessionMinutes(totalDue)} min
-            {" · "}
-            {visibleModes.filter((m) => modeBreakdown[m] > 0).length} skills
+            {breakdownPending
+              ? ""
+              : ` · ${visibleModes.filter((m) => modeBreakdown[m] > 0).length} skills`}
             {" · +"}{xpReward} XP
           </>
         )}
@@ -721,7 +778,7 @@ export function PracticeOrbit({
       {speakingEnabled ? (
         // Cinco habilidades: las cuatro de siempre abrazan al circulo de
         // Speaking. Ver SkillHug.
-        <SkillHug breakdown={modeBreakdown} onPick={handleSkillPress} />
+        <SkillHug breakdown={modeBreakdown} pending={breakdownPending} onPick={handleSkillPress} />
       ) : (
         <View style={styles.skillGrid}>
           {visibleModes.map((mode) => (
@@ -729,14 +786,72 @@ export function PracticeOrbit({
               key={mode}
               mode={mode}
               count={modeBreakdown[mode] ?? 0}
+              pending={breakdownPending}
               onPress={() => handleSkillPress(mode)}
             />
           ))}
         </View>
       )}
+
+      {missedWords.length > 0 && onRetryMissed ? (
+        <MissedStrip words={missedWords} onRetry={onRetryMissed} />
+      ) : null}
     </View>
   );
 }
+
+// Cuantas palabras enteras caben en la linea de la franja. Se cuenta por
+// caracteres y no midiendo el texto: RN no da el ancho antes de pintar, y una
+// palabra cortada a medias ("parc...") es peor que una menos. Siempre sale al
+// menos una; el resto va como "+K".
+const MISSED_LINE_BUDGET = 30;
+
+function fitMissedWords(words: string[]): { shown: string[]; rest: number } {
+  const shown: string[] = [];
+  let used = 0;
+  for (const word of words) {
+    const cost = word.length + (shown.length > 0 ? 3 : 0);
+    if (shown.length > 0 && used + cost > MISSED_LINE_BUDGET) break;
+    shown.push(word);
+    used += cost;
+  }
+  return { shown, rest: words.length - shown.length };
+}
+
+const MissedStrip = memo(function MissedStrip({
+  words,
+  onRetry,
+}: {
+  words: string[];
+  onRetry: () => void;
+}) {
+  const { shown, rest } = fitMissedWords(words);
+  return (
+    <Pressable
+      onPress={onRetry}
+      accessibilityRole="button"
+      accessibilityLabel={`Retry the ${words.length} ${words.length === 1 ? "word" : "words"} you missed`}
+      testID="qa-practice-missed"
+      style={({ pressed }) => [styles.missedStrip, pressed ? styles.missedStripPressed : null]}
+    >
+      <View style={styles.missedIconWrap}>
+        <Feather name="x-circle" size={14} color={MISSED_COLOR} />
+      </View>
+      <View style={styles.missedText}>
+        <Text style={styles.missedTitle}>
+          {words.length} {words.length === 1 ? "word" : "words"} you missed
+        </Text>
+        <Text style={styles.missedWords} numberOfLines={1}>
+          {shown.join(" · ")}
+          {rest > 0 ? <Text style={styles.missedMore}>{`  +${rest}`}</Text> : null}
+        </Text>
+      </View>
+      <View style={styles.missedCta}>
+        <Text style={styles.missedCtaLabel}>RETRY</Text>
+      </View>
+    </Pressable>
+  );
+});
 
 const styles = StyleSheet.create({
   shell: {
@@ -896,6 +1011,62 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 10,
+  },
+  // Franja de fallos bajo las habilidades. Misma anchura que el bloque de
+  // tarjetas (hereda el padding del shell), fondo navy de las tarjetas
+  // flotantes y borde rosa fino: se ve, pero no compite con START.
+  missedStrip: {
+    marginTop: 14,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    backgroundColor: "#151d2e",
+    borderWidth: 1,
+    borderColor: "rgba(251,113,133,0.5)",
+    borderRadius: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  missedStripPressed: {
+    opacity: 0.85,
+  },
+  missedIconWrap: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: "rgba(251,113,133,0.18)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  missedText: {
+    flex: 1,
+    minWidth: 0,
+  },
+  missedTitle: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  missedWords: {
+    color: "#cdd9ec",
+    fontSize: 11,
+    marginTop: 2,
+  },
+  missedMore: {
+    color: MISSED_COLOR,
+    fontWeight: "800",
+  },
+  missedCta: {
+    backgroundColor: MISSED_COLOR,
+    borderRadius: 14,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  missedCtaLabel: {
+    color: "#0e1727",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 0.8,
   },
   skillCard: {
     width: "48%",

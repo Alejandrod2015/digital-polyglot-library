@@ -128,9 +128,9 @@
       "answer": "the smell of damp",
       "options": [
         "the smell of damp",
-        "fresh paint",
-        "burnt sugar",
-        "wet grass"
+        "the fresh paint",
+        "the burnt sugar",
+        "the wet grass"
       ],
       "audioClip": {
         "storySlug": "a-pousada-sem-luz",
@@ -287,9 +287,9 @@
     "sentence": "A [[energia]] volta às três da madrugada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "electricity",
+      "answer": "the electricity",
       "options": [
-        "electricity",
+        "the electricity",
         "the water",
         "the noise",
         "the heat"

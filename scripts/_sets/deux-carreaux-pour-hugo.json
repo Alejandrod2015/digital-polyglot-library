@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "la tasse,le tablier,le mistral,la tête",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "la tasse",
-     "answer": "a small coffee cup",
-     "options": [
-      "a small coffee cup",
-      "a work apron",
-      "a strong cold wind",
-      "the head"
-     ]
-    },
-    {
-     "word": "le tablier",
-     "answer": "a work apron",
-     "options": [
-      "a small coffee cup",
-      "a work apron",
-      "a strong cold wind",
-      "the head"
-     ]
-    },
-    {
-     "word": "le mistral",
-     "answer": "a strong cold wind",
-     "options": [
-      "a small coffee cup",
-      "a work apron",
-      "a strong cold wind",
-      "the head"
-     ]
-    },
-    {
-     "word": "la tête",
-     "answer": "the head",
-     "options": [
-      "a small coffee cup",
-      "a work apron",
-      "a strong cold wind",
-      "the head"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "la tasse,le tablier,le mistral,la tête",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la tasse",
+          "answer": "a small coffee cup",
+          "options": [
+            "a small coffee cup",
+            "a work apron",
+            "a strong cold wind",
+            "the head"
+          ]
+        },
+        {
+          "word": "le tablier",
+          "answer": "a work apron",
+          "options": [
+            "a small coffee cup",
+            "a work apron",
+            "a strong cold wind",
+            "the head"
+          ]
+        },
+        {
+          "word": "le mistral",
+          "answer": "a strong cold wind",
+          "options": [
+            "a small coffee cup",
+            "a work apron",
+            "a strong cold wind",
+            "the head"
+          ]
+        },
+        {
+          "word": "la tête",
+          "answer": "the head",
+          "options": [
+            "a small coffee cup",
+            "a work apron",
+            "a strong cold wind",
+            "the head"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le carreau",
-  "sentence": "Sa boule reste à sa place: c'est un [[carreau]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a perfect shot",
-   "options": [
-    "a perfect shot",
-    "a bad throw",
-    "a lucky bounce",
-    "a lost ball"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Sa boule reste à sa place: c'est un carreau.",
-    "targetWord": "carreau",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tirer",
-  "sentence": "Il [[tire]]: carreau. Encore: carreau.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hit a ball hard",
-   "options": [
-    "to hit a ball hard",
-    "to roll a ball gently",
-    "to hold a ball still",
-    "to clean a ball"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Il tire: carreau. Encore: carreau.",
-    "targetWord": "tire",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le pari",
-  "sentence": "Il fait un [[pari]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a bet",
-   "options": [
-    "a bet",
-    "a joke",
-    "a mistake",
-    "a plan"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Il fait un pari.",
-    "targetWord": "pari",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "souffler",
-  "sentence": "Le mistral arrive. Il [[souffle]] fort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to blow",
-   "options": [
-    "to blow",
-    "to rain",
-    "to shine",
-    "to freeze"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Le mistral arrive. Il souffle fort.",
-    "targetWord": "souffle",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "devoir",
-  "sentence": "“Tu [[dois]] apprendre à tirer.”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to have to",
-   "options": [
-    "to have to",
-    "to want to",
-    "to be able to",
-    "to like to"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "“Tu dois apprendre à tirer.”",
-    "targetWord": "dois",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rater",
-  "sentence": "Elle tire, et elle [[rate]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to miss",
-   "options": [
-    "to miss",
-    "to hit",
-    "to win",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Elle tire, et elle rate.",
-    "targetWord": "rate",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "payer",
-  "sentence": "Si tu rates, tu [[paies]] les cafés.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pay for",
-   "options": [
-    "to pay for",
-    "to drink",
-    "to make",
-    "to carry"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Si tu rates, tu paies les cafés.",
-    "targetWord": "paies",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "l'ombre",
-  "sentence": "Ils restent à l'[[ombre]] tout l'après-midi.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the shade",
-   "options": [
-    "the shade",
-    "the sunshine",
-    "the wind",
-    "the rain"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Ils restent à l'ombre tout l'après-midi.",
-    "targetWord": "ombre",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "fort",
-  "sentence": "Le vent souffle _____: les chapeaux s'envolent.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "fort",
-   "options": [
-    "fort",
-    "doucement",
-    "lentement",
-    "rarement"
-   ],
-   "translation": "The wind blows _____: the hats fly away.",
-   "optionTranslations": [
-    "hard",
-    "gently",
-    "slowly",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Le vent souffle fort: les chapeaux s'envolent.",
-    "targetWord": "fort",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "montrer",
-  "sentence": "Il veut [[montrer]] quelque chose.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to show",
-   "options": [
-    "to show",
-    "to hide",
-    "to sell",
-    "to ask"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Il veut montrer quelque chose.",
-    "targetWord": "montrer",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "prendre",
-  "sentence": "Mais elle [[prend]] une boule.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pick up",
-   "options": [
-    "to pick up",
-    "to put down",
-    "to clean",
-    "to buy"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Mais elle prend une boule.",
-    "targetWord": "prend",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le carreau",
+    "sentence": "Sa boule reste à sa place: c'est un [[carreau]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a perfect shot",
+      "options": [
+        "a perfect shot",
+        "a bad throw",
+        "a lucky bounce",
+        "a lost ball"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Sa boule reste à sa place: c'est un carreau.",
+        "targetWord": "carreau",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "droit",
-  "sentence": "La boule ne va pas [[droit]], et elle rate.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "straight",
-   "options": [
-    "straight",
-    "fast",
-    "high",
-    "low"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "La boule ne va pas droit, et elle rate.",
-    "targetWord": "droit",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tirer",
+    "sentence": "Il [[tire]]: carreau. Encore: carreau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hit a ball hard",
+      "options": [
+        "to hit a ball hard",
+        "to roll a ball gently",
+        "to hold a ball still",
+        "to clean a ball"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Il tire: carreau. Encore: carreau.",
+        "targetWord": "tire",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "comme ça",
-  "sentence": "Tu tiens la boule [[comme ça]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "like this",
-   "options": [
-    "like this",
-    "over there",
-    "right now",
-    "too much"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Tu tiens la boule comme ça.",
-    "targetWord": "comme ça",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le pari",
+    "sentence": "Il fait un [[pari]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bet",
+      "options": [
+        "a bet",
+        "a joke",
+        "a mistake",
+        "a plan"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Il fait un pari.",
+        "targetWord": "pari",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "encore une fois",
-  "sentence": "“[[Encore une fois]]”, annonce-t-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "one more time",
-   "options": [
-    "one more time",
-    "never again",
-    "not today",
-    "all together"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "“Encore une fois”, annonce-t-elle.",
-    "targetWord": "Encore une fois",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "souffler",
+    "sentence": "Le mistral arrive. Il [[souffle]] fort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to blow",
+      "options": [
+        "to blow",
+        "to rain",
+        "to shine",
+        "to freeze"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Le mistral arrive. Il souffle fort.",
+        "targetWord": "souffle",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "facile",
-  "sentence": "Le test est très _____: tout le monde réussit.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "facile",
-   "options": [
-    "facile",
-    "difficile",
-    "sale",
-    "cher"
-   ],
-   "translation": "The test is very _____: everyone passes.",
-   "optionTranslations": [
-    "easy",
-    "difficult",
-    "dirty",
-    "expensive"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Le test est très facile: tout le monde réussit.",
-    "targetWord": "facile",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "devoir",
+    "sentence": "“Tu [[dois]] apprendre à tirer.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have to",
+      "options": [
+        "to have to",
+        "to want to",
+        "to be able to",
+        "to like to"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "“Tu dois apprendre à tirer.”",
+        "targetWord": "dois",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "va",
-  "sentence": "Chaque matin, elle _____ au travail à pied.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "va",
-   "options": [
-    "va",
-    "dort",
-    "mange",
-    "lit"
-   ],
-   "translation": "Every morning, she _____ to work on foot.",
-   "optionTranslations": [
-    "goes",
-    "sleeps",
-    "eats",
-    "reads"
-   ],
-   "audioClip": {
-    "storySlug": "deux-carreaux-pour-hugo",
-    "storySource": "user",
-    "sentence": "Chaque matin, elle va au travail à pied.",
-    "targetWord": "va",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "rater",
+    "sentence": "Elle tire, et elle [[rate]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to miss",
+      "options": [
+        "to miss",
+        "to hit",
+        "to win",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Elle tire, et elle rate.",
+        "targetWord": "rate",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "payer",
+    "sentence": "Si tu rates, tu [[paies]] les cafés.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pay for",
+      "options": [
+        "to pay for",
+        "to drink",
+        "to make",
+        "to carry"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Si tu rates, tu paies les cafés.",
+        "targetWord": "paies",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'ombre",
+    "sentence": "Ils restent à l'[[ombre]] tout l'après-midi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shade",
+      "options": [
+        "the shade",
+        "the sunshine",
+        "the wind",
+        "the rain"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Ils restent à l'ombre tout l'après-midi.",
+        "targetWord": "ombre",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fort",
+    "sentence": "Le vent souffle _____: les chapeaux s'envolent.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fort",
+      "options": [
+        "fort",
+        "doucement",
+        "lentement",
+        "rarement"
+      ],
+      "translation": "The wind blows _____: the hats fly away.",
+      "optionTranslations": [
+        "hard",
+        "gently",
+        "slowly",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Le vent souffle fort: les chapeaux s'envolent.",
+        "targetWord": "fort",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montrer",
+    "sentence": "Il veut [[montrer]] quelque chose.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show",
+      "options": [
+        "to show",
+        "to hide",
+        "to sell",
+        "to ask"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Il veut montrer quelque chose.",
+        "targetWord": "montrer",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prendre",
+    "sentence": "Mais elle [[prend]] une boule.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pick up",
+      "options": [
+        "to pick up",
+        "to put down",
+        "to clean",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Mais elle prend une boule.",
+        "targetWord": "prend",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "droit",
+    "sentence": "La boule ne va pas [[droit]], et elle rate.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight",
+      "options": [
+        "straight",
+        "fast",
+        "high",
+        "low"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "La boule ne va pas droit, et elle rate.",
+        "targetWord": "droit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comme ça",
+    "sentence": "Tu tiens la boule [[comme ça]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "like this",
+      "options": [
+        "like this",
+        "over there",
+        "right now",
+        "too much"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Tu tiens la boule comme ça.",
+        "targetWord": "comme ça",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encore une fois",
+    "sentence": "“[[Encore une fois]]”, annonce-t-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one more time",
+      "options": [
+        "one more time",
+        "never again",
+        "not today",
+        "all together"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "“Encore une fois”, annonce-t-elle.",
+        "targetWord": "Encore une fois",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "facile",
+    "sentence": "Le test est très _____: tout le monde réussit.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "facile",
+      "options": [
+        "facile",
+        "long",
+        "sale",
+        "cher"
+      ],
+      "translation": "The test is very _____: everyone passes.",
+      "optionTranslations": [
+        "easy",
+        "long",
+        "dirty",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Le test est très facile: tout le monde réussit.",
+        "targetWord": "facile",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "va",
+    "sentence": "Chaque matin, elle _____ au travail à pied.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "va",
+      "options": [
+        "va",
+        "dort",
+        "mange",
+        "lit"
+      ],
+      "translation": "Every morning, she _____ to work on foot.",
+      "optionTranslations": [
+        "goes",
+        "sleeps",
+        "eats",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "deux-carreaux-pour-hugo",
+        "storySource": "user",
+        "sentence": "Chaque matin, elle va au travail à pied.",
+        "targetWord": "va",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

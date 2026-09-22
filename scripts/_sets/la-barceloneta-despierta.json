@@ -372,7 +372,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "caliente",
-        "fría",
+        "verde",
         "dura",
         "rica"
       ],
@@ -388,7 +388,7 @@
       "translation": "Do not touch the soup, it is very _____.",
       "optionTranslations": [
         "hot",
-        "cold",
+        "green",
         "hard",
         "tasty"
       ]
@@ -404,7 +404,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "despacio",
-        "rápido",
+        "solo",
         "lejos",
         "temprano"
       ],
@@ -420,7 +420,7 @@
       "translation": "The car goes _____, not fast.",
       "optionTranslations": [
         "slowly",
-        "fast",
+        "alone",
         "far",
         "early"
       ]

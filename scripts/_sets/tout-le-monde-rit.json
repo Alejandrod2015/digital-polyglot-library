@@ -105,7 +105,7 @@
       "answer": "remember",
       "options": [
         "remember",
-        "forget",
+        "dream",
         "choose",
         "sell"
       ],
@@ -335,7 +335,7 @@
       "answer": "the evening",
       "options": [
         "the evening",
-        "the morning",
+        "the meal",
         "the trip",
         "the week"
       ],

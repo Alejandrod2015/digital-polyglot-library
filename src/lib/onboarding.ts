@@ -327,3 +327,23 @@ export const PRODUCT_TOUR_MESSAGES = [
     body: "Everything beyond your journey is in here: Explore for standalone stories, Library for the audiobooks, and Saved for the stories you keep.",
   },
 ] as const;
+
+/**
+ * The mobile tour: the web steps plus one more, pointing at the flag at the
+ * top of the journey. Tapping it opens the journey list, where a lower or
+ * higher level is one "Add journey" away; nobody guesses that from a flag.
+ * Why (2026-09-21): Nancy tested at Pre-Intermediate, found it too hard and
+ * went looking in Settings, which has nothing; she never tapped the flag.
+ * Mobile-only because the web tour runs on the home page, where that flag
+ * does not exist.
+ */
+export const MOBILE_PRODUCT_TOUR_MESSAGES = [
+  ...PRODUCT_TOUR_MESSAGES,
+  {
+    id: "level",
+    target: "level",
+    targetLabel: "Level",
+    title: "Too easy or too hard?",
+    body: "Tap the flag to see your journeys and add one at a different level. Your current journey stays where it is.",
+  },
+] as const;

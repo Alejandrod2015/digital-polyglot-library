@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Dose,die Schrift,der Titel,das Heft",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Dose",
-     "answer": "a tin",
-     "options": [
-      "a tin",
-      "handwriting",
-      "a title",
-      "a notebook"
-     ]
-    },
-    {
-     "word": "die Schrift",
-     "answer": "handwriting",
-     "options": [
-      "a tin",
-      "handwriting",
-      "a title",
-      "a notebook"
-     ]
-    },
-    {
-     "word": "der Titel",
-     "answer": "a title",
-     "options": [
-      "a tin",
-      "handwriting",
-      "a title",
-      "a notebook"
-     ]
-    },
-    {
-     "word": "das Heft",
-     "answer": "a notebook",
-     "options": [
-      "a tin",
-      "handwriting",
-      "a title",
-      "a notebook"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Dose,die Schrift,der Titel,das Heft",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Dose",
+          "answer": "a tin",
+          "options": [
+            "a tin",
+            "handwriting",
+            "a title",
+            "a notebook"
+          ]
+        },
+        {
+          "word": "die Schrift",
+          "answer": "handwriting",
+          "options": [
+            "a tin",
+            "handwriting",
+            "a title",
+            "a notebook"
+          ]
+        },
+        {
+          "word": "der Titel",
+          "answer": "a title",
+          "options": [
+            "a tin",
+            "handwriting",
+            "a title",
+            "a notebook"
+          ]
+        },
+        {
+          "word": "das Heft",
+          "answer": "a notebook",
+          "options": [
+            "a tin",
+            "handwriting",
+            "a title",
+            "a notebook"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Viele",
-  "sentence": "[[Viele]] kleine Zettel liegen in ihrer Dose.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Many",
-   "options": [
-    "Many",
-    "Few",
-    "No",
-    "All"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Viele kleine Zettel liegen in ihrer Dose.",
-    "targetWord": "Viele",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kleine",
-  "sentence": "Viele [[kleine]] Zettel liegen in ihrer Dose.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "small",
-   "options": [
-    "small",
-    "big",
-    "old",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Viele kleine Zettel liegen in ihrer Dose.",
-    "targetWord": "kleine",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zusammen",
-  "sentence": "Die beiden sitzen [[zusammen]] auf der Treppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "together",
-   "options": [
-    "together",
-    "alone",
-    "far apart",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Die beiden sitzen zusammen auf der Treppe.",
-    "targetWord": "zusammen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "liest",
-  "sentence": "Die Freundin [[liest]] die Zettel laut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "reads",
-   "options": [
-    "reads",
-    "writes",
-    "hides",
-    "folds"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Die Freundin liest die Zettel laut.",
-    "targetWord": "liest",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "traurig",
-  "sentence": "“Seite zwölf ist [[traurig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sad",
-   "options": [
-    "sad",
-    "funny",
-    "short",
-    "long"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "“Seite zwölf ist traurig.",
-    "targetWord": "traurig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lustig",
-  "sentence": "Die Treppe ist kalt, aber die Zettel sind [[lustig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "funny",
-   "options": [
-    "funny",
-    "sad",
-    "long",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Die Treppe ist kalt, aber die Zettel sind lustig.",
-    "targetWord": "lustig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Noch",
-  "sentence": "“[[Noch]] einer: Der Kaffee ist kalt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Another",
-   "options": [
-    "Another",
-    "No",
-    "One",
-    "Every"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "“Noch einer: Der Kaffee ist kalt.",
-    "targetWord": "Noch",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schief",
-  "sentence": "Die Schrift ist klein und [[schief]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "crooked",
-   "options": [
-    "crooked",
-    "clear",
-    "big",
-    "dark"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Die Schrift ist klein und schief.",
-    "targetWord": "schief",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vierzig",
-  "sentence": "“Lies Seite [[vierzig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "forty",
-   "options": [
-    "forty",
-    "fourteen",
-    "forty-four",
-    "thirty"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "“Lies Seite vierzig.",
-    "targetWord": "vierzig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "denke",
-  "sentence": "Ich [[denke]] an dich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "think",
-   "options": [
-    "think",
-    "forget",
-    "write",
-    "dream"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Ich denke an dich.",
-    "targetWord": "denke",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "leer",
-  "sentence": "Ihr Kopf ist [[leer]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "empty",
-   "options": [
-    "empty",
-    "full",
-    "heavy",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Ihr Kopf ist leer.",
-    "targetWord": "leer",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Viele",
+    "sentence": "[[Viele]] kleine Zettel liegen in ihrer Dose.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Many",
+      "options": [
+        "Many",
+        "Two",
+        "No",
+        "All"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Viele kleine Zettel liegen in ihrer Dose.",
+        "targetWord": "Viele",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "über",
-  "sentence": "Die Freundin lacht [[über]] jeden Zettel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at",
-   "options": [
-    "at",
-    "without",
-    "under",
-    "against"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Die Freundin lacht über jeden Zettel.",
-    "targetWord": "über",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "kleine",
+    "sentence": "Viele [[kleine]] Zettel liegen in ihrer Dose.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "big",
+        "old",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Viele kleine Zettel liegen in ihrer Dose.",
+        "targetWord": "kleine",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "reicht",
-  "sentence": "“Der Titel [[reicht]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "is enough",
-   "options": [
-    "is enough",
-    "is missing",
-    "is wrong",
-    "is late"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "“Der Titel reicht.",
-    "targetWord": "reicht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "zusammen",
+    "sentence": "Die beiden sitzen [[zusammen]] auf der Treppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": [
+        "together",
+        "alone",
+        "far apart",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Die beiden sitzen zusammen auf der Treppe.",
+        "targetWord": "zusammen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "wartet",
-  "sentence": "Der Zettel _____ acht Jahre in einer Dose.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wartet",
-   "options": [
-    "wartet",
-    "liegt",
-    "schläft",
-    "steht"
-   ],
-   "translation": "The note _____ eight years in a tin.",
-   "optionTranslations": [
-    "waits",
-    "lies",
-    "sleeps",
-    "stands"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Der Zettel wartet acht Jahre in einer Dose.",
-    "targetWord": "wartet",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "liest",
+    "sentence": "Die Freundin [[liest]] die Zettel laut.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reads",
+      "options": [
+        "reads",
+        "writes",
+        "hides",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Die Freundin liest die Zettel laut.",
+        "targetWord": "liest",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "drückt",
-  "sentence": "Sie _____ den Zettel an ihr Herz.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "drückt",
-   "options": [
-    "drückt",
-    "liest",
-    "zeigt",
-    "wirft"
-   ],
-   "translation": "She _____ the note to her heart.",
-   "optionTranslations": [
-    "presses",
-    "reads",
-    "shows",
-    "throws"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "Sie drückt den Zettel an ihr Herz.",
-    "targetWord": "drückt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "traurig",
+    "sentence": "“Seite zwölf ist [[traurig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sad",
+      "options": [
+        "sad",
+        "funny",
+        "short",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "“Seite zwölf ist traurig.",
+        "targetWord": "traurig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "besorge",
-  "sentence": "“Ich _____ das Buch bald”, sagt die Freundin.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "besorge",
-   "options": [
-    "besorge",
-    "lese",
-    "verkaufe",
-    "suche"
-   ],
-   "translation": "I'll _____ the book soon,\" says the friend.",
-   "optionTranslations": [
-    "get",
-    "read",
-    "sell",
-    "look for"
-   ],
-   "audioClip": {
-    "storySlug": "zettel-in-johannas-dose",
-    "storySource": "user",
-    "sentence": "“Ich besorge das Buch bald”, sagt die Freundin.",
-    "targetWord": "besorge",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "lustig",
+    "sentence": "Die Treppe ist kalt, aber die Zettel sind [[lustig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "funny",
+      "options": [
+        "funny",
+        "sad",
+        "long",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Die Treppe ist kalt, aber die Zettel sind lustig.",
+        "targetWord": "lustig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Noch",
+    "sentence": "“[[Noch]] einer: Der Kaffee ist kalt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Another",
+      "options": [
+        "Another",
+        "No",
+        "One",
+        "Every"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "“Noch einer: Der Kaffee ist kalt.",
+        "targetWord": "Noch",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schief",
+    "sentence": "Die Schrift ist klein und [[schief]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crooked",
+      "options": [
+        "crooked",
+        "clear",
+        "big",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Die Schrift ist klein und schief.",
+        "targetWord": "schief",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vierzig",
+    "sentence": "“Lies Seite [[vierzig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "forty",
+      "options": [
+        "forty",
+        "fourteen",
+        "forty-four",
+        "thirty"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "“Lies Seite vierzig.",
+        "targetWord": "vierzig",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "denke",
+    "sentence": "Ich [[denke]] an dich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "think",
+      "options": [
+        "think",
+        "forget",
+        "write",
+        "dream"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Ich denke an dich.",
+        "targetWord": "denke",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leer",
+    "sentence": "Ihr Kopf ist [[leer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "warm",
+        "heavy",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Ihr Kopf ist leer.",
+        "targetWord": "leer",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "über",
+    "sentence": "Die Freundin lacht [[über]] jeden Zettel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at",
+      "options": [
+        "at",
+        "without",
+        "under",
+        "against"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Die Freundin lacht über jeden Zettel.",
+        "targetWord": "über",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reicht",
+    "sentence": "“Der Titel [[reicht]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is enough",
+      "options": [
+        "is enough",
+        "is missing",
+        "is wrong",
+        "is late"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "“Der Titel reicht.",
+        "targetWord": "reicht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "wartet",
+    "sentence": "Der Zettel _____ acht Jahre in einer Dose.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wartet",
+      "options": [
+        "wartet",
+        "liegt",
+        "schläft",
+        "steht"
+      ],
+      "translation": "The note _____ eight years in a tin.",
+      "optionTranslations": [
+        "waits",
+        "lies",
+        "sleeps",
+        "stands"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Der Zettel wartet acht Jahre in einer Dose.",
+        "targetWord": "wartet",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "drückt",
+    "sentence": "Sie _____ den Zettel an ihr Herz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "drückt",
+      "options": [
+        "drückt",
+        "liest",
+        "zeigt",
+        "wirft"
+      ],
+      "translation": "She _____ the note to her heart.",
+      "optionTranslations": [
+        "presses",
+        "reads",
+        "shows",
+        "throws"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "Sie drückt den Zettel an ihr Herz.",
+        "targetWord": "drückt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "besorge",
+    "sentence": "“Ich _____ das Buch bald”, sagt die Freundin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "besorge",
+      "options": [
+        "besorge",
+        "lese",
+        "verkaufe",
+        "suche"
+      ],
+      "translation": "I'll _____ the book soon,\" says the friend.",
+      "optionTranslations": [
+        "get",
+        "read",
+        "sell",
+        "look for"
+      ],
+      "audioClip": {
+        "storySlug": "zettel-in-johannas-dose",
+        "storySource": "user",
+        "sentence": "“Ich besorge das Buch bald”, sagt die Freundin.",
+        "targetWord": "besorge",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -307,9 +307,9 @@
     "sentence": "Il se sentait comme [[un incapable]] devant cette machine.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "someone useless",
+      "answer": "a useless person",
       "options": [
-        "someone useless",
+        "a useless person",
         "a real expert",
         "a great leader",
         "a fast learner"

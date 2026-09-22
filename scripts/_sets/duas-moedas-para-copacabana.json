@@ -59,7 +59,7 @@
       "answer": "to get off",
       "options": [
         "to get off",
-        "to get on",
+        "to run",
         "to drive",
         "to wait"
       ],
@@ -82,14 +82,14 @@
       "answer": "cheia",
       "options": [
         "cheia",
-        "vazia",
+        "escura",
         "limpa",
         "larga"
       ],
       "translation": "In the afternoon the street gets _____ of cars.",
       "optionTranslations": [
         "full",
-        "empty",
+        "dark",
         "clean",
         "wide"
       ],
@@ -250,14 +250,14 @@
       "answer": "leve",
       "options": [
         "leve",
-        "pesada",
+        "nova",
         "suja",
         "larga"
       ],
       "translation": "The suitcase is almost empty, so it is very _____.",
       "optionTranslations": [
         "light",
-        "heavy",
+        "new",
         "dirty",
         "wide"
       ],
@@ -496,7 +496,7 @@
       "answer": "wide",
       "options": [
         "wide",
-        "narrow",
+        "quiet",
         "short",
         "dark"
       ],

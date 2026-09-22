@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "le lampion,la guirlande,le gâteau,la bougie",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "le lampion",
-     "answer": "a paper lantern",
-     "options": [
-      "a paper lantern",
-      "a string of lights",
-      "a birthday cake",
-      "a small candle"
-     ]
-    },
-    {
-     "word": "la guirlande",
-     "answer": "a string of lights",
-     "options": [
-      "a paper lantern",
-      "a string of lights",
-      "a birthday cake",
-      "a small candle"
-     ]
-    },
-    {
-     "word": "le gâteau",
-     "answer": "a birthday cake",
-     "options": [
-      "a paper lantern",
-      "a string of lights",
-      "a birthday cake",
-      "a small candle"
-     ]
-    },
-    {
-     "word": "la bougie",
-     "answer": "a small candle",
-     "options": [
-      "a paper lantern",
-      "a string of lights",
-      "a birthday cake",
-      "a small candle"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "le lampion,la guirlande,le gâteau,la bougie",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le lampion",
+          "answer": "a paper lantern",
+          "options": [
+            "a paper lantern",
+            "a string of lights",
+            "a birthday cake",
+            "a small candle"
+          ]
+        },
+        {
+          "word": "la guirlande",
+          "answer": "a string of lights",
+          "options": [
+            "a paper lantern",
+            "a string of lights",
+            "a birthday cake",
+            "a small candle"
+          ]
+        },
+        {
+          "word": "le gâteau",
+          "answer": "a birthday cake",
+          "options": [
+            "a paper lantern",
+            "a string of lights",
+            "a birthday cake",
+            "a small candle"
+          ]
+        },
+        {
+          "word": "la bougie",
+          "answer": "a small candle",
+          "options": [
+            "a paper lantern",
+            "a string of lights",
+            "a birthday cake",
+            "a small candle"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "allumer",
-  "sentence": "Sous chaque platane, elle [[allume]] un lampion.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to light",
-   "options": [
-    "to light",
-    "to put out",
-    "to hang up",
-    "to carry"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Sous chaque platane, elle allume un lampion.",
-    "targetWord": "allume",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "l'anniversaire",
-  "sentence": "Pour son [[anniversaire]], elle invite les amis.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a birthday",
-   "options": [
-    "a birthday",
-    "a wedding",
-    "a holiday",
-    "a farewell"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Pour son anniversaire, elle invite les amis.",
-    "targetWord": "anniversaire",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "inviter",
-  "sentence": "Elle [[invite]] les amis.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to ask to come",
-   "options": [
-    "to ask to come",
-    "to visit",
-    "to phone",
-    "to wait for"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Elle invite les amis.",
-    "targetWord": "invite",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "éteindre",
-  "sentence": "Il souffle et [[éteint]] les bougies.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to put out",
-   "options": [
-    "to put out",
-    "to light",
-    "to count",
-    "to cut"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Il souffle et éteint les bougies.",
-    "targetWord": "éteint",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "joyeux anniversaire",
-  "sentence": "Tout le monde dit: “[[Joyeux anniversaire]]!”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "happy birthday",
-   "options": [
-    "happy birthday",
-    "happy new year",
-    "good luck",
-    "welcome home"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Tout le monde dit: “Joyeux anniversaire!”",
-    "targetWord": "Joyeux anniversaire",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "laisser",
-  "sentence": "Elle le [[laisse]] gagner.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to let",
-   "options": [
-    "to let",
-    "to help",
-    "to watch",
-    "to force"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Elle le laisse gagner.",
-    "targetWord": "laisse",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le gagnant",
-  "sentence": "“Tu es le [[gagnant]]!”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the winner",
-   "options": [
-    "the winner",
-    "the loser",
-    "the player",
-    "the judge"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "“Tu es le gagnant!”, dit-elle.",
-    "targetWord": "gagnant",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "exprès",
-  "sentence": "Sa boule roule loin, [[exprès]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on purpose",
-   "options": [
-    "on purpose",
-    "by accident",
-    "very fast",
-    "once again"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Sa boule roule loin, exprès.",
-    "targetWord": "exprès",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "fête",
-  "sentence": "Ce soir, elle _____ son nouveau travail avec du champagne.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "fête",
-   "options": [
-    "fête",
-    "cherche",
-    "oublie",
-    "perd"
-   ],
-   "translation": "Tonight, she _____ her new job with champagne.",
-   "optionTranslations": [
-    "celebrates",
-    "looks for",
-    "forgets",
-    "loses"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Ce soir, elle fête son nouveau travail avec du champagne.",
-    "targetWord": "fête",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le pastis",
-  "sentence": "“Le [[pastis]] est sur la table!”, crie-t-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an aniseed drink",
-   "options": [
-    "an aniseed drink",
-    "a fish soup",
-    "a sweet cake",
-    "a green salad"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "“Le pastis est sur la table!”, crie-t-elle.",
-    "targetWord": "pastis",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "trente-trois",
-  "sentence": "Sur le gâteau, il y a [[trente-trois]] bougies.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thirty-three",
-   "options": [
-    "thirty-three",
-    "twenty-three",
-    "thirty-two",
-    "forty-three"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Sur le gâteau, il y a trente-trois bougies.",
-    "targetWord": "trente-trois",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "allumer",
+    "sentence": "Sous chaque platane, elle [[allume]] un lampion.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to light",
+      "options": [
+        "to light",
+        "to put out",
+        "to hang up",
+        "to carry"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Sous chaque platane, elle allume un lampion.",
+        "targetWord": "allume",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "à la fin",
-  "sentence": "[[À la fin]], il y a une dernière partie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at the end",
-   "options": [
-    "at the end",
-    "at the start",
-    "in the middle",
-    "every time"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "À la fin, il y a une dernière partie.",
-    "targetWord": "À la fin",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "l'anniversaire",
+    "sentence": "Pour son [[anniversaire]], elle invite les amis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a birthday",
+      "options": [
+        "a birthday",
+        "a wedding",
+        "a holiday",
+        "a farewell"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Pour son anniversaire, elle invite les amis.",
+        "targetWord": "anniversaire",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "voir",
-  "sentence": "Tout le monde veut [[voir]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to see",
-   "options": [
-    "to see",
-    "to hear",
-    "to play",
-    "to leave"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Tout le monde veut voir.",
-    "targetWord": "voir",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "inviter",
+    "sentence": "Elle [[invite]] les amis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask to come",
+      "options": [
+        "to ask to come",
+        "to visit",
+        "to phone",
+        "to wait for"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Elle invite les amis.",
+        "targetWord": "invite",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "chanter",
-  "sentence": "Tout le monde [[chante]] et danse.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to sing",
-   "options": [
-    "to sing",
-    "to shout",
-    "to laugh",
-    "to clap"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Tout le monde chante et danse.",
-    "targetWord": "chante",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "éteindre",
+    "sentence": "Il souffle et [[éteint]] les bougies.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put out",
+      "options": [
+        "to put out",
+        "to light",
+        "to count",
+        "to cut"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Il souffle et éteint les bougies.",
+        "targetWord": "éteint",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "danse",
-  "sentence": "Il y a de la musique, alors elle _____ avec ses amis.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "danse",
-   "options": [
-    "danse",
-    "dort",
-    "lit",
-    "pleure"
-   ],
-   "translation": "There is music, so she _____ with her friends.",
-   "optionTranslations": [
-    "dances",
-    "sleeps",
-    "reads",
-    "cries"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Il y a de la musique, alors elle danse avec ses amis.",
-    "targetWord": "danse",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "joyeux anniversaire",
+    "sentence": "Tout le monde dit: “[[Joyeux anniversaire]]!”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy birthday",
+      "options": [
+        "happy birthday",
+        "happy new year",
+        "good luck",
+        "welcome home"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Tout le monde dit: “Joyeux anniversaire!”",
+        "targetWord": "Joyeux anniversaire",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "vieux",
-  "sentence": "Ce pull a beaucoup de trous; il est très _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vieux",
-   "options": [
-    "vieux",
-    "neuf",
-    "cher",
-    "chaud"
-   ],
-   "translation": "This sweater has lots of holes; it is very _____.",
-   "optionTranslations": [
-    "old",
-    "new",
-    "expensive",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "trente-trois-bougies",
-    "storySource": "user",
-    "sentence": "Ce pull a beaucoup de trous; il est très vieux.",
-    "targetWord": "vieux",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "laisser",
+    "sentence": "Elle le [[laisse]] gagner.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let",
+      "options": [
+        "to let",
+        "to help",
+        "to watch",
+        "to force"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Elle le laisse gagner.",
+        "targetWord": "laisse",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "le gagnant",
+    "sentence": "“Tu es le [[gagnant]]!”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the winner",
+      "options": [
+        "the winner",
+        "the loser",
+        "the player",
+        "the judge"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "“Tu es le gagnant!”, dit-elle.",
+        "targetWord": "gagnant",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "exprès",
+    "sentence": "Sa boule roule loin, [[exprès]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on purpose",
+      "options": [
+        "on purpose",
+        "by accident",
+        "very fast",
+        "once again"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Sa boule roule loin, exprès.",
+        "targetWord": "exprès",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fête",
+    "sentence": "Ce soir, elle _____ son nouveau travail avec du champagne.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fête",
+      "options": [
+        "fête",
+        "cherche",
+        "oublie",
+        "perd"
+      ],
+      "translation": "Tonight, she _____ her new job with champagne.",
+      "optionTranslations": [
+        "celebrates",
+        "looks for",
+        "forgets",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Ce soir, elle fête son nouveau travail avec du champagne.",
+        "targetWord": "fête",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le pastis",
+    "sentence": "“Le [[pastis]] est sur la table!”, crie-t-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aniseed drink",
+      "options": [
+        "an aniseed drink",
+        "a fish soup",
+        "a sweet cake",
+        "a green salad"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "“Le pastis est sur la table!”, crie-t-elle.",
+        "targetWord": "pastis",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trente-trois",
+    "sentence": "Sur le gâteau, il y a [[trente-trois]] bougies.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thirty-three",
+      "options": [
+        "thirty-three",
+        "twenty-three",
+        "thirty-two",
+        "forty-three"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Sur le gâteau, il y a trente-trois bougies.",
+        "targetWord": "trente-trois",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la fin",
+    "sentence": "[[À la fin]], il y a une dernière partie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the end",
+      "options": [
+        "at the end",
+        "at the start",
+        "in the middle",
+        "every time"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "À la fin, il y a une dernière partie.",
+        "targetWord": "À la fin",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voir",
+    "sentence": "Tout le monde veut [[voir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to see",
+      "options": [
+        "to see",
+        "to hear",
+        "to play",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Tout le monde veut voir.",
+        "targetWord": "voir",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chanter",
+    "sentence": "Tout le monde [[chante]] et danse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sing",
+      "options": [
+        "to sing",
+        "to shout",
+        "to laugh",
+        "to clap"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Tout le monde chante et danse.",
+        "targetWord": "chante",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "danse",
+    "sentence": "Il y a de la musique, alors elle _____ avec ses amis.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "danse",
+      "options": [
+        "danse",
+        "dort",
+        "lit",
+        "pleure"
+      ],
+      "translation": "There is music, so she _____ with her friends.",
+      "optionTranslations": [
+        "dances",
+        "sleeps",
+        "reads",
+        "cries"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Il y a de la musique, alors elle danse avec ses amis.",
+        "targetWord": "danse",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vieux",
+    "sentence": "Ce pull a beaucoup de trous; il est très _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vieux",
+      "options": [
+        "vieux",
+        "gris",
+        "cher",
+        "chaud"
+      ],
+      "translation": "This sweater has lots of holes; it is very _____.",
+      "optionTranslations": [
+        "old",
+        "grey",
+        "expensive",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "trente-trois-bougies",
+        "storySource": "user",
+        "sentence": "Ce pull a beaucoup de trous; il est très vieux.",
+        "targetWord": "vieux",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

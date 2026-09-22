@@ -131,9 +131,9 @@
     "sentence": "Manu sintió que había leído todo [[al revés]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the opposite way around",
+      "answer": "back to front",
       "options": [
-        "the opposite way around",
+        "back to front",
         "very slowly",
         "out loud",
         "by heart"

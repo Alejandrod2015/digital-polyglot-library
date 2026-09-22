@@ -108,7 +108,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "fría",
-        "caliente",
+        "rota",
         "seca",
         "dura"
       ],
@@ -124,7 +124,7 @@
       "translation": "You put your hand in the ice and it is _____.",
       "optionTranslations": [
         "cold",
-        "hot",
+        "broken",
         "dry",
         "hard"
       ]
@@ -140,7 +140,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "small",
-        "large",
+        "round",
         "fast",
         "loud"
       ],
@@ -304,7 +304,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "near",
-        "far",
+        "behind",
         "inside",
         "above"
       ],
@@ -627,9 +627,9 @@
       "answer": "life",
       "options": [
         "life",
-        "a house",
-        "a book",
-        "a table"
+        "sand",
+        "noise",
+        "light"
       ],
       "audioClip": {
         "storySlug": "tengo-un-poco-de-miedo",

@@ -125,14 +125,14 @@
       "options": [
         "empujar",
         "cargar",
-        "halar",
+        "levantar",
         "abrazar"
       ],
       "translation": "The instructor had to ____ her a little.",
       "optionTranslations": [
         "to push",
         "to carry",
-        "to pull",
+        "to lift",
         "to hug"
       ],
       "audioClip": {
@@ -317,10 +317,10 @@
     "sentence": "No hagas tanta [[ceremonia]] y lánzate ya.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "fuss made around something simple",
+      "answer": "a lot of fuss over nothing",
       "options": [
-        "fuss made around something simple",
-        "a solemn religious wedding rite",
+        "a lot of fuss over nothing",
+        "a solemn religious rite",
         "a careful safety check",
         "a loud angry protest"
       ],
@@ -392,9 +392,9 @@
     "sentence": "Le tocó tenerle [[confianza]] al instructor experto.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "trust that someone won't fail you",
+      "answer": "a firm trust in someone",
       "options": [
-        "trust that someone won't fail you",
+        "a firm trust in someone",
         "a strong fear of someone",
         "a debt owed to someone",
         "a secret kept from someone"

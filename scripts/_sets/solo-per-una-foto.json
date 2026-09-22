@@ -221,7 +221,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "wet",
-        "dry",
+        "red",
         "new",
         "warm"
       ],
@@ -244,7 +244,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "dirty",
-        "clean",
+        "short",
         "folded",
         "expensive"
       ],

@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "confianza",
+    "sentence": "La [[confianza]] no vuelve entera, pero vuelve algo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trust",
+      "options": [
+        "trust",
+        "light",
+        "heat",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "La confianza no vuelve entera, pero vuelve algo.",
+        "targetWord": "confianza",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/84d6c896d5f999a79a7b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse",
+    "sentence": "[[Se queda]] callado más de lo que se quedaba antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay",
+      "options": [
+        "to stay",
+        "to sound",
+        "to grow",
+        "to appear"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Se queda callado más de lo que se quedaba antes.",
+        "targetWord": "Se queda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6390b360b37becb2ee38.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "sentence": "Se va en junio, antes que ella, y eso [[pesa]] más que el dato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to weigh",
+      "options": [
+        "to weigh",
+        "to cost",
+        "to last",
+        "to hurt"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Se va en junio, antes que ella, y eso pesa más que el dato.",
+        "targetWord": "pesa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/08aa0d33e10f59f47fd8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prisa",
+    "sentence": "Baja sin [[prisa]] y deja la puerta abierta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hurry",
+      "options": [
+        "hurry",
+        "noise",
+        "fear",
+        "keys"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Baja sin prisa y deja la puerta abierta.",
+        "targetWord": "prisa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/358309134d8b634c3fc2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se lo digo yo",
+    "sentence": "[[Se lo digo yo]], y se lo digo ahora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I'll tell him myself",
+      "options": [
+        "I'll tell him myself",
+        "I'll think about it",
+        "I'll pay for it",
+        "I'll wait for him"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Se lo digo yo, y se lo digo ahora.",
+        "targetWord": "Se lo digo yo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3846769bb2aa5a17b646.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todavía no",
+    "sentence": "[[No me voy todavía]], y si me voy, lo sabrá usted primero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not yet",
+      "options": [
+        "not yet",
+        "never again",
+        "not really",
+        "not here"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "No me voy todavía, y si me voy, lo sabrá usted primero.",
+        "targetWord": "No me voy todavía",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ceddb87c3555b6b96c4f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "más que",
+    "sentence": "Eso pesa [[más que]] el dato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more than",
+      "options": [
+        "more than",
+        "as much as",
+        "instead of",
+        "apart from"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Eso pesa más que el dato.",
+        "targetWord": "más que",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/60b65f1ce06af2e56bc9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "afloja",
+    "sentence": "El nudo está muy apretado; _____ un poco la cuerda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "afloja",
+      "options": [
+        "afloja",
+        "mide",
+        "dobla",
+        "pesa"
+      ],
+      "translation": "The knot is very tight; _____ the rope a little.",
+      "optionTranslations": [
+        "loosen",
+        "measure",
+        "fold",
+        "weigh"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "El nudo está muy apretado; afloja un poco la cuerda.",
+        "targetWord": "afloja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/080e0b131909297a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llama",
+    "sentence": "Llega a la puerta y _____ al timbre dos veces.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llama",
+      "options": [
+        "llama",
+        "mira",
+        "limpia",
+        "cuenta"
+      ],
+      "translation": "She gets to the door and _____ the bell twice.",
+      "optionTranslations": [
+        "rings",
+        "looks at",
+        "cleans",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Llega a la puerta y llama al timbre dos veces.",
+        "targetWord": "llama",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1e24e1d7be9dbd3.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "timbre,nudillo,marco,dato",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "timbre",
+          "answer": "a doorbell",
+          "options": [
+            "a doorbell",
+            "a knuckle",
+            "a frame",
+            "a fact"
+          ]
+        },
+        {
+          "word": "nudillo",
+          "answer": "a knuckle",
+          "options": [
+            "a doorbell",
+            "a knuckle",
+            "a frame",
+            "a fact"
+          ]
+        },
+        {
+          "word": "marco",
+          "answer": "a frame",
+          "options": [
+            "a doorbell",
+            "a knuckle",
+            "a frame",
+            "a fact"
+          ]
+        },
+        {
+          "word": "dato",
+          "answer": "a fact",
+          "options": [
+            "a doorbell",
+            "a knuckle",
+            "a frame",
+            "a fact"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "sentence": "Y si me voy, lo [[sabrá]] usted primero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": [
+        "to know",
+        "to pay",
+        "to decide",
+        "to see"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Y si me voy, lo sabrá usted primero.",
+        "targetWord": "sabrá",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/602e7d8d330fd82b1973.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invitar",
+    "sentence": "La escucha en el marco de la puerta, sin [[invitarla]] a pasar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to invite",
+      "options": [
+        "to invite",
+        "to allow",
+        "to force",
+        "to beg"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "La escucha en el marco de la puerta, sin invitarla a pasar.",
+        "targetWord": "invitarla",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/08236c4c1d4839167910.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Llama al timbre con la mano [[abierta]], no con el nudillo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "wet",
+        "left",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Llama al timbre con la mano abierta, no con el nudillo.",
+        "targetWord": "abierta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ca332046bcdbd18408eb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antes que ella",
+    "sentence": "Le ha contado que se va en junio, [[antes que ella]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "before her",
+      "options": [
+        "before her",
+        "with her",
+        "without her",
+        "because of her"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Le ha contado que se va en junio, antes que ella.",
+        "targetWord": "antes que ella",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/73cbdc8d4f69a46642b5.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un poco",
+    "sentence": "Afloja [[un poco]] la cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slightly",
+      "options": [
+        "slightly",
+        "suddenly",
+        "completely",
+        "twice"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Afloja un poco la cara.",
+        "targetWord": "un poco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/106954b9db0dd10f1d7b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "coger",
+    "sentence": "Está en el sexto: mejor _____ el ascensor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "coger",
+      "options": [
+        "coger",
+        "limpiar",
+        "contar",
+        "cerrar"
+      ],
+      "translation": "It's on the sixth floor: better to _____ the lift.",
+      "optionTranslations": [
+        "take",
+        "clean",
+        "count",
+        "close"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "Está en el sexto: mejor coger el ascensor.",
+        "targetWord": "coger",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef489c9ff692ce61.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rápida",
+    "sentence": "La respuesta es tan _____ que casi no la entiendo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rápida",
+      "options": [
+        "rápida",
+        "cara",
+        "fría",
+        "roja"
+      ],
+      "translation": "The reply is so _____ that I can barely understand it.",
+      "optionTranslations": [
+        "fast",
+        "expensive",
+        "cold",
+        "red"
+      ],
+      "audioClip": {
+        "storySlug": "la-voz-mas-rapida",
+        "storySource": "user",
+        "sentence": "La respuesta es tan rápida que casi no la entiendo.",
+        "targetWord": "rápida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c53637bbbc9aea61.mp3"
+      }
+    },
+    "featured": false
+  }
+]

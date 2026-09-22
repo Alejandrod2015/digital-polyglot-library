@@ -147,7 +147,7 @@
       "answer": "big",
       "options": [
         "big",
-        "small",
+        "round",
         "dark",
         "noisy"
       ],
@@ -310,14 +310,14 @@
       "answer": "terminar",
       "options": [
         "terminar",
-        "empezar",
+        "copiar",
         "vender",
         "esconder"
       ],
       "translation": "He wanted to _____ the work soon, without staying late.",
       "optionTranslations": [
         "finish",
-        "start",
+        "copy",
         "sell",
         "hide"
       ],

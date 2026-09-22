@@ -277,9 +277,9 @@
     "sentence": "[[Grüß]] Gott, sagt Achim zur Begrüßung.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "hello (in the south)",
+      "answer": "hello",
       "options": [
-        "hello (in the south)",
+        "hello",
         "see you soon",
         "good luck",
         "many thanks"

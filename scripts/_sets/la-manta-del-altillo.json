@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "norma",
+    "sentence": "Son once [[normas]] y la primera es que la lavadora se apunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rule",
+      "options": [
+        "a rule",
+        "a step",
+        "a name",
+        "a bill"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Son once normas y la primera es que la lavadora se apunta.",
+        "targetWord": "normas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fa1c9495820b7ac88bdf.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "herramienta",
+    "sentence": "Apunta la hora y la [[herramienta]] que le prometen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tool",
+      "options": [
+        "the tool",
+        "the price",
+        "the visit",
+        "the meal"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Apunta la hora y la herramienta que le prometen.",
+        "targetWord": "herramienta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e7fa108145b063315529.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colgar",
+    "sentence": "Ella [[ha colgado]] tres perchas y estira una alfombra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hang",
+      "options": [
+        "to hang",
+        "to buy",
+        "to count",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Ella ha colgado tres perchas y estira una alfombra.",
+        "targetWord": "ha colgado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/339137812de36b9330a4.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estirar",
+    "sentence": "Ha colgado tres perchas y [[estira]] una alfombra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stretch out",
+      "options": [
+        "to stretch out",
+        "to roll up",
+        "to throw away",
+        "to shake out"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Ha colgado tres perchas y estira una alfombra.",
+        "targetWord": "estira",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/363b2e7b1d27b865a4ba.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin falta",
+    "sentence": "El cepillo se lo presto, aunque me lo devuelva [[sin falta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without fail",
+      "options": [
+        "without fail",
+        "without asking",
+        "without a word",
+        "without hurry"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "El cepillo se lo presto, aunque me lo devuelva sin falta.",
+        "targetWord": "sin falta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2a9c811b73f202d5c4e2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de golpe",
+    "sentence": "A las once alguien ha arrastrado algo arriba, [[de golpe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all at once",
+      "options": [
+        "all at once",
+        "for a while",
+        "as usual",
+        "on purpose"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "A las once alguien ha arrastrado algo arriba, de golpe.",
+        "targetWord": "de golpe",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7c461df78d318523106e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegar",
+    "sentence": "[[Ha pegado]] una hoja en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stick",
+      "options": [
+        "to stick",
+        "to paint",
+        "to find",
+        "to read"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Ha pegado una hoja en la puerta.",
+        "targetWord": "Ha pegado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3638870ac6affa8ac33e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "presto",
+    "sentence": "Si no tienes paraguas, te _____ el mío hasta mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "presto",
+      "options": [
+        "presto",
+        "regalo",
+        "escondo",
+        "cambio"
+      ],
+      "translation": "If you don't have an umbrella, I'll _____ you mine until tomorrow.",
+      "optionTranslations": [
+        "lend",
+        "give away",
+        "hide",
+        "swap"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Si no tienes paraguas, te presto el mío hasta mañana.",
+        "targetWord": "presto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a966a43f10f7d77.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "devuelva",
+    "sentence": "Le dejo el libro con la condición de que me lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "devuelva",
+      "options": [
+        "devuelva",
+        "cocine",
+        "cante",
+        "pierda"
+      ],
+      "translation": "I'll let him have the book on condition that he _____ it to me.",
+      "optionTranslations": [
+        "gives back",
+        "cooks",
+        "sings",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Le dejo el libro con la condición de que me lo devuelva.",
+        "targetWord": "devuelva",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13efbf6cab43795c.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "percha,alfombra,bombilla,manta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "percha",
+          "answer": "a hanger",
+          "options": [
+            "a hanger",
+            "a rug",
+            "a bulb",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "alfombra",
+          "answer": "a rug",
+          "options": [
+            "a hanger",
+            "a rug",
+            "a bulb",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "bombilla",
+          "answer": "a bulb",
+          "options": [
+            "a hanger",
+            "a rug",
+            "a bulb",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "manta",
+          "answer": "a blanket",
+          "options": [
+            "a hanger",
+            "a rug",
+            "a bulb",
+            "a blanket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lavadora",
+    "sentence": "La primera es que la [[lavadora]] se apunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the washing machine",
+      "options": [
+        "the washing machine",
+        "the phone number",
+        "the front door",
+        "the dining table"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "La primera es que la lavadora se apunta.",
+        "targetWord": "lavadora",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/35e22039b8fb325ea896.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "duro",
+    "sentence": "El cepillo [[duro]] se lo presto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hard",
+      "options": [
+        "hard",
+        "small",
+        "green",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "El cepillo duro se lo presto.",
+        "targetWord": "duro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/891f96bb6a1c0355be25.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco a poco",
+    "sentence": "La lee entera, [[poco a poco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "out loud",
+        "in silence",
+        "twice over"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "La lee entera, poco a poco.",
+        "targetWord": "poco a poco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2bfa801c10855ef67807.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en serio",
+    "sentence": "Para la antena haría falta permiso de todos, [[en serio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seriously",
+      "options": [
+        "seriously",
+        "sadly",
+        "probably",
+        "secretly"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Para la antena haría falta permiso de todos, en serio.",
+        "targetWord": "en serio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/20c9252482d68ac04480.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de momento",
+    "sentence": "[[De momento]] apunta la hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for now",
+      "options": [
+        "for now",
+        "at once",
+        "in vain",
+        "as well"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "De momento apunta la hora.",
+        "targetWord": "De momento",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/461176bedb22b8363e4a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "promete",
+    "sentence": "Él _____ llegar a tiempo, pero nunca lo cumple.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "promete",
+      "options": [
+        "promete",
+        "odia",
+        "teme",
+        "evita"
+      ],
+      "translation": "He _____ to arrive on time, but he never keeps his word.",
+      "optionTranslations": [
+        "promises",
+        "hates",
+        "fears",
+        "avoids"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Él promete llegar a tiempo, pero nunca lo cumple.",
+        "targetWord": "promete",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40d5ffaf383c73e9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mojado",
+    "sentence": "Ha llovido y el suelo del balcón está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mojado",
+      "options": [
+        "mojado",
+        "caro",
+        "roto",
+        "lleno"
+      ],
+      "translation": "It has rained and the balcony floor is _____.",
+      "optionTranslations": [
+        "wet",
+        "expensive",
+        "broken",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "la-manta-del-altillo",
+        "storySource": "user",
+        "sentence": "Ha llovido y el suelo del balcón está mojado.",
+        "targetWord": "mojado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a87a0c28c1a528be.mp3"
+      }
+    },
+    "featured": false
+  }
+]

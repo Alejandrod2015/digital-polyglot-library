@@ -8,7 +8,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to arrive",
-        "to leave",
+        "to sleep",
         "to wait",
         "to return"
       ],
@@ -148,7 +148,7 @@
       "options": [
         "miedo",
         "sueño",
-        "hambre",
+        "ruido",
         "calor"
       ],
       "audioClip": {
@@ -164,7 +164,7 @@
       "optionTranslations": [
         "fear",
         "sleepiness",
-        "hunger",
+        "noise",
         "heat"
       ]
     },

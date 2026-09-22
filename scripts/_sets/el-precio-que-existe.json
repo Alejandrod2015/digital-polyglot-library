@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "encargado",
+    "sentence": "La [[encargada]] la hace pasar sin levantarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a manager",
+      "options": [
+        "a manager",
+        "a cleaner",
+        "a customer",
+        "a lawyer"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La encargada la hace pasar sin levantarse.",
+        "targetWord": "encargada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/85a44dcd26ffdd248989.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compromiso",
+    "sentence": "El plazo son dos semanas y el [[compromiso]] va firmado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a commitment",
+      "options": [
+        "a commitment",
+        "a complaint",
+        "a receipt",
+        "a budget"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "El plazo son dos semanas y el compromiso va firmado.",
+        "targetWord": "compromiso",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/40bf4079874e227eebaa.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calidad",
+    "sentence": "La [[calidad]] tampoco le aumenta el precio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the quality",
+      "options": [
+        "the quality",
+        "the quantity",
+        "the distance",
+        "the weather"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La calidad tampoco le aumenta el precio.",
+        "targetWord": "calidad",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4e562217db67e090fe96.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negociar",
+    "sentence": "La tarifa no se [[negocia]], es la misma para todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to negotiate",
+      "options": [
+        "to negotiate",
+        "to publish",
+        "to remember",
+        "to translate"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "La tarifa no se negocia, es la misma para todos.",
+        "targetWord": "negocia",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/65df37116327362abc1d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "competir",
+    "sentence": "Esto no es Madrid y aquí [[competimos]] con menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to compete",
+      "options": [
+        "to compete",
+        "to complain",
+        "to complete",
+        "to survive"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Esto no es Madrid y aquí competimos con menos.",
+        "targetWord": "competimos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4cbb2c1a4494ffd7039c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "capaz",
+    "sentence": "Se queda calmada, [[capaz]] de decir un número y callarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "able",
+      "options": [
+        "able",
+        "afraid",
+        "sorry",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Se queda calmada, capaz de decir un número y callarse.",
+        "targetWord": "capaz",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a219fab70af06dc1ad3a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahora bien",
+    "sentence": "[[Ahora bien]], esto no es Madrid y aquí competimos con menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that said",
+      "options": [
+        "that said",
+        "in the end",
+        "for example",
+        "by the way"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Ahora bien, esto no es Madrid y aquí competimos con menos.",
+        "targetWord": "Ahora bien",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c2036038e73d8a151340.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rebajar",
+    "sentence": "Nadie paga tanto: tendrás que _____ el precio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rebajar",
+      "options": [
+        "rebajar",
+        "copiar",
+        "escribir",
+        "leer"
+      ],
+      "translation": "Nobody pays that much: you will have to _____ the price.",
+      "optionTranslations": [
+        "lower",
+        "copy",
+        "write",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Nadie paga tanto: tendrás que rebajar el precio.",
+        "targetWord": "rebajar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb7ed3d8d2468eb3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "confirma",
+    "sentence": "Para estar seguro, el cliente _____ la hora por correo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "confirma",
+      "options": [
+        "confirma",
+        "discute",
+        "pierde",
+        "oculta"
+      ],
+      "translation": "To be sure, the client _____ the time by email.",
+      "optionTranslations": [
+        "confirms",
+        "argues about",
+        "loses",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Para estar seguro, el cliente confirma la hora por correo.",
+        "targetWord": "confirma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/742415ca4bc8b7ed.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tarifa,cliente,plazo,oficio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tarifa",
+          "answer": "a rate",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "cliente",
+          "answer": "a client",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "plazo",
+          "answer": "a deadline",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        },
+        {
+          "word": "oficio",
+          "answer": "a trade",
+          "options": [
+            "a rate",
+            "a client",
+            "a deadline",
+            "a trade"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cargo",
+    "sentence": "El [[cargo]] de la oficina sale de ese número.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the charge",
+      "options": [
+        "the charge",
+        "the cargo",
+        "the address",
+        "the schedule"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "El cargo de la oficina sale de ese número.",
+        "targetWord": "cargo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cdcaebaeb8fe8cf37500.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "afirmar",
+    "sentence": "Es la misma para todos los clientes, [[afirma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to state",
+      "options": [
+        "to state",
+        "to ask",
+        "to whisper",
+        "to repeat"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Es la misma para todos los clientes, afirma.",
+        "targetWord": "afirma",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a28bb85b798d171554ca.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aconsejar",
+    "sentence": "Nadie le [[aconseja]] rebajar su trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to advise",
+      "options": [
+        "to advise",
+        "to force",
+        "to pay",
+        "to teach"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Nadie le aconseja rebajar su trabajo.",
+        "targetWord": "aconseja",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b83ee5ea006646c2798a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "admitir",
+    "sentence": "[[Admite]] que en Madrid tampoco era distinto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to admit",
+      "options": [
+        "to admit",
+        "to forget",
+        "to promise",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Admite que en Madrid tampoco era distinto.",
+        "targetWord": "Admite",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/90b527c39c2c3da1d957.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corregir",
+    "sentence": "Este oficio se aprende [[corrigiendo]], no discutiendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to correct",
+      "options": [
+        "to correct",
+        "to copy",
+        "to collect",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Este oficio se aprende corrigiendo, no discutiendo.",
+        "targetWord": "corrigiendo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d6833401b5fbdb31b365.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aumenta",
+    "sentence": "Cada enero la empresa _____ los precios un poco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aumenta",
+      "options": [
+        "aumenta",
+        "limpia",
+        "pierde",
+        "cierra"
+      ],
+      "translation": "Every January the company _____ its prices a little.",
+      "optionTranslations": [
+        "raises",
+        "cleans",
+        "loses",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Cada enero la empresa aumenta los precios un poco.",
+        "targetWord": "aumenta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6ab1a763a4ade85.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calmada",
+    "sentence": "Aunque todos gritan, ella sigue _____, sin nervios.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calmada",
+      "options": [
+        "calmada",
+        "cansada",
+        "mojada",
+        "perdida"
+      ],
+      "translation": "Even though everyone is shouting, she stays _____, with no nerves.",
+      "optionTranslations": [
+        "calm",
+        "tired",
+        "wet",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "el-precio-que-existe",
+        "storySource": "user",
+        "sentence": "Aunque todos gritan, ella sigue calmada, sin nervios.",
+        "targetWord": "calmada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c178a79c8afa3000.mp3"
+      }
+    },
+    "featured": false
+  }
+]

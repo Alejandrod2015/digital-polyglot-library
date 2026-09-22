@@ -56,10 +56,10 @@
     "word": "restare",
     "sentence": "Sulla terrazza [[restano]] dieci pezzi di torta.",
     "payload": {
-      "answer": "to be left, to remain",
+      "answer": "to remain",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to be left, to remain",
+        "to remain",
         "to disappear",
         "to break",
         "to arrive"
@@ -156,7 +156,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to laugh",
-        "to cry",
+        "to sing",
         "to shout",
         "to sigh"
       ],
@@ -200,10 +200,10 @@
     "word": "battere forte",
     "sentence": "Il cuore le [[batte forte]].",
     "payload": {
-      "answer": "to beat hard (heart)",
+      "answer": "to beat hard",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to beat hard (heart)",
+        "to beat hard",
         "to feel cold",
         "to fall asleep",
         "to stay calm"
@@ -318,10 +318,10 @@
     "word": "tenere",
     "sentence": "Lo [[tieni]] tu, per favore?",
     "payload": {
-      "answer": "to keep, to hold on to",
+      "answer": "to hold",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to keep, to hold on to",
+        "to hold",
         "to sell",
         "to lose",
         "to break"
@@ -345,7 +345,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "always",
-        "never",
+        "twice",
         "sometimes",
         "rarely"
       ],

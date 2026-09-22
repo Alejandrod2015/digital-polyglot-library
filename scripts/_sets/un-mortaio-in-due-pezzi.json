@@ -60,7 +60,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "midday",
-        "midnight",
+        "dusk",
         "evening",
         "dawn"
       ],
@@ -104,13 +104,13 @@
     "word": "molto",
     "sentence": "Il mortaio pesa [[molto]].",
     "payload": {
-      "answer": "a lot",
+      "answer": "quite a lot",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "a lot",
+        "quite a lot",
         "very little",
-        "nothing",
-        "almost"
+        "nothing at all",
+        "almost nothing"
       ],
       "audioClip": {
         "language": "italian",

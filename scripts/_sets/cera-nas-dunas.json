@@ -213,9 +213,9 @@
       "answer": "silence",
       "options": [
         "silence",
-        "a hurry",
-        "a laugh",
-        "a doubt"
+        "haste",
+        "laughter",
+        "doubt"
       ],
       "audioClip": {
         "storySlug": "cera-nas-dunas",

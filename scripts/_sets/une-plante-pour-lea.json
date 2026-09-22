@@ -1,440 +1,440 @@
 [
- {
-  "type": "match_meaning",
-  "word": "le plafond,l'ampoule,l'arrosoir,la plante",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "le plafond",
-     "answer": "a ceiling",
-     "options": [
-      "a ceiling",
-      "a light bulb",
-      "a watering can",
-      "a plant"
-     ]
-    },
-    {
-     "word": "l'ampoule",
-     "answer": "a light bulb",
-     "options": [
-      "a ceiling",
-      "a light bulb",
-      "a watering can",
-      "a plant"
-     ]
-    },
-    {
-     "word": "l'arrosoir",
-     "answer": "a watering can",
-     "options": [
-      "a ceiling",
-      "a light bulb",
-      "a watering can",
-      "a plant"
-     ]
-    },
-    {
-     "word": "la plante",
-     "answer": "a plant",
-     "options": [
-      "a ceiling",
-      "a light bulb",
-      "a watering can",
-      "a plant"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "le plafond,l'ampoule,l'arrosoir,la plante",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le plafond",
+          "answer": "a ceiling",
+          "options": [
+            "a ceiling",
+            "a light bulb",
+            "a watering can",
+            "a plant"
+          ]
+        },
+        {
+          "word": "l'ampoule",
+          "answer": "a light bulb",
+          "options": [
+            "a ceiling",
+            "a light bulb",
+            "a watering can",
+            "a plant"
+          ]
+        },
+        {
+          "word": "l'arrosoir",
+          "answer": "a watering can",
+          "options": [
+            "a ceiling",
+            "a light bulb",
+            "a watering can",
+            "a plant"
+          ]
+        },
+        {
+          "word": "la plante",
+          "answer": "a plant",
+          "options": [
+            "a ceiling",
+            "a light bulb",
+            "a watering can",
+            "a plant"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "les meubles",
-  "sentence": "L'appartement est vide, sans [[meubles]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "furniture",
-   "options": [
-    "furniture",
-    "curtains",
-    "paintings",
-    "lamps"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "L'appartement est vide, sans meubles.",
-    "targetWord": "meubles",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vider",
-  "sentence": "Ils [[vident]] la cuisine ensemble.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to empty",
-   "options": [
-    "to empty",
-    "to fill",
-    "to clean",
-    "to cook in"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Ils vident la cuisine ensemble.",
-    "targetWord": "vident",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le chauffage",
-  "sentence": "Le [[chauffage]] est éteint.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the heating",
-   "options": [
-    "the heating",
-    "the light",
-    "the fridge",
-    "the radio"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Le chauffage est éteint.",
-    "targetWord": "chauffage",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "peindre",
-  "sentence": "Il [[peint]] le dernier mur.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to paint",
-   "options": [
-    "to paint",
-    "to wash",
-    "to build",
-    "to break"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Il peint le dernier mur.",
-    "targetWord": "peint",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la terre",
-  "sentence": "La [[terre]] est sèche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the soil",
-   "options": [
-    "the soil",
-    "the floor",
-    "the table",
-    "the window"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "La terre est sèche.",
-    "targetWord": "terre",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vivant",
-  "sentence": "Elle est [[vivante]], tu vois?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "alive",
-   "options": [
-    "alive",
-    "dead",
-    "ill",
-    "asleep"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Elle est vivante, tu vois?",
-    "targetWord": "vivante",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la feuille",
-  "sentence": "L'eau coule sur les [[feuilles]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a leaf",
-   "options": [
-    "a leaf",
-    "a root",
-    "a flower",
-    "a stone"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "L'eau coule sur les feuilles.",
-    "targetWord": "feuilles",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "arroses",
-  "sentence": "Chaque soir, tu _____ les fleurs avec de l'eau.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "arroses",
-   "options": [
-    "arroses",
-    "coupes",
-    "cueilles",
-    "ranges"
-   ],
-   "translation": "Every evening, you _____ the flowers with water.",
-   "optionTranslations": [
-    "water",
-    "cut",
-    "pick",
-    "put away"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Chaque soir, tu arroses les fleurs avec de l'eau.",
-    "targetWord": "arroses",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "grandit",
-  "sentence": "Avec de l'eau et du soleil, l'arbre _____ vite.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "grandit",
-   "options": [
-    "grandit",
-    "tombe",
-    "meurt",
-    "dort"
-   ],
-   "translation": "With water and sun, the tree _____ fast.",
-   "optionTranslations": [
-    "grows",
-    "falls",
-    "dies",
-    "sleeps"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Avec de l'eau et du soleil, l'arbre grandit vite.",
-    "targetWord": "grandit",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tiède",
-  "sentence": "L'air est [[tiède]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slightly warm",
-   "options": [
-    "slightly warm",
-    "boiling hot",
-    "ice cold",
-    "damp"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "L'air est tiède.",
-    "targetWord": "tiède",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "blanc",
-  "sentence": "Il peint le mur en [[blanc]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "white",
-   "options": [
-    "white",
-    "black",
-    "red",
-    "blue"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Il peint le mur en blanc.",
-    "targetWord": "blanc",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "les meubles",
+    "sentence": "L'appartement est vide, sans [[meubles]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "furniture",
+      "options": [
+        "furniture",
+        "curtains",
+        "paintings",
+        "lamps"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "L'appartement est vide, sans meubles.",
+        "targetWord": "meubles",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "vert",
-  "sentence": "À la fenêtre, il y a une plante [[verte]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "green",
-   "options": [
-    "green",
-    "yellow",
-    "purple",
-    "grey"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "À la fenêtre, il y a une plante verte.",
-    "targetWord": "verte",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "vider",
+    "sentence": "Ils [[vident]] la cuisine ensemble.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to empty",
+      "options": [
+        "to empty",
+        "to fill",
+        "to clean",
+        "to cook in"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Ils vident la cuisine ensemble.",
+        "targetWord": "vident",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tous les matins",
-  "sentence": "Tu l'arroses [[tous les matins]], s'il te plaît?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every morning",
-   "options": [
-    "every morning",
-    "every evening",
-    "once a week",
-    "all day long"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Tu l'arroses tous les matins, s'il te plaît?",
-    "targetWord": "tous les matins",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le chauffage",
+    "sentence": "Le [[chauffage]] est éteint.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the heating",
+      "options": [
+        "the heating",
+        "the light",
+        "the fridge",
+        "the radio"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Le chauffage est éteint.",
+        "targetWord": "chauffage",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "petit à petit",
-  "sentence": "Elle grandit [[petit à petit]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "little by little",
-   "options": [
-    "little by little",
-    "all at once",
-    "very fast",
-    "not at all"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Elle grandit petit à petit.",
-    "targetWord": "petit à petit",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "peindre",
+    "sentence": "Il [[peint]] le dernier mur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to paint",
+      "options": [
+        "to paint",
+        "to wash",
+        "to build",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Il peint le dernier mur.",
+        "targetWord": "peint",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "s'il te plaît",
-  "sentence": "Tu me passes le sel, _____?",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "s'il te plaît",
-   "options": [
-    "s'il te plaît",
-    "bonne nuit",
-    "à demain",
-    "au revoir"
-   ],
-   "translation": "Can you pass me the salt, _____?",
-   "optionTranslations": [
-    "please",
-    "good night",
-    "see you tomorrow",
-    "goodbye"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Tu me passes le sel, s'il te plaît?",
-    "targetWord": "s'il te plaît",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "la terre",
+    "sentence": "La [[terre]] est sèche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the soil",
+      "options": [
+        "the soil",
+        "the floor",
+        "the table",
+        "the window"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "La terre est sèche.",
+        "targetWord": "terre",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "sèche",
-  "sentence": "Il ne pleut pas depuis des semaines: l'herbe est _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sèche",
-   "options": [
-    "sèche",
-    "mouillée",
-    "fraîche",
-    "bleue"
-   ],
-   "translation": "It has not rained for weeks: the grass is _____.",
-   "optionTranslations": [
-    "dry",
-    "wet",
-    "fresh",
-    "blue"
-   ],
-   "audioClip": {
-    "storySlug": "une-plante-pour-lea",
-    "storySource": "user",
-    "sentence": "Il ne pleut pas depuis des semaines: l'herbe est sèche.",
-    "targetWord": "sèche",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "vivant",
+    "sentence": "Elle est [[vivante]], tu vois?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alive",
+      "options": [
+        "alive",
+        "hungry",
+        "ill",
+        "asleep"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Elle est vivante, tu vois?",
+        "targetWord": "vivante",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "la feuille",
+    "sentence": "L'eau coule sur les [[feuilles]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a leaf",
+      "options": [
+        "a leaf",
+        "a root",
+        "a flower",
+        "a stone"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "L'eau coule sur les feuilles.",
+        "targetWord": "feuilles",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arroses",
+    "sentence": "Chaque soir, tu _____ les fleurs avec de l'eau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arroses",
+      "options": [
+        "arroses",
+        "coupes",
+        "cueilles",
+        "ranges"
+      ],
+      "translation": "Every evening, you _____ the flowers with water.",
+      "optionTranslations": [
+        "water",
+        "cut",
+        "pick",
+        "put away"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Chaque soir, tu arroses les fleurs avec de l'eau.",
+        "targetWord": "arroses",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grandit",
+    "sentence": "Avec de l'eau et du soleil, l'arbre _____ vite.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grandit",
+      "options": [
+        "grandit",
+        "tombe",
+        "meurt",
+        "dort"
+      ],
+      "translation": "With water and sun, the tree _____ fast.",
+      "optionTranslations": [
+        "grows",
+        "falls",
+        "dies",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Avec de l'eau et du soleil, l'arbre grandit vite.",
+        "targetWord": "grandit",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tiède",
+    "sentence": "L'air est [[tiède]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slightly warm",
+      "options": [
+        "slightly warm",
+        "boiling hot",
+        "ice cold",
+        "damp"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "L'air est tiède.",
+        "targetWord": "tiède",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanc",
+    "sentence": "Il peint le mur en [[blanc]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "white",
+      "options": [
+        "white",
+        "black",
+        "red",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Il peint le mur en blanc.",
+        "targetWord": "blanc",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vert",
+    "sentence": "À la fenêtre, il y a une plante [[verte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green",
+      "options": [
+        "green",
+        "yellow",
+        "purple",
+        "grey"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "À la fenêtre, il y a une plante verte.",
+        "targetWord": "verte",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les matins",
+    "sentence": "Tu l'arroses [[tous les matins]], s'il te plaît?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every morning",
+      "options": [
+        "every morning",
+        "every evening",
+        "once a week",
+        "all day long"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Tu l'arroses tous les matins, s'il te plaît?",
+        "targetWord": "tous les matins",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "petit à petit",
+    "sentence": "Elle grandit [[petit à petit]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "all at once",
+        "very fast",
+        "not at all"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Elle grandit petit à petit.",
+        "targetWord": "petit à petit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "s'il te plaît",
+    "sentence": "Tu me passes le sel, _____?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "s'il te plaît",
+      "options": [
+        "s'il te plaît",
+        "bonne nuit",
+        "à demain",
+        "au revoir"
+      ],
+      "translation": "Can you pass me the salt, _____?",
+      "optionTranslations": [
+        "please",
+        "good night",
+        "see you tomorrow",
+        "goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Tu me passes le sel, s'il te plaît?",
+        "targetWord": "s'il te plaît",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sèche",
+    "sentence": "Il ne pleut pas depuis des semaines: l'herbe est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sèche",
+      "options": [
+        "sèche",
+        "haute",
+        "fraîche",
+        "bleue"
+      ],
+      "translation": "It has not rained for weeks: the grass is _____.",
+      "optionTranslations": [
+        "dry",
+        "tall",
+        "fresh",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "une-plante-pour-lea",
+        "storySource": "user",
+        "sentence": "Il ne pleut pas depuis des semaines: l'herbe est sèche.",
+        "targetWord": "sèche",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

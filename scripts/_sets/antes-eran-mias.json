@@ -448,9 +448,9 @@
       "answer": "Saturdays",
       "options": [
         "Saturdays",
-        "mornings",
-        "winters",
-        "holidays"
+        "Mondays",
+        "Sundays",
+        "Fridays"
       ],
       "audioClip": {
         "storySlug": "antes-eran-mias",

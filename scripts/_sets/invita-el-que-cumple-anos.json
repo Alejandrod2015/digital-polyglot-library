@@ -79,9 +79,9 @@
     "sentence": "En su país es [[al revés]]: paga el que invita.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the other way round",
+      "answer": "back to front",
       "options": [
-        "the other way round",
+        "back to front",
         "exactly the same",
         "far cheaper",
         "much later"
@@ -507,9 +507,9 @@
     "sentence": "Así [[funciona]] aquí, le explica la pescadera.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to work, to be done",
+      "answer": "to work",
       "options": [
-        "to work, to be done",
+        "to work",
         "to fail",
         "to change",
         "to end"

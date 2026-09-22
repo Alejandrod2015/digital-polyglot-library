@@ -148,9 +148,9 @@
     "sentence": "O macaco abre a [[casca]] com os dentes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the skin of a fruit",
+      "answer": "the peel",
       "options": [
-        "the skin of a fruit",
+        "the peel",
         "the seed",
         "the juice",
         "the bag"
@@ -174,7 +174,7 @@
       "answer": "the back",
       "options": [
         "the back",
-        "the front",
+        "the knee",
         "the side",
         "the head"
       ],

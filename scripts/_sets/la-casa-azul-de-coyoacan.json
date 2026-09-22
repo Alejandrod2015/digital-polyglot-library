@@ -158,7 +158,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to buy",
-        "to sell",
+        "to read",
         "to lose",
         "to find"
       ],
@@ -329,7 +329,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "strong",
-        "weak",
+        "dark",
         "soft",
         "pale"
       ],

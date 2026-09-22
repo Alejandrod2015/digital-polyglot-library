@@ -132,7 +132,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "difficult",
-        "easy",
+        "late",
         "cheap",
         "fast"
       ],
@@ -152,13 +152,13 @@
     "word": "fare male",
     "sentence": "[[Le fa male]], ma è giusto.",
     "payload": {
-      "answer": "to hurt",
+      "answer": "it hurts her",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to hurt",
+        "it hurts her",
         "it makes her happy",
         "it costs a lot",
-        "it takes a long time"
+        "it takes long"
       ],
       "audioClip": {
         "language": "italian",
@@ -180,7 +180,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "right",
-        "wrong",
+        "cheap",
         "funny",
         "strange"
       ],

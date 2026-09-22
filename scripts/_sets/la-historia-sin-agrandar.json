@@ -77,9 +77,9 @@
     "sentence": "Salió cierta, [[al pie de la letra]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to the letter",
+      "answer": "word for word",
       "options": [
-        "to the letter",
+        "word for word",
         "only in part",
         "by pure luck",
         "more or less"

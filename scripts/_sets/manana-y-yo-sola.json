@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "tardío",
+    "sentence": "El aviso llega [[tardío]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "late",
+      "options": [
+        "late",
+        "short",
+        "loud",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "El aviso llega tardío.",
+        "targetWord": "tardío",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d16aaacc71100a2289c3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "punto de vista",
+    "sentence": "Desde su [[punto de vista]], la esperanza y el miedo caben juntos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "point of view",
+      "options": [
+        "point of view",
+        "front door",
+        "phone number",
+        "place of work"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Desde su punto de vista, la esperanza y el miedo caben juntos.",
+        "targetWord": "punto de vista",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4a2833ab62ddc7aad9b7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "Yo iría [[tranquila]], que tampoco es la primera vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "early",
+        "alone",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Yo iría tranquila, que tampoco es la primera vez.",
+        "targetWord": "tranquila",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b6741f1e969fb6adf135.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en persona",
+    "sentence": "Alguien prefiere decirlo [[en persona]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in person",
+      "options": [
+        "in person",
+        "in writing",
+        "in private",
+        "on the phone"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Alguien prefiere decirlo en persona.",
+        "targetWord": "en persona",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5b73c2168ffc28c35f02.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tan pronto como",
+    "sentence": "¿Mañana, [[tan pronto como]] abran, y yo sola?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as soon as",
+      "options": [
+        "as soon as",
+        "as long as",
+        "as far as",
+        "as much as"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "¿Mañana, tan pronto como abran, y yo sola?",
+        "targetWord": "tan pronto como",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/19718aa440289147ebad.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "La esperanza y el [[miedo]] caben en la misma frase.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "anger",
+        "pride",
+        "shame"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "La esperanza y el miedo caben en la misma frase.",
+        "targetWord": "miedo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/785c5867c3cb78cd2b24.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dos veces",
+    "sentence": "Ella lo lee [[dos veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice",
+      "options": [
+        "twice",
+        "aloud",
+        "quickly",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Ella lo lee dos veces.",
+        "targetWord": "dos veces",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/28b7111502b92ec70868.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prefiere",
+    "sentence": "No le gusta el café: _____ el té por la mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prefiere",
+      "options": [
+        "prefiere",
+        "quema",
+        "pierde",
+        "cuenta"
+      ],
+      "translation": "She doesn't like coffee: she _____ tea in the morning.",
+      "optionTranslations": [
+        "prefers",
+        "burns",
+        "loses",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "No le gusta el café: prefiere el té por la mañana.",
+        "targetWord": "prefiere",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2967db08bcdf8fec.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "caben",
+    "sentence": "El coche es pequeño: no _____ cinco personas dentro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caben",
+      "options": [
+        "caben",
+        "duermen",
+        "cantan",
+        "trabajan"
+      ],
+      "translation": "The car is small: five people don't _____ inside.",
+      "optionTranslations": [
+        "fit",
+        "sleep",
+        "sing",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "El coche es pequeño: no caben cinco personas dentro.",
+        "targetWord": "caben",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9464f1eff1542a3a.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "silencio,aviso,esperanza,orden del día",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "silencio",
+          "answer": "silence",
+          "options": [
+            "silence",
+            "a notice",
+            "hope",
+            "an agenda"
+          ]
+        },
+        {
+          "word": "aviso",
+          "answer": "a notice",
+          "options": [
+            "silence",
+            "a notice",
+            "hope",
+            "an agenda"
+          ]
+        },
+        {
+          "word": "esperanza",
+          "answer": "hope",
+          "options": [
+            "silence",
+            "a notice",
+            "hope",
+            "an agenda"
+          ]
+        },
+        {
+          "word": "orden del día",
+          "answer": "an agenda",
+          "options": [
+            "silence",
+            "a notice",
+            "hope",
+            "an agenda"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "exacto",
+    "sentence": "Son cuatro líneas, sin orden del día y sin una hora [[exacta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exact",
+      "options": [
+        "exact",
+        "early",
+        "free",
+        "final"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Son cuatro líneas, sin orden del día y sin una hora exacta.",
+        "targetWord": "exacta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2e84bd53ffae1c5c0b44.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la próxima semana",
+    "sentence": "Mejor saberlo ya que [[la próxima semana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next week",
+      "options": [
+        "next week",
+        "next year",
+        "tomorrow morning",
+        "some day"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Mejor saberlo ya que la próxima semana.",
+        "targetWord": "la próxima semana",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f35589c928891c1e7419.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "Y si es lo que [[piensas]], mejor saberlo ya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": [
+        "to think",
+        "to say",
+        "to hear",
+        "to remember"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Y si es lo que piensas, mejor saberlo ya.",
+        "targetWord": "piensas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ab0f59c0b9bbd7194e6e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segundo",
+    "sentence": "Llega un [[segundo]] correo, más corto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "second",
+      "options": [
+        "second",
+        "single",
+        "final",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Llega un segundo correo, más corto.",
+        "targetWord": "segundo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/146eee948daef460897e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por la noche",
+    "sentence": "El jueves [[por la noche]] llega un segundo correo, más corto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at night",
+      "options": [
+        "at night",
+        "at noon",
+        "at dawn",
+        "at work"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "El jueves por la noche llega un segundo correo, más corto.",
+        "targetWord": "por la noche",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5a97defd6b2956f97521.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "apaga",
+    "sentence": "Antes de salir, _____ la luz de la cocina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apaga",
+      "options": [
+        "apaga",
+        "cuenta",
+        "pesa",
+        "dobla"
+      ],
+      "translation": "Before leaving, she _____ the kitchen light.",
+      "optionTranslations": [
+        "turns off",
+        "counts",
+        "weighs",
+        "folds"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Antes de salir, apaga la luz de la cocina.",
+        "targetWord": "apaga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d44fff01486b49d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sola",
+    "sentence": "Hoy no viene nadie conmigo; voy _____ a la reunión.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sola",
+      "options": [
+        "sola",
+        "cansada",
+        "tarde",
+        "contenta"
+      ],
+      "translation": "Nobody is coming with me today; I'm going _____ to the meeting.",
+      "optionTranslations": [
+        "alone",
+        "tired",
+        "late",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "manana-y-yo-sola",
+        "storySource": "user",
+        "sentence": "Hoy no viene nadie conmigo; voy sola a la reunión.",
+        "targetWord": "sola",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6bdd5cac0a3c24f.mp3"
+      }
+    },
+    "featured": false
+  }
+]

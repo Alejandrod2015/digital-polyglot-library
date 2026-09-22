@@ -310,9 +310,9 @@
       "answer": "gossip",
       "options": [
         "gossip",
-        "a small party",
-        "a fried snack",
-        "a loud song"
+        "noise",
+        "smell",
+        "music"
       ],
       "audioClip": {
         "storySlug": "arepa-de-huevo-sin-afan",

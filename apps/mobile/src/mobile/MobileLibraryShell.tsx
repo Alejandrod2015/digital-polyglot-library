@@ -13,6 +13,7 @@ import {
   useWindowDimensions,
   Easing,
   findNodeHandle,
+  InteractionManager,
   Keyboard,
   KeyboardAvoidingView,
   Linking,
@@ -248,6 +249,7 @@ import {
   REMINDER_MINUTE_OPTIONS,
   normalizeRemindersEnabled,
 } from "../../../../src/lib/reminders";
+import type { DailyReminderContext } from "../../../../src/lib/reminders";
 import {
   normalizeNotificationPrefs,
   type NotificationTypeKey,
@@ -271,7 +273,7 @@ import {
   ONBOARDING_LEVEL_OPTIONS,
   normalizeJourneyFocus,
   pickOnboardingTopicPreference,
-  PRODUCT_TOUR_MESSAGES,
+  MOBILE_PRODUCT_TOUR_MESSAGES,
   scoreReadTimeFit,
   sortPracticeItemsByOnboarding,
   scoreTopicLabelAgainstOnboarding,
@@ -2670,32 +2672,16 @@ export function MobileLibraryShell(args: {
   //   - `pendingPairings` holds the user-built pairs that have NOT been
   //     validated yet (word → meaning). The user is free to undo any of
   //     these by tapping either side again.
-  //   - `matchedWords` is the set of pairs that have ALREADY been
-  //     validated as correct (after pressing Check). They lock and stay
-  //     pinned with the green "correct" treatment.
-  //   - `wrongMatchWords` is the list of words flagged red during the
-  //     post-Check flash; cleared after ~900 ms when those pairings are
-  //     broken so the user can retry.
+  //   - `matchedWords` is the set of pairs validated as correct. They
+  //     lock and stay pinned with the green "correct" treatment.
+  //   - `wrongMatchWords` is the list of words validated as wrong. They
+  //     stay red until the auto-advance moves to the next exercise; a
+  //     wrong round ends the exercise, there is no retry.
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [activeMatchMeaning, setActiveMatchMeaning] = useState<string | null>(null);
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
   const [pendingPairings, setPendingPairings] = useState<Record<string, string>>({});
   const [wrongMatchWords, setWrongMatchWords] = useState<string[]>([]);
-  /**
-   * ¿Este match ha tenido ALGÚN fallo? Decide si suma punto.
-   *
-   * El ejercicio bloquea los aciertos y borra los fallos a los 900 ms, así que
-   * se puede reintentar: bien pedagógicamente, mal para el marcador, porque
-   * `setPracticeScore(+1)` se disparaba en la validación limpia FINAL sin mirar
-   * lo anterior. Se podía fallar seis veces y llevarse el punto, y con cuatro
-   * pares acertar tres fuerza la cuarta. Un 10/10 dejaba de significar nada, y
-   * con él el sonido de victoria.
-   *
-   * No se penaliza el reintento ni se rompe el bloqueo de aciertos: solo deja
-   * de contar como acierto lo que no se acertó a la primera. El repaso
-   * espaciado ya era honesto (una palabra marcada `again` se queda en `again`).
-   */
-  const matchHadErrorRef = useRef(false);
   const [practiceLaunchContext, setPracticeLaunchContext] = useState<PracticeLaunchContext>({
     source: "favorites",
   });
@@ -3721,6 +3707,10 @@ export function MobileLibraryShell(args: {
   // height once after first paint and never re-fire.
   const [journeyTopBarHeight, setJourneyTopBarHeight] = useState(66);
   const topBarMeasuredRef = useRef(false);
+  // Screen x of the flag badge's centre, so the "level" tour step can point
+  // its arrow at it. The strip spans the full width, so the badge's layout x
+  // is already a screen coordinate.
+  const [journeyFlagCenterX, setJourneyFlagCenterX] = useState(70);
   // Scroll-to-top floating arrow on the journey screen. Shows once
   // the user has scrolled far enough that returning to the start of
   // the path is a meaningful action (one full topic-block down,
@@ -6050,6 +6040,25 @@ export function MobileLibraryShell(args: {
     return { count, minutes };
   }, [practicePoolWords]);
 
+  // Palabras falladas y aun no recuperadas, la mas reciente primero. Un fallo
+  // deja la racha en 0 y sella `lastReviewedAt` (computeNextReview); acertarla
+  // la sube a 1 y la saca de aqui. Una palabra nunca repasada tambien tiene
+  // racha 0, pero sin `lastReviewedAt`, y no cuenta. Es lo que persiste del
+  // "Fix N" de la pantalla de resultado: aquello vive solo en esa ronda.
+  const missedPracticeItems = useMemo(() => {
+    const failed = practicePoolWords
+      .filter((w) => (w.streak ?? 0) === 0 && Boolean(w.lastReviewedAt))
+      .sort((a, b) => Date.parse(b.lastReviewedAt ?? "") - Date.parse(a.lastReviewedAt ?? ""));
+    return buildPracticeFavorites(failed);
+  }, [practicePoolWords]);
+  const missedPracticeWords = useMemo(
+    () => missedPracticeItems.map((item) => item.word),
+    [missedPracticeItems]
+  );
+  // La ronda es de 10, como todas: con mas fallos entran los 10 mas recientes
+  // y el resto se queda en la franja para la siguiente.
+  const MISSED_ROUND_SIZE = 10;
+
   const recommendedPracticeMode = useMemo<PracticeModeKey>(() => {
     const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(practicePoolWords));
     const personalized = getRecommendedPracticeModeFromOnboarding(
@@ -6135,14 +6144,6 @@ export function MobileLibraryShell(args: {
   }, [dueFavoritesCount, preferredPracticeMinutes, recommendedPracticeLabel]);
   const visiblePracticeCards = PRACTICE_MODE_CARDS;
   const currentPracticeExercise = practiceExercises[practiceIndex] ?? null;
-
-  // La bandera de "este match tuvo fallos" se limpia al cambiar de ejercicio, y
-  // AQUI y no en cada sitio que resetea el match: hay seis (arranque, reinicio,
-  // avance, checkpoint, journey, retry) y parchearlos uno a uno es pedir que el
-  // septimo se olvide. Atado al id del ejercicio, cualquier camino lo cubre.
-  useEffect(() => {
-    matchHadErrorRef.current = false;
-  }, [currentPracticeExercise?.id]);
 
   // Persiste la ronda de MATCH a medida que avanza (ejercicio en curso, parejas
   // ya resueltas y marcador), para que salir y volver la devuelva tal cual.
@@ -6960,7 +6961,7 @@ export function MobileLibraryShell(args: {
   // Preview path (Replay tour) bypasses the survey/tourDone gate.
   const tourVisible = (forceTourPreview || shouldShowOnboardingTour) && onboardingTourStep !== null;
   const activeOnboardingTourMessage =
-    tourVisible && onboardingTourStep !== null ? PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
+    tourVisible && onboardingTourStep !== null ? MOBILE_PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
   const activeOnboardingTourTarget = activeOnboardingTourMessage?.target ?? null;
   const tourOnTabStep =
     tourVisible &&
@@ -6969,6 +6970,10 @@ export function MobileLibraryShell(args: {
       activeOnboardingTourTarget === "practice" ||
       activeOnboardingTourTarget === "favorites" ||
       activeOnboardingTourTarget === "menu");
+  // Last step points UP at the flag in the journey's top strip instead of
+  // down at a tab: the strip is lifted above the scrim like the nav is, and
+  // the card sits right under it.
+  const tourOnLevelStep = tourVisible && activeOnboardingTourTarget === "level";
 
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
@@ -7362,6 +7367,12 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        // El minuto se caia aqui: sin esta linea, guardar preferencias
+        // devolvia un objeto SIN `reminderMinute`, el estado perdia el
+        // :15/:30/:45 elegido y el recordatorio se reprogramaba en punto.
+        reminderMinute: normalizeReminderMinute(
+          (next as { reminderMinute?: unknown }).reminderMinute
+        ),
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
@@ -7385,24 +7396,10 @@ export function MobileLibraryShell(args: {
       const reminderState = await syncDailyReminderSchedule({
         enabled: normalized.remindersEnabled,
         hour: normalized.reminderHour,
+        minute: normalized.reminderMinute ?? 0,
         learningGoal: normalized.learningGoal,
         dailyMinutes: normalized.dailyMinutes,
-        context:
-          continueReading.length > 0
-            ? {
-                continueStoryTitle: continueReading[0]?.story.title,
-                continueBookTitle: continueReading[0]?.book.title,
-                continueBookSlug: continueReading[0]?.book.slug,
-                continueStorySlug: continueReading[0]?.story.slug,
-              }
-            : dueFavoritesCount > 0
-              ? { dueReviewCount: dueFavoritesCount }
-              : activeJourneyPrimaryAction
-                ? {
-                    journeyActionTitle: activeJourneyPrimaryAction.title,
-                    journeyActionBody: activeJourneyPrimaryAction.body,
-                  }
-                : null,
+        context: dailyReminderContext,
         activeToday: hasDailyLoopActivityToday,
         requestPermissions: normalized.remindersEnabled,
       });
@@ -7411,22 +7408,7 @@ export function MobileLibraryShell(args: {
         const reminderTarget = buildDailyReminderCopy({
           learningGoal: normalized.learningGoal,
           dailyMinutes: normalized.dailyMinutes,
-          context:
-            continueReading.length > 0
-              ? {
-                  continueStoryTitle: continueReading[0]?.story.title,
-                  continueBookTitle: continueReading[0]?.book.title,
-                  continueBookSlug: continueReading[0]?.book.slug,
-                  continueStorySlug: continueReading[0]?.story.slug,
-                }
-              : dueFavoritesCount > 0
-                ? { dueReviewCount: dueFavoritesCount }
-                : activeJourneyPrimaryAction
-                  ? {
-                      journeyActionTitle: activeJourneyPrimaryAction.title,
-                      journeyActionBody: activeJourneyPrimaryAction.body,
-                    }
-                  : null,
+          context: dailyReminderContext,
         }).target;
         void trackReminderMetric("reminder_scheduled", {
           targetKind: reminderTarget.kind,
@@ -7505,6 +7487,12 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        // El minuto se caia aqui: sin esta linea, guardar preferencias
+        // devolvia un objeto SIN `reminderMinute`, el estado perdia el
+        // :15/:30/:45 elegido y el recordatorio se reprogramaba en punto.
+        reminderMinute: normalizeReminderMinute(
+          (next as { reminderMinute?: unknown }).reminderMinute
+        ),
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
@@ -8699,7 +8687,10 @@ export function MobileLibraryShell(args: {
     mode: PracticeSessionMode,
     review = false,
     overrideItems?: PracticeFavoriteItem[] | null,
-    favoriteKind?: "due" | "all" | "related"
+    favoriteKind?: "due" | "all" | "related",
+    // Ejercicios ya construidos (la franja de fallos): se usan tal cual, sin
+    // pasar por los generadores de abajo, que recortan el conjunto.
+    prebuilt?: PracticeExercise[] | null
   ) {
     if (!isSignedIn) {
       onRequestSignIn?.();
@@ -8708,6 +8699,10 @@ export function MobileLibraryShell(args: {
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(practicePoolWords);
+    if (prebuilt && prebuilt.length > 0) {
+      await startPracticeExercises(prebuilt, mode, sourceItems, favoriteKind, null);
+      return;
+    }
     // Si el usuario pidió un session de review (review=true) pero los
     // dues actuales no son suficientes para construir ejercicios de
     // este modo (ej.: match necesita 4 candidatos y solo hay 3 dues,
@@ -8782,6 +8777,19 @@ export function MobileLibraryShell(args: {
         });
       }
     }
+    await startPracticeExercises(exercises, effectiveMode, sourceItems, favoriteKind, matchResume);
+  }
+
+  // Cola comun de openPracticeMode: deja la sesion lista con los ejercicios
+  // que le den. Separada para que la franja de fallos pueda entrar con los
+  // suyos ya hechos.
+  async function startPracticeExercises(
+    exercises: PracticeExercise[],
+    effectiveMode: PracticeSessionMode,
+    sourceItems: PracticeFavoriteItem[],
+    favoriteKind: "due" | "all" | "related" | undefined,
+    matchResume: { index: number; matchedWords: string[]; score: number } | null
+  ) {
     setPracticeSeedItems(sourceItems);
     setPracticeLaunchContext((current) => ({
       source: "favorites",
@@ -9873,10 +9881,24 @@ export function MobileLibraryShell(args: {
 
     // El turno hablado necesita mas aire que un multiple-choice: en pantalla
     // hay transcripcion, la palabra recien revelada y una linea de feedback.
-    // Con 1,5 s el usuario no llega a leer lo que dijo.
+    // Con 1,5 s el usuario no llega a leer lo que dijo. Y al revelar suena
+    // la frase completa, asi que, igual que en `context`, no se avanza hasta
+    // que termine (`contextAudioFinishedFor`, que `resolveSpeakingAnswer`
+    // vacia porque el mismo id ya quedo publicado por el audio del
+    // enunciado). Antes un reloj fijo de 4 s cortaba el audio a la mitad.
     if (current.kind === "speaking") {
-      const id = setTimeout(() => advancePractice(), 4000);
-      return () => clearTimeout(id);
+      const hasAudio = !!current.audioClip;
+      const audioDone = contextAudioFinishedFor === current.id;
+      if (!hasAudio || audioDone) {
+        // Minimo 4 s desde el reveal para leer, y un beat de 1 s tras el
+        // audio si este duro mas que eso.
+        const elapsed = Date.now() - practiceAnswerT0Ref.current;
+        const id = setTimeout(() => advancePractice(), Math.max(1000, 4000 - elapsed));
+        return () => clearTimeout(id);
+      }
+      // Audio pendiente: mismo cap de 10 s que `context`, por si no llega.
+      const cap = setTimeout(() => advancePractice(), 10000);
+      return () => clearTimeout(cap);
     }
 
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
@@ -10628,6 +10650,10 @@ export function MobileLibraryShell(args: {
 
     practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
+    // El audio del enunciado ya publico este id al terminar (arranca el
+    // reloj de contestar). Se vacia para que el auto-avance espere al audio
+    // del reveal, que es otro play distinto sobre el mismo ejercicio.
+    setContextAudioFinishedFor(null);
     setPracticeRevealed(true);
     setPracticeTimedOut(false);
     setPracticeReviewScores((currentScores) => ({
@@ -12501,10 +12527,9 @@ export function MobileLibraryShell(args: {
   // pending pair if the opposite side already has a half-selection,
   // or (c) breaks an existing pending pair if the tapped item is
   // already paired. Once all `pairs.length` slots are filled the
-  // Check button appears; pressing it locks the correct pairs as
-  // matched, flashes the wrong ones red briefly, then releases the
-  // wrong ones so the user can retry. The exercise completes when
-  // every pair has been validated as correct.
+  // auto-validate effect runs the verdict: all correct locks green and
+  // scores; any wrong pair ends the round as wrong, with the correct
+  // ones green and the wrong ones red until the auto-advance.
   function tapMatchWord(word: string) {
     if (practiceComplete) return;
     if (practiceRevealed) return;
@@ -12670,23 +12695,13 @@ export function MobileLibraryShell(args: {
       }
       recordLevelTestItem(current.id, !matchHadErrorRef.current, false);
       setPracticeRevealed(true);
-      setPracticeLastResult(matchHadErrorRef.current ? "wrong" : "correct");
+      setPracticeLastResult("correct");
       // maxStreak + combo toast se derivan del cambio en sessionStreak
       // vía useEffect (mismo path que multiple-choice). Antes lo
       // hacíamos dentro del updater, lo cual fallaba en sesiones de
       // puro match porque el side-effect anidado podía perderse y la
       // result card mostraba combo=0.
-      //
-      // La racha sigue al mismo criterio que el marcador: un match resuelto
-      // DESPUÉS de fallar no encadena. Antes subía igual, así que bastaba con
-      // fallar y reintentar para llegar al combo, que es la misma trampa que
-      // ya cerramos en la puntuación.
-      const cleanSolve = !matchHadErrorRef.current;
-      if (cleanSolve) {
-        setPracticeSessionStreak((value) => value + 1);
-      } else {
-        setPracticeSessionStreak(0);
-      }
+      setPracticeSessionStreak((value) => value + 1);
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
@@ -12697,29 +12712,28 @@ export function MobileLibraryShell(args: {
         }
         return nextScores;
       });
-      void playPracticeFeedbackSound(
-        true,
-        cleanSolve && getPracticeComboTier(practiceSessionStreak + 1) >= 1
-      );
+      void playPracticeFeedbackSound(true, getPracticeComboTier(practiceSessionStreak + 1) >= 1);
       return;
     }
 
-    // Partial: lock the correct ones, flash the wrong ones red,
-    // then break those pending pairings so the user can retry.
+    // Wrong: the round is over, like in every other mode and like the
+    // webapp. The correct pairs lock green, the wrong ones stay red, and
+    // the auto-advance effect moves on after its 2200 ms beat. Until
+    // 2026-09-21 the wrong ones flashed for 900 ms and were released to
+    // retry until the timer ran out; the user read that as "a wrong
+    // answer never moves to the next exercise".
     setMatchedWords((curr) => [...curr, ...newlyCorrect]);
-    matchHadErrorRef.current = true;
     setWrongMatchWords(newlyWrong);
-    // Promote-then-prune in the same render: pull the correct entries
-    // out of pendingPairings immediately so the counter doesn't
-    // double-count them while the wrong flash plays (matchedWords
-    // already has them; pendings should only retain wrong entries to
-    // keep the red highlight rendering until the 900 ms timer breaks
-    // them).
+    // Keep only the wrong entries pending: matchedWords already holds the
+    // correct ones, and a pending wrong pair is what paints the red row.
     setPendingPairings((curr) => {
       const next = { ...curr };
       for (const word of newlyCorrect) delete next[word];
       return next;
     });
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
+    setPracticeRevealed(true);
     setPracticeSessionStreak(0);
     setPracticeLastResult("wrong");
     setPracticeReviewScores((currentScores) => {
@@ -12727,19 +12741,13 @@ export function MobileLibraryShell(args: {
       for (const word of newlyWrong) {
         next[normalizePracticeWord(word)] = "again";
       }
+      for (const word of newlyCorrect) {
+        const key = normalizePracticeWord(word);
+        if (next[key] !== "again") next[key] = "good";
+      }
       return next;
     });
     void playPracticeFeedbackSound(false);
-    setTimeout(() => {
-      setPendingPairings((curr) => {
-        const next = { ...curr };
-        for (const word of newlyWrong) delete next[word];
-        return next;
-      });
-      setWrongMatchWords([]);
-      setActiveMatchWord(null);
-      setActiveMatchMeaning(null);
-    }, 900);
   }
 
   async function openFeedback() {
@@ -12878,7 +12886,7 @@ export function MobileLibraryShell(args: {
             );
           return scoreBook(b) - scoreBook(a) || a.title.localeCompare(b.title);
         })
-        .slice(0, 6)
+        .slice(0, 8)
         .map((book) => ({
         key: `book-${book.id}`,
         title: book.title,
@@ -14494,7 +14502,11 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  const exploreView = (
+  // Solo se construye cuando se ve. Medido el 2026-09-21: montar este arbol
+  // costaba 110-125 ms en CADA repintado del shell, tambien dentro de una
+  // ronda de practica, donde el countdown repinta una vez por segundo; el
+  // segundero iba un 17 % lento solo por esto.
+  const exploreView = activeScreen !== "explore" ? null : (
     <>
       <View style={styles.favoritesHero}>
         <View style={styles.heroHeaderRow}>
@@ -15037,24 +15049,91 @@ export function MobileLibraryShell(args: {
   // que tocaba". Si el usuario igual quiere repaso libre, el card
   // sigue siendo tappeable y `openPracticeMode(mode, true)` cae al
   // pool general cuando dueItems está vacío.
-  const orbitModeBreakdown = useMemo(() => {
+  //
+  // Medido en el Pixel el 2026-09-21: esto tardaba 1,3-2,7 s por recalculo,
+  // porque monta CINCO sesiones completas (distractores incluidos) sobre los
+  // 50-80 items del pool, y se recalculaba dentro de un repintado, con el
+  // hilo JS bloqueado: el countdown saltaba de 1 s a 4 s y cada cambio de
+  // ejercicio se trababa. Desde el pool de historias terminadas (09-18) el
+  // pool es diez veces mayor que cuando solo eran las guardadas. Ahora se
+  // calcula en un efecto, fuera del repintado, un modo por tanda y nunca
+  // durante una ronda ni con el lector abierto (ver el efecto de abajo).
+  const ORBIT_BREAKDOWN_ZERO: Record<OrbitModeKey, number> = useMemo(
+    () => ({ meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 }),
+    []
+  );
+  const [orbitModeBreakdown, setOrbitModeBreakdown] =
+    useState<Record<OrbitModeKey, number>>(ORBIT_BREAKDOWN_ZERO);
+  // true desde que cambia el pool hasta que llega su recuento. Mientras se
+  // calcula, la orbita no ensena numeros (ceros leen como "no hay nada"); y al
+  // recalcular se conserva el recuento anterior en vez de volver a cero.
+  const [orbitBreakdownPending, setOrbitBreakdownPending] = useState(true);
+  // Para que pool y prefs se cuentan ya. Sin esto, cada entrada en Practice
+  // recalculaba lo mismo (la dependencia de `activeScreen` relanzaba el
+  // efecto) y los numeros desaparecian un segundo cada vez.
+  const orbitBreakdownForRef = useRef<{
+    items: typeof duePracticeItems;
+    prefs: typeof onboardingPracticePrefs;
+  } | null>(null);
+  useEffect(() => {
+    // Se calcula en cualquier pestana, no solo con el hub a la vista, para
+    // que al entrar en Practice los numeros ya esten. Lo que se evita es
+    // pisar algo que se esta viendo moverse: una ronda (su reloj saltaba de
+    // 1 s a 4 s con este calculo dentro) y el lector con karaoke.
+    if (activePracticeMode || selection || talkingReader) return;
+    const done = orbitBreakdownForRef.current;
+    if (done && done.items === duePracticeItems && done.prefs === onboardingPracticePrefs) return;
     if (duePracticeItems.length === 0) {
-      return { meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 };
+      orbitBreakdownForRef.current = { items: duePracticeItems, prefs: onboardingPracticePrefs };
+      setOrbitModeBreakdown(ORBIT_BREAKDOWN_ZERO);
+      setOrbitBreakdownPending(false);
+      return;
     }
-    const sizeFor = (mode: OrbitModeKey) =>
-      buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
-    return {
-      meaning: sizeFor("meaning"),
-      context: sizeFor("context"),
-      listening: sizeFor("listening"),
-      match: sizeFor("match"),
-      // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
-      // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
-      // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
-      // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
-      speaking: sizeFor("speaking"),
+    let cancelled = false;
+    // Sin numeros solo la PRIMERA vez. Cuando el pool cambia con un recuento
+    // ya en pantalla (el del servidor llega encima del local nada mas abrir
+    // la app), se dejan los de antes y el rollup los lleva a los nuevos;
+    // vaciarlos un segundo era el parpadeo que se veia al entrar en Practice
+    // recien abierta la app.
+    // Un recuento anterior de pool VACIO no cuenta como "numeros en
+    // pantalla": son ceros, y al arrancar en frio el pool local esta vacio
+    // hasta que llega el del servidor. Sin esto el hub decia "0 skills".
+    if (!done || done.items.length === 0) setOrbitBreakdownPending(true);
+    // Un modo por tanda, con un frame entre medias, en vez de los cinco de
+    // golpe: con el pool del iPhone (unas 40 palabras) los cinco juntos
+    // bloqueaban el hilo JS mas de un segundo, y de paso el `onLayout` del
+    // hub, que entraba en pantalla sin el bloque de habilidades.
+    // `runAfterInteractions` ademas deja terminar la transicion de pestana.
+    const modes: OrbitModeKey[] = ["meaning", "context", "listening", "match", "speaking"];
+    const partial: Record<OrbitModeKey, number> = { ...ORBIT_BREAKDOWN_ZERO };
+    let index = 0;
+    let handle: ReturnType<typeof setTimeout> | null = null;
+    const step = () => {
+      if (cancelled) return;
+      const mode = modes[index];
+      index += 1;
+      // Con el plan `polyglot` speaking cuenta como cualquier otra skill. Sin
+      // el sale CERO por partida doble: `speakingEnabled` es false en las
+      // prefs, asi que el builder ya devuelve 0, y ademas la orbita no pinta
+      // su tarjeta. Nadie que no pueda resolverlo lo ve en el anillo.
+      partial[mode] = buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
+      if (index < modes.length) {
+        handle = setTimeout(step, 16);
+        return;
+      }
+      orbitBreakdownForRef.current = { items: duePracticeItems, prefs: onboardingPracticePrefs };
+      setOrbitModeBreakdown({ ...partial });
+      setOrbitBreakdownPending(false);
     };
-  }, [duePracticeItems, onboardingPracticePrefs]);
+    const task = InteractionManager.runAfterInteractions(() => {
+      handle = setTimeout(step, 0);
+    });
+    return () => {
+      cancelled = true;
+      task.cancel();
+      if (handle) clearTimeout(handle);
+    };
+  }, [activePracticeMode, selection, talkingReader, duePracticeItems, onboardingPracticePrefs, ORBIT_BREAKDOWN_ZERO]);
 
   // Topic label: por ahora fijo. El campo "From {topic}" del mockup
   // requiere saber el topic dominante de las palabras due, lo cual
@@ -15189,6 +15268,23 @@ export function MobileLibraryShell(args: {
             // Misma condicion que abre el slot de la sesion mixta: el piloto
             // hablado es del plan `polyglot` y de nadie mas.
             speakingEnabled={effectivePlan === "premium" || effectivePlan === "polyglot"}
+            breakdownPending={orbitBreakdownPending}
+            missedWords={missedPracticeWords}
+            onRetryMissed={() => {
+              const round = missedPracticeItems.slice(0, MISSED_ROUND_SIZE);
+              // UN ejercicio por palabra fallada, garantizado. Pasarlas por un
+              // solo modo las recortaba: context y meaning funden las palabras
+              // que comparten oracion en un ejercicio, y devuelven nada para
+              // la que no trae frase. El 2026-09-21 "7 words you missed" dio
+              // una ronda de 5 y dos palabras se quedaron sin practicar.
+              const exercises = buildExercisesWithDistractors(
+                round,
+                buildPracticeFavorites(practicePoolWords),
+                ["context", "meaning", "listening"],
+                onboardingPracticePrefs
+              );
+              void openPracticeMode("mixed", false, round, "due", exercises);
+            }}
           />
         </>
       )}
@@ -16816,17 +16912,14 @@ export function MobileLibraryShell(args: {
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const filled = Object.keys(pendingPairings).length + matchedWords.length;
                   const allFilled = filled >= totalPairs;
-                  const flashing = wrongMatchWords.length > 0;
-                  if (allFilled && !flashing) {
+                  if (allFilled) {
                     return (
                       <Text style={styles.practiceFooterHint}>Checking…</Text>
                     );
                   }
                   return (
                     <Text style={styles.practiceFooterHint}>
-                      {flashing
-                        ? "Some pairs were wrong; try again."
-                        : activeMatchWord
+                      {activeMatchWord
                           ? "Now choose the matching meaning."
                           : activeMatchMeaning
                             ? "Now choose the matching word."
@@ -17372,6 +17465,10 @@ export function MobileLibraryShell(args: {
     </>
   );
 
+  // Vista previa de la pantalla de ajustes. NO lee `dailyReminderContext`: ese
+  // memo se declara mas abajo, junto a los datos del recorrido, y aqui todavia
+  // no existe. Se queda como estaba, con las dos ramas que no dependen del
+  // journey.
   const reminderPreview = buildDailyReminderCopy({
     learningGoal: preferences.learningGoal,
     dailyMinutes: preferences.dailyMinutes,
@@ -18319,6 +18416,25 @@ export function MobileLibraryShell(args: {
   // busca esa historia y se abre. Sin esto el aviso deja al alumno en la
   // portada del recorrido y la historia que le prometía el texto la tiene que
   // encontrar él solo.
+  /**
+   * Abre una historia del recorrido por su slug. Devuelve false cuando el
+   * track cargado no la tiene (todavia no ha llegado, u otro idioma), para que
+   * quien llame decida si la deja apuntada o se rinde.
+   */
+  function openJourneyStoryBySlug(slug: string): boolean {
+    if (!activeJourneyTrack) return false;
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        const story = topic.stories.find((entry) => entry.storySlug === slug);
+        if (story) {
+          void openJourneyStory(story);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   useEffect(() => {
     const pending = pendingPushStoryRef.current;
     if (!pending || !activeJourneyTrack) return;
@@ -18328,15 +18444,8 @@ export function MobileLibraryShell(args: {
       pendingPushStoryRef.current = null;
       return;
     }
-    for (const level of activeJourneyTrack.levels) {
-      for (const topic of level.topics) {
-        const story = topic.stories.find((entry) => entry.storySlug === pending.slug);
-        if (story) {
-          pendingPushStoryRef.current = null;
-          void openJourneyStory(story);
-          return;
-        }
-      }
+    if (openJourneyStoryBySlug(pending.slug)) {
+      pendingPushStoryRef.current = null;
     }
   }, [activeJourneyTrack]);
 
@@ -18638,28 +18747,70 @@ export function MobileLibraryShell(args: {
         }),
     };
   }, [activeJourneyLevel, activeJourneyNextStory, activeJourneyNextTopic, activeJourneyTopic, activeJourneyTrack]);
+
+  /**
+   * De que habla el recordatorio diario. UNA sola vez, y la leen los cuatro
+   * sitios que lo necesitan (guardar preferencias, la metrica de programado,
+   * la vista previa de ajustes y el re-programado al arrancar).
+   *
+   * El orden de preferencia es el de siempre, con un cambio en la tercera
+   * rama. Antes miraba `activeJourneyPrimaryAction`, que es la accion del TEMA
+   * ABIERTO en pantalla; sin tema elegido eso cae al primero desbloqueado, y
+   * ademas solo da una historia por vista cuando tiene el checkpoint del tema
+   * aprobado. Un alumno que no haya hecho ningun checkpoint (lo normal al
+   * principio) no tiene NINGUNA historia "completa", asi que el aviso le
+   * nombraba la primera del primer tema para siempre, por muchas que
+   * escuchara. Se cambia por `tourNextStory`, el puntero global del track: el
+   * mismo que la pantalla del recorrido marca con el circulo de "empieza
+   * aqui", que recorre todos los niveles y salta lo ya escuchado.
+   * (Feedback beta del 2026-09-21: "I get notifications about the very first
+   * story rather than the next story on my journey".)
+   */
+  const dailyReminderContext = useMemo<DailyReminderContext | null>(() => {
+    if (continueReading.length > 0) {
+      return {
+        continueStoryTitle: continueReading[0]?.story.title,
+        continueBookTitle: continueReading[0]?.book.title,
+        continueBookSlug: continueReading[0]?.book.slug,
+        continueStorySlug: continueReading[0]?.story.slug,
+      };
+    }
+    if (dueFavoritesCount > 0) return { dueReviewCount: dueFavoritesCount };
+    if (tourNextStory?.storySlug && tourNextStory.title) {
+      let topicLabel: string | null = null;
+      for (const level of activeJourneyTrack?.levels ?? []) {
+        for (const topic of level.topics) {
+          if (topic.stories.some((entry) => entry.id === tourNextStory.id)) {
+            topicLabel = topic.label;
+            break;
+          }
+        }
+        if (topicLabel) break;
+      }
+      return {
+        journeyStoryTitle: tourNextStory.title,
+        journeyStorySlug: tourNextStory.storySlug,
+        journeyStoryTopicLabel: topicLabel,
+      };
+    }
+    // Sin historia por delante (recorrido terminado, o track sin cargar) el
+    // aviso sigue teniendo algo que decir: repaso, practica o checkpoint.
+    if (activeJourneyPrimaryAction) {
+      return {
+        journeyActionTitle: activeJourneyPrimaryAction.title,
+        journeyActionBody: activeJourneyPrimaryAction.body,
+      };
+    }
+    return null;
+  }, [activeJourneyPrimaryAction, activeJourneyTrack, continueReading, dueFavoritesCount, tourNextStory]);
   const reminderContentPreview = useMemo(
     () =>
       buildDailyReminderCopy({
         learningGoal: preferences.learningGoal,
         dailyMinutes: preferences.dailyMinutes,
-        context: continueReading.length > 0
-          ? {
-              continueStoryTitle: continueReading[0]?.story.title,
-              continueBookTitle: continueReading[0]?.book.title,
-              continueBookSlug: continueReading[0]?.book.slug,
-              continueStorySlug: continueReading[0]?.story.slug,
-            }
-          : dueFavoritesCount > 0
-            ? { dueReviewCount: dueFavoritesCount }
-            : activeJourneyPrimaryAction
-              ? {
-                  journeyActionTitle: activeJourneyPrimaryAction.title,
-                  journeyActionBody: activeJourneyPrimaryAction.body,
-                }
-              : null,
+        context: dailyReminderContext,
       }),
-    [activeJourneyPrimaryAction, continueReading, dueFavoritesCount, preferences.dailyMinutes, preferences.learningGoal]
+    [dailyReminderContext, preferences.dailyMinutes, preferences.learningGoal]
   );
 
   // Cuando llega un payload NUEVO del servidor, una eleccion AUTOMATICA de track
@@ -18748,6 +18899,24 @@ export function MobileLibraryShell(args: {
       return;
     }
 
+    // El recordatorio que nombra una historia del recorrido la abre. Si el
+    // track todavia no ha llegado (arranque en frio), se deja apuntada en la
+    // misma cola que usan los avisos del servidor y la abre el efecto de
+    // arriba en cuanto llega.
+    if (target.kind === "journeyStory") {
+      setActiveScreen("home");
+      setJourneyDetailTopicId(null);
+      if (!openJourneyStoryBySlug(target.storySlug)) {
+        pendingPushStoryRef.current = { slug: target.storySlug, atMs: Date.now() };
+      }
+      void trackReminderMetric("reminder_destination_opened", {
+        targetKind: target.kind,
+        storySlug: target.storySlug,
+      });
+      onHandledReminderNavigation?.();
+      return;
+    }
+
     if (target.kind === "practiceDue") {
       setActiveScreen("practice");
       void openPracticeMode("mixed", true, undefined, "due");
@@ -18783,22 +18952,7 @@ export function MobileLibraryShell(args: {
         minute: preferences.reminderMinute ?? 0,
         learningGoal: preferences.learningGoal,
         dailyMinutes: preferences.dailyMinutes,
-        context:
-          continueReading.length > 0
-            ? {
-                continueStoryTitle: continueReading[0]?.story.title,
-                continueBookTitle: continueReading[0]?.book.title,
-                continueBookSlug: continueReading[0]?.book.slug,
-                continueStorySlug: continueReading[0]?.story.slug,
-              }
-            : dueFavoritesCount > 0
-              ? { dueReviewCount: dueFavoritesCount }
-              : activeJourneyPrimaryAction
-                ? {
-                    journeyActionTitle: activeJourneyPrimaryAction.title,
-                    journeyActionBody: activeJourneyPrimaryAction.body,
-                  }
-                : null,
+        context: dailyReminderContext,
         activeToday: hasDailyLoopActivityToday,
         requestPermissions: false,
       });
@@ -18814,12 +18968,11 @@ export function MobileLibraryShell(args: {
       cancelled = true;
     };
   }, [
-    activeJourneyPrimaryAction,
-    continueReading,
-    dueFavoritesCount,
+    dailyReminderContext,
     preferences.dailyMinutes,
     preferences.learningGoal,
     preferences.reminderHour,
+    preferences.reminderMinute,
     preferences.remindersEnabled,
   ]);
 
@@ -19748,10 +19901,15 @@ export function MobileLibraryShell(args: {
         accessibilityLabel="Choose journey language"
         testID="qa-journey-language-switch"
         hitSlop={12}
+        onLayout={(e) => {
+          const { x, width } = e.nativeEvent.layout;
+          if (width > 0) setJourneyFlagCenterX(x + width / 2);
+        }}
         style={({ pressed }) => [
           styles.journeyHeaderFlagBadge,
           styles.favoritesHeroFlagWrap,
           pressed ? styles.journeyHeaderFlagBadgePressed : null,
+          tourOnLevelStep ? styles.journeyHeaderFlagBadgeTour : null,
         ]}
       >
         <LanguageFlag
@@ -21870,6 +22028,7 @@ export function MobileLibraryShell(args: {
               setJourneyTopBarHeight(h);
             }
           }}
+          style={tourOnLevelStep ? styles.journeyTopBarAboveTour : null}
         >
           {journeyPathTopBar}
         </View>
@@ -22647,7 +22806,7 @@ export function MobileLibraryShell(args: {
         ? (() => {
             const step = onboardingTourStep ?? 0;
             const isFirst = step === 0;
-            const isLast = step >= PRODUCT_TOUR_MESSAGES.length - 1;
+            const isLast = step >= MOBILE_PRODUCT_TOUR_MESSAGES.length - 1;
             const tabIndex = bottomTabs.findIndex((t) => tourTargetMatchesTab(t.key));
             const tabCount = bottomTabs.length || 5;
             const GOLD = "#f8c15c";
@@ -22662,9 +22821,15 @@ export function MobileLibraryShell(args: {
                       ? "star"
                       : activeOnboardingTourTarget === "menu"
                         ? "menu"
-                        : "book-open";
+                        : activeOnboardingTourTarget === "level"
+                          ? "flag"
+                          : "book-open";
             // Tab steps point a down-arrow at the (evenly spaced) target tab.
             const tabCenterX = (viewportWidth * (tabIndex + 0.5)) / tabCount;
+            // The level step hangs under the top strip and points up at the
+            // flag; the card's left edge is 16, so subtract it from the
+            // flag's screen x (and half the arrow's 14px).
+            const onLevelStep = activeOnboardingTourTarget === "level";
             return (
               <View
                 pointerEvents="box-none"
@@ -22672,13 +22837,20 @@ export function MobileLibraryShell(args: {
                 testID="qa-onboarding-tour"
               >
                 <Pressable onPress={() => {}} style={styles.tourScrim} />
-                <View style={[styles.tourCard, { bottom: 96 }]}>
-                  {tabIndex >= 0 ? (
+                <View
+                  style={[
+                    styles.tourCard,
+                    onLevelStep ? { top: journeyTopBarHeight + 10 } : { bottom: 96 },
+                  ]}
+                >
+                  {onLevelStep ? (
+                    <View style={[styles.tourArrowUp, { left: journeyFlagCenterX - 16 - 7 }]} />
+                  ) : tabIndex >= 0 ? (
                     <View style={[styles.tourArrowDown, { left: tabCenterX - 23 }]} />
                   ) : null}
                   <View style={styles.tourTopRow}>
                     <View style={styles.tourDotsRow}>
-                      {PRODUCT_TOUR_MESSAGES.map((m, i) => (
+                      {MOBILE_PRODUCT_TOUR_MESSAGES.map((m, i) => (
                         <View key={m.id} style={[styles.tourDot, i === step ? styles.tourDotActive : null]} />
                       ))}
                     </View>
@@ -25211,6 +25383,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.04)",
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyHeaderFlagBadgeTour: {
+    backgroundColor: "rgba(248, 193, 92, 0.14)",
+    borderColor: "#f8c15c",
   },
   journeyHeaderFlagBadgePressed: {
     backgroundColor: "rgba(255,255,255,0.08)",
@@ -30198,6 +30374,22 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "rgba(248, 193, 92, 0.5)",
     transform: [{ rotate: "45deg" }],
+  },
+  tourArrowUp: {
+    position: "absolute",
+    top: -7,
+    width: 14,
+    height: 14,
+    backgroundColor: "#17304b",
+    borderLeftWidth: 1,
+    borderTopWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.5)",
+    transform: [{ rotate: "45deg" }],
+  },
+  // The journey's top strip, lifted above the tour scrim on the "level"
+  // step the same way `bottomNavAboveTour` lifts the nav on tab steps.
+  journeyTopBarAboveTour: {
+    zIndex: 80,
   },
   tourTopRow: {
     flexDirection: "row",

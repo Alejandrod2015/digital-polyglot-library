@@ -7,10 +7,10 @@
       "answer": "aponta",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "torcer",
-        "gritar",
-        "escurecer",
-        "aponta"
+        "aponta",
+        "lava",
+        "rasga",
+        "vende"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
@@ -28,7 +28,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "points at",
+        "washes",
+        "tears",
+        "sells"
+      ]
     },
     "featured": true
   },
@@ -37,13 +43,13 @@
     "word": "apontar",
     "sentence": "Márcia aponta a camisa dela e explica o nome.",
     "payload": {
-      "answer": "to point at something with the finger",
+      "answer": "to point at something",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "to give something in exchange for money",
-        "metal coin used to pay",
-        "to point at something with the finger",
-        "to shout loudly so that people far away hear you"
+        "to point at something",
+        "to hide something",
+        "to wash something",
+        "to buy something"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
@@ -91,9 +97,9 @@
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
         "beira",
-        "golpe",
-        "camisa",
-        "dique"
+        "praça",
+        "ponte",
+        "escada"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e881b7079c3c8e6d.mp3",
@@ -111,7 +117,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "edge",
+        "square",
+        "bridge",
+        "staircase"
+      ]
     },
     "featured": true
   },
@@ -240,10 +252,10 @@
       "answer": "canudo",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "dique",
-        "bola",
-        "gol",
-        "canudo"
+        "canudo",
+        "time",
+        "chapéu",
+        "sapato"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8149bc493932ca0.mp3",
@@ -261,7 +273,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "straw",
+        "team",
+        "hat",
+        "shoe"
+      ]
     },
     "featured": true
   },
@@ -270,13 +288,13 @@
     "word": "cocada",
     "sentence": "Ela vende água de coco e cocada branca.",
     "payload": {
-      "answer": "Brazilian sweet made of coconut and sugar",
+      "answer": "a coconut sweet",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "to hand something to somebody",
-        "Brazilian sweet made of coconut and sugar",
-        "metal coin used to pay",
-        "ball used to play games"
+        "a coconut sweet",
+        "a corn cake",
+        "a meat pie",
+        "a cheese roll"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/107a97fdb42dbb20.mp3",
@@ -702,13 +720,13 @@
     "word": "escurecer",
     "sentence": "Nara fica no banco até escurecer.",
     "payload": {
-      "answer": "to get dark at the end of the day",
+      "answer": "to get dark",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "ball used to play games",
-        "to get dark at the end of the day",
-        "thin tube you use to drink from a coconut or glass",
-        "sports team, especially in football"
+        "to get dark",
+        "to get cold",
+        "to get late",
+        "to get wet"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38b322c4306c4b65.mp3",
@@ -735,13 +753,13 @@
     "word": "gelado",
     "sentence": "“Coco gelado?”, pergunta para Nara.",
     "payload": {
-      "answer": "very cold, straight from the ice",
+      "answer": "very cold",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "to shout loudly so that people far away hear you",
-        "very cold, straight from the ice",
-        "shirt, also a team jersey",
-        "Brazilian sweet made of coconut and sugar"
+        "very cold",
+        "very sweet",
+        "very ripe",
+        "very small"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba42fbda8aea413b.mp3",
@@ -821,12 +839,18 @@
       "answer": "carrinho",
       "prompt": "Listen and choose the word you hear.",
       "options": [
-        "gol",
-        "camisa",
-        "cocada",
-        "carrinho"
+        "carrinho",
+        "caminho",
+        "cantinho",
+        "pratinho"
       ],
-      "language": "portuguese"
+      "language": "portuguese",
+      "optionTranslations": [
+        "cart",
+        "path",
+        "little corner",
+        "little plate"
+      ]
     },
     "featured": false
   },

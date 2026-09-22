@@ -1,0 +1,474 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "encogerse",
+    "sentence": "[[Se encoge]] de hombros y se va con las manos como vino.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shrug",
+      "options": [
+        "to shrug",
+        "to hurt",
+        "to lean",
+        "to wave"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Se encoge de hombros y se va con las manos como vino.",
+        "targetWord": "Se encoge",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0b1a57ad472caac1ff2c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preocuparse",
+    "sentence": "Ya me enteraré yo por otro lado, no te [[preocupes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to worry",
+      "options": [
+        "to worry",
+        "to hurry",
+        "to bother",
+        "to move"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Ya me enteraré yo por otro lado, no te preocupes.",
+        "targetWord": "preocupes",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/eeb2984b20eade7cded8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costar",
+    "sentence": "Sale sin pedir perdón, que es lo que antes le [[costaba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be hard",
+      "options": [
+        "to be hard",
+        "to be fun",
+        "to be late",
+        "to be enough"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Sale sin pedir perdón, que es lo que antes le costaba.",
+        "targetWord": "costaba",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/15acbb2fa6b8c967c4a9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de oídas",
+    "sentence": "Las dos saben lo mismo: poco y [[de oídas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by hearsay",
+      "options": [
+        "by hearsay",
+        "by heart",
+        "for sure",
+        "from books"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Las dos saben lo mismo: poco y de oídas.",
+        "targetWord": "de oídas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1cdcad667599b39adb06.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aunque lo supiera",
+    "sentence": "No lo sé, y [[aunque lo supiera]], eso yo no lo cuento por ahí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even if I knew",
+      "options": [
+        "even if I knew",
+        "as soon as I know",
+        "since I know",
+        "because I forgot"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "No lo sé, y aunque lo supiera, eso yo no lo cuento por ahí.",
+        "targetWord": "aunque lo supiera",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/683fc3b0716b59c67d46.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como vino",
+    "sentence": "Se va con las manos [[como vino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as she came",
+      "options": [
+        "as she came",
+        "in her pockets",
+        "full of bags",
+        "on her hips"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Se va con las manos como vino.",
+        "targetWord": "como vino",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a19415ca599248d2b840.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "es verdad",
+    "sentence": "Tú que trabajas allí, ¿[[es verdad]] lo que dicen?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is it true",
+      "options": [
+        "is it true",
+        "is it new",
+        "is it bad",
+        "is it late"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Tú que trabajas allí, ¿es verdad lo que dicen?",
+        "targetWord": "es verdad",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/91d28b98f2c28bcb5ccd.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuento",
+    "sentence": "Es un secreto: no se lo _____ a nadie.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuento",
+      "options": [
+        "cuento",
+        "cocino",
+        "regalo",
+        "presto"
+      ],
+      "translation": "It's a secret: I don't _____ it to anyone.",
+      "optionTranslations": [
+        "tell",
+        "cook",
+        "give",
+        "lend"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Es un secreto: no se lo cuento a nadie.",
+        "targetWord": "cuento",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd0b61150495dc97.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "trabajas",
+    "sentence": "Tú _____ en esa oficina y conoces a todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trabajas",
+      "options": [
+        "trabajas",
+        "duermes",
+        "cantas",
+        "cocinas"
+      ],
+      "translation": "You _____ in that office and you know everyone.",
+      "optionTranslations": [
+        "work",
+        "sleep",
+        "sing",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Tú trabajas en esa oficina y conoces a todos.",
+        "targetWord": "trabajas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b724038f42d885d.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "hombro,caso,perdón,pregunta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "hombro",
+          "answer": "a shoulder",
+          "options": [
+            "a shoulder",
+            "a case",
+            "an apology",
+            "a question"
+          ]
+        },
+        {
+          "word": "caso",
+          "answer": "a case",
+          "options": [
+            "a shoulder",
+            "a case",
+            "an apology",
+            "a question"
+          ]
+        },
+        {
+          "word": "perdón",
+          "answer": "an apology",
+          "options": [
+            "a shoulder",
+            "a case",
+            "an apology",
+            "a question"
+          ]
+        },
+        {
+          "word": "pregunta",
+          "answer": "a question",
+          "options": [
+            "a shoulder",
+            "a case",
+            "an apology",
+            "a question"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordarse",
+    "sentence": "¿Y tú dónde lo has oído?, pregunta, y [[se acuerda]] de junio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": [
+        "to remember",
+        "to talk",
+        "to complain",
+        "to dream"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "¿Y tú dónde lo has oído?, pregunta, y se acuerda de junio.",
+        "targetWord": "se acuerda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/80debcdd1ad601c7236e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hecho",
+    "sentence": "La pregunta viene [[hecha]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready made",
+      "options": [
+        "ready made",
+        "half done",
+        "in writing",
+        "on time"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "La pregunta viene hecha.",
+        "targetWord": "hecha",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3c433e73b9b21d733166.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin adornarlo",
+    "sentence": "Sale [[sin adornarlo]] y sin pedir perdón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plainly",
+      "options": [
+        "plainly",
+        "loudly",
+        "slowly",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Sale sin adornarlo y sin pedir perdón.",
+        "targetWord": "sin adornarlo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/36827e994450b0d7c510.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un rato",
+    "sentence": "Se queda [[un rato]] en el rellano, con el aire frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a while",
+      "options": [
+        "a while",
+        "a year",
+        "a second",
+        "a night"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Se queda un rato en el rellano, con el aire frío.",
+        "targetWord": "un rato",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/30c7d40ca15f45741666.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vino",
+    "sentence": "Ayer _____ a verme y se quedó a cenar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vino",
+      "options": [
+        "vino",
+        "cantó",
+        "durmió",
+        "pagó"
+      ],
+      "translation": "Yesterday he _____ to see me and stayed for dinner.",
+      "optionTranslations": [
+        "came",
+        "sang",
+        "slept",
+        "paid"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Ayer vino a verme y se quedó a cenar.",
+        "targetWord": "vino",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b2942a786ae19b6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "baja",
+    "sentence": "Vive en el quinto y _____ por las escaleras cada mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baja",
+      "options": [
+        "baja",
+        "canta",
+        "duerme",
+        "cocina"
+      ],
+      "translation": "She lives on the fifth floor and _____ the stairs every morning.",
+      "optionTranslations": [
+        "comes down",
+        "sings",
+        "sleeps",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "Vive en el quinto y baja por las escaleras cada mañana.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5872f2b2d63682f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fácil",
+    "sentence": "El examen era _____ y lo terminó en diez minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fácil",
+      "options": [
+        "fácil",
+        "caro",
+        "largo",
+        "azul"
+      ],
+      "translation": "The exam was _____ and she finished it in ten minutes.",
+      "optionTranslations": [
+        "easy",
+        "expensive",
+        "long",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "poco-y-de-oidas",
+        "storySource": "user",
+        "sentence": "El examen era fácil y lo terminó en diez minutos.",
+        "targetWord": "fácil",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f11fb93fdfc5042.mp3"
+      }
+    },
+    "featured": false
+  }
+]

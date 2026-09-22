@@ -1,446 +1,446 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Anlegestelle,das Deck,die Burg,der Hund",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Anlegestelle",
-     "answer": "a landing stage",
-     "options": [
-      "a landing stage",
-      "a boat deck",
-      "a castle",
-      "a dog"
-     ]
-    },
-    {
-     "word": "das Deck",
-     "answer": "a boat deck",
-     "options": [
-      "a landing stage",
-      "a boat deck",
-      "a castle",
-      "a dog"
-     ]
-    },
-    {
-     "word": "die Burg",
-     "answer": "a castle",
-     "options": [
-      "a landing stage",
-      "a boat deck",
-      "a castle",
-      "a dog"
-     ]
-    },
-    {
-     "word": "der Hund",
-     "answer": "a dog",
-     "options": [
-      "a landing stage",
-      "a boat deck",
-      "a castle",
-      "a dog"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Anlegestelle,das Deck,die Burg,der Hund",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Anlegestelle",
+          "answer": "a landing stage",
+          "options": [
+            "a landing stage",
+            "a boat deck",
+            "a castle",
+            "a dog"
+          ]
+        },
+        {
+          "word": "das Deck",
+          "answer": "a boat deck",
+          "options": [
+            "a landing stage",
+            "a boat deck",
+            "a castle",
+            "a dog"
+          ]
+        },
+        {
+          "word": "die Burg",
+          "answer": "a castle",
+          "options": [
+            "a landing stage",
+            "a boat deck",
+            "a castle",
+            "a dog"
+          ]
+        },
+        {
+          "word": "der Hund",
+          "answer": "a dog",
+          "options": [
+            "a landing stage",
+            "a boat deck",
+            "a castle",
+            "a dog"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Fähre",
-  "sentence": "Die [[Fähre]] nach Meersburg kommt pünktlich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a ferry",
-   "options": [
-    "a ferry",
-    "a bus",
-    "a taxi",
-    "a plane"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Die Fähre nach Meersburg kommt pünktlich.",
-    "targetWord": "Fähre",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der See",
-  "sentence": "Der [[See]] ist heute ruhig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a lake",
-   "options": [
-    "a lake",
-    "a river",
-    "a road",
-    "a field"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Der See ist heute ruhig.",
-    "targetWord": "See",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Freundin",
-  "sentence": "Sie ist eine alte [[Freundin]] aus der Schule.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a female friend",
-   "options": [
-    "a female friend",
-    "a female cousin",
-    "a teacher",
-    "a neighbour"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Sie ist eine alte Freundin aus der Schule.",
-    "targetWord": "Freundin",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Gasse",
-  "sentence": "Emilia führt die zwei durch die [[Gassen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an alley",
-   "options": [
-    "an alley",
-    "a square",
-    "a garden",
-    "a bridge"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Emilia führt die zwei durch die Gassen.",
-    "targetWord": "Gassen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Möwe",
-  "sentence": "[[Möwen]] kreisen über dem Deck.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a gull",
-   "options": [
-    "a gull",
-    "a duck",
-    "a fish",
-    "a horse"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Möwen kreisen über dem Deck.",
-    "targetWord": "Möwen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Haar",
-  "sentence": "Ihre [[Haare]] sind jetzt sehr kurz.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hair",
-   "options": [
-    "hair",
-    "hands",
-    "eyes",
-    "ears"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Ihre Haare sind jetzt sehr kurz.",
-    "targetWord": "Haare",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "führen",
-  "sentence": "Emilia [[führt]] die zwei durch die Gassen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lead",
-   "options": [
-    "to lead",
-    "to follow",
-    "to wait",
-    "to close"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Emilia führt die zwei durch die Gassen.",
-    "targetWord": "führt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verstehen",
-  "sentence": "Er [[versteht]] auch nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to understand",
-   "options": [
-    "to understand",
-    "to answer",
-    "to forget",
-    "to hear"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Er versteht auch nichts.",
-    "targetWord": "versteht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "kurz",
-  "sentence": "Ihre Haare sind jetzt sehr _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "kurz",
-   "options": [
-    "kurz",
-    "lang",
-    "dick",
-    "hell"
-   ],
-   "translation": "Her hair is very _____ now.",
-   "optionTranslations": [
-    "short",
-    "long",
-    "thick",
-    "light"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Ihre Haare sind jetzt sehr kurz.",
-    "targetWord": "kurz",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Hemd",
-  "sentence": "Sie trägt ein graues [[Hemd]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a shirt",
-   "options": [
-    "a shirt",
-    "a hat",
-    "a shoe",
-    "a bag"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Sie trägt ein graues Hemd.",
-    "targetWord": "Hemd",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Fensterladen",
-  "sentence": "Die Häuser haben bunte [[Fensterläden]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a window shutter",
-   "options": [
-    "a window shutter",
-    "a front door",
-    "a stone step",
-    "a roof tile"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Die Häuser haben bunte Fensterläden.",
-    "targetWord": "Fensterläden",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Fähre",
+    "sentence": "Die [[Fähre]] nach Meersburg kommt pünktlich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ferry",
+      "options": [
+        "a ferry",
+        "a bus",
+        "a taxi",
+        "a plane"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Die Fähre nach Meersburg kommt pünktlich.",
+        "targetWord": "Fähre",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kreisen",
-  "sentence": "Möwen [[kreisen]] über dem Deck.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to circle",
-   "options": [
-    "to circle",
-    "to sink",
-    "to sleep",
-    "to sing"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Möwen kreisen über dem Deck.",
-    "targetWord": "kreisen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der See",
+    "sentence": "Der [[See]] ist heute ruhig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lake",
+      "options": [
+        "a lake",
+        "a river",
+        "a road",
+        "a field"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Der See ist heute ruhig.",
+        "targetWord": "See",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Tag",
-  "sentence": "Sie kennt Hannah seit dem ersten _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Tag",
-   "options": [
-    "Tag",
-    "Jahr",
-    "Monat",
-    "Abend"
-   ],
-   "translation": "She has known Hannah since the first _____.",
-   "optionTranslations": [
-    "day",
-    "year",
-    "month",
-    "evening"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Sie kennt Hannah seit dem ersten Tag.",
-    "targetWord": "Tag",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Freundin",
+    "sentence": "Sie ist eine alte [[Freundin]] aus der Schule.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a female friend",
+      "options": [
+        "a female friend",
+        "a female cousin",
+        "a teacher",
+        "a neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Sie ist eine alte Freundin aus der Schule.",
+        "targetWord": "Freundin",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bunte",
-  "sentence": "Die Häuser haben _____ Fensterläden.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bunte",
-   "options": [
-    "bunte",
-    "alte",
-    "kleine",
-    "nasse"
-   ],
-   "translation": "The houses have _____ shutters.",
-   "optionTranslations": [
-    "colourful",
-    "old",
-    "small",
-    "wet"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Die Häuser haben bunte Fensterläden.",
-    "targetWord": "bunte",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Gasse",
+    "sentence": "Emilia führt die zwei durch die [[Gassen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an alley",
+      "options": [
+        "an alley",
+        "a square",
+        "a garden",
+        "a bridge"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Emilia führt die zwei durch die Gassen.",
+        "targetWord": "Gassen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "oben",
-  "sentence": "Emilia zeigt nach _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "oben",
-   "options": [
-    "oben",
-    "unten",
-    "hinten",
-    "links"
-   ],
-   "translation": "Emilia points _____.",
-   "optionTranslations": [
-    "up there",
-    "down",
-    "behind",
-    "left"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Emilia zeigt nach oben.",
-    "targetWord": "oben",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Möwe",
+    "sentence": "[[Möwen]] kreisen über dem Deck.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gull",
+      "options": [
+        "a gull",
+        "a duck",
+        "a fish",
+        "a horse"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Möwen kreisen über dem Deck.",
+        "targetWord": "Möwen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Mauer",
-  "sentence": "Emilia legt die Hand auf die alte _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Mauer",
-   "options": [
-    "Mauer",
-    "Tür",
-    "Bank",
-    "Treppe"
-   ],
-   "translation": "Emilia puts her hand on the old _____.",
-   "optionTranslations": [
-    "wall",
-    "door",
-    "bench",
-    "stairs"
-   ],
-   "audioClip": {
-    "storySlug": "die-fahre-nach-meersburg",
-    "storySource": "user",
-    "sentence": "Emilia legt die Hand auf die alte Mauer.",
-    "targetWord": "Mauer",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Haar",
+    "sentence": "Ihre [[Haare]] sind jetzt sehr kurz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hair",
+      "options": [
+        "hair",
+        "hands",
+        "eyes",
+        "ears"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Ihre Haare sind jetzt sehr kurz.",
+        "targetWord": "Haare",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "führen",
+    "sentence": "Emilia [[führt]] die zwei durch die Gassen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lead",
+      "options": [
+        "to lead",
+        "to follow",
+        "to wait",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Emilia führt die zwei durch die Gassen.",
+        "targetWord": "führt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verstehen",
+    "sentence": "Er [[versteht]] auch nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to answer",
+        "to forget",
+        "to hear"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Er versteht auch nichts.",
+        "targetWord": "versteht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "kurz",
+    "sentence": "Ihre Haare sind jetzt sehr _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kurz",
+      "options": [
+        "kurz",
+        "nass",
+        "dick",
+        "hell"
+      ],
+      "translation": "Her hair is very _____ now.",
+      "optionTranslations": [
+        "short",
+        "wet",
+        "thick",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Ihre Haare sind jetzt sehr kurz.",
+        "targetWord": "kurz",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Hemd",
+    "sentence": "Sie trägt ein graues [[Hemd]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shirt",
+      "options": [
+        "a shirt",
+        "a hat",
+        "a shoe",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Sie trägt ein graues Hemd.",
+        "targetWord": "Hemd",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Fensterladen",
+    "sentence": "Die Häuser haben bunte [[Fensterläden]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a window shutter",
+      "options": [
+        "a window shutter",
+        "a front door",
+        "a stone step",
+        "a roof tile"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Die Häuser haben bunte Fensterläden.",
+        "targetWord": "Fensterläden",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kreisen",
+    "sentence": "Möwen [[kreisen]] über dem Deck.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to circle",
+      "options": [
+        "to circle",
+        "to sink",
+        "to sleep",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Möwen kreisen über dem Deck.",
+        "targetWord": "kreisen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Tag",
+    "sentence": "Sie kennt Hannah seit dem ersten _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Tag",
+      "options": [
+        "Tag",
+        "Jahr",
+        "Monat",
+        "Abend"
+      ],
+      "translation": "She has known Hannah since the first _____.",
+      "optionTranslations": [
+        "day",
+        "year",
+        "month",
+        "evening"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Sie kennt Hannah seit dem ersten Tag.",
+        "targetWord": "Tag",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bunte",
+    "sentence": "Die Häuser haben _____ Fensterläden.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bunte",
+      "options": [
+        "bunte",
+        "alte",
+        "kleine",
+        "nasse"
+      ],
+      "translation": "The houses have _____ shutters.",
+      "optionTranslations": [
+        "colourful",
+        "old",
+        "small",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Die Häuser haben bunte Fensterläden.",
+        "targetWord": "bunte",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "oben",
+    "sentence": "Emilia zeigt nach _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oben",
+      "options": [
+        "oben",
+        "unten",
+        "hinten",
+        "links"
+      ],
+      "translation": "Emilia points _____.",
+      "optionTranslations": [
+        "up there",
+        "down",
+        "behind",
+        "left"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Emilia zeigt nach oben.",
+        "targetWord": "oben",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Mauer",
+    "sentence": "Emilia legt die Hand auf die alte _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Mauer",
+      "options": [
+        "Mauer",
+        "Tür",
+        "Bank",
+        "Treppe"
+      ],
+      "translation": "Emilia puts her hand on the old _____.",
+      "optionTranslations": [
+        "wall",
+        "door",
+        "bench",
+        "stairs"
+      ],
+      "audioClip": {
+        "storySlug": "die-fahre-nach-meersburg",
+        "storySource": "user",
+        "sentence": "Emilia legt die Hand auf die alte Mauer.",
+        "targetWord": "Mauer",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -103,7 +103,7 @@
       "answer": "early",
       "options": [
         "early",
-        "late",
+        "twice",
         "alone",
         "tired"
       ],
@@ -191,7 +191,7 @@
       "answer": "last",
       "options": [
         "last",
-        "first",
+        "third",
         "only",
         "best"
       ],

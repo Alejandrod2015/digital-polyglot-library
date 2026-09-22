@@ -1,0 +1,194 @@
+{
+  "cmt5x63te001832ro42v9dhr9": {
+    "label": "arabic a0 egypt Traveler (draft)",
+    "failing": 0
+  },
+  "cmu04ereh000732z7px7naqa2": {
+    "label": "french a2 france Friends (active)",
+    "failing": 0
+  },
+  "cmtwz1iop000l32jybeo2jg4x": {
+    "label": "french a1 france Friends (active)",
+    "failing": 138
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc": {
+    "label": "french a0 france Friends (active)",
+    "failing": 0
+  },
+  "cmt09ehi60000320qf9efrypu": {
+    "label": "french a1 france Expat (draft)",
+    "failing": 0
+  },
+  "cmu0doigc0007j8e292tycths": {
+    "label": "french b1 france Friends (active)",
+    "failing": 0
+  },
+  "cmqfnp3tf000032afygkqp8z2": {
+    "label": "german a1 germany Traveler (draft)",
+    "failing": 0
+  },
+  "cmt0a8vb1000m32p1x7r5ba28": {
+    "label": "german a0 germany Traveler (draft)",
+    "failing": 0
+  },
+  "cmr92f0qz000032ff1dfd4fgx": {
+    "label": "german c1 germany Expat (active)",
+    "failing": 0
+  },
+  "cmroo4w4v0000324ow1o9qlcp": {
+    "label": "german c1 germany Friends (active)",
+    "failing": 0
+  },
+  "cmu0dqr6y0007j8o52i1s3gf7": {
+    "label": "german a1 germany Friends (active)",
+    "failing": 0
+  },
+  "cmrdbz11t000032asrvo832i9": {
+    "label": "german c1 germany Expat (draft)",
+    "failing": 0
+  },
+  "cmubidgaf0007j8np6g7n89iu": {
+    "label": "german a2 germany Friends (draft)",
+    "failing": 0
+  },
+  "cmu047bkz0007326jsgeptkox": {
+    "label": "german a0 germany Friends (active)",
+    "failing": 0
+  },
+  "cmt5wqsf7000032ghesowd0jy": {
+    "label": "italian a2 italy Traveler (draft)",
+    "failing": 0
+  },
+  "cmss0fkc40007j8dub1zpa1kc": {
+    "label": "italian a1 italy Traveler (active)",
+    "failing": 0
+  },
+  "cmu0dpa3i0007j80ugstn0jf0": {
+    "label": "italian a0 italy Friends (active)",
+    "failing": 0
+  },
+  "cmu1bfmb3000732wxuuwj7j2a": {
+    "label": "italian a1 italy Friends (draft)",
+    "failing": 0
+  },
+  "cmt5x635e000m32roty396dz9": {
+    "label": "korean a0 korea Traveler (draft)",
+    "failing": 0
+  },
+  "cmt5x629l000032rouvjjr1wf": {
+    "label": "polish a0 poland Traveler (draft)",
+    "failing": 0
+  },
+  "cmtq5n9a50007j8812p9lzxjr": {
+    "label": "portuguese b2 brazil Traveler (draft)",
+    "failing": 0
+  },
+  "cmtrcpgso00073232h8vaf7na": {
+    "label": "portuguese b1 brazil Traveler (active)",
+    "failing": 0
+  },
+  "cmsyrge55000732u9oiu8wue3": {
+    "label": "portuguese a2 brazil Traveler (active)",
+    "failing": 0
+  },
+  "cmsou2uk0000732mqa4oatcmn": {
+    "label": "portuguese a1 brazil Traveler (active)",
+    "failing": 0
+  },
+  "cmtvpqsfv000832hgemzk20cl": {
+    "label": "portuguese a0 brazil Traveler (draft)",
+    "failing": 0
+  },
+  "cmu8cbe0f000732rj3or0lld1": {
+    "label": "portuguese a1 brazil Friends (draft)",
+    "failing": 0
+  },
+  "cmrqn1s5s000032tj3kq0gykb": {
+    "label": "spanish c1 argentina Friends (draft)",
+    "failing": 0
+  },
+  "cmt5vx8du000732fjgkwi59ks": {
+    "label": "spanish a1 argentina Friends (draft)",
+    "failing": 216
+  },
+  "cmu7f663l0007j87p36m70mp6": {
+    "label": "spanish a1 chile Friends (draft)",
+    "failing": 0
+  },
+  "cmrpm0tra000032vgxcs33wrb": {
+    "label": "spanish c1 colombia Friends (active)",
+    "failing": 0
+  },
+  "cmtmylg7k0007321h6t7njesx": {
+    "label": "spanish b1 latam Traveler (active)",
+    "failing": 0
+  },
+  "cmtgelq560007j84n3ujx9bpd": {
+    "label": "spanish a2 latam Traveler (active)",
+    "failing": 0
+  },
+  "cmt5vxwgd0007324oesy195k8": {
+    "label": "spanish a1 latam Traveler (active)",
+    "failing": 219
+  },
+  "cmu8gjgax0007j8yhcnsrr2wl": {
+    "label": "spanish a1 latam Friends (draft)",
+    "failing": 0
+  },
+  "cmtpls1l20007j8epwgcs6e1h": {
+    "label": "spanish b2 latam Traveler (active)",
+    "failing": 0
+  },
+  "cmrdqk484000032r4rt2vw4ej": {
+    "label": "spanish c1 latam Friends (active)",
+    "failing": 32
+  },
+  "cmub5my8d000432ye0v6pv5ng": {
+    "label": "spanish a0 latam Conversations (draft)",
+    "failing": 0
+  },
+  "cmqrtaj1p000032qtda86z6um": {
+    "label": "spanish a0 latam Traveler (active)",
+    "failing": 0
+  },
+  "cmu410zep000732szrw94t2sl": {
+    "label": "spanish a0 latam Cultural (draft)",
+    "failing": 0
+  },
+  "cmrrrpru1000032nnzsmraa7h": {
+    "label": "spanish c1 mexico Friends (draft)",
+    "failing": 0
+  },
+  "cmrrqjd2n000032nvnp2tryzg": {
+    "label": "spanish a1 mexico Traveler (active)",
+    "failing": 0
+  },
+  "cmu36dk1d0007j8p7grgcyiok": {
+    "label": "spanish a2 spain Friends (active)",
+    "failing": 0
+  },
+  "cmsvz6mz9000732gsgsfer0ko": {
+    "label": "spanish a1 spain Traveler (active)",
+    "failing": 0
+  },
+  "cmub2d9ly000732omf2bfg39b": {
+    "label": "spanish b1 spain Friends (draft)",
+    "failing": 0
+  },
+  "cmtplpfum0007j8c6piegwt31": {
+    "label": "spanish b2 spain Traveler (active)",
+    "failing": 0
+  },
+  "cmrr5hnbl000032k1esry5n8g": {
+    "label": "spanish a1 spain Friends (active)",
+    "failing": 0
+  },
+  "cmt5x67ze000l320cpgunu5vi": {
+    "label": "spanish b1 spain Traveler (active)",
+    "failing": 0
+  },
+  "cmt70xfyt000l3283gxd70wck": {
+    "label": "spanish a2 spain Traveler (active)",
+    "failing": 297
+  }
+}

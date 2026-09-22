@@ -56,12 +56,12 @@
     "sentence": "El [[man]] está en su salsa, feliz.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the guy, a casual word for a man",
+      "answer": "the guy",
       "options": [
-        "the guy, a casual word for a man",
-        "an old grandmother",
-        "a police officer",
-        "a small child"
+        "the guy",
+        "the grandmother",
+        "the police officer",
+        "the child"
       ],
       "audioClip": {
         "storySlug": "apagaron-el-pico",
@@ -410,10 +410,10 @@
     "sentence": "La [[bulla]] se apaga en seco con la patrulla.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "loud noise from a rowdy crowd",
+      "answer": "a loud rowdy racket",
       "options": [
-        "loud noise from a rowdy crowd",
-        "a deep total silence",
+        "a loud rowdy racket",
+        "a quick warm hug",
         "a soft gentle whisper",
         "a slow sad song"
       ],

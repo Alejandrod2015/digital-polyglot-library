@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "casa di ringhiera,pioggia,appena,tornare",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "casa di ringhiera",
-     "answer": "a shared-balcony building",
-     "options": [
-      "a shared-balcony building",
-      "rain",
-      "just",
-      "to come back"
-     ]
-    },
-    {
-     "word": "pioggia",
-     "answer": "rain",
-     "options": [
-      "a shared-balcony building",
-      "rain",
-      "just",
-      "to come back"
-     ]
-    },
-    {
-     "word": "appena",
-     "answer": "just",
-     "options": [
-      "a shared-balcony building",
-      "rain",
-      "just",
-      "to come back"
-     ]
-    },
-    {
-     "word": "tornare",
-     "answer": "to come back",
-     "options": [
-      "a shared-balcony building",
-      "rain",
-      "just",
-      "to come back"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "casa di ringhiera,pioggia,appena,tornare",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "casa di ringhiera",
+          "answer": "a shared-balcony building",
+          "options": [
+            "a shared-balcony building",
+            "rain",
+            "just",
+            "to come back"
+          ]
+        },
+        {
+          "word": "pioggia",
+          "answer": "rain",
+          "options": [
+            "a shared-balcony building",
+            "rain",
+            "just",
+            "to come back"
+          ]
+        },
+        {
+          "word": "appena",
+          "answer": "just",
+          "options": [
+            "a shared-balcony building",
+            "rain",
+            "just",
+            "to come back"
+          ]
+        },
+        {
+          "word": "tornare",
+          "answer": "to come back",
+          "options": [
+            "a shared-balcony building",
+            "rain",
+            "just",
+            "to come back"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "magro",
-  "sentence": "Non mangia da giorni ed è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "magro",
-   "options": [
-    "magro",
-    "stanco",
-    "sporco",
-    "vecchio"
-   ],
-   "translation": "It hasn't eaten in days and is very _____.",
-   "optionTranslations": [
-    "thin",
-    "tired",
-    "dirty",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Non mangia da giorni ed è molto magro.",
-    "targetWord": "magro",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "legato",
-  "sentence": "Il cane non può scappare: è _____ a un palo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "legato",
-   "options": [
-    "legato",
-    "lasciato",
-    "trovato",
-    "chiuso"
-   ],
-   "translation": "The dog can't run away: it's _____ to a pole.",
-   "optionTranslations": [
-    "to tie up",
-    "left",
-    "found",
-    "closed"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Il cane non può scappare: è legato a un palo.",
-    "targetWord": "legato",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "piccolo",
-  "sentence": "Entra facilmente in tasca: è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "piccolo",
-   "options": [
-    "piccolo",
-    "grande",
-    "pesante",
-    "vecchio"
-   ],
-   "translation": "It fits easily in a pocket: it's very _____.",
-   "optionTranslations": [
-    "small",
-    "big",
-    "heavy",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Entra facilmente in tasca: è molto piccolo.",
-    "targetWord": "piccolo",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dormire",
-  "sentence": "Vuole [[dormire]] subito.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to sleep",
-   "options": [
-    "to sleep",
-    "to interest",
-    "to drink",
-    "to run"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Vuole dormire subito.",
-    "targetWord": "dormire",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "collare",
-  "sentence": "Non ha il [[collare]] e nessuno lo cerca.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a collar",
-   "options": [
-    "a collar",
-    "a round",
-    "a small workshop",
-    "the south"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Non ha il collare e nessuno lo cerca.",
-    "targetWord": "collare",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lasciare",
-  "sentence": "Chi ha [[lasciato]] un cane così?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to leave behind",
-   "options": [
-    "to leave behind",
-    "to decide",
-    "to repair",
-    "to put"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Chi ha lasciato un cane così?",
-    "targetWord": "lasciato",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "suonare",
-  "sentence": "Elisa [[suona]] al primo piano.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to ring",
-   "options": [
-    "to ring",
-    "to send",
-    "to give as a gift",
-    "to stir"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Elisa suona al primo piano.",
-    "targetWord": "suona",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "giù",
-  "sentence": "Guarda [[giù]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "down",
-   "options": [
-    "down",
-    "maybe",
-    "inside",
-    "better"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Guarda giù.",
-    "targetWord": "giù",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cercare",
-  "sentence": "Non ha il collare e nessuno lo [[cerca]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to look for",
-   "options": [
-    "to look for",
-    "to share",
-    "to sit down",
-    "to grow"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Non ha il collare e nessuno lo cerca.",
-    "targetWord": "cerca",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "scendere",
-  "sentence": "Davide [[scende]] e slega il cane.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to go down",
-   "options": [
-    "to go down",
-    "to vote",
-    "to lose",
-    "to call"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Davide scende e slega il cane.",
-    "targetWord": "scende",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "domani",
-  "sentence": "Io [[domani]] lavoro alle sei.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tomorrow",
-   "options": [
-    "tomorrow",
-    "now",
-    "out",
-    "before"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Io domani lavoro alle sei.",
-    "targetWord": "domani",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "magro",
+    "sentence": "Non mangia da giorni ed è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "magro",
+      "options": [
+        "magro",
+        "stanco",
+        "sporco",
+        "vecchio"
+      ],
+      "translation": "It hasn't eaten in days and is very _____.",
+      "optionTranslations": [
+        "thin",
+        "tired",
+        "dirty",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Non mangia da giorni ed è molto magro.",
+        "targetWord": "magro",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "lavorare",
-  "sentence": "Io domani [[lavoro]] alle sei.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to work",
-   "options": [
-    "to work",
-    "to listen",
-    "to hide",
-    "can"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Io domani lavoro alle sei.",
-    "targetWord": "lavoro",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "legato",
+    "sentence": "Il cane non può scappare: è _____ a un palo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "legato",
+      "options": [
+        "legato",
+        "lasciato",
+        "trovato",
+        "chiuso"
+      ],
+      "translation": "The dog can't run away: it's _____ to a pole.",
+      "optionTranslations": [
+        "tied",
+        "left",
+        "found",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Il cane non può scappare: è legato a un palo.",
+        "targetWord": "legato",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sentire",
-  "sentence": "e [[sente]] la pioggia sul collo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to feel",
-   "options": [
-    "to feel",
-    "to bring",
-    "to write",
-    "to learn"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "e sente la pioggia sul collo.",
-    "targetWord": "sente",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "piccolo",
+    "sentence": "Entra facilmente in tasca: è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "piccolo",
+      "options": [
+        "piccolo",
+        "rosso",
+        "pesante",
+        "vecchio"
+      ],
+      "translation": "It fits easily in a pocket: it's very _____.",
+      "optionTranslations": [
+        "small",
+        "red",
+        "heavy",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Entra facilmente in tasca: è molto piccolo.",
+        "targetWord": "piccolo",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "togliere",
-  "sentence": "Si [[toglie]] il foulard",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to take off",
-   "options": [
-    "to take off",
-    "to keep",
-    "to work",
-    "to stand up"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Si toglie il foulard",
-    "targetWord": "toglie",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dormire",
+    "sentence": "Vuole [[dormire]] subito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sleep",
+      "options": [
+        "to sleep",
+        "to interest",
+        "to drink",
+        "to run"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Vuole dormire subito.",
+        "targetWord": "dormire",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "solo",
-  "sentence": "[[Solo]] per stanotte, per favore,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "only",
-   "options": [
-    "only",
-    "still",
-    "in front of",
-    "quietly"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "Solo per stanotte, per favore,",
-    "targetWord": "Solo",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "collare",
+    "sentence": "Non ha il [[collare]] e nessuno lo cerca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a collar",
+      "options": [
+        "a collar",
+        "a round",
+        "a small workshop",
+        "the south"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Non ha il collare e nessuno lo cerca.",
+        "targetWord": "collare",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sopra",
-  "sentence": "[[sopra]] il foulard blu.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on top of",
-   "options": [
-    "on top of",
-    "finally",
-    "worse",
-    "maybe"
-   ],
-   "audioClip": {
-    "storySlug": "un-cane-alla-ringhiera",
-    "storySource": "user",
-    "sentence": "sopra il foulard blu.",
-    "targetWord": "sopra",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "lasciare",
+    "sentence": "Chi ha [[lasciato]] un cane così?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to leave behind",
+      "options": [
+        "to leave behind",
+        "to decide",
+        "to repair",
+        "to put"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Chi ha lasciato un cane così?",
+        "targetWord": "lasciato",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "suonare",
+    "sentence": "Elisa [[suona]] al primo piano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ring",
+      "options": [
+        "to ring",
+        "to send",
+        "to give as a gift",
+        "to stir"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Elisa suona al primo piano.",
+        "targetWord": "suona",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giù",
+    "sentence": "Guarda [[giù]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "down",
+      "options": [
+        "down",
+        "maybe",
+        "inside",
+        "better"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Guarda giù.",
+        "targetWord": "giù",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cercare",
+    "sentence": "Non ha il collare e nessuno lo [[cerca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to share",
+        "to sit down",
+        "to grow"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Non ha il collare e nessuno lo cerca.",
+        "targetWord": "cerca",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scendere",
+    "sentence": "Davide [[scende]] e slega il cane.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go down",
+      "options": [
+        "to go down",
+        "to vote",
+        "to lose",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Davide scende e slega il cane.",
+        "targetWord": "scende",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domani",
+    "sentence": "Io [[domani]] lavoro alle sei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tomorrow",
+      "options": [
+        "tomorrow",
+        "now",
+        "out",
+        "before"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Io domani lavoro alle sei.",
+        "targetWord": "domani",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lavorare",
+    "sentence": "Io domani [[lavoro]] alle sei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work",
+      "options": [
+        "to work",
+        "to listen",
+        "to hide",
+        "can"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Io domani lavoro alle sei.",
+        "targetWord": "lavoro",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentire",
+    "sentence": "e [[sente]] la pioggia sul collo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to feel",
+      "options": [
+        "to feel",
+        "to bring",
+        "to write",
+        "to learn"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "e sente la pioggia sul collo.",
+        "targetWord": "sente",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "togliere",
+    "sentence": "Si [[toglie]] il foulard",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take off",
+      "options": [
+        "to take off",
+        "to keep",
+        "to work",
+        "to stand up"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Si toglie il foulard",
+        "targetWord": "toglie",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "sentence": "[[Solo]] per stanotte, per favore,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": [
+        "only",
+        "still",
+        "in front of",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "Solo per stanotte, per favore,",
+        "targetWord": "Solo",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sopra",
+    "sentence": "[[sopra]] il foulard blu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on top of",
+      "options": [
+        "on top of",
+        "finally",
+        "worse",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "un-cane-alla-ringhiera",
+        "storySource": "user",
+        "sentence": "sopra il foulard blu.",
+        "targetWord": "sopra",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

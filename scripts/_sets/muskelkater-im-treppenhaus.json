@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Haustür,die Einkaufstüte,die Sekunde,der Muskelkater",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Haustür",
-     "answer": "the front door",
-     "options": [
-      "the front door",
-      "a shopping bag",
-      "a second",
-      "sore muscles"
-     ]
-    },
-    {
-     "word": "die Einkaufstüte",
-     "answer": "a shopping bag",
-     "options": [
-      "the front door",
-      "a shopping bag",
-      "a second",
-      "sore muscles"
-     ]
-    },
-    {
-     "word": "die Sekunde",
-     "answer": "a second",
-     "options": [
-      "the front door",
-      "a shopping bag",
-      "a second",
-      "sore muscles"
-     ]
-    },
-    {
-     "word": "der Muskelkater",
-     "answer": "sore muscles",
-     "options": [
-      "the front door",
-      "a shopping bag",
-      "a second",
-      "sore muscles"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Haustür,die Einkaufstüte,die Sekunde,der Muskelkater",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Haustür",
+          "answer": "the front door",
+          "options": [
+            "the front door",
+            "a shopping bag",
+            "a second",
+            "sore muscles"
+          ]
+        },
+        {
+          "word": "die Einkaufstüte",
+          "answer": "a shopping bag",
+          "options": [
+            "the front door",
+            "a shopping bag",
+            "a second",
+            "sore muscles"
+          ]
+        },
+        {
+          "word": "die Sekunde",
+          "answer": "a second",
+          "options": [
+            "the front door",
+            "a shopping bag",
+            "a second",
+            "sore muscles"
+          ]
+        },
+        {
+          "word": "der Muskelkater",
+          "answer": "sore muscles",
+          "options": [
+            "the front door",
+            "a shopping bag",
+            "a second",
+            "sore muscles"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kaum",
-  "sentence": "Sie schafft die Treppe [[kaum]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hardly",
-   "options": [
-    "hardly",
-    "easily",
-    "quickly",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie schafft die Treppe kaum.",
-    "targetWord": "kaum",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schafft",
-  "sentence": "Nach acht Stunden [[schafft]] sie die Treppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "manages",
-   "options": [
-    "manages",
-    "climbs",
-    "cleans",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Nach acht Stunden schafft sie die Treppe.",
-    "targetWord": "schafft",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "brennen",
-  "sentence": "Ihre Waden [[brennen]] beim Laufen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "burn",
-   "options": [
-    "burn",
-    "freeze",
-    "shake",
-    "sleep"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Ihre Waden brennen beim Laufen.",
-    "targetWord": "brennen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ersten",
-  "sentence": "Sie war zum [[ersten]] Mal hier.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "first",
-   "options": [
-    "first",
-    "last",
-    "next",
-    "best"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie war zum ersten Mal hier.",
-    "targetWord": "ersten",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "liest",
-  "sentence": "Sie [[liest]] den Chat aus Rostock.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "reads",
-   "options": [
-    "reads",
-    "writes",
-    "sends",
-    "deletes"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie liest den Chat aus Rostock.",
-    "targetWord": "liest",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "erzählt",
-  "sentence": "Er [[erzählt]] von seiner Woche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tells",
-   "options": [
-    "tells",
-    "asks",
-    "forgets",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Er erzählt von seiner Woche.",
-    "targetWord": "erzählt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Oben",
-  "sentence": "[[Oben]] liest sie den Chat.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "upstairs",
-   "options": [
-    "upstairs",
-    "outside",
-    "nearby",
-    "downstairs"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Oben liest sie den Chat.",
-    "targetWord": "Oben",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "immer",
-  "sentence": "Freundinnen wollen [[immer]] am Sonntag telefonieren.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "always",
-   "options": [
-    "always",
-    "never",
-    "rarely",
-    "sometimes"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Freundinnen wollen immer am Sonntag telefonieren.",
-    "targetWord": "immer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "setzt",
-  "sentence": "Sie [[setzt]] sich auf die Treppe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sits down",
-   "options": [
-    "sits down",
-    "stands up",
-    "lies down",
-    "runs away"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie setzt sich auf die Treppe.",
-    "targetWord": "setzt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lange",
-  "sentence": "Sie denkt [[lange]] darüber nach.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "for a long time",
-   "options": [
-    "for a long time",
-    "for a moment",
-    "never again",
-    "right away"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie denkt lange darüber nach.",
-    "targetWord": "lange",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "wichtig",
-  "sentence": "Ihre Freundinnen sind ihr [[wichtig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "important",
-   "options": [
-    "important",
-    "strange",
-    "funny",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Ihre Freundinnen sind ihr wichtig.",
-    "targetWord": "wichtig",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "kaum",
+    "sentence": "Sie schafft die Treppe [[kaum]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hardly",
+      "options": [
+        "hardly",
+        "easily",
+        "quickly",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie schafft die Treppe kaum.",
+        "targetWord": "kaum",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sofort",
-  "sentence": "Die Antwort kommt [[sofort]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "immediately",
-   "options": [
-    "immediately",
-    "later",
-    "never",
-    "tomorrow"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Die Antwort kommt sofort.",
-    "targetWord": "sofort",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schafft",
+    "sentence": "Nach acht Stunden [[schafft]] sie die Treppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "manages",
+      "options": [
+        "manages",
+        "climbs",
+        "cleans",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Nach acht Stunden schafft sie die Treppe.",
+        "targetWord": "schafft",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kurze",
-  "sentence": "Sie hat keine [[kurze]] Antwort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "short",
-   "options": [
-    "short",
-    "clear",
-    "new",
-    "good"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie hat keine kurze Antwort.",
-    "targetWord": "kurze",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "brennen",
+    "sentence": "Ihre Waden [[brennen]] beim Laufen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burn",
+      "options": [
+        "burn",
+        "freeze",
+        "shake",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Ihre Waden brennen beim Laufen.",
+        "targetWord": "brennen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "riecht",
-  "sentence": "Es _____ nach frischer Suppe.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "riecht",
-   "options": [
-    "riecht",
-    "schmeckt",
-    "klingt",
-    "fühlt"
-   ],
-   "translation": "It _____ of fresh soup.",
-   "optionTranslations": [
-    "smells",
-    "tastes",
-    "sounds",
-    "feels"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Es riecht nach frischer Suppe.",
-    "targetWord": "riecht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "ersten",
+    "sentence": "Sie war zum [[ersten]] Mal hier.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "third",
+        "next",
+        "best"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie war zum ersten Mal hier.",
+        "targetWord": "ersten",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "geht",
-  "sentence": "Sie _____ langsam nach oben.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "geht",
-   "options": [
-    "geht",
-    "läuft",
-    "fährt",
-    "fliegt"
-   ],
-   "translation": "She _____ slowly upstairs.",
-   "optionTranslations": [
-    "walks",
-    "runs",
-    "drives",
-    "flies"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Sie geht langsam nach oben.",
-    "targetWord": "geht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "liest",
+    "sentence": "Sie [[liest]] den Chat aus Rostock.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reads",
+      "options": [
+        "reads",
+        "writes",
+        "sends",
+        "deletes"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie liest den Chat aus Rostock.",
+        "targetWord": "liest",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "trägt",
-  "sentence": "Er _____ ihre schwere Tasche.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "trägt",
-   "options": [
-    "trägt",
-    "sucht",
-    "kauft",
-    "findet"
-   ],
-   "translation": "He _____ her heavy bag.",
-   "optionTranslations": [
-    "carries",
-    "looks for",
-    "buys",
-    "finds"
-   ],
-   "audioClip": {
-    "storySlug": "muskelkater-im-treppenhaus",
-    "storySource": "user",
-    "sentence": "Er trägt ihre schwere Tasche.",
-    "targetWord": "trägt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "erzählt",
+    "sentence": "Er [[erzählt]] von seiner Woche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tells",
+      "options": [
+        "tells",
+        "asks",
+        "forgets",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Er erzählt von seiner Woche.",
+        "targetWord": "erzählt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Oben",
+    "sentence": "[[Oben]] liest sie den Chat.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "upstairs",
+      "options": [
+        "upstairs",
+        "outside",
+        "nearby",
+        "downstairs"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Oben liest sie den Chat.",
+        "targetWord": "Oben",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "immer",
+    "sentence": "Freundinnen wollen [[immer]] am Sonntag telefonieren.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "always",
+      "options": [
+        "always",
+        "again",
+        "rarely",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Freundinnen wollen immer am Sonntag telefonieren.",
+        "targetWord": "immer",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "setzt",
+    "sentence": "Sie [[setzt]] sich auf die Treppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sits down",
+      "options": [
+        "sits down",
+        "stands up",
+        "lies down",
+        "runs away"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie setzt sich auf die Treppe.",
+        "targetWord": "setzt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lange",
+    "sentence": "Sie denkt [[lange]] darüber nach.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for a long time",
+      "options": [
+        "for a long time",
+        "for a moment",
+        "never again",
+        "right away"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie denkt lange darüber nach.",
+        "targetWord": "lange",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wichtig",
+    "sentence": "Ihre Freundinnen sind ihr [[wichtig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "important",
+      "options": [
+        "important",
+        "strange",
+        "funny",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Ihre Freundinnen sind ihr wichtig.",
+        "targetWord": "wichtig",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sofort",
+    "sentence": "Die Antwort kommt [[sofort]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "immediately",
+      "options": [
+        "immediately",
+        "later",
+        "never",
+        "tomorrow"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Die Antwort kommt sofort.",
+        "targetWord": "sofort",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kurze",
+    "sentence": "Sie hat keine [[kurze]] Antwort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "clear",
+        "new",
+        "good"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie hat keine kurze Antwort.",
+        "targetWord": "kurze",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "riecht",
+    "sentence": "Es _____ nach frischer Suppe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "riecht",
+      "options": [
+        "riecht",
+        "schmeckt",
+        "klingt",
+        "fühlt"
+      ],
+      "translation": "It _____ of fresh soup.",
+      "optionTranslations": [
+        "smells",
+        "tastes",
+        "sounds",
+        "feels"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Es riecht nach frischer Suppe.",
+        "targetWord": "riecht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "geht",
+    "sentence": "Sie _____ langsam nach oben.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "geht",
+      "options": [
+        "geht",
+        "läuft",
+        "fährt",
+        "fliegt"
+      ],
+      "translation": "She _____ slowly upstairs.",
+      "optionTranslations": [
+        "walks",
+        "runs",
+        "drives",
+        "flies"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Sie geht langsam nach oben.",
+        "targetWord": "geht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "trägt",
+    "sentence": "Er _____ ihre schwere Tasche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trägt",
+      "options": [
+        "trägt",
+        "sucht",
+        "kauft",
+        "findet"
+      ],
+      "translation": "He _____ her heavy bag.",
+      "optionTranslations": [
+        "carries",
+        "looks for",
+        "buys",
+        "finds"
+      ],
+      "audioClip": {
+        "storySlug": "muskelkater-im-treppenhaus",
+        "storySource": "user",
+        "sentence": "Er trägt ihre schwere Tasche.",
+        "targetWord": "trägt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

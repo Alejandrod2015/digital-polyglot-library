@@ -358,14 +358,14 @@
       "answer": "froid",
       "options": [
         "froid",
-        "chaud",
+        "noir",
         "sucré",
         "plein"
       ],
       "translation": "She waits outside with a coffee that's already _____.",
       "optionTranslations": [
         "cold",
-        "hot",
+        "black",
         "sweet",
         "full"
       ],

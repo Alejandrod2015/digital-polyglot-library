@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "albañil",
+    "sentence": "El [[albañil]] que lleva la obra llega tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a builder",
+      "options": [
+        "a builder",
+        "a plumber",
+        "an architect",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "El albañil que lleva la obra llega tarde.",
+        "targetWord": "albañil",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a388a249baa5797f50a8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tejado",
+    "sentence": "Es barato porque no toca el [[tejado]] entero, solo la mitad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the roof",
+      "options": [
+        "the roof",
+        "the floor",
+        "the wall",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Es barato porque no toca el tejado entero, solo la mitad.",
+        "targetWord": "tejado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ec2b52582989122632d7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caro",
+    "sentence": "El mío es [[caro]] porque sí lo toca entero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "expensive",
+      "options": [
+        "expensive",
+        "finished",
+        "simple",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "El mío es caro porque sí lo toca entero.",
+        "targetWord": "caro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3fe3da63dc6fb9d41543.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dudar",
+    "sentence": "Mira los dos totales y [[duda]], como si faltara una línea.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to doubt",
+      "options": [
+        "to doubt",
+        "to sign",
+        "to count",
+        "to smile"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Mira los dos totales y duda, como si faltara una línea.",
+        "targetWord": "duda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5f85e7735acf9e4fd802.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salir las cuentas",
+    "sentence": "Como si faltara una línea: no le [[salen las cuentas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to add up",
+      "options": [
+        "to add up",
+        "to run out",
+        "to show up",
+        "to give in"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Como si faltara una línea: no le salen las cuentas.",
+        "targetWord": "salen las cuentas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/13d6ddee70a6fc5bbdb0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en partes",
+    "sentence": "¿Me lo divides [[en partes]], con lo que cuesta cada una?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "into parts",
+      "options": [
+        "into parts",
+        "in cash",
+        "on paper",
+        "by hand"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "¿Me lo divides en partes, con lo que cuesta cada una?",
+        "targetWord": "en partes",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/478d049fe7efa833edef.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "así de simple",
+    "sentence": "Y el mío es caro porque sí lo toca entero, [[así de simple]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as simple as that",
+      "options": [
+        "as simple as that",
+        "as far as I know",
+        "as soon as possible",
+        "as a last resort"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Y el mío es caro porque sí lo toca entero, así de simple.",
+        "targetWord": "así de simple",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ff4075837fb78e421c4c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "descarga",
+    "sentence": "Aparca la furgoneta y _____ las cajas en la acera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descarga",
+      "options": [
+        "descarga",
+        "cierra",
+        "pesa",
+        "envuelve"
+      ],
+      "translation": "He parks the van and _____ the boxes on the pavement.",
+      "optionTranslations": [
+        "unloads",
+        "closes",
+        "weighs",
+        "wraps"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Aparca la furgoneta y descarga las cajas en la acera.",
+        "targetWord": "descarga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff716b8f61709401.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "divides",
+    "sentence": "Si _____ la cuenta entre cuatro, tocamos a diez euros.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "divides",
+      "options": [
+        "divides",
+        "firmas",
+        "pierdes",
+        "guardas"
+      ],
+      "translation": "If you _____ the bill between four, we each pay ten euros.",
+      "optionTranslations": [
+        "split",
+        "sign",
+        "lose",
+        "keep"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Si divides la cuenta entre cuatro, tocamos a diez euros.",
+        "targetWord": "divides",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7fa26540d995f77.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cemento,ladrillo,lápiz,calculadora",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cemento",
+          "answer": "cement",
+          "options": [
+            "cement",
+            "a brick",
+            "a pencil",
+            "a calculator"
+          ]
+        },
+        {
+          "word": "ladrillo",
+          "answer": "a brick",
+          "options": [
+            "cement",
+            "a brick",
+            "a pencil",
+            "a calculator"
+          ]
+        },
+        {
+          "word": "lápiz",
+          "answer": "a pencil",
+          "options": [
+            "cement",
+            "a brick",
+            "a pencil",
+            "a calculator"
+          ]
+        },
+        {
+          "word": "calculadora",
+          "answer": "a calculator",
+          "options": [
+            "cement",
+            "a brick",
+            "a pencil",
+            "a calculator"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oreja",
+    "sentence": "Le sube el calor a las [[orejas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an ear",
+      "options": [
+        "an ear",
+        "a cheek",
+        "a hand",
+        "a neck"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Le sube el calor a las orejas.",
+        "targetWord": "orejas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/63e25007b552f4241e1d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "resto",
+    "sentence": "Uno pone cemento y ladrillo, el otro pintura y el [[resto]] en blanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rest",
+      "options": [
+        "the rest",
+        "the price",
+        "the roof",
+        "the date"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Uno pone cemento y ladrillo, el otro pintura y el resto en blanco.",
+        "targetWord": "resto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4cccfd291bbac672f1cc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyarse",
+    "sentence": "[[Se apoya]] y escribe seis líneas con un lápiz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lean",
+      "options": [
+        "to lean",
+        "to sit down",
+        "to bend over",
+        "to turn around"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Se apoya y escribe seis líneas con un lápiz.",
+        "targetWord": "Se apoya",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2c3a9381e3ef2ee6ce2f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanco",
+    "sentence": "El otro pone pintura y el resto en [[blanco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "left blank",
+      "options": [
+        "left blank",
+        "in bold",
+        "in pencil",
+        "in red"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "El otro pone pintura y el resto en blanco.",
+        "targetWord": "blanco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6fa797013990c74364b8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el doble",
+    "sentence": "Dos papeles con el mismo techo, y [[el doble]] de diferencia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice as much",
+      "options": [
+        "twice as much",
+        "slightly less",
+        "exactly the same",
+        "slightly more"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Dos papeles con el mismo techo, y el doble de diferencia.",
+        "targetWord": "el doble",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d14e5cd9989697df6bc7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "Este piso es _____: cuesta la mitad que el otro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barato",
+      "options": [
+        "barato",
+        "grande",
+        "viejo",
+        "lento"
+      ],
+      "translation": "This flat is _____: it costs half as much as the other one.",
+      "optionTranslations": [
+        "cheap",
+        "big",
+        "old",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Este piso es barato: cuesta la mitad que el otro.",
+        "targetWord": "barato",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/615ea506f6dc3be0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "comparar",
+    "sentence": "Pon los dos precios juntos para _____ mejor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comparar",
+      "options": [
+        "comparar",
+        "pagar",
+        "firmar",
+        "cobrar"
+      ],
+      "translation": "Put the two prices side by side to _____ better.",
+      "optionTranslations": [
+        "compare",
+        "pay",
+        "sign",
+        "charge"
+      ],
+      "audioClip": {
+        "storySlug": "el-tejado-a-la-mitad",
+        "storySource": "user",
+        "sentence": "Pon los dos precios juntos para comparar mejor.",
+        "targetWord": "comparar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57e880e878ead92b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

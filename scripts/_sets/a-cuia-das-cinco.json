@@ -78,9 +78,9 @@
     "sentence": "A sopa sai quente e amarga, com goma e [[jambu]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the jambu leaf",
+      "answer": "a jambu leaf",
       "options": [
-        "the jambu leaf",
+        "a jambu leaf",
         "a hot pepper",
         "a green lemon",
         "a white onion"
@@ -147,9 +147,9 @@
       "answer": "seasoning",
       "options": [
         "seasoning",
-        "a mistake",
-        "a dessert",
-        "a drink"
+        "dessert",
+        "poison",
+        "medicine"
       ],
       "audioClip": {
         "storySlug": "a-cuia-das-cinco",

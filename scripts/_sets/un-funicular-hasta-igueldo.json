@@ -154,7 +154,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "reír",
-        "llorar",
+        "cantar",
         "dormir",
         "correr"
       ],
@@ -170,7 +170,7 @@
       "translation": "The joke is very good and makes me _____.",
       "optionTranslations": [
         "to laugh",
-        "to cry",
+        "to sing",
         "to sleep",
         "to run"
       ]
@@ -188,7 +188,7 @@
         "viento",
         "sol",
         "ruido",
-        "agua"
+        "calor"
       ],
       "audioClip": {
         "language": "spanish",
@@ -204,7 +204,7 @@
         "wind",
         "sun",
         "noise",
-        "water"
+        "heat"
       ]
     },
     "featured": true
@@ -357,7 +357,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "new",
-        "old",
+        "big",
         "easy",
         "free"
       ],
@@ -532,7 +532,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "strong",
-        "weak",
+        "dry",
         "warm",
         "quiet"
       ],

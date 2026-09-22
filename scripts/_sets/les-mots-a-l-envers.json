@@ -409,14 +409,14 @@
       "answer": "durs",
       "options": [
         "durs",
-        "faciles",
+        "longs",
         "clairs",
         "simples"
       ],
       "translation": "These words are _____: I understand nothing.",
       "optionTranslations": [
         "hard",
-        "easy",
+        "long",
         "clear",
         "simple"
       ],

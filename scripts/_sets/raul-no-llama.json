@@ -430,14 +430,14 @@
       "answer": "menos",
       "options": [
         "menos",
-        "más",
+        "poco",
         "igual",
         "doble"
       ],
       "translation": "With help, the work weighs _____.",
       "optionTranslations": [
         "less",
-        "more",
+        "little",
         "the same",
         "double"
       ],

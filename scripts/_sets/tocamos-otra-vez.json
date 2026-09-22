@@ -144,9 +144,9 @@
     "sentence": "Un disco con una [[rana]] dibujada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "frog",
+      "answer": "a frog",
       "options": [
-        "frog",
+        "a frog",
         "a bird",
         "a fish",
         "a flower"

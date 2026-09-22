@@ -125,7 +125,7 @@
       "answer": "light",
       "options": [
         "light",
-        "heavy",
+        "wet",
         "full",
         "dirty"
       ],
@@ -191,7 +191,7 @@
       "answer": "cheap",
       "options": [
         "cheap",
-        "expensive",
+        "warm",
         "old",
         "dirty"
       ],

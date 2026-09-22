@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Flohmarkt,das Kleid,die Schneiderin,die Jeansjacke",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Flohmarkt",
-     "answer": "a flea market",
-     "options": [
-      "a flea market",
-      "a dress",
-      "a dressmaker",
-      "a denim jacket"
-     ]
-    },
-    {
-     "word": "das Kleid",
-     "answer": "a dress",
-     "options": [
-      "a flea market",
-      "a dress",
-      "a dressmaker",
-      "a denim jacket"
-     ]
-    },
-    {
-     "word": "die Schneiderin",
-     "answer": "a dressmaker",
-     "options": [
-      "a flea market",
-      "a dress",
-      "a dressmaker",
-      "a denim jacket"
-     ]
-    },
-    {
-     "word": "die Jeansjacke",
-     "answer": "a denim jacket",
-     "options": [
-      "a flea market",
-      "a dress",
-      "a dressmaker",
-      "a denim jacket"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Flohmarkt,das Kleid,die Schneiderin,die Jeansjacke",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Flohmarkt",
+          "answer": "a flea market",
+          "options": [
+            "a flea market",
+            "a dress",
+            "a dressmaker",
+            "a denim jacket"
+          ]
+        },
+        {
+          "word": "das Kleid",
+          "answer": "a dress",
+          "options": [
+            "a flea market",
+            "a dress",
+            "a dressmaker",
+            "a denim jacket"
+          ]
+        },
+        {
+          "word": "die Schneiderin",
+          "answer": "a dressmaker",
+          "options": [
+            "a flea market",
+            "a dress",
+            "a dressmaker",
+            "a denim jacket"
+          ]
+        },
+        {
+          "word": "die Jeansjacke",
+          "answer": "a denim jacket",
+          "options": [
+            "a flea market",
+            "a dress",
+            "a dressmaker",
+            "a denim jacket"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Überall",
-  "sentence": "[[Überall]] hängen alte Kleider.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "everywhere",
-   "options": [
-    "everywhere",
-    "nowhere",
-    "somewhere",
-    "nearby"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Überall hängen alte Kleider.",
-    "targetWord": "Überall",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dunkelblaues",
-  "sentence": "Sie findet ein [[dunkelblaues]] Kleid.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dark blue",
-   "options": [
-    "dark blue",
-    "light green",
-    "bright yellow",
-    "pale pink"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Sie findet ein dunkelblaues Kleid.",
-    "targetWord": "dunkelblaues",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kostet",
-  "sentence": "Was [[kostet]] das Kleid?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "costs",
-   "options": [
-    "costs",
-    "weighs",
-    "needs",
-    "misses"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Was kostet das Kleid?",
-    "targetWord": "kostet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schmutzig",
-  "sentence": "Die alte Jacke ist etwas [[schmutzig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dirty",
-   "options": [
-    "dirty",
-    "heavy",
-    "tight",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Die alte Jacke ist etwas schmutzig.",
-    "targetWord": "schmutzig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "voll",
-  "sentence": "Die Jacke ist [[voll]] mit bunten Knöpfen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "full",
-   "options": [
-    "full",
-    "empty",
-    "light",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Die Jacke ist voll mit bunten Knöpfen.",
-    "targetWord": "voll",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "geschenkt",
-  "sentence": "Ihre Freundin hat sie ihr [[geschenkt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "given as a present",
-   "options": [
-    "given as a present",
-    "sold quickly",
-    "taken away",
-    "found again"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Ihre Freundin hat sie ihr geschenkt.",
-    "targetWord": "geschenkt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fest",
-  "sentence": "Er hält die Jacke ganz [[fest]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tight",
-   "options": [
-    "tight",
-    "loose",
-    "open",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Er hält die Jacke ganz fest.",
-    "targetWord": "fest",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "altem",
-  "sentence": "Die Jacke ist aus [[altem]] Stoff.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "old",
-   "options": [
-    "old",
-    "soft",
-    "cheap",
-    "thick"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Die Jacke ist aus altem Stoff.",
-    "targetWord": "altem",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "viel",
-  "sentence": "Das Kleid ist [[viel]] zu weit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "much",
-   "options": [
-    "much",
-    "little",
-    "just",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Das Kleid ist viel zu weit.",
-    "targetWord": "viel",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nachdenken",
-  "sentence": "Ich muss kurz [[nachdenken]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "think it over",
-   "options": [
-    "think it over",
-    "fall asleep",
-    "get dressed",
-    "go outside"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Ich muss kurz nachdenken.",
-    "targetWord": "nachdenken",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Wollen",
-  "sentence": "[[Wollen]] wir tauschen?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shall we",
-   "options": [
-    "shall we",
-    "must we",
-    "may we",
-    "should we"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Wollen wir tauschen?",
-    "targetWord": "Wollen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Überall",
+    "sentence": "[[Überall]] hängen alte Kleider.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everywhere",
+      "options": [
+        "everywhere",
+        "nowhere",
+        "somewhere",
+        "nearby"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Überall hängen alte Kleider.",
+        "targetWord": "Überall",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "noch",
-  "sentence": "Ihre Sachen sind [[noch]] in Rostock.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "still",
-   "options": [
-    "still",
-    "already",
-    "never",
-    "almost"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Ihre Sachen sind noch in Rostock.",
-    "targetWord": "noch",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dunkelblaues",
+    "sentence": "Sie findet ein [[dunkelblaues]] Kleid.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark blue",
+      "options": [
+        "dark blue",
+        "light green",
+        "bright yellow",
+        "pale pink"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Sie findet ein dunkelblaues Kleid.",
+        "targetWord": "dunkelblaues",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "beste",
-  "sentence": "Das ist ihre [[beste]] Freundin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "best",
-   "options": [
-    "best",
-    "only",
-    "new",
-    "first"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Das ist ihre beste Freundin.",
-    "targetWord": "beste",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "kostet",
+    "sentence": "Was [[kostet]] das Kleid?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "costs",
+      "options": [
+        "costs",
+        "weighs",
+        "needs",
+        "misses"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Was kostet das Kleid?",
+        "targetWord": "kostet",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "verkauft",
-  "sentence": "Sie _____ alte Kleider auf dem Markt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verkauft",
-   "options": [
-    "verkauft",
-    "kauft",
-    "sucht",
-    "trägt"
-   ],
-   "translation": "She _____ old clothes at the market.",
-   "optionTranslations": [
-    "sells",
-    "buys",
-    "looks for",
-    "wears"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Sie verkauft alte Kleider auf dem Markt.",
-    "targetWord": "verkauft",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schmutzig",
+    "sentence": "Die alte Jacke ist etwas [[schmutzig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dirty",
+      "options": [
+        "dirty",
+        "heavy",
+        "tight",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Die alte Jacke ist etwas schmutzig.",
+        "targetWord": "schmutzig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "findet",
-  "sentence": "Sie _____ endlich ein schönes Kleid.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "findet",
-   "options": [
-    "findet",
-    "kauft",
-    "näht",
-    "sucht"
-   ],
-   "translation": "She finally _____ a nice dress.",
-   "optionTranslations": [
-    "finds",
-    "buys",
-    "sews",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Sie findet endlich ein schönes Kleid.",
-    "targetWord": "findet",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "voll",
+    "sentence": "Die Jacke ist [[voll]] mit bunten Knöpfen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "wet",
+        "light",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Die Jacke ist voll mit bunten Knöpfen.",
+        "targetWord": "voll",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "hängt",
-  "sentence": "Sie _____ das Kleid zurück.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hängt",
-   "options": [
-    "hängt",
-    "stellt",
-    "wirft",
-    "trägt"
-   ],
-   "translation": "She _____ the dress back.",
-   "optionTranslations": [
-    "hangs",
-    "puts",
-    "throws",
-    "wears"
-   ],
-   "audioClip": {
-    "storySlug": "nichts-zum-anziehen",
-    "storySource": "user",
-    "sentence": "Sie hängt das Kleid zurück.",
-    "targetWord": "hängt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "geschenkt",
+    "sentence": "Ihre Freundin hat sie ihr [[geschenkt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "given as a present",
+      "options": [
+        "given as a present",
+        "sold quickly",
+        "taken away",
+        "found again"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Ihre Freundin hat sie ihr geschenkt.",
+        "targetWord": "geschenkt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "fest",
+    "sentence": "Er hält die Jacke ganz [[fest]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tight",
+      "options": [
+        "tight",
+        "loose",
+        "open",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Er hält die Jacke ganz fest.",
+        "targetWord": "fest",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "altem",
+    "sentence": "Die Jacke ist aus [[altem]] Stoff.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "soft",
+        "cheap",
+        "thick"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Die Jacke ist aus altem Stoff.",
+        "targetWord": "altem",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viel",
+    "sentence": "Das Kleid ist [[viel]] zu weit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "much",
+      "options": [
+        "much",
+        "almost",
+        "just",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Das Kleid ist viel zu weit.",
+        "targetWord": "viel",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nachdenken",
+    "sentence": "Ich muss kurz [[nachdenken]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "think it over",
+      "options": [
+        "think it over",
+        "fall asleep",
+        "get dressed",
+        "go outside"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Ich muss kurz nachdenken.",
+        "targetWord": "nachdenken",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Wollen",
+    "sentence": "[[Wollen]] wir tauschen?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shall we",
+      "options": [
+        "shall we",
+        "must we",
+        "may we",
+        "should we"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Wollen wir tauschen?",
+        "targetWord": "Wollen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noch",
+    "sentence": "Ihre Sachen sind [[noch]] in Rostock.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "only",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Ihre Sachen sind noch in Rostock.",
+        "targetWord": "noch",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beste",
+    "sentence": "Das ist ihre [[beste]] Freundin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "best",
+      "options": [
+        "best",
+        "only",
+        "new",
+        "first"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Das ist ihre beste Freundin.",
+        "targetWord": "beste",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verkauft",
+    "sentence": "Sie _____ alte Kleider auf dem Markt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verkauft",
+      "options": [
+        "verkauft",
+        "kauft",
+        "sucht",
+        "trägt"
+      ],
+      "translation": "She _____ old clothes at the market.",
+      "optionTranslations": [
+        "sells",
+        "buys",
+        "looks for",
+        "wears"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Sie verkauft alte Kleider auf dem Markt.",
+        "targetWord": "verkauft",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "findet",
+    "sentence": "Sie _____ endlich ein schönes Kleid.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "findet",
+      "options": [
+        "findet",
+        "kauft",
+        "näht",
+        "sucht"
+      ],
+      "translation": "She finally _____ a nice dress.",
+      "optionTranslations": [
+        "finds",
+        "buys",
+        "sews",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Sie findet endlich ein schönes Kleid.",
+        "targetWord": "findet",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hängt",
+    "sentence": "Sie _____ das Kleid zurück.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hängt",
+      "options": [
+        "hängt",
+        "stellt",
+        "wirft",
+        "trägt"
+      ],
+      "translation": "She _____ the dress back.",
+      "optionTranslations": [
+        "hangs",
+        "puts",
+        "throws",
+        "wears"
+      ],
+      "audioClip": {
+        "storySlug": "nichts-zum-anziehen",
+        "storySource": "user",
+        "sentence": "Sie hängt das Kleid zurück.",
+        "targetWord": "hängt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

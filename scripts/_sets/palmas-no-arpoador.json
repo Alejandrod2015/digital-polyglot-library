@@ -151,7 +151,7 @@
       "answer": "last",
       "options": [
         "last",
-        "first",
+        "third",
         "next",
         "only"
       ],
@@ -220,7 +220,7 @@
       "answer": "to go up",
       "options": [
         "to go up",
-        "to go down",
+        "to wash",
         "to sit",
         "to stop"
       ],
@@ -345,7 +345,7 @@
       "answer": "to start",
       "options": [
         "to start",
-        "to finish",
+        "to stop",
         "to wait",
         "to leave"
       ],

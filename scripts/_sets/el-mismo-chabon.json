@@ -125,9 +125,9 @@
     "sentence": "Las invitó con el mismo [[verso]] trillado.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the same worn out line",
+      "answer": "a worn-out pickup line",
       "options": [
-        "the same worn out line",
+        "a worn-out pickup line",
         "a brand new gift",
         "a fair honest deal",
         "a kind sweet note"

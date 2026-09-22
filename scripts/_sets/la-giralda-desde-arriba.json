@@ -90,7 +90,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to go up",
-        "to go down",
+        "to run",
         "to sit",
         "to wait"
       ],
@@ -197,8 +197,8 @@
       "prompt": "Complete the sentence.",
       "options": [
         "alto",
-        "bajo",
-        "corto",
+        "rojo",
+        "viejo",
         "ancho"
       ],
       "audioClip": {
@@ -213,8 +213,8 @@
       "translation": "That building is very _____; it reaches the clouds.",
       "optionTranslations": [
         "tall",
-        "low",
-        "short",
+        "red",
+        "old",
         "wide"
       ]
     },
@@ -254,7 +254,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to go down",
-        "to go up",
+        "to count",
         "to open",
         "to clean"
       ],
@@ -354,7 +354,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "hard",
-        "easy",
+        "long",
         "cheap",
         "heavy"
       ],

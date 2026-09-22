@@ -100,9 +100,9 @@
     "sentence": "“Aqui a [[umidade]] não vai embora o ano inteiro.”",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the damp in the air",
+      "answer": "the damp",
       "options": [
-        "the damp in the air",
+        "the damp",
         "the noise",
         "the dust",
         "the heat"

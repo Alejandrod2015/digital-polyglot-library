@@ -103,7 +103,7 @@
       "answer": "sad",
       "options": [
         "sad",
-        "happy",
+        "tall",
         "famous",
         "young"
       ],
@@ -125,7 +125,7 @@
       "answer": "midday",
       "options": [
         "midday",
-        "midnight",
+        "dusk",
         "dawn",
         "evening"
       ],

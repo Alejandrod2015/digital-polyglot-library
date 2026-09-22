@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "seguir",
+    "sentence": "Y si no los llevas tú, los llevo yo, [[sigue]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go on",
+      "options": [
+        "to go on",
+        "to give up",
+        "to shut up",
+        "to turn back"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Y si no los llevas tú, los llevo yo, sigue.",
+        "targetWord": "sigue",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3c8f8c05fa5934257070.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltar",
+    "sentence": "Lo del agua es del martes, y el banco pide papeles, [[suelta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come out with",
+      "options": [
+        "to come out with",
+        "to think over",
+        "to write down",
+        "to read out"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Lo del agua es del martes, y el banco pide papeles, suelta.",
+        "targetWord": "suelta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/878f9b399ce783d14af6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torpe",
+    "sentence": "Le sale [[torpe]], con un susurro en medio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clumsy",
+      "options": [
+        "clumsy",
+        "loud",
+        "perfect",
+        "funny"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Le sale torpe, con un susurro en medio.",
+        "targetWord": "torpe",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1fa1f89883a05de9c603.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callarse",
+    "sentence": "Antes callaba, porque [[callarse]] era cómodo y no costaba nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep quiet",
+      "options": [
+        "to keep quiet",
+        "to show up",
+        "to give in",
+        "to walk away"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Antes callaba, porque callarse era cómodo y no costaba nada.",
+        "targetWord": "callarse",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cc088996ddeec938225a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indicar",
+    "sentence": "Le [[indica]] el sobre del banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to point out",
+      "options": [
+        "to point out",
+        "to hand over",
+        "to open",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Le indica el sobre del banco.",
+        "targetWord": "indica",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8d54d33153ed45b314b2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a ver si",
+    "sentence": "[[A ver si]] te sigo: la obra en abril, y los papeles esta semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "let's see if",
+      "options": [
+        "let's see if",
+        "no wonder",
+        "I doubt that",
+        "it's a pity"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "A ver si te sigo: la obra en abril, y los papeles esta semana.",
+        "targetWord": "A ver si",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8c637192d70d5529dc88.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin darle importancia",
+    "sentence": "Los papeles son para el lunes, contesta [[sin darle importancia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without making a fuss",
+      "options": [
+        "without making a fuss",
+        "without looking up",
+        "without a word",
+        "without thinking"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Los papeles son para el lunes, contesta sin darle importancia.",
+        "targetWord": "sin darle importancia",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4a334bf2dc13a4517bbc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sigo",
+    "sentence": "Te oigo bien, pero vas rápido y no te _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sigo",
+      "options": [
+        "sigo",
+        "pago",
+        "veo",
+        "creo"
+      ],
+      "translation": "I hear you fine, but you go fast and I don't _____ you.",
+      "optionTranslations": [
+        "follow",
+        "pay",
+        "see",
+        "believe"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Te oigo bien, pero vas rápido y no te sigo.",
+        "targetWord": "sigo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01fbe768bfaead74.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se pierde",
+    "sentence": "La explicación es larga y ella _____ a la mitad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se pierde",
+      "options": [
+        "se pierde",
+        "se ducha",
+        "se casa",
+        "se cae"
+      ],
+      "translation": "The explanation is long and she _____ halfway through.",
+      "optionTranslations": [
+        "loses the thread",
+        "has a shower",
+        "gets married",
+        "falls down"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "La explicación es larga y ella se pierde a la mitad.",
+        "targetWord": "se pierde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b62be4ead983ec69.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "susurro,abril,martes,confusión",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "susurro",
+          "answer": "a whisper",
+          "options": [
+            "a whisper",
+            "April",
+            "Tuesday",
+            "confusion"
+          ]
+        },
+        {
+          "word": "abril",
+          "answer": "April",
+          "options": [
+            "a whisper",
+            "April",
+            "Tuesday",
+            "confusion"
+          ]
+        },
+        {
+          "word": "martes",
+          "answer": "Tuesday",
+          "options": [
+            "a whisper",
+            "April",
+            "Tuesday",
+            "confusion"
+          ]
+        },
+        {
+          "word": "confusión",
+          "answer": "confusion",
+          "options": [
+            "a whisper",
+            "April",
+            "Tuesday",
+            "confusion"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "importancia",
+    "sentence": "Contesta sin darle [[importancia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "importance",
+      "options": [
+        "importance",
+        "permission",
+        "money",
+        "time"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Contesta sin darle importancia.",
+        "targetWord": "importancia",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a343a578f4194c1dd4cd.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reírse",
+    "sentence": "Recoge el sobre y sube [[riéndose]] sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to sing",
+        "to shout",
+        "to whistle"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Recoge el sobre y sube riéndose sola.",
+        "targetWord": "riéndose",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6d12c90d277b7e7b8216.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "propio",
+    "sentence": "La confusión se deshace con sus [[propias]] palabras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "own",
+      "options": [
+        "own",
+        "first",
+        "last",
+        "few"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "La confusión se deshace con sus propias palabras.",
+        "targetWord": "propias",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bbe7e7cb3d63d4efaecb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en medio",
+    "sentence": "Le sale torpe, con un susurro [[en medio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the middle",
+      "options": [
+        "in the middle",
+        "at the end",
+        "on purpose",
+        "at the top"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Le sale torpe, con un susurro en medio.",
+        "targetWord": "en medio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f0fd749825d9c6063dd8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo demás",
+    "sentence": "Los papeles son para el lunes, [[lo demás]] sí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rest",
+      "options": [
+        "the rest",
+        "the bank",
+        "the truth",
+        "the point"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Los papeles son para el lunes, lo demás sí.",
+        "targetWord": "lo demás",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6fd9a2c9090934e7c1f3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "contesta",
+    "sentence": "Le hacen una pregunta y ella _____ enseguida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contesta",
+      "options": [
+        "contesta",
+        "cocina",
+        "duerme",
+        "corre"
+      ],
+      "translation": "They ask her a question and she _____ right away.",
+      "optionTranslations": [
+        "answers",
+        "cooks",
+        "sleeps",
+        "runs"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "Le hacen una pregunta y ella contesta enseguida.",
+        "targetWord": "contesta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dd81e61f1ac8112.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cómodo",
+    "sentence": "El sofá nuevo es muy _____: te duermes en él.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cómodo",
+      "options": [
+        "cómodo",
+        "caro",
+        "sucio",
+        "feo"
+      ],
+      "translation": "The new sofa is very _____: you fall asleep on it.",
+      "optionTranslations": [
+        "comfortable",
+        "expensive",
+        "dirty",
+        "ugly"
+      ],
+      "audioClip": {
+        "storySlug": "a-ver-si-te-sigo",
+        "storySource": "user",
+        "sentence": "El sofá nuevo es muy cómodo: te duermes en él.",
+        "targetWord": "cómodo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4896d2c26574aa16.mp3"
+      }
+    },
+    "featured": false
+  }
+]

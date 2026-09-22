@@ -197,7 +197,7 @@
       "answer": "the bottom",
       "options": [
         "the bottom",
-        "the top",
+        "the bank",
         "the edge",
         "the middle"
       ],
@@ -328,7 +328,7 @@
       "answer": "thin",
       "options": [
         "thin",
-        "fat",
+        "red",
         "long",
         "heavy"
       ],
@@ -400,7 +400,7 @@
       "answer": "open",
       "options": [
         "open",
-        "closed",
+        "red",
         "dry",
         "full"
       ],

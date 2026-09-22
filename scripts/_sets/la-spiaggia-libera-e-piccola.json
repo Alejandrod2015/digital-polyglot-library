@@ -171,9 +171,9 @@
     "sentence": "Sulla spiaggia [[libera]] non si paga niente.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "free, open to all",
+      "answer": "free",
       "options": [
-        "free, open to all",
+        "free",
         "closed",
         "private",
         "new"
@@ -335,11 +335,11 @@
     "sentence": "Il mare qui è [[uguale]] a quello a pagamento.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the same",
+      "answer": "identical",
       "options": [
-        "the same",
-        "different",
+        "identical",
         "colder",
+        "deeper",
         "further"
       ],
       "audioClip": {

@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "la corde,le tapis,le coussin,la camionnette",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "la corde",
-     "answer": "a rope",
-     "options": [
-      "a rope",
-      "a rug",
-      "a cushion",
-      "a small van"
-     ]
-    },
-    {
-     "word": "le tapis",
-     "answer": "a rug",
-     "options": [
-      "a rope",
-      "a rug",
-      "a cushion",
-      "a small van"
-     ]
-    },
-    {
-     "word": "le coussin",
-     "answer": "a cushion",
-     "options": [
-      "a rope",
-      "a rug",
-      "a cushion",
-      "a small van"
-     ]
-    },
-    {
-     "word": "la camionnette",
-     "answer": "a small van",
-     "options": [
-      "a rope",
-      "a rug",
-      "a cushion",
-      "a small van"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "la corde,le tapis,le coussin,la camionnette",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la corde",
+          "answer": "a rope",
+          "options": [
+            "a rope",
+            "a rug",
+            "a cushion",
+            "a small van"
+          ]
+        },
+        {
+          "word": "le tapis",
+          "answer": "a rug",
+          "options": [
+            "a rope",
+            "a rug",
+            "a cushion",
+            "a small van"
+          ]
+        },
+        {
+          "word": "le coussin",
+          "answer": "a cushion",
+          "options": [
+            "a rope",
+            "a rug",
+            "a cushion",
+            "a small van"
+          ]
+        },
+        {
+          "word": "la camionnette",
+          "answer": "a small van",
+          "options": [
+            "a rope",
+            "a rug",
+            "a cushion",
+            "a small van"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le fauteuil",
-  "sentence": "Le [[fauteuil]], là-haut, est large et lourd.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an armchair",
-   "options": [
-    "an armchair",
-    "a bed",
-    "a wardrobe",
-    "a desk"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Le fauteuil, là-haut, est large et lourd.",
-    "targetWord": "fauteuil",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "porter",
-  "sentence": "Elle veut le [[porter]] en bas, au café.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to carry",
-   "options": [
-    "to carry",
-    "to push",
-    "to sell",
-    "to fix"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Elle veut le porter en bas, au café.",
-    "targetWord": "porter",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "en bas",
-  "sentence": "Elle veut le porter [[en bas]], au café.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "downstairs",
-   "options": [
-    "downstairs",
-    "upstairs",
-    "outside",
-    "next door"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Elle veut le porter en bas, au café.",
-    "targetWord": "en bas",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "étroit",
-  "sentence": "Mais l'escalier est [[étroit]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "narrow",
-   "options": [
-    "narrow",
-    "steep",
-    "dark",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Mais l'escalier est étroit.",
-    "targetWord": "étroit",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aider",
-  "sentence": "“Je peux [[aider]]. Je suis libre”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to help",
-   "options": [
-    "to help",
-    "to wait",
-    "to drive",
-    "to pay"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "“Je peux aider. Je suis libre”, dit-elle.",
-    "targetWord": "aider",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le service",
-  "sentence": "“Pas du tout. Un [[service]] contre un café.”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a favour",
-   "options": [
-    "a favour",
-    "a payment",
-    "a promise",
-    "a job"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "“Pas du tout. Un service contre un café.”",
-    "targetWord": "service",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ensemble",
-  "sentence": "Elles portent le fauteuil lentement, [[ensemble]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "together",
-   "options": [
-    "together",
-    "alone",
-    "again",
-    "at night"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Elles portent le fauteuil lentement, ensemble.",
-    "targetWord": "ensemble",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "attention",
-  "sentence": "“[[Attention]]! L'escalier tourne”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Careful!",
-   "options": [
-    "Careful!",
-    "Hurry up!",
-    "Stop here!",
-    "Well done!"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "“Attention! L'escalier tourne”, dit-elle.",
-    "targetWord": "Attention",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "gratuit",
-  "sentence": "Le concert ne coûte rien: il est _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "gratuit",
-   "options": [
-    "gratuit",
-    "cher",
-    "long",
-    "fermé"
-   ],
-   "translation": "The concert costs nothing: it is _____.",
-   "optionTranslations": [
-    "free",
-    "expensive",
-    "long",
-    "closed"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Le concert ne coûte rien: il est gratuit.",
-    "targetWord": "gratuit",
-    "language": "french"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la rampe",
-  "sentence": "La [[rampe]] est froide sous la main.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a handrail",
-   "options": [
-    "a handrail",
-    "a step",
-    "a wall",
-    "a door handle"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "La rampe est froide sous la main.",
-    "targetWord": "rampe",
-    "language": "french"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "avoir mal",
-  "sentence": "Elle [[a mal]] au dos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hurt",
-   "options": [
-    "to hurt",
-    "to be tired",
-    "to be cold",
-    "to be hungry"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Elle a mal au dos.",
-    "targetWord": "a mal",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le fauteuil",
+    "sentence": "Le [[fauteuil]], là-haut, est large et lourd.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an armchair",
+      "options": [
+        "an armchair",
+        "a bed",
+        "a wardrobe",
+        "a desk"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Le fauteuil, là-haut, est large et lourd.",
+        "targetWord": "fauteuil",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "merci beaucoup",
-  "sentence": "“[[Merci beaucoup]]”, dit-elle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thank you very much",
-   "options": [
-    "thank you very much",
-    "see you soon",
-    "excuse me",
-    "good night"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "“Merci beaucoup”, dit-elle.",
-    "targetWord": "Merci beaucoup",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "porter",
+    "sentence": "Elle veut le [[porter]] en bas, au café.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to carry",
+      "options": [
+        "to carry",
+        "to push",
+        "to sell",
+        "to fix"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Elle veut le porter en bas, au café.",
+        "targetWord": "porter",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "de rien",
-  "sentence": "“[[De rien]]. Un café tous les jours.”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "you're welcome",
-   "options": [
-    "you're welcome",
-    "I'm sorry",
-    "good luck",
-    "see you later"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "“De rien. Un café tous les jours.”",
-    "targetWord": "De rien",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "en bas",
+    "sentence": "Elle veut le porter [[en bas]], au café.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downstairs",
+      "options": [
+        "downstairs",
+        "upstairs",
+        "outside",
+        "next door"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Elle veut le porter en bas, au café.",
+        "targetWord": "en bas",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tous les jours",
-  "sentence": "Un café [[tous les jours]], jusqu'en mars.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every day",
-   "options": [
-    "every day",
-    "every week",
-    "some days",
-    "all day long"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Un café tous les jours, jusqu'en mars.",
-    "targetWord": "tous les jours",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "étroit",
+    "sentence": "Mais l'escalier est [[étroit]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": [
+        "narrow",
+        "steep",
+        "dark",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Mais l'escalier est étroit.",
+        "targetWord": "étroit",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "lourd",
-  "sentence": "Je ne peux pas porter ce sac: il est trop _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lourd",
-   "options": [
-    "lourd",
-    "léger",
-    "court",
-    "propre"
-   ],
-   "translation": "I can't carry this bag: it is too _____.",
-   "optionTranslations": [
-    "heavy",
-    "light",
-    "short",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Je ne peux pas porter ce sac: il est trop lourd.",
-    "targetWord": "lourd",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "aider",
+    "sentence": "“Je peux [[aider]]. Je suis libre”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to help",
+      "options": [
+        "to help",
+        "to wait",
+        "to drive",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "“Je peux aider. Je suis libre”, dit-elle.",
+        "targetWord": "aider",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "dos",
-  "sentence": "Il porte son sac sur le _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dos",
-   "options": [
-    "dos",
-    "nez",
-    "pied",
-    "front"
-   ],
-   "translation": "He carries his bag on his _____.",
-   "optionTranslations": [
-    "back",
-    "nose",
-    "foot",
-    "forehead"
-   ],
-   "audioClip": {
-    "storySlug": "le-fauteuil-descend",
-    "storySource": "user",
-    "sentence": "Il porte son sac sur le dos.",
-    "targetWord": "dos",
-    "language": "french"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "le service",
+    "sentence": "“Pas du tout. Un [[service]] contre un café.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a favour",
+      "options": [
+        "a favour",
+        "a payment",
+        "a promise",
+        "a job"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "“Pas du tout. Un service contre un café.”",
+        "targetWord": "service",
+        "language": "french"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "ensemble",
+    "sentence": "Elles portent le fauteuil lentement, [[ensemble]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": [
+        "together",
+        "alone",
+        "again",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Elles portent le fauteuil lentement, ensemble.",
+        "targetWord": "ensemble",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "attention",
+    "sentence": "“[[Attention]]! L'escalier tourne”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Careful!",
+      "options": [
+        "Careful!",
+        "Hurry up!",
+        "Stop here!",
+        "Well done!"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "“Attention! L'escalier tourne”, dit-elle.",
+        "targetWord": "Attention",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gratuit",
+    "sentence": "Le concert ne coûte rien: il est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gratuit",
+      "options": [
+        "gratuit",
+        "cher",
+        "long",
+        "fermé"
+      ],
+      "translation": "The concert costs nothing: it is _____.",
+      "optionTranslations": [
+        "free",
+        "expensive",
+        "long",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Le concert ne coûte rien: il est gratuit.",
+        "targetWord": "gratuit",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la rampe",
+    "sentence": "La [[rampe]] est froide sous la main.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a handrail",
+      "options": [
+        "a handrail",
+        "a step",
+        "a wall",
+        "a door handle"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "La rampe est froide sous la main.",
+        "targetWord": "rampe",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir mal",
+    "sentence": "Elle [[a mal]] au dos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hurt",
+      "options": [
+        "to hurt",
+        "to be tired",
+        "to be cold",
+        "to be hungry"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Elle a mal au dos.",
+        "targetWord": "a mal",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "merci beaucoup",
+    "sentence": "“[[Merci beaucoup]]”, dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thank you very much",
+      "options": [
+        "thank you very much",
+        "see you soon",
+        "excuse me",
+        "good night"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "“Merci beaucoup”, dit-elle.",
+        "targetWord": "Merci beaucoup",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de rien",
+    "sentence": "“[[De rien]]. Un café tous les jours.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you're welcome",
+      "options": [
+        "you're welcome",
+        "I'm sorry",
+        "good luck",
+        "see you later"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "“De rien. Un café tous les jours.”",
+        "targetWord": "De rien",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les jours",
+    "sentence": "Un café [[tous les jours]], jusqu'en mars.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every day",
+      "options": [
+        "every day",
+        "every week",
+        "some days",
+        "all day long"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Un café tous les jours, jusqu'en mars.",
+        "targetWord": "tous les jours",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lourd",
+    "sentence": "Je ne peux pas porter ce sac: il est trop _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lourd",
+      "options": [
+        "lourd",
+        "sale",
+        "court",
+        "propre"
+      ],
+      "translation": "I can't carry this bag: it is too _____.",
+      "optionTranslations": [
+        "heavy",
+        "dirty",
+        "short",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Je ne peux pas porter ce sac: il est trop lourd.",
+        "targetWord": "lourd",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dos",
+    "sentence": "Il porte son sac sur le _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dos",
+      "options": [
+        "dos",
+        "nez",
+        "pied",
+        "front"
+      ],
+      "translation": "He carries his bag on his _____.",
+      "optionTranslations": [
+        "back",
+        "nose",
+        "foot",
+        "forehead"
+      ],
+      "audioClip": {
+        "storySlug": "le-fauteuil-descend",
+        "storySource": "user",
+        "sentence": "Il porte son sac sur le dos.",
+        "targetWord": "dos",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
 ]

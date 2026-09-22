@@ -369,7 +369,7 @@
       "answer": "heavy",
       "options": [
         "heavy",
-        "light",
+        "old",
         "empty",
         "new"
       ],

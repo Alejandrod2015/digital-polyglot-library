@@ -151,9 +151,9 @@
       "answer": "small change",
       "options": [
         "small change",
-        "a big note",
-        "a card",
-        "a receipt"
+        "big notes",
+        "credit cards",
+        "old receipts"
       ],
       "audioClip": {
         "storySlug": "a-cana-vira-caldo-doce",
@@ -297,7 +297,7 @@
       "answer": "the morning",
       "options": [
         "the morning",
-        "the evening",
+        "the afternoon",
         "the night",
         "the week"
       ],
@@ -345,7 +345,7 @@
       "answer": "to buy",
       "options": [
         "to buy",
-        "to sell",
+        "to touch",
         "to carry",
         "to break"
       ],

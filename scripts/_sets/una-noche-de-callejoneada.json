@@ -8,7 +8,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "night",
-        "day",
+        "afternoon",
         "morning",
         "week"
       ],
@@ -361,7 +361,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "old",
-        "new",
+        "big",
         "clean",
         "cheap"
       ],
@@ -493,7 +493,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to laugh",
-        "to cry",
+        "to sing",
         "to shout",
         "to run"
       ],
@@ -543,7 +543,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "last",
-        "first",
+        "same",
         "next",
         "best"
       ],

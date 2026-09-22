@@ -55,12 +55,12 @@
     "sentence": "El [[permiso]] del puesto se paga el domingo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the licence",
+      "answer": "the stall licence",
       "options": [
-        "the licence",
-        "the rent of the house",
-        "the ticket to the ring",
-        "the wage of the day"
+        "the stall licence",
+        "the house rent",
+        "the ring ticket",
+        "the day's wage"
       ],
       "audioClip": {
         "storySlug": "el-gallo-colorado",

@@ -108,7 +108,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to laugh",
-        "to cry",
+        "to sing",
         "to shout",
         "to yawn"
       ],
@@ -190,7 +190,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "alta",
-        "corta",
+        "roja",
         "ancha",
         "lenta"
       ],
@@ -206,7 +206,7 @@
       "translation": "The tower goes up a lot and is very _____.",
       "optionTranslations": [
         "tall",
-        "short",
+        "red",
         "wide",
         "slow"
       ]

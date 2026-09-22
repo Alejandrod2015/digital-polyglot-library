@@ -125,9 +125,9 @@
     "sentence": "Se instalaron con un [[terremoto]] a disfrutar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a sweet strong Chilean drink",
+      "answer": "a sweet strong wine drink",
       "options": [
-        "a sweet strong Chilean drink",
+        "a sweet strong wine drink",
         "a plain black coffee",
         "a cold fruit juice",
         "a warm herbal tea"
@@ -270,12 +270,12 @@
     "sentence": "Sabían que ese deseo era [[la firme]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the honest truth",
+      "answer": "the plain truth",
       "options": [
-        "the honest truth",
-        "a total lie",
-        "an old joke",
-        "a wild guess"
+        "the plain truth",
+        "the usual lie",
+        "the same old joke",
+        "the wildest guess"
       ],
       "audioClip": {
         "storySlug": "el-asado-a-la-orilla",

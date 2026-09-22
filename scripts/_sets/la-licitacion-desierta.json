@@ -267,11 +267,11 @@
     "sentence": "El último viaje subió con [[harto]] pasaje.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a lot of",
+      "answer": "plenty of",
       "options": [
-        "a lot of",
+        "plenty of",
         "hardly any",
-        "fed up",
+        "very tired",
         "the same"
       ],
       "audioClip": {
@@ -290,9 +290,9 @@
     "sentence": "Haz la vista gorda, [[no más]], pidió él.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "just (softener)",
+      "answer": "just",
       "options": [
-        "just (softener)",
+        "just",
         "no more",
         "not yet",
         "never again"

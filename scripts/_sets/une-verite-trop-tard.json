@@ -402,8 +402,8 @@
       "answer": "start",
       "options": [
         "start",
-        "finish",
         "cancel",
+        "sell",
         "forget"
       ],
       "audioClip": {

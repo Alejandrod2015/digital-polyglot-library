@@ -1,0 +1,468 @@
+<title>Plan de lanzamiento</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+  :root {
+    --bg: #f4f6fb; --panel: #ffffff; --panel-2: #eef2f9; --line: #d9e0ec; --hair: #e8edf5;
+    --ink: #0f1c33; --ink-soft: #3b4b66; --muted: #6b7a94; --faint: #9aa8bf;
+    --navy: #051834; --navy-2: #0c2c54; --gold: #f2c33c; --gold-ink: #2a1a02; --gold-soft: #fff4d1;
+    --cyan: #1e8fc4; --cyan-soft: #e1f2fb; --green: #1f9d6b; --green-soft: #dff5ea;
+    --amber: #c2741a; --amber-soft: #fff0da; --red: #c8433a; --red-soft: #fde3e0;
+    --shadow: 0 10px 30px -18px rgba(5,24,52,.35);
+    --sans: "Nunito", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #071a36; --panel: #0c2950; --panel-2: #113260; --line: rgba(125,211,252,.18); --hair: rgba(255,255,255,.08);
+      --ink: #eef4fc; --ink-soft: #c2d2e8; --muted: #8aa0be; --faint: #54708f;
+      --gold: #fcd34d; --gold-soft: rgba(252,211,77,.14); --cyan: #7dd3fc; --cyan-soft: rgba(125,211,252,.14);
+      --green: #5fd0a3; --green-soft: rgba(95,208,163,.16); --amber: #f5b25a; --amber-soft: rgba(245,178,90,.16);
+      --red: #f08a82; --red-soft: rgba(240,138,130,.16); --shadow: 0 16px 40px -22px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #071a36; --panel: #0c2950; --panel-2: #113260; --line: rgba(125,211,252,.18); --hair: rgba(255,255,255,.08);
+    --ink: #eef4fc; --ink-soft: #c2d2e8; --muted: #8aa0be; --faint: #54708f;
+    --gold: #fcd34d; --gold-soft: rgba(252,211,77,.14); --cyan: #7dd3fc; --cyan-soft: rgba(125,211,252,.14);
+    --green: #5fd0a3; --green-soft: rgba(95,208,163,.16); --amber: #f5b25a; --amber-soft: rgba(245,178,90,.16);
+    --red: #f08a82; --red-soft: rgba(240,138,130,.16); --shadow: 0 16px 40px -22px rgba(0,0,0,.8);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { background: var(--bg); }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); font-size: 15px; line-height: 1.5; padding-inline: 16px; padding-block: 20px 60px; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  a { color: var(--cyan); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; background: var(--panel-2); padding: 1px 5px; border-radius: 4px; }
+
+  /* Header */
+  .top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+  .top h1 { margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -0.01em; }
+  .top .asof { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .date { display: flex; align-items: center; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; box-shadow: var(--shadow); }
+  .date label { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .date input { font: 700 15px var(--sans); color: var(--ink); background: transparent; border: 0; outline: none; }
+  .date input:focus-visible { outline: 2px solid var(--cyan); border-radius: 6px; }
+  .date .days { font-weight: 900; color: var(--gold-ink); background: var(--gold); padding: 3px 9px; border-radius: 999px; font-size: 13px; white-space: nowrap; }
+  .date .days.none { background: var(--panel-2); color: var(--muted); }
+
+  /* KPIs */
+  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 18px; }
+  @media (max-width: 900px) { .kpis { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 520px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; cursor: pointer; text-align: left; font: inherit; color: inherit; transition: transform .12s, border-color .12s; }
+  .kpi:hover { border-color: var(--cyan); transform: translateY(-1px); }
+  .kpi:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .kpi .l { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .kpi .v { font-size: 20px; font-weight: 900; line-height: 1.15; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .kpi .s { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* Layout: nav + panel */
+  .grid { display: grid; grid-template-columns: 250px 1fr; gap: 18px; margin-top: 20px; align-items: start; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  nav.side { position: sticky; top: env(safe-area-inset-top, 0px); display: grid; gap: 6px; }
+  @media (max-width: 820px) { nav.side { position: static; display: flex; overflow-x: auto; gap: 8px; padding-bottom: 4px; scrollbar-width: none; } nav.side::-webkit-scrollbar { display: none; } }
+  .nb { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 10px; width: 100%; text-align: left; font: inherit; color: var(--ink-soft); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; transition: border-color .12s, background .12s; }
+  @media (max-width: 820px) { .nb { flex: none; width: auto; grid-template-columns: 22px auto; } .nb .st { display: none; } }
+  .nb:hover { border-color: var(--cyan); }
+  .nb:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .nb.active { background: var(--navy); border-color: var(--navy); color: #eef4fc; }
+  .nb .n { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; font-weight: 900; font-size: 12px; background: var(--panel-2); color: var(--ink-soft); }
+  .nb.active .n { background: var(--gold); color: var(--gold-ink); }
+  .nb .t { font-weight: 800; font-size: 14px; white-space: nowrap; }
+  .nb .st { width: 9px; height: 9px; border-radius: 50%; }
+
+  .dot-listo { background: var(--green); } .dot-curso { background: var(--cyan); } .dot-sin { background: var(--faint); } .dot-bloq { background: var(--red); }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px 22px; box-shadow: var(--shadow); min-width: 0; }
+  .ph { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+  .ph h2 { margin: 0; font-size: 22px; font-weight: 900; letter-spacing: -0.01em; }
+  .ph .lead { margin: 8px 0 0; color: var(--ink-soft); max-width: 70ch; flex-basis: 100%; }
+  .status { display: inline-flex; align-items: center; gap: 8px; font: 800 12px var(--sans); letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid transparent; cursor: pointer; }
+  .status:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .status.listo { background: var(--green-soft); color: var(--green); }
+  .status.curso { background: var(--cyan-soft); color: var(--cyan); }
+  .status.sin { background: var(--panel-2); color: var(--muted); }
+  .status.bloq { background: var(--red-soft); color: var(--red); }
+  .status .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .progress { height: 6px; border-radius: 3px; background: var(--panel-2); margin-top: 14px; overflow: hidden; }
+  .progress i { display: block; height: 100%; background: var(--gold); width: 0; transition: width .3s; }
+  .pline { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* Subsections */
+  details { border-top: 1px solid var(--hair); margin-top: 14px; padding-top: 4px; }
+  details:first-of-type { margin-top: 18px; }
+  summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; padding: 10px 0; font-weight: 900; font-size: 15px; }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 6px; }
+  summary .chev { width: 22px; height: 22px; border-radius: 6px; background: var(--panel-2); display: grid; place-items: center; flex: none; transition: transform .15s; }
+  summary .chev svg { width: 10px; height: 10px; }
+  details[open] summary .chev { transform: rotate(90deg); }
+  summary > span:not(.chev):not(.cnt) { flex: 1; }
+  summary .cnt { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: auto; }
+  .body { padding: 2px 0 12px; }
+  .body p { margin: 0 0 10px; color: var(--ink-soft); max-width: 72ch; }
+  .body p:last-child { margin-bottom: 0; }
+
+  .tw { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th { text-align: left; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--hair); vertical-align: top; color: var(--ink-soft); }
+  td:first-child { font-weight: 800; color: var(--ink); white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+  .tag.ok { background: var(--green-soft); color: var(--green); }
+  .tag.pend { background: var(--amber-soft); color: var(--amber); }
+  .tag.live { background: var(--green-soft); color: var(--green); }
+  .tag.draft { background: var(--panel-2); color: var(--muted); }
+
+  .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .checks label { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; padding: 8px 10px; border-radius: 10px; background: var(--panel-2); cursor: pointer; color: var(--ink-soft); font-size: 14px; }
+  .checks input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--green); }
+  .checks label.done { color: var(--muted); text-decoration: line-through; }
+  .checks b { color: var(--ink); font-weight: 800; }
+  .checks label.done b { color: var(--muted); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+  .card { background: var(--panel-2); border-radius: 12px; padding: 12px 14px; }
+  .card .k { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .card .v { font-weight: 900; font-size: 17px; margin-top: 2px; }
+  .card .d { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* Decisions */
+  .dec { display: grid; gap: 10px; }
+  .dc { display: grid; grid-template-columns: 34px 1fr; gap: 12px; background: var(--panel-2); border-radius: 12px; padding: 12px 14px; border-left: 4px solid var(--amber); }
+  .dc.done { border-left-color: var(--green); }
+  .dc .num { width: 30px; height: 30px; border-radius: 8px; background: var(--panel); display: grid; place-items: center; font-weight: 900; font-size: 13px; }
+  .dc h4 { margin: 0; font-size: 15px; font-weight: 900; }
+  .dc .why { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+  .dc .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .dc textarea { flex: 1 1 220px; min-height: 36px; font: 600 13.5px/1.4 var(--sans); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; resize: vertical; }
+  .dc textarea:focus-visible { outline: 2px solid var(--cyan); }
+  .btn { font: 800 13px var(--sans); border: 0; border-radius: 8px; padding: 9px 12px; cursor: pointer; background: var(--panel); color: var(--ink-soft); border: 1px solid var(--line); white-space: nowrap; }
+  .btn:hover { border-color: var(--cyan); }
+  .btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .btn.on { background: var(--green); color: #052a1c; border-color: var(--green); }
+  .dc.done h4 { color: var(--muted); }
+
+  .foot { margin-top: 18px; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .sync { display: inline-flex; align-items: center; gap: 6px; }
+  .sync i { width: 8px; height: 8px; border-radius: 50%; background: var(--faint); }
+  .sync.ok i { background: var(--green); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Plan de lanzamiento</h1>
+      <div class="asof">Digital Polyglot · estado al 21 de septiembre de 2026</div>
+    </div>
+    <div class="date">
+      <label for="launch">Fecha</label>
+      <input type="date" id="launch" aria-label="Fecha de lanzamiento">
+      <span class="days none" id="days">sin fijar</span>
+    </div>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid">
+    <nav class="side" id="nav" aria-label="Frentes"></nav>
+    <section class="panel" id="panel" aria-live="polite"></section>
+  </div>
+
+  <div class="foot">
+    <span class="sync" id="sync"><i></i><span>guardando en este navegador</span></span>
+    <span>Los estados, las casillas, la fecha y las decisiones se guardan al tocarlos.</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  // ---------- Content ----------
+  const ST = { listo: 'Listo', curso: 'En curso', sin: 'Sin empezar', bloq: 'Bloqueado' };
+  const ORDER = ['sin', 'curso', 'listo', 'bloq'];
+
+  const F = [
+    {
+      id: 'producto', n: '1', title: 'Producto en tienda', status: 'curso',
+      lead: 'Hay build en las dos tiendas y ninguna es pública: iOS 340 en TestFlight y Android 28 en la pista alpha de Play. Producción web corre b28c99e1 con 6 commits locales sin subir.',
+      sections: [
+        { t: 'Builds actuales', kind: 'table', head: ['Superficie', 'Versión', 'Dónde', 'Lleva'], rows: [
+          ['iOS', '340', 'TestFlight, Beta App Review aprobada', 'speaking (premium + polyglot), prueba de nivel ES rehecha, glosa por aparición, JWT renovado sin cerrar sesión, feedback con historia, hub de cinco habilidades'],
+          ['Android', '28', 'Play, pista alpha (desde internal)', 'lo mismo que iOS 340'],
+          ['Web', 'b28c99e1', 'reader.digitalpolyglot.com', 'lo mismo, más el lector web y /plans'] ] },
+        { t: 'De beta a público', kind: 'checks', items: [
+          ['prod-1', '<b>Fijar la versión de lanzamiento.</b> iOS y Android salen juntas, nunca una sola.'],
+          ['prod-2', '<b>iOS: enviar a App Review</b> (no Beta App Review) con la ficha de la tienda.'],
+          ['prod-3', '<b>Android: promover de alpha a producción</b> con rollout escalonado, 20% y luego 100% en 24 h.'],
+          ['prod-4', '<b>Web: subir los commits pendientes en un solo lote</b> y comprobar el SHA en /api/version.'],
+          ['prod-5', '<b>Activar Phased Release</b> en iOS.'] ] },
+      ]
+    },
+    {
+      id: 'catalogo', n: '2', title: 'Catálogo', status: 'listo',
+      lead: '27 journeys live y 21 en borrador (scripts/journeysTable.ts, 21-09). Todos los live tienen 21/21 historias publicadas, narradas y con portada.',
+      sections: [
+        { t: 'Live por idioma', kind: 'cards', cards: [
+          ['Español', '14', 'A0 a C1: latam, España, México, Colombia'], ['Francés', '4', 'A0 a B1'], ['Alemán', '4', 'A0, A1, C1'], ['Portugués', '3', 'A1 a B1'], ['Italiano', '2', 'A0, A1'] ] },
+        { t: 'Borradores más cerca de entrar', kind: 'table', head: ['Journey', 'Le falta'], rows: [
+          ['Friends IT A1', 'solo las 21 portadas (21 narradas, 605 clips)'],
+          ['Cultural ES latam A0', '9 narraciones y publicar (12 narradas, 21 portadas)'],
+          ['Friends ES Argentina C1', '19 narraciones (21 portadas)'],
+          ['Expat FR A1', '14 narraciones, portadas y voz aprobada'] ] },
+        { t: 'Personajes no nativos en live (regla dura: objetivo 0)', kind: 'table', head: ['Journey', 'Quién', 'Historias'], rows: [
+          ['Expat DE C1', 'Nadia (premisa), Mira', '21 + 1'], ['Friends DE C1', 'Nadia', '5'], ['Traveler IT A1', 'Irene', '1'], ['Traveler ES latam A0', 'Ana', '3'] ] },
+        { t: 'Tabla completa (48)', kind: 'table', head: ['Estado', 'Idioma', 'Variante', 'Tipo', 'Nivel', 'Hist.', 'Narr', 'Covers', 'Clips'], rows: [
+          ['LIVE','french','france','Friends','a0','21/21','21','21','336'],['LIVE','french','france','Friends','a1','21/21','21','21','334'],['LIVE','french','france','Friends','a2','21/21','21','21','530'],['LIVE','french','france','Friends','b1','21/21','21','21','460'],
+          ['LIVE','german','germany','Expat','c1','21/21','21','21','653'],['LIVE','german','germany','Friends','a0','21/21','21','21','611'],['LIVE','german','germany','Friends','a1','21/21','21','21','611'],['LIVE','german','germany','Friends','c1','21/21','21','21','581'],
+          ['LIVE','italian','italy','Friends','a0','21/21','21','21','530'],['LIVE','italian','italy','Traveler','a1','21/21','21','21','859'],
+          ['LIVE','portuguese','brazil','Traveler','a1','21/21','21','21','718'],['LIVE','portuguese','brazil','Traveler','a2','21/21','21','21','372'],['LIVE','portuguese','brazil','Traveler','b1','21/21','21','21','336'],
+          ['LIVE','spanish','colombia','Friends','c1','21/21','21','21','618'],['LIVE','spanish','latam','Friends','c1','21/21','21','21','606'],['LIVE','spanish','latam','Traveler','a0','21/21','21','21','693'],['LIVE','spanish','latam','Traveler','a1','21/21','21','21','436'],['LIVE','spanish','latam','Traveler','a2','21/21','21','21','336'],['LIVE','spanish','latam','Traveler','b1','21/21','21','21','457'],['LIVE','spanish','latam','Traveler','b2','21/21','21','21','336'],['LIVE','spanish','mexico','Traveler','a1','21/21','21','21','992'],
+          ['LIVE','spanish','spain','Friends','a1','21/21','21','21','763'],['LIVE','spanish','spain','Friends','a2','21/21','21','21','546'],['LIVE','spanish','spain','Traveler','a1','21/21','21','21','409'],['LIVE','spanish','spain','Traveler','a2','21/21','21','21','584'],['LIVE','spanish','spain','Traveler','b1','21/21','21','21','387'],['LIVE','spanish','spain','Traveler','b2','21/21','21','21','336'],
+          ['DRAFT','arabic','egypt','Traveler','a0','1/21','0','0','0'],['DRAFT','french','france','Expat','a1','0/21','7','0','0'],['DRAFT','german','germany','Expat','c1','0/21','0','0','0'],['DRAFT','german','germany','Friends','a2','0/21','0','0','0'],['DRAFT','german','germany','Traveler','a0','0/21','1','0','0'],['DRAFT','german','germany','Traveler','a1','0/21','0','0','0'],
+          ['DRAFT','italian','italy','Friends','a1','0/21','21','0','605'],['DRAFT','italian','italy','Traveler','a2','0/21','0','0','0'],['DRAFT','korean','korea','Traveler','a0','1/21','0','0','0'],['DRAFT','polish','poland','Traveler','a0','1/21','0','0','0'],
+          ['DRAFT','portuguese','brazil','Friends','a1','0/21','0','0','0'],['DRAFT','portuguese','brazil','Traveler','a0','0/21','0','0','0'],['DRAFT','portuguese','brazil','Traveler','b2','0/21','0','0','0'],
+          ['DRAFT','spanish','argentina','Friends','a1','0/21','1','0','0'],['DRAFT','spanish','argentina','Friends','c1','0/21','2','21','0'],['DRAFT','spanish','chile','Friends','a1','0/21','0','0','0'],['DRAFT','spanish','latam','Conversations','a0','0/0','0','0','0'],['DRAFT','spanish','latam','Cultural','a0','0/21','12','21','0'],['DRAFT','spanish','latam','Friends','a1','0/21','0','0','0'],['DRAFT','spanish','mexico','Friends','c1','0/21','0','0','0'],['DRAFT','spanish','spain','Friends','b1','0/21','0','0','0'] ], closed: true },
+      ]
+    },
+    {
+      id: 'precios', n: '3', title: 'Precios y suscripción', status: 'curso',
+      lead: 'El modelo está cerrado y el código hecho. Lo que falta es la oferta de lanzamiento, que se monta al tener fecha. Muro duro con trial de 7 días; iOS cobra con Apple IAP directo, Android con Play Billing, web con Stripe.',
+      sections: [
+        { t: 'Planes', kind: 'table', head: ['Plan', 'Quién', 'Incluye', 'Precio'], rows: [
+          ['Free', 'sin cuenta', 'historia del día completa (de un journey live) + previews de 650 caracteres', '€0'],
+          ['Basic', 'con cuenta', 'tema 1 completo de su journey, práctica y vocab de ese tema, placement', '€0, permanente'],
+          ['Trial', '7 días', 'premium entero', '€0'],
+          ['Premium', 'suscriptor', 'todos los journeys, práctica completa, offline, libros, speaking', '€14,99/mes · €149/año'],
+          ['Lanzamiento', 'nuevos, ventana con fin', 'primer año del anual', '€89 ("Save €60"), luego €149'] ] },
+        { t: 'Estado por superficie', kind: 'table', head: ['Superficie', 'Trial 7 días', 'Precios', 'Oferta €89'], rows: [
+          ['iOS (ASC)', '<span class="tag ok">creado</span> en ambas subs, sin fecha de fin', '€14,99 y €149, "Ready for Review"', '<span class="tag pend">por crear</span> Introductory Offer Pay Up Front, 1 año, start = lanzamiento, end = +4 a 6 semanas'],
+          ['Android (Play)', '<span class="tag ok">activo</span> free-trial-7d en los dos base plans', '€14,99 y €149', '<span class="tag pend">por crear</span> misma ventana'],
+          ['Web (Stripe)', '<span class="tag ok">en código</span>', 'en vivo desde /api/stripe/prices', '<span class="tag pend">por crear</span> coupon amount_off €60 once + envs STRIPE_LAUNCH_COUPON_ID y NEXT_PUBLIC_LAUNCH_ANNUAL_PRICE=€89; sin ellos cobra €149'] ] },
+        { t: 'Al tener fecha', kind: 'checks', items: [
+          ['prec-1', '<b>ASC:</b> crear la Introductory Offer de €89 con start y end.'],
+          ['prec-2', '<b>Play:</b> crear la oferta de €89 con la misma ventana.'],
+          ['prec-3', '<b>Stripe:</b> crear el coupon de €60 y poner los dos envs en Vercel.'],
+          ['prec-4', '<b>Después del lanzamiento, no antes:</b> PPP por país, recordatorio de fin de trial, nudges tardíos. Basic y polyglot no se tocan.'] ] },
+      ]
+    },
+    {
+      id: 'testers', n: '4', title: 'Testers', status: 'sin',
+      lead: 'Al lanzar, cada tester recibe un correo de agradecimiento con un solo botón: quedarse 6 meses más con premium completo. Quien no haga nada pasa a basic el día del lanzamiento y puede volver a postularse en /beta. No se promete renovación.',
+      sections: [
+        { t: 'Maqueta y base de partida', kind: 'cards', cards: [
+          ['Maqueta', 'Beta Seat Renewal', '<a href="https://claude.ai/artifact/KuKNTzYjN95977JeLrkLfq">artifact</a> · copia en docs/beta-seat-renewal-mockup.html'],
+          ['Testers activos', '104', '101 recibieron el boletín de septiembre, 3 de baja'],
+          ['Nunca entraron', '40%', 'de 56 invitados, igual en iOS y Android'],
+          ['Feedback real', '6 personas', 'Vincent, Colombe, Steffen, Ty, Christoph, Gary; todo por correo'] ] },
+        { t: 'Antes del correo', kind: 'checks', items: [
+          ['test-1', '<b>Caducidad del premium beta.</b> Hoy grantBetaPlan escribe plan = premium sin fecha y solo lo quita revokeBetaPlan a mano. "Keep my seat" tiene que escribir lanzamiento + 6 meses; el resto cae a basic el día del lanzamiento.'],
+          ['test-2', '<b>Cuentas antiguas.</b> Las creadas antes del 07-09 tienen gracia hasta el 31-03-2027; si aceptan, manda la mayor de las dos fechas.'],
+          ['test-3', '<b>Correo real:</b> builder 13 en src/lib/emails/beta.ts, kit DPE, en "we", beta una sola vez y en segundo plano.'],
+          ['test-4', '<b>Pantalla "Your seat" en la app</b> con deep link, o página web con token si la app no llega a la versión de lanzamiento.'],
+          ['test-5', '<b>Envío</b> con el verbo del usuario y prueba de veracidad en web, iOS y Android.'] ] },
+        { t: 'Después: grupo insider', kind: 'text', html: '<p>15-20 personas con premium a cambio de feedback, por correo. Se forma hacia marzo de 2027, cuando acabe la gracia; no antes. El mecanismo ya existe (<code>BillingEntitlement</code> con fuente <code>comp</code>, ruta <code>/api/studio/insiders</code>).</p>' },
+      ]
+    },
+    {
+      id: 'comunicacion', n: '5', title: 'Comunicación', status: 'sin',
+      lead: 'Tres públicos y ninguna pieza de lanzamiento escrita todavía. Todo correo que anuncie algo pasa por dos candados: el verbo del usuario y la prueba de que lo anunciado se ve en web, iOS y Android con la versión de la tienda.',
+      sections: [
+        { t: 'Por público', kind: 'table', head: ['Público', 'Canal', 'Hoy', 'Pieza de lanzamiento'], rows: [
+          ['Testers (104)', 'Correo Resend, builders de emails/beta.ts', 'Boletín de septiembre enviado el 21-09 a 101', 'Correo "Keep my seat"'],
+          ['Tienda de libros', 'Correo del freebie y del pedido', 'CTA a la app en los dos correos; la pantalla tras reclamar el freebie sigue sin CTA', 'Correo de lanzamiento a la lista; arreglar la pantalla'],
+          ['Tráfico nuevo', 'Meta: leads a /beta (10 €/día, US/UK/CA/AU) y audiolibros', 'Ambas vivas', 'Campaña con objetivo instalación/compra y CTA a la tienda; la de /beta se pausa o se reconvierte'],
+          ['Instagram', 'Comentarios en 20 cuentas de profes de español', 'Estrategia definida, sin ritmo', 'Anuncio del lanzamiento en el perfil'],
+          ['Push', 'sendCampaign a todos o por tipo', 'No segmenta por idioma', 'Un push único el día del lanzamiento, o ninguno'] ] },
+        { t: 'Piezas por hacer', kind: 'checks', items: [
+          ['com-1', '<b>Correo a testers</b> (chat ejecutor).'],
+          ['com-2', '<b>Correo a la lista de la tienda.</b>'],
+          ['com-3', '<b>Campaña de Meta de lanzamiento</b> (CTA "Listen now", casilla de IA marcada).'],
+          ['com-4', '<b>CTA en la pantalla tras reclamar el freebie.</b>'],
+          ['com-5', '<b>Ficha de las tiendas:</b> capturas y texto finales (las 5 de iPhone 6.5" ya subidas el 15-07).'] ] },
+        { t: 'Reglas de todas las piezas', kind: 'text', html: '<p>Hablan en "we". "Beta" aparece una vez y en segundo plano. Nada de copy antropomórfico. Capturas dentro de un marco de teléfono. Cada enlace probado. <code>/go/app</code> lleva a la tienda en móvil y al lector en escritorio, así que lo prometido tiene que verse en los tres sitios.</p>' },
+      ]
+    },
+    {
+      id: 'despliegue', n: '6', title: 'Despliegue y vigilancia', status: 'curso',
+      lead: 'El lanzamiento es la etapa 1 del plan de despliegue (hasta ~300 DAU): deshacer rápido y no romper a quien paga. Medido el 06-09: 5 piezas hechas de 11.',
+      sections: [
+        { t: 'Piezas de la etapa 1', kind: 'table', head: ['Pieza', 'Estado', 'Qué es'], rows: [
+          ['Sentry móvil', '<span class="tag ok">hecha</span>', 'proyecto digital-polyglot-mobile, sesión recibida desde build Release'],
+          ['OTA con expo-updates', '<span class="tag ok">hecha</span>', 'canales preview y production, fingerprint'],
+          ['Canales EAS', '<span class="tag ok">hecha</span>', 'perfil preview apunta a staging por env'],
+          ['Gate de veracidad mira OTA', '<span class="tag ok">hecha</span>', 'pre-comms-claim-guard.sh'],
+          ['Rama de build ignorada', '<span class="tag ok">hecha</span>', 'vercel-ignore-build.sh parametrizado'],
+          ['CI en cada PR', '<span class="tag pend">pendiente</span>', 'typecheck, 12 lints y tests en GitHub Actions'],
+          ['Crons sin salida en staging', '<span class="tag pend">pendiente</span>', 'sin Resend ni FCM fuera de producción'],
+          ['Proyecto de staging en Vercel', '<span class="tag pend">manual</span>', 'rama de Neon sembrada y correos anonimizados'],
+          ['Rollout escalonado en Play', '<span class="tag pend">manual</span>', '20% y luego 100% en 24 h; Phased Release en iOS'],
+          ['Ensayo de restauración de Neon', '<span class="tag pend">manual</span>', 'confirmar ventana PITR y restaurar una vez'],
+          ['Umbral de aborto escrito', '<span class="tag pend">manual</span>', '3 usuarios distintos con crash en la misma release en una hora detienen el rollout'] ] },
+        { t: 'Cadencia tras el lanzamiento', kind: 'text', html: '<p>Tren semanal fijo; los hotfix van por su carril. Web: Instant Rollback como plan A, nunca un revert (gasta build). Móvil: <code>preview</code> 24 h en TestFlight interno y luego <code>production</code>. Base de datos: expand/contract, nunca borrar una columna en la release en que deja de usarse. Coste: Vercel Pro (~20 €/mes) más la rama de Neon.</p><p>El plan vive en <code>docs/plan-despliegue-por-etapas.md</code> y en <code>src/lib/releaseStage.ts</code>; <code>lint:release-readiness</code> lo mide en el pre-push y el digest de los lunes imprime lo pendiente.</p>' },
+      ]
+    },
+  ];
+
+  const D = [
+    ['d1', 'Fecha de lanzamiento', 'Fija la ventana de la oferta €89, el fin del premium beta y la fecha de los correos. Va primero.'],
+    ['d2', 'Versión: ¿340/28 tal cual o una build más con la pantalla "Your seat"?', 'Decide si el botón de testers vive en la app o en una página web con token. Antes de App Review.'],
+    ['d3', 'Qué borradores entran', 'Cambia la ficha de la tienda y el correo de lanzamiento. Friends IT A1 está a 21 portadas.'],
+    ['d4', 'Caducidad del premium beta', 'Fecha de fin en grantBetaPlan o revocación en lote el día del lanzamiento. Sin esto la oferta de 6 meses no acaba.'],
+    ['d5', 'Los 4 live con personajes no nativos: corregir antes o después', 'Toca texto y, en 2 de ellos, audio.'],
+    ['d6', 'Ventana de la oferta €89: 4 o 6 semanas', 'Fecha de fin en ASC, Play y el coupon de Stripe.'],
+    ['d7', 'Campaña de Meta: pausar la de leads a /beta o reconvertirla', 'El formulario de beta deja de tener sentido el día del lanzamiento.'],
+  ];
+
+  // ---------- State ----------
+  let state = { launchDate: '', checks: {}, decisions: {}, status: {} };
+  let active = 'resumen';
+  let db = null, docRef = null, writing = Promise.resolve();
+  const LS = 'dpl-launch-plan';
+
+  function lsLoad() { try { const s = localStorage.getItem(LS); if (s) state = Object.assign(state, JSON.parse(s)); } catch (e) {} }
+  function lsSave() { try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+
+  function persist(patch) {
+    Object.keys(patch).forEach(k => { state[k] = Object.assign({}, state[k] || {}, patch[k]); });
+    if (typeof patch.launchDate === 'string') state.launchDate = patch.launchDate;
+    lsSave();
+    if (docRef) {
+      writing = writing.then(() => docRef.set(clone(state))).catch(() => {});
+    }
+    renderAll();
+  }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  // ---------- Helpers ----------
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function statusOf(f) { return state.status[f.id] || f.status; }
+  function allChecks() { const out = []; F.forEach(f => f.sections.forEach(s => (s.items || []).forEach(i => out.push(i[0])))); return out; }
+  function checksOf(f) { const out = []; f.sections.forEach(s => (s.items || []).forEach(i => out.push(i[0]))); return out; }
+  function doneCount(ids) { return ids.filter(id => state.checks[id]).length; }
+  function decidedCount() { return D.filter(d => state.decisions[d[0]] && state.decisions[d[0]].done).length; }
+  function daysTo(iso) {
+    if (!iso) return null;
+    const t = new Date(iso + 'T00:00:00'); const now = new Date(); now.setHours(0, 0, 0, 0);
+    return Math.round((t - now) / 86400000);
+  }
+  function fmtDate(iso) {
+    if (!iso) return 'sin fijar';
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  // ---------- Render ----------
+  function renderAll() { renderDate(); renderKpis(); renderNav(); renderPanel(); }
+
+  function renderDate() {
+    const inp = $('#launch'); if (inp.value !== (state.launchDate || '')) inp.value = state.launchDate || '';
+    const d = daysTo(state.launchDate); const el = $('#days');
+    if (d === null) { el.textContent = 'sin fijar'; el.className = 'days none'; }
+    else { el.className = 'days'; el.textContent = d > 0 ? 'faltan ' + d + ' días' : d === 0 ? 'es hoy' : 'hace ' + (-d) + ' días'; }
+  }
+
+  function renderKpis() {
+    const all = allChecks(); const dn = doneCount(all);
+    const k = [
+      ['Fecha', state.launchDate ? fmtDate(state.launchDate) : 'Sin fijar', state.launchDate ? 'decisión 1 tomada' : 'decisión 1, bloquea el resto', 'decisiones'],
+      ['Tienda', 'iOS 340 · Android 28', 'TestFlight y alpha, ninguna pública', 'producto'],
+      ['Catálogo', '27 live', '21 en borrador', 'catalogo'],
+      ['Etapa 1', '5 / 11', 'piezas de despliegue hechas', 'despliegue'],
+      ['Tareas', dn + ' / ' + all.length, 'casillas marcadas en todos los frentes', 'producto'],
+      ['Decisiones', decidedCount() + ' / ' + D.length, 'tomadas', 'decisiones'],
+    ];
+    $('#kpis').innerHTML = k.map(x => '<button class="kpi" type="button" data-go="' + x[3] + '"><div class="l">' + x[0] + '</div><div class="v">' + esc(x[1]) + '</div><div class="s">' + esc(x[2]) + '</div></button>').join('');
+  }
+
+  function renderNav() {
+    const items = [{ id: 'resumen', n: '0', title: 'Resumen' }].concat(F).concat([{ id: 'decisiones', n: '7', title: 'Decisiones', dec: true }]);
+    $('#nav').innerHTML = items.map(it => {
+      let dot = '';
+      if (it.id === 'resumen') dot = '';
+      else if (it.dec) dot = '<span class="st ' + (decidedCount() === D.length ? 'dot-listo' : 'dot-bloq') + '"></span>';
+      else dot = '<span class="st dot-' + statusOf(it) + '"></span>';
+      return '<button class="nb' + (active === it.id ? ' active' : '') + '" type="button" data-go="' + it.id + '"><span class="n">' + it.n + '</span><span class="t">' + esc(it.title) + '</span>' + dot + '</button>';
+    }).join('');
+  }
+
+  function chev() { return '<span class="chev"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1.5 6.5 5 3 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'; }
+
+  function sectionHtml(s, idx) {
+    const open = !s.closed && idx === 0 ? ' open' : '';
+    let body = '';
+    if (s.kind === 'table') {
+      body = '<div class="tw"><table><thead><tr>' + s.head.map(h => '<th>' + esc(h) + '</th>').join('') + '</tr></thead><tbody>' +
+        s.rows.map(r => '<tr>' + r.map((c, i) => '<td>' + (i === 0 && (c === 'LIVE' || c === 'DRAFT') ? '<span class="tag ' + c.toLowerCase() + '">' + c + '</span>' : c) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
+    } else if (s.kind === 'checks') {
+      body = '<ul class="checks">' + s.items.map(it => '<li><label class="' + (state.checks[it[0]] ? 'done' : '') + '"><input type="checkbox" data-check="' + it[0] + '"' + (state.checks[it[0]] ? ' checked' : '') + '><span>' + it[1] + '</span></label></li>').join('') + '</ul>';
+    } else if (s.kind === 'cards') {
+      body = '<div class="cards">' + s.cards.map(c => '<div class="card"><div class="k">' + esc(c[0]) + '</div><div class="v">' + esc(c[1]) + '</div><div class="d">' + c[2] + '</div></div>').join('') + '</div>';
+    } else { body = s.html; }
+    let cnt = '';
+    if (s.kind === 'checks') cnt = '<span class="cnt">' + doneCount(s.items.map(i => i[0])) + ' / ' + s.items.length + '</span>';
+    if (s.kind === 'table') cnt = '<span class="cnt">' + s.rows.length + '</span>';
+    return '<details' + open + '><summary>' + chev() + '<span>' + esc(s.t) + '</span>' + cnt + '</summary><div class="body">' + body + '</div></details>';
+  }
+
+  function renderPanel() {
+    const p = $('#panel');
+    if (active === 'resumen') {
+      const rows = F.map(f => {
+        const ids = checksOf(f); const st = statusOf(f);
+        return '<tr><td><button class="btn" type="button" data-go="' + f.id + '">' + f.n + ' · ' + esc(f.title) + '</button></td><td><span class="status ' + st + '" style="cursor:default"><span class="dot"></span>' + ST[st] + '</span></td><td>' + doneCount(ids) + ' / ' + ids.length + '</td><td>' + esc(f.lead.split('. ')[0]) + '.</td></tr>';
+      }).join('');
+      const pend = D.filter(d => !(state.decisions[d[0]] && state.decisions[d[0]].done));
+      p.innerHTML = '<div class="ph"><h2>Resumen</h2><p class="lead">' + (state.launchDate ? 'Lanzamiento el <b>' + fmtDate(state.launchDate) + '</b>.' : '<b>La fecha de lanzamiento no está fijada</b> y es la primera decisión: sin ella no se puede montar nada de lo que tiene ventana (oferta €89, fin del premium beta, correos).') + ' La base sobre la que se lanza es iOS 340 y Android 28, ya en las tiendas en beta.</p></div>' +
+        '<details open><summary>' + chev() + '<span>Frentes</span><span class="cnt">' + F.length + '</span></summary><div class="body"><div class="tw"><table><thead><tr><th>Frente</th><th>Estado</th><th>Tareas</th><th>En una línea</th></tr></thead><tbody>' + rows + '</tbody></table></div></div></details>' +
+        '<details open><summary>' + chev() + '<span>Decisiones pendientes</span><span class="cnt">' + pend.length + ' / ' + D.length + '</span></summary><div class="body">' + (pend.length ? '<div class="tw"><table><thead><tr><th>#</th><th>Decisión</th><th>Por qué bloquea</th></tr></thead><tbody>' + pend.map((d, i) => '<tr><td>' + d[0].slice(1) + '</td><td>' + esc(d[1]) + '</td><td>' + esc(d[2]) + '</td></tr>').join('') + '</tbody></table></div><p style="margin-top:10px"><button class="btn" type="button" data-go="decisiones">Tomar decisiones</button></p>' : '<p>Todas tomadas.</p>') + '</div></details>';
+      return;
+    }
+    if (active === 'decisiones') {
+      p.innerHTML = '<div class="ph"><h2>Decisiones abiertas</h2><p class="lead">Las filas van en el orden en que bloquean. Escribe lo decidido y márcala; la nota se guarda al salir del campo.</p></div><div class="dec" style="margin-top:16px">' +
+        D.map(d => { const s = state.decisions[d[0]] || {}; return '<div class="dc' + (s.done ? ' done' : '') + '"><div class="num">' + d[0].slice(1) + '</div><div><h4>' + esc(d[1]) + '</h4><div class="why">' + esc(d[2]) + '</div><div class="row"><textarea data-note="' + d[0] + '" placeholder="Qué se decidió">' + esc(s.note || '') + '</textarea><button class="btn' + (s.done ? ' on' : '') + '" type="button" data-decide="' + d[0] + '">' + (s.done ? 'Decidida' : 'Marcar decidida') + '</button></div></div></div>'; }).join('') + '</div>';
+      return;
+    }
+    const f = F.find(x => x.id === active); if (!f) return;
+    const ids = checksOf(f); const dn = doneCount(ids); const st = statusOf(f);
+    p.innerHTML = '<div class="ph"><h2>' + f.n + ' · ' + esc(f.title) + '</h2><button class="status ' + st + '" type="button" data-cycle="' + f.id + '" title="Cambiar estado"><span class="dot"></span>' + ST[st] + '</button><p class="lead">' + esc(f.lead) + '</p></div>' +
+      (ids.length ? '<div class="progress"><i style="width:' + Math.round(100 * dn / ids.length) + '%"></i></div><div class="pline"><span>' + dn + ' de ' + ids.length + ' tareas</span><span>toca el estado para cambiarlo</span></div>' : '') +
+      f.sections.map(sectionHtml).join('');
+  }
+
+  // ---------- Events ----------
+  document.addEventListener('click', (e) => {
+    const go = e.target.closest('[data-go]'); if (go) { active = go.getAttribute('data-go'); renderNav(); renderPanel(); $('#panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    const cy = e.target.closest('[data-cycle]'); if (cy) { const id = cy.getAttribute('data-cycle'); const f = F.find(x => x.id === id); const cur = statusOf(f); const next = ORDER[(ORDER.indexOf(cur) + 1) % ORDER.length]; const st = {}; st[id] = next; persist({ status: st }); return; }
+    const dc = e.target.closest('[data-decide]'); if (dc) { const id = dc.getAttribute('data-decide'); const cur = state.decisions[id] || {}; const ta = document.querySelector('[data-note="' + id + '"]'); const d = {}; d[id] = { done: !cur.done, note: ta ? ta.value : (cur.note || '') }; persist({ decisions: d }); return; }
+  });
+  document.addEventListener('change', (e) => {
+    const c = e.target.closest('[data-check]'); if (c) { const ch = {}; ch[c.getAttribute('data-check')] = c.checked; persist({ checks: ch }); return; }
+    if (e.target.id === 'launch') { persist({ launchDate: e.target.value || '' }); return; }
+    const n = e.target.closest('[data-note]'); if (n) { const id = n.getAttribute('data-note'); const cur = state.decisions[id] || {}; if ((cur.note || '') !== n.value) { const d = {}; d[id] = { done: !!cur.done, note: n.value }; persist({ decisions: d }); } }
+  });
+
+  // ---------- Boot ----------
+  lsLoad();
+  renderAll();
+
+  (async () => {
+    try {
+      const d = await (window.claude && window.claude.use ? window.claude.use('db') : Promise.resolve(null));
+      if (!d) return;
+      db = d; docRef = db.doc('plan/state');
+      const snap = await docRef.get();
+      if (snap.exists) { state = Object.assign({ launchDate: '', checks: {}, decisions: {}, status: {} }, snap.data()); lsSave(); renderAll(); }
+      else { await docRef.set(clone(state)); }
+      const sy = $('#sync'); sy.className = 'sync ok'; sy.lastElementChild.textContent = 'compartido: lo que cambies lo ven todos';
+      docRef.onSnapshot((s) => {
+        if (!s.exists || s.metadata.hasPendingWrites) return;
+        const inc = s.data(); const cur = JSON.stringify(state); const next = Object.assign({ launchDate: '', checks: {}, decisions: {}, status: {} }, inc);
+        if (JSON.stringify(next) !== cur) { if (document.activeElement && document.activeElement.tagName === 'TEXTAREA') return; state = next; lsSave(); renderAll(); }
+      }, () => {});
+    } catch (e) {}
+  })();
+})();
+</script>

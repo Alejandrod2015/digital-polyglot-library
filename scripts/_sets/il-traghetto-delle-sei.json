@@ -84,7 +84,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "cold",
-        "warm",
+        "dirty",
         "wet",
         "soft"
       ],
@@ -108,7 +108,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to leave",
-        "to arrive",
+        "to turn",
         "to stop",
         "to sink"
       ],
@@ -156,7 +156,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "awake",
-        "asleep",
+        "dressed",
         "sad",
         "late"
       ],
@@ -251,7 +251,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "down",
-        "up",
+        "back",
         "around",
         "inside"
       ],

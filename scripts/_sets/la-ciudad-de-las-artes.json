@@ -486,7 +486,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "inside",
-        "outside",
+        "behind",
         "above",
         "near"
       ],

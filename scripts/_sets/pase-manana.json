@@ -210,9 +210,9 @@
     "sentence": "Ya lo había contado [[a gritos]] por todo el puesto.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "at the top of his voice",
+      "answer": "shouting",
       "options": [
-        "at the top of his voice",
+        "shouting",
         "in writing",
         "in secret",
         "by mistake"

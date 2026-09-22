@@ -1,446 +1,446 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Weste,das Sofa,der Anruf,die Universität",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Weste",
-     "answer": "a waistcoat",
-     "options": [
-      "a waistcoat",
-      "a sofa",
-      "a phone call",
-      "a university"
-     ]
-    },
-    {
-     "word": "das Sofa",
-     "answer": "a sofa",
-     "options": [
-      "a waistcoat",
-      "a sofa",
-      "a phone call",
-      "a university"
-     ]
-    },
-    {
-     "word": "der Anruf",
-     "answer": "a phone call",
-     "options": [
-      "a waistcoat",
-      "a sofa",
-      "a phone call",
-      "a university"
-     ]
-    },
-    {
-     "word": "die Universität",
-     "answer": "a university",
-     "options": [
-      "a waistcoat",
-      "a sofa",
-      "a phone call",
-      "a university"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Weste,das Sofa,der Anruf,die Universität",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Weste",
+          "answer": "a waistcoat",
+          "options": [
+            "a waistcoat",
+            "a sofa",
+            "a phone call",
+            "a university"
+          ]
+        },
+        {
+          "word": "das Sofa",
+          "answer": "a sofa",
+          "options": [
+            "a waistcoat",
+            "a sofa",
+            "a phone call",
+            "a university"
+          ]
+        },
+        {
+          "word": "der Anruf",
+          "answer": "a phone call",
+          "options": [
+            "a waistcoat",
+            "a sofa",
+            "a phone call",
+            "a university"
+          ]
+        },
+        {
+          "word": "die Universität",
+          "answer": "a university",
+          "options": [
+            "a waistcoat",
+            "a sofa",
+            "a phone call",
+            "a university"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Förster",
-  "sentence": "Noah ist [[Förster]] im Schwarzwald.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a forester",
-   "options": [
-    "a forester",
-    "a farmer",
-    "a fisherman",
-    "a baker"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Noah ist Förster im Schwarzwald.",
-    "targetWord": "Förster",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Wald",
-  "sentence": "Der [[Wald]] riecht nach Harz und nach Pilzen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a forest",
-   "options": [
-    "a forest",
-    "a garden",
-    "a field",
-    "a beach"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Der Wald riecht nach Harz und nach Pilzen.",
-    "targetWord": "Wald",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Ofen",
-  "sentence": "Ein alter [[Ofen]] steht in der Ecke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a stove",
-   "options": [
-    "a stove",
-    "a bed",
-    "a lamp",
-    "a shelf"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Ein alter Ofen steht in der Ecke.",
-    "targetWord": "Ofen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Brot",
-  "sentence": "Noah schneidet [[Brot]] und Wurst.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bread",
-   "options": [
-    "bread",
-    "soup",
-    "rice",
-    "cake"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Noah schneidet Brot und Wurst.",
-    "targetWord": "Brot",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Bahnsteig",
-  "sentence": "Noah wartet auf dem [[Bahnsteig]] in Triberg.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a railway platform",
-   "options": [
-    "a railway platform",
-    "a market square",
-    "a car park",
-    "a bus stop"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Noah wartet auf dem Bahnsteig in Triberg.",
-    "targetWord": "Bahnsteig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "öffnen",
-  "sentence": "Noah [[öffnet]] die Tür.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to open",
-   "options": [
-    "to open",
-    "to close",
-    "to knock",
-    "to paint"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Noah öffnet die Tür.",
-    "targetWord": "öffnet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "Zug",
-  "sentence": "Der _____ aus Freiburg hält am Nachmittag.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Zug",
-   "options": [
-    "Zug",
-    "Bus",
-    "Wagen",
-    "Kutter"
-   ],
-   "translation": "The _____ from Freiburg stops in the afternoon.",
-   "optionTranslations": [
-    "train",
-    "bus",
-    "car",
-    "cutter"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Der Zug aus Freiburg hält am Nachmittag.",
-    "targetWord": "Zug",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "Haus",
-  "sentence": "Sie wohnen in einem kleinen _____ am Wald.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Haus",
-   "options": [
-    "Haus",
-    "Boot",
-    "Zimmer",
-    "Turm"
-   ],
-   "translation": "They live in a small _____ by the forest.",
-   "optionTranslations": [
-    "house",
-    "boat",
-    "room",
-    "tower"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Sie wohnen in einem kleinen Haus am Wald.",
-    "targetWord": "Haus",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sauber",
-  "sentence": "Das Zimmer ist einfach und _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sauber",
-   "options": [
-    "sauber",
-    "dunkel",
-    "voll",
-    "kalt"
-   ],
-   "translation": "The room is simple and _____.",
-   "optionTranslations": [
-    "clean",
-    "dark",
-    "full",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Das Zimmer ist einfach und sauber.",
-    "targetWord": "sauber",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Ort",
-  "sentence": "Die beiden gehen zu seinem Haus am Rand vom Wald im [[Ort]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a village",
-   "options": [
-    "a village",
-    "a city",
-    "a station",
-    "a valley"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Die beiden gehen zu seinem Haus am Rand vom Wald im Ort.",
-    "targetWord": "Ort",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Rand",
-  "sentence": "Sein Haus steht am [[Rand]] vom Wald.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the edge",
-   "options": [
-    "the edge",
-    "the middle",
-    "the top",
-    "the back"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Sein Haus steht am Rand vom Wald.",
-    "targetWord": "Rand",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Förster",
+    "sentence": "Noah ist [[Förster]] im Schwarzwald.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a forester",
+      "options": [
+        "a forester",
+        "a farmer",
+        "a fisherman",
+        "a baker"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Noah ist Förster im Schwarzwald.",
+        "targetWord": "Förster",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Harz",
-  "sentence": "Der Wald riecht nach [[Harz]] und nach Pilzen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "resin",
-   "options": [
-    "resin",
-    "smoke",
-    "rain",
-    "salt"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Der Wald riecht nach Harz und nach Pilzen.",
-    "targetWord": "Harz",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Wald",
+    "sentence": "Der [[Wald]] riecht nach Harz und nach Pilzen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a forest",
+      "options": [
+        "a forest",
+        "a garden",
+        "a field",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Der Wald riecht nach Harz und nach Pilzen.",
+        "targetWord": "Wald",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Schokolade",
-  "sentence": "Hannah legt [[Schokolade]] auf den Ofen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "chocolate",
-   "options": [
-    "chocolate",
-    "bread",
-    "cheese",
-    "fruit"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Hannah legt Schokolade auf den Ofen.",
-    "targetWord": "Schokolade",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Ofen",
+    "sentence": "Ein alter [[Ofen]] steht in der Ecke.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stove",
+      "options": [
+        "a stove",
+        "a bed",
+        "a lamp",
+        "a shelf"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Ein alter Ofen steht in der Ecke.",
+        "targetWord": "Ofen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Wurst",
-  "sentence": "Noah schneidet Brot und [[Wurst]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sausage",
-   "options": [
-    "sausage",
-    "butter",
-    "honey",
-    "salad"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Noah schneidet Brot und Wurst.",
-    "targetWord": "Wurst",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Brot",
+    "sentence": "Noah schneidet [[Brot]] und Wurst.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bread",
+      "options": [
+        "bread",
+        "soup",
+        "rice",
+        "cake"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Noah schneidet Brot und Wurst.",
+        "targetWord": "Brot",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Freunde",
-  "sentence": "Die zwei alten _____ reden bis nach Mitternacht.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Freunde",
-   "options": [
-    "Freunde",
-    "Ärzte",
-    "Schüler",
-    "Gäste"
-   ],
-   "translation": "The two old _____ talk until after midnight.",
-   "optionTranslations": [
-    "friends",
-    "doctors",
-    "pupils",
-    "guests"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Die zwei alten Freunde reden bis nach Mitternacht.",
-    "targetWord": "Freunde",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Bahnsteig",
+    "sentence": "Noah wartet auf dem [[Bahnsteig]] in Triberg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a railway platform",
+      "options": [
+        "a railway platform",
+        "a market square",
+        "a car park",
+        "a bus stop"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Noah wartet auf dem Bahnsteig in Triberg.",
+        "targetWord": "Bahnsteig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "Schuhe",
-  "sentence": "Sie sieht müde auf ihre nassen _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "Schuhe",
-   "options": [
-    "Schuhe",
-    "Hände",
-    "Taschen",
-    "Fenster"
-   ],
-   "translation": "She looks tired at her wet _____.",
-   "optionTranslations": [
-    "shoes",
-    "hands",
-    "bags",
-    "windows"
-   ],
-   "audioClip": {
-    "storySlug": "der-zug-nach-triberg",
-    "storySource": "user",
-    "sentence": "Sie sieht müde auf ihre nassen Schuhe.",
-    "targetWord": "Schuhe",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "öffnen",
+    "sentence": "Noah [[öffnet]] die Tür.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open",
+      "options": [
+        "to open",
+        "to paint",
+        "to knock",
+        "to lock"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Noah öffnet die Tür.",
+        "targetWord": "öffnet",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "Zug",
+    "sentence": "Der _____ aus Freiburg hält am Nachmittag.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Zug",
+      "options": [
+        "Zug",
+        "Bus",
+        "Wagen",
+        "Kutter"
+      ],
+      "translation": "The _____ from Freiburg stops in the afternoon.",
+      "optionTranslations": [
+        "train",
+        "bus",
+        "car",
+        "cutter"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Der Zug aus Freiburg hält am Nachmittag.",
+        "targetWord": "Zug",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "Haus",
+    "sentence": "Sie wohnen in einem kleinen _____ am Wald.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Haus",
+      "options": [
+        "Haus",
+        "Boot",
+        "Zimmer",
+        "Turm"
+      ],
+      "translation": "They live in a small _____ by the forest.",
+      "optionTranslations": [
+        "house",
+        "boat",
+        "room",
+        "tower"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Sie wohnen in einem kleinen Haus am Wald.",
+        "targetWord": "Haus",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sauber",
+    "sentence": "Das Zimmer ist einfach und _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sauber",
+      "options": [
+        "sauber",
+        "dunkel",
+        "voll",
+        "kalt"
+      ],
+      "translation": "The room is simple and _____.",
+      "optionTranslations": [
+        "clean",
+        "dark",
+        "full",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Das Zimmer ist einfach und sauber.",
+        "targetWord": "sauber",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Ort",
+    "sentence": "Die beiden gehen zu seinem Haus am Rand vom Wald im [[Ort]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a village",
+      "options": [
+        "a village",
+        "a city",
+        "a station",
+        "a valley"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Die beiden gehen zu seinem Haus am Rand vom Wald im Ort.",
+        "targetWord": "Ort",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Rand",
+    "sentence": "Sein Haus steht am [[Rand]] vom Wald.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the edge",
+      "options": [
+        "the edge",
+        "the middle",
+        "the top",
+        "the back"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Sein Haus steht am Rand vom Wald.",
+        "targetWord": "Rand",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Harz",
+    "sentence": "Der Wald riecht nach [[Harz]] und nach Pilzen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "resin",
+      "options": [
+        "resin",
+        "smoke",
+        "rain",
+        "salt"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Der Wald riecht nach Harz und nach Pilzen.",
+        "targetWord": "Harz",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Schokolade",
+    "sentence": "Hannah legt [[Schokolade]] auf den Ofen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chocolate",
+      "options": [
+        "chocolate",
+        "bread",
+        "cheese",
+        "fruit"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Hannah legt Schokolade auf den Ofen.",
+        "targetWord": "Schokolade",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Wurst",
+    "sentence": "Noah schneidet Brot und [[Wurst]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sausage",
+      "options": [
+        "sausage",
+        "butter",
+        "honey",
+        "salad"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Noah schneidet Brot und Wurst.",
+        "targetWord": "Wurst",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Freunde",
+    "sentence": "Die zwei alten _____ reden bis nach Mitternacht.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Freunde",
+      "options": [
+        "Freunde",
+        "Ärzte",
+        "Schüler",
+        "Gäste"
+      ],
+      "translation": "The two old _____ talk until after midnight.",
+      "optionTranslations": [
+        "friends",
+        "doctors",
+        "pupils",
+        "guests"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Die zwei alten Freunde reden bis nach Mitternacht.",
+        "targetWord": "Freunde",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Schuhe",
+    "sentence": "Sie sieht müde auf ihre nassen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Schuhe",
+      "options": [
+        "Schuhe",
+        "Hände",
+        "Taschen",
+        "Fenster"
+      ],
+      "translation": "She looks tired at her wet _____.",
+      "optionTranslations": [
+        "shoes",
+        "hands",
+        "bags",
+        "windows"
+      ],
+      "audioClip": {
+        "storySlug": "der-zug-nach-triberg",
+        "storySource": "user",
+        "sentence": "Sie sieht müde auf ihre nassen Schuhe.",
+        "targetWord": "Schuhe",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

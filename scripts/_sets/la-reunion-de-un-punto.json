@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "punto",
+    "sentence": "En el ordenador hay un orden del día de nueve [[puntos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an item",
+      "options": [
+        "an item",
+        "a page",
+        "a chair",
+        "a coffee"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "En el ordenador hay un orden del día de nueve puntos.",
+        "targetWord": "puntos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/01c8b0f37680d94f36fa.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acuerdo",
+    "sentence": "El [[acuerdo]] fue cambiar una palabra por otra parecida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the agreement",
+      "options": [
+        "the agreement",
+        "the mistake",
+        "the surprise",
+        "the excuse"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "El acuerdo fue cambiar una palabra por otra parecida.",
+        "targetWord": "acuerdo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b7eee592f4de1c1d9766.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrega",
+    "sentence": "Y la [[entrega]] no se mueve, eso lo dejo claro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the delivery",
+      "options": [
+        "the delivery",
+        "the meeting",
+        "the salary",
+        "the office"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Y la entrega no se mueve, eso lo dejo claro.",
+        "targetWord": "entrega",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a6162c2b13e5c668d669.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ocupar",
+    "sentence": "El primer punto [[ocupa]] media reunión.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take up",
+      "options": [
+        "to take up",
+        "to cut short",
+        "to skip",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "El primer punto ocupa media reunión.",
+        "targetWord": "ocupa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9604c5fe09ab7ba9862f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuanto antes",
+    "sentence": "Tú termina lo tuyo [[cuanto antes]], que lo demás se arregla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as soon as possible",
+      "options": [
+        "as soon as possible",
+        "as well as you can",
+        "as usual",
+        "as agreed"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Tú termina lo tuyo cuanto antes, que lo demás se arregla.",
+        "targetWord": "cuanto antes",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7c73e838fa979c722369.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de vez en cuando",
+    "sentence": "Esto es así, y [[de vez en cuando]] sale un tema de verdad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from time to time",
+      "options": [
+        "from time to time",
+        "all the time",
+        "at the last minute",
+        "by pure luck"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Esto es así, y de vez en cuando sale un tema de verdad.",
+        "targetWord": "de vez en cuando",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/139979f323996ca8b4bb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde luego",
+    "sentence": "[[Desde luego]] la reunión no le ha quitado trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of course",
+      "options": [
+        "of course",
+        "at least",
+        "at last",
+        "so far"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Desde luego la reunión no le ha quitado trabajo.",
+        "targetWord": "Desde luego",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a86db3211214955c82e7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "comienza",
+    "sentence": "La reunión _____ a las nueve y acaba a las diez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comienza",
+      "options": [
+        "comienza",
+        "sigue",
+        "falta",
+        "vuelve"
+      ],
+      "translation": "The meeting _____ at nine and ends at ten.",
+      "optionTranslations": [
+        "begins",
+        "continues",
+        "is missing",
+        "comes back"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "La reunión comienza a las nueve y acaba a las diez.",
+        "targetWord": "comienza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86fb90d2648ea153.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "termina",
+    "sentence": "Ella _____ el informe y lo entrega el viernes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "termina",
+      "options": [
+        "termina",
+        "pierde",
+        "olvida",
+        "quema"
+      ],
+      "translation": "She _____ the report and hands it in on Friday.",
+      "optionTranslations": [
+        "finishes",
+        "loses",
+        "forgets",
+        "burns"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Ella termina el informe y lo entrega el viernes.",
+        "targetWord": "termina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/485ae01dc4752bc1.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "ordenador,título,texto,sala de espera",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ordenador",
+          "answer": "a computer",
+          "options": [
+            "a computer",
+            "a title",
+            "a text",
+            "a waiting room"
+          ]
+        },
+        {
+          "word": "título",
+          "answer": "a title",
+          "options": [
+            "a computer",
+            "a title",
+            "a text",
+            "a waiting room"
+          ]
+        },
+        {
+          "word": "texto",
+          "answer": "a text",
+          "options": [
+            "a computer",
+            "a title",
+            "a text",
+            "a waiting room"
+          ]
+        },
+        {
+          "word": "sala de espera",
+          "answer": "a waiting room",
+          "options": [
+            "a computer",
+            "a title",
+            "a text",
+            "a waiting room"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desacuerdo",
+    "sentence": "Hay [[desacuerdo]] sobre una palabra del título.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "disagreement",
+      "options": [
+        "disagreement",
+        "silence",
+        "laughter",
+        "confusion"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Hay desacuerdo sobre una palabra del título.",
+        "targetWord": "desacuerdo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f00ca5d65f81730c6f26.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "Eso lo dejo [[claro]] antes que nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": [
+        "clear",
+        "open",
+        "ready",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Eso lo dejo claro antes que nada.",
+        "targetWord": "claro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/336978313ae611bb264b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antes que nada",
+    "sentence": "Eso lo dejo claro [[antes que nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first of all",
+      "options": [
+        "first of all",
+        "in the end",
+        "once again",
+        "just in case"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Eso lo dejo claro antes que nada.",
+        "targetWord": "antes que nada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e35ca214a3b80d02d4d6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mientras tanto",
+    "sentence": "[[Mientras tanto]] el encargo la espera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meanwhile",
+      "options": [
+        "meanwhile",
+        "afterwards",
+        "luckily",
+        "nevertheless"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Mientras tanto el encargo la espera.",
+        "targetWord": "Mientras tanto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e89aa9c65dcb9edcccb4.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tres horas",
+    "sentence": "La reunión no le ha quitado trabajo, solo [[tres horas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three hours",
+      "options": [
+        "three hours",
+        "three days",
+        "thirteen minutes",
+        "thirty euros"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "La reunión no le ha quitado trabajo, solo tres horas.",
+        "targetWord": "tres horas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/59e30c14cdfc542530ef.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "saluda",
+    "sentence": "Al entrar, _____ a todos y dice buenos días.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "saluda",
+      "options": [
+        "saluda",
+        "castiga",
+        "cobra",
+        "pierde"
+      ],
+      "translation": "When she comes in, she _____ everyone and says good morning.",
+      "optionTranslations": [
+        "greets",
+        "punishes",
+        "charges",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Al entrar, saluda a todos y dice buenos días.",
+        "targetWord": "saluda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38261f8e556a3564.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "parecida",
+    "sentence": "Su letra es tan _____ a la mía que las confundo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parecida",
+      "options": [
+        "parecida",
+        "lenta",
+        "clara",
+        "rara"
+      ],
+      "translation": "Her handwriting is so _____ to mine that I mix them up.",
+      "optionTranslations": [
+        "similar",
+        "slow",
+        "clear",
+        "odd"
+      ],
+      "audioClip": {
+        "storySlug": "la-reunion-de-un-punto",
+        "storySource": "user",
+        "sentence": "Su letra es tan parecida a la mía que las confundo.",
+        "targetWord": "parecida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c91ac79e313a5f98.mp3"
+      }
+    },
+    "featured": false
+  }
+]

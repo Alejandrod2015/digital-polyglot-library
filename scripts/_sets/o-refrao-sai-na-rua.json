@@ -297,7 +297,7 @@
       "answer": "open",
       "options": [
         "open",
-        "closed",
+        "cheap",
         "empty",
         "new"
       ],

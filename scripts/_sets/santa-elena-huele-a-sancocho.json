@@ -232,9 +232,9 @@
     "sentence": "En Santa Elena cargan [[silletas]] de flores enormes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "flower frames carried on the back",
+      "answer": "back-carried flower frames",
       "options": [
-        "flower frames carried on the back",
+        "back-carried flower frames",
         "small wooden stools",
         "heavy iron pots",
         "woven straw hats"

@@ -8,9 +8,9 @@
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
         "afina",
-        "misturar",
-        "procurar",
-        "tocar"
+        "lava",
+        "vende",
+        "pinta"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
@@ -28,7 +28,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "tunes",
+        "washes",
+        "sells",
+        "paints"
+      ]
     },
     "featured": true
   },
@@ -40,10 +46,10 @@
       "answer": "to tune a musical instrument",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "acoustic guitar, very common in Brazilian music",
-        "to mix with something else",
-        "the sound a person makes when speaking",
-        "to tune a musical instrument"
+        "to tune a musical instrument",
+        "to clean a musical instrument",
+        "to carry a musical instrument",
+        "to sell a musical instrument"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
@@ -73,12 +79,18 @@
       "answer": "agradecer",
       "prompt": "Listen and choose the word you hear.",
       "options": [
-        "afinar",
         "agradecer",
-        "sentar",
-        "tocar"
+        "procurar",
+        "misturar",
+        "esperar"
       ],
-      "language": "portuguese"
+      "language": "portuguese",
+      "optionTranslations": [
+        "to thank",
+        "to look for",
+        "to mix",
+        "to wait"
+      ]
     },
     "featured": true
   },
@@ -90,10 +102,10 @@
       "answer": "agradece",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "procurar",
-        "tocar",
-        "misturar",
-        "agradece"
+        "agradece",
+        "dorme",
+        "corre",
+        "canta"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c091eaee56747659.mp3",
@@ -111,7 +123,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "says thank you",
+        "sleeps",
+        "runs",
+        "sings"
+      ]
     },
     "featured": true
   },
@@ -120,13 +138,13 @@
     "word": "almoço",
     "sentence": "O Mercado Modelo está cheio na hora do almoço.",
     "payload": {
-      "answer": "the midday meal, the main one of the day in Brazil",
+      "answer": "the midday meal",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "to say thank you to someone",
-        "party or celebration with people",
-        "the midday meal, the main one of the day in Brazil",
-        "the sound a person makes when speaking"
+        "the midday meal",
+        "the evening meal",
+        "the morning coffee",
+        "the afternoon snack"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/095f26fba3b837d0.mp3",
@@ -156,12 +174,18 @@
       "answer": "cadeira",
       "prompt": "Listen and choose the word you hear.",
       "options": [
-        "mercado",
-        "colo",
         "cadeira",
-        "voz"
+        "mercado",
+        "janela",
+        "cozinha"
       ],
-      "language": "portuguese"
+      "language": "portuguese",
+      "optionTranslations": [
+        "chair",
+        "market",
+        "window",
+        "kitchen"
+      ]
     },
     "featured": true
   },
@@ -242,8 +266,8 @@
       "options": [
         "colo",
         "dedo",
-        "corda",
-        "rapaz"
+        "chão",
+        "banco"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc19978566932b18.mp3",
@@ -261,7 +285,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "lap",
+        "finger",
+        "floor",
+        "bench"
+      ]
     },
     "featured": true
   },
@@ -273,10 +303,10 @@
       "answer": "finger of the hand",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "acoustic guitar, very common in Brazilian music",
         "finger of the hand",
-        "to look for something you need",
-        "to mix with something else"
+        "toe of the foot",
+        "palm of the hand",
+        "heel of the foot"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63872827cc2507a9.mp3",
@@ -702,13 +732,13 @@
     "word": "festa",
     "sentence": "Zeca diz que toca em festas pequenas.",
     "payload": {
-      "answer": "party or celebration with people",
+      "answer": "a party",
       "prompt": "Choose the meaning that fits this word in context.",
       "options": [
-        "party or celebration with people",
-        "acoustic guitar, very common in Brazilian music",
-        "to say thank you to someone",
-        "to look for something you need"
+        "a party",
+        "a school",
+        "a church",
+        "a market"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21a6ee8d53352f9a.mp3",
@@ -837,10 +867,10 @@
       "answer": "mistura",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "procurar",
-        "tocar",
-        "afinar",
-        "mistura"
+        "mistura",
+        "esconde",
+        "perde",
+        "cala"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0aa68ca2c321cf.mp3",
@@ -858,7 +888,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "mixes",
+        "hides",
+        "loses",
+        "goes quiet"
+      ]
     },
     "featured": false
   },
@@ -870,10 +906,10 @@
       "answer": "procura",
       "prompt": "Complete the sentence with the right word or expression.",
       "options": [
-        "afinar",
-        "sentar",
-        "agradecer",
-        "procura"
+        "procura",
+        "limpa",
+        "pinta",
+        "vende"
       ],
       "audioClip": {
         "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b524b5737aec58e.mp3",
@@ -891,7 +927,13 @@
         "audioWordStartSec": null,
         "audioSentenceEndSec": null,
         "audioSentenceStartSec": null
-      }
+      },
+      "optionTranslations": [
+        "looks for",
+        "cleans",
+        "paints",
+        "sells"
+      ]
     },
     "featured": false
   },
@@ -904,11 +946,17 @@
       "prompt": "Listen and choose the word you hear.",
       "options": [
         "cheio",
-        "esquerdo",
-        "dedo",
-        "vazio"
+        "feio",
+        "meio",
+        "veio"
       ],
-      "language": "portuguese"
+      "language": "portuguese",
+      "optionTranslations": [
+        "full",
+        "ugly",
+        "half",
+        "came"
+      ]
     },
     "featured": false
   },
@@ -937,12 +985,18 @@
       "answer": "esquerdo",
       "prompt": "Listen and choose the word you hear.",
       "options": [
-        "corda",
-        "cheio",
-        "vazio",
-        "esquerdo"
+        "esquerdo",
+        "esperto",
+        "aberto",
+        "coberto"
       ],
-      "language": "portuguese"
+      "language": "portuguese",
+      "optionTranslations": [
+        "left",
+        "clever",
+        "open",
+        "covered"
+      ]
     },
     "featured": false
   },

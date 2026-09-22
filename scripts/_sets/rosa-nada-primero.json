@@ -33,7 +33,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to arrive",
-        "to leave",
+        "to sleep",
         "to travel",
         "to wait"
       ],
@@ -254,7 +254,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "fría",
-        "caliente",
+        "verde",
         "sucia",
         "clara"
       ],
@@ -270,7 +270,7 @@
       "translation": "In winter the sea water is _____.",
       "optionTranslations": [
         "cold",
-        "hot",
+        "green",
         "dirty",
         "clear"
       ]
@@ -336,7 +336,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "young",
-        "old",
+        "rich",
         "tall",
         "tired"
       ],
@@ -386,7 +386,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "to laugh",
-        "to cry",
+        "to fall",
         "to shout",
         "to sing"
       ],
@@ -543,7 +543,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "húmeda",
-        "seca",
+        "fría",
         "dura",
         "limpia"
       ],
@@ -559,7 +559,7 @@
       "translation": "After the rain the ground is _____.",
       "optionTranslations": [
         "wet",
-        "dry",
+        "cold",
         "hard",
         "clean"
       ]

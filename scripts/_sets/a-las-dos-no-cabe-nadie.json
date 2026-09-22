@@ -376,9 +376,9 @@
       "answer": "the next day",
       "options": [
         "the next day",
-        "that same night",
-        "a month later",
-        "every summer"
+        "the same night",
+        "the month after",
+        "the whole summer"
       ],
       "audioClip": {
         "storySlug": "a-las-dos-no-cabe-nadie",
@@ -424,7 +424,7 @@
       "answer": "to sit down",
       "options": [
         "to sit down",
-        "to stand up",
+        "to lean back",
         "to walk out",
         "to look round"
       ],
@@ -496,7 +496,7 @@
       "answer": "to close",
       "options": [
         "to close",
-        "to open",
+        "to move",
         "to fill",
         "to wait"
       ],

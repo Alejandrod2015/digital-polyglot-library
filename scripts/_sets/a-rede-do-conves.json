@@ -197,9 +197,9 @@
       "answer": "silence",
       "options": [
         "silence",
-        "a hurry",
-        "a storm",
-        "a crowd"
+        "haste",
+        "darkness",
+        "fear"
       ],
       "audioClip": {
         "storySlug": "a-rede-do-conves",
@@ -402,14 +402,14 @@
         "mês",
         "ano",
         "dia",
-        "hora"
+        "século"
       ],
       "translation": "Thirty days on the river are a whole _____.",
       "optionTranslations": [
         "month",
         "year",
         "day",
-        "hour"
+        "century"
       ],
       "audioClip": {
         "storySlug": "a-rede-do-conves",

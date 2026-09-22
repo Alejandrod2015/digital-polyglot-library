@@ -79,9 +79,9 @@
     "sentence": "[[Uy]], el jueves lo tengo complicado, contesta con las bolsas.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "ooh, a doubt is coming",
+      "answer": "ooh, hang on",
       "options": [
-        "ooh, a doubt is coming",
+        "ooh, hang on",
         "great news",
         "right away",
         "never mind"

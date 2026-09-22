@@ -339,9 +339,9 @@
     "sentence": "Desayuna un café y una [[tostada]] en la barra.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "toast with oil",
+      "answer": "a slice of toast",
       "options": [
-        "toast with oil",
+        "a slice of toast",
         "a fried egg",
         "a slice of cake",
         "a bowl of fruit"

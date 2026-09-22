@@ -321,7 +321,7 @@
       "answer": "old",
       "options": [
         "old",
-        "new",
+        "wet",
         "clean",
         "big"
       ],
@@ -441,7 +441,7 @@
       "answer": "open",
       "options": [
         "open",
-        "closed",
+        "red",
         "empty",
         "broken"
       ],

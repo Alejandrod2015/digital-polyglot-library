@@ -158,7 +158,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "sol",
-        "luna",
+        "suelo",
         "viento",
         "agua"
       ],
@@ -174,7 +174,7 @@
       "translation": "During the day the _____ gives a lot of light.",
       "optionTranslations": [
         "sun",
-        "moon",
+        "ground",
         "wind",
         "water"
       ]
@@ -190,7 +190,7 @@
       "prompt": "Complete the sentence.",
       "options": [
         "fuerte",
-        "débil",
+        "rubio",
         "alto",
         "joven"
       ],
@@ -206,7 +206,7 @@
       "translation": "That man lifts boxes because he is very _____.",
       "optionTranslations": [
         "strong",
-        "weak",
+        "blond",
         "tall",
         "young"
       ]
@@ -286,7 +286,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "early",
-        "late",
+        "alone",
         "slowly",
         "soon"
       ],
@@ -307,10 +307,10 @@
     "word": "maya",
     "sentence": "Escuchamos la historia de los [[mayas]].",
     "payload": {
-      "answer": "an old Mexican people",
+      "answer": "an ancient people",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "an old Mexican people",
+        "an ancient people",
         "a modern city",
         "a big river",
         "a tall mountain"

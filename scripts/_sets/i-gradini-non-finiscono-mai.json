@@ -537,7 +537,7 @@
       "answer": "low",
       "options": [
         "low",
-        "high",
+        "round",
         "wide",
         "far"
       ],

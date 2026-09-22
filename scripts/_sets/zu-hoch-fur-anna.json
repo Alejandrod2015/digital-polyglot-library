@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "der Keller,die Trommel,der Refrain,das Wasser",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Keller",
-     "answer": "a cellar",
-     "options": [
-      "a cellar",
-      "a drum",
-      "a chorus",
-      "water"
-     ]
-    },
-    {
-     "word": "die Trommel",
-     "answer": "a drum",
-     "options": [
-      "a cellar",
-      "a drum",
-      "a chorus",
-      "water"
-     ]
-    },
-    {
-     "word": "der Refrain",
-     "answer": "a chorus",
-     "options": [
-      "a cellar",
-      "a drum",
-      "a chorus",
-      "water"
-     ]
-    },
-    {
-     "word": "das Wasser",
-     "answer": "water",
-     "options": [
-      "a cellar",
-      "a drum",
-      "a chorus",
-      "water"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "der Keller,die Trommel,der Refrain,das Wasser",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Keller",
+          "answer": "a cellar",
+          "options": [
+            "a cellar",
+            "a drum",
+            "a chorus",
+            "water"
+          ]
+        },
+        {
+          "word": "die Trommel",
+          "answer": "a drum",
+          "options": [
+            "a cellar",
+            "a drum",
+            "a chorus",
+            "water"
+          ]
+        },
+        {
+          "word": "der Refrain",
+          "answer": "a chorus",
+          "options": [
+            "a cellar",
+            "a drum",
+            "a chorus",
+            "water"
+          ]
+        },
+        {
+          "word": "das Wasser",
+          "answer": "water",
+          "options": [
+            "a cellar",
+            "a drum",
+            "a chorus",
+            "water"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "regnet",
-  "sentence": "Es [[regnet]], und der Keller ist kalt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "is raining",
-   "options": [
-    "is raining",
-    "is snowing",
-    "is cold",
-    "is dark"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Es regnet, und der Keller ist kalt.",
-    "targetWord": "regnet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Strophe",
-  "sentence": "Sie singt die erste [[Strophe]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "verse",
-   "options": [
-    "verse",
-    "word",
-    "song",
-    "line"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Sie singt die erste Strophe.",
-    "targetWord": "Strophe",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tief",
-  "sentence": "Sie singt [[tief]] und ruhig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "low",
-   "options": [
-    "low",
-    "high",
-    "loud",
-    "fast"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Sie singt tief und ruhig.",
-    "targetWord": "tief",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Töne",
-  "sentence": "Die tiefen [[Töne]] sind nicht schlecht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "notes",
-   "options": [
-    "notes",
-    "words",
-    "songs",
-    "voices"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Die tiefen Töne sind nicht schlecht.",
-    "targetWord": "Töne",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sehr",
-  "sentence": "Der Refrain ist [[sehr]] hoch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "very",
-   "options": [
-    "very",
-    "a little",
-    "never",
-    "almost"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Der Refrain ist sehr hoch.",
-    "targetWord": "sehr",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hoch",
-  "sentence": "Der Refrain ist sehr [[hoch]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "high",
-   "options": [
-    "high",
-    "low",
-    "loud",
-    "slow"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Der Refrain ist sehr hoch.",
-    "targetWord": "hoch",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "falsch",
-  "sentence": "Der Ton ist [[falsch]] und laut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "wrong",
-   "options": [
-    "wrong",
-    "right",
-    "quiet",
-    "sweet"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Der Ton ist falsch und laut.",
-    "targetWord": "falsch",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vor",
-  "sentence": "Sie hält die Hände [[vor]] den Mund.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in front of",
-   "options": [
-    "in front of",
-    "behind",
-    "under",
-    "next to"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Sie hält die Hände vor den Mund.",
-    "targetWord": "vor",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Ganz",
-  "sentence": "[[Ganz]] ruhig”, sagt der Freund.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Quite",
-   "options": [
-    "Quite",
-    "Never",
-    "Almost",
-    "A little"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Ganz ruhig”, sagt der Freund.",
-    "targetWord": "Ganz",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "einmal",
-  "sentence": "“Noch [[einmal]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "once",
-   "options": [
-    "once",
-    "never",
-    "always",
-    "twice"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "“Noch einmal.",
-    "targetWord": "einmal",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Schluck",
-  "sentence": "Sie trinkt einen [[Schluck]] Wasser.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sip",
-   "options": [
-    "sip",
-    "glass",
-    "bottle",
-    "cup"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Sie trinkt einen Schluck Wasser.",
-    "targetWord": "Schluck",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "regnet",
+    "sentence": "Es [[regnet]], und der Keller ist kalt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is raining",
+      "options": [
+        "is raining",
+        "is snowing",
+        "is cold",
+        "is dark"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Es regnet, und der Keller ist kalt.",
+        "targetWord": "regnet",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Kein",
-  "sentence": "[[Kein]] Problem.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "No",
-   "options": [
-    "No",
-    "A",
-    "Every",
-    "Some"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Kein Problem.",
-    "targetWord": "Kein",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Strophe",
+    "sentence": "Sie singt die erste [[Strophe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "verse",
+      "options": [
+        "verse",
+        "word",
+        "song",
+        "line"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Sie singt die erste Strophe.",
+        "targetWord": "Strophe",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bis",
-  "sentence": "Wir schreiben [[bis]] Samstag ein neues Lied.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "by",
-   "options": [
-    "by",
-    "after",
-    "without",
-    "since"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Wir schreiben bis Samstag ein neues Lied.",
-    "targetWord": "bis",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tief",
+    "sentence": "Sie singt [[tief]] und ruhig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "low",
+      "options": [
+        "low",
+        "soft",
+        "loud",
+        "fast"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Sie singt tief und ruhig.",
+        "targetWord": "tief",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schlagen",
-  "sentence": "Seine Stöcke _____ auf die Trommel.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schlagen",
-   "options": [
-    "schlagen",
-    "fallen",
-    "liegen",
-    "stehen"
-   ],
-   "translation": "His sticks _____ the drum.",
-   "optionTranslations": [
-    "strike",
-    "fall",
-    "lie",
-    "stand"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Seine Stöcke schlagen auf die Trommel.",
-    "targetWord": "schlagen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Töne",
+    "sentence": "Die tiefen [[Töne]] sind nicht schlecht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "notes",
+      "options": [
+        "notes",
+        "words",
+        "songs",
+        "voices"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Die tiefen Töne sind nicht schlecht.",
+        "targetWord": "Töne",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bricht",
-  "sentence": "Ihre Stimme _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bricht",
-   "options": [
-    "bricht",
-    "singt",
-    "spricht",
-    "lacht"
-   ],
-   "translation": "Her voice _____.",
-   "optionTranslations": [
-    "breaks",
-    "sings",
-    "speaks",
-    "laughs"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Ihre Stimme bricht.",
-    "targetWord": "bricht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "sehr",
+    "sentence": "Der Refrain ist [[sehr]] hoch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very",
+      "options": [
+        "very",
+        "a little",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Der Refrain ist sehr hoch.",
+        "targetWord": "sehr",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schämt",
-  "sentence": "Sie _____ sich.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schämt",
-   "options": [
-    "schämt",
-    "freut",
-    "ärgert",
-    "wundert"
-   ],
-   "translation": "She's _____.",
-   "optionTranslations": [
-    "ashamed",
-    "glad",
-    "angry",
-    "surprised"
-   ],
-   "audioClip": {
-    "storySlug": "zu-hoch-fur-anna",
-    "storySource": "user",
-    "sentence": "Sie schämt sich.",
-    "targetWord": "schämt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "hoch",
+    "sentence": "Der Refrain ist sehr [[hoch]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "high",
+      "options": [
+        "high",
+        "short",
+        "loud",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Der Refrain ist sehr hoch.",
+        "targetWord": "hoch",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "falsch",
+    "sentence": "Der Ton ist [[falsch]] und laut.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wrong",
+      "options": [
+        "wrong",
+        "new",
+        "quiet",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Der Ton ist falsch und laut.",
+        "targetWord": "falsch",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vor",
+    "sentence": "Sie hält die Hände [[vor]] den Mund.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in front of",
+      "options": [
+        "in front of",
+        "behind",
+        "under",
+        "next to"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Sie hält die Hände vor den Mund.",
+        "targetWord": "vor",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Ganz",
+    "sentence": "[[Ganz]] ruhig”, sagt der Freund.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Quite",
+      "options": [
+        "Quite",
+        "Never",
+        "Almost",
+        "A little"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Ganz ruhig”, sagt der Freund.",
+        "targetWord": "Ganz",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einmal",
+    "sentence": "“Noch [[einmal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "once",
+      "options": [
+        "once",
+        "never",
+        "always",
+        "twice"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "“Noch einmal.",
+        "targetWord": "einmal",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Schluck",
+    "sentence": "Sie trinkt einen [[Schluck]] Wasser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sip",
+      "options": [
+        "sip",
+        "glass",
+        "bottle",
+        "cup"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Sie trinkt einen Schluck Wasser.",
+        "targetWord": "Schluck",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Kein",
+    "sentence": "[[Kein]] Problem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "No",
+      "options": [
+        "No",
+        "A",
+        "Every",
+        "Some"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Kein Problem.",
+        "targetWord": "Kein",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bis",
+    "sentence": "Wir schreiben [[bis]] Samstag ein neues Lied.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by",
+      "options": [
+        "by",
+        "after",
+        "without",
+        "since"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Wir schreiben bis Samstag ein neues Lied.",
+        "targetWord": "bis",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schlagen",
+    "sentence": "Seine Stöcke _____ auf die Trommel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schlagen",
+      "options": [
+        "schlagen",
+        "fallen",
+        "liegen",
+        "stehen"
+      ],
+      "translation": "His sticks _____ the drum.",
+      "optionTranslations": [
+        "strike",
+        "fall",
+        "lie",
+        "stand"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Seine Stöcke schlagen auf die Trommel.",
+        "targetWord": "schlagen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bricht",
+    "sentence": "Ihre Stimme _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bricht",
+      "options": [
+        "bricht",
+        "singt",
+        "spricht",
+        "lacht"
+      ],
+      "translation": "Her voice _____.",
+      "optionTranslations": [
+        "breaks",
+        "sings",
+        "speaks",
+        "laughs"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Ihre Stimme bricht.",
+        "targetWord": "bricht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schämt",
+    "sentence": "Sie _____ sich.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schämt",
+      "options": [
+        "schämt",
+        "freut",
+        "ärgert",
+        "wundert"
+      ],
+      "translation": "She's _____.",
+      "optionTranslations": [
+        "ashamed",
+        "glad",
+        "angry",
+        "surprised"
+      ],
+      "audioClip": {
+        "storySlug": "zu-hoch-fur-anna",
+        "storySource": "user",
+        "sentence": "Sie schämt sich.",
+        "targetWord": "schämt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

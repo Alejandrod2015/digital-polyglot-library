@@ -78,9 +78,9 @@
     "sentence": "O suor escorre na [[nuca]] dela.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the nape of the neck",
+      "answer": "the nape",
       "options": [
-        "the nape of the neck",
+        "the nape",
         "the wrist",
         "the ankle",
         "the elbow"

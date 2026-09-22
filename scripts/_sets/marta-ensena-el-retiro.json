@@ -322,7 +322,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "good",
-        "bad",
+        "fast",
         "new",
         "long"
       ],
@@ -372,7 +372,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "cold",
-        "warm",
+        "salty",
         "dirty",
         "deep"
       ],

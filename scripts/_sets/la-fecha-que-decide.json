@@ -1,0 +1,443 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "seguridad",
+    "sentence": "Pregunta lo que falta con [[seguridad]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "confidence",
+      "options": [
+        "confidence",
+        "sadness",
+        "humour",
+        "haste"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Pregunta lo que falta con seguridad.",
+        "targetWord": "seguridad",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/24625103672143e52ece.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortarse",
+    "sentence": "La línea [[se corta]] antes de la respuesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cut out",
+      "options": [
+        "to cut out",
+        "to ring",
+        "to pick up",
+        "to hold on"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "La línea se corta antes de la respuesta.",
+        "targetWord": "se corta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1f29273276bf8f86c04e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "[[Apoya]] la frente en la pared fría.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rest",
+      "options": [
+        "to rest",
+        "to hit",
+        "to wipe",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Apoya la frente en la pared fría.",
+        "targetWord": "Apoya",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8e39fc98b4e750040e0f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oírse",
+    "sentence": "Contesta desde la calle, donde hace viento, y [[se oye]] la mitad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be heard",
+      "options": [
+        "to be heard",
+        "to be lost",
+        "to be paid",
+        "to be late"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Contesta desde la calle, donde hace viento, y se oye la mitad.",
+        "targetWord": "se oye",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/46078d267ab07b36ee8f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de nuevo",
+    "sentence": "Marca [[de nuevo]], y el minuto que tarda se le hace largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "slowly",
+        "at last",
+        "at random"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Marca de nuevo, y el minuto que tarda se le hace largo.",
+        "targetWord": "de nuevo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0b597c26ad5895629f21.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar las gracias",
+    "sentence": "Sin [[dar las gracias]] dos veces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to thank",
+      "options": [
+        "to thank",
+        "to apologise",
+        "to hang up",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Sin dar las gracias dos veces.",
+        "targetWord": "dar las gracias",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/96a92809b2644ec2646d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las ocho",
+    "sentence": "El veinte, sí, [[a las ocho]], y con el portal abierto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at eight",
+      "options": [
+        "at eight",
+        "at night",
+        "at noon",
+        "at once"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "El veinte, sí, a las ocho, y con el portal abierto.",
+        "targetWord": "a las ocho",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cbe5e80e189455d9fa81.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "marca",
+    "sentence": "Coge el teléfono y _____ el número para llamar a su madre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "marca",
+      "options": [
+        "marca",
+        "canta",
+        "cuenta",
+        "borra"
+      ],
+      "translation": "She picks up the phone and _____ the number to call her mother.",
+      "optionTranslations": [
+        "dials",
+        "sings",
+        "counts",
+        "erases"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Coge el teléfono y marca el número para llamar a su madre.",
+        "targetWord": "marca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0cf3e38e5075eef.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grita",
+    "sentence": "Hay mucho ruido, así que _____ para que la oigan.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grita",
+      "options": [
+        "grita",
+        "duerme",
+        "come",
+        "paga"
+      ],
+      "translation": "There is a lot of noise, so she _____ so they can hear her.",
+      "optionTranslations": [
+        "shouts",
+        "sleeps",
+        "eats",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Hay mucho ruido, así que grita para que la oigan.",
+        "targetWord": "grita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f99c20cff8b7ff5a.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "murmullo,techo,viento,minuto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "murmullo",
+          "answer": "a murmur",
+          "options": [
+            "a murmur",
+            "a roof",
+            "wind",
+            "a minute"
+          ]
+        },
+        {
+          "word": "techo",
+          "answer": "a roof",
+          "options": [
+            "a murmur",
+            "a roof",
+            "wind",
+            "a minute"
+          ]
+        },
+        {
+          "word": "viento",
+          "answer": "wind",
+          "options": [
+            "a murmur",
+            "a roof",
+            "wind",
+            "a minute"
+          ]
+        },
+        {
+          "word": "minuto",
+          "answer": "a minute",
+          "options": [
+            "a murmur",
+            "a roof",
+            "wind",
+            "a minute"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "veces",
+    "sentence": "Sin dar las gracias dos [[veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "times",
+      "options": [
+        "times",
+        "days",
+        "words",
+        "steps"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Sin dar las gracias dos veces.",
+        "targetWord": "veces",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/67fae1d2c4d54b7508e0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "El teléfono [[suena]] con un murmullo de fondo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ring",
+      "options": [
+        "to ring",
+        "to break",
+        "to fall",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "El teléfono suena con un murmullo de fondo.",
+        "targetWord": "suena",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e19c255562843759cedb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "veintiuno",
+    "sentence": "¿El veinte o el [[veintiuno]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twenty one",
+      "options": [
+        "twenty one",
+        "twelve",
+        "thirty one",
+        "twenty"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "¿El veinte o el veintiuno?",
+        "targetWord": "veintiuno",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/943506c5bd85c24ad92d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detrás",
+    "sentence": "Contesta él, ya sin viento [[detrás]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "above",
+        "inside",
+        "nearby"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "Contesta él, ya sin viento detrás.",
+        "targetWord": "detrás",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/336149f86578e8421718.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "falla",
+    "sentence": "El coche viejo _____ cada vez que llueve.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "falla",
+      "options": [
+        "falla",
+        "canta",
+        "brilla",
+        "crece"
+      ],
+      "translation": "The old car _____ every time it rains.",
+      "optionTranslations": [
+        "fails",
+        "sings",
+        "shines",
+        "grows"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "El coche viejo falla cada vez que llueve.",
+        "targetWord": "falla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e328b3412fe568e4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fría",
+    "sentence": "El agua de la ducha sale _____ y ella grita.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fría",
+      "options": [
+        "fría",
+        "limpia",
+        "lenta",
+        "clara"
+      ],
+      "translation": "The shower water comes out _____ and she screams.",
+      "optionTranslations": [
+        "cold",
+        "clean",
+        "slow",
+        "clear"
+      ],
+      "audioClip": {
+        "storySlug": "la-fecha-que-decide",
+        "storySource": "user",
+        "sentence": "El agua de la ducha sale fría y ella grita.",
+        "targetWord": "fría",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28cb5813e2b521cb.mp3"
+      }
+    },
+    "featured": false
+  }
+]

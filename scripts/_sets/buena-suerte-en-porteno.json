@@ -55,9 +55,9 @@
     "sentence": "Nadie preguntaba cómo se decía buena suerte en [[porteño]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "from Buenos Aires",
+      "answer": "from the capital",
       "options": [
-        "from Buenos Aires",
+        "from the capital",
         "from the countryside",
         "from the coast",
         "from abroad"
@@ -233,9 +233,9 @@
       "translation": "Before going into the exam, her friend wished her _____.",
       "optionTranslations": [
         "good luck",
-        "a good trip",
-        "a happy night",
-        "a good weekend"
+        "good trip",
+        "good night",
+        "good weekend"
       ],
       "audioClip": {
         "storySlug": "buena-suerte-en-porteno",

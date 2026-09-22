@@ -31,9 +31,9 @@
     "sentence": "Los turistas fotografían la vieja [[muralla]] de piedra.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the old defensive stone wall",
+      "answer": "an old defensive wall",
       "options": [
-        "the old defensive stone wall",
+        "an old defensive wall",
         "a narrow cobbled alley",
         "a tall bell tower",
         "a wide open plaza"
@@ -81,9 +81,9 @@
     "sentence": "El [[casco histórico]] se llena de turistas al mediodía.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the old walled colonial center",
+      "answer": "an old colonial center",
       "options": [
-        "the old walled colonial center",
+        "an old colonial center",
         "a modern shopping mall",
         "a poor outer suburb",
         "a busy fishing dock"
@@ -106,9 +106,9 @@
     "sentence": "La [[ciudad amurallada]] guarda calles coloniales muy fotografiadas.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the old town enclosed by walls",
+      "answer": "an old town inside walls",
       "options": [
-        "the old town enclosed by walls",
+        "an old town inside walls",
         "a beach lined with hotels",
         "a green mountain valley",
         "a crowded bus terminal"
@@ -303,9 +303,9 @@
     "sentence": "Esta [[vaina]] sí está buena, dice doña Nubia.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a thing or situation (slang)",
+      "answer": "a thing or a situation",
       "options": [
-        "a thing or situation (slang)",
+        "a thing or a situation",
         "a serious money problem",
         "a kind of coastal fruit",
         "a loud musical style"
@@ -353,9 +353,9 @@
     "sentence": "[[Ajá]], ¿y viniste a fotografiar piedra vieja?",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "casual filler like so or well",
+      "answer": "a casual filler word",
       "options": [
-        "casual filler like so or well",
+        "a casual filler word",
         "a firm and angry no",
         "a cry of sudden pain",
         "a formal work greeting"

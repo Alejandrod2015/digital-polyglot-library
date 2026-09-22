@@ -169,7 +169,7 @@
       "answer": "fast",
       "options": [
         "fast",
-        "slow",
+        "softly",
         "loud",
         "badly"
       ],
@@ -188,9 +188,9 @@
     "sentence": "Con un [[dolor]] en el pecho.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "pain",
+      "answer": "a pain",
       "options": [
-        "pain",
+        "a pain",
         "a smile",
         "a song",
         "a memory"
@@ -312,14 +312,14 @@
         "encontró",
         "rompió",
         "vendió",
-        "perdió"
+        "limpió"
       ],
       "translation": "After searching a lot, he finally _____ the glasses.",
       "optionTranslations": [
         "found",
         "broke",
         "sold",
-        "lost"
+        "cleaned"
       ],
       "audioClip": {
         "storySlug": "jaime-lo-grabo-todo",

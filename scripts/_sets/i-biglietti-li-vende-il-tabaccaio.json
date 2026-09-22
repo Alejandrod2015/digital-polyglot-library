@@ -424,7 +424,7 @@
       "answer": "narrow",
       "options": [
         "narrow",
-        "wide",
+        "green",
         "open",
         "broken"
       ],
@@ -544,7 +544,7 @@
       "answer": "thin",
       "options": [
         "thin",
-        "thick",
+        "red",
         "heavy",
         "wet"
       ],

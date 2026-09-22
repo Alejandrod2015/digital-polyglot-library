@@ -1,433 +1,433 @@
 [
- {
-  "type": "match_meaning",
-  "word": "matita,elenco,parte,differenza",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "matita",
-     "answer": "a pencil",
-     "options": [
-      "a pencil",
-      "a list",
-      "a part",
-      "the difference"
-     ]
-    },
-    {
-     "word": "elenco",
-     "answer": "a list",
-     "options": [
-      "a pencil",
-      "a list",
-      "a part",
-      "the difference"
-     ]
-    },
-    {
-     "word": "parte",
-     "answer": "a part",
-     "options": [
-      "a pencil",
-      "a list",
-      "a part",
-      "the difference"
-     ]
-    },
-    {
-     "word": "differenza",
-     "answer": "the difference",
-     "options": [
-      "a pencil",
-      "a list",
-      "a part",
-      "the difference"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "matita,elenco,parte,differenza",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "matita",
+          "answer": "a pencil",
+          "options": [
+            "a pencil",
+            "a list",
+            "a part",
+            "the difference"
+          ]
+        },
+        {
+          "word": "elenco",
+          "answer": "a list",
+          "options": [
+            "a pencil",
+            "a list",
+            "a part",
+            "the difference"
+          ]
+        },
+        {
+          "word": "parte",
+          "answer": "a part",
+          "options": [
+            "a pencil",
+            "a list",
+            "a part",
+            "the difference"
+          ]
+        },
+        {
+          "word": "differenza",
+          "answer": "the difference",
+          "options": [
+            "a pencil",
+            "a list",
+            "a part",
+            "the difference"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "semplice",
-  "sentence": "La ricetta ha pochi ingredienti ed è molto _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "semplice",
-   "options": [
-    "semplice",
-    "difficile",
-    "cara",
-    "strana"
-   ],
-   "translation": "The recipe has few ingredients and is very _____.",
-   "optionTranslations": [
-    "simple",
-    "difficult",
-    "expensive",
-    "strange"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "La ricetta ha pochi ingredienti ed è molto semplice.",
-    "targetWord": "semplice",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "presti",
-  "sentence": "Ho dimenticato il portafoglio: mi _____ un po' di soldi?",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "presti",
-   "options": [
-    "presti",
-    "regali",
-    "chiedi",
-    "cerchi"
-   ],
-   "translation": "I forgot my wallet: can you _____ me some money?",
-   "optionTranslations": [
-    "to lend",
-    "give",
-    "ask",
-    "look for"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Ho dimenticato il portafoglio: mi presti un po' di soldi?",
-    "targetWord": "presti",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "inutile",
-  "sentence": "Questo attrezzo non funziona più: ormai è _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "inutile",
-   "options": [
-    "inutile",
-    "difficile",
-    "semplice",
-    "pesante"
-   ],
-   "translation": "This tool doesn't work anymore: by now it's _____.",
-   "optionTranslations": [
-    "useless",
-    "difficult",
-    "simple",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Questo attrezzo non funziona più: ormai è inutile.",
-    "targetWord": "inutile",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "intero",
-  "sentence": "lei ha fatto un elenco [[intero]]",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "whole",
-   "options": [
-    "whole",
-    "long",
-    "happy",
-    "right"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "lei ha fatto un elenco intero",
-    "targetWord": "intero",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "calcolare",
-  "sentence": "e poi [[calcola]] la metà di tutto.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to calculate",
-   "options": [
-    "to calculate",
-    "to change",
-    "to negotiate",
-    "to be worth"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "e poi calcola la metà di tutto.",
-    "targetWord": "calcola",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dividere",
-  "sentence": "[[Dividiamo]] in parti uguali,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to divide",
-   "options": [
-    "to divide",
-    "to open",
-    "to forget",
-    "to suggest"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Dividiamo in parti uguali,",
-    "targetWord": "Dividiamo",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "uguale",
-  "sentence": "Dividiamo in parti [[uguali]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "equal",
-   "options": [
-    "equal",
-    "sad",
-    "high or loud",
-    "warm or hot"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Dividiamo in parti uguali,",
-    "targetWord": "uguali",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "segnare",
-  "sentence": "Elisa ha [[segnato]] tutto con attenzione,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to write down",
-   "options": [
-    "to write down",
-    "to walk",
-    "to bark",
-    "to offer"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Elisa ha segnato tutto con attenzione,",
-    "targetWord": "segnato",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "attenzione",
-  "sentence": "Elisa ha segnato tutto con [[attenzione]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "attention",
-   "options": [
-    "attention",
-    "a piece of advice",
-    "a name tag",
-    "a moment"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Elisa ha segnato tutto con attenzione,",
-    "targetWord": "attenzione",
-    "language": "italian"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "crocchette",
-  "sentence": "[[Crocchette]], ventidue euro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dry dog food",
-   "options": [
-    "dry dog food",
-    "a tile",
-    "a knife",
-    "football"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Crocchette, ventidue euro.",
-    "targetWord": "Crocchette",
-    "language": "italian"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bere",
-  "sentence": "anche un caffè [[bevuto]] insieme al bar: importo,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to drink",
-   "options": [
-    "to drink",
-    "to buy",
-    "to refuse",
-    "to study"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "anche un caffè bevuto insieme al bar: importo,",
-    "targetWord": "bevuto",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "semplice",
+    "sentence": "La ricetta ha pochi ingredienti ed è molto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "semplice",
+      "options": [
+        "semplice",
+        "difficile",
+        "cara",
+        "strana"
+      ],
+      "translation": "The recipe has few ingredients and is very _____.",
+      "optionTranslations": [
+        "simple",
+        "difficult",
+        "expensive",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "La ricetta ha pochi ingredienti ed è molto semplice.",
+        "targetWord": "semplice",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "importo",
-  "sentence": "anche un caffè bevuto insieme al bar: [[importo]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the amount",
-   "options": [
-    "the amount",
-    "a screw",
-    "a short note",
-    "an office"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "anche un caffè bevuto insieme al bar: importo,",
-    "targetWord": "importo",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "presti",
+    "sentence": "Ho dimenticato il portafoglio: mi _____ un po' di soldi?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "presti",
+      "options": [
+        "presti",
+        "regali",
+        "chiedi",
+        "cerchi"
+      ],
+      "translation": "I forgot my wallet: can you _____ me some money?",
+      "optionTranslations": [
+        "lend",
+        "give",
+        "ask",
+        "look for"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Ho dimenticato il portafoglio: mi presti un po' di soldi?",
+        "targetWord": "presti",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sbagliare",
-  "sentence": "Elisa vuole cancellare la riga [[sbagliata]],",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to make a mistake",
-   "options": [
-    "to make a mistake",
-    "to work",
-    "to try",
-    "to build"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Elisa vuole cancellare la riga sbagliata,",
-    "targetWord": "sbagliata",
-    "language": "italian"
-   }
+  {
+    "type": "fill_blank",
+    "word": "inutile",
+    "sentence": "Questo attrezzo non funziona più: ormai è _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "inutile",
+      "options": [
+        "inutile",
+        "difficile",
+        "semplice",
+        "pesante"
+      ],
+      "translation": "This tool doesn't work anymore: by now it's _____.",
+      "optionTranslations": [
+        "useless",
+        "difficult",
+        "simple",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Questo attrezzo non funziona più: ormai è inutile.",
+        "targetWord": "inutile",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cancellare",
-  "sentence": "Elisa vuole [[cancellare]] la riga sbagliata,",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to erase",
-   "options": [
-    "to erase",
-    "to pass",
-    "to push",
-    "to look at"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "Elisa vuole cancellare la riga sbagliata,",
-    "targetWord": "cancellare",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "intero",
+    "sentence": "lei ha fatto un elenco [[intero]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "long",
+        "happy",
+        "right"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "lei ha fatto un elenco intero",
+        "targetWord": "intero",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "gomma",
-  "sentence": "ma non trova la [[gomma]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an eraser",
-   "options": [
-    "an eraser",
-    "a key",
-    "a sock",
-    "a researcher"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "ma non trova la gomma.",
-    "targetWord": "gomma",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "calcolare",
+    "sentence": "e poi [[calcola]] la metà di tutto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to calculate",
+      "options": [
+        "to calculate",
+        "to change",
+        "to negotiate",
+        "to be worth"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "e poi calcola la metà di tutto.",
+        "targetWord": "calcola",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nascondere",
-  "sentence": "e [[nasconde]] il telefono.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hide",
-   "options": [
-    "to hide",
-    "to take off",
-    "to feel",
-    "to sell"
-   ],
-   "audioClip": {
-    "storySlug": "anche-il-caffe",
-    "storySource": "user",
-    "sentence": "e nasconde il telefono.",
-    "targetWord": "nasconde",
-    "language": "italian"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dividere",
+    "sentence": "[[Dividiamo]] in parti uguali,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to divide",
+      "options": [
+        "to divide",
+        "to open",
+        "to forget",
+        "to suggest"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Dividiamo in parti uguali,",
+        "targetWord": "Dividiamo",
+        "language": "italian"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "uguale",
+    "sentence": "Dividiamo in parti [[uguali]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "equal",
+      "options": [
+        "equal",
+        "sad",
+        "high or loud",
+        "warm or hot"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Dividiamo in parti uguali,",
+        "targetWord": "uguali",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segnare",
+    "sentence": "Elisa ha [[segnato]] tutto con attenzione,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to write down",
+      "options": [
+        "to write down",
+        "to walk",
+        "to bark",
+        "to offer"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Elisa ha segnato tutto con attenzione,",
+        "targetWord": "segnato",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "attenzione",
+    "sentence": "Elisa ha segnato tutto con [[attenzione]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "care",
+      "options": [
+        "care",
+        "advice",
+        "luck",
+        "haste"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Elisa ha segnato tutto con attenzione,",
+        "targetWord": "attenzione",
+        "language": "italian"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crocchette",
+    "sentence": "[[Crocchette]], ventidue euro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dry dog food",
+      "options": [
+        "dry dog food",
+        "a tile",
+        "a knife",
+        "football"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Crocchette, ventidue euro.",
+        "targetWord": "Crocchette",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bere",
+    "sentence": "anche un caffè [[bevuto]] insieme al bar: importo,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to drink",
+      "options": [
+        "to drink",
+        "to buy",
+        "to refuse",
+        "to study"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "anche un caffè bevuto insieme al bar: importo,",
+        "targetWord": "bevuto",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "importo",
+    "sentence": "anche un caffè bevuto insieme al bar: [[importo]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the amount",
+      "options": [
+        "the amount",
+        "the screw",
+        "the note",
+        "the office"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "anche un caffè bevuto insieme al bar: importo,",
+        "targetWord": "importo",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sbagliare",
+    "sentence": "Elisa vuole cancellare la riga [[sbagliata]],",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make a mistake",
+      "options": [
+        "to make a mistake",
+        "to work",
+        "to try",
+        "to build"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Elisa vuole cancellare la riga sbagliata,",
+        "targetWord": "sbagliata",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cancellare",
+    "sentence": "Elisa vuole [[cancellare]] la riga sbagliata,",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to erase",
+      "options": [
+        "to erase",
+        "to pass",
+        "to push",
+        "to look at"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "Elisa vuole cancellare la riga sbagliata,",
+        "targetWord": "cancellare",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gomma",
+    "sentence": "ma non trova la [[gomma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an eraser",
+      "options": [
+        "an eraser",
+        "a key",
+        "a sock",
+        "a researcher"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "ma non trova la gomma.",
+        "targetWord": "gomma",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nascondere",
+    "sentence": "e [[nasconde]] il telefono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hide",
+      "options": [
+        "to hide",
+        "to take off",
+        "to feel",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "anche-il-caffe",
+        "storySource": "user",
+        "sentence": "e nasconde il telefono.",
+        "targetWord": "nasconde",
+        "language": "italian"
+      }
+    },
+    "featured": false
+  }
 ]

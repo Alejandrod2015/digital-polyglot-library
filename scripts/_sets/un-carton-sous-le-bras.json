@@ -399,9 +399,9 @@
     "sentence": "Il a défendu son idée [[jusqu'au bout]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to the very end",
+      "answer": "right to the end",
       "options": [
-        "to the very end",
+        "right to the end",
         "for only a minute",
         "without any reason",
         "by pure luck"

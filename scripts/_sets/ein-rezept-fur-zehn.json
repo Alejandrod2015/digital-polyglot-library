@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "das Rezept,die Köchin,die Schürze,der Löffel",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "das Rezept",
-     "answer": "a recipe",
-     "options": [
-      "a recipe",
-      "a female cook",
-      "an apron",
-      "a spoon"
-     ]
-    },
-    {
-     "word": "die Köchin",
-     "answer": "a female cook",
-     "options": [
-      "a recipe",
-      "a female cook",
-      "an apron",
-      "a spoon"
-     ]
-    },
-    {
-     "word": "die Schürze",
-     "answer": "an apron",
-     "options": [
-      "a recipe",
-      "a female cook",
-      "an apron",
-      "a spoon"
-     ]
-    },
-    {
-     "word": "der Löffel",
-     "answer": "a spoon",
-     "options": [
-      "a recipe",
-      "a female cook",
-      "an apron",
-      "a spoon"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "das Rezept,die Köchin,die Schürze,der Löffel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Rezept",
+          "answer": "a recipe",
+          "options": [
+            "a recipe",
+            "a female cook",
+            "an apron",
+            "a spoon"
+          ]
+        },
+        {
+          "word": "die Köchin",
+          "answer": "a female cook",
+          "options": [
+            "a recipe",
+            "a female cook",
+            "an apron",
+            "a spoon"
+          ]
+        },
+        {
+          "word": "die Schürze",
+          "answer": "an apron",
+          "options": [
+            "a recipe",
+            "a female cook",
+            "an apron",
+            "a spoon"
+          ]
+        },
+        {
+          "word": "der Löffel",
+          "answer": "a spoon",
+          "options": [
+            "a recipe",
+            "a female cook",
+            "an apron",
+            "a spoon"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "billig",
-  "sentence": "Die Suppe ist [[billig]] und warm.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cheap",
-   "options": [
-    "cheap",
-    "expensive",
-    "cold",
-    "tasty"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Suppe ist billig und warm.",
-    "targetWord": "billig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Donnerstag",
-  "sentence": "Sie kocht am [[Donnerstag]] für alle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Thursday",
-   "options": [
-    "Thursday",
-    "Friday",
-    "Sunday",
-    "Monday"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Sie kocht am Donnerstag für alle.",
-    "targetWord": "Donnerstag",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mild",
-  "sentence": "Die Suppe ist zu [[mild]]”, meint die Köchin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "mild",
-   "options": [
-    "mild",
-    "hot",
-    "cold",
-    "sweet"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Suppe ist zu mild”, meint die Köchin.",
-    "targetWord": "mild",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schwimmt",
-  "sentence": "“Mein Rezept [[schwimmt]]!”, ruft sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "is floating",
-   "options": [
-    "is floating",
-    "is burning",
-    "is falling",
-    "is missing"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "“Mein Rezept schwimmt!”, ruft sie.",
-    "targetWord": "schwimmt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zwei",
-  "sentence": "Mein Rezept ist nur für [[zwei]]”, antwortet sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "two",
-   "options": [
-    "two",
-    "three",
-    "four",
-    "ten"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Mein Rezept ist nur für zwei”, antwortet sie.",
-    "targetWord": "zwei",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Flecken",
-  "sentence": "Sie trägt eine schwarze Schürze mit vielen [[Flecken]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stains",
-   "options": [
-    "stains",
-    "pockets",
-    "buttons",
-    "colors"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Sie trägt eine schwarze Schürze mit vielen Flecken.",
-    "targetWord": "Flecken",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Töpfe",
-  "sentence": "Drei riesige [[Töpfe]] sind schon da.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pots",
-   "options": [
-    "pots",
-    "plates",
-    "spoons",
-    "glasses"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Drei riesige Töpfe sind schon da.",
-    "targetWord": "Töpfe",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rechnen",
-  "sentence": "Wir [[rechnen]] einfach mal fünf”, sagt die Köchin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "calculate",
-   "options": [
-    "calculate",
-    "cook",
-    "wait",
-    "ask"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Wir rechnen einfach mal fünf”, sagt die Köchin.",
-    "targetWord": "rechnen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mal",
-  "sentence": "Wir rechnen einfach [[mal]] fünf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "times",
-   "options": [
-    "times",
-    "minus",
-    "plus",
-    "over"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Wir rechnen einfach mal fünf.",
-    "targetWord": "mal",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "spitzes",
-  "sentence": "Die Köchin gibt ihr zuerst ein [[spitzes]] Messer.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sharp",
-   "options": [
-    "sharp",
-    "heavy",
-    "old",
-    "small"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Köchin gibt ihr zuerst ein spitzes Messer.",
-    "targetWord": "spitzes",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "scharf",
-  "sentence": "Die Zwiebeln sind [[scharf]], und ihre Augen tränen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "strong",
-   "options": [
-    "strong",
-    "sweet",
-    "cold",
-    "soft"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Zwiebeln sind scharf, und ihre Augen tränen.",
-    "targetWord": "scharf",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "billig",
+    "sentence": "Die Suppe ist [[billig]] und warm.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheap",
+      "options": [
+        "cheap",
+        "thick",
+        "salty",
+        "tasty"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Suppe ist billig und warm.",
+        "targetWord": "billig",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tränen",
-  "sentence": "Die Zwiebeln sind scharf, und ihre Augen [[tränen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "water",
-   "options": [
-    "water",
-    "shine",
-    "close",
-    "hurt"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Zwiebeln sind scharf, und ihre Augen tränen.",
-    "targetWord": "tränen",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Donnerstag",
+    "sentence": "Sie kocht am [[Donnerstag]] für alle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Thursday",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Sunday",
+        "Monday"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Sie kocht am Donnerstag für alle.",
+        "targetWord": "Donnerstag",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "stolz",
-  "sentence": "“Ich bin ein bisschen [[stolz]]”, sagt sie leise.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "proud",
-   "options": [
-    "proud",
-    "tired",
-    "sad",
-    "angry"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "“Ich bin ein bisschen stolz”, sagt sie leise.",
-    "targetWord": "stolz",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "mild",
+    "sentence": "Die Suppe ist zu [[mild]]”, meint die Köchin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mild",
+      "options": [
+        "mild",
+        "hot",
+        "cold",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Suppe ist zu mild”, meint die Köchin.",
+        "targetWord": "mild",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "rührt",
-  "sentence": "Sie _____ ganz langsam.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rührt",
-   "options": [
-    "rührt",
-    "schneidet",
-    "würzt",
-    "probiert"
-   ],
-   "translation": "She _____ very slowly.",
-   "optionTranslations": [
-    "stirs",
-    "cuts",
-    "seasons",
-    "tastes"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Sie rührt ganz langsam.",
-    "targetWord": "rührt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "schwimmt",
+    "sentence": "“Mein Rezept [[schwimmt]]!”, ruft sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is floating",
+      "options": [
+        "is floating",
+        "is burning",
+        "is falling",
+        "is missing"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "“Mein Rezept schwimmt!”, ruft sie.",
+        "targetWord": "schwimmt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "probiert",
-  "sentence": "Die Köchin _____ die Suppe mit einem großen Löffel.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "probiert",
-   "options": [
-    "probiert",
-    "kocht",
-    "würzt",
-    "sucht"
-   ],
-   "translation": "The cook _____ the soup with a big spoon.",
-   "optionTranslations": [
-    "tastes",
-    "cooks",
-    "seasons",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Die Köchin probiert die Suppe mit einem großen Löffel.",
-    "targetWord": "probiert",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "zwei",
+    "sentence": "Mein Rezept ist nur für [[zwei]]”, antwortet sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "two",
+      "options": [
+        "two",
+        "three",
+        "four",
+        "ten"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Mein Rezept ist nur für zwei”, antwortet sie.",
+        "targetWord": "zwei",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "rutscht",
-  "sentence": "Der Zettel mit dem Rezept _____ in die Suppe.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rutscht",
-   "options": [
-    "rutscht",
-    "fällt",
-    "schwimmt",
-    "liegt"
-   ],
-   "translation": "The note with the recipe _____ into the soup.",
-   "optionTranslations": [
-    "slips",
-    "falls",
-    "floats",
-    "lies"
-   ],
-   "audioClip": {
-    "storySlug": "ein-rezept-fur-zehn",
-    "storySource": "user",
-    "sentence": "Der Zettel mit dem Rezept rutscht in die Suppe.",
-    "targetWord": "rutscht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Flecken",
+    "sentence": "Sie trägt eine schwarze Schürze mit vielen [[Flecken]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stains",
+      "options": [
+        "stains",
+        "pockets",
+        "buttons",
+        "colors"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Sie trägt eine schwarze Schürze mit vielen Flecken.",
+        "targetWord": "Flecken",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "Töpfe",
+    "sentence": "Drei riesige [[Töpfe]] sind schon da.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pots",
+      "options": [
+        "pots",
+        "plates",
+        "spoons",
+        "glasses"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Drei riesige Töpfe sind schon da.",
+        "targetWord": "Töpfe",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rechnen",
+    "sentence": "Wir [[rechnen]] einfach mal fünf”, sagt die Köchin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calculate",
+      "options": [
+        "calculate",
+        "cook",
+        "wait",
+        "ask"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Wir rechnen einfach mal fünf”, sagt die Köchin.",
+        "targetWord": "rechnen",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mal",
+    "sentence": "Wir rechnen einfach [[mal]] fünf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "times",
+      "options": [
+        "times",
+        "minus",
+        "plus",
+        "over"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Wir rechnen einfach mal fünf.",
+        "targetWord": "mal",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spitzes",
+    "sentence": "Die Köchin gibt ihr zuerst ein [[spitzes]] Messer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sharp",
+      "options": [
+        "sharp",
+        "heavy",
+        "old",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Köchin gibt ihr zuerst ein spitzes Messer.",
+        "targetWord": "spitzes",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scharf",
+    "sentence": "Die Zwiebeln sind [[scharf]], und ihre Augen tränen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strong",
+      "options": [
+        "strong",
+        "sweet",
+        "cold",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Zwiebeln sind scharf, und ihre Augen tränen.",
+        "targetWord": "scharf",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tränen",
+    "sentence": "Die Zwiebeln sind scharf, und ihre Augen [[tränen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "shine",
+        "close",
+        "hurt"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Zwiebeln sind scharf, und ihre Augen tränen.",
+        "targetWord": "tränen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stolz",
+    "sentence": "“Ich bin ein bisschen [[stolz]]”, sagt sie leise.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud",
+      "options": [
+        "proud",
+        "tired",
+        "sad",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "“Ich bin ein bisschen stolz”, sagt sie leise.",
+        "targetWord": "stolz",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rührt",
+    "sentence": "Sie _____ ganz langsam.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rührt",
+      "options": [
+        "rührt",
+        "schneidet",
+        "würzt",
+        "probiert"
+      ],
+      "translation": "She _____ very slowly.",
+      "optionTranslations": [
+        "stirs",
+        "cuts",
+        "seasons",
+        "tastes"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Sie rührt ganz langsam.",
+        "targetWord": "rührt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "probiert",
+    "sentence": "Die Köchin _____ die Suppe mit einem großen Löffel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "probiert",
+      "options": [
+        "probiert",
+        "kocht",
+        "würzt",
+        "sucht"
+      ],
+      "translation": "The cook _____ the soup with a big spoon.",
+      "optionTranslations": [
+        "tastes",
+        "cooks",
+        "seasons",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Die Köchin probiert die Suppe mit einem großen Löffel.",
+        "targetWord": "probiert",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rutscht",
+    "sentence": "Der Zettel mit dem Rezept _____ in die Suppe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rutscht",
+      "options": [
+        "rutscht",
+        "fällt",
+        "schwimmt",
+        "liegt"
+      ],
+      "translation": "The note with the recipe _____ into the soup.",
+      "optionTranslations": [
+        "slips",
+        "falls",
+        "floats",
+        "lies"
+      ],
+      "audioClip": {
+        "storySlug": "ein-rezept-fur-zehn",
+        "storySource": "user",
+        "sentence": "Der Zettel mit dem Rezept rutscht in die Suppe.",
+        "targetWord": "rutscht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

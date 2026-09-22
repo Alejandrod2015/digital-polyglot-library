@@ -119,14 +119,14 @@
       "answer": "rápido",
       "options": [
         "rápido",
-        "lento",
+        "raro",
         "caro",
         "difícil"
       ],
       "translation": "It came out in two minutes: it was all very _____.",
       "optionTranslations": [
         "quick",
-        "slow",
+        "odd",
         "expensive",
         "hard"
       ],
@@ -225,7 +225,7 @@
       "answer": "to remember",
       "options": [
         "to remember",
-        "to forget",
+        "to paint",
         "to describe",
         "to leave"
       ],
@@ -271,7 +271,7 @@
       "answer": "hard",
       "options": [
         "hard",
-        "easy",
+        "new",
         "rude",
         "common"
       ],

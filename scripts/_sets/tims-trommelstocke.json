@@ -1,432 +1,432 @@
 [
- {
-  "type": "match_meaning",
-  "word": "das Lied,der Schulfreund,das Schlagzeug,das Klavier",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "das Lied",
-     "answer": "a song",
-     "options": [
-      "a song",
-      "a school friend",
-      "a drum kit",
-      "a piano"
-     ]
-    },
-    {
-     "word": "der Schulfreund",
-     "answer": "a school friend",
-     "options": [
-      "a song",
-      "a school friend",
-      "a drum kit",
-      "a piano"
-     ]
-    },
-    {
-     "word": "das Schlagzeug",
-     "answer": "a drum kit",
-     "options": [
-      "a song",
-      "a school friend",
-      "a drum kit",
-      "a piano"
-     ]
-    },
-    {
-     "word": "das Klavier",
-     "answer": "a piano",
-     "options": [
-      "a song",
-      "a school friend",
-      "a drum kit",
-      "a piano"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "das Lied,der Schulfreund,das Schlagzeug,das Klavier",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Lied",
+          "answer": "a song",
+          "options": [
+            "a song",
+            "a school friend",
+            "a drum kit",
+            "a piano"
+          ]
+        },
+        {
+          "word": "der Schulfreund",
+          "answer": "a school friend",
+          "options": [
+            "a song",
+            "a school friend",
+            "a drum kit",
+            "a piano"
+          ]
+        },
+        {
+          "word": "das Schlagzeug",
+          "answer": "a drum kit",
+          "options": [
+            "a song",
+            "a school friend",
+            "a drum kit",
+            "a piano"
+          ]
+        },
+        {
+          "word": "das Klavier",
+          "answer": "a piano",
+          "options": [
+            "a song",
+            "a school friend",
+            "a drum kit",
+            "a piano"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fünfzehn",
-  "sentence": "Ihr altes Lied ist [[fünfzehn]] Jahre alt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fifteen",
-   "options": [
-    "fifteen",
-    "five",
-    "fifty",
-    "twelve"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Ihr altes Lied ist fünfzehn Jahre alt.",
-    "targetWord": "fünfzehn",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Sängerin",
-  "sentence": "Die [[Sängerin]] von früher singt es nie mehr.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "singer",
-   "options": [
-    "singer",
-    "teacher",
-    "cook",
-    "neighbor"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Die Sängerin von früher singt es nie mehr.",
-    "targetWord": "Sängerin",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "trinkt",
-  "sentence": "Sie [[trinkt]] heute Tee in seiner Küche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "drinks",
-   "options": [
-    "drinks",
-    "cooks",
-    "sells",
-    "writes"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie trinkt heute Tee in seiner Küche.",
-    "targetWord": "trinkt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Trommelstöcken",
-  "sentence": "Sein Schulfreund kommt mit zwei [[Trommelstöcken]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "drumsticks",
-   "options": [
-    "drumsticks",
-    "glasses",
-    "keys",
-    "spoons"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sein Schulfreund kommt mit zwei Trommelstöcken.",
-    "targetWord": "Trommelstöcken",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Stimme",
-  "sentence": "Ihre [[Stimme]] ist ganz leise.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a voice",
-   "options": [
-    "a voice",
-    "a name",
-    "a song",
-    "a face"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Ihre Stimme ist ganz leise.",
-    "targetWord": "Stimme",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Geburtstag",
-  "sentence": "“Er hat am Samstag [[Geburtstag]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "birthday",
-   "options": [
-    "birthday",
-    "a meeting",
-    "a game",
-    "a trip"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "“Er hat am Samstag Geburtstag.",
-    "targetWord": "Geburtstag",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "flüstert",
-  "sentence": "“Die Band spielt wieder, wie früher!”, [[flüstert]] der Freund.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "whispers",
-   "options": [
-    "whispers",
-    "shouts",
-    "sings",
-    "asks"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "“Die Band spielt wieder, wie früher!”, flüstert der Freund.",
-    "targetWord": "flüstert",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Wer",
-  "sentence": "“[[Wer]] spielt denn?”, fragt sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Who",
-   "options": [
-    "Who",
-    "What",
-    "When",
-    "Why"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "“Wer spielt denn?”, fragt sie.",
-    "targetWord": "Wer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "singt",
-  "sentence": "Sie [[singt]] tief und ruhig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sings",
-   "options": [
-    "sings",
-    "dances",
-    "plays",
-    "whispers"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie singt tief und ruhig.",
-    "targetWord": "singt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "plötzlich",
-  "sentence": "Sie nickt [[plötzlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "suddenly",
-   "options": [
-    "suddenly",
-    "never",
-    "slowly",
-    "sadly"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie nickt plötzlich.",
-    "targetWord": "plötzlich",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nervös",
-  "sentence": "Sie dreht [[nervös]] ihre Tasse.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nervously",
-   "options": [
-    "nervously",
-    "happily",
-    "slowly",
-    "loudly"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie dreht nervös ihre Tasse.",
-    "targetWord": "nervös",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "fünfzehn",
+    "sentence": "Ihr altes Lied ist [[fünfzehn]] Jahre alt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fifteen",
+      "options": [
+        "fifteen",
+        "five",
+        "fifty",
+        "twelve"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Ihr altes Lied ist fünfzehn Jahre alt.",
+        "targetWord": "fünfzehn",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "hinter",
-  "sentence": "Der Freund versteckt die Stöcke [[hinter]] dem Rücken.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "behind",
-   "options": [
-    "behind",
-    "next to",
-    "under",
-    "in front of"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Der Freund versteckt die Stöcke hinter dem Rücken.",
-    "targetWord": "hinter",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Sängerin",
+    "sentence": "Die [[Sängerin]] von früher singt es nie mehr.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "singer",
+      "options": [
+        "singer",
+        "teacher",
+        "cook",
+        "neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Die Sängerin von früher singt es nie mehr.",
+        "targetWord": "Sängerin",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Rücken",
-  "sentence": "Der Freund versteckt die Stöcke hinter dem [[Rücken]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "back",
-   "options": [
-    "back",
-    "table",
-    "chair",
-    "door"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Der Freund versteckt die Stöcke hinter dem Rücken.",
-    "targetWord": "Rücken",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "trinkt",
+    "sentence": "Sie [[trinkt]] heute Tee in seiner Küche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "drinks",
+      "options": [
+        "drinks",
+        "cooks",
+        "sells",
+        "writes"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie trinkt heute Tee in seiner Küche.",
+        "targetWord": "trinkt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "dreht",
-  "sentence": "Sie _____ nervös ihre Tasse.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dreht",
-   "options": [
-    "dreht",
-    "hält",
-    "sucht",
-    "zeigt"
-   ],
-   "translation": "She _____ her cup nervously.",
-   "optionTranslations": [
-    "turns",
-    "holds",
-    "looks for",
-    "shows"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie dreht nervös ihre Tasse.",
-    "targetWord": "dreht",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Trommelstöcken",
+    "sentence": "Sein Schulfreund kommt mit zwei [[Trommelstöcken]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "drumsticks",
+      "options": [
+        "drumsticks",
+        "glasses",
+        "keys",
+        "spoons"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sein Schulfreund kommt mit zwei Trommelstöcken.",
+        "targetWord": "Trommelstöcken",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "nickt",
-  "sentence": "Sie _____ plötzlich.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "nickt",
-   "options": [
-    "nickt",
-    "lacht",
-    "weint",
-    "singt"
-   ],
-   "translation": "She suddenly _____.",
-   "optionTranslations": [
-    "nods",
-    "laughs",
-    "cries",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Sie nickt plötzlich.",
-    "targetWord": "nickt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Stimme",
+    "sentence": "Ihre [[Stimme]] ist ganz leise.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a voice",
+      "options": [
+        "a voice",
+        "a name",
+        "a song",
+        "a face"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Ihre Stimme ist ganz leise.",
+        "targetWord": "Stimme",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "still",
-  "sentence": "Ihre Stimme ist seit Jahren _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "still",
-   "options": [
-    "still",
-    "laut",
-    "neu",
-    "jung"
-   ],
-   "translation": "Her voice has been _____ for years.",
-   "optionTranslations": [
-    "silent",
-    "loud",
-    "new",
-    "young"
-   ],
-   "audioClip": {
-    "storySlug": "tims-trommelstocke",
-    "storySource": "user",
-    "sentence": "Ihre Stimme ist seit Jahren still.",
-    "targetWord": "still",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "Geburtstag",
+    "sentence": "“Er hat am Samstag [[Geburtstag]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a birthday",
+      "options": [
+        "a birthday",
+        "a meeting",
+        "a game",
+        "a trip"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "“Er hat am Samstag Geburtstag.",
+        "targetWord": "Geburtstag",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "flüstert",
+    "sentence": "“Die Band spielt wieder, wie früher!”, [[flüstert]] der Freund.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whispers",
+      "options": [
+        "whispers",
+        "shouts",
+        "sings",
+        "asks"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "“Die Band spielt wieder, wie früher!”, flüstert der Freund.",
+        "targetWord": "flüstert",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Wer",
+    "sentence": "“[[Wer]] spielt denn?”, fragt sie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Who",
+      "options": [
+        "Who",
+        "What",
+        "When",
+        "Why"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "“Wer spielt denn?”, fragt sie.",
+        "targetWord": "Wer",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "singt",
+    "sentence": "Sie [[singt]] tief und ruhig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sings",
+      "options": [
+        "sings",
+        "dances",
+        "plays",
+        "whispers"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie singt tief und ruhig.",
+        "targetWord": "singt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plötzlich",
+    "sentence": "Sie nickt [[plötzlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "never",
+        "slowly",
+        "sadly"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie nickt plötzlich.",
+        "targetWord": "plötzlich",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nervös",
+    "sentence": "Sie dreht [[nervös]] ihre Tasse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nervously",
+      "options": [
+        "nervously",
+        "happily",
+        "slowly",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie dreht nervös ihre Tasse.",
+        "targetWord": "nervös",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hinter",
+    "sentence": "Der Freund versteckt die Stöcke [[hinter]] dem Rücken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "next to",
+        "under",
+        "in front of"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Der Freund versteckt die Stöcke hinter dem Rücken.",
+        "targetWord": "hinter",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Rücken",
+    "sentence": "Der Freund versteckt die Stöcke hinter dem [[Rücken]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "back",
+      "options": [
+        "back",
+        "table",
+        "chair",
+        "door"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Der Freund versteckt die Stöcke hinter dem Rücken.",
+        "targetWord": "Rücken",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dreht",
+    "sentence": "Sie _____ nervös ihre Tasse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dreht",
+      "options": [
+        "dreht",
+        "hält",
+        "sucht",
+        "zeigt"
+      ],
+      "translation": "She _____ her cup nervously.",
+      "optionTranslations": [
+        "turns",
+        "holds",
+        "looks for",
+        "shows"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie dreht nervös ihre Tasse.",
+        "targetWord": "dreht",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "nickt",
+    "sentence": "Sie _____ plötzlich.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nickt",
+      "options": [
+        "nickt",
+        "lacht",
+        "weint",
+        "singt"
+      ],
+      "translation": "She suddenly _____.",
+      "optionTranslations": [
+        "nods",
+        "laughs",
+        "cries",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Sie nickt plötzlich.",
+        "targetWord": "nickt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "still",
+    "sentence": "Ihre Stimme ist seit Jahren _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "still",
+      "options": [
+        "still",
+        "laut",
+        "neu",
+        "jung"
+      ],
+      "translation": "Her voice has been _____ for years.",
+      "optionTranslations": [
+        "silent",
+        "loud",
+        "new",
+        "young"
+      ],
+      "audioClip": {
+        "storySlug": "tims-trommelstocke",
+        "storySource": "user",
+        "sentence": "Ihre Stimme ist seit Jahren still.",
+        "targetWord": "still",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
 ]

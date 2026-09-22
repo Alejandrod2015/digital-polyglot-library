@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "urgencia",
+    "sentence": "La [[urgencia]] se hereda hacia abajo, de quien manda a quien trabaja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "urgency",
+      "options": [
+        "urgency",
+        "money",
+        "silence",
+        "boredom"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "La urgencia se hereda hacia abajo, de quien manda a quien trabaja.",
+        "targetWord": "urgencia",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6331662ba69bf453ecde.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heredar",
+    "sentence": "La urgencia se [[hereda]] hacia abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to inherit",
+      "options": [
+        "to inherit",
+        "to hide",
+        "to forget",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "La urgencia se hereda hacia abajo.",
+        "targetWord": "hereda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a5dc234e1af7aa22794a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mandar",
+    "sentence": "Se hereda hacia abajo, de quien [[manda]] a quien trabaja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be in charge",
+      "options": [
+        "to be in charge",
+        "to be on time",
+        "to be away",
+        "to be new"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Se hereda hacia abajo, de quien manda a quien trabaja.",
+        "targetWord": "manda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/063516653995717c77d9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acabar",
+    "sentence": "El retrasado [[acababa]] siendo el último que tocaba la pared.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to end up",
+      "options": [
+        "to end up",
+        "to give up",
+        "to show up",
+        "to keep on"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "El retrasado acababa siendo el último que tocaba la pared.",
+        "targetWord": "acababa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/759e80d4c7b173cf14ff.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "retrasado",
+    "sentence": "Y el [[retrasado]] acababa siendo el último que tocaba la pared.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind schedule",
+      "options": [
+        "behind schedule",
+        "in a hurry",
+        "on holiday",
+        "out of work"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Y el retrasado acababa siendo el último que tocaba la pared.",
+        "targetWord": "retrasado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/02d9820fe8a60f3434de.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hasta cierto punto",
+    "sentence": "[[Hasta cierto punto]], es una costumbre y no una ley.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "up to a point",
+      "options": [
+        "up to a point",
+        "at the same time",
+        "in other words",
+        "on the other hand"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Hasta cierto punto, es una costumbre y no una ley.",
+        "targetWord": "Hasta cierto punto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3e44a08dc3cc0454a249.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por lo pronto",
+    "sentence": "[[Por lo pronto]] tiene una semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for now",
+      "options": [
+        "for now",
+        "for free",
+        "for once",
+        "for good"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Por lo pronto tiene una semana.",
+        "targetWord": "Por lo pronto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/db0aa06a5267412a9def.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esperas",
+    "sentence": "Si _____ diez minutos, te atiendo yo misma.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esperas",
+      "options": [
+        "esperas",
+        "corres",
+        "cantas",
+        "cocinas"
+      ],
+      "translation": "If you _____ ten minutes, I will serve you myself.",
+      "optionTranslations": [
+        "wait",
+        "run",
+        "sing",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Si esperas diez minutos, te atiendo yo misma.",
+        "targetWord": "esperas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59e4821eaef5a308.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "discutir",
+    "sentence": "No quiero _____ contigo; tienes razón y ya está.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "discutir",
+      "options": [
+        "discutir",
+        "cenar",
+        "viajar",
+        "bailar"
+      ],
+      "translation": "I don't want to _____ with you; you are right and that's it.",
+      "optionTranslations": [
+        "argue",
+        "have dinner",
+        "travel",
+        "dance"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "No quiero discutir contigo; tienes razón y ya está.",
+        "targetWord": "discutir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e279c0703d976bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "pared,ley,material,desorden",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pared",
+          "answer": "a wall",
+          "options": [
+            "a wall",
+            "a law",
+            "materials",
+            "a mess"
+          ]
+        },
+        {
+          "word": "ley",
+          "answer": "a law",
+          "options": [
+            "a wall",
+            "a law",
+            "materials",
+            "a mess"
+          ]
+        },
+        {
+          "word": "material",
+          "answer": "materials",
+          "options": [
+            "a wall",
+            "a law",
+            "materials",
+            "a mess"
+          ]
+        },
+        {
+          "word": "desorden",
+          "answer": "a mess",
+          "options": [
+            "a wall",
+            "a law",
+            "materials",
+            "a mess"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "determinar",
+    "sentence": "Tú [[determina]] la fecha y mándala tú.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to set",
+      "options": [
+        "to set",
+        "to skip",
+        "to guess",
+        "to move"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Tú determina la fecha y mándala tú.",
+        "targetWord": "determina",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/53e0df54c34a5b02b54d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Empieza a escribir [[despacio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "again",
+        "alone",
+        "badly"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "Empieza a escribir despacio.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3b0aa951faf67132e130.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "media hora",
+    "sentence": "La respuesta llega en [[media hora]] y acepta la fecha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half an hour",
+      "options": [
+        "half an hour",
+        "half a day",
+        "a whole week",
+        "a few seconds"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "La respuesta llega en media hora y acepta la fecha.",
+        "targetWord": "media hora",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/56de83a2399c71a74aef.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde el principio",
+    "sentence": "El retraso era suyo [[desde el principio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from the start",
+      "options": [
+        "from the start",
+        "for a while",
+        "without a doubt",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "El retraso era suyo desde el principio.",
+        "targetWord": "desde el principio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f5a0799033c5f041955c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacia abajo",
+    "sentence": "La urgencia se hereda [[hacia abajo]], de quien manda a quien trabaja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downwards",
+      "options": [
+        "downwards",
+        "sideways",
+        "outwards",
+        "backwards"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "La urgencia se hereda hacia abajo, de quien manda a quien trabaja.",
+        "targetWord": "hacia abajo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e1d0343cf777ab7ddafc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tocaba",
+    "sentence": "El cartel decía que nadie _____ los cuadros con las manos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tocaba",
+      "options": [
+        "tocaba",
+        "contaba",
+        "pintaba",
+        "miraba"
+      ],
+      "translation": "The sign said that nobody _____ the paintings with their hands.",
+      "optionTranslations": [
+        "touched",
+        "counted",
+        "painted",
+        "looked at"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "El cartel decía que nadie tocaba los cuadros con las manos.",
+        "targetWord": "tocaba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e78146ed0e516aac.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "encendido",
+    "sentence": "El ordenador sigue _____ toda la noche, con la pantalla azul.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encendido",
+      "options": [
+        "encendido",
+        "roto",
+        "vacío",
+        "limpio"
+      ],
+      "translation": "The computer stays _____ all night, with the screen blue.",
+      "optionTranslations": [
+        "switched on",
+        "broken",
+        "empty",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "la-ventana-del-rellano",
+        "storySource": "user",
+        "sentence": "El ordenador sigue encendido toda la noche, con la pantalla azul.",
+        "targetWord": "encendido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46e2166ac93ab876.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -29,9 +29,9 @@
     "sentence": "Se juntaban a echar [[relajo]] hasta que dolía la panza.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "rowdy fun and joking",
+      "answer": "a rowdy good time",
       "options": [
-        "rowdy fun and joking",
+        "a rowdy good time",
         "a serious meeting",
         "a long nap",
         "a quiet dinner"

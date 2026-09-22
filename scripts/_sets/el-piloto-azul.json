@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "piloto",
+    "sentence": "Mira el [[piloto]] azul, que huele a cerrado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pilot light",
+      "options": [
+        "the pilot light",
+        "the front door",
+        "the paint",
+        "the pipe"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Mira el piloto azul, que huele a cerrado.",
+        "targetWord": "piloto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6c263ce6cf65bfd185e9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "presión",
+    "sentence": "Si se apaga, miras la [[presión]] y ya está.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pressure",
+      "options": [
+        "the pressure",
+        "the presence",
+        "the price",
+        "the clock"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Si se apaga, miras la presión y ya está.",
+        "targetWord": "presión",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5bf90bfdd486b41079ef.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asentir",
+    "sentence": "Ella [[asiente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to nod",
+      "options": [
+        "to nod",
+        "to sigh",
+        "to frown",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Ella asiente.",
+        "targetWord": "asiente",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/61c1924ff82043a0485f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señalar",
+    "sentence": "Lo cuenta otra vez, [[señalando]] cada tubo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to point at",
+      "options": [
+        "to point at",
+        "to clean",
+        "to cut",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Lo cuenta otra vez, señalando cada tubo.",
+        "targetWord": "señalando",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c2edf3e4312fde25cda1.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganarse la vida",
+    "sentence": "Ella [[se gana la vida]] con las palabras y ahora no le llegan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to earn a living",
+      "options": [
+        "to earn a living",
+        "to have fun",
+        "to keep busy",
+        "to get by"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Ella se gana la vida con las palabras y ahora no le llegan.",
+        "targetWord": "se gana la vida",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8cd92ee7527487e24246.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "es decir",
+    "sentence": "Aunque nadie lo lee, [[es decir]], nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that is to say",
+      "options": [
+        "that is to say",
+        "by the way",
+        "on the other hand",
+        "as a rule"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Aunque nadie lo lee, es decir, nadie.",
+        "targetWord": "es decir",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/620579d326b43ad5162e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin volverse",
+    "sentence": "Lo dice [[sin volverse]], mirando el piloto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without turning round",
+      "options": [
+        "without turning round",
+        "without stopping",
+        "without smiling",
+        "without thinking"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Lo dice sin volverse, mirando el piloto.",
+        "targetWord": "sin volverse",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f204c32599a4b54ce6ec.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aprieta",
+    "sentence": "Ella _____ el bolígrafo con fuerza y le tiembla la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aprieta",
+      "options": [
+        "aprieta",
+        "pierde",
+        "mancha",
+        "guarda"
+      ],
+      "translation": "She _____ the pen hard and her hand shakes.",
+      "optionTranslations": [
+        "grips",
+        "loses",
+        "stains",
+        "puts away"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Ella aprieta el bolígrafo con fuerza y le tiembla la mano.",
+        "targetWord": "aprieta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a703a583776721f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "comprende",
+    "sentence": "Tras la segunda explicación, por fin lo _____ todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comprende",
+      "options": [
+        "comprende",
+        "olvida",
+        "niega",
+        "vende"
+      ],
+      "translation": "After the second explanation, she finally _____ everything.",
+      "optionTranslations": [
+        "understands",
+        "forgets",
+        "denies",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Tras la segunda explicación, por fin lo comprende todo.",
+        "targetWord": "comprende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa4fcade7e0de8c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "guante,tubo,manual,técnico",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "guante",
+          "answer": "a glove",
+          "options": [
+            "a glove",
+            "a pipe",
+            "a manual",
+            "a technician"
+          ]
+        },
+        {
+          "word": "tubo",
+          "answer": "a pipe",
+          "options": [
+            "a glove",
+            "a pipe",
+            "a manual",
+            "a technician"
+          ]
+        },
+        {
+          "word": "manual",
+          "answer": "a manual",
+          "options": [
+            "a glove",
+            "a pipe",
+            "a manual",
+            "a technician"
+          ]
+        },
+        {
+          "word": "técnico",
+          "answer": "a technician",
+          "options": [
+            "a glove",
+            "a pipe",
+            "a manual",
+            "a technician"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gas",
+    "sentence": "El técnico del [[gas]] se pone un guante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gas",
+      "options": [
+        "gas",
+        "water",
+        "phone",
+        "lift"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "El técnico del gas se pone un guante.",
+        "targetWord": "gas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fc9503b4ed3de9319a53.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traductor",
+    "sentence": "Se gana la vida con las palabras: es [[traductora]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a translator",
+      "options": [
+        "a translator",
+        "a teacher",
+        "a journalist",
+        "a lawyer"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Se gana la vida con las palabras: es traductora.",
+        "targetWord": "traductora",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/956f7db6491995d6410f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicación",
+    "sentence": "No ha cogido ni la mitad de la [[explicación]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the explanation",
+      "options": [
+        "the explanation",
+        "the exploration",
+        "the invitation",
+        "the conversation"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "No ha cogido ni la mitad de la explicación.",
+        "targetWord": "explicación",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/25aad659712ec390ecfc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "minuto",
+    "sentence": "Aprieta el bolígrafo y deja pasar un [[minuto]], insegura.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a minute",
+      "options": [
+        "a minute",
+        "a week",
+        "a bus",
+        "a chance"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Aprieta el bolígrafo y deja pasar un minuto, insegura.",
+        "targetWord": "minuto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0584be71ffc0e27991f8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez",
+    "sentence": "Se gira y lo cuenta [[otra vez]], señalando cada tubo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "aloud",
+        "slowly",
+        "badly"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Se gira y lo cuenta otra vez, señalando cada tubo.",
+        "targetWord": "otra vez",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/445bc7e53b532cc6912a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se gira",
+    "sentence": "Oye su nombre a la espalda y _____ para mirar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se gira",
+      "options": [
+        "se gira",
+        "se duerme",
+        "se lava",
+        "se sienta"
+      ],
+      "translation": "She hears her name behind her and _____ to look.",
+      "optionTranslations": [
+        "turns round",
+        "falls asleep",
+        "washes",
+        "sits down"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Oye su nombre a la espalda y se gira para mirar.",
+        "targetWord": "se gira",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/224a925499aa924c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "insegura",
+    "sentence": "Es su primer día y camina _____, sin saber dónde ir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insegura",
+      "options": [
+        "insegura",
+        "mojada",
+        "dormida",
+        "rota"
+      ],
+      "translation": "It's her first day and she walks _____, not knowing where to go.",
+      "optionTranslations": [
+        "unsure",
+        "wet",
+        "asleep",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "el-piloto-azul",
+        "storySource": "user",
+        "sentence": "Es su primer día y camina insegura, sin saber dónde ir.",
+        "targetWord": "insegura",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49df64155a9d07c4.mp3"
+      }
+    },
+    "featured": false
+  }
+]

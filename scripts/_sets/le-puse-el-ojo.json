@@ -190,9 +190,9 @@
     "sentence": "La [[promesa]] ya no es solo suya.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "something you said you would do",
+      "answer": "a promise",
       "options": [
-        "something you said you would do",
+        "a promise",
         "a doubt",
         "a delay",
         "a payment"

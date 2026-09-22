@@ -329,7 +329,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "strong",
-        "weak",
+        "warm",
         "soft",
         "light"
       ],
@@ -354,7 +354,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "sad",
-        "happy",
+        "calm",
         "angry",
         "tired"
       ],

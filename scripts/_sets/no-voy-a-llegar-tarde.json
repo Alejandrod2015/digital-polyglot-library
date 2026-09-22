@@ -243,14 +243,14 @@
       "answer": "temprano",
       "options": [
         "temprano",
-        "tarde",
+        "sola",
         "despacio",
         "igual"
       ],
       "translation": "“I get there _____, before the carriers gather.”",
       "optionTranslations": [
         "early",
-        "late",
+        "alone",
         "slowly",
         "all the same"
       ],

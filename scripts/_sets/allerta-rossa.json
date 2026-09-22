@@ -132,7 +132,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "strong",
-        "weak",
+        "dry",
         "warm",
         "slow"
       ],
@@ -224,11 +224,11 @@
     "word": "andare giù",
     "sentence": "Qui è pericoloso: [[andiamo giù]].",
     "payload": {
-      "answer": "to go down",
+      "answer": "let's go down",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "to go down",
-        "let's go up",
+        "let's go down",
+        "let's go home",
         "let's wait here",
         "let's run away"
       ],

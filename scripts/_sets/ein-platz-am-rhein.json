@@ -56,9 +56,9 @@
     "sentence": "während über [[Kölle]] eine heimelige Ruhe liegt.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "Cologne",
+      "answer": "the city",
       "options": [
-        "Cologne",
+        "the city",
         "the harbour",
         "the market",
         "the river"
@@ -396,7 +396,7 @@
       ],
       "translation": "He helps his friends quite _____, without asking.",
       "optionTranslations": [
-        "as a matter of course",
+        "naturally",
         "reluctantly",
         "rarely",
         "secretly"

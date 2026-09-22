@@ -108,7 +108,7 @@
       "prompt": "Choose the meaning in context.",
       "options": [
         "early",
-        "late",
+        "alone",
         "never",
         "twice"
       ],

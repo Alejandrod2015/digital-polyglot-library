@@ -460,7 +460,7 @@
       "options": [
         "full",
         "covered",
-        "empty",
+        "heavy",
         "cold"
       ],
       "audioClip": {

@@ -59,7 +59,7 @@
       "answer": "full",
       "options": [
         "full",
-        "empty",
+        "dark",
         "closed",
         "new"
       ],
@@ -366,9 +366,9 @@
       "answer": "the owner",
       "options": [
         "the owner",
-        "a customer",
-        "a waiter",
-        "a cook"
+        "the customer",
+        "the waiter",
+        "the cook"
       ],
       "audioClip": {
         "storySlug": "la-barra-manda",

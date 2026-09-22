@@ -393,7 +393,7 @@
       "answer": "old",
       "options": [
         "old",
-        "new",
+        "red",
         "tall",
         "empty"
       ],
@@ -417,15 +417,15 @@
       "answer": "cedo",
       "options": [
         "cedo",
-        "tarde",
         "longe",
+        "perto",
         "alto"
       ],
       "translation": "She got off at a stop that was too _____ and had to walk.",
       "optionTranslations": [
         "early",
-        "late",
         "far",
+        "near",
         "loud"
       ],
       "audioClip": {
@@ -520,7 +520,7 @@
       "answer": "to sit down",
       "options": [
         "to sit down",
-        "to stand up",
+        "to lie down",
         "to run",
         "to jump"
       ],

@@ -119,14 +119,14 @@
       "answer": "brûlante",
       "options": [
         "brûlante",
-        "froide",
+        "sale",
         "propre",
         "cassée"
       ],
       "translation": "Don't touch this plate, it's still _____.",
       "optionTranslations": [
         "hot",
-        "cold",
+        "dirty",
         "clean",
         "broken"
       ],
@@ -399,12 +399,12 @@
     "sentence": "[[Plus]] on attend, plus c'est difficile.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the more... the more",
+      "answer": "the more, the more",
       "options": [
-        "the more... the more",
-        "never ever",
-        "at least",
-        "by the way"
+        "the more, the more",
+        "the sooner, the better",
+        "the same as before",
+        "the last of all"
       ],
       "audioClip": {
         "language": "french",

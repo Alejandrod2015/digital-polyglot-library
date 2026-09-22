@@ -414,7 +414,7 @@
       "answer": "never",
       "options": [
         "never",
-        "always",
+        "twice",
         "already",
         "hardly"
       ],
@@ -438,7 +438,7 @@
       "answer": "always",
       "options": [
         "always",
-        "never",
+        "early",
         "rarely",
         "today"
       ],
