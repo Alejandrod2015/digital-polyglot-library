@@ -346,6 +346,14 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "krumm","datum","überhaupt","quietschen","quietscht","delle","grinsen","grinst",
   "gebraucht","entschuldigen","entschuldigt","ding","dinge","überlegen","überlegt","neid",
   "werfen","wirft","geworfen",
+  // Batch 9d (2026-09-21), same journey, tema 4 (job-hunting-and-interviews).
+  "bewerbung","bewerbungen","strauß","sträuße","schere","scheren","schicht","schichten",
+  "lücke","kittel","fegen","fegt","verlegen","aufgeregt","stiel","stiele","rose","rosen",
+  "band","bänder","vase","schleppen","schleppt","stolpern","rostig","wechseln","wechselt",
+  "schräg","wut","kasse","greifen","greift","erleichterung","weinen","weint","geduldig",
+  "handelskammer","angebot","entspannt","dringend","werkzeug","bitten","bittet","schämen",
+  "schämt","eben","mindestlohn","lebenslauf","probearbeiten","blumenladen","inhaber",
+  "postfach","postfächer","vorstellungsgespräch","danach","schuppen",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

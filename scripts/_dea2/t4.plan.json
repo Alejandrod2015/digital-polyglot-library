@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "tenso y formal: usted en el mostrador, silencios largos y frases que se dicen demasiado rapido",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple, espejo concreto y flashback marcado (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "un trabajo de florista, el oficio que ya sabe hacer", "impide": "medio ano sin nada en el curriculo y un dueno que lo lee dos veces", "cuesta": "acepta en voz alta un sueldo que es la mitad del que tenia", "cambia": "deja de negociar desde lo que valia y empieza desde lo que tiene", "emocion": "la prisa nerviosa de quien contesta antes de pensar" },
+  { "slot": "2", "quiere": "demostrar en la prueba lo que sabe hacer con las manos", "impide": "el dia entero es escoba, cubos y suelo mojado", "cuesta": "se traga la rabia y vuelve a fregar despues de bordar el ramo", "cambia": "entiende que el oficio no se demuestra, se aguanta", "emocion": "la rabia contenida que le llega a las manos" },
+  { "slot": "3", "quiere": "empezar el lunes con sus propias herramientas", "impide": "la caja con su tijera sigue en Muenster", "cuesta": "tiene que pedir a Malte exactamente lo que necesita, sin rodeos", "cambia": "en febrero rechazo el aval; hoy pide el transporte y no se avergüenza", "emocion": "el alivio de pedir y que no duela" }
+ ]
+}
