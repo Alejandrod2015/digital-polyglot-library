@@ -1858,6 +1858,44 @@
         "veinte",
         "veinticuatro"
       ]
+    },
+    "spanish-friends-mexico-a0": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una",
+        "unas",
+        "unos"
+      ],
+      "characterNames": [
+        "arturo",
+        "bruno",
+        "citlali",
+        "fernanda",
+        "itzel",
+        "mauricio",
+        "omar",
+        "valeria"
+      ],
+      "numerals": [
+        "cero",
+        "uno",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once",
+        "doce",
+        "catorce"
+      ]
     }
   }
 }
