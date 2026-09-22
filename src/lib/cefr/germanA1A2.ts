@@ -354,6 +354,14 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "handelskammer","angebot","entspannt","dringend","werkzeug","bitten","bittet","schämen",
   "schämt","eben","mindestlohn","lebenslauf","probearbeiten","blumenladen","inhaber",
   "postfach","postfächer","vorstellungsgespräch","danach","schuppen",
+  // Batch 9e (2026-09-21), same journey, tema 5 (sports-and-match-days).
+  "stadion","tribüne","block","trikot","anpfiff","schiedsrichter","fankurve","gesang",
+  "heiser","sieg","jubeln","jubelt","pfeifen","pfeift","fan","fans","brüllen","brüllt",
+  "tulpe","tulpen","fußball","klappsitz","rasen","schimpfen","schimpft","regel","regeln",
+  "frieren","friert","sonst","text","auswendig","senf","pommes","winken","winkt",
+  "umarmen","umarmt","strophe","gegner","derby","punkt","punkte","dauerkarte","nachspielzeit",
+  "falten","faltet","gefaltet","abpfiff","kehle","elfmeter","schreien","schreit","radio","foul",
+  "heimspiel","wurststand","lärm","krähe","bestimmt",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

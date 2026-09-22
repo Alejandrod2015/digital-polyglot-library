@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "colectivo y ruidoso: frases cortas de grada, canticos y quejas a voz en grito",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "quitarse de encima el abono que le regala un cliente", "impide": "va igualmente, aunque el futbol no le interesa nada", "cuesta": "pasa noventa minutos muerta de frio sin entender las reglas", "cambia": "descubre que lo que la retiene es el asiento vacio con su nombre", "emocion": "la sorpresa de sentirse esperada en un sitio" },
+  { "slot": "2", "quiere": "no hacer el ridiculo en la grada", "impide": "no se sabe la letra y canta casi todo mal", "cuesta": "canta fatal delante de treinta mil personas y lo aguanta", "cambia": "paga las dos salchichas sin que nadie se lo pida", "emocion": "la calidez de que a nadie le importe como cantas" },
+  { "slot": "3", "quiere": "que Hannover gane el derbi", "impide": "el penalti en contra y el gol en el descuento", "cuesta": "grita hasta quedarse sin voz y la garganta empieza a arder", "cambia": "por primera vez pierde algo junto a alguien, no sola", "emocion": "la euforia que tapa el primer sintoma" }
+ ]
+}

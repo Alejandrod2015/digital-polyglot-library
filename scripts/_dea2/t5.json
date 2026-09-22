@@ -1,0 +1,409 @@
+[
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 0,
+  "title": "Block H, Reihe zwölf",
+  "slug": "block-h-reihe-zwoelf",
+  "arcType": "reframe-turn",
+  "synopsis": "Every Friday the same customer buys three yellow tulips and says two sentences about the weather. In October he leaves a season ticket next to the till, because his wife has stopped coming. Britta knows nothing about football, freezes through a bad game, and notices something else entirely.",
+  "text": "Drei gelbe Tulpen kauft derselbe Mann jeden Freitag im Laden. Torben ist ein Stammkunde und trägt bei jedem Wetter eine rote Mütze. An einem Freitag im Oktober legt er eine Karte neben die Kasse.\n\n“Meine Frau kommt nicht mehr mit, und die zweite Dauerkarte verfällt sonst einfach im Oktober”, erklärt er. “Ich verstehe von Fußball wirklich gar nichts, das muss ich dir ganz ehrlich sagen”, antwortet Britta. Trotzdem steht sie am Samstag pünktlich um halb vier vor dem Stadion.\n\nBlock H, Reihe zwölf, und neben ihr wartet ein leerer Klappsitz. Das Spiel ist schlecht, der Rasen nass, und auf der Tribüne ist es kalt. Torben schimpft neunzig Minuten, und Britta versteht die Regeln kaum.\n\nIn der zweiten Halbzeit friert sie an den Füßen und merkt etwas anderes. Nicht das Spiel hält sie dort, sondern der leere Platz mit ihrem Namen. “Nächsten Samstag wieder, gleicher Block, gleiche Reihe, gleiche Zeit?”, fragt Torben.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Tulpe",
+    "surface": "Tulpen",
+    "definition": "A tulip; the smooth spring flower with a cup shaped head."
+   },
+   {
+    "type": "adjective",
+    "word": "gelb",
+    "surface": "gelbe",
+    "definition": "Yellow; the colour of butter and of ripe lemons."
+   },
+   {
+    "type": "noun",
+    "word": "der Stammkunde",
+    "anchor": true,
+    "surface": "Stammkunde",
+    "definition": "A regular; the customer who comes back every single week."
+   },
+   {
+    "type": "noun",
+    "word": "die Mütze",
+    "surface": "Mütze",
+    "definition": "A cap; the soft warm hat you pull over your head."
+   },
+   {
+    "type": "noun",
+    "word": "die Karte",
+    "surface": "Karte",
+    "definition": "A ticket; the card that lets you into a match or a train."
+   },
+   {
+    "type": "noun",
+    "word": "die Dauerkarte",
+    "anchor": true,
+    "surface": "Dauerkarte",
+    "definition": "A season ticket; one card for every home game of the year."
+   },
+   {
+    "type": "noun",
+    "word": "der Fußball",
+    "anchor": true,
+    "surface": "Fußball",
+    "definition": "Football; the game two teams of eleven play with one ball."
+   },
+   {
+    "type": "noun",
+    "word": "das Stadion",
+    "anchor": true,
+    "surface": "Stadion",
+    "definition": "A stadium; the big open ground where a city watches football."
+   },
+   {
+    "type": "adverb",
+    "word": "sonst",
+    "surface": "sonst",
+    "definition": "Otherwise; what will happen if nobody does anything about it."
+   },
+   {
+    "type": "adjective",
+    "word": "pünktlich",
+    "surface": "pünktlich",
+    "definition": "On time; arriving at exactly the hour that was agreed."
+   },
+   {
+    "type": "noun",
+    "word": "der Block",
+    "anchor": true,
+    "surface": "Block",
+    "definition": "A stand; one lettered part of the seats inside a stadium."
+   },
+   {
+    "type": "noun",
+    "word": "der Klappsitz",
+    "surface": "Klappsitz",
+    "definition": "A tip up seat; a seat that folds away when nobody sits there."
+   },
+   {
+    "type": "noun",
+    "word": "der Rasen",
+    "surface": "Rasen",
+    "definition": "The pitch; the short cut grass that the game is played on."
+   },
+   {
+    "type": "verb",
+    "word": "schimpfen",
+    "surface": "schimpft",
+    "definition": "To grumble loudly; to complain out loud about everything you see."
+   },
+   {
+    "type": "noun",
+    "word": "die Regel",
+    "surface": "Regeln",
+    "definition": "A rule; one of the things a game says you may not do."
+   },
+   {
+    "type": "noun",
+    "word": "die Halbzeit",
+    "anchor": true,
+    "surface": "Halbzeit",
+    "definition": "A half; one of the two parts a football match is split into."
+   },
+   {
+    "type": "verb",
+    "word": "frieren",
+    "surface": "friert",
+    "definition": "To be cold; to feel the cold so much that it hurts."
+   },
+   {
+    "type": "noun",
+    "word": "der Platz",
+    "surface": "Platz",
+    "definition": "A seat; the exact place that belongs to one person."
+   },
+   {
+    "type": "adjective",
+    "word": "gleich",
+    "surface": "gleicher",
+    "definition": "The same; not another one, but exactly this one again."
+   },
+   {
+    "type": "adjective",
+    "word": "nächste",
+    "surface": "Nächsten",
+    "definition": "Next; the one that comes right after this one."
+   }
+  ]
+ },
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 1,
+  "title": "Ein Schal, zwei Lieder",
+  "slug": "ein-schal-zwei-lieder",
+  "arcType": "harmonic-close",
+  "synopsis": "For the third home game Torben brings a second scarf and a folded sheet of paper with two songs on it. Britta sings the wrong words in front of thirty thousand people and nobody minds. At half time she buys the sausages, and for once she pays before anybody asks.",
+  "text": "Ein zweiter Schal liegt beim dritten Heimspiel in Torbens Tasche. Daneben steckt ein gefaltetes Blatt mit zwei Strophen darauf. “Den Text lernt hier jeder auswendig, spätestens nach dem vierten Spiel”, sagt er.\n\nBritta singt in der ersten Strophe fast jedes Wort falsch. “Ich klinge wie eine Krähe, und das hört man bestimmt bis ganz nach unten”, ruft sie. Dreißigtausend Leute brüllen weiter, und kein Einziger dreht sich um.\n\nTorben lacht und drückt ihr den Schal fester in die Hand. Zur Halbzeit geht Britta zum Wurststand und kauft zwei Bratwürste mit Senf. Sie zahlt beide, bevor Torben überhaupt nach seinem Geld sucht.\n\n“Nächstes Mal bin ich dran, so läuft das hier bei uns beiden”, sagt er nur. In der zweiten Strophe singt sie schon die Hälfte richtig mit. Beim Abpfiff ist ihre Kehle warm, und der fremde Schal riecht nach Zuhause.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Heimspiel",
+    "anchor": true,
+    "surface": "Heimspiel",
+    "definition": "A home game; a match your team plays in its own city."
+   },
+   {
+    "type": "noun",
+    "word": "der Schal",
+    "surface": "Schal",
+    "definition": "A scarf; the long piece of cloth fans wear round the neck."
+   },
+   {
+    "type": "verb",
+    "word": "falten",
+    "surface": "gefaltetes",
+    "definition": "To fold; to bend paper over itself so it becomes smaller."
+   },
+   {
+    "type": "noun",
+    "word": "die Strophe",
+    "surface": "Strophen",
+    "definition": "A verse; one part of a song before the next part starts."
+   },
+   {
+    "type": "noun",
+    "word": "der Text",
+    "surface": "Text",
+    "definition": "The words; everything a song says, without the music."
+   },
+   {
+    "type": "adverb",
+    "word": "auswendig",
+    "surface": "auswendig",
+    "definition": "By heart; so well that you need no paper to say it."
+   },
+   {
+    "type": "verb",
+    "word": "singen",
+    "surface": "singt",
+    "definition": "To sing; to make music with your voice and a song."
+   },
+   {
+    "type": "adjective",
+    "word": "falsch",
+    "surface": "falsch",
+    "definition": "Wrong; not the word or the note that should come there."
+   },
+   {
+    "type": "noun",
+    "word": "die Krähe",
+    "surface": "Krähe",
+    "definition": "A crow; the big black bird with a rough, ugly call."
+   },
+   {
+    "type": "adverb",
+    "word": "bestimmt",
+    "surface": "bestimmt",
+    "definition": "Surely; you are quite sure that this is the case."
+   },
+   {
+    "type": "verb",
+    "word": "brüllen",
+    "surface": "brüllen",
+    "definition": "To roar; to shout as loudly as a whole crowd can."
+   },
+   {
+    "type": "verb",
+    "word": "drücken",
+    "surface": "drückt",
+    "definition": "To press; to push a thing firmly into somebody's hand."
+   },
+   {
+    "type": "adjective",
+    "word": "fest",
+    "surface": "fester",
+    "definition": "Tight; held so firmly that it will not slip away."
+   },
+   {
+    "type": "noun",
+    "word": "der Wurststand",
+    "surface": "Wurststand",
+    "definition": "A sausage stall; the little booth that sells hot sausages."
+   },
+   {
+    "type": "noun",
+    "word": "die Bratwurst",
+    "anchor": true,
+    "surface": "Bratwürste",
+    "definition": "A fried sausage; the German snack sold at every match."
+   },
+   {
+    "type": "noun",
+    "word": "der Senf",
+    "surface": "Senf",
+    "definition": "Mustard; the sharp yellow sauce Germans put on sausages."
+   },
+   {
+    "type": "verb",
+    "word": "laufen",
+    "surface": "läuft",
+    "definition": "To go; here the way a thing is normally done here."
+   },
+   {
+    "type": "adjective",
+    "word": "richtig",
+    "surface": "richtig",
+    "definition": "Right; exactly as it should be and not wrong any more."
+   },
+   {
+    "type": "noun",
+    "word": "der Abpfiff",
+    "anchor": true,
+    "surface": "Abpfiff",
+    "definition": "The final whistle; the moment when the match is over."
+   },
+   {
+    "type": "noun",
+    "word": "die Kehle",
+    "surface": "Kehle",
+    "definition": "The throat; the inside of your neck, where the voice comes from."
+   }
+  ]
+ },
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 2,
+  "title": "Elf Minuten Nachspielzeit",
+  "slug": "elf-minuten-nachspielzeit",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "The derby is a cold Sunday in November and the whole stand is standing from the first minute. In the eleven minutes of stoppage time the visitors score, and Britta screams louder than anybody around her. On the way home she cannot finish a sentence, and Torben looks at her sideways.",
+  "text": "Das Derby gegen den Gegner aus der Nachbarstadt fällt auf einen kalten Sonntag. Ab dem Anpfiff steht die ganze Tribüne, und niemand setzt sich wieder hin. Britta kennt jetzt beide Lieder und braucht kein Papier mehr dafür.\n\nNach einer Stunde pfeift der Schiedsrichter einen Elfmeter gegen Hannover. “Das war nie im Leben ein Foul, der Mann braucht eine Brille”, brüllt Torben. In der Nachspielzeit steht das ganze Stadion und hofft noch einmal.\n\nDann fällt das zweite Tor, und der Lärm bricht sofort ab. Elf Minuten ziehen sich länger als die erste Stunde vorher. “Noch ein Tor, nur noch ein einziges, dann reden wir hier wieder”, schreit Britta.\n\nSie merkt dabei nicht, wie ihr Hals langsam zu brennen anfängt. Auf dem Heimweg ist ihre Stimme nur noch ein heiseres Flüstern. “Du klingst wie ein altes Radio, das seit Jahren im Keller steht”, sagt Torben.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Derby",
+    "anchor": true,
+    "surface": "Derby",
+    "definition": "A derby; the match against the team from the next city."
+   },
+   {
+    "type": "noun",
+    "word": "der Gegner",
+    "surface": "Gegner",
+    "definition": "The opponent; the other team you are playing against."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachbarstadt",
+    "surface": "Nachbarstadt",
+    "definition": "The neighbouring town; the city right next to your own."
+   },
+   {
+    "type": "noun",
+    "word": "der Anpfiff",
+    "anchor": true,
+    "surface": "Anpfiff",
+    "definition": "The kick off; the whistle that starts a football match."
+   },
+   {
+    "type": "noun",
+    "word": "das Lied",
+    "surface": "Lieder",
+    "definition": "A song; words and music that a crowd sings together."
+   },
+   {
+    "type": "verb",
+    "word": "pfeifen",
+    "surface": "pfeift",
+    "definition": "To whistle; to blow so a sharp sound stops the game."
+   },
+   {
+    "type": "noun",
+    "word": "der Schiedsrichter",
+    "anchor": true,
+    "surface": "Schiedsrichter",
+    "definition": "The referee; the man who decides what counts in a match."
+   },
+   {
+    "type": "noun",
+    "word": "der Elfmeter",
+    "anchor": true,
+    "surface": "Elfmeter",
+    "definition": "A penalty; the free shot given for a foul near the goal."
+   },
+   {
+    "type": "noun",
+    "word": "die Brille",
+    "surface": "Brille",
+    "definition": "Glasses; the two lenses people wear to see better."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachspielzeit",
+    "anchor": true,
+    "surface": "Nachspielzeit",
+    "definition": "Stoppage time; the extra minutes added at the end of a match."
+   },
+   {
+    "type": "noun",
+    "word": "das Tor",
+    "surface": "Tor",
+    "definition": "A goal; the moment the ball goes in and the score changes."
+   },
+   {
+    "type": "adjective",
+    "word": "zweite",
+    "surface": "zweite",
+    "definition": "Second; the one that comes after the first one."
+   },
+   {
+    "type": "noun",
+    "word": "der Lärm",
+    "surface": "Lärm",
+    "definition": "Noise; loud sound made by a lot of people at once."
+   },
+   {
+    "type": "verb",
+    "word": "brechen",
+    "surface": "bricht",
+    "definition": "To break off; to stop suddenly, the way noise stops at once."
+   },
+   {
+    "type": "verb",
+    "word": "schreien",
+    "surface": "schreit",
+    "definition": "To scream; to use your whole voice as loudly as possible."
+   },
+   {
+    "type": "noun",
+    "word": "der Hals",
+    "surface": "Hals",
+    "definition": "The throat; the part of your neck that hurts after shouting."
+   },
+   {
+    "type": "verb",
+    "word": "brennen",
+    "surface": "brennen",
+    "definition": "To burn; here the hot sore feeling inside a used throat."
+   },
+   {
+    "type": "noun",
+    "word": "der Heimweg",
+    "surface": "Heimweg",
+    "definition": "The way home; the trip back after an evening out."
+   },
+   {
+    "type": "adjective",
+    "word": "heiser",
+    "surface": "heiseres",
+    "definition": "Hoarse; with a rough voice after shouting for a long time."
+   },
+   {
+    "type": "noun",
+    "word": "das Radio",
+    "surface": "Radio",
+    "definition": "A radio; the box that plays music and news out loud."
+   }
+  ]
+ }
+]
