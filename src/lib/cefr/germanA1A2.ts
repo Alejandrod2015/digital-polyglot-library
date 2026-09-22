@@ -369,6 +369,12 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "praxis","husten","hustet","hausärztin","hausarzt","versichertenkarte","wartezimmer",
   "krankenschein","nudelsuppe","flüstern","flüstert","tippen","tippt","beginnen","beginnt",
   "lange","dienst","kratzen","kratzt","unterschrift","lunge","stur","hartnäckig","empfang",
+  // Batch 9g (2026-09-21), same journey, tema 7 (housewarming-and-toasts).
+  "kasten","kästen","anstoßen","stößt","rede","korkenzieher","korken","prost",
+  "anbieten","bietet","stapel","spruch","klirren","klirrt","schnittchen","einweihung",
+  "trinkspruch","abwaschen","spülbecken","lappen","baguette","chips","dip","duft",
+  "krach","egal","völlig","deuten","deutet","einstand","aufstrich","treppenabsatz",
+  "umzugswagen","serviette","aushang","absagen","zusagen","zweifel","geländer",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

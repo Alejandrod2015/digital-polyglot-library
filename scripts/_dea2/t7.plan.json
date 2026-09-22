@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "calido y ruidoso: cocina pequena, ofrecimientos y brindis; frases que se cruzan",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; en este tema cierra el arco y pasa a ser la que ofrece",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple, espejo concreto y flashback marcado (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "subir a su casa sin rodear la caja que bloquea la escalera", "impide": "hay un inquilino nuevo perdido en su propia mudanza", "cuesta": "ofrece ayuda sin que nadie se la pida, que en febrero le habria costado el dia", "cambia": "por primera vez es ella la que carga la caja ajena", "emocion": "el reconocerse en alguien que acaba de llegar" },
+  { "slot": "2", "quiere": "dar el Einstand que el edificio espera de ella", "impide": "no conoce los nombres detras de casi ninguna puerta", "cuesta": "cuelga una invitacion abierta y aguanta dos dias sin respuesta", "cambia": "pide sin condiciones y deja que la casa decida", "emocion": "la duda en el estomago mientras el papel sigue solo" },
+  { "slot": "3", "quiere": "que la fiesta salga bien", "impide": "la mesa coja, las copas desparejadas y diecinueve personas en dos habitaciones", "cuesta": "tiene que hablar en voz alta delante de gente que apenas conoce", "cambia": "brinda sin disculparse por nada de lo que hay en la casa", "emocion": "la calma de estar en un sitio que ya es suyo" }
+ ]
+}

@@ -6,7 +6,7 @@
   "slug": "der-gelbe-zettel",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Her throat is on fire before she is even awake and the thermometer says almost thirty nine. It is Monday and the fourth week of her trial period at the flower shop. The doctor two streets away writes three days of bed rest on a small yellow sheet of paper.",
-  "text": "Ihr Hals brennt schon beim Aufwachen, und das Bett ist nass vom Schweiß. Das Thermometer zeigt achtunddreißig Komma neun. Am Montag beginnt ihre vierte Woche in der Probezeit.\n\nBente ist die Hausärztin zwei Straßen weiter, im Haus über der Bäckerei. Im Wartezimmer sitzen neun Leute, und niemand sagt ein Wort. “Halsschmerzen seit Sonntag, Fieber seit heute Nacht, und die Stimme ist weg”, sagt Britta heiser.\n\nBente schaut in den Hals, misst noch einmal und tippt etwas in den Computer. “Drei Tage Bettruhe, viel trinken, und danach sehen wir noch einmal weiter”, erklärt sie ruhig. Der gelbe Krankenschein sagt ausruhen, die Probezeit sagt komm trotzdem.\n\nBritta steht auf der Straße und schaut das Papier lange an. Dann ruft sie Lars an und hört ihre eigene Stimme kaum. “Ich bin krankgeschrieben, drei Tage, und es tut mir wirklich sehr leid”, flüstert sie.",
+  "text": "Ihr Hals brennt schon beim Aufwachen, und das Bett ist nass vom Schweiß. Das Thermometer zeigt achtunddreißig Komma neun. Am Montag beginnt ihre vierte Woche in der Probezeit.\n\nBente, die Hausärztin über der Bäckerei, hat am Montag noch einen Termin frei. Im Wartezimmer sitzen neun Leute, und niemand sagt ein Wort. “Halsschmerzen seit Sonntag, Fieber seit heute Nacht, und die Stimme ist weg”, sagt Britta heiser.\n\nBente schaut in den Hals, misst noch einmal und tippt etwas in den Computer. “Drei Tage Bettruhe, viel trinken, und danach sehen wir noch einmal weiter”, erklärt sie ruhig. Der gelbe Krankenschein sagt ausruhen, die Probezeit sagt komm trotzdem.\n\nBritta steht auf der Straße und schaut das Papier lange an. Dann ruft sie im Blumenladen an und hört ihre eigene Stimme kaum. “Ich bin krankgeschrieben, drei Tage, und es tut mir wirklich sehr leid”, flüstert sie.",
   "vocab": [
    {
     "type": "noun",
@@ -273,7 +273,7 @@
   "slug": "die-praxis-am-dienstag",
   "arcType": "reframe-turn",
   "synopsis": "Britta goes back to the doctor on Tuesday for one signature, so that she can work again on Wednesday. Bente listens to her lungs and gives her two more days instead. Britta cycles to the shop anyway, and her boss takes the bag out of her hand at the door.",
-  "text": "Die Sprechstunde fängt am Dienstag um acht an, und die Praxis ist voll. Britta legt die Versichertenkarte hin und will nur die Unterschrift. Am Mittwoch soll sie wieder im Laden stehen, und mehr will sie gar nicht.\n\nBente hört die Lunge ab und schaut lange auf die Karteikarte. “Zwei Tage noch, sonst schleppen Sie diese Grippe wochenlang mit”, meint sie. “Ich bin in der Probezeit, ich kann da nicht einfach wegbleiben”, antwortet Britta stur.\n\n“Krank sein ist kein Fehler”, wiederholt Bente nur und tippt weiter. Am Mittwoch fährt Britta trotzdem los, obwohl ihr Rücken bei jeder Kurve zieht. Lars sieht ihre heißen Wangen schon durch das Schaufenster und kommt an die Tür.\n\n“Der Laden steht nächste Woche auch noch hier, und Sie gehören jetzt ins Bett”, sagt er. Britta wartet auf das schlechte Gewissen, aber es kommt nicht. Sie fährt langsam zurück und schläft bis zum Donnerstagmorgen durch.",
+  "text": "Die Sprechstunde fängt am Dienstag um acht an, und die Praxis ist voll. Britta legt die Versichertenkarte hin und will nur die Unterschrift. Am Mittwoch soll sie wieder im Laden stehen, mehr nicht.\n\nBente hört die Lunge ab und schaut lange auf die Karteikarte. “Zwei Tage noch, sonst schleppen Sie diese Grippe hier wochenlang mit sich herum”, meint sie. “Ich bin noch in der Probezeit, ich kann da doch nicht einfach wegbleiben”, antwortet Britta stur.\n\n“Krank sein ist kein Fehler, und Ihr Chef weiß das besser als Sie”, wiederholt Bente. Am Mittwoch fährt Britta trotzdem los, obwohl ihr Rücken bei jeder Kurve zieht. Ihr Chef sieht die heißen Wangen schon durch das Schaufenster.\n\nEr nimmt ihr die Tasche aus der Hand und zeigt ohne ein Wort zur Straße. Britta wartet auf das schlechte Gewissen, aber es kommt nicht. Sie fährt langsam zurück und schläft bis zum Donnerstagmorgen durch.",
   "vocab": [
    {
     "type": "noun",
@@ -366,10 +366,10 @@
     "definition": "A shop; the small place where things are sold."
    },
    {
-    "type": "verb",
-    "word": "gehören",
-    "surface": "gehören",
-    "definition": "To belong; here to be in the place you should be in."
+    "type": "noun",
+    "word": "der Chef",
+    "surface": "Chef",
+    "definition": "The boss; the person who decides who works and when."
    },
    {
     "type": "noun",
