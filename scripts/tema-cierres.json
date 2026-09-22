@@ -12345,6 +12345,74 @@
       ]
     }
   },
+  "cmud5qhu00006j81cmkl4u5ks#lost-and-found": {
+    "cerrado": "2026-09-22T21:27:15.636Z",
+    "hash": "f5071b2089628556",
+    "historias": [
+      "lost-and-found#0 peinate-como-en-la-foto",
+      "lost-and-found#1 puestas-por-fuera",
+      "lost-and-found#2 tres-duenos-y-un-paraguas"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"burocratico y absurdo: un mostrador con reglas propias y dos personas que no las entienden\", espina \"Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"ahora\", 11%)",
+      "seguidilla 15/41 oraciones cortas narradas",
+      "banda gramatical: sin banda medida para a0 (pretérito 0 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 55/63 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: lost-and-found (Itzel, Omar, Bruno) · presentados tarde: Bruno (aparece en la 2a de lost-and-found)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "MEXICO",
+      "registro": "burocratico y absurdo: un mostrador con reglas propias y dos personas que no las entienden",
+      "espina": "Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+      "recursos": "presente, frases cortas, el conflicto se discute en voz alta, y el giro sale de un objeto de la caja que resulta ser de quien menos toca",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Itzel quiere su credencial del hospital antes del turno",
+          "impide": "Omar la tiene en la caja pero no la entrega: en la foto ella no se parece a ella",
+          "cuesta": "pierde una hora y la dignidad de peinarse delante de un mostrador",
+          "cambia": "se peina como en la foto y Omar se la da",
+          "emocion": "la rabia tranquila de tener razon y no poder demostrarla"
+        },
+        {
+          "slot": "1",
+          "quiere": "Bruno quiere sus llaves, que no aparecen por ningun lado",
+          "impide": "las busca en toda la azotea mientras estan puestas en su propia puerta",
+          "cuesta": "pierde la noche y descubre que la puerta estuvo abierta para el barrio entero",
+          "cambia": "nadie entro, y Bruno decide que eso dice algo bueno o algo triste",
+          "emocion": "el susto que se convierte en ternura por los vecinos"
+        },
+        {
+          "slot": "2",
+          "quiere": "Omar quiere vaciar la caja antes de fin de mes",
+          "impide": "aparece un paraguas rojo que tres personas reclaman como suyo",
+          "cuesta": "Omar pierde el paraguas al reconocer, delante de todos, que es suyo",
+          "cambia": "el paraguas se queda en la caja, ahora con etiqueta",
+          "emocion": "la vergueenza tibia de reclamar algo propio demasiado tarde"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "densidad alta para a0: 9.4 palabras por oracion (techo 9). En niveles bajos se recortan HECHOS, no se aprietan frases: quita un suceso de la escena."
+    ]
+  },
   "cmud5qhu00006j81cmkl4u5ks#plants-and-balconies": {
     "cerrado": "2026-09-22T21:22:12.836Z",
     "hash": "ea501769c0e882a7",
