@@ -1,0 +1,35 @@
+{
+  "achtzig-fuer-drei-beine": {
+    "euro": { "es": "Achtzig Euro für einen Tisch", "en": "Eighty euros for a table" },
+    "für": { "es": "Achtzig Euro für einen Tisch", "en": "Eighty euros for a table" }
+  },
+  "der-gelbe-zettel": {
+    "tage": { "es": "Ich bin krankgeschrieben, drei Tage", "en": "I am signed off sick, three days" }
+  },
+  "ein-loch-im-lebenslauf": {
+    "sagt": { "es": "danach rufe ich Sie an”, sagt Lars", "en": "after that I will call you, Lars says" }
+  },
+  "ein-schal-zwei-lieder": {
+    "in": { "es": "In der zweiten Strophe", "en": "In the second verse" },
+    "und": { "es": "wie eine Krähe, und das hört man", "en": "like a crow, and people can hear it" },
+    "singt": { "es": "In der zweiten Strophe singt sie", "en": "In the second verse she sings" },
+    "strophe": { "es": "In der zweiten Strophe singt sie", "en": "In the second verse she sings" }
+  },
+  "elf-minuten-nachspielzeit": {
+    "tor": { "es": "Noch ein Tor, nur noch ein einziges", "en": "One more goal, just one single one" },
+    "noch": { "es": "Noch ein Tor, nur noch ein einziges", "en": "One more goal, just one single one" }
+  },
+  "pizza-auf-den-kartons": {
+    "sie": { "es": "für den ganzen Tag schulde”, sagt sie", "en": "for the whole day, she says" },
+    "sagt": { "es": "für den ganzen Tag schulde”, sagt sie", "en": "for the whole day, she says" }
+  },
+  "probearbeiten-am-freitag": {
+    "sagt": { "es": "vorne ist alles noch nass”, sagt Lars", "en": "at the front everything is still wet, Lars says" }
+  },
+  "salz-brot-und-sekt": {
+    "salz": { "es": "Salz, Brot und Sekt", "en": "Salt, bread and sparkling wine" }
+  },
+  "zwei-namen-im-vertrag": {
+    "und": { "es": "als Bürge, und das ist für mich", "en": "as guarantor, and for me that is" }
+  }
+}
