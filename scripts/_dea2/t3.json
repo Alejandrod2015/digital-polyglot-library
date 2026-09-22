@@ -10,16 +10,15 @@
   "vocab": [
    {
     "type": "noun",
-    "word": "der Flohmarkt",
-    "anchor": true,
-    "surface": "Flohmarkt",
-    "definition": "A flea market; a street market where people sell used things."
+    "word": "der Wagen",
+    "surface": "Wagen",
+    "definition": "A cart; here the small wagon a market trader sells from."
    },
    {
-    "type": "noun",
-    "word": "der Nebel",
-    "surface": "Nebel",
-    "definition": "Fog; thick grey air that you cannot see far through."
+    "type": "verb",
+    "word": "brauchen",
+    "surface": "braucht",
+    "definition": "To need; to have to have something before you can go on."
    },
    {
     "type": "adjective",
@@ -305,9 +304,9 @@
    },
    {
     "type": "noun",
-    "word": "der Rotwein",
-    "surface": "Rotwein",
-    "definition": "Red wine; the dark wine people bring when they visit friends."
+    "word": "die Flasche",
+    "surface": "Flasche",
+    "definition": "A bottle; the tall glass container that wine comes in."
    },
    {
     "type": "adjective",

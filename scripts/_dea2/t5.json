@@ -98,10 +98,10 @@
     "definition": "To grumble loudly; to complain out loud about everything you see."
    },
    {
-    "type": "noun",
-    "word": "die Regel",
-    "surface": "Regeln",
-    "definition": "A rule; one of the things a game says you may not do."
+    "type": "adjective",
+    "word": "rot",
+    "surface": "roter",
+    "definition": "Red; the colour of blood and of a warm winter cap."
    },
    {
     "type": "noun",
@@ -118,9 +118,9 @@
    },
    {
     "type": "noun",
-    "word": "der Platz",
-    "surface": "Platz",
-    "definition": "A seat; the exact place that belongs to one person."
+    "word": "der Fuß",
+    "surface": "Füßen",
+    "definition": "A foot; the part of your body inside your shoe."
    },
    {
     "type": "adjective",
@@ -165,10 +165,10 @@
     "definition": "To fold; to bend paper over itself so it becomes smaller."
    },
    {
-    "type": "noun",
-    "word": "die Strophe",
-    "surface": "Strophen",
-    "definition": "A verse; one part of a song before the next part starts."
+    "type": "verb",
+    "word": "lernen",
+    "surface": "lernt",
+    "definition": "To learn; to put something into your head so it stays."
    },
    {
     "type": "noun",
@@ -306,10 +306,10 @@
     "definition": "The kick off; the whistle that starts a football match."
    },
    {
-    "type": "noun",
-    "word": "das Lied",
-    "surface": "Lieder",
-    "definition": "A song; words and music that a crowd sings together."
+    "type": "verb",
+    "word": "kennen",
+    "surface": "kennt",
+    "definition": "To know; to have met a thing often enough to recognise it."
    },
    {
     "type": "verb",
@@ -333,9 +333,9 @@
    },
    {
     "type": "noun",
-    "word": "die Brille",
-    "surface": "Brille",
-    "definition": "Glasses; the two lenses people wear to see better."
+    "word": "das Foul",
+    "surface": "Foul",
+    "definition": "A foul; a move against the rules that the referee punishes."
    },
    {
     "type": "noun",
@@ -375,10 +375,10 @@
     "definition": "To scream; to use your whole voice as loudly as possible."
    },
    {
-    "type": "noun",
-    "word": "der Hals",
-    "surface": "Hals",
-    "definition": "The throat; the part of your neck that hurts after shouting."
+    "type": "adjective",
+    "word": "alt",
+    "surface": "altes",
+    "definition": "Old; here something kept for many years and out of date."
    },
    {
     "type": "verb",

@@ -60,10 +60,10 @@
     "definition": "Half; one of the two equal parts of a whole thing."
    },
    {
-    "type": "noun",
-    "word": "die Wahrheit",
-    "surface": "Wahrheit",
-    "definition": "The truth; what really happened, not a nicer version of it."
+    "type": "verb",
+    "word": "lesen",
+    "surface": "liest",
+    "definition": "To read; to look at written words and understand them."
    },
    {
     "type": "adverb",
@@ -163,10 +163,10 @@
     "definition": "A broom; the long brush you sweep a floor with."
    },
    {
-    "type": "noun",
-    "word": "der Boden",
-    "surface": "Boden",
-    "definition": "The floor; the ground inside a room that you walk on."
+    "type": "adjective",
+    "word": "blau",
+    "surface": "blauen",
+    "definition": "Blue; the colour of a clear sky on a good day."
    },
    {
     "type": "noun",

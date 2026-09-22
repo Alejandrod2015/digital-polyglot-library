@@ -66,10 +66,10 @@
     "definition": "A fever; a body that is much warmer than it should be."
    },
    {
-    "type": "noun",
-    "word": "die Bäckerei",
-    "surface": "Bäckerei",
-    "definition": "A bakery; the shop that sells fresh bread every morning."
+    "type": "adjective",
+    "word": "frei",
+    "surface": "frei",
+    "definition": "Free; not taken yet, so somebody else can still have it."
    },
    {
     "type": "verb",
@@ -146,9 +146,9 @@
   "vocab": [
    {
     "type": "noun",
-    "word": "die Stille",
-    "surface": "Stille",
-    "definition": "Silence; a quiet so complete that it feels like a room."
+    "word": "die Welle",
+    "surface": "Wellen",
+    "definition": "A wave; here the illness coming back again and again."
    },
    {
     "type": "noun",
@@ -181,10 +181,10 @@
     "definition": "A tablet; the small hard pill you take for an illness."
    },
    {
-    "type": "noun",
-    "word": "die Milch",
-    "surface": "Milch",
-    "definition": "Milk; the white drink people warm up for somebody ill."
+    "type": "adverb",
+    "word": "morgens",
+    "surface": "morgens",
+    "definition": "In the mornings; early in the day, before the work starts."
    },
    {
     "type": "verb",
@@ -342,16 +342,16 @@
     "definition": "A mistake; something you did wrong and should not repeat."
    },
    {
-    "type": "noun",
-    "word": "der Rücken",
-    "surface": "Rücken",
-    "definition": "The back; the long part of your body behind your chest."
+    "type": "verb",
+    "word": "wiederholen",
+    "surface": "wiederholt",
+    "definition": "To repeat; to say the same thing again, slowly and calmly."
    },
    {
-    "type": "noun",
-    "word": "die Wange",
-    "surface": "Wangen",
-    "definition": "A cheek; the soft side of your face, red when you have fever."
+    "type": "adjective",
+    "word": "krank",
+    "surface": "Krank",
+    "definition": "Ill; not well enough to work, and allowed to stay home."
    },
    {
     "type": "noun",
@@ -390,10 +390,10 @@
     "definition": "To wait; to stay and expect something that does not come."
    },
    {
-    "type": "noun",
-    "word": "der Donnerstagmorgen",
-    "surface": "Donnerstagmorgen",
-    "definition": "Thursday morning; the early hours of the fourth working day."
+    "type": "verb",
+    "word": "nehmen",
+    "surface": "nimmt",
+    "definition": "To take; to put your hand on something and hold it."
    }
   ]
  }

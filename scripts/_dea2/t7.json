@@ -16,10 +16,10 @@
     "definition": "A removal van; the big truck that carries a whole home."
    },
    {
-    "type": "noun",
-    "word": "der Montagmorgen",
-    "surface": "Montagmorgen",
-    "definition": "Monday morning; the first hours of the working week."
+    "type": "verb",
+    "word": "suchen",
+    "surface": "sucht",
+    "definition": "To look for; to try to find a thing you cannot see."
    },
    {
     "type": "noun",
@@ -47,10 +47,10 @@
     "definition": "Paint; the wet colour you put on a wall with a brush."
    },
    {
-    "type": "noun",
-    "word": "der Stapel",
-    "surface": "Stapel",
-    "definition": "A pile; several flat things lying one on top of another."
+    "type": "adverb",
+    "word": "außerdem",
+    "surface": "außerdem",
+    "definition": "Besides; one more thing on top of what was already said."
    },
    {
     "type": "adverb",
@@ -126,9 +126,9 @@
    },
    {
     "type": "noun",
-    "word": "der Abend",
-    "surface": "Abend",
-    "definition": "The evening; the hours after work and before the night."
+    "word": "die Wandfarbe",
+    "surface": "Wandfarbe",
+    "definition": "Wall paint; the colour you put on the walls of a flat."
    }
   ]
  },
@@ -148,10 +148,10 @@
     "definition": "To sit; to be resting on a chair and not standing."
    },
    {
-    "type": "noun",
-    "word": "der Becher",
-    "surface": "Becher",
-    "definition": "A mug; a big cup without a small plate under it."
+    "type": "adverb",
+    "word": "wieder",
+    "surface": "wieder",
+    "definition": "Again; one more time after it already happened once."
    },
    {
     "type": "noun",
@@ -172,16 +172,16 @@
     "definition": "A biro; the cheap blue pen everybody has in a drawer."
    },
    {
-    "type": "noun",
-    "word": "die Tür",
-    "surface": "Türen",
-    "definition": "A door; here each flat behind its own closed door."
+    "type": "adverb",
+    "word": "herzlich",
+    "surface": "herzlich",
+    "definition": "Warmly; said in a friendly way that means it honestly."
    },
    {
-    "type": "noun",
-    "word": "die Uhr",
-    "surface": "Uhr",
-    "definition": "O'clock; the word that follows the hour of an appointment."
+    "type": "adverb",
+    "word": "unten",
+    "surface": "unten",
+    "definition": "Downstairs; on a lower floor, here by the front door."
    },
    {
     "type": "adjective",
@@ -220,10 +220,10 @@
     "definition": "A doubt; the feeling that it may all go wrong."
    },
    {
-    "type": "noun",
-    "word": "der Magen",
-    "surface": "Magen",
-    "definition": "The stomach; the place inside you where worry sits."
+    "type": "adverb",
+    "word": "dreimal",
+    "surface": "dreimal",
+    "definition": "Three times; once and then twice more, one after another."
    },
    {
     "type": "noun",
@@ -250,10 +250,10 @@
     "definition": "Loudly; so that other people in the room can hear it."
    },
    {
-    "type": "noun",
-    "word": "der Freitagabend",
-    "surface": "Freitagabend",
-    "definition": "Friday evening; the first free hours of the weekend."
+    "type": "verb",
+    "word": "rufen",
+    "surface": "ruft",
+    "definition": "To call out; to say something loudly so people hear you."
    },
    {
     "type": "verb",
@@ -279,10 +279,10 @@
     "definition": "Salt; the white grains Germans bring to a new home."
    },
    {
-    "type": "noun",
-    "word": "der Tisch",
-    "surface": "Tisch",
-    "definition": "A table; the flat piece of furniture you put food on."
+    "type": "verb",
+    "word": "bringen",
+    "surface": "bringt",
+    "definition": "To bring; to carry something with you when you visit."
    },
    {
     "type": "noun",
@@ -321,10 +321,10 @@
     "definition": "To clink; the bright noise glasses make when they touch."
    },
    {
-    "type": "noun",
-    "word": "der Sekt",
-    "surface": "Sekt",
-    "definition": "Sparkling wine; what Germans open when something is celebrated."
+    "type": "verb",
+    "word": "wandern",
+    "surface": "wandert",
+    "definition": "To wander; to pass slowly from one hand to the next."
    },
    {
     "type": "verb",
@@ -369,10 +369,10 @@
     "definition": "Dirty; used for eating and not washed up yet."
    },
    {
-    "type": "noun",
-    "word": "der Schluck",
-    "surface": "Schluck",
-    "definition": "A sip; the small amount you drink in one go."
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkt",
+    "definition": "To drink; to take water, wine or tea into your mouth."
    },
    {
     "type": "verb",
@@ -381,10 +381,10 @@
     "definition": "To tidy up; to put everything back where it belongs."
    },
    {
-    "type": "noun",
-    "word": "der Müll",
-    "surface": "Müll",
-    "definition": "Rubbish; what is left over and has to be thrown away."
+    "type": "adjective",
+    "word": "letzt",
+    "surface": "letzten",
+    "definition": "Last; the one at the end, with nothing after it."
    },
    {
     "type": "adverb",

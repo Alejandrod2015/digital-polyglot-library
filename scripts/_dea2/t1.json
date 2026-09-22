@@ -279,10 +279,10 @@
   "text": "Am schwarzen Brett im Waschsalon hängt ein Zettel: zwei Zimmer in der List. Die Maschinen brummen warm, und der ganze Raum riecht nach Seife. “Die nehme ich, bevor sie mir jemand anders wegschnappt”, murmelt Britta und zieht den letzten Streifen ab.\n\nDie Vormieterin öffnet in Jacke und zeigt ihr die halb leeren Räume. Überall stehen Kartons, und an der Wand kleben helle Vierecke von alten Bildern. “Ein Hinterhof mit drei Fahrrädern, das reicht mir vollkommen”, sagt Britta leise.\n\n“Dünne Wände stören mich nicht, das merke ich abends sowieso kaum”, erzählt sie weiter. Dann erzählt die Vormieterin ganz ruhig, warum sie nach sechs Jahren auszieht. Sie fängt in ihrer alten Stadt noch einmal an.\n\nBritta lacht kurz auf, weil sie diesen Satz selbst schon gesagt hat. Auf der Treppe ruft sie Malte an, und ihre Hand zittert ein bisschen. “Ich habe eine Wohnung gefunden, und diesmal schaffe ich das ganz allein”, sagt sie zu ihm.",
   "vocab": [
    {
-    "type": "noun",
-    "word": "das Brett",
-    "surface": "Brett",
-    "definition": "A board; here the wall board where people pin up small ads."
+    "type": "verb",
+    "word": "murmeln",
+    "surface": "murmelt",
+    "definition": "To mutter; to say something quietly, almost only to yourself."
    },
    {
     "type": "noun",
@@ -371,10 +371,10 @@
     "definition": "To begin; to start a thing again from the very first step."
    },
    {
-    "type": "noun",
-    "word": "der Satz",
-    "surface": "Satz",
-    "definition": "A sentence; the words somebody puts together and says out loud."
+    "type": "adverb",
+    "word": "diesmal",
+    "surface": "diesmal",
+    "definition": "This time; on this occasion and not like the times before."
    },
    {
     "type": "adverb",

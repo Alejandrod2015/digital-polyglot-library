@@ -23,9 +23,9 @@
    },
    {
     "type": "noun",
-    "word": "der Deckel",
-    "surface": "Deckel",
-    "definition": "A lid; the flap or top that closes a box or a pot."
+    "word": "das Erdgeschoss",
+    "surface": "Erdgeschoss",
+    "definition": "The ground floor; the level of a building at street height."
    },
    {
     "type": "noun",
@@ -178,10 +178,10 @@
     "definition": "A bend; the place where stairs or a road turn sharply."
    },
    {
-    "type": "noun",
-    "word": "der Rahmen",
-    "surface": "Rahmen",
-    "definition": "A frame; the hard outer edge of a sofa, a window or a door."
+    "type": "adjective",
+    "word": "leicht",
+    "surface": "leicht",
+    "definition": "Easy; here going smoothly and without any real trouble."
    },
    {
     "type": "verb",
@@ -347,9 +347,9 @@
    },
    {
     "type": "noun",
-    "word": "der Keller",
-    "surface": "Keller",
-    "definition": "The cellar; the rooms under a German house where tenants keep things."
+    "word": "der Umzug",
+    "surface": "Umzug",
+    "definition": "A move; taking all your things from one home to another."
    },
    {
     "type": "noun",
