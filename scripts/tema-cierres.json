@@ -12349,6 +12349,75 @@
       "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmubidgaf0007j8np6g7n89iu#illness-and-sick-days": {
+    "cerrado": "2026-09-22T10:06:44.339Z",
+    "hash": "2ac4765cbd959688",
+    "historias": [
+      "illness-and-sick-days#0 der-gelbe-zettel",
+      "illness-and-sick-days#1 drei-tage-ohne-stimme",
+      "illness-and-sick-days#2 die-praxis-am-dienstag"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"bajo y lento: voz rota, frases cortas, dias que se confunden unos con otros\", espina \"Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"sagt\" 25%)",
+      "arranques de parrafo variados (mas repetido \"bente\", 25%)",
+      "densidad 12.7 palabras por oracion (techo 13 en a2)",
+      "seguidilla 6/35 oraciones cortas narradas",
+      "banda gramatical: sin banda medida para a2 (pretérito 0 · subj. imperfecto 6 · condicional 0 · estilo indirecto 0)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 55 plazas · 47 salen una sola vez | ancladas: 5/60 (8%) | cola: 47/55 portables con un solo encuentro (85%, tope 80%) | de un solo encuentro: Schweiß, Thermometer, zeigt, beginnt, Halsschmerzen, Fieber, Bäckerei, misst, ausruhen, flüstert, Stille, schwitzt, aufsetzt, schlucken, Tabletten, Milch, niest, wach, Geräusch, Nudelsuppe, Tüte, Taschentüchern, Äpfeln, Handschrift, klingeln, Dienst, kratzt, aufstehst, ganze, Sprechstunde…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en DE A2 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "germany",
+      "registro": "bajo y lento: voz rota, frases cortas, dias que se confunden unos con otros",
+      "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+      "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "aguantar el lunes y no faltar en periodo de prueba",
+          "impide": "casi treinta y nueve de fiebre y la voz perdida",
+          "cuesta": "tiene que llamar a su jefe en el primer mes y decir que esta enferma",
+          "cambia": "obedece al papel amarillo en vez de a su miedo",
+          "emocion": "la culpa caliente de fallar recien llegada"
+        },
+        {
+          "slot": "2",
+          "quiere": "pasar la gripe sola, sin molestar a nadie",
+          "impide": "tres dias sin poder levantarse ni hablar",
+          "cuesta": "descubre que alguien la cuidaba sin que ella lo pidiera",
+          "cambia": "llama ella, con la voz rota, y pregunta por que no llama al timbre",
+          "emocion": "la vergüenza que se deshace al leer la nota"
+        },
+        {
+          "slot": "3",
+          "quiere": "la firma para volver al trabajo el miercoles",
+          "impide": "la medica le da dos dias mas y el jefe la manda a casa",
+          "cuesta": "tiene que aceptar que el sitio no se gana estando presente",
+          "cambia": "espera el mal sabor de la culpa y no llega",
+          "emocion": "el alivio raro de no tener que pedir perdon"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
   "cmubidgaf0007j8np6g7n89iu#job-hunting-and-interviews": {
     "cerrado": "2026-09-22T08:59:02.480Z",
     "hash": "ff51ef52ee79048f",

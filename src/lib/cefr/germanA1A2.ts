@@ -362,6 +362,13 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "umarmen","umarmt","strophe","gegner","derby","punkt","punkte","dauerkarte","nachspielzeit",
   "falten","faltet","gefaltet","abpfiff","kehle","elfmeter","schreien","schreit","radio","foul",
   "heimspiel","wurststand","lärm","krähe","bestimmt",
+  // Batch 9f (2026-09-21), same journey, tema 6 (illness-and-sick-days).
+  "fieber","grippe","krankschreibung","krankgeschrieben","halsschmerzen","schlucken",
+  "tablette","tabletten","schwitzen","schwitzt","schüttelfrost","messen","misst",
+  "thermometer","ausruhen","bettruhe","schwindlig","niesen","taschentuch","taschentücher",
+  "praxis","husten","hustet","hausärztin","hausarzt","versichertenkarte","wartezimmer",
+  "krankenschein","nudelsuppe","flüstern","flüstert","tippen","tippt","beginnen","beginnt",
+  "lange","dienst","kratzen","kratzt","unterschrift","lunge","stur","hartnäckig","empfang",
 ]);
 
 export function isGermanA1A2(word: string): boolean {
