@@ -794,47 +794,68 @@ export function validateJourneyStories(
       push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang === "ES") {
-      // Suelo A0 espanol (2026-09-18). Hasta hoy este check devolvia
-      // `not-implemented` para ES, y saveStory lo trata como fallo: NO SE
-      // PODIA GUARDAR NINGUNA HISTORIA A0 EN ESPANOL. Los tres A0 espanoles
-      // live entraron por el camino viejo, antes del gate de conjunto.
-      // Se mide TODO el texto, comillas incluidas (ver A0_ES_* arriba).
-      const RASGOS_ES: Array<[string, RegExp, RegExp?]> = [
-        ["preterito", A0_ES_PRETERITO, A0_ES_NO_PRETERITO],
-        ["imperfecto", A0_ES_IMPERFECTO],
-        ["perfecto", A0_ES_PERFECTO],
-        ["futuro", A0_ES_FUTURO],
-        ["condicional", A0_ES_CONDICIONAL, A0_ES_NO_CONDICIONAL],
-        ["subjuntivo", A0_ES_SUBJUNTIVO],
-        ["ir a + infinitivo", A0_ES_IR_A],
-        ["pronombre de objeto", A0_ES_OBJETO],
-      ];
+      // Suelo A0 espanol (2026-09-22, montando el Friends ES Mexico A0). La
+      // NARRACION va en presente; lo citado es habla real y queda fuera, igual
+      // que en frances y en italiano. Lo que NO se mide aqui: "sujeto primero"
+      // es una regla alemana (inversion V2) que en espanol no dice nada, y el
+      // largo de frase ya lo mide `body-a0-sentence-length` en el validador de
+      // historia. Aqui solo el tiempo verbal.
+      //
+      // LA TILDE ES EL DETECTOR, y por eso no se normaliza nada. Las dos
+      // unicas falsas alarmas que salieron al calibrar contra el Traveler ES
+      // latam A0 se caen solas con ella: "esta seria un momento" (adjetivo,
+      // frente al condicional "seria") y "Mira hacia el alebrije" (preposicion,
+      // frente al imperfecto "hacia"). Todo -ia de imperfecto y de condicional
+      // la lleva; ninguno de sus homografos, si.
+      //
+      // Otras dos trampas del espanol:
+      //   - el imperfecto en -ia choca ademas con media lista de tiendas
+      //     (taqueria, lavanderia, peluqueria) y con dia, tia o Maria, asi que
+      //     va por LISTA de verbos frecuentes y no por terminacion;
+      //   - el preterito en -o acentuada es seguro, pero -e acentuada no
+      //     (cafe, bebe, pure), y el futuro en -ra choca con detras y atras.
+      // Calibrado contra las 21 del Traveler ES latam A0 y las 21 del Cultural
+      // ES latam A0, que son el A0 espanol ya publicado: las 42 en verde.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const PART = "\\p{Ll}{2,}(?:ado|ada|ados|adas|ido|ida|idos|idas)";
+      const PERFECTO = new RegExp(`${L}(?:he|has|ha|hemos|han|había|habían)\\s+(?:ya\\s+|no\\s+)?${PART}${R}`, "iu");
+      const PRET_IRREG = new RegExp(
+        `${L}(?:fue|fueron|tuvo|tuvieron|hizo|hicieron|dijo|dijeron|vino|vinieron|` +
+        `estuvo|estuvieron|pudo|pudieron|puso|pusieron|quiso|quisieron|supo|supieron|` +
+        `anduvo|anduvieron|trajo|trajeron|dieron|vieron|hubo|condujo)${R}`, "iu");
+      const PRET_REG = new RegExp(`${L}\\p{Ll}{2,}(?:ó|aron|ieron|yeron)${R}`, "u");
+      const IMP_COND = new RegExp(
+        `${L}(?:era|eran|éramos|iba|iban|íbamos|había|habían|tenía|tenían|` +
+        `quería|querían|podía|podían|hacía|hacían|decía|decían|venía|venían|salía|salían|` +
+        `ponía|ponían|veía|veían|sabía|sabían|vivía|vivían|sentía|sentían|dormía|dormían|` +
+        `subía|subían|comía|comían|bebía|bebían|abría|abrían|seguía|seguían|servía|servían|` +
+        `traía|traían|oía|oían|reía|reían|creía|creían|leía|leían|corría|corrían|` +
+        `estaba|estabas|estaban|estábamos|` +
+        `sería|serían|tendría|tendrían|querría|querrían|gustaría|gustarían|podría|podrían|` +
+        `haría|harían|iría|irían|diría|dirían)${R}`, "iu");
+      const IMP_ABA = new RegExp(`${L}\\p{Ll}{3,}(?:aba|abas|aban|ábamos)${R}`, "u");
+      const NO_FUTURO = /^(?:detrás|atrás)$/i;
+      const FUTURO = new RegExp(`${L}(\\p{Ll}{2,}(?:rá|rán|rás|ré|remos|réis))${R}`, "u");
       const malas: string[] = [];
       for (const s of stories) {
-        // Nombre propio = con mayuscula en mitad de frase; "Verá" o "Andrés"
-        // no son verbos. Solo filtra las terminaciones, no las listas.
-        const propios = new Set(
-          [...s.text.matchAll(/(?<=[\p{Ll},;]\s+)(\p{Lu}\p{Ll}+)/gu)].map((x) => x[1].toLowerCase()),
-        );
-        for (const f of sentences(s.text)) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
           if (f.length < 4) continue;
           const flags: string[] = [];
-          for (const [n, r, no] of RASGOS_ES) {
-            const m = f.match(r);
-            if (!m) continue;
-            const w = m[0].trim().split(/\s+/)[0].toLowerCase();
-            if (propios.has(w)) continue;
-            if (no && no.test(w)) continue;
-            flags.push(`${n}: ${m[0].trim()}`);
-          }
-          if (flags.length) malas.push(`${s.slug}: [${flags.join(" · ")}] ${f.slice(0, 60)}`);
+          if (PERFECTO.test(f)) flags.push("perfecto compuesto");
+          if (PRET_IRREG.test(f) || PRET_REG.test(f)) flags.push("preterito");
+          if (IMP_COND.test(f) || IMP_ABA.test(f)) flags.push("imperfecto o condicional");
+          const fut = f.match(FUTURO);
+          if (fut && !NO_FUTURO.test(fut[1])) flags.push("futuro");
+          if (flags.length) malas.push(`${s.slug}: [${[...new Set(flags)].join(" · ")}] ${f.slice(0, 70)}`);
         }
       }
-      push("journey-a0-floor", "Suelo A0: solo presente, sin pronombres de objeto",
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
-        `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
+        `El suelo A0 solo esta implementado para DE, FR, IT y ES; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
     } else {
       const partFinal = new RegExp(`\\s(${A0_DE_PARTICULAS.join("|")})\\s*[.!?]$`);
       const malas: string[] = [];
