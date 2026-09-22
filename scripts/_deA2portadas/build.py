@@ -1,0 +1,698 @@
+#!/usr/bin/env python3
+"""Portadas del Friends aleman A2 (Hannover), journey cmubidgaf0007j8np6g7n89iu.
+
+Escribe portadas.json (21 prompts + 7 hojas de reparto) y para-el-doc.txt
+(el mismo material en texto plano, para pegarlo en la Pestana 1 del doc).
+
+NO genera ninguna imagen. Solo compone texto.
+
+    python3 scripts/_deA2portadas/build.py
+"""
+import json
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+JOURNEY = "cmubidgaf0007j8np6g7n89iu"
+PLACE = "Hannover, Germany"
+
+# ---------------------------------------------------------------- fichas
+# Cada recurrente lleva UN ancla visible en cualquier plano (trenza, calva con
+# barba, bigote, gorra plana, mono, gorro, gafas, recogido) y un color de ropa
+# fijo que no comparte con nadie. Sacadas de las 21 historias, no inventadas.
+FICHAS = {
+    "BRITTA": (
+        "woman, exactly 32 years old, slim build, medium height, fair skin, "
+        "dark auburn-red hair worn in ONE thick braid falling over her right "
+        "shoulder, WITHOUT fringe, no glasses; wears a mustard-yellow knitted "
+        "cardigan over a plain white t-shirt with no print, dark-blue jeans "
+        "and brown ankle boots."
+    ),
+    "MALTE": (
+        "man, exactly 34 years old, stocky broad-shouldered build, half a head "
+        "taller than BRITTA, light olive skin, HEAD COMPLETELY SHAVED and a "
+        "thick full dark-brown beard, no glasses; wears a plain grey-blue "
+        "zip-up hooded sweatshirt with no print, black trousers and grey "
+        "trainers."
+    ),
+    "INGO": (
+        "man, exactly 41 years old, tall and heavy-set, the tallest and "
+        "broadest person in any scene he appears in, ruddy fair skin, thick "
+        "grey-blond hair combed straight back, a BUSHY GREY-BLOND WALRUS "
+        "MOUSTACHE and no beard at all, no glasses; wears a red-and-black "
+        "checked flannel shirt with the sleeves rolled up, brown corduroy "
+        "trousers and tan work boots."
+    ),
+    "KERSTIN": (
+        "woman, exactly 47 years old, short and broad-shouldered, a head "
+        "shorter than BRITTA, weathered tanned skin, very short cropped "
+        "platinum-grey hair under a BLACK FLAT CAP she never takes off, no "
+        "glasses; wears a teal-blue padded body-warmer gilet over a black "
+        "long-sleeved top, dark-grey work trousers and black boots."
+    ),
+    "LARS": (
+        "man, exactly 45 years old, lean and narrow-shouldered, slightly "
+        "taller than BRITTA, fair skin, long dark-blond hair tied in a LOW BUN "
+        "at the back of his head, clean-shaven, RECTANGULAR BLACK-FRAMED "
+        "GLASSES; wears a dark-green canvas work apron over a light-grey "
+        "shirt, beige trousers and dark-brown shoes."
+    ),
+    "TORBEN": (
+        "man, exactly 38 years old, short and round-bellied, shorter than "
+        "BRITTA, fair skin, a RED KNITTED BEANIE pulled down over his ears "
+        "that he never takes off and a full GINGER-RED beard, no glasses; "
+        "wears a navy-blue quilted jacket, black jeans and black trainers."
+    ),
+    "BENTE": (
+        "woman, exactly 39 years old, tall and slim, a head taller than "
+        "BRITTA, deep brown skin, black hair pulled into a HIGH TIGHT BUN, "
+        "ROUND TORTOISESHELL GLASSES; wears a white open doctor's coat over a "
+        "burgundy blouse, navy trousers and plain white shoes."
+    ),
+    "HENDRIK": (
+        "man, exactly 29 years old, slim and wiry, the same height as BRITTA, "
+        "brown skin, an UNDERCUT with the sides shaved and a high tuft of "
+        "BLEACHED-BLOND hair on top, completely clean-shaven, no glasses; "
+        "wears PAINT-SPATTERED light-blue dungaree overalls over a plain "
+        "orange t-shirt with no print, and white trainers."
+    ),
+}
+
+SIDES = ["LEFT", "CENTRE-LEFT", "CENTRE-RIGHT", "RIGHT"]
+
+
+def sheet(names):
+    n = len(names)
+    if n == 2:
+        slots = ["LEFT", "RIGHT"]
+    elif n == 3:
+        slots = ["LEFT", "CENTRE", "RIGHT"]
+    else:
+        slots = SIDES[:n]
+    lines = [
+        "Character model sheet for a story series, clean cel-shaded editorial "
+        "illustration, crisp clean linework, flat vivid warm colour fills, "
+        "plain pure white background, landscape 16:9.",
+        "",
+        "Exactly %d adult characters drawn as a reference sheet: top row shows "
+        "all of them full body from head to feet, standing straight, front "
+        "view, neutral expression, natural even skin with no blush and no rosy "
+        "circles on the cheeks, large natural almond-shaped eyes with a "
+        "visible dark iris in every face; bottom row shows the same characters "
+        "as head and shoulders close ups." % n,
+        "",
+    ]
+    for slot, name in zip(slots, names):
+        lines.append("%s is %s: %s" % (slot, name, FICHAS[name]))
+        lines.append("")
+    lines.append(
+        "No two characters wear the same garment or the same colour: each "
+        "wears only what this sheet gives them. Every adult here is between 29 "
+        "and 47: no children, no teenagers, no elderly people. Generous white "
+        "margin around every figure, no props, no animals, no scenery, no "
+        "shadows on the background, and absolutely no text, labels or numbers "
+        "anywhere in the image."
+    )
+    return "\n".join(lines)
+
+
+LOCK = (
+    "LOCK: The image provided is the cast sheet for this story. KEEP every "
+    "character's face, hair, facial hair, headwear, body build, height "
+    "difference, skin tone and clothing IDENTICAL to the sheet; only pose, "
+    "framing, light and background change. No two characters wear the same "
+    "garment or the same colour: each wears only what the sheet gives them. "
+    "Every face in the image, main or secondary, has large natural "
+    "almond-shaped eyes with a visible dark iris, and even matte skin with no "
+    "rosy blush circles on the cheeks. Draw only the characters the scene "
+    "names, and no other people: no children, no teenagers, no elderly people, "
+    "no crowd, no queue, no passers-by, not even in the background, at a "
+    "window or in a doorway. No animals anywhere. No text, letters or numbers "
+    "anywhere in the image. No readable surfaces, no signs, no shop signs, no "
+    "street signs, no noticeboards, no posters, no house numbers, no price "
+    "tags, no visible writing paper, no open books, no open notebooks, no open "
+    "newspapers, no front-facing screens: any phone shows only its plain back "
+    "and any laptop is closed. Any paper, note, folder, sheet, receipt, "
+    "envelope, card or ticket is folded shut, closed or lying face down, never "
+    "legible writing. Any bottle, jar, tin, crate or cardboard box is plain "
+    "with no label and no print. Any vehicle is plain with no number plate, no "
+    "lettering and no markings of any kind. Any scarf, shirt or jacket is a "
+    "plain solid colour or a plain check with no crest, badge, logo or "
+    "lettering."
+)
+
+STYLE = (
+    "STYLE: Clean cel-shaded editorial illustration anchored to the published "
+    "German A1 Friends cover 'Alles super in Frankfurt' (a woman in a bright "
+    "yellow jacket sitting on pale stone stairs beside a black wrought-iron "
+    "banister with a light wooden handrail, a sage-green painted dado below a "
+    "cream wall, one warm bare bulb overhead, a man in a dark-green hooded "
+    "sweatshirt standing in a dark-green panelled doorway): thick crisp "
+    "linework, flat saturated warm colour fills, simple graphic shadows, adult "
+    "figures at middle distance with realistic adult proportions and large "
+    "readable faces, natural even skin with no blush, natural eyes with a dark "
+    "iris, bright and warm even at night and even in the rain. Hannover "
+    "palette: dark-red clinker brick facades, post-war plaster walls in cream "
+    "and pale sage green, white window frames, black wrought-iron railings, "
+    "grey stone steps, red roof tiles, the grey-green water of the Leine, and "
+    "the red and black of the local football club. 16:9 landscape."
+)
+
+FRAMING = (
+    "FRAMING: the named characters stand close together with no empty gap "
+    "between them, they occupy the middle third of the frame, waist-up or "
+    "fuller, their faces large enough to read clearly, and the illustration "
+    "fills the entire canvas edge to edge with no borders or empty margins."
+)
+
+# ---------------------------------------------------------------- temas
+TOPICS = [
+    {
+        "topic": "flats-and-viewings",
+        "label": "Flats & Viewings",
+        "names": ["BRITTA", "MALTE"],
+        "stories": [
+            {
+                "slug": "die-mappe-auf-dem-sofa",
+                "title": "Die Mappe auf dem Sofa",
+                "slot": 1,
+                "scene": (
+                    "SCENE: On the half-landing of an old Hannover apartment "
+                    "building on a wet afternoon, cream plaster walls above a "
+                    "sage-green painted dado, grey stone steps, a black "
+                    "wrought-iron banister with a light wooden handrail, one "
+                    "warm bare bulb overhead, wet coats dripping on a hook. "
+                    "Exactly two people, no queue and nobody else on the "
+                    "stairs. BRITTA stands at the top step with both hands "
+                    "open and empty in front of her, caught out, her bag "
+                    "hanging from one shoulder. Facing her is FRAU DORN, the "
+                    "estate agent, a woman of exactly 36, average height, "
+                    "pale skin, straight chin-length dark-brown hair with a "
+                    "blunt fringe, no glasses, in a charcoal-grey trouser "
+                    "suit over a white blouse and black shoes; she holds a "
+                    "closed grey clipboard flat against her chest with both "
+                    "hands, face down, and looks at BRITTA expectantly. "
+                    "Medium shot from a few steps below, both waist up or "
+                    "fuller."
+                ),
+            },
+            {
+                "slug": "zwei-namen-im-vertrag",
+                "title": "Zwei Namen im Vertrag",
+                "slot": 2,
+                "scene": (
+                    "SCENE: Inside an empty flat in the Suedstadt, late "
+                    "morning, the narrow balcony door open behind them onto "
+                    "dark-red brick and white window frames, dust hanging in "
+                    "the shaft of sunlight, bare floorboards, cream walls. "
+                    "Exactly three people. BRITTA stands in the middle with "
+                    "one palm raised flat in a polite refusal, her chin up, "
+                    "calm. MALTE stands on her left with one hand still on "
+                    "the doorframe and the other half-lifted, mid-offer, "
+                    "leaning in. On her right stands HERR VOSS, the landlord, "
+                    "a man of exactly 52, heavy-set, medium height, pale "
+                    "skin, thinning short grey hair, no beard, no glasses, in "
+                    "a brown zip cardigan over a checked shirt, dark trousers "
+                    "and brown shoes; he holds a shut cardboard folder under "
+                    "one arm and rests his other hand on his hip. Medium "
+                    "shot, all three waist up or fuller."
+                ),
+            },
+            {
+                "slug": "der-zettel-im-waschsalon",
+                "title": "Der Zettel im Waschsalon",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In a half-emptied two-room flat in the List "
+                    "district, afternoon light through a bare window, plain "
+                    "unlabelled cardboard boxes stacked along the wall, pale "
+                    "rectangles left on the cream wall where pictures used to "
+                    "hang, a rolled-up rug against the radiator. Exactly two "
+                    "people. On the left stands FRAU LENZ, the outgoing "
+                    "tenant, a woman of exactly 44, tall and thin, olive "
+                    "skin, greying black hair in a short ponytail, no "
+                    "glasses, still wearing her navy anorak over a dark-red "
+                    "jumper and black trousers; she is pressing a strip of "
+                    "packing tape down onto the top of a box with the flat of "
+                    "her hand and has just turned her head to speak. BRITTA "
+                    "stands beside her with one hand resting on the top box "
+                    "and her head tilted, listening, caught by what she "
+                    "hears. Medium shot, both waist up or fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "moving-and-helping-out",
+        "label": "Moving & Helping Out",
+        "names": ["BRITTA", "MALTE", "INGO"],
+        "stories": [
+            {
+                "slug": "drei-stunden-transporter",
+                "title": "Drei Stunden Transporter",
+                "slot": 1,
+                "scene": (
+                    "SCENE: In the back courtyard of a dark-red brick "
+                    "building on a Saturday morning just after rain, wet "
+                    "cobbles shining, three bicycles against the wall, the "
+                    "open back doors of a completely plain white van with no "
+                    "number plate and no lettering. Exactly three people, "
+                    "nobody at the windows. INGO stands at the tailgate in "
+                    "thick work gloves, hoisting a large plain cardboard box "
+                    "up onto his shoulder with both arms, grinning. BRITTA is "
+                    "next to him, both hands under a second box, passing it "
+                    "to him. MALTE stands on her other side with one hand "
+                    "pressed flat to his lower back and the other gripping "
+                    "the van door, wincing. Medium shot from the courtyard, "
+                    "all three waist up or fuller."
+                ),
+            },
+            {
+                "slug": "das-sofa-aus-muenster",
+                "title": "Das Sofa aus Münster",
+                "slot": 2,
+                "scene": (
+                    "SCENE: At the tight bend of an old stairwell between the "
+                    "first and second floor, grey stone steps, black "
+                    "wrought-iron banister, cream walls above a sage-green "
+                    "dado, grey daylight from a landing window. A wide green "
+                    "two-seater sofa, dark with rain, is jammed diagonally "
+                    "into the turn of the stairs and will not go further. "
+                    "Exactly three people. INGO is above the sofa with both "
+                    "hands under the armrest, heaving upward, mouth open "
+                    "mid-sentence. MALTE is below it with his shoulder "
+                    "against the back of the sofa, pushing, silent and "
+                    "grim-faced. BRITTA stands on the step beside them with "
+                    "one hand flat on the wet green upholstery, looking at "
+                    "the jammed corner and working out the sums. Medium shot "
+                    "from the lower flight, all three waist up or fuller."
+                ),
+            },
+            {
+                "slug": "pizza-auf-den-kartons",
+                "title": "Pizza auf den Kartons",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In a completely empty kitchen that evening, bare "
+                    "cream walls, a single warm ceiling lamp, no furniture at "
+                    "all, three upturned plain cardboard boxes used as seats "
+                    "and a fourth as a table. Exactly three people, sitting "
+                    "in a close triangle. Two flat plain unprinted pizza "
+                    "boxes are open between them and each holds a white paper "
+                    "plate. BRITTA sits on the left holding her plate in both "
+                    "hands, halfway through an awkward question. MALTE sits "
+                    "opposite, head back, laughing out loud, a slice in one "
+                    "hand. INGO sits on the right leaning forward with his "
+                    "elbows on his knees, counting something off on the "
+                    "fingers of one hand while he explains. Medium shot at "
+                    "seated height, all three waist up or fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "second-hand-and-bargains",
+        "label": "Second Hand & Bargains",
+        "names": ["BRITTA", "KERSTIN", "MALTE"],
+        "stories": [
+            {
+                "slug": "achtzig-fuer-drei-beine",
+                "title": "Achtzig für drei Beine",
+                "slot": 1,
+                "scene": (
+                    "SCENE: At a flea market on the bank of the Leine on a "
+                    "grey misty Saturday morning, the grey-green water and "
+                    "bare trees behind, a handcart piled with second-hand "
+                    "furniture, two wooden folding chairs leaning against it, "
+                    "no other stalls and nobody else in sight. Exactly two "
+                    "people, with a solid wooden table between them and no "
+                    "price tag anywhere. KERSTIN stands behind the table with "
+                    "one hand slapped flat on the tabletop, selling hard, the "
+                    "other hand holding a folding chair upright by its back. "
+                    "BRITTA stands on the near side, running her palm along "
+                    "the smooth tabletop, her mouth shut on the question she "
+                    "cannot ask. Medium shot across the table, both waist up "
+                    "or fuller."
+                ),
+            },
+            {
+                "slug": "der-zettel-am-bett",
+                "title": "Der Zettel am Bett",
+                "slot": 2,
+                "scene": (
+                    "SCENE: Inside a cold storage depot on a Wednesday "
+                    "afternoon, grey daylight through a high dusty window, a "
+                    "concrete floor and stacked second-hand furniture along "
+                    "the brick wall. Exactly two people. A plain wooden bed "
+                    "frame with its slatted base stands upright between them, "
+                    "unscratched, with no mattress. BRITTA has one hand "
+                    "gripping the bed frame and the other open in front of "
+                    "her, mid-offer, surprised by her own voice. KERSTIN "
+                    "stands opposite wiping both hands on a rag, head tilted, "
+                    "sizing her up, amused. Medium shot, both waist up or "
+                    "fuller."
+                ),
+            },
+            {
+                "slug": "zwei-stuehle-ein-teller",
+                "title": "Zwei Stühle, ein Teller",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In BRITTA's small kitchen on a Friday evening, "
+                    "one warm lamp throwing a bright circle on the floor, "
+                    "steam off a pot, nothing matching: a solid wooden table "
+                    "with a folded wedge of plain cardboard under one short "
+                    "leg, two wooden folding chairs, a tall cupboard with a "
+                    "deep dent in its door. Exactly two people. MALTE stands "
+                    "just inside the doorway holding a plain dark bottle of "
+                    "red wine by the neck with no label, laughing, his free "
+                    "arm sweeping across the room. BRITTA stands at the table "
+                    "setting down two plates of different sizes and colours, "
+                    "one in each hand, grinning back at him instead of "
+                    "apologising. Medium shot from the kitchen door, both "
+                    "waist up or fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "job-hunting-and-interviews",
+        "label": "Job Hunting & Interviews",
+        "names": ["BRITTA", "LARS", "MALTE"],
+        "stories": [
+            {
+                "slug": "ein-loch-im-lebenslauf",
+                "title": "Ein Loch im Lebenslauf",
+                "slot": 1,
+                "scene": (
+                    "SCENE: Inside a small flower shop in the Nordstadt on a "
+                    "Thursday morning, buckets of cut flowers on the floor, "
+                    "damp green foliage, a zinc counter, cool grey daylight "
+                    "through the window and warm lamps inside. Exactly two "
+                    "people. LARS stands behind the counter cutting the stems "
+                    "of three white roses with secateurs, not looking up, a "
+                    "chipped mug of cold coffee beside him and a shut "
+                    "cardboard folder lying face down on the zinc. BRITTA "
+                    "stands on the customer side with both hands flat on the "
+                    "counter edge, answering too fast, leaning slightly "
+                    "forward. Medium shot across the counter, both waist up "
+                    "or fuller."
+                ),
+            },
+            {
+                "slug": "probearbeiten-am-freitag",
+                "title": "Probearbeiten am Freitag",
+                "slot": 2,
+                "scene": (
+                    "SCENE: Inside the same flower shop late on a Friday "
+                    "morning, a wet floor still shining, a metal bucket and a "
+                    "broom propped against the counter, a wall of hanging "
+                    "florist's scissors and secateurs behind. Exactly two "
+                    "people. BRITTA stands at the work table with a plain "
+                    "blue work coat pulled on over her sheet clothes, the "
+                    "only garment the scene adds, both hands turning the "
+                    "ribbon around a finished dark bouquet, fast and certain, "
+                    "her jaw set. LARS stands two steps behind at the till "
+                    "with a phone held to his ear showing only its plain "
+                    "back, his other arm raised with the thumb up, not "
+                    "looking at her. Medium shot, both waist up or fuller."
+                ),
+            },
+            {
+                "slug": "die-schere-aus-muenster",
+                "title": "Die Schere aus Münster",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In BRITTA's kitchen on a Monday evening, warm "
+                    "lamplight, the dented cupboard and the wobbly wooden "
+                    "table behind them, two glasses on the table. Exactly two "
+                    "people, sitting on wooden folding chairs turned towards "
+                    "each other. MALTE sits leaning forward with both elbows "
+                    "on his knees and one hand open in mid-air, making an "
+                    "offer. BRITTA sits opposite shaking her head with a "
+                    "smile, one hand laid flat on MALTE's forearm, relaxed "
+                    "for the first time, asking for something else instead. "
+                    "Medium shot at seated height, both waist up or fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "sports-and-match-days",
+        "label": "Sports & Match Days",
+        "names": ["BRITTA", "TORBEN"],
+        "stories": [
+            {
+                "slug": "block-h-reihe-zwoelf",
+                "title": "Block H, Reihe zwölf",
+                "slot": 1,
+                "scene": (
+                    "SCENE: High in a football stand on a cold grey Saturday "
+                    "afternoon in October, rows of empty red tip-up seats "
+                    "around them and a wet green pitch far below, no spectat"
+                    "ors anywhere, no banners, no scoreboard. Exactly two "
+                    "people, with one empty folded-up seat between them. "
+                    "TORBEN sits on the left leaning over the seat back in "
+                    "front, both hands gripping it, shouting down at the "
+                    "pitch. BRITTA sits on the right with her hands pushed "
+                    "into her sleeves and her shoulders hunched against the "
+                    "cold, not watching the pitch at all but looking sideways "
+                    "at the empty seat beside her. Medium shot from the row "
+                    "in front, both waist up or fuller."
+                ),
+            },
+            {
+                "slug": "ein-schal-zwei-lieder",
+                "title": "Ein Schal, zwei Lieder",
+                "slot": 2,
+                "scene": (
+                    "SCENE: Standing in the same football stand before "
+                    "kick-off, rows of empty red seats behind them and the "
+                    "floodlit green pitch below, nobody else in the frame, no "
+                    "banners and no flags. Exactly two people, standing close "
+                    "together. TORBEN is pressing a plain red-and-black "
+                    "knitted scarf with no lettering into BRITTA's hands with "
+                    "both of his, laughing. BRITTA has the scarf gripped in "
+                    "both fists and is mid-song, head back, mouth open, "
+                    "singing the wrong words and not caring. Medium shot, "
+                    "both waist up or fuller."
+                ),
+            },
+            {
+                "slug": "elf-minuten-nachspielzeit",
+                "title": "Elf Minuten Nachspielzeit",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In the same stand on a freezing Sunday evening in "
+                    "November under white floodlight, breath showing in the "
+                    "cold air, rows of empty red seats behind them and the "
+                    "pitch below, nobody else in the frame. Exactly two "
+                    "people, both standing. BRITTA is up on the step with "
+                    "both fists raised and her whole body stretched forward, "
+                    "roaring at the pitch, the red-and-black scarf knotted "
+                    "round her neck. TORBEN stands beside her with both hands "
+                    "clamped on the steel railing, head down, unable to look. "
+                    "Medium shot from just below, both waist up or fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "illness-and-sick-days",
+        "label": "Illness & Sick Days",
+        "names": ["BRITTA", "BENTE", "LARS"],
+        "stories": [
+            {
+                "slug": "der-gelbe-zettel",
+                "title": "Der gelbe Zettel",
+                "slot": 1,
+                "scene": (
+                    "SCENE: In a small doctor's consulting room on a Monday "
+                    "morning, pale green walls, a white examination couch "
+                    "with paper cover, a window onto dark-red brick, cool "
+                    "clean daylight. Exactly two people, nobody in the "
+                    "doorway. BENTE stands leaning in with a small examinat"
+                    "ion torch in one hand and a wooden tongue depressor in "
+                    "the other, looking into BRITTA's throat, calm and "
+                    "unhurried. BRITTA sits on the edge of the couch with her "
+                    "head tipped back and her mouth open, one hand gripping "
+                    "the edge of the couch, ill and grey-faced but with even "
+                    "matte skin and no rosy cheeks. Medium shot from the "
+                    "side, both waist up or fuller."
+                ),
+            },
+            {
+                "slug": "drei-tage-ohne-stimme",
+                "title": "Drei Tage ohne Stimme",
+                "slot": 2,
+                "scene": (
+                    "SCENE: On the landing outside BRITTA's own flat door "
+                    "early on a grey morning, cream walls above a sage-green "
+                    "dado, grey stone steps, a black wrought-iron banister, "
+                    "one warm bare bulb. Exactly one person, nobody else on "
+                    "the stairs or in the doorway. BRITTA has opened her door "
+                    "in a thick grey blanket pulled round her shoulders over "
+                    "her clothes, the only garment the scene adds, and is "
+                    "crouched on the threshold reaching down with one hand "
+                    "for what is waiting on the doormat: a plain unlabelled "
+                    "paper bag, two apples and a covered bowl, with a small "
+                    "note folded shut in half lying beside them. Her other "
+                    "hand holds the doorframe. Ill, moved, wrecked voice. "
+                    "Medium shot from the stairs, waist up or fuller."
+                ),
+            },
+            {
+                "slug": "die-praxis-am-dienstag",
+                "title": "Die Praxis am Dienstag",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In the doorway of the flower shop on a Wednesday "
+                    "morning, the wet pavement outside, a plain bicycle "
+                    "leaning against the dark-red brick beside the door, "
+                    "buckets of flowers just inside, cool grey daylight. "
+                    "Exactly two people, nobody in the street. LARS stands in "
+                    "the doorway with BRITTA's bag already lifted out of her "
+                    "hand in one of his and his other arm stretched out "
+                    "pointing back towards the street, firm and unbothered. "
+                    "BRITTA stands on the step facing him, one hand still on "
+                    "the bicycle handlebar, ill and worn out with even matte "
+                    "skin and no rosy cheeks, caught between arguing and "
+                    "relief. Medium shot from the pavement, both waist up or "
+                    "fuller."
+                ),
+            },
+        ],
+    },
+    {
+        "topic": "housewarming-and-toasts",
+        "label": "Housewarming & Toasts",
+        "names": ["BRITTA", "MALTE", "HENDRIK"],
+        "stories": [
+            {
+                "slug": "ein-kasten-im-hausflur",
+                "title": "Ein Kasten im Hausflur",
+                "slot": 1,
+                "scene": (
+                    "SCENE: On the first-floor landing on a Monday morning, "
+                    "cream walls above a sage-green dado, grey stone steps, a "
+                    "black wrought-iron banister, the smell of fresh paint, "
+                    "an open flat door behind with a freshly painted wall "
+                    "inside. Exactly two people. A wooden crate of plain "
+                    "unlabelled glass bottles blocks the middle of the "
+                    "landing. BRITTA has both hands under the crate, lifting "
+                    "it up off the floor, knees bent, offering. HENDRIK "
+                    "stands beside her with a stack of plain cardboard boxes "
+                    "clamped under his left arm and his right hand patting "
+                    "his pocket for a key, wet paint on his hands, laughing "
+                    "at himself. Medium shot from the stairs, both waist up "
+                    "or fuller."
+                ),
+            },
+            {
+                "slug": "einladung-ohne-namen",
+                "title": "Einladung ohne Namen",
+                "slot": 2,
+                "scene": (
+                    "SCENE: In BRITTA's kitchen on a Thursday morning, warm "
+                    "daylight, the smell of coffee, the wobbly wooden table "
+                    "with the cardboard wedge under its leg, the dented "
+                    "cupboard behind. Exactly two people. MALTE sits on a "
+                    "wooden folding chair with both hands round a chipped mug "
+                    "on the table, explaining something with his chin, "
+                    "certain of it. BRITTA stands at the table pressing the "
+                    "cap back onto a ballpoint pen with both hands, half a "
+                    "sheet of paper lying FACE DOWN and blank-side-up on the "
+                    "wood beside her, doubtful, looking at MALTE for "
+                    "confirmation. Medium shot across the table, both waist "
+                    "up or fuller."
+                ),
+            },
+            {
+                "slug": "salz-brot-und-sekt",
+                "title": "Salz, Brot und Sekt",
+                "slot": 3,
+                "scene": (
+                    "SCENE: In BRITTA's small living room on a Saturday "
+                    "evening, warm lamplight, the table loaded with bowls of "
+                    "spread, sliced bread, a dish of salt, gherkins and a "
+                    "stack of paper napkins, the cardboard wedge still under "
+                    "the table leg. Exactly three people, close together in "
+                    "front of the table, and nobody else in the room or in "
+                    "the doorway. BRITTA stands in the middle tapping a knife "
+                    "against a raised glass, mid-speech, steady. HENDRIK "
+                    "stands on her left with his glass lifted high towards "
+                    "her, grinning. MALTE stands on her right pouring from a "
+                    "plain unlabelled green bottle into a glass held out in "
+                    "his other hand. Medium shot from across the table, all "
+                    "three waist up or fuller."
+                ),
+            },
+        ],
+    },
+]
+
+
+def build():
+    out = []
+    for t in TOPICS:
+        sh = sheet(t["names"])
+        stories = []
+        for s in t["stories"]:
+            stories.append(
+                {
+                    "slug": s["slug"],
+                    "title": s["title"],
+                    "slot": s["slot"],
+                    "prompt": "\n\n".join([LOCK, STYLE, FRAMING, s["scene"]]),
+                }
+            )
+        out.append(
+            {
+                "topic": t["topic"],
+                "label": t["label"],
+                "place": PLACE,
+                "names": t["names"],
+                "sheet": sh,
+                "stories": stories,
+            }
+        )
+    return out
+
+
+def doc(data):
+    parts = [
+        "[Journey-planning-2] PETICION DE A2 Friends (Hannover): 21 portadas + "
+        "7 cast sheets, journey %s" % JOURNEY,
+        "",
+        "Orden: primero la cast sheet del tema, despues las 3 escenas de ese "
+        "tema adjuntando esa misma hoja. Tope 2 tiradas por portada; si una "
+        "escena falla dos veces por lo mismo, se cambia la escena, no se "
+        "vuelve a tirar.",
+        "",
+    ]
+    for i, t in enumerate(data, 1):
+        parts.append("=" * 70)
+        parts.append("TEMA %d: %s (%s)" % (i, t["label"], t["topic"]))
+        parts.append("Lugar: %s" % t["place"])
+        parts.append("Reparto: %s" % ", ".join(t["names"]))
+        parts.append("")
+        parts.append("CAST SHEET:")
+        parts.append(t["sheet"])
+        parts.append("")
+        for s in t["stories"]:
+            parts.append("-" * 70)
+            parts.append("%d.%d  %s  (%s)" % (i, s["slot"], s["title"], s["slug"]))
+            parts.append("")
+            parts.append(s["prompt"])
+            parts.append("")
+    return "\n".join(parts)
+
+
+if __name__ == "__main__":
+    data = build()
+    with open(os.path.join(HERE, "portadas.json"), "w") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    with open(os.path.join(HERE, "para-el-doc.txt"), "w") as f:
+        f.write(doc(data))
+    n = sum(len(t["stories"]) for t in data)
+    print("temas:", len(data), "| prompts:", n, "| fichas:", len(FICHAS))
