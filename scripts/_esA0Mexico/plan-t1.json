@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "MEXICO",
+  "registro": "seco y practico, dos amigos que discuten una tonteria como si fuera un juicio",
+  "espina": "Itzel y Bruno comparten edificio en Guadalajara y resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+  "recursos": "presente, frases de cinco a ocho palabras, dialogo que lleva el conflicto, giro que el lector deduce de un objeto ya visto (la pinza, la silla, el calcetin). Nada de ironia narrada ni de monologo interior",
+  "historias": [
+    { "slot": "0", "quiere": "Itzel quiere su camisa azul para el turno de la noche", "impide": "en el tendedero solo hay una camisa azul y Bruno dice que es suya", "cuesta": "pierde la certeza de reconocer su propia ropa, y el mes anterior ya no se puede deshacer", "cambia": "las marcan para no confundirlas, y eligen la misma marca", "emocion": "la vergueenza de reirse de uno mismo delante del otro" },
+    { "slot": "1", "quiere": "Itzel quiere su tendedero libre para lavar el uniforme", "impide": "esta lleno de ropa de Bruno, que dice que su cuerda se rompio", "cuesta": "Bruno pierde su rincon de sol, que era lo unico que defendia", "cambia": "Itzel descubre que la cuerda no se rompio sola y vuelve a colgar la sabana ahi", "emocion": "el enfado pequeno que se desinfla al entender el motivo" },
+    { "slot": "2", "quiere": "Itzel quiere dejar la ropa toda la noche en la azotea", "impide": "Bruno jura que no llueve y llueve", "cuesta": "la ropa de Itzel se moja entera y ya no vuelve a ser blanca", "cambia": "Bruno la lava para disculparse y la deja rosa; ahora nadie confunde nada", "emocion": "la ternura torpe de quien arregla algo y lo empeora" }
+  ]
+}

@@ -1,0 +1,383 @@
+[
+ {
+  "topic": "rooftops-and-laundry",
+  "slotIndex": 0,
+  "title": "Dos camisas azules",
+  "slug": "dos-camisas-azules",
+  "synopsis": "Itzel busca su camisa azul para el turno de la noche. En el tendedero hay una sola, y Bruno dice que es suya.",
+  "text": "En la azotea hace calor y huele a jabón. Itzel es una enfermera de Guadalajara, México. Ella cuelga una camisa azul en uno de los dos tendederos y baja por un café.\n\nBruno, un mecánico del mismo edificio, sube con su ropa mojada. Él ve una camisa azul en el tendedero. La dobla y se la lleva.\n\nItzel regresa con el café. El tendedero está vacío.\n\n“Bruno, ¿tienes mi camisa?” pregunta Itzel. “Tengo la mía,” dice Bruno. “Yo también tengo una camisa azul.”\n\nLos dos suben otra vez. En el tendedero hay una sola camisa, con una pinza rota.\n\n“Es mía,” dicen los dos al mismo tiempo. Itzel mira la etiqueta. Bruno mira la etiqueta.\n\n“Llevo un mes con tu camisa,” dice Bruno. “Y yo con la tuya,” dice Itzel. “Ahora marco la mía con una pinza roja.” “Buena idea,” dice Bruno. “Yo marco la mía con una pinza roja.”",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "azotea",
+    "definition": "Flat roof of a building, used as an open terrace."
+   },
+   {
+    "type": "verb",
+    "word": "oler",
+    "surface": "huele",
+    "definition": "To have a smell, good or bad."
+   },
+   {
+    "type": "noun",
+    "word": "tendederos",
+    "definition": "Clotheslines; lines where wet clothes dry in the air."
+   },
+   {
+    "type": "verb",
+    "word": "colgar",
+    "surface": "cuelga",
+    "definition": "To hang something on a line, a hook or a nail."
+   },
+   {
+    "type": "noun",
+    "word": "camisa",
+    "definition": "Shirt; clothing for the upper body, with buttons."
+   },
+   {
+    "type": "adjective",
+    "word": "azul",
+    "definition": "Blue; the colour of the sky on a clear day."
+   },
+   {
+    "type": "verb",
+    "word": "subir",
+    "surface": "sube",
+    "definition": "To go up, for example to a higher floor."
+   },
+   {
+    "type": "adjective",
+    "word": "mojada",
+    "definition": "Wet; with water on it and not dry yet."
+   },
+   {
+    "type": "noun",
+    "word": "ropa",
+    "definition": "Clothes; the things people wear."
+   },
+   {
+    "type": "verb",
+    "word": "doblar",
+    "surface": "dobla",
+    "definition": "To fold cloth or paper so it becomes smaller."
+   },
+   {
+    "type": "verb",
+    "word": "regresar",
+    "surface": "regresa",
+    "definition": "To come back to the place you were before."
+   },
+   {
+    "type": "adjective",
+    "word": "vacío",
+    "definition": "Empty; with nothing inside or on it."
+   },
+   {
+    "type": "verb",
+    "word": "preguntar",
+    "surface": "pregunta",
+    "definition": "To ask; to say something you want an answer to."
+   },
+   {
+    "type": "pronoun",
+    "word": "mía",
+    "definition": "Mine; the one that belongs to me."
+   },
+   {
+    "type": "noun",
+    "word": "pinza",
+    "definition": "Clothes peg; the small clip that holds clothes on the line."
+   },
+   {
+    "type": "adjective",
+    "word": "rota",
+    "definition": "Broken; in pieces or not working."
+   },
+   {
+    "type": "expression",
+    "word": "al mismo tiempo",
+    "definition": "At the same time; together, in the same moment."
+   },
+   {
+    "type": "noun",
+    "word": "etiqueta",
+    "definition": "Label; the small tag sewn inside a piece of clothing."
+   },
+   {
+    "type": "pronoun",
+    "word": "tuya",
+    "definition": "Yours; the one that belongs to you."
+   },
+   {
+    "type": "verb",
+    "word": "marcar",
+    "surface": "marco",
+    "definition": "To put a sign on something so you know it is yours."
+   },
+   {
+    "type": "adjective",
+    "word": "roja",
+    "definition": "Red; the colour of a tomato."
+   }
+  ]
+ },
+ {
+  "topic": "rooftops-and-laundry",
+  "slotIndex": 1,
+  "title": "Una cuerda no hace nudos",
+  "slug": "una-cuerda-no-hace-nudos",
+  "synopsis": "Una cuerda que se rompe sola dos veces en una semana es una cuerda sospechosa, y Bruno no quiere explicar por que.",
+  "text": "Itzel termina el turno de noche y sube a la azotea con el jabón y con prisa. Su tendedero está lleno de ropa de Bruno.\n\nBruno toma café en su rincón, al lado del tinaco. Ahí pega el sol toda la mañana. Es el único sitio con sol de la azotea.\n\n“Bruno, tu ropa está en mi tendedero,” dice Itzel. “Mi cuerda se rompe sola,” dice Bruno. “Es una cuerda vieja.”\n\nItzel mira la cuerda. No está rota. Está desatada, con un nudo en el clavo.\n\n“Una cuerda vieja no hace nudos,” dice ella. Bruno toma otro café y calla. “Las cuerdas viejas son así,” dice al rato.\n\n“Tu sábana tapa mi rincón,” dice al final. “Con la sábana ahí, tomo café en la sombra.”\n\nItzel entiende todo. Lava el uniforme y cuelga la sábana en el mismo sitio de siempre. Bruno mueve su silla dos metros. Ahora el sol le pega en la espalda.",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "uniforme",
+    "definition": "Uniform; the special clothes you wear for work."
+   },
+   {
+    "type": "noun",
+    "word": "jabón",
+    "definition": "Soap; you use it with water to wash things."
+   },
+   {
+    "type": "expression",
+    "word": "con prisa",
+    "definition": "In a hurry; going fast because there is little time."
+   },
+   {
+    "type": "adjective",
+    "word": "lleno",
+    "definition": "Full; with no space left."
+   },
+   {
+    "type": "noun",
+    "word": "rincón",
+    "definition": "Corner; the small space where two walls meet."
+   },
+   {
+    "type": "noun",
+    "word": "tinaco",
+    "definition": "Water tank on the roof of a Mexican house."
+   },
+   {
+    "type": "verb",
+    "word": "pegar",
+    "surface": "pega",
+    "definition": "To hit a place; the sun pega when it shines hard there."
+   },
+   {
+    "type": "noun",
+    "word": "sitio",
+    "definition": "Place; the spot where something is."
+   },
+   {
+    "type": "noun",
+    "word": "cuerda",
+    "definition": "Rope; a long thick string."
+   },
+   {
+    "type": "verb",
+    "word": "romperse",
+    "surface": "rompe",
+    "definition": "To break; to end in pieces or stop working."
+   },
+   {
+    "type": "adjective",
+    "word": "vieja",
+    "definition": "Old; used for a long time already."
+   },
+   {
+    "type": "adjective",
+    "word": "desatada",
+    "definition": "Untied; loose because the knot was opened."
+   },
+   {
+    "type": "noun",
+    "word": "nudo",
+    "definition": "Knot; the part where a rope is tied."
+   },
+   {
+    "type": "verb",
+    "word": "callar",
+    "surface": "calla",
+    "definition": "To stop talking; to say nothing."
+   },
+   {
+    "type": "noun",
+    "word": "sábana",
+    "definition": "Sheet; the big cloth you put on a bed."
+   },
+   {
+    "type": "verb",
+    "word": "tapar",
+    "surface": "tapa",
+    "definition": "To cover something so it cannot be seen or reached."
+   },
+   {
+    "type": "verb",
+    "word": "entender",
+    "surface": "entiende",
+    "definition": "To understand; to know what something means."
+   },
+   {
+    "type": "verb",
+    "word": "mover",
+    "surface": "mueve",
+    "definition": "To change the place of something."
+   },
+   {
+    "type": "noun",
+    "word": "silla",
+    "definition": "Chair; the thing you sit on, with a back."
+   },
+   {
+    "type": "expression",
+    "word": "al final",
+    "definition": "In the end; after waiting or thinking for a while."
+   },
+   {
+    "type": "noun",
+    "word": "metros",
+    "definition": "Metres; a way to measure how long or how far."
+   }
+  ]
+ },
+ {
+  "topic": "rooftops-and-laundry",
+  "slotIndex": 2,
+  "title": "El cerro está limpio",
+  "slug": "el-cerro-esta-limpio",
+  "synopsis": "Bruno jura que esta noche no llueve, porque el cerro se ve limpio. Itzel deja su uniforme blanco en la azotea.",
+  "text": "El cielo está gris sobre Guadalajara y hace frío. Itzel tiene el uniforme blanco en el tendedero y duda. Bruno sube con su café y mira el cerro.\n\n“Esta noche no llueve,” dice Bruno. “Si el cerro está limpio, no llueve.” “¿Seguro?” pregunta Itzel. “Seguro,” dice Bruno.\n\nA las once empieza la tormenta. A las tres de la mañana, Bruno sube con una linterna. Recoge su ropa y baja otra vez.\n\nPor la mañana, el uniforme de Itzel pesa cinco kilos. “Mi ropa está seca,” dice Bruno, muy serio. “La tuya no.” “Ya veo,” dice Itzel. “Gracias por avisarme de la lluvia.”\n\nBruno mete el uniforme en la lavadora y aprieta el botón. Adentro hay un calcetín rojo, nuevo. Por la tarde, el uniforme blanco de Itzel es rosa.\n\n“Ahora nadie confunde tu ropa,” dice Bruno. “Y el rosa te queda bien.”",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "gris",
+    "definition": "Grey; the colour of clouds before rain."
+   },
+   {
+    "type": "adjective",
+    "word": "blanco",
+    "definition": "White; the colour of milk."
+   },
+   {
+    "type": "verb",
+    "word": "dudar",
+    "surface": "duda",
+    "definition": "To not be sure about something."
+   },
+   {
+    "type": "noun",
+    "word": "cerro",
+    "definition": "Hill; a small mountain next to a town."
+   },
+   {
+    "type": "verb",
+    "word": "llover",
+    "surface": "llueve",
+    "definition": "To rain; for water to fall from the sky."
+   },
+   {
+    "type": "adjective",
+    "word": "limpio",
+    "definition": "Clean; with no dirt on it."
+   },
+   {
+    "type": "adjective",
+    "word": "seguro",
+    "definition": "Sure; certain that something is true."
+   },
+   {
+    "type": "verb",
+    "word": "empezar",
+    "surface": "empieza",
+    "definition": "To begin; to start to happen."
+   },
+   {
+    "type": "noun",
+    "word": "linterna",
+    "definition": "Torch; a small lamp you hold in your hand."
+   },
+   {
+    "type": "verb",
+    "word": "recoger",
+    "surface": "recoge",
+    "definition": "To pick things up and take them away."
+   },
+   {
+    "type": "verb",
+    "word": "bajar",
+    "surface": "baja",
+    "definition": "To go down, for example to a lower floor."
+   },
+   {
+    "type": "verb",
+    "word": "pesar",
+    "surface": "pesa",
+    "definition": "To have weight; to be heavy or light."
+   },
+   {
+    "type": "adjective",
+    "word": "seca",
+    "definition": "Dry; with no water in it."
+   },
+   {
+    "type": "adjective",
+    "word": "serio",
+    "definition": "Serious; not laughing or joking."
+   },
+   {
+    "type": "verb",
+    "word": "meter",
+    "surface": "mete",
+    "definition": "To put something inside a bag, a box or a machine."
+   },
+   {
+    "type": "noun",
+    "word": "lavadora",
+    "definition": "Washing machine; the machine that washes clothes."
+   },
+   {
+    "type": "verb",
+    "word": "apretar",
+    "surface": "aprieta",
+    "definition": "To press something, for example a button."
+   },
+   {
+    "type": "adverb",
+    "word": "adentro",
+    "definition": "Inside; in the inner part of something."
+   },
+   {
+    "type": "noun",
+    "word": "calcetín",
+    "definition": "Sock; the soft clothing for your foot, inside the shoe."
+   },
+   {
+    "type": "adjective",
+    "word": "nuevo",
+    "definition": "New; bought or made a short time ago."
+   },
+   {
+    "type": "adjective",
+    "word": "rosa",
+    "definition": "Pink; the colour you get from red and white."
+   },
+   {
+    "type": "verb",
+    "word": "confundir",
+    "surface": "confunde",
+    "definition": "To take one thing for another by mistake."
+   },
+   {
+    "type": "verb",
+    "word": "avisar",
+    "surface": "avisarme",
+    "definition": "To tell someone in time that something will happen."
+   }
+  ]
+ }
+]
