@@ -127,6 +127,12 @@
     margin: 12px 0 0; font-weight: 800; letter-spacing: -0.01em;
     font-size: var(--subSize); line-height: 1.35; color: rgba(255,255,255,0.60);
   }
+  /* Tour de variantes: la bandera y el pais, en la linea del subtitulo. */
+  .adFlagRow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-weight: 900; letter-spacing: 0.14em;
+  }
+  .adFlagRow svg { border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
   .adPhoneWrap {
     position: relative; flex: 0 0 auto; margin-top: var(--phoneTop);
     width: 100%; display: flex; justify-content: center;
@@ -301,6 +307,7 @@
   .paraBreak { display: block; height: 0; margin-top: 11px; }
   /* Texto que sigue al fragmento: se ve igual que el resto, no suena y no se
    * resalta. */
+  .wTailTop { margin-top: 0; margin-bottom: 11px; }
   .wTail { display: block; margin-top: 11px; font-weight: 900; }
   .vrunVerb       { background-color: rgba(248, 113, 113, 0.6); }
   .vrunNoun       { background-color: rgba(56, 189, 248, 0.65); }

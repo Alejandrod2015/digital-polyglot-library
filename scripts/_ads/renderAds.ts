@@ -57,15 +57,51 @@ const SLUGS: Record<number, string> = {
   63: "lector-practice-quemas-co",
   64: "lector-practice-altiro-cl",
   65: "lector-practice-fiado-mx",
+  66: "lector-practice-sabroso-co",
+  671: "var-mx",
+  672: "var-ar",
+  673: "var-co",
+  674: "var-es",
+  675: "var-catalogo",
+  681: "var2-co",
+  682: "var2-mx",
+  683: "var2-ar",
+  684: "var2-es",
+  685: "var2-catalogo",
+  691: "var3-es",
+  692: "var3-co",
+  693: "var3-mx",
+  694: "var3-ar",
+  695: "var3-catalogo",
+  701: "var4-pe",
+  702: "var4-co",
+  703: "var4-ar",
+  704: "var4-es",
+  705: "var4-catalogo",
+  711: "var5-co",
+  712: "var5-pe",
+  713: "var5-ar",
+  714: "var5-catalogo",
   61: "social-quiz-gato-es",
   62: "social-tour-6-countries",
 };
 
 /** Escena -> historia narrada. El audio sale del que ya tiene la historia
  *  publicada: no se sintetiza nada para un anuncio. */
-const AUDIO_OF: Record<number, string> = { 6: "ahorita", 7: "hormigas", 8: "causa", 9: "previa", 10: "escoba", 11: "spaeti", 12: "ahorita", 13: "ahorita", 14: "ahorita", 15: "ahorita", 16: "causa", 17: "barra", 18: "gato", 19: "gato", 20: "gato", 21: "gato", 22: "suelos", 23: "pancho", 27: "gato", 51: "gato", 52: "pedo", 53: "comedera", 54: "roche", 55: "escoba", 56: "embalada", 60: "roche", 63: "quemas", 64: "altiro", 65: "fiado" };
+const AUDIO_OF: Record<number, string> = { 6: "ahorita", 7: "hormigas", 8: "causa", 9: "previa", 10: "escoba", 11: "spaeti", 12: "ahorita", 13: "ahorita", 14: "ahorita", 15: "ahorita", 16: "causa", 17: "barra", 18: "gato", 19: "gato", 20: "gato", 21: "gato", 22: "suelos", 23: "pancho", 27: "gato", 51: "gato", 52: "pedo", 53: "comedera", 54: "roche", 55: "escoba", 56: "embalada", 60: "roche", 63: "quemas", 64: "altiro", 65: "fiado", 66: "sabroso", 671: "vmx", 672: "var", 673: "vco", 674: "ves", 681: "wco", 682: "wmx", 683: "war", 684: "wes", 691: "xes", 692: "yco", 693: "ymx", 694: "xar", 701: "zpe", 702: "zco", 703: "zar", 704: "zes", 711: "yco2", 712: "ype", 713: "yar" };
 
 type Narration = { audio: string; audioStart: number };
+
+/* Mono a estereo SIN perder 3 dB. El upmix por defecto de ffmpeg reparte la
+ * potencia entre los dos canales, asi que una narracion mono sale 3 dB mas
+ * floja que una estereo. En una pieza que corta entre cuatro historias eso se
+ * oye como un bajon de volumen al cambiar de pais (paso el 2026-09-21: el
+ * argentino y el colombiano, mono, iban 3 dB por debajo del mexicano). */
+function toStereo(file: string): string {
+  const ch = Number(execFileSync("ffprobe", ["-v", "error", "-select_streams", "a:0",
+    "-show_entries", "stream=channels", "-of", "csv=p=0", file]).toString().trim());
+  return ch === 1 ? "pan=stereo|c0=c0|c1=c0" : "aformat=channel_layouts=stereo";
+}
 
 function narration(scene: number): Narration | null {
   const key = AUDIO_OF[scene];
@@ -170,7 +206,7 @@ async function main() {
             ? `afade=t=out:st=${(audioUntil - audioFade).toFixed(2)}:d=${audioFade}`
             : `afade=t=out:st=${(duration - 0.5).toFixed(2)}:d=0.5`;
           const tempo = speed === 1 ? "" : `,atempo=${speed}`;
-          chains.push(`[${n}:a]${fade}${tempo},aresample=44100,aformat=channel_layouts=stereo[a${n}]`);
+          chains.push(`[${n}:a]${fade}${tempo},aresample=44100,${toStereo(nar.audio)}[a${n}]`);
           labels.push(`[a${n}]`);
           n++;
         }
@@ -178,7 +214,7 @@ async function main() {
           inputs.push("-ss", String(c.ss), "-t", String(c.len), "-i", c.file);
           const ms = Math.round(c.at * 1000);
           const out = Math.max(0, c.len - 0.08).toFixed(3);
-          chains.push(`[${n}:a]afade=t=in:d=0.03,afade=t=out:st=${out}:d=0.08,aresample=44100,aformat=channel_layouts=stereo,adelay=${ms}|${ms}[a${n}]`);
+          chains.push(`[${n}:a]afade=t=in:d=0.03,afade=t=out:st=${out}:d=0.08,aresample=44100,${toStereo(c.file)},adelay=${ms}|${ms}[a${n}]`);
           labels.push(`[a${n}]`);
           n++;
         }

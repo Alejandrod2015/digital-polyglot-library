@@ -157,6 +157,8 @@
     BR: '<rect width="3" height="2" fill="#009C3B"/><polygon points="1.5,0.2 2.75,1 1.5,1.8 0.25,1" fill="#FFDF00"/><circle cx="1.5" cy="1" r="0.4" fill="#002776"/>',
     IT: '<rect width="1" height="2" x="0" fill="#009246"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#CE2B37"/>',
     DE: '<rect width="3" height="0.667" y="0" fill="#000000"/><rect width="3" height="0.667" y="0.667" fill="#DD0000"/><rect width="3" height="0.666" y="1.333" fill="#FFCE00"/>',
+    PE: '<rect width="1" height="2" x="0" fill="#D91023"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#D91023"/>',
+    AR: '<rect width="3" height="2" fill="#74ACDF"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><circle cx="1.5" cy="1" r="0.2" fill="#F6B40E"/>',
   };
   function flag(code, size) {
     return '<svg viewBox="0 0 3 2" width="' + size + '" height="' + (size * 2) / 3 +
@@ -696,6 +698,204 @@
       speed: 1.15,
       duration: 12.77,
     },
+    // Lector + Practice, Colombia (costa). Escena social: la parranda. El
+    // fragmento 1 entero; tarjeta y ejercicio salen de la base.
+    66: {
+      screen: "combo", story: "sabroso", theme: "light", phoneScale: 0.97, practiceStep: 4,
+      hook: ['Colombians don&rsquo;t dance well.', '<span class="lime">They dance &ldquo;tasty.&rdquo;</span>'],
+      hook2: ['Your move.', '<span class="lime">Don&rsquo;t blow it.</span>'],
+      glosses: [{
+        trigger: "sabroso", word: "bailar sabroso", pos: "EXPRESSION", litRange: [10, 11], delay: 0.45, until: 7.27,
+        def: "to dance with great flavor and easy natural rhythm",
+      }],
+      practice: { word: "bailar sabroso", options: ["dancing with real flavor", "standing totally still", "tripping over herself", "sitting off to the side"], correct: 0 },
+      // duration = switchAt + tap + 2.0 para que el acierto se vea.
+      // El segmento de la narracion acaba en 14,86 s, pero ahi ya suena el
+      // "Ahi" de la frase siguiente: el silencio real va de 14,30 a 14,82 y el
+      // corte cae en medio (14,55 = 6,27 s de escena).
+      switchAt: 7.27, tap: 5.0, clock: true, audioUntil: 6.27, audioFade: 0.1,
+      speed: 1.15,
+      duration: 14.27,
+    },
+    /* 67: tour de variantes. Cuatro paises en el MISMO lector, una oracion
+     * entera cada uno, sin ejercicio. Cada pais se renderiza como su propia
+     * pieza (671-674) y el montaje las pega con corte seco (_tourVar.ts): el
+     * titular no se mueve, asi que lo unico que cambia es la historia, la
+     * bandera y el acento. La ultima (675) es el catalogo.
+     *
+     * Los cortes de audio van medidos en el mp3, no por el alineado; ver el
+     * comentario de las ventanas "v*" en buildStories.ts. */
+    671: {
+      screen: "reader", story: "vmx", theme: "light", phoneScale: 0.97, tour: true,
+      hook: ['&ldquo;Spanish&rdquo; is not', '<span class="lime">one language.</span>'],
+      sub: '<span class="adFlagRow">' + flag("MX", 22) + "MEXICO</span>",
+      glosses: [{ trigger: "qué", word: "qué pedo", pos: "EXPRESSION", litRange: [0, 1], delay: 0.95, def: "what's up" }],
+      audioUntil: 2.24, audioFade: 0.12, duration: 2.56,
+    },
+    672: {
+      screen: "reader", story: "var", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['&ldquo;Spanish&rdquo; is not', '<span class="lime">one language.</span>'],
+      sub: '<span class="adFlagRow">' + flag("AR", 22) + "ARGENTINA</span>",
+      glosses: [{ trigger: "horno", word: "horno", pos: "EXPRESSION", litRange: [3, 3], delay: 0.4, def: "in deep trouble" }],
+      audioUntil: 2.79, audioFade: 0.12, duration: 3.11,
+    },
+    673: {
+      screen: "reader", story: "vco", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['&ldquo;Spanish&rdquo; is not', '<span class="lime">one language.</span>'],
+      sub: '<span class="adFlagRow">' + flag("CO", 22) + "COLOMBIA</span>",
+      glosses: [{ trigger: "juemadre", word: "juemadre", pos: "EXPRESSION", litRange: [1, 1], delay: 0.35, def: "damn it" }],
+      audioUntil: 3.02, audioFade: 0.12, duration: 3.34,
+    },
+    674: {
+      screen: "reader", story: "ves", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['&ldquo;Spanish&rdquo; is not', '<span class="lime">one language.</span>'],
+      sub: '<span class="adFlagRow">' + flag("ES", 22) + "SPAIN</span>",
+      glosses: [{ trigger: "cumpleañero", word: "cumpleañero", pos: "NOUN", litRange: [5, 5], delay: 0.05, def: "the birthday person" }],
+      audioUntil: 3.28, audioFade: 0.12, duration: 3.6,
+    },
+    675: {
+      screen: "catalog", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true, catalogLang: "es",
+      hook: ['One app.', '<span class="lime">Every Spanish.</span>'],
+      sub: "Stories written and voiced where they are set.",
+      duration: 2.2,
+    },
+    /* 68: segundo tour de variantes. Otras cuatro historias, otro titular y
+     * otro cierre. Mismo montaje que el 67 (_tourVar.ts --ad 68). */
+    681: {
+      screen: "reader", story: "wco", theme: "light", phoneScale: 0.97, tour: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("CO", 22) + "COLOMBIA</span>",
+      glosses: [{ trigger: "rumba", word: "rumba", pos: "NOUN", litRange: [1, 1], delay: 0.35, def: "a party" }],
+      audioUntil: 2.94, audioFade: 0.12, duration: 3.12,
+    },
+    682: {
+      screen: "reader", story: "wmx", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("MX", 22) + "MEXICO</span>",
+      glosses: [{ trigger: "mamada", word: "mamada", pos: "NOUN", litRange: [1, 1], delay: 0.35, def: "nonsense, rubbish" }],
+      audioUntil: 2.88, audioFade: 0.12, duration: 3.06,
+    },
+    683: {
+      screen: "reader", story: "war", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("AR", 22) + "ARGENTINA</span>",
+      glosses: [{ trigger: "previa", word: "previa", pos: "NOUN", litRange: [1, 1], delay: 0.45, def: "the warm-up gathering before going out" }],
+      audioUntil: 3.56, audioFade: 0.12, duration: 3.74,
+    },
+    684: {
+      screen: "reader", story: "wes", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("ES", 22) + "SPAIN</span>",
+      glosses: [{ trigger: "sobremesa", word: "sobremesa", pos: "NOUN", litRange: [1, 1], delay: 0.35, def: "the long talk that keeps everyone at the table after a meal" }],
+      audioUntil: 2.66, audioFade: 0.12, duration: 3.34,
+    },
+    685: {
+      screen: "catalog", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true, catalogLang: "es",
+      hook: ['One app.', '<span class="lime">Every accent.</span>'],
+      sub: "Stories written and voiced where they are set.",
+      duration: 1.6,
+    },
+    /* 69: cuatro paises otra vez, con palabras que no salen ni en la 67 ni en
+     * la 68, y en otro orden (Espana, Colombia, Mexico, Argentina). */
+    691: {
+      screen: "reader", story: "xes", theme: "light", phoneScale: 0.97, tour: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("ES", 22) + "SPAIN</span>",
+      // La frase ocupa dos lineas: la tarjeta espera a que se lea entera.
+      glosses: [{ trigger: "caña", word: "caña", pos: "NOUN", litRange: [5, 5], delay: 0.7, def: "a small draught beer" }],
+      audioUntil: 2.92, audioFade: 0.12, duration: 3.5,
+    },
+    692: {
+      screen: "reader", story: "yco", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("CO", 22) + "COLOMBIA</span>",
+      glosses: [{ trigger: "berraco", word: "berraco", pos: "ADJECTIVE", litRange: [2, 2], delay: 0.3, def: "brilliant, wild, amazing" }],
+      audioUntil: 1.6, audioFade: 0.12, duration: 2.45,
+    },
+    693: {
+      screen: "reader", story: "ymx", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("MX", 22) + "MEXICO</span>",
+      glosses: [{ trigger: "ofrenda", word: "ofrenda", pos: "NOUN", litRange: [3, 3], delay: 0.35, def: "the altar built for the dead" }],
+      audioUntil: 3.74, audioFade: 0.12, duration: 3.95,
+    },
+    694: {
+      screen: "reader", story: "xar", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("AR", 22) + "ARGENTINA</span>",
+      glosses: [{ trigger: "chamuyero", word: "chamuyero", pos: "NOUN", litRange: [1, 1], delay: 0.2, def: "a smooth talker" }],
+      audioUntil: 3.5, audioFade: 0.12, duration: 3.68,
+    },
+    695: {
+      screen: "catalog", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true, catalogLang: "es",
+      hook: ['One app.', '<span class="lime">Every accent.</span>'],
+      sub: "Stories written and voiced where they are set.",
+      duration: 1.3,
+    },
+    /* 70: cuatro paises, ninguno repetido con 67-69, y entra Peru. */
+    701: {
+      screen: "reader", story: "zpe", theme: "light", phoneScale: 0.97, tour: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("PE", 22) + "PERU</span>",
+      glosses: [{ trigger: "chifa", word: "chifa", pos: "NOUN", litRange: [2, 2], delay: 0.35, def: "a Chinese-Peruvian restaurant" }],
+      audioUntil: 3.34, audioFade: 0.12, duration: 3.7,
+    },
+    702: {
+      screen: "reader", story: "zco", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("CO", 22) + "COLOMBIA</span>",
+      glosses: [{ trigger: "man", word: "el man", pos: "NOUN", litRange: [1, 1], delay: 0.35, def: "the guy" }],
+      audioUntil: 3.48, audioFade: 0.12, duration: 3.84,
+    },
+    703: {
+      screen: "reader", story: "zar", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("AR", 22) + "ARGENTINA</span>",
+      glosses: [{ trigger: "macana", word: "macana", pos: "SLANG", litRange: [1, 1], delay: 0.3, def: "a mess, a blunder" }],
+      audioUntil: 1.5, audioFade: 0.12, duration: 2.6,
+    },
+    704: {
+      screen: "reader", story: "zes", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("ES", 22) + "SPAIN</span>",
+      glosses: [{ trigger: "ronda", word: "ronda", pos: "NOUN", litRange: [2, 2], delay: 0.35, def: "a round of drinks for everyone" }],
+      audioUntil: 2.92, audioFade: 0.12, duration: 3.3,
+    },
+    705: {
+      screen: "catalog", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true, catalogLang: "es",
+      hook: ['One app.', '<span class="lime">Every accent.</span>'],
+      sub: "Stories written and voiced where they are set.",
+      duration: 1.5,
+    },
+    /* 71: tres paises, con Barranquilla y Lima. Mas corto a proposito: no hay
+     * material limpio para una cuarta pieza sin repetir palabra. */
+    711: {
+      screen: "reader", story: "yco2", theme: "light", phoneScale: 0.97, tour: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("CO", 22) + "COLOMBIA</span>",
+      glosses: [{ trigger: "marimondas", word: "marimonda", pos: "NOUN", litRange: [2, 2], delay: 0.3, def: "the long-nosed carnival mask of Barranquilla" }],
+      audioUntil: 1.96, audioFade: 0.12, duration: 3.0,
+    },
+    712: {
+      screen: "reader", story: "ype", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("PE", 22) + "PERU</span>",
+      glosses: [{ trigger: "mozo", word: "mozo", pos: "NOUN", litRange: [1, 1], delay: 0.35, def: "the waiter" }],
+      audioUntil: 3.36, audioFade: 0.12, duration: 3.72,
+    },
+    713: {
+      screen: "reader", story: "yar", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true,
+      hook: ['You learned &ldquo;Spanish&rdquo;.', '<span class="lime">Now learn how they talk.</span>'],
+      sub: '<span class="adFlagRow">' + flag("AR", 22) + "ARGENTINA</span>",
+      glosses: [{ trigger: "pomo", word: "pomo", pos: "EXPRESSION", litRange: [8, 8], delay: 0.25, def: "not a thing, nothing at all" }],
+      audioUntil: 2.1, audioFade: 0.12, duration: 3.1,
+    },
+    714: {
+      screen: "catalog", theme: "light", phoneScale: 0.97, tour: true, noEntrance: true, catalogLang: "es",
+      hook: ['One app.', '<span class="lime">Every accent.</span>'],
+      sub: "Stories written and voiced where they are set.",
+      duration: 1.5,
+    },
     // Redes, formatos propios (socialFormats.js pinta y cronometra todo; aqui
     // solo hace falta una escena valida para que la pagina arranque).
     61: { screen: "reader", story: "gato", hook: ["", ""], duration: 1 },
@@ -940,13 +1140,21 @@
   ];
 
   function catalogScreen() {
+    /* catalogLang: el cierre del tour de variantes promete espanol, asi que el
+     * catalogo va filtrado como lo filtraria el usuario: el chip de Spanish
+     * encendido y solo historias en espanol. Ensenar un journey aleman debajo
+     * de "Every Spanish" seria enseñar otra cosa de la que se dice. */
+    const ES_ONLY = ["ES", "MX", "CO", "AR", "PE", "CL"];
     const chips = [
-      ["All languages", true], ["Spanish", false], ["Portuguese", false],
-      ["Italian", false], ["German", false],
+      ["All languages", S.catalogLang !== "es"], ["Spanish", S.catalogLang === "es"],
+      ["Portuguese", false], ["Italian", false], ["German", false],
     ].map(function (c) {
       return '<span class="adChip' + (c[1] ? " adChipOn" : "") + '">' + c[0] + "</span>";
     }).join("");
-    const cards = CATALOG.map(function (c) {
+    const rows = S.catalogLang === "es"
+      ? CATALOG.filter(function (c) { return ES_ONLY.indexOf(c[1]) !== -1; })
+      : CATALOG;
+    const cards = rows.map(function (c) {
       return '<div class="adCard">' +
         '<img class="adCardImg" src="' + c[4] + '" alt=""/>' +
         '<div class="adCardBody"><div class="adCardTitle">' + c[0] + "</div>" +
@@ -1041,7 +1249,7 @@
   /* Lector + Practice en 4:5: con el 72% el lector quedaba ilegible en el
    * feed y sobraban 110 px abajo. El telefono crece hasta casi el borde y el
    * titular sube de cuerpo. Solo toca a "combo"; el resto de 4:5 no cambia. */
-  if (RATIO === "45" && S.screen === "combo") {
+  if (RATIO === "45" && (S.screen === "combo" || S.tour)) {
     R.setProperty("--scale", "0.80");
     R.setProperty("--phoneTop", "18px");
     R.setProperty("--hookSize", "34px");
@@ -1263,7 +1471,14 @@
       panel.style.opacity = "0";
       document.getElementById("dimA").className = "readerTitleCentered";
       document.getElementById("dimB").className = "coverWarm";
-      if (!SCROLLREAD) bodyEl.style.maxHeight = "";
+      /* Con la tarjeta cerrada el texto llega hasta el REPRODUCTOR, no hasta
+       * donde ira la tarjeta: cortarlo ahi dejaba media pantalla en blanco
+       * mientras la tarjeta no estaba abierta. Al abrirse, el bloque de
+       * arriba vuelve a cortar contra ella. */
+      if (!SCROLLREAD) {
+        const bar = document.querySelector(".audioBar");
+        bodyEl.style.maxHeight = S.tour && bar ? bar.offsetTop - BODY_TOP - 10 + "px" : "";
+      }
     }
   }
 
@@ -1505,7 +1720,7 @@
   }
 
   function seek(t) {
-    entrance(t);
+    if (!S.noEntrance) entrance(t);
     if (S.layout) bare(t);
     else if (S.screen === "reader") reader(t);
     else if (S.screen === "practice") practice(t);

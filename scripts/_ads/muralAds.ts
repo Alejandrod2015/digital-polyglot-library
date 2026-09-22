@@ -33,7 +33,8 @@ const CONCEPTS: Concept[] = [
     blurb: "El lector: karaoke, audio y glosa al tocar",
     match: (s) =>
       /^(1-word-synced|2-tap-a-word|5-textbook-vs-real)$/.test(s) ||
-      /^(\d+)-/.test(s) && Number(s.split("-")[0]) >= 6 && Number(s.split("-")[0]) <= 23 && !s.includes("books"),
+      /^(\d+)-/.test(s) && Number(s.split("-")[0]) >= 6 && Number(s.split("-")[0]) <= 23 && !s.includes("books") ||
+      /^6[78]-variantes/.test(s),
   },
   {
     key: "lector-practice",

@@ -18,6 +18,12 @@ import { execFileSync } from "node:child_process";
 const p = new PrismaClient();
 const AUDIO_CACHE = "/tmp/claude-501/dpl-ads/audio";
 
+/** Nombre en cache de un mp3: el de su URL. Dos historias distintas nunca
+ *  comparten archivo, aunque compartan ventana. */
+function cacheName(url: string): string {
+  return (url.split("/").pop() ?? "audio.mp3").replace(/[^\w.-]/g, "_");
+}
+
 type W = { text: string; startSec: number; endSec: number; charStart: number; charEnd: number };
 
 /**
@@ -32,7 +38,7 @@ type W = { text: string; startSec: number; endSec: number; charStart: number; ch
  */
 type Vocab = Array<[number, number, string]>;
 
-const WINDOWS: Array<{ key: string; title: string; from?: number; to?: number; vocab: Vocab; lead?: number; align?: number; segments?: [number, number]; fragments?: [number, number] }> = [
+const WINDOWS: Array<{ key: string; title: string; from?: number; to?: number; vocab: Vocab; lead?: number; align?: number; segments?: [number, number]; fragments?: [number, number]; clip?: [number, number] }> = [
   {
     key: "ahorita",
     title: "Ahorita salgo",
@@ -166,6 +172,15 @@ const WINDOWS: Array<{ key: string; title: string; from?: number; to?: number; v
     fragments: [2, 2],
     vocab: [[59, 60, "expression"]] as Vocab,
   },
+  // Colombia, costa. Solo la frase de "bailaba sabroso" (segmento 1): el
+  // fragmento entero dura 20 s y el anuncio tiene que quedar en 15. Corta en
+  // las pausas que guardo la narracion, no en mitad de una palabra.
+  {
+    key: "sabroso",
+    title: "Andrés en la pista",
+    segments: [1, 1],
+    vocab: [[24, 25, "expression"]] as Vocab,
+  },
   // Aguascalientes. El fragmento 6 entero: la oferta del corredor.
   {
     key: "fiado",
@@ -186,6 +201,141 @@ const WINDOWS: Array<{ key: string; title: string; from?: number; to?: number; v
     title: "Pilar no entiende nada",
     from: 77, to: 125,
     vocab: [[86, 86, "noun"], [96, 96, "noun"], [111, 111, "noun"], [123, 123, "adjective"], [125, 125, "noun"]] as Vocab,
+  },
+  /* Tour de variantes (anuncio 67): una oracion entera por pais, sin
+   * ejercicio. El corte va MEDIDO en el mp3 con silencedetect a -40 dB
+   * (scripts/_ads/_clipmeas.ts), porque en estas cuatro el alineado no cierra
+   * donde acaba la voz y en tres de ellas adelanta la PRIMERA palabra hasta un
+   * segundo. Esa primera se queda
+   * pegada al inicio del clip (tiempo negativo, se pinta en 0) y el resto
+   * del karaoke cae donde suena. */
+  {
+    key: "vmx",
+    title: "Ahorita salgo",
+    clip: [26.58, 28.56], from: 70, to: 76, align: 0.38,
+    vocab: [[70, 71, "expression"]] as Vocab,
+  },
+  {
+    key: "var",
+    title: "La porteña mete mano",
+    clip: [52.26, 54.79], from: 113, to: 118,
+    vocab: [[116, 116, "expression"]] as Vocab,
+  },
+  {
+    key: "vco",
+    title: "La Mesa no perdona",
+    clip: [31.10, 33.86], from: 68, to: 75,
+    vocab: [[69, 69, "expression"]] as Vocab,
+  },
+  /* Tour de variantes, segunda pieza (anuncio 68): otras cuatro historias y
+   * otro titular. Mismos cortes medidos con _speechRuns.ts. */
+  {
+    key: "wco",
+    title: "La Última Pola",
+    clip: [21.20, 23.88], from: 44, to: 49,
+    vocab: [[45, 45, "noun"]] as Vocab,
+  },
+  {
+    key: "wmx",
+    title: "Le toca a Mateo",
+    clip: [61.24, 63.86], from: 155, to: 162,
+    vocab: [[156, 156, "noun"]] as Vocab,
+  },
+  {
+    key: "war",
+    title: "El mismo chabón",
+    // Frase de MITAD de historia, no del final: una ventana en la ultima
+    // frase deja el lector medio vacio, porque debajo no queda texto.
+    clip: [70.90, 74.20], from: 182, to: 192,
+    vocab: [[183, 183, "noun"]] as Vocab,
+  },
+  /* Variante de la 68 (anuncio 69): mismas Colombia y Mexico, pero Argentina
+   * con "chamuyero" y Espana con "cuñada". */
+  {
+    key: "xar",
+    title: "El mismo chabón",
+    clip: [94.68, 97.92], from: 248, to: 260,
+    vocab: [[249, 249, "noun"]] as Vocab,
+  },
+  {
+    key: "xes",
+    title: "La caña de Marcos",
+    clip: [50.50, 53.16], from: 109, to: 116,
+    vocab: [[114, 114, "noun"]] as Vocab,
+  },
+  {
+    key: "yco",
+    title: "Apagaron el picó",
+    clip: [31.36, 32.70], from: 78, to: 80,
+    vocab: [[80, 80, "adjective"]] as Vocab,
+  },
+  {
+    key: "ymx",
+    title: "Día de Muertos en Oaxaca",
+    // Dos oraciones seguidas: el corte abarca las dos y la pausa de en medio.
+    clip: [21.94, 25.42], from: 51, to: 61,
+    vocab: [[54, 54, "noun"], [59, 59, "noun"]] as Vocab,
+  },
+  /* Tours 70 y 71: palabras nuevas y mas paises. Todos los cortes medidos con
+   * _speechRuns.ts; las historias que no aparecen aqui es porque su narracion
+   * va sin pausas y no hay donde cortar limpio. */
+  {
+    key: "zpe",
+    title: "La cortesía más cara",
+    clip: [59.70, 62.78], from: 143, to: 152,
+    vocab: [[145, 145, "noun"]] as Vocab,
+  },
+  {
+    key: "zco",
+    title: "Apagaron el picó",
+    clip: [21.36, 24.58], from: 51, to: 63,
+    vocab: [[52, 52, "noun"]] as Vocab,
+  },
+  {
+    key: "zar",
+    title: "La porteña mete mano",
+    clip: [43.82, 45.06], from: 91, to: 94,
+    vocab: [[92, 92, "slang"]] as Vocab,
+  },
+  {
+    key: "zes",
+    title: "Apúntame la de mañana",
+    clip: [38.76, 41.42], from: 83, to: 92,
+    vocab: [[85, 85, "noun"]] as Vocab,
+  },
+  {
+    key: "yco2",
+    title: "Aquí la máscara baila",
+    clip: [24.14, 25.84], from: 45, to: 47,
+    vocab: [[47, 47, "noun"]] as Vocab,
+  },
+  {
+    key: "ype",
+    title: "Una yapa de sobremesa",
+    clip: [63.28, 66.38], from: 154, to: 164,
+    vocab: [[155, 155, "noun"]] as Vocab,
+  },
+  {
+    key: "yar",
+    title: "La porteña mete mano",
+    clip: [46.50, 48.34], from: 95, to: 103,
+    vocab: [[103, 103, "expression"]] as Vocab,
+  },
+  {
+    key: "wes",
+    title: "La sobremesa se estira",
+    clip: [7.58, 9.98], from: 16, to: 23,
+    vocab: [[17, 17, "noun"]] as Vocab,
+  },
+  {
+    key: "ves",
+    title: "Invita el que cumple años",
+    // El final va en 55,44: entre 55,01 y 55,20 hay una oclusion de "aqui" que
+    // silencedetect leia como silencio, y el corte se comia la ultima silaba
+    // ("paga aqu"). Medido con _speechRuns.ts, que cierra la voz solo tras
+    // 0,18 s por debajo de -52 dB.
+    clip: [52.42, 55.44], from: 126, to: 133,
+    vocab: [[131, 131, "noun"]] as Vocab,
   },
 ];
 
@@ -263,7 +413,7 @@ async function main() {
       fragStart = picked[0].startSec;
       const parts: string[] = [];
       for (const f of picked) {
-        const file = `${AUDIO_CACHE}/${win.key}-f${f.index}.mp3`;
+        const file = `${AUDIO_CACHE}/${cacheName(f.url)}`;
         if (!existsSync(file)) {
           const res = await fetch(f.url);
           if (!res.ok) throw new Error(`${win.title}: el fragmento ${f.index} devolvio ${res.status}`);
@@ -271,10 +421,10 @@ async function main() {
         }
         parts.push(file);
       }
-      fragFile = `${AUDIO_CACHE}/${win.key}-frag.mp3`;
+      fragFile = `${AUDIO_CACHE}/${win.key}-frag-${cacheName(picked[0].url).slice(0, 40)}.mp3`;
       if (parts.length === 1) copyFileSync(parts[0], fragFile);
       else {
-        const list = `${AUDIO_CACHE}/${win.key}-frag.txt`;
+        const list = `${fragFile.replace(/\.mp3$/, "")}.txt`;
         writeFileSync(list, parts.map((f) => `file '${f}'`).join("\n"));
         execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", fragFile]);
       }
@@ -287,7 +437,15 @@ async function main() {
     }
     const segs = (row.audioSegments as unknown as Array<{ index: number; startSec: number; endSec: number }> | null) ?? [];
     let segStart = 0, segEnd = 0;
-    if (win.segments) {
+    /* clip: el corte va MEDIDO sobre el mp3 (silencedetect a -40 dB), no por
+     * los limites que guardo el alineado. En varias historias el alineado
+     * cierra la oracion decimas antes de que la voz la acabe, o arranca la
+     * primera palabra un segundo antes de que suene; ahi el limite bueno es
+     * el silencio de verdad. Las palabras las da `from`/`to`, a mano. */
+    if (win.clip) {
+      segStart = win.clip[0]; segEnd = win.clip[1];
+      if (win.from == null || win.to == null) throw new Error(`${win.title}: clip sin from/to`);
+    } else if (win.segments) {
       const a = segs.find((g) => g.index === win.segments![0]);
       const b = segs.find((g) => g.index === win.segments![1]);
       if (!a || !b) throw new Error(`${win.title}: faltan los fragmentos ${win.segments}`);
@@ -302,7 +460,7 @@ async function main() {
     // parte de la historia (medido con scripts/_ads/_cuts.ts). Se suma a los
     // tiempos de palabra, asi el karaoke cae donde suena y no antes.
     const align = win.align ?? 0;
-    const start = win.fragments ? fragStart : win.segments ? segStart - 0.08 : Math.max(prevEnd, first.startSec + align - lead);
+    const start = win.fragments ? fragStart : win.clip ? segStart - 0.06 : win.segments ? segStart - 0.08 : Math.max(prevEnd, first.startSec + align - lead);
 
     const tokens = [];
     for (let i = win.from; i <= win.to; i++) {
@@ -332,7 +490,12 @@ async function main() {
     // La primera palabra de la ventana abre frase en el anuncio.
     tokens[0].t = tokens[0].t.charAt(0).toUpperCase() + tokens[0].t.slice(1);
 
-    const file = `${AUDIO_CACHE}/${win.key}.mp3`;
+    /* El nombre del archivo en cache sale de la URL, no de la clave de la
+     * ventana: con `${win.key}.mp3` bastaba cambiar de historia dentro de la
+     * misma ventana para que se reusara el mp3 ANTERIOR, y el anuncio salia
+     * con el texto de una historia y la voz de otra. Paso el 2026-09-21 en
+     * tres de las cuatro piezas del tour. */
+    const file = `${AUDIO_CACHE}/${cacheName(row.audioUrl)}`;
     if (!existsSync(file)) {
       const res = await fetch(row.audioUrl);
       if (!res.ok) throw new Error(`${win.title}: el audio devolvio ${res.status}`);
@@ -343,6 +506,18 @@ async function main() {
       title: row.title,
       cover: row.coverUrl,
       total: Math.round(tim.audioDurationSec),
+      /* Texto que VA ANTES del fragmento, por si el que sigue no llega para
+       * llenar la pantalla (una ventana al final de la historia deja el
+       * telefono medio vacio). Se pinta apagado encima, como en el lector. */
+      before: (() => {
+        const first = words[win.from!];
+        const head = plain.slice(0, first.charStart).replace(/[^\S\n]*[“¡¿]?$/, "");
+        // UNA linea, no mas: el relleno de arriba esta para que la pagina no
+        // se vea vacia, no para empujar la frase que suena fuera de cuadro.
+        const cut = head.slice(-46).split(/\n/).pop() ?? "";
+        const trimmed = cut.slice(cut.indexOf(" ") + 1).replace(/\s+/g, " ").trim();
+        return trimmed ? [trimmed] : [];
+      })(),
       // Texto que SIGUE al fragmento: se pinta apagado debajo para que el
       // lector no parezca vacio. No suena ni se resalta.
       after: (() => {
@@ -374,7 +549,7 @@ async function main() {
       // Con fragmentos, el audio ES el mp3 del fragmento y empieza en cero.
       audio: fragFile ?? file,
       audioStart: fragFile ? 0 : Math.round(start * 1000) / 1000,
-      clipEnd: win.fragments ? Math.round(fragDur * 100) / 100 : win.segments ? Math.round((segEnd + 0.12 - start) * 100) / 100 : null,
+      clipEnd: win.fragments ? Math.round(fragDur * 100) / 100 : win.clip ? Math.round((segEnd + 0.08 - start) * 100) / 100 : win.segments ? Math.round((segEnd + 0.12 - start) * 100) / 100 : null,
       // Donde va la barra de progreso: el minuto real de la historia.
       offset: Math.round(start * 1000) / 1000,
       words: tokens,
