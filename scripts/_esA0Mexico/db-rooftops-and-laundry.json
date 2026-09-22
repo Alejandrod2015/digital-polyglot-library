@@ -19,11 +19,6 @@
     "definition": "To have a smell, good or bad."
    },
    {
-    "type": "noun",
-    "word": "tendederos",
-    "definition": "Clotheslines; lines where wet clothes dry in the air."
-   },
-   {
     "type": "verb",
     "word": "colgar",
     "surface": "cuelga",
@@ -57,20 +52,9 @@
    },
    {
     "type": "verb",
-    "word": "doblar",
-    "surface": "dobla",
-    "definition": "To fold cloth or paper so it becomes smaller."
-   },
-   {
-    "type": "verb",
     "word": "regresar",
     "surface": "regresa",
     "definition": "To come back to the place you were before."
-   },
-   {
-    "type": "adjective",
-    "word": "vacío",
-    "definition": "Empty; with nothing inside or on it."
    },
    {
     "type": "verb",
@@ -115,14 +99,20 @@
     "definition": "Red; the colour of a tomato."
    },
    {
-    "type": "expression",
-    "word": "al mismo tiempo",
-    "definition": "At the same time; together, in the same moment."
-   },
-   {
     "type": "noun",
     "word": "escalera",
     "definition": "Stairs; the steps that go from floor to floor."
+   },
+   {
+    "type": "verb",
+    "word": "decir",
+    "surface": "dice",
+    "definition": "To say; to put something into words."
+   },
+   {
+    "type": "adjective",
+    "word": "vacío",
+    "definition": "Empty; with nothing on it or inside it."
    }
   ],
   "arcType": null
@@ -144,11 +134,6 @@
     "type": "noun",
     "word": "jabón",
     "definition": "Soap; you use it with water to wash things."
-   },
-   {
-    "type": "expression",
-    "word": "con prisa",
-    "definition": "In a hurry; going fast because there is little time."
    },
    {
     "type": "adjective",
@@ -264,28 +249,6 @@
    },
    {
     "type": "adjective",
-    "word": "blanco",
-    "definition": "White; the colour of milk."
-   },
-   {
-    "type": "verb",
-    "word": "dudar",
-    "surface": "duda",
-    "definition": "To not be sure about something."
-   },
-   {
-    "type": "noun",
-    "word": "cerro",
-    "definition": "Hill; a small mountain next to a town."
-   },
-   {
-    "type": "verb",
-    "word": "llover",
-    "surface": "llueve",
-    "definition": "To rain; for water to fall from the sky."
-   },
-   {
-    "type": "adjective",
     "word": "limpio",
     "definition": "Clean; with no dirt on it."
    },
@@ -381,6 +344,12 @@
     "type": "adjective",
     "word": "serio",
     "definition": "Serious; not laughing or joking."
+   },
+   {
+    "type": "verb",
+    "word": "secar",
+    "surface": "seca",
+    "definition": "To dry; to take the water out of something."
    }
   ],
   "arcType": null

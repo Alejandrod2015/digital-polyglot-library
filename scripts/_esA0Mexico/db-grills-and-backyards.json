@@ -5,7 +5,7 @@
   "slug": "carbon-mojado",
   "title": "Carbón mojado",
   "synopsis": "Mauricio promete carne a las dos. El carbón llevó toda la semana bajo la lluvia y nadie lo dice en voz alta.",
-  "text": "Mauricio, el primo de Bruno, llega los domingos con la carne. Hoy trae dos kilos, y detrás de él sube Itzel. En la cochera ya está el asador, con el carbón del costal viejo.\n\n“A las dos comemos,” dice Mauricio. “Yo prendo el asador, tú pones los refrescos.”\n\nEl carbón no prende. Sale un poco de olor, nada más, y la carne sigue cruda encima de la parrilla. “Ese costal se mojó el jueves,” dice Itzel desde la puerta. “Yo lo vi ahí afuera.”\n\n“Está seco,” dice Mauricio. “Yo lo veo seco, y yo sé de carbón.” Bruno sopla con un abanico de cartón, media hora, sin parar. Mauricio sopla con la boca.\n\nA las cuatro sale la primera brasa, y nada está quemado todavía. Comen a las nueve, con la linterna de Bruno colgada del asador.\n\n“Sabe mejor de noche,” dice Mauricio. “Con hambre todo sabe mejor,” contesta Itzel.",
+  "text": "Mauricio, el primo de Bruno, llega los domingos con la carne. Hoy trae dos kilos, y detrás de él sube Itzel. En la cochera ya está el asador, con el carbón del costal viejo.\n\n“A las dos comemos,” dice Mauricio. “Yo prendo el asador, tú pones los refrescos.”\n\nEl carbón no prende. Sale un poco de olor, nada más, y la carne sigue cruda encima de la parrilla. “Ese costal se mojó el jueves,” dice Itzel desde la puerta. “Yo lo vi ahí afuera.”\n\n“Está seco,” dice Mauricio. “Yo lo veo seco, y yo sé de carbón.” Bruno sopla con un abanico de cartón, sin parar. Mauricio sopla con la boca y se limpia con un trapo.\n\nA las cuatro sale la primera brasa, y nada está quemado. Comen a las nueve, con la linterna de Bruno colgada del asador.\n\n“Sabe mejor de noche,” dice Mauricio. “Con hambre todo sabe mejor,” contesta Itzel.",
   "vocab": [
    {
     "type": "noun",
@@ -26,11 +26,6 @@
     "type": "noun",
     "word": "asador",
     "definition": "Grill; the metal box where meat cooks over fire."
-   },
-   {
-    "type": "noun",
-    "word": "carbón",
-    "definition": "Charcoal; the black pieces that burn under the meat."
    },
    {
     "type": "noun",
@@ -125,7 +120,7 @@
   "slug": "una-sola-vuelta",
   "title": "Una sola vuelta",
   "synopsis": "Bruno tiene teorías sobre la carne. Mauricio tiene el volteador, y esa es toda la discusión.",
-  "text": "El domingo siguiente, la cochera huele a carne y a cebolla. Mauricio pone la carne en la parrilla y se queda parado enfrente, con el volteador en la mano. Bruno mira el asador de cerca.\n\n“Voltéala ya,” dice Bruno. “Se quema abajo, yo veo el humo.” “Se voltea una vez,” dice Mauricio. “Una, y al final.”\n\n“¿Y eso quién lo dice?” pregunta Bruno. “Es la costumbre de la casa,” dice Mauricio, tranquilo.\n\nBruno estira la mano hacia el volteador. Mauricio lo levanta y lo deja fuera de su alcance, sin dejar de mirar la carne.\n\nItzel llega con los refrescos y ve a los dos quietos, frente a frente, como en la arena. “Denle vuelta al asunto, no a la carne,” dice ella. “Yo tengo hambre desde las doce.”\n\nLa carne sale jugosa y blanda. Bruno come tres y no admite nada del método.",
+  "text": "El domingo siguiente, la cochera huele a carne y a cebolla. Mauricio corta la carne con una navaja. La pone en la parrilla y se queda parado junto a su silla, con el volteador en la mano. Bruno mira el asador de cerca.\n\n“Voltéala ya,” dice Bruno. “Se quema abajo, yo veo el humo.” “Se voltea una vez,” dice Mauricio. “Una, y al final.”\n\n“¿Y eso quién lo dice?” pregunta Bruno. “Es la costumbre de la casa,” dice Mauricio, tranquilo.\n\nBruno estira la mano hacia el volteador. Mauricio lo levanta y lo deja fuera de su alcance, sin dejar de mirar la carne.\n\nItzel llega con los refrescos y ve a los dos quietos, frente a frente, como en la arena. “Denle vuelta al asunto, no a la carne,” dice ella. “Yo tengo hambre desde las doce.”\n\nLa carne sale jugosa y blanda. Bruno come tres y no admite nada del método.",
   "vocab": [
    {
     "type": "noun",
@@ -136,11 +131,6 @@
     "type": "noun",
     "word": "parrilla",
     "definition": "Grill bars; the metal bars the meat lies on."
-   },
-   {
-    "type": "adjective",
-    "word": "parado",
-    "definition": "Standing; on your feet and not moving."
    },
    {
     "type": "noun",
@@ -245,7 +235,7 @@
   "slug": "la-salsa-no-se-apunta",
   "title": "La salsa no se apunta",
   "synopsis": "La salsa de Mauricio es famosa en el edificio. Itzel quiere la receta y descubre que no existe ninguna.",
-  "text": "En la cochera huele a chile tostado y el molcajete de Mauricio suena duro contra la mesa. Itzel llega con un cuaderno y una pluma.\n\n“Quiero la receta,” dice ella. “La de hoy.” “No hay receta,” dice Mauricio. “Hay molcajete.”\n\nItzel se pone al lado y apunta todo: tres chiles, un aguacate, media cebolla y un limón. Apunta también cuánto de cada cosa.\n\n“¿Y el domingo pasado?” pregunta Itzel. “El domingo pasado había otros chiles,” dice Mauricio. “Y menos limón.”\n\n“Entonces cada salsa es distinta,” dice ella. “Cada salsa es de su domingo,” dice Mauricio, muy serio.\n\nEl siguiente domingo, Itzel hace la salsa con el cuaderno abierto. Sale bien, y nadie quiere más. Mauricio prueba una cucharada. “Le falta domingo,” dice, y esconde el cuaderno arriba del refrigerador.",
+  "text": "En la cochera huele a chile tostado y el molcajete de Mauricio suena duro sobre un trapo. Itzel llega con un cuaderno y una pluma, y se sienta en una silla de la cochera.\n\n“Quiero la receta,” dice ella. “La de hoy.” “No hay receta,” dice Mauricio. “Hay molcajete.”\n\nItzel se pone al lado y apunta todo: tres chiles, un aguacate, media cebolla y un limón. Apunta también cuánto de cada cosa.\n\n“¿Y el domingo pasado?” pregunta Itzel. “El domingo pasado había otros chiles,” dice Mauricio. “Y menos limón.”\n\n“Entonces cada salsa es distinta,” dice ella. “Cada salsa es de su domingo,” dice Mauricio, muy serio.\n\nEl siguiente domingo, Itzel hace la salsa con el cuaderno abierto y los refrescos fríos. Sale bien, y nadie quiere más. Mauricio prueba una cucharada. “Le falta domingo,” dice, y esconde el cuaderno arriba del refrigerador.",
   "vocab": [
    {
     "type": "noun",

@@ -5,22 +5,12 @@
   "slug": "poquito-son-dos-dedos",
   "title": "Poquito son dos dedos",
   "synopsis": "Bruno pide poquito y sale de la barbería con el pelo de otra persona. La palabra poquito tiene dueño, y no es él.",
-  "text": "La barbería de la esquina huele a jabón y a loción. Detrás del sillón está Arturo, un barbero que trabaja solo desde siempre. Bruno entra y se sienta en el sillón viejo.\n\n“Poquito, por favor,” dice Bruno. Arturo toma las tijeras y el peine. “Poquito,” repite Arturo, muy tranquilo.\n\nLa máquina suena cinco minutos. Bruno mira el espejo y abre mucho los ojos.\n\n“¡Esto no es poquito!” dice Bruno. “¡Esto es un mes de pelo!”\n\n“Poquito son dos dedos,” dice Arturo. Señala un cartel pegado en el espejo. El cartel está ahí desde siempre, entre dos fotos.\n\nBruno lee el cartel. Dice: “Poquito = dos dedos.” Nadie lee ese cartel nunca.\n\n“La próxima vez pido dos dedos,” dice Bruno.\n\n“La próxima vez corto tres,” dice Arturo. “Tus dedos son muy chicos.”",
+  "text": "La barbería de la esquina huele a jabón y a loción. Detrás del sillón está Arturo, un barbero que trabaja solo desde siempre. Bruno sube la escalera, entra y se sienta en el sillón viejo.\n\n“Poquito, por favor,” dice Bruno. Arturo toma las tijeras y el peine. “Poquito,” repite Arturo, muy tranquilo.\n\nLa máquina suena cinco minutos y el pelo cae sobre un trapo. Bruno mira el espejo y abre mucho los ojos.\n\n“¡Esto no es poquito!” dice Bruno. “¡Esto es un mes de pelo!”\n\n“Poquito son dos dedos,” dice Arturo. Señala con el peine un cartel pegado en el espejo. El cartel está ahí desde siempre, junto a una camisa colgada.\n\nBruno lee el cartel. Dice: “Poquito = dos dedos.” Nadie lee ese cartel nunca.\n\n“La próxima vez pido dos dedos,” dice Bruno.\n\n“La próxima vez corto tres,” dice Arturo. “Tus dedos son muy chicos.”",
   "vocab": [
-   {
-    "type": "noun",
-    "word": "barbería",
-    "definition": "Barber shop; the place where men get their hair cut."
-   },
    {
     "type": "noun",
     "word": "esquina",
     "definition": "Corner; the place where two streets meet."
-   },
-   {
-    "type": "noun",
-    "word": "loción",
-    "definition": "Lotion; the liquid a barber puts on your face after."
    },
    {
     "type": "verb",
@@ -108,11 +98,6 @@
     "definition": "To look at words and understand them."
    },
    {
-    "type": "expression",
-    "word": "la próxima vez",
-    "definition": "Next time; the time after this one."
-   },
-   {
     "type": "adjective",
     "word": "chicos",
     "definition": "Small; the opposite of big."
@@ -121,6 +106,12 @@
     "type": "noun",
     "word": "minutos",
     "definition": "Minutes; the sixty small parts of one hour."
+   },
+   {
+    "type": "verb",
+    "word": "tomar",
+    "surface": "toma",
+    "definition": "To take something, or to drink it."
    }
   ],
   "arcType": null
@@ -131,7 +122,7 @@
   "slug": "nadie-se-queja-nunca",
   "title": "Nadie se queja nunca",
   "synopsis": "Itzel llega a la barbería segura de que su fleco está chueco. Arturo lo mide dos veces y no le da la razón.",
-  "text": "Una gorra tapa el fleco de Itzel. Ella entra en la barbería a las cinco. El sol de la tarde llena el espejo de luz. Arturo limpia el mueble con un trapo y Bruno espera su turno.\n\n“Quiero el fleco derecho,” dice Itzel. “Lo tengo muy chueco.” “¿Quién te lo corta?” pregunta Arturo.\n\nItzel no contesta y mira para otro lado. Bruno se ríe despacio, con la boca cerrada. “Ella sola, en el baño, con las tijeras de la comida,” dice Bruno.\n\nArturo quita la gorra y mide el fleco con el peine, de un lado y del otro.\n\n“Tu fleco está derecho,” dice Arturo. “Perfecto, además.” “¿Lo mides otra vez?” pide Itzel. “Ya lo medí dos veces,” dice Arturo.\n\n“El chueco es el espejo,” dice Arturo. Está torcido desde el temblor. Abajo tiene un papel para que no baile. Medio barrio sale de esa barbería con el fleco chueco, y nadie se queja nunca.",
+  "text": "Una gorra tapa el fleco de Itzel, que entra a las cinco. El sol de la tarde llena el espejo de luz. Arturo limpia el mueble con un trapo y Bruno espera su turno.\n\n“Quiero el fleco derecho,” dice Itzel. “Lo tengo muy chueco.” “¿Quién te lo corta?” pregunta Arturo.\n\nItzel no contesta. Bruno se ríe despacio en su silla, con la boca cerrada. “Ella sola, en el baño, con las tijeras de la comida,” dice.\n\nArturo quita la gorra, la cuelga en un clavo y mide el fleco con el peine, de un lado y del otro.\n\n“Tu fleco está derecho,” dice Arturo. “Perfecto, además.” “¿Lo mides otra vez?” pide Itzel. “Ya lo medí dos veces,” dice Arturo.\n\n“El chueco es el espejo,” dice Arturo. Está torcido desde el temblor, con un papel abajo para que no baile. Medio barrio sale de ahí con el fleco chueco, y nadie se queja nunca.",
   "vocab": [
    {
     "type": "noun",
@@ -164,11 +155,6 @@
     "type": "adjective",
     "word": "derecho",
     "definition": "Straight; in a line, not bent or crooked."
-   },
-   {
-    "type": "adjective",
-    "word": "chueco",
-    "definition": "Crooked; not straight. Very common in Mexico."
    },
    {
     "type": "verb",
@@ -220,11 +206,6 @@
     "definition": "To dance; here, to move from side to side."
    },
    {
-    "type": "expression",
-    "word": "medio barrio",
-    "definition": "Half the neighbourhood; a lot of the people nearby."
-   },
-   {
     "type": "verb",
     "word": "quejarse",
     "surface": "queja",
@@ -245,6 +226,12 @@
     "word": "reírse",
     "surface": "ríe",
     "definition": "To laugh; to make the sound of being amused."
+   },
+   {
+    "type": "verb",
+    "word": "querer",
+    "surface": "quiero",
+    "definition": "To want something, or to love a person."
    }
   ],
   "arcType": null
@@ -255,13 +242,8 @@
   "slug": "media-cara-rasurada",
   "title": "Media cara rasurada",
   "synopsis": "Bruno necesita la barba lista hoy y el único con navaja en el edificio rasura brazos de hospital, no caras.",
-  "text": "Nadie rasura barbas los martes: Arturo, el barbero, cierra ese día. Bruno tiene la barba de tres semanas y una comida a las seis. Itzel baja con su navaja del hospital, fría y limpia.\n\n“Yo rasuro bien,” dice Itzel. “Rasuro brazos todos los días.”\n\n“Un brazo no es una cara,” dice Bruno.\n\n“Es lo mismo, pero con nariz,” dice Itzel.\n\nBruno se sienta en la cocina. Itzel pone la brocha y la espuma en fila, como en el hospital.\n\nA los diez minutos, Bruno tiene media cara rasurada y la otra media con barba.\n\n“Se acabó el filo,” dice Itzel, seria. “¿Y la otra media cara?” pregunta Bruno. “Mañana,” dice ella.\n\nBruno va a la comida así. Nadie dice nada, porque nadie se atreve.\n\nAl día siguiente, Arturo abre y mira la cara de Bruno sin decir nada.\n\n“Te la dejo a cero,” dice Arturo. “Y el martes yo descanso, no la navaja.”",
+  "text": "Nadie rasura barbas los martes: Arturo cierra ese día. Bruno tiene barba de tres semanas y una comida a las seis. Itzel baja de la azotea con su navaja del hospital, fría y limpia.\n\n“Yo rasuro bien,” dice Itzel. “Rasuro brazos todos los días.”\n\n“Un brazo no es una cara,” dice Bruno.\n\n“Es lo mismo, pero con nariz,” dice Itzel.\n\nBruno se sienta en la cocina. Itzel pone la brocha, el jabón y la espuma en fila, como en el hospital.\n\nA los diez minutos, Bruno tiene media cara rasurada y media con barba.\n\n“Se acabó el filo,” dice Itzel, seria. “¿Y la otra media cara?” pregunta Bruno. “Mañana,” dice ella.\n\nBruno va así, con la camisa azul, y nadie se atreve a decir nada.\n\nAl día siguiente, Arturo abre y mira esa cara sin decir nada.\n\n“Te la dejo a cero,” dice Arturo. “Y el martes yo descanso, no la navaja.”",
   "vocab": [
-   {
-    "type": "noun",
-    "word": "barba",
-    "definition": "Beard; the hair that grows on a man's face."
-   },
    {
     "type": "noun",
     "word": "semanas",
@@ -333,11 +315,6 @@
     "definition": "To open; to let people come in."
    },
    {
-    "type": "expression",
-    "word": "a cero",
-    "definition": "To zero; with all the hair cut off."
-   },
-   {
     "type": "verb",
     "word": "descansar",
     "surface": "descanso",
@@ -368,6 +345,12 @@
     "type": "expression",
     "word": "sin decir nada",
     "definition": "Without saying anything; in complete quiet."
+   },
+   {
+    "type": "verb",
+    "word": "dejar",
+    "surface": "dejo",
+    "definition": "To leave something in a place and not take it."
    }
   ],
   "arcType": null
