@@ -127,7 +127,12 @@ const config = {
     // source maps al build. OJO: sin SENTRY_AUTH_TOKEN el build FALLA en la
     // fase "Bundle React Native code and images" (comprobado el 2026-09-06);
     // para una build local sin token, SENTRY_DISABLE_AUTO_UPLOAD=true en el
-    // entorno de xcodebuild. El proyecto de Sentry
+    // entorno de xcodebuild; ese flag NO puede vivir en el perfil de
+    // produccion de eas.json, porque apaga tambien la subida de dSYMs y deja
+    // todo crash de iOS sin simbolizar (asi llego la 340, ver
+    // DIGITAL-POLYGLOT-MOBILE-3). El token va de secreto en EAS, y la fase
+    // "Upload Debug Symbols" busca `.env.sentry-build-plugin` DENTRO de
+    // apps/mobile: ahi hay un symlink al de la raiz. El proyecto de Sentry
     // es aparte del de la web para que el crash-free por release sea el de
     // la APP y no una mezcla con los errores del navegador.
     [
