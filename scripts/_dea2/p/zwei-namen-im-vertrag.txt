@@ -1,0 +1,17 @@
+MATCH|der Staub=dust|der Vermieter=a landlord|der Arbeitsvertrag=a work contract|der Bürge=a guarantor
+M|unterschreiben|Der Mieter [[unterschreibt]] den Vertrag mit seinem Namen.|to sign|to read|to copy|to pay
+M|zufrieden|Nach dem Gespräch wirkt er nicht mehr [[zufrieden]].|satisfied|surprised|polite|tired
+M|der Stolz|Ihr [[Stolz]] ist stärker als ihre Angst.|pride|hunger|luck|doubt
+M|schenken|Zum Geburtstag [[schenkt]] er ihr Blumen.|to give as a present|to sell cheaply|to show quickly|to bring back
+M|höflich|Ihre Antwort ist kurz, aber [[höflich]].|polite|loud|angry|strange
+F|sauber|Nach dem Putzen ist die ganze Küche wieder _____.|After the cleaning the whole kitchen is _____ again.|clean|leer=empty|teuer=expensive|dunkel=dark
+F|dauert|Die Fahrt mit dem Bus _____ fast eine Stunde.|The bus ride _____ almost an hour.|takes|kostet=costs|endet=ends|beginnt=begins
+M|schütteln|Er [[schüttelt]] den Kopf und sagt nichts.|to shake|to lower|to turn|to hold
+M|wortlos|Er stellt den Teller [[wortlos]] auf den Tisch.|without a word|at the front|in a hurry|by mistake
+M|schmal|Der Balkon ist sehr [[schmal]] und kurz.|narrow|sunny|dirty|new
+M|klopfen|Jemand [[klopft]] laut an die Tür.|to knock|to open|to paint|to close
+M|sortieren|Sie [[sortiert]] die Papiere nach Datum.|to sort|to store|to sign|to burn
+M|blättern|Er [[blättert]] langsam durch das Heft.|to leaf through|to write in|to look for|to pay for
+M|zucken|Sie [[zuckt]] mit den Schultern.|to twitch|to rub|to cover|to count
+M|wiegen|Der Karton [[wiegt]] mehr als zehn Kilo.|to weigh|to hold|to cost|to last
+F|behalten|Wir werfen den alten Schlüssel nicht weg, wir _____ ihn.|We do not throw the old key away, we _____ it.|keep|verkaufen=sell|suchen=look for|putzen=clean

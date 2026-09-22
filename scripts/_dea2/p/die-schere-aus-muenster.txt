@@ -1,0 +1,17 @@
+MATCH|die Schere=scissors|die Holzkiste=a wooden crate|der Schuppen=a shed|das Werkzeug=tools
+M|einstellen|Der Inhaber [[stellt]] sie für vier Tage die Woche ein.|to hire|to train|to pay|to call
+M|der Anruf|Der [[Anruf]] kommt am Montag um halb elf.|a phone call|a delivery|a meeting|a visit
+M|die Erleichterung|Sie weint fast vor [[Erleichterung]].|relief|anger|hunger|pride
+M|die Handelskammer|Er kennt jemanden bei der [[Handelskammer]].|the chamber of commerce|the housing office|the local library|the train company
+M|das Angebot|Im Februar hat sie dieses [[Angebot]] noch abgelehnt.|an offer|a warning|a bill|a rule
+F|geduldig|Er hört ihr zwei Stunden lang _____ zu.|He listens to her _____ for two hours.|patiently|laut=loudly|kurz=briefly|streng=sternly
+F|dringend|Am Sonntag braucht sie seine Hilfe _____.|On Sunday she needs his help _____.|urgently|selten=rarely|später=later|gern=gladly
+M|weinen|Sie [[weint]] fast, sagt aber nichts.|to cry|to blink|to shout|to sleep
+M|still|Sie steht ganz [[still]] vor dem Supermarkt.|still|proud|cold|lost
+M|entspannt|Heute bleibt sie [[entspannt]] sitzen.|relaxed|nervous|bored|busy
+M|holen|Am Sonntag [[holen]] sie die Kiste zusammen.|to fetch|to sell|to open|to clean
+M|bitten|Zum ersten Mal [[bittet]] sie um Hilfe.|to ask for|to pay for|to wait for|to look for
+M|schämen|Sie [[schämt]] sich diesmal nicht dafür.|to be ashamed|to be sorry|to be late|to be sure
+M|genau|Es ist [[genau]] dasselbe Angebot wie im Februar.|exactly|almost|nearly|hardly
+M|gern|Er fragt [[gern]] nächste Woche dort nach.|gladly|rarely|secretly|loudly
+F|eben|Dann fahren wir _____ am Sonntag hoch.|Then we will _____ drive up on Sunday.|just|nie=never|kaum=hardly|fast=almost

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Transporter,der Deckel,das Klebeband,der Nachbar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Transporter",
+     "answer": "a hired van",
+     "options": [
+      "a hired van",
+      "a lid",
+      "sticky tape",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "der Deckel",
+     "answer": "a lid",
+     "options": [
+      "a hired van",
+      "a lid",
+      "sticky tape",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "das Klebeband",
+     "answer": "sticky tape",
+     "options": [
+      "a hired van",
+      "a lid",
+      "sticky tape",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "der Nachbar",
+     "answer": "a neighbour",
+     "options": [
+      "a hired van",
+      "a lid",
+      "sticky tape",
+      "a neighbour"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heben",
+  "sentence": "Er [[hebt]] die schwere Kiste vom Boden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lift",
+   "options": [
+    "to lift",
+    "to push",
+    "to drop",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Er hebt die schwere Kiste vom Boden.",
+    "targetWord": "hebt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tragen",
+  "sentence": "Sie [[trägt]] den Schrank durch den Flur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry",
+   "options": [
+    "to carry",
+    "to paint",
+    "to sell",
+    "to measure"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Sie trägt den Schrank durch den Flur.",
+    "targetWord": "trägt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zögern",
+  "sentence": "Sie [[zögert]] kurz und sagt dann ja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hesitate",
+   "options": [
+    "to hesitate",
+    "to shout",
+    "to smile",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Sie zögert kurz und sagt dann ja.",
+    "targetWord": "zögert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nicken",
+  "sentence": "Er [[nickt]] und nimmt den Karton.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to nod",
+   "options": [
+    "to nod",
+    "to wave",
+    "to sit",
+    "to run"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Er nickt und nimmt den Karton.",
+    "targetWord": "nickt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Rechnung",
+  "sentence": "Am Ende der Woche kommt die [[Rechnung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the bill",
+   "options": [
+    "the bill",
+    "the answer",
+    "the parcel",
+    "the ticket"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Am Ende der Woche kommt die Rechnung.",
+    "targetWord": "Rechnung",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "passt",
+  "sentence": "Das breite Sofa _____ durch keine einzige Tür.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passt",
+   "options": [
+    "passt",
+    "klingt",
+    "riecht",
+    "wartet"
+   ],
+   "translation": "The wide sofa _____ through any door at all.",
+   "optionTranslations": [
+    "fits",
+    "sounds",
+    "smells",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Das breite Sofa passt durch keine einzige Tür.",
+    "targetWord": "passt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "schwer",
+  "sentence": "Die Kiste ist so _____, dass zwei Leute sie tragen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schwer",
+   "options": [
+    "schwer",
+    "teuer",
+    "alt",
+    "neu"
+   ],
+   "translation": "The crate is so _____ that two people carry it.",
+   "optionTranslations": [
+    "heavy",
+    "expensive",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Die Kiste ist so schwer, dass zwei Leute sie tragen.",
+    "targetWord": "schwer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plötzlich",
+  "sentence": "[[Plötzlich]] steht jemand mit Handschuhen vor der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suddenly",
+   "options": [
+    "suddenly",
+    "carefully",
+    "every day",
+    "from below"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Plötzlich steht jemand mit Handschuhen vor der Tür.",
+    "targetWord": "Plötzlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Gang",
+  "sentence": "Nach dem dritten [[Gang]] tut ihm alles weh.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a trip on foot",
+   "options": [
+    "a trip on foot",
+    "a short break",
+    "a free hour",
+    "a cold drink"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Nach dem dritten Gang tut ihm alles weh.",
+    "targetWord": "Gang",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "packen",
+  "sentence": "Sie hat alles selbst in Kisten [[gepackt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pack",
+   "options": [
+    "to pack",
+    "to park",
+    "to count",
+    "to paint"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Sie hat alles selbst in Kisten gepackt.",
+    "targetWord": "gepackt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stöhnen",
+  "sentence": "Er [[stöhnt]] leise und stellt die Kiste ab.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to groan",
+   "options": [
+    "to groan",
+    "to whistle",
+    "to shout",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Er stöhnt leise und stellt die Kiste ab.",
+    "targetWord": "stöhnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weh",
+  "sentence": "Nach drei Stunden tut ihr der Rücken [[weh]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "painfully",
+   "options": [
+    "painfully",
+    "quickly",
+    "clearly",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Nach drei Stunden tut ihr der Rücken weh.",
+    "targetWord": "weh",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doppelt",
+  "sentence": "Zu dritt geht die Arbeit [[doppelt]] so schnell.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice as",
+   "options": [
+    "twice as",
+    "almost as",
+    "never as",
+    "hardly as"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Zu dritt geht die Arbeit doppelt so schnell.",
+    "targetWord": "doppelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eng",
+  "sentence": "Das Treppenhaus ist alt und sehr [[eng]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "bright",
+    "warm",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Das Treppenhaus ist alt und sehr eng.",
+    "targetWord": "eng",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "warnen",
+  "sentence": "Er [[warnt]] sie vor dem nassen Boden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to warn",
+   "options": [
+    "to warn",
+    "to warm",
+    "to follow",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Er warnt sie vor dem nassen Boden.",
+    "targetWord": "warnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nirgendwo",
+  "sentence": "Sie sucht überall, aber der Schlüssel ist _____ zu finden.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nirgendwo",
+   "options": [
+    "nirgendwo",
+    "drinnen",
+    "draußen",
+    "oben"
+   ],
+   "translation": "She looks everywhere, but the key is _____ to be found.",
+   "optionTranslations": [
+    "nowhere",
+    "inside",
+    "outside",
+    "upstairs"
+   ],
+   "audioClip": {
+    "storySlug": "drei-stunden-transporter",
+    "storySource": "user",
+    "sentence": "Sie sucht überall, aber der Schlüssel ist nirgendwo zu finden.",
+    "targetWord": "nirgendwo",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

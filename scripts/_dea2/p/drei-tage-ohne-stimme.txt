@@ -1,0 +1,17 @@
+MATCH|die Tablette=a tablet|die Nudelsuppe=noodle soup|das Taschentuch=a tissue|der Apfel=an apple
+M|die Grippe|Die [[Grippe]] hält sie drei Tage im Bett.|flu|sunburn|rash|bruise
+M|die Stille|In der Wohnung liegt eine [[Stille]] wie im Wartezimmer.|silence|shadow|smell|draught
+M|aufsetzen|Sobald sie sich [[aufsetzt]], dreht sich das Zimmer.|to sit up|to lie down|to stand still|to walk about
+M|die Handschrift|Auf dem Zettel erkennt sie seine [[Handschrift]].|handwriting|signature|stamp|drawing
+M|der Dienst|Er kommt jeden Morgen vor seinem [[Dienst]] vorbei.|a shift|a holiday|a lesson|a flight
+F|schwitzt|Erst friert sie, und eine Stunde später _____ sie.|First she is cold, and an hour later she _____.|sweats|singt=sings|kocht=cooks|liest=reads
+F|schlucken|Ihr Hals tut so weh, dass sie kaum _____ kann.|Her throat hurts so much that she can hardly _____.|swallow|laufen=walk|hören=hear|sehen=see
+M|die Milch|Sie nimmt die Tabletten mit warmer [[Milch]].|milk|soup|juice|tea
+M|niesen|Sie [[niest]] und weiß nie, welcher Tag ist.|to sneeze|to yawn|to snore|to blink
+M|wach|Sie war nie [[wach]], wenn er an der Tür stand.|awake|alone|angry|late
+M|das Geräusch|Am Dienstag hört sie ein leises [[Geräusch]] an der Tür.|a noise|a shadow|a smell|a light
+M|die Tüte|Vor der Tür steht eine [[Tüte]] mit Taschentüchern.|a bag|a bottle|a basket|a bowl
+M|klingeln|Er will nicht [[klingeln]], damit sie weiterschläft.|to ring the bell|to knock the door|to call the phone|to leave a note
+M|kratzen|Ihre Stimme [[kratzt]] am Telefon.|to scratch|to echo|to squeak|to fade
+M|aufstehen|Diese Woche soll sie gar nicht [[aufstehen]].|to get up|to go out|to sit down|to lie back
+F|ganze|Von Montag bis Sonntag, also die _____ Woche, bleibt sie im Bett.|From Monday to Sunday, so the _____ week, she stays in bed.|whole|nächste=next|letzte=last|halbe=half

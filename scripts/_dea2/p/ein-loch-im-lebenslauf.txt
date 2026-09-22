@@ -1,0 +1,17 @@
+MATCH|der Blumenladen=a flower shop|der Lebenslauf=a CV|die Rose=a rose|der Stiel=a stem
+M|die Bewerbung|Fünf [[Bewerbungen]] liegen seit Dienstag ungelesen.|an application|an invitation|a reminder|a receipt
+M|die Stelle|Er erklärt die [[Stelle]]: vier Tage pro Woche.|a position|a delivery|a meeting|a holiday
+M|der Mindestlohn|Die Bezahlung liegt genau beim [[Mindestlohn]].|the minimum wage|the yearly bonus|the monthly rent|the travel cost
+M|der Lohn|Der [[Lohn]] ist niedriger als früher.|the pay|the noise|the risk|the rush
+M|der Inhaber|Der [[Inhaber]] entscheidet selbst über neue Leute.|the owner|the cleaner|the customer|the courier
+F|weit|Das Geld liegt _____ unter dem alten Gehalt.|The money is _____ below the old salary.|far|kurz=briefly|gern=gladly|spät=late
+F|aufgeregt|Ihre Stimme wird hoch und klingt sehr _____.|Her voice goes high and sounds very _____.|excited|müde=tired|streng=stern|leise=quiet
+M|die Wahrheit|Sie sagt die [[Wahrheit]], aber viel zu schnell.|the truth|the price|the address|the answer
+M|das Postfach|Die Briefe liegen in fremden [[Postfächern]].|an inbox|a cupboard|a suitcase|a drawer
+M|die Erde|Der Laden riecht nach [[Erde]] und kaltem Kaffee.|soil|smoke|bread|rain
+M|weiß|Er schneidet die Stiele von drei [[weißen]] Rosen.|white|round|cheap|dry
+M|halb|Nach sechs Jahren kommt ein [[halbes]] Jahr ohne Arbeit.|half|third|double|whole
+M|zweimal|Er liest das Papier [[zweimal]] und schaut auf.|twice|slowly|aloud|later
+M|schnell|Sie antwortet zu [[schnell]] und klingt unsicher.|fast|softly|rudely|briefly
+M|danach|Zuerst das Gespräch, [[danach]] der Anruf.|after that|before that|instead of that|during that
+F|sofort|Die Stelle ist ab heute frei, sie kann _____ anfangen.|The job is free from today, she can start _____.|right away|später=later|selten=rarely|kaum=hardly

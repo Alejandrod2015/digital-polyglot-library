@@ -1,0 +1,17 @@
+MATCH|die Schachtel=a box|der Pappteller=a paper plate|die Tonne=a bin|die Waschmaschine=a washing machine
+M|der Gefallen|Sie hat gerade einen [[Gefallen]] angenommen.|a favour|a warning|a mistake|a present
+M|schulden|Ich [[schulde]] dir noch zwei Kaffee.|to owe|to bring|to drink|to order
+M|die Hausordnung|In der [[Hausordnung]] steht alles über den Müll.|the house rules|the phone book|the price list|the train plan
+M|der Keller|Jede Wohnung hat unten einen [[Keller]].|a cellar|a garden|a garage|a balcony
+M|üblich|Geld für einen Umzug ist hier nicht [[üblich]].|usual|possible|enough|cheap
+F|peinlich|Sie dankt zu laut und findet das danach _____.|She thanks him too loudly and finds it _____ afterwards.|embarrassing|teuer=expensive|nützlich=useful|dringend=urgent
+F|flache|Pizza passt nur in breite und _____ Schachteln, nicht in hohe.|Pizza only fits in wide and _____ boxes, not in tall ones.|flat|kalte=cold|neue=new|blaue=blue
+M|umdrehen|Sie sitzen auf [[umgedrehten]] Kartons.|turned over|neatly stacked|carefully closed|badly painted
+M|einzig|Im ganzen Zimmer steht kein [[einziger]] Stuhl.|single|comfortable|expensive|free
+M|die Pizza|Der Käse klebt noch am Deckel der [[Pizza]].|pizza|bread|soup|cake
+M|bedanken|Sie will sich bei den Nachbarn [[bedanken]].|to thank somebody|to write to somebody|to wait for somebody|to look for somebody
+M|schief|Der Satz kommt [[schief]] heraus und klingt hart.|crooked|clear|loud|slow
+M|lachen|Er [[lacht]] laut in der leeren Küche.|to laugh|to yawn|to cough|to sleep
+M|fühlen|Diesmal [[fühlt]] es sich gut an.|to feel|to sound|to taste|to seem
+M|weg|Der Zweifel sitzt jetzt weiter [[weg]].|away|below|inside|ahead
+F|irgendwann|Heute hilfst du mir, und _____ helfe ich dir.|Today you help me, and _____ I help you.|some day|gestern=yesterday|gerade=right now|nie=never

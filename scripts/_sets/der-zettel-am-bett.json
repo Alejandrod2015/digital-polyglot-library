@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Lattenrost,die Matratze,der Anhänger,das Lager",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Lattenrost",
+     "answer": "a slatted frame",
+     "options": [
+      "a slatted frame",
+      "a mattress",
+      "a trailer",
+      "a store room"
+     ]
+    },
+    {
+     "word": "die Matratze",
+     "answer": "a mattress",
+     "options": [
+      "a slatted frame",
+      "a mattress",
+      "a trailer",
+      "a store room"
+     ]
+    },
+    {
+     "word": "der Anhänger",
+     "answer": "a trailer",
+     "options": [
+      "a slatted frame",
+      "a mattress",
+      "a trailer",
+      "a store room"
+     ]
+    },
+    {
+     "word": "das Lager",
+     "answer": "a store room",
+     "options": [
+      "a slatted frame",
+      "a mattress",
+      "a trailer",
+      "a store room"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gebraucht",
+  "sentence": "Das Bett ist [[gebraucht]] und kostet wenig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "second hand",
+   "options": [
+    "second hand",
+    "brand new",
+    "badly built",
+    "freshly painted"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Das Bett ist gebraucht und kostet wenig.",
+    "targetWord": "gebraucht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Kratzer",
+  "sentence": "Das Holz hat keinen einzigen [[Kratzer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scratch",
+   "options": [
+    "a scratch",
+    "a corner",
+    "a handle",
+    "a shadow"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Das Holz hat keinen einzigen Kratzer.",
+    "targetWord": "Kratzer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mustern",
+  "sentence": "Die Händlerin [[mustert]] sie kurz von oben bis unten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look somebody over",
+   "options": [
+    "to look somebody over",
+    "to greet somebody warmly",
+    "to call somebody back",
+    "to send somebody away"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Die Händlerin mustert sie kurz von oben bis unten.",
+    "targetWord": "mustert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Gelegenheit",
+  "sentence": "Bei [[Gelegenheit]] bringt sie zwei Kaffee vorbei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an occasion",
+   "options": [
+    "an occasion",
+    "a mistake",
+    "a promise",
+    "a reason"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Bei Gelegenheit bringt sie zwei Kaffee vorbei.",
+    "targetWord": "Gelegenheit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "erfolgreich",
+  "sentence": "Zum ersten Mal hat sie [[erfolgreich]] gehandelt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "successfully",
+   "options": [
+    "successfully",
+    "carefully",
+    "loudly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Zum ersten Mal hat sie erfolgreich gehandelt.",
+    "targetWord": "erfolgreich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "atmet",
+  "sentence": "Vor dem schweren Gespräch _____ sie einmal tief durch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "atmet",
+   "options": [
+    "atmet",
+    "isst",
+    "schreibt",
+    "zahlt"
+   ],
+   "translation": "Before the hard talk she _____ deeply once.",
+   "optionTranslations": [
+    "breathes",
+    "eats",
+    "writes",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Vor dem schweren Gespräch atmet sie einmal tief durch.",
+    "targetWord": "atmet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fremd",
+  "sentence": "Die eigene Stimme klingt _____, fast wie die von jemand anderem.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fremd",
+   "options": [
+    "fremd",
+    "laut",
+    "tief",
+    "schnell"
+   ],
+   "translation": "Her own voice sounds _____, almost like somebody else's.",
+   "optionTranslations": [
+    "strange",
+    "loud",
+    "deep",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Die eigene Stimme klingt fremd, fast wie die von jemand anderem.",
+    "targetWord": "fremd",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klingen",
+  "sentence": "Ihre Stimme [[klingt]] heute anders als sonst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sound",
+   "options": [
+    "to sound",
+    "to hurt",
+    "to stop",
+    "to grow"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Ihre Stimme klingt heute anders als sonst.",
+    "targetWord": "klingt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seltsam",
+  "sentence": "Der neue Preis fühlt sich [[seltsam]] an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strange",
+   "options": [
+    "strange",
+    "cheap",
+    "heavy",
+    "useful"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Der neue Preis fühlt sich seltsam an.",
+    "targetWord": "seltsam",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wischen",
+  "sentence": "Sie [[wischt]] die Hände an der Hose ab.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wipe",
+   "options": [
+    "to wipe",
+    "to warm",
+    "to hide",
+    "to bite"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Sie wischt die Hände an der Hose ab.",
+    "targetWord": "wischt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tief",
+  "sentence": "Sie atmet einmal [[tief]] durch und klingelt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "deeply",
+   "options": [
+    "deeply",
+    "quietly",
+    "quickly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Sie atmet einmal tief durch und klingelt.",
+    "targetWord": "tief",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Rückweg",
+  "sentence": "Auf dem [[Rückweg]] fällt ihr der Zettel auf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the way back",
+   "options": [
+    "the way back",
+    "the front door",
+    "the long queue",
+    "the last bus"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Auf dem Rückweg fällt ihr der Zettel auf.",
+    "targetWord": "Rückweg",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "krumm",
+  "sentence": "Auf dem Zettel stehen [[krumme]] Buchstaben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crooked",
+   "options": [
+    "crooked",
+    "golden",
+    "tiny",
+    "foreign"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Auf dem Zettel stehen krumme Buchstaben.",
+    "targetWord": "krumme",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Vorname",
+  "sentence": "Er kennt nur ihren [[Vornamen]], nicht den Nachnamen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a first name",
+   "options": [
+    "a first name",
+    "a house number",
+    "a bank code",
+    "a shop name"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Er kennt nur ihren Vornamen, nicht den Nachnamen.",
+    "targetWord": "Vornamen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Datum",
+  "sentence": "Unter dem Namen steht das [[Datum]] vom Samstag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the date",
+   "options": [
+    "the date",
+    "the price",
+    "the weight",
+    "the address"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Unter dem Namen steht das Datum vom Samstag.",
+    "targetWord": "Datum",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "überhaupt",
+  "sentence": "Sie hat davon [[überhaupt]] nichts gemerkt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at all",
+   "options": [
+    "at all",
+    "almost",
+    "once more",
+    "straight away"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-am-bett",
+    "storySource": "user",
+    "sentence": "Sie hat davon überhaupt nichts gemerkt.",
+    "targetWord": "überhaupt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

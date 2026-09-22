@@ -1,0 +1,17 @@
+MATCH|der Becher=a mug|der Kugelschreiber=a biro|der Fahrstuhl=a lift|die Bank=a bench
+M|der Einstand|Ein [[Einstand]] ist in diesem Haus keine Idee.|a housewarming|a house rule|a rent rise|a spring clean
+M|die Pflicht|Hier ist so ein Fest eine [[Pflicht]].|a duty|a habit|a favour|a chance
+M|der Aushang|Der [[Aushang]] hängt unten neben dem Fahrstuhl.|a notice|a mirror|a mailbox|a clock
+M|der Zweifel|Der [[Zweifel]] wird jede Stunde größer.|a doubt|a hunger|a headache|a rumour
+M|der Magen|Die Angst sitzt ihr im [[Magen]].|the stomach|the throat|the shoulder|the knee
+F|mutig|Sie hat Angst und macht es trotzdem, das ist sehr _____.|She is afraid and does it anyway, that is very _____.|brave|müde=tired|krank=ill|nass=wet
+F|hofft|Drei Zettel hängen unter dem Aushang, und sie _____ wieder.|Three notes hang under the notice and she _____ again.|hopes|zahlt=pays|kocht=cooks|putzt=cleans
+M|das Treppenlicht|Im [[Treppenlicht]] liest sie den Text noch dreimal.|the stair light|the shop window|the front door|the back yard
+M|der Spruch|Sie liest ihren eigenen [[Spruch]] noch einmal durch.|a line|a price|a name|a game
+M|die Tür|Sie kennt die Leute hinter den meisten [[Türen]] nicht.|a door|a wall|a roof|a stair
+M|hängen|Drei kleine Zettel [[hängen]] unter dem Aushang.|to hang|to fall|to fly|to melt
+M|sitzen|Er [[sitzt]] auf demselben Klappstuhl wie im Oktober.|to sit|to kneel|to lean|to lie
+M|die Uhr|Auf dem Zettel steht neunzehn [[Uhr]], zweiter Stock.|o'clock|minutes|degrees|euros
+M|willkommen|Jeder ist herzlich [[willkommen]].|welcome|punctual|curious|polite
+M|laut|Sie ruft es [[laut]] durch die leere Küche.|loudly|slowly|calmly|shyly
+M|der Freitagabend|Am [[Freitagabend]] hängen drei Zettel unter dem Aushang.|Friday evening|Monday morning|Sunday noon|Tuesday night

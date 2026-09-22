@@ -1,0 +1,17 @@
+MATCH|der Schal=a scarf|der Wurststand=a sausage stall|die Bratwurst=a fried sausage|der Senf=mustard
+M|das Heimspiel|Beim dritten [[Heimspiel]] bringt er einen zweiten Schal mit.|a home game|a long trip|a free drink|a new club
+M|die Strophe|In der ersten [[Strophe]] singt sie fast alles falsch.|a verse|a chorus|a whistle|a shout
+M|der Text|Den [[Text]] lernt hier jeder auswendig.|the words|the tune|the rule|the price
+M|auswendig|Nach vier Spielen kann sie das Lied [[auswendig]].|by heart|out loud|in tune|by chance
+M|die Kehle|Nach dem Singen ist ihre [[Kehle]] warm.|the throat|the shoulder|the elbow|the wrist
+F|falsch|Sie kennt den Text nicht und singt fast jedes Wort _____.|She does not know the words and sings almost every word _____.|wrong|laut=loudly|allein=alone|langsam=slowly
+F|fester|Er drückt ihr den Schal noch _____ in die Hand.|He presses the scarf even more _____ into her hand.|tightly|später=later|leiser=more quietly|kürzer=more briefly
+M|falten|Neben dem Schal liegt ein [[gefaltetes]] Blatt.|folded|torn|wet|thick
+M|die Krähe|Ihre Stimme klingt heute wie eine [[Krähe]].|a crow|a bell|a horn|a drum
+M|brüllen|Dreißigtausend Leute [[brüllen]] weiter.|to roar|to clap|to leave|to stand
+M|drücken|Er [[drückt]] ihr den Schal in die Hand.|to press|to lend|to fold|to wash
+M|singen|Beim zweiten Lied [[singt]] sie schon die Hälfte mit.|to sing|to shout|to hum|to speak
+M|richtig|In der zweiten Strophe sitzt jedes Wort [[richtig]].|right|early|loud|slow
+M|bestimmt|Das hört man [[bestimmt]] bis ganz nach unten.|surely|barely|rarely|slowly
+M|der Abpfiff|Beim [[Abpfiff]] steht das ganze Stadion noch.|the final whistle|the first goal|the long queue|the empty seat
+F|läuft|So _____ das hier zwischen uns beiden.|That is how it _____ between the two of us.|works|kostet=costs|klingt=sounds|riecht=smells

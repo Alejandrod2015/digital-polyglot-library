@@ -1,0 +1,17 @@
+MATCH|die Praxis=a doctor's surgery|die Versichertenkarte=a health card|die Karteikarte=a patient card|das Schaufenster=a shop window
+M|die Sprechstunde|Die [[Sprechstunde]] fängt am Dienstag um acht an.|surgery hours|opening times|lunch breaks|night shifts
+M|die Unterschrift|Sie will nur die [[Unterschrift]] und sonst nichts.|a signature|a receipt|a stamp|a copy
+M|die Lunge|Die Ärztin hört die [[Lunge]] lange ab.|the lung|the elbow|the ankle|the wrist
+M|das Gewissen|Sie wartet auf das schlechte [[Gewissen]], aber es kommt nicht.|conscience|appetite|memory|balance
+M|stur|Sie antwortet [[stur]] und will trotzdem arbeiten.|stubbornly|politely|quietly|slowly
+F|wegbleiben|In der Probezeit kann sie nicht einfach _____.|During the trial period she cannot simply _____.|stay away|aufstehen=get up|zuhören=listen|nachfragen=ask again
+F|wochenlang|Ohne zwei Tage Ruhe schleppt sie die Grippe _____ mit.|Without two days of rest she carries the flu around _____.|for weeks|gestern=yesterday|sofort=at once|kaum=hardly
+M|der Fehler|Krank sein ist kein [[Fehler]], sagt die Ärztin.|a mistake|a favour|a habit|a secret
+M|der Chef|Ihr [[Chef]] sieht die roten Wangen durch das Fenster.|the boss|the patient|the neighbour|the courier
+M|die Wange|Das Fieber macht ihre [[Wangen]] ganz heiß.|a cheek|a thumb|a shoulder|an ankle
+M|der Rücken|Bei jeder Kurve zieht ihr [[Rücken]].|the back|the throat|the hand|the foot
+M|der Laden|Am Mittwoch soll sie wieder im [[Laden]] stehen.|a shop|a school|a bank|a hall
+M|der Mittwoch|Am [[Mittwoch]] fährt sie trotzdem los.|Wednesday|Saturday|Sunday|Monday
+M|warten|Sie [[wartet]] auf ein schlechtes Gefühl.|to wait|to hope|to search|to repeat
+M|der Donnerstagmorgen|Sie schläft bis zum [[Donnerstagmorgen]] durch.|Thursday morning|Friday evening|Sunday night|Tuesday noon
+F|zurück|Der Chef schickt sie nach Hause, und sie fährt langsam _____.|The boss sends her home and she drives slowly _____.|back|weiter=onwards|hoch=upstairs|raus=outside

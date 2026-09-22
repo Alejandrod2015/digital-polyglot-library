@@ -1,0 +1,17 @@
+MATCH|das Salz=salt|die Gurke=a cucumber|die Serviette=a napkin|der Korkenzieher=a corkscrew
+M|der Sekt|Zum Anstoßen öffnet er den [[Sekt]].|sparkling wine|dark beer|cold water|black coffee
+M|anstoßen|Alle wollen gleichzeitig [[anstoßen]].|to toast|to leave|to argue|to pay
+M|der Aufstrich|Zum Brot gibt es einen weichen [[Aufstrich]].|a spread|a sauce|a syrup|a batter
+M|die Schüssel|Sie stellt eine große [[Schüssel]] auf den Tisch.|a bowl|a kettle|a tray|a pan
+M|der Krach|Der [[Krach]] wird leiser, als sie ans Glas klopft.|racket|smoke|draught|smell
+F|reicht|Mehr braucht sie nicht, das kleine Fest _____ ihr völlig.|She needs no more, the small party is completely _____ for her.|enough|fehlt=missing|gefällt=pleasing|hilft=helpful
+F|spät|Erst um drei Uhr nachts geht sie ins Bett, also sehr _____.|Only at three in the morning does she go to bed, so very _____.|late|leise=quietly|allein=alone|müde=tired
+M|achten|Sie klopft ans Glas, bis alle auf sie [[achten]].|to pay attention|to sit down|to drink up|to move away
+M|klirren|Die Gläser [[klirren]] im ganzen Zimmer.|to clink|to crack|to spill|to steam
+M|tanzen|Später [[tanzt]] jemand zwischen den Tellern.|to dance|to cook|to sleep|to read
+M|schmutzig|In der Küche stehen überall [[schmutzige]] Teller.|dirty|golden|square|deep
+M|der Schluck|Sie trinkt den letzten [[Schluck]] und stellt das Glas hin.|a sip|a slice|a spoon|a straw
+M|aufräumen|Heute [[räumt]] sie den Müll nicht auf.|to tidy up|to take out|to pay for|to look at
+M|der Müll|Der [[Müll]] bleibt bis zum nächsten Morgen stehen.|rubbish|luggage|laundry|furniture
+M|danke|Sie sagt [[danke]] und hebt ihr Glas.|thank you|good luck|see you|well done
+F|Tisch|Auf dem _____ stehen die Teller und die Gläser.|On the _____ stand the plates and the glasses.|table|Schrank=cupboard|Sessel=armchair|Teppich=carpet

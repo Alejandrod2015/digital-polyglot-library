@@ -1,0 +1,17 @@
+MATCH|das Seil=a rope|der Filzstift=a marker pen|das Schild=a sign|die Lehne=the back of a seat
+M|klemmen|Das Sofa [[klemmt]] zwischen zwei Wänden.|to jam|to fall|to shine|to float
+M|stecken|Der Rahmen bleibt in der Tür [[stecken]].|to be stuck|to be broken|to be ready|to be open
+M|der Knick|Die Treppe macht hier einen scharfen [[Knick]].|a bend|a hole|a step|a door
+M|der Rahmen|Der [[Rahmen]] ist breiter als die Tür.|a frame|a mirror|a curtain|a carpet
+M|das Möbelstück|Das Bett war ihr erstes [[Möbelstück]].|a piece of furniture|a kind of plant|a sort of cloth|a type of tool
+F|breit|Das Sofa ist zu _____ für die schmale Tür.|The sofa is too _____ for the narrow door.|wide|teuer=expensive|weich=soft|hell=bright
+F|müde|Am Ende des Umzugs sind alle so _____, dass sie sofort schlafen.|At the end of the move everybody is so _____ that they sleep at once.|tired|hungrig=hungry|nervös=nervous|froh=glad
+M|rechnen|Sie [[rechnet]] kurz im Kopf und nickt.|to work out numbers|to look for keys|to write down names|to hand out papers
+M|leihen|Für den Umzug nimmt er ein [[geliehenes]] Seil.|borrowed|painted|folded|stolen
+M|mitten|Der Schrank steht [[mitten]] im Zimmer.|right in the middle|close to the wall|behind the door|under the window
+M|grün|Das alte Sofa ist dunkel [[grün]].|green|round|empty|soft
+M|riechen|Die Wohnung [[riecht]] noch nach Farbe.|to smell|to sound|to look|to feel
+M|langsam|Der Regen macht alles [[langsam]] nass.|slowly|clearly|suddenly|rarely
+M|kaputt|Nach dem Umzug haben alle einen [[kaputten]] Rücken.|broken|strong|straight|warm
+M|trocken|Sie sagt das ganz [[trocken]] und geht weiter.|drily|loudly|slowly|gladly
+F|verschwindet|Er stellt das Schild hin und _____ im Hinterhof.|He puts up the sign and _____ into the back yard.|disappears|kocht=cooks|singt=sings|liest=reads

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Schachtel,der Pappteller,die Tonne,die Waschmaschine",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Schachtel",
+     "answer": "a box",
+     "options": [
+      "a box",
+      "a paper plate",
+      "a bin",
+      "a washing machine"
+     ]
+    },
+    {
+     "word": "der Pappteller",
+     "answer": "a paper plate",
+     "options": [
+      "a box",
+      "a paper plate",
+      "a bin",
+      "a washing machine"
+     ]
+    },
+    {
+     "word": "die Tonne",
+     "answer": "a bin",
+     "options": [
+      "a box",
+      "a paper plate",
+      "a bin",
+      "a washing machine"
+     ]
+    },
+    {
+     "word": "die Waschmaschine",
+     "answer": "a washing machine",
+     "options": [
+      "a box",
+      "a paper plate",
+      "a bin",
+      "a washing machine"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Gefallen",
+  "sentence": "Sie hat gerade einen [[Gefallen]] angenommen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a favour",
+   "options": [
+    "a favour",
+    "a warning",
+    "a mistake",
+    "a present"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Sie hat gerade einen Gefallen angenommen.",
+    "targetWord": "Gefallen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schulden",
+  "sentence": "Ich [[schulde]] dir noch zwei Kaffee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to owe",
+   "options": [
+    "to owe",
+    "to bring",
+    "to drink",
+    "to order"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Ich schulde dir noch zwei Kaffee.",
+    "targetWord": "schulde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Hausordnung",
+  "sentence": "In der [[Hausordnung]] steht alles über den Müll.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the house rules",
+   "options": [
+    "the house rules",
+    "the phone book",
+    "the price list",
+    "the train plan"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "In der Hausordnung steht alles über den Müll.",
+    "targetWord": "Hausordnung",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Keller",
+  "sentence": "Jede Wohnung hat unten einen [[Keller]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cellar",
+   "options": [
+    "a cellar",
+    "a garden",
+    "a garage",
+    "a balcony"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Jede Wohnung hat unten einen Keller.",
+    "targetWord": "Keller",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "üblich",
+  "sentence": "Geld für einen Umzug ist hier nicht [[üblich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "usual",
+   "options": [
+    "usual",
+    "possible",
+    "enough",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Geld für einen Umzug ist hier nicht üblich.",
+    "targetWord": "üblich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "peinlich",
+  "sentence": "Sie dankt zu laut und findet das danach _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "peinlich",
+   "options": [
+    "peinlich",
+    "teuer",
+    "nützlich",
+    "dringend"
+   ],
+   "translation": "She thanks him too loudly and finds it _____ afterwards.",
+   "optionTranslations": [
+    "embarrassing",
+    "expensive",
+    "useful",
+    "urgent"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Sie dankt zu laut und findet das danach peinlich.",
+    "targetWord": "peinlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "flache",
+  "sentence": "Pizza passt nur in breite und _____ Schachteln, nicht in hohe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "flache",
+   "options": [
+    "flache",
+    "kalte",
+    "neue",
+    "blaue"
+   ],
+   "translation": "Pizza only fits in wide and _____ boxes, not in tall ones.",
+   "optionTranslations": [
+    "flat",
+    "cold",
+    "new",
+    "blue"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Pizza passt nur in breite und flache Schachteln, nicht in hohe.",
+    "targetWord": "flache",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "umdrehen",
+  "sentence": "Sie sitzen auf [[umgedrehten]] Kartons.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "turned over",
+   "options": [
+    "turned over",
+    "neatly stacked",
+    "carefully closed",
+    "badly painted"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Sie sitzen auf umgedrehten Kartons.",
+    "targetWord": "umgedrehten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "einzig",
+  "sentence": "Im ganzen Zimmer steht kein [[einziger]] Stuhl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "single",
+   "options": [
+    "single",
+    "comfortable",
+    "expensive",
+    "free"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Im ganzen Zimmer steht kein einziger Stuhl.",
+    "targetWord": "einziger",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Pizza",
+  "sentence": "Der Käse klebt noch am Deckel der [[Pizza]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pizza",
+   "options": [
+    "pizza",
+    "bread",
+    "soup",
+    "cake"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Der Käse klebt noch am Deckel der Pizza.",
+    "targetWord": "Pizza",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bedanken",
+  "sentence": "Sie will sich bei den Nachbarn [[bedanken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to thank somebody",
+   "options": [
+    "to thank somebody",
+    "to write to somebody",
+    "to wait for somebody",
+    "to look for somebody"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Sie will sich bei den Nachbarn bedanken.",
+    "targetWord": "bedanken",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schief",
+  "sentence": "Der Satz kommt [[schief]] heraus und klingt hart.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crooked",
+   "options": [
+    "crooked",
+    "clear",
+    "loud",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Der Satz kommt schief heraus und klingt hart.",
+    "targetWord": "schief",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lachen",
+  "sentence": "Er [[lacht]] laut in der leeren Küche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to yawn",
+    "to cough",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Er lacht laut in der leeren Küche.",
+    "targetWord": "lacht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fühlen",
+  "sentence": "Diesmal [[fühlt]] es sich gut an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to feel",
+   "options": [
+    "to feel",
+    "to sound",
+    "to taste",
+    "to seem"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Diesmal fühlt es sich gut an.",
+    "targetWord": "fühlt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weg",
+  "sentence": "Der Zweifel sitzt jetzt weiter [[weg]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "away",
+   "options": [
+    "away",
+    "below",
+    "inside",
+    "ahead"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Der Zweifel sitzt jetzt weiter weg.",
+    "targetWord": "weg",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "irgendwann",
+  "sentence": "Heute hilfst du mir, und _____ helfe ich dir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "irgendwann",
+   "options": [
+    "irgendwann",
+    "gestern",
+    "gerade",
+    "nie"
+   ],
+   "translation": "Today you help me, and _____ I help you.",
+   "optionTranslations": [
+    "some day",
+    "yesterday",
+    "right now",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "pizza-auf-den-kartons",
+    "storySource": "user",
+    "sentence": "Heute hilfst du mir, und irgendwann helfe ich dir.",
+    "targetWord": "irgendwann",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

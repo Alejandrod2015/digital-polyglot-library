@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Tablette,die Nudelsuppe,das Taschentuch,der Apfel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Tablette",
+     "answer": "a tablet",
+     "options": [
+      "a tablet",
+      "noodle soup",
+      "a tissue",
+      "an apple"
+     ]
+    },
+    {
+     "word": "die Nudelsuppe",
+     "answer": "noodle soup",
+     "options": [
+      "a tablet",
+      "noodle soup",
+      "a tissue",
+      "an apple"
+     ]
+    },
+    {
+     "word": "das Taschentuch",
+     "answer": "a tissue",
+     "options": [
+      "a tablet",
+      "noodle soup",
+      "a tissue",
+      "an apple"
+     ]
+    },
+    {
+     "word": "der Apfel",
+     "answer": "an apple",
+     "options": [
+      "a tablet",
+      "noodle soup",
+      "a tissue",
+      "an apple"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Grippe",
+  "sentence": "Die [[Grippe]] hält sie drei Tage im Bett.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flu",
+   "options": [
+    "flu",
+    "sunburn",
+    "rash",
+    "bruise"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Die Grippe hält sie drei Tage im Bett.",
+    "targetWord": "Grippe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Stille",
+  "sentence": "In der Wohnung liegt eine [[Stille]] wie im Wartezimmer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silence",
+   "options": [
+    "silence",
+    "shadow",
+    "smell",
+    "draught"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "In der Wohnung liegt eine Stille wie im Wartezimmer.",
+    "targetWord": "Stille",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufsetzen",
+  "sentence": "Sobald sie sich [[aufsetzt]], dreht sich das Zimmer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit up",
+   "options": [
+    "to sit up",
+    "to lie down",
+    "to stand still",
+    "to walk about"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Sobald sie sich aufsetzt, dreht sich das Zimmer.",
+    "targetWord": "aufsetzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Handschrift",
+  "sentence": "Auf dem Zettel erkennt sie seine [[Handschrift]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "handwriting",
+   "options": [
+    "handwriting",
+    "signature",
+    "stamp",
+    "drawing"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Auf dem Zettel erkennt sie seine Handschrift.",
+    "targetWord": "Handschrift",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Dienst",
+  "sentence": "Er kommt jeden Morgen vor seinem [[Dienst]] vorbei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shift",
+   "options": [
+    "a shift",
+    "a holiday",
+    "a lesson",
+    "a flight"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Er kommt jeden Morgen vor seinem Dienst vorbei.",
+    "targetWord": "Dienst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "schwitzt",
+  "sentence": "Erst friert sie, und eine Stunde später _____ sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schwitzt",
+   "options": [
+    "schwitzt",
+    "singt",
+    "kocht",
+    "liest"
+   ],
+   "translation": "First she is cold, and an hour later she _____.",
+   "optionTranslations": [
+    "sweats",
+    "sings",
+    "cooks",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Erst friert sie, und eine Stunde später schwitzt sie.",
+    "targetWord": "schwitzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "schlucken",
+  "sentence": "Ihr Hals tut so weh, dass sie kaum _____ kann.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schlucken",
+   "options": [
+    "schlucken",
+    "laufen",
+    "hören",
+    "sehen"
+   ],
+   "translation": "Her throat hurts so much that she can hardly _____.",
+   "optionTranslations": [
+    "swallow",
+    "walk",
+    "hear",
+    "see"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Ihr Hals tut so weh, dass sie kaum schlucken kann.",
+    "targetWord": "schlucken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Milch",
+  "sentence": "Sie nimmt die Tabletten mit warmer [[Milch]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "milk",
+   "options": [
+    "milk",
+    "soup",
+    "juice",
+    "tea"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Sie nimmt die Tabletten mit warmer Milch.",
+    "targetWord": "Milch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "niesen",
+  "sentence": "Sie [[niest]] und weiß nie, welcher Tag ist.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sneeze",
+   "options": [
+    "to sneeze",
+    "to yawn",
+    "to snore",
+    "to blink"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Sie niest und weiß nie, welcher Tag ist.",
+    "targetWord": "niest",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wach",
+  "sentence": "Sie war nie [[wach]], wenn er an der Tür stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awake",
+   "options": [
+    "awake",
+    "alone",
+    "angry",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Sie war nie wach, wenn er an der Tür stand.",
+    "targetWord": "wach",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Geräusch",
+  "sentence": "Am Dienstag hört sie ein leises [[Geräusch]] an der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a noise",
+   "options": [
+    "a noise",
+    "a shadow",
+    "a smell",
+    "a light"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Am Dienstag hört sie ein leises Geräusch an der Tür.",
+    "targetWord": "Geräusch",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Tüte",
+  "sentence": "Vor der Tür steht eine [[Tüte]] mit Taschentüchern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bag",
+   "options": [
+    "a bag",
+    "a bottle",
+    "a basket",
+    "a bowl"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Vor der Tür steht eine Tüte mit Taschentüchern.",
+    "targetWord": "Tüte",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klingeln",
+  "sentence": "Er will nicht [[klingeln]], damit sie weiterschläft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ring the bell",
+   "options": [
+    "to ring the bell",
+    "to knock the door",
+    "to call the phone",
+    "to leave a note"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Er will nicht klingeln, damit sie weiterschläft.",
+    "targetWord": "klingeln",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kratzen",
+  "sentence": "Ihre Stimme [[kratzt]] am Telefon.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to scratch",
+   "options": [
+    "to scratch",
+    "to echo",
+    "to squeak",
+    "to fade"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Ihre Stimme kratzt am Telefon.",
+    "targetWord": "kratzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufstehen",
+  "sentence": "Diese Woche soll sie gar nicht [[aufstehen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get up",
+   "options": [
+    "to get up",
+    "to go out",
+    "to sit down",
+    "to lie back"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Diese Woche soll sie gar nicht aufstehen.",
+    "targetWord": "aufstehen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ganze",
+  "sentence": "Von Montag bis Sonntag, also die _____ Woche, bleibt sie im Bett.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ganze",
+   "options": [
+    "ganze",
+    "nächste",
+    "letzte",
+    "halbe"
+   ],
+   "translation": "From Monday to Sunday, so the _____ week, she stays in bed.",
+   "optionTranslations": [
+    "whole",
+    "next",
+    "last",
+    "half"
+   ],
+   "audioClip": {
+    "storySlug": "drei-tage-ohne-stimme",
+    "storySource": "user",
+    "sentence": "Von Montag bis Sonntag, also die ganze Woche, bleibt sie im Bett.",
+    "targetWord": "ganze",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

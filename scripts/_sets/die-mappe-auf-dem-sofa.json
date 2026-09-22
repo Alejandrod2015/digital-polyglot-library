@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Wasserhahn,die Mappe,die Miete,der Bürgersteig",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Wasserhahn",
+     "answer": "a tap",
+     "options": [
+      "a tap",
+      "a folder",
+      "the rent",
+      "the pavement"
+     ]
+    },
+    {
+     "word": "die Mappe",
+     "answer": "a folder",
+     "options": [
+      "a tap",
+      "a folder",
+      "the rent",
+      "the pavement"
+     ]
+    },
+    {
+     "word": "die Miete",
+     "answer": "the rent",
+     "options": [
+      "a tap",
+      "a folder",
+      "the rent",
+      "the pavement"
+     ]
+    },
+    {
+     "word": "der Bürgersteig",
+     "answer": "the pavement",
+     "options": [
+      "a tap",
+      "a folder",
+      "the rent",
+      "the pavement"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Bewerber",
+  "sentence": "Dreißig [[Bewerber]] warten vor der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an applicant",
+   "options": [
+    "an applicant",
+    "a landlord",
+    "a neighbour",
+    "a visitor"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Dreißig Bewerber warten vor der Tür.",
+    "targetWord": "Bewerber",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Maklerin",
+  "sentence": "Die [[Maklerin]] zeigt heute drei Wohnungen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an estate agent",
+   "options": [
+    "an estate agent",
+    "a cleaner",
+    "a teacher",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Die Maklerin zeigt heute drei Wohnungen.",
+    "targetWord": "Maklerin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Schufa",
+  "sentence": "Der Vermieter fragt zuerst nach der [[Schufa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a credit record",
+   "options": [
+    "a credit record",
+    "a work contract",
+    "a phone bill",
+    "a bank card"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Der Vermieter fragt zuerst nach der Schufa.",
+    "targetWord": "Schufa",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Gehaltszettel",
+  "sentence": "Jeden Monat kommt ein neuer [[Gehaltszettel]] per Post.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a payslip",
+   "options": [
+    "a payslip",
+    "a rent bill",
+    "a train ticket",
+    "a shopping list"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Jeden Monat kommt ein neuer Gehaltszettel per Post.",
+    "targetWord": "Gehaltszettel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spüren",
+  "sentence": "Sie [[spürt]] die Wärme im Gesicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to feel",
+   "options": [
+    "to feel",
+    "to hide",
+    "to count",
+    "to wash"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Sie spürt die Wärme im Gesicht.",
+    "targetWord": "spürt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "nass",
+  "sentence": "Ich stelle die Schuhe an die Heizung, sie sind ganz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nass",
+   "options": [
+    "nass",
+    "eng",
+    "neu",
+    "dunkel"
+   ],
+   "translation": "I put the shoes by the heater, they are completely _____.",
+   "optionTranslations": [
+    "wet",
+    "tight",
+    "new",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Ich stelle die Schuhe an die Heizung, sie sind ganz nass.",
+    "targetWord": "nass",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "winzig",
+  "sentence": "Das Zimmer hat nur zwei Meter Platz, es ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "winzig",
+   "options": [
+    "winzig",
+    "teuer",
+    "ruhig",
+    "hell"
+   ],
+   "translation": "The room has only two metres of space, it is _____.",
+   "optionTranslations": [
+    "tiny",
+    "expensive",
+    "quiet",
+    "bright"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Das Zimmer hat nur zwei Meter Platz, es ist winzig.",
+    "targetWord": "winzig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eigen",
+  "sentence": "Endlich hat sie eine [[eigene]] Wohnung.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one's own",
+   "options": [
+    "one's own",
+    "brand new",
+    "quite cheap",
+    "rather small"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Endlich hat sie eine eigene Wohnung.",
+    "targetWord": "eigene",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trotzdem",
+  "sentence": "Es regnet stark, [[trotzdem]] geht sie zu Fuß.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all the same",
+   "options": [
+    "all the same",
+    "for example",
+    "at first",
+    "by chance"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Es regnet stark, trotzdem geht sie zu Fuß.",
+    "targetWord": "trotzdem",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dick",
+  "sentence": "Sie trägt eine [[dicke]] Mappe unter dem Arm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thick",
+   "options": [
+    "thick",
+    "light",
+    "empty",
+    "shiny"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Sie trägt eine dicke Mappe unter dem Arm.",
+    "targetWord": "dicke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heiß",
+  "sentence": "Der Kaffee ist noch zu [[heiß]] zum Trinken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "sweet",
+    "strong",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Der Kaffee ist noch zu heiß zum Trinken.",
+    "targetWord": "heiß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bisher",
+  "sentence": "[[Bisher]] hat niemand auf die Anzeige geantwortet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "until now",
+   "options": [
+    "until now",
+    "since then",
+    "by tomorrow",
+    "every year"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Bisher hat niemand auf die Anzeige geantwortet.",
+    "targetWord": "Bisher",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "umsonst",
+  "sentence": "Der zweite Kaffee ist heute [[umsonst]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for free",
+   "options": [
+    "for free",
+    "for later",
+    "too strong",
+    "very small"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Der zweite Kaffee ist heute umsonst.",
+    "targetWord": "umsonst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wirklich",
+  "sentence": "Das ist [[wirklich]] kein Problem für mich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "almost",
+    "hardly",
+    "maybe"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Das ist wirklich kein Problem für mich.",
+    "targetWord": "wirklich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "leise",
+  "sentence": "Die Nachbarn hören alles, deshalb sprechen wir hier sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "leise",
+   "options": [
+    "leise",
+    "kurz",
+    "langsam",
+    "allein"
+   ],
+   "translation": "The neighbours hear everything, so we speak very _____ here.",
+   "optionTranslations": [
+    "quietly",
+    "briefly",
+    "slowly",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Die Nachbarn hören alles, deshalb sprechen wir hier sehr leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zugegeben",
+  "sentence": "Er hat den Fehler vor allen _____ und sich entschuldigt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zugegeben",
+   "options": [
+    "zugegeben",
+    "vergessen",
+    "gesucht",
+    "bezahlt"
+   ],
+   "translation": "In front of everybody he _____ the mistake and apologised.",
+   "optionTranslations": [
+    "admitted",
+    "forgotten",
+    "looked for",
+    "paid for"
+   ],
+   "audioClip": {
+    "storySlug": "die-mappe-auf-dem-sofa",
+    "storySource": "user",
+    "sentence": "Er hat den Fehler vor allen zugegeben und sich entschuldigt.",
+    "targetWord": "zugegeben",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

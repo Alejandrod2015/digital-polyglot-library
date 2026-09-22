@@ -1,0 +1,17 @@
+MATCH|der Waschsalon=a launderette|die Seife=soap|der Karton=a cardboard box|der Hinterhof=a back yard
+M|die Vormieterin|Die [[Vormieterin]] gibt ihr die Schlüssel.|the previous tenant|the new neighbour|the young cleaner|the local dentist
+M|ausziehen|Alle fragen, warum sie nach sechs Jahren [[auszieht]].|to move out|to come back|to pay more|to clean up
+M|anfangen|Im Herbst [[fängt]] sie in der neuen Stadt an.|to begin|to arrive|to travel|to rest
+M|merken|Sie [[merkt]] sofort, dass etwas fehlt.|to notice|to forget|to explain|to repeat
+M|schaffen|Diesmal [[schaffe]] ich das ganz allein.|to manage|to try|to learn|to explain
+F|dünn|Die Wände sind so _____, dass man alles hört.|The walls are so _____ that you hear everything.|thin|alt=old|hell=bright|neu=new
+F|zittern|Sie ist so nervös, dass ihre Hände _____.|She is so nervous that her hands _____.|shake|frieren=are cold|brennen=burn|jucken=itch
+M|das Brett|Am schwarzen [[Brett]] hängen viele kleine Zettel.|a board|a window|a door|a shelf
+M|der Satz|Diesen [[Satz]] hat sie schon einmal gesagt.|a sentence|a promise|a question|a story
+M|brummen|Die alten Maschinen [[brummen]] den ganzen Tag.|to hum|to shine|to smell|to drip
+M|der Streifen|Sie reißt den letzten [[Streifen]] vom Zettel ab.|a paper strip|a small coin|a thin nail|a blue stamp
+M|das Viereck|An der Wand bleibt ein helles [[Viereck]].|a square|a circle|a line|a hole
+M|selbst|Das hat sie [[selbst]] gemacht, ohne Hilfe.|herself|again|already|almost
+M|allein|Sie wohnt jetzt [[allein]] in zwei Zimmern.|alone|happily|cheaply|nearby
+F|kleben|Die alten Zettel _____ noch an der Wand.|The old notes are still _____ to the wall.|stuck|liegen=lying|warten=waiting|fehlen=missing
+F|ruhig|Auch im Streit bleibt seine Stimme ganz _____.|Even in an argument his voice stays quite _____.|calm|schnell=fast|streng=stern|fremd=strange
