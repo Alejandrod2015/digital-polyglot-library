@@ -26732,5 +26732,575 @@
    "g": "alive, and feeling it",
    "t": "adjective"
   }
+ },
+ "spanish-friends-mexico-a0": {
+  "kilos": {
+   "g": "kilos",
+   "t": "noun"
+  },
+  "sube": {
+   "g": "goes up, climbs (subir)",
+   "t": "verb"
+  },
+  "costal": {
+   "g": "sack",
+   "t": "noun"
+  },
+  "prendo": {
+   "g": "I light (prender)",
+   "t": "verb"
+  },
+  "mojó": {
+   "g": "got wet (mojarse)",
+   "t": "verb"
+  },
+  "trapo": {
+   "g": "rag, cloth",
+   "t": "noun"
+  },
+  "colgada": {
+   "g": "hanging (colgar)",
+   "t": "adjective"
+  },
+  "rasura": {
+   "g": "shaves (rasurar)",
+   "t": "verb"
+  },
+  "barbas": {
+   "g": "beards",
+   "t": "noun"
+  },
+  "baja": {
+   "g": "comes down (bajar)",
+   "t": "verb"
+  },
+  "navaja": {
+   "g": "razor, blade",
+   "t": "noun"
+  },
+  "rasuro": {
+   "g": "I shave (rasurar)",
+   "t": "verb"
+  },
+  "sienta": {
+   "g": "sits down (sentarse)",
+   "t": "verb"
+  },
+  "brocha": {
+   "g": "shaving brush",
+   "t": "noun"
+  },
+  "rasurada": {
+   "g": "shaved (rasurar)",
+   "t": "adjective"
+  },
+  "así": {
+   "g": "like that, that way",
+   "t": "adverb"
+  },
+  "gorra": {
+   "g": "cap",
+   "t": "noun"
+  },
+  "fleco": {
+   "g": "fringe, bangs",
+   "t": "noun"
+  },
+  "chueco": {
+   "g": "crooked",
+   "t": "adjective"
+  },
+  "tijeras": {
+   "g": "scissors",
+   "t": "noun"
+  },
+  "clavo": {
+   "g": "nail",
+   "t": "noun"
+  },
+  "mides": {
+   "g": "you measure (medir)",
+   "t": "verb"
+  },
+  "medí": {
+   "g": "I measured (medir)",
+   "t": "verb"
+  },
+  "suéter": {
+   "g": "sweater",
+   "t": "noun"
+  },
+  "tendedero": {
+   "g": "clothesline",
+   "t": "noun"
+  },
+  "toco": {
+   "g": "I touch (tocar)",
+   "t": "verb"
+  },
+  "estuviste": {
+   "g": "you were (estar)",
+   "t": "verb"
+  },
+  "bajan": {
+   "g": "they go down (bajar)",
+   "t": "verb"
+  },
+  "revisan": {
+   "g": "they check (revisar)",
+   "t": "verb"
+  },
+  "señala": {
+   "g": "points (señalar)",
+   "t": "verb"
+  },
+  "están": {
+   "g": "they are (estar)",
+   "t": "verb"
+  },
+  "cuelgan": {
+   "g": "they hang (colgar)",
+   "t": "verb"
+  },
+  "honrado": {
+   "g": "honest",
+   "t": "adjective"
+  },
+  "barbería": {
+   "g": "barbershop",
+   "t": "noun"
+  },
+  "loción": {
+   "g": "aftershave",
+   "t": "noun"
+  },
+  "volteador": {
+   "g": "spatula, turner",
+   "t": "noun"
+  },
+  "voltéala": {
+   "g": "turn it over (voltear)",
+   "t": "verb"
+  },
+  "voltea": {
+   "g": "is turned over (voltear)",
+   "t": "verb"
+  },
+  "alcance": {
+   "g": "reach",
+   "t": "noun"
+  },
+  "denle": {
+   "g": "give it (dar)",
+   "t": "verb"
+  },
+  "método": {
+   "g": "method",
+   "t": "noun"
+  },
+  "molcajete": {
+   "g": "molcajete, a Mexican stone mortar",
+   "t": "noun"
+  },
+  "pluma": {
+   "g": "pen, as it is called in Mexico",
+   "t": "noun"
+  },
+  "aguacate": {
+   "g": "avocado",
+   "t": "noun"
+  },
+  "cucharada": {
+   "g": "spoonful",
+   "t": "noun"
+  },
+  "falta": {
+   "g": "is missing (faltar)",
+   "t": "verb"
+  },
+  "deportes": {
+   "g": "sports",
+   "t": "noun"
+  },
+  "duras": {
+   "g": "stiff, hard",
+   "t": "adjective"
+  },
+  "vieja": {
+   "g": "old",
+   "t": "adjective"
+  },
+  "algodón": {
+   "g": "cotton",
+   "t": "noun"
+  },
+  "enfermería": {
+   "g": "the nursing ward",
+   "t": "noun"
+  },
+  "operen": {
+   "g": "operate on (operar)",
+   "t": "verb"
+  },
+  "vivero": {
+   "g": "plant nursery",
+   "t": "noun"
+  },
+  "regada": {
+   "g": "watered (regar)",
+   "t": "adjective"
+  },
+  "muchacha": {
+   "g": "young woman",
+   "t": "noun"
+  },
+  "muera": {
+   "g": "dies (morirse)",
+   "t": "verb"
+  },
+  "llévate": {
+   "g": "take (llevarse)",
+   "t": "verb"
+  },
+  "charco": {
+   "g": "puddle",
+   "t": "noun"
+  },
+  "sed": {
+   "g": "thirst",
+   "t": "noun"
+  },
+  "echas": {
+   "g": "you pour (echar)",
+   "t": "verb"
+  },
+  "saca": {
+   "g": "takes out (sacar)",
+   "t": "verb"
+  },
+  "lodo": {
+   "g": "mud",
+   "t": "noun"
+  },
+  "uña": {
+   "g": "fingernail",
+   "t": "noun"
+  },
+  "ahogaste": {
+   "g": "you drowned (ahogar)",
+   "t": "verb"
+  },
+  "regadera": {
+   "g": "watering can",
+   "t": "noun"
+  },
+  "muere": {
+   "g": "is dying (morirse)",
+   "t": "verb"
+  },
+  "tinaco": {
+   "g": "rooftop water tank",
+   "t": "noun"
+  },
+  "desatada": {
+   "g": "untied (desatar)",
+   "t": "adjective"
+  },
+  "nudos": {
+   "g": "knots",
+   "t": "noun"
+  },
+  "cielo": {
+   "g": "sky",
+   "t": "noun"
+  },
+  "seca": {
+   "g": "dry",
+   "t": "adjective"
+  },
+  "avisarme": {
+   "g": "to warn me (avisar)",
+   "t": "verb"
+  },
+  "calcetín": {
+   "g": "sock",
+   "t": "noun"
+  },
+  "reparte": {
+   "g": "delivers (repartir)",
+   "t": "verb"
+  },
+  "paquetes": {
+   "g": "parcels",
+   "t": "noun"
+  },
+  "puesto": {
+   "g": "on, worn (poner)",
+   "t": "adjective"
+  },
+  "culpando": {
+   "g": "blaming (culpar)",
+   "t": "verb"
+  },
+  "luchadora": {
+   "g": "wrestler",
+   "t": "noun"
+  },
+  "entrena": {
+   "g": "trains (entrenar)",
+   "t": "verb"
+  },
+  "gimnasio": {
+   "g": "gym",
+   "t": "noun"
+  },
+  "plateada": {
+   "g": "silver",
+   "t": "adjective"
+  },
+  "quieta": {
+   "g": "still",
+   "t": "adjective"
+  },
+  "cuélgala": {
+   "g": "hang it (colgar)",
+   "t": "verb"
+  },
+  "brillo": {
+   "g": "shine",
+   "t": "noun"
+  },
+  "pinzas": {
+   "g": "clothespins",
+   "t": "noun"
+  },
+  "entrenar": {
+   "g": "to train",
+   "t": "verb"
+  },
+  "enredadera": {
+   "g": "climbing vine",
+   "t": "noun"
+  },
+  "riega": {
+   "g": "waters (regar)",
+   "t": "verb"
+  },
+  "dueños": {
+   "g": "owners",
+   "t": "noun"
+  },
+  "discuten": {
+   "g": "argue (discutir)",
+   "t": "verb"
+  },
+  "hule": {
+   "g": "rubber",
+   "t": "noun"
+  },
+  "lugar": {
+   "g": "place",
+   "t": "noun"
+  },
+  "entregar": {
+   "g": "to hand over",
+   "t": "verb"
+  },
+  "trenza": {
+   "g": "braid",
+   "t": "noun"
+  },
+  "peina": {
+   "g": "combs (peinarse)",
+   "t": "verb"
+  },
+  "tráigala": {
+   "g": "bring it (traer)",
+   "t": "verb"
+  },
+  "péinate": {
+   "g": "do your hair (peinarse)",
+   "t": "verb"
+  },
+  "boletos": {
+   "g": "tickets",
+   "t": "noun"
+  },
+  "gradas": {
+   "g": "stands, bleachers",
+   "t": "noun"
+  },
+  "ruda": {
+   "g": "the villain wrestler",
+   "t": "noun"
+  },
+  "botas": {
+   "g": "boots",
+   "t": "noun"
+  },
+  "rojas": {
+   "g": "red",
+   "t": "adjective"
+  },
+  "grítale": {
+   "g": "shout at her (gritar)",
+   "t": "verb"
+  },
+  "taladro": {
+   "g": "drill",
+   "t": "noun"
+  },
+  "técnico": {
+   "g": "the good-guy wrestler",
+   "t": "noun"
+  },
+  "brinco": {
+   "g": "jump",
+   "t": "noun"
+  },
+  "arruina": {
+   "g": "ruins (arruinar)",
+   "t": "verb"
+  },
+  "insultas": {
+   "g": "you insult (insultar)",
+   "t": "verb"
+  },
+  "voy": {
+   "g": "I am going to (ir)",
+   "t": "verb"
+  },
+  "intentar": {
+   "g": "to try",
+   "t": "verb"
+  },
+  "rudo": {
+   "g": "villain wrestler",
+   "t": "noun"
+  },
+  "puntuales": {
+   "g": "on time",
+   "t": "adjective"
+  },
+  "cobren": {
+   "g": "take the money (cobrar)",
+   "t": "verb"
+  },
+  "toquen": {
+   "g": "touch (tocar)",
+   "t": "verb"
+  },
+  "regué": {
+   "g": "I watered (regar)",
+   "t": "verb"
+  },
+  "perfectas": {
+   "g": "perfect",
+   "t": "adjective"
+  },
+  "llevan": {
+   "g": "have been (llevar)",
+   "t": "verb"
+  },
+  "pobres": {
+   "g": "poor things",
+   "t": "noun"
+  },
+  "riegan": {
+   "g": "water (regar)",
+   "t": "verb"
+  },
+  "escurre": {
+   "g": "drips (escurrir)",
+   "t": "verb"
+  },
+  "únicas": {
+   "g": "the only ones",
+   "t": "adjective"
+  },
+  "mueren": {
+   "g": "die (morirse)",
+   "t": "verb"
+  },
+  "vaciarla": {
+   "g": "to empty it (vaciar)",
+   "t": "verb"
+  },
+  "lentes": {
+   "g": "glasses",
+   "t": "noun"
+  },
+  "plumón": {
+   "g": "marker pen",
+   "t": "noun"
+  },
+  "apunté": {
+   "g": "I wrote down (apuntar)",
+   "t": "verb"
+  },
+  "tendederos": {
+   "g": "clotheslines",
+   "t": "noun"
+  },
+  "llevo": {
+   "g": "I have been (llevar)",
+   "t": "verb"
+  },
+  "camisas": {
+   "g": "shirts",
+   "t": "noun"
+  },
+  "broca": {
+   "g": "drill bit",
+   "t": "noun"
+  },
+  "encargaste": {
+   "g": "you ordered (encargar)",
+   "t": "verb"
+  },
+  "aluminio": {
+   "g": "aluminium",
+   "t": "noun"
+  },
+  "plegable": {
+   "g": "folding",
+   "t": "adjective"
+  },
+  "peldaño": {
+   "g": "step, rung",
+   "t": "noun"
+  },
+  "borrado": {
+   "g": "worn away (borrar)",
+   "t": "adjective"
+  },
+  "forma": {
+   "g": "shape",
+   "t": "noun"
+  },
+  "arreglamos": {
+   "g": "we fix (arreglar)",
+   "t": "verb"
+  },
+  "plantilla": {
+   "g": "stencil",
+   "t": "noun"
+  },
+  "copian": {
+   "g": "they copy (copiar)",
+   "t": "verb"
+  },
+  "estilo": {
+   "g": "style",
+   "t": "noun"
+  },
+  "entrega": {
+   "g": "delivers (entregar)",
+   "t": "verb"
+  },
+  "ni": {
+   "g": "not even",
+   "t": "conjunction"
+  }
  }
 }

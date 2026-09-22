@@ -339,6 +339,13 @@ async function main() {
     });
   }
 
+  if (faltantes.size > 0) {
+    console.log(
+      `\naviso: ${faltantes.size} hermano(s) de FAMILIES no estan en la base y no se han copiado: ` +
+        `${[...faltantes].sort().join(", ")}`
+    );
+  }
+
   if (check) {
     if (stale.length === 0) {
       console.log("\nlookup al día: cada palabra tocable tiene su glosa");
