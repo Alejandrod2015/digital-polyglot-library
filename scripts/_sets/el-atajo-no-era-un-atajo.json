@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Este atajo es más corto que la carretera y llegas antes.",
         "targetWord": "atajo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07740155eedba494.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Tropieza con una roca enorme que sale de la tierra.",
         "targetWord": "roca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c31a05db962887e0.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El sol se esconde por el horizonte al final del día.",
         "targetWord": "horizonte",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7477e7c3a8cb384.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "Espera a que el tren esté parado para bajar.",
         "targetWord": "parado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b72b3a7d44ed0bd8.mp3"
       }
     },
     "featured": false

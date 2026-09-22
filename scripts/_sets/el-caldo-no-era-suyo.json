@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Después de la hoguera solo queda ceniza gris en el suelo.",
         "targetWord": "ceniza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43e85d071381bd57.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Corta la carne sobre una tabla de madera.",
         "targetWord": "tabla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b7f57fa22067e6f.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Deja una pila de platos sucios junto al fregadero.",
         "targetWord": "pila",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/559c94bb7a37368c.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Hoy es jueves, mañana viernes.",
         "targetWord": "jueves",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f799c3f6a747c8df.mp3"
       }
     },
     "featured": false

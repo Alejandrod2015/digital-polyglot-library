@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "No tengo casa propia, así que voy a alquilar un piso.",
         "targetWord": "alquilar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6db5b130d40103b.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Abraza a su abuela con mucho cariño cada domingo.",
         "targetWord": "cariño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45975fd082e37ef6.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Con la regla traza una raya recta sobre el papel.",
         "targetWord": "traza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38e43453b882e423.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Mira el cuadro de cerca para ver cada pequeño detalle.",
         "targetWord": "detalle",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2eff4d226667d0de.mp3"
       }
     },
     "featured": false

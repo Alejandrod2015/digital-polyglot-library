@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Lee el contrato entero y luego lo firma con su nombre.",
         "targetWord": "firma",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98ef3ad27644e73a.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Antes de pagar, verifica que la cuenta está bien sumada.",
         "targetWord": "verifica",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6181706fbd577d41.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Escribe la fecha de hoy arriba: día, mes y año.",
         "targetWord": "fecha",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e57d3571923966e.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "Es muy joven; todavía va al colegio.",
         "targetWord": "joven",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91faad7cc8879e88.mp3"
       }
     },
     "featured": false

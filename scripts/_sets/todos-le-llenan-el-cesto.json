@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Este baúl es muy pesado y no puedo levantarlo solo.",
         "targetWord": "pesado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/417e7a4f59088c22.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Le hago una pregunta y él contesta enseguida.",
         "targetWord": "contesta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f16928a42757507.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Se le cae el vaso al suelo y se rompe.",
         "targetWord": "suelo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b694c2234451abf.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "El jersey es tan grueso que no entra en la maleta.",
         "targetWord": "grueso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca1c9a8d54495a42.mp3"
       }
     },
     "featured": false

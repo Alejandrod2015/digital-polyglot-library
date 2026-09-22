@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Sin calefacción, la casa está muy fría en invierno.",
         "targetWord": "fría",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5020f7573436c29.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Levanta la copa y brinda por los novios.",
         "targetWord": "brinda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0798b1323bd5954e.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Guardan las bicis en el sótano, debajo de la casa.",
         "targetWord": "sótano",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/546898efd82cc206.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Pone una reja de hierro en la ventana para más seguridad.",
         "targetWord": "reja",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15905c4440b3f3a7.mp3"
       }
     },
     "featured": false

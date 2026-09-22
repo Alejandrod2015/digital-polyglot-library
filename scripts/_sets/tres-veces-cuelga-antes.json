@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Ella marca el número de su madre y espera el tono.",
         "targetWord": "marca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fa6fa12fa60cea5.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Es muy tímida y no habla con gente que no conoce.",
         "targetWord": "tímida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/422ecf11ffaf506c.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El bombero entra en la casa en llamas; es muy valiente.",
         "targetWord": "valiente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dc2768da76d7799.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "Oye la voz y la reconoce enseguida: es su hermano.",
         "targetWord": "reconoce",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94e71ddd034c188a.mp3"
       }
     },
     "featured": false

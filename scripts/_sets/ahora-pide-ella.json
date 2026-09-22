@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "El río es tan ancho que no se ve la otra orilla.",
         "targetWord": "ancho",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/185c0e4745a4a7ce.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Yo creía que hoy era domingo, pero es lunes.",
         "targetWord": "creía",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4411cd1fc2a90c7f.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El médico le da unas pastillas para el dolor de cabeza.",
         "targetWord": "pastillas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eed7373601ead241.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "En verano hace calor y la gente va a la playa.",
         "targetWord": "verano",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc737ef868bc4156.mp3"
       }
     },
     "featured": false

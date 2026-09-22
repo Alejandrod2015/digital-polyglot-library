@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Ella anota la lista de la compra en un papel.",
         "targetWord": "anota",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1a74e30344ddebd.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Usa una cuerda para atar el paquete y que no se abra.",
         "targetWord": "atar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5ed37ca47f90372.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El papel de lija es áspero y raspa la piel.",
         "targetWord": "áspero",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dc7b5e0715dd4dc.mp3"
       }
     }
   },
@@ -524,7 +527,8 @@
         "storySource": "user",
         "sentence": "Esta hoja es tan fina que se ve la luz a través.",
         "targetWord": "fina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/403979df8d2e5009.mp3"
       }
     },
     "featured": false
@@ -554,7 +558,8 @@
         "storySource": "user",
         "sentence": "Él cuelga el abrigo detrás de la puerta al entrar.",
         "targetWord": "cuelga",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f5768aeb2a1e473.mp3"
       }
     },
     "featured": false

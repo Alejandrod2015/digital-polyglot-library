@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Ella pela la naranja y tira la piel a la basura.",
         "targetWord": "pela",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c24afecdb69b33f0.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Espera a que el agua hierva y echa la pasta.",
         "targetWord": "hierva",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf23c8b533dfdef5.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Ella pica la cebolla en trozos muy pequeños con el cuchillo.",
         "targetWord": "pica",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5c03d04b0473456.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Sale humo gris de la chimenea en invierno.",
         "targetWord": "humo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5d1c22fa2f83869.mp3"
       }
     },
     "featured": false

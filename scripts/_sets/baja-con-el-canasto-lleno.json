@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "El sol de mediodía calienta el agua de la piscina.",
         "targetWord": "calienta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be1908a0371c84dc.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "La toalla sigue húmeda porque no le ha dado el sol.",
         "targetWord": "húmeda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac21f55b0c3dc4bf.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Riega las plantas del balcón para que no se sequen.",
         "targetWord": "plantas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e43e4d8ffb950c7.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Enero es el primer mes del año.",
         "targetWord": "mes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/929237d6c1c734ff.mp3"
       }
     },
     "featured": false

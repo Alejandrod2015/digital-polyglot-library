@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Se le cae el plato al suelo y se rompe en pedazos.",
         "targetWord": "rompe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b079ede417ac2d69.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Estos zapatos son muy caros; cuestan una fortuna.",
         "targetWord": "caros",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90febd8df7883ffb.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Se sienta delante, en la primera fila del cine.",
         "targetWord": "delante",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8650cde622e1c304.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Para saber el cambio, resta el precio al dinero que das.",
         "targetWord": "resta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6bef303aa9dac472.mp3"
       }
     },
     "featured": false

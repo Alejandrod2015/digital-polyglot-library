@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "El pozo es muy hondo y no se ve el fondo.",
         "targetWord": "hondo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecf8c52a0cc7d0ce.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Sujeta la escalera con la mano firme para que no se mueva.",
         "targetWord": "firme",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b8acbe157f18936.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Ella agita la botella para mezclar el zumo con el agua.",
         "targetWord": "agita",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac96e615509d8ca5.mp3"
       }
     }
   },
@@ -455,7 +458,8 @@
         "storySource": "user",
         "sentence": "El clavo está torcido y ya no entra en la pared.",
         "targetWord": "torcido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9eefb76d3bcc766.mp3"
       }
     },
     "featured": false

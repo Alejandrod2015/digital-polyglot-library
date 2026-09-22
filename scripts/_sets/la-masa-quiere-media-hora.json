@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "La tortuga camina muy lentamente por el jardín.",
         "targetWord": "lentamente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/528934f9b04be655.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "El pan recién hecho está tierno y se corta fácil.",
         "targetWord": "tierno",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e3499982a9cdeaa.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Le duele la espalda de cargar cajas todo el día.",
         "targetWord": "espalda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46539ab257209343.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Esa historia pasó de verdad; es verdadera, no inventada.",
         "targetWord": "verdadera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4609e379935adcdb.mp3"
       }
     },
     "featured": false

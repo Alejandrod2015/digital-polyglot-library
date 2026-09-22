@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "El arroz está soso; le falta sal.",
         "targetWord": "soso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/999bf6023b81c1a3.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Ella mezcla la harina con los huevos hasta formar una masa.",
         "targetWord": "mezcla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f97ee07371dde35.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Ella fríe las patatas en aceite muy caliente.",
         "targetWord": "fríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50b8d4e5431f177f.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "El número que marcaste está equivocado; no es mi teléfono.",
         "targetWord": "equivocado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aaea85d7bd02bfa0.mp3"
       }
     },
     "featured": false

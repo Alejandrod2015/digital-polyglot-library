@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "La botella está vacía; no queda ni una gota.",
         "targetWord": "vacía",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67f51ac603fc7d1c.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Tiene tanto sueño que bosteza sin parar.",
         "targetWord": "bosteza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d292a8c878303ba3.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El café ya no quema; está tibio y se puede beber.",
         "targetWord": "tibio",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12121e83af205192.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "Ella tararea una canción en voz baja mientras cocina.",
         "targetWord": "tararea",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cba96b5c30f761be.mp3"
       }
     },
     "featured": false

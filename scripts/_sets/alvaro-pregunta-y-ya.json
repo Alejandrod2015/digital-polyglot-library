@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Perdona por molestar tan tarde; solo tengo una pregunta.",
         "targetWord": "molestar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c6d7d0e1f407e7e.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Ella intenta abrir la puerta, pero la llave no gira.",
         "targetWord": "intenta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e45eaba1879fd12.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Quiero solo medio vaso de agua, no uno entero.",
         "targetWord": "medio",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ed4464f4a8b0e3a.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Subir tantas escaleras cansa mucho a la abuela.",
         "targetWord": "cansa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9391968861889118.mp3"
       }
     },
     "featured": false

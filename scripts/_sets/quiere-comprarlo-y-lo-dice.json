@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Está preocupada porque su hijo no llama desde hace días.",
         "targetWord": "preocupada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53d54b1f183ada04.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "El trueno asusta al perro y se esconde debajo de la cama.",
         "targetWord": "asusta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/703e1f82181d5f60.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El agua de la fuente está helada en pleno invierno.",
         "targetWord": "helada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec3cf566de0c1c61.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Después de la gripe se siente débil y sin fuerza.",
         "targetWord": "débil",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a59750675ca76d9.mp3"
       }
     },
     "featured": false

@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Hay que regar las plantas cada día para que no se sequen.",
         "targetWord": "regar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ec0c738caf2e414.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "Las raíces de la planta crecen bajo la tierra.",
         "targetWord": "tierra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c03281fde5d18471.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Las vacas comen hierba verde en el prado todo el día.",
         "targetWord": "hierba",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a948f76cdd61ee0f.mp3"
       }
     }
   },
@@ -478,7 +481,8 @@
         "storySource": "user",
         "sentence": "Tiene la camisa sucia porque jugó con barro toda la tarde.",
         "targetWord": "sucia",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e2a91732894c58a.mp3"
       }
     },
     "featured": false

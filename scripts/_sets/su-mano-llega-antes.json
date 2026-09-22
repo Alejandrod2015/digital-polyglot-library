@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Él carga las cajas pesadas hasta el camión.",
         "targetWord": "carga",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea644fdd4a21a6cf.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "El cartero entrega el paquete en mano a la vecina.",
         "targetWord": "entrega",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9108ea6032fdbb0c.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "El cajón no es redondo, es cuadrado con cuatro lados iguales.",
         "targetWord": "cuadrado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69ecae7454de79a4.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Ella junta las dos manos para aplaudir al final.",
         "targetWord": "junta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d0fe3ae5c9686fa.mp3"
       }
     },
     "featured": false

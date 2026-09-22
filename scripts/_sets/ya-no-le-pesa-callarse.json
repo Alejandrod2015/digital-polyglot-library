@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "Después de correr una hora, se tumba y descansa.",
         "targetWord": "descansa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/978311ded1b0696f.mp3"
       }
     }
   },
@@ -185,7 +186,8 @@
         "storySource": "user",
         "sentence": "El bebé duerme, así que ella susurra para no despertarlo.",
         "targetWord": "susurra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc037011e624b162.mp3"
       }
     }
   },
@@ -214,7 +216,8 @@
         "storySource": "user",
         "sentence": "Bosteza porque tiene mucho sueño y quiere irse a la cama.",
         "targetWord": "sueño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3639efbcfae4f1f3.mp3"
       }
     }
   },
@@ -432,7 +435,8 @@
         "storySource": "user",
         "sentence": "Cierra los ojos y se queda dormida en el sofá.",
         "targetWord": "dormida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c05de322715ea1d4.mp3"
       }
     },
     "featured": false
