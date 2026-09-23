@@ -257,12 +257,15 @@ podamos crearlos tema por tema, sin tener que parar para revisar el audio
 problematico. Eso lo quiero dejar para cuando se termine con el audio de todo
 el journey". Lo caro de verdad es la voz equivocada, y contra eso protege la
 muestra, que se queda. Parar entre historia e historia protegia contra los
-fragmentos marcados, y eso ya no compensa: de los 19 fragmentos juzgados de
-oido que hay rescatados, 18 eran falsos positivos y 1 defecto real
-(`docs/veredictos-audio-gates.json`, su propio `_resumen`). Se paraba veintiuna
-veces por un defecto que el revisador de veredictos encuentra igual al final.
-La regla no desaparece: baja de tres paradas por tema a una por journey, que es
-lo que el dato dice que hace falta.
+fragmentos marcados, y eso ya no compensa: de los 29 fragmentos juzgados de
+oido, 27 eran falsos positivos y 2 defectos reales
+(`docs/veredictos-audio-gates.json`). Se paraba veintiuna veces por dos
+defectos que el revisador de veredictos encuentra igual al final. La regla no
+desaparece: baja de tres paradas por tema a una por journey, que es lo que el
+dato dice que hace falta.
+
+Cuidado al citar ese fichero: su `_resumen` esta escrito a mano al lado de los
+datos y se queda atras cada vez que un chat añade veredictos. Cuenta el array.
 
 ## Karaoke y texto: el orden es texto primero (BLOQUEANTE, 2026-09-02)
 

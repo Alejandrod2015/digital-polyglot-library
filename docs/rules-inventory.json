@@ -103,11 +103,11 @@
       "source": "memory:feedback_exercise_audio_narrator_voice.md"
     },
     {
-      "id": "feedback_narration_order_per_topic",
+      "id": "feedback_narration_order_one_sample_per_journey",
       "domain": "audio",
       "rule": "\"REGLA DURA: UNA muestra por journey, aprobada de oido; a partir de ahi cada tema se narra entero, sin parar entre historias\"",
       "gate": "scripts/_narraUnaA2.ts",
-      "source": "memory:feedback_narration_order_per_topic.md"
+      "source": "memory:feedback_narration_order_one_sample_per_journey.md"
     },
     {
       "id": "feedback_narrator_first_person",
