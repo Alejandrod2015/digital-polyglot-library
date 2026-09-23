@@ -15,10 +15,10 @@
         "anchor": true
       },
       {
-        "type": "verb",
-        "word": "gata",
-        "surface": "gata",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el cajón",
+        "type": "noun",
+        "definition": "A drawer; the box you pull out of furniture.",
+        "surface": "cajón"
       },
       {
         "type": "verb",
@@ -27,10 +27,10 @@
         "definition": "To sound; to make a noise you hear."
       },
       {
+        "word": "arrastrar",
         "type": "verb",
-        "word": "viaja",
-        "surface": "viaja",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "To drag; to pull something heavy along the floor.",
+        "surface": "arrastra"
       },
       {
         "type": "noun",
@@ -40,11 +40,9 @@
         "anchor": true
       },
       {
-        "type": "noun",
-        "word": "el golpe",
-        "surface": "golpe",
-        "definition": "A bang; the sound of something hitting a surface.",
-        "anchor": true
+        "word": "oyes",
+        "type": "verb",
+        "definition": "Do you hear it?; asking about a sound."
       },
       {
         "type": "expression",
@@ -66,22 +64,20 @@
         "anchor": true
       },
       {
+        "word": "parecer",
         "type": "verb",
-        "word": "jugar",
-        "surface": "juega",
-        "definition": "To play; to do something only for fun."
+        "definition": "To seem; it sounds like that from here.",
+        "surface": "Parece"
       },
       {
-        "type": "verb",
-        "word": "empujar",
-        "surface": "Empuja",
-        "definition": "To push; to move something away with force."
+        "word": "cerca",
+        "type": "adverb",
+        "definition": "Near; not far from here."
       },
       {
-        "type": "verb",
-        "word": "correr",
-        "surface": "corre",
-        "definition": "To run; to move fast on your feet."
+        "word": "despierto",
+        "type": "adjective",
+        "definition": "Awake; not sleeping at all."
       },
       {
         "type": "verb",
@@ -97,22 +93,20 @@
         "anchor": true
       },
       {
-        "type": "verb",
-        "word": "juega",
-        "surface": "juega",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el tren",
+        "type": "noun",
+        "definition": "A train; it runs on rails and is loud.",
+        "surface": "tren"
       },
       {
-        "type": "adverb",
-        "word": "nunca",
-        "surface": "nunca",
-        "definition": "Never; not at any time."
+        "word": "corre",
+        "type": "verb",
+        "definition": "She runs; she moves fast after it."
       },
       {
-        "type": "verb",
-        "word": "dormir",
-        "surface": "duerme",
-        "definition": "To sleep; to rest with your eyes closed."
+        "word": "todo el día",
+        "type": "expression",
+        "definition": "All day; from morning to night."
       },
       {
         "type": "adverb",
@@ -121,16 +115,16 @@
         "definition": "Almost; very near but not quite."
       },
       {
-        "type": "noun",
-        "word": "oyes",
-        "surface": "oyes",
-        "definition": "Used here in this sentence of the story."
+        "word": "ni idea",
+        "type": "expression",
+        "definition": "No idea; I do not know at all.",
+        "surface": "Ni idea"
       },
       {
+        "word": "jugar",
         "type": "verb",
-        "word": "empieza",
-        "surface": "empieza",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "To play; she plays with the marble.",
+        "surface": "juega"
       }
     ]
   },
@@ -149,16 +143,16 @@
         "definition": "Loud; strong enough to hear far away."
       },
       {
-        "type": "adverb",
-        "word": "encima",
-        "surface": "encima",
-        "definition": "Above; on the floor right over yours."
+        "word": "dormido",
+        "type": "adjective",
+        "definition": "Half asleep; not fully awake yet.",
+        "surface": "dormida"
       },
       {
-        "type": "adverb",
-        "word": "gatitos",
-        "surface": "gatitos",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la leche",
+        "type": "noun",
+        "definition": "Milk; the white drink.",
+        "surface": "leche"
       },
       {
         "type": "noun",
@@ -174,22 +168,21 @@
         "definition": "To begin; to start doing something."
       },
       {
-        "type": "adverb",
-        "word": "pongo",
-        "surface": "pongo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el despertador",
+        "type": "noun",
+        "definition": "An alarm clock; it rings to wake you up.",
+        "surface": "despertador"
       },
       {
-        "type": "adverb",
-        "word": "cuatro",
-        "surface": "cuatro",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la mesa",
+        "type": "noun",
+        "definition": "A table; you put things on it.",
+        "surface": "mesa"
       },
       {
-        "type": "adverb",
-        "word": "duermes",
-        "surface": "duermes",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "a las seis",
+        "type": "expression",
+        "definition": "At six o'clock; very early in the morning."
       },
       {
         "type": "verb",
@@ -254,16 +247,15 @@
         "definition": "On time; at the right hour, not later."
       },
       {
-        "type": "adverb",
-        "word": "despierta",
-        "surface": "despierta",
-        "definition": "Used here in this sentence of the story."
+        "word": "el trabajo",
+        "type": "noun",
+        "definition": "A job; the work you do for money.",
+        "surface": "trabajo"
       },
       {
+        "word": "temprano",
         "type": "adverb",
-        "word": "dormida",
-        "surface": "dormida",
-        "definition": "Used here in this sentence of the story."
+        "definition": "Early; before the usual time."
       }
     ]
   },
@@ -283,22 +275,21 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "gatito",
-        "surface": "gatito",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el camión",
+        "type": "noun",
+        "definition": "A lorry; a big loud vehicle.",
+        "surface": "camión"
       },
       {
-        "type": "adverb",
-        "word": "están",
-        "surface": "están",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "regalar",
+        "type": "verb",
+        "definition": "To give away; to hand over as a gift.",
+        "surface": "regalo"
       },
       {
-        "type": "adjective",
-        "word": "grande",
-        "surface": "grande",
-        "definition": "Big; large in size or in space."
+        "word": "me tapo",
+        "type": "expression",
+        "definition": "I cover my head; I hide under the sheet."
       },
       {
         "type": "expression",
@@ -307,16 +298,15 @@
         "definition": "Not anymore; it was true before, not now."
       },
       {
-        "type": "adverb",
-        "word": "subo",
-        "surface": "subo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la cabeza",
+        "type": "noun",
+        "definition": "The head; the top part of your body.",
+        "surface": "cabeza"
       },
       {
-        "type": "verb",
-        "word": "sonríe",
-        "surface": "sonríe",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "demasiado",
+        "type": "adverb",
+        "definition": "Too much; more than you want."
       },
       {
         "type": "adjective",
@@ -325,10 +315,10 @@
         "definition": "Sad; feeling low and without joy."
       },
       {
+        "word": "todavía",
         "type": "adverb",
-        "word": "duermo",
-        "surface": "duermo",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "Still; up to now and not yet.",
+        "surface": "Todavía"
       },
       {
         "type": "noun",
@@ -375,10 +365,9 @@
         "definition": "To miss; to feel sad without someone near."
       },
       {
-        "type": "expression",
-        "word": "un poco",
-        "surface": "un poco",
-        "definition": "A little; a small amount, not much."
+        "word": "tampoco",
+        "type": "adverb",
+        "definition": "Neither; not you and not me."
       },
       {
         "type": "noun",
@@ -394,10 +383,10 @@
         "definition": "Really; truly, with no joke."
       },
       {
-        "type": "adverb",
-        "word": "tapo",
-        "surface": "tapo",
-        "definition": "Used here in this sentence of the story."
+        "word": "servir",
+        "type": "verb",
+        "definition": "To work; to be of use for something.",
+        "surface": "sirve"
       }
     ]
   }

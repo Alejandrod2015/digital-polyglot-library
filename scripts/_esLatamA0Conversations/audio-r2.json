@@ -1,0 +1,233 @@
+{
+  "un-gato-con-dos-nombres": {
+    "topic": "new-neighbors",
+    "slotIndex": 0,
+    "title": "Un gato con dos nombres",
+    "audioFilename": "Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
+    "key": "media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
+    "bytes": 1037418,
+    "origen": "historia1/historia1-final.mp3",
+    "subido": "2026-09-23T17:29:57.286Z"
+  },
+  "yo-no-le-doy-nada": {
+    "topic": "new-neighbors",
+    "slotIndex": 1,
+    "title": "Yo no le doy nada",
+    "audioFilename": "Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
+    "key": "media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
+    "bytes": 881519,
+    "origen": "historia2/historia2-final.mp3",
+    "subido": "2026-09-23T17:29:57.852Z"
+  },
+  "una-caja-que-hace-ruido": {
+    "topic": "new-neighbors",
+    "slotIndex": 2,
+    "title": "Una caja que hace ruido",
+    "audioFilename": "Una_caja_que_hace_ruido_multivoice_1790184597853.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_caja_que_hace_ruido_multivoice_1790184597853.mp3",
+    "key": "media/generated/audio/Una_caja_que_hace_ruido_multivoice_1790184597853.mp3",
+    "bytes": 947557,
+    "origen": "historia3/historia3-final.mp3",
+    "subido": "2026-09-23T17:29:58.399Z"
+  },
+  "mi-sofa-esta-mojado": {
+    "topic": "home-and-neighbors",
+    "slotIndex": 0,
+    "title": "Mi sofá está mojado",
+    "audioFilename": "Mi_sofa_esta_mojado_multivoice_1790184598401.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Mi_sofa_esta_mojado_multivoice_1790184598401.mp3",
+    "key": "media/generated/audio/Mi_sofa_esta_mojado_multivoice_1790184598401.mp3",
+    "bytes": 933764,
+    "origen": "t2-historia1/t2-historia1-final.mp3",
+    "subido": "2026-09-23T17:29:58.972Z"
+  },
+  "el-agua-esta-caliente": {
+    "topic": "home-and-neighbors",
+    "slotIndex": 1,
+    "title": "El agua está caliente",
+    "audioFilename": "El_agua_esta_caliente_multivoice_1790184598973.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_agua_esta_caliente_multivoice_1790184598973.mp3",
+    "key": "media/generated/audio/El_agua_esta_caliente_multivoice_1790184598973.mp3",
+    "bytes": 906179,
+    "origen": "t2-historia2/t2-historia2-final.mp3",
+    "subido": "2026-09-23T17:29:59.650Z"
+  },
+  "la-manguera-gris": {
+    "topic": "home-and-neighbors",
+    "slotIndex": 2,
+    "title": "La manguera gris",
+    "audioFilename": "La_manguera_gris_multivoice_1790184599652.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_manguera_gris_multivoice_1790184599652.mp3",
+    "key": "media/generated/audio/La_manguera_gris_multivoice_1790184599652.mp3",
+    "bytes": 955498,
+    "origen": "t2-historia3/t2-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:00.044Z"
+  },
+  "nunca-tuve-un-barco": {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 0,
+    "title": "Nunca tuve un barco",
+    "audioFilename": "Nunca_tuve_un_barco_multivoice_1790184600046.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nunca_tuve_un_barco_multivoice_1790184600046.mp3",
+    "key": "media/generated/audio/Nunca_tuve_un_barco_multivoice_1790184600046.mp3",
+    "bytes": 967201,
+    "origen": "t3-historia1/t3-historia1-final.mp3",
+    "subido": "2026-09-23T17:30:00.487Z"
+  },
+  "ahora-soy-mas-gordo": {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 1,
+    "title": "Ahora soy más gordo",
+    "audioFilename": "Ahora_soy_mas_gordo_multivoice_1790184600488.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Ahora_soy_mas_gordo_multivoice_1790184600488.mp3",
+    "key": "media/generated/audio/Ahora_soy_mas_gordo_multivoice_1790184600488.mp3",
+    "bytes": 963022,
+    "origen": "t3-historia2/t3-historia2-final.mp3",
+    "subido": "2026-09-23T17:30:00.842Z"
+  },
+  "seis-calcetines-solos": {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 2,
+    "title": "Seis calcetines solos",
+    "audioFilename": "Seis_calcetines_solos_multivoice_1790184600843.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Seis_calcetines_solos_multivoice_1790184600843.mp3",
+    "key": "media/generated/audio/Seis_calcetines_solos_multivoice_1790184600843.mp3",
+    "bytes": 940452,
+    "origen": "t3-historia3/t3-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:01.263Z"
+  },
+  "nadie-pide-este-paquete": {
+    "topic": "packages-and-deliveries",
+    "slotIndex": 0,
+    "title": "Nadie pide este paquete",
+    "audioFilename": "Nadie_pide_este_paquete_multivoice_1790184601266.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_pide_este_paquete_multivoice_1790184601266.mp3",
+    "key": "media/generated/audio/Nadie_pide_este_paquete_multivoice_1790184601266.mp3",
+    "bytes": 986009,
+    "origen": "t4-historia1/t4-historia1-final.mp3",
+    "subido": "2026-09-23T17:30:01.663Z"
+  },
+  "nicolas-firma-demasiado": {
+    "topic": "packages-and-deliveries",
+    "slotIndex": 1,
+    "title": "Nicolás firma demasiado",
+    "audioFilename": "Nicolas_firma_demasiado_multivoice_1790184601666.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nicolas_firma_demasiado_multivoice_1790184601666.mp3",
+    "key": "media/generated/audio/Nicolas_firma_demasiado_multivoice_1790184601666.mp3",
+    "bytes": 986845,
+    "origen": "t4-historia2/t4-historia2-final.mp3",
+    "subido": "2026-09-23T17:30:02.135Z"
+  },
+  "una-caja-sin-tapa": {
+    "topic": "packages-and-deliveries",
+    "slotIndex": 2,
+    "title": "Una caja sin tapa",
+    "audioFilename": "Una_caja_sin_tapa_multivoice_1790184602137.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_caja_sin_tapa_multivoice_1790184602137.mp3",
+    "key": "media/generated/audio/Una_caja_sin_tapa_multivoice_1790184602137.mp3",
+    "bytes": 999384,
+    "origen": "t4-historia3/t4-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:02.527Z"
+  },
+  "alguien-mueve-los-muebles": {
+    "topic": "noise-and-sleep",
+    "slotIndex": 0,
+    "title": "Alguien mueve los muebles",
+    "audioFilename": "Alguien_mueve_los_muebles_multivoice_1790184602527.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Alguien_mueve_los_muebles_multivoice_1790184602527.mp3",
+    "key": "media/generated/audio/Alguien_mueve_los_muebles_multivoice_1790184602527.mp3",
+    "bytes": 1016102,
+    "origen": "t5-historia1/t5-historia1-final.mp3",
+    "subido": "2026-09-23T17:30:03.483Z"
+  },
+  "nadie-me-avisa-nada": {
+    "topic": "noise-and-sleep",
+    "slotIndex": 1,
+    "title": "Nadie me avisa nada",
+    "audioFilename": "Nadie_me_avisa_nada_multivoice_1790184603485.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_me_avisa_nada_multivoice_1790184603485.mp3",
+    "key": "media/generated/audio/Nadie_me_avisa_nada_multivoice_1790184603485.mp3",
+    "bytes": 1037000,
+    "origen": "t5-historia2/t5-historia2-final.mp3",
+    "subido": "2026-09-23T17:30:03.896Z"
+  },
+  "demasiado-silencio": {
+    "topic": "noise-and-sleep",
+    "slotIndex": 2,
+    "title": "Demasiado silencio",
+    "audioFilename": "Demasiado_silencio_multivoice_1790184603897.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Demasiado_silencio_multivoice_1790184603897.mp3",
+    "key": "media/generated/audio/Demasiado_silencio_multivoice_1790184603897.mp3",
+    "bytes": 1002728,
+    "origen": "t5-historia3/t5-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:04.307Z"
+  },
+  "domingo-sin-senal": {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 0,
+    "title": "Domingo sin señal",
+    "audioFilename": "Domingo_sin_senal_multivoice_1790184604308.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Domingo_sin_senal_multivoice_1790184604308.mp3",
+    "key": "media/generated/audio/Domingo_sin_senal_multivoice_1790184604308.mp3",
+    "bytes": 999384,
+    "origen": "t6-historia1/t6-historia1-final.mp3",
+    "subido": "2026-09-23T17:30:04.696Z"
+  },
+  "la-gata-tapa-la-pantalla": {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 1,
+    "title": "La gata tapa la pantalla",
+    "audioFilename": "La_gata_tapa_la_pantalla_multivoice_1790184604697.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_gata_tapa_la_pantalla_multivoice_1790184604697.mp3",
+    "key": "media/generated/audio/La_gata_tapa_la_pantalla_multivoice_1790184604697.mp3",
+    "bytes": 1019864,
+    "origen": "t6-historia2/t6-historia2-final.mp3",
+    "subido": "2026-09-23T17:30:05.206Z"
+  },
+  "cien-avisos-y-una-gata": {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 2,
+    "title": "Cien avisos y una gata",
+    "audioFilename": "Cien_avisos_y_una_gata_multivoice_1790184605208.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Cien_avisos_y_una_gata_multivoice_1790184605208.mp3",
+    "key": "media/generated/audio/Cien_avisos_y_una_gata_multivoice_1790184605208.mp3",
+    "bytes": 1048703,
+    "origen": "t6-historia3/t6-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:05.547Z"
+  },
+  "dos-semanas-y-una-lista": {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 0,
+    "title": "Dos semanas y una lista",
+    "audioFilename": "Dos_semanas_y_una_lista_multivoice_1790184605550.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_semanas_y_una_lista_multivoice_1790184605550.mp3",
+    "key": "media/generated/audio/Dos_semanas_y_una_lista_multivoice_1790184605550.mp3",
+    "bytes": 1032821,
+    "origen": "t7-historia1/t7-historia1-final.mp3",
+    "subido": "2026-09-23T17:30:06.005Z"
+  },
+  "el-punto-cuatro-miente": {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 1,
+    "title": "El punto cuatro miente",
+    "audioFilename": "El_punto_cuatro_miente_multivoice_1790184606007.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_punto_cuatro_miente_multivoice_1790184606007.mp3",
+    "key": "media/generated/audio/El_punto_cuatro_miente_multivoice_1790184606007.mp3",
+    "bytes": 1039508,
+    "origen": "t7-historia2/t7-historia2-final.mp3",
+    "subido": "2026-09-23T17:30:06.336Z"
+  },
+  "aqui-abajo-duerme-mejor": {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 2,
+    "title": "Aquí abajo duerme mejor",
+    "audioFilename": "Aqui_abajo_duerme_mejor_multivoice_1790184606338.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Aqui_abajo_duerme_mejor_multivoice_1790184606338.mp3",
+    "key": "media/generated/audio/Aqui_abajo_duerme_mejor_multivoice_1790184606338.mp3",
+    "bytes": 1031567,
+    "origen": "t7-historia3/t7-historia3-final.mp3",
+    "subido": "2026-09-23T17:30:06.774Z"
+  }
+}

@@ -21,10 +21,10 @@
         "definition": "To sign; to write your name on paper."
       },
       {
-        "type": "verb",
-        "word": "gata",
-        "surface": "gata",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el jueves",
+        "type": "noun",
+        "definition": "Thursday; the day before Friday.",
+        "surface": "jueves"
       },
       {
         "type": "verb",
@@ -39,10 +39,10 @@
         "definition": "A little; not very much."
       },
       {
-        "type": "adjective",
-        "word": "mío",
-        "surface": "mío",
-        "definition": "Mine; belonging to me."
+        "word": "comprar",
+        "type": "verb",
+        "definition": "To buy; to pay for something.",
+        "surface": "compro"
       },
       {
         "type": "verb",
@@ -51,10 +51,10 @@
         "definition": "To order something; to ask for a thing."
       },
       {
-        "type": "verb",
-        "word": "come",
-        "surface": "come",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la marca",
+        "type": "noun",
+        "definition": "A brand; the name of the maker.",
+        "surface": "marca"
       },
       {
         "type": "expression",
@@ -75,10 +75,10 @@
         "definition": "Heavy; hard to lift or carry."
       },
       {
-        "type": "adverb",
-        "word": "ningún",
-        "surface": "ningún",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la etiqueta",
+        "type": "noun",
+        "definition": "A label; the paper with the address on it.",
+        "surface": "etiqueta"
       },
       {
         "type": "expression",
@@ -87,10 +87,10 @@
         "definition": "In silence; without saying a word."
       },
       {
-        "type": "verb",
-        "word": "trae",
-        "surface": "trae",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el cuchillo",
+        "type": "noun",
+        "definition": "A knife; you cut things with it.",
+        "surface": "cuchillo"
       },
       {
         "type": "noun",
@@ -106,28 +106,27 @@
         "definition": "Better than; in a nicer way than someone."
       },
       {
-        "type": "verb",
-        "word": "bolsas",
-        "surface": "bolsas",
-        "definition": "Used here in this sentence of the story."
+        "word": "la bolsa",
+        "type": "noun",
+        "definition": "A bag; a soft packet of food.",
+        "surface": "bolsas"
       },
       {
-        "type": "verb",
-        "word": "leen",
-        "surface": "leen",
-        "definition": "Used here in this sentence of the story."
+        "word": "la cinta",
+        "type": "noun",
+        "definition": "Tape; the sticky strip that closes a box.",
+        "surface": "cinta"
       },
       {
-        "type": "adverb",
-        "word": "iguales",
-        "surface": "iguales",
-        "definition": "Used here in this sentence of the story."
+        "word": "la entrada",
+        "type": "noun",
+        "definition": "The entrance; the way into a building.",
+        "surface": "entrada"
       },
       {
-        "type": "adverb",
-        "word": "somos",
-        "surface": "somos",
-        "definition": "Used here in this sentence of the story."
+        "word": "treinta y ocho",
+        "type": "number",
+        "definition": "Thirty-eight; the street number of this building."
       }
     ]
   },
@@ -140,16 +139,15 @@
     "text": "Nicolás vive abajo, al lado de la puerta. Sus vecinos lo saben. Por eso él firma sus paquetes. Hoy su casa está llena de cajas ajenas. Él ya no cabe.\n\nMariana: Nicolás, yo no camino aquí.\nNicolás: Yo tampoco. Hay once cajas juntas.\nMariana: ¿Tú firmas por todo el edificio?\nNicolás: Sí. Yo casi nunca salgo.\nMariana: ¿Y esta caja de abajo?\nNicolás: Esa no lleva ningún apellido.\n\nNicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta.\n\nMariana: Este papel lleva tu apellido.\nNicolás: ¿Mi apellido? Yo no pido nada.\nMariana: Pues alguien pide con tu apellido.\nNicolás: Un momento. Ahora recuerdo. Es de marzo.\nMariana: Ábrela. Yo quiero ver eso.\nNicolás: Es un felpudo. Dice bienvenido.\nMariana: Ponlo delante de tu puerta.\nNicolás: Ahí hay once cajas de vecinos.\nMariana: Entonces el felpudo tiene paciencia.\nNicolás: Bienvenido a mi propia casa.",
     "vocab": [
       {
-        "type": "verb",
-        "word": "alta",
-        "surface": "alta",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "once",
+        "type": "number",
+        "definition": "Eleven; the number after ten."
       },
       {
-        "type": "verb",
-        "word": "lleva",
-        "surface": "lleva",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el vecino",
+        "type": "noun",
+        "definition": "A neighbour; someone who lives near you.",
+        "surface": "vecinos"
       },
       {
         "type": "adverb",
@@ -158,10 +156,10 @@
         "definition": "Today; on this very day."
       },
       {
-        "type": "verb",
-        "word": "cabe",
-        "surface": "cabe",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la paciencia",
+        "type": "noun",
+        "definition": "Patience; waiting without getting angry.",
+        "surface": "paciencia"
       },
       {
         "type": "verb",
@@ -182,10 +180,10 @@
         "definition": "Almost never; very rarely."
       },
       {
-        "type": "verb",
-        "word": "salir",
-        "surface": "salgo",
-        "definition": "To go out; to leave the house."
+        "word": "lleno",
+        "type": "adjective",
+        "definition": "Full; with no space left inside.",
+        "surface": "llena"
       },
       {
         "type": "noun",
@@ -251,16 +249,15 @@
         "definition": "In front; at the front part of something."
       },
       {
-        "type": "adjective",
-        "word": "propio",
-        "surface": "propia",
-        "definition": "Own; belonging to that same person."
+        "word": "salgo",
+        "type": "verb",
+        "definition": "I go out; I leave the house."
       },
       {
-        "type": "verb",
-        "word": "saben",
-        "surface": "saben",
-        "definition": "Used here in this sentence of the story."
+        "word": "ajeno",
+        "type": "adjective",
+        "definition": "Belonging to other people; not yours.",
+        "surface": "ajenas"
       }
     ]
   },
@@ -273,10 +270,10 @@
     "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta y vacía. El fondo está roto.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nMariana y Nicolás bajan la caja. Mariana toca el fondo mojado. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo. Cabe bien.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
     "vocab": [
       {
-        "type": "adjective",
-        "word": "abierto",
-        "surface": "abierta",
-        "definition": "Open; not closed or shut."
+        "word": "robar",
+        "type": "verb",
+        "definition": "To steal; to take what is not yours.",
+        "surface": "roba"
       },
       {
         "type": "noun",
@@ -286,16 +283,16 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "gatito",
-        "surface": "gatito",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el fondo",
+        "type": "noun",
+        "definition": "The bottom; the lowest part inside.",
+        "surface": "fondo"
       },
       {
-        "type": "adverb",
-        "word": "conozco",
-        "surface": "conozco",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el martes",
+        "type": "noun",
+        "definition": "Tuesday; the day after Monday.",
+        "surface": "martes"
       },
       {
         "type": "adverb",
@@ -310,10 +307,10 @@
         "definition": "Empty; with nothing inside."
       },
       {
-        "type": "verb",
-        "word": "tocar",
-        "surface": "toca",
-        "definition": "To touch; to put your hand on something."
+        "word": "el suelo",
+        "type": "noun",
+        "definition": "The ground; the floor under your feet.",
+        "surface": "suelo"
       },
       {
         "type": "noun",
@@ -323,16 +320,15 @@
         "anchor": true
       },
       {
+        "word": "asustarse",
         "type": "verb",
-        "word": "correr",
-        "surface": "corre",
-        "definition": "To run; to go very fast."
+        "definition": "To get scared; to be afraid of something.",
+        "surface": "asustas"
       },
       {
-        "type": "verb",
-        "word": "bajan",
-        "surface": "bajan",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "blando",
+        "type": "adjective",
+        "definition": "Soft; not hard when you touch it."
       },
       {
         "type": "noun",
@@ -342,10 +338,10 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "atrás",
-        "surface": "atrás",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "suelto",
+        "type": "adjective",
+        "definition": "Loose; not fixed in its place.",
+        "surface": "suelta"
       },
       {
         "type": "verb",
@@ -360,10 +356,9 @@
         "definition": "Backwards; away from what is in front."
       },
       {
-        "type": "verb",
-        "word": "moverse",
-        "surface": "se mueve",
-        "definition": "To move; to change place a little."
+        "word": "gratis",
+        "type": "adverb",
+        "definition": "Free; with nothing to pay for it."
       },
       {
         "type": "verb",

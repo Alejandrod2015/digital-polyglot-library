@@ -15,10 +15,10 @@
         "anchor": true
       },
       {
-        "type": "verb",
-        "word": "gata",
-        "surface": "gata",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el domingo",
+        "type": "noun",
+        "definition": "Sunday; the day people rest.",
+        "surface": "domingo"
       },
       {
         "type": "interjection",
@@ -34,22 +34,23 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "pongo",
-        "surface": "pongo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el celular",
+        "type": "noun",
+        "definition": "A mobile phone, as it is called in Latin America.",
+        "surface": "celular",
+        "anchor": true
       },
       {
+        "word": "probar",
         "type": "verb",
-        "word": "quiere",
-        "surface": "quiere",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "To try; to test if it works.",
+        "surface": "prueba"
       },
       {
-        "type": "adverb",
-        "word": "nombres",
-        "surface": "nombres",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "ayudar",
+        "type": "verb",
+        "definition": "To help; to make something easier for someone.",
+        "surface": "ayuda"
       },
       {
         "type": "verb",
@@ -64,10 +65,10 @@
         "definition": "It does not get in; it does not open."
       },
       {
-        "type": "phrase",
-        "word": "a ver",
-        "surface": "A ver",
-        "definition": "Let me see; wait, I am thinking."
+        "word": "el internet",
+        "type": "noun",
+        "definition": "The internet; what brings the web home.",
+        "surface": "internet"
       },
       {
         "type": "noun",
@@ -84,10 +85,9 @@
         "anchor": true
       },
       {
-        "type": "pronoun",
-        "word": "nadie",
-        "surface": "Nadie",
-        "definition": "Nobody; not one person at all."
+        "word": "ahora",
+        "type": "adverb",
+        "definition": "Now; at this moment."
       },
       {
         "type": "adverb",
@@ -96,10 +96,10 @@
         "definition": "Like that; in that way."
       },
       {
-        "type": "phrase",
-        "word": "ya no",
-        "surface": "Ya no",
-        "definition": "Not anymore; I did before, now I stop."
+        "word": "andar",
+        "type": "verb",
+        "definition": "To work; here, the internet is working.",
+        "surface": "anda"
       },
       {
         "type": "verb",
@@ -115,10 +115,10 @@
         "anchor": true
       },
       {
-        "type": "phrase",
-        "word": "de nuevo",
-        "surface": "de nuevo",
-        "definition": "Again; one more time."
+        "word": "el error",
+        "type": "noun",
+        "definition": "An error; the message when something is wrong.",
+        "surface": "error"
       },
       {
         "type": "phrase",
@@ -127,10 +127,10 @@
         "definition": "I mean it; this is not a joke."
       },
       {
+        "word": "escribir",
         "type": "verb",
-        "word": "dormir",
-        "surface": "duerme",
-        "definition": "To sleep; to rest with your eyes closed."
+        "definition": "To write; to put letters down.",
+        "surface": "escribo"
       }
     ]
   },
@@ -143,22 +143,22 @@
     "text": "Mariana habla por video con su familia. Nicolás sube a devolver un plato.\n\nMariana: Miren, esta es mi sala nueva.\nNicolás: Yo dejo el plato encima de la mesa.\nMariana: Mi familia quiere ver la casa.\n\nLa gata salta a la mesa. Se sienta sobre la pantalla.\n\nMariana: Quita la cola. Ella siempre busca la cámara.\nNicolás: Ven acá, Tigre. Yo la cargo.\n\nNicolás levanta a la gata. Ella pesa bastante. Su cara tapa la pantalla.\n\nMariana: Ay. Ahora te ven a ti.\nNicolás: ¿Qué dicen? Yo no oigo bien.\nMariana: Mi mamá pregunta si comes bien.\nNicolás: ¿Yo? Pero yo vivo abajo.\nMariana: Para ellos, tú vives aquí.\nNicolás: Entonces saludo. Buenas tardes a todos.\n\nLa familia sonríe en la pantalla.\n\nMariana: Mi tía te espera en diciembre.\nNicolás: ¿Con gata o sin gata?\nMariana: Con gata. A ellos les gusta más.\nNicolás: Entonces yo llevo a la gata.",
     "vocab": [
       {
-        "type": "adverb",
-        "word": "llevo",
-        "surface": "llevo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la familia",
+        "type": "noun",
+        "definition": "A family; your parents and relatives.",
+        "surface": "familia"
       },
       {
-        "type": "verb",
-        "word": "saltar",
-        "surface": "salta",
-        "definition": "To jump; to go up with your legs."
+        "word": "la cámara",
+        "type": "noun",
+        "definition": "A camera; it takes the picture.",
+        "surface": "cámara"
       },
       {
-        "type": "verb",
-        "word": "sonríe",
-        "surface": "sonríe",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la tía",
+        "type": "noun",
+        "definition": "An aunt; your mother's or father's sister.",
+        "surface": "tía"
       },
       {
         "type": "noun",
@@ -199,10 +199,10 @@
         "definition": "To lift; to raise something up."
       },
       {
-        "type": "verb",
-        "word": "pesar",
-        "surface": "pesa",
-        "definition": "To weigh; to be heavy or light."
+        "word": "la cara",
+        "type": "noun",
+        "definition": "A face; the front of your head.",
+        "surface": "cara"
       },
       {
         "type": "adverb",
@@ -241,10 +241,10 @@
         "definition": "Good afternoon; hello after noon."
       },
       {
-        "type": "verb",
-        "word": "sonreír",
-        "surface": "sonríe",
-        "definition": "To smile; to show you are happy."
+        "word": "el video",
+        "type": "noun",
+        "definition": "A video call; talking and seeing on a screen.",
+        "surface": "video"
       },
       {
         "type": "phrase",
@@ -253,16 +253,15 @@
         "definition": "They like it; it makes them happy."
       },
       {
-        "type": "adverb",
-        "word": "gusta",
-        "surface": "gusta",
-        "definition": "Used here in this sentence of the story."
+        "word": "devolver",
+        "type": "verb",
+        "definition": "To give back; to return something."
       },
       {
-        "type": "adverb",
-        "word": "vives",
-        "surface": "vives",
-        "definition": "Used here in this sentence of the story."
+        "word": "la sala",
+        "type": "noun",
+        "definition": "The living room; where you sit with visitors.",
+        "surface": "sala"
       }
     ]
   },
@@ -275,10 +274,10 @@
     "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nMariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
     "vocab": [
       {
-        "type": "verb",
-        "word": "sonar",
-        "surface": "suena",
-        "definition": "To ring; to make a sound, like a phone."
+        "word": "el mensaje",
+        "type": "noun",
+        "definition": "A message; text you send to someone.",
+        "surface": "mensajes"
       },
       {
         "type": "number",
@@ -287,10 +286,10 @@
         "definition": "One hundred; the number 100."
       },
       {
-        "type": "adverb",
-        "word": "apago",
-        "surface": "apago",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el grupo",
+        "type": "noun",
+        "definition": "A group chat; messages that everyone in it sees.",
+        "surface": "grupo"
       },
       {
         "type": "verb",
@@ -299,10 +298,9 @@
         "definition": "To send; to make a message go to someone."
       },
       {
+        "word": "se mueve",
         "type": "verb",
-        "word": "apagar",
-        "surface": "apago",
-        "definition": "To turn off; to make a sound or light stop."
+        "definition": "To move; here, the cat stays still."
       },
       {
         "type": "phrase",
@@ -330,10 +328,10 @@
         "anchor": true
       },
       {
-        "type": "adjective",
-        "word": "junto",
-        "surface": "juntos",
-        "definition": "Together; the two of them side by side."
+        "word": "la tarde",
+        "type": "noun",
+        "definition": "The afternoon; the hours after midday.",
+        "surface": "tarde"
       },
       {
         "type": "phrase",
@@ -349,16 +347,14 @@
         "anchor": true
       },
       {
+        "word": "juntos",
         "type": "adjective",
-        "word": "corto",
-        "surface": "corto",
-        "definition": "Short; with very few words."
+        "definition": "Together; both at the same time."
       },
       {
-        "type": "verb",
-        "word": "cortar",
-        "surface": "cortan",
-        "definition": "To cut off; to stop the water or power."
+        "word": "sin parar",
+        "type": "expression",
+        "definition": "Without stopping; on and on."
       },
       {
         "type": "verb",
@@ -379,10 +375,10 @@
         "definition": "Right now; this very minute."
       },
       {
+        "word": "ver",
         "type": "verb",
-        "word": "moverse",
-        "surface": "se mueve",
-        "definition": "To move; to change place or position."
+        "definition": "To watch; they all look at the cat.",
+        "surface": "ven"
       },
       {
         "type": "phrase",
@@ -391,10 +387,10 @@
         "definition": "The whole building; every person who lives there."
       },
       {
+        "word": "temblar",
         "type": "verb",
-        "word": "suenan",
-        "surface": "suenan",
-        "definition": "Used here in this sentence of the story."
+        "definition": "To shake; to move with small quick movements.",
+        "surface": "tiembla"
       }
     ]
   }

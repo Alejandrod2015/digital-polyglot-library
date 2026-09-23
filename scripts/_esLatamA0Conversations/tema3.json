@@ -5,13 +5,14 @@
     "title": "Nunca tuve un barco",
     "arcType": "juxtaposition-discovery",
     "synopsis": "Mariana hangs her washing on the roof terrace. The wind takes a white T-shirt down to Nicolás's balcony, and up close it is not hers.",
-    "text": "En la terraza, Mariana tiende su ropa. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
+    "text": "En la terraza, Mariana tiende su ropa. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Viene de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
     "vocab": [
       {
-        "type": "verb",
-        "word": "vuela",
-        "surface": "vuela",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la terraza",
+        "type": "noun",
+        "definition": "A roof terrace; the flat open space upstairs.",
+        "surface": "terraza",
+        "anchor": true
       },
       {
         "type": "verb",
@@ -20,10 +21,10 @@
         "definition": "To fly; to move through the air."
       },
       {
-        "type": "verb",
-        "word": "huele",
-        "surface": "huele",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el viento",
+        "type": "noun",
+        "definition": "The wind; air that moves outside.",
+        "surface": "viento"
       },
       {
         "type": "expression",
@@ -44,10 +45,10 @@
         "definition": "It takes it away; the wind carries it."
       },
       {
-        "type": "verb",
-        "word": "caer",
-        "surface": "Cayó",
-        "definition": "To fall; to drop down."
+        "word": "la ropa",
+        "type": "noun",
+        "definition": "Clothes; the things you wear.",
+        "surface": "ropa"
       },
       {
         "type": "adjective",
@@ -87,46 +88,45 @@
         "definition": "Done; it is finished now."
       },
       {
-        "type": "verb",
-        "word": "oler",
-        "surface": "huele",
-        "definition": "To smell; to have a smell of something."
+        "word": "el olor",
+        "type": "noun",
+        "definition": "A smell; what your nose notices.",
+        "surface": "olor"
       },
       {
+        "word": "blanco",
         "type": "adjective",
-        "word": "viejo",
-        "surface": "viejo",
-        "definition": "Old; used for a long time already."
+        "definition": "White; the colour of milk.",
+        "surface": "blanca"
       },
       {
+        "word": "hace viento",
+        "type": "expression",
+        "definition": "It is windy; the wind is blowing.",
+        "surface": "Hace viento"
+      },
+      {
+        "word": "tuve",
         "type": "verb",
-        "word": "venir",
-        "surface": "viene",
-        "definition": "To come; to arrive from a place."
+        "definition": "I had; the past form used in the title."
       },
       {
-        "type": "adjective",
-        "word": "nuevo",
-        "surface": "nueva",
-        "definition": "New; nobody uses it before today."
-      },
-      {
+        "word": "seguir",
         "type": "verb",
-        "word": "llevar",
-        "surface": "lleva",
-        "definition": "To carry away; to take something with it."
+        "definition": "To keep on; to go on doing the same.",
+        "surface": "sigue"
       },
       {
+        "word": "tender",
         "type": "verb",
-        "word": "tiende",
-        "surface": "tiende",
-        "definition": "Used here in this sentence of the story."
+        "definition": "To hang out washing; to put clothes on a line.",
+        "surface": "tiende"
       },
       {
-        "type": "adverb",
-        "word": "negra",
-        "surface": "negra",
-        "definition": "Used here in this sentence of the story."
+        "word": "un momento",
+        "type": "expression",
+        "definition": "One moment; wait a little.",
+        "surface": "Un momento"
       }
     ]
   },
@@ -145,10 +145,10 @@
         "definition": "To answer; to reply to a question."
       },
       {
-        "type": "verb",
-        "word": "bajar",
-        "surface": "baja",
-        "definition": "To come down; to go down the stairs."
+        "word": "el tercero",
+        "type": "noun",
+        "definition": "The third floor of the building.",
+        "surface": "tercero"
       },
       {
         "type": "noun",
@@ -158,16 +158,16 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "después",
-        "surface": "Después",
-        "definition": "After that; a moment later."
+        "word": "el niño",
+        "type": "noun",
+        "definition": "A child; a young boy.",
+        "surface": "niño"
       },
       {
-        "type": "adverb",
-        "word": "llevo",
-        "surface": "llevo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la cuerda",
+        "type": "noun",
+        "definition": "A washing line; the rope where clothes dry.",
+        "surface": "cuerda"
       },
       {
         "type": "expression",
@@ -176,17 +176,16 @@
         "definition": "Me too; I do the same thing."
       },
       {
-        "type": "adverb",
-        "word": "tiendo",
-        "surface": "tiendo",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el balcón",
+        "type": "noun",
+        "definition": "A balcony; the small open platform of a flat.",
+        "surface": "balcón",
+        "anchor": true
       },
       {
-        "type": "noun",
-        "word": "la vergüenza",
-        "surface": "vergüenza",
-        "definition": "Shame; the feeling of being embarrassed.",
-        "anchor": true
+        "word": "me da vergüenza",
+        "type": "expression",
+        "definition": "It makes me feel ashamed."
       },
       {
         "type": "verb",
@@ -195,10 +194,10 @@
         "definition": "To sit down; to take a seat somewhere."
       },
       {
-        "type": "adverb",
-        "word": "conozco",
-        "surface": "conozco",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "conocer",
+        "type": "verb",
+        "definition": "To know; to recognise something you have seen before.",
+        "surface": "conozco"
       },
       {
         "type": "expression",
@@ -207,16 +206,14 @@
         "definition": "To look good on someone; to fit nicely."
       },
       {
-        "type": "verb",
-        "word": "hablar",
-        "surface": "hablamos",
-        "definition": "To talk; to speak with another person."
+        "word": "otra vez",
+        "type": "expression",
+        "definition": "Again; one more time."
       },
       {
-        "type": "verb",
-        "word": "volar",
-        "surface": "Vuela",
-        "definition": "To fly; to move through the air."
+        "word": "hace tres años",
+        "type": "expression",
+        "definition": "Three years ago; in the past."
       },
       {
         "type": "adverb",
@@ -225,40 +222,39 @@
         "definition": "On the back; behind, on the other side."
       },
       {
-        "type": "verb",
-        "word": "mirar",
-        "surface": "Mírala",
-        "definition": "To look at it; to take a good look."
-      },
-      {
+        "word": "pequeña",
         "type": "adjective",
-        "word": "gordo",
-        "surface": "gordo",
-        "definition": "Fat; with a rounder body than before."
+        "definition": "Small; the size of a child."
       },
       {
+        "word": "creer",
         "type": "verb",
-        "word": "miran",
-        "surface": "miran",
-        "definition": "Used here in this sentence of the story."
+        "definition": "To think; to believe something is true.",
+        "surface": "Creo"
       },
       {
+        "word": "el lunes",
         "type": "noun",
-        "word": "nicolás",
-        "surface": "Nicolás",
-        "definition": "Used here in this sentence of the story."
+        "definition": "Monday; the first day of the week.",
+        "surface": "lunes"
       },
       {
-        "type": "adverb",
-        "word": "dices",
-        "surface": "dices",
-        "definition": "Used here in this sentence of the story."
+        "word": "la señora",
+        "type": "noun",
+        "definition": "A lady; a grown-up woman.",
+        "surface": "señora"
       },
       {
-        "type": "adverb",
-        "word": "barcos",
-        "surface": "barcos",
-        "definition": "Used here in this sentence of the story."
+        "word": "el año",
+        "type": "noun",
+        "definition": "A year; twelve months.",
+        "surface": "años"
+      },
+      {
+        "word": "la silla",
+        "type": "noun",
+        "definition": "A chair; a seat with a back.",
+        "surface": "silla"
       }
     ]
   },
@@ -268,7 +264,7 @@
     "title": "Seis calcetines solos",
     "arcType": "recurring-character-callback",
     "synopsis": "The kittens now walk all over Mariana's flat, and this morning no sock in her wardrobe matches another one.",
-    "text": "Los gatitos ya caminan y corren por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nMariana busca debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina. No está limpia.\nMariana: Aquí están las seis, juntas y escondidas.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
+    "text": "Cuatro gatitos caminan y corren por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nMariana busca debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina. No está limpia.\nMariana: Aquí están las seis, juntas y escondidas.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
     "vocab": [
       {
         "type": "verb",
@@ -277,10 +273,9 @@
         "definition": "To walk; to go on foot."
       },
       {
-        "type": "verb",
-        "word": "abrir",
-        "surface": "abre",
-        "definition": "To open; to make something not closed."
+        "word": "seis",
+        "type": "number",
+        "definition": "Six; the number after five."
       },
       {
         "type": "adjective",
@@ -289,11 +284,9 @@
         "definition": "No; not one single thing."
       },
       {
-        "type": "noun",
-        "word": "el calcetín",
-        "surface": "calcetín",
-        "definition": "A sock; you wear it inside your shoe.",
-        "anchor": true
+        "word": "me faltan",
+        "type": "expression",
+        "definition": "I am missing them; I do not have them."
       },
       {
         "type": "verb",
@@ -302,10 +295,10 @@
         "definition": "To be missing; not to be there."
       },
       {
-        "type": "adverb",
-        "word": "gatitos",
-        "surface": "gatitos",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "aquí están",
+        "type": "expression",
+        "definition": "Here they are; said when you find them.",
+        "surface": "Aquí están"
       },
       {
         "type": "verb",
@@ -314,52 +307,46 @@
         "definition": "To want; to wish for something."
       },
       {
-        "type": "adjective",
-        "word": "pequeño",
-        "surface": "pequeño",
-        "definition": "Small; not big in size."
-      },
-      {
+        "word": "cuatro patas",
         "type": "expression",
-        "word": "debajo de",
-        "surface": "debajo de",
-        "definition": "Under; below something else."
+        "definition": "Four paws; an animal, not a person."
       },
       {
-        "type": "verb",
-        "word": "buscar",
-        "surface": "busca",
-        "definition": "To look for; to try to find."
-      },
-      {
+        "word": "dentro",
         "type": "adverb",
-        "word": "están",
-        "surface": "están",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "Inside; in the box, not outside."
       },
       {
+        "word": "detrás",
         "type": "adverb",
-        "word": "cuatro",
-        "surface": "cuatro",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "Behind; at the back of something."
       },
       {
+        "word": "escondido",
+        "type": "adjective",
+        "definition": "Hidden; put where nobody can see them.",
+        "surface": "escondidas"
+      },
+      {
+        "word": "busca",
         "type": "verb",
-        "word": "quiere",
-        "surface": "quiere",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "She looks for it; she searches for it."
       },
       {
-        "type": "verb",
-        "word": "quedarse",
-        "surface": "se queda",
-        "definition": "To stay; to remain where it is."
+        "word": "la cuchara",
+        "type": "noun",
+        "definition": "A spoon; you eat soup with it.",
+        "surface": "cuchara"
       },
       {
+        "word": "conmigo",
         "type": "pronoun",
-        "word": "alguien",
-        "surface": "Alguien",
-        "definition": "Somebody; some person, you don't know who."
+        "definition": "With me; together with me."
+      },
+      {
+        "word": "también",
+        "type": "adverb",
+        "definition": "Too; as well as the others."
       },
       {
         "type": "noun",
@@ -369,28 +356,27 @@
         "anchor": true
       },
       {
-        "type": "adverb",
         "word": "izquierdo",
-        "surface": "izquierdo",
-        "definition": "Used here in this sentence of the story."
+        "type": "adjective",
+        "definition": "Left; the left one of a pair."
       },
       {
-        "type": "adverb",
-        "word": "patas",
-        "surface": "patas",
-        "definition": "Used here in this sentence of the story."
+        "word": "el guante",
+        "type": "noun",
+        "definition": "A glove; you wear it on your hand.",
+        "surface": "guante"
       },
       {
-        "type": "verb",
-        "word": "vuelven",
-        "surface": "vuelven",
-        "definition": "Used here in this sentence of the story."
+        "word": "el sábado",
+        "type": "noun",
+        "definition": "Saturday; the day before Sunday.",
+        "surface": "sábado"
       },
       {
-        "type": "adverb",
-        "word": "solos",
-        "surface": "solos",
-        "definition": "Used here in this sentence of the story."
+        "word": "la pareja",
+        "type": "noun",
+        "definition": "A pair; the other one that matches.",
+        "surface": "pareja"
       }
     ]
   }

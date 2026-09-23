@@ -1,0 +1,28 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "Una gotera obliga a Mariana y Nicolás a repartir una culpa que va cambiando de dueño, hasta que resulta ser de ella.",
+  "recursos": "techo, balde, plato del gato, tubo, plomero, manguera",
+  "historias": [
+    { "slot": "0",
+      "quiere": "que pare el agua que cae sobre su sofá",
+      "impide": "la cocina de arriba está seca y nadie ha lavado nada",
+      "cuesta": "subir a acusar a la vecina sin pruebas",
+      "cambia": "la culpa no es de nadie: es el plato del gato que comparten",
+      "emocion": "alivio con risa" },
+    { "slot": "1",
+      "quiere": "saber de dónde sale tanta agua, ahora caliente",
+      "impide": "un gato no bebe agua caliente, así que no es el plato",
+      "cuesta": "hablar de quién paga antes de saber qué se rompió",
+      "cambia": "pagan mitad y mitad sin saber todavía de quién es la avería",
+      "emocion": "tensión contenida" },
+    { "slot": "2",
+      "quiere": "que el plomero encuentre el tubo roto",
+      "impide": "el tubo está seco; el agua viene de una manguera",
+      "cuesta": "reconocer delante del vecino que la manguera es suya",
+      "cambia": "la disculpa se convierte en una invitación a comer",
+      "emocion": "vergüenza que se vuelve cariño" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "La gata se cuela en todo lo que pasa por una pantalla: la clave, la videollamada y el grupo del edificio.",
+  "recursos": "clave, celular, pantalla, videollamada, grupo de mensajes, aviso",
+  "historias": [
+    { "slot": "0",
+      "quiere": "ver una película con el internet del vecino",
+      "impide": "la clave que él dicta no entra",
+      "cuesta": "bajar dos veces a preguntar por una sola palabra",
+      "cambia": "la clave era el nombre de la gata con una falta de ortografía",
+      "emocion": "humor" },
+    { "slot": "1",
+      "quiere": "enseñar su casa nueva a la familia por videollamada",
+      "impide": "la gata se sienta encima de la pantalla",
+      "cuesta": "que el vecino acabe saliendo en la llamada por levantarla",
+      "cambia": "la familia lo adopta a él y lo espera en diciembre",
+      "emocion": "calidez divertida" },
+    { "slot": "2",
+      "quiere": "que el aviso del corte de agua lo lea alguien",
+      "impide": "el grupo del edificio solo mira fotos de la gata",
+      "cuesta": "aceptar que su aviso solo, nadie lo abre",
+      "cambia": "ponen el aviso debajo de una foto de la gata para que se lea",
+      "emocion": "humor" }
+  ]
+}

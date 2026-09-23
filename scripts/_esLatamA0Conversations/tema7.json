@@ -8,17 +8,16 @@
     "text": "Mariana baja con dos maletas pesadas. Nicolás la espera en el felpudo. La gata los mira desde la escalera.\n\nMariana: Me voy dos semanas. Aquí tienes mi llavero.\nNicolás: Sin problema. Yo paso una vez al día.\nMariana: Gracias. Y lee esto. Son mis instrucciones.\n\nNicolás desdobla la hoja. Cuenta veinte puntos. Después lee en voz alta.\n\nNicolás: Punto seis: cepilla a la gata.\nMariana: Le encanta. Con tres minutos basta.\nNicolás: Punto trece: los gatitos duermen juntos.\nMariana: Siempre. Uno solo llora toda la noche.\nNicolás: Punto veinte: guarda el cepillo arriba.\n\nNicolás lee la hoja entera, de arriba abajo. Después mira las plantas tristes del balcón.\n\nNicolás: Mariana, tus plantas no están en la hoja.\nMariana: ¿Mis plantas? Ah, sí. Riega mis plantas.\nNicolás: ¿Y cada cuánto las riego?\nMariana: Una vez por semana. Ellas no se quejan.\nNicolás: La gata tiene veinte puntos. Ellas, ninguno.\nMariana: Ellas nunca lloran de noche.",
     "vocab": [
       {
-        "type": "adjective",
-        "word": "pesado",
-        "surface": "pesadas",
-        "definition": "heavy; hard to carry because of its weight"
+        "word": "el problema",
+        "type": "noun",
+        "definition": "A problem; something that goes wrong.",
+        "surface": "problema"
       },
       {
-        "type": "noun",
-        "word": "el felpudo",
-        "surface": "felpudo",
-        "definition": "the mat in front of a door for shoes",
-        "anchor": true
+        "word": "guardar",
+        "surface": "guarda",
+        "type": "verb",
+        "definition": "To put away; to keep it in its place."
       },
       {
         "type": "verb",
@@ -40,34 +39,33 @@
         "anchor": true
       },
       {
-        "type": "verb",
-        "word": "gata",
-        "surface": "gata",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la maleta",
+        "type": "noun",
+        "definition": "A suitcase; the bag you travel with.",
+        "surface": "maletas"
       },
       {
-        "type": "adverb",
-        "word": "gatitos",
-        "surface": "gatitos",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "la hoja",
+        "type": "noun",
+        "definition": "A sheet of paper; the page with the list.",
+        "surface": "hoja"
       },
       {
-        "type": "verb",
-        "word": "alta",
-        "surface": "alta",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "trece",
+        "type": "number",
+        "definition": "Thirteen; the number after twelve."
       },
       {
-        "type": "adverb",
-        "word": "tienes",
-        "surface": "tienes",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "las instrucciones",
+        "type": "noun",
+        "definition": "Instructions; the steps that say what to do.",
+        "surface": "instrucciones"
       },
       {
-        "type": "expression",
-        "word": "en voz alta",
-        "surface": "en voz alta",
-        "definition": "out loud; so other people can hear"
+        "word": "el minuto",
+        "type": "noun",
+        "definition": "A minute; sixty seconds of time.",
+        "surface": "minutos"
       },
       {
         "type": "verb",
@@ -83,28 +81,28 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "están",
-        "surface": "están",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "regar",
+        "type": "verb",
+        "definition": "To water; to give water to plants.",
+        "surface": "Riega"
       },
       {
-        "type": "adverb",
-        "word": "semanas",
-        "surface": "semanas",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "encantar",
+        "type": "verb",
+        "definition": "To love it; to like something very much.",
+        "surface": "encanta"
       },
       {
-        "type": "adverb",
-        "word": "puntos",
-        "surface": "puntos",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "llorar",
+        "type": "verb",
+        "definition": "To cry; to make tears and sad sounds.",
+        "surface": "llora"
       },
       {
+        "word": "entero",
         "type": "adjective",
-        "word": "triste",
-        "surface": "tristes",
-        "definition": "sad; here, dry and almost without life"
+        "definition": "Whole; complete from start to end.",
+        "surface": "entera"
       },
       {
         "type": "noun",
@@ -126,10 +124,10 @@
         "definition": "to complain; to say you are not happy"
       },
       {
-        "type": "adverb",
-        "word": "desdobla",
-        "surface": "desdobla",
-        "definition": "Used here in this sentence of the story."
+        "word": "desdoblar",
+        "type": "verb",
+        "definition": "To unfold; to open a folded paper.",
+        "surface": "desdobla"
       }
     ]
   },
@@ -149,28 +147,26 @@
         "anchor": true
       },
       {
+        "word": "siguiente",
         "type": "adjective",
-        "word": "vacío",
-        "surface": "vacía",
-        "definition": "empty; with nothing and nobody inside"
+        "definition": "Next; the day right after this one."
       },
       {
+        "word": "cerrado",
+        "type": "adjective",
+        "definition": "Closed; shut, not open.",
+        "surface": "cerrada"
+      },
+      {
+        "word": "el teléfono",
+        "type": "noun",
+        "definition": "A phone; you call people with it.",
+        "surface": "teléfono"
+      },
+      {
+        "word": "descansar",
         "type": "verb",
-        "word": "sonar",
-        "surface": "suena",
-        "definition": "to ring; to make a sound people hear"
-      },
-      {
-        "type": "adverb",
-        "word": "cuatro",
-        "surface": "cuatro",
-        "definition": "Used again later in the journey; see this sentence."
-      },
-      {
-        "type": "adverb",
-        "word": "miro",
-        "surface": "miro",
-        "definition": "Used again later in the journey; see this sentence."
+        "definition": "To rest; to stop and do nothing."
       },
       {
         "type": "expression",
@@ -179,11 +175,9 @@
         "definition": "since yesterday; from the day before today"
       },
       {
-        "type": "noun",
-        "word": "la ventana",
-        "surface": "ventana",
-        "definition": "the hole in a wall with glass",
-        "anchor": true
+        "word": "diecisiete",
+        "type": "number",
+        "definition": "Seventeen; the number after sixteen."
       },
       {
         "type": "expression",
@@ -192,10 +186,9 @@
         "definition": "at the end; in the last part"
       },
       {
-        "type": "expression",
-        "word": "en silencio",
-        "surface": "en silencio",
-        "definition": "without a sound; saying nothing at all"
+        "word": "sola",
+        "type": "adjective",
+        "definition": "On her own; with nobody with her."
       },
       {
         "type": "noun",
@@ -223,10 +216,9 @@
         "definition": "to come back; to return to a place"
       },
       {
-        "type": "adjective",
-        "word": "junto",
-        "surface": "juntos",
-        "definition": "together; agreeing with each other"
+        "word": "van",
+        "type": "verb",
+        "definition": "They go together; here, two points that disagree."
       },
       {
         "type": "verb",
@@ -248,10 +240,10 @@
         "definition": "open; not shut, so anyone can pass"
       },
       {
-        "type": "expression",
-        "word": "ya está",
-        "surface": "ya está",
-        "definition": "there it is; the problem is over"
+        "word": "el lado",
+        "type": "noun",
+        "definition": "A side; in 'ningun lado' it means anywhere.",
+        "surface": "lado"
       },
       {
         "type": "expression",
@@ -276,28 +268,26 @@
     "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nMariana y Nicolás bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
     "vocab": [
       {
-        "type": "adverb",
-        "word": "ningún",
-        "surface": "ningún",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "en orden",
+        "type": "expression",
+        "definition": "In order; everything as it should be."
       },
       {
-        "type": "adverb",
-        "word": "plantas",
-        "surface": "plantas",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "el bolsillo",
+        "type": "noun",
+        "definition": "A pocket; the small bag in your clothes.",
+        "surface": "bolsillo"
       },
       {
-        "type": "verb",
-        "word": "bajan",
-        "surface": "bajan",
-        "definition": "Used again later in the journey; see this sentence."
+        "word": "por fin",
+        "type": "expression",
+        "definition": "At last; after a long wait."
       },
       {
-        "type": "adverb",
-        "word": "casi",
-        "surface": "Casi",
-        "definition": "almost; very near but not all"
+        "word": "la casa",
+        "type": "noun",
+        "definition": "A house; the place where someone lives.",
+        "surface": "casas"
       },
       {
         "type": "expression",
@@ -319,10 +309,10 @@
         "anchor": true
       },
       {
-        "type": "verb",
-        "word": "moverse",
-        "surface": "se mueve",
-        "definition": "to move; to change place or position"
+        "word": "tuyo",
+        "type": "adjective",
+        "definition": "Yours; it belongs to you.",
+        "surface": "tuya"
       },
       {
         "type": "expression",
@@ -350,10 +340,9 @@
         "definition": "something for you; a small gift"
       },
       {
-        "type": "verb",
-        "word": "sacar",
-        "surface": "Saca",
-        "definition": "to take out; to pull something from inside"
+        "word": "todas",
+        "type": "pronoun",
+        "definition": "All of them; every single one."
       },
       {
         "type": "adjective",
@@ -387,16 +376,15 @@
         "definition": "there is no need; do not bother"
       },
       {
+        "word": "correr",
         "type": "verb",
-        "word": "corren",
-        "surface": "corren",
-        "definition": "Used here in this sentence of the story."
+        "definition": "To run; to move fast on your feet.",
+        "surface": "corren"
       },
       {
-        "type": "verb",
-        "word": "viven",
-        "surface": "viven",
-        "definition": "Used here in this sentence of the story."
+        "word": "gracias por todo",
+        "type": "expression",
+        "definition": "Thanks for everything; said when someone helped a lot."
       }
     ]
   }

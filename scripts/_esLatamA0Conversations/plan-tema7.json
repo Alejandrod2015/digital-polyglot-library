@@ -1,0 +1,28 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "Dos semanas de llaves prestadas demuestran que la gata ya tenía dos casas, y al final sus dueños también.",
+  "recursos": "maletas, llavero, hoja de instrucciones, plantas, ventana, rascador",
+  "historias": [
+    { "slot": "0",
+      "quiere": "dejar la casa y la gata en orden antes de irse dos semanas",
+      "impide": "la hoja tiene veinte puntos para la gata y ninguno para las plantas",
+      "cuesta": "reconocer lo que había olvidado delante del vecino",
+      "cambia": "las plantas entran en la lista, aunque nunca lloren de noche",
+      "emocion": "humor cariñoso" },
+    { "slot": "1",
+      "quiere": "encontrar a la gata, que no aparece desde ayer",
+      "impide": "dos puntos de la hoja se contradicen",
+      "cuesta": "admitir que sus propias instrucciones se equivocan",
+      "cambia": "la gata duerme abajo: no se pierde, se escapa",
+      "emocion": "susto que pasa" },
+    { "slot": "2",
+      "quiere": "volver a casa y recuperar su rutina con la gata",
+      "impide": "la gata ya duerme abajo, en un rascador nuevo",
+      "cuesta": "aceptar que la gata eligió dos casas",
+      "cambia": "se cambian las llaves para siempre y el timbre ya no hace falta",
+      "emocion": "cierre cálido" }
+  ]
+}

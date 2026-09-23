@@ -1,401 +1,399 @@
 [
- {
-  "topic": "new-neighbors",
-  "slotIndex": 0,
-  "title": "Un gato con dos nombres",
-  "arcType": "reframe-turn",
-  "synopsis": "Every night a grey cat visits Mariana, the new neighbor. Tonight it does not come. Next door, Nicolás says the cat is his, and its name is not Luna.",
-  "text": "Mariana es la vecina nueva del edificio. Todas las noches, un gato gris entra por su ventana. Hoy el gato no viene. Mariana oye un gato en la casa de al lado. Toca la puerta. Nicolás, el vecino, abre.\n\nMariana: Perdón. ¿Tienes un gato gris?\nNicolás: Sí. Se llama Tigre. Está aquí, en el sofá. ¿Por qué?\nMariana: Ese gato se llama Luna, no Tigre. Es mi gato.\nNicolás: ¿Tu gato? Tigre vive aquí. Come aquí todos los días.\nMariana: Luna cena en mi casa todas las noches.\n\nEl gato mira a Mariana. Después mira a Nicolás. Está muy gordo.\n\nNicolás: Ahora entiendo. El gato come dos veces.\nMariana: ¡Por eso está tan gordo! Pero no quiero perder a Luna.\nNicolás: ¿Compartimos el gato? De día, aquí. De noche, en tu casa.\nMariana: Bien. Pero el gato come una vez, no dos.\nNicolás: Trato hecho. Aquí se llama Tigre.\nMariana: Y en mi casa, Luna.",
-  "vocab": [
-   {
-    "type": "expression",
-    "word": "todas las noches",
-    "surface": "Todas las noches",
-    "definition": "Every night; each night, again and again."
-   },
-   {
-    "type": "noun",
-    "word": "el gato",
-    "surface": "gato",
-    "definition": "A cat; the grey cat in this story.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "gris",
-    "surface": "gris",
-    "definition": "Grey; the color between black and white."
-   },
-   {
-    "type": "verb",
-    "word": "entrar",
-    "surface": "entra",
-    "definition": "To come in; to go inside a place."
-   },
-   {
-    "type": "verb",
-    "word": "venir",
-    "surface": "viene",
-    "definition": "To come; to arrive where someone is."
-   },
-   {
-    "type": "verb",
-    "word": "oír",
-    "surface": "oye",
-    "definition": "To hear; to catch a sound with your ears."
-   },
-   {
-    "type": "verb",
-    "word": "come",
-    "surface": "come",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "noches",
-    "surface": "noches",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "vivir",
-    "surface": "vive",
-    "definition": "To live; to have your home in a place."
-   },
-   {
-    "type": "expression",
-    "word": "todos los días",
-    "surface": "todos los días",
-    "definition": "Every day; each day, with no break."
-   },
-   {
-    "type": "verb",
-    "word": "cenar",
-    "surface": "cena",
-    "definition": "To have dinner; to eat in the evening."
-   },
-   {
-    "type": "adverb",
-    "word": "después",
-    "surface": "Después",
-    "definition": "After that; then, a moment later."
-   },
-   {
-    "type": "verb",
-    "word": "mirar",
-    "surface": "mira",
-    "definition": "To look at; to turn your eyes to someone."
-   },
-   {
-    "type": "adjective",
-    "word": "gordo",
-    "surface": "gordo",
-    "definition": "Fat; heavy, with a big round body."
-   },
-   {
-    "type": "adverb",
-    "word": "hecho",
-    "surface": "hecho",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "expression",
-    "word": "dos veces",
-    "surface": "dos veces",
-    "definition": "Twice; two times, not only one."
-   },
-   {
-    "type": "expression",
-    "word": "por eso",
-    "surface": "Por eso",
-    "definition": "That's why; for that reason."
-   },
-   {
-    "type": "verb",
-    "word": "perder",
-    "surface": "perder",
-    "definition": "To lose; to not have something anymore."
-   },
-   {
-    "type": "verb",
-    "word": "compartir",
-    "surface": "Compartimos",
-    "definition": "To share; to use or have something together."
-   },
-   {
-    "type": "expression",
-    "word": "trato hecho",
-    "surface": "Trato hecho",
-    "definition": "It's a deal; we both agree to this."
-   }
-  ]
- },
- {
-  "topic": "new-neighbors",
-  "slotIndex": 1,
-  "title": "Yo no le doy nada",
-  "arcType": "late-reveal",
-  "synopsis": "The grey cat is still getting fatter. Mariana and Nicolás each think the other one feeds it. Then Nicolás finds a small note on the cat's collar.",
-  "text": "Una semana después, el gato está más gordo. Mariana y Nicolás lo miran en la escalera. Los dos están muy serios.\n\nMariana: Nicolás, ¿tú le das comida a Luna?\nNicolás: Yo no. Tigre come solo por la mañana. Es el trato.\nMariana: Yo no le doy nada. Solo toma agua.\nNicolás: ¿Solo agua? Tu cocina huele a pollo todas las noches.\nMariana: ¡El pollo es para mí!\n\nEntonces Nicolás toca el cuello del gato. Hay un papel pequeño en el collar.\n\nNicolás: Aquí hay una nota. Dice: “Me llamo Rey. Ceno en la casa azul.”\nMariana: ¿Rey? ¡La casa azul es la casa de enfrente!\nNicolás: Entonces cena allá. Y nosotros peleamos por nada.\nMariana: Tres casas y tres nombres. Este gato es un rey.\nNicolás: Sí. Un rey muy gordo.",
-  "vocab": [
-   {
-    "type": "verb",
-    "word": "miran",
-    "surface": "miran",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adjective",
-    "word": "serio",
-    "surface": "serios",
-    "definition": "Serious; not smiling, a little worried."
-   },
-   {
-    "type": "verb",
-    "word": "dar",
-    "surface": "das",
-    "definition": "To give; to hand something to someone."
-   },
-   {
-    "type": "noun",
-    "word": "la comida",
-    "surface": "comida",
-    "definition": "Food; what people or animals eat.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "tomar",
-    "surface": "toma",
-    "definition": "To drink; here, to drink water."
-   },
-   {
-    "type": "adverb",
-    "word": "solo",
-    "surface": "solo",
-    "definition": "Only; just this and nothing more."
-   },
-   {
-    "type": "verb",
-    "word": "oler",
-    "surface": "huele",
-    "definition": "To smell of; to have the smell of something."
-   },
-   {
-    "type": "noun",
-    "word": "el pollo",
-    "surface": "pollo",
-    "definition": "Chicken; chicken meat as food.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "están",
-    "surface": "están",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "tocar",
-    "surface": "toca",
-    "definition": "To touch; to put your hand on something."
-   },
-   {
-    "type": "noun",
-    "word": "el cuello",
-    "surface": "cuello",
-    "definition": "Neck; the part between the head and the body.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "pequeño",
-    "surface": "pequeño",
-    "definition": "Small; little, not big."
-   },
-   {
-    "type": "verb",
-    "word": "decir",
-    "surface": "Dice",
-    "definition": "To say; here, what the note says."
-   },
-   {
-    "type": "noun",
-    "word": "el rey",
-    "surface": "Rey",
-    "definition": "King; a man who rules a country.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "azul",
-    "surface": "azul",
-    "definition": "Blue; the color of the sky."
-   },
-   {
-    "type": "expression",
-    "word": "de enfrente",
-    "surface": "de enfrente",
-    "definition": "Across the street; on the other side."
-   },
-   {
-    "type": "verb",
-    "word": "huele",
-    "surface": "huele",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "expression",
-    "word": "por nada",
-    "surface": "por nada",
-    "definition": "For nothing; with no real reason."
-   },
-   {
-    "type": "adverb",
-    "word": "peleamos",
-    "surface": "peleamos",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "adverb",
-    "word": "llamo",
-    "surface": "llamo",
-    "definition": "Used here in this sentence of the story."
-   }
-  ]
- },
- {
-  "topic": "new-neighbors",
-  "slotIndex": 2,
-  "title": "Una caja que hace ruido",
-  "arcType": "juxtaposition-discovery",
-  "synopsis": "The cat with three names is missing. Mariana and Nicolás look for it all over the building and hear a noise under the stairs.",
-  "text": "Hoy el gato no está en ninguna casa. No está con Mariana ni con Nicolás. Tampoco está en la casa azul. Los dos lo buscan por el edificio.\n\nNicolás: ¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.\nMariana: Escucha, Nicolás. Hay un ruido abajo.\nNicolás: Sí. Viene de la caja vieja, debajo de la escalera.\n\nMariana abre la caja muy despacio. Adentro está el gato. Y cuatro gatitos.\n\nMariana: ¡Nicolás! No es un gato. Es una gata.\nNicolás: ¿Tigre es una gata? ¿Y es mamá?\nMariana: Sí. Por eso come tanto. Come por cinco, no por uno.\nNicolás: ¿Y ahora? Cuatro gatitos y tres casas.\nMariana: Es fácil. Uno para ti, uno para mí, uno para la casa azul.\nNicolás: ¿Y el cuarto gatito?\nMariana: Se queda con su mamá. Aquí, en el edificio.\nNicolás: Pobre gata. Cuatro hijos y tres nombres.",
-  "vocab": [
-   {
-    "type": "verb",
-    "word": "buscar",
-    "surface": "buscan",
-    "definition": "To look for; to try to find."
-   },
-   {
-    "type": "verb",
-    "word": "escuchar",
-    "surface": "Escucha",
-    "definition": "To listen; to pay attention to a sound."
-   },
-   {
-    "type": "noun",
-    "word": "el ruido",
-    "surface": "ruido",
-    "definition": "A noise; a sound, often not nice.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "abajo",
-    "surface": "abajo",
-    "definition": "Downstairs; below, on a lower floor."
-   },
-   {
-    "type": "noun",
-    "word": "la caja",
-    "surface": "caja",
-    "definition": "A box; here, an old box under the stairs.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "viejo",
-    "surface": "vieja",
-    "definition": "Old; not new, used for many years."
-   },
-   {
-    "type": "expression",
-    "word": "debajo de",
-    "surface": "debajo de",
-    "definition": "Under; below something, lower than it."
-   },
-   {
-    "type": "adverb",
-    "word": "despacio",
-    "surface": "despacio",
-    "definition": "Slowly; not fast, with care."
-   },
-   {
-    "type": "adverb",
-    "word": "adentro",
-    "surface": "Adentro",
-    "definition": "Inside; in the box."
-   },
-   {
-    "type": "noun",
-    "word": "el gatito",
-    "surface": "gatitos",
-    "definition": "A kitten; a baby cat.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "la gata",
-    "surface": "gata",
-    "definition": "A female cat; a girl cat, not a boy.",
-    "anchor": true
-   },
-   {
-    "type": "expression",
-    "word": "comer por cinco",
-    "surface": "Come por cinco",
-    "definition": "She eats for five; she eats a lot."
-   },
-   {
-    "type": "expression",
-    "word": "¿y ahora?",
-    "surface": "Y ahora",
-    "definition": "And now what?; what do we do next?"
-   },
-   {
-    "type": "adjective",
-    "word": "fácil",
-    "surface": "fácil",
-    "definition": "Easy; not hard to do."
-   },
-   {
-    "type": "adjective",
-    "word": "cuarto",
-    "surface": "cuarto",
-    "definition": "Fourth; number four in a list."
-   },
-   {
-    "type": "verb",
-    "word": "quedarse",
-    "surface": "Se queda",
-    "definition": "To stay; to not go away."
-   },
-   {
-    "type": "number",
-    "word": "cuatro",
-    "surface": "cuatro",
-    "definition": "Four; the number after three."
-   },
-   {
-    "type": "verb",
-    "word": "ninguna",
-    "surface": "ninguna",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "adverb",
-    "word": "nombres",
-    "surface": "nombres",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "verb",
-    "word": "venir",
-    "surface": "viene",
-    "definition": "To come; to arrive where you are."
-   }
-  ]
- }
+  {
+    "topic": "new-neighbors",
+    "slotIndex": 0,
+    "title": "Un gato con dos nombres",
+    "arcType": "reframe-turn",
+    "synopsis": "Every night a grey cat visits Mariana, the new neighbor. Tonight it does not come. Next door, Nicolás says the cat is his, and its name is not Luna.",
+    "text": "Mariana es la vecina nueva del edificio. Todas las noches, un gato gris entra por su ventana. Hoy el gato no viene. Mariana oye un gato en la casa de al lado. Toca la puerta. Nicolás, el vecino, abre.\n\nMariana: Perdón. ¿Tienes un gato gris?\nNicolás: Sí. Se llama Tigre. Está aquí, en el sofá. ¿Por qué?\nMariana: Ese gato se llama Luna, no Tigre. Es mi gato.\nNicolás: ¿Tu gato? Tigre vive aquí. Come aquí todos los días.\nMariana: Luna cena en mi casa todas las noches.\n\nEl gato mira a Mariana. Después mira a Nicolás. Está muy gordo.\n\nNicolás: Ahora entiendo. El gato come dos veces.\nMariana: ¡Por eso está tan gordo! Pero no quiero perder a Luna.\nNicolás: ¿Compartimos el gato? De día, aquí. De noche, en tu casa.\nMariana: Bien. Pero el gato come una vez, no dos.\nNicolás: Trato hecho. Aquí se llama Tigre.\nMariana: Y en mi casa, Luna.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "todas las noches",
+        "surface": "Todas las noches",
+        "definition": "Every night; each night, again and again."
+      },
+      {
+        "type": "noun",
+        "word": "el gato",
+        "surface": "gato",
+        "definition": "A cat; the grey cat in this story.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "gris",
+        "surface": "gris",
+        "definition": "Grey; the color between black and white."
+      },
+      {
+        "type": "verb",
+        "word": "entrar",
+        "surface": "entra",
+        "definition": "To come in; to go inside a place."
+      },
+      {
+        "type": "verb",
+        "word": "venir",
+        "surface": "viene",
+        "definition": "To come; to arrive where someone is."
+      },
+      {
+        "type": "verb",
+        "word": "oír",
+        "surface": "oye",
+        "definition": "To hear; to catch a sound with your ears."
+      },
+      {
+        "word": "comer",
+        "type": "verb",
+        "definition": "To eat; to have a meal.",
+        "surface": "Come"
+      },
+      {
+        "word": "la ventana",
+        "type": "noun",
+        "definition": "A window; the opening in a wall with glass.",
+        "surface": "ventana"
+      },
+      {
+        "type": "verb",
+        "word": "vivir",
+        "surface": "vive",
+        "definition": "To live; to have your home in a place."
+      },
+      {
+        "type": "expression",
+        "word": "todos los días",
+        "surface": "todos los días",
+        "definition": "Every day; each day, with no break."
+      },
+      {
+        "type": "verb",
+        "word": "cenar",
+        "surface": "cena",
+        "definition": "To have dinner; to eat in the evening."
+      },
+      {
+        "type": "adverb",
+        "word": "después",
+        "surface": "Después",
+        "definition": "After that; then, a moment later."
+      },
+      {
+        "type": "verb",
+        "word": "mirar",
+        "surface": "mira",
+        "definition": "To look at; to turn your eyes to someone."
+      },
+      {
+        "type": "adjective",
+        "word": "gordo",
+        "surface": "gordo",
+        "definition": "Fat; heavy, with a big round body."
+      },
+      {
+        "word": "el sofá",
+        "type": "noun",
+        "definition": "A sofa; the long soft seat of a living room.",
+        "surface": "sofá"
+      },
+      {
+        "type": "expression",
+        "word": "dos veces",
+        "surface": "dos veces",
+        "definition": "Twice; two times, not only one."
+      },
+      {
+        "type": "expression",
+        "word": "por eso",
+        "surface": "Por eso",
+        "definition": "That's why; for that reason."
+      },
+      {
+        "type": "verb",
+        "word": "perder",
+        "surface": "perder",
+        "definition": "To lose; to not have something anymore."
+      },
+      {
+        "type": "verb",
+        "word": "compartir",
+        "surface": "Compartimos",
+        "definition": "To share; to use or have something together."
+      },
+      {
+        "type": "expression",
+        "word": "trato hecho",
+        "surface": "Trato hecho",
+        "definition": "It's a deal; we both agree to this."
+      }
+    ]
+  },
+  {
+    "topic": "new-neighbors",
+    "slotIndex": 1,
+    "title": "Yo no le doy nada",
+    "arcType": "late-reveal",
+    "synopsis": "The grey cat is still getting fatter. Mariana and Nicolás each think the other one feeds it. Then Nicolás finds a small note on the cat's collar.",
+    "text": "Una semana después, el gato está más gordo. Mariana y Nicolás lo miran en la escalera. Los dos están muy serios.\n\nMariana: Nicolás, ¿tú le das comida a Luna?\nNicolás: Yo no. Tigre come solo por la mañana. Es el trato.\nMariana: Yo no le doy nada. Solo toma agua.\nNicolás: ¿Solo agua? Tu cocina huele a pollo todas las noches.\nMariana: ¡El pollo es para mí!\n\nEntonces Nicolás toca el cuello del gato. Hay un papel pequeño en el collar.\n\nNicolás: Aquí hay una nota. Dice: “Me llamo Rey. Ceno en la casa azul.”\nMariana: ¿Rey? ¡La casa azul es la casa de enfrente!\nNicolás: Entonces cena allá. Y nosotros peleamos por nada.\nMariana: Tres casas y tres nombres. Este gato es un rey.\nNicolás: Sí. Un rey muy gordo.",
+    "vocab": [
+      {
+        "word": "la escalera",
+        "type": "noun",
+        "definition": "The stairs; the steps between two floors.",
+        "surface": "escalera"
+      },
+      {
+        "type": "adjective",
+        "word": "serio",
+        "surface": "serios",
+        "definition": "Serious; not smiling, a little worried."
+      },
+      {
+        "type": "verb",
+        "word": "dar",
+        "surface": "das",
+        "definition": "To give; to hand something to someone."
+      },
+      {
+        "type": "noun",
+        "word": "la comida",
+        "surface": "comida",
+        "definition": "Food; what people or animals eat.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "tomar",
+        "surface": "toma",
+        "definition": "To drink; here, to drink water."
+      },
+      {
+        "type": "adverb",
+        "word": "solo",
+        "surface": "solo",
+        "definition": "Only; just this and nothing more."
+      },
+      {
+        "type": "verb",
+        "word": "oler",
+        "surface": "huele",
+        "definition": "To smell of; to have the smell of something."
+      },
+      {
+        "type": "noun",
+        "word": "el pollo",
+        "surface": "pollo",
+        "definition": "Chicken; chicken meat as food.",
+        "anchor": true
+      },
+      {
+        "word": "la nota",
+        "type": "noun",
+        "definition": "A note; a short written message.",
+        "surface": "nota"
+      },
+      {
+        "type": "verb",
+        "word": "tocar",
+        "surface": "toca",
+        "definition": "To touch; to put your hand on something."
+      },
+      {
+        "type": "noun",
+        "word": "el cuello",
+        "surface": "cuello",
+        "definition": "Neck; the part between the head and the body.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "pequeño",
+        "surface": "pequeño",
+        "definition": "Small; little, not big."
+      },
+      {
+        "type": "verb",
+        "word": "decir",
+        "surface": "Dice",
+        "definition": "To say; here, what the note says."
+      },
+      {
+        "type": "noun",
+        "word": "el rey",
+        "surface": "Rey",
+        "definition": "King; a man who rules a country.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "azul",
+        "surface": "azul",
+        "definition": "Blue; the color of the sky."
+      },
+      {
+        "type": "expression",
+        "word": "de enfrente",
+        "surface": "de enfrente",
+        "definition": "Across the street; on the other side."
+      },
+      {
+        "word": "la cocina",
+        "type": "noun",
+        "definition": "The kitchen; the room where you cook.",
+        "surface": "cocina"
+      },
+      {
+        "type": "expression",
+        "word": "por nada",
+        "surface": "por nada",
+        "definition": "For nothing; with no real reason."
+      },
+      {
+        "word": "pelear",
+        "type": "verb",
+        "definition": "To argue; to fight with words.",
+        "surface": "peleamos"
+      },
+      {
+        "word": "me llamo",
+        "type": "expression",
+        "definition": "My name is; used to say your own name.",
+        "surface": "Me llamo"
+      }
+    ]
+  },
+  {
+    "topic": "new-neighbors",
+    "slotIndex": 2,
+    "title": "Una caja que hace ruido",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "The cat with three names is missing. Mariana and Nicolás look for it all over the building and hear a noise under the stairs.",
+    "text": "Hoy el gato no está en ninguna casa. No está con Mariana ni con Nicolás. Tampoco está en la casa azul. Los dos lo buscan por el edificio.\n\nNicolás: ¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.\nMariana: Escucha, Nicolás. Hay un ruido abajo.\nNicolás: Sí. Viene de la caja vieja, debajo de la escalera.\n\nMariana abre la caja muy despacio. Adentro está el gato. Y cuatro gatitos.\n\nMariana: ¡Nicolás! No es un gato. Es una gata.\nNicolás: ¿Tigre es una gata? ¿Y es mamá?\nMariana: Sí. Por eso come tanto. Come por cinco, no por uno.\nNicolás: ¿Y ahora? Cuatro gatitos y tres casas.\nMariana: Es fácil. Uno para ti, uno para mí, uno para la casa azul.\nNicolás: ¿Y el cuarto gatito?\nMariana: Se queda con su mamá. Aquí, en el edificio.\nNicolás: Pobre gata. Cuatro hijos y tres nombres.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "buscar",
+        "surface": "buscan",
+        "definition": "To look for; to try to find."
+      },
+      {
+        "type": "verb",
+        "word": "escuchar",
+        "surface": "Escucha",
+        "definition": "To listen; to pay attention to a sound."
+      },
+      {
+        "type": "noun",
+        "word": "el ruido",
+        "surface": "ruido",
+        "definition": "A noise; a sound, often not nice.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "abajo",
+        "surface": "abajo",
+        "definition": "Downstairs; below, on a lower floor."
+      },
+      {
+        "type": "noun",
+        "word": "la caja",
+        "surface": "caja",
+        "definition": "A box; here, an old box under the stairs.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "viejo",
+        "surface": "vieja",
+        "definition": "Old; not new, used for many years."
+      },
+      {
+        "type": "expression",
+        "word": "debajo de",
+        "surface": "debajo de",
+        "definition": "Under; below something, lower than it."
+      },
+      {
+        "type": "adverb",
+        "word": "despacio",
+        "surface": "despacio",
+        "definition": "Slowly; not fast, with care."
+      },
+      {
+        "type": "adverb",
+        "word": "adentro",
+        "surface": "Adentro",
+        "definition": "Inside; in the box."
+      },
+      {
+        "type": "noun",
+        "word": "el gatito",
+        "surface": "gatitos",
+        "definition": "A kitten; a baby cat.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la gata",
+        "surface": "gata",
+        "definition": "A female cat; a girl cat, not a boy.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "comer por cinco",
+        "surface": "Come por cinco",
+        "definition": "She eats for five; she eats a lot."
+      },
+      {
+        "type": "expression",
+        "word": "¿y ahora?",
+        "surface": "Y ahora",
+        "definition": "And now what?; what do we do next?"
+      },
+      {
+        "type": "adjective",
+        "word": "fácil",
+        "surface": "fácil",
+        "definition": "Easy; not hard to do."
+      },
+      {
+        "type": "adjective",
+        "word": "cuarto",
+        "surface": "cuarto",
+        "definition": "Fourth; number four in a list."
+      },
+      {
+        "type": "verb",
+        "word": "quedarse",
+        "surface": "Se queda",
+        "definition": "To stay; to not go away."
+      },
+      {
+        "type": "number",
+        "word": "cuatro",
+        "surface": "cuatro",
+        "definition": "Four; the number after three."
+      },
+      {
+        "word": "ninguna",
+        "type": "adjective",
+        "definition": "Not any; none of the three houses."
+      },
+      {
+        "word": "el nombre",
+        "type": "noun",
+        "definition": "A name; what a person or animal is called.",
+        "surface": "nombres"
+      },
+      {
+        "word": "tiene",
+        "type": "verb",
+        "definition": "He or she has; the cat has three names."
+      }
+    ]
+  }
 ]

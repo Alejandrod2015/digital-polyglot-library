@@ -1,0 +1,28 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "Tres noches sin dormir por tres motivos distintos, y al final lo que no deja dormir es el silencio.",
+  "recursos": "madrugada, canica, despertador, biberones, sofá, almohada",
+  "historias": [
+    { "slot": "0",
+      "quiere": "dormir sin un ruido de muebles arrastrados encima",
+      "impide": "sobre esa casa no vive nadie y el ruido sigue",
+      "cuesta": "subir de madrugada a buscar el origen",
+      "cambia": "el mueble pesado eran dos gramos de canica, y la gata los guarda",
+      "emocion": "humor" },
+    { "slot": "1",
+      "quiere": "que el despertador de las seis deje de despertarla a ella",
+      "impide": "Nicolás no puede cambiar esa hora y no dice por qué",
+      "cuesta": "enterarse de que él se levanta por los gatitos de ella",
+      "cambia": "ella toma el turno de la leche y él pone dos despertadores",
+      "emocion": "ternura" },
+    { "slot": "2",
+      "quiere": "dormir la primera noche sin gatitos en casa",
+      "impide": "el silencio que querían es justo lo que no los deja",
+      "cuesta": "reconocer que echan de menos el ruido",
+      "cambia": "queda un gatito que ronca, y Nicolás sube con su almohada",
+      "emocion": "melancolía cálida" }
+  ]
+}
