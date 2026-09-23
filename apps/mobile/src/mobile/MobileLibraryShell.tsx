@@ -12886,6 +12886,7 @@ export function MobileLibraryShell(args: {
       | "vocab_marked_known"
       | "vocab_marked_unknown"
       | "rating_prompt_shown"
+      | "audio_play"
       | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) {

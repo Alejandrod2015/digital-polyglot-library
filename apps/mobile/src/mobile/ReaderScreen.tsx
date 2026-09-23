@@ -1385,6 +1385,7 @@ export function ReaderScreen(args: {
       | "vocab_marked_known"
       | "vocab_marked_unknown"
       | "rating_prompt_shown"
+      | "audio_play"
       | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) => void;
@@ -2055,11 +2056,25 @@ export function ReaderScreen(args: {
   // (looping isPlaying=false ticks), so without this guard we'd flood the
   // metrics endpoint with duplicate completion events.
   const audioCompleteFiredForStoryRef = useRef<string | null>(null);
+  /**
+   * Si el audio venía sonando en el tick anterior. Sirve para emitir
+   * `audio_play` SOLO en el flanco de parado a sonando.
+   *
+   * Hasta hoy el móvil no emitía ese evento: los 238 plays del mes hasta el
+   * 2026-09-23 eran todos del lector web, así que la tarjeta Plays del panel
+   * caía a cero al filtrar por iOS o Android y se leía como una avería. Se
+   * cuenta en el flanco, igual que la web, que lo emite en cada pulsación de
+   * play (`src/components/Player.tsx`), reanudaciones incluidas: si se contara
+   * una vez por historia, las dos superficies medirían cosas distintas con el
+   * mismo nombre.
+   */
+  const audioWasPlayingRef = useRef(false);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     setStoryCompleted(false);
     promptShownForStoryRef.current = null;
     ratingShownForStoryRef.current = null;
+    audioWasPlayingRef.current = false;
     audioCompleteFiredForStoryRef.current = null;
     // A cero: si la tarjeta no se renderiza (historia sin terminar), nadie
     // vuelve a llamar a su onLayout y una altura vieja desajustaría el mapeo
@@ -3474,6 +3489,29 @@ export function ReaderScreen(args: {
                 isPlaying: playback.isPlaying,
                 rate: playback.rate || 1,
               };
+            }
+            if (playback.isLoaded) {
+              // Flanco de parado a sonando: una fila por arranque, igual que
+              // la web. El tick llega cada 500 ms, así que sin el flanco esto
+              // sería un evento cada medio segundo.
+              if (
+                playback.isPlaying &&
+                !audioWasPlayingRef.current &&
+                onTrackReaderEvent &&
+                story.slug
+              ) {
+                onTrackReaderEvent("audio_play", {
+                  storySlug: story.slug,
+                  bookSlug: book.slug,
+                  metadata: {
+                    progressKey: `standalone:${story.slug}`,
+                    progressSec: Math.round((playback.positionMillis ?? 0) / 1000),
+                    audioDurationSec: Math.round((playback.durationMillis ?? 0) / 1000),
+                    source: "mobile_reader",
+                  },
+                });
+              }
+              audioWasPlayingRef.current = playback.isPlaying;
             }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
