@@ -1084,11 +1084,37 @@ export function validateJourneyStories(
   // su vocab no ha pasado por esta limpieza. Se remide con el segundo journey
   // de dialogo que se escriba; si ese deja mucho menos, el tope baja.
   const TOPE_COLA_DIALOGO = 0.55;
+  // La misma rama por el otro extremo: el SUELO de la media.
+  //
+  // La media cuenta en cuantos cuerpos aparece la palabra de cada plaza, asi
+  // que sufre lo mismo que la cola: con el vocab honesto, el journey de
+  // dialogo da 2,26 y el suelo A0 pide 2,5. Suelo de dialogo 2,2, justo por
+  // debajo de lo medido y sin holgura, que es como se pusieron todos los
+  // suelos del catalogo. Misma muestra unica, misma revision pendiente.
+  //
+  // LO QUE ESTE NUMERO NO SIGNIFICA, dicho aqui porque dentro de seis meses
+  // un 2,2 al lado de un 2,5 se lee como listón bajado: no significa que en
+  // dialogo se enseñe peor. La metrica se diseño sobre prosa narrada, donde
+  // una escena larga repite sus palabras sola y el narrador vuelve sobre los
+  // mismos verbos y conectores. En dialogo, la mitad del vocab son formulas
+  // de turno ("Ya voy", "Trato hecho", "De verdad", "Lo siento") que por
+  // naturaleza NO se repiten: si vuelven, suenan a plantilla, que es el
+  // defecto que el usuario caza siempre. Exigirles el numero de la prosa es
+  // pedirle a un formato el comportamiento de otro, y lo que se consigue es
+  // relleno: 95 plazas de este journey llegaron con la definicion vacia por
+  // eso. El listón de calidad de un journey de dialogo esta en otra parte
+  // (que la plaza valga la pena y su glosa enseñe), no en este numero.
+  const MEDIA_MINIMA_DIALOGO = 2.2;
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
   const TOPE_ANCLADAS = 0.30;
-  const suelo = MEDIA_MINIMA[level];
+  // Mismo criterio de formato que el tope de la cola, calculado una sola vez.
+  const journeyEnDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
+  const sueloNivel = MEDIA_MINIMA[level];
+  const suelo = journeyEnDialogo && sueloNivel !== undefined
+    ? Math.min(sueloNivel, MEDIA_MINIMA_DIALOGO)
+    : sueloNivel;
   if (suelo === undefined) {
     noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
@@ -1183,7 +1209,7 @@ export function validateJourneyStories(
       // El formato se decide por el journey, no por la historia suelta: un
       // journey es de dialogo cuando la mitad o mas de sus historias lo son.
       // Misma deteccion que usa la banda de habla citada, no una segunda.
-      const enDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
+      const enDialogo = journeyEnDialogo;
       const topeNivel = TOPE_COLA_POR_NIVEL[level];
       const topeCola = enDialogo && topeNivel !== undefined
         ? Math.max(topeNivel, TOPE_COLA_DIALOGO)

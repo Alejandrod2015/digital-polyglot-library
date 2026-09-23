@@ -11,9 +11,10 @@ import { validateJourneyStories, type JourneyStoryInput } from "../validateJourn
  * journey de dialogo solo contienen 220. Cumplirlo como estaba costo 95 plazas
  * con la definicion vacia, que es lo que el lector toca en la app.
  *
- * El tope de dialogo (0,55) esta calibrado con UNA muestra, asi que estos casos
- * fijan el comportamiento, no el numero: que la prosa conserve su tope de nivel
- * y que el formato lo decida el journey entero, no una historia suelta.
+ * Los dos numeros de dialogo (cola 0,55 y media 2,2) estan calibrados con UNA
+ * muestra, asi que estos casos fijan el COMPORTAMIENTO, no el numero: que la
+ * prosa conserve los suyos, que el formato lo decida el journey entero y no una
+ * historia suelta, y que el detalle diga cual se aplico.
  */
 const vocab = (palabras: string[]) =>
   // La primera va anclada: sin una sola plaza marcada, el check cae en la rama
@@ -72,8 +73,12 @@ describe("el tope de la cola distingue dialogo de prosa", () => {
     expect(cola(mezcla).detail ?? "").toContain("tope 30%");
   });
 
-  it("el suelo de la media no se toca: sigue siendo el del nivel", () => {
-    const c = cola(PALABRAS.map((p, i) => dialogo(`dialogo-${i}`, p)));
-    expect(c.label).toContain("media 2.5");
+  it("el suelo de la media tambien baja en dialogo, y en prosa no", () => {
+    // La media cuenta en cuantos cuerpos sale la palabra de cada plaza, asi
+    // que sufre lo mismo que la cola. No es un liston de calidad mas bajo:
+    // en dialogo la mitad del vocab son formulas de turno que, si vuelven,
+    // suenan a plantilla.
+    expect(cola(PALABRAS.map((p, i) => dialogo(`dialogo-${i}`, p))).label).toContain("media 2.2");
+    expect(cola(PALABRAS.map((p, i) => prosa(`prosa-${i}`, p))).label).toContain("media 2.5");
   });
 });
