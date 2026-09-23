@@ -51,6 +51,7 @@ import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
+import { extractSpeakerNames } from "@/lib/validateGeneratedStory";
 import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
 import { formasDeVerbo } from "./cefr/spanishConjugations";
 
@@ -172,6 +173,20 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
         if (!cuentaHabla.has(m[1])) cuentaHabla.set(m[1], new Set());
         cuentaHabla.get(m[1])!.add(s.slug);
       }
+    }
+    // FORMATO DE DIALOGO (2026-09-23). Los dos patrones de arriba son de PROSA
+    // NARRADA: buscan una acotacion ("dice Mariana"). En un journey
+    // multipersonaje quien habla va en la ETIQUETA de la linea (`Mariana: ...`)
+    // y puede no haber una sola acotacion en las 21 historias: medido en el
+    // Conversations ES latam A0, los dos patrones devolvian once FALSOS (Tigre,
+    // Luna, Rey, Se, Me, Nadie, Que, Cien, Aqui, Ese, Tigrre) y ni un nombre de
+    // persona, asi que el reparto salia vacio y `journey-cast-protagonist-in-all`
+    // y el "(protagonista ?)" de `journey-closing-alone` median sobre nada.
+    // Las etiquetas SE SUMAN a las acotaciones, no las sustituyen: el 95% del
+    // catalogo es prosa y ese camino no cambia.
+    for (const nombre of extractSpeakerNames(s.text)) {
+      if (!cuentaHabla.has(nombre)) cuentaHabla.set(nombre, new Set());
+      cuentaHabla.get(nombre)!.add(s.slug);
     }
   }
   const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));

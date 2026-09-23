@@ -3,7 +3,7 @@
   "topic": "goodbyes-and-keys",
   "slotIndex": 0,
   "title": "Dos semanas y una lista",
-  "arcType": "juxtaposition-discovery",
+  "arcType": "mini-cliffhanger",
   "synopsis": "Mariana leaves for two weeks and hands Nicolás her keys with a list of twenty points. He reads the whole page out loud and notices what is missing.",
   "text": "Mariana baja con dos maletas pesadas. Nicolás la espera en el felpudo. La gata los mira desde la escalera.\n\nMariana: Me voy dos semanas. Aquí tienes mi llavero.\nNicolás: Sin problema. Yo paso una vez al día.\nMariana: Gracias. Y lee esto. Son mis instrucciones.\n\nNicolás desdobla la hoja. Cuenta veinte puntos. Después lee en voz alta.\n\nNicolás: Punto seis: cepilla a la gata.\nMariana: Le encanta. Con tres minutos basta.\nNicolás: Punto trece: los gatitos duermen juntos.\nMariana: Siempre. Uno solo llora toda la noche.\nNicolás: Punto veinte: guarda el cepillo arriba.\n\nNicolás lee la hoja entera, de arriba abajo. Después mira las plantas tristes del balcón.\n\nNicolás: Mariana, tus plantas no están en la hoja.\nMariana: ¿Mis plantas? Ah, sí. Riega mis plantas.\nNicolás: ¿Y cada cuánto las riego?\nMariana: Una vez por semana. Ellas no se quejan.\nNicolás: La gata tiene veinte puntos. Ellas, ninguno.\nMariana: Ellas nunca lloran de noche.",
   "vocab": [
@@ -137,7 +137,7 @@
   "topic": "goodbyes-and-keys",
   "slotIndex": 1,
   "title": "El punto cuatro miente",
-  "arcType": "reframe-turn",
+  "arcType": "recurring-character-callback",
   "synopsis": "Nicolás is in charge and the cat is gone. On the phone Mariana reads him point four. Point seventeen says the opposite, so Nicolás looks somewhere else.",
   "text": "Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Mal. Tu gata no aparece desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después baja a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
   "vocab": [

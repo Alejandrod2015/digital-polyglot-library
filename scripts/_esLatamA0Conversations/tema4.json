@@ -3,7 +3,7 @@
   "topic": "packages-and-deliveries",
   "slotIndex": 0,
   "title": "Nadie pide este paquete",
-  "arcType": "juxtaposition-discovery",
+  "arcType": "late-reveal",
   "synopsis": "A package with no name on it waits in the entrance. Mariana and Nicolás argue about who ordered it, until the address tells them it belongs across the street.",
   "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Los dos leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
   "vocab": [
@@ -135,7 +135,7 @@
   "topic": "packages-and-deliveries",
   "slotIndex": 1,
   "title": "Nicolás firma demasiado",
-  "arcType": "late-reveal",
+  "arcType": "juxtaposition-discovery",
   "synopsis": "Nicolás signs for every parcel in the building, so eleven boxes now block his door. The one at the bottom carries no surname, and then Mariana reads the small paper on top.",
   "text": "Nicolás vive abajo, al lado de la puerta. Sus vecinos lo saben. Por eso él firma sus paquetes. Hoy su casa está llena de cajas ajenas. Él ya no cabe.\n\nMariana: Nicolás, yo no camino aquí.\nNicolás: Yo tampoco. Hay once cajas juntas.\nMariana: ¿Tú firmas por todo el edificio?\nNicolás: Sí. Yo casi nunca salgo.\nMariana: ¿Y esta caja de abajo?\nNicolás: Esa no lleva ningún apellido.\n\nNicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta.\n\nMariana: Este papel lleva tu apellido.\nNicolás: ¿Mi apellido? Yo no pido nada.\nMariana: Pues alguien pide con tu apellido.\nNicolás: Un momento. Ahora recuerdo. Es de marzo.\nMariana: Ábrela. Yo quiero ver eso.\nNicolás: Es un felpudo. Dice bienvenido.\nMariana: Ponlo delante de tu puerta.\nNicolás: Ahí hay once cajas de vecinos.\nMariana: Entonces el felpudo tiene paciencia.\nNicolás: Bienvenido a mi propia casa.",
   "vocab": [

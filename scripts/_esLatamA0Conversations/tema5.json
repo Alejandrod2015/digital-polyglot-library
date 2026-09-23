@@ -3,7 +3,7 @@
   "topic": "noise-and-sleep",
   "slotIndex": 0,
   "title": "Alguien mueve los muebles",
-  "arcType": "juxtaposition-discovery",
+  "arcType": "mini-cliffhanger",
   "synopsis": "At two in the morning something heavy drags across the floor above Nicolás. Mariana blames the new neighbor. In her kitchen they find the real culprit, and it weighs two grams.",
   "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Los dos caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
   "vocab": [
@@ -38,18 +38,6 @@
     "surface": "mueble",
     "definition": "A piece of furniture, like a table or a shelf.",
     "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "arrastrar",
-    "surface": "arrastra",
-    "definition": "To drag; to pull something along the floor."
-   },
-   {
-    "type": "adjective",
-    "word": "vacío",
-    "surface": "vacía",
-    "definition": "Empty; with nothing and nobody inside."
    },
    {
     "type": "noun",
@@ -131,6 +119,18 @@
     "word": "casi",
     "surface": "casi",
     "definition": "Almost; very near but not quite."
+   },
+   {
+    "type": "noun",
+    "word": "oyes",
+    "surface": "oyes",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "arrastrar",
+    "surface": "arrastra",
+    "definition": "To drag; to pull something heavy along."
    }
   ]
  },
@@ -273,7 +273,7 @@
   "topic": "noise-and-sleep",
   "slotIndex": 2,
   "title": "Demasiado silencio",
-  "arcType": "reframe-turn",
+  "arcType": "harmonic-close",
   "synopsis": "The kittens leave for their new homes and the building goes completely quiet. At two in the morning neither Mariana nor Nicolás can sleep, and one small sound is left.",
   "text": "Esta noche el edificio está en silencio. Mariana baja a las dos. Nicolás abre la puerta.\n\nMariana: ¿Tú tampoco duermes?\nNicolás: Todavía no duermo. Aquí hay demasiado silencio.\nMariana: Arriba también. Ahora mi cama es muy grande.\nNicolás: Los gatitos ya no están.\n\nNicolás mira su sofá.\n\nMariana: Hoy los regalo. Tres casas nuevas.\nNicolás: Qué raro. Mi sofá está triste.\nMariana: Yo me tapo la cabeza. No sirve.\n\nDebajo del sofá solo hay pelusa. Nadie juega.\n\nMariana: Apenas duermo sin ese ruido.\nNicolás: Escucha. Ahí hay algo.\n\nDel sofá llega un ronquido suave. Mariana sonríe.\n\nNicolás: Ese ronquido no es mío.\nMariana: Es tu gatito. Ronca como un camión.\nNicolás: Sueña todo el día.\n\nLos dos escuchan al gatito.\n\nMariana: Ese ruido sí lo extraño un poco.\nNicolás: Entonces subo con mi almohada.\nMariana: ¿De verdad?\nNicolás: De verdad. Pero el sofá se queda aquí.",
   "vocab": [

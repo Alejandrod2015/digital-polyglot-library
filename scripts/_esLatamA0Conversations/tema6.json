@@ -3,7 +3,7 @@
   "topic": "wifi-and-passwords",
   "slotIndex": 0,
   "title": "Domingo sin señal",
-  "arcType": "late-reveal",
+  "arcType": "juxtaposition-discovery",
   "synopsis": "Mariana loses her internet and asks Nicolás for his password. She types the cat's name three times and nothing opens. One letter is to blame.",
   "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nLa gata duerme en el sofá y no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
   "vocab": [
@@ -270,7 +270,7 @@
   "topic": "wifi-and-passwords",
   "slotIndex": 2,
   "title": "Cien avisos y una gata",
-  "arcType": "juxtaposition-discovery",
+  "arcType": "late-reveal",
   "synopsis": "The building opens a message group and it rings all afternoon with cat photos. The one notice that matters is buried among them, and it is Nicolás who wrote it.",
   "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nLos dos revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
   "vocab": [

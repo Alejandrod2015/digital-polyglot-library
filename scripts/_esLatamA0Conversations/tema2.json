@@ -3,7 +3,7 @@
   "topic": "home-and-neighbors",
   "slotIndex": 0,
   "title": "Mi sofá está mojado",
-  "arcType": "juxtaposition-discovery",
+  "arcType": "recurring-character-callback",
   "synopsis": "Nicolás finds a dark stain on his ceiling and water dripping on his sofa. Upstairs, Mariana's kitchen floor is dry, except for one corner.",
   "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nLos dos miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
   "vocab": [
@@ -138,7 +138,7 @@
   "topic": "home-and-neighbors",
   "slotIndex": 1,
   "title": "El agua está caliente",
-  "arcType": "reframe-turn",
+  "arcType": "mini-cliffhanger",
   "synopsis": "A week later the bucket is full every morning. Nicolás puts a finger in the water and finds it warm, so the cat is not the problem this time.",
   "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nLos dos se quedan callados un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
   "vocab": [
