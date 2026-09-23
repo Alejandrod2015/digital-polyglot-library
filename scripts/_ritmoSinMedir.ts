@@ -2,19 +2,28 @@
  * Que historias de un journey se narraron SIN informe de ritmo por oracion.
  *
  * POR QUE (2026-09-23, Friends ES Mexico A0). El informe de ritmo
- * (`rapidasDe` / `checkNarrationPace`) lee `audioSegments`, y esos segmentos
- * salen de `transcribeAudioSegments` (whisper-1 de OpenAI). Cuando la cuenta de
- * OpenAI se queda sin credito, esa llamada devuelve 429, el catch se lo traga y
- * `audioSegments` vuelve VACIO. La narracion no falla: se degrada en silencio y
- * nadie mide si una oracion salio disparada. El 2026-09-08 ese gate cazo una
- * frase a 3,45 palabras/s dentro de una historia de mediana 2,31.
+ * (`rapidasDe` / `checkNarrationPace`) lee `audioSegments`, y a esa columna la
+ * escriben DOS pasos, uno detras de otro:
+ *
+ *   1. `transcribeAudioSegments` durante la sintesis (whisper-1 de OpenAI). Si
+ *      la cuenta de OpenAI no tiene credito devuelve 429, el catch se lo traga
+ *      y deja la columna vacia, sin tumbar la narracion.
+ *   2. `generateWordTimingsForStory` al alinear (Modal), que la REESCRIBE con
+ *      segmentos por oracion y sus tiempos. Este no depende de OpenAI.
+ *
+ * O sea: mientras la alineacion funcione, el ritmo SI se mide aunque OpenAI
+ * este caido. Lo que deja ciego el informe es que fallen los dos, y entonces
+ * `rapidasDe` no encuentra oraciones y dice "sin oraciones aceleradas", que es
+ * un verde falso. El gate importa: el 2026-09-08 cazo una frase a 3,45
+ * palabras/s dentro de una historia de mediana 2,31.
  *
  * La constancia se DERIVA de la base, no se escribe a mano: una historia con
  * audio y con `audioSegments` vacio es una historia cuyo ritmo no midio nadie.
  * Asi no hay lista que mantener ni que se quede atras.
  *
- * Cuando vuelva a haber credito, esto se arregla sin gastar un centimo de
- * ElevenLabs: el audio ya esta pagado y solo hay que volver a transcribirlo.
+ * Cuando vuelva a haber segmentos, esto se arregla sin gastar un centimo de
+ * ElevenLabs: el audio ya esta pagado y solo hay que volver a alinearlo
+ * (`scripts/_realinea.ts`).
  *
  *   npx tsx scripts/_ritmoSinMedir.ts --journey mx-a0 [--json]
  */
