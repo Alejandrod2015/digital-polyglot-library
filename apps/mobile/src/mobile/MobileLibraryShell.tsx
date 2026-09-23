@@ -9297,6 +9297,22 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  /**
+   * Segundos de reloj de un ejercicio. Unica fuente: los tres sitios que
+   * rearman el contador llaman aqui.
+   *
+   * El match no cuesta lo mismo que una pregunta de cuatro opciones: hay que
+   * leer N palabras desconocidas, N glosas en el otro idioma y dar 2N toques.
+   * Con 20 s fijos, una tester italiana de nivel principiante emparejo dos de
+   * cuatro y el resto se marco mal solo ("I think it worked on two out of
+   * four", 2026-09-06). Ahora son 12 s por par, asi que los cuatro pares de un
+   * set normal dan 48 s en vez de 20, y un match de dos pares sigue en 24.
+   */
+  function practiceSecondsFor(exercise: PracticeExercise | undefined): number {
+    if (exercise?.kind === "match") return 12 * Math.max(exercise.pairs.length, 1);
+    return 15;
+  }
+
   /** Reset the per-round practice state and load a station's exercises. */
   function loadLevelTestStation(exercises: PracticeExercise[]) {
     getOptionalSpeechModule()?.stop();
@@ -9307,7 +9323,7 @@ export function MobileLibraryShell(args: {
     // reset effect: with a leftover 0 (a station that ended by timeout, or a
     // previous run) the timeout effect reads the old value in the same pass
     // and fails the first exercise before it is even shown (2026-09-20).
-    setPracticeTimerRemaining(exercises[0]?.kind === "match" ? 20 : 15);
+    setPracticeTimerRemaining(practiceSecondsFor(exercises[0]));
     setPracticeScore(0);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
@@ -9630,12 +9646,13 @@ export function MobileLibraryShell(args: {
     // por tiempo tumbaba tambien la siguiente, sin que al usuario le diera
     // tiempo ni a leerla.
     //
-    // Poniendolo aqui, el render que sigue al avance ya trae 15 (o 20 en match)
+    // Poniendolo aqui, el render que sigue al avance ya trae los segundos del
+    // ejercicio nuevo (15, o 12 por par en match)
     // y el effect (3) se corta en su propio guard `practiceTimerRemaining > 0`.
     // El effect (1) se queda como red de seguridad: cubre el arranque de sesion
     // y el fin del countdown 3-2-1, que no pasan por aqui.
     const nextExercise = practiceExercises[practiceIndex + 1];
-    setPracticeTimerRemaining(nextExercise?.kind === "match" ? 20 : 15);
+    setPracticeTimerRemaining(practiceSecondsFor(nextExercise));
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
     setPracticeTimedOut(false);
@@ -9684,7 +9701,7 @@ export function MobileLibraryShell(args: {
     if (practiceCountdownActive) return;
     const current = practiceExercises[practiceIndex];
     if (!current) return;
-    const seconds = current.kind === "match" ? 20 : 15;
+    const seconds = practiceSecondsFor(current);
     setPracticeTimerRemaining(seconds);
     levelTestItemShownAtRef.current = Date.now();
   }, [practiceIndex, activePracticeMode, practiceCountdownActive, practiceExercises]);
@@ -16694,21 +16711,24 @@ export function MobileLibraryShell(args: {
                           ? accentForPair(meaningPairedWord)
                           : null;
 
-                        // Disable rules; enforce "no two selections of the same side at once".
-                        // Word side: lock if matched/wrong, or if a different word is already
-                        //   half-selected (forces user to deselect it first).
-                        // Meaning side: same logic mirrored.
+                        // Disable rules. Solo se bloquea lo que de verdad no se puede
+                        // tocar: la ronda revelada, el parpadeo del fallo y los pares ya
+                        // acertados.
+                        //
+                        // Antes tambien se bloqueaba el resto de fichas del MISMO lado
+                        // mientras una estaba medio elegida, para forzar a soltarla
+                        // primero. Una tester lo describio asi: "I couldn't get the word
+                        // matching to work properly (I think it worked on two out of
+                        // four)". Quien elige una palabra, cambia de idea y toca otra, no
+                        // recibia NADA: la ficha nueva estaba muerta, la vieja seguia
+                        // elegida y el reloj corriendo. Ahora tocar otra ficha del mismo
+                        // lado mueve la media seleccion, que es lo que espera cualquiera
+                        // (`tapMatchWord` ya lo hacia; el disabled no dejaba que el tap
+                        // llegara).
                         const flashing = wrongMatchWords.length > 0;
-                        const wordDisabled =
-                          practiceRevealed ||
-                          flashing ||
-                          isWordMatched ||
-                          (activeMatchWord !== null && activeMatchWord !== pair.word && !isWordPending);
+                        const wordDisabled = practiceRevealed || flashing || isWordMatched;
                         const meaningDisabled =
-                          practiceRevealed ||
-                          flashing ||
-                          Boolean(matchedPairForMeaning) ||
-                          (activeMatchMeaning !== null && activeMatchMeaning !== meaning && !isMeaningPending);
+                          practiceRevealed || flashing || Boolean(matchedPairForMeaning);
 
                         // A word is "dimmed" when it's neither the active half-selection
                         // nor part of any pair (pending/matched/wrong) AND the user has
