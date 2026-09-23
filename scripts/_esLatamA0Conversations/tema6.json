@@ -5,7 +5,7 @@
   "title": "Domingo sin señal",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Mariana loses her internet and asks Nicolás for his password. She types the cat's name three times and nothing opens. One letter is to blame.",
-  "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nLa gata duerme en el sofá y no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
+  "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nEn el sofá duerme la gata, que no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
   "vocab": [
    {
     "type": "noun",
@@ -16,9 +16,9 @@
    },
    {
     "type": "verb",
-    "word": "andar",
-    "surface": "anda",
-    "definition": "To work; to run well, like a machine."
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "interjection",
@@ -34,22 +34,22 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "escribir",
-    "surface": "escribo",
-    "definition": "To write; to put letters on a screen."
-   },
-   {
-    "type": "phrase",
-    "word": "todo junto",
-    "surface": "Todo junto",
-    "definition": "All in one word; with no space between."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "probar",
-    "surface": "prueba",
-    "definition": "To try; to test if something works."
+    "word": "quiere",
+    "surface": "quiere",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "nombres",
+    "surface": "nombres",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -143,16 +143,10 @@
   "text": "Mariana habla por video con su familia. Nicolás sube a devolver un plato.\n\nMariana: Miren, esta es mi sala nueva.\nNicolás: Yo dejo el plato encima de la mesa.\nMariana: Mi familia quiere ver la casa.\n\nLa gata salta a la mesa. Se sienta sobre la pantalla.\n\nMariana: Quita la cola. Ella siempre busca la cámara.\nNicolás: Ven acá, Tigre. Yo la cargo.\n\nNicolás levanta a la gata. Ella pesa bastante. Su cara tapa la pantalla.\n\nMariana: Ay. Ahora te ven a ti.\nNicolás: ¿Qué dicen? Yo no oigo bien.\nMariana: Mi mamá pregunta si comes bien.\nNicolás: ¿Yo? Pero yo vivo abajo.\nMariana: Para ellos, tú vives aquí.\nNicolás: Entonces saludo. Buenas tardes a todos.\n\nLa familia sonríe en la pantalla.\n\nMariana: Mi tía te espera en diciembre.\nNicolás: ¿Con gata o sin gata?\nMariana: Con gata. A ellos les gusta más.\nNicolás: Entonces yo llevo a la gata.",
   "vocab": [
    {
-    "type": "phrase",
-    "word": "por video",
-    "surface": "por video",
-    "definition": "On a video call; face to face on a screen."
-   },
-   {
-    "type": "verb",
-    "word": "devolver",
-    "surface": "devolver",
-    "definition": "To give back; to return a thing you took."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -161,10 +155,10 @@
     "definition": "To jump; to go up with your legs."
    },
    {
-    "type": "phrase",
-    "word": "encima de",
-    "surface": "encima de",
-    "definition": "On top of; right over something."
+    "type": "verb",
+    "word": "sonríe",
+    "surface": "sonríe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -172,12 +166,6 @@
     "surface": "pantalla",
     "definition": "A screen; the flat part of a phone you watch.",
     "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "quitar",
-    "surface": "Quita",
-    "definition": "To take away; to move a thing from there."
    },
    {
     "type": "noun",
@@ -263,6 +251,18 @@
     "word": "les gusta",
     "surface": "les gusta",
     "definition": "They like it; it makes them happy."
+   },
+   {
+    "type": "adverb",
+    "word": "gusta",
+    "surface": "gusta",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "vives",
+    "surface": "vives",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -272,7 +272,7 @@
   "title": "Cien avisos y una gata",
   "arcType": "late-reveal",
   "synopsis": "The building opens a message group and it rings all afternoon with cat photos. The one notice that matters is buried among them, and it is Nicolás who wrote it.",
-  "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nLos dos revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
+  "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nMariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
   "vocab": [
    {
     "type": "verb",
@@ -281,22 +281,16 @@
     "definition": "To ring; to make a sound, like a phone."
    },
    {
-    "type": "phrase",
-    "word": "sin parar",
-    "surface": "sin parar",
-    "definition": "Non stop; again and again with no rest."
-   },
-   {
     "type": "number",
     "word": "cien",
     "surface": "cien",
     "definition": "One hundred; the number 100."
    },
    {
-    "type": "verb",
-    "word": "temblar",
-    "surface": "tiembla",
-    "definition": "To shake; to move fast in small jumps."
+    "type": "adverb",
+    "word": "apago",
+    "surface": "apago",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -395,6 +389,12 @@
     "word": "todo el edificio",
     "surface": "todo el edificio",
     "definition": "The whole building; every person who lives there."
+   },
+   {
+    "type": "verb",
+    "word": "suenan",
+    "surface": "suenan",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }

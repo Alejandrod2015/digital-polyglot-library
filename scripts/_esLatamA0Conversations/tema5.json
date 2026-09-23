@@ -5,7 +5,7 @@
   "title": "Alguien mueve los muebles",
   "arcType": "mini-cliffhanger",
   "synopsis": "At two in the morning something heavy drags across the floor above Nicolás. Mariana blames the new neighbor. In her kitchen they find the real culprit, and it weighs two grams.",
-  "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Los dos caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
+  "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Mariana y Nicolás caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
   "vocab": [
    {
     "type": "noun",
@@ -15,10 +15,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "despierto",
-    "surface": "despierto",
-    "definition": "Awake; not sleeping, with open eyes."
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -27,10 +27,10 @@
     "definition": "To sound; to make a noise you hear."
    },
    {
-    "type": "adjective",
-    "word": "pesado",
-    "surface": "pesado",
-    "definition": "Heavy; hard to lift or move."
+    "type": "verb",
+    "word": "viaja",
+    "surface": "viaja",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -97,10 +97,10 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "ni idea",
-    "surface": "Ni idea",
-    "definition": "No idea; I really do not know."
+    "type": "verb",
+    "word": "juega",
+    "surface": "juega",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -128,9 +128,9 @@
    },
    {
     "type": "verb",
-    "word": "arrastrar",
-    "surface": "arrastra",
-    "definition": "To drag; to pull something heavy along."
+    "word": "empieza",
+    "surface": "empieza",
+    "definition": "Used again later in the journey; see this sentence."
    }
   ]
  },
@@ -142,13 +142,6 @@
   "synopsis": "Nicolás sets his alarm for six every morning and Mariana, who sleeps right above him, comes down to complain. His kitchen table explains everything in four small bottles.",
   "text": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana vive encima. Hoy baja medio dormida y da un bostezo.\n\nMariana: Nicolás, tu despertador me despierta.\nNicolás: Perdón. Suena siempre.\nMariana: Mi cama está encima. Yo salto.\nNicolás: No puedo cambiar esa hora.\n\nMariana: ¿Tu trabajo empieza tan temprano?\nNicolás: No. Empiezo a las nueve.\nMariana: ¿Entonces por qué te levantas?\n\nNicolás abre la puerta de su cocina. Sobre la mesa hay cuatro biberones. Arriba empieza un maullido.\n\nMariana: ¿Biberones con leche?\nNicolás: Para tus gatitos. Comen a las seis.\nMariana: ¿Tú preparas la leche?\nNicolás: Sí. Subo a tu casa.\n\nMariana no dice nada. La cocina está tranquila.\n\nNicolás: Tú duermes como una piedra.\nMariana: ¿Y nadie me avisa nada?\nNicolás: Ahora ya sabes. ¿Apago el despertador?\nMariana: No. Mañana yo doy la leche a tiempo.\nNicolás: Entonces pongo dos despertadores.\nMariana: ¿Dos?\nNicolás: Uno para los gatitos. Otro para ti.",
   "vocab": [
-   {
-    "type": "noun",
-    "word": "el despertador",
-    "surface": "despertador",
-    "definition": "An alarm clock; it rings to wake you up.",
-    "anchor": true
-   },
    {
     "type": "adjective",
     "word": "fuerte",
@@ -162,10 +155,10 @@
     "definition": "Above; on the floor right over yours."
    },
    {
-    "type": "adjective",
-    "word": "dormido",
-    "surface": "dormida",
-    "definition": "Sleepy; still half asleep, not fully awake."
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -181,22 +174,22 @@
     "definition": "To begin; to start doing something."
    },
    {
-    "type": "verb",
-    "word": "saltar",
-    "surface": "salto",
-    "definition": "To jump; to push your body up fast."
-   },
-   {
-    "type": "verb",
-    "word": "cambiar",
-    "surface": "cambiar",
-    "definition": "To change; to make something different."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
-    "word": "temprano",
-    "surface": "temprano",
-    "definition": "Early; before the usual hour of the day."
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "duermes",
+    "surface": "duermes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -216,13 +209,6 @@
     "word": "el maullido",
     "surface": "maullido",
     "definition": "A meow; the small sound a cat makes.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "la leche",
-    "surface": "leche",
-    "definition": "Milk; the white drink babies and kittens take.",
     "anchor": true
    },
    {
@@ -266,6 +252,18 @@
     "word": "a tiempo",
     "surface": "a tiempo",
     "definition": "On time; at the right hour, not later."
+   },
+   {
+    "type": "adverb",
+    "word": "despierta",
+    "surface": "despierta",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "dormida",
+    "surface": "dormida",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -286,15 +284,15 @@
    },
    {
     "type": "adverb",
-    "word": "todavía",
-    "surface": "Todavía",
-    "definition": "Still; up to now and not yet finished."
+    "word": "gatito",
+    "surface": "gatito",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
-    "word": "demasiado",
-    "surface": "demasiado",
-    "definition": "Too much; more than a person can take."
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -309,16 +307,16 @@
     "definition": "Not anymore; it was true before, not now."
    },
    {
-    "type": "verb",
-    "word": "regalar",
-    "surface": "regalo",
-    "definition": "To give away; to hand over with no payment."
+    "type": "adverb",
+    "word": "subo",
+    "surface": "subo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "adjective",
-    "word": "raro",
-    "surface": "raro",
-    "definition": "Strange; not normal, a little odd."
+    "type": "verb",
+    "word": "sonríe",
+    "surface": "sonríe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -327,10 +325,10 @@
     "definition": "Sad; feeling low and without joy."
    },
    {
-    "type": "verb",
-    "word": "tapar",
-    "surface": "tapo",
-    "definition": "To cover; to put something over a thing."
+    "type": "adverb",
+    "word": "duermo",
+    "surface": "duermo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -372,12 +370,6 @@
    },
    {
     "type": "verb",
-    "word": "soñar",
-    "surface": "sueña",
-    "definition": "To dream; to see things while sleeping."
-   },
-   {
-    "type": "verb",
     "word": "extrañar",
     "surface": "extraño",
     "definition": "To miss; to feel sad without someone near."
@@ -400,6 +392,12 @@
     "word": "de verdad",
     "surface": "De verdad",
     "definition": "Really; truly, with no joke."
+   },
+   {
+    "type": "adverb",
+    "word": "tapo",
+    "surface": "tapo",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }

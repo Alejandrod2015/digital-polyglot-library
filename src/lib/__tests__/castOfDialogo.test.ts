@@ -76,3 +76,29 @@ describe("castOf ve quien habla en los dos formatos", () => {
     expect(c.status).not.toBe("pass");
   });
 });
+
+/**
+ * La banda de habla citada (25-35%) es de PROSA NARRADA. Una historia en
+ * formato de dialogo pone el habla en las etiquetas, no entre comillas: basta
+ * una nota leida en voz alta para que entrara en la medida y saliera al 6%.
+ */
+describe("la banda de habla citada solo mide prosa narrada", () => {
+  const banda = (stories: JourneyStoryInput[]) => {
+    const c = validateJourneyStories(stories, { language: "ES", level: "A0" })
+      .find((x) => x.id === "journey-quoted-speech-band");
+    if (!c) throw new Error("no hay check journey-quoted-speech-band");
+    return c;
+  };
+  const dialogoConNota = (slug: string): JourneyStoryInput => ({
+    slug, title: slug, language: "ES", level: "A0", topic: "t1",
+    text:
+      `Mariana abre la caja en la entrada del edificio.\n\n` +
+      `Mariana: Aqui hay una nota. Dice: “Me llamo Rey”.\n` +
+      `Nicolas: Entonces el paquete no es tuyo.\n` +
+      `Mariana: Ni tuyo. Es del gato.\n` +
+      `Nicolas: El gato tiene mas correo que yo.\n`,
+  });
+  it("una historia de dialogo con una frase entrecomillada no entra en la banda", () => {
+    expect(banda([dialogoConNota("uno"), dialogoConNota("dos")]).status).toBe("pass");
+  });
+});

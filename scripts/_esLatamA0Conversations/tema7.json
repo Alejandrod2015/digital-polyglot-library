@@ -40,28 +40,28 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "sin problema",
-    "surface": "Sin problema",
-    "definition": "no problem; that is easy for me"
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "una vez al día",
-    "surface": "una vez al día",
-    "definition": "once a day; one time each day"
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "desdoblar",
-    "surface": "desdobla",
-    "definition": "to unfold; to open a folded paper"
+    "word": "alta",
+    "surface": "alta",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "contar",
-    "surface": "Cuenta",
-    "definition": "to count; to say numbers in order"
+    "type": "adverb",
+    "word": "tienes",
+    "surface": "tienes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -83,22 +83,22 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "encantar",
-    "surface": "encanta",
-    "definition": "to love something; to like it very much"
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "llorar",
-    "surface": "llora",
-    "definition": "to cry; to make sad sounds with tears"
+    "type": "adverb",
+    "word": "semanas",
+    "surface": "semanas",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "de arriba abajo",
-    "surface": "de arriba abajo",
-    "definition": "from top to bottom; the whole thing"
+    "type": "adverb",
+    "word": "puntos",
+    "surface": "puntos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -114,12 +114,6 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "regar",
-    "surface": "Riega",
-    "definition": "to give water to plants"
-   },
-   {
     "type": "expression",
     "word": "cada cuánto",
     "surface": "cada cuánto",
@@ -130,6 +124,12 @@
     "word": "quejarse",
     "surface": "se quejan",
     "definition": "to complain; to say you are not happy"
+   },
+   {
+    "type": "adverb",
+    "word": "desdobla",
+    "surface": "desdobla",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -139,7 +139,7 @@
   "title": "El punto cuatro miente",
   "arcType": "recurring-character-callback",
   "synopsis": "Nicolás is in charge and the cat is gone. On the phone Mariana reads him point four. Point seventeen says the opposite, so Nicolás looks somewhere else.",
-  "text": "Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Mal. Tu gata no aparece desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después baja a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
+  "text": "Al día siguiente, Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Mal. Tu gata no aparece desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después baja a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
   "vocab": [
    {
     "type": "noun",
@@ -161,16 +161,16 @@
     "definition": "to ring; to make a sound people hear"
    },
    {
-    "type": "expression",
-    "word": "cómo va todo",
-    "surface": "Cómo va todo",
-    "definition": "how is everything going; how are things"
+    "type": "adverb",
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "aparecer",
-    "surface": "aparece",
-    "definition": "to show up; to be seen again"
+    "type": "adverb",
+    "word": "miro",
+    "surface": "miro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -273,37 +273,25 @@
   "title": "Aquí abajo duerme mejor",
   "arcType": "harmonic-close",
   "synopsis": "Mariana comes home after two weeks. Her plants are almost fine, her cat is not upstairs, and Nicolás has a small surprise waiting in his pocket.",
-  "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nLos dos bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
+  "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nMariana y Nicolás bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
   "vocab": [
    {
+    "type": "adverb",
+    "word": "ningún",
+    "surface": "ningún",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "plantas",
+    "surface": "plantas",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
     "type": "verb",
-    "word": "correr",
-    "surface": "corren",
-    "definition": "to run; to move fast on your feet"
-   },
-   {
-    "type": "expression",
-    "word": "por fin",
-    "surface": "por fin",
-    "definition": "at last; after a long wait it happens"
-   },
-   {
-    "type": "expression",
-    "word": "por toda la casa",
-    "surface": "por toda la casa",
-    "definition": "all over the home; in every room"
-   },
-   {
-    "type": "expression",
-    "word": "gracias por todo",
-    "surface": "gracias por todo",
-    "definition": "thank you for everything you did"
-   },
-   {
-    "type": "expression",
-    "word": "bienvenida",
-    "surface": "Bienvenida",
-    "definition": "welcome; we are glad you are back"
+    "word": "bajan",
+    "surface": "bajan",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -397,6 +385,18 @@
     "word": "no hace falta",
     "surface": "No hace falta",
     "definition": "there is no need; do not bother"
+   },
+   {
+    "type": "verb",
+    "word": "corren",
+    "surface": "corren",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "viven",
+    "surface": "viven",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }

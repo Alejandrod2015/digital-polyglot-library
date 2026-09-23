@@ -45,16 +45,16 @@
     "definition": "To hear; to catch a sound with your ears."
    },
    {
-    "type": "expression",
-    "word": "de al lado",
-    "surface": "de al lado",
-    "definition": "Next door; in the house just beside yours."
+    "type": "verb",
+    "word": "come",
+    "surface": "come",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "se llama",
-    "surface": "Se llama",
-    "definition": "Its name is; it is called."
+    "type": "adverb",
+    "word": "noches",
+    "surface": "noches",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -93,10 +93,10 @@
     "definition": "Fat; heavy, with a big round body."
    },
    {
-    "type": "expression",
-    "word": "ahora entiendo",
-    "surface": "Ahora entiendo",
-    "definition": "Now I get it; now it makes sense."
+    "type": "adverb",
+    "word": "hecho",
+    "surface": "hecho",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -139,10 +139,10 @@
   "text": "Una semana después, el gato está más gordo. Mariana y Nicolás lo miran en la escalera. Los dos están muy serios.\n\nMariana: Nicolás, ¿tú le das comida a Luna?\nNicolás: Yo no. Tigre come solo por la mañana. Es el trato.\nMariana: Yo no le doy nada. Solo toma agua.\nNicolás: ¿Solo agua? Tu cocina huele a pollo todas las noches.\nMariana: ¡El pollo es para mí!\n\nEntonces Nicolás toca el cuello del gato. Hay un papel pequeño en el collar.\n\nNicolás: Aquí hay una nota. Dice: “Me llamo Rey. Ceno en la casa azul.”\nMariana: ¿Rey? ¡La casa azul es la casa de enfrente!\nNicolás: Entonces cena allá. Y nosotros peleamos por nada.\nMariana: Tres casas y tres nombres. Este gato es un rey.\nNicolás: Sí. Un rey muy gordo.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "una semana después",
-    "surface": "Una semana después",
-    "definition": "One week later; seven days after that."
+    "type": "verb",
+    "word": "miran",
+    "surface": "miran",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -162,12 +162,6 @@
     "surface": "comida",
     "definition": "Food; what people or animals eat.",
     "anchor": true
-   },
-   {
-    "type": "expression",
-    "word": "por la mañana",
-    "surface": "por la mañana",
-    "definition": "In the morning; early in the day."
    },
    {
     "type": "verb",
@@ -195,10 +189,10 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "es para mí",
-    "surface": "es para mí",
-    "definition": "It's for me; it belongs to me."
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -245,22 +239,28 @@
     "definition": "Across the street; on the other side."
    },
    {
-    "type": "adverb",
-    "word": "allá",
-    "surface": "allá",
-    "definition": "Over there; in that place, far from here."
-   },
-   {
     "type": "verb",
-    "word": "pelear",
-    "surface": "peleamos",
-    "definition": "To fight; to argue with someone."
+    "word": "huele",
+    "surface": "huele",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
     "word": "por nada",
     "surface": "por nada",
     "definition": "For nothing; with no real reason."
+   },
+   {
+    "type": "adverb",
+    "word": "peleamos",
+    "surface": "peleamos",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "llamo",
+    "surface": "llamo",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -272,12 +272,6 @@
   "synopsis": "The cat with three names is missing. Mariana and Nicolás look for it all over the building and hear a noise under the stairs.",
   "text": "Hoy el gato no está en ninguna casa. No está con Mariana ni con Nicolás. Tampoco está en la casa azul. Los dos lo buscan por el edificio.\n\nNicolás: ¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.\nMariana: Escucha, Nicolás. Hay un ruido abajo.\nNicolás: Sí. Viene de la caja vieja, debajo de la escalera.\n\nMariana abre la caja muy despacio. Adentro está el gato. Y cuatro gatitos.\n\nMariana: ¡Nicolás! No es un gato. Es una gata.\nNicolás: ¿Tigre es una gata? ¿Y es mamá?\nMariana: Sí. Por eso come tanto. Come por cinco, no por uno.\nNicolás: ¿Y ahora? Cuatro gatitos y tres casas.\nMariana: Es fácil. Uno para ti, uno para mí, uno para la casa azul.\nNicolás: ¿Y el cuarto gatito?\nMariana: Se queda con su mamá. Aquí, en el edificio.\nNicolás: Pobre gata. Cuatro hijos y tres nombres.",
   "vocab": [
-   {
-    "type": "adverb",
-    "word": "tampoco",
-    "surface": "Tampoco",
-    "definition": "Not either; also not."
-   },
    {
     "type": "verb",
     "word": "buscar",
@@ -395,6 +389,12 @@
     "word": "nombres",
     "surface": "nombres",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "venir",
+    "surface": "viene",
+    "definition": "To come; to arrive where you are."
    }
   ]
  }

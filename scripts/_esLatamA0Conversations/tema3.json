@@ -5,13 +5,13 @@
   "title": "Nunca tuve un barco",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Mariana hangs her washing on the roof terrace. The wind takes a white T-shirt down to Nicolás's balcony, and up close it is not hers.",
-  "text": "Mariana tiende su ropa en la terraza. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
+  "text": "En la terraza, Mariana tiende su ropa. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "hace viento",
-    "surface": "Hace viento",
-    "definition": "It is windy; the wind blows hard."
+    "type": "verb",
+    "word": "vuela",
+    "surface": "vuela",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -20,10 +20,10 @@
     "definition": "To fly; to move through the air."
    },
    {
-    "type": "adjective",
-    "word": "blanco",
-    "surface": "blanca",
-    "definition": "White; the color of milk or snow."
+    "type": "verb",
+    "word": "huele",
+    "surface": "huele",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -42,12 +42,6 @@
     "word": "se la lleva",
     "surface": "se la lleva",
     "definition": "It takes it away; the wind carries it."
-   },
-   {
-    "type": "expression",
-    "word": "un momento",
-    "surface": "Un momento",
-    "definition": "Wait a second; hold on."
    },
    {
     "type": "verb",
@@ -127,6 +121,12 @@
     "word": "tiende",
     "surface": "tiende",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "negra",
+    "surface": "negra",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -136,7 +136,7 @@
   "title": "Ahora soy más gordo",
   "arcType": "reframe-turn",
   "synopsis": "The note has been on the stairs for a week and nobody has answered. Then Nicolás looks at the little boat on the T-shirt again.",
-  "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Creo que conozco esta camiseta.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Ahora soy más gordo.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nLos dos miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Gracias. Y no hablamos más de barcos.",
+  "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Creo que conozco esta camiseta.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Ahora soy más gordo.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nMariana y Nicolás miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Gracias. Y no hablamos más de barcos.",
   "vocab": [
    {
     "type": "verb",
@@ -158,22 +158,16 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "creer",
-    "surface": "Creo",
-    "definition": "To think; to believe something is true."
-   },
-   {
     "type": "adverb",
     "word": "después",
     "surface": "Después",
     "definition": "After that; a moment later."
    },
    {
-    "type": "expression",
-    "word": "de hace tres años",
-    "surface": "de hace tres años",
-    "definition": "From three years ago; quite old."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -182,10 +176,10 @@
     "definition": "Me too; I do the same thing."
    },
    {
-    "type": "verb",
-    "word": "decir",
-    "surface": "dices",
-    "definition": "To say; to tell someone something."
+    "type": "adverb",
+    "word": "tiendo",
+    "surface": "tiendo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -201,10 +195,10 @@
     "definition": "To sit down; to take a seat somewhere."
    },
    {
-    "type": "expression",
-    "word": "me la llevo",
-    "surface": "Me la llevo",
-    "definition": "I take it with me; I keep it."
+    "type": "adverb",
+    "word": "conozco",
+    "surface": "conozco",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -243,12 +237,6 @@
     "definition": "Fat; with a rounder body than before."
    },
    {
-    "type": "adverb",
-    "word": "ahora",
-    "surface": "Ahora",
-    "definition": "Now; at this moment, not before."
-   },
-   {
     "type": "verb",
     "word": "miran",
     "surface": "miran",
@@ -259,6 +247,18 @@
     "word": "nicolás",
     "surface": "Nicolás",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "dices",
+    "surface": "dices",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "barcos",
+    "surface": "barcos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -268,7 +268,7 @@
   "title": "Seis calcetines solos",
   "arcType": "recurring-character-callback",
   "synopsis": "The kittens now walk all over Mariana's flat, and this morning no sock in her wardrobe matches another one.",
-  "text": "Los gatitos ya caminan por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nLos dos buscan debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina.\nMariana: Aquí están. Todos, y bien escondidos.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
+  "text": "Los gatitos ya caminan por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nMariana busca debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina.\nMariana: Aquí están. Todos, y bien escondidos.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
   "vocab": [
    {
     "type": "verb",
@@ -302,10 +302,10 @@
     "definition": "To be missing; not to be there."
    },
    {
-    "type": "adjective",
-    "word": "izquierdo",
-    "surface": "izquierdo",
-    "definition": "Left; not the right one."
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -328,33 +328,26 @@
    {
     "type": "verb",
     "word": "buscar",
-    "surface": "buscan",
+    "surface": "busca",
     "definition": "To look for; to try to find."
    },
    {
-    "type": "expression",
-    "word": "detrás de",
-    "surface": "detrás de",
-    "definition": "Behind; at the back of something."
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "adjective",
-    "word": "escondido",
-    "surface": "escondidos",
-    "definition": "Hidden; put away so nobody sees it."
+    "type": "adverb",
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "no están solos",
-    "surface": "no están solos",
-    "definition": "They are not alone; there is more."
-   },
-   {
-    "type": "noun",
-    "word": "la cuchara",
-    "surface": "cuchara",
-    "definition": "A spoon; you eat dessert with it.",
-    "anchor": true
+    "type": "verb",
+    "word": "quiere",
+    "surface": "quiere",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -369,29 +362,35 @@
     "definition": "Somebody; some person, you don't know who."
    },
    {
-    "type": "adverb",
-    "word": "entonces",
-    "surface": "Entonces",
-    "definition": "Then; so, after knowing that."
-   },
-   {
-    "type": "expression",
-    "word": "¿para qué?",
-    "surface": "¿Para qué",
-    "definition": "What for?; for what reason?"
-   },
-   {
-    "type": "verb",
-    "word": "volver",
-    "surface": "vuelven",
-    "definition": "To come back; to return to someone."
-   },
-   {
     "type": "noun",
     "word": "la pierna",
     "surface": "piernas",
     "definition": "A leg; you stand on two of them.",
     "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "izquierdo",
+    "surface": "izquierdo",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "patas",
+    "surface": "patas",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "vuelven",
+    "surface": "vuelven",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "solos",
+    "surface": "solos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }

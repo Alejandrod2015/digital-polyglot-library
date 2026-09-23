@@ -5,7 +5,7 @@
   "title": "Mi sofá está mojado",
   "arcType": "recurring-character-callback",
   "synopsis": "Nicolás finds a dark stain on his ceiling and water dripping on his sofa. Upstairs, Mariana's kitchen floor is dry, except for one corner.",
-  "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nLos dos miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
+  "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nMariana y Nicolás miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
   "vocab": [
    {
     "type": "noun",
@@ -22,16 +22,22 @@
     "anchor": true
    },
    {
+    "type": "adjective",
+    "word": "nuevo",
+    "surface": "nueva",
+    "definition": "New; that was not there before."
+   },
+   {
     "type": "verb",
     "word": "caer",
     "surface": "cae",
     "definition": "To fall; to drop down from above."
    },
    {
-    "type": "expression",
-    "word": "gota a gota",
-    "surface": "gota a gota",
-    "definition": "Drop by drop; slowly, one drop at a time."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used here, and again in other stories of this journey."
    },
    {
     "type": "adverb",
@@ -46,10 +52,22 @@
     "definition": "To go up; to climb to a higher floor."
    },
    {
-    "type": "expression",
-    "word": "tener cara de",
-    "surface": "Tienes cara de",
-    "definition": "To look like; your face shows something."
+    "type": "adverb",
+    "word": "mete",
+    "surface": "mete",
+    "definition": "Used here, and again in other stories of this journey."
+   },
+   {
+    "type": "adjective",
+    "word": "mojado",
+    "surface": "mojado",
+    "definition": "Wet; with water on it."
+   },
+   {
+    "type": "adverb",
+    "word": "justo",
+    "surface": "Justo",
+    "definition": "Right; exactly in that place."
    },
    {
     "type": "verb",
@@ -62,6 +80,12 @@
     "word": "pasar",
     "surface": "pasar",
     "definition": "To come in; to enter a place."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "surface": "miran",
+    "definition": "To look at; to turn your eyes to it."
    },
    {
     "type": "adjective",
@@ -90,23 +114,10 @@
     "definition": "To put in; to push something inside."
    },
    {
-    "type": "adjective",
-    "word": "mojado",
-    "surface": "mojado",
-    "definition": "Wet; with water on it."
-   },
-   {
-    "type": "noun",
-    "word": "el lavadero",
-    "surface": "lavadero",
-    "definition": "A laundry sink, for washing things.",
-    "anchor": true
-   },
-   {
     "type": "expression",
-    "word": "por si acaso",
-    "surface": "Por si acaso",
-    "definition": "Just in case; because it might happen."
+    "word": "todos los días",
+    "surface": "todos los días",
+    "definition": "Every day; each day, always."
    },
    {
     "type": "verb",
@@ -115,22 +126,11 @@
     "definition": "To put; to place something somewhere."
    },
    {
-    "type": "adjective",
-    "word": "nuevo",
-    "surface": "nueva",
-    "definition": "New; that was not there before."
-   },
-   {
-    "type": "adverb",
-    "word": "justo",
-    "surface": "Justo",
-    "definition": "Right; exactly in that place."
-   },
-   {
-    "type": "expression",
-    "word": "hay algo",
-    "surface": "Hay algo",
-    "definition": "There is something; something is there."
+    "type": "noun",
+    "word": "el lavadero",
+    "surface": "lavadero",
+    "definition": "A laundry sink, for washing things.",
+    "anchor": true
    }
   ]
  },
@@ -140,7 +140,7 @@
   "title": "El agua está caliente",
   "arcType": "mini-cliffhanger",
   "synopsis": "A week later the bucket is full every morning. Nicolás puts a finger in the water and finds it warm, so the cat is not the problem this time.",
-  "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nLos dos se quedan callados un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
+  "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nNadie habla durante un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
   "vocab": [
    {
     "type": "noun",
@@ -150,10 +150,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "lleno",
-    "surface": "lleno",
-    "definition": "Full; with no room for more."
+    "type": "adverb",
+    "word": "tienes",
+    "surface": "tienes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -168,12 +168,6 @@
     "definition": "To come down; to go to a lower floor."
    },
    {
-    "type": "expression",
-    "word": "un momento",
-    "surface": "un momento",
-    "definition": "A moment; a short time."
-   },
-   {
     "type": "adjective",
     "word": "caliente",
     "surface": "caliente",
@@ -184,12 +178,6 @@
     "word": "tibio",
     "surface": "tibia",
     "definition": "Warm; a little hot, not cold."
-   },
-   {
-    "type": "adjective",
-    "word": "exacto",
-    "surface": "Exacto",
-    "definition": "Exactly; that is right."
    },
    {
     "type": "noun",
@@ -218,10 +206,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "callado",
-    "surface": "callados",
-    "definition": "Quiet; not saying a word to anyone."
+    "type": "verb",
+    "word": "hablar",
+    "surface": "habla",
+    "definition": "To speak; to say something out loud."
    },
    {
     "type": "adjective",
@@ -264,6 +252,18 @@
     "word": "pequeño",
     "surface": "pequeña",
     "definition": "Small; little, not big."
+   },
+   {
+    "type": "adverb",
+    "word": "tibia",
+    "surface": "tibia",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "quien",
+    "surface": "quien",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -273,7 +273,7 @@
   "title": "La manguera gris",
   "arcType": "late-reveal",
   "synopsis": "The plumber opens the ceiling at last. The pipe is dry, and his flashlight points at something else above it.",
-  "text": "El plomero llega y abre el techo. Los dos miran desde abajo, sin hablar.\n\nNicolás: ¿Está roto el tubo?\nMariana: Tiene que ser el tubo. Es viejo como el edificio.\n\nEl plomero toca el tubo con la mano. Está seco. Después apunta con la linterna a una manguera gris.\n\nMariana: Esa manguera es mía. Va a mi lavadora.\nNicolás: ¿Tuya? Entonces el agua caliente...\nMariana: Es mi lavadora. Lo siento mucho, Nicolás.\nNicolás: Una semana de baldes por una manguera.\nMariana: Pago yo al plomero. Y el sábado, comida en mi casa.\n\nEl plomero cierra su caja de herramientas. Después se va.\n\nNicolás: ¿Comida el sábado? Acepto.\nMariana: Con una condición: el postre lo traes tú.\nNicolás: ¿Y la lavadora apagada?\nMariana: Apagada. Y el gato, encerrado en mi cuarto.\nNicolás: Entonces llevo el postre. Y mi balde, por si acaso.",
+  "text": "El plomero llega y abre el techo. Mariana y Nicolás miran desde abajo, sin hablar.\n\nNicolás: ¿Está roto el tubo?\nMariana: Tiene que ser el tubo. Es viejo como el edificio.\n\nEl plomero toca el tubo con la mano. Está seco. Después apunta con la linterna a una manguera gris.\n\nMariana: Esa manguera es mía. Va a mi lavadora.\nNicolás: ¿Tuya? Entonces el agua caliente...\nMariana: Es mi lavadora. Lo siento mucho, Nicolás.\nNicolás: Una semana de baldes por una manguera.\nMariana: Pago yo al plomero. Y el sábado, comida en mi casa.\n\nEl plomero cierra su caja de herramientas. Después se va.\n\nNicolás: ¿Comida el sábado? Acepto.\nMariana: Con una condición: el postre lo traes tú.\nNicolás: ¿Y la lavadora apagada?\nMariana: Apagada. Y el gato, encerrado en mi cuarto.\nNicolás: Entonces llevo el postre. Y mi balde, por si acaso.",
   "vocab": [
    {
     "type": "verb",
@@ -288,10 +288,10 @@
     "definition": "To open; to make something open."
    },
    {
-    "type": "verb",
-    "word": "hablar",
-    "surface": "hablar",
-    "definition": "To speak; to say words to someone."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -386,16 +386,16 @@
     "definition": "A whole week of; seven days of the same thing."
    },
    {
-    "type": "expression",
-    "word": "sin hablar",
-    "surface": "sin hablar",
-    "definition": "Without speaking; saying nothing."
+    "type": "verb",
+    "word": "miran",
+    "surface": "miran",
+    "definition": "Used here, and again in other stories of this journey."
    },
    {
     "type": "adverb",
-    "word": "entonces",
-    "surface": "Entonces",
-    "definition": "Then; so, after knowing that."
+    "word": "siento",
+    "surface": "siento",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }

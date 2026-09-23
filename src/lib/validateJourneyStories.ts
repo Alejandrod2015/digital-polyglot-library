@@ -553,7 +553,15 @@ export function validateJourneyStories(
   const langRaw = (ctx.language || "").toUpperCase();
   const lang = NOMBRE_A_CODIGO[langRaw] ?? langRaw;
   const level = (ctx.level || "").toUpperCase();
-  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN));
+  // PROSA NARRADA, y solo esa (2026-09-23). Una historia en formato de dialogo
+  // pone el habla en las ETIQUETAS (`Mariana: ...`), no entre comillas, asi que
+  // medirle la banda de habla citada es medir otra cosa: basta una nota leida
+  // en voz alta dentro del dialogo para que entre aqui y salga al 6%. Paso el
+  // 2026-09-23 con new-neighbors#1 del Conversations ES latam A0, que es
+  // dialogo entero y lleva una sola frase entrecomillada (la nota del collar).
+  const esDialogo = (t: string) =>
+    (t.match(/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S/gmu) ?? []).length >= 4;
+  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN) && !esDialogo(s.text));
 
   const push = (id: string, label: string, ok: boolean, detail?: string) =>
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });

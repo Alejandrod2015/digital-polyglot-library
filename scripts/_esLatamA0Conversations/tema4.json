@@ -5,7 +5,7 @@
   "title": "Nadie pide este paquete",
   "arcType": "late-reveal",
   "synopsis": "A package with no name on it waits in the entrance. Mariana and Nicolás argue about who ordered it, until the address tells them it belongs across the street.",
-  "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Los dos leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
+  "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Mariana y Nicolás leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
   "vocab": [
    {
     "type": "noun",
@@ -21,10 +21,10 @@
     "definition": "To sign; to write your name on paper."
    },
    {
-    "type": "expression",
-    "word": "sin nombre",
-    "surface": "sin nombre",
-    "definition": "With no name written on it."
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -52,15 +52,9 @@
    },
    {
     "type": "verb",
-    "word": "esperar",
-    "surface": "espero",
-    "definition": "To wait for something; to expect it."
-   },
-   {
-    "type": "expression",
-    "word": "esta semana",
-    "surface": "esta semana",
-    "definition": "This week; in the next seven days."
+    "word": "come",
+    "surface": "come",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -81,16 +75,10 @@
     "definition": "Heavy; hard to lift or carry."
    },
    {
-    "type": "expression",
-    "word": "los dos",
-    "surface": "Los dos",
-    "definition": "Both of them; the two people together."
-   },
-   {
-    "type": "verb",
-    "word": "leer",
-    "surface": "leen",
-    "definition": "To read; to look at words."
+    "type": "adverb",
+    "word": "ningún",
+    "surface": "ningún",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -100,9 +88,9 @@
    },
    {
     "type": "verb",
-    "word": "comprar",
-    "surface": "compro",
-    "definition": "To buy; to pay money for a thing."
+    "word": "trae",
+    "surface": "trae",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -112,22 +100,34 @@
     "anchor": true
    },
    {
-    "type": "adverb",
-    "word": "ahí",
-    "surface": "Ahí",
-    "definition": "There; in that place near you."
-   },
-   {
-    "type": "adjective",
-    "word": "suyo",
-    "surface": "suyo",
-    "definition": "Theirs; belonging to them."
-   },
-   {
     "type": "expression",
     "word": "mejor que",
     "surface": "mejor que",
     "definition": "Better than; in a nicer way than someone."
+   },
+   {
+    "type": "verb",
+    "word": "bolsas",
+    "surface": "bolsas",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "leen",
+    "surface": "leen",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "iguales",
+    "surface": "iguales",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "somos",
+    "surface": "somos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -140,16 +140,16 @@
   "text": "Nicolás vive abajo, al lado de la puerta. Sus vecinos lo saben. Por eso él firma sus paquetes. Hoy su casa está llena de cajas ajenas. Él ya no cabe.\n\nMariana: Nicolás, yo no camino aquí.\nNicolás: Yo tampoco. Hay once cajas juntas.\nMariana: ¿Tú firmas por todo el edificio?\nNicolás: Sí. Yo casi nunca salgo.\nMariana: ¿Y esta caja de abajo?\nNicolás: Esa no lleva ningún apellido.\n\nNicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta.\n\nMariana: Este papel lleva tu apellido.\nNicolás: ¿Mi apellido? Yo no pido nada.\nMariana: Pues alguien pide con tu apellido.\nNicolás: Un momento. Ahora recuerdo. Es de marzo.\nMariana: Ábrela. Yo quiero ver eso.\nNicolás: Es un felpudo. Dice bienvenido.\nMariana: Ponlo delante de tu puerta.\nNicolás: Ahí hay once cajas de vecinos.\nMariana: Entonces el felpudo tiene paciencia.\nNicolás: Bienvenido a mi propia casa.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "al lado de",
-    "surface": "al lado de",
-    "definition": "Next to; right beside something."
+    "type": "verb",
+    "word": "alta",
+    "surface": "alta",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "saber",
-    "surface": "saben",
-    "definition": "To know; to have the information."
+    "word": "lleva",
+    "surface": "lleva",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -158,22 +158,16 @@
     "definition": "Today; on this very day."
    },
    {
-    "type": "adjective",
-    "word": "ajeno",
-    "surface": "ajenas",
-    "definition": "Belonging to other people, not to you."
+    "type": "verb",
+    "word": "cabe",
+    "surface": "cabe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
     "word": "caber",
     "surface": "cabe",
     "definition": "To fit; to have enough room."
-   },
-   {
-    "type": "adverb",
-    "word": "aquí",
-    "surface": "aquí",
-    "definition": "Here; in this place."
    },
    {
     "type": "adjective",
@@ -261,6 +255,12 @@
     "word": "propio",
     "surface": "propia",
     "definition": "Own; belonging to that same person."
+   },
+   {
+    "type": "verb",
+    "word": "saben",
+    "surface": "saben",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -270,7 +270,7 @@
   "title": "Una caja sin tapa",
   "arcType": "reframe-turn",
   "synopsis": "An open box arrives with its lid on the floor and nothing inside. Mariana and Nicolás blame the postman, until something soft and grey moves at the bottom.",
-  "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta. Y está vacía.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nLos dos bajan la caja. Mariana toca el fondo. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
+  "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta. Y está vacía.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nMariana y Nicolás bajan la caja. Mariana toca el fondo. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
   "vocab": [
    {
     "type": "adjective",
@@ -286,16 +286,16 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "suelto",
-    "surface": "suelta",
-    "definition": "Loose; not held or fixed to anything."
+    "type": "adverb",
+    "word": "gatito",
+    "surface": "gatito",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "desde arriba",
-    "surface": "desde arriba",
-    "definition": "From above; looking down on something."
+    "type": "adverb",
+    "word": "conozco",
+    "surface": "conozco",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -330,9 +330,9 @@
    },
    {
     "type": "verb",
-    "word": "robar",
-    "surface": "roba",
-    "definition": "To steal; to take what is not yours."
+    "word": "bajan",
+    "surface": "bajan",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -342,10 +342,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "blando",
-    "surface": "blando",
-    "definition": "Soft; easy to press with your fingers."
+    "type": "adverb",
+    "word": "atrás",
+    "surface": "atrás",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",

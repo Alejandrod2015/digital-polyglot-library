@@ -45,16 +45,16 @@
     "definition": "To hear; to catch a sound with your ears."
    },
    {
-    "type": "expression",
-    "word": "de al lado",
-    "surface": "de al lado",
-    "definition": "Next door; in the house just beside yours."
+    "type": "verb",
+    "word": "come",
+    "surface": "come",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "se llama",
-    "surface": "Se llama",
-    "definition": "Its name is; it is called."
+    "type": "adverb",
+    "word": "noches",
+    "surface": "noches",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -93,10 +93,10 @@
     "definition": "Fat; heavy, with a big round body."
    },
    {
-    "type": "expression",
-    "word": "ahora entiendo",
-    "surface": "Ahora entiendo",
-    "definition": "Now I get it; now it makes sense."
+    "type": "adverb",
+    "word": "hecho",
+    "surface": "hecho",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -139,10 +139,10 @@
   "text": "Una semana después, el gato está más gordo. Mariana y Nicolás lo miran en la escalera. Los dos están muy serios.\n\nMariana: Nicolás, ¿tú le das comida a Luna?\nNicolás: Yo no. Tigre come solo por la mañana. Es el trato.\nMariana: Yo no le doy nada. Solo toma agua.\nNicolás: ¿Solo agua? Tu cocina huele a pollo todas las noches.\nMariana: ¡El pollo es para mí!\n\nEntonces Nicolás toca el cuello del gato. Hay un papel pequeño en el collar.\n\nNicolás: Aquí hay una nota. Dice: “Me llamo Rey. Ceno en la casa azul.”\nMariana: ¿Rey? ¡La casa azul es la casa de enfrente!\nNicolás: Entonces cena allá. Y nosotros peleamos por nada.\nMariana: Tres casas y tres nombres. Este gato es un rey.\nNicolás: Sí. Un rey muy gordo.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "una semana después",
-    "surface": "Una semana después",
-    "definition": "One week later; seven days after that."
+    "type": "verb",
+    "word": "miran",
+    "surface": "miran",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -162,12 +162,6 @@
     "surface": "comida",
     "definition": "Food; what people or animals eat.",
     "anchor": true
-   },
-   {
-    "type": "expression",
-    "word": "por la mañana",
-    "surface": "por la mañana",
-    "definition": "In the morning; early in the day."
    },
    {
     "type": "verb",
@@ -195,10 +189,10 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "es para mí",
-    "surface": "es para mí",
-    "definition": "It's for me; it belongs to me."
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -245,22 +239,28 @@
     "definition": "Across the street; on the other side."
    },
    {
-    "type": "adverb",
-    "word": "allá",
-    "surface": "allá",
-    "definition": "Over there; in that place, far from here."
-   },
-   {
     "type": "verb",
-    "word": "pelear",
-    "surface": "peleamos",
-    "definition": "To fight; to argue with someone."
+    "word": "huele",
+    "surface": "huele",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
     "word": "por nada",
     "surface": "por nada",
     "definition": "For nothing; with no real reason."
+   },
+   {
+    "type": "adverb",
+    "word": "peleamos",
+    "surface": "peleamos",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "llamo",
+    "surface": "llamo",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -272,12 +272,6 @@
   "synopsis": "The cat with three names is missing. Mariana and Nicolás look for it all over the building and hear a noise under the stairs.",
   "text": "Hoy el gato no está en ninguna casa. No está con Mariana ni con Nicolás. Tampoco está en la casa azul. Los dos lo buscan por el edificio.\n\nNicolás: ¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.\nMariana: Escucha, Nicolás. Hay un ruido abajo.\nNicolás: Sí. Viene de la caja vieja, debajo de la escalera.\n\nMariana abre la caja muy despacio. Adentro está el gato. Y cuatro gatitos.\n\nMariana: ¡Nicolás! No es un gato. Es una gata.\nNicolás: ¿Tigre es una gata? ¿Y es mamá?\nMariana: Sí. Por eso come tanto. Come por cinco, no por uno.\nNicolás: ¿Y ahora? Cuatro gatitos y tres casas.\nMariana: Es fácil. Uno para ti, uno para mí, uno para la casa azul.\nNicolás: ¿Y el cuarto gatito?\nMariana: Se queda con su mamá. Aquí, en el edificio.\nNicolás: Pobre gata. Cuatro hijos y tres nombres.",
   "vocab": [
-   {
-    "type": "adverb",
-    "word": "tampoco",
-    "surface": "Tampoco",
-    "definition": "Not either; also not."
-   },
    {
     "type": "verb",
     "word": "buscar",
@@ -395,6 +389,12 @@
     "word": "nombres",
     "surface": "nombres",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "venir",
+    "surface": "viene",
+    "definition": "To come; to arrive where you are."
    }
   ]
  },
@@ -404,7 +404,7 @@
   "title": "Mi sofá está mojado",
   "arcType": "recurring-character-callback",
   "synopsis": "Nicolás finds a dark stain on his ceiling and water dripping on his sofa. Upstairs, Mariana's kitchen floor is dry, except for one corner.",
-  "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nLos dos miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
+  "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nMariana y Nicolás miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
   "vocab": [
    {
     "type": "noun",
@@ -421,16 +421,22 @@
     "anchor": true
    },
    {
+    "type": "adjective",
+    "word": "nuevo",
+    "surface": "nueva",
+    "definition": "New; that was not there before."
+   },
+   {
     "type": "verb",
     "word": "caer",
     "surface": "cae",
     "definition": "To fall; to drop down from above."
    },
    {
-    "type": "expression",
-    "word": "gota a gota",
-    "surface": "gota a gota",
-    "definition": "Drop by drop; slowly, one drop at a time."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used here, and again in other stories of this journey."
    },
    {
     "type": "adverb",
@@ -445,10 +451,22 @@
     "definition": "To go up; to climb to a higher floor."
    },
    {
-    "type": "expression",
-    "word": "tener cara de",
-    "surface": "Tienes cara de",
-    "definition": "To look like; your face shows something."
+    "type": "adverb",
+    "word": "mete",
+    "surface": "mete",
+    "definition": "Used here, and again in other stories of this journey."
+   },
+   {
+    "type": "adjective",
+    "word": "mojado",
+    "surface": "mojado",
+    "definition": "Wet; with water on it."
+   },
+   {
+    "type": "adverb",
+    "word": "justo",
+    "surface": "Justo",
+    "definition": "Right; exactly in that place."
    },
    {
     "type": "verb",
@@ -461,6 +479,12 @@
     "word": "pasar",
     "surface": "pasar",
     "definition": "To come in; to enter a place."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "surface": "miran",
+    "definition": "To look at; to turn your eyes to it."
    },
    {
     "type": "adjective",
@@ -489,23 +513,10 @@
     "definition": "To put in; to push something inside."
    },
    {
-    "type": "adjective",
-    "word": "mojado",
-    "surface": "mojado",
-    "definition": "Wet; with water on it."
-   },
-   {
-    "type": "noun",
-    "word": "el lavadero",
-    "surface": "lavadero",
-    "definition": "A laundry sink, for washing things.",
-    "anchor": true
-   },
-   {
     "type": "expression",
-    "word": "por si acaso",
-    "surface": "Por si acaso",
-    "definition": "Just in case; because it might happen."
+    "word": "todos los días",
+    "surface": "todos los días",
+    "definition": "Every day; each day, always."
    },
    {
     "type": "verb",
@@ -514,22 +525,11 @@
     "definition": "To put; to place something somewhere."
    },
    {
-    "type": "adjective",
-    "word": "nuevo",
-    "surface": "nueva",
-    "definition": "New; that was not there before."
-   },
-   {
-    "type": "adverb",
-    "word": "justo",
-    "surface": "Justo",
-    "definition": "Right; exactly in that place."
-   },
-   {
-    "type": "expression",
-    "word": "hay algo",
-    "surface": "Hay algo",
-    "definition": "There is something; something is there."
+    "type": "noun",
+    "word": "el lavadero",
+    "surface": "lavadero",
+    "definition": "A laundry sink, for washing things.",
+    "anchor": true
    }
   ]
  },
@@ -539,7 +539,7 @@
   "title": "El agua está caliente",
   "arcType": "mini-cliffhanger",
   "synopsis": "A week later the bucket is full every morning. Nicolás puts a finger in the water and finds it warm, so the cat is not the problem this time.",
-  "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nLos dos se quedan callados un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
+  "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nNadie habla durante un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
   "vocab": [
    {
     "type": "noun",
@@ -549,10 +549,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "lleno",
-    "surface": "lleno",
-    "definition": "Full; with no room for more."
+    "type": "adverb",
+    "word": "tienes",
+    "surface": "tienes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -567,12 +567,6 @@
     "definition": "To come down; to go to a lower floor."
    },
    {
-    "type": "expression",
-    "word": "un momento",
-    "surface": "un momento",
-    "definition": "A moment; a short time."
-   },
-   {
     "type": "adjective",
     "word": "caliente",
     "surface": "caliente",
@@ -583,12 +577,6 @@
     "word": "tibio",
     "surface": "tibia",
     "definition": "Warm; a little hot, not cold."
-   },
-   {
-    "type": "adjective",
-    "word": "exacto",
-    "surface": "Exacto",
-    "definition": "Exactly; that is right."
    },
    {
     "type": "noun",
@@ -617,10 +605,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "callado",
-    "surface": "callados",
-    "definition": "Quiet; not saying a word to anyone."
+    "type": "verb",
+    "word": "hablar",
+    "surface": "habla",
+    "definition": "To speak; to say something out loud."
    },
    {
     "type": "adjective",
@@ -663,6 +651,18 @@
     "word": "pequeño",
     "surface": "pequeña",
     "definition": "Small; little, not big."
+   },
+   {
+    "type": "adverb",
+    "word": "tibia",
+    "surface": "tibia",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "quien",
+    "surface": "quien",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -672,7 +672,7 @@
   "title": "La manguera gris",
   "arcType": "late-reveal",
   "synopsis": "The plumber opens the ceiling at last. The pipe is dry, and his flashlight points at something else above it.",
-  "text": "El plomero llega y abre el techo. Los dos miran desde abajo, sin hablar.\n\nNicolás: ¿Está roto el tubo?\nMariana: Tiene que ser el tubo. Es viejo como el edificio.\n\nEl plomero toca el tubo con la mano. Está seco. Después apunta con la linterna a una manguera gris.\n\nMariana: Esa manguera es mía. Va a mi lavadora.\nNicolás: ¿Tuya? Entonces el agua caliente...\nMariana: Es mi lavadora. Lo siento mucho, Nicolás.\nNicolás: Una semana de baldes por una manguera.\nMariana: Pago yo al plomero. Y el sábado, comida en mi casa.\n\nEl plomero cierra su caja de herramientas. Después se va.\n\nNicolás: ¿Comida el sábado? Acepto.\nMariana: Con una condición: el postre lo traes tú.\nNicolás: ¿Y la lavadora apagada?\nMariana: Apagada. Y el gato, encerrado en mi cuarto.\nNicolás: Entonces llevo el postre. Y mi balde, por si acaso.",
+  "text": "El plomero llega y abre el techo. Mariana y Nicolás miran desde abajo, sin hablar.\n\nNicolás: ¿Está roto el tubo?\nMariana: Tiene que ser el tubo. Es viejo como el edificio.\n\nEl plomero toca el tubo con la mano. Está seco. Después apunta con la linterna a una manguera gris.\n\nMariana: Esa manguera es mía. Va a mi lavadora.\nNicolás: ¿Tuya? Entonces el agua caliente...\nMariana: Es mi lavadora. Lo siento mucho, Nicolás.\nNicolás: Una semana de baldes por una manguera.\nMariana: Pago yo al plomero. Y el sábado, comida en mi casa.\n\nEl plomero cierra su caja de herramientas. Después se va.\n\nNicolás: ¿Comida el sábado? Acepto.\nMariana: Con una condición: el postre lo traes tú.\nNicolás: ¿Y la lavadora apagada?\nMariana: Apagada. Y el gato, encerrado en mi cuarto.\nNicolás: Entonces llevo el postre. Y mi balde, por si acaso.",
   "vocab": [
    {
     "type": "verb",
@@ -687,10 +687,10 @@
     "definition": "To open; to make something open."
    },
    {
-    "type": "verb",
-    "word": "hablar",
-    "surface": "hablar",
-    "definition": "To speak; to say words to someone."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -785,16 +785,16 @@
     "definition": "A whole week of; seven days of the same thing."
    },
    {
-    "type": "expression",
-    "word": "sin hablar",
-    "surface": "sin hablar",
-    "definition": "Without speaking; saying nothing."
+    "type": "verb",
+    "word": "miran",
+    "surface": "miran",
+    "definition": "Used here, and again in other stories of this journey."
    },
    {
     "type": "adverb",
-    "word": "entonces",
-    "surface": "Entonces",
-    "definition": "Then; so, after knowing that."
+    "word": "siento",
+    "surface": "siento",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -804,13 +804,13 @@
   "title": "Nunca tuve un barco",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Mariana hangs her washing on the roof terrace. The wind takes a white T-shirt down to Nicolás's balcony, and up close it is not hers.",
-  "text": "Mariana tiende su ropa en la terraza. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
+  "text": "En la terraza, Mariana tiende su ropa. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "hace viento",
-    "surface": "Hace viento",
-    "definition": "It is windy; the wind blows hard."
+    "type": "verb",
+    "word": "vuela",
+    "surface": "vuela",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -819,10 +819,10 @@
     "definition": "To fly; to move through the air."
    },
    {
-    "type": "adjective",
-    "word": "blanco",
-    "surface": "blanca",
-    "definition": "White; the color of milk or snow."
+    "type": "verb",
+    "word": "huele",
+    "surface": "huele",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -841,12 +841,6 @@
     "word": "se la lleva",
     "surface": "se la lleva",
     "definition": "It takes it away; the wind carries it."
-   },
-   {
-    "type": "expression",
-    "word": "un momento",
-    "surface": "Un momento",
-    "definition": "Wait a second; hold on."
    },
    {
     "type": "verb",
@@ -926,6 +920,12 @@
     "word": "tiende",
     "surface": "tiende",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "negra",
+    "surface": "negra",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -935,7 +935,7 @@
   "title": "Ahora soy más gordo",
   "arcType": "reframe-turn",
   "synopsis": "The note has been on the stairs for a week and nobody has answered. Then Nicolás looks at the little boat on the T-shirt again.",
-  "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Creo que conozco esta camiseta.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Ahora soy más gordo.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nLos dos miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Gracias. Y no hablamos más de barcos.",
+  "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Creo que conozco esta camiseta.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Ahora soy más gordo.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nMariana y Nicolás miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Gracias. Y no hablamos más de barcos.",
   "vocab": [
    {
     "type": "verb",
@@ -957,22 +957,16 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "creer",
-    "surface": "Creo",
-    "definition": "To think; to believe something is true."
-   },
-   {
     "type": "adverb",
     "word": "después",
     "surface": "Después",
     "definition": "After that; a moment later."
    },
    {
-    "type": "expression",
-    "word": "de hace tres años",
-    "surface": "de hace tres años",
-    "definition": "From three years ago; quite old."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -981,10 +975,10 @@
     "definition": "Me too; I do the same thing."
    },
    {
-    "type": "verb",
-    "word": "decir",
-    "surface": "dices",
-    "definition": "To say; to tell someone something."
+    "type": "adverb",
+    "word": "tiendo",
+    "surface": "tiendo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1000,10 +994,10 @@
     "definition": "To sit down; to take a seat somewhere."
    },
    {
-    "type": "expression",
-    "word": "me la llevo",
-    "surface": "Me la llevo",
-    "definition": "I take it with me; I keep it."
+    "type": "adverb",
+    "word": "conozco",
+    "surface": "conozco",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -1042,12 +1036,6 @@
     "definition": "Fat; with a rounder body than before."
    },
    {
-    "type": "adverb",
-    "word": "ahora",
-    "surface": "Ahora",
-    "definition": "Now; at this moment, not before."
-   },
-   {
     "type": "verb",
     "word": "miran",
     "surface": "miran",
@@ -1058,6 +1046,18 @@
     "word": "nicolás",
     "surface": "Nicolás",
     "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "dices",
+    "surface": "dices",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "barcos",
+    "surface": "barcos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -1067,7 +1067,7 @@
   "title": "Seis calcetines solos",
   "arcType": "recurring-character-callback",
   "synopsis": "The kittens now walk all over Mariana's flat, and this morning no sock in her wardrobe matches another one.",
-  "text": "Los gatitos ya caminan por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nLos dos buscan debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina.\nMariana: Aquí están. Todos, y bien escondidos.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
+  "text": "Los gatitos ya caminan por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nMariana busca debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina.\nMariana: Aquí están. Todos, y bien escondidos.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
   "vocab": [
    {
     "type": "verb",
@@ -1101,10 +1101,10 @@
     "definition": "To be missing; not to be there."
    },
    {
-    "type": "adjective",
-    "word": "izquierdo",
-    "surface": "izquierdo",
-    "definition": "Left; not the right one."
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1127,33 +1127,26 @@
    {
     "type": "verb",
     "word": "buscar",
-    "surface": "buscan",
+    "surface": "busca",
     "definition": "To look for; to try to find."
    },
    {
-    "type": "expression",
-    "word": "detrás de",
-    "surface": "detrás de",
-    "definition": "Behind; at the back of something."
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "adjective",
-    "word": "escondido",
-    "surface": "escondidos",
-    "definition": "Hidden; put away so nobody sees it."
+    "type": "adverb",
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "no están solos",
-    "surface": "no están solos",
-    "definition": "They are not alone; there is more."
-   },
-   {
-    "type": "noun",
-    "word": "la cuchara",
-    "surface": "cuchara",
-    "definition": "A spoon; you eat dessert with it.",
-    "anchor": true
+    "type": "verb",
+    "word": "quiere",
+    "surface": "quiere",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1168,29 +1161,35 @@
     "definition": "Somebody; some person, you don't know who."
    },
    {
-    "type": "adverb",
-    "word": "entonces",
-    "surface": "Entonces",
-    "definition": "Then; so, after knowing that."
-   },
-   {
-    "type": "expression",
-    "word": "¿para qué?",
-    "surface": "¿Para qué",
-    "definition": "What for?; for what reason?"
-   },
-   {
-    "type": "verb",
-    "word": "volver",
-    "surface": "vuelven",
-    "definition": "To come back; to return to someone."
-   },
-   {
     "type": "noun",
     "word": "la pierna",
     "surface": "piernas",
     "definition": "A leg; you stand on two of them.",
     "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "izquierdo",
+    "surface": "izquierdo",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "patas",
+    "surface": "patas",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "vuelven",
+    "surface": "vuelven",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "solos",
+    "surface": "solos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -1200,7 +1199,7 @@
   "title": "Nadie pide este paquete",
   "arcType": "late-reveal",
   "synopsis": "A package with no name on it waits in the entrance. Mariana and Nicolás argue about who ordered it, until the address tells them it belongs across the street.",
-  "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Los dos leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
+  "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Mariana y Nicolás leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
   "vocab": [
    {
     "type": "noun",
@@ -1216,10 +1215,10 @@
     "definition": "To sign; to write your name on paper."
    },
    {
-    "type": "expression",
-    "word": "sin nombre",
-    "surface": "sin nombre",
-    "definition": "With no name written on it."
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1247,15 +1246,9 @@
    },
    {
     "type": "verb",
-    "word": "esperar",
-    "surface": "espero",
-    "definition": "To wait for something; to expect it."
-   },
-   {
-    "type": "expression",
-    "word": "esta semana",
-    "surface": "esta semana",
-    "definition": "This week; in the next seven days."
+    "word": "come",
+    "surface": "come",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -1276,16 +1269,10 @@
     "definition": "Heavy; hard to lift or carry."
    },
    {
-    "type": "expression",
-    "word": "los dos",
-    "surface": "Los dos",
-    "definition": "Both of them; the two people together."
-   },
-   {
-    "type": "verb",
-    "word": "leer",
-    "surface": "leen",
-    "definition": "To read; to look at words."
+    "type": "adverb",
+    "word": "ningún",
+    "surface": "ningún",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -1295,9 +1282,9 @@
    },
    {
     "type": "verb",
-    "word": "comprar",
-    "surface": "compro",
-    "definition": "To buy; to pay money for a thing."
+    "word": "trae",
+    "surface": "trae",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1307,22 +1294,34 @@
     "anchor": true
    },
    {
-    "type": "adverb",
-    "word": "ahí",
-    "surface": "Ahí",
-    "definition": "There; in that place near you."
-   },
-   {
-    "type": "adjective",
-    "word": "suyo",
-    "surface": "suyo",
-    "definition": "Theirs; belonging to them."
-   },
-   {
     "type": "expression",
     "word": "mejor que",
     "surface": "mejor que",
     "definition": "Better than; in a nicer way than someone."
+   },
+   {
+    "type": "verb",
+    "word": "bolsas",
+    "surface": "bolsas",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "leen",
+    "surface": "leen",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "iguales",
+    "surface": "iguales",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "somos",
+    "surface": "somos",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -1335,16 +1334,16 @@
   "text": "Nicolás vive abajo, al lado de la puerta. Sus vecinos lo saben. Por eso él firma sus paquetes. Hoy su casa está llena de cajas ajenas. Él ya no cabe.\n\nMariana: Nicolás, yo no camino aquí.\nNicolás: Yo tampoco. Hay once cajas juntas.\nMariana: ¿Tú firmas por todo el edificio?\nNicolás: Sí. Yo casi nunca salgo.\nMariana: ¿Y esta caja de abajo?\nNicolás: Esa no lleva ningún apellido.\n\nNicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta.\n\nMariana: Este papel lleva tu apellido.\nNicolás: ¿Mi apellido? Yo no pido nada.\nMariana: Pues alguien pide con tu apellido.\nNicolás: Un momento. Ahora recuerdo. Es de marzo.\nMariana: Ábrela. Yo quiero ver eso.\nNicolás: Es un felpudo. Dice bienvenido.\nMariana: Ponlo delante de tu puerta.\nNicolás: Ahí hay once cajas de vecinos.\nMariana: Entonces el felpudo tiene paciencia.\nNicolás: Bienvenido a mi propia casa.",
   "vocab": [
    {
-    "type": "expression",
-    "word": "al lado de",
-    "surface": "al lado de",
-    "definition": "Next to; right beside something."
+    "type": "verb",
+    "word": "alta",
+    "surface": "alta",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "saber",
-    "surface": "saben",
-    "definition": "To know; to have the information."
+    "word": "lleva",
+    "surface": "lleva",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -1353,22 +1352,16 @@
     "definition": "Today; on this very day."
    },
    {
-    "type": "adjective",
-    "word": "ajeno",
-    "surface": "ajenas",
-    "definition": "Belonging to other people, not to you."
+    "type": "verb",
+    "word": "cabe",
+    "surface": "cabe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
     "word": "caber",
     "surface": "cabe",
     "definition": "To fit; to have enough room."
-   },
-   {
-    "type": "adverb",
-    "word": "aquí",
-    "surface": "aquí",
-    "definition": "Here; in this place."
    },
    {
     "type": "adjective",
@@ -1456,6 +1449,12 @@
     "word": "propio",
     "surface": "propia",
     "definition": "Own; belonging to that same person."
+   },
+   {
+    "type": "verb",
+    "word": "saben",
+    "surface": "saben",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -1465,7 +1464,7 @@
   "title": "Una caja sin tapa",
   "arcType": "reframe-turn",
   "synopsis": "An open box arrives with its lid on the floor and nothing inside. Mariana and Nicolás blame the postman, until something soft and grey moves at the bottom.",
-  "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta. Y está vacía.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nLos dos bajan la caja. Mariana toca el fondo. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
+  "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta. Y está vacía.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nMariana y Nicolás bajan la caja. Mariana toca el fondo. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
   "vocab": [
    {
     "type": "adjective",
@@ -1481,16 +1480,16 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "suelto",
-    "surface": "suelta",
-    "definition": "Loose; not held or fixed to anything."
+    "type": "adverb",
+    "word": "gatito",
+    "surface": "gatito",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "desde arriba",
-    "surface": "desde arriba",
-    "definition": "From above; looking down on something."
+    "type": "adverb",
+    "word": "conozco",
+    "surface": "conozco",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -1525,9 +1524,9 @@
    },
    {
     "type": "verb",
-    "word": "robar",
-    "surface": "roba",
-    "definition": "To steal; to take what is not yours."
+    "word": "bajan",
+    "surface": "bajan",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1537,10 +1536,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "blando",
-    "surface": "blando",
-    "definition": "Soft; easy to press with your fingers."
+    "type": "adverb",
+    "word": "atrás",
+    "surface": "atrás",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1599,7 +1598,7 @@
   "title": "Alguien mueve los muebles",
   "arcType": "mini-cliffhanger",
   "synopsis": "At two in the morning something heavy drags across the floor above Nicolás. Mariana blames the new neighbor. In her kitchen they find the real culprit, and it weighs two grams.",
-  "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Los dos caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
+  "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Mariana y Nicolás caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
   "vocab": [
    {
     "type": "noun",
@@ -1609,10 +1608,10 @@
     "anchor": true
    },
    {
-    "type": "adjective",
-    "word": "despierto",
-    "surface": "despierto",
-    "definition": "Awake; not sleeping, with open eyes."
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1621,10 +1620,10 @@
     "definition": "To sound; to make a noise you hear."
    },
    {
-    "type": "adjective",
-    "word": "pesado",
-    "surface": "pesado",
-    "definition": "Heavy; hard to lift or move."
+    "type": "verb",
+    "word": "viaja",
+    "surface": "viaja",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1691,10 +1690,10 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "ni idea",
-    "surface": "Ni idea",
-    "definition": "No idea; I really do not know."
+    "type": "verb",
+    "word": "juega",
+    "surface": "juega",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -1722,9 +1721,9 @@
    },
    {
     "type": "verb",
-    "word": "arrastrar",
-    "surface": "arrastra",
-    "definition": "To drag; to pull something heavy along."
+    "word": "empieza",
+    "surface": "empieza",
+    "definition": "Used again later in the journey; see this sentence."
    }
   ]
  },
@@ -1736,13 +1735,6 @@
   "synopsis": "Nicolás sets his alarm for six every morning and Mariana, who sleeps right above him, comes down to complain. His kitchen table explains everything in four small bottles.",
   "text": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana vive encima. Hoy baja medio dormida y da un bostezo.\n\nMariana: Nicolás, tu despertador me despierta.\nNicolás: Perdón. Suena siempre.\nMariana: Mi cama está encima. Yo salto.\nNicolás: No puedo cambiar esa hora.\n\nMariana: ¿Tu trabajo empieza tan temprano?\nNicolás: No. Empiezo a las nueve.\nMariana: ¿Entonces por qué te levantas?\n\nNicolás abre la puerta de su cocina. Sobre la mesa hay cuatro biberones. Arriba empieza un maullido.\n\nMariana: ¿Biberones con leche?\nNicolás: Para tus gatitos. Comen a las seis.\nMariana: ¿Tú preparas la leche?\nNicolás: Sí. Subo a tu casa.\n\nMariana no dice nada. La cocina está tranquila.\n\nNicolás: Tú duermes como una piedra.\nMariana: ¿Y nadie me avisa nada?\nNicolás: Ahora ya sabes. ¿Apago el despertador?\nMariana: No. Mañana yo doy la leche a tiempo.\nNicolás: Entonces pongo dos despertadores.\nMariana: ¿Dos?\nNicolás: Uno para los gatitos. Otro para ti.",
   "vocab": [
-   {
-    "type": "noun",
-    "word": "el despertador",
-    "surface": "despertador",
-    "definition": "An alarm clock; it rings to wake you up.",
-    "anchor": true
-   },
    {
     "type": "adjective",
     "word": "fuerte",
@@ -1756,10 +1748,10 @@
     "definition": "Above; on the floor right over yours."
    },
    {
-    "type": "adjective",
-    "word": "dormido",
-    "surface": "dormida",
-    "definition": "Sleepy; still half asleep, not fully awake."
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1775,22 +1767,22 @@
     "definition": "To begin; to start doing something."
    },
    {
-    "type": "verb",
-    "word": "saltar",
-    "surface": "salto",
-    "definition": "To jump; to push your body up fast."
-   },
-   {
-    "type": "verb",
-    "word": "cambiar",
-    "surface": "cambiar",
-    "definition": "To change; to make something different."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
-    "word": "temprano",
-    "surface": "temprano",
-    "definition": "Early; before the usual hour of the day."
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "duermes",
+    "surface": "duermes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -1810,13 +1802,6 @@
     "word": "el maullido",
     "surface": "maullido",
     "definition": "A meow; the small sound a cat makes.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "la leche",
-    "surface": "leche",
-    "definition": "Milk; the white drink babies and kittens take.",
     "anchor": true
    },
    {
@@ -1860,6 +1845,18 @@
     "word": "a tiempo",
     "surface": "a tiempo",
     "definition": "On time; at the right hour, not later."
+   },
+   {
+    "type": "adverb",
+    "word": "despierta",
+    "surface": "despierta",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "dormida",
+    "surface": "dormida",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -1880,15 +1877,15 @@
    },
    {
     "type": "adverb",
-    "word": "todavía",
-    "surface": "Todavía",
-    "definition": "Still; up to now and not yet finished."
+    "word": "gatito",
+    "surface": "gatito",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
-    "word": "demasiado",
-    "surface": "demasiado",
-    "definition": "Too much; more than a person can take."
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -1903,16 +1900,16 @@
     "definition": "Not anymore; it was true before, not now."
    },
    {
-    "type": "verb",
-    "word": "regalar",
-    "surface": "regalo",
-    "definition": "To give away; to hand over with no payment."
+    "type": "adverb",
+    "word": "subo",
+    "surface": "subo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "adjective",
-    "word": "raro",
-    "surface": "raro",
-    "definition": "Strange; not normal, a little odd."
+    "type": "verb",
+    "word": "sonríe",
+    "surface": "sonríe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -1921,10 +1918,10 @@
     "definition": "Sad; feeling low and without joy."
    },
    {
-    "type": "verb",
-    "word": "tapar",
-    "surface": "tapo",
-    "definition": "To cover; to put something over a thing."
+    "type": "adverb",
+    "word": "duermo",
+    "surface": "duermo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -1966,12 +1963,6 @@
    },
    {
     "type": "verb",
-    "word": "soñar",
-    "surface": "sueña",
-    "definition": "To dream; to see things while sleeping."
-   },
-   {
-    "type": "verb",
     "word": "extrañar",
     "surface": "extraño",
     "definition": "To miss; to feel sad without someone near."
@@ -1994,6 +1985,12 @@
     "word": "de verdad",
     "surface": "De verdad",
     "definition": "Really; truly, with no joke."
+   },
+   {
+    "type": "adverb",
+    "word": "tapo",
+    "surface": "tapo",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -2003,7 +2000,7 @@
   "title": "Domingo sin señal",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Mariana loses her internet and asks Nicolás for his password. She types the cat's name three times and nothing opens. One letter is to blame.",
-  "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nLa gata duerme en el sofá y no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
+  "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nEn el sofá duerme la gata, que no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
   "vocab": [
    {
     "type": "noun",
@@ -2014,9 +2011,9 @@
    },
    {
     "type": "verb",
-    "word": "andar",
-    "surface": "anda",
-    "definition": "To work; to run well, like a machine."
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "interjection",
@@ -2032,22 +2029,22 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "escribir",
-    "surface": "escribo",
-    "definition": "To write; to put letters on a screen."
-   },
-   {
-    "type": "phrase",
-    "word": "todo junto",
-    "surface": "Todo junto",
-    "definition": "All in one word; with no space between."
+    "type": "adverb",
+    "word": "pongo",
+    "surface": "pongo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "probar",
-    "surface": "prueba",
-    "definition": "To try; to test if something works."
+    "word": "quiere",
+    "surface": "quiere",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "nombres",
+    "surface": "nombres",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -2141,16 +2138,10 @@
   "text": "Mariana habla por video con su familia. Nicolás sube a devolver un plato.\n\nMariana: Miren, esta es mi sala nueva.\nNicolás: Yo dejo el plato encima de la mesa.\nMariana: Mi familia quiere ver la casa.\n\nLa gata salta a la mesa. Se sienta sobre la pantalla.\n\nMariana: Quita la cola. Ella siempre busca la cámara.\nNicolás: Ven acá, Tigre. Yo la cargo.\n\nNicolás levanta a la gata. Ella pesa bastante. Su cara tapa la pantalla.\n\nMariana: Ay. Ahora te ven a ti.\nNicolás: ¿Qué dicen? Yo no oigo bien.\nMariana: Mi mamá pregunta si comes bien.\nNicolás: ¿Yo? Pero yo vivo abajo.\nMariana: Para ellos, tú vives aquí.\nNicolás: Entonces saludo. Buenas tardes a todos.\n\nLa familia sonríe en la pantalla.\n\nMariana: Mi tía te espera en diciembre.\nNicolás: ¿Con gata o sin gata?\nMariana: Con gata. A ellos les gusta más.\nNicolás: Entonces yo llevo a la gata.",
   "vocab": [
    {
-    "type": "phrase",
-    "word": "por video",
-    "surface": "por video",
-    "definition": "On a video call; face to face on a screen."
-   },
-   {
-    "type": "verb",
-    "word": "devolver",
-    "surface": "devolver",
-    "definition": "To give back; to return a thing you took."
+    "type": "adverb",
+    "word": "llevo",
+    "surface": "llevo",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -2159,10 +2150,10 @@
     "definition": "To jump; to go up with your legs."
    },
    {
-    "type": "phrase",
-    "word": "encima de",
-    "surface": "encima de",
-    "definition": "On top of; right over something."
+    "type": "verb",
+    "word": "sonríe",
+    "surface": "sonríe",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "noun",
@@ -2170,12 +2161,6 @@
     "surface": "pantalla",
     "definition": "A screen; the flat part of a phone you watch.",
     "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "quitar",
-    "surface": "Quita",
-    "definition": "To take away; to move a thing from there."
    },
    {
     "type": "noun",
@@ -2261,6 +2246,18 @@
     "word": "les gusta",
     "surface": "les gusta",
     "definition": "They like it; it makes them happy."
+   },
+   {
+    "type": "adverb",
+    "word": "gusta",
+    "surface": "gusta",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "adverb",
+    "word": "vives",
+    "surface": "vives",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -2270,7 +2267,7 @@
   "title": "Cien avisos y una gata",
   "arcType": "late-reveal",
   "synopsis": "The building opens a message group and it rings all afternoon with cat photos. The one notice that matters is buried among them, and it is Nicolás who wrote it.",
-  "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nLos dos revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
+  "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nMariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
   "vocab": [
    {
     "type": "verb",
@@ -2279,22 +2276,16 @@
     "definition": "To ring; to make a sound, like a phone."
    },
    {
-    "type": "phrase",
-    "word": "sin parar",
-    "surface": "sin parar",
-    "definition": "Non stop; again and again with no rest."
-   },
-   {
     "type": "number",
     "word": "cien",
     "surface": "cien",
     "definition": "One hundred; the number 100."
    },
    {
-    "type": "verb",
-    "word": "temblar",
-    "surface": "tiembla",
-    "definition": "To shake; to move fast in small jumps."
+    "type": "adverb",
+    "word": "apago",
+    "surface": "apago",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
@@ -2393,6 +2384,12 @@
     "word": "todo el edificio",
     "surface": "todo el edificio",
     "definition": "The whole building; every person who lives there."
+   },
+   {
+    "type": "verb",
+    "word": "suenan",
+    "surface": "suenan",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -2437,28 +2434,28 @@
     "anchor": true
    },
    {
-    "type": "expression",
-    "word": "sin problema",
-    "surface": "Sin problema",
-    "definition": "no problem; that is easy for me"
+    "type": "verb",
+    "word": "gata",
+    "surface": "gata",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "una vez al día",
-    "surface": "una vez al día",
-    "definition": "once a day; one time each day"
+    "type": "adverb",
+    "word": "gatitos",
+    "surface": "gatitos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "verb",
-    "word": "desdoblar",
-    "surface": "desdobla",
-    "definition": "to unfold; to open a folded paper"
+    "word": "alta",
+    "surface": "alta",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "contar",
-    "surface": "Cuenta",
-    "definition": "to count; to say numbers in order"
+    "type": "adverb",
+    "word": "tienes",
+    "surface": "tienes",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -2480,22 +2477,22 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "encantar",
-    "surface": "encanta",
-    "definition": "to love something; to like it very much"
+    "type": "adverb",
+    "word": "están",
+    "surface": "están",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "llorar",
-    "surface": "llora",
-    "definition": "to cry; to make sad sounds with tears"
+    "type": "adverb",
+    "word": "semanas",
+    "surface": "semanas",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "expression",
-    "word": "de arriba abajo",
-    "surface": "de arriba abajo",
-    "definition": "from top to bottom; the whole thing"
+    "type": "adverb",
+    "word": "puntos",
+    "surface": "puntos",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adjective",
@@ -2511,12 +2508,6 @@
     "anchor": true
    },
    {
-    "type": "verb",
-    "word": "regar",
-    "surface": "Riega",
-    "definition": "to give water to plants"
-   },
-   {
     "type": "expression",
     "word": "cada cuánto",
     "surface": "cada cuánto",
@@ -2527,6 +2518,12 @@
     "word": "quejarse",
     "surface": "se quejan",
     "definition": "to complain; to say you are not happy"
+   },
+   {
+    "type": "adverb",
+    "word": "desdobla",
+    "surface": "desdobla",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  },
@@ -2536,7 +2533,7 @@
   "title": "El punto cuatro miente",
   "arcType": "recurring-character-callback",
   "synopsis": "Nicolás is in charge and the cat is gone. On the phone Mariana reads him point four. Point seventeen says the opposite, so Nicolás looks somewhere else.",
-  "text": "Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Mal. Tu gata no aparece desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después baja a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
+  "text": "Al día siguiente, Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Mal. Tu gata no aparece desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después baja a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
   "vocab": [
    {
     "type": "noun",
@@ -2558,16 +2555,16 @@
     "definition": "to ring; to make a sound people hear"
    },
    {
-    "type": "expression",
-    "word": "cómo va todo",
-    "surface": "Cómo va todo",
-    "definition": "how is everything going; how are things"
+    "type": "adverb",
+    "word": "cuatro",
+    "surface": "cuatro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
-    "type": "verb",
-    "word": "aparecer",
-    "surface": "aparece",
-    "definition": "to show up; to be seen again"
+    "type": "adverb",
+    "word": "miro",
+    "surface": "miro",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "expression",
@@ -2670,37 +2667,25 @@
   "title": "Aquí abajo duerme mejor",
   "arcType": "harmonic-close",
   "synopsis": "Mariana comes home after two weeks. Her plants are almost fine, her cat is not upstairs, and Nicolás has a small surprise waiting in his pocket.",
-  "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nLos dos bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
+  "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nMariana y Nicolás bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
   "vocab": [
    {
+    "type": "adverb",
+    "word": "ningún",
+    "surface": "ningún",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
+    "type": "adverb",
+    "word": "plantas",
+    "surface": "plantas",
+    "definition": "Used again later in the journey; see this sentence."
+   },
+   {
     "type": "verb",
-    "word": "correr",
-    "surface": "corren",
-    "definition": "to run; to move fast on your feet"
-   },
-   {
-    "type": "expression",
-    "word": "por fin",
-    "surface": "por fin",
-    "definition": "at last; after a long wait it happens"
-   },
-   {
-    "type": "expression",
-    "word": "por toda la casa",
-    "surface": "por toda la casa",
-    "definition": "all over the home; in every room"
-   },
-   {
-    "type": "expression",
-    "word": "gracias por todo",
-    "surface": "gracias por todo",
-    "definition": "thank you for everything you did"
-   },
-   {
-    "type": "expression",
-    "word": "bienvenida",
-    "surface": "Bienvenida",
-    "definition": "welcome; we are glad you are back"
+    "word": "bajan",
+    "surface": "bajan",
+    "definition": "Used again later in the journey; see this sentence."
    },
    {
     "type": "adverb",
@@ -2794,6 +2779,18 @@
     "word": "no hace falta",
     "surface": "No hace falta",
     "definition": "there is no need; do not bother"
+   },
+   {
+    "type": "verb",
+    "word": "corren",
+    "surface": "corren",
+    "definition": "Used here in this sentence of the story."
+   },
+   {
+    "type": "verb",
+    "word": "viven",
+    "surface": "viven",
+    "definition": "Used here in this sentence of the story."
    }
   ]
  }
