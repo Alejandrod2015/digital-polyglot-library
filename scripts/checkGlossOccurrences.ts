@@ -15,6 +15,13 @@
  * que ningun trozo de la entrada (`c` y `cs`) cubre. Palabras sin `c` no
  * entran: sin capa no hay nada que confundir.
  *
+ * TAMPOCO entra la aparicion cuyo TURNO completo es una sola palabra tocable
+ * (`turnoDeUnaPalabra`, en src/lib/tapGlossChunk.ts). En un journey de formato
+ * dialogo media conversacion son turnos asi ("Si.", "Gracias.", "¿Casi?"), y
+ * ahi el trozo seria la palabra repitiendo su propia definicion, que es lo que
+ * `checkGlossContextReal` prohibe: no es un hueco de la capa, es la forma del
+ * texto. La condicion es del TURNO: "Si, ya voy." sigue contando.
+ *
  * La deuda de hoy se congela por bundle en
  * scripts/gloss-occurrences-baseline.json como CONJUNTO de `slug|palabra`
  * (src/lib/glossContextBaseline.ts): un hueco nuevo bloquea, uno viejo se ve
@@ -33,7 +40,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { PrismaClient } from "../src/generated/prisma";
 import { extractStoryPlainText } from "../src/lib/storyPlainText";
-import { uncoveredOccurrences, type GlossChunk } from "../src/lib/tapGlossChunk";
+import { turnoDeUnaPalabra, uncoveredOccurrences, type GlossChunk } from "../src/lib/tapGlossChunk";
 import { apretarLineaBase, clavesDelBundle, compararConLineaBase, type LineaBaseGlossContext } from "../src/lib/glossContextBaseline";
 
 const prisma = new PrismaClient();
@@ -67,7 +74,11 @@ async function medirBundle(bundle: string, lista = false): Promise<{ malas: Set<
     for (const [palabra, entrada] of Object.entries(glosses)) {
       if (typeof entrada?.c?.es !== "string") continue;
       total++;
-      const sin = uncoveredOccurrences(palabra, texto, entrada);
+      // La rama de DIALOGO se SUMA a la logica de siempre, no la sustituye:
+      // una aparicion cuyo turno completo es una sola palabra tocable ("Si.",
+      // "Gracias.", "¿Casi?") no es un hueco, porque no hay trozo que escribir
+      // (seria la palabra repitiendo su definicion). "Si, ya voy." si cuenta.
+      const sin = uncoveredOccurrences(palabra, texto, entrada).filter((o) => !turnoDeUnaPalabra(texto, o.at));
       if (!sin.length) continue;
       huecos += sin.length;
       malas.add(`${row.slug}|${palabra}`);

@@ -38,7 +38,14 @@ function fragmento(texto: string, at: number): string {
     cursor += parte.length + 1;
   }
   const elegido = trozos.filter((t) => t.ini <= pos).pop() ?? trozos[0];
-  return elegido.txt.replace(/^[¿¡"“]+/, "").replace(/[.,;:!?"”]+$/, "").trim();
+  const limpio = (x: string) => x.replace(/^[¿¡"“]+/, "").replace(/[.,;:!?"”]+$/, "").trim();
+  // Si la ORACION es de una sola palabra ("Si.", "¿Casi?", "No."), el trozo
+  // seria la palabra repitiendo su definicion. El contexto esta en el TURNO
+  // entero, que aqui si tiene varias palabras ("Si. Y sin mayuscula."), asi
+  // que se usa ese. Un turno que de verdad sea de una palabra no llega hasta
+  // aqui: lo descarta el gate (turnoDeUnaPalabra, en tapGlossChunk.ts).
+  if ((limpio(elegido.txt).match(/\p{L}+/gu) ?? []).length <= 1) return sinEtiqueta.trim();
+  return limpio(elegido.txt);
 }
 
 async function cargar() {
