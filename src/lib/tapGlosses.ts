@@ -33,6 +33,10 @@ export type TapGloss = {
   /** El trozo mínimo con sentido alrededor de la palabra, en la lengua de la
    *  historia y en inglés. "baja" -> { es: "baja del tren", en: "gets off the train" }. */
   c?: { es: string; en: string };
+  /** Los trozos de las DEMÁS apariciones de la palabra en la historia, cuando
+   *  sale más de una vez. `c` es la primera y lo leen las apps ya publicadas;
+   *  la tarjeta elige el que cubre la posición tocada (`chunkForTap`). */
+  cs?: { es: string; en: string }[];
   /** Marca de género para los sustantivos ("m." / "f."), pegada a la palabra
    *  como en un diccionario. Es lo único que el distintivo de tipo no dice, y
    *  `el` no se lo dice a quien viene del inglés. */

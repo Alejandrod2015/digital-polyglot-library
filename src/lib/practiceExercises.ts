@@ -1127,7 +1127,7 @@ export function buildPracticeSession(
   const languageAwarePool = uniqueByWord([...source, ...catalogPool]);
   const exercises: PracticeExercise[] = [];
 
-  // SPEAKING: piloto de plan `polyglot`. El slot no existe si el cliente no
+  // SPEAKING: planes `premium` y `polyglot` (gate en el cliente movil). El slot no existe si el cliente no
   // lo habilita. La web pasa siempre `false`: el microfono del navegador queda
   // fuera del piloto.
   if (mode === "speaking") {

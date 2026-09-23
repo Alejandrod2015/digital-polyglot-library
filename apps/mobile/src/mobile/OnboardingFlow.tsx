@@ -13,8 +13,10 @@ import {
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import { LevelTestRunner } from "./LevelTestRunner";
+import { hasStoryLevelTest } from "./levelTestAvailability";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { type CEFRLevel, hasLevelTest } from "./levelTest";
+import { formatCefrDisplay } from "@digital-polyglot/domain";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
@@ -60,6 +62,11 @@ export type OnboardingPayload = {
   /** CEFR level from the level test, if the user took it. null when
    *  they skipped the test. */
   testedLevel: CEFRLevel | null;
+  /** True when the user asked for the story test (four curated practice
+   *  exercises per level, run in the practice session) instead of picking
+   *  a level. The shell starts it right after the onboarding hand-off;
+   *  `level` carries the provisional pick until the test places them. */
+  startLevelTest?: boolean;
   dailyMinutes: 5 | 10 | 15 | 30;
   remindersEnabled: boolean;
   reminderHour: number | null;
@@ -83,6 +90,10 @@ type Props = {
   unavailableVariants?: ReadonlySet<string>;
   onComplete: (payload: OnboardingPayload) => Promise<void> | void;
   onCancel?: () => void;
+  /** Answers to come back to, opened at step 4: the shell passes them when
+   *  the learner left the story test without a result, so they pick a level
+   *  by hand instead of landing on a journey they never chose. */
+  resumeFrom?: OnboardingPayload | null;
   /** Fire-and-forget tracker injected by the shell so OnboardingFlow
    *  stays unaware of session/auth details. Used to record funnel
    *  events (started / step_completed / finished / abandoned /
@@ -232,6 +243,7 @@ export function OnboardingFlow({
   onComplete,
   onCancel,
   trackEvent,
+  resumeFrom = null,
 }: Props) {
   // 4-step flow:
   //   1. Languages
@@ -239,11 +251,21 @@ export function OnboardingFlow({
   //   3. Daily goal + reminders
   //   4. Level (with optional level test for accuracy); last step so
   //      the test result, when taken, lands right before submit.
-  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(resumeFrom ? 4 : 1);
   // We track selection by option *key*, not language name, so the two
   // English rows (English|us / English|uk) can coexist in the catalog
   // without collapsing to the same selection bucket.
-  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(() =>
+    resumeFrom
+      ? resumeFrom.selections
+          .map((sel) =>
+            LANGUAGE_OPTIONS.find(
+              (o) => o.name === sel.language && (o.variantCode ?? null) === (sel.variant ?? null)
+            )?.key
+          )
+          .filter((key): key is string => Boolean(key))
+      : []
+  );
   const selectedOptions = useMemo(
     () =>
       selectedKeys
@@ -254,7 +276,7 @@ export function OnboardingFlow({
   // Convenience shortcut for places that only care about the
   // first/active language (greeting examples, summary copy, etc.).
   const language = selectedOptions[0]?.name ?? null;
-  const [whys, setWhys] = useState<Set<string>>(new Set());
+  const [whys, setWhys] = useState<Set<string>>(() => new Set(resumeFrom?.whys ?? []));
   const [level, setLevel] = useState<OnboardingLevel | null>(null);
   // CEFR level produced by the level test, if the user took it. null
   // means they skipped the test (we'll persist the self-reported
@@ -264,10 +286,14 @@ export function OnboardingFlow({
   // the onboarding flow. The runner is full-screen and self-handles
   // its lifecycle; we just gate it with this flag.
   const [levelTestOpen, setLevelTestOpen] = useState(false);
-  const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(15);
-  const [remindersEnabled, setRemindersEnabled] = useState(true);
-  const [reminderHour, setReminderHour] = useState<number | null>(19);
-  const [reminderMinute, setReminderMinute] = useState<number | null>(0);
+  const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(resumeFrom?.dailyMinutes ?? 15);
+  const [remindersEnabled, setRemindersEnabled] = useState(resumeFrom?.remindersEnabled ?? true);
+  const [reminderHour, setReminderHour] = useState<number | null>(
+    resumeFrom ? resumeFrom.reminderHour : 19
+  );
+  const [reminderMinute, setReminderMinute] = useState<number | null>(
+    resumeFrom ? resumeFrom.reminderMinute ?? 0 : 0
+  );
   const [timePickerOpen, setTimePickerOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   // Optional first name (step 1). Seed from the session name when we
@@ -280,7 +306,8 @@ export function OnboardingFlow({
   // de pila mas "del Carpio" de apellido daba "Alejandro del Carpio del
   // Carpio" en pantalla, y guardarlo lo dejaba asi en la cuenta.
   const [firstName, setFirstName] = useState(
-    typeof userName === "string" && userName.trim() ? userName.trim().split(/\s+/)[0] : ""
+    resumeFrom?.firstName ??
+      (typeof userName === "string" && userName.trim() ? userName.trim().split(/\s+/)[0] : "")
   );
 
   // Fire onboarding_started exactly once per mount. The ref guard
@@ -295,7 +322,17 @@ export function OnboardingFlow({
   // Slide animation between steps. translateX 24→0 + fade-in.
   const slide = useRef(new Animated.Value(0)).current;
   const fade = useRef(new Animated.Value(1)).current;
+  // Coming back from the story test the flow mounts straight on step 4:
+  // it is already in view, so it must not start invisible and wait for an
+  // animation (on Android the resumed step showed empty, 2026-09-20).
+  const skipEntranceRef = useRef(Boolean(resumeFrom));
   useEffect(() => {
+    if (skipEntranceRef.current) {
+      skipEntranceRef.current = false;
+      slide.setValue(0);
+      fade.setValue(1);
+      return;
+    }
     slide.setValue(24);
     fade.setValue(0);
     Animated.parallel([
@@ -317,7 +354,10 @@ export function OnboardingFlow({
     if (step === 1) return selectedKeys.length > 0;
     if (step === 2) return whys.size > 0;
     if (step === 3) return dailyMinutes !== null;
-    // Step 4 (level): need a level pick OR a test result.
+    // Step 4 (level): need a level pick OR a test result. The pick is
+    // always available (2026-09-20, second decision of the day: making the
+    // listening test the only way through put three minutes in front of
+    // every Spanish sign-up); the test is the optional, more accurate path.
     return level !== null || testedLevel !== null;
   }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes]);
 
@@ -388,11 +428,14 @@ export function OnboardingFlow({
   async function submit(opts?: {
     testedLevelOverride?: CEFRLevel | null;
     levelFallback?: OnboardingLevel;
+    startLevelTest?: boolean;
   }) {
     const effectiveTested =
       opts && "testedLevelOverride" in opts ? opts.testedLevelOverride ?? null : testedLevel;
     if (selectedOptions.length === 0 || !dailyMinutes) return;
-    if (!level && !effectiveTested) return;
+    // The story test may start with no pick at all: `levelFallback` then
+    // carries the provisional level until the test places the learner.
+    if (!level && !effectiveTested && !opts?.startLevelTest) return;
     setSubmitting(true);
     try {
       await onComplete({
@@ -409,6 +452,7 @@ export function OnboardingFlow({
         // back to the caller's hint or "Brand new".
         level: level ?? opts?.levelFallback ?? "Brand new",
         testedLevel: effectiveTested,
+        startLevelTest: opts?.startLevelTest ?? false,
         dailyMinutes,
         remindersEnabled,
         reminderHour: remindersEnabled ? reminderHour : null,
@@ -692,8 +736,9 @@ export function OnboardingFlow({
               Where are you starting with {language ?? "this language"}?
             </Text>
             <Text style={styles.subtitle}>
-              Pick the closest match. Or take a 1-minute level test for a more
-              accurate placement.
+              {language && hasStoryLevelTest(language)
+                ? "Pick the closest match. Or try a few story exercises and we'll pick a level that feels comfortable."
+                : "Pick the closest match. Or take a 1-minute level test for a more accurate placement."}
             </Text>
 
             <View style={styles.levelList}>
@@ -753,15 +798,24 @@ export function OnboardingFlow({
             {/* Level test offer; only shown for languages where we
                 have authored test content (Spanish, German). The test
                 runner is a full-screen modal that overlays this flow. */}
-            {language && hasLevelTest(language) ? (
+            {language && (hasLevelTest(language) || hasStoryLevelTest(language)) ? (
               <Pressable
                 onPress={() => {
                   trackEvent?.("onboarding_level_test_started", {
                     language,
                     variant: selectedOptions[0]?.variantCode ?? null,
+                    format: hasStoryLevelTest(language) ? "practice" : "grammar",
                   });
+                  if (hasStoryLevelTest(language)) {
+                    // The story test runs in the practice session, which
+                    // lives in the shell: finish the onboarding with the
+                    // pick so far (or the floor) and let the shell open it.
+                    void submit({ levelFallback: "Brand new", startLevelTest: true });
+                    return;
+                  }
                   setLevelTestOpen(true);
                 }}
+                disabled={submitting}
                 style={styles.levelTestCta}
               >
                 <View style={styles.levelTestCtaIcon}>
@@ -770,13 +824,17 @@ export function OnboardingFlow({
                 <View style={styles.levelTestCtaText}>
                   <Text style={styles.levelTestCtaTitle}>
                     {testedLevel
-                      ? `Tested level: ${testedLevel}`
-                      : "Take the level test"}
+                      ? `Tested level: ${formatCefrDisplay(testedLevel)}`
+                      : hasStoryLevelTest(language)
+                        ? "Take the story test"
+                        : "Take the level test"}
                   </Text>
                   <Text style={styles.levelTestCtaHint}>
                     {testedLevel
                       ? "Tap to retake the test"
-                      : "10 quick questions · ~1 minute"}
+                      : hasStoryLevelTest(language)
+                        ? "4 quick exercises per level · about 3 minutes"
+                        : "10 quick questions · ~1 minute"}
                   </Text>
                 </View>
                 <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.55)" />
@@ -787,7 +845,7 @@ export function OnboardingFlow({
               <View style={styles.testedLevelCard}>
                 <Feather name="check-circle" size={14} color={tokenColor.xp} />
                 <Text style={styles.testedLevelText}>
-                  We&apos;ll start your journey at {testedLevel}.
+                  We&apos;ll start your journey at {formatCefrDisplay(testedLevel)}.
                 </Text>
               </View>
             ) : null}
@@ -815,7 +873,7 @@ export function OnboardingFlow({
           when the user taps "Take the level test". Self-contained;
           calls back with a CEFR level which we store as `testedLevel`
           and surface as the placement when the user submits. */}
-      {language ? (
+      {language && !hasStoryLevelTest(language) ? (
         <LevelTestRunner
           open={levelTestOpen}
           language={language}
@@ -829,9 +887,20 @@ export function OnboardingFlow({
             // result directly since setTestedLevel hasn't flushed yet.
             setTestedLevel(result.level);
             setLevelTestOpen(false);
+            // `cefrLevel` is where the user starts (one step below what they
+            // showed); `demonstratedLevel` and the score are logged too, or
+            // there is no way to judge the test afterwards. Until
+            // 2026-09-19 only the level was saved. `origin` tells this
+            // attempt apart from the same test taken from a locked story
+            // (MobileLibraryShell), which fires the same event.
             trackEvent?.("onboarding_level_test_completed", {
               language,
               cefrLevel: result.level,
+              demonstratedLevel: result.demonstrated,
+              correct: result.correct,
+              total: result.total,
+              origin: "onboarding",
+              format: "grammar",
             });
             await submit({ testedLevelOverride: result.level, levelFallback: "Some" });
           }}

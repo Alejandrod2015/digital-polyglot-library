@@ -112,6 +112,7 @@ checkKaraokeFresh    db
 checkDistractors     db
 checkGlossContext    db
 checkGlossContextReal db
+checkGlossOccurrences db
 checkGlossesReviewed db
 checkHardRules       memoria
 checkRulesInventory  -

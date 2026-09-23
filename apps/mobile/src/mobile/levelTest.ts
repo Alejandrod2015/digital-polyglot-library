@@ -9,21 +9,28 @@
  *      instead of just blocking them.
  *
  * Each question is tagged with a CEFR level (A1/A2/B1/B2). The 10
- * questions ramp up in difficulty: 2 A1 + 3 A2 + 3 B1 + 2 B2. The
- * resulting score (0-10) maps to a level via `levelFromScore`.
+ * questions ramp up in difficulty: 2 A1 + 3 A2 + 3 B1 + 2 B2. A level
+ * counts only when its OWN questions are answered (`demonstratedLevel`),
+ * and onboarding starts the user one step below that
+ * (`placementFromTest`).
  *
  * This module ships hand-authored content for Spanish + German. Other
  * languages fall back to a generic placeholder set or hide the test
  * entry point until content is authored for them.
  */
 
-export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+/** A0 is not a real CEFR level, but it is our first journey rung and the
+ *  honest result for someone who misses the A1 questions. */
+export type CEFRLevel = "A0" | "A1" | "A2" | "B1" | "B2" | "C1";
+
+/** Levels a question can be tagged with. */
+export type LevelTestQuestionLevel = "A1" | "A2" | "B1" | "B2";
 
 export type LevelTestQuestion = {
   id: string;
   /** CEFR difficulty of this question; drives the score → level
-   *  mapping in `levelFromScore`. */
-  level: Exclude<CEFRLevel, "C1">;
+   *  mapping in `demonstratedLevel`. */
+  level: LevelTestQuestionLevel;
   /** Short prompt shown to the user (e.g. "Complete the sentence"
    *  or "What's the meaning of '___'?"). */
   prompt: string;
@@ -323,19 +330,53 @@ const ITALIAN_QUESTIONS: LevelTestQuestion[] = [
   },
 ];
 
+const LEVEL_SCALE: CEFRLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1"];
+const QUESTION_LEVELS: LevelTestQuestionLevel[] = ["A1", "A2", "B1", "B2"];
+
+export type LevelTestAnswer = { level: LevelTestQuestionLevel; correct: boolean };
+
 /**
- * Map a 10-question score to the highest level the user can
- * comfortably access. The mapping is intentionally conservative -
- * a perfect score lands the user at C1, but missing one B2
- * question still places them at B2 (we don't want to gate users
- * out of content they're nearly at).
+ * The highest level the user actually DEMONSTRATED: a level counts only
+ * if at least two thirds of its own questions are right (2 of 2, 2 of 3),
+ * and every level below it counts too. The first level that fails stops
+ * the climb.
+ *
+ * WHY (2026-09-19): the old mapping only counted correct answers. 8 of 10
+ * meant B2 even with both B2 questions wrong, and 3 of 10 already meant
+ * A2, which pure guessing on four options reaches 47% of the time. Nine of
+ * the sixteen real results up to that day were A2 and none was A1. A
+ * tester placed at B2 got 30% on her first B2 practice and dropped to A0.
+ *
+ * All ten right is C1, as before: the test has no C1 questions, so a
+ * perfect score is the only signal above B2.
  */
-export function levelFromScore(correct: number): CEFRLevel {
-  if (correct >= 10) return "C1";
-  if (correct >= 8) return "B2";
-  if (correct >= 6) return "B1";
-  if (correct >= 3) return "A2";
-  return "A1";
+export function demonstratedLevel(answers: LevelTestAnswer[]): CEFRLevel {
+  let reached: CEFRLevel = "A0";
+  for (const level of QUESTION_LEVELS) {
+    const items = answers.filter((a) => a.level === level);
+    if (items.length === 0) continue;
+    const right = items.filter((a) => a.correct).length;
+    if (right < Math.ceil((items.length * 2) / 3)) break;
+    reached = level;
+  }
+  if (reached === "B2" && answers.length > 0 && answers.every((a) => a.correct)) return "C1";
+  return reached;
+}
+
+/**
+ * Where onboarding starts the user: one step below what they
+ * demonstrated, never below A0.
+ *
+ * The test checks grammar and a few very common words; the stories carry
+ * far more vocabulary and run at narration speed. Starting too high costs
+ * more than starting too low: testers who began one step below scored
+ * 93-100% and kept going, the ones placed above struggled and left or
+ * dropped several levels. The result screen says it is our guess and that
+ * other levels are one tap away.
+ */
+export function placementFromTest(answers: LevelTestAnswer[]): CEFRLevel {
+  const index = LEVEL_SCALE.indexOf(demonstratedLevel(answers));
+  return LEVEL_SCALE[Math.max(0, index - 1)];
 }
 
 /**
@@ -384,11 +425,12 @@ export function cefrFromLegacyLevel(
 }
 
 /**
- * Order CEFR levels for comparison: A1 < A2 < B1 < B2 < C1. Used by
+ * Order CEFR levels for comparison: A0 < A1 < A2 < B1 < B2 < C1. Used by
  * the locked-story modal to decide whether the story is "above" the
  * user's current level.
  */
 const LEVEL_ORDER: Record<CEFRLevel, number> = {
+  A0: -1,
   A1: 0,
   A2: 1,
   B1: 2,

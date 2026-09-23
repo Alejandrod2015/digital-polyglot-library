@@ -2189,6 +2189,13 @@
       "source": "memory:feedback_gloss_in_context.md"
     },
     {
+      "id": "project_gloss_chunk_per_occurrence",
+      "domain": "vocab",
+      "rule": "\"Trozo de contexto por APARICION de la palabra, no por palabra: `c` (primera) + `cs` (las demas); la tarjeta elige el que cubre la posicion tocada y nunca ensena uno ajeno. Regla dura desde 2026-09...",
+      "gate": "scripts/checkGlossOccurrences.ts",
+      "source": "memory:project_gloss_chunk_per_occurrence.md"
+    },
+    {
       "id": "feedback_missing_content_is_an_opportunity",
       "domain": "vocab",
       "rule": "\"Que falte contenido para un idioma, nivel o región NO es un problema ni un motivo para excluir a nadie; es una señal de qué crear\"",

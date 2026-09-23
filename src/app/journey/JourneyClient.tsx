@@ -107,6 +107,8 @@ function topicEmoji(label: string): string {
 const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; country: string }> = {
   // ── ISO short codes ──
   latam: { code: "ES", country: "CO" }, // LATAM → Colombia por defecto
+  // Tour pan-regional (2026-09-19, TAXONOMIA_variantes_latam): misma pill.
+  "latam-multi": { code: "ES", country: "CO" },
   spain: { code: "ES", country: "ES" },
   // Country-specific Spanish journeys carry their own country flag.
   mexico: { code: "ES", country: "MX" },

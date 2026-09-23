@@ -79,6 +79,21 @@ const FLAGS: Record<string, React.ReactNode> = {
       <rect width="1" height="2" x="2" fill="#EF4135" />
     </>
   ),
+  PE: (
+    <>
+      <rect width="1" height="2" x="0" fill="#D91023" />
+      <rect width="1" height="2" x="1" fill="#FFFFFF" />
+      <rect width="1" height="2" x="2" fill="#D91023" />
+    </>
+  ),
+  CL: (
+    <>
+      <rect width="3" height="1" y="0" fill="#FFFFFF" />
+      <rect width="3" height="1" y="1" fill="#D52B1E" />
+      <rect width="1" height="1" x="0" y="0" fill="#0039A6" />
+      <polygon points="0.5,0.22 0.63,0.62 0.05,0.38 0.95,0.38 0.37,0.62" fill="#FFFFFF" />
+    </>
+  ),
   IT: (
     <>
       <rect width="1" height="2" x="0" fill="#009246" />

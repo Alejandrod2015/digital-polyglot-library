@@ -5,6 +5,13 @@
  *
  * `trozos.json`: { "palabra": { "es": "...", "en": "...", "gm"?, "g"?, "t"?, "here"?, "nof"? }
  *
+ * Una palabra que sale VARIAS veces en la historia lleva una LISTA, un trozo
+ * por aparicion y en el orden del texto: el primero va a `c` (lo leen las apps
+ * publicadas) y los demas a `cs`. Con un solo trozo, la tarjeta se lo callaba
+ * en las otras apariciones y `checkGlossOccurrences.ts` las cuenta como hueco.
+ * Todo trozo tiene que estar literal en el texto de la historia; si no, no se
+ * escribe.
+ *
  * `here` corrige la fila encendida de la tabla del generador, que elige la
  * PRIMERA fila con esa forma: `war` sale "ich war" en "Das war dumm", y
  * `sitzen` sale "wir" en "Alle sitzen". -1 es un infinitivo, ninguna fila.
@@ -29,9 +36,13 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import fs from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
+import { extractStoryPlainText } from "../src/lib/storyPlainText";
+import { chunkCoversTap } from "../src/lib/tapGlossChunk";
 
 const prisma = new PrismaClient();
 type Trozo = { es: string; en: string; gm?: string; g?: string; t?: string; here?: number; nof?: boolean };
+type Entrada = Trozo | Trozo[];
+const primero = (e: Entrada): Trozo => (Array.isArray(e) ? e[0] : e);
 
 async function main() {
   const [bundle, slug, fichero] = process.argv.slice(2);
@@ -39,25 +50,46 @@ async function main() {
     console.error("uso: writeGlossLayer.ts <bundle> <slug> <trozos.json>");
     process.exit(2);
   }
-  const trozos = JSON.parse(fs.readFileSync(fichero, "utf8")) as Record<string, Trozo>;
+  const trozos = JSON.parse(fs.readFileSync(fichero, "utf8")) as Record<string, Entrada>;
+  for (const [w, e] of Object.entries(trozos)) {
+    if (Array.isArray(e) && e.length === 0) { console.error(`${w}: lista vacia`); process.exit(1); }
+  }
 
   const global = await prisma.tapGlossSet.findUnique({ where: { bundle_slug: { bundle, slug: "" } } });
   if (!global) { console.error(`el bundle ${bundle} no existe en la base`); process.exit(1); }
   const plana = global.glosses as Record<string, { g: string; t: string }>;
 
-  const faltan = Object.keys(trozos).filter((w) => !plana[w]);
+  const fila = await prisma.tapGlossSet.findUnique({ where: { bundle_slug: { bundle, slug } } });
+  const capa = (fila?.glosses as Record<string, Record<string, unknown>>) ?? {};
+  // Una expresion de varias palabras ("vitel toné") vive solo en la capa de
+  // la historia; vale si ya esta ahi aunque el mapa global no la tenga.
+  const faltan = Object.keys(trozos).filter((w) => !plana[w] && !capa[w]);
   if (faltan.length) {
-    console.error("no estan en la glosa global, no escribo:", faltan.join(", "));
+    console.error("no estan en la glosa global ni en la capa, no escribo:", faltan.join(", "));
     process.exit(1);
   }
 
-  const fila = await prisma.tapGlossSet.findUnique({ where: { bundle_slug: { bundle, slug } } });
-  const capa = (fila?.glosses as Record<string, Record<string, unknown>>) ?? {};
-  for (const [w, t] of Object.entries(trozos)) {
+  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { title: true, text: true } });
+  if (!story) { console.error(`la historia ${slug} no existe en la base`); process.exit(1); }
+  const texto = `${story.title}\n${extractStoryPlainText(story.text)}`;
+  const noEstan = Object.entries(trozos).flatMap(([w, e]) =>
+    (Array.isArray(e) ? e : [e]).filter((t) => !chunkCoversTap(t.es, texto)).map((t) => `${w}: "${t.es}"`)
+  );
+  if (noEstan.length) {
+    console.error("trozos que no estan literales en la historia, no escribo:\n  " + noEstan.join("\n  "));
+    process.exit(1);
+  }
+
+  for (const [w, entrada] of Object.entries(trozos)) {
+    const t = primero(entrada);
     const e = capa[w] ?? { g: plana[w].g, t: plana[w].t };
-    e.g ??= plana[w].g;
-    e.t ??= plana[w].t;
+    e.g ??= plana[w]?.g;
+    e.t ??= plana[w]?.t;
     e.c = { es: t.es, en: t.en };
+    if (Array.isArray(entrada)) {
+      const resto = entrada.slice(1).map((x) => ({ es: x.es, en: x.en }));
+      if (resto.length) e.cs = resto; else delete e.cs;
+    }
     if (t.gm) e.gm = t.gm;
     if (t.g) e.g = t.g;
     if (t.t) e.t = t.t;

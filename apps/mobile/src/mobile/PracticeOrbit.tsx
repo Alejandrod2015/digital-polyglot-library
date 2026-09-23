@@ -57,7 +57,7 @@ export type PracticeOrbitProps = {
   reviewSoonCount?: number;
   /** Minutes until the soonest of those reviews, for the caption. */
   reviewSoonMinutes?: number | null;
-  /** Piloto del ejercicio hablado: solo el plan `polyglot`. Cuando es false, su
+  /** Ejercicio hablado: planes `premium` y `polyglot`. Cuando es false, su
    *  tarjeta no se pinta y el modo no cuenta como skill, igual que su slot no
    *  entra en la sesion mixta. */
   speakingEnabled?: boolean;
@@ -118,7 +118,7 @@ const MODE_LABELS: Record<PracticeModeKey, string> = {
 
 // Los modos que se pueden elegir a mano. `speaking` entra para poder hacer una
 // tanda ENTERA hablada: probar diez turnos seguidos pasando por diez sesiones
-// mixtas no es una prueba, es una tarde. Solo se pinta con el plan `polyglot`
+// mixtas no es una prueba, es una tarde. Solo se pinta con el gate de plan
 // (`speakingEnabled`), la misma condicion que abre el slot de la mixta, asi que
 // para todos los demas la rejilla sigue siendo el 2x2 de siempre.
 const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match", "speaking"];

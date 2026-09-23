@@ -234,18 +234,25 @@ const FORMAS_DE: Array<[string, (n: string) => RegExp]> = [
  * Las tres formas aprobadas en PORTUGUES, fijadas con el usuario el 2026-08-18
  * mientras se escribia el Traveler PT-BR A1 ([[feedback_introduce_characters]]):
  *
- *   aposicion   Rafaela, uma moca de Sao Paulo, chega em Manaus...
- *   quem        Quem serve e Dora, uma senhora de Belem que abre a banca...
- *   nombre      Neide vende na mesma calcada desde que a filha dela nasceu.
+ *   lugar y descriptor  No portao esta Rafaela, uma moca de Sao Paulo que...
+ *   aposicion           Rafaela, uma moca de Sao Paulo, chega em Manaus...
+ *   nombre y oficio     Rafaela e uma moca de Sao Paulo. / Neide vende na...
  *
  * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
  * lleva ahi); "Rafaela chega" no presenta a nadie y por eso no entra.
+ *
+ * "Quem serve e Dora" NO es una forma: hasta el 2026-09-11 figuraba aqui y los
+ * chats la usaban para pasar el check, cuando la regla la prohibe con esas
+ * mismas palabras. Ahora la caza GIROS_PROHIBIDOS, mas abajo.
  */
 const NUC_PT = "(?:[a-zà-ú]+\\s+){0,3}[a-zà-ú]+";
 const VERBO_SER_PT = "(?:é|foi|era|trabalha|trabalhou|vende|vendia|leva|levava|cuida|cuidava|pinta|pintava|desceu|mora|morava|abre|abria|serve|servia|senta|sentava|nasceu|estuda|estudava|pesca|pescava|sobe|subia)";
 const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
+  // Va delante de la aposicion porque tambien la contiene: sin ir primero,
+  // toda presentacion tras el lugar se contaria como aposicion y la variedad
+  // mediria dos formas donde hay tres.
+  ["lugar y descriptor", (n) => new RegExp(`(?<!\\p{L})(?:está|estava|espera|esperava|aguarda|aguardava)\\s+${n},\\s+(?:um|uma|o|a)\\s+${NUC_PT}`, "iu")],
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:um|uma)\\s+${NUC_PT}`, "iu")],
-  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}(?!\\p{L})`, "iu")],
   ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+(?:${VERBO_SER_PT})(?!\\p{L})`, "iu")],
 ];
 
@@ -276,12 +283,16 @@ const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
  * `not-implemented` para ES, que bloquea igual que un fallo, asi que ningun
  * journey de espanol podia guardarse.
  *
- *   aposicion        Elena, una viajera de paso, busca el letrero de su ruta.
- *   quien            Quien abre la puerta es Mireya, la duena de la casa.
- *   nombre y oficio  Julio maneja un taxi desde antes de que naciera su hija.
+ *   lugar y descriptor  En la puerta esta Mireya, la duena de la casa, con...
+ *   aposicion           Elena, una viajera de paso, busca el letrero de su ruta.
+ *   nombre y oficio     Julio maneja un taxi desde antes de que naciera su hija.
  *
  * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
  * lleva ahi); "Elena llega" no presenta a nadie y por eso no entra.
+ *
+ * "Quien abre la puerta es Mireya" NO es una forma (2026-09-11): el checker la
+ * aceptaba, la regla la prohibe, y siete historias de cuatro journeys la
+ * usaron para pasar. Ahora la caza GIROS_PROHIBIDOS, mas abajo.
  */
 const NUC_ES = "(?:[a-zá-úüñ]+\\s+){0,3}[a-zá-úüñ]+";
 const VERBO_SER_ES =
@@ -289,13 +300,12 @@ const VERBO_SER_ES =
   "pinta|pintaba|vive|vivia|vivía|alquila|alquilaba|estudia|estudiaba|atiende|atendia|atendía|" +
   "toca|tocaba|cocina|cocinaba|nacio|nació|lleva|llevaba|reparte|repartia|repartía)";
 const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
+  // Delante de la aposicion por lo mismo que en portugues: la contiene.
+  ["lugar y descriptor", (n) => new RegExp(`(?<!\\p{L})(?:está|estaba|espera|esperaba|aguarda|aguardaba)\\s+${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
   // El APELLIDO no rompe la aposicion: "Marisol Cortes, una fotografa de Lima"
   // es el caso de libro y el detector lo daba por no presentado porque exigia
   // la coma pegada al nombre de pila (2026-09-01).
   ["aposicion", (n) => new RegExp(`${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
-  // "es|era|fue": en pasado la presentacion es la misma ("Quien abria la puerta
-  // era Mireya"), y la forma hermana VERBO_SER_ES ya lo aceptaba (2026-09-10).
-  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+(?:es|era|fue)\\s+${n}(?!\\p{L})`, "iu")],
   ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
@@ -330,6 +340,18 @@ const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> 
   FR: FORMAS_FR,
   ES: FORMAS_ES,
   IT: FORMAS_IT,
+};
+
+/**
+ * Presentaciones PROHIBIDAS por [[feedback_introduce_characters]]: la hendida
+ * "Quien/Quem ... es/era Nombre". Cubre presente y pasado (el checker viejo
+ * solo miraba "es"/"é" y aun asi la daba por buena) y la pareja "... era Ana y
+ * Luis". Fuera de la presentacion es castellano normal ("quien pago fue
+ * Celia"), por eso el bucle solo la juzga si va antes de la forma aprobada.
+ */
+const GIROS_PROHIBIDOS: Record<string, (n: string) => RegExp> = {
+  ES: (n) => new RegExp(`(?<!\\p{L})[Qq]uien(?:es)?\\s+(?:\\p{L}+\\s+){1,6}?(?:es|era|fue|son|eran)\\s+(?:\\p{Lu}\\p{Ll}+\\s+y\\s+)?${n}(?!\\p{L})`, "u"),
+  PT: (n) => new RegExp(`(?<!\\p{L})[Qq]uem\\s+(?:\\p{L}+\\s+){1,6}?(?:é|era|foi|são|eram)\\s+(?:\\p{Lu}\\p{Ll}+\\s+e\\s+)?${n}(?!\\p{L})`, "u"),
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -559,6 +581,16 @@ export function validateJourneyStories(
       const forma = FORMAS.find(([, re]) => re(n).test(t));
       const posCita = t.indexOf(QUOTE_OPEN);
       const posPres = forma ? t.search(forma[1](n)) : -1;
+      // El giro prohibido cuenta aunque traiga una forma buena pegada: en
+      // "Quien la espera es Emilio, el casero" la aposicion va dentro del giro.
+      const giro = GIROS_PROHIBIDOS[lang]?.(n);
+      const posGiro = giro ? t.search(giro) : -1;
+      if (posGiro >= 0 && (!forma || posGiro <= posPres)) {
+        malos.push(`${n} (${primera.slug}): presentado con el giro "${lang === "PT" ? "Quem ... é" : "Quien ... es/era"} ${n}", ` +
+          `prohibido por feedback_introduce_characters (suena raro y no dice que es); ` +
+          `usa aposicion, descriptor tras el lugar o ser en frase propia`);
+        continue;
+      }
       if (!forma) { malos.push(`${n} (${primera.slug}): sin sintagma que diga que es`); continue; }
       if (posCita >= 0 && posPres > posCita) { malos.push(`${n} (${primera.slug}): presentado despues de su primera cita`); continue; }
       formas.push(forma[0]);

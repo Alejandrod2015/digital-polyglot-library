@@ -17,11 +17,9 @@
  * la tabla se regenere con él y no viva solo en un chat.
  */
 import { PrismaClient } from "../src/generated/prisma";
+import { formatUsage, loadMetrics, loadStoryIndex, usageFor } from "../src/lib/betaFeedbackProfile";
 
 const prisma = new PrismaClient();
-
-/** Eventos que cuentan como "terminó el audio" (misma regla que journeyProgress). */
-const AUDIO_DONE = ["audio_complete", "continue_listening_progress"];
 
 function arg(name: string): string | null {
   const i = process.argv.indexOf(`--${name}`);
@@ -65,44 +63,12 @@ async function main() {
     .map((row) => row.signup?.clerkUserId)
     .filter((id): id is string => Boolean(id));
 
-  const metrics = userIds.length
-    ? await prisma.userMetric.findMany({
-        where: { userId: { in: userIds } },
-        select: { userId: true, eventType: true, storySlug: true, createdAt: true },
-        orderBy: { createdAt: "asc" },
-      })
-    : [];
-
-  // Slug de historia -> journey (idioma, variante, nivel). Es la pieza que
-  // convierte "abrió tal historia" en "estaba leyendo un C1".
-  const journeyBySlug = new Map<string, string>();
-  const journeyStories = await prisma.journeyStory.findMany({
-    select: { slug: true, journey: { select: { name: true, variant: true, levels: true } } },
-  });
-  for (const story of journeyStories) {
-    if (!story.slug) continue;
-    const level = (story.journey.levels ?? []).join("/").toUpperCase();
-    journeyBySlug.set(story.slug, `${story.journey.name} ${story.journey.variant} ${level}`);
-  }
-
+  // Perfil de uso compartido con la pestana Feedback del Studio
+  // (src/lib/betaFeedbackProfile.ts): misma frase en los dos sitios.
+  const [metrics, storyIndex] = await Promise.all([loadMetrics(prisma, userIds), loadStoryIndex(prisma)]);
   const usoPorUsuario = new Map<string, string>();
   for (const userId of new Set(userIds)) {
-    const míos = metrics.filter((metric) => metric.userId === userId);
-    const abiertas = míos.filter((metric) => metric.eventType === "story_opened");
-    const audios = míos.filter((metric) => AUDIO_DONE.includes(metric.eventType));
-    const prácticas = míos.filter((metric) => metric.eventType === "practice_session_completed");
-    const últimas = Array.from(new Set(abiertas.map((metric) => metric.storySlug ?? "?")))
-      .slice(-3)
-      .map((slug) => `${slug}${journeyBySlug.has(slug) ? ` (${journeyBySlug.get(slug)})` : ""}`);
-    usoPorUsuario.set(
-      userId,
-      [
-        `${abiertas.length} abiertas`,
-        `${audios.length} audios terminados`,
-        `${prácticas.length} prácticas`,
-        últimas.length ? `últimas: ${últimas.join("; ")}` : "sin lecturas",
-      ].join(" · ")
-    );
+    usoPorUsuario.set(userId, formatUsage(usageFor(metrics, userId, storyIndex)));
   }
 
   const header = [

@@ -33,6 +33,7 @@ type FlagSpec =
   | { kind: "uk" }
   | { kind: "brazil" }
   | { kind: "mexico" }
+  | { kind: "chile" }
   | { kind: "all" };
 
 // "Todos los idiomas" no es un país, así que no tiene bandera. Antes cada
@@ -88,6 +89,11 @@ const ARGENTINA_SPEC: FlagSpec = {
   colors: ["#74ACDF", "#FFFFFF", "#74ACDF"],
   weights: [1, 1, 1],
 };
+// Peru: vertical red/white/red already matches the generic vBands renderer.
+const PERU_SPEC: FlagSpec = { kind: "vBands", colors: ["#D91023", "#FFFFFF", "#D91023"] };
+// Chile needs its own kind: white/red horizontal split plus a blue canton
+// with a single white star, which the generic band renderers can't express.
+const CHILE_SPEC: FlagSpec = { kind: "chile" };
 
 const SPECS: Record<string, FlagSpec> = {
   Italian: { kind: "vBands", colors: ["#008C45", "#F4F5F0", "#CD212A"] },
@@ -123,7 +129,7 @@ const SPECS: Record<string, FlagSpec> = {
  * resolves to the right flag.
  */
 const LATAM_REGION_CODES = new Set<string>([
-  "latam", "es-la", "es-419",
+  "latam", "latam-multi", "es-la", "es-419",
   // Country codes (lowercase) that imply LATAM Spanish.
   "mx", "co", "ar", "pe", "cl", "ec", "ve", "uy", "py", "bo", "cr", "pa", "do", "cu", "gt", "hn", "sv", "ni", "pr",
   // Spanish country names spelled out (some legacy data does this).
@@ -144,6 +150,8 @@ const BRAZIL_REGION_CODES = new Set<string>(["br", "brazil", "brasil"]);
 const MEXICO_CODES = new Set<string>(["mexico", "mx"]);
 const COLOMBIA_CODES = new Set<string>(["colombia", "co"]);
 const ARGENTINA_CODES = new Set<string>(["argentina", "ar"]);
+const PERU_CODES = new Set<string>(["peru", "pe"]);
+const CHILE_CODES = new Set<string>(["chile", "cl"]);
 
 /**
  * Canonical region family for a variant/region code, so equivalents like
@@ -196,6 +204,8 @@ function pickSpec(language: string | null | undefined, variant?: string | null):
     if (MEXICO_CODES.has(v)) return MEXICO_SPEC;
     if (COLOMBIA_CODES.has(v)) return COLOMBIA_SPEC;
     if (ARGENTINA_CODES.has(v)) return ARGENTINA_SPEC;
+    if (PERU_CODES.has(v)) return PERU_SPEC;
+    if (CHILE_CODES.has(v)) return CHILE_SPEC;
     if (LATAM_REGION_CODES.has(v)) return COLOMBIA_SPEC;
     if (SPAIN_REGION_CODES.has(v)) return SPECS.Spanish;
     return SPECS.Spanish;
@@ -427,6 +437,41 @@ export function LanguageFlag({
             height: blueCircleSize,
             borderRadius: blueCircleSize / 2,
             backgroundColor: blue,
+          }}
+        />
+      </View>
+    );
+  }
+
+  if (spec.kind === "chile") {
+    // White top / red bottom halves, plus a blue canton (top-left quarter)
+    // holding a single white star. Views can't draw a 5-point star cleanly
+    // at coin scale, so the star is a small white diamond, matching the
+    // simplification already used for the Mexican coat of arms.
+    const starSize = size * 0.22;
+    return (
+      <View style={containerStyle}>
+        <View style={{ flex: 1, backgroundColor: "#FFFFFF" }} />
+        <View style={{ flex: 1, backgroundColor: "#D52B1E" }} />
+        <View
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "44%",
+            height: "50%",
+            backgroundColor: "#0039A6",
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            top: "25%",
+            left: "22%",
+            width: starSize,
+            height: starSize,
+            backgroundColor: "#FFFFFF",
+            transform: [{ translateX: -starSize / 2 }, { translateY: -starSize / 2 }, { rotate: "45deg" }],
           }}
         />
       </View>

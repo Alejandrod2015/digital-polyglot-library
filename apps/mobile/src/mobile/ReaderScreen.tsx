@@ -1,3 +1,4 @@
+import { chunkForTap } from "../../../../src/lib/tapGlossChunk";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
@@ -28,6 +29,8 @@ import {
   getVocabTypeLabel,
   normalizeVocabRegister,
   normalizeVocabType,
+  topicCountryIso,
+  topicCountryLabel,
   type AudioWordTimingsPayload,
   type Book,
   type Story,
@@ -35,6 +38,7 @@ import {
   type VocabItem,
   type VocabTypeKey,
 } from "@digital-polyglot/domain";
+import { LanguageFlag } from "./LanguageFlag";
 import * as Application from "expo-application";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
@@ -91,6 +95,7 @@ type TapGloss = {
   t?: string;
   r?: string;
   c?: { es: string; en: string };
+  cs?: { es: string; en: string }[];
   gm?: string;
   f?: TapGlossForms;
 };
@@ -139,18 +144,21 @@ const TITLE_WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
 function renderTappableTitle(
   title: string,
   glosses: Record<string, TapGloss>,
-  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => void
 ): React.ReactNode {
   const parts = title.split(TITLE_WORD_SPLIT);
   if (parts.length === 1) return title;
+  let at = 0;
   return parts.map((part, i) => {
+    const here = at;
+    at += part.length;
     if (i % 2 === 1) {
       const hit = lookupGloss(glosses, part);
       const token = hit?.token ?? "";
       const gloss = hit?.gloss;
       if (gloss) {
         return (
-          <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title)}>
+          <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title, here)}>
             {part}
           </Text>
         );
@@ -835,7 +843,7 @@ function renderKaraokeParagraph(args: {
   activeWordIndex: number | null;
   vocabLookup: Map<string, VocabItem>;
   paragraphKey: string;
-  onWordPress: (item: VocabItem, contextSentence?: string, tapped?: string) => void;
+  onWordPress: (item: VocabItem, contextSentence?: string, tapped?: string, at?: number) => void;
   variant: "paragraph" | "quote";
   // Shared across all paragraphs of the story: a vocab word only renders
   // as a pill the first time it shows up. Mirrors the legacy reader's
@@ -846,7 +854,7 @@ function renderKaraokeParagraph(args: {
   // curado). Cualquier palabra NO-vocab cuyo token esté en `glosses` se
   // vuelve tapeable y dispara `onQuickLookup` con su traducción.
   glosses: Record<string, TapGloss>;
-  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void;
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => void;
 }) {
   const {
     paragraph,
@@ -969,7 +977,7 @@ function renderKaraokeParagraph(args: {
           textColor = "#ffffff";
           bold = true;
         }
-        onPress = () => onWordPress(phrase.item, paragraph.text);
+        onPress = () => onWordPress(phrase.item, paragraph.text, undefined, w.charStart - paragraph.charStart);
       } else {
         const isActive = activeWordIndex === iA;
         const vocabItem = lookupVocabToken(vocabLookup, w.text);
@@ -989,12 +997,12 @@ function renderKaraokeParagraph(args: {
           bg = "#f8c15c";
           textColor = "#0e1727";
         }
-        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text, w.text);
+        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text, w.text, w.charStart - paragraph.charStart);
         else {
           const hit = lookupGloss(glosses, w.text);
           const glossToken = hit?.token ?? "";
           const gloss = hit?.gloss;
-          if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
+          if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text, w.charStart - paragraph.charStart);
         }
       }
 
@@ -1174,7 +1182,7 @@ function renderKaraokeParagraph(args: {
             key={`${paragraphKey}-ph-${i}`}
             style={styles.karaokeWordOuter}
             hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            onPress={() => onWordPress(phrase.item, paragraph.text)}
+            onPress={() => onWordPress(phrase.item, paragraph.text, undefined, firstTok.charStart - paragraph.charStart)}
           >
             <View
               style={
@@ -1260,7 +1268,7 @@ function renderKaraokeParagraph(args: {
           key={`${paragraphKey}-w-${i}`}
           style={styles.karaokeWordOuter}
           hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-          onPress={() => onWordPress(vocabItem, paragraph.text, w.text)}
+          onPress={() => onWordPress(vocabItem, paragraph.text, w.text, w.charStart - paragraph.charStart)}
         >
           <View style={containerStyle}>
             <Text style={wordTextStyle}>{w.text}</Text>
@@ -1282,7 +1290,7 @@ function renderKaraokeParagraph(args: {
             key={`${paragraphKey}-w-${i}`}
             style={styles.karaokeWordOuter}
             hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            onPress={() => onQuickLookup(w.text, gloss, paragraph.text)}
+            onPress={() => onQuickLookup(w.text, gloss, paragraph.text, w.charStart - paragraph.charStart)}
           >
             <View style={containerStyle}>
               <Text style={wordTextStyle}>{w.text}</Text>
@@ -1370,9 +1378,10 @@ export function ReaderScreen(args: {
    * Abre el panel de feedback beta. Se ofrece al pie de una historia YA
    * terminada: es el otro momento (además del final de una práctica) en el
    * que la persona acaba de vivir algo y todavía lo tiene fresco. Ausente
-   * para quien no puede enviar (sin sesión o sin API).
+   * para quien no puede enviar (sin sesión o sin API). Lleva la posición del
+   * audio en segundos para que el reporte diga en qué punto estaba.
    */
-  onOpenFeedback?: () => void;
+  onOpenFeedback?: (details: { progressSec: number }) => void;
   isFavoriteWord: (word: string) => boolean;
   onToggleFavoriteWord: (item: VocabItem, contextSentence?: string, desiredSaved?: boolean) => void;
   onTrackReaderEvent?: (
@@ -1428,6 +1437,10 @@ export function ReaderScreen(args: {
   } = args;
   const blocks = useMemo(() => toBlocks(story.text), [story.text]);
   const vocab = story.vocab ?? [];
+  // Solo devuelve algo para journeys `latam` multi-pais; null en cualquier
+  // otro caso (journey de un solo pais, otra variante del idioma).
+  const topicCountry = topicCountryLabel(story.variant, story.topic);
+  const topicCountryFlagIso = topicCountryIso(story.variant, story.topic);
   // If a `file://` audio URL was provided but it fails to play (e.g. the
   // downloaded file was truncated), this state lets us fall back to the
   // remote story.audio on a retry pass. Reset whenever the story changes.
@@ -1541,10 +1554,11 @@ export function ReaderScreen(args: {
   // Abre el popup de quick lookup. Extraído de los args de
   // renderKaraokeParagraph porque ahora lo comparten el cuerpo y el TÍTULO.
   const handleQuickLookup = useCallback(
-    (word: string, gloss: TapGloss, contextSentence?: string) => {
+    (word: string, gloss: TapGloss, contextSentence?: string, at?: number) => {
       // Reusa el mismo popup del vocab curado, marcado como quickLookup para
       // mostrar el chip "Quick lookup" y NO el de tipo curado. La traducción
-      // vive en gloss.g.
+      // vive en gloss.g. El trozo solo entra si describe ESTA aparición de la
+      // palabra (ver `chunkCoversTap`): se escribió para una sola.
       setSelectedVocab({
         word,
         definition: gloss.g,
@@ -1552,7 +1566,7 @@ export function ReaderScreen(args: {
         register: gloss.r,
         note: contextSentence,
         quickLookup: true,
-        chunk: gloss.c,
+        chunk: chunkForTap(gloss, contextSentence, at, word.length),
         forms: gloss.f,
       });
       setFormsOpen(false);
@@ -2329,6 +2343,9 @@ export function ReaderScreen(args: {
     });
   }, [story.id, story.slug, book.slug, onTrackReaderEvent]);
   const lastPersistedProgressSecRef = useRef<number | null>(null);
+  // Ultima posicion del audio, en cada tick, sin la cadencia de persistencia
+  // de arriba: es lo que viaja con el feedback beta como `progressSec`.
+  const lastPositionSecRef = useRef(0);
   const lastPersistedAtRef = useRef<number>(0);
   const scrollViewRef = useRef<ScrollView | null>(null);
   const contentHeightRef = useRef(0);
@@ -2525,6 +2542,7 @@ export function ReaderScreen(args: {
   useEffect(() => {
     lastPersistedProgressSecRef.current = null;
     lastPersistedAtRef.current = 0;
+    lastPositionSecRef.current = 0;
   }, [story.id]);
 
   function trackReadingPosition(progressRatio: number, nextBlockIndex: number) {
@@ -2599,7 +2617,7 @@ export function ReaderScreen(args: {
           activeWordIndex,
           vocabLookup: karaokeVocabLookup,
           paragraphKey: `${story.id}-k-${index}`,
-          onWordPress: (item, contextSentence, tapped) => {
+          onWordPress: (item, contextSentence, tapped, at) => {
             // El trozo se busca por la palabra TOCADA, no por el lema del
             // vocabulario. "esperar" no aparece en el texto y "espera" sí, y es
             // esa ocurrencia la que el trozo describe. Buscando por lema se
@@ -2614,8 +2632,8 @@ export function ReaderScreen(args: {
               (tapped ? lookupGloss(tapGlosses, tapped)?.gloss : undefined) ??
               (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss : undefined);
             const chunk =
-              (tapped ? lookupGloss(tapGlosses, tapped)?.gloss.c : undefined) ??
-              (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss.c : undefined);
+              (tapped ? chunkForTap(lookupGloss(tapGlosses, tapped)?.gloss, contextSentence, at, tapped.length) : undefined) ??
+              (item.surface ? chunkForTap(lookupGloss(tapGlosses, item.surface)?.gloss, contextSentence, at, item.surface.length) : undefined);
             const base = contextSentence ? { ...item, note: contextSentence } : item;
             setSelectedVocab({
               ...base,
@@ -2866,6 +2884,15 @@ export function ReaderScreen(args: {
           <Text style={styles.storyTitle}>
             {renderTappableTitle(story.title, tapGlosses, handleQuickLookup)}
           </Text>
+          {/* Solo pinta en journeys `latam` multi-pais (ver
+              LATAM_TOPIC_COUNTRY en packages/domain/src/languageVariant.ts):
+              null en cualquier otro journey, sin banner ni tooltip. */}
+          {topicCountry ? (
+            <View style={styles.topicCountryPill}>
+              <LanguageFlag language="Spanish" variant={topicCountryFlagIso ?? undefined} size={14} />
+              <Text style={styles.topicCountryPillText}>{topicCountry}</Text>
+            </View>
+          ) : null}
         </View>
 
         {coverUrl ? (
@@ -2961,7 +2988,7 @@ export function ReaderScreen(args: {
               debajo, para no disputarle el sitio a "Start practice". */}
           {onOpenFeedback && storyCompleted ? (
             <Pressable
-              onPress={onOpenFeedback}
+              onPress={() => onOpenFeedback({ progressSec: Math.round(lastPositionSecRef.current) })}
               style={styles.readerFeedbackLink}
               accessibilityRole="button"
               accessibilityLabel="Tell us about this story"
@@ -3515,6 +3542,7 @@ export function ReaderScreen(args: {
             }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
+              lastPositionSecRef.current = progressSec;
               const durationSec = playback.durationMillis / 1000;
               const ratio = durationSec > 0 ? progressSec / durationSec : 0;
               const shouldPersist =
@@ -3703,6 +3731,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 8,
     marginTop: 4,
+  },
+  topicCountryPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    marginTop: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#3d5470",
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    backgroundColor: "rgba(21, 37, 58, 0.55)",
+  },
+  topicCountryPillText: {
+    color: "#d7e2f1",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.2,
   },
   storyTitle: {
     color: "#ffffff",

@@ -678,7 +678,10 @@ export async function validateGeneratedStory(
   const LATAM_PLACES = LATAM_PLACES_SET;
   const variantLower = (context.variant ?? "").toLowerCase();
   const titleRegionLang = (context.language ?? "").toUpperCase();
-  if (titleRegionLang === "ES" && variantLower === "latam") {
+  // "latam-multi" (2026-09-19, TAXONOMIA_variantes_latam) es el tour
+  // pan-regional que antes vivia bajo el codigo "latam"; el guard de nombres
+  // propios LATAM aplica igual.
+  if (titleRegionLang === "ES" && (variantLower === "latam" || variantLower === "latam-multi")) {
     // Direct title scan; we cannot reuse extractProperNouns here
     // because its STOP list strips well-known city names (Madrid,
     // Roma, Lima, etc.) so the names-match check stays focused on

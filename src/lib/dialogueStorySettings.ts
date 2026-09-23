@@ -55,7 +55,7 @@ export function inferStorySetting(args: {
 
   if (lang === "spanish") {
     if (variant === "spain") return "spain";
-    if (variant === "latam") return "latam-generic";
+    if (variant === "latam" || variant === "latam-multi") return "latam-generic";
     return null;
   }
   if (lang === "portuguese") {

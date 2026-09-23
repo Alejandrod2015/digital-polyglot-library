@@ -223,7 +223,7 @@ const config = {
     // envios murieron ahi con un "something went wrong" sin motivo; el
     // motivo salio con `xcrun altool --validate-app`, que dice
     // previousBundleVersion 315. La fuente de verdad es Apple.
-    buildNumber: "318",
+    buildNumber: "339",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // El plugin de expo-speech-recognition tambien las escribe; van aqui
@@ -273,7 +273,7 @@ const config = {
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
     // El 25 se gastó en el build de EAS del 2026-08-14, así que el siguiente
     // sale con este 26 o Play lo rechaza.
-    versionCode: 27,
+    versionCode: 28,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena

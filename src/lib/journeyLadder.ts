@@ -30,9 +30,18 @@ export const ESCALERA = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"] as const;
  *   la escalera del Friends DE empieza en el A0. Literal: "en realidad C1 fue
  *   un test para mí, pero ahora sí vamos a crear el journey bien". Sigue live
  *   en la base; solo deja de sostener la escalera.
+ * - cmrdqk484000032r4rt2vw4ej (Friends ES C1, hoy variant="latam"): temporal,
+ *   2026-09-19, pendiente de pasar a "latam-multi" en el flip de
+ *   TAXONOMIA_variantes_latam (Journey.variant en BD, DESPUES del deploy web
+ *   y de la build movil). Mientras su variant siga siendo literalmente
+ *   "latam", cuenta como el mismo (idioma, variante, nombre) que un futuro
+ *   "Friends" A1 latam NEUTRAL y bloquearia su creacion por hueco (B1/B2
+ *   faltantes). Quitar esta entrada en el flip: a partir de ahi su variant
+ *   real ("latam-multi") ya lo separa solo, sin necesitar la excepcion.
  */
 export const FUERA_DE_ESCALERA: ReadonlySet<string> = new Set([
   "cmroo4w4v0000324ow1o9qlcp",
+  "cmrdqk484000032r4rt2vw4ej",
 ]);
 
 export type JourneyExistente = {

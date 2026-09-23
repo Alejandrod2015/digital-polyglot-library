@@ -216,7 +216,32 @@ type Feedback = {
   replySubject: string | null;
   replyText: string | null;
   createdAt: string;
-  signup: { id: string; firstName: string | null; email: string } | null;
+  signup: {
+    id: string;
+    firstName: string | null;
+    email: string;
+    targetLanguage: string | null;
+    targetVariant: string | null;
+    currentLevel: string | null;
+    platform: string | null;
+  } | null;
+  // What the telemetry says this tester did (from UserMetric), and where they
+  // were when they wrote. Both computed server side by betaFeedbackProfile,
+  // the same module scripts/feedbackTable.ts prints from.
+  tester: {
+    opened: number;
+    audiosDone: number;
+    practices: number;
+    last: FeedbackStoryRef[];
+  } | null;
+  where: (FeedbackStoryRef & { source: "context" | "metric"; at: string | null }) | null;
+};
+
+type FeedbackStoryRef = {
+  slug: string;
+  title: string | null;
+  journey: string | null;
+  level: string | null;
 };
 
 type Release = {
@@ -2198,6 +2223,9 @@ function FeedbackList({
   const [replyOpen, setReplyOpen] = useState<string | null>(null);
   const [replySubject, setReplySubject] = useState("");
   const [replyBody, setReplyBody] = useState("");
+  // Diagnosis being typed per row. Saved on blur, so a note is never lost to
+  // a click elsewhere and there is no extra button to find.
+  const [notes, setNotes] = useState<Record<string, string>>({});
 
   const openReply = (f: Feedback) => {
     setReplyOpen(f.id);
@@ -2234,6 +2262,12 @@ function FeedbackList({
             </div>
           </div>
 
+          {/* Where they were and who they are. The message alone cannot be
+              triaged: "the last paragraph repeats" needs the story, and
+              "the speaker is hard to follow" needs to know they are a
+              beginner who just opened an A0. */}
+          <FeedbackContext f={f} />
+
           <div
             style={{
               marginTop: 10,
@@ -2247,6 +2281,30 @@ function FeedbackList({
           >
             {f.message}
           </div>
+
+          {/* The thread: what we wrote back, under their words. The model
+              keeps one reply per report (a "Reply again" replaces it), so
+              this is the latest one, dated. */}
+          {f.repliedAt && f.replyText && (
+            <div
+              style={{
+                marginTop: 8,
+                marginLeft: 18,
+                padding: "8px 12px",
+                borderLeft: "2px solid var(--border)",
+                fontSize: 13,
+                lineHeight: 1.5,
+                color: "var(--muted)",
+                whiteSpace: "pre-wrap",
+              }}
+            >
+              <div style={{ fontSize: 11.5, marginBottom: 4 }}>
+                We replied {new Date(f.repliedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
+                {f.replySubject ? ` · ${f.replySubject}` : ""}
+              </div>
+              {f.replyText}
+            </div>
+          )}
 
           <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap", alignItems: "center" }}>
             <select
@@ -2297,6 +2355,21 @@ function FeedbackList({
             )}
           </div>
 
+          {/* The diagnosis. Lives on the row so the table script regenerates
+              with it and it does not stay behind in a chat. */}
+          <textarea
+            value={notes[f.id] ?? f.adminNotes ?? ""}
+            placeholder="Diagnosis: what is really going on, and what we decided."
+            disabled={busy === f.id}
+            onChange={(e) => setNotes((n) => ({ ...n, [f.id]: e.target.value }))}
+            onBlur={() => {
+              const typed = notes[f.id];
+              if (typed === undefined || typed === (f.adminNotes ?? "")) return;
+              void onPatch(f.id, { adminNotes: typed });
+            }}
+            style={{ ...areaStyle, height: 56, marginTop: 10, fontSize: 12.5 }}
+          />
+
           {replyOpen === f.id && (
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
               <div style={{ fontSize: 12, color: "var(--muted)" }}>
@@ -2334,6 +2407,41 @@ function FeedbackList({
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+// Two lines under the header: the story they were in, and who they are.
+// Nothing here is typed by anyone; it is what the app, the signup form and
+// the event log already know, put next to the message for once.
+function FeedbackContext({ f }: { f: Feedback }) {
+  const profile = [f.signup?.targetLanguage, f.signup?.targetVariant, f.signup?.currentLevel, f.signup?.platform]
+    .filter(Boolean)
+    .join(" · ");
+  const usage = f.tester
+    ? `${f.tester.opened} stories opened · ${f.tester.audiosDone} audios finished · ${f.tester.practices} practice sessions`
+    : "no telemetry (not linked to a Clerk user)";
+  const lastRead = f.tester?.last.length
+    ? f.tester.last.map((s) => (s.journey ? `${s.title ?? s.slug} (${s.journey})` : (s.title ?? s.slug))).join("; ")
+    : null;
+
+  const w = f.where;
+  const whereText = w
+    ? `${w.title ?? w.slug}${w.journey ? ` · ${w.journey}` : ""}${
+        w.source === "context" ? " · sent by the app" : w.at ? ` · opened ${ago(w.at)}` : ""
+      }`
+    : "no story opened before this message";
+
+  return (
+    <div style={{ marginTop: 8, fontSize: 12.5, lineHeight: 1.6, display: "flex", flexDirection: "column", gap: 2 }}>
+      <div>
+        <span style={{ color: "var(--muted)" }}>In </span>
+        <span style={{ fontWeight: 500 }}>{whereText}</span>
+      </div>
+      <div style={{ color: "var(--muted)" }} title={lastRead ? `Last read: ${lastRead}` : undefined}>
+        {profile || "no signup profile"} · {usage}
+        {lastRead ? ` · last: ${lastRead}` : ""}
+      </div>
     </div>
   );
 }

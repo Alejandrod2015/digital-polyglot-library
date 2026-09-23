@@ -369,7 +369,8 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
           title: `${titlePrefix}: ${gap.topic}`,
           language: gap.language.toLowerCase(),
           variant: gap.variant,
-          region: gap.variant === "latam" ? "colombia" : gap.variant,
+          region:
+            gap.variant === "latam" || gap.variant === "latam-multi" ? "colombia" : gap.variant,
           cefrLevel: gap.level,
           topic: gap.topic,
           journeyTopic: gap.topicSlug,

@@ -12,9 +12,11 @@ import { Feather } from "@expo/vector-icons";
 import { LanguageFlag } from "./LanguageFlag";
 import {
   type CEFRLevel,
+  type LevelTestAnswer,
   type LevelTestQuestion,
+  demonstratedLevel,
   getLevelTestQuestions,
-  levelFromScore,
+  placementFromTest,
 } from "./levelTest";
 import { cefrDisplayLabel, formatCefrDisplay } from "@digital-polyglot/domain";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
@@ -45,7 +47,15 @@ type Props = {
   /** Called when the user finishes the test. The runner closes
    *  itself first; the parent decides what to do with the result
    *  (update preferredLevel, mark levels accessible, etc.). */
-  onComplete: (result: { level: CEFRLevel; correct: number; total: number }) => void;
+  onComplete: (result: {
+    /** Where to put the user. From onboarding it is one step below what
+     *  they demonstrated; from a locked story it is what they demonstrated,
+     *  because there the test is a way to unlock, not a placement. */
+    level: CEFRLevel;
+    demonstrated: CEFRLevel;
+    correct: number;
+    total: number;
+  }) => void;
   /** Called when the user dismisses the test before finishing. */
   onCancel: () => void;
 };
@@ -69,8 +79,10 @@ export function LevelTestRunner({
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
-  const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState<LevelTestAnswer[]>([]);
   const [finished, setFinished] = useState(false);
+  const score = answers.filter((a) => a.correct).length;
+  const resultLevel = source === "onboarding" ? placementFromTest(answers) : demonstratedLevel(answers);
 
   const currentQuestion: LevelTestQuestion | undefined = questions[questionIndex];
 
@@ -96,7 +108,7 @@ export function LevelTestRunner({
       setQuestionIndex(0);
       setSelectedOption(null);
       setRevealed(false);
-      setScore(0);
+      setAnswers([]);
       setFinished(false);
     }
   }, [open]);
@@ -150,9 +162,9 @@ export function LevelTestRunner({
   function handleCheck() {
     if (!currentQuestion || !selectedOption) return;
     setRevealed(true);
-    if (selectedOption === currentQuestion.answer) {
-      setScore((prev) => prev + 1);
-    }
+    const question = currentQuestion;
+    const correct = selectedOption === question.answer;
+    setAnswers((prev) => [...prev, { level: question.level, correct }]);
   }
 
   function handleNext() {
@@ -167,8 +179,12 @@ export function LevelTestRunner({
   }
 
   function handleClaimResult() {
-    const level = levelFromScore(score);
-    onComplete({ level, correct: score, total: questions.length });
+    onComplete({
+      level: resultLevel,
+      demonstrated: demonstratedLevel(answers),
+      correct: score,
+      total: questions.length,
+    });
   }
 
   // No content authored for this language → render an apologetic
@@ -306,7 +322,7 @@ export function LevelTestRunner({
             {(() => {
               // Friendly level name (e.g. "Intermediate") as the primary
               // label; the CEFR code stays an optional secondary annotation.
-              const levelCode = levelFromScore(score);
+              const levelCode = resultLevel;
               const levelName = cefrDisplayLabel(levelCode) ?? levelCode;
               const levelDisplay = formatCefrDisplay(levelCode);
               return (
@@ -315,7 +331,9 @@ export function LevelTestRunner({
                     <Text style={styles.resultBadgeText}>{levelName}</Text>
                   </View>
                   <Text style={styles.resultTitle}>
-                    You&apos;re at {levelDisplay}
+                    {source === "onboarding"
+                      ? `We think you're at ${levelDisplay}`
+                      : `You're at ${levelDisplay}`}
                   </Text>
                   <Text style={styles.resultBody}>
                     {score} of {questions.length} correct.
@@ -326,7 +344,7 @@ export function LevelTestRunner({
                         a `${...}` expression, where it would render as
                         the literal characters "&apos;". */}
                     {source === "onboarding"
-                      ? `Your ${language} journey starts at ${levelDisplay}. Easier levels stay open whenever you want extra practice.`
+                      ? `Your ${language} journey starts here. Too easy or too hard? You can add another level anytime from your journeys.`
                       : `${levelName} stories are unlocked. Pick up where you wanted to go; earlier levels stay available too.`}
                   </Text>
                 </View>
