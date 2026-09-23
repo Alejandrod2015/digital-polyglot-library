@@ -1,7 +1,7 @@
 {
  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo. aceptado_asi = el usuario lo deja como esta sabiendo lo que mide.",
- "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura. HIPOTESIS ABIERTA (2026-09-23, un solo caso): entre los titulos preposicionales, los de LUGAR u ORIGEN caen solos (auf dem Sofa, im Waschsalon, im Treppenhaus, im Lebenslauf, aus Muenster, vom Sperrmuell) y el de TIEMPO sube y no se arregla re-tirando (am Freitag: +7,7 y tres re-tomas a +7,9, +6,7, +8,0). Si se confirma, el sospechoso que queda sin narrar es 'Die Praxis am Dienstag' del tema 6, y quiza 'Heiser nach dem Derby' del 5. La hipotesis suma un caso a favor: cambiar la cola temporal por una locativa en el mismo titulo lo llevo de +7,7 irreparable a -3,8 en una sola toma. HIPOTESIS REFUTADA (2026-09-23): 'Die Praxis am Dienstag' es el mismo molde temporal que 'Probearbeiten am Freitag' y salio SIN NINGUNA marca. Asi que no es la cola de tiempo lo que rompia un titulo; lo unico que sigue en pie es que el nominal pelado no se arregla re-tirando. Del 'am Freitag' no sabemos la causa.",
+ "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura. HIPOTESIS ABIERTA (2026-09-23, un solo caso): entre los titulos preposicionales, los de LUGAR u ORIGEN caen solos (auf dem Sofa, im Waschsalon, im Treppenhaus, im Lebenslauf, aus Muenster, vom Sperrmuell) y el de TIEMPO sube y no se arregla re-tirando (am Freitag: +7,7 y tres re-tomas a +7,9, +6,7, +8,0). Si se confirma, el sospechoso que queda sin narrar es 'Die Praxis am Dienstag' del tema 6, y quiza 'Heiser nach dem Derby' del 5. La hipotesis suma un caso a favor: cambiar la cola temporal por una locativa en el mismo titulo lo llevo de +7,7 irreparable a -3,8 en una sola toma. HIPOTESIS REFUTADA (2026-09-23): 'Die Praxis am Dienstag' es el mismo molde temporal que 'Probearbeiten am Freitag' y salio SIN NINGUNA marca. Asi que no es la cola de tiempo lo que rompia un titulo; lo unico que sigue en pie es que el nominal pelado no se arregla re-tirando. Del 'am Freitag' no sabemos la causa. CIERRE del Friends DE A2 (2026-09-23): 21 de 21 narradas, 21 veredictos del usuario, ninguna oracion acelerada y ningun fragmento marcado sin juzgar. Los dos gates de CONTENIDO que quedaban resultaron falsos positivos del reconocedor: 'betrue' por 'Bettruhe' y el numero escrito en cifras donde la voz lo dice con palabras.",
  "veredictos": [
   {
    "fragmento": "alle-3",
@@ -222,6 +222,25 @@
    "veredicto": "re-tirado_ok",
    "fecha": "2026-09-23",
    "nota": "Sustituye a 'Probearbeiten am Freitag' (+7,7, tres re-tomas peores). El locativo se arreglo a la PRIMERA toma, que es lo que la hipotesis predecia."
+  },
+  {
+   "fragmento": "bettruhe-in-der-probezeit-0",
+   "gate": "contenido, se oye 'betrue'",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "bettruhe-in-der-probezeit-1",
+   "gate": "cobertura, hueco '38 komma 9'",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "einladung-ohne-namen-2, brot-und-salz-fuer-die-neue-4",
+   "gate": "ritmo 3,69 y 3,56 w/s",
+   "veredicto": "re-tirado_ok",
+   "fecha": "2026-09-23",
+   "nota": "Las dos ultimas oraciones disparadas del journey. Con esto, 21 de 21 historias sin ninguna."
   }
  ],
  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
