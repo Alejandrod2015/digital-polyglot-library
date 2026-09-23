@@ -1,7 +1,7 @@
 {
  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo.",
- "_resumen": "25 juzgados: 22 falsos positivos, 3 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 6 del Friends DE A2 Hannover (juzgados en https://claude.ai/artifact/EXvz3hYzheohVBnUdzkpA7). PATRON del DE A2: los 2 fragmentos de TITULO marcados salieron defecto real y los 4 de prosa salieron falso positivo, asi que en aleman el gate acierta en titulos y ruidea en fragmentos largos.",
+ "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6.",
  "veredictos": [
   {
    "fragmento": "alle-3",
@@ -162,6 +162,36 @@
   {
    "fragmento": "der-zettel-im-waschsalon-0 (re-tirado)",
    "gate": "titulo, de +5,4 a -0,4 st",
+   "veredicto": "aprobado_de_oido",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "drei-stunden-transporter-0 (titulo viejo)",
+   "gate": "titulo nominal, +6,7 st",
+   "veredicto": "defecto_real",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "drei-stunden-transporter-3",
+   "gate": "ritmo 3,40 w/s",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "pizza-auf-den-kartons-0",
+   "gate": "titulo preposicional, +4,8 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "das-sofa-aus-muenster-1",
+   "gate": "prosa, +6,3 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "zu-dritt-im-treppenhaus (muestras 1 y 2)",
+   "gate": "titulo nuevo, -0,6 y +1,3 st",
    "veredicto": "aprobado_de_oido",
    "fecha": "2026-09-23"
   }
