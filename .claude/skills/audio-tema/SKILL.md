@@ -1,7 +1,7 @@
 ---
 name: audio-tema
 description: |
-  Narrar un tema en el orden que exige el proyecto (muestra, primera entera, resto). Usalo cuando el usuario pida narrar, generar el audio de un tema o de una historia, o cuando vaya a tocar cualquier sintesis de ElevenLabs de un journey. No genera nada por su cuenta: recuerda el orden, comprueba lo que hay y para en seco si falta un paso.
+  Narrar un tema en el orden que exige el proyecto (una muestra por journey, y luego cada tema entero). Usalo cuando el usuario pida narrar, generar el audio de un tema o de una historia, o cuando vaya a tocar cualquier sintesis de ElevenLabs de un journey. No genera nada por su cuenta: recuerda el orden, comprueba lo que hay y para en seco si falta un paso.
 ---
 
 # Audio de un tema: el orden, y quien lo hace cumplir
@@ -27,16 +27,20 @@ los rodea. Si un gate te para, la respuesta es hacer el paso que falta.
 npx tsx scripts/rulesFor.ts audio
 ```
 
-## El orden, que es de tres pasos y con parada entre cada uno
+## El orden: una muestra por JOURNEY, y luego cada tema entero
 
-1. **Muestra**: titulo y primer parrafo de la PRIMERA historia del tema.
-   Queda registrada, y sin ese registro el narrador entero no arranca.
-2. **La primera entera**, solo cuando el usuario aprueba la muestra.
-3. **Las otras dos**, solo cuando aprueba la primera.
+1. **Muestra**, una sola vez por journey: titulo y primer parrafo de la primera
+   historia que se narre. Queda registrada, y sin ese registro el narrador
+   entero no arranca. El usuario la aprueba de oido.
+2. **El tema entero**, las tres historias seguidas, sin parar entre ellas. El
+   verbo del usuario se pide una vez por TEMA, no por historia.
+3. **Los fragmentos marcados no paran nada**: se acumulan en `gateFlags` y se
+   juzgan de golpe al terminar el journey, en el revisador de veredictos.
 
-El runner del journey se para solo en cada uno de esos puntos y escupe el
-comando que falta. Cuando lo haga, pega su mensaje y espera: no busques otro
-script que no tenga la parada.
+El runner se para solo si falta la muestra del journey, y escupe el comando.
+Cuando lo haga, pega su mensaje y espera: no busques otro script sin la parada.
+Para ver en que paso esta cada historia sin sintetizar nada,
+`npx tsx scripts/_narraSeco.ts --journey <perfil>`.
 
 ## Lo que NUNCA se hace aqui
 

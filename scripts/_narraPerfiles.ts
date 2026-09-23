@@ -92,22 +92,51 @@ export function muestrasRegistradas(): Record<string, unknown> {
     : {};
 }
 
-/** ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02): primero la muestra de
- *  titulo y primer parrafo, que el usuario comprueba; luego la primera historia
- *  entera, que vuelve a comprobar; y solo entonces el resto del tema.
- *  `bloqueo` dice por que la historia todavia no puede narrarse entera. */
-export function pasoDelOrden(
-  s: { slug: string | null; slotIndex: number; audioUrl?: string | null },
+/**
+ * La muestra registrada de ESTE journey, si la hay (2026-09-23: la muestra pasa
+ * de una por tema a UNA POR JOURNEY). El registro esta indexado por slug, asi
+ * que hay dos formas de saber a que journey pertenece una entrada:
+ *
+ *   - las nuevas guardan `journey` con el id, y ese campo manda;
+ *   - las viejas (todas las de antes del 2026-09-23) no lo traen, y se
+ *     reconocen porque su slug es el de una historia del journey. Por eso hay
+ *     que pasarle los slugs: es lo que deja seguir narrando, sin re-tirar
+ *     ninguna muestra, un journey empezado con el orden anterior.
+ */
+export function muestraDelJourney(
   muestras: Record<string, unknown>,
-  primeraDelTemaNarrada: boolean,
-): { paso: "ya narrada" | "muestra" | "primera entera" | "resto del tema"; bloqueo?: string } {
+  journeyId: string,
+  slugsDelJourney: Iterable<string | null | undefined>,
+): string | null {
+  const marcada = Object.entries(muestras).find(
+    ([, v]) => (v as { journey?: string } | null)?.journey === journeyId
+  );
+  if (marcada) return marcada[0];
+  const slugs = new Set([...slugsDelJourney].filter(Boolean) as string[]);
+  return Object.keys(muestras).find((slug) => slugs.has(slug)) ?? null;
+}
+
+/**
+ * Si la voz de este journey ya paso por el oido del usuario. Dos formas, y la
+ * segunda existe para no endurecer la regla a mitad de un journey: o hay
+ * muestra registrada, o ya hay historias narradas (entonces el usuario ya oyo
+ * esa voz en este journey, que es justo lo que la muestra protege). Sin
+ * ninguna de las dos, el journey esta virgen y la muestra es obligatoria.
+ */
+export function vozYaAprobada(muestra: string | null, narradas: number): boolean {
+  return !!muestra || narradas > 0;
+}
+
+/** ORDEN DE NARRACION (regla dura 2026-09-02, aflojada el 2026-09-23): una
+ *  muestra por JOURNEY, que el usuario aprueba de oido; a partir de ahi el tema
+ *  se narra entero, las tres historias seguidas. `bloqueo` dice por que la
+ *  historia todavia no puede narrarse. */
+export function pasoDelOrden(
+  s: { slug: string | null; audioUrl?: string | null },
+  aprobada: boolean,
+): { paso: "ya narrada" | "muestra" | "tema entero"; bloqueo?: string } {
   if (s.audioUrl) return { paso: "ya narrada" };
-  if (s.slotIndex === 1) {
-    return muestras[s.slug ?? ""]
-      ? { paso: "primera entera" }
-      : { paso: "muestra", bloqueo: "es la PRIMERA de su tema y no tiene muestra" };
-  }
-  return primeraDelTemaNarrada
-    ? { paso: "resto del tema" }
-    : { paso: "resto del tema", bloqueo: "la primera de este tema todavia no esta narrada" };
+  return aprobada
+    ? { paso: "tema entero" }
+    : { paso: "muestra", bloqueo: "este journey no tiene muestra aprobada todavia" };
 }
