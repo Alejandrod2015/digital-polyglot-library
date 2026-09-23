@@ -1,5 +1,11 @@
 /** Los 21 titulos del Friends DE A2 con su tema, si estan narrados y, cuando
- *  lo esten, la medida F0 que el gate dejo en el fragmento 0. Sin sintesis. */
+ *  lo esten, la medida F0 que el gate dejo en el fragmento 0. Sin sintesis.
+ *
+ *  OJO con la ultima columna: sale de los gateFlags GUARDADOS, y empalmar un
+ *  fragmento con _rerollSection los borra al reconstruir audioFragments. Por
+ *  eso dice "sin flags" y no "limpio": la ausencia de flag puede significar
+ *  que la toma paso el gate, o que hubo un empalme despues de medirla. La
+ *  medida de verdad vive en docs/veredictos-audio-gates.json. */
 import "./_loadEnv";
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
@@ -18,7 +24,7 @@ const J = "cmubidgaf0007j8np6g7n89iu";
       s.title,
       String(s.title.length),
       s.audioUrl ? "narrada" : "-",
-      f0 || (s.audioUrl ? "limpio" : ""),
+      f0 || (s.audioUrl ? "sin flags" : ""),
     ].join("\t"));
   }
   await p.$disconnect();
