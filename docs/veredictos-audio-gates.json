@@ -1,7 +1,7 @@
 {
  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo. aceptado_asi = el usuario lo deja como esta sabiendo lo que mide.",
- "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura.",
+ "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura. HIPOTESIS ABIERTA (2026-09-23, un solo caso): entre los titulos preposicionales, los de LUGAR u ORIGEN caen solos (auf dem Sofa, im Waschsalon, im Treppenhaus, im Lebenslauf, aus Muenster, vom Sperrmuell) y el de TIEMPO sube y no se arregla re-tirando (am Freitag: +7,7 y tres re-tomas a +7,9, +6,7, +8,0). Si se confirma, el sospechoso que queda sin narrar es 'Die Praxis am Dienstag' del tema 6, y quiza 'Heiser nach dem Derby' del 5.",
  "veredictos": [
   {
    "fragmento": "alle-3",
@@ -201,6 +201,20 @@
    "veredicto": "aceptado_asi",
    "fecha": "2026-09-23",
    "nota": "El usuario decide dejarlo en +4,5. La re-toma media -5,1 pero juntaba 'zu dritt' en una palabra y el candado de cobertura la revirtio."
+  },
+  {
+   "fragmento": "probearbeiten-am-freitag-0",
+   "gate": "titulo preposicional TEMPORAL, +7,7 st",
+   "veredicto": "defecto_real",
+   "fecha": "2026-09-23",
+   "nota": "Tres re-tomas a +7,9, +6,7 y +8,0: ninguna baja del umbral. No se aplico ninguna; el master conserva la de +7,7."
+  },
+  {
+   "fragmento": "ein-loch-im-lebenslauf, die-schere-aus-muenster, achtzig-fuer-drei-beine, der-zettel-am-bett, die-lampe-vom-sperrmuell",
+   "gate": "sin marca",
+   "veredicto": "limpio_de_gates",
+   "fecha": "2026-09-23",
+   "nota": "Cinco historias narradas sin que ningun gate marcara nada. Sus titulos son todos sintagmas preposicionales de LUGAR u ORIGEN."
   }
  ],
  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
