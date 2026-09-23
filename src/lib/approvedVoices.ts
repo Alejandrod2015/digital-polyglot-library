@@ -94,6 +94,17 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // usuario el 2026-09-17 tras revisar 3 candidatas con acento "dominican"
   // del shared library (previews gratis, sin audicion en HTML dedicado).
   awOajHsqRllBLH3sYn6Z: { note: "Makemcie (DO, m, mediana edad); use_case narrative_story; user-approved 2026-09-17" },
+
+  // ── Reparto del primer journey MULTIPERSONAJE (Friends ES latam neutral A0).
+  // Aprobadas por el usuario el 2026-09-21 tras oir la muestra de la historia
+  // "Un gato con dos nombres" (narrador + una linea por personaje), ya con los
+  // tres segmentos igualados de volumen.
+  IaUx9NjPDJeDAwpNQMW2: { note: "Superior Welcoming & casual (LATAM, m, joven); NARRADOR del Friends ES latam neutral A0; user-approved 2026-09-21" },
+  wnQAQM2xwHFeVXM7PQOq: { note: "Sabina (PE, f, joven); user-approved 2026-09-21 sobre la muestra corta. Al oir la historia entera el usuario la rechazo como Mariana ese mismo dia; queda aprobada pero sin papel" },
+  // Sustituta de Sabina como Mariana, elegida al oir la historia 1 completa
+  // con las dos candidatas (Mila y Gaby) en el mismo montaje.
+  p5EUznrYaWnafKvUkNiR: { note: "Gaby - Natura & Casual (LATAM, f, joven); Mariana en el Friends ES latam neutral A0 (journey cmub5my8d000432ye0v6pv5ng); user-approved 2026-09-21" },
+  fxEPMjHccsIr94VUOijN: { note: "Javier Friendly & Approachable (LATAM, m, mediana edad); Nicolas en el Friends ES latam neutral A0; user-approved 2026-09-21" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
