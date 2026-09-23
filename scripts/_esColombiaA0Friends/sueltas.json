@@ -1,0 +1,368 @@
+{
+ "pan-amigo": {
+  "contesta": {
+   "es": "“Ese también”, contesta",
+   "en": "“That one too,” she answers"
+  },
+  "explica": {
+   "es": "“Hay una ración”, explica",
+   "en": "“There is one portion,” she explains"
+  },
+  "y": {
+   "es": "muestra una cara seria y luego una cara",
+   "en": "makes a serious face and then a happy"
+  }
+ },
+ "tres-papeles-mandan": {
+  "responde": {
+   "es": "“Yo soy el otro renglón”, responde",
+   "en": "“I am the other line item,” he replies"
+  },
+  "explica": {
+   "es": "color cuida algo: botica, pan o vuelto”, explica",
+   "en": "color looks after something: pharmacy, bread or change,” she explains"
+  },
+  "avisa": {
+   "es": "pan no toma plata ni firma papel”, avisa",
+   "en": "bread does not take money or sign paper,” she points out"
+  },
+  "cuenta": {
+   "es": "“La compra pequeña queda clara y limpia”, cuenta",
+   "en": "“The small purchase comes out clear and clean,” she says"
+  }
+ },
+ "mesa-amiga": {
+  "contesta": {
+   "es": "“Esa mesa es redonda”, contesta",
+   "en": "“That table is round,” she answers"
+  },
+  "explica": {
+   "es": "“La señal es el queso rayado”, explica",
+   "en": "“The sign is the grated cheese,” she explains"
+  },
+  "avisa": {
+   "es": "“Este es reservado”, avisa",
+   "en": "“This one is reserved,” she points out"
+  }
+ },
+ "pan-tiene-silla": {
+  "responde": {
+   "es": "saludo a Pan y guardo el vaso”, responde",
+   "en": "say hello to Bread and put the cup away,” he replies"
+  },
+  "pregunta": {
+   "es": "“¿Pan trae maletín o trae hambre?” pregunta",
+   "en": "“Does Bread bring a briefcase or bring hunger?” he asks"
+  },
+  "explica": {
+   "es": "“Pan no es persona; es comida rica”, explica",
+   "en": "“Bread is not a person; it is tasty food,” she explains"
+  },
+  "contesta": {
+   "es": "“Pero ya tiene silla”, contesta",
+   "en": "“But it already has a chair,” she answers"
+  },
+  "remata": {
+   "es": "aparece y pierde silla, pero gana mesa”, remata",
+   "en": "appears and loses a chair, but wins a table,” he finishes"
+  }
+ },
+ "dos-vasos-y-un-nombre": {
+  "colombia": {
+   "es": "En Pereira, Colombia, Mariana es barista del café",
+   "en": "In Pereira, Colombia, Mariana is the barista at the cafe"
+  },
+  "agrega": {
+   "es": "“Andrea no maneja moto”, agrega",
+   "en": "“Andrea does not ride a motorbike,” he adds"
+  },
+  "perdón": {
+   "es": "“Perdón, Andrés”, contesta ella",
+   "en": "“Sorry, Andres,” she answers"
+  },
+  "cuenta": {
+   "es": "“Ese sí soy yo”, cuenta",
+   "en": "“That one really is me,” he says"
+  },
+  "hola": {
+   "es": "“Hola, Andrea”, dice a Andrés",
+   "en": "“Hello, Andrea,” she says to Andres"
+  },
+  "buenas": {
+   "es": "“Buenas, yo soy los dos”, contesta serio",
+   "en": "“Hello, I am both of them,” he answers seriously"
+  },
+  "avisa": {
+   "es": "“Andrés trae paquetes”, avisa",
+   "en": "“Andres brings packages,” she points out"
+  },
+  "explica": {
+   "es": "“Ella vuelve mañana”, explica",
+   "en": "“She comes back tomorrow,” she explains"
+  }
+ },
+ "puesto-con-bolso": {
+  "pregunta": {
+   "es": "“¿Es otro amigo nuevo?” pregunta",
+   "en": "“Is it another new friend?” he asks"
+  },
+  "responde": {
+   "es": "“No saluda, pero trabaja”, responde",
+   "en": "“No greeting, but it works,” she replies"
+  },
+  "comenta": {
+   "es": "También mira la calle”, comenta",
+   "en": "It watches the street too,” he remarks"
+  },
+  "avisa": {
+   "es": "“Come poco y guarda mucho”, avisa",
+   "en": "“It eats little and keeps much,” she notes"
+  },
+  "aclara": {
+   "es": "“Yo guardo puesto, no amigos”, aclara",
+   "en": "“I save seats, not friends,” she makes clear"
+  }
+ },
+ "vasito-sin-dueno": {
+  "pregunta": {
+   "es": "“¿El vasito manda?” pregunta",
+   "en": "“Does the little cup rule?” he asks"
+  },
+  "explica": {
+   "es": "“Falta el buñuelo”, explica",
+   "en": "“The cheese fritter is missing,” she explains"
+  }
+ },
+ "el-platito-gira": {
+  "cuenta": {
+   "es": "plata se esconde aquí, junto al pan”, cuenta",
+   "en": "money is hiding here, next to the bread,” she says"
+  },
+  "avisa": {
+   "es": "“Así no veo la plata”, avisa",
+   "en": "“That way I cannot see the money,” she notes"
+  },
+  "responde": {
+   "es": "“Yo compro el tiquete, no el pan”, responde",
+   "en": "“I buy the bus ticket, not the bread,” he replies"
+  },
+  "agrega": {
+   "es": "queda libre y todos ríen sin cambio”, agrega",
+   "en": "ends up empty and everyone laughs with no change,” she adds"
+  }
+ },
+ "foto-con-vaso": {
+  "explica": {
+   "es": "“Falta la señal correcta”, explica",
+   "en": "“The right sign is missing,” she explains"
+  },
+  "comenta": {
+   "es": "“Objeto viejo parece raro”, comenta",
+   "en": "“An old object looks odd,” he remarks"
+  },
+  "cuenta": {
+   "es": "“Ahora tengo cara”, cuenta",
+   "en": "“Now I have a face,” he says"
+  }
+ },
+ "el-amigo-de-papel": {
+  "hola": {
+   "es": "“Hola, amigo nuevo”, dice Andrés",
+   "en": "“Hello, new friend,” says Andres"
+  },
+  "pregunta": {
+   "es": "“¿La silla es mía?”, pregunta",
+   "en": "“Is the chair mine?” he asks"
+  },
+  "explica": {
+   "es": "“El papel espera a alguien”, explica",
+   "en": "“The paper is waiting for someone,” he explains"
+  },
+  "cuenta": {
+   "es": "“Yo guardo mi nombre”, cuenta",
+   "en": "“I keep my name,” he says"
+  },
+  "sí": {
+   "es": "“Sí, pero el papel llega primero y saluda”",
+   "en": "“Yes, but the paper gets there first and says hello”"
+  },
+  "contesta": {
+   "es": "pero el papel llega primero y saluda”, contesta",
+   "en": "but the paper gets there first and says hello,” she answers"
+  }
+ },
+ "llueve-y-nadie-se-va": {
+  "cuenta": {
+   "es": "“La foto sale fea, pero nuestra”, cuenta",
+   "en": "“The photo comes out ugly, but ours,” she says"
+  },
+  "responde": {
+   "es": "“Sale nuestra, perfecta no, pero completa”, responde",
+   "en": "“It comes out ours, not perfect, but complete,” he replies"
+  },
+  "avisa": {
+   "es": "“Una mano sirve”, avisa",
+   "en": "“One hand is enough,” she points out"
+  }
+ },
+ "el-encargo-tapado": {
+  "avisa": {
+   "es": "“El vaso dice Andrés grande”, avisa",
+   "en": "“The cup says Andres big,” she notes"
+  },
+  "contesta": {
+   "es": "“Ahora la botica hace caso”, contesta",
+   "en": "“Now the pharmacy pays attention,” she answers"
+  }
+ },
+ "la-buseta-de-andres": {
+  "otro": {
+   "es": "Un papel dice paradero; otro, tarjetica",
+   "en": "One paper says bus stop; another, travel card"
+  },
+  "tarjetica": {
+   "es": "Un papel dice paradero; otro, tarjetica",
+   "en": "One paper says bus stop; another, travel card"
+  },
+  "cuenta": {
+   "es": "va cerca, pero mi cara va lejos”, cuenta",
+   "en": "is going nearby, but my face is going far,” he says"
+  },
+  "explica": {
+   "es": "La señal es Andrés”, explica",
+   "en": "The sign is Andres,” he explains"
+  },
+  "avisa": {
+   "es": "el pan y yo miro la vía”, avisa",
+   "en": "the bread and I watch the road,” he points out"
+  },
+  "señala": {
+   "es": "“Ahora Andrés sabe dónde bajar”, señala",
+   "en": "“Now Andres knows where to get off,” she notes"
+  }
+ },
+ "mesa-no-misa": {
+  "agrega": {
+   "es": "“Mesa”, agrega",
+   "en": "“Table,” she adds"
+  },
+  "explica": {
+   "es": "café, campana y pan para la mesa”, explica",
+   "en": "coffee, a bell and bread for the table,” she explains"
+  },
+  "cuenta": {
+   "es": "“El bus entiende mesa, no misa”, cuenta",
+   "en": "“The bus understands table, not mass,” he says"
+  },
+  "avisa": {
+   "es": "“Ahora no cambia y todos llegan”, avisa",
+   "en": "“Now it does not change and everyone arrives,” she notes"
+  }
+ },
+ "andres-sale-pequeno": {
+  "responde": {
+   "es": "“Yo no soy cocinero”, responde",
+   "en": "“I am not a cook,” he replies"
+  },
+  "afuera": {
+   "es": "Afuera, el andén queda vacío",
+   "en": "Outside, the sidewalk is empty"
+  },
+  "cuenta": {
+   "es": "sale enorme y me tapa la cara”, cuenta",
+   "en": "comes out huge and covers my face,” he says"
+  },
+  "después": {
+   "es": "Después, la panadera acomoda el pan",
+   "en": "Afterwards, the baker arranges the bread"
+  }
+ },
+ "la-nota-con-campana": {
+  "responde": {
+   "es": "dice paradero, pero la voz dice café”, responde",
+   "en": "says bus stop, but the voice says cafe,” he replies"
+  },
+  "explica": {
+   "es": "Es café, vaso y vitrina”, explica",
+   "en": "It is cafe, cup and display case,” he explains"
+  },
+  "cuenta": {
+   "es": "la campana y el olor de pan”, cuenta",
+   "en": "the bell and the smell of bread,” he says"
+  }
+ },
+ "un-peso-canta": {
+  "dice": {
+   "es": "propina ni drama; vuelve a mi mano”, dice",
+   "en": "tip or drama; it comes back to my hand,” he says"
+  },
+  "repite": {
+   "es": "“Peso, peso, sal del pan”, repite",
+   "en": "“Peso, peso, come out of the bread,” he repeats"
+  },
+  "explica": {
+   "es": "“La plata no contesta”, explica",
+   "en": "“The money does not answer,” she explains"
+  },
+  "cuenta": {
+   "es": "“El pan guarda vuelto, sin problema”, cuenta",
+   "en": "“The bread keeps change, no problem,” she says"
+  },
+  "avisa": {
+   "es": "“Para la próxima compra segura”, avisa",
+   "en": "“For the next sure purchase,” she points out"
+  }
+ },
+ "la-mesa-de-tres": {
+  "quieto": {
+   "es": "Andrés espera afuera, quieto, con pan",
+   "en": "Andres waits outside, still, with bread"
+  },
+  "agrega": {
+   "es": "“Una reunión pequeña”, agrega",
+   "en": "“A small meeting,” he adds"
+  }
+ },
+ "tiza-bajo-la-lluvia": {
+  "responde": {
+   "es": "tres aquí, pero yo sigo el café”, responde",
+   "en": "three here, but I follow the coffee,” he replies"
+  },
+  "contesta": {
+   "es": "“Ahora la mesa nada también”, contesta",
+   "en": "“Now the table is swimming too,” she answers"
+  }
+ },
+ "la-bolsa-saluda": {
+  "contesta": {
+   "es": "“Trae trabajo, no amigo”, contesta",
+   "en": "“It carries work, not a friend,” he answers"
+  },
+  "explica": {
+   "es": "“Todo va al café”, explica",
+   "en": "“Everything is going to the cafe,” she explains"
+  }
+ },
+ "amiga-paga-poco": {
+  "explica": {
+   "es": "“Todo trabaja”, explica",
+   "en": "“Everything works,” she explains"
+  },
+  "pregunta": {
+   "es": "“¿La cucharita también cobra?” pregunta",
+   "en": "“Does the teaspoon charge too?” he asks"
+  },
+  "agrega": {
+   "es": "“El costo queda en medio”, agrega",
+   "en": "“The cost sits in the middle,” she adds"
+  },
+  "responde": {
+   "es": "“Pago poco”, responde",
+   "en": "“I pay little,” he replies"
+  },
+  "remata": {
+   "es": "“Entre todos suena juego”, remata",
+   "en": "“Between us it sounds like play,” she finishes"
+  }
+ }
+}

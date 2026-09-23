@@ -59,6 +59,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-friends-argentina",
     "spanish-friends-argentina-a0",
     "spanish-friends-colombia",
+    "spanish-friends-colombia-a0",
     "spanish-friends-mexico",
     "spanish-friends-spain-a0",
     "spanish-friends-spain-a2",
@@ -235,6 +236,7 @@ async function main() {
 
   let totalAdded = 0;
   const blocked: string[] = [];
+  const ausentes: string[] = [];
 
   for (const name of names) {
     const bundle = loadBundle(name);
@@ -244,7 +246,13 @@ async function main() {
     const sibling = new Map<string, { g: string; t?: string; rev?: boolean }>();
     for (const other of FAMILIES[familyOf(name)] ?? []) {
       if (other === name) continue;
-      for (const [k, v] of Object.entries(loadBundle(other).glosses)) {
+      // Un hermano declarado en FAMILIES que aun no existe en la base no es un
+      // error de ESTE bundle: se avisa y se sigue. Antes tiraba, y eso dejaba
+      // el rebuild de cualquier bundle espanol bloqueado por un bundle ajeno
+      // que otra rama todavia no habia creado.
+      const hermano = CACHE?.get(other);
+      if (!hermano) { if (!ausentes.includes(other)) ausentes.push(other); continue; }
+      for (const [k, v] of Object.entries(hermano.glosses)) {
         const key = k.toLowerCase();
         if (!sibling.has(key)) sibling.set(key, v);
       }
@@ -329,6 +337,10 @@ async function main() {
       where: { bundle_slug: { bundle: name, slug: "" } },
       data: { glosses: merged as never },
     });
+  }
+
+  if (ausentes.length > 0) {
+    console.log(`\naviso: ${ausentes.length} hermano(s) de FAMILIES no estan en la base y no se han copiado: ${ausentes.join(", ")}`);
   }
 
   if (check) {

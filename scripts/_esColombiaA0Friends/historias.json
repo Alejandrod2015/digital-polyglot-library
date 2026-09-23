@@ -1,0 +1,3372 @@
+{
+ "topics": [
+  "greetings-and-introductions",
+  "coffee-and-bread",
+  "buses-and-streets",
+  "work-and-favors",
+  "phones-and-messages",
+  "cash-and-errands",
+  "parties-and-photos"
+ ],
+ "stories": [
+  {
+   "id": "cmue7cgmg000ej8p6qa3dhplr",
+   "slug": "la-buseta-de-andres",
+   "title": "Andrés sube primero",
+   "text": "Tres papeles esperan. Mariana guarda el pan. Andrés mira dos. Camilo, un conductor del barrio, espera en la buseta.\n\nUn papel dice paradero; otro, tarjetica. Andrés mira el torniquete y duda. “Mi pan va cerca, pero mi cara va lejos”, cuenta.\n\nCamilo toca el timbre. “Esta buseta para en el andencito. La señal es Andrés”, explica.\n\nLa panadera trae un pandebono. La médica cruza por la cebra, mira el carril y aprieta el cordón. “Andrés lleva el pan y yo miro la vía”, avisa.\n\nCamilo pega el papel en la placa. Escribe Andrés grande. Prende la lucecita, limpia el retrovisor y mira la calzada. La baldosa queda clara. “Ahora Andrés sabe dónde bajar”, señala.\n\nLa buseta para suave y sin frenazo. Andrés toca la baranda, la manija y el baúl. Camilo manda la señal. “Aquí bajo yo”, bromea Andrés. “Yo aviso en el andencito”, promete Camilo. Él camina a la mesa correcta con el pan.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "buseta",
+     "anchor": true,
+     "surface": "buseta",
+     "register": "cultural",
+     "definition": "A small Colombian city bus."
+    },
+    {
+     "type": "noun",
+     "word": "paradero",
+     "surface": "paradero",
+     "register": "neutral",
+     "definition": "A place where buses stop."
+    },
+    {
+     "type": "noun",
+     "word": "torniquete",
+     "surface": "torniquete",
+     "register": "neutral",
+     "definition": "A turning gate at a bus."
+    },
+    {
+     "type": "noun",
+     "word": "andencito",
+     "surface": "andencito",
+     "register": "neutral",
+     "definition": "A small bus stop area."
+    },
+    {
+     "type": "noun",
+     "word": "lucecita",
+     "surface": "Lucecita",
+     "register": "neutral",
+     "definition": "A very small light."
+    },
+    {
+     "type": "noun",
+     "word": "carril",
+     "surface": "carril",
+     "register": "neutral",
+     "definition": "A lane for buses or cars."
+    },
+    {
+     "type": "noun",
+     "word": "cebra",
+     "surface": "cebra",
+     "register": "neutral",
+     "definition": "White street lines for crossing."
+    },
+    {
+     "type": "noun",
+     "word": "tarjetica",
+     "surface": "tarjetica",
+     "register": "neutral",
+     "definition": "A very small card."
+    },
+    {
+     "type": "noun",
+     "word": "manija",
+     "surface": "manija",
+     "register": "neutral",
+     "definition": "A handle for the hand."
+    },
+    {
+     "type": "noun",
+     "word": "frenazo",
+     "surface": "frenazo",
+     "register": "neutral",
+     "definition": "A sudden hard stop."
+    },
+    {
+     "type": "noun",
+     "word": "cordón",
+     "surface": "cordón",
+     "register": "neutral",
+     "definition": "The edge of the sidewalk."
+    },
+    {
+     "type": "adverb",
+     "word": "ahora",
+     "surface": "ahora",
+     "register": "neutral",
+     "definition": "At this moment now."
+    },
+    {
+     "type": "noun",
+     "word": "placa",
+     "surface": "placa",
+     "register": "neutral",
+     "definition": "A sign or number plate."
+    },
+    {
+     "type": "noun",
+     "word": "baranda",
+     "surface": "baranda",
+     "register": "neutral",
+     "definition": "A rail to hold onto."
+    },
+    {
+     "type": "noun",
+     "word": "calzada",
+     "surface": "calzada",
+     "register": "neutral",
+     "definition": "The road where vehicles move."
+    },
+    {
+     "type": "noun",
+     "word": "baúl",
+     "surface": "baúl",
+     "register": "neutral",
+     "definition": "A storage part of a bus."
+    },
+    {
+     "type": "noun",
+     "word": "baldosa",
+     "surface": "baldosa",
+     "register": "neutral",
+     "definition": "A flat square floor piece."
+    },
+    {
+     "type": "verb",
+     "word": "mandar",
+     "surface": "manda",
+     "register": "neutral",
+     "definition": "To send a message."
+    },
+    {
+     "type": "adjective",
+     "word": "correcta",
+     "surface": "correcta",
+     "register": "neutral",
+     "definition": "Right, not wrong, for this moment."
+    },
+    {
+     "type": "noun",
+     "word": "retrovisor",
+     "surface": "retrovisor",
+     "register": "neutral",
+     "definition": "A mirror used for seeing behind."
+    }
+   ],
+   "topic": "buses-and-streets",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Andrés needs the right small bus for bread from Mariana's cafe, but two route papers look alike. Camilo turns Andrés's name into the sign everyone can follow.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000fj8p65ax4pa7e",
+   "slug": "tiza-bajo-la-lluvia",
+   "title": "La tiza ya nada",
+   "text": "Nadie ve la tiza completa. Mariana sale con un vaso y un papel. La médica espera. Andrés guarda pan. La buseta para suave.\n\nEn la orillita hay una señal de tiza. El aguacero cae. La señal ya parece sopa. “Mi nombre nada. La tiza nada”, lamenta la médica.\n\nMariana mira el papel mojado. “La mesa amiga es aquí, aquí mismo”, lee despacio. Andrés mira la cuneta. “Aquí hay tres aquí, pero yo sigo el café”, responde.\n\nCamilo baja por la calzada y toca la manija. Camilo muestra una rayita. Llega pan de queso. “El rastro y el manchón miran al café”, cuenta ella.\n\nEl papel cae al barro. La tinta azul corre por la canaleta. Ella ríe poco. “Ahora la mesa nada también”, contesta. Mariana levanta la sombrilla.\n\nCamilo pone la bolsa seca. Una ramita y una hojita quedan al lado. “La mesa queda y ella llega”, cierra Mariana. El aguacero borra la tiza.",
+   "vocab": [
+    {
+     "type": "verb",
+     "word": "salir",
+     "surface": "sale",
+     "register": "neutral",
+     "definition": "To go out of a place."
+    },
+    {
+     "type": "noun",
+     "word": "orillita",
+     "surface": "orillita",
+     "register": "neutral",
+     "definition": "A small edge of a place."
+    },
+    {
+     "type": "expression",
+     "word": "señal de tiza",
+     "surface": "señal de tiza",
+     "register": "neutral",
+     "definition": "A chalk mark that guides."
+    },
+    {
+     "type": "noun",
+     "word": "tiza",
+     "surface": "tiza",
+     "register": "neutral",
+     "definition": "Chalk for making marks."
+    },
+    {
+     "type": "noun",
+     "word": "cuneta",
+     "surface": "cuneta",
+     "register": "neutral",
+     "definition": "A water edge by a street."
+    },
+    {
+     "type": "adjective",
+     "word": "mojado",
+     "surface": "mojado",
+     "register": "neutral",
+     "definition": "Wet, with water on it."
+    },
+    {
+     "type": "verb",
+     "word": "leer",
+     "surface": "lee",
+     "register": "neutral",
+     "definition": "To understand written words."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "noun",
+     "word": "sopa",
+     "surface": "sopa",
+     "register": "neutral",
+     "definition": "Soup; here a watery mess."
+    },
+    {
+     "type": "noun",
+     "word": "rastro",
+     "surface": "rastro",
+     "register": "neutral",
+     "definition": "A mark left behind."
+    },
+    {
+     "type": "noun",
+     "word": "canaleta",
+     "surface": "canaleta",
+     "register": "neutral",
+     "definition": "A small channel for water."
+    },
+    {
+     "type": "noun",
+     "word": "sombrilla",
+     "surface": "sombrilla",
+     "register": "neutral",
+     "definition": "A cover held against rain."
+    },
+    {
+     "type": "noun",
+     "word": "tinta",
+     "surface": "tinta",
+     "register": "neutral",
+     "definition": "Colored liquid for writing."
+    },
+    {
+     "type": "adjective",
+     "word": "azul",
+     "surface": "azul",
+     "register": "neutral",
+     "definition": "Blue in color, not red."
+    },
+    {
+     "type": "noun",
+     "word": "rayita",
+     "surface": "rayita",
+     "register": "neutral",
+     "definition": "A very small line."
+    },
+    {
+     "type": "verb",
+     "word": "mostrar",
+     "surface": "muestra",
+     "register": "neutral",
+     "definition": "To show something clearly."
+    },
+    {
+     "type": "noun",
+     "word": "manchón",
+     "surface": "manchón",
+     "register": "neutral",
+     "definition": "A large dirty mark."
+    },
+    {
+     "type": "verb",
+     "word": "borrar",
+     "surface": "borra",
+     "register": "neutral",
+     "definition": "To make writing disappear."
+    },
+    {
+     "type": "adverb",
+     "word": "también",
+     "surface": "también",
+     "register": "neutral",
+     "definition": "In the same way too."
+    },
+    {
+     "type": "noun",
+     "word": "ramita",
+     "surface": "ramita",
+     "register": "neutral",
+     "definition": "A little branch from a plant."
+    }
+   ],
+   "topic": "buses-and-streets",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Mariana wants to meet la médica at the corner, but rain erases the chalk sign. A wet paper and the friendly table help everyone find the same place.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000gj8p622jjmxlr",
+   "slug": "puesto-con-bolso",
+   "title": "El bolso no saluda",
+   "text": "Un maletín negro guarda un puesto libre. Huele a pan. Camilo mira el puesto. Pilar, una enfermera del barrio, llega desde la botica.\n\nAndrés abre el broche, sube la cremallera y estira la tiranta. “¿Es otro amigo nuevo?” pregunta. La médica toca el papel. “No saluda, pero trabaja”, responde.\n\nCamilo mira el espaldar. “El maletín cuida el asiento. También mira la calle”, comenta. Andrés limpia la ventanilla, dobla el forro y toca el marco.\n\nMariana pone el vaso junto al maletín. La bolsa queda debajo. La panadera prueba la agarradera, el esquinero y una ruedita. “Come poco y guarda mucho”, avisa.\n\nPilar abre el bolsillo lateral, señala el parche y toca la tabla fina. “Yo guardo puesto, no amigos”, aclara. Mariana trae café y la panadera trae pan.\n\n“Veo un raspón y una raspadura”, observa Andrés. Pilar sonríe. “Entonces el maletín es amigo de puesto”, remata Andrés. Pilar se sienta y la buseta sale.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "broche",
+     "surface": "broche",
+     "register": "neutral",
+     "definition": "A clasp that closes a bag."
+    },
+    {
+     "type": "noun",
+     "word": "maletín",
+     "surface": "maletín",
+     "register": "neutral",
+     "definition": "A small work bag."
+    },
+    {
+     "type": "noun",
+     "word": "cremallera",
+     "surface": "cremallera",
+     "register": "neutral",
+     "definition": "A zipper on a bag."
+    },
+    {
+     "type": "noun",
+     "word": "esquinero",
+     "surface": "esquinero",
+     "register": "neutral",
+     "definition": "A small corner piece."
+    },
+    {
+     "type": "noun",
+     "word": "tiranta",
+     "surface": "tiranta",
+     "register": "neutral",
+     "definition": "A strap on a bag."
+    },
+    {
+     "type": "noun",
+     "word": "espaldar",
+     "surface": "espaldar",
+     "register": "neutral",
+     "definition": "The back part of a seat."
+    },
+    {
+     "type": "noun",
+     "word": "ventanilla",
+     "surface": "ventanilla",
+     "register": "neutral",
+     "definition": "A small bus window."
+    },
+    {
+     "type": "noun",
+     "word": "forro",
+     "surface": "forro",
+     "register": "neutral",
+     "definition": "Inner cloth inside a bag."
+    },
+    {
+     "type": "noun",
+     "word": "agarradera",
+     "surface": "agarradera",
+     "register": "neutral",
+     "definition": "A part held by hand."
+    },
+    {
+     "type": "expression",
+     "word": "puesto libre",
+     "surface": "puesto libre",
+     "register": "neutral",
+     "definition": "An empty place to sit."
+    },
+    {
+     "type": "noun",
+     "word": "bolsillo lateral",
+     "surface": "bolsillo lateral",
+     "register": "neutral",
+     "definition": "A side pocket on a bag."
+    },
+    {
+     "type": "noun",
+     "word": "parche",
+     "surface": "parche",
+     "register": "neutral",
+     "definition": "A piece covering a hole."
+    },
+    {
+     "type": "expression",
+     "word": "observa raspón",
+     "surface": "Veo un raspón",
+     "register": "neutral",
+     "definition": "To notice a scrape mark."
+    },
+    {
+     "type": "noun",
+     "word": "raspadura",
+     "surface": "raspadura",
+     "register": "neutral",
+     "definition": "A scraped area on something."
+    },
+    {
+     "type": "noun",
+     "word": "marco",
+     "surface": "marco",
+     "register": "neutral",
+     "definition": "An edge around something."
+    },
+    {
+     "type": "noun",
+     "word": "calle",
+     "surface": "calle",
+     "register": "neutral",
+     "definition": "A street outside the bus."
+    },
+    {
+     "type": "noun",
+     "word": "ruedita",
+     "surface": "ruedita",
+     "register": "neutral",
+     "definition": "A very small wheel."
+    },
+    {
+     "type": "noun",
+     "word": "botica",
+     "surface": "botica",
+     "register": "neutral",
+     "definition": "A small old-style shop."
+    },
+    {
+     "type": "expression",
+     "word": "amigo de puesto",
+     "surface": "amigo de puesto",
+     "register": "neutral",
+     "definition": "A seat friend in the joke."
+    },
+    {
+     "type": "adjective",
+     "word": "fina",
+     "surface": "fina",
+     "register": "neutral",
+     "definition": "Very thin and delicate."
+    }
+   ],
+   "topic": "buses-and-streets",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Camilo saves a seat on the bus, but an unknown bag makes Andrés nervous. The bag becomes the sign for the right seat and the group boards together.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000nj8p6keu4envj",
+   "slug": "el-platito-gira",
+   "title": "El platito gira",
+   "text": "Con café y pan, Andrés mira dos monedas. Mariana pone un platito. También llega la panadera con pandebono tibio. El bus espera.\n\nAndrés deja vuelto bajo el platito. “Es plata para la buseta, no para pan ni miga”, dice serio. Mariana acerca el vaso y escucha.\n\nEl platito gira sobre la bandejita. Una moneda rueda junto a la cucharita. Lina señala la orilla. “La plata se esconde aquí, junto al pan”, cuenta.\n\nLuego la panadera pone pan encima del platito. “Así no veo la plata”, avisa. Andrés entiende. “Yo compro el tiquete, no el pan”, responde.\n\nMariana recoge el vuelto y lo mete en un monedero. El conductor toca el timbre cerca de la puerta. La enfermera guarda el maletín debajo de la silla.\n\nLas monedas vuelven a la mano de Andrés. “El bus recibe plata, no miga”, dice. “Después compra pan simple”, dice Mariana. “El platito queda libre y todos ríen sin cambio”, agrega.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "regreso de dinero",
+     "surface": "vuelto",
+     "register": "neutral",
+     "definition": "Money given back after paying."
+    },
+    {
+     "type": "noun",
+     "word": "dinero diario",
+     "surface": "plata",
+     "register": "neutral",
+     "definition": "Money in everyday speech."
+    },
+    {
+     "type": "noun",
+     "word": "platito",
+     "surface": "platito",
+     "register": "neutral",
+     "definition": "A very small plate."
+    },
+    {
+     "type": "noun",
+     "word": "cucharita",
+     "surface": "cucharita",
+     "register": "neutral",
+     "definition": "A very small spoon."
+    },
+    {
+     "type": "verb",
+     "word": "esconderse",
+     "anchor": true,
+     "surface": "se esconde",
+     "register": "neutral",
+     "definition": "To hide from clear sight."
+    },
+    {
+     "type": "verb",
+     "word": "girar",
+     "anchor": true,
+     "surface": "gira",
+     "register": "neutral",
+     "definition": "To turn in a circle."
+    },
+    {
+     "type": "verb",
+     "word": "recibir",
+     "anchor": true,
+     "surface": "recibe",
+     "register": "neutral",
+     "definition": "To get something from someone."
+    },
+    {
+     "type": "noun",
+     "word": "orilla",
+     "anchor": true,
+     "surface": "orilla",
+     "register": "neutral",
+     "definition": "The edge of something."
+    },
+    {
+     "type": "verb",
+     "word": "rodar",
+     "anchor": true,
+     "surface": "rueda",
+     "register": "neutral",
+     "definition": "To roll along a surface."
+    },
+    {
+     "type": "noun",
+     "word": "monedero",
+     "anchor": true,
+     "surface": "monedero",
+     "register": "neutral",
+     "definition": "A small thing for money."
+    },
+    {
+     "type": "noun",
+     "word": "bandejita",
+     "surface": "bandejita",
+     "register": "neutral",
+     "definition": "A very small tray."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "expression",
+     "word": "puerta cercana",
+     "surface": "cerca de la puerta",
+     "register": "neutral",
+     "definition": "Near the door of a place."
+    },
+    {
+     "type": "verb",
+     "word": "comprar",
+     "surface": "compra",
+     "register": "neutral",
+     "definition": "To get something with money."
+    },
+    {
+     "type": "adjective",
+     "word": "simple",
+     "anchor": true,
+     "surface": "simple",
+     "register": "neutral",
+     "definition": "Easy and not complicated."
+    },
+    {
+     "type": "noun",
+     "word": "campanita de bus",
+     "surface": "timbre",
+     "register": "neutral",
+     "definition": "A bell sound from a vehicle."
+    },
+    {
+     "type": "expression",
+     "word": "dos monedas",
+     "anchor": true,
+     "surface": "dos monedas",
+     "register": "neutral",
+     "definition": "Two small metal coins."
+    },
+    {
+     "type": "expression",
+     "word": "sin cambio",
+     "anchor": true,
+     "surface": "sin cambio",
+     "register": "neutral",
+     "definition": "With no money change."
+    },
+    {
+     "type": "noun",
+     "word": "pieza redonda",
+     "surface": "moneda",
+     "register": "neutral",
+     "definition": "A small round piece of money."
+    },
+    {
+     "type": "noun",
+     "word": "pan molido",
+     "surface": "miga",
+     "register": "neutral",
+     "definition": "A very small piece of bread."
+    }
+   ],
+   "topic": "cash-and-errands",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Andres saves bus money under a small plate, but the plate turns and sends the coins toward the bread.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000oj8p61v5l6rlv",
+   "slug": "tres-papeles-mandan",
+   "title": "Tres papeles mandan",
+   "text": "La enfermera entra con un mandado. Mariana prepara café. La bolsa roja tiene pan.\n\nEl comprobante trae dos nombres. “Dos nombres, un sobre, y cero pelea”, dice la vendedora. Andrés mira la plata y el café. “Yo soy el otro renglón”, responde.\n\nHay tres papeles: azul, rojo y blanco. “Cada color cuida algo: botica, pan o vuelto”, explica. El azul cuida la botica. El rojo cuida pan.\n\nMariana deja el vaso junto al papel blanco. “El pan no toma plata ni firma papel”, avisa. Afuera espera la buseta.\n\nEl comprobante va al bolsillo lateral. El sobre queda ordenado. “La compra pequeña queda clara y limpia”, cuenta.\n\nAndrés entrega el sobre correcto. Nadie protesta. Ella sonríe poco. “Todo separado, todo amigo”, dice la vendedora. “Café, pan y plata van separados”, dice Andrés.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "mandado",
+     "anchor": true,
+     "surface": "mandado",
+     "register": "neutral",
+     "definition": "An errand for someone."
+    },
+    {
+     "type": "noun",
+     "word": "comprobante",
+     "anchor": true,
+     "surface": "comprobante",
+     "register": "neutral",
+     "definition": "A paper showing payment."
+    },
+    {
+     "type": "noun",
+     "word": "sobre",
+     "surface": "sobre",
+     "register": "neutral",
+     "definition": "A paper envelope for documents."
+    },
+    {
+     "type": "expression",
+     "word": "bolsa roja",
+     "anchor": true,
+     "surface": "bolsa roja",
+     "register": "neutral",
+     "definition": "A red bag for things."
+    },
+    {
+     "type": "expression",
+     "word": "papel blanco",
+     "anchor": true,
+     "surface": "papel blanco",
+     "register": "neutral",
+     "definition": "A white piece of paper."
+    },
+    {
+     "type": "noun",
+     "word": "renglón",
+     "surface": "renglón",
+     "register": "neutral",
+     "definition": "One written line on paper."
+    },
+    {
+     "type": "adjective",
+     "word": "separados",
+     "anchor": true,
+     "surface": "separados",
+     "register": "neutral",
+     "definition": "Kept apart, not together."
+    },
+    {
+     "type": "expression",
+     "word": "cero pelea",
+     "anchor": true,
+     "surface": "cero pelea",
+     "register": "neutral",
+     "definition": "No fight at all."
+    },
+    {
+     "type": "expression",
+     "word": "cada color",
+     "anchor": true,
+     "surface": "Cada color",
+     "register": "neutral",
+     "definition": "Each color by itself."
+    },
+    {
+     "type": "expression",
+     "word": "dos nombres",
+     "anchor": true,
+     "surface": "Dos nombres",
+     "register": "neutral",
+     "definition": "Two names on paper."
+    },
+    {
+     "type": "noun",
+     "word": "farmacia",
+     "surface": "botica",
+     "register": "neutral",
+     "definition": "A shop for medicine."
+    },
+    {
+     "type": "expression",
+     "word": "bolsillo lateral",
+     "surface": "bolsillo lateral",
+     "register": "neutral",
+     "definition": "A pocket on the side."
+    },
+    {
+     "type": "adjective",
+     "word": "correcto",
+     "surface": "correcto",
+     "register": "neutral",
+     "definition": "Right for this task."
+    },
+    {
+     "type": "adjective",
+     "word": "azul papel",
+     "surface": "azul",
+     "register": "neutral",
+     "definition": "The color of clear sky."
+    },
+    {
+     "type": "expression",
+     "word": "queda ordenado",
+     "anchor": true,
+     "surface": "queda ordenado",
+     "register": "neutral",
+     "definition": "Becomes neat and ordered."
+    },
+    {
+     "type": "expression",
+     "word": "mercado corto",
+     "anchor": true,
+     "surface": "compra pequeña",
+     "register": "neutral",
+     "definition": "A small thing bought."
+    },
+    {
+     "type": "expression",
+     "word": "café pan y plata",
+     "anchor": true,
+     "surface": "Café, pan y plata",
+     "register": "neutral",
+     "definition": "Coffee, bread, and money."
+    },
+    {
+     "type": "adjective",
+     "word": "limpia",
+     "surface": "limpia",
+     "register": "neutral",
+     "definition": "Clean, not dirty or marked."
+    },
+    {
+     "type": "expression",
+     "word": "todo separado",
+     "anchor": true,
+     "surface": "Todo separado",
+     "register": "neutral",
+     "definition": "Everything kept in different places."
+    },
+    {
+     "type": "noun",
+     "word": "lateral de bolso",
+     "surface": "bolsillo lateral",
+     "register": "neutral",
+     "definition": "A side pocket on a bag."
+    }
+   ],
+   "topic": "cash-and-errands",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la enfermera brings a pharmacy errand with two names, and la vendedora uses colored papers to separate bread, coffee, and money.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000pj8p6b7ft4km3",
+   "slug": "un-peso-canta",
+   "title": "Un peso canta",
+   "text": "Hay un peso en la mano abierta. Mariana sirve café. Andrés mira el pan amigo. Suena música suave en la mesa.\n\nEl peso cae en la bolsa del pan. Ella mete la mano. “No es propina ni drama; vuelve a mi mano”, dice. Andrés observa el pandebono y parte un pedacito horneado.\n\nCanta bajo para buscar. “Peso, peso, sal del pan”, repite. La miga y el papel señalan. “La plata no contesta”, explica.\n\nEl bolsillo, la silla y la nota quedan en revisión.\n\nEl peso aparece pegado a una tira roja. “El pan guarda vuelto, sin problema”, cuenta. Andrés levanta la moneda con cuidado.\n\nMariana pone el peso sobre el vaso vacío. “Para la próxima compra segura”, avisa. “Todos observan el último peso perdido”, remata la panadera. “¿Y mañana quién canta?”, pregunta Mariana.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "peso cae",
+     "anchor": true,
+     "surface": "peso cae",
+     "register": "neutral",
+     "definition": "A coin falls down."
+    },
+    {
+     "type": "noun",
+     "word": "propina",
+     "anchor": true,
+     "surface": "propina",
+     "register": "neutral",
+     "definition": "Extra money for service."
+    },
+    {
+     "type": "adjective",
+     "word": "roja",
+     "surface": "roja",
+     "register": "neutral",
+     "definition": "Red in color, not blue."
+    },
+    {
+     "type": "adjective",
+     "word": "pegado",
+     "anchor": true,
+     "surface": "pegado",
+     "register": "neutral",
+     "definition": "Stuck to another thing."
+    },
+    {
+     "type": "noun",
+     "word": "tira roja",
+     "anchor": true,
+     "surface": "tira roja",
+     "register": "neutral",
+     "definition": "A thin red strip."
+    },
+    {
+     "type": "expression",
+     "word": "servir café",
+     "surface": "sirve café",
+     "register": "neutral",
+     "definition": "To give coffee to someone."
+    },
+    {
+     "type": "verb",
+     "word": "devolver",
+     "anchor": true,
+     "surface": "levanta la moneda",
+     "register": "neutral",
+     "definition": "To give something back."
+    },
+    {
+     "type": "noun",
+     "word": "bolsillo",
+     "surface": "bolsillo",
+     "register": "neutral",
+     "definition": "A small pocket in clothing."
+    },
+    {
+     "type": "noun",
+     "word": "plata pequeña",
+     "surface": "plata",
+     "register": "neutral",
+     "definition": "A small amount of money."
+    },
+    {
+     "type": "expression",
+     "word": "quedar pegado",
+     "anchor": true,
+     "surface": "pegado",
+     "register": "neutral",
+     "definition": "To stay stuck to something."
+    },
+    {
+     "type": "expression",
+     "word": "canción corta",
+     "surface": "canta",
+     "register": "neutral",
+     "definition": "A short song with words."
+    },
+    {
+     "type": "noun",
+     "word": "miga",
+     "surface": "miga",
+     "register": "neutral",
+     "definition": "A small piece of bread."
+    },
+    {
+     "type": "noun",
+     "word": "drama",
+     "surface": "drama",
+     "register": "neutral",
+     "definition": "A big emotional problem."
+    },
+    {
+     "type": "expression",
+     "word": "vaso vacío",
+     "anchor": true,
+     "surface": "vaso vacío",
+     "register": "neutral",
+     "definition": "A glass with nothing inside."
+    },
+    {
+     "type": "expression",
+     "word": "seguir en sitio",
+     "anchor": true,
+     "surface": "guarda vuelto",
+     "register": "neutral",
+     "definition": "To keep something in place."
+    },
+    {
+     "type": "noun",
+     "word": "bolsa de pan",
+     "anchor": true,
+     "surface": "bolsa del pan",
+     "register": "neutral",
+     "definition": "A bag used for bread."
+    },
+    {
+     "type": "expression",
+     "word": "todos observan",
+     "anchor": true,
+     "surface": "Todos observan",
+     "register": "neutral",
+     "definition": "Everyone looks at something."
+    },
+    {
+     "type": "expression",
+     "word": "sin problema",
+     "anchor": true,
+     "surface": "sin problema",
+     "register": "neutral",
+     "definition": "With no trouble at all."
+    },
+    {
+     "type": "expression",
+     "word": "mano abierta",
+     "anchor": true,
+     "surface": "mano abierta",
+     "register": "neutral",
+     "definition": "A hand held open."
+    },
+    {
+     "type": "adjective",
+     "word": "último",
+     "anchor": true,
+     "surface": "último",
+     "register": "neutral",
+     "definition": "Last after all the others."
+    }
+   ],
+   "topic": "cash-and-errands",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la panadera tries to return one peso, but it falls into the bread bag while el músico turns the search into a tiny song.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000bj8p6qai99bm6",
+   "slug": "vasito-sin-dueno",
+   "title": "Vasito sin dueño",
+   "text": "El café de Pereira huele dulce. Mariana abre la puerta. Andrés espera en la mesa. Espera Sofi, una panadera del barrio, con un pandebono.\n\nMariana pone un vasito y un platito. “Esto es para Andrés”, dice. Sofi mira la bandejita. “¿El vasito manda?” pregunta.\n\nAndrés levanta la mano. “Yo mando poco”, responde. “El vasito manda menos”, agrega. Sofi deja una miga y una migaja junto al platito.\n\nMariana busca la cucharita. En el servilletero hay una tapita y un pitillo. “Tu pedido es pequeño”, avisa ella. “Pero serio”, responde Andrés.\n\nSofi señala la vitrina. “Falta el buñuelo”, explica. “También manda”, dice Mariana. “Y mira mucho”, agrega Sofi. Ella mira la lechera, la azucarera y el bocadillo con arequipe.\n\nAndrés toma un mordisco. “El dueño soy yo”, dice. “El vasito no paga mucho”, contesta Sofi. Mariana escribe el nombre y Andrés sonríe; el vasito pierde poder.",
+   "vocab": [
+    {
+     "type": "verb",
+     "word": "esperar",
+     "anchor": true,
+     "surface": "espera",
+     "register": "neutral",
+     "definition": "To stay until something happens."
+    },
+    {
+     "type": "noun",
+     "word": "panadera",
+     "surface": "panadera",
+     "register": "neutral",
+     "definition": "A woman who makes bread."
+    },
+    {
+     "type": "noun",
+     "word": "pandebono",
+     "anchor": true,
+     "surface": "pandebono",
+     "register": "cultural",
+     "definition": "Colombian cheese bread from a bakery."
+    },
+    {
+     "type": "expression",
+     "word": "perder poder",
+     "anchor": true,
+     "surface": "pierde poder",
+     "register": "neutral",
+     "definition": "To stop being in control."
+    },
+    {
+     "type": "noun",
+     "word": "platito",
+     "surface": "platito",
+     "register": "neutral",
+     "definition": "A very small plate."
+    },
+    {
+     "type": "noun",
+     "word": "bandejita",
+     "surface": "bandejita",
+     "register": "neutral",
+     "definition": "A very small tray."
+    },
+    {
+     "type": "noun",
+     "word": "miga",
+     "surface": "miga",
+     "register": "neutral",
+     "definition": "A soft bit of bread."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "noun",
+     "word": "cucharita",
+     "surface": "cucharita",
+     "register": "neutral",
+     "definition": "A very small spoon."
+    },
+    {
+     "type": "noun",
+     "word": "servilletero",
+     "surface": "servilletero",
+     "register": "neutral",
+     "definition": "A holder for paper napkins."
+    },
+    {
+     "type": "expression",
+     "word": "tomar mordisco",
+     "anchor": true,
+     "surface": "toma un mordisco",
+     "register": "neutral",
+     "definition": "To take one bite."
+    },
+    {
+     "type": "noun",
+     "word": "lechera",
+     "anchor": true,
+     "surface": "lechera",
+     "register": "neutral",
+     "definition": "A small thing for milk."
+    },
+    {
+     "type": "noun",
+     "word": "vitrina",
+     "surface": "vitrina",
+     "register": "neutral",
+     "definition": "A glass case for food."
+    },
+    {
+     "type": "noun",
+     "word": "buñuelo",
+     "anchor": true,
+     "surface": "buñuelo",
+     "register": "cultural",
+     "definition": "A round Colombian fried bread."
+    },
+    {
+     "type": "noun",
+     "word": "azucarera",
+     "anchor": true,
+     "surface": "azucarera",
+     "register": "neutral",
+     "definition": "A small thing for sugar."
+    },
+    {
+     "type": "verb",
+     "word": "agregar",
+     "surface": "agrega",
+     "register": "neutral",
+     "definition": "To add more words."
+    },
+    {
+     "type": "noun",
+     "word": "nombre",
+     "surface": "nombre",
+     "register": "neutral",
+     "definition": "The word for a person."
+    },
+    {
+     "type": "noun",
+     "word": "bocadillo",
+     "anchor": true,
+     "surface": "bocadillo",
+     "register": "cultural",
+     "definition": "Colombian guava paste candy."
+    },
+    {
+     "type": "noun",
+     "word": "arequipe",
+     "anchor": true,
+     "surface": "arequipe",
+     "register": "cultural",
+     "definition": "Colombian sweet milk caramel."
+    },
+    {
+     "type": "noun",
+     "word": "dueño",
+     "surface": "dueño",
+     "register": "neutral",
+     "definition": "The person something belongs to."
+    }
+   ],
+   "topic": "coffee-and-bread",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Mariana saves a small cup for Andrés, but Sofi thinks the cup owns the bread. The cafe turns the mistake into a tiny order with a funny owner.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000cj8p6zq63844y",
+   "slug": "mesa-amiga",
+   "title": "Mesa amiga",
+   "text": "Una fila falsa mira la barra. Mariana pone café. Andrés mira la fila. Espera Sofi, una panadera del barrio, junto a la vitrinita. El tintico huele dulce.\n\nLa médica espera con un costalito. “La mesa amiga es aquí”, dice. Andrés mira otra mesa. “Esa mesa es redonda”, contesta.\n\nSofi muestra un amasijo y queso campesino. “La señal es el queso rayado”, explica. “Yo sigo la señal”, dice Andrés. Andrés duda.\n\nMariana deja un tintico en la mesita. “Este es reservado”, avisa. La médica pone el costalito al lado. “Ahora está separado”, agrega.\n\nSofi trae un jarrón con flores y un canelazo sin licor. “Mesa seria”, dice. “Yo mando el pedido”, responde Andrés.\n\nEl café queda en el lugar justo. “Mesa amiga”, responde Andrés. “La fila falsa espera”, agrega Mariana. Mariana parte un pan compartido y nadie protesta.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "fila falsa",
+     "anchor": true,
+     "surface": "fila falsa",
+     "register": "neutral",
+     "definition": "A line that is not real."
+    },
+    {
+     "type": "noun",
+     "word": "barra",
+     "anchor": true,
+     "surface": "barra",
+     "register": "neutral",
+     "definition": "A long counter in a cafe."
+    },
+    {
+     "type": "noun",
+     "word": "costalito",
+     "anchor": true,
+     "surface": "costalito",
+     "register": "neutral",
+     "definition": "A small cloth sack."
+    },
+    {
+     "type": "expression",
+     "word": "mesa amiga",
+     "surface": "mesa amiga",
+     "register": "neutral",
+     "definition": "A friendly table for the group."
+    },
+    {
+     "type": "adjective",
+     "word": "redonda",
+     "anchor": true,
+     "surface": "redonda",
+     "register": "neutral",
+     "definition": "Round, like a small circle."
+    },
+    {
+     "type": "noun",
+     "word": "amasijo",
+     "anchor": true,
+     "surface": "amasijo",
+     "register": "cultural",
+     "definition": "Colombian bread or baked dough."
+    },
+    {
+     "type": "noun",
+     "word": "queso campesino",
+     "anchor": true,
+     "surface": "queso campesino",
+     "register": "cultural",
+     "definition": "Fresh Colombian white cheese."
+    },
+    {
+     "type": "verb",
+     "word": "mostrar",
+     "surface": "muestra",
+     "register": "neutral",
+     "definition": "To show something clearly."
+    },
+    {
+     "type": "verb",
+     "word": "dudar",
+     "surface": "duda",
+     "register": "neutral",
+     "definition": "To not feel sure."
+    },
+    {
+     "type": "noun",
+     "word": "tintico",
+     "anchor": true,
+     "surface": "tintico",
+     "register": "cultural",
+     "definition": "Small Colombian black coffee."
+    },
+    {
+     "type": "adverb",
+     "word": "ahora",
+     "surface": "ahora",
+     "register": "neutral",
+     "definition": "At this moment now."
+    },
+    {
+     "type": "adjective",
+     "word": "reservado",
+     "surface": "reservado",
+     "register": "neutral",
+     "definition": "Kept for one person or group."
+    },
+    {
+     "type": "adjective",
+     "word": "separado",
+     "surface": "separado",
+     "register": "neutral",
+     "definition": "Away from other things."
+    },
+    {
+     "type": "noun",
+     "word": "flores",
+     "surface": "flores",
+     "register": "neutral",
+     "definition": "Small colorful plant parts."
+    },
+    {
+     "type": "noun",
+     "word": "canelazo",
+     "anchor": true,
+     "surface": "canelazo",
+     "register": "cultural",
+     "definition": "Hot cinnamon drink from Colombia."
+    },
+    {
+     "type": "verb",
+     "word": "mandar",
+     "surface": "mando",
+     "register": "neutral",
+     "definition": "To send a message."
+    },
+    {
+     "type": "expression",
+     "word": "lugar justo",
+     "surface": "lugar justo",
+     "register": "neutral",
+     "definition": "The right place for something."
+    },
+    {
+     "type": "expression",
+     "word": "pan compartido",
+     "surface": "pan compartido",
+     "register": "neutral",
+     "definition": "Bread for more than one person."
+    },
+    {
+     "type": "verb",
+     "word": "protestar",
+     "surface": "protesta",
+     "register": "neutral",
+     "definition": "To complain or object."
+    },
+    {
+     "type": "noun",
+     "word": "vitrinita",
+     "surface": "vitrinita",
+     "register": "neutral",
+     "definition": "A very small display case."
+    }
+   ],
+   "topic": "coffee-and-bread",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Andrés needs the right table for Mariana's coffee, but a false line forms near the bread case. The group uses a tiny bread bag as the table sign.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000dj8p61bex2fqa",
+   "slug": "pan-amigo",
+   "title": "Pan amigo",
+   "text": "Sofi llega con el hornito apagado. Ella es una panadera del barrio. Mariana mira una nota corta. Una médica espera al lado.\n\nAndrés ve un pan de yuca. “Ese pan es mío”, dice. Ella ve pan de queso. “Ese también”, contesta.\n\nSofi toca el pan blandito. “Hay una ración”, explica. “La ración alcanza”, agrega. Mariana marca una mitad justa con cinta roja.\n\nElla mira la nota. “La letra bonita no corta pan”, avisa. Andrés muestra una cara seria y luego una cara feliz.\n\nMariana dibuja un dibujo serio y un dibujo feliz. Sofi parte un pedacito crujiente. “Esto queda horneado”, agrega. “Yo respeto la cinta”, dice Andrés.\n\nEl pan tiene olor dulzón. “Es un pan amigo bueno”, dice Andrés. “Yo tomo poco pan”, agrega ella. “Mañana vuelve”, avisa Sofi.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "hornito apagado",
+     "surface": "hornito apagado",
+     "register": "neutral",
+     "definition": "A small oven turned off."
+    },
+    {
+     "type": "expression",
+     "word": "nota corta",
+     "surface": "nota corta",
+     "register": "neutral",
+     "definition": "A note with few words."
+    },
+    {
+     "type": "noun",
+     "word": "pan de yuca",
+     "anchor": true,
+     "surface": "pan de yuca",
+     "register": "cultural",
+     "definition": "Colombian bread made with yuca."
+    },
+    {
+     "type": "noun",
+     "word": "queso",
+     "surface": "queso",
+     "register": "neutral",
+     "definition": "A soft white food from milk."
+    },
+    {
+     "type": "expression",
+     "word": "pan blandito",
+     "surface": "pan blandito",
+     "register": "neutral",
+     "definition": "Soft bread in the hand."
+    },
+    {
+     "type": "adjective",
+     "word": "roja",
+     "surface": "roja",
+     "register": "neutral",
+     "definition": "Red in color, not blue."
+    },
+    {
+     "type": "expression",
+     "word": "mitad justa",
+     "surface": "mitad justa",
+     "register": "neutral",
+     "definition": "A fair half part."
+    },
+    {
+     "type": "noun",
+     "word": "cinta roja",
+     "surface": "cinta roja",
+     "register": "neutral",
+     "definition": "A red strip of material."
+    },
+    {
+     "type": "expression",
+     "word": "letra bonita",
+     "surface": "letra bonita",
+     "register": "neutral",
+     "definition": "Pretty handwriting on paper."
+    },
+    {
+     "type": "expression",
+     "word": "cortar pan",
+     "surface": "corta pan",
+     "register": "neutral",
+     "definition": "To cut bread into parts."
+    },
+    {
+     "type": "expression",
+     "word": "cara seria",
+     "surface": "cara seria",
+     "register": "neutral",
+     "definition": "A face with no smile."
+    },
+    {
+     "type": "noun",
+     "word": "ración",
+     "surface": "ración",
+     "register": "neutral",
+     "definition": "One portion of food."
+    },
+    {
+     "type": "expression",
+     "word": "dibujo serio",
+     "surface": "dibujo serio",
+     "register": "neutral",
+     "definition": "A picture with no smile."
+    },
+    {
+     "type": "expression",
+     "word": "hecho a mano",
+     "surface": "dibuja",
+     "register": "neutral",
+     "definition": "Made by a person's hand."
+    },
+    {
+     "type": "noun",
+     "word": "pedacito",
+     "surface": "pedacito",
+     "register": "neutral",
+     "definition": "A very small piece."
+    },
+    {
+     "type": "adjective",
+     "word": "crujiente",
+     "surface": "crujiente",
+     "register": "neutral",
+     "definition": "Hard and noisy to bite."
+    },
+    {
+     "type": "adjective",
+     "word": "horneado",
+     "surface": "horneado",
+     "register": "neutral",
+     "definition": "Cooked inside an oven."
+    },
+    {
+     "type": "expression",
+     "word": "mañana vuelve",
+     "surface": "Mañana vuelve",
+     "register": "neutral",
+     "definition": "It comes back tomorrow."
+    },
+    {
+     "type": "expression",
+     "word": "pan amigo",
+     "surface": "pan amigo",
+     "register": "neutral",
+     "definition": "Bread treated like a friend."
+    },
+    {
+     "type": "noun",
+     "word": "olor",
+     "surface": "olor",
+     "register": "neutral",
+     "definition": "A smell from something."
+    }
+   ],
+   "topic": "coffee-and-bread",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Sofi has one warm bread from the small oven, and Andrés and la médica both want it. Mariana makes a small note, and the bread becomes a shared friend.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmf0008j8p60v8wgrye",
+   "slug": "dos-vasos-y-un-nombre",
+   "title": "Dos vasos y un nombre",
+   "text": "En Pereira, Colombia, Mariana es barista del café. Sirve café. Andrés reparte paquetes y trae pan. La campana suena suave. Andrés entra.\n\nMariana mira el vaso. El vaso dice “Andrea”. Andrés mira el nombre y sonríe poco. “Yo soy Andrés”, dice él. “Andrea no maneja moto”, agrega.\n\nMariana está roja. “Perdón, Andrés”, contesta ella. Andrés señala el vaso. “No pasa nada. Andrea toma mi café hoy”, responde él. “Yo pago por ella”, agrega.\n\nMariana prepara otro café. Escribe Andrés grande. También dibuja una cara feliz. Andrés mira el dibujo. “Ese sí soy yo”, cuenta.\n\nMariana ve dos vasos. “Hola, Andrea”, dice a Andrés. Andrés levanta los dos vasos. “Buenas, yo soy los dos”, contesta serio. “Andrés trae paquetes”, avisa.\n\nMariana ríe con Andrés. Andrés deja el vaso de Andrea en la mesa. “Ella vuelve mañana”, explica. Mariana ya recuerda su nombre.",
+   "vocab": [
+    {
+     "type": "verb",
+     "word": "recordar",
+     "anchor": true,
+     "surface": "recuerda",
+     "register": "neutral",
+     "definition": "To keep a name in mind."
+    },
+    {
+     "type": "verb",
+     "word": "traer",
+     "surface": "trae",
+     "register": "neutral",
+     "definition": "To carry something to a place."
+    },
+    {
+     "type": "verb",
+     "word": "entrar",
+     "surface": "entra",
+     "register": "neutral",
+     "definition": "To go inside a place."
+    },
+    {
+     "type": "adverb",
+     "word": "mañana",
+     "surface": "mañana",
+     "register": "neutral",
+     "definition": "The day after today."
+    },
+    {
+     "type": "adjective",
+     "word": "suave",
+     "surface": "suave",
+     "register": "neutral",
+     "definition": "Soft or gentle to touch."
+    },
+    {
+     "type": "verb",
+     "word": "decir",
+     "surface": "dice",
+     "register": "neutral",
+     "definition": "To speak words to someone."
+    },
+    {
+     "type": "verb",
+     "word": "mirar",
+     "surface": "mira",
+     "register": "neutral",
+     "definition": "To use your eyes on something."
+    },
+    {
+     "type": "verb",
+     "word": "sonreír",
+     "surface": "sonríe",
+     "register": "neutral",
+     "definition": "To make a happy face."
+    },
+    {
+     "type": "adverb",
+     "word": "poco",
+     "surface": "poco",
+     "register": "neutral",
+     "definition": "A small amount of something."
+    },
+    {
+     "type": "adjective",
+     "word": "rojo",
+     "surface": "roja",
+     "register": "neutral",
+     "definition": "Red in the face or color."
+    },
+    {
+     "type": "verb",
+     "word": "señalar",
+     "surface": "señala",
+     "register": "neutral",
+     "definition": "To show with your finger."
+    },
+    {
+     "type": "expression",
+     "word": "no pasa nada",
+     "surface": "No pasa nada",
+     "register": "neutral",
+     "definition": "It is okay, no problem."
+    },
+    {
+     "type": "verb",
+     "word": "preparar",
+     "surface": "prepara",
+     "register": "neutral",
+     "definition": "To make something ready."
+    },
+    {
+     "type": "verb",
+     "word": "escribir",
+     "surface": "escribe",
+     "register": "neutral",
+     "definition": "To make words with a pen."
+    },
+    {
+     "type": "verb",
+     "word": "volver",
+     "surface": "vuelve",
+     "register": "neutral",
+     "definition": "To come back again."
+    },
+    {
+     "type": "verb",
+     "word": "dibujar",
+     "surface": "dibuja",
+     "register": "neutral",
+     "definition": "To make a picture by hand."
+    },
+    {
+     "type": "adjective",
+     "word": "feliz",
+     "surface": "feliz",
+     "register": "neutral",
+     "definition": "Happy and feeling good."
+    },
+    {
+     "type": "verb",
+     "word": "levantar",
+     "surface": "levanta",
+     "register": "neutral",
+     "definition": "To raise something up."
+    },
+    {
+     "type": "adjective",
+     "word": "serio",
+     "surface": "serio",
+     "register": "neutral",
+     "definition": "Not smiling or joking."
+    },
+    {
+     "type": "expression",
+     "word": "dos vasos",
+     "anchor": true,
+     "surface": "dos vasos",
+     "register": "neutral",
+     "definition": "Two cups held together."
+    }
+   ],
+   "topic": "greetings-and-introductions",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Mariana works in a small cafe in Pereira, Colombia, and Andrés arrives with the wrong name on his cup. A simple greeting turns into a joke that helps him feel welcome.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmf0009j8p6tksenxw1",
+   "slug": "la-mesa-de-tres",
+   "title": "Tres platos esperan",
+   "text": "Mariana abre el café temprano. Andrés espera afuera, quieto, con pan. La mesa está libre. El pan huele dulce.\n\nLlega Lina, una médica nueva del barrio. Ella mira la mesa y pregunta bajo. “¿Es una reunión?” Andrés dice “sí” con calma. “Una reunión pequeña”, agrega. “La mesa espera”, avisa.\n\nMariana saluda a Lina. “Mucho gusto”, dice Mariana. Andrés repite muy rápido. “Mucho susto”, suelta él. Lina mira el pan.\n\nLina abre los ojos. Mariana mira a Andrés. En la mesa hay pan de queso, no miedo. “El pan no asusta”, explica Mariana. “Yo tampoco”, responde Andrés. “Me siento bien”, responde Lina.\n\nLina ríe. “Mucho gusto, no susto”, corrige ella. Andrés toca su pecho. “Yo tengo gusto y susto”, cuenta él. “Pero sigo aquí”, agrega.\n\nMariana trae café para todos. La mesa ya no parece grande. Lina escribe su nombre en una servilleta. “Yo escribo susto debajo”, avisa Andrés. Ahora los tres tienen un saludo propio.",
+   "vocab": [
+    {
+     "type": "verb",
+     "word": "esperar",
+     "surface": "espera",
+     "register": "neutral",
+     "definition": "To stay until someone comes."
+    },
+    {
+     "type": "adverb",
+     "word": "temprano",
+     "anchor": true,
+     "surface": "temprano",
+     "register": "neutral",
+     "definition": "Early, near the start of the day."
+    },
+    {
+     "type": "adverb",
+     "word": "afuera",
+     "surface": "afuera",
+     "register": "neutral",
+     "definition": "Outside, not in the room."
+    },
+    {
+     "type": "adjective",
+     "word": "quieto",
+     "surface": "quieto",
+     "register": "neutral",
+     "definition": "Still and not moving."
+    },
+    {
+     "type": "verb",
+     "word": "oler",
+     "surface": "huele",
+     "register": "neutral",
+     "definition": "To have a smell."
+    },
+    {
+     "type": "adjective",
+     "word": "libre",
+     "surface": "libre",
+     "register": "neutral",
+     "definition": "Free, not taken by anyone."
+    },
+    {
+     "type": "adjective",
+     "word": "dulce",
+     "surface": "dulce",
+     "register": "neutral",
+     "definition": "Sweet, like sugar or honey."
+    },
+    {
+     "type": "noun",
+     "word": "médica",
+     "surface": "médica",
+     "register": "neutral",
+     "definition": "A woman who helps sick people."
+    },
+    {
+     "type": "verb",
+     "word": "llegar",
+     "surface": "Llega",
+     "register": "neutral",
+     "definition": "To come to a place."
+    },
+    {
+     "type": "verb",
+     "word": "preguntar",
+     "surface": "pregunta",
+     "register": "neutral",
+     "definition": "To ask for words or news."
+    },
+    {
+     "type": "adverb",
+     "word": "bajo",
+     "surface": "bajo",
+     "register": "neutral",
+     "definition": "Under someone or something."
+    },
+    {
+     "type": "noun",
+     "word": "reunión",
+     "surface": "reunión",
+     "register": "neutral",
+     "definition": "A time when people meet."
+    },
+    {
+     "type": "verb",
+     "word": "saludar",
+     "surface": "saluda",
+     "register": "neutral",
+     "definition": "To say hello to someone."
+    },
+    {
+     "type": "verb",
+     "word": "soltar",
+     "anchor": true,
+     "surface": "suelta",
+     "register": "neutral",
+     "definition": "To say something suddenly."
+    },
+    {
+     "type": "adverb",
+     "word": "rápido",
+     "surface": "rápido",
+     "register": "neutral",
+     "definition": "Fast in movement or action."
+    },
+    {
+     "type": "noun",
+     "word": "susto",
+     "anchor": true,
+     "surface": "susto",
+     "register": "neutral",
+     "definition": "A sudden scared feeling."
+    },
+    {
+     "type": "expression",
+     "word": "abrir los ojos",
+     "surface": "abre los ojos",
+     "register": "neutral",
+     "definition": "To make your eyes wide."
+    },
+    {
+     "type": "verb",
+     "word": "parecer",
+     "surface": "parece",
+     "register": "neutral",
+     "definition": "To look or seem a certain way."
+    },
+    {
+     "type": "adverb",
+     "word": "debajo",
+     "surface": "debajo",
+     "register": "neutral",
+     "definition": "Under someone or something."
+    },
+    {
+     "type": "adjective",
+     "word": "propio",
+     "surface": "propio",
+     "register": "neutral",
+     "definition": "Your own, not another person's."
+    }
+   ],
+   "topic": "greetings-and-introductions",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Mariana and Andrés save a table for a new friend, but the cafe hears the wrong greeting. The mix-up gives everyone an easy way to meet.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmf000aj8p6o1v3nznf",
+   "slug": "el-amigo-de-papel",
+   "title": "Amigo nuevo",
+   "text": "El café huele a panela. Catalina es vendedora del barrio. Julián, un músico tímido del centro, mira una silla vacía. Andrés pone un papel en la silla. El papel dice “amigo nuevo”.\n\nJulián ve el papel y se queda de pie. “Hola, amigo nuevo”, dice Andrés. Julián sonríe poco.\n\nJulián toca su gorra. “Yo soy Julián”, dice él. Mariana ofrece café. Julián mira la silla vacía. “¿La silla es mía?”, pregunta.\n\nAndrés baja la voz. “El papel espera a alguien”, explica. Julián se sienta despacio. El papel cae al suelo. “Ahora espera abajo”, responde Julián.\n\nMariana recoge el papel. Ahora escribe “amigo real”. Julián ríe y guarda el papel en su bolsillo. “Yo guardo mi nombre”, cuenta.\n\nCatalina entra por pan. Ella mira a Julián. “¿Tú eres el amigo real?” Julián levanta la mano. “Sí, pero el papel llega primero y saluda”, contesta. Todos saludan al papel y luego a Julián.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "panela",
+     "anchor": true,
+     "surface": "panela",
+     "register": "cultural",
+     "definition": "Colombian brown sugar from cane."
+    },
+    {
+     "type": "adjective",
+     "word": "vacío",
+     "surface": "vacía",
+     "register": "neutral",
+     "definition": "Empty, with nothing inside."
+    },
+    {
+     "type": "verb",
+     "word": "poner",
+     "surface": "pone",
+     "register": "neutral",
+     "definition": "To place something somewhere."
+    },
+    {
+     "type": "adjective",
+     "word": "nuevo",
+     "surface": "nuevo",
+     "register": "neutral",
+     "definition": "New, not seen before."
+    },
+    {
+     "type": "verb",
+     "word": "esperar",
+     "surface": "espera",
+     "register": "neutral",
+     "definition": "To stay until someone comes."
+    },
+    {
+     "type": "verb",
+     "word": "ver",
+     "surface": "ve",
+     "register": "neutral",
+     "definition": "To look and notice something."
+    },
+    {
+     "type": "noun",
+     "word": "papel",
+     "surface": "papel",
+     "register": "neutral",
+     "definition": "Paper for a note or name."
+    },
+    {
+     "type": "expression",
+     "word": "quedarse de pie",
+     "anchor": true,
+     "surface": "se queda de pie",
+     "register": "neutral",
+     "definition": "To stay standing, not sitting."
+    },
+    {
+     "type": "verb",
+     "word": "guardar",
+     "surface": "guarda",
+     "register": "neutral",
+     "definition": "To keep something in a place."
+    },
+    {
+     "type": "verb",
+     "word": "tocar",
+     "surface": "toca",
+     "register": "neutral",
+     "definition": "To put your hand on something."
+    },
+    {
+     "type": "pronoun",
+     "word": "yo",
+     "surface": "Yo",
+     "register": "neutral",
+     "definition": "The word a speaker uses for self."
+    },
+    {
+     "type": "adjective",
+     "word": "tímido",
+     "anchor": true,
+     "surface": "tímido",
+     "register": "neutral",
+     "definition": "Shy and not very bold."
+    },
+    {
+     "type": "verb",
+     "word": "bajar",
+     "surface": "baja",
+     "register": "neutral",
+     "definition": "To move down or make lower."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "verb",
+     "word": "sentarse",
+     "surface": "se sienta",
+     "register": "neutral",
+     "definition": "To put your body on a seat."
+    },
+    {
+     "type": "adverb",
+     "word": "despacio",
+     "surface": "despacio",
+     "register": "neutral",
+     "definition": "Slowly, not fast at all."
+    },
+    {
+     "type": "verb",
+     "word": "caer",
+     "surface": "cae",
+     "register": "neutral",
+     "definition": "To move down to the ground."
+    },
+    {
+     "type": "adjective",
+     "word": "real",
+     "surface": "real",
+     "register": "neutral",
+     "definition": "True, not only a game."
+    },
+    {
+     "type": "verb",
+     "word": "recoger",
+     "surface": "recoge",
+     "register": "neutral",
+     "definition": "To take something from the ground."
+    },
+    {
+     "type": "adverb",
+     "word": "luego",
+     "surface": "luego",
+     "register": "neutral",
+     "definition": "After that, not before."
+    }
+   ],
+   "topic": "greetings-and-introductions",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Andrés wants to introduce a friend at Mariana's cafe, but the friend is only a paper sign. The small joke becomes a real welcome for a shy customer.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000qj8p6l0ok9piy",
+   "slug": "foto-con-vaso",
+   "title": "Foto con vaso",
+   "text": "La lámpara da luz sobre el pan. El vaso hace reflejo. Mariana mira el celular. Andrés trae el vaso de Andrea. El músico espera.\n\nCatalina pone la campana junto al pandebono. Lina guarda el papel con el nombre. La panadera mira. “El grupo posa y quiere salir en foto”, avisa Mariana. Todos miran la pantalla.\n\nMariana toma la foto. El vaso tapa al músico. “Yo soy café y salgo sin cara”, responde el músico bajo. Andrés abre los ojos.\n\nEl maletín negro sube. El bus espera cerca. “Falta la señal correcta”, explica. “Objeto viejo parece raro”, comenta.\n\nMariana coloca vaso, pan, papel y campana. “Mantel limpio”, dice Mariana. Andrés baja el vaso. El músico sonríe. “Ahora tengo cara”, cuenta.\n\nLa nueva foto queda clara. El vaso viejo ya no tapa. “Nada sale borroso; el músico queda sin tapar”, agrega la panadera. “Campana, pan y papel saludan”, dice Mariana.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "imagen de celular",
+     "surface": "foto",
+     "register": "neutral",
+     "definition": "A picture made with a camera."
+    },
+    {
+     "type": "noun",
+     "word": "rostro",
+     "surface": "cara",
+     "register": "neutral",
+     "definition": "The front part of the head."
+    },
+    {
+     "type": "noun",
+     "word": "reflejo",
+     "definition": "Light bouncing off a surface."
+    },
+    {
+     "type": "adverb",
+     "word": "cerca",
+     "definition": "At a short distance."
+    },
+    {
+     "type": "expression",
+     "word": "tomar foto",
+     "surface": "toma la foto",
+     "register": "neutral",
+     "definition": "To make a picture."
+    },
+    {
+     "type": "verb",
+     "word": "subir",
+     "surface": "sube",
+     "register": "neutral",
+     "definition": "To move upward slowly."
+    },
+    {
+     "type": "noun",
+     "word": "nombre escrito",
+     "surface": "nombre",
+     "register": "neutral",
+     "definition": "A written name on paper."
+    },
+    {
+     "type": "noun",
+     "word": "cámara",
+     "surface": "celular",
+     "register": "neutral",
+     "definition": "A tool that takes pictures."
+    },
+    {
+     "type": "verb",
+     "word": "tapar",
+     "anchor": true,
+     "surface": "tapa",
+     "register": "neutral",
+     "definition": "To cover something from view."
+    },
+    {
+     "type": "expression",
+     "word": "maletín negro",
+     "surface": "maletín negro",
+     "register": "neutral",
+     "definition": "A small black work bag."
+    },
+    {
+     "type": "noun",
+     "word": "mantel",
+     "definition": "A cloth on top of a table."
+    },
+    {
+     "type": "expression",
+     "word": "salir en foto",
+     "anchor": true,
+     "surface": "salir en foto",
+     "register": "neutral",
+     "definition": "To be in a picture."
+    },
+    {
+     "type": "noun",
+     "word": "gente junta",
+     "surface": "grupo",
+     "register": "neutral",
+     "definition": "People together in one place."
+    },
+    {
+     "type": "expression",
+     "word": "señal correcta",
+     "surface": "señal correcta",
+     "register": "neutral",
+     "definition": "The right sign to show."
+    },
+    {
+     "type": "adjective",
+     "word": "viejo",
+     "anchor": true,
+     "surface": "viejo",
+     "register": "neutral",
+     "definition": "Old and not new."
+    },
+    {
+     "type": "expression",
+     "word": "sin tapar",
+     "anchor": true,
+     "surface": "sin tapar",
+     "register": "neutral",
+     "definition": "With nothing covering it."
+    },
+    {
+     "type": "expression",
+     "word": "sin cara",
+     "anchor": true,
+     "surface": "sin cara",
+     "register": "neutral",
+     "definition": "With the face not showing."
+    },
+    {
+     "type": "adjective",
+     "word": "borroso",
+     "definition": "Not clear to see."
+    },
+    {
+     "type": "expression",
+     "word": "quedar claro",
+     "surface": "queda clara",
+     "register": "neutral",
+     "definition": "To become easy to see."
+    },
+    {
+     "type": "noun",
+     "word": "pantalla final",
+     "surface": "pantalla",
+     "register": "neutral",
+     "definition": "The phone screen at the end."
+    }
+   ],
+   "topic": "parties-and-photos",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Mariana wants a clear photo of the group, but Andrés's cup covers el músico's face. Old cafe objects become the signs everyone needs.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000rj8p6an7914gh",
+   "slug": "andres-sale-pequeno",
+   "title": "Andrés sale pequeño",
+   "text": "Andrés se sienta serio en la mesa amiga. Mariana tiene el celular. Hay pan amigo y arepa entera. La vendedora cuida el vaso.\n\nLa panadera pone el pan delante de Andrés. “Primer plano”, dice ella. “No sonrío”, avisa Andrés. “Yo no soy cocinero”, responde.\n\nEl papel queda con el nombre. Suena una cuerda suave. Afuera, el andén queda vacío. El carro espera en el parqueadero. La mesa queda limpia.\n\nMariana limpia el lente y toma la foto. “El pan sale enorme y me tapa la cara”, cuenta. “Yo salgo pequeño detrás del pan”, dice Andrés. La enfermera mira y pregunta bajo. “¿La fiesta es de pan?”\n\nAndrés mira serio. Después, la panadera acomoda el pan. La arepa queda junto al vaso. “Ahora eres dueño de fiesta”, bromea la vendedora.\n\nAndrés sonríe al fin. “La foto queda propia”, remata Mariana. “Pan, café y cara seria a medias”, dice Andrés. El grupo aplaude bajo.",
+   "vocab": [
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "noun",
+     "word": "arepa",
+     "anchor": true,
+     "surface": "arepa",
+     "register": "cultural",
+     "definition": "A round Colombian corn cake."
+    },
+    {
+     "type": "noun",
+     "word": "parqueadero",
+     "definition": "A place where cars wait."
+    },
+    {
+     "type": "adjective",
+     "word": "entera",
+     "anchor": true,
+     "surface": "entera",
+     "register": "neutral",
+     "definition": "Whole and not cut."
+    },
+    {
+     "type": "noun",
+     "word": "andén",
+     "definition": "The walking path beside a street."
+    },
+    {
+     "type": "expression",
+     "word": "delante de",
+     "anchor": true,
+     "surface": "delante de",
+     "register": "neutral",
+     "definition": "In front of something."
+    },
+    {
+     "type": "adjective",
+     "word": "pequeño",
+     "surface": "pequeño",
+     "register": "neutral",
+     "definition": "Small and not large."
+    },
+    {
+     "type": "noun",
+     "word": "cocinero",
+     "definition": "A person who cooks food."
+    },
+    {
+     "type": "adverb",
+     "word": "ahora",
+     "surface": "ahora",
+     "register": "neutral",
+     "definition": "At this moment now."
+    },
+    {
+     "type": "verb",
+     "word": "acomodar",
+     "anchor": true,
+     "surface": "acomoda",
+     "register": "neutral",
+     "definition": "To put in a good place."
+    },
+    {
+     "type": "adjective",
+     "word": "seria",
+     "surface": "seria",
+     "register": "neutral",
+     "definition": "Not smiling or joking."
+    },
+    {
+     "type": "verb",
+     "word": "aplaudir",
+     "anchor": true,
+     "surface": "aplaude",
+     "register": "neutral",
+     "definition": "To hit hands together happily."
+    },
+    {
+     "type": "noun",
+     "word": "lente",
+     "definition": "The glass part of a camera."
+    },
+    {
+     "type": "expression",
+     "word": "cuerda suave",
+     "anchor": true,
+     "surface": "cuerda suave",
+     "register": "neutral",
+     "definition": "A soft musical string."
+    },
+    {
+     "type": "adjective",
+     "word": "limpia",
+     "anchor": true,
+     "surface": "limpia",
+     "register": "neutral",
+     "definition": "Clean and not dirty."
+    },
+    {
+     "type": "expression",
+     "word": "propio de grupo",
+     "surface": "propia",
+     "register": "neutral",
+     "definition": "Belonging to the group."
+    },
+    {
+     "type": "expression",
+     "word": "dueño de fiesta",
+     "anchor": true,
+     "surface": "dueño de fiesta",
+     "register": "neutral",
+     "definition": "The person like a party owner."
+    },
+    {
+     "type": "noun",
+     "word": "gente retratada",
+     "surface": "foto",
+     "register": "neutral",
+     "definition": "A picture of people."
+    },
+    {
+     "type": "noun",
+     "word": "pose",
+     "surface": "cara seria",
+     "register": "neutral",
+     "definition": "A way to stand or look."
+    },
+    {
+     "type": "expression",
+     "word": "mirar serio",
+     "anchor": true,
+     "surface": "mira serio",
+     "register": "neutral",
+     "definition": "To look without smiling."
+    }
+   ],
+   "topic": "parties-and-photos",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Andrés wants to look serious in the party picture, but la panadera puts friendly bread in front. The group laughs and the photo becomes more theirs.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000sj8p6wnd8f3p0",
+   "slug": "llueve-y-nadie-se-va",
+   "title": "Llueve y nadie se va",
+   "text": "El aguacero cae sobre Pereira. El final empieza mojado. Mariana guarda el celular bajo la sombrilla. Andrés trae café. Hay pan crujiente. El bus espera.\n\nLa mesa amiga está mojada por lluvia. Las flores aguantan. El papel sube con el nombre. El maletín espera. Suena una nota suave.\n\nLa bolsa mira el barro. “La foto sale fea, pero nuestra”, cuenta. Mariana sonríe poco. “Sale nuestra, perfecta no, pero completa”, responde.\n\nTodos entran bajo la sombrilla con caras juntas. El vaso queda junto al pan. “El recibo y la moneda quedan”, dice Andrés.\n\nSuena el timbre. La arepa sube. Andrés levanta el papel. Mariana toma la imagen final con una mano. “Una mano sirve”, avisa.\n\n“La imagen tiene lluvia y barro. No sale perfecta; sale imperfecta”, dice Mariana. “Pero funciona”, repite Mariana. “Juntos es cierre”, agrega Andrés. Todos se quedan y la mesa amiga queda completa.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "celular bajo la sombrilla",
+     "anchor": true,
+     "surface": "celular bajo la sombrilla",
+     "register": "neutral",
+     "definition": "A phone kept under the umbrella."
+    },
+    {
+     "type": "adjective",
+     "word": "fea",
+     "anchor": true,
+     "surface": "fea",
+     "register": "neutral",
+     "definition": "Not pretty or nice."
+    },
+    {
+     "type": "expression",
+     "word": "levantar papel",
+     "anchor": true,
+     "surface": "levanta el papel",
+     "register": "neutral",
+     "definition": "To raise the paper up."
+    },
+    {
+     "type": "adjective",
+     "word": "perfecta",
+     "anchor": true,
+     "surface": "perfecta",
+     "register": "neutral",
+     "definition": "With nothing wrong in it."
+    },
+    {
+     "type": "verb",
+     "word": "funcionar",
+     "anchor": true,
+     "surface": "funciona",
+     "register": "neutral",
+     "definition": "To work well enough."
+    },
+    {
+     "type": "adjective",
+     "word": "completa",
+     "surface": "completa",
+     "register": "neutral",
+     "definition": "With all parts present."
+    },
+    {
+     "type": "expression",
+     "word": "bajo la sombrilla",
+     "anchor": true,
+     "surface": "bajo la sombrilla",
+     "register": "neutral",
+     "definition": "Under the umbrella together."
+    },
+    {
+     "type": "expression",
+     "word": "caras juntas",
+     "anchor": true,
+     "surface": "caras juntas",
+     "register": "neutral",
+     "definition": "Faces close in one picture."
+    },
+    {
+     "type": "expression",
+     "word": "imagen final",
+     "anchor": true,
+     "surface": "imagen final",
+     "register": "neutral",
+     "definition": "The last picture taken."
+    },
+    {
+     "type": "verb",
+     "word": "tomar",
+     "surface": "toma",
+     "register": "neutral",
+     "definition": "To take or hold something."
+    },
+    {
+     "type": "noun",
+     "word": "moneda",
+     "surface": "moneda",
+     "register": "neutral",
+     "definition": "A small round piece of money."
+    },
+    {
+     "type": "adjective",
+     "word": "imperfecta",
+     "anchor": true,
+     "surface": "imperfecta",
+     "register": "neutral",
+     "definition": "Not perfect at all."
+    },
+    {
+     "type": "adjective",
+     "word": "juntos",
+     "surface": "Juntos",
+     "register": "neutral",
+     "definition": "Together and not separate."
+    },
+    {
+     "type": "expression",
+     "word": "una mano",
+     "anchor": true,
+     "surface": "una mano",
+     "register": "neutral",
+     "definition": "One hand doing the job."
+    },
+    {
+     "type": "expression",
+     "word": "queda completa",
+     "anchor": true,
+     "surface": "queda completa",
+     "register": "neutral",
+     "definition": "Ends with all parts present."
+    },
+    {
+     "type": "expression",
+     "word": "guardar seco",
+     "anchor": true,
+     "surface": "guarda el celular",
+     "register": "neutral",
+     "definition": "To keep something dry."
+    },
+    {
+     "type": "expression",
+     "word": "nota suave",
+     "anchor": true,
+     "surface": "nota suave",
+     "register": "neutral",
+     "definition": "A soft musical note."
+    },
+    {
+     "type": "expression",
+     "word": "caer lluvia",
+     "surface": "cae",
+     "register": "neutral",
+     "definition": "Rain comes down outside."
+    },
+    {
+     "type": "expression",
+     "word": "tener lluvia",
+     "anchor": true,
+     "surface": "tiene lluvia",
+     "register": "neutral",
+     "definition": "To show rain inside it."
+    },
+    {
+     "type": "noun",
+     "word": "cierre",
+     "anchor": true,
+     "surface": "cierre",
+     "register": "neutral",
+     "definition": "The ending part of something."
+    }
+   ],
+   "topic": "parties-and-photos",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "Everyone wants one final photo at the friendly table, but rain pushes the group under an umbrella. The imperfect picture shows that the group now works.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000kj8p6bqdggp6k",
+   "slug": "mesa-no-misa",
+   "title": "Mesa no misa",
+   "text": "Lina mira el celular. Mariana prepara café con luz. Andrés trae pan. La mesa queda libre.\n\nLina escribe mesa, pero el celular manda misa. Andrés lee el mensaje serio. “Yo traigo pan, no silencio, y busco la mesa”, dice. “Mesa”, agrega.\n\nMariana mira el vaso y la servilleta. “Aquí hay café, campana y pan para la mesa”, explica. Señala el pandebono. “No hay misa”, agrega.\n\nLee la pantalla. La palabra está rara. La ubicación sale sin ruido. “El bus entiende mesa, no misa”, cuenta. Andrés toca una tecla y asiente.\n\nElla borra una letra. El mensaje ahora dice mesa amiga aquí. El celular queda bajo el maletín. “Ahora no cambia y todos llegan”, avisa. Ella corrige.\n\n“Mesa no misa, mesa amiga”, repite Andrés con el pan en la mano. Todos saludan bajo y ríen. “Palabra propia”, dice Mariana. “La mesa tiene palabra propia”, dice Mariana.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "telefonito",
+     "surface": "celular",
+     "register": "neutral",
+     "definition": "A small phone you carry."
+    },
+    {
+     "type": "noun",
+     "word": "texto corto",
+     "surface": "mensaje",
+     "register": "neutral",
+     "definition": "Words sent to another person."
+    },
+    {
+     "type": "noun",
+     "word": "servilleta",
+     "surface": "servilleta",
+     "register": "neutral",
+     "definition": "Paper used at a table."
+    },
+    {
+     "type": "noun",
+     "word": "callado",
+     "surface": "silencio",
+     "register": "neutral",
+     "definition": "A time with no sound."
+    },
+    {
+     "type": "noun",
+     "word": "visor",
+     "surface": "pantalla",
+     "register": "neutral",
+     "definition": "The lit part of a phone."
+    },
+    {
+     "type": "noun",
+     "word": "signo",
+     "surface": "letra",
+     "register": "neutral",
+     "definition": "One written sign in a word."
+    },
+    {
+     "type": "noun",
+     "word": "misa",
+     "anchor": true,
+     "surface": "misa",
+     "register": "neutral",
+     "definition": "A quiet church service."
+    },
+    {
+     "type": "expression",
+     "word": "palabra rara",
+     "anchor": true,
+     "surface": "palabra está rara",
+     "register": "neutral",
+     "definition": "A word that looks wrong."
+    },
+    {
+     "type": "verb",
+     "word": "cambiar",
+     "anchor": true,
+     "surface": "cambia",
+     "register": "neutral",
+     "definition": "To become different now."
+    },
+    {
+     "type": "expression",
+     "word": "mensaje serio",
+     "anchor": true,
+     "surface": "mensaje serio",
+     "register": "neutral",
+     "definition": "A serious phone message."
+    },
+    {
+     "type": "verb",
+     "word": "agregar",
+     "surface": "agrega",
+     "register": "neutral",
+     "definition": "To add more words."
+    },
+    {
+     "type": "verb",
+     "word": "repetir",
+     "surface": "repite",
+     "register": "neutral",
+     "definition": "To say or do again."
+    },
+    {
+     "type": "noun",
+     "word": "ubicación",
+     "anchor": true,
+     "surface": "ubicación",
+     "register": "neutral",
+     "definition": "A place shown on a phone."
+    },
+    {
+     "type": "adverb",
+     "word": "aquí",
+     "surface": "aquí",
+     "register": "neutral",
+     "definition": "In this place here."
+    },
+    {
+     "type": "expression",
+     "word": "sin ruido",
+     "anchor": true,
+     "surface": "sin ruido",
+     "register": "neutral",
+     "definition": "With no sound nearby."
+    },
+    {
+     "type": "noun",
+     "word": "maletín",
+     "surface": "maletín",
+     "register": "neutral",
+     "definition": "A small work bag."
+    },
+    {
+     "type": "noun",
+     "word": "claridad",
+     "surface": "luz",
+     "register": "neutral",
+     "definition": "Brightness that helps you see."
+    },
+    {
+     "type": "noun",
+     "word": "tecla",
+     "anchor": true,
+     "surface": "tecla",
+     "register": "neutral",
+     "definition": "A phone or computer button."
+    },
+    {
+     "type": "verb",
+     "word": "corregir",
+     "surface": "corrige",
+     "register": "neutral",
+     "definition": "To make a mistake right."
+    },
+    {
+     "type": "expression",
+     "word": "propia palabra",
+     "anchor": true,
+     "surface": "palabra propia",
+     "register": "neutral",
+     "definition": "A word that belongs to someone."
+    }
+   ],
+   "topic": "phones-and-messages",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la médica sends the table location, but the phone changes mesa to misa. Andrés arrives too serious until the group makes a new word for the table.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000lj8p6hqetr7qr",
+   "slug": "la-nota-con-campana",
+   "title": "La nota con campana",
+   "text": "Junto al café, el músico tiene el celular. Mariana escribe un nombre. Andrés espera con pan. La campana suena dos veces. El instrumento espera.\n\nEl músico hace una nota de voz. “Mesa amiga, café y pan; sigan mi voz”, dice. La campana entra rápido. El audio queda raro.\n\nLa nota suena en la buseta. “La campana dice paradero, pero la voz dice café”, responde. Andrés mira el pan y se detiene. “Suena cerca”, dice.\n\nMira la pantalla. “No es paradero. Es café, vaso y vitrina”, explica. La vitrina y el vaso señalan. Mariana escucha el sonido y avisa.\n\nEl músico manda otra nota. Esta vez toca una sola cuerda. “Mesa amiga aquí, con café”, canta bajo. La campana busca salida.\n\nAl final, la buseta llega limpia. “Seguí la campana y el olor de pan”, cuenta. Andrés levanta el pandebono. “Sirve por error”, responde. “La nota sirve por error”, dice Andrés.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "audio raro",
+     "anchor": true,
+     "surface": "audio queda raro",
+     "register": "neutral",
+     "definition": "Audio that sounds strange."
+    },
+    {
+     "type": "expression",
+     "word": "nota de voz",
+     "anchor": true,
+     "surface": "nota de voz",
+     "register": "neutral",
+     "definition": "A short voice message."
+    },
+    {
+     "type": "noun",
+     "word": "paradero",
+     "surface": "paradero",
+     "register": "neutral",
+     "definition": "A bus stop place."
+    },
+    {
+     "type": "expression",
+     "word": "una sola cuerda",
+     "anchor": true,
+     "surface": "una sola cuerda",
+     "register": "neutral",
+     "definition": "One string played alone."
+    },
+    {
+     "type": "noun",
+     "word": "hilito musical",
+     "surface": "cuerda",
+     "register": "neutral",
+     "definition": "A thin line on an instrument."
+    },
+    {
+     "type": "verb",
+     "word": "cantar",
+     "surface": "canta",
+     "register": "neutral",
+     "definition": "To make music with your voice."
+    },
+    {
+     "type": "verb",
+     "word": "seguir",
+     "anchor": true,
+     "surface": "Seguí",
+     "register": "neutral",
+     "definition": "To go after a sign."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "expression",
+     "word": "olor de pan",
+     "anchor": true,
+     "surface": "olor de pan",
+     "register": "neutral",
+     "definition": "The smell that bread makes."
+    },
+    {
+     "type": "adjective",
+     "word": "limpio",
+     "surface": "limpia",
+     "register": "neutral",
+     "definition": "Clean and not dirty."
+    },
+    {
+     "type": "noun",
+     "word": "vitrina",
+     "surface": "vitrina",
+     "register": "neutral",
+     "definition": "A glass display case."
+    },
+    {
+     "type": "noun",
+     "word": "habla grabada",
+     "surface": "voz",
+     "register": "neutral",
+     "definition": "The sound a person speaks with."
+    },
+    {
+     "type": "noun",
+     "word": "instrumento",
+     "anchor": true,
+     "surface": "instrumento",
+     "register": "neutral",
+     "definition": "A thing used for music."
+    },
+    {
+     "type": "verb",
+     "word": "buscar",
+     "surface": "busca",
+     "register": "neutral",
+     "definition": "To try to find something."
+    },
+    {
+     "type": "verb",
+     "word": "avisar",
+     "surface": "avisa",
+     "register": "neutral",
+     "definition": "To tell someone news."
+    },
+    {
+     "type": "verb",
+     "word": "servir",
+     "surface": "sirve",
+     "register": "neutral",
+     "definition": "To be useful now."
+    },
+    {
+     "type": "verb",
+     "word": "mandar",
+     "surface": "manda",
+     "register": "neutral",
+     "definition": "To send a message."
+    },
+    {
+     "type": "noun",
+     "word": "aroma",
+     "surface": "olor",
+     "register": "neutral",
+     "definition": "What your nose notices."
+    },
+    {
+     "type": "verb",
+     "word": "escuchar",
+     "surface": "escucha",
+     "register": "neutral",
+     "definition": "To listen to something."
+    },
+    {
+     "type": "noun",
+     "word": "puerta de salida",
+     "anchor": true,
+     "surface": "salida",
+     "register": "neutral",
+     "definition": "A way out of a place."
+    }
+   ],
+   "topic": "phones-and-messages",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "el músico tries to send a short voice note, but the cafe bell enters the recording. el conductor follows the sound and finds the right table anyway.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmh000mj8p6dgvwau0o",
+   "slug": "pan-tiene-silla",
+   "title": "Pan tiene silla",
+   "text": "Dentro de la tienda de pan, la panadera mira el celular. Queda pan amigo y pandebono. Mariana espera con café. Hay un asiento libre.\n\nElla escribe: queda pan. El celular pone Pan grande y nombre propio. Ella lee el mensaje equivocado. “Pan llega tarde, pero yo le guardo puesto”, dice seria.\n\nEl respaldo de la silla vacía queda enfrente. Andrés lo ve. “Yo saludo a Pan y guardo el vaso”, responde. Un vaso queda debajo del papel.\n\nLlega música sin tilde. Suena el timbre. “¿Pan trae maletín o trae hambre?” pregunta. Mariana señala la vitrina y ríe poco.\n\nEntonces la panadera entra con el pan real. “Pan no es persona; es comida rica”, explica. Ella mira la silla. “Pero ya tiene silla”, contesta.\n\nAndrés parte el pan. El celular queda en silencio. Al final, la panadera quita el papel. “Pan aparece y pierde silla, pero gana mesa”, remata. “Todos comen despacio”, dice Mariana.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "tienda de pan",
+     "anchor": true,
+     "surface": "tienda de pan",
+     "register": "neutral",
+     "definition": "A shop that sells bread."
+    },
+    {
+     "type": "noun",
+     "word": "adulto",
+     "anchor": true,
+     "surface": "persona",
+     "register": "neutral",
+     "definition": "A man or woman."
+    },
+    {
+     "type": "expression",
+     "word": "Pan grande",
+     "anchor": true,
+     "surface": "Pan grande",
+     "register": "neutral",
+     "definition": "A mistaken big name."
+    },
+    {
+     "type": "expression",
+     "word": "asiento libre",
+     "anchor": true,
+     "surface": "asiento libre",
+     "register": "neutral",
+     "definition": "A seat nobody uses."
+    },
+    {
+     "type": "verb",
+     "word": "ganar",
+     "surface": "gana",
+     "register": "neutral",
+     "definition": "To get something good."
+    },
+    {
+     "type": "verb",
+     "word": "perder",
+     "surface": "pierde",
+     "register": "neutral",
+     "definition": "To no longer have something."
+    },
+    {
+     "type": "expression",
+     "word": "queda pan",
+     "anchor": true,
+     "surface": "queda pan",
+     "register": "neutral",
+     "definition": "Bread is still left."
+    },
+    {
+     "type": "expression",
+     "word": "nombre propio",
+     "anchor": true,
+     "surface": "nombre propio",
+     "register": "neutral",
+     "definition": "A name for one person."
+    },
+    {
+     "type": "verb",
+     "word": "comer",
+     "anchor": true,
+     "surface": "comen",
+     "register": "neutral",
+     "definition": "To put food in your mouth."
+    },
+    {
+     "type": "noun",
+     "word": "respaldo",
+     "anchor": true,
+     "surface": "respaldo",
+     "register": "neutral",
+     "definition": "The back of a chair."
+    },
+    {
+     "type": "noun",
+     "word": "mayúscula",
+     "surface": "grande",
+     "register": "neutral",
+     "definition": "A big written letter."
+    },
+    {
+     "type": "expression",
+     "word": "gana mesa",
+     "anchor": true,
+     "surface": "gana mesa",
+     "register": "neutral",
+     "definition": "Gets a place at the table."
+    },
+    {
+     "type": "expression",
+     "word": "mensaje equivocado",
+     "anchor": true,
+     "surface": "mensaje equivocado",
+     "register": "neutral",
+     "definition": "A message with a mistake."
+    },
+    {
+     "type": "expression",
+     "word": "música sin tilde",
+     "anchor": true,
+     "surface": "música sin tilde",
+     "register": "neutral",
+     "definition": "Music with no accent mark."
+    },
+    {
+     "type": "adverb",
+     "word": "entonces",
+     "surface": "entonces",
+     "register": "neutral",
+     "definition": "At that time or because of that."
+    },
+    {
+     "type": "noun",
+     "word": "hambre",
+     "anchor": true,
+     "surface": "hambre",
+     "register": "neutral",
+     "definition": "The need to eat."
+    },
+    {
+     "type": "expression",
+     "word": "comida rica",
+     "anchor": true,
+     "surface": "comida rica",
+     "register": "neutral",
+     "definition": "Food that tastes good."
+    },
+    {
+     "type": "verb",
+     "word": "aparecer",
+     "surface": "aparece",
+     "register": "neutral",
+     "definition": "To come into view."
+    },
+    {
+     "type": "noun",
+     "word": "pan real",
+     "anchor": true,
+     "surface": "pan real",
+     "register": "neutral",
+     "definition": "Bread that is not a joke."
+    },
+    {
+     "type": "expression",
+     "word": "pierde silla",
+     "anchor": true,
+     "surface": "pierde silla",
+     "register": "neutral",
+     "definition": "Loses the saved seat."
+    }
+   ],
+   "topic": "phones-and-messages",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la panadera sends a message saying there is bread left, but the phone makes Pan look like a person. la enfermera saves a seat for Pan until the group explains the joke.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000hj8p6p9tj6f5f",
+   "slug": "el-encargo-tapado",
+   "title": "El encargo tapado",
+   "text": "Por el recado, la enfermera entra al café. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. La enfermera señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. “Yo miro el recado”, cuenta ella.\n\nLa nota corta se lee despacio. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde la enfermera. “El favor sigue aquí”, agrega. “La ayuda queda clara”, dice Mariana.\n\nEl café, el pan y el papel van en las manos de Andrés. La enfermera muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. Mariana y Andrés trabajan en la mesa pequeña.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "recado",
+     "surface": "recado",
+     "register": "neutral",
+     "definition": "A short message or errand."
+    },
+    {
+     "type": "noun",
+     "word": "rótulo",
+     "surface": "rótulo",
+     "register": "neutral",
+     "definition": "A small written label."
+    },
+    {
+     "type": "verb",
+     "word": "desaparecer",
+     "surface": "desaparece",
+     "register": "neutral",
+     "definition": "To go away from sight."
+    },
+    {
+     "type": "noun",
+     "word": "apunte",
+     "surface": "nota",
+     "register": "neutral",
+     "definition": "A short written note."
+    },
+    {
+     "type": "noun",
+     "word": "faltriquera",
+     "surface": "bolsillo",
+     "register": "neutral",
+     "definition": "A cloth place for small things."
+    },
+    {
+     "type": "noun",
+     "word": "enfermera",
+     "surface": "enfermera",
+     "register": "neutral",
+     "definition": "A woman who helps sick people."
+    },
+    {
+     "type": "verb",
+     "word": "responder",
+     "surface": "responde",
+     "register": "neutral",
+     "definition": "To answer another person."
+    },
+    {
+     "type": "noun",
+     "word": "favor",
+     "surface": "favor",
+     "register": "neutral",
+     "definition": "Help someone gives another person."
+    },
+    {
+     "type": "noun",
+     "word": "paquetico",
+     "surface": "paquetico",
+     "register": "neutral",
+     "definition": "A very small package."
+    },
+    {
+     "type": "expression",
+     "word": "junto a",
+     "surface": "junto al",
+     "register": "neutral",
+     "definition": "Next to something or someone."
+    },
+    {
+     "type": "expression",
+     "word": "cerca de",
+     "surface": "junto al",
+     "register": "neutral",
+     "definition": "Next to something else."
+    },
+    {
+     "type": "verb",
+     "word": "quedar",
+     "surface": "queda",
+     "register": "neutral",
+     "definition": "To stay in a place."
+    },
+    {
+     "type": "adjective",
+     "word": "correcto",
+     "surface": "correcto",
+     "register": "neutral",
+     "definition": "Right and not wrong."
+    },
+    {
+     "type": "verb",
+     "word": "agregar",
+     "surface": "agrega",
+     "register": "neutral",
+     "definition": "To add more words."
+    },
+    {
+     "type": "adjective",
+     "word": "pequeña",
+     "surface": "pequeña",
+     "register": "neutral",
+     "definition": "Small and not big."
+    },
+    {
+     "type": "verb",
+     "word": "trabajar",
+     "surface": "trabaja",
+     "register": "neutral",
+     "definition": "To do a job."
+    },
+    {
+     "type": "expression",
+     "word": "silla vacía",
+     "surface": "silla vacía",
+     "register": "neutral",
+     "definition": "An empty chair in the room."
+    },
+    {
+     "type": "noun",
+     "word": "cubierta",
+     "surface": "cubierta",
+     "register": "neutral",
+     "definition": "A cover over something."
+    },
+    {
+     "type": "expression",
+     "word": "hace caso",
+     "surface": "hace caso",
+     "register": "neutral",
+     "definition": "It pays attention now."
+    },
+    {
+     "type": "expression",
+     "word": "ayuda clara",
+     "surface": "ayuda queda clara",
+     "register": "neutral",
+     "definition": "Help that is easy to understand."
+    }
+   ],
+   "topic": "work-and-favors",
+   "slotIndex": 0,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la enfermera leaves a pharmacy errand at Mariana's cafe, but Andrés's name is hidden under a bag. Coffee, bread, and a table sign turn the favor into something clear.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000ij8p6jnprdfym",
+   "slug": "amiga-paga-poco",
+   "title": "Amiga paga poco",
+   "text": "Para la cuenta, la vendedora trae una planilla doblada. Mariana prepara café. La panadera mira el pan de yuca.\n\nLa vendedora escribe planilla amiga en un papel. Andrés lee despacio. “Amiga no paga gratis”, dice serio. Ella pone un platito en el puesto reservado.\n\nMariana señala el vaso, el pan y la cucharita. “Todo trabaja”, explica. Andrés duda y mira la vitrina. “¿La cucharita también cobra?” pregunta.\n\nElla trae queso. La vendedora marca tres rayitas. “Una por café, una por pan y una por favor”, cuenta ella. “El costo queda en medio”, agrega.\n\nEl papel cae junto al servilletero. La planilla se lee despacio. “Amiga paga poco”, avisa. Andrés mira con mirada suave. “Pago poco”, responde.\n\nAndrés deja una ficha sobre el platito. Ella guarda la planilla. “Entre todos suena juego”, remata. “Pan compartido”, avisa la panadera.",
+   "vocab": [
+    {
+     "type": "expression",
+     "word": "planilla doblada",
+     "surface": "planilla doblada",
+     "register": "neutral",
+     "definition": "A folded paper form."
+    },
+    {
+     "type": "noun",
+     "word": "vendedora",
+     "surface": "vendedora",
+     "register": "neutral",
+     "definition": "A woman who sells things."
+    },
+    {
+     "type": "noun",
+     "word": "vaso",
+     "surface": "vaso",
+     "register": "neutral",
+     "definition": "A cup or glass for drinking."
+    },
+    {
+     "type": "verb",
+     "word": "pagar",
+     "surface": "paga",
+     "register": "neutral",
+     "definition": "To give money for something."
+    },
+    {
+     "type": "expression",
+     "word": "papel cae",
+     "surface": "papel cae",
+     "register": "neutral",
+     "definition": "A paper falls down."
+    },
+    {
+     "type": "expression",
+     "word": "encima de",
+     "surface": "sobre el",
+     "register": "neutral",
+     "definition": "On top of something."
+    },
+    {
+     "type": "verb",
+     "word": "marcar",
+     "surface": "marca",
+     "register": "neutral",
+     "definition": "To make a sign or line."
+    },
+    {
+     "type": "expression",
+     "word": "tres rayitas",
+     "surface": "tres rayitas",
+     "register": "neutral",
+     "definition": "Three small written lines."
+    },
+    {
+     "type": "pronoun",
+     "word": "conjunto",
+     "surface": "Todo",
+     "register": "neutral",
+     "definition": "All the things together."
+    },
+    {
+     "type": "noun",
+     "word": "ficha",
+     "surface": "ficha",
+     "register": "neutral",
+     "definition": "A small token or chip."
+    },
+    {
+     "type": "noun",
+     "word": "costo",
+     "surface": "costo",
+     "register": "neutral",
+     "definition": "The money something costs."
+    },
+    {
+     "type": "noun",
+     "word": "juego",
+     "surface": "juego",
+     "register": "neutral",
+     "definition": "A game or playful action."
+    },
+    {
+     "type": "expression",
+     "word": "por favor",
+     "surface": "por favor",
+     "register": "neutral",
+     "definition": "A polite way to ask."
+    },
+    {
+     "type": "verb",
+     "word": "dejar",
+     "surface": "deja",
+     "register": "neutral",
+     "definition": "To put something somewhere."
+    },
+    {
+     "type": "expression",
+     "word": "mirada suave",
+     "surface": "mirada suave",
+     "register": "neutral",
+     "definition": "A gentle look from the eyes."
+    },
+    {
+     "type": "noun",
+     "word": "trazo",
+     "surface": "rayitas",
+     "register": "neutral",
+     "definition": "Small written line marks."
+    },
+    {
+     "type": "verb",
+     "word": "sonar",
+     "surface": "suena",
+     "register": "neutral",
+     "definition": "To make or seem by sound."
+    },
+    {
+     "type": "expression",
+     "word": "en medio",
+     "surface": "en medio",
+     "register": "neutral",
+     "definition": "In the center place."
+    },
+    {
+     "type": "adjective",
+     "word": "doblado",
+     "surface": "doblada",
+     "register": "neutral",
+     "definition": "Folded and not flat."
+    },
+    {
+     "type": "expression",
+     "word": "también cobra",
+     "surface": "también cobra",
+     "register": "neutral",
+     "definition": "Also asks for money."
+    }
+   ],
+   "topic": "work-and-favors",
+   "slotIndex": 1,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "la vendedora wants Andrés to pay for a small favor, but the word friend makes the price disappear. la panadera turns the count into a simple cafe game.",
+   "arcType": null,
+   "audioUrl": null
+  },
+  {
+   "id": "cmue7cgmg000jj8p6jz2zhqz4",
+   "slug": "la-bolsa-saluda",
+   "title": "La bolsa saluda",
+   "text": "Carga el conductor una tula. Mariana espera cerca de la puerta. La tula queda en medio.\n\nAndrés guarda pan y mira el café. El músico toca la mesa. “Cinta roja y parche azul”, observa Andrés. El conductor mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nEl maletín y la tula quedan juntos. “¿La tula saluda?” pregunta Mariana. “Suena suave”, cuenta Andrés.\n\nLa tula queda junto al andén. Dentro hay vasos y trapitos. Una ración de pan va encima. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Ella toma el otro extremo. “Recta y lista”, responde ella.\n\nEl músico guarda la música. Hay campo en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Andrés. “Sin drama y primero”, agrega Mariana.",
+   "vocab": [
+    {
+     "type": "noun",
+     "word": "tula",
+     "surface": "tula",
+     "register": "neutral",
+     "definition": "A cloth bag for carrying things."
+    },
+    {
+     "type": "expression",
+     "word": "parche azul",
+     "surface": "parche azul",
+     "register": "neutral",
+     "definition": "A blue patch on something."
+    },
+    {
+     "type": "noun",
+     "word": "vasos",
+     "surface": "vasos",
+     "register": "neutral",
+     "definition": "Cups used for drinking."
+    },
+    {
+     "type": "noun",
+     "word": "trapito",
+     "surface": "trapitos",
+     "register": "neutral",
+     "definition": "Small cloth used to clean things."
+    },
+    {
+     "type": "adverb",
+     "word": "ahora",
+     "surface": "ahora",
+     "register": "neutral",
+     "definition": "At this moment now."
+    },
+    {
+     "type": "adjective",
+     "word": "recto",
+     "surface": "recta",
+     "register": "neutral",
+     "definition": "Straight, not bent or leaning."
+    },
+    {
+     "type": "adverb",
+     "word": "primero",
+     "surface": "primero",
+     "register": "neutral",
+     "definition": "Before all other people."
+    },
+    {
+     "type": "verb",
+     "word": "tomar",
+     "surface": "toma",
+     "register": "neutral",
+     "definition": "To take or hold something."
+    },
+    {
+     "type": "adverb",
+     "word": "dentro",
+     "surface": "Dentro",
+     "register": "neutral",
+     "definition": "Inside and not outside."
+    },
+    {
+     "type": "verb",
+     "word": "levantarse",
+     "surface": "levanta",
+     "register": "neutral",
+     "definition": "To raise up from below."
+    },
+    {
+     "type": "verb",
+     "word": "empujar",
+     "surface": "empuja",
+     "register": "neutral",
+     "definition": "To move something with force."
+    },
+    {
+     "type": "noun",
+     "word": "muñeca",
+     "surface": "muñeca",
+     "register": "neutral",
+     "definition": "The joint near the hand."
+    },
+    {
+     "type": "expression",
+     "word": "mover cabeza",
+     "surface": "mueve la cabeza",
+     "register": "neutral",
+     "definition": "To move the head."
+    },
+    {
+     "type": "expression",
+     "word": "en medio",
+     "surface": "en medio",
+     "register": "neutral",
+     "definition": "In the middle place."
+    },
+    {
+     "type": "expression",
+     "word": "la tula saluda",
+     "surface": "La tula saluda",
+     "register": "neutral",
+     "definition": "The bag seems to say hello."
+    },
+    {
+     "type": "expression",
+     "word": "sin drama",
+     "surface": "sin drama",
+     "register": "neutral",
+     "definition": "Without making a big problem."
+    },
+    {
+     "type": "noun",
+     "word": "extremo",
+     "surface": "extremo",
+     "register": "neutral",
+     "definition": "One end of something."
+    },
+    {
+     "type": "expression",
+     "word": "campo en la mesa",
+     "surface": "Hay campo en la mesa",
+     "register": "neutral",
+     "definition": "There is space on the table."
+    },
+    {
+     "type": "adjective",
+     "word": "roja",
+     "surface": "roja",
+     "register": "neutral",
+     "definition": "Red in color, not blue."
+    },
+    {
+     "type": "adjective",
+     "word": "fuerte",
+     "surface": "fuerte",
+     "register": "neutral",
+     "definition": "With a lot of power."
+    }
+   ],
+   "topic": "work-and-favors",
+   "slotIndex": 2,
+   "status": "draft",
+   "cast": null,
+   "synopsis": "el conductor asks for help with a heavy bag, but the group treats it like another paper friend. The favor works only when they stop greeting the bag.",
+   "arcType": null,
+   "audioUrl": null
+  }
+ ]
+}
