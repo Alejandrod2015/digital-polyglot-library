@@ -334,10 +334,29 @@ export function NativeAudioPlayer({
       return;
     }
 
-    if (playback.isPlaying) {
-      await sound.pauseAsync();
-    } else {
-      await sound.playAsync();
+    try {
+      if (playback.isPlaying) {
+        await sound.pauseAsync();
+      } else {
+        await sound.playAsync();
+        setError(null);
+      }
+    } catch (playError) {
+      // El 2026-09-23 esto llego a Sentry como promesa sin atrapar
+      // (DIGITAL-POLYGLOT-MOBILE-4): Android nego el foco de audio, el
+      // `playAsync` reventó y el boton se quedo igual, asi que el usuario
+      // toco play y no sono nada ni aparecio nada. El foco se niega cuando
+      // otra cosa manda sobre el sonido del telefono: una llamada, una
+      // alarma, otro reproductor.
+      console.error("[audio] play failed", { error: playError, url: normalizedSrc });
+      const message = playError instanceof Error ? playError.message : "";
+      // Mismo criterio que el catch de la carga: nada de texto tecnico.
+      const sinFoco = /AudioFocusNotAcquired|audio focus/i.test(message);
+      setError(
+        sinFoco
+          ? "Something else is using your phone's audio. Close it and press play again."
+          : "Audio isn't available right now. Try again in a moment."
+      );
     }
   }
 
