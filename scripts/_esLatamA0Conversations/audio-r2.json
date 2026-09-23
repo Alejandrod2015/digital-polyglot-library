@@ -3,23 +3,25 @@
     "topic": "new-neighbors",
     "slotIndex": 0,
     "title": "Un gato con dos nombres",
-    "audioFilename": "Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
-    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
-    "key": "media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184596698.mp3",
-    "bytes": 1037418,
+    "audioFilename": "Un_gato_con_dos_nombres_multivoice_1790184996617.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184996617.mp3",
+    "key": "media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184996617.mp3",
+    "bytes": 1032403,
     "origen": "historia1/historia1-final.mp3",
-    "subido": "2026-09-23T17:29:57.286Z"
+    "subido": "2026-09-23T17:36:37.320Z",
+    "reemplaza": "media/generated/audio/Un_gato_con_dos_nombres_multivoice_1790184596698.mp3"
   },
   "yo-no-le-doy-nada": {
     "topic": "new-neighbors",
     "slotIndex": 1,
     "title": "Yo no le doy nada",
-    "audioFilename": "Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
-    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
-    "key": "media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184597288.mp3",
-    "bytes": 881519,
+    "audioFilename": "Yo_no_le_doy_nada_multivoice_1790184997322.mp3",
+    "audioUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184997322.mp3",
+    "key": "media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184997322.mp3",
+    "bytes": 878594,
     "origen": "historia2/historia2-final.mp3",
-    "subido": "2026-09-23T17:29:57.852Z"
+    "subido": "2026-09-23T17:36:37.829Z",
+    "reemplaza": "media/generated/audio/Yo_no_le_doy_nada_multivoice_1790184597288.mp3"
   },
   "una-caja-que-hace-ruido": {
     "topic": "new-neighbors",

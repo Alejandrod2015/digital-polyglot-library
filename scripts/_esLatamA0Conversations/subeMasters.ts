@@ -55,8 +55,12 @@ const master = (topic: string, slot: number) => {
   const mapa: Record<string, unknown> = fs.existsSync(salida)
     ? JSON.parse(fs.readFileSync(salida, "utf8")) : {};
 
+  // Con slugs en la linea de comandos sube SOLO esos: una re-tirada suelta no
+  // tiene por que volver a subir los 21.
+  const pedidos = process.argv.slice(2).filter((a) => !a.startsWith("--"));
   let subidos = 0, bytes = 0;
   for (const s of stories) {
+    if (pedidos.length && !pedidos.includes(slugDe(s.topic, s.slotIndex, s.title))) continue;
     const f = master(s.topic, s.slotIndex);
     if (!fs.existsSync(f)) { console.error(`FALTA el master de ${s.topic}#${s.slotIndex}: ${f}`); process.exit(1); }
     const body = fs.readFileSync(f);
@@ -71,6 +75,7 @@ const master = (topic: string, slot: number) => {
       topic: s.topic, slotIndex: s.slotIndex, title: s.title,
       audioFilename: filename, audioUrl: r.url, key: r.key,
       bytes: body.length, origen: path.relative(AUD, f), subido: new Date().toISOString(),
+      ...(mapa[slug] ? { reemplaza: (mapa[slug] as { key?: string }).key } : {}),
     };
     subidos++;
     console.log(`OK ${slug} · ${(body.length / 1e6).toFixed(1)} MB · ${r.url}`);
