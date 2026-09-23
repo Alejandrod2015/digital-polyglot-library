@@ -12281,8 +12281,8 @@
     }
   },
   "cmue7cgmf0007j8p6sh7f7xrh#buses-and-streets": {
-    "cerrado": "2026-09-23T15:19:15.914Z",
-    "hash": "d7a45aac88839820",
+    "cerrado": "2026-09-23T15:40:09.511Z",
+    "hash": "7bd3e2c5b718a040",
     "historias": [
       "buses-and-streets#0 la-buseta-de-andres",
       "buses-and-streets#1 tiza-bajo-la-lluvia",
@@ -12347,6 +12347,75 @@
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
       "seguidilla: 54% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
+  "cmue7cgmf0007j8p6sh7f7xrh#cash-and-errands": {
+    "cerrado": "2026-09-23T16:05:27.435Z",
+    "hash": "8e8942939283e19f",
+    "historias": [
+      "cash-and-errands#0 el-platito-gira",
+      "cash-and-errands#1 tres-papeles-mandan",
+      "cash-and-errands#2 un-peso-canta"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"vueltas cortas, plata pequena y humor con cuentas\", espina \"Mariana y Andres hacen mandados simples y cada peso necesita una senal clara.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 29%)",
+      "arranques de parrafo variados (mas repetido \"andrés\", 17%)",
+      "densidad 6.7 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/67 oraciones cortas narradas",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.17 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "colombia",
+      "registro": "vueltas cortas, plata pequena y humor con cuentas",
+      "espina": "Mariana y Andres hacen mandados simples y cada peso necesita una senal clara.",
+      "recursos": "Pereira, Colombia; tienda, vuelto, recibo, monedas, cafe, pan, botica, buseta.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Andres quiere pagar el cafe y guardar vuelto para la buseta.",
+          "impide": "Las monedas quedan debajo del platito.",
+          "cuesta": "Mariana casi da el vuelto con el pandebono.",
+          "cambia": "El platito se vuelve caja de viaje.",
+          "emocion": "alivio comico"
+        },
+        {
+          "slot": "2",
+          "quiere": "Pilar quiere mandar una compra pequena a la botica.",
+          "impide": "El recibo trae dos nombres y un solo sobre.",
+          "cuesta": "Catalina separa cafe, pan y plata tres veces.",
+          "cambia": "La mesa amiga ordena el mandado por colores.",
+          "emocion": "complicidad"
+        },
+        {
+          "slot": "3",
+          "quiere": "Sofi quiere devolver un peso sin hacer drama.",
+          "impide": "El peso cae en la bolsa del pan amigo.",
+          "cuesta": "Julian canta para encontrarlo y todos miran.",
+          "cambia": "El peso vuelve como senal de proxima compra.",
+          "emocion": "bienvenida"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#coffee-and-bread": {
@@ -12419,8 +12488,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#greetings-and-introductions": {
-    "cerrado": "2026-09-23T14:57:23.844Z",
-    "hash": "3ffe70e91bac2bdb",
+    "cerrado": "2026-09-23T16:04:09.785Z",
+    "hash": "abbf0968f0d58330",
     "historias": [
       "greetings-and-introductions#0 el-vaso-de-andres",
       "greetings-and-introductions#1 la-mesa-de-tres",
@@ -12432,14 +12501,14 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 18%)",
-      "arranques de parrafo variados (mas repetido \"mariana\", 44%)",
-      "densidad 5.2 palabras por oracion (techo 9 en a0)",
+      "arranques de parrafo variados (mas repetido \"mariana\", 50%)",
+      "densidad 5.3 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.37 sobre 59 plazas · 40 salen una sola vez | ancladas: 1/60 (2%) | cola: 40/59 portables con un solo encuentro (68%, tope 30%) | de un solo encuentro: barista, campana, suave, roja, señala, No pasa nada, prepara, dibuja, feliz, serio, recuerda, temprano, afuera, tibio, huele, libre, dulce, médica, bajo, reunión, Mucho gusto, rápido, susto, abre los ojos, parece, debajo, propio, vacía, pone, nuevo…",
@@ -12484,7 +12553,145 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 71% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 69% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
+  "cmue7cgmf0007j8p6sh7f7xrh#phones-and-messages": {
+    "cerrado": "2026-09-23T15:56:28.229Z",
+    "hash": "8113f6818238b472",
+    "historias": [
+      "phones-and-messages#0 mesa-no-misa",
+      "phones-and-messages#1 la-nota-con-campana",
+      "phones-and-messages#2 pan-tiene-silla"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"mensajes de celular, confusiones pequenas y humor seco\", espina \"Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Pereira.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 25%)",
+      "arranques de parrafo variados (mas repetido \"lina\", 17%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.10 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "colombia",
+      "registro": "mensajes de celular, confusiones pequenas y humor seco",
+      "espina": "Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Pereira.",
+      "recursos": "Pereira, Colombia; celular, mensaje, nombre, mesa amiga, cafe, pan, buseta y lluvia.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lina quiere mandar la ubicacion de la mesa amiga.",
+          "impide": "El celular cambia mesa por misa.",
+          "cuesta": "Andres llega serio con pan y pregunta por silencio.",
+          "cambia": "El grupo guarda una palabra propia para no perderse.",
+          "emocion": "alivio comico"
+        },
+        {
+          "slot": "2",
+          "quiere": "Julian quiere enviar una nota de voz corta.",
+          "impide": "La campana del cafe entra en la nota.",
+          "cuesta": "Camilo entiende campana como paradero.",
+          "cambia": "La nota sirve porque todos oyen cafe.",
+          "emocion": "complicidad"
+        },
+        {
+          "slot": "3",
+          "quiere": "Sofi quiere avisar que queda pan.",
+          "impide": "El mensaje llega sin tilde y parece nombre de persona.",
+          "cuesta": "Pilar guarda puesto para Pan.",
+          "cambia": "El pan gana silla y luego la pierde con risa.",
+          "emocion": "bienvenida"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "seguidilla: 57% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
+  "cmue7cgmf0007j8p6sh7f7xrh#work-and-favors": {
+    "cerrado": "2026-09-23T15:47:46.617Z",
+    "hash": "0c465862607808a0",
+    "historias": [
+      "work-and-favors#0 el-encargo-tapado",
+      "work-and-favors#1 cuenta-de-amiga",
+      "work-and-favors#2 la-bolsa-saluda"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"favores de barrio, trabajo pequeno y humor con papeles\", espina \"Mariana y Andres usan la mesa amiga para ordenar favores sin perder nombres, pan ni cafe.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"cuenta\" 19%)",
+      "arranques de parrafo variados (mas repetido \"andrés\", 22%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.20 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 52/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: work-and-favors (Pilar, Mariana, Sofi)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "colombia",
+      "registro": "favores de barrio, trabajo pequeno y humor con papeles",
+      "espina": "Mariana y Andres usan la mesa amiga para ordenar favores sin perder nombres, pan ni cafe.",
+      "recursos": "Pereira, Colombia; cafe, pan, mesa, papel, buseta, maletin, botica; reparto adulto ya en uso.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Pilar quiere dejar un encargo de la botica en la mesa correcta.",
+          "impide": "El papel del encargo trae el nombre de Andres, pero el maletin lo tapa.",
+          "cuesta": "Mariana casi manda el encargo en la buseta equivocada.",
+          "cambia": "El grupo usa pan y cafe como senal del favor.",
+          "emocion": "alivio comico"
+        },
+        {
+          "slot": "2",
+          "quiere": "Catalina quiere cobrar un favor pequeno sin sonar seria.",
+          "impide": "Andres cree que el favor es gratis porque dice amigo.",
+          "cuesta": "Sofi queda en medio con pan caliente y una cuenta rara.",
+          "cambia": "La cuenta se vuelve juego claro para todos.",
+          "emocion": "complicidad"
+        },
+        {
+          "slot": "3",
+          "quiere": "Camilo quiere pedir ayuda para una bolsa pesada.",
+          "impide": "Todos creen que la bolsa guarda otro amigo de papel.",
+          "cuesta": "Julian toca musica para la bolsa y nadie trabaja.",
+          "cambia": "El favor queda hecho cuando el grupo deja de saludar la bolsa.",
+          "emocion": "bienvenida"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "seguidilla: 55% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   }
 }

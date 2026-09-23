@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "favores de barrio, trabajo pequeno y humor con papeles",
+  "espina": "Mariana y Andres usan la mesa amiga para ordenar favores sin perder nombres, pan ni cafe.",
+  "recursos": "Pereira, Colombia; cafe, pan, mesa, papel, buseta, maletin, botica; reparto adulto ya en uso.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Pilar quiere dejar un encargo de la botica en la mesa correcta.",
+      "impide": "El papel del encargo trae el nombre de Andres, pero el maletin lo tapa.",
+      "cuesta": "Mariana casi manda el encargo en la buseta equivocada.",
+      "cambia": "El grupo usa pan y cafe como senal del favor.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Catalina quiere cobrar un favor pequeno sin sonar seria.",
+      "impide": "Andres cree que el favor es gratis porque dice amigo.",
+      "cuesta": "Sofi queda en medio con pan caliente y una cuenta rara.",
+      "cambia": "La cuenta se vuelve juego claro para todos.",
+      "emocion": "complicidad"
+    },
+    {
+      "slot": "3",
+      "quiere": "Camilo quiere pedir ayuda para una bolsa pesada.",
+      "impide": "Todos creen que la bolsa guarda otro amigo de papel.",
+      "cuesta": "Julian toca musica para la bolsa y nadie trabaja.",
+      "cambia": "El favor queda hecho cuando el grupo deja de saludar la bolsa.",
+      "emocion": "bienvenida"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "mensajes de celular, confusiones pequenas y humor seco",
+  "espina": "Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Pereira.",
+  "recursos": "Pereira, Colombia; celular, mensaje, nombre, mesa amiga, cafe, pan, buseta y lluvia.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lina quiere mandar la ubicacion de la mesa amiga.",
+      "impide": "El celular cambia mesa por misa.",
+      "cuesta": "Andres llega serio con pan y pregunta por silencio.",
+      "cambia": "El grupo guarda una palabra propia para no perderse.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Julian quiere enviar una nota de voz corta.",
+      "impide": "La campana del cafe entra en la nota.",
+      "cuesta": "Camilo entiende campana como paradero.",
+      "cambia": "La nota sirve porque todos oyen cafe.",
+      "emocion": "complicidad"
+    },
+    {
+      "slot": "3",
+      "quiere": "Sofi quiere avisar que queda pan.",
+      "impide": "El mensaje llega sin tilde y parece nombre de persona.",
+      "cuesta": "Pilar guarda puesto para Pan.",
+      "cambia": "El pan gana silla y luego la pierde con risa.",
+      "emocion": "bienvenida"
+    }
+  ]
+}
