@@ -88,9 +88,20 @@ function arg(name: string, fallback?: string): string | undefined {
 function flag(name: string): boolean {
   return process.argv.includes(`--${name}`);
 }
-function slugify(s: string): string {
-  return s
-    .toLowerCase()
+/** En ALEMAN la dieresis se translitera, no se tira: "ü" es "ue", no "u".
+ *  Quitarla a secas cambia la palabra ("Müll" basura -> "Mull" gasa) y rompe
+ *  la convencion del propio catalogo (das-sofa-aus-muenster, achtzig-fuer-
+ *  drei-beine). Solo se aplica al aleman: en espanol "pingüino" no lleva esa
+ *  regla. (2026-09-23, tras dos slugs mal derivados en el Friends DE A2.) */
+const TRANSLITERA_DE: Array<[RegExp, string]> = [
+  [/ä/g, "ae"], [/ö/g, "oe"], [/ü/g, "ue"], [/ß/g, "ss"],
+];
+function slugify(s: string, lang?: string): string {
+  let base = s.toLowerCase();
+  if ((lang ?? "").toUpperCase() === "DE") {
+    for (const [re, to] of TRANSLITERA_DE) base = base.replace(re, to);
+  }
+  return base
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
@@ -662,7 +673,7 @@ function slugify(s: string): string {
         if (slot.status !== "draft") { problemas.push(`${nombre}: status ${slot.status}; el slug de una publicada es URL viva`); continue; }
         if (slot.audioUrl || slot.audioWordTimings) { problemas.push(`${nombre}: narrada; hay copias alineadas que citan el slug`); continue; }
         if (!slot.title) { problemas.push(`${nombre}: sin título`); continue; }
-        const nuevo = slugify(slot.title);
+        const nuevo = slugify(slot.title, ctx.language);
         if (!nuevo) { problemas.push(`${nombre}: el título no da slug`); continue; }
         if (nuevo === slot.slug) continue;
         plan.push({ id: slot.id, antes: slot.slug ?? "", ahora: nuevo, titulo: slot.title });
@@ -1208,7 +1219,7 @@ function slugify(s: string): string {
     for (const { d } of results) {
       const slot = await prisma.journeyStory.findFirst({ where: { journeyId, topic: d.topic, slotIndex: d.slotIndex } });
       if (!slot) { console.log(`  NO slot for ${d.topic}#${d.slotIndex} (skipped)`); continue; }
-      const slug = d.slug || slugify(d.title);
+      const slug = d.slug || slugify(d.title, ctx.language);
       await prisma.journeyStory.update({
         where: { id: slot.id },
         data: {
