@@ -1,7 +1,7 @@
 {
  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo.",
- "_resumen": "60 juzgados: 57 falsos positivos, 3 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca y 41 del Conversations ES latam A0, estos ultimos juzgados el 2026-09-23 con las 21 historias delante. De ese journey salen dos defectos reales, los dos de Mariana en el tema 1: una pregunta que no sube y una afirmacion que sube.",
+ "_resumen": "61 juzgados: 58 falsos positivos, 3 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca y 42 del Conversations ES latam A0, estos ultimos juzgados el 2026-09-23 con las 21 historias delante. De ese journey salieron dos defectos reales, los dos de Mariana en el tema 1; las dos segundas tomas quedaron aprobadas, una de ellas con el gate todavia marcandola.",
  "veredictos": [
   {
    "fragmento": "alle-3",
@@ -446,6 +446,15 @@
    "fecha": "2026-09-23",
    "journey": "conversations-es-latam-a0",
    "texto": "¿Una llave? ¿De qué puerta?"
+  },
+  {
+   "fragmento": "gato-h1-f02-toma2",
+   "gate": "pregunta que sube +1,7 st, por debajo del umbral",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Perdón. ¿Tienes un gato gris?",
+   "nota": "segunda toma; la primera bajaba -1,7 st y el usuario la dio por defecto real. Esta sube +1,7 st: el gate la sigue marcando y el oido la da por buena"
   }
  ],
  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
