@@ -303,7 +303,7 @@
   "type": "meaning_in_context",
   "word": "amarillas",
   "featured": false,
-  "sentence": "Las hojas están [[amarillas]].",
+  "sentence": "La planta tiene las puntas [[amarillas]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "yellow",
@@ -316,7 +316,7 @@
    "audioClip": {
     "storySlug": "se-muere-de-amor",
     "storySource": "user",
-    "sentence": "Las hojas están amarillas.",
+    "sentence": "La planta tiene las puntas amarillas.",
     "targetWord": "amarillas",
     "language": "spanish"
    }

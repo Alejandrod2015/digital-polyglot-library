@@ -68,7 +68,7 @@
  {
   "type": "meaning_in_context",
   "word": "lado",
-  "sentence": "Mide el fleco de un [[lado]] y del otro.",
+  "sentence": "Él mira el fleco de este [[lado]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "side",
@@ -81,7 +81,7 @@
    "audioClip": {
     "storySlug": "nadie-se-queja-nunca",
     "storySource": "user",
-    "sentence": "Mide el fleco de un lado y del otro.",
+    "sentence": "Él mira el fleco de este lado.",
     "targetWord": "lado",
     "language": "spanish"
    }

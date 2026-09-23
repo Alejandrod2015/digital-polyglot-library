@@ -418,7 +418,7 @@
   "type": "meaning_in_context",
   "word": "minutos",
   "featured": false,
-  "sentence": "La máquina suena cinco [[minutos]].",
+  "sentence": "A los diez [[minutos]] ya está listo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "minutes",
@@ -431,7 +431,7 @@
    "audioClip": {
     "storySlug": "poquito-son-dos-dedos",
     "storySource": "user",
-    "sentence": "La máquina suena cinco minutos.",
+    "sentence": "A los diez minutos ya está listo.",
     "targetWord": "minutos",
     "language": "spanish"
    }

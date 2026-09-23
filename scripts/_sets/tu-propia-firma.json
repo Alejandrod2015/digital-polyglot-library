@@ -335,7 +335,7 @@
   "type": "meaning_in_context",
   "word": "tercer",
   "featured": false,
-  "sentence": "Ella se ríe desde el [[tercer]] peldaño.",
+  "sentence": "Ella sube al [[tercer]] piso con la caja.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "third",
@@ -348,7 +348,7 @@
    "audioClip": {
     "storySlug": "tu-propia-firma",
     "storySource": "user",
-    "sentence": "Ella se ríe desde el tercer peldaño.",
+    "sentence": "Ella sube al tercer piso con la caja.",
     "targetWord": "tercer",
     "language": "spanish"
    }

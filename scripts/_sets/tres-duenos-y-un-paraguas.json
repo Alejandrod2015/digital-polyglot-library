@@ -372,7 +372,7 @@
   "type": "meaning_in_context",
   "word": "grande",
   "featured": false,
-  "sentence": "El nombre está con letra [[grande]].",
+  "sentence": "El paraguas rojo es muy [[grande]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "big",
@@ -385,7 +385,7 @@
    "audioClip": {
     "storySlug": "tres-duenos-y-un-paraguas",
     "storySource": "user",
-    "sentence": "El nombre está con letra grande.",
+    "sentence": "El paraguas rojo es muy grande.",
     "targetWord": "grande",
     "language": "spanish"
    }
