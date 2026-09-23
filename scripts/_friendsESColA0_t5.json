@@ -5,29 +5,149 @@
     "title": "Mesa no misa",
     "slug": "mesa-no-misa",
     "arcType": null,
-    "synopsis": "Lina sends the table location, but the phone changes mesa to misa. Andrés arrives too serious until the group makes a new word for the table.",
-    "text": "Mira Lina el celular. Lina es médica. Mariana prepara café con luz suave. Andrés trae pan. La mesa amiga queda libre junto a la vitrina.\n\nLina escribe mesa, pero el celular manda misa. Andrés lee el mensaje serio. “Yo traigo pan, no silencio, y busco la mesa”, dice. “Mesa”, agrega.\n\nMariana mira el vaso y la servilleta. “Aquí hay café, campana y pan para la mesa”, explica. Sofi señala el pandebono. “No hay misa”, agrega.\n\nCamilo lee la pantalla. La palabra está rara. La ubicación sale sin ruido. “La buseta entiende mesa, no misa”, cuenta. Andrés toca una tecla y asiente.\n\nLina borra una letra. El mensaje ahora dice mesa amiga aquí. Pilar guarda el celular debajo del maletín. “Ahora no cambia y todos llegan”, avisa. Lina corrige.\n\nAndrés levanta el pan. “Mesa no misa, mesa amiga”, repite. Todos saludan bajo y ríen. “Palabra propia”, dice Mariana. La mesa amiga tiene palabra propia.",
+    "synopsis": "la médica sends the table location, but the phone changes mesa to misa. Andrés arrives too serious until the group makes a new word for the table.",
+    "text": "La médica mira el celular. Mariana prepara café con luz suave. Andrés trae pan. La mesa queda libre.\n\nLa médica escribe mesa, pero el celular manda misa. Andrés lee el mensaje serio. “Yo traigo pan, no silencio, y busco la mesa”, dice. “Mesa”, agrega.\n\nMariana mira el vaso y la servilleta. “Aquí hay café, campana y pan para la mesa”, explica. Señala el pandebono. “No hay misa”, agrega.\n\nLee la pantalla. La palabra está rara. La ubicación sale sin ruido. “La buseta entiende mesa, no misa”, cuenta. Andrés toca una tecla y asiente.\n\nLa médica borra una letra. El mensaje ahora dice mesa amiga aquí. El celular queda bajo el maletín. “Ahora no cambia y todos llegan”, avisa. Ella corrige.\n\nAndrés levanta el pan. “Mesa no misa, mesa amiga”, repite. Todos saludan bajo y ríen. “Palabra propia”, dice Mariana. “La mesa tiene palabra propia”, dice Mariana.",
     "vocab": [
-      { "word": "telefonito", "surface": "celular", "type": "noun", "register": "neutral", "definition": "A small phone you carry." },
-      { "word": "texto corto", "surface": "mensaje", "type": "noun", "register": "neutral", "definition": "Words sent to another person." },
-      { "word": "misa", "surface": "misa", "type": "noun", "register": "neutral", "definition": "A meeting in a church." },
-      { "word": "callado", "surface": "silencio", "type": "noun", "register": "neutral", "definition": "A time with no sound." },
-      { "word": "visor", "surface": "pantalla", "type": "noun", "register": "neutral", "definition": "The lit part of a phone." },
-      { "word": "signo", "surface": "letra", "type": "noun", "register": "neutral", "definition": "One written sign in a word." },
-      { "word": "borrar letra", "surface": "borra una letra", "type": "expression", "register": "neutral", "definition": "To remove one written sign." },
-      { "word": "raro", "surface": "rara", "type": "adjective", "register": "neutral", "definition": "Strange and not normal." },
-      { "word": "cambiar", "surface": "cambia", "type": "verb", "register": "neutral", "definition": "To become different now." },
-      { "word": "ubicación", "surface": "ubicación", "type": "noun", "register": "neutral", "definition": "The place where something is." },
-      { "word": "enviar", "surface": "manda", "type": "verb", "register": "neutral", "definition": "To send something to someone." },
-      { "word": "repetir", "surface": "repite", "type": "verb", "register": "neutral", "definition": "To say or do again." },
-      { "word": "entender", "surface": "entiende", "type": "verb", "register": "neutral", "definition": "To know what something means." },
-      { "word": "aquí", "surface": "aquí", "type": "adverb", "register": "neutral", "definition": "In this exact place." },
-      { "word": "voz escrita", "surface": "palabra", "type": "noun", "register": "neutral", "definition": "A word people say or write." },
-      { "word": "sin ruido", "surface": "sin ruido", "type": "expression", "register": "neutral", "definition": "With no loud sound." },
-      { "word": "claridad", "surface": "luz", "type": "noun", "register": "neutral", "definition": "Brightness that helps you see." },
-      { "word": "tecla", "surface": "tecla", "type": "noun", "register": "neutral", "definition": "A phone or computer button." },
-      { "word": "corregir", "surface": "corrige", "type": "verb", "register": "neutral", "definition": "To make a mistake right." },
-      { "word": "propia palabra", "surface": "palabra propia", "type": "expression", "register": "neutral", "definition": "A word that belongs to someone." }
+      {
+        "word": "telefonito",
+        "surface": "celular",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small phone you carry."
+      },
+      {
+        "word": "texto corto",
+        "surface": "mensaje",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Words sent to another person."
+      },
+      {
+        "word": "servilleta",
+        "surface": "servilleta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Paper used at a table."
+      },
+      {
+        "word": "callado",
+        "surface": "silencio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A time with no sound."
+      },
+      {
+        "word": "visor",
+        "surface": "pantalla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The lit part of a phone."
+      },
+      {
+        "word": "signo",
+        "surface": "letra",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "One written sign in a word."
+      },
+      {
+        "word": "misa",
+        "surface": "misa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A church service."
+      },
+      {
+        "word": "palabra rara",
+        "surface": "palabra está rara",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A word that looks wrong."
+      },
+      {
+        "word": "cambiar",
+        "surface": "cambia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To become different now."
+      },
+      {
+        "word": "mensaje serio",
+        "surface": "mensaje serio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A serious phone message."
+      },
+      {
+        "word": "agregar",
+        "surface": "agrega",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To add more words."
+      },
+      {
+        "word": "repetir",
+        "surface": "repite",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say or do again."
+      },
+      {
+        "word": "ubicación",
+        "surface": "ubicación",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A place shown on a phone."
+      },
+      {
+        "word": "aquí",
+        "surface": "aquí",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "In this place here."
+      },
+      {
+        "word": "sin ruido",
+        "surface": "sin ruido",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Without any sound."
+      },
+      {
+        "word": "tecla",
+        "surface": "tecla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A key on a phone."
+      },
+      {
+        "word": "claridad",
+        "surface": "luz",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Brightness that helps you see."
+      },
+      {
+        "word": "tecla",
+        "surface": "tecla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A phone or computer button."
+      },
+      {
+        "word": "corregir",
+        "surface": "corrige",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make a mistake right."
+      },
+      {
+        "word": "propia palabra",
+        "surface": "palabra propia",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A word that belongs to someone."
+      }
     ]
   },
   {
@@ -36,29 +156,149 @@
     "title": "La nota con campana",
     "slug": "la-nota-con-campana",
     "arcType": null,
-    "synopsis": "Julián tries to send a short voice note, but the cafe bell enters the recording. Camilo follows the sound and finds the right table anyway.",
-    "text": "Junto al café, Julián tiene el celular. Julián es músico del centro. Mariana escribe un nombre. Sofi trae pan de yuca. La campana suena suave. El instrumento espera.\n\nJulián hace una nota de voz. “Mesa amiga, café y pan; sigan mi voz”, dice. La campana entra rápido. El audio queda raro.\n\nCamilo oye la nota en la buseta. “La campana dice paradero, pero la voz dice café”, responde. Andrés mira el pan y abre los ojos. “Suena cerca”, dice.\n\nLina toca la pantalla. “No es paradero. Es café, vaso y vitrina”, explica. Pilar señala la vitrina y el vaso. Mariana escucha el sonido y avisa.\n\nJulián manda otra nota. Esta vez toca una sola cuerda. “Mesa amiga aquí, con café”, canta bajo. La campana busca salida.\n\nCamilo llega con la buseta limpia. “Seguí la campana y el olor dulce”, cuenta. Andrés levanta el pandebono. “Sirve por error”, responde. La nota sirve por error.",
+    "synopsis": "el músico tries to send a short voice note, but the cafe bell enters the recording. el conductor follows the sound and finds the right table anyway.",
+    "text": "Junto al café, el músico tiene el celular. Mariana escribe un nombre. La campana suena suave. El instrumento espera.\n\nEl músico hace una nota de voz. “Mesa amiga, café y pan; sigan mi voz”, dice. La campana entra rápido. El audio queda raro.\n\nLa nota suena en la buseta. “La campana dice paradero, pero la voz dice café”, responde. Andrés, un repartidor del barrio, mira el pan y abre los ojos. “Suena cerca”, dice.\n\nToca la pantalla. “No es paradero. Es café, vaso y vitrina”, explica. La vitrina y el vaso señalan. Mariana escucha el sonido y avisa.\n\nEl músico manda otra nota. Esta vez toca una sola cuerda. “Mesa amiga aquí, con café”, canta bajo. La campana busca salida.\n\nLa buseta llega limpia. “Seguí la campana y el olor dulce”, cuenta. Andrés levanta el pandebono. “Sirve por error”, responde. “La nota sirve por error”, dice Andrés.",
     "vocab": [
-      { "word": "nota de voz", "surface": "nota de voz", "type": "expression", "register": "neutral", "definition": "A short spoken phone message." },
-      { "word": "grabar", "surface": "hace una nota", "type": "verb", "register": "neutral", "definition": "To save sound or video." },
-      { "word": "audio", "surface": "audio", "type": "noun", "register": "neutral", "definition": "Sound saved on a phone." },
-      { "word": "oír", "surface": "oye", "type": "verb", "register": "neutral", "definition": "To hear with your ears." },
-      { "word": "hilito musical", "surface": "cuerda", "type": "noun", "register": "neutral", "definition": "A thin line on an instrument." },
-      { "word": "cantar", "surface": "canta", "type": "verb", "register": "neutral", "definition": "To make music with your voice." },
-      { "word": "seguir", "surface": "Seguí", "type": "verb", "register": "neutral", "definition": "To go after a sign." },
-      { "word": "por error", "surface": "por error", "type": "expression", "register": "neutral", "definition": "Because of a mistake." },
-      { "word": "esta vez", "surface": "Esta vez", "type": "expression", "register": "neutral", "definition": "On this one occasion." },
-      { "word": "limpio", "surface": "limpia", "type": "adjective", "register": "neutral", "definition": "Clean and not dirty." },
-      { "word": "ruido claro", "surface": "sonido", "type": "noun", "register": "neutral", "definition": "Something you can hear." },
-      { "word": "habla grabada", "surface": "voz", "type": "noun", "register": "neutral", "definition": "The sound a person speaks with." },
-      { "word": "instrumento", "surface": "instrumento", "type": "noun", "register": "neutral", "definition": "A thing used to make music." },
-      { "word": "buscar", "surface": "busca", "type": "verb", "register": "neutral", "definition": "To try to find something." },
-      { "word": "avisar", "surface": "avisa", "type": "verb", "register": "neutral", "definition": "To tell someone news." },
-      { "word": "servir", "surface": "sirve", "type": "verb", "register": "neutral", "definition": "To be useful now." },
-      { "word": "una sola", "surface": "una sola", "type": "expression", "register": "neutral", "definition": "Only one, not more." },
-      { "word": "aroma", "surface": "olor", "type": "noun", "register": "neutral", "definition": "What your nose notices." },
-      { "word": "escuchar", "surface": "escucha", "type": "verb", "register": "neutral", "definition": "To listen to something." },
-      { "word": "puerta de salida", "surface": "salida", "type": "noun", "register": "neutral", "definition": "A way out of a place." }
+      {
+        "word": "audio raro",
+        "surface": "audio queda raro",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Audio that sounds strange."
+      },
+      {
+        "word": "nota de voz",
+        "surface": "nota de voz",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A short voice message."
+      },
+      {
+        "word": "paradero",
+        "surface": "paradero",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A bus stop place."
+      },
+      {
+        "word": "una sola cuerda",
+        "surface": "una sola cuerda",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "One string played alone."
+      },
+      {
+        "word": "hilito musical",
+        "surface": "cuerda",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A thin line on an instrument."
+      },
+      {
+        "word": "cantar",
+        "surface": "canta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make music with your voice."
+      },
+      {
+        "word": "seguir",
+        "surface": "Seguí",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go after a sign."
+      },
+      {
+        "word": "responder",
+        "surface": "responde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer another person."
+      },
+      {
+        "word": "olor dulce",
+        "surface": "olor dulce",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A sweet smell."
+      },
+      {
+        "word": "limpio",
+        "surface": "limpia",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Clean and not dirty."
+      },
+      {
+        "word": "vitrina",
+        "surface": "vitrina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A glass display case."
+      },
+      {
+        "word": "habla grabada",
+        "surface": "voz",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The sound a person speaks with."
+      },
+      {
+        "word": "instrumento",
+        "surface": "instrumento",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A thing used for music."
+      },
+      {
+        "word": "buscar",
+        "surface": "busca",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To try to find something."
+      },
+      {
+        "word": "avisar",
+        "surface": "avisa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To tell someone news."
+      },
+      {
+        "word": "servir",
+        "surface": "sirve",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To be useful now."
+      },
+      {
+        "word": "mandar",
+        "surface": "manda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To send a message."
+      },
+      {
+        "word": "aroma",
+        "surface": "olor",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "What your nose notices."
+      },
+      {
+        "word": "escuchar",
+        "surface": "escucha",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen to something."
+      },
+      {
+        "word": "puerta de salida",
+        "surface": "salida",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A way out of a place."
+      }
     ]
   },
   {
@@ -67,29 +307,149 @@
     "title": "Pan tiene silla",
     "slug": "pan-tiene-silla",
     "arcType": null,
-    "synopsis": "Sofi sends a message saying there is bread left, but the phone makes Pan look like a person. Pilar saves a seat for Pan until the group explains the joke.",
-    "text": "En la tienda de pan, Sofi mira el celular. Queda pan amigo y pandebono. Mariana espera con café. Pilar guarda un asiento libre.\n\nSofi escribe: queda pan. El celular pone Pan grande y nombre propio. Pilar lee el mensaje equivocado. “Pan llega tarde, pero yo le guardo puesto”, dice seria.\n\nAndrés mira el respaldo de la silla vacía. “Yo saludo a Pan y guardo el vaso”, responde. Lina pone un vaso y un platito debajo del papel.\n\nJulián llega con música sin tilde. Camilo toca el timbre. “¿Pan trae maletín o trae hambre?” pregunta. Mariana señala la vitrina y ríe poco.\n\nEntonces Sofi entra con el pan real. “Pan no es persona; es comida rica”, explica. Pilar mira la silla y abre los ojos. “Pero ya tiene silla”, contesta.\n\nAndrés parte el pan. El celular queda en silencio. Sofi quita el papel. “Pan aparece y pierde silla, pero gana mesa”, remata. Todos comen despacio.",
+    "synopsis": "la panadera sends a message saying there is bread left, but the phone makes Pan look like a person. la enfermera saves a seat for Pan until the group explains the joke.",
+    "text": "En la tienda, la panadera mira el celular. Queda pan amigo y pandebono. Mariana espera con café. Hay un asiento libre.\n\nLa panadera escribe: queda pan. El celular pone Pan grande y nombre propio. Ella lee el mensaje equivocado. “Pan llega tarde, pero yo le guardo puesto”, dice seria.\n\nAndrés mira el respaldo de la silla vacía. “Yo saludo a Pan y guardo el vaso”, responde. Un vaso y un platito quedan debajo del papel.\n\nLlega música sin tilde. Suena el timbre. “¿Pan trae maletín o trae hambre?” pregunta. Mariana señala la vitrina y ríe poco.\n\nEntonces la panadera entra con el pan real. “Pan no es persona; es comida rica”, explica. Ella mira la silla. “Pero ya tiene silla”, contesta.\n\nAndrés parte el pan. El celular queda en silencio. La panadera quita el papel. “Pan aparece y pierde silla, pero gana mesa”, remata. “Todos comen despacio”, dice Mariana.",
     "vocab": [
-      { "word": "tienda de pan", "surface": "tienda de pan", "type": "noun", "register": "neutral", "definition": "A shop that sells bread." },
-      { "word": "adulto", "surface": "persona", "type": "noun", "register": "neutral", "definition": "A man or woman." },
-      { "word": "hora mala", "surface": "tarde", "type": "adverb", "register": "neutral", "definition": "After the right time." },
-      { "word": "asiento libre", "surface": "asiento libre", "type": "noun", "register": "neutral", "definition": "A seat not used by anyone." },
-      { "word": "ganar", "surface": "gana", "type": "verb", "register": "neutral", "definition": "To get something good." },
-      { "word": "perder", "surface": "pierde", "type": "verb", "register": "neutral", "definition": "To no longer have something." },
-      { "word": "quedar pan", "surface": "queda pan", "type": "expression", "register": "neutral", "definition": "There is bread left." },
-      { "word": "poner grande", "surface": "pone Pan grande", "type": "expression", "register": "neutral", "definition": "To write with big letters." },
-      { "word": "comer", "surface": "comen", "type": "verb", "register": "neutral", "definition": "To put food in your mouth." },
-      { "word": "real de comida", "surface": "pan real", "type": "expression", "register": "neutral", "definition": "Food that is truly there." },
-      { "word": "mayúscula", "surface": "grande", "type": "noun", "register": "neutral", "definition": "A big written letter." },
-      { "word": "respaldo", "surface": "respaldo", "type": "noun", "register": "neutral", "definition": "The back part of a chair." },
-      { "word": "nombre propio", "surface": "nombre propio", "type": "expression", "register": "neutral", "definition": "A name for one person." },
-      { "word": "equivocado", "surface": "equivocado", "type": "adjective", "register": "neutral", "definition": "Wrong and not right." },
-      { "word": "entonces", "surface": "entonces", "type": "adverb", "register": "neutral", "definition": "At that time or because of that." },
-      { "word": "guardar asiento", "surface": "guarda un asiento", "type": "expression", "register": "neutral", "definition": "To keep a seat for someone." },
-      { "word": "quitar", "surface": "quita", "type": "verb", "register": "neutral", "definition": "To take something away." },
-      { "word": "aparecer", "surface": "aparece", "type": "verb", "register": "neutral", "definition": "To come into view." },
-      { "word": "pan real", "surface": "pan real", "type": "noun", "register": "neutral", "definition": "Bread that is not a joke." },
-      { "word": "sin tilde", "surface": "sin tilde", "type": "expression", "register": "neutral", "definition": "With no accent mark." }
+      {
+        "word": "tienda de pan",
+        "surface": "tienda de pan",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A shop that sells bread."
+      },
+      {
+        "word": "adulto",
+        "surface": "persona",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A man or woman."
+      },
+      {
+        "word": "Pan grande",
+        "surface": "Pan grande",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A mistaken big name."
+      },
+      {
+        "word": "asiento libre",
+        "surface": "asiento libre",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A free seat."
+      },
+      {
+        "word": "ganar",
+        "surface": "gana",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To get something good."
+      },
+      {
+        "word": "perder",
+        "surface": "pierde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To no longer have something."
+      },
+      {
+        "word": "queda pan",
+        "surface": "queda pan",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Bread is still left."
+      },
+      {
+        "word": "nombre propio",
+        "surface": "nombre propio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A personal name."
+      },
+      {
+        "word": "comer",
+        "surface": "comen",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put food in your mouth."
+      },
+      {
+        "word": "respaldo",
+        "surface": "respaldo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The back of a chair."
+      },
+      {
+        "word": "mayúscula",
+        "surface": "grande",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A big written letter."
+      },
+      {
+        "word": "gana mesa",
+        "surface": "gana mesa",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Gets a place at the table."
+      },
+      {
+        "word": "mensaje equivocado",
+        "surface": "mensaje equivocado",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A message with a mistake."
+      },
+      {
+        "word": "música sin tilde",
+        "surface": "música sin tilde",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Music with no accent mark."
+      },
+      {
+        "word": "entonces",
+        "surface": "entonces",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "At that time or because of that."
+      },
+      {
+        "word": "hambre",
+        "surface": "hambre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The need to eat."
+      },
+      {
+        "word": "comida rica",
+        "surface": "comida rica",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Food that tastes good."
+      },
+      {
+        "word": "aparecer",
+        "surface": "aparece",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To come into view."
+      },
+      {
+        "word": "pan real",
+        "surface": "pan real",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bread that is not a joke."
+      },
+      {
+        "word": "pierde silla",
+        "surface": "pierde silla",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Loses the saved seat."
+      }
     ]
   }
 ]

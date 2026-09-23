@@ -5,29 +5,149 @@
     "title": "El encargo tapado",
     "slug": "el-encargo-tapado",
     "arcType": null,
-    "synopsis": "Pilar leaves a pharmacy errand at Mariana's cafe, but Andrés's name is hidden under a bag. Coffee, bread, and a table sign turn the favor into something clear.",
-    "text": "Por el recado, Pilar entra al café. Pilar es enfermera. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. Pilar señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. Sofi trae pandebono y una miga. “El pan mira el recado”, cuenta ella.\n\nCamilo espera afuera en la buseta. Lina lee despacio la nota corta. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde Pilar. “El favor sigue aquí”, agrega. La ayuda queda clara y a tiempo.\n\nAndrés levanta el café, el pan y el papel. Pilar muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. La mesa pequeña trabaja.",
+    "synopsis": "la enfermera leaves a pharmacy errand at Mariana's cafe, but Andrés's name is hidden under a bag. Coffee, bread, and a table sign turn the favor into something clear.",
+    "text": "Por el recado, la enfermera entra al café. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. La enfermera señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. “El pan mira el recado”, cuenta ella.\n\nLa nota corta se lee despacio. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde la enfermera. “El favor sigue aquí”, agrega. “La ayuda queda clara”, dice Mariana.\n\nAndrés levanta el café, el pan y el papel. La enfermera muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. La mesa pequeña trabaja.",
     "vocab": [
-      { "word": "recado", "surface": "recado", "type": "noun", "register": "neutral", "definition": "A small thing someone asks." },
-      { "word": "rótulo", "surface": "rótulo", "type": "noun", "register": "neutral", "definition": "A small sign with a name." },
-      { "word": "desaparecer", "surface": "desaparece", "type": "verb", "register": "neutral", "definition": "To go away from sight." },
-      { "word": "apunte", "surface": "nota", "type": "noun", "register": "neutral", "definition": "A short written note." },
-      { "word": "faltriquera", "surface": "bolsillo", "type": "noun", "register": "neutral", "definition": "A cloth place for small things." },
-      { "word": "enfermera", "surface": "enfermera", "type": "noun", "register": "neutral", "definition": "A woman who helps sick people." },
-      { "word": "paquetico", "surface": "paquetico", "type": "noun", "register": "neutral", "definition": "A very small package." },
-      { "word": "favor", "surface": "favor", "type": "noun", "register": "neutral", "definition": "Help someone gives another person." },
-      { "word": "cubierta", "surface": "cubierta", "type": "noun", "register": "neutral", "definition": "A cover around something." },
-      { "word": "junto a", "surface": "junto al", "type": "expression", "register": "neutral", "definition": "Next to something or someone." },
-      { "word": "cerca de", "surface": "junto al", "type": "expression", "register": "neutral", "definition": "Next to something else." },
-      { "word": "quedar", "surface": "queda", "type": "verb", "register": "neutral", "definition": "To stay in a place." },
-      { "word": "correcto", "surface": "correcto", "type": "adjective", "register": "neutral", "definition": "Right and not wrong." },
-      { "word": "siguiente", "surface": "sigue", "type": "adjective", "register": "neutral", "definition": "Coming after this one." },
-      { "word": "pequeña", "surface": "pequeña", "type": "adjective", "register": "neutral", "definition": "Small and not big." },
-      { "word": "trabajar", "surface": "trabaja", "type": "verb", "register": "neutral", "definition": "To do a job." },
-      { "word": "ayudar", "surface": "ayuda", "type": "verb", "register": "neutral", "definition": "To give help to someone." },
-      { "word": "hacer caso", "surface": "hace caso", "type": "expression", "register": "neutral", "definition": "To listen and do it." },
-      { "word": "a tiempo", "surface": "a tiempo", "type": "expression", "register": "neutral", "definition": "At the right time." },
-      { "word": "claro", "surface": "clara", "type": "adjective", "register": "neutral", "definition": "Easy to see or understand." }
+      {
+        "word": "recado",
+        "surface": "recado",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A short message or errand."
+      },
+      {
+        "word": "rótulo",
+        "surface": "rótulo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small written label."
+      },
+      {
+        "word": "desaparecer",
+        "surface": "desaparece",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go away from sight."
+      },
+      {
+        "word": "apunte",
+        "surface": "nota",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A short written note."
+      },
+      {
+        "word": "faltriquera",
+        "surface": "bolsillo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A cloth place for small things."
+      },
+      {
+        "word": "enfermera",
+        "surface": "enfermera",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A woman who helps sick people."
+      },
+      {
+        "word": "responder",
+        "surface": "responde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer another person."
+      },
+      {
+        "word": "favor",
+        "surface": "favor",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Help someone gives another person."
+      },
+      {
+        "word": "paquetico",
+        "surface": "paquetico",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A very small package."
+      },
+      {
+        "word": "junto a",
+        "surface": "junto al",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Next to something or someone."
+      },
+      {
+        "word": "cerca de",
+        "surface": "junto al",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Next to something else."
+      },
+      {
+        "word": "quedar",
+        "surface": "queda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay in a place."
+      },
+      {
+        "word": "correcto",
+        "surface": "correcto",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Right and not wrong."
+      },
+      {
+        "word": "agregar",
+        "surface": "agrega",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To add more words."
+      },
+      {
+        "word": "pequeña",
+        "surface": "pequeña",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Small and not big."
+      },
+      {
+        "word": "trabajar",
+        "surface": "trabaja",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To do a job."
+      },
+      {
+        "word": "silla vacía",
+        "surface": "silla vacía",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "An empty chair in the room."
+      },
+      {
+        "word": "cubierta",
+        "surface": "cubierta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A cover over something."
+      },
+      {
+        "word": "hace caso",
+        "surface": "hace caso",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "It pays attention now."
+      },
+      {
+        "word": "ayuda clara",
+        "surface": "ayuda queda clara",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Help that is easy to understand."
+      }
     ]
   },
   {
@@ -36,29 +156,149 @@
     "title": "Cuenta de amiga",
     "slug": "cuenta-de-amiga",
     "arcType": null,
-    "synopsis": "Catalina wants Andrés to pay for a small favor, but the word friend makes the price disappear. Sofi turns the count into a simple cafe game.",
-    "text": "Para la cuenta, Catalina trae una planilla doblada. Catalina es vendedora del barrio. Mariana prepara café. Sofi, una panadera del barrio, mira el pan de yuca.\n\nCatalina escribe planilla amiga en un papel. Andrés abre los ojos. “Amiga no paga gratis”, dice serio. Sofi pone un platito redondo.\n\nMariana señala el vaso, el pan y la cucharita. “Todo trabaja”, explica. Andrés duda y mira la vitrina. “¿La cucharita también cobra?” pregunta.\n\nSofi trae queso campesino. Catalina marca tres rayitas. “Una por café, una por pan y una por favor”, cuenta ella. “El costo queda en medio”, agrega.\n\nEl papel cae junto al servilletero. Lina recoge la planilla y lee despacio. “Amiga paga poco”, avisa. Andrés mira con mirada suave. “Pago poco”, responde.\n\nAndrés deja una ficha sobre el platito. Catalina guarda la planilla doblada. “Entre todos suena juego”, remata. “Pan compartido”, avisa Sofi.",
+    "synopsis": "la vendedora wants Andrés to pay for a small favor, but the word friend makes the price disappear. la panadera turns the count into a simple cafe game.",
+    "text": "Para la cuenta, la vendedora trae una planilla doblada. Mariana prepara café. La panadera mira el pan de yuca.\n\nLa vendedora escribe planilla amiga en un papel. Andrés abre los ojos. “Amiga no paga gratis”, dice serio. Ella pone un platito.\n\nMariana señala el vaso, el pan y la cucharita. “Todo trabaja”, explica. Andrés duda y mira la vitrina. “¿La cucharita también cobra?” pregunta.\n\nElla trae queso. La vendedora marca tres rayitas. “Una por café, una por pan y una por favor”, cuenta ella. “El costo queda en medio”, agrega.\n\nEl papel cae junto al servilletero. La planilla se lee despacio. “Amiga paga poco”, avisa. Andrés mira con mirada suave. “Pago poco”, responde.\n\nAndrés deja una ficha sobre el platito. Ella guarda la planilla. “Entre todos suena juego”, remata. “Pan compartido”, avisa la panadera.",
     "vocab": [
-      { "word": "planilla", "surface": "planilla", "type": "noun", "register": "neutral", "definition": "A paper with things listed." },
-      { "word": "vendedora", "surface": "vendedora", "type": "noun", "register": "neutral", "definition": "A woman who sells things." },
-      { "word": "cobrar", "surface": "cobra", "type": "verb", "register": "neutral", "definition": "To ask for money." },
-      { "word": "pagar", "surface": "paga", "type": "verb", "register": "neutral", "definition": "To give money for something." },
-      { "word": "ficha", "surface": "ficha", "type": "noun", "register": "neutral", "definition": "A small flat piece." },
-      { "word": "encima de", "surface": "sobre el", "type": "expression", "register": "neutral", "definition": "On top of something." },
-      { "word": "marcar", "surface": "marca", "type": "verb", "register": "neutral", "definition": "To make a sign or line." },
-      { "word": "rayita de cuenta", "surface": "rayitas", "type": "noun", "register": "neutral", "definition": "Small lines used for counting." },
-      { "word": "conjunto", "surface": "Todo", "type": "pronoun", "register": "neutral", "definition": "All the things together." },
-      { "word": "gratis", "surface": "gratis", "type": "adverb", "register": "neutral", "definition": "With no money to pay." },
-      { "word": "costo", "surface": "costo", "type": "noun", "register": "neutral", "definition": "The money something costs." },
-      { "word": "entre", "surface": "entre", "type": "preposition", "register": "neutral", "definition": "In the middle of two things." },
-      { "word": "por favor", "surface": "por favor", "type": "expression", "register": "neutral", "definition": "A polite way to ask." },
-      { "word": "dejar", "surface": "deja", "type": "verb", "register": "neutral", "definition": "To put something somewhere." },
-      { "word": "vistazo", "surface": "mirada", "type": "noun", "register": "neutral", "definition": "The way eyes look." },
-      { "word": "trazo", "surface": "rayitas", "type": "noun", "register": "neutral", "definition": "Small written line marks." },
-      { "word": "sonar", "surface": "suena", "type": "verb", "register": "neutral", "definition": "To make or seem by sound." },
-      { "word": "en medio", "surface": "en medio", "type": "expression", "register": "neutral", "definition": "In the center place." },
-      { "word": "doblado", "surface": "doblada", "type": "adjective", "register": "neutral", "definition": "Folded and not flat." },
-      { "word": "juego", "surface": "juego", "type": "noun", "register": "neutral", "definition": "A fun activity with rules." }
+      {
+        "word": "planilla doblada",
+        "surface": "planilla doblada",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A folded paper form."
+      },
+      {
+        "word": "vendedora",
+        "surface": "vendedora",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A woman who sells things."
+      },
+      {
+        "word": "vaso",
+        "surface": "vaso",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A cup or glass for drinking."
+      },
+      {
+        "word": "pagar",
+        "surface": "paga",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To give money for something."
+      },
+      {
+        "word": "papel cae",
+        "surface": "papel cae",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A paper falls down."
+      },
+      {
+        "word": "encima de",
+        "surface": "sobre el",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "On top of something."
+      },
+      {
+        "word": "marcar",
+        "surface": "marca",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make a sign or line."
+      },
+      {
+        "word": "tres rayitas",
+        "surface": "tres rayitas",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Three small written lines."
+      },
+      {
+        "word": "conjunto",
+        "surface": "Todo",
+        "type": "pronoun",
+        "register": "neutral",
+        "definition": "All the things together."
+      },
+      {
+        "word": "ficha",
+        "surface": "ficha",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small token or chip."
+      },
+      {
+        "word": "costo",
+        "surface": "costo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The money something costs."
+      },
+      {
+        "word": "juego",
+        "surface": "juego",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A game or playful action."
+      },
+      {
+        "word": "por favor",
+        "surface": "por favor",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A polite way to ask."
+      },
+      {
+        "word": "dejar",
+        "surface": "deja",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put something somewhere."
+      },
+      {
+        "word": "mirada suave",
+        "surface": "mirada suave",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A gentle look from the eyes."
+      },
+      {
+        "word": "trazo",
+        "surface": "rayitas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Small written line marks."
+      },
+      {
+        "word": "sonar",
+        "surface": "suena",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make or seem by sound."
+      },
+      {
+        "word": "en medio",
+        "surface": "en medio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "In the center place."
+      },
+      {
+        "word": "doblado",
+        "surface": "doblada",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Folded and not flat."
+      },
+      {
+        "word": "también cobra",
+        "surface": "también cobra",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Also asks for money."
+      }
     ]
   },
   {
@@ -67,29 +307,149 @@
     "title": "La bolsa saluda",
     "slug": "la-bolsa-saluda",
     "arcType": null,
-    "synopsis": "Camilo asks for help with a heavy bag, but the group treats it like another paper friend. The favor works only when they stop greeting the bag.",
-    "text": "Carga Camilo una tula pesada al andén. Mariana espera cerca de la puerta. Sofi mira la tula con Lina, una médica del barrio.\n\nAndrés guarda pan y mira el café. Julián, del centro, toca la mesa. “Cinta roja y parche azul”, observa Andrés. Camilo mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nSofi mira el maletín y la tula. Lina mira las notas suaves. “¿La tula saluda?” pregunta Sofi. “Suena suave”, cuenta Lina.\n\nCamilo pone la tula junto al andén. Dentro hay vasos, platitos y trapitos. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Pilar toma el otro extremo. “Recta y lista”, responde ella.\n\nJulián guarda la música. Sofi abre un campito en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Camilo. “Sin drama y primero”, agrega Pilar.",
+    "synopsis": "el conductor asks for help with a heavy bag, but the group treats it like another paper friend. The favor works only when they stop greeting the bag.",
+    "text": "Carga el conductor una tula. Mariana espera cerca de la puerta. La tula queda en medio.\n\nAndrés guarda pan y mira el café. El músico toca la mesa. “Cinta roja y parche azul”, observa Andrés. El conductor mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nEl maletín y la tula quedan juntos. “¿La tula saluda?” pregunta Mariana. “Suena suave”, cuenta Andrés.\n\nLa tula queda junto al andén. Dentro hay vasos, platitos y trapitos. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Ella toma el otro extremo. “Recta y lista”, responde ella.\n\nEl músico guarda la música. Hay campo en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Andrés. “Sin drama y primero”, agrega Mariana.",
     "vocab": [
-      { "word": "pesado", "surface": "pesada", "type": "adjective", "register": "neutral", "definition": "Hard to lift, not light." },
-      { "word": "mover la cabeza", "surface": "mueve la cabeza", "type": "expression", "register": "neutral", "definition": "To say no with your head." },
-      { "word": "nota musical", "surface": "notas", "type": "noun", "register": "neutral", "definition": "Small sounds in music." },
-      { "word": "trapito", "surface": "trapitos", "type": "noun", "register": "neutral", "definition": "Small cloth used to clean things." },
-      { "word": "campito", "surface": "campito", "type": "noun", "register": "neutral", "definition": "A very small open place." },
-      { "word": "recto", "surface": "recta", "type": "adjective", "register": "neutral", "definition": "Straight, not bent or leaning." },
-      { "word": "primero", "surface": "primero", "type": "adverb", "register": "neutral", "definition": "Before all other people." },
-      { "word": "otro extremo", "surface": "otro extremo", "type": "expression", "register": "neutral", "definition": "The other end of something." },
-      { "word": "dentro", "surface": "Dentro", "type": "adverb", "register": "neutral", "definition": "Inside and not outside." },
-      { "word": "levantarse", "surface": "levanta", "type": "verb", "register": "neutral", "definition": "To raise up from below." },
-      { "word": "empujar", "surface": "empuja", "type": "verb", "register": "neutral", "definition": "To move something with force." },
-      { "word": "muñeca", "surface": "muñeca", "type": "noun", "register": "neutral", "definition": "The body part by the hand." },
-      { "word": "portalito", "surface": "portalito", "type": "noun", "register": "neutral", "definition": "A very small entrance." },
-      { "word": "zona central", "surface": "centro", "type": "noun", "register": "neutral", "definition": "The middle part of a city." },
-      { "word": "parecido a", "surface": "como", "type": "preposition", "register": "neutral", "definition": "Similar to something else." },
-      { "word": "sin drama", "surface": "sin drama", "type": "expression", "register": "neutral", "definition": "Without making a big problem." },
-      { "word": "extremo", "surface": "extremo", "type": "noun", "register": "neutral", "definition": "One end of something." },
-      { "word": "abrir campito", "surface": "abre un campito", "type": "expression", "register": "neutral", "definition": "To make room for something." },
-      { "word": "trabajo", "surface": "trabajo", "type": "noun", "register": "neutral", "definition": "A job or thing to do." },
-      { "word": "fuerte", "surface": "fuerte", "type": "adjective", "register": "neutral", "definition": "With a lot of power." }
+      {
+        "word": "tula",
+        "surface": "tula",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A cloth bag for carrying things."
+      },
+      {
+        "word": "parche azul",
+        "surface": "parche azul",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A blue patch on something."
+      },
+      {
+        "word": "vasos",
+        "surface": "vasos",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cups used for drinking."
+      },
+      {
+        "word": "trapito",
+        "surface": "trapitos",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Small cloth used to clean things."
+      },
+      {
+        "word": "ahora",
+        "surface": "ahora",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "At this moment now."
+      },
+      {
+        "word": "recto",
+        "surface": "recta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Straight, not bent or leaning."
+      },
+      {
+        "word": "primero",
+        "surface": "primero",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Before all other people."
+      },
+      {
+        "word": "tomar",
+        "surface": "toma",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take or hold something."
+      },
+      {
+        "word": "dentro",
+        "surface": "Dentro",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Inside and not outside."
+      },
+      {
+        "word": "levantarse",
+        "surface": "levanta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To raise up from below."
+      },
+      {
+        "word": "empujar",
+        "surface": "empuja",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To move something with force."
+      },
+      {
+        "word": "muñeca",
+        "surface": "muñeca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The joint near the hand."
+      },
+      {
+        "word": "mover cabeza",
+        "surface": "mueve la cabeza",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To move the head."
+      },
+      {
+        "word": "en medio",
+        "surface": "en medio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "In the middle place."
+      },
+      {
+        "word": "la tula saluda",
+        "surface": "La tula saluda",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "The bag seems to say hello."
+      },
+      {
+        "word": "sin drama",
+        "surface": "sin drama",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Without making a big problem."
+      },
+      {
+        "word": "extremo",
+        "surface": "extremo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "One end of something."
+      },
+      {
+        "word": "campo en la mesa",
+        "surface": "Hay campo en la mesa",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "There is space on the table."
+      },
+      {
+        "word": "roja",
+        "surface": "roja",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red in color, not blue."
+      },
+      {
+        "word": "fuerte",
+        "surface": "fuerte",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "With a lot of power."
+      }
     ]
   }
 ]
