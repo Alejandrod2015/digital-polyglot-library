@@ -20,13 +20,24 @@ const arg = (f: string, d: string) => { const i = process.argv.indexOf(f); retur
     select: { slug: true, text: true, audioUrl: true },
   });
   let malas = 0;
+  let caidas = 0;
   for (const s of ss) {
     // una frase del medio del texto, poco probable en cualquier otra pagina
     const frase = (s.text ?? "").split(/[.!?]\s+/).map((x) => x.trim()).filter((x) => x.length > 40)[1] ?? "";
-    const html = await fetch(`${base}/stories/${s.slug}`).then((r) => r.text()).catch(() => "");
+    let html: string | null = null;
+    try { html = await fetch(`${base}/stories/${s.slug}`).then((r) => r.text()); } catch { html = null; }
+    // Un fetch que ni siquiera conecta es el servidor caido, no una pagina
+    // rota. Distinguirlo importa: el 2026-09-23 el dev server se habia parado
+    // y el informe daba FALLA en historias que estaban perfectas.
+    if (html === null) { caidas++; console.log(`SIN SERVIDOR ${s.slug}`); continue; }
     const ok = frase.length > 0 && html.includes(frase.slice(0, 40));
     if (!ok) malas++;
     console.log(`${ok ? "OK  " : "FALLA"} ${s.slug}${s.audioUrl ? " (narrada)" : ""}`);
+  }
+  if (caidas) {
+    console.log(`\nel servidor de ${base} no responde: ${caidas} sin comprobar. Arrancalo y repite.`);
+    await p.$disconnect();
+    process.exit(2);
   }
   console.log(`\n${ss.length - malas}/${ss.length} paginas del lector pintan su historia`);
   await p.$disconnect();
