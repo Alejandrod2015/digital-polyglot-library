@@ -1,6 +1,6 @@
 {
  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
- "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo.",
+ "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo. aceptado_asi = el usuario lo deja como esta sabiendo lo que mide.",
  "_resumen": "32 anotados: 25 falsos positivos, 4 defectos reales, el resto aprobados de oido tras re-tirar. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6.",
  "veredictos": [
   {
@@ -194,6 +194,13 @@
    "gate": "titulo nuevo, -0,6 y +1,3 st",
    "veredicto": "aprobado_de_oido",
    "fecha": "2026-09-23"
+  },
+  {
+   "fragmento": "zu-dritt-im-treppenhaus-0 (en el master)",
+   "gate": "titulo, +4,5 st",
+   "veredicto": "aceptado_asi",
+   "fecha": "2026-09-23",
+   "nota": "El usuario decide dejarlo en +4,5. La re-toma media -5,1 pero juntaba 'zu dritt' en una palabra y el candado de cobertura la revirtio."
   }
  ],
  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
