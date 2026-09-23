@@ -2,6 +2,7 @@
   "_why": "Unicos archivos autorizados a contener guiones largos. Dos motivos y ninguno mas: (1) DETECTORES, codigo que busca o prohibe el caracter y lo necesita como literal dentro de una regex o una comprobacion; (2) src/data/books, prosa publicada cuyos tiempos de karaoke guardan offsets charStart/charEnd sobre el texto, asi que editarla desincroniza el resaltado. La lista es POR CARACTER: un archivo que necesita el en dash no queda exento del em dash. Anadir una entrada exige un motivo escrito. Lo leen scripts/checkNoEmDash.ts y .claude/safety/pre-emdash-guard.sh, para que el lint y el hook no se desincronicen.",
   "em": {
     "prefixes": [
+      "scripts/_ads_books/",
       "src/data/books/"
     ],
     "files": [
