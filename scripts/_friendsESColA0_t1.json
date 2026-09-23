@@ -2,11 +2,11 @@
   {
     "topic": "greetings-and-introductions",
     "slotIndex": 0,
-    "title": "El vaso de Andrés",
-    "slug": "el-vaso-de-andres",
+    "title": "Dos vasos y un nombre",
+    "slug": "dos-vasos-y-un-nombre",
     "arcType": null,
     "synopsis": "Mariana works in a small cafe in Pereira, Colombia, and Andrés arrives with the wrong name on his cup. A simple greeting turns into a joke that helps him feel welcome.",
-    "text": "En Pereira, Colombia, Mariana es barista del café. Sirve café. Andrés reparte paquetes y trae pan. El olor a pan entra suave. La campana suena suave.\n\nMariana mira el vaso. El vaso dice “Andrea”. Andrés mira el nombre y sonríe poco. “Yo soy Andrés”, dice él. “Andrea no maneja moto”, agrega.\n\nMariana está roja. “Perdón, Andrés”, contesta ella. Andrés señala el vaso. “No pasa nada. Andrea toma mi café hoy”, responde él. “Yo pago por ella”, agrega.\n\nMariana prepara otro café. Escribe Andrés grande. También dibuja una cara feliz. Andrés mira el dibujo. “Ese sí soy yo”, cuenta.\n\nMariana ve dos vasos. “Hola, Andrea”, dice a Andrés. Andrés levanta los dos vasos. “Buenas, yo soy los dos”, contesta serio. “Andrés trae paquetes”, avisa.\n\nMariana ríe con Andrés. Andrés deja el vaso de Andrea en la mesa. “Ella vuelve mañana”, explica. Mariana ya recuerda su nombre.",
+    "text": "En Pereira, Colombia, Mariana es barista del café. Sirve café. Andrés reparte paquetes y trae pan. La campana suena suave. Andrés entra.\n\nMariana mira el vaso. El vaso dice “Andrea”. Andrés mira el nombre y sonríe poco. “Yo soy Andrés”, dice él. “Andrea no maneja moto”, agrega.\n\nMariana está roja. “Perdón, Andrés”, contesta ella. Andrés señala el vaso. “No pasa nada. Andrea toma mi café hoy”, responde él. “Yo pago por ella”, agrega.\n\nMariana prepara otro café. Escribe Andrés grande. También dibuja una cara feliz. Andrés mira el dibujo. “Ese sí soy yo”, cuenta.\n\nMariana ve dos vasos. “Hola, Andrea”, dice a Andrés. Andrés levanta los dos vasos. “Buenas, yo soy los dos”, contesta serio. “Andrés trae paquetes”, avisa.\n\nMariana ríe con Andrés. Andrés deja el vaso de Andrea en la mesa. “Ella vuelve mañana”, explica. Mariana ya recuerda su nombre.",
     "vocab": [
       {
         "word": "recordar",
@@ -159,7 +159,7 @@
     "slug": "la-mesa-de-tres",
     "arcType": null,
     "synopsis": "Mariana and Andrés save a table for a new friend, but the cafe hears the wrong greeting. The mix-up gives everyone an easy way to meet.",
-    "text": "Mariana abre el café temprano. Andrés espera afuera con pan tibio. La mesa está libre. El pan huele dulce.\n\nLlega Lina, una médica nueva del barrio. Ella mira la mesa y pregunta bajo. “¿Es una reunión?” Andrés dice “sí” con calma. “Una reunión pequeña”, agrega. “La mesa espera”, avisa.\n\nMariana saluda a Lina. “Mucho gusto”, dice Mariana. Andrés repite muy rápido. “Mucho susto”, suelta él. Lina mira el pan.\n\nLina abre los ojos. Mariana mira a Andrés. En la mesa hay pan de queso, no miedo. “El pan no asusta”, explica Mariana. “Yo tampoco”, responde Andrés. “Me siento bien”, responde Lina.\n\nLina ríe. “Mucho gusto, no susto”, corrige ella. Andrés toca su pecho. “Yo tengo gusto y susto”, cuenta él. “Pero sigo aquí”, agrega.\n\nMariana trae café para todos. La mesa ya no parece grande. Lina escribe su nombre en una servilleta. “Yo escribo susto debajo”, avisa Andrés. Ahora los tres tienen un saludo propio.",
+    "text": "Mariana abre el café temprano. Andrés espera afuera, quieto, con pan. La mesa está libre. El pan huele dulce.\n\nLlega Lina, una médica nueva del barrio. Ella mira la mesa y pregunta bajo. “¿Es una reunión?” Andrés dice “sí” con calma. “Una reunión pequeña”, agrega. “La mesa espera”, avisa.\n\nMariana saluda a Lina. “Mucho gusto”, dice Mariana. Andrés repite muy rápido. “Mucho susto”, suelta él. Lina mira el pan.\n\nLina abre los ojos. Mariana mira a Andrés. En la mesa hay pan de queso, no miedo. “El pan no asusta”, explica Mariana. “Yo tampoco”, responde Andrés. “Me siento bien”, responde Lina.\n\nLina ríe. “Mucho gusto, no susto”, corrige ella. Andrés toca su pecho. “Yo tengo gusto y susto”, cuenta él. “Pero sigo aquí”, agrega.\n\nMariana trae café para todos. La mesa ya no parece grande. Lina escribe su nombre en una servilleta. “Yo escribo susto debajo”, avisa Andrés. Ahora los tres tienen un saludo propio.",
     "vocab": [
       {
         "word": "esperar",
@@ -184,11 +184,11 @@
         "definition": "Outside, not in the room."
       },
       {
-        "word": "tibio",
-        "surface": "tibio",
+        "word": "quieto",
+        "surface": "quieto",
         "type": "adjective",
         "register": "neutral",
-        "definition": "Warm, but not very hot."
+        "definition": "Still and not moving."
       },
       {
         "word": "oler",

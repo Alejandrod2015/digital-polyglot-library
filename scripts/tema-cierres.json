@@ -12281,8 +12281,8 @@
     }
   },
   "cmue7cgmf0007j8p6sh7f7xrh#buses-and-streets": {
-    "cerrado": "2026-09-23T21:35:10.329Z",
-    "hash": "00406cf5c11701df",
+    "cerrado": "2026-09-23T21:48:31.758Z",
+    "hash": "db358ced0cf26c7e",
     "historias": [
       "buses-and-streets#0 la-buseta-de-andres",
       "buses-and-streets#1 tiza-bajo-la-lluvia",
@@ -12293,9 +12293,9 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"cuenta\" 12%)",
+      "acotacion dominante bajo tope (\"cuenta\" 11%)",
       "arranques de parrafo variados (mas repetido \"camilo\", 28%)",
-      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "densidad 6.3 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
@@ -12304,7 +12304,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 59 plazas · 53 salen una sola vez | ancladas: 1/60 (2%) | cola: 53/59 portables con un solo encuentro (90%, tope 30%) | de un solo encuentro: paradero, torniquete, andencito, Lucecita, carril, cebra, tarjetica, manija, frenazo, cordón, placa, baranda, calzada, baúl, baldosa, manda, retrovisor, orillita, señal de tiza, tiza, cuneta, mojado, lee, sopa, rastro, canaleta, sombrilla, tinta, azul, rayita…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 59 plazas · 53 salen una sola vez | ancladas: 1/60 (2%) | cola: 53/59 portables con un solo encuentro (90%, tope 30%) | de un solo encuentro: paradero, torniquete, andencito, Lucecita, carril, cebra, tarjetica, frenazo, cordón, placa, baranda, baúl, baldosa, manda, correcta, retrovisor, orillita, señal de tiza, tiza, cuneta, mojado, lee, sopa, rastro, canaleta, sombrilla, tinta, azul, rayita, muestra…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
@@ -12350,8 +12350,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#cash-and-errands": {
-    "cerrado": "2026-09-23T21:35:29.053Z",
-    "hash": "fecd774ec18e2fdf",
+    "cerrado": "2026-09-23T21:48:50.546Z",
+    "hash": "99ac280e356a8d7e",
     "historias": [
       "cash-and-errands#0 el-platito-gira",
       "cash-and-errands#1 tres-papeles-mandan",
@@ -12362,7 +12362,7 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"dice\" 38%)",
+      "acotacion dominante bajo tope (\"dice\" 33%)",
       "arranques de parrafo variados (mas repetido \"el\", 33%)",
       "densidad 6.5 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
@@ -12415,12 +12415,12 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 56% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 55% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#coffee-and-bread": {
-    "cerrado": "2026-09-23T21:35:04.182Z",
-    "hash": "51e7d25a69d9144c",
+    "cerrado": "2026-09-23T21:48:25.461Z",
+    "hash": "81932a92c98d7527",
     "historias": [
       "coffee-and-bread#0 vasito-sin-dueno",
       "coffee-and-bread#1 mesa-amiga",
@@ -12488,10 +12488,10 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#greetings-and-introductions": {
-    "cerrado": "2026-09-23T21:34:57.188Z",
-    "hash": "daddec73521b2c19",
+    "cerrado": "2026-09-23T21:48:19.022Z",
+    "hash": "47612751c504c6e8",
     "historias": [
-      "greetings-and-introductions#0 el-vaso-de-andres",
+      "greetings-and-introductions#0 dos-vasos-y-un-nombre",
       "greetings-and-introductions#1 la-mesa-de-tres",
       "greetings-and-introductions#2 el-amigo-de-papel"
     ],
@@ -12502,7 +12502,7 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 18%)",
       "arranques de parrafo variados (mas repetido \"mariana\", 50%)",
-      "densidad 5.2 palabras por oracion (techo 9 en a0)",
+      "densidad 5.1 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
@@ -12511,7 +12511,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.44 sobre 52 plazas · 33 salen una sola vez | ancladas: 8/60 (13%) | cola: 33/52 portables con un solo encuentro (63%, tope 30%) | de un solo encuentro: mañana, suave, roja, señala, No pasa nada, prepara, vuelve, dibuja, feliz, serio, afuera, tibio, huele, libre, dulce, médica, bajo, reunión, rápido, abre los ojos, parece, debajo, propio, vacía, pone, nuevo, papel, guarda, despacio, cae…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.44 sobre 52 plazas · 33 salen una sola vez | ancladas: 8/60 (13%) | cola: 33/52 portables con un solo encuentro (63%, tope 30%) | de un solo encuentro: mañana, suave, roja, señala, No pasa nada, prepara, vuelve, dibuja, feliz, serio, afuera, quieto, huele, libre, dulce, médica, bajo, reunión, rápido, abre los ojos, parece, debajo, propio, vacía, pone, nuevo, papel, guarda, despacio, cae…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -12553,12 +12553,12 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 70% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 71% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#parties-and-photos": {
-    "cerrado": "2026-09-23T21:35:35.370Z",
-    "hash": "0c2e99dfe0fb52cf",
+    "cerrado": "2026-09-23T21:48:56.879Z",
+    "hash": "0f40ec1a9510f4a7",
     "historias": [
       "parties-and-photos#0 foto-con-vaso",
       "parties-and-photos#1 andres-sale-pequeno",
@@ -12571,7 +12571,7 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 30%)",
       "arranques de parrafo variados (mas repetido \"la\", 33%)",
-      "densidad 5.4 palabras por oracion (techo 9 en a0)",
+      "densidad 5.5 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
@@ -12626,8 +12626,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#phones-and-messages": {
-    "cerrado": "2026-09-23T21:35:22.852Z",
-    "hash": "1fa36ad952bc73d2",
+    "cerrado": "2026-09-23T21:48:44.314Z",
+    "hash": "66513b21e9d4f57e",
     "historias": [
       "phones-and-messages#0 mesa-no-misa",
       "phones-and-messages#1 la-nota-con-campana",
@@ -12691,15 +12691,15 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 64% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 62% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#work-and-favors": {
-    "cerrado": "2026-09-23T21:35:16.641Z",
-    "hash": "6be6c0d08154d3fe",
+    "cerrado": "2026-09-23T21:49:56.746Z",
+    "hash": "aa8b8d574ec2c62f",
     "historias": [
       "work-and-favors#0 el-encargo-tapado",
-      "work-and-favors#1 cuenta-de-amiga",
+      "work-and-favors#1 amiga-paga-poco",
       "work-and-favors#2 la-bolsa-saluda"
     ],
     "checks": [
@@ -12760,7 +12760,7 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 54% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 51% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   }
 }

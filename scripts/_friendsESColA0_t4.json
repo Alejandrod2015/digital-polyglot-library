@@ -6,7 +6,7 @@
     "slug": "el-encargo-tapado",
     "arcType": null,
     "synopsis": "la enfermera leaves a pharmacy errand at Mariana's cafe, but Andrés's name is hidden under a bag. Coffee, bread, and a table sign turn the favor into something clear.",
-    "text": "Por el recado, la enfermera entra al café. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. La enfermera señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. “El pan mira el recado”, cuenta ella.\n\nLa nota corta se lee despacio. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde la enfermera. “El favor sigue aquí”, agrega. “La ayuda queda clara”, dice Mariana.\n\nAndrés levanta el café, el pan y el papel. La enfermera muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. La mesa pequeña trabaja.",
+    "text": "Por el recado, la enfermera entra al café. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. La enfermera señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. “Yo miro el recado”, cuenta ella.\n\nLa nota corta se lee despacio. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde la enfermera. “El favor sigue aquí”, agrega. “La ayuda queda clara”, dice Mariana.\n\nAndrés levanta el café, el pan y el papel. La enfermera muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. Mariana y Andrés trabajan en la mesa pequeña.",
     "vocab": [
       {
         "word": "recado",
@@ -153,8 +153,8 @@
   {
     "topic": "work-and-favors",
     "slotIndex": 1,
-    "title": "Cuenta de amiga",
-    "slug": "cuenta-de-amiga",
+    "title": "Amiga paga poco",
+    "slug": "amiga-paga-poco",
     "arcType": null,
     "synopsis": "la vendedora wants Andrés to pay for a small favor, but the word friend makes the price disappear. la panadera turns the count into a simple cafe game.",
     "text": "Para la cuenta, la vendedora trae una planilla doblada. Mariana prepara café. La panadera mira el pan de yuca.\n\nLa vendedora escribe planilla amiga en un papel. Andrés abre los ojos. “Amiga no paga gratis”, dice serio. Ella pone un platito en el puesto reservado.\n\nMariana señala el vaso, el pan y la cucharita. “Todo trabaja”, explica. Andrés duda y mira la vitrina. “¿La cucharita también cobra?” pregunta.\n\nElla trae queso. La vendedora marca tres rayitas. “Una por café, una por pan y una por favor”, cuenta ella. “El costo queda en medio”, agrega.\n\nEl papel cae junto al servilletero. La planilla se lee despacio. “Amiga paga poco”, avisa. Andrés mira con mirada suave. “Pago poco”, responde.\n\nAndrés deja una ficha sobre el platito. Ella guarda la planilla. “Entre todos suena juego”, remata. “Pan compartido”, avisa la panadera.",
@@ -308,7 +308,7 @@
     "slug": "la-bolsa-saluda",
     "arcType": null,
     "synopsis": "el conductor asks for help with a heavy bag, but the group treats it like another paper friend. The favor works only when they stop greeting the bag.",
-    "text": "Carga el conductor una tula. Mariana espera cerca de la puerta. La tula queda en medio.\n\nAndrés guarda pan y mira el café. El músico toca la mesa. “Cinta roja y parche azul”, observa Andrés. El conductor mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nEl maletín y la tula quedan juntos. “¿La tula saluda?” pregunta Mariana. “Suena suave”, cuenta Andrés.\n\nLa tula queda junto al andén. Dentro hay vasos, platitos y trapitos. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Ella toma el otro extremo. “Recta y lista”, responde ella.\n\nEl músico guarda la música. Hay campo en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Andrés. “Sin drama y primero”, agrega Mariana.",
+    "text": "Carga el conductor una tula. Mariana espera cerca de la puerta. La tula queda en medio.\n\nAndrés guarda pan y mira el café. El músico toca la mesa. “Cinta roja y parche azul”, observa Andrés. El conductor mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nEl maletín y la tula quedan juntos. “¿La tula saluda?” pregunta Mariana. “Suena suave”, cuenta Andrés.\n\nLa tula queda junto al andén. Dentro hay vasos y trapitos. Una ración de pan va encima. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Ella toma el otro extremo. “Recta y lista”, responde ella.\n\nEl músico guarda la música. Hay campo en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Andrés. “Sin drama y primero”, agrega Mariana.",
     "vocab": [
       {
         "word": "tula",
