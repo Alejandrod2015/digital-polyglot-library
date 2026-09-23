@@ -22,6 +22,7 @@ import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
 import { isPortugueseB1Lemma } from "./cefr/portugueseB1";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 import { classifyName, getNameBank } from "@/lib/characterNames";
+import { nombresDificiles, NOMBRES_APROBADOS_DE_OIDO } from "@/lib/nameSpeakability";
 import { canonicalLanguageName } from "@/lib/languageNames";
 
 // City list mirrored from src/lib/journeyCasts.ts. Inlined because the
@@ -1923,6 +1924,33 @@ export async function validateGeneratedStory(
         label: "Character names checked against the region's name bank",
         status: "warn",
         detail: `${desconocidos.slice(0, 6).join(", ")}: not in the name bank for this region (src/lib/characterNames.ts). Not necessarily wrong, but nobody verified it reads as a real, current name there.`,
+      });
+    }
+
+    // Nombres que la VOZ no sabe decir. Este si BLOQUEA, y es el unico check de
+    // nombres que lo hace: los otros dos miran si el nombre es creible para el
+    // alumno, y este mira si sobrevive a la narracion. El 2026-09-23 "Itzel"
+    // paso los dos anteriores (esta en el banco, es mexicano, es de la edad) y
+    // aun asi salio distinto en 12 de las 21 apariciones que se juzgaron de
+    // oido, con el journey ya narrado entero. Ver src/lib/nameSpeakability.ts.
+    const dificiles = nombresDificiles(
+      nombres,
+      context.language,
+      NOMBRES_APROBADOS_DE_OIDO[String(context.language ?? "").toLowerCase()] ?? [],
+    );
+    if (dificiles.length) {
+      checks.push({
+        id: "character-names-hard-to-say",
+        label: "Character names the narrator voice can pronounce",
+        status: "fail",
+        detail:
+          `${dificiles.map((d) => `${d.nombre} (${d.porque})`).join("; ")}. ` +
+          `A TTS voice has no learned pronunciation for these, so it says them ` +
+          `differently each time and the defect multiplies across the journey. ` +
+          `Pick a name from the region's bank instead. To keep one, the user has ` +
+          `to hear a one-line sample with that name in the journey's voice and ` +
+          `approve it; only then does it go into NOMBRES_APROBADOS_DE_OIDO ` +
+          `(src/lib/nameSpeakability.ts).`,
       });
     }
   }

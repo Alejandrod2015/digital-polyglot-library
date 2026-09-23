@@ -52,8 +52,12 @@ export const CHARACTER_NAMES: Record<string, NameBank> = {
   // registro civil, salen de criterio, y por eso el check solo AVISA.
   "spanish/mexico": {
     young: [
-      "Ximena", "Fernanda", "Valeria", "Montserrat", "Andrea", "Itzel", "Jimena",
-      "Paola", "Karla", "Abril", "Mariana", "Diana",
+      // "Itzel" salio de aqui el 2026-09-23: es mexicano, comun y de la edad,
+      // pero la voz de TTS no lo sabe decir dos veces igual (maya, grupo "tz").
+      // Ver src/lib/nameSpeakability.ts. Un banco de nombres para historias
+      // NARRADAS no puede ofrecer nombres que la voz no pronuncie.
+      "Ximena", "Fernanda", "Valeria", "Montserrat", "Andrea", "Jimena",
+      "Paola", "Karla", "Abril", "Mariana", "Diana", "Renata",
       "Diego", "Emiliano", "Santiago", "Bruno", "Mauricio", "Arturo", "Iván",
       "César", "Omar", "Alan", "Rodrigo", "Héctor",
     ],
