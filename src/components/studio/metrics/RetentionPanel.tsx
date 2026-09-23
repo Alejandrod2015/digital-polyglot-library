@@ -201,16 +201,19 @@ export function RetentionPanel({
   days,
   cohort,
   rangeLabel,
+  platform,
+  mode,
 }: {
   days: number;
   cohort: MetricsCohort;
   rangeLabel: string;
+  /** Los dos selectores viven ahora en la cabecera del tablero, no aquí. */
+  platform: Platform;
+  mode: Mode;
 }) {
   const [cohorts, setCohorts] = useState<RetentionDailyCohort[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [platform, setPlatform] = useState<Platform>("all");
-  const [mode, setMode] = useState<Mode>("week");
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
@@ -270,44 +273,6 @@ export function RetentionPanel({
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
-          <div style={{ display: "flex", gap: 8 }}>
-            <div className="mx-segmented">
-              {(
-                [
-                  { key: "week" as const, label: "Semana" },
-                  { key: "day" as const, label: "Día" },
-                ]
-              ).map((o) => (
-                <button
-                  type="button"
-                  key={o.key}
-                  onClick={() => setMode(o.key)}
-                  className={mode === o.key ? "mx-segmented__btn mx-segmented__btn--active" : "mx-segmented__btn"}
-                >
-                  {o.label}
-                </button>
-              ))}
-            </div>
-            <div className="mx-segmented">
-              {(
-                [
-                  { key: "all" as const, label: "Todos" },
-                  { key: "web" as const, label: "Web" },
-                  { key: "ios" as const, label: "iOS" },
-                  { key: "android" as const, label: "Android" },
-                ]
-              ).map((o) => (
-                <button
-                  type="button"
-                  key={o.key}
-                  onClick={() => setPlatform(o.key)}
-                  className={platform === o.key ? "mx-segmented__btn mx-segmented__btn--active" : "mx-segmented__btn"}
-                >
-                  {o.label}
-                </button>
-              ))}
-            </div>
-          </div>
           <span className="mx-panel__hint" style={{ marginTop: 0 }}>
             {error
               ? `error: ${error}`

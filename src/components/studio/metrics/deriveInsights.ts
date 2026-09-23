@@ -15,7 +15,6 @@ type Kpis = {
   completionRate: number;
   uniqueStories: number;
   uniqueBooks: number;
-  avgMinutesPerActiveUser: number;
   totalListenedMinutes: number;
   savedStories: number;
   savedBooks: number;

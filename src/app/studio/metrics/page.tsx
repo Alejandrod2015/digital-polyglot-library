@@ -5,6 +5,7 @@ import StudioShell from "@/components/studio/StudioShell";
 import {
   ComingSoonView,
   EngagementView,
+  VanityView,
   FunnelsView,
   LearningView,
   ResumenView,
@@ -44,7 +45,6 @@ const EMPTY_DATA: DashboardData = {
     completionRate: 0,
     uniqueStories: 0,
     uniqueBooks: 0,
-    avgMinutesPerActiveUser: 0,
     totalListenedMinutes: 0,
     savedStories: 0,
     savedBooks: 0,
@@ -177,20 +177,38 @@ const EMPTY_PIPELINE_DATA: PipelineData = {
   pipeline: { avgTimeToPublish: null, contentPerDay: 0 },
 };
 
-const PRIMARY_TABS: Array<{ key: MetricsSection; label: string }> = [
+/**
+ * Las once secciones, al mismo nivel y en una sola fila.
+ *
+ * Antes iban en dos grupos: cuatro normales a la izquierda y siete apagadas a
+ * la derecha, que era una jerarquía heredada de cuando esas siete estaban a
+ * medias. Ya no lo están, y el grupo apagado ocupaba justo el sitio donde
+ * ahora van los selectores globales.
+ */
+const TABS: Array<{ key: MetricsSection; label: string }> = [
   { key: "overview", label: "Resumen" },
+  { key: "vanity", label: "Vanity metrics" },
   { key: "engagement", label: "Engagement" },
   { key: "funnels", label: "Funnels" },
+  { key: "acquisition", label: "Adquisición" },
+  { key: "audience", label: "Audiencia" },
+  { key: "content", label: "Contenido" },
+  { key: "learning", label: "Aprendizaje" },
+  { key: "alerts", label: "Alertas" },
 ];
 
-const MUTED_TABS: Array<{ key: MetricsSection; label: string; icon: string }> = [
-  { key: "acquisition", label: "Adquisición", icon: "↗" },
-  { key: "audience", label: "Audiencia", icon: "◍" },
-  { key: "content", label: "Contenido", icon: "≡" },
-  { key: "learning", label: "Aprendizaje", icon: "✓" },
-  { key: "experiments", label: "Experimentos", icon: "⚗" },
-  { key: "alerts", label: "Alertas", icon: "!" },
-  { key: "exports", label: "Exportaciones", icon: "↧" },
+/** Superficie. Vive aquí y no dentro de un panel: filtra TODO el tablero. */
+const PLATFORM_OPTIONS = [
+  { key: "all" as const, label: "Todos" },
+  { key: "web" as const, label: "Web" },
+  { key: "ios" as const, label: "iOS" },
+  { key: "android" as const, label: "Android" },
+];
+
+/** Grano de todas las series temporales, incluidas las cohortes de retención. */
+const GRAIN_OPTIONS = [
+  { key: "day" as const, label: "Día" },
+  { key: "week" as const, label: "Semana" },
 ];
 
 const RANGE_OPTIONS = ["7", "30", "90", "180"];
@@ -234,6 +252,8 @@ export default function MetricsDashboard() {
   const isCustom = customFrom !== "" && customTo !== "";
   const [cohort, setCohort] = useState<MetricsCohort>("all");
   const [section, setSection] = useState<MetricsSection>("overview");
+  const [platform, setPlatform] = useState<"all" | "web" | "ios" | "android">("all");
+  const [grain, setGrain] = useState<"day" | "week">("day");
   /**
    * La pestaña que se está mirando AHORA, legible desde dentro de una petición
    * en vuelo. Cambiar de pestaña dispara una petición sin cancelar la
@@ -286,6 +306,8 @@ export default function MetricsDashboard() {
     try {
       const qs = new URLSearchParams();
       qs.set("section", targetSection);
+      qs.set("platform", platform);
+      qs.set("grain", grain);
       if (isCustom) {
         // Pasar ISO strings; el route handler hace parseDate(). Si la API
         // recibe ambos `from` y `to`, ignora `days`. Calculamos un `days`
@@ -329,8 +351,10 @@ export default function MetricsDashboard() {
   useEffect(() => {
     sectionRef.current = section;
     if (section === "content") {
+      // Contenido pinta DOS cosas: el pipeline editorial y, arriba, cuántas
+      // historias y libros distintos se consumieron en el rango. Lo segundo
+      // sale del dashboard, así que se piden los dos y no se sale de aquí.
       void loadPipelineMetrics();
-      return;
     }
     if (sectionCache[section]) {
       setData(sectionCache[section] ?? EMPTY_DATA);
@@ -364,7 +388,7 @@ export default function MetricsDashboard() {
     setSectionCache({});
     void loadMetrics(section, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [days, customFrom, customTo, cohort]);
+  }, [days, customFrom, customTo, cohort, platform, grain]);
 
   function handleExport() {
     const qs = new URLSearchParams();
@@ -383,7 +407,8 @@ export default function MetricsDashboard() {
   }
 
   function renderActiveSection() {
-    if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} />;
+    if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} platform={platform} grain={grain} />;
+    if (section === "vanity") return <VanityView data={data} />;
     if (section === "engagement") return <EngagementView data={data} />;
     if (section === "funnels") return <FunnelsView data={data} />;
 
@@ -391,7 +416,7 @@ export default function MetricsDashboard() {
       return <AudienceView data={data} />;
     }
     if (section === "content") {
-      return <ContentView data={pipelineData} />;
+      return <ContentView data={pipelineData} dashboard={data} />;
     }
     if (section === "acquisition") {
       return <AcquisitionView data={data} cohort={cohort} />;
@@ -399,31 +424,18 @@ export default function MetricsDashboard() {
     if (section === "learning") {
       return <LearningView learning={data.learning} />;
     }
-    if (section === "experiments") {
-      return (
-        <ComingSoonView
-          title="Experimentos"
-          description="Compara variantes A/B para covers, títulos, CTAs y copy del paywall."
-        />
-      );
-    }
-    if (section === "alerts") {
-      return (
-        <ComingSoonView
-          title="Alertas"
-          description="Umbrales para caídas de completion rate, anomalías de tráfico y fallos de pipeline o API."
-        />
-      );
-    }
     return (
       <ComingSoonView
-        title="Exportaciones"
-        description="Exporta snapshots semanales y conecta BI tools (Looker Studio, Metabase) con credenciales read-only."
+        title="Alertas"
+        description="Umbrales para caídas de completion rate, anomalías de tráfico y fallos de pipeline o API."
       />
     );
   }
 
   const periodLabel = formatRangeLabel(data.range.from, data.range.to);
+  // Los extremos del rango vigente en el formato que pide <input type="date">.
+  const rangoDesde = data.range.from ? data.range.from.slice(0, 10) : "";
+  const rangoHasta = data.range.to ? data.range.to.slice(0, 10) : "";
 
   const filtersForm = (
     <form
@@ -487,11 +499,21 @@ export default function MetricsDashboard() {
 
       <div className="mx-filters__group">
         <span className="mx-filters__label">Personalizado</span>
+        {/*
+          Los dos campos vienen con el rango que se está viendo, aunque venga
+          de un preset. Antes salían vacíos y el rango se leía en una línea
+          aparte, así que para acotar por fechas había que rellenar los dos.
+          Tocando UNO basta: el otro se siembra con el extremo vigente, que es
+          el que ya estaba en pantalla.
+        */}
         <input
           type="date"
-          value={customFrom}
-          max={customTo || undefined}
-          onChange={(e) => setCustomFrom(e.target.value)}
+          value={customFrom || rangoDesde}
+          max={customTo || rangoHasta || undefined}
+          onChange={(e) => {
+            setCustomFrom(e.target.value);
+            if (!customTo) setCustomTo(rangoHasta);
+          }}
           aria-label="Desde"
           className="mx-date-input"
           style={{
@@ -509,9 +531,12 @@ export default function MetricsDashboard() {
         <span style={{ color: "var(--mx-muted)", fontSize: 12 }}>→</span>
         <input
           type="date"
-          value={customTo}
-          min={customFrom || undefined}
-          onChange={(e) => setCustomTo(e.target.value)}
+          value={customTo || rangoHasta}
+          min={customFrom || rangoDesde || undefined}
+          onChange={(e) => {
+            setCustomTo(e.target.value);
+            if (!customFrom) setCustomFrom(rangoDesde);
+          }}
           aria-label="Hasta"
           className="mx-date-input"
           style={{
@@ -583,19 +608,9 @@ export default function MetricsDashboard() {
             flexWrap: "wrap",
           }}
         >
-          <p
-            style={{
-              margin: 0,
-              fontSize: 13,
-              color: "var(--mx-muted)",
-              maxWidth: 720,
-            }}
-          >
-            Últimos {data.range.days} días{" "}
-            <span className="mx-mono" style={{ color: "var(--mx-fg-soft)" }}>
-              {periodLabel}
-            </span>
-          </p>
+          {/* El rango ya no se dice aquí: se ve, y se edita, en los dos campos
+              de "Personalizado", que vienen rellenos con el rango vigente. */}
+          <span />
           <span className="mx-live">
             <span className="mx-live__dot" />
             Datos en vivo · actualizado{" "}
@@ -613,8 +628,9 @@ export default function MetricsDashboard() {
             className="mx-panel"
             style={{ padding: "8px 12px", fontSize: 12, color: "var(--mx-muted)" }}
           >
-            El filtro de cohorte no aplica aquí: estos números salen del
-            pipeline editorial, no de lo que hace la gente en la app.
+            El filtro de cohorte solo afecta a las dos tarjetas de consumo:
+            el resto sale del pipeline editorial, no de lo que hace la gente
+            en la app.
           </div>
         ) : null}
 
@@ -636,7 +652,7 @@ export default function MetricsDashboard() {
 
         <div className="mx-tabs">
           <div className="mx-tabs__main">
-            {PRIMARY_TABS.map((tab) => {
+            {TABS.map((tab) => {
               const active = tab.key === section;
               return (
                 <button
@@ -651,24 +667,38 @@ export default function MetricsDashboard() {
             })}
           </div>
           <div className="mx-tabs__more">
-            {MUTED_TABS.map((tab) => {
-              const active = tab.key === section;
-              return (
+            <div className="mx-segmented">
+              {PLATFORM_OPTIONS.map((o) => (
                 <button
                   type="button"
-                  key={tab.key}
-                  onClick={() => setSection(tab.key)}
+                  key={o.key}
+                  onClick={() => setPlatform(o.key)}
                   className={
-                    active
-                      ? "mx-tab mx-tab--muted mx-tab--active"
-                      : "mx-tab mx-tab--muted"
+                    platform === o.key
+                      ? "mx-segmented__btn mx-segmented__btn--active"
+                      : "mx-segmented__btn"
                   }
                 >
-                  <span className="mx-tab__icon">{tab.icon}</span>
-                  {tab.label}
+                  {o.label}
                 </button>
-              );
-            })}
+              ))}
+            </div>
+            <div className="mx-segmented">
+              {GRAIN_OPTIONS.map((o) => (
+                <button
+                  type="button"
+                  key={o.key}
+                  onClick={() => setGrain(o.key)}
+                  className={
+                    grain === o.key
+                      ? "mx-segmented__btn mx-segmented__btn--active"
+                      : "mx-segmented__btn"
+                  }
+                >
+                  {o.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -1967,9 +1997,45 @@ function AcquisitionView({
 }
 
 // ── Content view: pipeline metrics ──
-function ContentView({ data }: { data: PipelineData }) {
+function ContentView({
+  data,
+  dashboard,
+}: {
+  data: PipelineData;
+  dashboard: DashboardData;
+}) {
+  const k = dashboard.kpis;
+  const p = dashboard.prevKpis;
   return (
     <div className="mx-view">
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Consumo</div>
+            <h3 className="mx-panel__title">Catálogo tocado en el rango</h3>
+          </div>
+          <span className="mx-panel__hint">{dashboard.range.days}d</span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard
+            label="Unique stories"
+            value={k.uniqueStories}
+            prev={p?.uniqueStories}
+          />
+          <KpiCard
+            label="Unique books"
+            value={k.uniqueBooks}
+            prev={p?.uniqueBooks}
+          />
+        </div>
+      </div>
+
       <div className="mx-panel">
         <div className="mx-panel__head">
           <div>

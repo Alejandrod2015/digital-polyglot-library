@@ -47,6 +47,7 @@ type ProgressRow = {
   storySlug: string;
   value: number | null;
   metadata?: unknown;
+  createdAt?: Date;
 };
 
 type SavedStoryRow = {
@@ -128,7 +129,8 @@ type DashboardResponse = {
     completionRate: number;
     uniqueStories: number;
     uniqueBooks: number;
-    avgMinutesPerActiveUser: number;
+    minutesPerListener: number;
+    listeners: number;
     totalListenedMinutes: number;
     savedStories: number;
     savedBooks: number;
@@ -136,13 +138,22 @@ type DashboardResponse = {
   kpis: {
     dau: number;
     wau: number;
+    mau: number;
+    dauMauPct: number;
     activeUsersInRange: number;
     plays: number;
     completions: number;
     completionRate: number;
     uniqueStories: number;
     uniqueBooks: number;
-    avgMinutesPerActiveUser: number;
+    /** Minutos entre quien REPRODUJO algo, no entre todo el que dio señal. */
+    minutesPerListener: number;
+    /** Cuántas personas reprodujeron algo en el rango. */
+    listeners: number;
+    /** Ejercicios entre quien PRACTICÓ, no entre todo el que dio señal. */
+    exercisesPerPractitioner: number;
+    /** Cuántas personas terminaron alguna sesión de práctica. */
+    practitioners: number;
     totalListenedMinutes: number;
     savedStories: number;
     savedBooks: number;
@@ -165,6 +176,21 @@ type DashboardResponse = {
     plays: number;
     completions: number;
     completionRate: number;
+    minutesPerListener: number;
+    exercisesPerPractitioner: number;
+    activeUsers: number;
+    wau: number;
+    dauMauPct: number;
+    listenedMinutes: number;
+  }>;
+  languageSplit: Array<{
+    language: string;
+    variant: string;
+    users: number;
+    started: number;
+    finished: number;
+    completionRate: number;
+    minutes: number;
   }>;
   topStories: Array<{
     storySlug: string;
@@ -318,9 +344,7 @@ type DashboardSection =
   | "content"
   | "funnels"
   | "audience"
-  | "experiments"
-  | "alerts"
-  | "exports";
+  | "alerts";
 
 function parseSection(raw: string | null): DashboardSection {
   switch (raw) {
@@ -330,9 +354,7 @@ function parseSection(raw: string | null): DashboardSection {
     case "content":
     case "funnels":
     case "audience":
-    case "experiments":
     case "alerts":
-    case "exports":
       return raw;
     case "overview":
     default:
@@ -350,13 +372,18 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
     kpis: {
       dau: 0,
       wau: 0,
+      mau: 0,
+      dauMauPct: 0,
       activeUsersInRange: 0,
       plays: 0,
       completions: 0,
       completionRate: 0,
       uniqueStories: 0,
       uniqueBooks: 0,
-      avgMinutesPerActiveUser: 0,
+      minutesPerListener: 0,
+      listeners: 0,
+      exercisesPerPractitioner: 0,
+      practitioners: 0,
       totalListenedMinutes: 0,
       savedStories: 0,
       savedBooks: 0,
@@ -364,6 +391,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       storiesFinished: 0,
     },
     kpiUsers: { dau: [], wau: [] },
+    languageSplit: [],
     daily: [],
     topStories: [],
     topBooks: [],
@@ -452,6 +480,32 @@ function parseDays(raw: string | null): number {
   const parsed = Number(raw);
   if (!Number.isFinite(parsed)) return 30;
   return Math.min(180, Math.max(1, Math.floor(parsed)));
+}
+
+export type MetricsPlatform = "all" | "web" | "ios" | "android";
+
+function parsePlatform(raw: string | null): MetricsPlatform {
+  if (raw === "web" || raw === "ios" || raw === "android") return raw;
+  return "all";
+}
+
+/** Grano de las series temporales: un punto por día o uno por semana. */
+function parseGrain(raw: string | null): "day" | "week" {
+  return raw === "week" ? "week" : "day";
+}
+
+/**
+ * Filtro de plataforma para el `where` de cada consulta.
+ *
+ * CUIDADO con lo que deja fuera: `metadata.platform` se empezó a sellar más
+ * tarde que el resto, así que las filas antiguas no lo traen. Con el selector
+ * en "Todos" entran igual; en cuanto se elige una plataforma, desaparecen. Es
+ * lo correcto (no se puede afirmar que una fila sin sello sea de iOS) pero
+ * significa que la suma de las tres NO da el total.
+ */
+function platformWhere(platform: MetricsPlatform) {
+  if (platform === "all") return {};
+  return { metadata: { path: ["platform"], equals: platform } };
 }
 
 function parseDate(raw: string | null): Date | null {
@@ -795,10 +849,21 @@ export async function GET(req: NextRequest): Promise<Response> {
   const section = parseSection(search.get("section"));
   const days = parseDays(search.get("days"));
   const cohort = parseMetricsCohort(search.get("cohort"));
+  const platform = parsePlatform(search.get("platform"));
+  const grain = parseGrain(search.get("grain"));
+  const platformFilter = platformWhere(platform);
   const now = new Date();
   const defaultFrom = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
   const from = parseDate(search.get("from")) ?? defaultFrom;
   const to = parseDate(search.get("to")) ?? now;
+  // `days` se DERIVA del rango que de verdad se va a medir, en vez de creerle
+  // al que llama. Con `from` y `to` puestos, el `days` de la querystring es
+  // decorativo, y la interfaz lo usa para rotular ("· 30d", "30d · por idioma
+  // y variante"): un rango a mano de una semana salía etiquetado como 30d.
+  const daysReales = Math.max(
+    1,
+    Math.round((to.getTime() - from.getTime()) / 86400000)
+  );
   const storySlug = search.get("storySlug")?.trim() || null;
   const bookSlug = search.get("bookSlug")?.trim() || null;
   const storyIdsForFilter = storySlug ? await resolveStoryIdsForSlug(storySlug) : [];
@@ -821,6 +886,8 @@ export async function GET(req: NextRequest): Promise<Response> {
     storySlug,
     bookSlug,
     storyIdsForFilter,
+    platform,
+    grain,
   });
   const cached = metricsDashboardCache.get(cacheKey);
   if (cached && Date.now() - cached.createdAt < METRICS_DASHBOARD_CACHE_TTL_MS) {
@@ -832,7 +899,11 @@ export async function GET(req: NextRequest): Promise<Response> {
   const needsAcquisitionData = section === "acquisition";
   const needsFunnelsData = section === "funnels";
   const needsAudienceData = section === "audience";
-  const needsEventData = needsOverviewData || needsEngagementData;
+  // Contenido no es una sección de eventos, pero su primera tarjeta cuenta
+  // cuántas historias y libros distintos se tocaron en el rango, y eso sale
+  // de los mismos eventos que el Resumen.
+  const needsEventData =
+    needsOverviewData || needsEngagementData || section === "content";
   const needsProgressData = needsOverviewData;
   const needsActiveUsersData = needsOverviewData;
   const needsSavedCountsData = needsOverviewData || needsEngagementData;
@@ -865,6 +936,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     events,
     dauRows,
     wauRows,
+    mauRows,
     progressRows,
     activeUsersRows,
     savedStoryRows,
@@ -898,6 +970,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsEventData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -929,6 +1002,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsOverviewData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDay(now), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -941,6 +1015,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsOverviewData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDaysAgo(now, 6), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -949,9 +1024,29 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
       take: 50000,
     }) : Promise.resolve([]),
+    // Quien estuvo activo cada día, que es de donde salen TRES cosas: el MAU
+    // de la tarjeta, y las curvas de DAU, WAU y DAU/MAU.
+    //
+    // La ventana empieza 29 días ANTES del rango elegido, no en el rango. El
+    // WAU y el MAU de un día son ventanas móviles hacia atrás, así que sin ese
+    // arranque los primeros días de la curva saldrían bajos por no tener
+    // pasado que mirar, y eso se lee como una caída que nunca ocurrió.
+    needsOverviewData || needsEngagementData ? prisma.userMetric.findMany({
+      where: {
+        ...userScope,
+        ...platformFilter,
+        ...ACTIVITY_EVENT_WHERE,
+        createdAt: { gte: startOfLocalDaysAgo(from, 29), lte: to },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: { userId: true, createdAt: true },
+      take: 300000,
+    }) : Promise.resolve([]),
     needsProgressData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -962,6 +1057,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         storySlug: true,
         value: true,
         metadata: true,
+        createdAt: true,
       },
       orderBy: { createdAt: "asc" },
       take: 50000,
@@ -969,6 +1065,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsActiveUsersData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -1018,6 +1115,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["eventType"],
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1036,6 +1134,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsTrialData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1052,6 +1151,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1069,6 +1169,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1087,6 +1188,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["eventType"],
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1100,6 +1202,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["storySlug"],
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         eventType: "upgrade_cta_clicked",
         storySlug: { startsWith: "__upgrade_" },
@@ -1110,6 +1213,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["eventType"],
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         bookSlug: "journey",
         eventType: {
@@ -1130,6 +1234,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["eventType"],
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1142,6 +1247,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1162,6 +1268,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       ? prisma.userMetric.count({
           where: {
             ...userScope,
+            ...platformFilter,
             eventType: "signup_completed",
             createdAt: { gte: sevenDaysAgo },
           },
@@ -1171,6 +1278,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       ? prisma.userMetric.count({
           where: {
             ...userScope,
+            ...platformFilter,
             eventType: "signup_completed",
             createdAt: { gte: thirtyDaysAgo },
           },
@@ -1190,6 +1298,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsAudienceData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "onboarding",
         eventType: {
@@ -1215,6 +1324,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsAudienceData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: last7DaysStart, lte: now },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
       },
@@ -1231,6 +1341,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsPrevData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1248,6 +1359,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsPrevData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1264,6 +1376,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsPrevData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -1291,9 +1404,12 @@ export async function GET(req: NextRequest): Promise<Response> {
     // consultas de vocabulario. `journey_topic_checkpoint_complete` no
     // tiene ni una fila y `journey_story_read` se quedó en 5 de mayo de
     // 2026 (lo dispara solo el web), así que no se consultan.
-    needsLearningData ? prisma.userMetric.findMany({
+    // También en Resumen y Engagement: de aquí sale "Ejercicios por
+    // practicante", el gemelo de "Min por oyente" para la práctica.
+    needsLearningData || needsOverviewData || needsEngagementData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["practice_session_started", "practice_session_completed"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1304,12 +1420,14 @@ export async function GET(req: NextRequest): Promise<Response> {
         storySlug: true,
         eventType: true,
         metadata: true,
+        createdAt: true,
       },
       take: 20000,
     }) : Promise.resolve([]),
     needsLearningData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...platformFilter,
         createdAt: { gte: from, lte: to },
         eventType: "vocab_clicked",
         ...(storySlug ? { storySlug } : {}),
@@ -1343,24 +1461,28 @@ export async function GET(req: NextRequest): Promise<Response> {
     ...(storySlug ? { storySlug } : {}),
     ...(bookSlug ? { bookSlug } : {}),
   };
+  // `orderBy` + `distinct` devuelve la PRIMERA fila de cada pareja, y con ella
+  // el día en que esa persona empezó esa historia. Hace falta para que la
+  // curva diaria del completion rate use la misma definición que la tarjeta.
   const [startedPairs, finishedPairs, prevStartedPairs, prevFinishedPairs] = await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
-      where: { ...userScope, createdAt: { gte: from, lte: to }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
       distinct: ["userId", "storySlug"],
-      select: { userId: true, storySlug: true },
+      orderBy: { createdAt: "asc" },
+      select: { userId: true, storySlug: true, createdAt: true },
     }) : Promise.resolve([]),
     needsEventData ? prisma.userMetric.findMany({
-      where: { ...userScope, createdAt: { gte: from, lte: to }, eventType: "audio_complete", ...slugFilter },
+      where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to }, eventType: "audio_complete", ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
-      where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
-      where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo }, eventType: "audio_complete", ...slugFilter },
+      where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: "audio_complete", ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
@@ -1382,6 +1504,11 @@ export async function GET(req: NextRequest): Promise<Response> {
     const day = byDay.get(dayKey) ?? { plays: 0, completions: 0 };
     const story = byStory.get(row.storySlug) ?? { plays: 0, completions: 0 };
 
+    // OJO: `audio_play` lo emite SOLO el lector web. En los 30 días hasta el
+    // 2026-09-23 fueron 238, todos de web, cero de iOS y cero de Android: el
+    // móvil emite `story_opened` y `audio_complete` y nunca el play. Por eso
+    // la tarjeta se llama "Plays (solo web)": con el selector de plataforma en
+    // iOS o Android cae a cero, y sin el nombre se lee como una avería.
     if (row.eventType === "audio_play") {
       day.plays += 1;
       story.plays += 1;
@@ -1429,20 +1556,356 @@ export async function GET(req: NextRequest): Promise<Response> {
     0
   );
   const totalListenedMinutes = Math.round((totalListenedSeconds / 60) * 10) / 10;
-  const activeUsersInRange = activeUsersRows.length;
-  const avgMinutesPerActiveUser =
-    activeUsersInRange > 0
-      ? Math.round(((totalListenedSeconds / activeUsersInRange) / 60) * 10) / 10
+  const activeUsersInRange = (activeUsersRows as Array<{ userId: string }>).length;
+  // ── Minutos por OYENTE ──
+  // La cifra anterior, `avgMinutesPerActiveUser`, repartía los minutos entre
+  // todo el que dio
+  // cualquier señal, y la mayoría no reproduce nada: el 23/09 eran 92
+  // personas activas contra 52 que le dieron al play, así que 40 tiraban del
+  // promedio hacia abajo sin haber escuchado nunca. Mezclado así, la cifra
+  // BAJA cuando entra gente que no escucha, que es lo contrario de lo que uno
+  // cree estar leyendo. El alcance ya lo cuentan DAU, WAU y Active users; esta
+  // se queda solo con la profundidad.
+  const listeners = new Set(
+    Array.from(byUserStoryMaxSeconds.keys()).map((key) => key.split("::")[0])
+  ).size;
+  const minutesPerListener =
+    listeners > 0
+      ? Math.round(((totalListenedSeconds / listeners) / 60) * 10) / 10
       : 0;
 
-  const daily = Array.from(byDay.entries())
-    .map(([date, v]) => ({
-      date,
-      plays: v.plays,
-      completions: v.completions,
-      completionRate: v.plays > 0 ? Math.round((v.completions / v.plays) * 100) : 0,
-    }))
+  // ── Ejercicios por PRACTICANTE ──
+  // El gemelo de "Min por oyente" en la otra mitad del producto. Mismo
+  // criterio: el denominador es quien de verdad practicó, no todo el que dio
+  // cualquier señal, para que la cifra no baje cuando entra gente que ni abre
+  // la práctica. El numerador son los ejercicios (`itemsCount` de cada sesión
+  // terminada), no las sesiones, porque una sesión de diez no es una de tres.
+  const ejerciciosPorPersona = new Map<string, number>();
+  const ejerciciosPorDia = new Map<string, Map<string, number>>();
+  for (const row of practiceRows as Array<{
+    userId: string;
+    eventType: string;
+    metadata: unknown;
+    createdAt: Date;
+  }>) {
+    if (row.eventType !== "practice_session_completed") continue;
+    const meta = row.metadata as { itemsCount?: unknown } | null;
+    const items = typeof meta?.itemsCount === "number" ? meta.itemsCount : 0;
+    if (items <= 0) continue;
+    ejerciciosPorPersona.set(
+      row.userId,
+      (ejerciciosPorPersona.get(row.userId) ?? 0) + items
+    );
+    const dayKey = toDayKey(row.createdAt);
+    const delDia = ejerciciosPorDia.get(dayKey) ?? new Map<string, number>();
+    delDia.set(row.userId, (delDia.get(row.userId) ?? 0) + items);
+    ejerciciosPorDia.set(dayKey, delDia);
+  }
+  const practitioners = ejerciciosPorPersona.size;
+  const totalExercises = Array.from(ejerciciosPorPersona.values()).reduce(
+    (sum, n) => sum + n,
+    0
+  );
+  const exercisesPerPractitioner =
+    practitioners > 0
+      ? Math.round((totalExercises / practitioners) * 10) / 10
+      : 0;
+
+  // ── Completion rate DIARIO, con la definición de la tarjeta ──
+  // Antes era `audio_complete` entre `audio_play` del mismo día natural, y por
+  // eso el 11/09 salía 178%: una historia empezada la víspera y terminada ese
+  // día suma arriba sin sumar abajo. Ahora la unidad es la pareja
+  // persona+historia, igual que en la tarjeta, y cada pareja se apunta al día
+  // en que EMPEZÓ, también cuando se terminó más tarde. Así el numerador es
+  // siempre un subconjunto del denominador y la curva no puede pasar de 100.
+  const finishedKeys = new Set(finishedPairs.map(pairKey));
+  const byDayPairs = new Map<string, { started: number; finished: number }>();
+  for (const r of startedPairs as { userId: string; storySlug: string; createdAt: Date }[]) {
+    const dayKey = toDayKey(r.createdAt);
+    const d = byDayPairs.get(dayKey) ?? { started: 0, finished: 0 };
+    d.started += 1;
+    if (finishedKeys.has(pairKey(r))) d.finished += 1;
+    byDayPairs.set(dayKey, d);
+  }
+
+  // ── Minutos y gente activa por día, para la curva de Avg min/user ──
+  // Los minutos del rango se calculan con el punto MÁS LEJANO por
+  // persona+historia; aquí se hace lo mismo pero dentro de cada día, que es lo
+  // único que se puede repartir en una curva sin contar dos veces a quien
+  // retrocede y reescucha.
+  const secondsByDay = new Map<string, Map<string, number>>();
+  for (const row of progressRows as ProgressRow[]) {
+    if (!row.createdAt) continue;
+    const value = getProgressValue(row);
+    if (!Number.isFinite(value) || value <= 0) continue;
+    const dayKey = toDayKey(row.createdAt);
+    const perPair = secondsByDay.get(dayKey) ?? new Map<string, number>();
+    const key = `${row.userId}::${row.storySlug}`;
+    if (value > (perPair.get(key) ?? 0)) perPair.set(key, value);
+    secondsByDay.set(dayKey, perPair);
+  }
+
+  // ── Quien estuvo activo cada día ──
+  // De aquí salen las curvas de DAU, WAU y DAU/MAU. Hasta hoy esas tres
+  // tarjetas dibujaban la de reproducciones por día, que es otra cosa: el
+  // sparkline pequeño lo disimulaba y el globo grande, con fechas y valores,
+  // lo dejaba en evidencia.
+  const actividadPorDia = new Map<string, Set<string>>();
+  for (const f of mauRows as Array<{ userId: string; createdAt: Date }>) {
+    const clave = toDayKey(f.createdAt);
+    const set = actividadPorDia.get(clave) ?? new Set<string>();
+    set.add(f.userId);
+    actividadPorDia.set(clave, set);
+  }
+  /**
+   * Personas distintas en la ventana de `dias` que TERMINA en ese día, él
+   * incluido. Se retrocede con `startOfLocalDaysAgo` y no restando 24 h,
+   * porque el día que cambia la hora no dura 24 h y restar milisegundos
+   * saltaría o repetiría una jornada.
+   */
+  const unicosHasta = (fin: Date, dias: number): number => {
+    const set = new Set<string>();
+    for (let i = 0; i < dias; i++) {
+      for (const u of actividadPorDia.get(toDayKey(startOfLocalDaysAgo(fin, i))) ?? []) {
+        set.add(u);
+      }
+    }
+    return set.size;
+  };
+
+  // Una fila por CADA día del rango, no solo por los que tuvieron eventos.
+  // Antes las filas salían de la unión de las llaves con datos, así que un
+  // rango de 180 días daba 67 puntos y la curva se comía los ceros: dos días
+  // flojos separados por una semana muerta salían pegados, como si nada
+  // hubiera pasado en medio.
+  const diasDelRango = Math.max(
+    1,
+    Math.round((startOfLocalDay(to).getTime() - startOfLocalDay(from).getTime()) / 86400000) + 1
+  );
+  const allDays: string[] = [];
+  for (let i = diasDelRango - 1; i >= 0; i--) {
+    allDays.push(toDayKey(startOfLocalDaysAgo(to, i)));
+  }
+  const dailyPorDia = allDays
+    .map((date) => {
+      const v = byDay.get(date) ?? { plays: 0, completions: 0 };
+      const pares = byDayPairs.get(date);
+      const segundos = Array.from(secondsByDay.get(date)?.values() ?? []).reduce(
+        (sum, sec) => sum + sec,
+        0
+      );
+      const oyentes = new Set(
+        Array.from(secondsByDay.get(date)?.keys() ?? []).map(
+          (key) => key.split("::")[0]
+        )
+      ).size;
+      // Mediodía UTC: cualquier hora vale para identificar el día, y las 12
+      // no se cae al otro lado en ningún huso ni cuando cambia la hora.
+      const finDelDia = new Date(`${date}T12:00:00Z`);
+      return {
+        date,
+        plays: v.plays,
+        completions: v.completions,
+        completionRate:
+          pares && pares.started > 0
+            ? Math.round((pares.finished / pares.started) * 100)
+            : 0,
+        minutesPerListener:
+          oyentes > 0 ? Math.round((segundos / oyentes / 60) * 10) / 10 : 0,
+        activeUsers: actividadPorDia.get(date)?.size ?? 0,
+        wau: unicosHasta(finDelDia, 7),
+        dauMauPct: (() => {
+          const dau = actividadPorDia.get(date)?.size ?? 0;
+          const mauDia = unicosHasta(finDelDia, 30);
+          return mauDia > 0 ? Math.round((dau / mauDia) * 1000) / 10 : 0;
+        })(),
+        listenedMinutes: Math.round((segundos / 60) * 10) / 10,
+        exercisesPerPractitioner: (() => {
+          const delDia = ejerciciosPorDia.get(date);
+          if (!delDia || delDia.size === 0) return 0;
+          const total = Array.from(delDia.values()).reduce((sum, n) => sum + n, 0);
+          return Math.round((total / delDia.size) * 10) / 10;
+        })(),
+      };
+    })
     .sort((a, b) => a.date.localeCompare(b.date));
+
+  /**
+   * El mismo material, agrupado por semana cuando el selector lo pide.
+   *
+   * Se rehace desde los mapas crudos, NO desde las filas diarias, y por dos
+   * razones distintas:
+   *
+   * 1. Las razones no se promedian. Un día con 1 de 1 y otro con 0 de 30 no
+   *    dan 50%. La semana se calcula desde sus dos lados: terminadas entre
+   *    empezadas, minutos entre oyentes, ejercicios entre practicantes.
+   * 2. Las personas distintas no se suman. Quien entra los siete días es UNA
+   *    persona en la semana, no siete, así que hay que volver a unir los
+   *    conjuntos en vez de sumar los tamaños.
+   */
+  const lunesDe = (dia: string): string => {
+    const d = new Date(`${dia}T12:00:00Z`);
+    d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
+    return d.toISOString().slice(0, 10);
+  };
+  const daily =
+    grain === "week"
+      ? (() => {
+          const semanas = new Map<string, string[]>();
+          for (const dia of allDays) {
+            const clave = lunesDe(dia);
+            semanas.set(clave, [...(semanas.get(clave) ?? []), dia]);
+          }
+          return Array.from(semanas.entries())
+            .map(([date, dias]) => {
+              let plays = 0;
+              let completions = 0;
+              let empezadas = 0;
+              let terminadas = 0;
+              const oyentes = new Set<string>();
+              const activos = new Set<string>();
+              const practicantes = new Set<string>();
+              let segundos = 0;
+              let ejercicios = 0;
+              for (const dia of dias) {
+                const v = byDay.get(dia);
+                plays += v?.plays ?? 0;
+                completions += v?.completions ?? 0;
+                const pares = byDayPairs.get(dia);
+                empezadas += pares?.started ?? 0;
+                terminadas += pares?.finished ?? 0;
+                for (const [clave, sec] of secondsByDay.get(dia) ?? []) {
+                  segundos += sec;
+                  oyentes.add(clave.split("::")[0]);
+                }
+                for (const u of actividadPorDia.get(dia) ?? []) activos.add(u);
+                for (const [u, n] of ejerciciosPorDia.get(dia) ?? []) {
+                  ejercicios += n;
+                  practicantes.add(u);
+                }
+              }
+              const ultimo = dias[dias.length - 1];
+              const minutos = Math.round((segundos / 60) * 10) / 10;
+              return {
+                date,
+                plays,
+                completions,
+                completionRate:
+                  empezadas > 0 ? Math.round((terminadas / empezadas) * 100) : 0,
+                minutesPerListener:
+                  oyentes.size > 0
+                    ? Math.round((segundos / oyentes.size / 60) * 10) / 10
+                    : 0,
+                exercisesPerPractitioner:
+                  practicantes.size > 0
+                    ? Math.round((ejercicios / practicantes.size) * 10) / 10
+                    : 0,
+                // Personas distintas de la semana entera, no del último día.
+                activeUsers: activos.size,
+                // El WAU y el DAU/MAU ya son ventanas móviles: su valor
+                // semanal es el del último día, que es el que mira los siete.
+                wau: unicosHasta(new Date(`${ultimo}T12:00:00Z`), 7),
+                dauMauPct: (() => {
+                  const fin = new Date(`${ultimo}T12:00:00Z`);
+                  const mauDia = unicosHasta(fin, 30);
+                  return mauDia > 0
+                    ? Math.round((activos.size / mauDia) * 1000) / 10
+                    : 0;
+                })(),
+                listenedMinutes: minutos,
+              };
+            })
+            .sort((a, b) => a.date.localeCompare(b.date));
+        })()
+      : dailyPorDia;
+
+  // ── Reparto por idioma y variante ──
+  // El idioma NO sale del evento. `metadata.language` solo lo emite el móvil,
+  // así que 41 usuarios de web quedaban sin clasificar; sale de la historia,
+  // cruzando `storySlug` con `JourneyStory -> Journey`.
+  //
+  // La unidad es la pareja persona+historia, la misma que el completion rate
+  // de la tarjeta, para que las dos cifras se puedan leer juntas.
+  //
+  // El corte llega hasta la VARIANTE y no se queda en el idioma: español es
+  // latam, España, Colombia y México, y agrupar los cuatro borraría justo la
+  // diferencia que decide qué journey se escribe.
+  const slugsVistos = Array.from(
+    new Set([
+      ...startedPairs.map((r) => r.storySlug),
+      ...Array.from(byUserStoryMaxSeconds.keys()).map((k) => k.split("::")[1]),
+    ])
+  ).filter(Boolean);
+  const historiasDeJourney = needsOverviewData && slugsVistos.length > 0
+    ? await prisma.journeyStory.findMany({
+        where: { slug: { in: slugsVistos } },
+        select: {
+          slug: true,
+          journey: { select: { language: true, variant: true, name: true } },
+        },
+      })
+    : [];
+  const journeyDeSlug = new Map(
+    historiasDeJourney
+      .filter((h) => h.journey)
+      .map((h) => [h.slug, h.journey!])
+  );
+  type FilaIdioma = {
+    language: string;
+    variant: string;
+    users: number;
+    started: number;
+    finished: number;
+    completionRate: number;
+    minutes: number;
+  };
+  const acumIdioma = new Map<
+    string,
+    { language: string; variant: string; users: Set<string>; started: number; finished: number; seconds: number }
+  >();
+  const deIdioma = (clave: string, language: string, variant: string) => {
+    const fila = acumIdioma.get(clave) ?? {
+      language,
+      variant,
+      users: new Set<string>(),
+      started: 0,
+      finished: 0,
+      seconds: 0,
+    };
+    acumIdioma.set(clave, fila);
+    return fila;
+  };
+  // Las historias que no son de un journey van a su propia fila en vez de
+  // desaparecer: si no, la suma del panel no cuadraría con el total y no
+  // habría forma de saber por qué. Comprobado el 2026-09-23: TODAS tienen
+  // `bookSlug`, son los siete libros del catálogo y nada más, así que la fila
+  // se llama por lo que es.
+  const SIN_JOURNEY = "__sin_journey__";
+  for (const par of startedPairs as Array<{ userId: string; storySlug: string }>) {
+    const j = journeyDeSlug.get(par.storySlug);
+    const clave = j ? `${j.language}/${j.variant}` : SIN_JOURNEY;
+    const fila = deIdioma(clave, j?.language ?? "libros", j?.variant ?? "");
+    fila.users.add(par.userId);
+    fila.started += 1;
+    if (finishedKeys.has(pairKey(par))) fila.finished += 1;
+  }
+  for (const [clave, segundos] of byUserStoryMaxSeconds.entries()) {
+    const slug = clave.split("::")[1];
+    const j = journeyDeSlug.get(slug);
+    const k = j ? `${j.language}/${j.variant}` : SIN_JOURNEY;
+    deIdioma(k, j?.language ?? "libros", j?.variant ?? "").seconds += segundos;
+  }
+  const languageSplit: FilaIdioma[] = Array.from(acumIdioma.values())
+    .map((f) => ({
+      language: f.language,
+      variant: f.variant,
+      users: f.users.size,
+      started: f.started,
+      finished: f.finished,
+      completionRate: f.started > 0 ? Math.round((f.finished / f.started) * 100) : 0,
+      minutes: Math.round((f.seconds / 60) * 10) / 10,
+    }))
+    .sort((a, b) => b.users - a.users || b.minutes - a.minutes);
 
   const topStories = Array.from(byStory.entries())
     .map(([slug, v]) => ({
@@ -1718,7 +2181,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   // ── Audience: weekly activity distribution ──
   // Sum max-listened-seconds per user across all stories in the last
   // 7 days, then bucket users by minutes/week. This is the "activation
-  // rate" view that aggregate avgMinutesPerActiveUser can't surface.
+  // rate" view that an aggregate minutes-per-listener can't surface.
   const byUserStoryMaxSecondsWeekly = new Map<string, number>();
   for (const row of weeklyProgressRows as ProgressRow[]) {
     const value = getProgressValue(row);
@@ -1811,9 +2274,12 @@ export async function GET(req: NextRequest): Promise<Response> {
     const prevActiveUsers = (prevActiveUsersRows as Array<{ userId: string }>).length;
     const prevTotalListenedMinutes =
       Math.round((prevTotalListenedSeconds / 60) * 10) / 10;
-    const prevAvgMinutesPerActiveUser =
-      prevActiveUsers > 0
-        ? Math.round(((prevTotalListenedSeconds / prevActiveUsers) / 60) * 10) / 10
+    const prevListeners = new Set(
+      Array.from(prevByUserStoryMaxSeconds.keys()).map((key) => key.split("::")[0])
+    ).size;
+    const prevMinutesPerListener =
+      prevListeners > 0
+        ? Math.round(((prevTotalListenedSeconds / prevListeners) / 60) * 10) / 10
         : 0;
     prevKpisPayload = {
       dau: 0,
@@ -1824,7 +2290,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       completionRate: prevCompletionRate,
       uniqueStories: prevByStory.size,
       uniqueBooks: prevByBook.size,
-      avgMinutesPerActiveUser: prevAvgMinutesPerActiveUser,
+      minutesPerListener: prevMinutesPerListener,
+      listeners: prevListeners,
       totalListenedMinutes: prevTotalListenedMinutes,
       savedStories: prevSavedStoriesTotal as number,
       savedBooks: prevSavedBooksTotal as number,
@@ -1928,6 +2395,29 @@ export async function GET(req: NextRequest): Promise<Response> {
   const dauUsers = toKpiUsers(dauRaw);
   const wauUsers = toKpiUsers(wauRaw);
 
+  // ── DAU/MAU ──
+  // La vertical se compara con esta razón, no con cohortes: Duolingo publica
+  // un 37,2% y es la única cifra de una app de idiomas con definición firme.
+  // El numerador es el DAU MEDIO de los treinta días, no el de hoy: con nueve
+  // personas activas, un día bueno o un domingo mueven la razón veinte puntos
+  // y la tarjeta diría más del calendario que del producto.
+  // La ventana de `mauRows` es ancha (el rango más 29 días de arranque), así
+  // que aquí se recorta a los TREINTA días que acaban hoy, que es lo que dice
+  // la tarjeta. Sin recortar, un rango de 180 días daría un "MAU" de medio
+  // año.
+  const mauPersonas = new Set<string>();
+  const mauPersonaDias = new Set<string>();
+  for (let i = 0; i < 30; i++) {
+    const clave = toDayKey(startOfLocalDaysAgo(now, i));
+    for (const u of actividadPorDia.get(clave) ?? []) {
+      mauPersonas.add(u);
+      mauPersonaDias.add(`${u}::${clave}`);
+    }
+  }
+  const mau = mauPersonas.size;
+  const dauMedio30d = mauPersonaDias.size / 30;
+  const dauMauPct = mau > 0 ? Math.round((dauMedio30d / mau) * 1000) / 10 : 0;
+
   // ── Una fila por persona ──
   // Se calcula sobre filas crudas de las dos ventanas porque cada columna sale
   // de un evento distinto: los minutos del progreso más lejano por historia,
@@ -1944,12 +2434,12 @@ export async function GET(req: NextRequest): Promise<Response> {
   const [filasAhora, filasAntes] = needsAudienceData
     ? await Promise.all([
         prisma.userMetric.findMany({
-          where: { ...userScope, createdAt: { gte: from, lte: to } },
+          where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to } },
           select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
           take: 100000,
         }),
         prisma.userMetric.findMany({
-          where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo } },
+          where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo } },
           select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
           take: 100000,
         }),
@@ -2024,7 +2514,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     .sort((a, b) => b.minutes - a.minutes || b.activeDays - a.activeDays);
 
   const payload: DashboardResponse = {
-    ...createEmptyDashboardResponse(from, to, days),
+    ...createEmptyDashboardResponse(from, to, daysReales),
     ...(prevKpisPayload
       ? {
           prevRange: {
@@ -2039,19 +2529,25 @@ export async function GET(req: NextRequest): Promise<Response> {
     kpis: {
       dau: dauUsers.length,
       wau: wauUsers.length,
+      mau,
+      dauMauPct,
       activeUsersInRange,
       plays,
       completions,
       completionRate,
       uniqueStories: byStory.size,
       uniqueBooks: byBook.size,
-      avgMinutesPerActiveUser,
+      minutesPerListener,
+      listeners,
+      exercisesPerPractitioner,
+      practitioners,
       totalListenedMinutes,
       savedStories,
       savedBooks,
       storiesStarted,
       storiesFinished,
     },
+    languageSplit,
     daily,
     topStories,
     topBooks,

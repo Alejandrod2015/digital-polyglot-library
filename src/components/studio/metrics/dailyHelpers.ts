@@ -22,9 +22,28 @@ export function toAreaChartData(
 /** Extracts a numeric series (e.g. plays per day) for sparkline use. */
 export function sparkSeries(
   daily: DashboardData["daily"],
-  key: "plays" | "completions" | "completionRate"
+  key:
+    | "plays"
+    | "completions"
+    | "completionRate"
+    | "minutesPerListener"
+    | "exercisesPerPractitioner"
+    | "activeUsers"
+    | "wau"
+    | "dauMauPct"
+    | "listenedMinutes"
 ): number[] {
-  return daily.map((row) => row[key]);
+  // Las claves de minutos faltan en respuestas cacheadas de antes de que
+  // existieran; un hueco ahí es cero minutos, no un agujero en la curva.
+  return daily.map((row) => row[key] ?? 0);
+}
+
+/**
+ * Los días de la serie, en el mismo orden que `sparkSeries`. La curva grande
+ * del hover los necesita para poder decir qué día fue cada punto.
+ */
+export function sparkDates(daily: DashboardData["daily"]): string[] {
+  return daily.map((row) => row.date);
 }
 
 /** Tries to infer a 2-letter language code from a story or book slug. */

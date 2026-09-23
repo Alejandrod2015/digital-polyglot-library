@@ -10,13 +10,24 @@ import type { RatingsMetrics } from "@/lib/metricsRatings";
 export type DashboardKpis = {
   dau: number;
   wau: number;
+  /** Personas distintas en los 30 días de calendario que acaban hoy. */
+  mau?: number;
+  /** DAU medio de esos 30 días sobre el MAU, en %. Falta en respuestas viejas. */
+  dauMauPct?: number;
   activeUsersInRange: number;
   plays: number;
   completions: number;
   completionRate: number;
   uniqueStories: number;
   uniqueBooks: number;
-  avgMinutesPerActiveUser: number;
+  /** Minutos entre quien REPRODUJO algo. Falta en respuestas viejas. */
+  minutesPerListener?: number;
+  /** Cuántas personas reprodujeron algo en el rango. */
+  listeners?: number;
+  /** Ejercicios entre quien PRACTICÓ. Falta en respuestas viejas. */
+  exercisesPerPractitioner?: number;
+  /** Cuántas personas terminaron alguna sesión de práctica. */
+  practitioners?: number;
   totalListenedMinutes: number;
   savedStories: number;
   savedBooks: number;
@@ -74,6 +85,31 @@ export type DashboardData = {
     plays: number;
     completions: number;
     completionRate: number;
+    /** Minutos por oyente ESE día. Falta en respuestas viejas. */
+    minutesPerListener?: number;
+    /** Ejercicios por practicante ESE día. Falta en respuestas viejas. */
+    exercisesPerPractitioner?: number;
+    /** Personas distintas activas ESE día (el DAU de ese día). */
+    activeUsers?: number;
+    /** Personas distintas en los 7 días que acaban ese día. */
+    wau?: number;
+    /** DAU de ese día sobre el MAU de los 30 que acaban ahí, en %. */
+    dauMauPct?: number;
+    /** Minutos de audio de ESE día. */
+    listenedMinutes?: number;
+  }>;
+  /**
+   * Usuarios, minutos y completion rate por idioma y VARIANTE del journey.
+   * Falta en respuestas cacheadas de antes de que existiera.
+   */
+  languageSplit?: Array<{
+    language: string;
+    variant: string;
+    users: number;
+    started: number;
+    finished: number;
+    completionRate: number;
+    minutes: number;
   }>;
   topStories: Array<{
     storySlug: string;
@@ -273,12 +309,12 @@ export type PipelineData = {
 
 export type MetricsSection =
   | "overview"
+  /** Los totales acumulados. La API no la conoce: cae en "overview". */
+  | "vanity"
   | "acquisition"
   | "engagement"
   | "learning"
   | "content"
   | "funnels"
   | "audience"
-  | "experiments"
-  | "alerts"
-  | "exports";
+  | "alerts";

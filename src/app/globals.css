@@ -852,15 +852,31 @@ body {
 @media (max-width: 1100px) { .mx-row--chart { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .mx-row--2up { grid-template-columns: 1fr; } }
 
-.mx-hero-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--mx-gap-grid); }
-.mx-subkpi-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: var(--mx-gap-grid); }
+/* UNA fila, sean cuatro tarjetas (Vanity) o seis (Resumen). La segunda fila
+   estaba prohibida por el usuario, así que se encoge la tarjeta y no se parte
+   la fila; `auto-fit` evita además dejar columnas vacías cuando son cuatro. */
+.mx-hero-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--mx-gap-grid);
+}
+/* Mismo reparto por conteo: el Resumen dejó dos tarjetas aquí cuando los
+   totales se mudaron a Vanity, y con ocho columnas fijas se quedaban
+   encogidas en una esquina. */
+.mx-subkpi-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--mx-gap-grid);
+}
 @media (max-width: 1280px) {
-  .mx-hero-grid { grid-template-columns: repeat(3, 1fr); }
-  .mx-subkpi-grid { grid-template-columns: repeat(4, 1fr); }
+  .mx-hero-grid { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); }
+  .mx-subkpi-grid { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 900px) {
-  .mx-hero-grid { grid-template-columns: repeat(2, 1fr); }
-  .mx-subkpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .mx-hero-grid { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); }
+  .mx-subkpi-grid { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── KPI cards ── */
@@ -876,13 +892,13 @@ body {
 }
 .mx-kpi:hover { border-color: var(--mx-border-strong); background: rgba(255,255,255,0.04); }
 .mx-kpi--hero {
-  padding: 16px 18px;
-  min-height: 116px;
+  padding: 13px 14px;
+  min-height: 102px;
   background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
 }
 .mx-kpi--hero::before {
   content: "";
-  position: absolute; top: 0; left: 18px; right: 18px;
+  position: absolute; top: 0; left: 14px; right: 14px;
   height: 2px;
   background: linear-gradient(90deg, var(--mx-accent) 0%, transparent 80%);
   opacity: 0.7;
@@ -895,7 +911,7 @@ body {
   text-transform: uppercase;
   line-height: 1.25;
 }
-.mx-kpi--hero .mx-kpi__label { font-size: 11.5px; color: var(--mx-fg-soft); }
+.mx-kpi--hero .mx-kpi__label { font-size: 10.5px; color: var(--mx-fg-soft); }
 .mx-kpi__value-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-top: 4px; }
 .mx-kpi__value {
   font-size: 26px; font-weight: 700;
@@ -903,10 +919,10 @@ body {
   color: var(--mx-fg);
   font-variant-numeric: tabular-nums;
 }
-.mx-kpi--hero .mx-kpi__value { font-size: 36px; }
+.mx-kpi--hero .mx-kpi__value { font-size: 29px; }
 .mx-kpi__suffix { font-size: 13px; font-weight: 500; color: var(--mx-muted); margin-left: 4px; }
-.mx-kpi--hero .mx-kpi__suffix { font-size: 16px; }
-.mx-kpi__hint { font-size: 11.5px; color: var(--mx-muted-soft); margin-top: 6px; }
+.mx-kpi--hero .mx-kpi__suffix { font-size: 13px; }
+.mx-kpi__hint { font-size: 10.5px; color: var(--mx-muted-soft); margin-top: 5px; }
 
 .mx-delta {
   font-family: var(--mx-mono);
@@ -1061,17 +1077,25 @@ body {
   gap: 12px;
   border-bottom: 1px solid var(--mx-border);
 }
-.mx-tabs__main { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.mx-tabs__main { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+/* El hueco de la derecha ya no son pestañas apagadas: son los dos selectores
+   globales, plataforma y grano, que antes vivían dentro del panel de
+   retención y movían solo ese panel. `align-items: center` porque son
+   controles bajos y las pestañas miden 36px. */
 .mx-tabs__more {
-  display: flex; gap: 2px; margin-left: auto;
+  display: flex; gap: 8px; margin-left: auto;
+  align-items: center;
   padding-left: 12px;
   border-left: 1px solid var(--mx-border);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
+/* Once pestañas y dos selectores en la misma fila: a 14px de aire por lado
+   sumaban 1416px contra 1376 disponibles y "Exportaciones" caía sola a una
+   segunda línea. */
 .mx-tab {
   display: inline-flex; align-items: center; gap: 7px;
   height: 36px;
-  padding: 0 14px;
+  padding: 0 9px;
   font-size: 13px; font-weight: 600;
   color: var(--mx-muted);
   background: transparent;
@@ -1303,6 +1327,28 @@ body {
  * Todo el Studio pinta desde tokens; ningun componente lleva el color
  * escrito, asi el cambio es en vivo y sin recarga.
  * =======================================================*/
+/* El doble fondo del Studio.
+ *
+ * `<html>` y `<body>` pintan `--bg-content`, el azul marino del sitio
+ * público, y el shell del Studio pinta el suyo encima. Mientras el shell
+ * cubre hasta los cuatro bordes no se nota; en cuanto queda un hueco (una
+ * franja sobre la cabecera, el rebote del scroll en macOS) asoma el azul de
+ * detrás y se ven dos fondos a la vez.
+ *
+ * La cura es el LIENZO, no el hueco: con el lienzo del color del Studio da
+ * igual que algo no llegue a un borde, porque detrás ya no hay otro color.
+ * Va por `:has()` y no en el layout raíz porque `<body>` lo comparten el
+ * Studio y el sitio público, y el público sí quiere su azul.
+ */
+html:has(.studio-shell-root),
+body:has(.studio-shell-root) {
+  background-color: #0a1628;
+}
+html:has(.studio-shell-root[data-theme="warm"]),
+body:has(.studio-shell-root[data-theme="warm"]) {
+  background-color: #100c0a;
+}
+
 .studio-shell-root {
   /* Comunes a los dos temas */
   --mx-serif: var(--font-fraunces), Georgia, serif;
@@ -1451,11 +1497,16 @@ body {
 /* Retencion + top de contenido en una fila: el panel a media pantalla y
  * los plegables a su derecha, en vez de dejar media pantalla vacia. */
 .mx-retention-row { display: flex; gap: 18px; align-items: flex-start; }
-.mx-retention-row > .mx-panel { flex: 0 0 50%; max-width: 50%; min-width: 420px; }
+/* Dos paneles a mitades: retención a la izquierda y el reparto del catálogo a
+   la derecha, que es el hueco que quedaba vacío. `min-width: 0` en el segundo
+   para que las barras se encojan en vez de desbordar. */
+.mx-retention-row > .mx-panel { flex: 1 1 50%; max-width: 50%; min-width: 0; }
+.mx-retention-row > .mx-panel:first-child { min-width: 420px; }
 .mx-retention-row > .mx-fold-row { flex: 1; min-width: 0; grid-template-columns: 1fr; }
 @media (max-width: 1100px) {
   .mx-retention-row { flex-direction: column; }
-  .mx-retention-row > .mx-panel { flex: none; max-width: none; min-width: 0; width: 100%; }
+  .mx-retention-row > .mx-panel,
+  .mx-retention-row > .mx-panel:first-child { flex: none; max-width: none; min-width: 0; width: 100%; }
 }
 
 /* ── Live pill (period range chip in header) ── */

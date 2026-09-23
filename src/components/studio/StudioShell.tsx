@@ -288,28 +288,44 @@ export default function StudioShell({
             pendingLabel="Abriendo..."
             style={{ display: "flex", alignItems: "center", gap: 10, background: "none", border: "none", padding: 0 }}
           >
-            <div
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: 8,
-                background: ACCENT,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-              }}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
-              </svg>
-            </div>
-            {!collapsed && (
-              <span style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>
-                Digital Polyglot
-              </span>
+            {/*
+              Dos archivos del MISMO logo, ninguno de los dos compuesto aquí:
+              desplegada va el lockup blanco (marca y letras juntas, tal como
+              lo dibujó quien lo hizo), y plegada solo la marca. Antes las
+              letras se escribían con la fuente del sistema al lado del icono,
+              que no es el logo de nadie y además partía "Digital Polyglot" en
+              dos renglones en cuanto la barra se estrechaba.
+
+              `digital-polyglot-logo.png` ya viene en blanco y con fondo
+              transparente, así que no lleva filtro; la marca suelta sale del
+              favicon, que es de color, y esa sí se lleva a blanco.
+            */}
+            {collapsed ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src="/favicon/android-chrome-512x512.png"
+                alt="Digital Polyglot"
+                width={28}
+                height={28}
+                style={{
+                  display: "block",
+                  flexShrink: 0,
+                  filter: "brightness(0) invert(1)",
+                }}
+              />
+            ) : (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src="/digital-polyglot-logo.png"
+                alt="Digital Polyglot"
+                width={128}
+                height={62}
+                // `flexShrink: 0` y 128px y no 148: la fila lleva además la
+                // chapa STUDIO, y en los 200px útiles de la barra el flex
+                // encogía el logo hasta 134 y lo dejaba a una escala que no es
+                // la suya. A 128 caben los dos sin apretar.
+                style={{ display: "block", width: 128, height: "auto", flexShrink: 0 }}
+              />
             )}
           </StudioActionLink>
           {!collapsed && (

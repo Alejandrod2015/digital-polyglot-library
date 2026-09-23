@@ -11,7 +11,7 @@ import {
 } from "./MetricsPrimitives";
 import { RatingsPanel } from "./RatingsPanel";
 import { RetentionPanel } from "./RetentionPanel";
-import { sparkSeries } from "./dailyHelpers";
+import { sparkDates, sparkSeries } from "./dailyHelpers";
 import type { DashboardData } from "./types";
 import type { MetricsCohort } from "@/lib/metricsCohort";
 
@@ -28,19 +28,33 @@ export function ResumenView({
   data,
   cohort,
   rangeLabel,
+  platform,
+  grain,
 }: {
   data: DashboardData;
   cohort: MetricsCohort;
   rangeLabel: string;
+  platform: "all" | "web" | "ios" | "android";
+  grain: "day" | "week";
 }) {
   const k = data.kpis;
   const p = data.prevKpis;
-  const sparkPlays = useMemo(
-    () => sparkSeries(data.daily, "plays"),
+  const dias = useMemo(() => sparkDates(data.daily), [data.daily]);
+  const sparkDau = useMemo(
+    () => sparkSeries(data.daily, "activeUsers"),
     [data.daily]
   );
-  const sparkCompletions = useMemo(
-    () => sparkSeries(data.daily, "completions"),
+  const sparkWau = useMemo(() => sparkSeries(data.daily, "wau"), [data.daily]);
+  const sparkDauMau = useMemo(
+    () => sparkSeries(data.daily, "dauMauPct"),
+    [data.daily]
+  );
+  const sparkMinOyente = useMemo(
+    () => sparkSeries(data.daily, "minutesPerListener"),
+    [data.daily]
+  );
+  const sparkEjercicios = useMemo(
+    () => sparkSeries(data.daily, "exercisesPerPractitioner"),
     [data.daily]
   );
   const sparkCr = useMemo(
@@ -48,10 +62,6 @@ export function ResumenView({
     [data.daily]
   );
 
-  const maxStoryMinutes =
-    data.topStoriesByMinutes[0]?.listenedMinutes ?? 0;
-  const maxSavedStory = data.topSavedStories[0]?.saves ?? 0;
-  const maxSavedBook = data.topSavedBooks[0]?.saves ?? 0;
 
   return (
     <div className="mx-view">
@@ -61,7 +71,9 @@ export function ResumenView({
           label="DAU"
           value={k.dau}
           prev={p?.dau}
-          spark={sparkPlays}
+          spark={sparkDau}
+          sparkLabel="usuarios activos por día"
+          sparkDates={dias}
           accent="accent"
           hint="usuarios activos hoy"
           people={data.kpiUsers?.dau}
@@ -72,7 +84,9 @@ export function ResumenView({
           label="WAU"
           value={k.wau}
           prev={p?.wau}
-          spark={sparkPlays}
+          spark={sparkWau}
+          sparkLabel="activos en los 7 días que acaban ahí"
+          sparkDates={dias}
           accent="cyan"
           hint="7 días, hoy incluido"
           people={data.kpiUsers?.wau}
@@ -80,12 +94,19 @@ export function ResumenView({
         />
         <KpiCard
           hero
-          label="Plays"
-          value={k.plays}
-          prev={p?.plays}
-          spark={sparkPlays}
-          accent="accent"
-          hint={`reproducciones · ${data.range.days}d`}
+          label="DAU/MAU"
+          value={k.dauMauPct ?? 0}
+          suffix="%"
+          spark={sparkDauMau}
+          sparkLabel="DAU sobre MAU, día a día"
+          sparkSuffix="%"
+          sparkDates={dias}
+          accent="gems"
+          hint={
+            k.mau
+              ? `medio 30d / ${k.mau} MAU · Duolingo 37%`
+              : "DAU medio 30d / MAU"
+          }
         />
         <KpiCard
           hero
@@ -94,6 +115,9 @@ export function ResumenView({
           suffix="%"
           prev={p?.completionRate}
           spark={sparkCr}
+          sparkLabel="completion rate por día"
+          sparkSuffix="%"
+          sparkDates={dias}
           accent="xp"
           hint={
             k.storiesStarted
@@ -103,148 +127,227 @@ export function ResumenView({
         />
         <KpiCard
           hero
-          label="Total escuchado"
-          value={k.totalListenedMinutes}
-          suffix="min"
-          prev={p?.totalListenedMinutes}
-          spark={sparkCompletions}
+          label="Min por oyente"
+          value={k.minutesPerListener ?? 0}
+          prev={p?.minutesPerListener}
+          spark={sparkMinOyente}
+          sparkDates={dias}
+          sparkLabel="minutos por oyente y día"
+          sparkSuffix="min"
           accent="gold"
-          hint="suma de minutos"
-        />
-      </div>
-
-      <div className="mx-subkpi-grid">
-        <KpiCard
-          label="Active users"
-          value={k.activeUsersInRange}
-          prev={p?.activeUsersInRange}
+          hint={
+            k.listeners
+              ? `${k.listeners} reprodujeron algo · ${data.range.days}d`
+              : `minutos de audio · ${data.range.days}d`
+          }
         />
         <KpiCard
-          label="Completions"
-          value={k.completions}
-          prev={p?.completions}
-          accent="xp"
-        />
-        <KpiCard
-          label="Unique stories"
-          value={k.uniqueStories}
-          prev={p?.uniqueStories}
-        />
-        <KpiCard
-          label="Unique books"
-          value={k.uniqueBooks}
-          prev={p?.uniqueBooks}
-        />
-        <KpiCard
-          label="Avg min/user"
-          value={k.avgMinutesPerActiveUser}
-          prev={p?.avgMinutesPerActiveUser}
-          accent="gold"
-        />
-        <KpiCard
-          label="Stories saved"
-          value={k.savedStories}
-          prev={p?.savedStories}
+          hero
+          label="Ejercicios por practicante"
+          value={k.exercisesPerPractitioner ?? 0}
+          prev={p?.exercisesPerPractitioner}
+          spark={sparkEjercicios}
+          sparkDates={dias}
+          sparkLabel="ejercicios por practicante y día"
           accent="gems"
-        />
-        <KpiCard
-          label="Books saved"
-          value={k.savedBooks}
-          prev={p?.savedBooks}
-          accent="gems"
-        />
-        <KpiCard
-          label="Trial → Pago"
-          value={data.trialFunnel.conversionRate}
-          suffix="%"
-          accent="xp"
+          hint={
+            k.practitioners
+              ? `${k.practitioners} practicaron · ${data.range.days}d`
+              : `sesiones terminadas · ${data.range.days}d`
+          }
         />
       </div>
 
       <div className="mx-retention-row">
-        <RetentionPanel days={data.range.days} cohort={cohort} rangeLabel={rangeLabel} />
-
-      <div className="mx-fold-row">
-        <details className="mx-fold">
-          <summary>
-            <span className="mx-fold__eyebrow">Top contenido</span>
-            Historias más escuchadas
-            <span className="mx-fold__hint">{data.topStoriesByMinutes.length}</span>
-          </summary>
-          <div className="mx-fold__body mx-barlist mx-barlist--compact">
-            {data.topStoriesByMinutes.slice(0, 8).map((story) => {
-              const lang = story.language;
-              return (
-                <BarRow
-                  key={story.storySlug}
-                  label={story.storySlug}
-                  value={story.listenedMinutes}
-                  max={maxStoryMinutes || 1}
-                  suffix="min"
-                  sub={`${story.listeners} listeners`}
-                  tag={lang ? <LangTag code={lang} /> : null}
-                  accent="var(--mx-accent)"
-                />
-              );
-            })}
-            {data.topStoriesByMinutes.length === 0 && (
-              <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
-                Sin datos en el rango seleccionado.
-              </p>
-            )}
-          </div>
-        </details>
-
-        <details className="mx-fold">
-          <summary>
-            <span className="mx-fold__eyebrow">Saves</span>
-            Historias más guardadas
-            <span className="mx-fold__hint">{data.topSavedStories.length}</span>
-          </summary>
-          <div className="mx-fold__body mx-barlist mx-barlist--compact">
-            {data.topSavedStories.map((story) => (
-              <BarRow
-                key={story.storySlug}
-                label={story.storySlug}
-                value={story.saves}
-                max={maxSavedStory || 1}
-                suffix="saves"
-                accent="var(--mx-gems)"
-              />
-            ))}
-            {data.topSavedStories.length === 0 && (
-              <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
-                Sin saves en el rango.
-              </p>
-            )}
-          </div>
-        </details>
-
-        <details className="mx-fold">
-          <summary>
-            <span className="mx-fold__eyebrow">Saves</span>
-            Libros más guardados
-            <span className="mx-fold__hint">{data.topSavedBooks.length}</span>
-          </summary>
-          <div className="mx-fold__body mx-barlist mx-barlist--compact">
-            {data.topSavedBooks.map((book) => (
-              <BarRow
-                key={book.bookSlug}
-                label={book.bookSlug}
-                value={book.saves}
-                max={maxSavedBook || 1}
-                suffix="saves"
-                accent="var(--mx-gold)"
-              />
-            ))}
-            {data.topSavedBooks.length === 0 && (
-              <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
-                Sin saves en el rango.
-              </p>
-            )}
-          </div>
-        </details>
+        <RetentionPanel
+          days={data.range.days}
+          cohort={cohort}
+          rangeLabel={rangeLabel}
+          platform={platform}
+          mode={grain}
+        />
+        <LanguageSplitPanel rows={data.languageSplit ?? []} days={data.range.days} />
       </div>
+    </div>
+  );
+}
+
+// ── LanguageSplitPanel ──────────────────────────────────────────
+/**
+ * Dónde está la gente dentro del catálogo, por idioma y variante.
+ *
+ * Es una TABLA y no una lista de barras: la barra compara tamaños de un
+ * vistazo y no puede llevar encima los minutos por persona ni las empezadas
+ * contra las terminadas, que es donde se ve que los libros mueven a 23
+ * personas y solo rematan el 20%.
+ *
+ * Es la decisión más cara del proyecto: cada journey nuevo son veintiuna
+ * historias con sus portadas y su narración, y hasta ahora ninguna pantalla
+ * decía en qué idioma hay lectores. El corte llega a la VARIANTE porque
+ * español no es una cosa: latam y España son journeys distintos, con otro
+ * reparto y otro vocabulario, y agruparlos borraría justo lo que se decide.
+ *
+ * El idioma sale de la historia (`JourneyStory` -> `Journey`), no del evento:
+ * `metadata.language` solo lo emite el móvil y dejaba fuera a los usuarios de
+ * la web.
+ */
+function LanguageSplitPanel({
+  rows,
+  days,
+}: {
+  rows: NonNullable<DashboardData["languageSplit"]>;
+  days: number;
+}) {
+  return (
+    <div className="mx-panel" style={{ minWidth: 0 }}>
+      <div className="mx-panel__head">
+        <div>
+          <div className="mx-panel__eyebrow">Catálogo</div>
+          <h3 className="mx-panel__title">Dónde está la gente</h3>
+        </div>
+        <span className="mx-panel__hint">{days}d · por idioma y variante</span>
+      </div>
+      {rows.length === 0 ? (
+        <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
+          Sin datos en el rango seleccionado.
+        </p>
+      ) : (
+        <div style={{ overflowX: "auto" }}>
+          <table className="mx-table">
+            <thead>
+              <tr>
+                <th>Idioma y variante</th>
+                <th style={{ textAlign: "right" }} title="Personas">Pers.</th>
+                <th style={{ textAlign: "right" }} title="Minutos escuchados">Min</th>
+                <th style={{ textAlign: "right" }} title="Minutos por persona">Min/p.</th>
+                <th style={{ textAlign: "right" }} title="Historias empezadas">Empez.</th>
+                <th style={{ textAlign: "right" }} title="Historias terminadas">Term.</th>
+                <th style={{ textAlign: "right" }} title="Porcentaje terminadas">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((fila) => (
+                <tr key={`${fila.language}/${fila.variant}`}>
+                  <td>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
+                      <LangTag code={LANG_CODE[fila.language] ?? null} />
+                      {etiquetaIdioma(fila)}
+                    </span>
+                  </td>
+                  <td style={{ textAlign: "right" }}>{fila.users}</td>
+                  <td style={{ textAlign: "right" }}>{fila.minutes}</td>
+                  <td style={{ textAlign: "right" }}>
+                    {fila.users > 0
+                      ? Math.round((fila.minutes / fila.users) * 10) / 10
+                      : 0}
+                  </td>
+                  <td style={{ textAlign: "right" }}>{fila.started}</td>
+                  <td style={{ textAlign: "right" }}>{fila.finished}</td>
+                  <td style={{ textAlign: "right" }}>{fila.completionRate}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** "spanish · latam", o solo "libros" cuando no hay variante que decir. */
+function etiquetaIdioma(fila: { language: string; variant: string }): string {
+  return fila.variant ? `${fila.language} · ${fila.variant}` : fila.language;
+}
+
+/** El idioma viene entero de la base ("spanish"); la etiqueta quiere el código. */
+const LANG_CODE: Record<string, string> = {
+  spanish: "es",
+  italian: "it",
+  german: "de",
+  french: "fr",
+  portuguese: "pt",
+  english: "en",
+};
+
+// ── VanityView ───────────────────────────────────────────
+/**
+ * Los totales acumulados, apartados del Resumen.
+ *
+ * Suben siempre: un total no puede bajar mientras siga entrando gente, así
+ * que dicen que la app existe y no dicen si funciona. Viven juntos aquí para
+ * que el Resumen se quede con lo que sí admite un mal dato (DAU, WAU,
+ * DAU/MAU, completion rate) y no compitan por el sitio con las razones.
+ */
+export function VanityView({ data }: { data: DashboardData }) {
+  const k = data.kpis;
+  const p = data.prevKpis;
+  const dias = useMemo(() => sparkDates(data.daily), [data.daily]);
+  const sparkDau = useMemo(
+    () => sparkSeries(data.daily, "activeUsers"),
+    [data.daily]
+  );
+  const sparkMinutos = useMemo(
+    () => sparkSeries(data.daily, "listenedMinutes"),
+    [data.daily]
+  );
+  const sparkPlays = useMemo(
+    () => sparkSeries(data.daily, "plays"),
+    [data.daily]
+  );
+  const sparkCompletions = useMemo(
+    () => sparkSeries(data.daily, "completions"),
+    [data.daily]
+  );
+
+  return (
+    <div className="mx-view">
+      <div className="mx-hero-grid">
+        <KpiCard
+          hero
+          label="Total escuchado"
+          value={k.totalListenedMinutes}
+          suffix="min"
+          prev={p?.totalListenedMinutes}
+          spark={sparkMinutos}
+          sparkLabel="minutos de audio por día"
+          sparkSuffix="min"
+          sparkDates={dias}
+          accent="gold"
+          hint="suma de minutos"
+        />
+        <KpiCard
+          hero
+          label="Plays (solo web)"
+          value={k.plays}
+          prev={p?.plays}
+          spark={sparkPlays}
+          sparkLabel="reproducciones web por día"
+          sparkDates={dias}
+          accent="accent"
+          hint={`el móvil no emite play · ${data.range.days}d`}
+        />
+        <KpiCard
+          hero
+          label="Active users"
+          value={k.activeUsersInRange}
+          prev={p?.activeUsersInRange}
+          spark={sparkDau}
+          sparkLabel="usuarios activos por día"
+          sparkDates={dias}
+          accent="cyan"
+          hint={`con alguna señal · ${data.range.days}d`}
+        />
+        <KpiCard
+          hero
+          label="Completions"
+          value={k.completions}
+          prev={p?.completions}
+          spark={sparkCompletions}
+          sparkLabel="historias terminadas por día"
+          sparkDates={dias}
+          accent="xp"
+          hint="historias terminadas"
+        />
       </div>
     </div>
   );
@@ -254,6 +357,19 @@ export function ResumenView({
 export function EngagementView({ data }: { data: DashboardData }) {
   const k = data.kpis;
   const p = data.prevKpis;
+  const dias = useMemo(() => sparkDates(data.daily), [data.daily]);
+  const sparkMinutos = useMemo(
+    () => sparkSeries(data.daily, "listenedMinutes"),
+    [data.daily]
+  );
+  const sparkMinOyente = useMemo(
+    () => sparkSeries(data.daily, "minutesPerListener"),
+    [data.daily]
+  );
+  const sparkEjercicios = useMemo(
+    () => sparkSeries(data.daily, "exercisesPerPractitioner"),
+    [data.daily]
+  );
   const sparkPlays = useMemo(
     () => sparkSeries(data.daily, "plays"),
     [data.daily]
@@ -270,18 +386,17 @@ export function EngagementView({ data }: { data: DashboardData }) {
   const maxStoryMinutes = data.topStoriesByMinutes[0]?.listenedMinutes ?? 0;
   const maxBookPlays = data.topBooks[0]?.plays ?? 0;
 
-  const totalSaves = k.savedStories + k.savedBooks;
-  const prevSaves =
-    p !== undefined ? p.savedStories + p.savedBooks : undefined;
 
   return (
     <div className="mx-view">
       <div className="mx-subkpi-grid">
         <KpiCard
-          label="Plays"
+          label="Plays (solo web)"
           value={k.plays}
           prev={p?.plays}
           spark={sparkPlays}
+          sparkLabel="reproducciones web por día"
+          sparkDates={dias}
           accent="accent"
         />
         <KpiCard
@@ -289,6 +404,8 @@ export function EngagementView({ data }: { data: DashboardData }) {
           value={k.completions}
           prev={p?.completions}
           spark={sparkCompletions}
+          sparkLabel="historias terminadas por día"
+          sparkDates={dias}
           accent="xp"
         />
         <KpiCard
@@ -297,36 +414,51 @@ export function EngagementView({ data }: { data: DashboardData }) {
           suffix="%"
           prev={p?.completionRate}
           spark={sparkCr}
+          sparkLabel="completion rate por día"
+          sparkSuffix="%"
+          sparkDates={dias}
           accent="xp"
         />
         <KpiCard
-          label="Avg min / user"
-          value={k.avgMinutesPerActiveUser}
-          prev={p?.avgMinutesPerActiveUser}
+          label="Min por oyente"
+          value={k.minutesPerListener ?? 0}
+          prev={p?.minutesPerListener}
+          spark={sparkMinOyente}
+          sparkDates={dias}
+          sparkLabel="minutos por oyente y día"
+          sparkSuffix="min"
           accent="gold"
+        />
+        <KpiCard
+          label="Ejercicios por practicante"
+          value={k.exercisesPerPractitioner ?? 0}
+          prev={p?.exercisesPerPractitioner}
+          spark={sparkEjercicios}
+          sparkDates={dias}
+          sparkLabel="ejercicios por practicante y día"
+          accent="gems"
         />
         <KpiCard
           label="Total escuchado"
           value={k.totalListenedMinutes}
           suffix="min"
           prev={p?.totalListenedMinutes}
-          spark={sparkCompletions}
+          spark={sparkMinutos}
+          sparkLabel="minutos de audio por día"
+          sparkSuffix="min"
+          sparkDates={dias}
           accent="gold"
         />
         <KpiCard
-          label="Unique stories"
-          value={k.uniqueStories}
-          prev={p?.uniqueStories}
+          label="Stories saved"
+          value={k.savedStories}
+          prev={p?.savedStories}
+          accent="gems"
         />
         <KpiCard
-          label="Unique books"
-          value={k.uniqueBooks}
-          prev={p?.uniqueBooks}
-        />
-        <KpiCard
-          label="Saves totales"
-          value={totalSaves}
-          prev={prevSaves}
+          label="Books saved"
+          value={k.savedBooks}
+          prev={p?.savedBooks}
           accent="gems"
         />
       </div>

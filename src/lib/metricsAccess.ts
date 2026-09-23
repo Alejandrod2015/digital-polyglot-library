@@ -3,6 +3,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
 import { getStudioMembers, isStudioMember } from "@/lib/studio-access";
 import { isInternalDomain } from "@/lib/internalAccounts";
+import { prisma } from "@/lib/prisma";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -98,6 +99,43 @@ export async function getInternalUserIds(): Promise<string[]> {
     }
   } catch (error) {
     console.warn("[metricsAccess] failed to list Clerk users for analyticsExcluded", error);
+  }
+
+  // ── El sello que el ingest ya escribió ──
+  // Cada fila de `UserMetric` se sella con `metadata.internal` en el momento
+  // de escribirla, con la regla de `isInternalEmail` (dominio de la empresa
+  // más `studio_members`). Todo lo de arriba, en cambio, se resuelve EN VIVO
+  // contra Clerk, y las dos cosas no dicen lo mismo en cuanto el presente
+  // deja de parecerse al pasado:
+  //
+  //   - alguien que estuvo en `studio_members` y ya no está: sus filas viejas
+  //     siguen selladas como internas, y la lista en vivo ya no lo nombra;
+  //   - una cuenta borrada de Clerk: sus filas siguen ahí y el `getUserList`
+  //     por correo no puede devolver un id que ya no existe.
+  //
+  // En los dos casos el panel contaba como externo a alguien que el ingest
+  // había marcado de casa. El 2026-09-23 esa grieta daba 39 practicantes
+  // contando por el sello y 40 contando por el panel. El sello gana porque
+  // sabe lo que era cierto cuando el evento ocurrió, que es justo lo que la
+  // lista en vivo no puede reconstruir.
+  //
+  // `groupBy` y no `findMany({ distinct })`: el segundo se trae TODAS las
+  // filas selladas y deduplica después, y son filas de eventos, no de
+  // personas. Seis cuentas de casa con meses de uso son decenas de miles de
+  // filas para sacar seis ids.
+  //
+  // CUIDADO: basta UNA fila sellada para excluir a esa persona entera, en
+  // todo el rango y para siempre. Es a propósito (quien fue de casa un mes no
+  // vuelve a ser señal externa el siguiente), pero un sello mal puesto no se
+  // corrige solo: hay que quitar la marca de esas filas.
+  try {
+    const sellados = await prisma.userMetric.groupBy({
+      by: ["userId"],
+      where: { metadata: { path: ["internal"], equals: true } },
+    });
+    for (const fila of sellados) ids.push(fila.userId);
+  } catch (error) {
+    console.warn("[metricsAccess] no se pudo leer el sello metadata.internal", error);
   }
 
   // Manual override: tester userIds set in Vercel env. Useful for

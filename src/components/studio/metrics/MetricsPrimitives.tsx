@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { PeopleHoverCard } from "./PeopleHoverCard";
+import { SparkHoverCard } from "./SparkHoverCard";
 import type { MetricsKpiUser } from "./types";
 
 /**
@@ -141,6 +142,20 @@ type KpiCardProps = {
   people?: MetricsKpiUser[];
   /** Qué ventana cubre esa gente, para la cabecera de la tarjeta flotante. */
   peopleWindow?: string;
+  /**
+   * Un día por cada valor de `spark`. Sin esto la curva grande sale sin eje de
+   * fechas: se ve la forma y no se puede decir qué día fue el pico, que es
+   * justo lo que se va a mirar.
+   */
+  sparkDates?: string[];
+  /** Unidad de la serie en la etiqueta del punto. */
+  sparkSuffix?: string;
+  /**
+   * QUÉ serie es la curva. Casi ninguna tarjeta dibuja su propia cifra: DAU,
+   * WAU y DAU/MAU comparten la de reproducciones por día. Mientras eso siga
+   * así, el globo tiene que decirlo, o afirma lo que no es.
+   */
+  sparkLabel?: string;
 };
 
 export function KpiCard({
@@ -155,20 +170,59 @@ export function KpiCard({
   inverted = false,
   people,
   peopleWindow,
+  sparkDates,
+  sparkSuffix,
+  sparkLabel,
 }: KpiCardProps) {
   const accentColor = ACCENT_VAR[accent];
   const dataAccent = accent === "accent" ? undefined : accent;
   const numericValue = typeof value === "number" ? value : Number(value);
   const [hover, setHover] = useState<{ x: number; y: number } | null>(null);
+  const hasSpark = Array.isArray(spark) && spark.length > 0;
   const hoverable = Array.isArray(people);
+
+  // ── Curva grande al pasar el cursor ──
+  // Cuando la tarjeta tiene serie, el globo va ANCLADO a la tarjeta y acepta
+  // el puntero, porque hay que poder meter el cursor dentro para leer las
+  // etiquetas. Eso obliga a un cierre con retardo: al salir de la tarjeta
+  // hacia el globo, el ratón pasa un instante por el hueco de en medio, y sin
+  // ese margen el globo se cerraría justo antes de poder entrar en él.
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [anchor, setAnchor] = useState<DOMRect | null>(null);
+  const closeTimer = useRef<number | null>(null);
+  const cancelClose = useCallback(() => {
+    if (closeTimer.current !== null) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+  const openSpark = useCallback(() => {
+    cancelClose();
+    if (cardRef.current) setAnchor(cardRef.current.getBoundingClientRect());
+  }, [cancelClose]);
+  const closeSpark = useCallback(() => {
+    cancelClose();
+    closeTimer.current = window.setTimeout(() => setAnchor(null), 120);
+  }, [cancelClose]);
+
   const track = (e: React.MouseEvent) => setHover({ x: e.clientX, y: e.clientY });
+  // La lista de personas sigue al cursor SOLO cuando no hay curva; con curva
+  // se muda dentro del globo anclado, para no tener dos globos a la vez.
+  const followPeople = hoverable && !hasSpark;
   return (
     <div
+      ref={cardRef}
       className={hero ? "mx-kpi mx-kpi--hero" : "mx-kpi"}
       data-accent={dataAccent}
-      onMouseEnter={hoverable ? track : undefined}
-      onMouseMove={hoverable ? track : undefined}
-      onMouseLeave={hoverable ? () => setHover(null) : undefined}
+      onMouseEnter={(e) => {
+        if (followPeople) track(e);
+        if (hasSpark) openSpark();
+      }}
+      onMouseMove={followPeople ? track : undefined}
+      onMouseLeave={() => {
+        if (followPeople) setHover(null);
+        if (hasSpark) closeSpark();
+      }}
     >
       <div className="mx-kpi__head">
         <div className="mx-kpi__label">{label}</div>
@@ -191,7 +245,21 @@ export function KpiCard({
         )}
       </div>
       {hint && <div className="mx-kpi__hint">{hint}</div>}
-      {hover && people ? (
+      {anchor && hasSpark ? (
+        <SparkHoverCard
+          anchor={anchor}
+          title={peopleWindow ? `${label} · ${peopleWindow}` : label}
+          color={accentColor}
+          values={spark as number[]}
+          dates={sparkDates}
+          suffix={sparkSuffix}
+          serieLabel={sparkLabel}
+          people={people}
+          onEnter={cancelClose}
+          onLeave={closeSpark}
+        />
+      ) : null}
+      {hover && people && !hasSpark ? (
         <PeopleHoverCard
           x={hover.x}
           y={hover.y}
