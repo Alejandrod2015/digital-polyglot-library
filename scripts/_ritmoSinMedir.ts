@@ -31,6 +31,7 @@ import "./_loadEnv";
 
 import { PrismaClient } from "../src/generated/prisma";
 import { perfilDeArgs } from "./_narraPerfiles";
+import { rapidasDe, informe } from "./checkNarrationPace";
 
 const prisma = new PrismaClient();
 
@@ -58,7 +59,7 @@ async function main() {
   const historias = await prisma.journeyStory.findMany({
     where: { journeyId: perfil.journey },
     orderBy: [{ topic: "asc" }, { slotIndex: "asc" }],
-    select: { slug: true, topic: true, slotIndex: true, audioUrl: true, audioSegments: true },
+    select: { slug: true, topic: true, slotIndex: true, audioUrl: true, audioSegments: true, audioFragments: true },
   });
 
   const filas = filasDe(historias);
@@ -78,11 +79,28 @@ async function main() {
   }
   if (sin.length) {
     console.log(
-      `\n${sin.length} historia(s) sin informe de ritmo por oracion: se narraron con la cuenta de ` +
-      `OpenAI sin credito, asi que audioSegments vino vacio. El audio ya esta pagado; cuando haya ` +
-      `credito se vuelve a transcribir y se mide, sin gastar ElevenLabs.`
+      `\n${sin.length} historia(s) sin informe de ritmo por oracion: ni la transcripcion de la ` +
+      `sintesis ni la alineacion dejaron segmentos. El audio ya esta pagado; se vuelve a alinear ` +
+      `con scripts/_realinea.ts y se mide, sin gastar ElevenLabs.`
     );
   }
+
+  // Las oraciones aceleradas las imprime la narracion y se las lleva el viento:
+  // `rapidasDe` no guarda nada. Aqui se vuelven a calcular sobre lo que hay en
+  // la base, para que el informe del tema no dependa de haber leido un log.
+  console.log("\n--- oraciones aceleradas ---");
+  let conRapidas = 0;
+  for (const h of historias) {
+    if (!h.audioUrl) continue;
+    const rapidas = rapidasDe(
+      (h.audioSegments as never[]) ?? [],
+      (h.audioFragments as never[]) ?? []
+    );
+    if (!rapidas.length) continue;
+    conRapidas++;
+    console.log(`${h.slug}: ${informe(h.slug ?? "", rapidas)}`);
+  }
+  if (!conRapidas) console.log("ninguna");
 }
 
 if (require.main === module) {
