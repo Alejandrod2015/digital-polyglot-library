@@ -1013,6 +1013,13 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
+      "id": "journey-write-target",
+      "domain": "journey",
+      "rule": "saveStory comprueba el journey destino: el --level tiene que estar en journey.levels, y un journey active solo se escribe con DPL_WRITE_TO_LIVE_JOURNEY=1",
+      "gate": "scripts/journeyWriteTarget.ts#journey-write-target",
+      "source": "project_journey_pipeline_five_phases + saveStory.ts (2026-09-23)"
+    },
+    {
       "id": "journeys-table-canonical",
       "domain": "journey",
       "rule": "La tabla de journeys la genera scripts/journeysTable.ts; componerla a mano esta prohibido y los archivados solo salen con --archived",
