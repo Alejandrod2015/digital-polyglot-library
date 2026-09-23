@@ -68,7 +68,7 @@
  {
   "type": "meaning_in_context",
   "word": "refrescos",
-  "sentence": "Ella pone los [[refrescos]] en la mesa.",
+  "sentence": "La enfermera pone los [[refrescos]] en la mesa.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "fizzy drinks",
@@ -81,7 +81,7 @@
    "audioClip": {
     "storySlug": "carbon-mojado",
     "storySource": "user",
-    "sentence": "Ella pone los refrescos en la mesa.",
+    "sentence": "La enfermera pone los refrescos en la mesa.",
     "targetWord": "refrescos",
     "language": "spanish"
    }
@@ -280,7 +280,7 @@
   "type": "meaning_in_context",
   "word": "kilos",
   "featured": false,
-  "sentence": "Él trae dos [[kilos]] de carbón.",
+  "sentence": "El primo trae dos [[kilos]] de carbón.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "kilos",
@@ -293,7 +293,7 @@
    "audioClip": {
     "storySlug": "carbon-mojado",
     "storySource": "user",
-    "sentence": "Él trae dos kilos de carbón.",
+    "sentence": "El primo trae dos kilos de carbón.",
     "targetWord": "kilos",
     "language": "spanish"
    }

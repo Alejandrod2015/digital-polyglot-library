@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "macetas",
-  "sentence": "Él riega sus [[macetas]] sin prisa.",
+  "sentence": "El vecino riega sus [[macetas]] sin prisa.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "flowerpots",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "verde-en-mi-ventana",
     "storySource": "user",
-    "sentence": "Él riega sus macetas sin prisa.",
+    "sentence": "El vecino riega sus macetas sin prisa.",
     "targetWord": "macetas",
     "language": "spanish"
    }
@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "raíz",
-  "sentence": "Ella mira la [[raíz]] de la planta.",
+  "sentence": "La vecina mira la [[raíz]] de la planta.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the root",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "verde-en-mi-ventana",
     "storySource": "user",
-    "sentence": "Ella mira la raíz de la planta.",
+    "sentence": "La vecina mira la raíz de la planta.",
     "targetWord": "raíz",
     "language": "spanish"
    }

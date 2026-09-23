@@ -46,7 +46,7 @@
  {
   "type": "meaning_in_context",
   "word": "semanas",
-  "sentence": "Él tiene barba de tres [[semanas]].",
+  "sentence": "El cliente tiene barba de tres [[semanas]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "weeks",
@@ -59,7 +59,7 @@
    "audioClip": {
     "storySlug": "media-cara-rasurada",
     "storySource": "user",
-    "sentence": "Él tiene barba de tres semanas.",
+    "sentence": "El cliente tiene barba de tres semanas.",
     "targetWord": "semanas",
     "language": "spanish"
    }
@@ -280,7 +280,7 @@
   "type": "meaning_in_context",
   "word": "brazos",
   "featured": false,
-  "sentence": "Ella rasura [[brazos]] todos los días.",
+  "sentence": "La enfermera rasura [[brazos]] todos los días.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "arms",
@@ -293,7 +293,7 @@
    "audioClip": {
     "storySlug": "media-cara-rasurada",
     "storySource": "user",
-    "sentence": "Ella rasura brazos todos los días.",
+    "sentence": "La enfermera rasura brazos todos los días.",
     "targetWord": "brazos",
     "language": "spanish"
    }

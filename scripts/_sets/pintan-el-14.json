@@ -46,7 +46,7 @@
  {
   "type": "meaning_in_context",
   "word": "plantilla",
-  "sentence": "Él baja con el bote y una [[plantilla]] de cartón.",
+  "sentence": "El vecino baja con el bote y una [[plantilla]] de cartón.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a stencil",
@@ -59,7 +59,7 @@
    "audioClip": {
     "storySlug": "pintan-el-14",
     "storySource": "user",
-    "sentence": "Él baja con el bote y una plantilla de cartón.",
+    "sentence": "El vecino baja con el bote y una plantilla de cartón.",
     "targetWord": "plantilla",
     "language": "spanish"
    }
@@ -90,7 +90,7 @@
  {
   "type": "meaning_in_context",
   "word": "vueltas",
-  "sentence": "Ella da tres [[vueltas]] cada vez.",
+  "sentence": "La repartidora da tres [[vueltas]] cada vez.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "laps",
@@ -103,7 +103,7 @@
    "audioClip": {
     "storySlug": "pintan-el-14",
     "storySource": "user",
-    "sentence": "Ella da tres vueltas cada vez.",
+    "sentence": "La repartidora da tres vueltas cada vez.",
     "targetWord": "vueltas",
     "language": "spanish"
    }

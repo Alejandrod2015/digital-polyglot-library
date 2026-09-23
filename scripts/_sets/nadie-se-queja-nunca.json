@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "derecho",
-  "sentence": "Ella quiere el fleco [[derecho]].",
+  "sentence": "La enfermera quiere el fleco [[derecho]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "straight",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "nadie-se-queja-nunca",
     "storySource": "user",
-    "sentence": "Ella quiere el fleco derecho.",
+    "sentence": "La enfermera quiere el fleco derecho.",
     "targetWord": "derecho",
     "language": "spanish"
    }
@@ -68,7 +68,7 @@
  {
   "type": "meaning_in_context",
   "word": "lado",
-  "sentence": "Él mira el fleco de este [[lado]].",
+  "sentence": "El barbero mira el fleco de este [[lado]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "side",
@@ -81,7 +81,7 @@
    "audioClip": {
     "storySlug": "nadie-se-queja-nunca",
     "storySource": "user",
-    "sentence": "Él mira el fleco de este lado.",
+    "sentence": "El barbero mira el fleco de este lado.",
     "targetWord": "lado",
     "language": "spanish"
    }
@@ -326,7 +326,7 @@
   "type": "meaning_in_context",
   "word": "despacio",
   "featured": false,
-  "sentence": "Él se ríe [[despacio]], con la boca cerrada.",
+  "sentence": "El vecino se ríe [[despacio]], con la boca cerrada.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "slowly",
@@ -339,7 +339,7 @@
    "audioClip": {
     "storySlug": "nadie-se-queja-nunca",
     "storySource": "user",
-    "sentence": "Él se ríe despacio, con la boca cerrada.",
+    "sentence": "El vecino se ríe despacio, con la boca cerrada.",
     "targetWord": "despacio",
     "language": "spanish"
    }

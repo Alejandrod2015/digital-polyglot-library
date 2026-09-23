@@ -46,7 +46,7 @@
  {
   "type": "meaning_in_context",
   "word": "calma",
-  "sentence": "Ella pregunta con toda la [[calma]] que le queda.",
+  "sentence": "La enfermera pregunta con toda la [[calma]] que le queda.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the calm",
@@ -59,7 +59,7 @@
    "audioClip": {
     "storySlug": "peinate-como-en-la-foto",
     "storySource": "user",
-    "sentence": "Ella pregunta con toda la calma que le queda.",
+    "sentence": "La enfermera pregunta con toda la calma que le queda.",
     "targetWord": "calma",
     "language": "spanish"
    }

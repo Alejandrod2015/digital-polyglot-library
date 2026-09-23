@@ -280,7 +280,7 @@
   "type": "meaning_in_context",
   "word": "conocer",
   "featured": false,
-  "sentence": "Ella [[conoce]] a todo el barrio.",
+  "sentence": "La muchacha [[conoce]] a todo el barrio.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to know",
@@ -293,7 +293,7 @@
    "audioClip": {
     "storySlug": "se-muere-de-amor",
     "storySource": "user",
-    "sentence": "Ella conoce a todo el barrio.",
+    "sentence": "La muchacha conoce a todo el barrio.",
     "targetWord": "conoce",
     "language": "spanish"
    }

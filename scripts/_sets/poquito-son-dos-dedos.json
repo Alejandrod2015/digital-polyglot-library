@@ -280,7 +280,7 @@
   "type": "meaning_in_context",
   "word": "poquito",
   "featured": false,
-  "sentence": "Él pide [[poquito]], solo dos dedos.",
+  "sentence": "El cliente pide [[poquito]], solo dos dedos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a tiny bit",
@@ -293,7 +293,7 @@
    "audioClip": {
     "storySlug": "poquito-son-dos-dedos",
     "storySource": "user",
-    "sentence": "Él pide poquito, solo dos dedos.",
+    "sentence": "El cliente pide poquito, solo dos dedos.",
     "targetWord": "poquito",
     "language": "spanish"
    }

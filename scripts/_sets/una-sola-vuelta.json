@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "refrescos",
-  "sentence": "Ella llega con los [[refrescos]] fríos.",
+  "sentence": "La enfermera llega con los [[refrescos]] fríos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "fizzy drinks",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "una-sola-vuelta",
     "storySource": "user",
-    "sentence": "Ella llega con los refrescos fríos.",
+    "sentence": "La enfermera llega con los refrescos fríos.",
     "targetWord": "refrescos",
     "language": "spanish"
    }
@@ -68,7 +68,7 @@
  {
   "type": "meaning_in_context",
   "word": "mano",
-  "sentence": "Él tiene el volteador en la [[mano]].",
+  "sentence": "El primo tiene el volteador en la [[mano]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "hand",
@@ -81,7 +81,7 @@
    "audioClip": {
     "storySlug": "una-sola-vuelta",
     "storySource": "user",
-    "sentence": "Él tiene el volteador en la mano.",
+    "sentence": "El primo tiene el volteador en la mano.",
     "targetWord": "mano",
     "language": "spanish"
    }

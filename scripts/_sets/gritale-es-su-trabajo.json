@@ -303,7 +303,7 @@
   "type": "meaning_in_context",
   "word": "tirar",
   "featured": false,
-  "sentence": "Ella [[tira]] al otro luchador con un brinco.",
+  "sentence": "La luchadora [[tira]] al otro luchador con un brinco.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to throw down",
@@ -316,7 +316,7 @@
    "audioClip": {
     "storySlug": "gritale-es-su-trabajo",
     "storySource": "user",
-    "sentence": "Ella tira al otro luchador con un brinco.",
+    "sentence": "La luchadora tira al otro luchador con un brinco.",
     "targetWord": "tira",
     "language": "spanish"
    }
@@ -395,7 +395,7 @@
   "type": "meaning_in_context",
   "word": "bajito",
   "featured": false,
-  "sentence": "Él aplaude [[bajito]], con la gorra en las manos.",
+  "sentence": "El vecino aplaude [[bajito]], con la gorra en las manos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "very quietly",
@@ -408,7 +408,7 @@
    "audioClip": {
     "storySlug": "gritale-es-su-trabajo",
     "storySource": "user",
-    "sentence": "Él aplaude bajito, con la gorra en las manos.",
+    "sentence": "El vecino aplaude bajito, con la gorra en las manos.",
     "targetWord": "bajito",
     "language": "spanish"
    }

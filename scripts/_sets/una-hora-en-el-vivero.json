@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "aparador",
-  "sentence": "Él mira las plantas del [[aparador]].",
+  "sentence": "El vecino mira las plantas del [[aparador]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the shop window",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "una-hora-en-el-vivero",
     "storySource": "user",
-    "sentence": "Él mira las plantas del aparador.",
+    "sentence": "El vecino mira las plantas del aparador.",
     "targetWord": "aparador",
     "language": "spanish"
    }
@@ -46,7 +46,7 @@
  {
   "type": "meaning_in_context",
   "word": "desastre",
-  "sentence": "Ella regresa y ve el [[desastre]].",
+  "sentence": "La muchacha regresa y ve el [[desastre]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the mess",
@@ -59,7 +59,7 @@
    "audioClip": {
     "storySlug": "una-hora-en-el-vivero",
     "storySource": "user",
-    "sentence": "Ella regresa y ve el desastre.",
+    "sentence": "La muchacha regresa y ve el desastre.",
     "targetWord": "desastre",
     "language": "spanish"
    }

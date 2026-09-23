@@ -170,7 +170,7 @@
  {
   "type": "meaning_in_context",
   "word": "chica",
-  "sentence": "Él espera una broca [[chica]], de tres pesos.",
+  "sentence": "El mecánico espera una broca [[chica]], de tres pesos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "small",
@@ -183,7 +183,7 @@
    "audioClip": {
     "storySlug": "tu-propia-firma",
     "storySource": "user",
-    "sentence": "Él espera una broca chica, de tres pesos.",
+    "sentence": "El mecánico espera una broca chica, de tres pesos.",
     "targetWord": "chica",
     "language": "spanish"
    }
@@ -266,7 +266,7 @@
   "type": "meaning_in_context",
   "word": "con cuidado",
   "featured": false,
-  "sentence": "Ella deja la caja en el suelo [[con cuidado]].",
+  "sentence": "La repartidora deja la caja en el suelo [[con cuidado]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "carefully",
@@ -279,7 +279,7 @@
    "audioClip": {
     "storySlug": "tu-propia-firma",
     "storySource": "user",
-    "sentence": "Ella deja la caja en el suelo con cuidado.",
+    "sentence": "La repartidora deja la caja en el suelo con cuidado.",
     "targetWord": "con cuidado",
     "language": "spanish"
    }

@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "chiles",
-  "sentence": "Ella apunta tres [[chiles]] en el cuaderno.",
+  "sentence": "La enfermera apunta tres [[chiles]] en el cuaderno.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "chillies",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "la-salsa-no-se-apunta",
     "storySource": "user",
-    "sentence": "Ella apunta tres chiles en el cuaderno.",
+    "sentence": "La enfermera apunta tres chiles en el cuaderno.",
     "targetWord": "chiles",
     "language": "spanish"
    }
@@ -46,7 +46,7 @@
  {
   "type": "meaning_in_context",
   "word": "refrigerador",
-  "sentence": "Él esconde el cuaderno arriba del [[refrigerador]].",
+  "sentence": "El primo esconde el cuaderno arriba del [[refrigerador]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the fridge",
@@ -59,7 +59,7 @@
    "audioClip": {
     "storySlug": "la-salsa-no-se-apunta",
     "storySource": "user",
-    "sentence": "Él esconde el cuaderno arriba del refrigerador.",
+    "sentence": "El primo esconde el cuaderno arriba del refrigerador.",
     "targetWord": "refrigerador",
     "language": "spanish"
    }

@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "rincón",
-  "sentence": "Él toma café en su [[rincón]].",
+  "sentence": "El mecánico toma café en su [[rincón]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "corner",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "una-cuerda-no-hace-nudos",
     "storySource": "user",
-    "sentence": "Él toma café en su rincón.",
+    "sentence": "El mecánico toma café en su rincón.",
     "targetWord": "rincón",
     "language": "spanish"
    }

@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "recibo",
-  "sentence": "Ella tiene el [[recibo]] en la mano.",
+  "sentence": "La repartidora tiene el [[recibo]] en la mano.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the receipt",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "el-timbre-si-suena",
     "storySource": "user",
-    "sentence": "Ella tiene el recibo en la mano.",
+    "sentence": "La repartidora tiene el recibo en la mano.",
     "targetWord": "recibo",
     "language": "spanish"
    }
@@ -68,7 +68,7 @@
  {
   "type": "meaning_in_context",
   "word": "pitido",
-  "sentence": "Él oye un [[pitido]] corto, ahí dentro.",
+  "sentence": "El vecino oye un [[pitido]] corto, ahí dentro.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a beep",
@@ -81,7 +81,7 @@
    "audioClip": {
     "storySlug": "el-timbre-si-suena",
     "storySource": "user",
-    "sentence": "Él oye un pitido corto, ahí dentro.",
+    "sentence": "El vecino oye un pitido corto, ahí dentro.",
     "targetWord": "pitido",
     "language": "spanish"
    }

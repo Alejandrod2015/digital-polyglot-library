@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "vendas",
-  "sentence": "Ella llega con las [[vendas]] viejas.",
+  "sentence": "La luchadora llega con las [[vendas]] viejas.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "bandages",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "vendas-de-enfermera",
     "storySource": "user",
-    "sentence": "Ella llega con las vendas viejas.",
+    "sentence": "La luchadora llega con las vendas viejas.",
     "targetWord": "vendas",
     "language": "spanish"
    }

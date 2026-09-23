@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "dentro",
-  "sentence": "Ella revisa [[dentro]] de la lavadora.",
+  "sentence": "La enfermera revisa [[dentro]] de la lavadora.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "inside",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "puestas-por-fuera",
     "storySource": "user",
-    "sentence": "Ella revisa dentro de la lavadora.",
+    "sentence": "La enfermera revisa dentro de la lavadora.",
     "targetWord": "dentro",
     "language": "spanish"
    }
@@ -418,7 +418,7 @@
   "type": "meaning_in_context",
   "word": "por todos lados",
   "featured": false,
-  "sentence": "Él busca sus llaves [[por todos lados]].",
+  "sentence": "El mecánico busca sus llaves [[por todos lados]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "everywhere",
@@ -431,7 +431,7 @@
    "audioClip": {
     "storySlug": "puestas-por-fuera",
     "storySource": "user",
-    "sentence": "Él busca sus llaves por todos lados.",
+    "sentence": "El mecánico busca sus llaves por todos lados.",
     "targetWord": "por todos lados",
     "language": "spanish"
    }

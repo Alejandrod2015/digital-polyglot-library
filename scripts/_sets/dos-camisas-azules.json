@@ -24,7 +24,7 @@
  {
   "type": "meaning_in_context",
   "word": "camisa",
-  "sentence": "Ella cuelga una [[camisa]] azul en el tendedero.",
+  "sentence": "La enfermera cuelga una [[camisa]] azul en el tendedero.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a shirt",
@@ -37,7 +37,7 @@
    "audioClip": {
     "storySlug": "dos-camisas-azules",
     "storySource": "user",
-    "sentence": "Ella cuelga una camisa azul en el tendedero.",
+    "sentence": "La enfermera cuelga una camisa azul en el tendedero.",
     "targetWord": "camisa",
     "language": "spanish"
    }
@@ -90,7 +90,7 @@
  {
   "type": "meaning_in_context",
   "word": "ropa",
-  "sentence": "Él sube con su cubeta de [[ropa]] mojada.",
+  "sentence": "El mecánico sube con su cubeta de [[ropa]] mojada.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "clothes",
@@ -103,7 +103,7 @@
    "audioClip": {
     "storySlug": "dos-camisas-azules",
     "storySource": "user",
-    "sentence": "Él sube con su cubeta de ropa mojada.",
+    "sentence": "El mecánico sube con su cubeta de ropa mojada.",
     "targetWord": "ropa",
     "language": "spanish"
    }

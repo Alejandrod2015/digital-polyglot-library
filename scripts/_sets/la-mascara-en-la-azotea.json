@@ -326,7 +326,7 @@
   "type": "meaning_in_context",
   "word": "atrás",
   "featured": false,
-  "sentence": "Ella oye pasos [[atrás]].",
+  "sentence": "La enfermera oye pasos [[atrás]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "behind her",
@@ -339,7 +339,7 @@
    "audioClip": {
     "storySlug": "la-mascara-en-la-azotea",
     "storySource": "user",
-    "sentence": "Ella oye pasos atrás.",
+    "sentence": "La enfermera oye pasos atrás.",
     "targetWord": "atrás",
     "language": "spanish"
    }

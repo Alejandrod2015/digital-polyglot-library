@@ -90,7 +90,7 @@
  {
   "type": "meaning_in_context",
   "word": "cuaderno",
-  "sentence": "Él apunta cada cosa en su [[cuaderno]].",
+  "sentence": "El encargado apunta cada cosa en su [[cuaderno]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "notebook",
@@ -103,7 +103,7 @@
    "audioClip": {
     "storySlug": "tres-duenos-y-un-paraguas",
     "storySource": "user",
-    "sentence": "Él apunta cada cosa en su cuaderno.",
+    "sentence": "El encargado apunta cada cosa en su cuaderno.",
     "targetWord": "cuaderno",
     "language": "spanish"
    }

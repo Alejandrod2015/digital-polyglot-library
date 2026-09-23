@@ -303,7 +303,7 @@
   "type": "meaning_in_context",
   "word": "bajar",
   "featured": false,
-  "sentence": "Ella [[baja]] la escalera otra vez.",
+  "sentence": "La enfermera [[baja]] la escalera otra vez.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to go down",
@@ -316,7 +316,7 @@
    "audioClip": {
     "storySlug": "el-cerro-esta-limpio",
     "storySource": "user",
-    "sentence": "Ella baja la escalera otra vez.",
+    "sentence": "La enfermera baja la escalera otra vez.",
     "targetWord": "baja",
     "language": "spanish"
    }
