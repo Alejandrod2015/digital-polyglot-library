@@ -25,7 +25,7 @@ ejercicios = [
  M("por fin", "Mariana abre su puerta [[por fin]].", "at last", ["as always", "in a rush", "by mistake"]),
  M("en orden", "Todo está [[en orden]].", "in order", ["in the hall", "as new", "on the list"]),
  # pool
- M("en ningún lado", "No está [[en ningún lado]].", "nowhere to be found", ["out on the roof", "back in her basket", "under the sofa"]),
+ M("en ningún lado", "No está [[en ningún lado]].", "nowhere to be found", ["somewhere in the building", "right where I left her", "further up the stairs"]),
  M("sin hacer ruido", "Mariana y Nicolás bajan [[sin hacer ruido]].", "without making a sound", ["one after the other", "in the dark", "in a hurry"]),
  M("Yo no digo nada", "[[Yo no digo nada]].", "I am saying nothing", ["I told you so", "I do not mind", "I want it back"]),
  M("para siempre", "Esta llave es tuya, [[para siempre]].", "for good", ["for tonight", "for a while", "for the summer"]),

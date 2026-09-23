@@ -7,9 +7,9 @@ M, F, MATCH = m.M, m.F, m.MATCH
 ejercicios = [
  MATCH([("el balde", "a bucket"), ("el plomero", "a plumber"), ("la gotera", "a leak"), ("el tubo", "a pipe")]),
  F("cobra", "El plomero _____ igual.",
-   ["habla", "baja", "cierra"],
+   ["cierra", "apunta", "dobla"],
    "The plumber _____ the same either way.",
-   ["charges", "speaks", "comes down", "closes"]),
+   ["charges", "closes", "points", "folds"]),
  F("cerramos", "Y _____ la llave hasta el lunes.",
    ["hablamos", "pagamos", "bajamos"],
    "And we _____ the tap until Monday.",

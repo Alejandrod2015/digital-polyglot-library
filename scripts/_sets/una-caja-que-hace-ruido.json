@@ -90,16 +90,16 @@
    "answer": "buscan",
    "options": [
     "buscan",
-    "escuchan",
     "abren",
-    "quedan"
+    "quedan",
+    "doblan"
    ],
    "translation": "The two of them _____ him around the building.",
    "optionTranslations": [
     "look for",
-    "listen to",
     "open",
-    "keep"
+    "keep",
+    "fold"
    ],
    "audioClip": {
     "storySlug": "una-caja-que-hace-ruido",

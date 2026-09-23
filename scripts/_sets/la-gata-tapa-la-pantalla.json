@@ -52,29 +52,22 @@
   "featured": true
  },
  {
-  "type": "fill_blank",
+  "type": "meaning_in_context",
   "word": "levanta",
-  "sentence": "Nicolás _____ a la gata.",
+  "sentence": "Nicolás [[levanta]] a la gata. Ella pesa bastante.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "levanta",
+   "prompt": "Choose the meaning in context.",
+   "answer": "lifts up",
    "options": [
-    "levanta",
-    "pregunta",
-    "tapa",
-    "devuelve"
-   ],
-   "translation": "Nicolas _____ the cat.",
-   "optionTranslations": [
-    "lifts",
-    "asks",
-    "covers",
-    "gives back"
+    "lifts up",
+    "strokes",
+    "shuts out",
+    "feeds"
    ],
    "audioClip": {
     "storySlug": "la-gata-tapa-la-pantalla",
     "storySource": "user",
-    "sentence": "Nicolás levanta a la gata.",
+    "sentence": "Nicolás levanta a la gata. Ella pesa bastante.",
     "targetWord": "levanta",
     "language": "spanish"
    }

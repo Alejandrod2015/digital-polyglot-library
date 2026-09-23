@@ -52,24 +52,17 @@
   "featured": true
  },
  {
-  "type": "fill_blank",
+  "type": "meaning_in_context",
   "word": "saca",
-  "sentence": "Nicolás _____ la caja de abajo.",
+  "sentence": "Nicolás [[saca]] la caja de abajo.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "saca",
+   "prompt": "Choose the meaning in context.",
+   "answer": "pulls out",
    "options": [
-    "saca",
-    "recuerda",
-    "cabe",
-    "firma"
-   ],
-   "translation": "Nicolas _____ the box at the bottom.",
-   "optionTranslations": [
     "pulls out",
-    "remembers",
-    "fits",
-    "signs"
+    "signs for",
+    "stacks up",
+    "points at"
    ],
    "audioClip": {
     "storySlug": "nicolas-firma-demasiado",

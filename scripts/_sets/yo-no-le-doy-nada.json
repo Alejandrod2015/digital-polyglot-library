@@ -120,14 +120,14 @@
    "answer": "toca",
    "options": [
     "toca",
-    "huele",
+    "pesa",
     "pelea",
     "dice"
    ],
    "translation": "Then Nicolas _____ the cat's neck.",
    "optionTranslations": [
     "touches",
-    "smells",
+    "weighs",
     "argues",
     "says"
    ],

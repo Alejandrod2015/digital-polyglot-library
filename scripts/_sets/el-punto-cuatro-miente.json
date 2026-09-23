@@ -91,15 +91,15 @@
    "options": [
     "Se escapa",
     "Descansa",
-    "Vuelve",
-    "Sale"
+    "Espera",
+    "Pesa"
    ],
    "translation": "My cat does not get lost. She _____.",
    "optionTranslations": [
     "sneaks out",
     "rests",
-    "comes back",
-    "goes out"
+    "waits",
+    "weighs"
    ],
    "audioClip": {
     "storySlug": "el-punto-cuatro-miente",

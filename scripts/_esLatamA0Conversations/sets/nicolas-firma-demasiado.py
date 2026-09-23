@@ -6,10 +6,7 @@ M, F, MATCH = m.M, m.F, m.MATCH
 
 ejercicios = [
  MATCH([("el apellido", "a surname"), ("el papel", "paper"), ("el felpudo", "a doormat"), ("el vecino", "a neighbour")]),
- F("saca", "Nicolás _____ la caja de abajo.",
-   ["recuerda", "cabe", "firma"],
-   "Nicolas _____ the box at the bottom.",
-   ["pulls out", "remembers", "fits", "signs"]),
+ M("saca", "Nicolás [[saca]] la caja de abajo.", "pulls out", ["signs for", "stacks up", "points at"]),
  F("recuerdo", "Un momento. Ahora _____.",
    ["saco", "quepo", "firmo"],
    "Hold on. Now I _____.",

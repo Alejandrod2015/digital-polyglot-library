@@ -6,10 +6,7 @@ M, F, MATCH = m.M, m.F, m.MATCH
 
 ejercicios = [
  MATCH([("la pantalla", "a screen"), ("la cámara", "a camera"), ("la cola", "a tail"), ("la sala", "the living room")]),
- F("levanta", "Nicolás _____ a la gata.",
-   ["pregunta", "tapa", "devuelve"],
-   "Nicolas _____ the cat.",
-   ["lifts", "asks", "covers", "gives back"]),
+ M("levanta", "Nicolás [[levanta]] a la gata. Ella pesa bastante.", "lifts up", ["strokes", "shuts out", "feeds"]),
  F("pregunta", "Mi mamá _____ si comes bien.",
    ["levanta", "devuelve", "tapa"],
    "My mum _____ whether you eat properly.",

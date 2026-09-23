@@ -61,15 +61,15 @@
    "options": [
     "contesta",
     "conoce",
-    "recuerda",
-    "cree"
+    "dobla",
+    "vuela"
    ],
    "translation": "The note has been on the stairs since Monday. Nobody _____.",
    "optionTranslations": [
     "answers",
     "knows",
-    "remembers",
-    "thinks"
+    "folds",
+    "flies"
    ],
    "audioClip": {
     "storySlug": "ahora-soy-mas-gordo",
@@ -281,7 +281,7 @@
    "answer": "me too",
    "options": [
     "me too",
-    "not me",
+    "every week",
     "of course",
     "back then"
    ],
@@ -373,9 +373,9 @@
    "answer": "from three years ago",
    "options": [
     "from three years ago",
-    "from a market stall",
-    "from my brother",
-    "from a school trip"
+    "from last winter",
+    "from my school days",
+    "from before the move"
    ],
    "audioClip": {
     "storySlug": "ahora-soy-mas-gordo",

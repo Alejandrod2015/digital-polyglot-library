@@ -7,9 +7,9 @@ M, F, MATCH = m.M, m.F, m.MATCH
 ejercicios = [
  MATCH([("la tapa", "a lid"), ("el cartero", "a postman"), ("el ladrón", "a thief"), ("el sello", "a stamp")]),
  F("roba", "Él no _____ nada. Yo lo conozco.",
-   ["salta", "viaja", "gana"],
+   ["salta", "viaja", "corta"],
    "He does not _____ anything. I know him.",
-   ["steal", "jump", "travel", "gain"]),
+   ["steal", "jump", "travel", "cut"]),
  F("salta", "Ella _____ hacia atrás.",
    ["roba", "viaja", "gana"],
    "She _____ backwards.",

@@ -60,16 +60,16 @@
    "answer": "cobra",
    "options": [
     "cobra",
-    "habla",
-    "baja",
-    "cierra"
+    "cierra",
+    "apunta",
+    "dobla"
    ],
    "translation": "The plumber _____ the same either way.",
    "optionTranslations": [
     "charges",
-    "speaks",
-    "comes down",
-    "closes"
+    "closes",
+    "points",
+    "folds"
    ],
    "audioClip": {
     "storySlug": "el-agua-esta-caliente",
