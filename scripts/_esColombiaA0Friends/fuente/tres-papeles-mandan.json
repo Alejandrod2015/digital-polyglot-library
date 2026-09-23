@@ -1,0 +1,128 @@
+{
+ "slug": "tres-papeles-mandan",
+ "topic": "cash-and-errands",
+ "title": "Tres papeles mandan",
+ "text": "La enfermera entra con un mandado. Mariana prepara café. La bolsa roja tiene pan.\n\nEl comprobante trae dos nombres. “Dos nombres, un sobre, y cero pelea”, dice la vendedora. Andrés mira la plata y el café. “Yo soy el otro renglón”, responde.\n\nHay tres papeles: azul, rojo y blanco. “Cada color cuida algo: botica, pan o vuelto”, explica. El azul cuida la botica. El rojo cuida pan.\n\nMariana deja el vaso junto al papel blanco. “El pan no toma plata ni firma papel”, avisa. Afuera espera la buseta.\n\nEl comprobante va al bolsillo lateral. El sobre queda ordenado. “La compra pequeña queda clara y limpia”, cuenta.\n\nAndrés entrega el sobre correcto. Nadie protesta. Ella sonríe poco. “Todo separado, todo amigo”, dice la vendedora. “Café, pan y plata van separados”, dice Andrés.",
+ "vocab": [
+  {
+   "word": "mandado",
+   "surface": "mandado",
+   "type": "noun",
+   "def": "An errand for someone."
+  },
+  {
+   "word": "comprobante",
+   "surface": "comprobante",
+   "type": "noun",
+   "def": "A paper showing payment."
+  },
+  {
+   "word": "sobre",
+   "surface": "sobre",
+   "type": "noun",
+   "def": "A paper envelope for documents."
+  },
+  {
+   "word": "bolsa roja",
+   "surface": "bolsa roja",
+   "type": "expression",
+   "def": "A red bag for things."
+  },
+  {
+   "word": "papel blanco",
+   "surface": "papel blanco",
+   "type": "expression",
+   "def": "A white piece of paper."
+  },
+  {
+   "word": "renglón",
+   "surface": "renglón",
+   "type": "noun",
+   "def": "One written line on paper."
+  },
+  {
+   "word": "separados",
+   "surface": "separados",
+   "type": "adjective",
+   "def": "Kept apart, not together."
+  },
+  {
+   "word": "cero pelea",
+   "surface": "cero pelea",
+   "type": "expression",
+   "def": "No fight at all."
+  },
+  {
+   "word": "cada color",
+   "surface": "Cada color",
+   "type": "expression",
+   "def": "Each color by itself."
+  },
+  {
+   "word": "dos nombres",
+   "surface": "Dos nombres",
+   "type": "expression",
+   "def": "Two names on paper."
+  },
+  {
+   "word": "farmacia",
+   "surface": "botica",
+   "type": "noun",
+   "def": "A shop for medicine."
+  },
+  {
+   "word": "bolsillo lateral",
+   "surface": "bolsillo lateral",
+   "type": "expression",
+   "def": "A pocket on the side."
+  },
+  {
+   "word": "correcto",
+   "surface": "correcto",
+   "type": "adjective",
+   "def": "Right for this task."
+  },
+  {
+   "word": "azul papel",
+   "surface": "azul",
+   "type": "adjective",
+   "def": "The color of clear sky."
+  },
+  {
+   "word": "queda ordenado",
+   "surface": "queda ordenado",
+   "type": "expression",
+   "def": "Becomes neat and ordered."
+  },
+  {
+   "word": "mercado corto",
+   "surface": "compra pequeña",
+   "type": "expression",
+   "def": "A small thing bought."
+  },
+  {
+   "word": "café pan y plata",
+   "surface": "Café, pan y plata",
+   "type": "expression",
+   "def": "Coffee, bread, and money."
+  },
+  {
+   "word": "limpia",
+   "surface": "limpia",
+   "type": "adjective",
+   "def": "Clean, not dirty or marked."
+  },
+  {
+   "word": "todo separado",
+   "surface": "Todo separado",
+   "type": "expression",
+   "def": "Everything kept in different places."
+  },
+  {
+   "word": "lateral de bolso",
+   "surface": "bolsillo lateral",
+   "type": "noun",
+   "def": "A side pocket on a bag."
+  }
+ ]
+}

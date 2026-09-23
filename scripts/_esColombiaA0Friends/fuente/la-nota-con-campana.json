@@ -1,0 +1,128 @@
+{
+ "slug": "la-nota-con-campana",
+ "topic": "phones-and-messages",
+ "title": "La nota con campana",
+ "text": "Junto al café, el músico tiene el celular. Mariana escribe un nombre. Andrés espera con pan. La campana suena dos veces. El instrumento espera.\n\nEl músico hace una nota de voz. “Mesa amiga, café y pan; sigan mi voz”, dice. La campana entra rápido. El audio queda raro.\n\nLa nota suena en la buseta. “La campana dice paradero, pero la voz dice café”, responde. Andrés mira el pan y se detiene. “Suena cerca”, dice.\n\nMira la pantalla. “No es paradero. Es café, vaso y vitrina”, explica. La vitrina y el vaso señalan. Mariana escucha el sonido y avisa.\n\nEl músico manda otra nota. Esta vez toca una sola cuerda. “Mesa amiga aquí, con café”, canta bajo. La campana busca salida.\n\nAl final, la buseta llega limpia. “Seguí la campana y el olor de pan”, cuenta. Andrés levanta el pandebono. “Sirve por error”, responde. “La nota sirve por error”, dice Andrés.",
+ "vocab": [
+  {
+   "word": "audio raro",
+   "surface": "audio queda raro",
+   "type": "expression",
+   "def": "Audio that sounds strange."
+  },
+  {
+   "word": "nota de voz",
+   "surface": "nota de voz",
+   "type": "expression",
+   "def": "A short voice message."
+  },
+  {
+   "word": "paradero",
+   "surface": "paradero",
+   "type": "noun",
+   "def": "A bus stop place."
+  },
+  {
+   "word": "una sola cuerda",
+   "surface": "una sola cuerda",
+   "type": "expression",
+   "def": "One string played alone."
+  },
+  {
+   "word": "hilito musical",
+   "surface": "cuerda",
+   "type": "noun",
+   "def": "A thin line on an instrument."
+  },
+  {
+   "word": "cantar",
+   "surface": "canta",
+   "type": "verb",
+   "def": "To make music with your voice."
+  },
+  {
+   "word": "seguir",
+   "surface": "Seguí",
+   "type": "verb",
+   "def": "To go after a sign."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "olor de pan",
+   "surface": "olor de pan",
+   "type": "expression",
+   "def": "The smell that bread makes."
+  },
+  {
+   "word": "limpio",
+   "surface": "limpia",
+   "type": "adjective",
+   "def": "Clean and not dirty."
+  },
+  {
+   "word": "vitrina",
+   "surface": "vitrina",
+   "type": "noun",
+   "def": "A glass display case."
+  },
+  {
+   "word": "habla grabada",
+   "surface": "voz",
+   "type": "noun",
+   "def": "The sound a person speaks with."
+  },
+  {
+   "word": "instrumento",
+   "surface": "instrumento",
+   "type": "noun",
+   "def": "A thing used for music."
+  },
+  {
+   "word": "buscar",
+   "surface": "busca",
+   "type": "verb",
+   "def": "To try to find something."
+  },
+  {
+   "word": "avisar",
+   "surface": "avisa",
+   "type": "verb",
+   "def": "To tell someone news."
+  },
+  {
+   "word": "servir",
+   "surface": "sirve",
+   "type": "verb",
+   "def": "To be useful now."
+  },
+  {
+   "word": "mandar",
+   "surface": "manda",
+   "type": "verb",
+   "def": "To send a message."
+  },
+  {
+   "word": "aroma",
+   "surface": "olor",
+   "type": "noun",
+   "def": "What your nose notices."
+  },
+  {
+   "word": "escuchar",
+   "surface": "escucha",
+   "type": "verb",
+   "def": "To listen to something."
+  },
+  {
+   "word": "puerta de salida",
+   "surface": "salida",
+   "type": "noun",
+   "def": "A way out of a place."
+  }
+ ]
+}

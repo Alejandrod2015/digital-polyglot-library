@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "orillita",
+  "sentence": "En la [[orillita]] hay una señal de tiza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small edge of a place",
+   "options": [
+    "a small edge of a place",
+    "a large room with chairs",
+    "a shop that sells bread",
+    "a bus with two doors"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "En la orillita hay una señal de tiza.",
+    "targetWord": "orillita",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señal de tiza",
+  "sentence": "En la orillita hay una [[señal de tiza]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chalk mark that guides",
+   "options": [
+    "a chalk mark that guides",
+    "a paper with a name",
+    "a light on the street",
+    "a card for the bus"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "En la orillita hay una señal de tiza.",
+    "targetWord": "señal de tiza",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuneta",
+  "sentence": "Andrés mira la [[cuneta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a water edge by a street",
+   "options": [
+    "a water edge by a street",
+    "a small paper bag",
+    "a warm drink with milk",
+    "a seat near the window"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Andrés mira la cuneta.",
+    "targetWord": "cuneta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mojado",
+  "sentence": "Mariana mira el papel [[mojado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet, with water on it",
+   "options": [
+    "wet, with water on it",
+    "new and very clean",
+    "small and very thin",
+    "old and very dark"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Mariana mira el papel mojado.",
+    "targetWord": "mojado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rastro",
+  "sentence": "El [[rastro]] y el manchón miran al café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mark left behind",
+   "options": [
+    "a mark left behind",
+    "a bag full of bread",
+    "a cup of hot coffee",
+    "a door near the seat"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "El rastro y el manchón miran al café.",
+    "targetWord": "rastro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "sale",
+  "sentence": "Mariana _____ con un vaso y un papel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sale",
+   "options": [
+    "sale",
+    "lee",
+    "borra",
+    "muestra"
+   ],
+   "translation": "Mariana _____ with a glass and a paper.",
+   "optionTranslations": [
+    "goes out",
+    "reads",
+    "erases",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Mariana sale con un vaso y un papel.",
+    "targetWord": "sale",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "lee",
+  "sentence": "“La mesa amiga es aquí”, _____ despacio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lee",
+   "options": [
+    "lee",
+    "prende",
+    "guarda",
+    "limpia"
+   ],
+   "translation": "“The friend table is here”, she _____ slowly.",
+   "optionTranslations": [
+    "reads",
+    "turns on",
+    "keeps",
+    "cleans"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "“La mesa amiga es aquí”, lee despacio.",
+    "targetWord": "lee",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "responde",
+  "sentence": "“Yo sigo el café”, _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "responde",
+   "options": [
+    "responde",
+    "camina",
+    "guarda",
+    "limpia"
+   ],
+   "translation": "“I follow the coffee”, he _____.",
+   "optionTranslations": [
+    "answers",
+    "walks",
+    "keeps",
+    "cleans"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "“Yo sigo el café”, responde.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "muestra",
+  "sentence": "Camilo _____ una rayita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "muestra",
+   "options": [
+    "muestra",
+    "sale",
+    "responde",
+    "llega"
+   ],
+   "translation": "Camilo _____ a little line.",
+   "optionTranslations": [
+    "shows",
+    "goes out",
+    "answers",
+    "arrives"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Camilo muestra una rayita.",
+    "targetWord": "muestra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "borra",
+  "sentence": "El aguacero _____ la tiza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "borra",
+   "options": [
+    "borra",
+    "sube",
+    "canta",
+    "prende"
+   ],
+   "translation": "The downpour _____ the chalk.",
+   "optionTranslations": [
+    "erases",
+    "goes up",
+    "sings",
+    "turns on"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "El aguacero borra la tiza.",
+    "targetWord": "borra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "canaleta",
+  "sentence": "La tinta azul corre por la [[canaleta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small channel for water",
+   "options": [
+    "a small channel for water",
+    "a thin blue pen",
+    "a wide green field",
+    "a short white wall"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "La tinta azul corre por la canaleta.",
+    "targetWord": "canaleta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "azul",
+  "sentence": "La tinta [[azul]] corre por la canaleta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue in color, not red",
+   "options": [
+    "blue in color, not red",
+    "warm and very sweet",
+    "small and very round",
+    "dry and very hard"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "La tinta azul corre por la canaleta.",
+    "targetWord": "azul",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rayita",
+  "sentence": "Camilo muestra una [[rayita]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a very small line",
+   "options": [
+    "a very small line",
+    "a cup of coffee",
+    "a piece of bread",
+    "a sheet of paper"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Camilo muestra una rayita.",
+    "targetWord": "rayita",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manchón",
+  "sentence": "El rastro y el [[manchón]] miran al café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a large dirty mark",
+   "options": [
+    "a large dirty mark",
+    "a clean white plate",
+    "a small red flower",
+    "a long brown table"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "El rastro y el manchón miran al café.",
+    "targetWord": "manchón",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "también",
+  "sentence": "Ahora la mesa nada [[también]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the same way too",
+   "options": [
+    "in the same way too",
+    "with a lot of care",
+    "at the end of it",
+    "for a short while"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "Ahora la mesa nada también.",
+    "targetWord": "también",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tiza",
+  "sentence": "En la orillita hay una señal de _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tiza",
+   "options": [
+    "tiza",
+    "sopa",
+    "cuneta",
+    "canaleta"
+   ],
+   "translation": "On the little edge there is a mark made of _____.",
+   "optionTranslations": [
+    "chalk for making marks",
+    "soup, here a watery mess",
+    "a water edge by a street",
+    "a small channel for water"
+   ],
+   "audioClip": {
+    "storySlug": "tiza-bajo-la-lluvia",
+    "storySource": "journey",
+    "sentence": "En la orillita hay una señal de tiza.",
+    "targetWord": "tiza",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "sombrilla,ramita,tinta,sopa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "sombrilla",
+     "answer": "a cover held against rain",
+     "options": [
+      "a cover held against rain",
+      "a little branch from a plant",
+      "colored liquid for writing",
+      "soup, here a watery mess"
+     ]
+    },
+    {
+     "word": "ramita",
+     "answer": "a little branch from a plant",
+     "options": [
+      "a cover held against rain",
+      "a little branch from a plant",
+      "colored liquid for writing",
+      "soup, here a watery mess"
+     ]
+    },
+    {
+     "word": "tinta",
+     "answer": "colored liquid for writing",
+     "options": [
+      "a cover held against rain",
+      "a little branch from a plant",
+      "colored liquid for writing",
+      "soup, here a watery mess"
+     ]
+    },
+    {
+     "word": "sopa",
+     "answer": "soup, here a watery mess",
+     "options": [
+      "a cover held against rain",
+      "a little branch from a plant",
+      "colored liquid for writing",
+      "soup, here a watery mess"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,128 @@
+{
+ "slug": "tiza-bajo-la-lluvia",
+ "topic": "buses-and-streets",
+ "title": "La tiza ya nada",
+ "text": "Nadie ve la tiza completa. Mariana sale con un vaso y un papel. La médica espera. Andrés guarda pan. La buseta para suave.\n\nEn la orillita hay una señal de tiza. El aguacero cae. La señal ya parece sopa. “Mi nombre nada. La tiza nada”, lamenta la médica.\n\nMariana mira el papel mojado. “La mesa amiga es aquí, aquí mismo”, lee despacio. Andrés mira la cuneta. “Aquí hay tres aquí, pero yo sigo el café”, responde.\n\nCamilo baja por la calzada y toca la manija. Camilo muestra una rayita. Llega pan de queso. “El rastro y el manchón miran al café”, cuenta ella.\n\nEl papel cae al barro. La tinta azul corre por la canaleta. Ella ríe poco. “Ahora la mesa nada también”, contesta. Mariana levanta la sombrilla.\n\nCamilo pone la bolsa seca. Una ramita y una hojita quedan al lado. “La mesa queda y ella llega”, cierra Mariana. El aguacero borra la tiza.",
+ "vocab": [
+  {
+   "word": "salir",
+   "surface": "sale",
+   "type": "verb",
+   "def": "To go out of a place."
+  },
+  {
+   "word": "orillita",
+   "surface": "orillita",
+   "type": "noun",
+   "def": "A small edge of a place."
+  },
+  {
+   "word": "señal de tiza",
+   "surface": "señal de tiza",
+   "type": "expression",
+   "def": "A chalk mark that guides."
+  },
+  {
+   "word": "tiza",
+   "surface": "tiza",
+   "type": "noun",
+   "def": "Chalk for making marks."
+  },
+  {
+   "word": "cuneta",
+   "surface": "cuneta",
+   "type": "noun",
+   "def": "A water edge by a street."
+  },
+  {
+   "word": "mojado",
+   "surface": "mojado",
+   "type": "adjective",
+   "def": "Wet, with water on it."
+  },
+  {
+   "word": "leer",
+   "surface": "lee",
+   "type": "verb",
+   "def": "To understand written words."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "sopa",
+   "surface": "sopa",
+   "type": "noun",
+   "def": "Soup; here a watery mess."
+  },
+  {
+   "word": "rastro",
+   "surface": "rastro",
+   "type": "noun",
+   "def": "A mark left behind."
+  },
+  {
+   "word": "canaleta",
+   "surface": "canaleta",
+   "type": "noun",
+   "def": "A small channel for water."
+  },
+  {
+   "word": "sombrilla",
+   "surface": "sombrilla",
+   "type": "noun",
+   "def": "A cover held against rain."
+  },
+  {
+   "word": "tinta",
+   "surface": "tinta",
+   "type": "noun",
+   "def": "Colored liquid for writing."
+  },
+  {
+   "word": "azul",
+   "surface": "azul",
+   "type": "adjective",
+   "def": "Blue in color, not red."
+  },
+  {
+   "word": "rayita",
+   "surface": "rayita",
+   "type": "noun",
+   "def": "A very small line."
+  },
+  {
+   "word": "mostrar",
+   "surface": "muestra",
+   "type": "verb",
+   "def": "To show something clearly."
+  },
+  {
+   "word": "manchón",
+   "surface": "manchón",
+   "type": "noun",
+   "def": "A large dirty mark."
+  },
+  {
+   "word": "borrar",
+   "surface": "borra",
+   "type": "verb",
+   "def": "To make writing disappear."
+  },
+  {
+   "word": "también",
+   "surface": "también",
+   "type": "adverb",
+   "def": "In the same way too."
+  },
+  {
+   "word": "ramita",
+   "surface": "ramita",
+   "type": "noun",
+   "def": "A little branch from a plant."
+  }
+ ]
+}

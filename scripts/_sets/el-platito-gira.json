@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "se esconde",
+  "sentence": "La plata [[se esconde]] aquí, junto al pan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hide from sight",
+   "options": [
+    "to hide from sight",
+    "to wait in line",
+    "to open the door",
+    "to pay the bus"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "La plata se esconde aquí, junto al pan.",
+    "targetWord": "se esconde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gira",
+  "sentence": "El platito [[gira]] sobre la bandejita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn in a circle",
+   "options": [
+    "to turn in a circle",
+    "to close the bag",
+    "to count the plates",
+    "to wait for a friend"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El platito gira sobre la bandejita.",
+    "targetWord": "gira",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recibe",
+  "sentence": "El bus [[recibe]] plata, no miga.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get money from someone",
+   "options": [
+    "to get money from someone",
+    "to look for a seat",
+    "to open the front door",
+    "to sing a short song"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El bus recibe plata, no miga.",
+    "targetWord": "recibe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responde",
+  "sentence": "Yo compro el tiquete, no el pan, [[responde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer another person",
+   "options": [
+    "to answer another person",
+    "to ask for more bread",
+    "to count the small coins",
+    "to leave the little plate"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Yo compro el tiquete, no el pan, responde.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "orilla",
+  "sentence": "Lina señala la [[orilla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the edge of something",
+   "options": [
+    "the edge of something",
+    "the middle of a street",
+    "the door of a house",
+    "the roof of a car"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Lina señala la orilla.",
+    "targetWord": "orilla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerca de la puerta",
+  "sentence": "El conductor toca el timbre [[cerca de la puerta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near the door",
+   "options": [
+    "near the door",
+    "under the table",
+    "behind the counter",
+    "next to the window"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El conductor toca el timbre cerca de la puerta.",
+    "targetWord": "cerca de la puerta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "simple",
+  "sentence": "Después compra pan [[simple]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plain and not fancy",
+   "options": [
+    "plain and not fancy",
+    "warm from the oven",
+    "sweet with white sugar",
+    "hard and very old"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Después compra pan simple.",
+    "targetWord": "simple",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos monedas",
+  "sentence": "Con café y pan, Andrés mira [[dos monedas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "two metal coins",
+   "options": [
+    "two metal coins",
+    "three paper bills",
+    "one bread roll",
+    "four small spoons"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Con café y pan, Andrés mira dos monedas.",
+    "targetWord": "dos monedas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin cambio",
+  "sentence": "El platito queda libre y todos ríen [[sin cambio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with no money back",
+   "options": [
+    "with no money back",
+    "with a lot of noise",
+    "with two new friends",
+    "with a warm drink"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El platito queda libre y todos ríen sin cambio.",
+    "targetWord": "sin cambio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "moneda",
+  "sentence": "Las [[monedas]] vuelven a la mano de Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a round piece of money",
+   "options": [
+    "a round piece of money",
+    "a small paper ticket",
+    "a warm cheese bread",
+    "a red plastic bag"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Las monedas vuelven a la mano de Andrés.",
+    "targetWord": "monedas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vuelto",
+  "sentence": "Mariana recoge el _____ y lo mete en un monedero.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuelto",
+   "options": [
+    "vuelto",
+    "timbre",
+    "platito",
+    "conductor"
+   ],
+   "translation": "Mariana picks up the _____ and puts it in a coin purse.",
+   "optionTranslations": [
+    "the change",
+    "the bell",
+    "the little plate",
+    "the driver"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Mariana recoge el vuelto y lo mete en un monedero.",
+    "targetWord": "vuelto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "miga",
+  "sentence": "El bus recibe plata, no _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "miga",
+   "options": [
+    "miga",
+    "buseta",
+    "cucharita",
+    "panadera"
+   ],
+   "translation": "The bus takes money, not _____.",
+   "optionTranslations": [
+    "a bread crumb",
+    "a small city bus",
+    "a small spoon",
+    "a baker"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El bus recibe plata, no miga.",
+    "targetWord": "miga",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "rueda",
+  "sentence": "Una moneda _____ junto a la cucharita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rueda",
+   "options": [
+    "rueda",
+    "escucha",
+    "responde",
+    "pregunta"
+   ],
+   "translation": "A coin _____ next to the little spoon.",
+   "optionTranslations": [
+    "rolls",
+    "listens",
+    "answers",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Una moneda rueda junto a la cucharita.",
+    "targetWord": "rueda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "plata",
+  "sentence": "Es _____ para la buseta, no para pan ni miga.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "plata",
+   "options": [
+    "plata",
+    "bandejita",
+    "orilla",
+    "cucharita"
+   ],
+   "translation": "It is _____ for the bus, not for bread or crumbs.",
+   "optionTranslations": [
+    "money",
+    "tray",
+    "edge",
+    "spoon"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Es plata para la buseta, no para pan ni miga.",
+    "targetWord": "plata",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "compra",
+  "sentence": "Después _____ pan simple.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "canta",
+    "escucha",
+    "responde"
+   ],
+   "translation": "Later she _____ plain bread.",
+   "optionTranslations": [
+    "buys",
+    "sings",
+    "listens",
+    "answers"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "Después compra pan simple.",
+    "targetWord": "compra",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "timbre",
+  "sentence": "El conductor toca el _____ cerca de la puerta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "timbre",
+   "options": [
+    "timbre",
+    "aguacero",
+    "pandebono",
+    "vuelto"
+   ],
+   "translation": "The driver rings the _____ near the door.",
+   "optionTranslations": [
+    "the bell",
+    "a heavy rain",
+    "the cheese bread",
+    "the change"
+   ],
+   "audioClip": {
+    "storySlug": "el-platito-gira",
+    "storySource": "journey",
+    "sentence": "El conductor toca el timbre cerca de la puerta.",
+    "targetWord": "timbre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "platito,cucharita,bandejita,monedero",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "platito",
+     "answer": "a very small plate",
+     "options": [
+      "a very small plate",
+      "a small spoon",
+      "a small tray",
+      "a small purse for coins"
+     ]
+    },
+    {
+     "word": "cucharita",
+     "answer": "a small spoon",
+     "options": [
+      "a very small plate",
+      "a small spoon",
+      "a small tray",
+      "a small purse for coins"
+     ]
+    },
+    {
+     "word": "bandejita",
+     "answer": "a small tray",
+     "options": [
+      "a very small plate",
+      "a small spoon",
+      "a small tray",
+      "a small purse for coins"
+     ]
+    },
+    {
+     "word": "monedero",
+     "answer": "a small purse for coins",
+     "options": [
+      "a very small plate",
+      "a small spoon",
+      "a small tray",
+      "a small purse for coins"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

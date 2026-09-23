@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "telefonito",
+  "sentence": "Lina mira el [[celular]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small phone you carry",
+   "options": [
+    "a small phone you carry",
+    "a glass of cold water",
+    "a paper napkin for hands",
+    "a key on a keyboard"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Lina mira el celular.",
+    "targetWord": "celular",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "texto corto",
+  "sentence": "El [[mensaje]] ahora dice mesa amiga aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a short written message",
+   "options": [
+    "a short written message",
+    "a long church service",
+    "a small paper napkin",
+    "a warm cheese bread roll"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "El mensaje ahora dice mesa amiga aquí.",
+    "targetWord": "mensaje",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callado",
+  "sentence": "“Yo traigo pan, no [[silencio]], y busco la mesa”, dice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a time with no sound",
+   "options": [
+    "a time with no sound",
+    "a room with no chairs",
+    "a day with no work",
+    "a cup with no coffee"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "“Yo traigo pan, no silencio, y busco la mesa”, dice.",
+    "targetWord": "silencio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "visor",
+  "sentence": "Lee la [[pantalla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the lit part of a phone",
+   "options": [
+    "the lit part of a phone",
+    "the back of a chair",
+    "the front door of a shop",
+    "the top of a table"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Lee la pantalla.",
+    "targetWord": "pantalla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "signo",
+  "sentence": "Ella borra una [[letra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a single written sign",
+   "options": [
+    "a single written sign",
+    "a single loud bell",
+    "a single warm bread",
+    "a single glass door"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Ella borra una letra.",
+    "targetWord": "letra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "palabra rara",
+  "sentence": "La [[palabra está rara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a word that looks wrong",
+   "options": [
+    "a word that looks wrong",
+    "a word that sounds loud",
+    "a song that feels slow",
+    "a bag that looks heavy"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "La palabra está rara.",
+    "targetWord": "palabra está rara",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin ruido",
+  "sentence": "La ubicación sale [[sin ruido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with no sound nearby",
+   "options": [
+    "with no sound nearby",
+    "with no bread left",
+    "with no light inside",
+    "with no money today"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "La ubicación sale sin ruido.",
+    "targetWord": "sin ruido",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "claridad",
+  "sentence": "Mariana prepara café con [[luz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light that helps you see",
+   "options": [
+    "light that helps you see",
+    "water that helps you cook",
+    "paper that helps you write",
+    "music that helps you rest"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Mariana prepara café con luz.",
+    "targetWord": "luz",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propia palabra",
+  "sentence": "La mesa tiene [[palabra propia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a word that belongs to someone",
+   "options": [
+    "a word that belongs to someone",
+    "a seat that belongs to a friend",
+    "a bell that belongs to a church",
+    "a bag that belongs to a worker"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "La mesa tiene palabra propia.",
+    "targetWord": "palabra propia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mensaje serio",
+  "sentence": "Andrés lee el [[mensaje serio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a serious phone message",
+   "options": [
+    "a serious phone message",
+    "a funny phone game",
+    "a short voice note",
+    "a long paper list"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Andrés lee el mensaje serio.",
+    "targetWord": "mensaje serio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "servilleta",
+  "sentence": "Mariana mira el vaso y la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "servilleta",
+   "options": [
+    "servilleta",
+    "misa",
+    "buseta",
+    "ubicación"
+   ],
+   "translation": "Mariana looks at the glass and the _____.",
+   "optionTranslations": [
+    "a paper napkin",
+    "a church service",
+    "a small city bus",
+    "a place on a map"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Mariana mira el vaso y la servilleta.",
+    "targetWord": "servilleta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "misa",
+  "sentence": "Lina escribe mesa, pero el celular manda _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "misa",
+   "options": [
+    "misa",
+    "servilleta",
+    "campana",
+    "silla"
+   ],
+   "translation": "Lina writes mesa, but the phone sends _____.",
+   "optionTranslations": [
+    "a church service",
+    "a paper napkin",
+    "a loud bell",
+    "a wooden chair"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Lina escribe mesa, pero el celular manda misa.",
+    "targetWord": "misa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ubicación",
+  "sentence": "La _____ sale sin ruido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ubicación",
+   "options": [
+    "ubicación",
+    "servilleta",
+    "silla",
+    "campana"
+   ],
+   "translation": "The _____ goes out with no sound.",
+   "optionTranslations": [
+    "a place on a map",
+    "a paper napkin",
+    "a wooden chair",
+    "a loud bell"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "La ubicación sale sin ruido.",
+    "targetWord": "ubicación",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "maletín",
+  "sentence": "El celular queda bajo el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "maletín",
+   "options": [
+    "maletín",
+    "silencio",
+    "mensaje",
+    "ruido"
+   ],
+   "translation": "The phone stays under the _____.",
+   "optionTranslations": [
+    "a small work bag",
+    "a time with no sound",
+    "a written phone note",
+    "a loud noise nearby"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "El celular queda bajo el maletín.",
+    "targetWord": "maletín",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tecla",
+  "sentence": "Andrés toca una _____ y asiente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tecla",
+   "options": [
+    "tecla",
+    "misa",
+    "ubicación",
+    "voz"
+   ],
+   "translation": "Andrés touches a _____ and nods.",
+   "optionTranslations": [
+    "a phone key",
+    "a church service",
+    "a place on a map",
+    "a speaking sound"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "Andrés toca una tecla y asiente.",
+    "targetWord": "tecla",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aquí",
+  "sentence": "El mensaje ahora dice mesa amiga _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aquí",
+   "options": [
+    "aquí",
+    "ayer",
+    "despacio",
+    "lejos"
+   ],
+   "translation": "The message now says mesa amiga _____.",
+   "optionTranslations": [
+    "in this place here",
+    "on the day before",
+    "in a slow way",
+    "at a far place"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-no-misa",
+    "storySource": "journey",
+    "sentence": "El mensaje ahora dice mesa amiga aquí.",
+    "targetWord": "aquí",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "cambiar,agregar,repetir,corregir",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cambiar",
+     "answer": "to become different now",
+     "options": [
+      "to become different now",
+      "to add more words",
+      "to say it again",
+      "to fix a mistake"
+     ]
+    },
+    {
+     "word": "agregar",
+     "answer": "to add more words",
+     "options": [
+      "to become different now",
+      "to add more words",
+      "to say it again",
+      "to fix a mistake"
+     ]
+    },
+    {
+     "word": "repetir",
+     "answer": "to say it again",
+     "options": [
+      "to become different now",
+      "to add more words",
+      "to say it again",
+      "to fix a mistake"
+     ]
+    },
+    {
+     "word": "corregir",
+     "answer": "to fix a mistake",
+     "options": [
+      "to become different now",
+      "to add more words",
+      "to say it again",
+      "to fix a mistake"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

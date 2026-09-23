@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "imagen de celular",
+  "sentence": "La nueva [[foto]] queda clara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a picture made with a camera",
+   "options": [
+    "a picture made with a camera",
+    "a light that hangs on a wall",
+    "a cloth put on a table",
+    "a bag kept under a chair"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "La nueva foto queda clara.",
+    "targetWord": "foto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tomar foto",
+  "sentence": "Mariana [[toma la foto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a picture",
+   "options": [
+    "to make a picture",
+    "to pay for the bread",
+    "to wait for the bus",
+    "to clean the glass"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "Mariana toma la foto.",
+    "targetWord": "toma la foto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tapar",
+  "sentence": "El vaso [[tapa]] al músico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cover something from view",
+   "options": [
+    "to cover something from view",
+    "to carry something in a bag",
+    "to clean something with water",
+    "to count something out loud"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "El vaso tapa al músico.",
+    "targetWord": "tapa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nombre escrito",
+  "sentence": "Lina guarda el papel con el [[nombre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a written name on paper",
+   "options": [
+    "a written name on paper",
+    "a small coin in hand",
+    "a warm drink in a cup",
+    "a long line at a door"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "Lina guarda el papel con el nombre.",
+    "targetWord": "nombre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gente junta",
+  "sentence": "“El [[grupo]] posa y quiere salir en foto”, avisa Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people together in one place",
+   "options": [
+    "people together in one place",
+    "bread sold at a bakery",
+    "a phone left on a table",
+    "money kept in a purse"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“El grupo posa y quiere salir en foto”, avisa Mariana.",
+    "targetWord": "grupo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pantalla final",
+  "sentence": "Todos miran la [[pantalla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the phone screen at the end",
+   "options": [
+    "the phone screen at the end",
+    "the bread left on a plate",
+    "the door open to a street",
+    "the chair next to a table"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "Todos miran la pantalla.",
+    "targetWord": "pantalla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "borroso",
+  "sentence": "“Nada sale _____”, agrega la panadera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "borroso",
+   "options": [
+    "borroso",
+    "verde",
+    "dulce",
+    "mojado"
+   ],
+   "translation": "“Nothing comes out _____,” adds the baker.",
+   "optionTranslations": [
+    "not clear to see",
+    "green in color",
+    "sweet like sugar",
+    "wet from the rain"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“Nada sale borroso”, agrega la panadera.",
+    "targetWord": "borroso",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerca",
+  "sentence": "El bus espera _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerca",
+   "options": [
+    "cerca",
+    "gratis",
+    "despacio",
+    "barato"
+   ],
+   "translation": "The bus waits _____.",
+   "optionTranslations": [
+    "at a short distance",
+    "for no money",
+    "in a slow way",
+    "for little money"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "El bus espera cerca.",
+    "targetWord": "cerca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "viejo",
+  "sentence": "“Objeto _____ parece raro”, comenta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "viejo",
+   "options": [
+    "viejo",
+    "caro",
+    "pesado",
+    "redondo"
+   ],
+   "translation": "“An _____ object looks odd,” he comments.",
+   "optionTranslations": [
+    "old and not new",
+    "high in price",
+    "heavy to lift",
+    "round in shape"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“Objeto viejo parece raro”, comenta.",
+    "targetWord": "viejo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "salir en foto",
+  "sentence": "“El grupo posa y quiere _____”, avisa Mariana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salir en foto",
+   "options": [
+    "salir en foto",
+    "dormir en casa",
+    "cantar en misa",
+    "correr en fila"
+   ],
+   "translation": "“The group poses and wants _____,” warns Mariana.",
+   "optionTranslations": [
+    "to be in a picture",
+    "to sleep at home",
+    "to sing at church",
+    "to run in a line"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“El grupo posa y quiere salir en foto”, avisa Mariana.",
+    "targetWord": "salir en foto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "subir",
+  "sentence": "El maletín negro [[sube]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move upward slowly",
+   "options": [
+    "to move upward slowly",
+    "to make a loud noise",
+    "to turn around twice",
+    "to open the door"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "El maletín negro sube.",
+    "targetWord": "sube",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maletín negro",
+  "sentence": "El [[maletín negro]] sube.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small black work bag",
+   "options": [
+    "a small black work bag",
+    "a warm cheese bread roll",
+    "a white cloth for a table",
+    "a paper with a name"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "El maletín negro sube.",
+    "targetWord": "maletín negro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señal correcta",
+  "sentence": "“Falta la [[señal correcta]]”, explica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the right sign to show",
+   "options": [
+    "the right sign to show",
+    "the last bus of the day",
+    "the cloth under the plate",
+    "the coin left on a table"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“Falta la señal correcta”, explica.",
+    "targetWord": "señal correcta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedar claro",
+  "sentence": "La nueva foto [[queda clara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to become easy to see",
+   "options": [
+    "to become easy to see",
+    "to fall on the floor",
+    "to cost a lot of money",
+    "to arrive before the bus"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "La nueva foto queda clara.",
+    "targetWord": "queda clara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sin tapar",
+  "sentence": "El músico queda _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sin tapar",
+   "options": [
+    "sin tapar",
+    "sin silla",
+    "sin luz",
+    "sin pan"
+   ],
+   "translation": "The musician stays _____.",
+   "optionTranslations": [
+    "with nothing covering it",
+    "with no chair there",
+    "with no light on",
+    "with no bread left"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "El músico queda sin tapar.",
+    "targetWord": "sin tapar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sin cara",
+  "sentence": "“Yo soy café y salgo _____”, responde el músico.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sin cara",
+   "options": [
+    "sin cara",
+    "sin llave",
+    "sin plato",
+    "sin monedas"
+   ],
+   "translation": "“I am coffee and I come out _____,” answers the musician.",
+   "optionTranslations": [
+    "with the face not showing",
+    "with no key on me",
+    "with no plate here",
+    "with no coins left"
+   ],
+   "audioClip": {
+    "storySlug": "foto-con-vaso",
+    "storySource": "journey",
+    "sentence": "“Yo soy café y salgo sin cara”, responde el músico.",
+    "targetWord": "sin cara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "mantel,reflejo,cámara,rostro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mantel",
+     "answer": "a cloth on top of a table",
+     "options": [
+      "a cloth on top of a table",
+      "light bouncing off a surface",
+      "a tool that takes pictures",
+      "the front part of the head"
+     ]
+    },
+    {
+     "word": "reflejo",
+     "answer": "light bouncing off a surface",
+     "options": [
+      "a cloth on top of a table",
+      "light bouncing off a surface",
+      "a tool that takes pictures",
+      "the front part of the head"
+     ]
+    },
+    {
+     "word": "cámara",
+     "answer": "a tool that takes pictures",
+     "options": [
+      "a cloth on top of a table",
+      "light bouncing off a surface",
+      "a tool that takes pictures",
+      "the front part of the head"
+     ]
+    },
+    {
+     "word": "rostro",
+     "answer": "the front part of the head",
+     "options": [
+      "a cloth on top of a table",
+      "light bouncing off a surface",
+      "a tool that takes pictures",
+      "the front part of the head"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

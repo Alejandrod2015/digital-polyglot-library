@@ -1,0 +1,128 @@
+{
+ "slug": "llueve-y-nadie-se-va",
+ "topic": "parties-and-photos",
+ "title": "Llueve y nadie se va",
+ "text": "El aguacero cae sobre Pereira. El final empieza mojado. Mariana guarda el celular bajo la sombrilla. Andrés trae café. Hay pan crujiente. El bus espera.\n\nLa mesa amiga está mojada por lluvia. Las flores aguantan. El papel sube con el nombre. El maletín espera. Suena una nota suave.\n\nLa bolsa mira el barro. “La foto sale fea, pero nuestra”, cuenta. Mariana sonríe poco. “Sale nuestra, perfecta no, pero completa”, responde.\n\nTodos entran bajo la sombrilla con caras juntas. El vaso queda junto al pan. “El recibo y la moneda quedan”, dice Andrés.\n\nSuena el timbre. La arepa sube. Andrés levanta el papel. Mariana toma la imagen final con una mano. “Una mano sirve”, avisa.\n\n“La imagen tiene lluvia y barro. No sale perfecta; sale imperfecta”, dice Mariana. “Pero funciona”, repite Mariana. “Juntos es cierre”, agrega Andrés. Todos se quedan y la mesa amiga queda completa.",
+ "vocab": [
+  {
+   "word": "celular bajo la sombrilla",
+   "surface": "celular bajo la sombrilla",
+   "type": "expression",
+   "def": "A phone kept under the umbrella."
+  },
+  {
+   "word": "fea",
+   "surface": "fea",
+   "type": "adjective",
+   "def": "Not pretty or nice."
+  },
+  {
+   "word": "levantar papel",
+   "surface": "levanta el papel",
+   "type": "expression",
+   "def": "To raise the paper up."
+  },
+  {
+   "word": "perfecta",
+   "surface": "perfecta",
+   "type": "adjective",
+   "def": "With nothing wrong in it."
+  },
+  {
+   "word": "funcionar",
+   "surface": "funciona",
+   "type": "verb",
+   "def": "To work well enough."
+  },
+  {
+   "word": "completa",
+   "surface": "completa",
+   "type": "adjective",
+   "def": "With all parts present."
+  },
+  {
+   "word": "bajo la sombrilla",
+   "surface": "bajo la sombrilla",
+   "type": "expression",
+   "def": "Under the umbrella together."
+  },
+  {
+   "word": "caras juntas",
+   "surface": "caras juntas",
+   "type": "expression",
+   "def": "Faces close in one picture."
+  },
+  {
+   "word": "imagen final",
+   "surface": "imagen final",
+   "type": "expression",
+   "def": "The last picture taken."
+  },
+  {
+   "word": "tomar",
+   "surface": "toma",
+   "type": "verb",
+   "def": "To take or hold something."
+  },
+  {
+   "word": "moneda",
+   "surface": "moneda",
+   "type": "noun",
+   "def": "A small round piece of money."
+  },
+  {
+   "word": "imperfecta",
+   "surface": "imperfecta",
+   "type": "adjective",
+   "def": "Not perfect at all."
+  },
+  {
+   "word": "juntos",
+   "surface": "Juntos",
+   "type": "adjective",
+   "def": "Together and not separate."
+  },
+  {
+   "word": "una mano",
+   "surface": "una mano",
+   "type": "expression",
+   "def": "One hand doing the job."
+  },
+  {
+   "word": "queda completa",
+   "surface": "queda completa",
+   "type": "expression",
+   "def": "Ends with all parts present."
+  },
+  {
+   "word": "guardar seco",
+   "surface": "guarda el celular",
+   "type": "expression",
+   "def": "To keep something dry."
+  },
+  {
+   "word": "nota suave",
+   "surface": "nota suave",
+   "type": "expression",
+   "def": "A soft musical note."
+  },
+  {
+   "word": "caer lluvia",
+   "surface": "cae",
+   "type": "expression",
+   "def": "Rain comes down outside."
+  },
+  {
+   "word": "tener lluvia",
+   "surface": "tiene lluvia",
+   "type": "expression",
+   "def": "To show rain inside it."
+  },
+  {
+   "word": "cierre",
+   "surface": "cierre",
+   "type": "noun",
+   "def": "The ending part of something."
+  }
+ ]
+}

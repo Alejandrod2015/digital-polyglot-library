@@ -1,0 +1,128 @@
+{
+ "slug": "foto-con-vaso",
+ "topic": "parties-and-photos",
+ "title": "Foto con vaso",
+ "text": "La lámpara da luz sobre el pan. El vaso hace reflejo. Mariana mira el celular. Andrés trae el vaso de Andrea. El músico espera.\n\nCatalina pone la campana junto al pandebono. Lina guarda el papel con el nombre. La panadera mira. “El grupo posa y quiere salir en foto”, avisa Mariana. Todos miran la pantalla.\n\nMariana toma la foto. El vaso tapa al músico. “Yo soy café y salgo sin cara”, responde el músico bajo. Andrés abre los ojos.\n\nEl maletín negro sube. El bus espera cerca. “Falta la señal correcta”, explica. “Objeto viejo parece raro”, comenta.\n\nMariana coloca vaso, pan, papel y campana. “Mantel limpio”, dice Mariana. Andrés baja el vaso. El músico sonríe. “Ahora tengo cara”, cuenta.\n\nLa nueva foto queda clara. El vaso viejo ya no tapa. “Nada sale borroso; el músico queda sin tapar”, agrega la panadera. “Campana, pan y papel saludan”, dice Mariana.",
+ "vocab": [
+  {
+   "word": "imagen de celular",
+   "surface": "foto",
+   "type": "noun",
+   "def": "A picture made with a camera."
+  },
+  {
+   "word": "rostro",
+   "surface": "cara",
+   "type": "noun",
+   "def": "The front part of the head."
+  },
+  {
+   "word": "reflejo",
+   "surface": null,
+   "type": "noun",
+   "def": "Light bouncing off a surface."
+  },
+  {
+   "word": "cerca",
+   "surface": null,
+   "type": "adverb",
+   "def": "At a short distance."
+  },
+  {
+   "word": "tomar foto",
+   "surface": "toma la foto",
+   "type": "expression",
+   "def": "To make a picture."
+  },
+  {
+   "word": "subir",
+   "surface": "sube",
+   "type": "verb",
+   "def": "To move upward slowly."
+  },
+  {
+   "word": "nombre escrito",
+   "surface": "nombre",
+   "type": "noun",
+   "def": "A written name on paper."
+  },
+  {
+   "word": "cámara",
+   "surface": "celular",
+   "type": "noun",
+   "def": "A tool that takes pictures."
+  },
+  {
+   "word": "tapar",
+   "surface": "tapa",
+   "type": "verb",
+   "def": "To cover something from view."
+  },
+  {
+   "word": "maletín negro",
+   "surface": "maletín negro",
+   "type": "expression",
+   "def": "A small black work bag."
+  },
+  {
+   "word": "mantel",
+   "surface": null,
+   "type": "noun",
+   "def": "A cloth on top of a table."
+  },
+  {
+   "word": "salir en foto",
+   "surface": "salir en foto",
+   "type": "expression",
+   "def": "To be in a picture."
+  },
+  {
+   "word": "gente junta",
+   "surface": "grupo",
+   "type": "noun",
+   "def": "People together in one place."
+  },
+  {
+   "word": "señal correcta",
+   "surface": "señal correcta",
+   "type": "expression",
+   "def": "The right sign to show."
+  },
+  {
+   "word": "viejo",
+   "surface": "viejo",
+   "type": "adjective",
+   "def": "Old and not new."
+  },
+  {
+   "word": "sin tapar",
+   "surface": "sin tapar",
+   "type": "expression",
+   "def": "With nothing covering it."
+  },
+  {
+   "word": "sin cara",
+   "surface": "sin cara",
+   "type": "expression",
+   "def": "With the face not showing."
+  },
+  {
+   "word": "borroso",
+   "surface": null,
+   "type": "adjective",
+   "def": "Not clear to see."
+  },
+  {
+   "word": "quedar claro",
+   "surface": "queda clara",
+   "type": "expression",
+   "def": "To become easy to see."
+  },
+  {
+   "word": "pantalla final",
+   "surface": "pantalla",
+   "type": "noun",
+   "def": "The phone screen at the end."
+  }
+ ]
+}

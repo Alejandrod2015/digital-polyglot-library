@@ -1,0 +1,128 @@
+{
+ "slug": "el-amigo-de-papel",
+ "topic": "greetings-and-introductions",
+ "title": "Amigo nuevo",
+ "text": "El café huele a panela. Catalina es vendedora del barrio. Julián, un músico tímido del centro, mira una silla vacía. Andrés pone un papel en la silla. El papel dice “amigo nuevo”.\n\nJulián ve el papel y se queda de pie. “Hola, amigo nuevo”, dice Andrés. Julián sonríe poco.\n\nJulián toca su gorra. “Yo soy Julián”, dice él. Mariana ofrece café. Julián mira la silla vacía. “¿La silla es mía?”, pregunta.\n\nAndrés baja la voz. “El papel espera a alguien”, explica. Julián se sienta despacio. El papel cae al suelo. “Ahora espera abajo”, responde Julián.\n\nMariana recoge el papel. Ahora escribe “amigo real”. Julián ríe y guarda el papel en su bolsillo. “Yo guardo mi nombre”, cuenta.\n\nCatalina entra por pan. Ella mira a Julián. “¿Tú eres el amigo real?” Julián levanta la mano. “Sí, pero el papel llega primero y saluda”, contesta. Todos saludan al papel y luego a Julián.",
+ "vocab": [
+  {
+   "word": "panela",
+   "surface": "panela",
+   "type": "noun",
+   "def": "Colombian brown sugar from cane."
+  },
+  {
+   "word": "vacío",
+   "surface": "vacía",
+   "type": "adjective",
+   "def": "Empty, with nothing inside."
+  },
+  {
+   "word": "poner",
+   "surface": "pone",
+   "type": "verb",
+   "def": "To place something somewhere."
+  },
+  {
+   "word": "nuevo",
+   "surface": "nuevo",
+   "type": "adjective",
+   "def": "New, not seen before."
+  },
+  {
+   "word": "esperar",
+   "surface": "espera",
+   "type": "verb",
+   "def": "To stay until someone comes."
+  },
+  {
+   "word": "ver",
+   "surface": "ve",
+   "type": "verb",
+   "def": "To look and notice something."
+  },
+  {
+   "word": "papel",
+   "surface": "papel",
+   "type": "noun",
+   "def": "Paper for a note or name."
+  },
+  {
+   "word": "quedarse de pie",
+   "surface": "se queda de pie",
+   "type": "expression",
+   "def": "To stay standing, not sitting."
+  },
+  {
+   "word": "guardar",
+   "surface": "guarda",
+   "type": "verb",
+   "def": "To keep something in a place."
+  },
+  {
+   "word": "tocar",
+   "surface": "toca",
+   "type": "verb",
+   "def": "To put your hand on something."
+  },
+  {
+   "word": "yo",
+   "surface": "Yo",
+   "type": "pronoun",
+   "def": "The word a speaker uses for self."
+  },
+  {
+   "word": "tímido",
+   "surface": "tímido",
+   "type": "adjective",
+   "def": "Shy and not very bold."
+  },
+  {
+   "word": "bajar",
+   "surface": "baja",
+   "type": "verb",
+   "def": "To move down or make lower."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "sentarse",
+   "surface": "se sienta",
+   "type": "verb",
+   "def": "To put your body on a seat."
+  },
+  {
+   "word": "despacio",
+   "surface": "despacio",
+   "type": "adverb",
+   "def": "Slowly, not fast at all."
+  },
+  {
+   "word": "caer",
+   "surface": "cae",
+   "type": "verb",
+   "def": "To move down to the ground."
+  },
+  {
+   "word": "real",
+   "surface": "real",
+   "type": "adjective",
+   "def": "True, not only a game."
+  },
+  {
+   "word": "recoger",
+   "surface": "recoge",
+   "type": "verb",
+   "def": "To take something from the ground."
+  },
+  {
+   "word": "luego",
+   "surface": "luego",
+   "type": "adverb",
+   "def": "After that, not before."
+  }
+ ]
+}

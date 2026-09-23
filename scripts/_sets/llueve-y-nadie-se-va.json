@@ -1,0 +1,457 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "celular bajo la sombrilla",
+  "sentence": "Mariana guarda el [[celular bajo la sombrilla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a phone kept under the umbrella",
+   "options": [
+    "a phone kept under the umbrella",
+    "a coin kept inside a purse",
+    "a paper kept under a plate",
+    "a cup kept beside the bread"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Mariana guarda el celular bajo la sombrilla.",
+    "targetWord": "celular bajo la sombrilla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardar seco",
+  "sentence": "Mariana [[guarda el celular]] bajo la sombrilla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep something dry",
+   "options": [
+    "to keep something dry",
+    "to break something open",
+    "to sell something cheap",
+    "to carry something far"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Mariana guarda el celular bajo la sombrilla.",
+    "targetWord": "guarda el celular",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "levantar papel",
+  "sentence": "Andrés [[levanta el papel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to raise the paper up",
+   "options": [
+    "to raise the paper up",
+    "to fold the paper twice",
+    "to burn the paper slowly",
+    "to hide the paper away"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Andrés levanta el papel.",
+    "targetWord": "levanta el papel",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajo la sombrilla",
+  "sentence": "Todos entran [[bajo la sombrilla]] con caras juntas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under the umbrella together",
+   "options": [
+    "under the umbrella together",
+    "along the wet street quickly",
+    "beside the warm oven inside",
+    "behind the long bus line"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Todos entran bajo la sombrilla con caras juntas.",
+    "targetWord": "bajo la sombrilla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caras juntas",
+  "sentence": "Todos entran bajo la sombrilla con [[caras juntas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "faces close in one picture",
+   "options": [
+    "faces close in one picture",
+    "shoes wet from the rain",
+    "hands full of warm bread",
+    "bags left under the table"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Todos entran bajo la sombrilla con caras juntas.",
+    "targetWord": "caras juntas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "imagen final",
+  "sentence": "Mariana toma la [[imagen final]] con una mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the last picture taken",
+   "options": [
+    "the last picture taken",
+    "the empty bus at the stop",
+    "the small coin on the table",
+    "the warm bread from the oven"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Mariana toma la imagen final con una mano.",
+    "targetWord": "imagen final",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "moneda",
+  "sentence": "“El recibo y la _____ quedan”, dice Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "moneda",
+   "options": [
+    "moneda",
+    "lluvia",
+    "flor",
+    "silla"
+   ],
+   "translation": "“The receipt and the _____ stay,” says Andrés.",
+   "optionTranslations": [
+    "a small round piece of money",
+    "water falling from the sky",
+    "a plant with bright petals",
+    "a seat with four legs"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“El recibo y la moneda quedan”, dice Andrés.",
+    "targetWord": "moneda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "fea",
+  "sentence": "“La foto sale _____, pero nuestra”, cuenta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fea",
+   "options": [
+    "fea",
+    "dulce",
+    "larga",
+    "tibia"
+   ],
+   "translation": "“The picture comes out _____, but ours,” she tells.",
+   "optionTranslations": [
+    "not pretty or nice",
+    "sweet like sugar",
+    "long from end to end",
+    "a little bit warm"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“La foto sale fea, pero nuestra”, cuenta.",
+    "targetWord": "fea",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "completa",
+  "sentence": "“Sale nuestra, perfecta no, pero _____”, responde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "completa",
+   "options": [
+    "completa",
+    "redonda",
+    "barata",
+    "pesada"
+   ],
+   "translation": "“It comes out ours, not perfect, but _____,” she answers.",
+   "optionTranslations": [
+    "with all parts present",
+    "with a round shape",
+    "cheap and not costly",
+    "heavy to lift"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“Sale nuestra, perfecta no, pero completa”, responde.",
+    "targetWord": "completa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "perfecta",
+  "sentence": "“No sale _____”, dice Mariana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "perfecta",
+   "options": [
+    "perfecta",
+    "cuadrada",
+    "lenta",
+    "amarga"
+   ],
+   "translation": "“It does not come out _____,” says Mariana.",
+   "optionTranslations": [
+    "with nothing wrong in it",
+    "with a square shape",
+    "slow to move",
+    "bitter in taste"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“No sale perfecta”, dice Mariana.",
+    "targetWord": "perfecta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tomar",
+  "sentence": "Mariana [[toma]] la imagen final con una mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take or hold something",
+   "options": [
+    "to take or hold something",
+    "to clean or dry something",
+    "to break or cut something",
+    "to sell or buy something"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Mariana toma la imagen final con una mano.",
+    "targetWord": "toma",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queda completa",
+  "sentence": "Todos se quedan y la mesa amiga [[queda completa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ends with all parts present",
+   "options": [
+    "ends with all parts present",
+    "ends with a loud song",
+    "ends before the rain stops",
+    "ends under a bright lamp"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "Todos se quedan y la mesa amiga queda completa.",
+    "targetWord": "queda completa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caer lluvia",
+  "sentence": "El aguacero [[cae]] sobre Pereira.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rain comes down outside",
+   "options": [
+    "rain comes down outside",
+    "snow falls on the roof",
+    "wind blows across the town",
+    "light shines on the street"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "El aguacero cae sobre Pereira.",
+    "targetWord": "cae",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tener lluvia",
+  "sentence": "“La imagen [[tiene lluvia]] y barro”, dice Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to show rain inside it",
+   "options": [
+    "to show rain inside it",
+    "to hide the mud from view",
+    "to smell like fresh bread",
+    "to weigh more than a coin"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“La imagen tiene lluvia y barro”, dice Mariana.",
+    "targetWord": "tiene lluvia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cierre",
+  "sentence": "“Juntos es _____”, agrega Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cierre",
+   "options": [
+    "cierre",
+    "barro",
+    "vaso",
+    "timbre"
+   ],
+   "translation": "“Together is _____,” adds Andrés.",
+   "optionTranslations": [
+    "the ending part of something",
+    "the wet mud on a street",
+    "a cup for cold drinks",
+    "a bell at a door"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“Juntos es cierre”, agrega Andrés.",
+    "targetWord": "cierre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntos",
+  "sentence": "“[[Juntos]] es cierre”, agrega Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all of us in the same place",
+   "options": [
+    "all of us in the same place",
+    "each one on their own",
+    "early in the morning",
+    "out in the wet street"
+   ],
+   "audioClip": {
+    "storySlug": "llueve-y-nadie-se-va",
+    "storySource": "journey",
+    "sentence": "“Juntos es cierre”, agrega Andrés.",
+    "targetWord": "juntos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "nota suave,una mano,imperfecta,funcionar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "nota suave",
+     "answer": "a soft musical note",
+     "options": [
+      "a soft musical note",
+      "one hand doing the job",
+      "not perfect at all",
+      "to work well enough"
+     ]
+    },
+    {
+     "word": "una mano",
+     "answer": "one hand doing the job",
+     "options": [
+      "a soft musical note",
+      "one hand doing the job",
+      "not perfect at all",
+      "to work well enough"
+     ]
+    },
+    {
+     "word": "imperfecta",
+     "answer": "not perfect at all",
+     "options": [
+      "a soft musical note",
+      "one hand doing the job",
+      "not perfect at all",
+      "to work well enough"
+     ]
+    },
+    {
+     "word": "funcionar",
+     "answer": "to work well enough",
+     "options": [
+      "a soft musical note",
+      "one hand doing the job",
+      "not perfect at all",
+      "to work well enough"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

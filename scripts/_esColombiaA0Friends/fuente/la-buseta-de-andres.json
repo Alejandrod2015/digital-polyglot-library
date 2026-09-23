@@ -1,0 +1,128 @@
+{
+ "slug": "la-buseta-de-andres",
+ "topic": "buses-and-streets",
+ "title": "Andrés sube primero",
+ "text": "Tres papeles esperan. Mariana guarda el pan. Andrés mira dos. Camilo, un conductor del barrio, espera en la buseta.\n\nUn papel dice paradero; otro, tarjetica. Andrés mira el torniquete y duda. “Mi pan va cerca, pero mi cara va lejos”, cuenta.\n\nCamilo toca el timbre. “Esta buseta para en el andencito. La señal es Andrés”, explica.\n\nLa panadera trae un pandebono. La médica cruza por la cebra, mira el carril y aprieta el cordón. “Andrés lleva el pan y yo miro la vía”, avisa.\n\nCamilo pega el papel en la placa. Escribe Andrés grande. Prende la lucecita, limpia el retrovisor y mira la calzada. La baldosa queda clara. “Ahora Andrés sabe dónde bajar”, señala.\n\nLa buseta para suave y sin frenazo. Andrés toca la baranda, la manija y el baúl. Camilo manda la señal. “Aquí bajo yo”, bromea Andrés. “Yo aviso en el andencito”, promete Camilo. Él camina a la mesa correcta con el pan.",
+ "vocab": [
+  {
+   "word": "buseta",
+   "surface": "buseta",
+   "type": "noun",
+   "def": "A small Colombian city bus."
+  },
+  {
+   "word": "paradero",
+   "surface": "paradero",
+   "type": "noun",
+   "def": "A place where buses stop."
+  },
+  {
+   "word": "torniquete",
+   "surface": "torniquete",
+   "type": "noun",
+   "def": "A turning gate at a bus."
+  },
+  {
+   "word": "andencito",
+   "surface": "andencito",
+   "type": "noun",
+   "def": "A small bus stop area."
+  },
+  {
+   "word": "lucecita",
+   "surface": "Lucecita",
+   "type": "noun",
+   "def": "A very small light."
+  },
+  {
+   "word": "carril",
+   "surface": "carril",
+   "type": "noun",
+   "def": "A lane for buses or cars."
+  },
+  {
+   "word": "cebra",
+   "surface": "cebra",
+   "type": "noun",
+   "def": "White street lines for crossing."
+  },
+  {
+   "word": "tarjetica",
+   "surface": "tarjetica",
+   "type": "noun",
+   "def": "A very small card."
+  },
+  {
+   "word": "manija",
+   "surface": "manija",
+   "type": "noun",
+   "def": "A handle for the hand."
+  },
+  {
+   "word": "frenazo",
+   "surface": "frenazo",
+   "type": "noun",
+   "def": "A sudden hard stop."
+  },
+  {
+   "word": "cordón",
+   "surface": "cordón",
+   "type": "noun",
+   "def": "The edge of the sidewalk."
+  },
+  {
+   "word": "ahora",
+   "surface": "ahora",
+   "type": "adverb",
+   "def": "At this moment now."
+  },
+  {
+   "word": "placa",
+   "surface": "placa",
+   "type": "noun",
+   "def": "A sign or number plate."
+  },
+  {
+   "word": "baranda",
+   "surface": "baranda",
+   "type": "noun",
+   "def": "A rail to hold onto."
+  },
+  {
+   "word": "calzada",
+   "surface": "calzada",
+   "type": "noun",
+   "def": "The road where vehicles move."
+  },
+  {
+   "word": "baúl",
+   "surface": "baúl",
+   "type": "noun",
+   "def": "A storage part of a bus."
+  },
+  {
+   "word": "baldosa",
+   "surface": "baldosa",
+   "type": "noun",
+   "def": "A flat square floor piece."
+  },
+  {
+   "word": "mandar",
+   "surface": "manda",
+   "type": "verb",
+   "def": "To send a message."
+  },
+  {
+   "word": "correcta",
+   "surface": "correcta",
+   "type": "adjective",
+   "def": "Right, not wrong, for this moment."
+  },
+  {
+   "word": "retrovisor",
+   "surface": "retrovisor",
+   "type": "noun",
+   "def": "A mirror used for seeing behind."
+  }
+ ]
+}

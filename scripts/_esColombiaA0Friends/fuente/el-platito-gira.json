@@ -1,0 +1,128 @@
+{
+ "slug": "el-platito-gira",
+ "topic": "cash-and-errands",
+ "title": "El platito gira",
+ "text": "Con café y pan, Andrés mira dos monedas. Mariana pone un platito. También llega la panadera con pandebono tibio. El bus espera.\n\nAndrés deja vuelto bajo el platito. “Es plata para la buseta, no para pan ni miga”, dice serio. Mariana acerca el vaso y escucha.\n\nEl platito gira sobre la bandejita. Una moneda rueda junto a la cucharita. Lina señala la orilla. “La plata se esconde aquí, junto al pan”, cuenta.\n\nLuego la panadera pone pan encima del platito. “Así no veo la plata”, avisa. Andrés entiende. “Yo compro el tiquete, no el pan”, responde.\n\nMariana recoge el vuelto y lo mete en un monedero. El conductor toca el timbre cerca de la puerta. La enfermera guarda el maletín debajo de la silla.\n\nLas monedas vuelven a la mano de Andrés. “El bus recibe plata, no miga”, dice. “Después compra pan simple”, dice Mariana. “El platito queda libre y todos ríen sin cambio”, agrega.",
+ "vocab": [
+  {
+   "word": "regreso de dinero",
+   "surface": "vuelto",
+   "type": "noun",
+   "def": "Money given back after paying."
+  },
+  {
+   "word": "dinero diario",
+   "surface": "plata",
+   "type": "noun",
+   "def": "Money in everyday speech."
+  },
+  {
+   "word": "platito",
+   "surface": "platito",
+   "type": "noun",
+   "def": "A very small plate."
+  },
+  {
+   "word": "cucharita",
+   "surface": "cucharita",
+   "type": "noun",
+   "def": "A very small spoon."
+  },
+  {
+   "word": "esconderse",
+   "surface": "se esconde",
+   "type": "verb",
+   "def": "To hide from clear sight."
+  },
+  {
+   "word": "girar",
+   "surface": "gira",
+   "type": "verb",
+   "def": "To turn in a circle."
+  },
+  {
+   "word": "recibir",
+   "surface": "recibe",
+   "type": "verb",
+   "def": "To get something from someone."
+  },
+  {
+   "word": "orilla",
+   "surface": "orilla",
+   "type": "noun",
+   "def": "The edge of something."
+  },
+  {
+   "word": "rodar",
+   "surface": "rueda",
+   "type": "verb",
+   "def": "To roll along a surface."
+  },
+  {
+   "word": "monedero",
+   "surface": "monedero",
+   "type": "noun",
+   "def": "A small thing for money."
+  },
+  {
+   "word": "bandejita",
+   "surface": "bandejita",
+   "type": "noun",
+   "def": "A very small tray."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "puerta cercana",
+   "surface": "cerca de la puerta",
+   "type": "expression",
+   "def": "Near the door of a place."
+  },
+  {
+   "word": "comprar",
+   "surface": "compra",
+   "type": "verb",
+   "def": "To get something with money."
+  },
+  {
+   "word": "simple",
+   "surface": "simple",
+   "type": "adjective",
+   "def": "Easy and not complicated."
+  },
+  {
+   "word": "campanita de bus",
+   "surface": "timbre",
+   "type": "noun",
+   "def": "A bell sound from a vehicle."
+  },
+  {
+   "word": "dos monedas",
+   "surface": "dos monedas",
+   "type": "expression",
+   "def": "Two small metal coins."
+  },
+  {
+   "word": "sin cambio",
+   "surface": "sin cambio",
+   "type": "expression",
+   "def": "With no money change."
+  },
+  {
+   "word": "pieza redonda",
+   "surface": "moneda",
+   "type": "noun",
+   "def": "A small round piece of money."
+  },
+  {
+   "word": "pan molido",
+   "surface": "miga",
+   "type": "noun",
+   "def": "A very small piece of bread."
+  }
+ ]
+}

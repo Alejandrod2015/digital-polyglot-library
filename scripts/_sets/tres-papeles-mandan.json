@@ -1,0 +1,464 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "papel blanco",
+    "sentence": "Mariana deja el vaso junto al [[papel blanco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a white piece of paper",
+      "options": [
+        "a white piece of paper",
+        "a small brown bag",
+        "a long wooden table",
+        "a hot cup of coffee"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Mariana deja el vaso junto al papel blanco.",
+        "targetWord": "papel blanco",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cero pelea",
+    "sentence": "Dos nombres, un sobre, y [[cero pelea]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no fight at all",
+      "options": [
+        "no fight at all",
+        "two more names",
+        "one more line",
+        "three clean papers"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Dos nombres, un sobre, y cero pelea.",
+        "targetWord": "cero pelea",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cada color",
+    "sentence": "[[Cada color]] cuida algo: botica, pan o vuelto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "each color by itself",
+      "options": [
+        "each color by itself",
+        "all the colors mixed",
+        "one color for the bread",
+        "two colors on one paper"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Cada color cuida algo: botica, pan o vuelto.",
+        "targetWord": "Cada color",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "botica",
+    "sentence": "El azul cuida la [[botica]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shop for medicine",
+      "options": [
+        "a shop for medicine",
+        "a shop for bread",
+        "a bag for coins",
+        "a bus for the city"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "El azul cuida la botica.",
+        "targetWord": "botica",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "Hay tres papeles: [[azul]], rojo y blanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the color of a clear sky",
+      "options": [
+        "the color of a clear sky",
+        "the color of dark coffee",
+        "the color of fresh grass",
+        "the color of warm bread"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Hay tres papeles: azul, rojo y blanco.",
+        "targetWord": "azul",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "queda ordenado",
+    "sentence": "El sobre [[queda ordenado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "becomes neat and ordered",
+      "options": [
+        "becomes neat and ordered",
+        "falls on the floor",
+        "opens without a sound",
+        "stays wet and dirty"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "El sobre queda ordenado.",
+        "targetWord": "queda ordenado",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compra pequeña",
+    "sentence": "La [[compra pequeña]] queda clara y limpia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small thing bought",
+      "options": [
+        "a small thing bought",
+        "a long walk home",
+        "a big family lunch",
+        "a new red bag"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "La compra pequeña queda clara y limpia.",
+        "targetWord": "compra pequeña",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "café, pan y plata",
+    "sentence": "[[Café, pan y plata]] van separados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "coffee, bread, and money",
+      "options": [
+        "coffee, bread, and money",
+        "water, milk, and sugar",
+        "paper, pen, and ink",
+        "bread, butter, and salt"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Café, pan y plata van separados.",
+        "targetWord": "Café, pan y plata",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo separado",
+    "sentence": "[[Todo separado]], todo amigo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everything kept in different places",
+      "options": [
+        "everything kept in different places",
+        "everything piled in one box",
+        "nothing left on the table",
+        "something lost in the street"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Todo separado, todo amigo.",
+        "targetWord": "Todo separado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lateral de bolso",
+    "sentence": "El comprobante va al [[bolsillo lateral]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a side pocket on a bag",
+      "options": [
+        "a side pocket on a bag",
+        "a front seat on a bus",
+        "a small shelf on a wall",
+        "a long strap on a box"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "El comprobante va al bolsillo lateral.",
+        "targetWord": "bolsillo lateral",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "correcto",
+    "sentence": "Andrés entrega el sobre _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "correcto",
+      "options": [
+        "correcto",
+        "redondo",
+        "tibio",
+        "dulce"
+      ],
+      "translation": "Andrés hands over the _____ envelope.",
+      "optionTranslations": [
+        "right for this task",
+        "round in shape",
+        "warm to the touch",
+        "sweet like sugar"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Andrés entrega el sobre correcto.",
+        "targetWord": "correcto",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpia",
+    "sentence": "La compra pequeña queda clara y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpia",
+      "options": [
+        "limpia",
+        "roja",
+        "tibia",
+        "dulce"
+      ],
+      "translation": "The small purchase stays clear and _____.",
+      "optionTranslations": [
+        "clean and not marked",
+        "red in color",
+        "warm to the touch",
+        "sweet like sugar"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "La compra pequeña queda clara y limpia.",
+        "targetWord": "limpia",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "separados",
+    "sentence": "Café, pan y plata van _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "separados",
+      "options": [
+        "separados",
+        "mojados",
+        "nuevos",
+        "dulces"
+      ],
+      "translation": "Coffee, bread, and money go _____.",
+      "optionTranslations": [
+        "kept apart from each other",
+        "wet after the rain",
+        "new and not old",
+        "sweet like white sugar"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Café, pan y plata van separados.",
+        "targetWord": "separados",
+        "language": "spanish"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sobre",
+    "sentence": "Dos nombres, un _____, y cero pelea.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sobre",
+      "options": [
+        "sobre",
+        "vaso",
+        "bolsillo",
+        "café"
+      ],
+      "translation": "Two names, one _____, and no fight.",
+      "optionTranslations": [
+        "an envelope",
+        "a glass",
+        "a pocket",
+        "a coffee"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "Dos nombres, un sobre, y cero pelea.",
+        "targetWord": "sobre",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bolsa roja",
+    "sentence": "La _____ tiene pan.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bolsa roja",
+      "options": [
+        "bolsa roja",
+        "silla azul",
+        "taza nueva",
+        "nota corta"
+      ],
+      "translation": "The _____ has bread inside.",
+      "optionTranslations": [
+        "a red bag",
+        "a blue chair",
+        "a new cup",
+        "a short note"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "La bolsa roja tiene pan.",
+        "targetWord": "bolsa roja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dos nombres",
+    "sentence": "El comprobante trae _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dos nombres",
+      "options": [
+        "dos nombres",
+        "tres platos",
+        "cinco sillas",
+        "cuatro vasos"
+      ],
+      "translation": "The receipt carries _____.",
+      "optionTranslations": [
+        "two names",
+        "three plates",
+        "five chairs",
+        "four glasses"
+      ],
+      "audioClip": {
+        "storySlug": "tres-papeles-mandan",
+        "storySource": "journey",
+        "sentence": "El comprobante trae dos nombres.",
+        "targetWord": "dos nombres",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mandado,comprobante,renglón,bolsillo lateral",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mandado",
+          "answer": "an errand for someone",
+          "options": [
+            "an errand for someone",
+            "a paper showing payment",
+            "one written line on paper",
+            "a pocket on the side"
+          ]
+        },
+        {
+          "word": "comprobante",
+          "answer": "a paper showing payment",
+          "options": [
+            "an errand for someone",
+            "a paper showing payment",
+            "one written line on paper",
+            "a pocket on the side"
+          ]
+        },
+        {
+          "word": "renglón",
+          "answer": "one written line on paper",
+          "options": [
+            "an errand for someone",
+            "a paper showing payment",
+            "one written line on paper",
+            "a pocket on the side"
+          ]
+        },
+        {
+          "word": "bolsillo lateral",
+          "answer": "a pocket on the side",
+          "options": [
+            "an errand for someone",
+            "a paper showing payment",
+            "one written line on paper",
+            "a pocket on the side"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

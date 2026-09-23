@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "torniquete",
+  "sentence": "Andrés mira el [[torniquete]] y duda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a turning gate at a bus",
+   "options": [
+    "a turning gate at a bus",
+    "a mirror for the driver",
+    "a rail near the steps",
+    "a light above the seat"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Andrés mira el torniquete y duda.",
+    "targetWord": "torniquete",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "paradero",
+  "sentence": "Un papel dice _____ y otro dice tarjetica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paradero",
+   "options": [
+    "paradero",
+    "monedero",
+    "pandebono",
+    "timbre"
+   ],
+   "translation": "One paper says _____ and another says travel card.",
+   "optionTranslations": [
+    "a place where buses stop",
+    "a small purse for coins",
+    "a warm cheese bread roll",
+    "a bell inside the bus"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Un papel dice paradero y otro dice tarjetica.",
+    "targetWord": "paradero",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tarjetica",
+  "sentence": "Un papel dice paradero y otro dice [[tarjetica]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a very small card",
+   "options": [
+    "a very small card",
+    "a small paper bag",
+    "a metal coin box",
+    "a short bus ride"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Un papel dice paradero y otro dice tarjetica.",
+    "targetWord": "tarjetica",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "andencito",
+  "sentence": "Esta buseta para en el [[andencito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small bus stop area",
+   "options": [
+    "a small bus stop area",
+    "a wide city road",
+    "a long metal rail",
+    "a side bus window"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Esta buseta para en el andencito.",
+    "targetWord": "andencito",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "buseta",
+  "sentence": "Camilo espera en la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "buseta",
+   "options": [
+    "buseta",
+    "cuchara",
+    "sopa",
+    "tiza"
+   ],
+   "translation": "Camilo waits in the _____.",
+   "optionTranslations": [
+    "a small city bus",
+    "a tool for eating soup",
+    "a warm liquid food",
+    "chalk for making marks"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Camilo espera en la buseta.",
+    "targetWord": "buseta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "placa",
+  "sentence": "Camilo pega el papel en la [[placa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sign or number plate",
+   "options": [
+    "a sign or number plate",
+    "a soft cloth for hands",
+    "a deep dish for soup",
+    "a small green plant"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Camilo pega el papel en la placa.",
+    "targetWord": "placa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "lucecita",
+  "sentence": "Prende la _____ y limpia el retrovisor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lucecita",
+   "options": [
+    "lucecita",
+    "tarjetica",
+    "baldosa",
+    "manija"
+   ],
+   "translation": "He turns on the _____ and cleans the mirror.",
+   "optionTranslations": [
+    "a very small light",
+    "a very small card",
+    "a flat square floor piece",
+    "a handle for the hand"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Prende la lucecita y limpia el retrovisor.",
+    "targetWord": "lucecita",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baranda",
+  "sentence": "Andrés toca la [[baranda]], la manija y el baúl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a rail to hold onto",
+   "options": [
+    "a rail to hold onto",
+    "a bag under the seat",
+    "a light near the door",
+    "a card for the fare"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Andrés toca la baranda, la manija y el baúl.",
+    "targetWord": "baranda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "retrovisor",
+  "sentence": "Limpia el _____ y mira la calzada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "retrovisor",
+   "options": [
+    "retrovisor",
+    "pandebono",
+    "sombrero",
+    "cuaderno"
+   ],
+   "translation": "He cleans the _____ and looks at the road.",
+   "optionTranslations": [
+    "a mirror for seeing behind",
+    "a warm cheese bread roll",
+    "a hat against the sun",
+    "a book for writing notes"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Limpia el retrovisor y mira la calzada.",
+    "targetWord": "retrovisor",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manija",
+  "sentence": "Andrés toca la baranda, la [[manija]] y el baúl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a handle for the hand",
+   "options": [
+    "a handle for the hand",
+    "a step near the door",
+    "a paper with a name",
+    "a lane for the buses"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Andrés toca la baranda, la manija y el baúl.",
+    "targetWord": "manija",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baúl",
+  "sentence": "Andrés toca la baranda, la manija y el [[baúl]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a storage part of a bus",
+   "options": [
+    "a storage part of a bus",
+    "a small round mirror",
+    "a thin white line",
+    "a gate that turns"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Andrés toca la baranda, la manija y el baúl.",
+    "targetWord": "baúl",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baldosa",
+  "sentence": "La [[baldosa]] queda clara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flat square floor piece",
+   "options": [
+    "a flat square floor piece",
+    "a small metal coin",
+    "a soft paper bag",
+    "a long wooden bench"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "La baldosa queda clara.",
+    "targetWord": "baldosa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ahora",
+  "sentence": "[[Ahora]] Andrés sabe dónde bajar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this moment now",
+   "options": [
+    "at this moment now",
+    "at the same place",
+    "on the next day",
+    "in a small shop"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Ahora Andrés sabe dónde bajar.",
+    "targetWord": "Ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "correcta",
+  "sentence": "Él camina a la mesa [[correcta]] con el pan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right, not wrong",
+   "options": [
+    "right, not wrong",
+    "blue in color",
+    "very thin and small",
+    "wet with rain water"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Él camina a la mesa correcta con el pan.",
+    "targetWord": "correcta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "frenazo",
+  "sentence": "La buseta para suave y sin _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frenazo",
+   "options": [
+    "frenazo",
+    "timbre",
+    "papel",
+    "vaso"
+   ],
+   "translation": "The bus stops softly and without a _____.",
+   "optionTranslations": [
+    "a sudden hard stop",
+    "a bell inside the bus",
+    "a sheet for writing",
+    "a glass for drinking"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "La buseta para suave y sin frenazo.",
+    "targetWord": "frenazo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "manda",
+  "sentence": "Camilo _____ la señal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "manda",
+   "options": [
+    "manda",
+    "prende",
+    "cruza",
+    "sube"
+   ],
+   "translation": "Camilo _____ the signal.",
+   "optionTranslations": [
+    "sends",
+    "turns on",
+    "crosses",
+    "goes up"
+   ],
+   "audioClip": {
+    "storySlug": "la-buseta-de-andres",
+    "storySource": "journey",
+    "sentence": "Camilo manda la señal.",
+    "targetWord": "manda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "cordón,calzada,carril,cebra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cordón",
+     "answer": "the edge of the sidewalk",
+     "options": [
+      "the edge of the sidewalk",
+      "the road where cars move",
+      "a lane for cars and buses",
+      "white lines for crossing"
+     ]
+    },
+    {
+     "word": "calzada",
+     "answer": "the road where cars move",
+     "options": [
+      "the edge of the sidewalk",
+      "the road where cars move",
+      "a lane for cars and buses",
+      "white lines for crossing"
+     ]
+    },
+    {
+     "word": "carril",
+     "answer": "a lane for cars and buses",
+     "options": [
+      "the edge of the sidewalk",
+      "the road where cars move",
+      "a lane for cars and buses",
+      "white lines for crossing"
+     ]
+    },
+    {
+     "word": "cebra",
+     "answer": "white lines for crossing",
+     "options": [
+      "the edge of the sidewalk",
+      "the road where cars move",
+      "a lane for cars and buses",
+      "white lines for crossing"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]
