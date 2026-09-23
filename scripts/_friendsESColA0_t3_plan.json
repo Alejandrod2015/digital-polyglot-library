@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "calle de barrio, buses pequenos y humor con senales",
+  "espina": "Mariana y Andres usan palabras pequenas para que el grupo se mueva sin perder la mesa amiga.",
+  "recursos": "Pereira, Colombia; cafe, pan, mesa, nombre, papel, senal, amigo; entra Camilo, un conductor adulto de buseta del barrio.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Andres quiere llevar pan en la buseta correcta.",
+      "impide": "Dos rutas tienen un papel parecido.",
+      "cuesta": "El pan casi sale para otra mesa.",
+      "cambia": "Camilo usa el nombre de Andres como senal.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Mariana quiere encontrar a Lina en la esquina.",
+      "impide": "La lluvia borra la senal de tiza.",
+      "cuesta": "Mariana camina con cafe y papel mojado.",
+      "cambia": "La mesa amiga se vuelve punto de encuentro.",
+      "emocion": "complicidad"
+    },
+    {
+      "slot": "3",
+      "quiere": "Camilo quiere guardar un puesto para el grupo.",
+      "impide": "Un bolso ocupa el asiento y nadie sabe de quien es.",
+      "cuesta": "Andres teme que el bolso sea otro amigo de papel.",
+      "cambia": "El bolso marca el puesto correcto y el grupo sube unido.",
+      "emocion": "bienvenida"
+    }
+  ]
+}
