@@ -6,28 +6,150 @@
     "slug": "el-vaso-de-andres",
     "arcType": null,
     "synopsis": "Mariana works in a small cafe in Pereira, Colombia, and Andrés arrives with the wrong name on his cup. A simple greeting turns into a joke that helps him feel welcome.",
-    "text": "En Pereira, Colombia, Mariana, una barista del café, sirve café. Andrés, un repartidor del barrio, trae paquetes. El olor a pan entra suave. La campana suena suave.\n\nMariana mira el vaso. El vaso dice “Andrea”. Andrés mira el nombre y sonríe poco. “Yo soy Andrés”, dice él. “Andrea no maneja moto”, agrega.\n\nMariana está roja. “Perdón, Andrés”, contesta ella. Andrés señala el vaso. “No pasa nada. Andrea toma mi café hoy”, responde él. “Yo pago por ella”, agrega.\n\nMariana prepara otro café. Escribe Andrés grande. También dibuja una cara feliz. Andrés mira el dibujo. “Ese sí soy yo”, cuenta.\n\nMariana ve dos vasos. “Hola, Andrea”, dice a Andrés. Andrés levanta los dos vasos. “Buenas, yo soy los dos”, contesta serio. “Andrés trae paquetes”, avisa.\n\nMariana ríe con Andrés. Andrés deja el vaso de Andrea en la mesa. “Ella vuelve mañana”, explica. Mariana ya recuerda su nombre.",
+    "text": "En Pereira, Colombia, Mariana es barista del café. Sirve café. Andrés reparte paquetes y trae pan. El olor a pan entra suave. La campana suena suave.\n\nMariana mira el vaso. El vaso dice “Andrea”. Andrés mira el nombre y sonríe poco. “Yo soy Andrés”, dice él. “Andrea no maneja moto”, agrega.\n\nMariana está roja. “Perdón, Andrés”, contesta ella. Andrés señala el vaso. “No pasa nada. Andrea toma mi café hoy”, responde él. “Yo pago por ella”, agrega.\n\nMariana prepara otro café. Escribe Andrés grande. También dibuja una cara feliz. Andrés mira el dibujo. “Ese sí soy yo”, cuenta.\n\nMariana ve dos vasos. “Hola, Andrea”, dice a Andrés. Andrés levanta los dos vasos. “Buenas, yo soy los dos”, contesta serio. “Andrés trae paquetes”, avisa.\n\nMariana ríe con Andrés. Andrés deja el vaso de Andrea en la mesa. “Ella vuelve mañana”, explica. Mariana ya recuerda su nombre.",
     "vocab": [
-      { "word": "recordar", "surface": "recuerda", "type": "verb", "register": "neutral", "definition": "To keep a name in mind." },
-      { "word": "traer", "surface": "trae", "type": "verb", "register": "neutral", "definition": "To carry something to a place." },
-      { "word": "entrar", "surface": "entra", "type": "verb", "register": "neutral", "definition": "To go inside a place." },
-      { "word": "mañana", "surface": "mañana", "type": "adverb", "register": "neutral", "definition": "The day after today." },
-      { "word": "suave", "surface": "suave", "type": "adjective", "register": "neutral", "definition": "Soft or gentle to touch." },
-      { "word": "decir", "surface": "dice", "type": "verb", "register": "neutral", "definition": "To speak words to someone." },
-      { "word": "mirar", "surface": "mira", "type": "verb", "register": "neutral", "definition": "To use your eyes on something." },
-      { "word": "sonreír", "surface": "sonríe", "type": "verb", "register": "neutral", "definition": "To make a happy face." },
-      { "word": "poco", "surface": "poco", "type": "adverb", "register": "neutral", "definition": "A small amount of something." },
-      { "word": "rojo", "surface": "roja", "type": "adjective", "register": "neutral", "definition": "Red in the face or color." },
-      { "word": "señalar", "surface": "señala", "type": "verb", "register": "neutral", "definition": "To show with your finger." },
-      { "word": "no pasa nada", "surface": "No pasa nada", "type": "expression", "register": "neutral", "definition": "It is okay, no problem." },
-      { "word": "preparar", "surface": "prepara", "type": "verb", "register": "neutral", "definition": "To make something ready." },
-      { "word": "escribir", "surface": "escribe", "type": "verb", "register": "neutral", "definition": "To make words with a pen." },
-      { "word": "volver", "surface": "vuelve", "type": "verb", "register": "neutral", "definition": "To come back again." },
-      { "word": "dibujar", "surface": "dibuja", "type": "verb", "register": "neutral", "definition": "To make a picture by hand." },
-      { "word": "feliz", "surface": "feliz", "type": "adjective", "register": "neutral", "definition": "Happy and feeling good." },
-      { "word": "levantar", "surface": "levanta", "type": "verb", "register": "neutral", "definition": "To raise something up." },
-      { "word": "serio", "surface": "serio", "type": "adjective", "register": "neutral", "definition": "Not smiling or joking." },
-      { "word": "dos vasos", "surface": "dos vasos", "type": "expression", "register": "neutral", "definition": "Two cups held together." }
+      {
+        "word": "recordar",
+        "surface": "recuerda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To keep a name in mind.",
+        "anchor": true
+      },
+      {
+        "word": "traer",
+        "surface": "trae",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To carry something to a place."
+      },
+      {
+        "word": "entrar",
+        "surface": "entra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go inside a place."
+      },
+      {
+        "word": "mañana",
+        "surface": "mañana",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "The day after today."
+      },
+      {
+        "word": "suave",
+        "surface": "suave",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Soft or gentle to touch."
+      },
+      {
+        "word": "decir",
+        "surface": "dice",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To speak words to someone."
+      },
+      {
+        "word": "mirar",
+        "surface": "mira",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To use your eyes on something."
+      },
+      {
+        "word": "sonreír",
+        "surface": "sonríe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make a happy face."
+      },
+      {
+        "word": "poco",
+        "surface": "poco",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "A small amount of something."
+      },
+      {
+        "word": "rojo",
+        "surface": "roja",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red in the face or color."
+      },
+      {
+        "word": "señalar",
+        "surface": "señala",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To show with your finger."
+      },
+      {
+        "word": "no pasa nada",
+        "surface": "No pasa nada",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "It is okay, no problem."
+      },
+      {
+        "word": "preparar",
+        "surface": "prepara",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make something ready."
+      },
+      {
+        "word": "escribir",
+        "surface": "escribe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make words with a pen."
+      },
+      {
+        "word": "volver",
+        "surface": "vuelve",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To come back again."
+      },
+      {
+        "word": "dibujar",
+        "surface": "dibuja",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make a picture by hand."
+      },
+      {
+        "word": "feliz",
+        "surface": "feliz",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Happy and feeling good."
+      },
+      {
+        "word": "levantar",
+        "surface": "levanta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To raise something up."
+      },
+      {
+        "word": "serio",
+        "surface": "serio",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Not smiling or joking."
+      },
+      {
+        "word": "dos vasos",
+        "surface": "dos vasos",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Two cups held together.",
+        "anchor": true
+      }
     ]
   },
   {
@@ -39,26 +161,149 @@
     "synopsis": "Mariana and Andrés save a table for a new friend, but the cafe hears the wrong greeting. The mix-up gives everyone an easy way to meet.",
     "text": "Mariana abre el café temprano. Andrés espera afuera con pan tibio. La mesa está libre. El pan huele dulce.\n\nLlega Lina, una médica nueva del barrio. Ella mira la mesa y pregunta bajo. “¿Es una reunión?” Andrés dice “sí” con calma. “Una reunión pequeña”, agrega. “La mesa espera”, avisa.\n\nMariana saluda a Lina. “Mucho gusto”, dice Mariana. Andrés repite muy rápido. “Mucho susto”, suelta él. Lina mira el pan.\n\nLina abre los ojos. Mariana mira a Andrés. En la mesa hay pan de queso, no miedo. “El pan no asusta”, explica Mariana. “Yo tampoco”, responde Andrés. “Me siento bien”, responde Lina.\n\nLina ríe. “Mucho gusto, no susto”, corrige ella. Andrés toca su pecho. “Yo tengo gusto y susto”, cuenta él. “Pero sigo aquí”, agrega.\n\nMariana trae café para todos. La mesa ya no parece grande. Lina escribe su nombre en una servilleta. “Yo escribo susto debajo”, avisa Andrés. Ahora los tres tienen un saludo propio.",
     "vocab": [
-      { "word": "esperar", "surface": "espera", "type": "verb", "register": "neutral", "definition": "To stay until someone comes." },
-      { "word": "temprano", "surface": "temprano", "type": "adverb", "register": "neutral", "definition": "Early, near the start of the day." },
-      { "word": "afuera", "surface": "afuera", "type": "adverb", "register": "neutral", "definition": "Outside, not in the room." },
-      { "word": "tibio", "surface": "tibio", "type": "adjective", "register": "neutral", "definition": "Warm, but not very hot." },
-      { "word": "oler", "surface": "huele", "type": "verb", "register": "neutral", "definition": "To have a smell." },
-      { "word": "libre", "surface": "libre", "type": "adjective", "register": "neutral", "definition": "Free, not taken by anyone." },
-      { "word": "dulce", "surface": "dulce", "type": "adjective", "register": "neutral", "definition": "Sweet, like sugar or honey." },
-      { "word": "médica", "surface": "médica", "type": "noun", "register": "neutral", "definition": "A woman who helps sick people." },
-      { "word": "llegar", "surface": "Llega", "type": "verb", "register": "neutral", "definition": "To come to a place." },
-      { "word": "preguntar", "surface": "pregunta", "type": "verb", "register": "neutral", "definition": "To ask for words or news." },
-      { "word": "bajo", "surface": "bajo", "type": "adverb", "register": "neutral", "definition": "Under someone or something." },
-      { "word": "reunión", "surface": "reunión", "type": "noun", "register": "neutral", "definition": "A time when people meet." },
-      { "word": "saludar", "surface": "saluda", "type": "verb", "register": "neutral", "definition": "To say hello to someone." },
-      { "word": "soltar", "surface": "suelta", "type": "verb", "register": "neutral", "definition": "To say something suddenly." },
-      { "word": "rápido", "surface": "rápido", "type": "adverb", "register": "neutral", "definition": "Fast in movement or action." },
-      { "word": "susto", "surface": "susto", "type": "noun", "register": "neutral", "definition": "A sudden scared feeling." },
-      { "word": "abrir los ojos", "surface": "abre los ojos", "type": "expression", "register": "neutral", "definition": "To make your eyes wide." },
-      { "word": "parecer", "surface": "parece", "type": "verb", "register": "neutral", "definition": "To look or seem a certain way." },
-      { "word": "debajo", "surface": "debajo", "type": "adverb", "register": "neutral", "definition": "Under someone or something." },
-      { "word": "propio", "surface": "propio", "type": "adjective", "register": "neutral", "definition": "Your own, not another person's." }
+      {
+        "word": "esperar",
+        "surface": "espera",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay until someone comes."
+      },
+      {
+        "word": "temprano",
+        "surface": "temprano",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Early, near the start of the day.",
+        "anchor": true
+      },
+      {
+        "word": "afuera",
+        "surface": "afuera",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Outside, not in the room."
+      },
+      {
+        "word": "tibio",
+        "surface": "tibio",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Warm, but not very hot."
+      },
+      {
+        "word": "oler",
+        "surface": "huele",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To have a smell."
+      },
+      {
+        "word": "libre",
+        "surface": "libre",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Free, not taken by anyone."
+      },
+      {
+        "word": "dulce",
+        "surface": "dulce",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sweet, like sugar or honey."
+      },
+      {
+        "word": "médica",
+        "surface": "médica",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A woman who helps sick people."
+      },
+      {
+        "word": "llegar",
+        "surface": "Llega",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To come to a place."
+      },
+      {
+        "word": "preguntar",
+        "surface": "pregunta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask for words or news."
+      },
+      {
+        "word": "bajo",
+        "surface": "bajo",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Under someone or something."
+      },
+      {
+        "word": "reunión",
+        "surface": "reunión",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A time when people meet."
+      },
+      {
+        "word": "saludar",
+        "surface": "saluda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say hello to someone."
+      },
+      {
+        "word": "soltar",
+        "surface": "suelta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say something suddenly.",
+        "anchor": true
+      },
+      {
+        "word": "rápido",
+        "surface": "rápido",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Fast in movement or action."
+      },
+      {
+        "word": "susto",
+        "surface": "susto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A sudden scared feeling.",
+        "anchor": true
+      },
+      {
+        "word": "abrir los ojos",
+        "surface": "abre los ojos",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To make your eyes wide."
+      },
+      {
+        "word": "parecer",
+        "surface": "parece",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look or seem a certain way."
+      },
+      {
+        "word": "debajo",
+        "surface": "debajo",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Under someone or something."
+      },
+      {
+        "word": "propio",
+        "surface": "propio",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Your own, not another person's."
+      }
     ]
   },
   {
@@ -70,26 +315,149 @@
     "synopsis": "Andrés wants to introduce a friend at Mariana's cafe, but the friend is only a paper sign. The small joke becomes a real welcome for a shy customer.",
     "text": "El café huele a panela. Catalina es vendedora del barrio. Julián, un músico tímido del centro, mira una silla vacía. Andrés pone un papel en la silla. El papel dice “amigo nuevo”.\n\nJulián ve el papel y se queda de pie. “Hola, amigo nuevo”, dice Andrés. Julián sonríe poco.\n\nJulián toca su gorra. “Yo soy Julián”, dice él. Mariana ofrece café. Julián mira la silla vacía. “¿La silla es mía?”, pregunta.\n\nAndrés baja la voz. “El papel espera a alguien”, explica. Julián se sienta despacio. El papel cae al suelo. “Ahora espera abajo”, responde Julián.\n\nMariana recoge el papel. Ahora escribe “amigo real”. Julián ríe y guarda el papel en su bolsillo. “Yo guardo mi nombre”, cuenta.\n\nCatalina entra por pan. Ella mira a Julián. “¿Tú eres el amigo real?” Julián levanta la mano. “Sí, pero el papel llega primero y saluda”, contesta. Todos saludan al papel y luego a Julián.",
     "vocab": [
-      { "word": "panela", "surface": "panela", "type": "noun", "register": "cultural", "anchor": true, "definition": "Colombian brown sugar from cane." },
-      { "word": "vacío", "surface": "vacía", "type": "adjective", "register": "neutral", "definition": "Empty, with nothing inside." },
-      { "word": "poner", "surface": "pone", "type": "verb", "register": "neutral", "definition": "To place something somewhere." },
-      { "word": "nuevo", "surface": "nuevo", "type": "adjective", "register": "neutral", "definition": "New, not seen before." },
-      { "word": "esperar", "surface": "espera", "type": "verb", "register": "neutral", "definition": "To stay until someone comes." },
-      { "word": "ver", "surface": "ve", "type": "verb", "register": "neutral", "definition": "To look and notice something." },
-      { "word": "papel", "surface": "papel", "type": "noun", "register": "neutral", "definition": "Paper for a note or name." },
-      { "word": "quedarse de pie", "surface": "se queda de pie", "type": "expression", "register": "neutral", "definition": "To stay standing, not sitting." },
-      { "word": "guardar", "surface": "guarda", "type": "verb", "register": "neutral", "definition": "To keep something in a place." },
-      { "word": "tocar", "surface": "toca", "type": "verb", "register": "neutral", "definition": "To put your hand on something." },
-      { "word": "yo", "surface": "Yo", "type": "pronoun", "register": "neutral", "definition": "The word a speaker uses for self." },
-      { "word": "tímido", "surface": "tímido", "type": "adjective", "register": "neutral", "definition": "Shy and not very bold." },
-      { "word": "bajar", "surface": "baja", "type": "verb", "register": "neutral", "definition": "To move down or make lower." },
-      { "word": "responder", "surface": "responde", "type": "verb", "register": "neutral", "definition": "To answer another person." },
-      { "word": "sentarse", "surface": "se sienta", "type": "verb", "register": "neutral", "definition": "To put your body on a seat." },
-      { "word": "despacio", "surface": "despacio", "type": "adverb", "register": "neutral", "definition": "Slowly, not fast at all." },
-      { "word": "caer", "surface": "cae", "type": "verb", "register": "neutral", "definition": "To move down to the ground." },
-      { "word": "real", "surface": "real", "type": "adjective", "register": "neutral", "definition": "True, not only a game." },
-      { "word": "recoger", "surface": "recoge", "type": "verb", "register": "neutral", "definition": "To take something from the ground." },
-      { "word": "luego", "surface": "luego", "type": "adverb", "register": "neutral", "definition": "After that, not before." }
+      {
+        "word": "panela",
+        "surface": "panela",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Colombian brown sugar from cane."
+      },
+      {
+        "word": "vacío",
+        "surface": "vacía",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Empty, with nothing inside."
+      },
+      {
+        "word": "poner",
+        "surface": "pone",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To place something somewhere."
+      },
+      {
+        "word": "nuevo",
+        "surface": "nuevo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "New, not seen before."
+      },
+      {
+        "word": "esperar",
+        "surface": "espera",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay until someone comes."
+      },
+      {
+        "word": "ver",
+        "surface": "ve",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look and notice something."
+      },
+      {
+        "word": "papel",
+        "surface": "papel",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Paper for a note or name."
+      },
+      {
+        "word": "quedarse de pie",
+        "surface": "se queda de pie",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To stay standing, not sitting.",
+        "anchor": true
+      },
+      {
+        "word": "guardar",
+        "surface": "guarda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To keep something in a place."
+      },
+      {
+        "word": "tocar",
+        "surface": "toca",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put your hand on something."
+      },
+      {
+        "word": "yo",
+        "surface": "Yo",
+        "type": "pronoun",
+        "register": "neutral",
+        "definition": "The word a speaker uses for self."
+      },
+      {
+        "word": "tímido",
+        "surface": "tímido",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Shy and not very bold.",
+        "anchor": true
+      },
+      {
+        "word": "bajar",
+        "surface": "baja",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To move down or make lower."
+      },
+      {
+        "word": "responder",
+        "surface": "responde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer another person."
+      },
+      {
+        "word": "sentarse",
+        "surface": "se sienta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put your body on a seat."
+      },
+      {
+        "word": "despacio",
+        "surface": "despacio",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Slowly, not fast at all."
+      },
+      {
+        "word": "caer",
+        "surface": "cae",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To move down to the ground."
+      },
+      {
+        "word": "real",
+        "surface": "real",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "True, not only a game."
+      },
+      {
+        "word": "recoger",
+        "surface": "recoge",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take something from the ground."
+      },
+      {
+        "word": "luego",
+        "surface": "luego",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "After that, not before."
+      }
     ]
   }
 ]
