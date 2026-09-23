@@ -89,7 +89,7 @@
       "id": "journey-vocab-recirculation",
       "gate": "journey",
       "check": "journey-vocab-recirculation",
-      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey; el suelo de B1 (media 1,2 y cola 80%) es PROVISIONAL, remedir contra el primer B1 publicado y sustituir por el numero medido",
+      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey; el suelo de B1 (media 1,2 y cola 80%) es PROVISIONAL, remedir contra el primer B1 publicado y sustituir por el numero medido. La COLA (plazas portables con un solo encuentro) tiene tope por nivel en prosa narrada (A0 30%, A1 70%, A2 y B1 y B2 80%) y tope propio en formato DIALOGO (55%), porque ahi esta regla y vocab-taught-same-type se contradicen: 420 plazas distintas piden unas 294 palabras repetidas entre historias y 21 escenas de dialogo contienen 220. El 55% esta calibrado con UNA muestra (Conversations ES latam A0, 52%) y se remide con el segundo journey de dialogo",
       "memory": "project_vocab_recirculation_ladder"
     },
     {

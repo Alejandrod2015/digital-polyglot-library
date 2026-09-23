@@ -1056,6 +1056,34 @@ export function validateJourneyStories(
   // con el si del usuario. Mismo caveat que el B1: no hay B2 publicado que
   // medir; se remide contra el primero que se publique.
   const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80, B2: 0.80 };
+  // FORMATO DIALOGO: otro tope, porque en dialogo esta regla y la de solape se
+  // contradicen (2026-09-23, autorizado por el usuario).
+  //
+  // Las dos reglas, juntas, piden cosas incompatibles: `vocab-taught-same-type`
+  // exige que las plazas del journey sean palabras DISTINTAS (21 x 20 = 420), y
+  // esta exige que la palabra de cada plaza aparezca en dos o mas CUERPOS. Con
+  // el tope del 30%, unas 294 de esas 420 tienen que ser palabras que se
+  // repiten entre historias, y las 21 historias del primer journey de dialogo
+  // contienen 220 palabras de contenido que salgan en dos o mas cuerpos. No
+  // alcanza, y no por descuido: un dialogo A0 es corto y cada escena trae su
+  // propio mobiliario, asi que el pozo de palabras que vuelven es mas pequeño
+  // que en prosa narrada, donde el narrador repite verbos y conectores.
+  //
+  // El precio de cumplirlo como estaba se vio en ese mismo journey: 95 de sus
+  // 420 plazas tenian por definicion "Used here in this sentence of the story",
+  // que es lo que el lector toca en la app. No eran un descuido del generador;
+  // eran la unica forma de que la plaza cayera en una palabra que se repite.
+  // Entre enseñar de verdad y pasar el tope, la regla estaba obligando a lo
+  // segundo.
+  //
+  // CALIBRADO CON UNA SOLA MUESTRA, y hay que decirlo: el unico journey de
+  // dialogo con el vocab limpio es el Conversations ES latam A0, que deja el
+  // 52%. El tope va en 0,55, justo por encima y sin holgura generosa, que es
+  // el mismo criterio con el que se pusieron el 0,70 del A1 y el 0,80 del A2.
+  // Los tres journeys de dialogo alemanes que existen NO sirven de referencia:
+  // su vocab no ha pasado por esta limpieza. Se remide con el segundo journey
+  // de dialogo que se escriba; si ese deja mucho menos, el tope baja.
+  const TOPE_COLA_DIALOGO = 0.55;
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
@@ -1152,7 +1180,14 @@ export function validateJourneyStories(
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
-      const topeCola = TOPE_COLA_POR_NIVEL[level];
+      // El formato se decide por el journey, no por la historia suelta: un
+      // journey es de dialogo cuando la mitad o mas de sus historias lo son.
+      // Misma deteccion que usa la banda de habla citada, no una segunda.
+      const enDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
+      const topeNivel = TOPE_COLA_POR_NIVEL[level];
+      const topeCola = enDialogo && topeNivel !== undefined
+        ? Math.max(topeNivel, TOPE_COLA_DIALOGO)
+        : topeNivel;
       const okCola = topeCola === undefined || cola <= topeCola;
       pushSetEscalera("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
@@ -1160,7 +1195,7 @@ export function validateJourneyStories(
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
-        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
+        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%${enDialogo ? " de dialogo" : ""}`})` +
         `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
         { valor: media, mejor: "alta" });
