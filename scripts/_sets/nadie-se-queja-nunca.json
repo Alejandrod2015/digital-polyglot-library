@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "fleco",
+  "sentence": "Una gorra tapa el [[fleco]] de ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the fringe",
+   "options": [
+    "the fringe",
+    "the neck",
+    "the collar",
+    "the pocket"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Una gorra tapa el fleco de ella.",
+    "targetWord": "fleco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "derecho",
+  "sentence": "Ella quiere el fleco [[derecho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight",
+   "options": [
+    "straight",
+    "short",
+    "dark",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Ella quiere el fleco derecho.",
+    "targetWord": "derecho",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "torcido",
+  "sentence": "El espejo está [[torcido]] desde el temblor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crooked",
+   "options": [
+    "crooked",
+    "wet",
+    "new",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "El espejo está torcido desde el temblor.",
+    "targetWord": "torcido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lado",
+  "sentence": "Mide el fleco de un [[lado]] y del otro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "side",
+   "options": [
+    "side",
+    "hour",
+    "price",
+    "floor"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Mide el fleco de un lado y del otro.",
+    "targetWord": "lado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "querer",
+  "sentence": "[[Quiero]] el fleco derecho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want",
+   "options": [
+    "to want",
+    "to cut",
+    "to see",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Quiero el fleco derecho.",
+    "targetWord": "Quiero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "limpia",
+  "sentence": "Antes de cortar el pelo, él _____ el mueble.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limpia",
+   "options": [
+    "limpia",
+    "pinta",
+    "paga",
+    "vende"
+   ],
+   "translation": "Before cutting the hair, he _____ the counter.",
+   "optionTranslations": [
+    "wipes",
+    "paints",
+    "pays",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Antes de cortar el pelo, él limpia el mueble.",
+    "targetWord": "limpia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quita",
+  "sentence": "Para ver el fleco, el barbero le _____ la gorra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quita",
+   "options": [
+    "quita",
+    "lava",
+    "corta",
+    "guarda"
+   ],
+   "translation": "To see the fringe, the barber _____ her cap.",
+   "optionTranslations": [
+    "takes off",
+    "washes",
+    "cuts",
+    "puts away"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Para ver el fleco, el barbero le quita la gorra.",
+    "targetWord": "quita",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mide",
+  "sentence": "Con el peine, él _____ el fleco para ver si está derecho.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mide",
+   "options": [
+    "mide",
+    "moja",
+    "tira",
+    "pinta"
+   ],
+   "translation": "With the comb, he _____ the fringe to see if it is straight.",
+   "optionTranslations": [
+    "measures",
+    "wets",
+    "throws away",
+    "paints"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Con el peine, él mide el fleco para ver si está derecho.",
+    "targetWord": "mide",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "queja",
+  "sentence": "No le gusta el corte, pero nadie se _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "queja",
+   "options": [
+    "queja",
+    "moja",
+    "sienta",
+    "peina"
+   ],
+   "translation": "Nobody likes the haircut, but nobody _____.",
+   "optionTranslations": [
+    "complains",
+    "gets wet",
+    "sits down",
+    "combs"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "No le gusta el corte, pero nadie se queja.",
+    "targetWord": "queja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "gorra,trapo,baño,temblor",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "gorra",
+     "answer": "a cap",
+     "options": [
+      "a cap",
+      "a cloth",
+      "a bathroom",
+      "a tremor"
+     ]
+    },
+    {
+     "word": "trapo",
+     "answer": "a cloth",
+     "options": [
+      "a cap",
+      "a cloth",
+      "a bathroom",
+      "a tremor"
+     ]
+    },
+    {
+     "word": "baño",
+     "answer": "a bathroom",
+     "options": [
+      "a cap",
+      "a cloth",
+      "a bathroom",
+      "a tremor"
+     ]
+    },
+    {
+     "word": "temblor",
+     "answer": "a tremor",
+     "options": [
+      "a cap",
+      "a cloth",
+      "a bathroom",
+      "a tremor"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esperar",
+  "featured": false,
+  "sentence": "Él [[espera]] su turno en el sillón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wait",
+   "options": [
+    "to wait",
+    "to pay",
+    "to leave",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Él espera su turno en el sillón.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contestar",
+  "featured": false,
+  "sentence": "Ella no [[contesta]] y mira el espejo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": [
+    "to answer",
+    "to enter",
+    "to pay",
+    "to sit"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Ella no contesta y mira el espejo.",
+    "targetWord": "contesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despacio",
+  "featured": false,
+  "sentence": "Él se ríe [[despacio]], con la boca cerrada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "loudly",
+    "again",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Él se ríe despacio, con la boca cerrada.",
+    "targetWord": "despacio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bailar",
+  "featured": false,
+  "sentence": "Pone un papel abajo para que el espejo no [[baile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wobble",
+   "options": [
+    "to wobble",
+    "to shine",
+    "to fall",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Pone un papel abajo para que el espejo no baile.",
+    "targetWord": "baile",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boca",
+  "featured": false,
+  "sentence": "Se ríe con la [[boca]] cerrada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mouth",
+   "options": [
+    "mouth",
+    "hand",
+    "door",
+    "window"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Se ríe con la boca cerrada.",
+    "targetWord": "boca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de un lado y del otro",
+  "featured": false,
+  "sentence": "Mide el fleco [[de un lado y del otro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on both sides",
+   "options": [
+    "on both sides",
+    "from the back",
+    "with two combs",
+    "very slowly"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Mide el fleco de un lado y del otro.",
+    "targetWord": "de un lado y del otro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reírse",
+  "featured": false,
+  "sentence": "Él se [[ríe]] despacio en su silla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to shout",
+    "to stand",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-se-queja-nunca",
+    "storySource": "user",
+    "sentence": "Él se ríe despacio en su silla.",
+    "targetWord": "ríe",
+    "language": "spanish"
+   }
+  }
+ }
+]

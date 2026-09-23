@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "azotea",
+  "sentence": "En la [[azotea]] hace calor y huele a jabón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the flat roof",
+   "options": [
+    "the flat roof",
+    "the front door",
+    "the back room",
+    "the side street"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "En la azotea hace calor y huele a jabón.",
+    "targetWord": "azotea",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "camisa",
+  "sentence": "Ella cuelga una [[camisa]] azul en el tendedero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shirt",
+   "options": [
+    "a shirt",
+    "a towel",
+    "a sheet",
+    "a sock"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Ella cuelga una camisa azul en el tendedero.",
+    "targetWord": "camisa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pinza",
+  "sentence": "Hay una camisa con una [[pinza]] rota.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a clothes peg",
+   "options": [
+    "a clothes peg",
+    "a coat hook",
+    "a shirt button",
+    "a metal nail"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Hay una camisa con una pinza rota.",
+    "targetWord": "pinza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "etiqueta",
+  "sentence": "Ella revisa la [[etiqueta]] de la camisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the label",
+   "options": [
+    "the label",
+    "the pocket",
+    "the sleeve",
+    "the collar"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Ella revisa la etiqueta de la camisa.",
+    "targetWord": "etiqueta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ropa",
+  "sentence": "Él sube con su cubeta de [[ropa]] mojada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clothes",
+   "options": [
+    "clothes",
+    "plates",
+    "tools",
+    "papers"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Él sube con su cubeta de ropa mojada.",
+    "targetWord": "ropa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuelga",
+  "sentence": "La camisa está mojada y ella la _____ al sol.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuelga",
+   "options": [
+    "cuelga",
+    "cuenta",
+    "rompe",
+    "paga"
+   ],
+   "translation": "The shirt is wet and she _____ it in the sun.",
+   "optionTranslations": [
+    "hangs",
+    "counts",
+    "breaks",
+    "pays for"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "La camisa está mojada y ella la cuelga al sol.",
+    "targetWord": "cuelga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "regresa",
+  "sentence": "Baja por un café y _____ a la azotea.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regresa",
+   "options": [
+    "regresa",
+    "pinta",
+    "lava",
+    "paga"
+   ],
+   "translation": "She goes down for a coffee and _____ to the roof.",
+   "optionTranslations": [
+    "comes back",
+    "paints",
+    "washes",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Baja por un café y regresa a la azotea.",
+    "targetWord": "regresa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "marco",
+  "sentence": "Para saber cuál es mía, la _____ con una pinza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "marco",
+   "options": [
+    "marco",
+    "cuento",
+    "pinto",
+    "cuelgo"
+   ],
+   "translation": "So I know which one is mine, I _____ it with a peg.",
+   "optionTranslations": [
+    "mark",
+    "count",
+    "paint",
+    "hang up"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Para saber cuál es mía, la marco con una pinza.",
+    "targetWord": "marco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "huele",
+  "sentence": "Acaba de lavar y todo _____ a jabón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "huele",
+   "options": [
+    "huele",
+    "pesa",
+    "corta",
+    "paga"
+   ],
+   "translation": "She has just done the washing and everything _____ of soap.",
+   "optionTranslations": [
+    "smells",
+    "weighs",
+    "cuts",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Acaba de lavar y todo huele a jabón.",
+    "targetWord": "huele",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "subir,preguntar,decir,mojada",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "subir",
+     "answer": "to go up",
+     "options": [
+      "to go up",
+      "to ask",
+      "to say",
+      "to be wet"
+     ]
+    },
+    {
+     "word": "preguntar",
+     "answer": "to ask",
+     "options": [
+      "to go up",
+      "to ask",
+      "to say",
+      "to be wet"
+     ]
+    },
+    {
+     "word": "decir",
+     "answer": "to say",
+     "options": [
+      "to go up",
+      "to ask",
+      "to say",
+      "to be wet"
+     ]
+    },
+    {
+     "word": "mojada",
+     "answer": "to be wet",
+     "options": [
+      "to go up",
+      "to ask",
+      "to say",
+      "to be wet"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "azul",
+  "featured": false,
+  "sentence": "Ella cuelga una camisa [[azul]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "brown",
+    "white",
+    "pink"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Ella cuelga una camisa azul.",
+    "targetWord": "azul",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mía",
+  "featured": false,
+  "sentence": "Esa camisa es [[mía]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mine",
+   "options": [
+    "mine",
+    "yours",
+    "ours",
+    "theirs"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Esa camisa es mía.",
+    "targetWord": "mía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tuya",
+  "featured": false,
+  "sentence": "Y yo con la [[tuya]], dice ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yours",
+   "options": [
+    "yours",
+    "mine",
+    "ours",
+    "theirs"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Y yo con la tuya, dice ella.",
+    "targetWord": "tuya",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rota",
+  "featured": false,
+  "sentence": "La camisa cuelga de una pinza [[rota]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broken",
+   "options": [
+    "broken",
+    "yellow",
+    "heavy",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "La camisa cuelga de una pinza rota.",
+    "targetWord": "rota",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roja",
+  "featured": false,
+  "sentence": "Ahora marco la mía con una pinza [[roja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "grey",
+    "green",
+    "blue"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Ahora marco la mía con una pinza roja.",
+    "targetWord": "roja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escalera",
+  "featured": false,
+  "sentence": "Los dos suben la [[escalera]] otra vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the stairs",
+   "options": [
+    "the stairs",
+    "the street",
+    "the bridge",
+    "the lift"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "Los dos suben la escalera otra vez.",
+    "targetWord": "escalera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vacío",
+  "featured": false,
+  "sentence": "El tendedero está [[vacío]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": [
+    "empty",
+    "broken",
+    "narrow",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "dos-camisas-azules",
+    "storySource": "user",
+    "sentence": "El tendedero está vacío.",
+    "targetWord": "vacío",
+    "language": "spanish"
+   }
+  }
+ }
+]

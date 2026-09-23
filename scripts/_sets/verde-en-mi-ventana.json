@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "macetas",
+  "sentence": "Él riega sus [[macetas]] sin prisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flowerpots",
+   "options": [
+    "flowerpots",
+    "buckets",
+    "windows",
+    "brushes"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Él riega sus macetas sin prisa.",
+    "targetWord": "macetas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raíz",
+  "sentence": "Ella mira la [[raíz]] de la planta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the root",
+   "options": [
+    "the root",
+    "the leaf",
+    "the stone",
+    "the pot"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Ella mira la raíz de la planta.",
+    "targetWord": "raíz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dueños",
+  "sentence": "La planta tiene dos [[dueños]] ahora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "owners",
+   "options": [
+    "owners",
+    "colours",
+    "windows",
+    "flowers"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "La planta tiene dos dueños ahora.",
+    "targetWord": "dueños",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "larga",
+  "sentence": "Del balcón baja una planta muy [[larga]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long",
+   "options": [
+    "long",
+    "cheap",
+    "clean",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Del balcón baja una planta muy larga.",
+    "targetWord": "larga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ajenas",
+  "sentence": "Yo no corto plantas [[ajenas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "other people's",
+   "options": [
+    "other people's",
+    "very small",
+    "half dead",
+    "newly bought"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Yo no corto plantas ajenas.",
+    "targetWord": "ajenas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "riega",
+  "sentence": "Las macetas tienen sed y él las _____ cada mañana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riega",
+   "options": [
+    "riega",
+    "pinta",
+    "vende",
+    "tapa"
+   ],
+   "translation": "The flowerpots are thirsty and he _____ them every morning.",
+   "optionTranslations": [
+    "waters",
+    "paints",
+    "sells",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Las macetas tienen sed y él las riega cada mañana.",
+    "targetWord": "riega",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corta",
+  "sentence": "La planta tapa la ventana y ella la _____ un poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corta",
+   "options": [
+    "corta",
+    "cuenta",
+    "paga",
+    "mide"
+   ],
+   "translation": "The plant covers the window and she _____ it back a little.",
+   "optionTranslations": [
+    "cuts",
+    "counts",
+    "pays for",
+    "measures"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "La planta tapa la ventana y ella la corta un poco.",
+    "targetWord": "corta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "busca",
+  "sentence": "La planta crece hacia arriba porque _____ el sol.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "busca",
+   "options": [
+    "busca",
+    "paga",
+    "cuenta",
+    "tapa"
+   ],
+   "translation": "The plant grows upward because it _____ the sun.",
+   "optionTranslations": [
+    "goes after",
+    "pays for",
+    "counts",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "La planta crece hacia arriba porque busca el sol.",
+    "targetWord": "busca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "guarda",
+  "sentence": "Ya no quiere cortar nada y _____ las tijeras.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda",
+   "options": [
+    "guarda",
+    "cuenta",
+    "pinta",
+    "mide"
+   ],
+   "translation": "She does not want to cut anything now and _____ the scissors.",
+   "optionTranslations": [
+    "puts away",
+    "counts",
+    "paints",
+    "measures"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Ya no quiere cortar nada y guarda las tijeras.",
+    "targetWord": "guarda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "cruzar,salir,olvidar,discutir",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cruzar",
+     "answer": "to go across",
+     "options": [
+      "to go across",
+      "to come out",
+      "to forget",
+      "to argue"
+     ]
+    },
+    {
+     "word": "salir",
+     "answer": "to come out",
+     "options": [
+      "to go across",
+      "to come out",
+      "to forget",
+      "to argue"
+     ]
+    },
+    {
+     "word": "olvidar",
+     "answer": "to forget",
+     "options": [
+      "to go across",
+      "to come out",
+      "to forget",
+      "to argue"
+     ]
+    },
+    {
+     "word": "discutir",
+     "answer": "to argue",
+     "options": [
+      "to go across",
+      "to come out",
+      "to forget",
+      "to argue"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de quién es",
+  "featured": false,
+  "sentence": "¿Y [[de quién es]] esa planta?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whose it is",
+   "options": [
+    "whose it is",
+    "where it grows",
+    "how old it is",
+    "what it costs"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "¿Y de quién es esa planta?",
+    "targetWord": "de quién es",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacia abajo",
+  "featured": false,
+  "sentence": "Él señala [[hacia abajo]], despacio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "downwards",
+   "options": [
+    "downwards",
+    "backwards",
+    "upwards",
+    "sideways"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Él señala hacia abajo, despacio.",
+    "targetWord": "hacia abajo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mojado",
+  "featured": false,
+  "sentence": "Señala con el dedo [[mojado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": [
+    "wet",
+    "thin",
+    "warm",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Señala con el dedo mojado.",
+    "targetWord": "mojado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pobre",
+  "featured": false,
+  "sentence": "La maceta tiene tierra [[pobre]] y sin nombre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "poor",
+   "options": [
+    "poor",
+    "wet",
+    "heavy",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "La maceta tiene tierra pobre y sin nombre.",
+    "targetWord": "pobre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verdes",
+  "featured": false,
+  "sentence": "Ahora hay dos ventanas [[verdes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "white",
+    "narrow",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Ahora hay dos ventanas verdes.",
+    "targetWord": "verdes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un poco",
+  "featured": false,
+  "sentence": "Corta [[un poco]], por favor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little",
+   "options": [
+    "a little",
+    "a whole branch",
+    "one more time",
+    "very fast"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "Corta un poco, por favor.",
+    "targetWord": "un poco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desde hace dos años",
+  "featured": false,
+  "sentence": "La maceta está ahí [[desde hace dos años]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for two years now",
+   "options": [
+    "for two years now",
+    "since this morning",
+    "for one more week",
+    "until next summer"
+   ],
+   "audioClip": {
+    "storySlug": "verde-en-mi-ventana",
+    "storySource": "user",
+    "sentence": "La maceta está ahí desde hace dos años.",
+    "targetWord": "desde hace dos años",
+    "language": "spanish"
+   }
+  }
+ }
+]

@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "luchadora",
+  "sentence": "Ella es [[luchadora]] y entrena cada mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a wrestler",
+   "options": [
+    "a wrestler",
+    "a nurse",
+    "a driver",
+    "a baker"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Ella es luchadora y entrena cada mañana.",
+    "targetWord": "luchadora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "máscara",
+  "sentence": "Trae la [[máscara]] plateada en la mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the mask",
+   "options": [
+    "the mask",
+    "the towel",
+    "the jacket",
+    "the ticket"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Trae la máscara plateada en la mano.",
+    "targetWord": "máscara",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plateada",
+  "sentence": "La máscara es [[plateada]] y brilla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silver",
+   "options": [
+    "silver",
+    "yellow",
+    "brown",
+    "green"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "La máscara es plateada y brilla.",
+    "targetWord": "plateada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frente",
+  "sentence": "Tiene el pelo pegado a la [[frente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forehead",
+   "options": [
+    "forehead",
+    "elbow",
+    "ankle",
+    "thumb"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Tiene el pelo pegado a la frente.",
+    "targetWord": "frente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brillo",
+  "sentence": "Si se moja, el [[brillo]] se va.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the shine",
+   "options": [
+    "the shine",
+    "the price",
+    "the smell",
+    "the size"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Si se moja, el brillo se va.",
+    "targetWord": "brillo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "entrena",
+  "sentence": "Cada mañana ella _____ dos horas en el gimnasio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entrena",
+   "options": [
+    "entrena",
+    "mide",
+    "vende",
+    "tapa"
+   ],
+   "translation": "Every morning she _____ for two hours at the gym.",
+   "optionTranslations": [
+    "trains",
+    "measures",
+    "sells",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Cada mañana ella entrena dos horas en el gimnasio.",
+    "targetWord": "entrena",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "termina",
+  "sentence": "A las seis _____ su turno y sube a la azotea.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "termina",
+   "options": [
+    "termina",
+    "pinta",
+    "moja",
+    "tapa"
+   ],
+   "translation": "At six she _____ her shift and goes up to the roof.",
+   "optionTranslations": [
+    "finishes",
+    "paints",
+    "wets",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "A las seis termina su turno y sube a la azotea.",
+    "targetWord": "termina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "oye",
+  "sentence": "No ve a nadie, pero _____ pasos atrás.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "oye",
+   "options": [
+    "oye",
+    "paga",
+    "pinta",
+    "tapa"
+   ],
+   "translation": "She sees nobody, but she _____ steps behind her.",
+   "optionTranslations": [
+    "hears",
+    "pays",
+    "paints",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "No ve a nadie, pero oye pasos atrás.",
+    "targetWord": "oye",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quieta",
+  "sentence": "No mueve ni una mano; se queda muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quieta",
+   "options": [
+    "quieta",
+    "mojada",
+    "vieja",
+    "rosa"
+   ],
+   "translation": "She does not move a hand; she stays very _____.",
+   "optionTranslations": [
+    "still",
+    "wet",
+    "old",
+    "pink"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "No mueve ni una mano; se queda muy quieta.",
+    "targetWord": "quieta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "gimnasio,pasos,colonia,edificio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "gimnasio",
+     "answer": "a training gym",
+     "options": [
+      "a training gym",
+      "the sound of feet",
+      "a city neighbourhood",
+      "a block of flats"
+     ]
+    },
+    {
+     "word": "pasos",
+     "answer": "the sound of feet",
+     "options": [
+      "a training gym",
+      "the sound of feet",
+      "a city neighbourhood",
+      "a block of flats"
+     ]
+    },
+    {
+     "word": "colonia",
+     "answer": "a city neighbourhood",
+     "options": [
+      "a training gym",
+      "the sound of feet",
+      "a city neighbourhood",
+      "a block of flats"
+     ]
+    },
+    {
+     "word": "edificio",
+     "answer": "a block of flats",
+     "options": [
+      "a training gym",
+      "the sound of feet",
+      "a city neighbourhood",
+      "a block of flats"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enfrente",
+  "featured": false,
+  "sentence": "El gimnasio de [[enfrente]] abre a las seis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "across the street",
+   "options": [
+    "across the street",
+    "under the roof",
+    "behind the door",
+    "next to the bed"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "El gimnasio de enfrente abre a las seis.",
+    "targetWord": "enfrente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arriba",
+  "featured": false,
+  "sentence": "A esa hora [[arriba]] no hay nadie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up there",
+   "options": [
+    "up there",
+    "far away",
+    "next door",
+    "down here"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "A esa hora arriba no hay nadie.",
+    "targetWord": "arriba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atrás",
+  "featured": false,
+  "sentence": "Ella oye pasos [[atrás]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind her",
+   "options": [
+    "behind her",
+    "above her",
+    "far from her",
+    "next to her"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Ella oye pasos atrás.",
+    "targetWord": "atrás",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buenos días",
+  "featured": false,
+  "sentence": "[[Buenos días]], dice ella, tranquila.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good morning",
+   "options": [
+    "good morning",
+    "good night",
+    "see you soon",
+    "thank you"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Buenos días, dice ella, tranquila.",
+    "targetWord": "Buenos días",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se echa a perder",
+  "featured": false,
+  "sentence": "Mojada [[se echa a perder]] la máscara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it goes bad",
+   "options": [
+    "it goes bad",
+    "it gets lost",
+    "it comes back",
+    "it costs more"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Mojada se echa a perder la máscara.",
+    "targetWord": "se echa a perder",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a las seis",
+  "featured": false,
+  "sentence": "Ella sube a la azotea [[a las seis]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at six",
+   "options": [
+    "at six",
+    "at noon",
+    "on Friday",
+    "every week"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Ella sube a la azotea a las seis.",
+    "targetWord": "a las seis",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suelto",
+  "featured": false,
+  "sentence": "Baja al gimnasio con el pelo [[suelto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loose",
+   "options": [
+    "loose",
+    "short",
+    "dark",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "la-mascara-en-la-azotea",
+    "storySource": "user",
+    "sentence": "Baja al gimnasio con el pelo suelto.",
+    "targetWord": "suelto",
+    "language": "spanish"
+   }
+  }
+ }
+]

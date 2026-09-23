@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "paraguas",
+  "sentence": "Hay un [[paraguas]] rojo en la caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an umbrella",
+   "options": [
+    "an umbrella",
+    "a towel",
+    "a bottle",
+    "a book"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Hay un paraguas rojo en la caja.",
+    "targetWord": "paraguas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letra",
+  "sentence": "El nombre está con [[letra]] grande.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "handwriting",
+   "options": [
+    "handwriting",
+    "paint",
+    "paper",
+    "string"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "El nombre está con letra grande.",
+    "targetWord": "letra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quietos",
+  "sentence": "Los tres se quedan [[quietos]] junto al cuaderno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still",
+   "options": [
+    "still",
+    "happy",
+    "tired",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Los tres se quedan quietos junto al cuaderno.",
+    "targetWord": "quietos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apuntar",
+  "sentence": "Yo mismo lo [[apunté]] en la lista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write down",
+   "options": [
+    "to write down",
+    "to throw away",
+    "to hand over",
+    "to look for"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Yo mismo lo apunté en la lista.",
+    "targetWord": "apunté",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuaderno",
+  "sentence": "Él apunta cada cosa en su [[cuaderno]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "notebook",
+   "options": [
+    "notebook",
+    "pocket",
+    "drawer",
+    "window"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Él apunta cada cosa en su cuaderno.",
+    "targetWord": "cuaderno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ayudan",
+  "sentence": "La caja pesa mucho y los dos lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ayudan",
+   "options": [
+    "ayudan",
+    "cuentan",
+    "pintan",
+    "lavan"
+   ],
+   "translation": "The box is very heavy and the two of them _____ him.",
+   "optionTranslations": [
+    "help",
+    "count",
+    "paint",
+    "wash"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "La caja pesa mucho y los dos lo ayudan.",
+    "targetWord": "ayudan",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vaciarla",
+  "sentence": "La caja ya no cierra y hay que _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vaciarla",
+   "options": [
+    "vaciarla",
+    "pintarla",
+    "venderla",
+    "mojarla"
+   ],
+   "translation": "The box does not close any more and we have to _____.",
+   "optionTranslations": [
+    "empty it",
+    "paint it",
+    "sell it",
+    "wet it"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "La caja ya no cierra y hay que vaciarla.",
+    "targetWord": "vaciarla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "reclama",
+  "sentence": "El paraguas es suyo y por eso ella lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "reclama",
+   "options": [
+    "reclama",
+    "moja",
+    "rompe",
+    "cuelga"
+   ],
+   "translation": "The umbrella is hers and that is why she _____ it.",
+   "optionTranslations": [
+    "claims",
+    "wets",
+    "breaks",
+    "hangs up"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "El paraguas es suyo y por eso ella lo reclama.",
+    "targetWord": "reclama",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cierra",
+  "sentence": "La caja está muy llena y ya no _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cierra",
+   "options": [
+    "cierra",
+    "corta",
+    "suena",
+    "lava"
+   ],
+   "translation": "The box is very full and it does not _____ any more.",
+   "optionTranslations": [
+    "close",
+    "cut",
+    "sound",
+    "wash"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "La caja está muy llena y ya no cierra.",
+    "targetWord": "cierra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "lentes,guante,pila,plumón",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "lentes",
+     "answer": "the glasses",
+     "options": [
+      "the glasses",
+      "a glove",
+      "a battery",
+      "a marker pen"
+     ]
+    },
+    {
+     "word": "guante",
+     "answer": "a glove",
+     "options": [
+      "the glasses",
+      "a glove",
+      "a battery",
+      "a marker pen"
+     ]
+    },
+    {
+     "word": "pila",
+     "answer": "a battery",
+     "options": [
+      "the glasses",
+      "a glove",
+      "a battery",
+      "a marker pen"
+     ]
+    },
+    {
+     "word": "plumón",
+     "answer": "a marker pen",
+     "options": [
+      "the glasses",
+      "a glove",
+      "a battery",
+      "a marker pen"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escribir",
+  "featured": false,
+  "sentence": "Hay un nombre [[escrito]] con plumón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write",
+   "options": [
+    "to write",
+    "to wash",
+    "to break",
+    "to buy"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Hay un nombre escrito con plumón.",
+    "targetWord": "escrito",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trabajar",
+  "featured": false,
+  "sentence": "Y yo [[trabajo]] aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work",
+   "options": [
+    "to work",
+    "to live",
+    "to eat",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Y yo trabajo aquí.",
+    "targetWord": "trabajo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propia",
+  "featured": false,
+  "sentence": "Lleva dos años en mi [[propia]] caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "own",
+   "options": [
+    "own",
+    "empty",
+    "small",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Lleva dos años en mi propia caja.",
+    "targetWord": "propia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos años",
+  "featured": false,
+  "sentence": "El paraguas lleva [[dos años]] en la caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "two years",
+   "options": [
+    "two years",
+    "two hours",
+    "two boxes",
+    "two pesos"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "El paraguas lleva dos años en la caja.",
+    "targetWord": "dos años",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grande",
+  "featured": false,
+  "sentence": "El nombre está con letra [[grande]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big",
+   "options": [
+    "big",
+    "blue",
+    "wet",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "El nombre está con letra grande.",
+    "targetWord": "grande",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguir",
+  "featured": false,
+  "sentence": "Él no dice nada y [[sigue]] apuntando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go on",
+   "options": [
+    "to go on",
+    "to answer",
+    "to leave",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Él no dice nada y sigue apuntando.",
+    "targetWord": "sigue",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntar",
+  "featured": false,
+  "sentence": "Ella [[junta]] las cosas perdidas en una caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put together",
+   "options": [
+    "to put together",
+    "to write down",
+    "to give away",
+    "to look for"
+   ],
+   "audioClip": {
+    "storySlug": "tres-duenos-y-un-paraguas",
+    "storySource": "user",
+    "sentence": "Ella junta las cosas perdidas en una caja.",
+    "targetWord": "junta",
+    "language": "spanish"
+   }
+  }
+ }
+]

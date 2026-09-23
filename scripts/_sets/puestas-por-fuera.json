@@ -1,0 +1,440 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "puestas",
+  "sentence": "Las llaves están [[puestas]] en la cerradura.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "left in place",
+   "options": [
+    "left in place",
+    "taken away",
+    "very old",
+    "made of iron"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Las llaves están puestas en la cerradura.",
+    "targetWord": "puestas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "Ella revisa [[dentro]] de la lavadora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "behind",
+    "above",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Ella revisa dentro de la lavadora.",
+    "targetWord": "dentro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callada",
+  "sentence": "Ella se queda [[callada]] un momento largo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "angry",
+    "tired",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Ella se queda callada un momento largo.",
+    "targetWord": "callada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "honrado",
+  "sentence": "O el barrio es muy [[honrado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "honest",
+   "options": [
+    "honest",
+    "noisy",
+    "big",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "O el barrio es muy honrado.",
+    "targetWord": "honrado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frío",
+  "sentence": "A las nueve hace [[frío]] en la azotea.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "noise",
+    "light",
+    "wind"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "A las nueve hace frío en la azotea.",
+    "targetWord": "frío",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "piensa",
+  "sentence": "Antes de contestar, ella _____ un momento.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "piensa",
+   "options": [
+    "piensa",
+    "corta",
+    "paga",
+    "canta"
+   ],
+   "translation": "Before answering, she _____ for a moment.",
+   "optionTranslations": [
+    "thinks",
+    "cuts",
+    "pays",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Antes de contestar, ella piensa un momento.",
+    "targetWord": "piensa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "revisan",
+  "sentence": "Con la linterna, los dos _____ cada rincón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "revisan",
+   "options": [
+    "revisan",
+    "cantan",
+    "pintan",
+    "venden"
+   ],
+   "translation": "With the flashlight, the two of them _____ every corner.",
+   "optionTranslations": [
+    "check",
+    "sing in",
+    "paint",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Con la linterna, los dos revisan cada rincón.",
+    "targetWord": "revisan",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "para",
+  "sentence": "Llega a la puerta y se _____ un momento.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "para",
+   "options": [
+    "para",
+    "moja",
+    "peina",
+    "cuenta"
+   ],
+   "translation": "She gets to the door and _____ for a moment.",
+   "optionTranslations": [
+    "stops",
+    "gets wet",
+    "combs",
+    "counts"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Llega a la puerta y se para un momento.",
+    "targetWord": "para",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pasa",
+  "sentence": "Todo el edificio _____ por el zaguán cada día.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pasa",
+   "options": [
+    "pasa",
+    "duerme",
+    "come",
+    "canta"
+   ],
+   "translation": "The whole building _____ through the hallway every day.",
+   "optionTranslations": [
+    "goes",
+    "sleeps",
+    "eats",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Todo el edificio pasa por el zaguán cada día.",
+    "targetWord": "pasa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "suéter,cerradura,barbilla,once",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "suéter",
+     "answer": "a jumper",
+     "options": [
+      "a jumper",
+      "a door lock",
+      "a chin",
+      "an eleven"
+     ]
+    },
+    {
+     "word": "cerradura",
+     "answer": "a door lock",
+     "options": [
+      "a jumper",
+      "a door lock",
+      "a chin",
+      "an eleven"
+     ]
+    },
+    {
+     "word": "barbilla",
+     "answer": "a chin",
+     "options": [
+      "a jumper",
+      "a door lock",
+      "a chin",
+      "an eleven"
+     ]
+    },
+    {
+     "word": "once",
+     "answer": "an eleven",
+     "options": [
+      "a jumper",
+      "a door lock",
+      "a chin",
+      "an eleven"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ver",
+  "featured": false,
+  "sentence": "¿Tú las [[viste]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to see",
+   "options": [
+    "to see",
+    "to lose",
+    "to buy",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "¿Tú las viste?",
+    "targetWord": "viste",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hablar",
+  "featured": false,
+  "sentence": "Bajan los dos sin [[hablar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to talk",
+   "options": [
+    "to talk",
+    "to run",
+    "to eat",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Bajan los dos sin hablar.",
+    "targetWord": "hablar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seis",
+  "featured": false,
+  "sentence": "Las llaves cuelgan desde las [[seis]] de la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "six",
+   "options": [
+    "six",
+    "four",
+    "two",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Las llaves cuelgan desde las seis de la tarde.",
+    "targetWord": "seis",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "visitar",
+  "featured": false,
+  "sentence": "Nadie me quiere [[visitar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to visit",
+   "options": [
+    "to visit",
+    "to call",
+    "to pay",
+    "to hear"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Nadie me quiere visitar.",
+    "targetWord": "visitar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nueve",
+  "featured": false,
+  "sentence": "A las [[nueve]] ya hace frío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nine",
+   "options": [
+    "nine",
+    "three",
+    "seven",
+    "five"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "A las nueve ya hace frío.",
+    "targetWord": "nueve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "solo",
+  "featured": false,
+  "sentence": "Yo vivo [[solo]], y hoy se nota.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "badly",
+    "far away",
+    "upstairs"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Yo vivo solo, y hoy se nota.",
+    "targetWord": "solo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por todos lados",
+  "featured": false,
+  "sentence": "Él busca sus llaves [[por todos lados]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "everywhere",
+   "options": [
+    "everywhere",
+    "for an hour",
+    "very slowly",
+    "one more time"
+   ],
+   "audioClip": {
+    "storySlug": "puestas-por-fuera",
+    "storySource": "user",
+    "sentence": "Él busca sus llaves por todos lados.",
+    "targetWord": "por todos lados",
+    "language": "spanish"
+   }
+  }
+ }
+]
