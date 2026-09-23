@@ -134,7 +134,7 @@ nav button:disabled{opacity:.35;cursor:default}
 
 <div class="wrap">
   <header><h1>Veredictos de Guadalajara</h1></header>
-  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; lo que marcaron los gates, una ficha a la vez. Ninguna se re-tiro: esto decide cuales valia la pena re-tirar.</p>
+  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; lo que marcaron los gates, mas las veces que el nombre Itzel no suena it-SEL. Una ficha a la vez, ninguna se re-tiro.</p>
 
   <div class="marcador" id="marcador"></div>
   <div class="barra"><i id="barra"></i></div>
@@ -188,8 +188,8 @@ function pinta(){
       '<p class="texto">' + esc(f.texto) + '</p>' +
       (f.nota ? '<p class="nota">' + esc(f.nota) + '</p>' : '') +
       '<div class="acciones">' +
-        '<button class="fp" id="b-fp">Al oido esta bien</button>' +
-        '<button class="real" id="b-real">Defecto real</button>' +
+        '<button class="fp" id="b-fp">' + (f.kind === "nombre" ? "Suena it-SEL" : "Al oido esta bien") + '</button>' +
+        '<button class="real" id="b-real">' + (f.kind === "nombre" ? "Suena de otra forma" : "Defecto real") + '</button>' +
       '</div>' +
       '<nav>' +
         '<button id="b-prev">&larr; anterior</button>' +
