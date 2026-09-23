@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el bolsillo,el rascador,la llave,el timbre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el bolsillo",
+     "answer": "a pocket",
+     "options": [
+      "a pocket",
+      "a scratching post",
+      "a key",
+      "a doorbell"
+     ]
+    },
+    {
+     "word": "el rascador",
+     "answer": "a scratching post",
+     "options": [
+      "a pocket",
+      "a scratching post",
+      "a key",
+      "a doorbell"
+     ]
+    },
+    {
+     "word": "la llave",
+     "answer": "a key",
+     "options": [
+      "a pocket",
+      "a scratching post",
+      "a key",
+      "a doorbell"
+     ]
+    },
+    {
+     "word": "el timbre",
+     "answer": "a doorbell",
+     "options": [
+      "a pocket",
+      "a scratching post",
+      "a key",
+      "a doorbell"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "se ríe",
+  "sentence": "Saca una llave dorada y _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "se ríe",
+   "options": [
+    "se ríe",
+    "necesita",
+    "corre",
+    "toca"
+   ],
+   "translation": "He takes out a golden key and _____.",
+   "optionTranslations": [
+    "laughs",
+    "needs",
+    "runs",
+    "rings"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Saca una llave dorada y se ríe.",
+    "targetWord": "se ríe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "necesita",
+  "sentence": "Ella no _____ llave. Tiene la ventana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "necesita",
+   "options": [
+    "necesita",
+    "ríe",
+    "corre",
+    "guarda"
+   ],
+   "translation": "She does not _____ a key. She has the window.",
+   "optionTranslations": [
+    "need",
+    "laugh",
+    "run",
+    "keep"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Ella no necesita llave. Tiene la ventana.",
+    "targetWord": "necesita",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "corren",
+  "sentence": "Los gatitos _____ por toda la casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corren",
+   "options": [
+    "corren",
+    "ríen",
+    "necesitan",
+    "tocan"
+   ],
+   "translation": "The kittens _____ all over the flat.",
+   "optionTranslations": [
+    "run",
+    "laugh",
+    "need",
+    "ring"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Los gatitos corren por toda la casa.",
+    "targetWord": "corren",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dorada",
+  "sentence": "Saca una llave [[dorada]] y se ríe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "spare",
+    "bent",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Saca una llave dorada y se ríe.",
+    "targetWord": "dorada",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tuya",
+  "sentence": "Esta llave es [[tuya]], para siempre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yours",
+   "options": [
+    "yours",
+    "new",
+    "spare",
+    "special"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Esta llave es tuya, para siempre.",
+    "targetWord": "tuya",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "casas",
+  "sentence": "Ya tiene dos [[casas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "homes",
+   "options": [
+    "homes",
+    "bowls",
+    "beds",
+    "names"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Ya tiene dos casas.",
+    "targetWord": "casas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todas",
+  "sentence": "Tus plantas viven. Casi [[todas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all of them",
+   "options": [
+    "all of them",
+    "most days",
+    "one of them",
+    "the big ones"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Tus plantas viven. Casi todas.",
+    "targetWord": "todas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por fin",
+  "sentence": "Mariana abre su puerta [[por fin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at last",
+   "options": [
+    "at last",
+    "as always",
+    "in a rush",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Mariana abre su puerta por fin.",
+    "targetWord": "por fin",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en orden",
+  "sentence": "Todo está [[en orden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in order",
+   "options": [
+    "in order",
+    "in the hall",
+    "as new",
+    "on the list"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Todo está en orden.",
+    "targetWord": "en orden",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en ningún lado",
+  "sentence": "No está [[en ningún lado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nowhere to be found",
+   "options": [
+    "nowhere to be found",
+    "out on the roof",
+    "back in her basket",
+    "under the sofa"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "No está en ningún lado.",
+    "targetWord": "en ningún lado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin hacer ruido",
+  "sentence": "Mariana y Nicolás bajan [[sin hacer ruido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without making a sound",
+   "options": [
+    "without making a sound",
+    "one after the other",
+    "in the dark",
+    "in a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás bajan sin hacer ruido.",
+    "targetWord": "sin hacer ruido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Yo no digo nada",
+  "sentence": "[[Yo no digo nada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am saying nothing",
+   "options": [
+    "I am saying nothing",
+    "I told you so",
+    "I do not mind",
+    "I want it back"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Yo no digo nada.",
+    "targetWord": "Yo no digo nada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "para siempre",
+  "sentence": "Esta llave es tuya, [[para siempre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for good",
+   "options": [
+    "for good",
+    "for tonight",
+    "for a while",
+    "for the summer"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Esta llave es tuya, para siempre.",
+    "targetWord": "para siempre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "algo para ti",
+  "sentence": "Yo también tengo [[algo para ti]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something for you",
+   "options": [
+    "something for you",
+    "a word with you",
+    "a favour to ask",
+    "news from home"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Yo también tengo algo para ti.",
+    "targetWord": "algo para ti",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "No hace falta",
+  "sentence": "[[No hace falta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there is no need",
+   "options": [
+    "there is no need",
+    "there is no time",
+    "that is not fair",
+    "that is the rule"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "No hace falta.",
+    "targetWord": "No hace falta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gracias por todo",
+  "sentence": "Nicolás, [[gracias por todo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thanks for everything",
+   "options": [
+    "thanks for everything",
+    "sorry for the delay",
+    "welcome back",
+    "see you tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "aqui-abajo-duerme-mejor",
+    "storySource": "user",
+    "sentence": "Nicolás, gracias por todo.",
+    "targetWord": "gracias por todo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

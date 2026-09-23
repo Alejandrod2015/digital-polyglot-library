@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la pantalla,la cámara,la cola,la sala",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la pantalla",
+     "answer": "a screen",
+     "options": [
+      "a screen",
+      "a camera",
+      "a tail",
+      "the living room"
+     ]
+    },
+    {
+     "word": "la cámara",
+     "answer": "a camera",
+     "options": [
+      "a screen",
+      "a camera",
+      "a tail",
+      "the living room"
+     ]
+    },
+    {
+     "word": "la cola",
+     "answer": "a tail",
+     "options": [
+      "a screen",
+      "a camera",
+      "a tail",
+      "the living room"
+     ]
+    },
+    {
+     "word": "la sala",
+     "answer": "the living room",
+     "options": [
+      "a screen",
+      "a camera",
+      "a tail",
+      "the living room"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "levanta",
+  "sentence": "Nicolás _____ a la gata.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "levanta",
+   "options": [
+    "levanta",
+    "pregunta",
+    "tapa",
+    "devuelve"
+   ],
+   "translation": "Nicolas _____ the cat.",
+   "optionTranslations": [
+    "lifts",
+    "asks",
+    "covers",
+    "gives back"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Nicolás levanta a la gata.",
+    "targetWord": "levanta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "pregunta",
+  "sentence": "Mi mamá _____ si comes bien.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pregunta",
+   "options": [
+    "pregunta",
+    "levanta",
+    "devuelve",
+    "tapa"
+   ],
+   "translation": "My mum _____ whether you eat properly.",
+   "optionTranslations": [
+    "asks",
+    "lifts",
+    "gives back",
+    "covers"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Mi mamá pregunta si comes bien.",
+    "targetWord": "pregunta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "tapa",
+  "sentence": "Su cara _____ la pantalla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tapa",
+   "options": [
+    "tapa",
+    "levanta",
+    "pregunta",
+    "carga"
+   ],
+   "translation": "His face _____ the screen.",
+   "optionTranslations": [
+    "fills",
+    "lifts",
+    "asks",
+    "carries"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Su cara tapa la pantalla.",
+    "targetWord": "tapa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "familia",
+  "sentence": "Mariana habla por video con su [[familia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "family",
+   "options": [
+    "family",
+    "company",
+    "neighbour",
+    "doctor"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Mariana habla por video con su familia.",
+    "targetWord": "familia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tía",
+  "sentence": "Mi [[tía]] te espera en diciembre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "aunt",
+   "options": [
+    "aunt",
+    "cousin",
+    "grandmother",
+    "godmother"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Mi tía te espera en diciembre.",
+    "targetWord": "tía",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "siempre",
+  "sentence": "Ella [[siempre]] busca la cámara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "always",
+   "options": [
+    "always",
+    "rarely",
+    "suddenly",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Ella siempre busca la cámara.",
+    "targetWord": "siempre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cargo",
+  "sentence": "Yo la [[cargo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I will pick her up",
+   "options": [
+    "I will pick her up",
+    "I will feed her",
+    "I will shut her out",
+    "I will call her"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Yo la cargo.",
+    "targetWord": "cargo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cara",
+  "sentence": "Su [[cara]] tapa la pantalla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "face",
+   "options": [
+    "face",
+    "hand",
+    "shadow",
+    "arm"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Su cara tapa la pantalla.",
+    "targetWord": "cara",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bastante",
+  "sentence": "Ella pesa [[bastante]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quite a lot",
+   "options": [
+    "quite a lot",
+    "very little",
+    "the same",
+    "too little"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Ella pesa bastante.",
+    "targetWord": "bastante",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ven acá",
+  "sentence": "[[Ven acá]], Tigre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come here",
+   "options": [
+    "come here",
+    "get down",
+    "stay put",
+    "go away"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Ven acá, Tigre.",
+    "targetWord": "Ven acá",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Para ellos",
+  "sentence": "[[Para ellos]], tú vives aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in their eyes",
+   "options": [
+    "in their eyes",
+    "from now on",
+    "for a while",
+    "in the end"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Para ellos, tú vives aquí.",
+    "targetWord": "Para ellos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saludo",
+  "sentence": "Entonces [[saludo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I will say hello",
+   "options": [
+    "I will say hello",
+    "I will sit down",
+    "I will explain",
+    "I will leave"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Entonces saludo.",
+    "targetWord": "saludo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Buenas tardes",
+  "sentence": "[[Buenas tardes]] a todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good afternoon",
+   "options": [
+    "good afternoon",
+    "good night",
+    "see you soon",
+    "many thanks"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Buenas tardes a todos.",
+    "targetWord": "Buenas tardes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "video",
+  "sentence": "Mariana habla por [[video]] con su familia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "video call",
+   "options": [
+    "video call",
+    "video game",
+    "voice message",
+    "photo album"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Mariana habla por video con su familia.",
+    "targetWord": "video",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "les gusta",
+  "sentence": "A ellos [[les gusta]] más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they like her",
+   "options": [
+    "they like her",
+    "they expect her",
+    "they miss her",
+    "they know her"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "A ellos les gusta más.",
+    "targetWord": "les gusta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devolver",
+  "sentence": "Nicolás sube a [[devolver]] un plato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "give back",
+   "options": [
+    "give back",
+    "borrow",
+    "wash",
+    "fill"
+   ],
+   "audioClip": {
+    "storySlug": "la-gata-tapa-la-pantalla",
+    "storySource": "user",
+    "sentence": "Nicolás sube a devolver un plato.",
+    "targetWord": "devolver",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

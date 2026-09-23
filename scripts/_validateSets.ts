@@ -13,6 +13,7 @@ import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import * as fs from "fs";
+import { distractorIssues, type GateCtx } from "./distractorGate";
 
 const DIR = "scripts/_sets";
 const AUTHORING = "scripts/_authoring.json";
@@ -66,8 +67,15 @@ const covers = (target: string, vocabEntry: string) => {
 
 const wordCount = (s: string) => (s || "").replace(/\[\[|\]\]/g, "").trim().split(/\s+/).filter(Boolean).length;
 
-/** Returns a list of human-readable issues; empty array = the set is valid. */
-export function validateSet(exs: any[], vocabWords?: string[]): string[] {
+/**
+ * Returns a list of human-readable issues; empty array = the set is valid.
+ *
+ * `gate` (idioma + corpus del journey) enciende el gate de distractores
+ * (scripts/distractorGate.ts): sin el, un set con la respuesta como unica
+ * glosa larga con mayuscula pasaba como valido. Sus fallos van con el prefijo
+ * `[distractor]` y `_seedAllSets.ts` NO los deja pasar ni con --force.
+ */
+export function validateSet(exs: any[], vocabWords?: string[], gate?: GateCtx): string[] {
   const issues: string[] = [];
   if (!Array.isArray(exs) || exs.length === 0) return ["not a non-empty array"];
 
@@ -82,6 +90,8 @@ export function validateSet(exs: any[], vocabWords?: string[]): string[] {
     counts[e.type] = (counts[e.type] ?? 0) + 1;
     if (e.featured !== false) featured++;
     if (JSON.stringify(e).includes("—")) issues.push(`${at} '${e.word}': em-dash`);
+
+    if (gate) for (const d of distractorIssues(e, gate).issues) issues.push(`${at} [distractor] ${d}`);
 
     const p = e.payload ?? {};
     const opts: string[] = p.options ?? [];
@@ -147,6 +157,21 @@ export function validateSet(exs: any[], vocabWords?: string[]): string[] {
   return issues;
 }
 
+/** Idioma y corpus (cuerpos del journey) por slug, para el gate de distractores. */
+export async function loadGateCtx(prisma: any, slugs: string[]): Promise<Map<string, GateCtx>> {
+  const out = new Map<string, GateCtx>();
+  if (!slugs.length) return out;
+  const rows: Array<{ slug: string | null; journeyId: string; journey: { language: string } }> =
+    await prisma.journeyStory.findMany({ where: { slug: { in: slugs } }, select: { slug: true, journeyId: true, journey: { select: { language: true } } } });
+  const journeyIds = [...new Set(rows.map((r) => r.journeyId))];
+  const bodies: Array<{ journeyId: string; text: string | null }> =
+    await prisma.journeyStory.findMany({ where: { journeyId: { in: journeyIds } }, select: { journeyId: true, text: true } });
+  const corpus = new Map<string, string>();
+  for (const b of bodies) corpus.set(b.journeyId, (corpus.get(b.journeyId) ?? "") + "\n" + (b.text ?? ""));
+  for (const r of rows) if (r.slug) out.set(r.slug, { language: r.journey.language, corpus: corpus.get(r.journeyId) ?? "" });
+  return out;
+}
+
 // ---- CLI runner ----
 if (require.main === module) {
 (async () => {
@@ -162,17 +187,22 @@ if (require.main === module) {
     .sort();
   // Coverage vocab fallback: _authoring.json only holds the A2 journey; for
   // any other slug (A0/A1) pull the vocab list from the story row so the
-  // full-coverage lock applies to every journey, not just A2.
+  // full-coverage lock applies to every journey, not just A2. El gate de
+  // distractores necesita idioma y corpus de TODOS los slugs, asi que la base
+  // se abre siempre.
+  const slugs = files.map((f) => f.replace(".json", ""));
+  let gateBySlug = new Map<string, GateCtx>();
   {
-    const missing = files.map((f) => f.replace(".json", "")).filter((slug) => !vocabBySlug.has(slug));
-    if (missing.length) {
-      const { PrismaClient } = await import("../src/generated/prisma");
-      const prisma = new PrismaClient();
-      try {
+    const missing = slugs.filter((slug) => !vocabBySlug.has(slug));
+    const { PrismaClient } = await import("../src/generated/prisma");
+    const prisma = new PrismaClient();
+    try {
+      if (missing.length) {
         const rows = await prisma.journeyStory.findMany({ where: { slug: { in: missing } }, select: { slug: true, vocab: true } });
         for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => (v.surface ? `${v.word}||${v.surface}` : v.word)).filter(Boolean));
-      } finally { await prisma.$disconnect(); }
-    }
+      }
+      gateBySlug = await loadGateCtx(prisma, slugs);
+    } finally { await prisma.$disconnect(); }
   }
   let totalIssues = 0;
   for (const f of files) {
@@ -180,7 +210,7 @@ if (require.main === module) {
     let exs: any[];
     try { exs = JSON.parse(fs.readFileSync(`${DIR}/${f}`, "utf8")); }
     catch (e: any) { console.log(`✗ ${slug}: INVALID JSON ${e.message}`); totalIssues++; continue; }
-    const issues = validateSet(exs, vocabBySlug.get(slug));
+    const issues = validateSet(exs, vocabBySlug.get(slug), gateBySlug.get(slug));
     if (issues.length) { console.log(`✗ ${slug} (${exs.length} ex):\n    ` + issues.join("\n    ")); totalIssues += issues.length; }
     else console.log(`✓ ${slug} (${exs.length} ex)`);
   }

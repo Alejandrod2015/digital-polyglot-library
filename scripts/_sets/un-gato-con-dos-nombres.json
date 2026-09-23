@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el gato,la ventana,el sofá,gris",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el gato",
+     "answer": "a cat",
+     "options": [
+      "a cat",
+      "a window",
+      "a sofa",
+      "grey"
+     ]
+    },
+    {
+     "word": "la ventana",
+     "answer": "a window",
+     "options": [
+      "a cat",
+      "a window",
+      "a sofa",
+      "grey"
+     ]
+    },
+    {
+     "word": "el sofá",
+     "answer": "a sofa",
+     "options": [
+      "a cat",
+      "a window",
+      "a sofa",
+      "grey"
+     ]
+    },
+    {
+     "word": "gris",
+     "answer": "grey",
+     "options": [
+      "a cat",
+      "a window",
+      "a sofa",
+      "grey"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "entra",
+  "sentence": "Todas las noches, un gato gris _____ por su ventana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entra",
+   "options": [
+    "entra",
+    "duerme",
+    "come",
+    "cena"
+   ],
+   "translation": "Every night a grey cat _____ in through her window.",
+   "optionTranslations": [
+    "comes in",
+    "sleeps",
+    "eats",
+    "has dinner"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Todas las noches, un gato gris entra por su ventana.",
+    "targetWord": "entra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cena",
+  "sentence": "Luna _____ en mi casa todas las noches.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cena",
+   "options": [
+    "cena",
+    "mira",
+    "pierde",
+    "comparte"
+   ],
+   "translation": "Luna _____ at my place every night.",
+   "optionTranslations": [
+    "has dinner",
+    "looks",
+    "loses",
+    "shares"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Luna cena en mi casa todas las noches.",
+    "targetWord": "cena",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "oye",
+  "sentence": "Mariana _____ un gato en la casa de al lado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "oye",
+   "options": [
+    "oye",
+    "cena",
+    "comparte",
+    "pierde"
+   ],
+   "translation": "Mariana _____ a cat in the house next door.",
+   "optionTranslations": [
+    "hears",
+    "has dinner",
+    "shares",
+    "loses"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Mariana oye un gato en la casa de al lado.",
+    "targetWord": "oye",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viene",
+  "sentence": "Hoy el gato no [[viene]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "comes",
+   "options": [
+    "comes",
+    "eats",
+    "sleeps",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Hoy el gato no viene.",
+    "targetWord": "viene",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vive",
+  "sentence": "Tigre [[vive]] aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lives",
+   "options": [
+    "lives",
+    "eats",
+    "waits",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Tigre vive aquí.",
+    "targetWord": "vive",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Come",
+  "sentence": "[[Come]] aquí todos los días.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he eats",
+   "options": [
+    "he eats",
+    "he sleeps",
+    "he plays",
+    "he waits"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Come aquí todos los días.",
+    "targetWord": "Come",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mira",
+  "sentence": "El gato [[mira]] a Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks at",
+   "options": [
+    "looks at",
+    "touches",
+    "calls",
+    "follows"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "El gato mira a Mariana.",
+    "targetWord": "mira",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gordo",
+  "sentence": "Está muy [[gordo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fat",
+   "options": [
+    "fat",
+    "tired",
+    "quiet",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Está muy gordo.",
+    "targetWord": "gordo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perder",
+  "sentence": "Pero no quiero [[perder]] a Luna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lose",
+   "options": [
+    "to lose",
+    "to feed",
+    "to call",
+    "to carry"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Pero no quiero perder a Luna.",
+    "targetWord": "perder",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Después",
+  "sentence": "[[Después]] mira a Nicolás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after that",
+   "options": [
+    "after that",
+    "before",
+    "never",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Después mira a Nicolás.",
+    "targetWord": "Después",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Compartimos",
+  "sentence": "¿[[Compartimos]] el gato?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shall we share",
+   "options": [
+    "shall we share",
+    "shall we sell",
+    "shall we feed",
+    "shall we count"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "¿Compartimos el gato?",
+    "targetWord": "Compartimos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todas las noches",
+  "sentence": "[[Todas las noches]], un gato gris entra por su ventana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every night",
+   "options": [
+    "every night",
+    "every morning",
+    "once a week",
+    "on Sundays"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Todas las noches, un gato gris entra por su ventana.",
+    "targetWord": "todas las noches",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todos los días",
+  "sentence": "Come aquí [[todos los días]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every day",
+   "options": [
+    "every day",
+    "every month",
+    "on Fridays",
+    "twice a year"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Come aquí todos los días.",
+    "targetWord": "todos los días",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos veces",
+  "sentence": "El gato come [[dos veces]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice",
+   "options": [
+    "twice",
+    "slowly",
+    "at night",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "El gato come dos veces.",
+    "targetWord": "dos veces",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Por eso",
+  "sentence": "¡[[Por eso]] está tan gordo!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that is why",
+   "options": [
+    "that is why",
+    "even so",
+    "until then",
+    "by the way"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "¡Por eso está tan gordo!",
+    "targetWord": "Por eso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Trato hecho",
+  "sentence": "[[Trato hecho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is a deal",
+   "options": [
+    "it is a deal",
+    "no way",
+    "too late",
+    "never mind"
+   ],
+   "audioClip": {
+    "storySlug": "un-gato-con-dos-nombres",
+    "storySource": "user",
+    "sentence": "Trato hecho.",
+    "targetWord": "Trato hecho",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

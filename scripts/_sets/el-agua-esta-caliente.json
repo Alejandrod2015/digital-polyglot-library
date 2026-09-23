@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el balde,el plomero,la gotera,el tubo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el balde",
+     "answer": "a bucket",
+     "options": [
+      "a bucket",
+      "a plumber",
+      "a leak",
+      "a pipe"
+     ]
+    },
+    {
+     "word": "el plomero",
+     "answer": "a plumber",
+     "options": [
+      "a bucket",
+      "a plumber",
+      "a leak",
+      "a pipe"
+     ]
+    },
+    {
+     "word": "la gotera",
+     "answer": "a leak",
+     "options": [
+      "a bucket",
+      "a plumber",
+      "a leak",
+      "a pipe"
+     ]
+    },
+    {
+     "word": "el tubo",
+     "answer": "a pipe",
+     "options": [
+      "a bucket",
+      "a plumber",
+      "a leak",
+      "a pipe"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cobra",
+  "sentence": "El plomero _____ igual.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cobra",
+   "options": [
+    "cobra",
+    "habla",
+    "baja",
+    "cierra"
+   ],
+   "translation": "The plumber _____ the same either way.",
+   "optionTranslations": [
+    "charges",
+    "speaks",
+    "comes down",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "El plomero cobra igual.",
+    "targetWord": "cobra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerramos",
+  "sentence": "Y _____ la llave hasta el lunes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerramos",
+   "options": [
+    "cerramos",
+    "hablamos",
+    "pagamos",
+    "bajamos"
+   ],
+   "translation": "And we _____ the tap until Monday.",
+   "optionTranslations": [
+    "turn off",
+    "speak",
+    "pay",
+    "come down"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Y cerramos la llave hasta el lunes.",
+    "targetWord": "cerramos",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "llamas",
+  "sentence": "Pero el plomero lo _____ tú.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llamas",
+   "options": [
+    "llamas",
+    "cierras",
+    "cobras",
+    "bajas"
+   ],
+   "translation": "But you are the one who _____ the plumber.",
+   "optionTranslations": [
+    "calls",
+    "closes",
+    "charges",
+    "comes down"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Pero el plomero lo llamas tú.",
+    "targetWord": "llamas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caliente",
+  "sentence": "Porque el agua está [[caliente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "clean",
+    "dark",
+    "salty"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Porque el agua está caliente.",
+    "targetWord": "caliente",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tibia",
+  "sentence": "Está [[tibia]], como un café de ayer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "sweet",
+    "murky",
+    "still"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Está tibia, como un café de ayer.",
+    "targetWord": "tibia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baja",
+  "sentence": "Mariana, [[baja]] un momento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come down",
+   "options": [
+    "come down",
+    "wait",
+    "listen",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Mariana, baja un momento.",
+    "targetWord": "baja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paga",
+  "sentence": "¿Y quién [[paga]] un tubo?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pays for",
+   "options": [
+    "pays for",
+    "repairs",
+    "chooses",
+    "owns"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "¿Y quién paga un tubo?",
+    "targetWord": "paga",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "habla",
+  "sentence": "Nadie [[habla]] durante un minuto largo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "speaks",
+   "options": [
+    "speaks",
+    "moves",
+    "breathes",
+    "leaves"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Nadie habla durante un minuto largo.",
+    "targetWord": "habla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dedo",
+  "sentence": "Mete un [[dedo]] aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finger",
+   "options": [
+    "finger",
+    "coin",
+    "stick",
+    "cloth"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Mete un dedo aquí.",
+    "targetWord": "dedo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tienes",
+  "sentence": "Tú [[tienes]] la gotera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you have",
+   "options": [
+    "you have",
+    "you fixed",
+    "you found",
+    "you caused"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Tú tienes la gotera.",
+    "targetWord": "tienes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "largo",
+  "sentence": "Nadie habla durante un minuto [[largo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long",
+   "options": [
+    "long",
+    "quiet",
+    "final",
+    "whole"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Nadie habla durante un minuto largo.",
+    "targetWord": "largo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "igual",
+  "sentence": "El plomero cobra [[igual]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all the same",
+   "options": [
+    "all the same",
+    "by the hour",
+    "in advance",
+    "too much"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "El plomero cobra igual.",
+    "targetWord": "igual",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cada mañana",
+  "sentence": "El balde de Nicolás está lleno [[cada mañana]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every morning",
+   "options": [
+    "every morning",
+    "every Monday",
+    "twice a day",
+    "since June"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "El balde de Nicolás está lleno cada mañana.",
+    "targetWord": "cada mañana",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mitad y mitad",
+  "sentence": "Pagamos [[mitad y mitad]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half and half",
+   "options": [
+    "half and half",
+    "right away",
+    "in cash",
+    "next month"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Pagamos mitad y mitad.",
+    "targetWord": "mitad y mitad",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de ayer",
+  "sentence": "Está tibia, como un café [[de ayer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from yesterday",
+   "options": [
+    "from yesterday",
+    "from a machine",
+    "without sugar",
+    "in a paper cup"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Está tibia, como un café de ayer.",
+    "targetWord": "de ayer",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quien",
+  "sentence": "Paga [[quien]] tiene la gotera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one who",
+   "options": [
+    "the one who",
+    "the day when",
+    "the place where",
+    "the reason why"
+   ],
+   "audioClip": {
+    "storySlug": "el-agua-esta-caliente",
+    "storySource": "user",
+    "sentence": "Paga quien tiene la gotera.",
+    "targetWord": "quien",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el silencio,la pelusa,el ronquido,la almohada",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el silencio",
+     "answer": "silence",
+     "options": [
+      "silence",
+      "fluff",
+      "a snore",
+      "a pillow"
+     ]
+    },
+    {
+     "word": "la pelusa",
+     "answer": "fluff",
+     "options": [
+      "silence",
+      "fluff",
+      "a snore",
+      "a pillow"
+     ]
+    },
+    {
+     "word": "el ronquido",
+     "answer": "a snore",
+     "options": [
+      "silence",
+      "fluff",
+      "a snore",
+      "a pillow"
+     ]
+    },
+    {
+     "word": "la almohada",
+     "answer": "a pillow",
+     "options": [
+      "silence",
+      "fluff",
+      "a snore",
+      "a pillow"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "regalo",
+  "sentence": "Hoy los _____. Tres casas nuevas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regalo",
+   "options": [
+    "regalo",
+    "sirvo",
+    "sueño",
+    "ronco"
+   ],
+   "translation": "Today I _____ them. Three new homes.",
+   "optionTranslations": [
+    "gave away",
+    "am useful",
+    "dream",
+    "snore"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Hoy los regalo. Tres casas nuevas.",
+    "targetWord": "regalo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "Ronca",
+  "sentence": "_____ como un camión.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Ronca",
+   "options": [
+    "Ronca",
+    "Sirve",
+    "Regala",
+    "Extraña"
+   ],
+   "translation": "He _____ like a truck.",
+   "optionTranslations": [
+    "snores",
+    "is useful",
+    "gives away",
+    "misses"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Ronca como un camión.",
+    "targetWord": "Ronca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "extraño",
+  "sentence": "Ese ruido sí lo _____ un poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "extraño",
+   "options": [
+    "extraño",
+    "regalo",
+    "ronco",
+    "sirvo"
+   ],
+   "translation": "That noise I do _____ a little.",
+   "optionTranslations": [
+    "miss",
+    "give away",
+    "snore",
+    "use"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Ese ruido sí lo extraño un poco.",
+    "targetWord": "extraño",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "camión",
+  "sentence": "Ronca como un [[camión]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lorry",
+   "options": [
+    "a lorry",
+    "a kettle",
+    "a drum",
+    "a storm"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Ronca como un camión.",
+    "targetWord": "camión",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cabeza",
+  "sentence": "Yo me tapo la [[cabeza]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "head",
+   "options": [
+    "head",
+    "ears",
+    "face",
+    "eyes"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Yo me tapo la cabeza.",
+    "targetWord": "cabeza",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "triste",
+  "sentence": "Mi sofá está [[triste]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": [
+    "sad",
+    "damp",
+    "bare",
+    "crowded"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Mi sofá está triste.",
+    "targetWord": "triste",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suave",
+  "sentence": "Del sofá llega un ronquido [[suave]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soft",
+   "options": [
+    "soft",
+    "steady",
+    "distant",
+    "odd"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Del sofá llega un ronquido suave.",
+    "targetWord": "suave",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonríe",
+  "sentence": "Mariana [[sonríe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smiles",
+   "options": [
+    "smiles",
+    "listens",
+    "stands up",
+    "whispers"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Mariana sonríe.",
+    "targetWord": "sonríe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sirve",
+  "sentence": "Yo me tapo la cabeza. No [[sirve]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is no use",
+   "options": [
+    "it is no use",
+    "it is too warm",
+    "it is a habit",
+    "it is enough"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Yo me tapo la cabeza. No sirve.",
+    "targetWord": "sirve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me tapo",
+  "sentence": "Yo [[me tapo]] la cabeza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I cover my head",
+   "options": [
+    "I cover my head",
+    "I hold my breath",
+    "I count to ten",
+    "I turn over"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Yo me tapo la cabeza.",
+    "targetWord": "me tapo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ya no",
+  "sentence": "Los gatitos [[ya no]] están.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not anymore",
+   "options": [
+    "not anymore",
+    "not quite",
+    "not often",
+    "not together"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Los gatitos ya no están.",
+    "targetWord": "ya no",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demasiado",
+  "sentence": "Aquí hay [[demasiado]] silencio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too much",
+   "options": [
+    "too much",
+    "a little",
+    "the same",
+    "almost no"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Aquí hay demasiado silencio.",
+    "targetWord": "demasiado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Todavía",
+  "sentence": "[[Todavía]] no duermo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still",
+   "options": [
+    "still",
+    "never",
+    "hardly",
+    "barely"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Todavía no duermo.",
+    "targetWord": "Todavía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Apenas",
+  "sentence": "[[Apenas]] duermo sin ese ruido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hardly",
+   "options": [
+    "hardly",
+    "gladly",
+    "finally",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "Apenas duermo sin ese ruido.",
+    "targetWord": "Apenas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tampoco",
+  "sentence": "¿Tú [[tampoco]] duermes?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not either",
+   "options": [
+    "not either",
+    "already",
+    "any better",
+    "so late"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "¿Tú tampoco duermes?",
+    "targetWord": "tampoco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "De verdad",
+  "sentence": "[[De verdad]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "perhaps",
+    "as usual",
+    "if you like"
+   ],
+   "audioClip": {
+    "storySlug": "demasiado-silencio",
+    "storySource": "user",
+    "sentence": "De verdad.",
+    "targetWord": "De verdad",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

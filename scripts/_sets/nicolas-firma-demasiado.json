@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el apellido,el papel,el felpudo,el vecino",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el apellido",
+     "answer": "a surname",
+     "options": [
+      "a surname",
+      "paper",
+      "a doormat",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "el papel",
+     "answer": "paper",
+     "options": [
+      "a surname",
+      "paper",
+      "a doormat",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "el felpudo",
+     "answer": "a doormat",
+     "options": [
+      "a surname",
+      "paper",
+      "a doormat",
+      "a neighbour"
+     ]
+    },
+    {
+     "word": "el vecino",
+     "answer": "a neighbour",
+     "options": [
+      "a surname",
+      "paper",
+      "a doormat",
+      "a neighbour"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "saca",
+  "sentence": "Nicolás _____ la caja de abajo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "saca",
+   "options": [
+    "saca",
+    "recuerda",
+    "cabe",
+    "firma"
+   ],
+   "translation": "Nicolas _____ the box at the bottom.",
+   "optionTranslations": [
+    "pulls out",
+    "remembers",
+    "fits",
+    "signs"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Nicolás saca la caja de abajo.",
+    "targetWord": "saca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "recuerdo",
+  "sentence": "Un momento. Ahora _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recuerdo",
+   "options": [
+    "recuerdo",
+    "saco",
+    "quepo",
+    "firmo"
+   ],
+   "translation": "Hold on. Now I _____.",
+   "optionTranslations": [
+    "remember",
+    "pull out",
+    "fit",
+    "sign"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Un momento. Ahora recuerdo.",
+    "targetWord": "recuerdo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cabe",
+  "sentence": "Hoy su casa está llena de cajas ajenas. Él ya no _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cabe",
+   "options": [
+    "cabe",
+    "recuerda",
+    "saca",
+    "firma"
+   ],
+   "translation": "Today his flat is full of other people's boxes. He no longer _____.",
+   "optionTranslations": [
+    "fits",
+    "remembers",
+    "pulls out",
+    "signs"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hoy su casa está llena de cajas ajenas. Él ya no cabe.",
+    "targetWord": "cabe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llena",
+  "sentence": "Hoy su casa está [[llena]] de cajas ajenas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "dark",
+    "open",
+    "tidy"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hoy su casa está llena de cajas ajenas.",
+    "targetWord": "llena",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ajenas",
+  "sentence": "Hoy su casa está llena de cajas [[ajenas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "belonging to other people",
+   "options": [
+    "belonging to other people",
+    "ready to post",
+    "left over",
+    "half empty"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hoy su casa está llena de cajas ajenas.",
+    "targetWord": "ajenas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntas",
+  "sentence": "Hay once cajas [[juntas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stacked together",
+   "options": [
+    "stacked together",
+    "missing",
+    "unopened",
+    "identical"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hay once cajas juntas.",
+    "targetWord": "juntas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doblado",
+  "sentence": "Encima hay un papel [[doblado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "folded",
+   "options": [
+    "folded",
+    "torn",
+    "damp",
+    "printed"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Encima hay un papel doblado.",
+    "targetWord": "doblado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Encima",
+  "sentence": "[[Encima]] hay un papel doblado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on top",
+   "options": [
+    "on top",
+    "nearby",
+    "beneath",
+    "at the back"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Encima hay un papel doblado.",
+    "targetWord": "Encima",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paciencia",
+  "sentence": "Entonces el felpudo tiene [[paciencia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "patience",
+   "options": [
+    "patience",
+    "company",
+    "dust",
+    "competition"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Entonces el felpudo tiene paciencia.",
+    "targetWord": "paciencia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "once",
+  "sentence": "Hay [[once]] cajas juntas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eleven",
+   "options": [
+    "eleven",
+    "seven",
+    "twenty",
+    "fifteen"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hay once cajas juntas.",
+    "targetWord": "once",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hoy",
+  "sentence": "[[Hoy]] su casa está llena de cajas ajenas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": [
+    "today",
+    "lately",
+    "again",
+    "by now"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Hoy su casa está llena de cajas ajenas.",
+    "targetWord": "Hoy",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "casi nunca",
+  "sentence": "Yo [[casi nunca]] salgo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almost never",
+   "options": [
+    "almost never",
+    "quite often",
+    "only at night",
+    "on foot"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Yo casi nunca salgo.",
+    "targetWord": "casi nunca",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en voz alta",
+  "sentence": "Mariana lo lee [[en voz alta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out loud",
+   "options": [
+    "out loud",
+    "straight away",
+    "to herself",
+    "one more time"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Mariana lo lee en voz alta.",
+    "targetWord": "en voz alta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bienvenido",
+  "sentence": "Dice [[bienvenido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "welcome",
+   "options": [
+    "welcome",
+    "private",
+    "fragile",
+    "handle with care"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Dice bienvenido.",
+    "targetWord": "bienvenido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "delante",
+  "sentence": "Ponlo [[delante]] de tu puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front",
+   "options": [
+    "in front",
+    "to one side",
+    "just inside",
+    "underneath"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Ponlo delante de tu puerta.",
+    "targetWord": "delante",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salgo",
+  "sentence": "Yo casi nunca [[salgo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I go out",
+   "options": [
+    "I go out",
+    "I complain",
+    "I refuse",
+    "I answer"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-firma-demasiado",
+    "storySource": "user",
+    "sentence": "Yo casi nunca salgo.",
+    "targetWord": "salgo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -3,7 +3,7 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import * as fs from "fs";
-import { validateSet } from "./_validateSets";
+import { validateSet, loadGateCtx } from "./_validateSets";
 const prisma = new PrismaClient();
 function genId(p: string, i: number): string {
   return `${p}${Date.now().toString(36)}${i.toString(36)}${Math.random().toString(36).slice(2, 8)}`;
@@ -59,14 +59,19 @@ function genId(p: string, i: number): string {
     .filter(f => !journeySlugs || journeySlugs.has(f.replace(".json", "")))
     .sort();
   let ok = 0;
+  const gateBySlug = await loadGateCtx(prisma, files.map((f) => f.replace(".json", "")));
   for (const f of files) {
     const slug = f.replace(".json", "");
     const exs = JSON.parse(fs.readFileSync(`scripts/_sets/${f}`, "utf8"));
     // GATE: never seed a set that fails the template validator (mix, featured/
     // pool split, translations, audioClip specs, full vocab coverage, …).
-    const issues = validateSet(exs, vocabBySlug.get(slug));
-    if (issues.length && !force) {
-      console.log(`✗ ${slug}: BLOCKED by validator (${issues.length} issue${issues.length === 1 ? "" : "s"}):\n    ` + issues.join("\n    "));
+    const issues = validateSet(exs, vocabBySlug.get(slug), gateBySlug.get(slug));
+    // Los fallos de distractor no se saltan con --force: un ejercicio que se
+    // acierta sin saber la palabra no es un ejercicio (2026-09-21).
+    const distractor = issues.filter((i) => i.includes("[distractor]"));
+    if (issues.length && (!force || distractor.length)) {
+      const nota = force && distractor.length ? ", --force no cubre [distractor]" : "";
+      console.log(`✗ ${slug}: BLOCKED by validator (${issues.length} issue${issues.length === 1 ? "" : "s"}${nota}):\n    ` + issues.join("\n    "));
       continue;
     }
     if (issues.length && force) console.log(`! ${slug}: ${issues.length} validator issue(s) overridden by --force`);

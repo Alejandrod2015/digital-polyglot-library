@@ -76,7 +76,11 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-latam-b1",
     "spanish-traveler-latam-b2",
     "spanish-traveler-spain-b2",
-    "spanish-cultural-latam-b1",
+    // Conversations ES latam A0 (el de formato dialogo). Entra AQUI antes del
+    // primer rebuild: sin su fila, familyOf devuelve "" y no copia nada de los
+    // hermanos latam. Registrarlo lo mete en los gates del pre-push, asi que
+    // cierra solo con sus huecos a cero (ver el revert b28c99e1).
+    "spanish-conversations-latam-a0",
   ],
   german: ["german-expat", "german-friends", "german-friends-a0", "german-friends-a1", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
   french: ["french-traveler", "french-expat-lyon", "french-friends-a0", "french-friends-france-a1", "french-friends-france-a2", "french-friends-france-b1"],

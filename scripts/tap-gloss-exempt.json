@@ -671,6 +671,38 @@
         "vinte"
       ]
     },
+    "spanish-conversations-latam-a0": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una"
+      ],
+      "characterNames": [
+        "mariana",
+        "nicol\u00e1s"
+      ],
+      "numerals": [
+        "cien",
+        "cinco",
+        "cuarenta",
+        "cuatro",
+        "diecisiete",
+        "diez",
+        "doce",
+        "dos",
+        "nueve",
+        "ocho",
+        "once",
+        "seis",
+        "trece",
+        "treinta",
+        "tres",
+        "veinte"
+      ]
+    },
     "spanish-friends": {
       "articles": [
         "el",
