@@ -6,7 +6,7 @@
     "slug": "foto-con-vaso",
     "arcType": null,
     "synopsis": "Mariana wants a clear photo of the group, but Andrés's cup covers el músico's face. Old cafe objects become the signs everyone needs.",
-    "text": "La lámpara da luz sobre el pan. El vaso hace reflejo. Mariana mira el celular. Andrés trae el vaso de Andrea. El músico espera.\n\nCatalina pone la campana junto al pandebono. Lina guarda el papel con el nombre. La panadera mira. “El grupo posa y quiere salir en foto”, avisa Mariana. Todos miran la pantalla.\n\nMariana toma la foto. El vaso tapa al músico. “Yo soy café y salgo sin cara”, dice el músico bajo. Andrés abre los ojos.\n\nEl maletín negro sube. El bus espera cerca. “Falta la señal correcta”, explica. “Objeto viejo parece raro”, dice.\n\nMariana coloca vaso, pan, papel y campana. “Mantel limpio”, dice Mariana. Andrés baja el vaso. El músico sonríe. “Ahora tengo cara”, cuenta.\n\nLa nueva foto queda clara. El vaso viejo ya no tapa. “Nada sale borroso; el músico queda sin tapar”, dice la panadera. “Campana, pan y papel saludan”, dice Mariana.",
+    "text": "La lámpara da luz sobre el pan. El vaso hace reflejo. Mariana mira el celular. Andrés trae el vaso de Andrea. El músico espera.\n\nCatalina pone la campana junto al pandebono. Lina guarda el papel con el nombre. La panadera mira. “El grupo posa y quiere salir en foto”, avisa Mariana. Todos miran la pantalla.\n\nMariana toma la foto. El vaso tapa al músico. “Yo soy café y salgo sin cara”, responde el músico bajo. Andrés abre los ojos.\n\nEl maletín negro sube. El bus espera cerca. “Falta la señal correcta”, explica. “Objeto viejo parece raro”, comenta.\n\nMariana coloca vaso, pan, papel y campana. “Mantel limpio”, dice Mariana. Andrés baja el vaso. El músico sonríe. “Ahora tengo cara”, cuenta.\n\nLa nueva foto queda clara. El vaso viejo ya no tapa. “Nada sale borroso; el músico queda sin tapar”, agrega la panadera. “Campana, pan y papel saludan”, dice Mariana.",
     "vocab": [
       {
         "word": "imagen de celular",
@@ -150,11 +150,11 @@
   {
     "topic": "parties-and-photos",
     "slotIndex": 1,
-    "title": "Pan en primer plano",
-    "slug": "pan-en-primer-plano",
+    "title": "Andrés sale pequeño",
+    "slug": "andres-sale-pequeno",
     "arcType": null,
     "synopsis": "Andrés wants to look serious in the party picture, but la panadera puts friendly bread in front. The group laughs and the photo becomes more theirs.",
-    "text": "Andrés se sienta serio en la mesa amiga. Mariana tiene el celular. Hay pan amigo y arepa caliente. La vendedora cuida el vaso.\n\nCon cuidado, la panadera pone el pan delante de Andrés. “Primer plano”, dice ella. “No sonrío”, dice Andrés. “Yo no soy cocinero”, responde.\n\nEl papel queda con el nombre. Suena una cuerda suave. Afuera, el andén queda vacío. El carro espera en el parqueadero. La mesa queda limpia.\n\nMariana limpia el lente y toma la foto. “El pan sale enorme y me tapa la cara”, dice. “Yo salgo pequeño detrás del pan”, dice Andrés. La enfermera mira y pregunta bajo. “¿La fiesta es de pan?”\n\nAndrés mira serio. Después, la panadera acomoda el pan. La arepa queda junto al vaso. “Ahora eres dueño de fiesta”, bromea la vendedora.\n\nAndrés sonríe al fin. “La foto queda propia”, dice Mariana. “Pan, café y cara seria a medias”, dice Andrés. El grupo aplaude bajo.",
+    "text": "Andrés se sienta serio en la mesa amiga. Mariana tiene el celular. Hay pan amigo y arepa entera. La vendedora cuida el vaso.\n\nLa panadera pone el pan delante de Andrés. “Primer plano”, dice ella. “No sonrío”, avisa Andrés. “Yo no soy cocinero”, responde.\n\nEl papel queda con el nombre. Suena una cuerda suave. Afuera, el andén queda vacío. El carro espera en el parqueadero. La mesa queda limpia.\n\nMariana limpia el lente y toma la foto. “El pan sale enorme y me tapa la cara”, cuenta. “Yo salgo pequeño detrás del pan”, dice Andrés. La enfermera mira y pregunta bajo. “¿La fiesta es de pan?”\n\nAndrés mira serio. Después, la panadera acomoda el pan. La arepa queda junto al vaso. “Ahora eres dueño de fiesta”, bromea la vendedora.\n\nAndrés sonríe al fin. “La foto queda propia”, remata Mariana. “Pan, café y cara seria a medias”, dice Andrés. El grupo aplaude bajo.",
     "vocab": [
       {
         "word": "responder",
@@ -177,11 +177,11 @@
         "definition": "A place where cars wait."
       },
       {
-        "word": "caliente",
-        "surface": "caliente",
+        "word": "entera",
+        "surface": "entera",
         "type": "adjective",
         "register": "neutral",
-        "definition": "Hot or warm to touch.",
+        "definition": "Whole and not cut.",
         "anchor": true
       },
       {
@@ -302,11 +302,11 @@
   {
     "topic": "parties-and-photos",
     "slotIndex": 2,
-    "title": "Todos bajo la sombrilla",
-    "slug": "todos-bajo-la-sombrilla",
+    "title": "Llueve y nadie se va",
+    "slug": "llueve-y-nadie-se-va",
     "arcType": null,
     "synopsis": "Everyone wants one final photo at the friendly table, but rain pushes the group under an umbrella. The imperfect picture shows that the group now works.",
-    "text": "El aguacero cae sobre Pereira. El final empieza mojado. Mariana guarda el celular bajo la sombrilla. Andrés trae café. Hay pan. El bus espera.\n\nLa mesa amiga está mojada por lluvia. El papel sube con el nombre. El maletín espera. Suena una nota suave.\n\nLa bolsa mira el barro. “La foto sale fea, pero nuestra”, dice. Mariana sonríe poco. “Sale nuestra, perfecta no, pero completa”, responde.\n\nTodos entran bajo la sombrilla con caras juntas. El vaso queda junto al pan. “El recibo y la moneda quedan”, dice Andrés.\n\nSuena el timbre. La arepa sube. Andrés levanta el papel. Mariana toma la imagen final con una mano. “Una mano sirve”, avisa.\n\n“La imagen tiene lluvia y barro. No sale perfecta; sale imperfecta”, dice Mariana. “Pero funciona”, dice Mariana. “Juntos es cierre”, agrega Andrés. La mesa amiga queda completa.",
+    "text": "El aguacero cae sobre Pereira. El final empieza mojado. Mariana guarda el celular bajo la sombrilla. Andrés trae café. Hay pan crujiente. El bus espera.\n\nLa mesa amiga está mojada por lluvia. Las flores aguantan. El papel sube con el nombre. El maletín espera. Suena una nota suave.\n\nLa bolsa mira el barro. “La foto sale fea, pero nuestra”, cuenta. Mariana sonríe poco. “Sale nuestra, perfecta no, pero completa”, responde.\n\nTodos entran bajo la sombrilla con caras juntas. El vaso queda junto al pan. “El recibo y la moneda quedan”, dice Andrés.\n\nSuena el timbre. La arepa sube. Andrés levanta el papel. Mariana toma la imagen final con una mano. “Una mano sirve”, avisa.\n\n“La imagen tiene lluvia y barro. No sale perfecta; sale imperfecta”, dice Mariana. “Pero funciona”, repite Mariana. “Juntos es cierre”, agrega Andrés. La mesa amiga queda completa.",
     "vocab": [
       {
         "word": "celular bajo la sombrilla",

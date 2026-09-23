@@ -166,7 +166,7 @@
     "slug": "tres-papeles-mandan",
     "arcType": null,
     "synopsis": "la enfermera brings a pharmacy errand with two names, and la vendedora uses colored papers to separate bread, coffee, and money.",
-    "text": "La enfermera entra con un mandado. Mariana prepara café. La bolsa roja tiene pan.\n\nEl comprobante trae dos nombres. “Dos nombres, un sobre, y cero pelea”, dice la vendedora. Andrés mira la plata y el café. “Yo soy medio recibo”, responde.\n\nHay tres papeles: azul, rojo y blanco. “Cada color cuida algo: botica, pan o vuelto”, explica. El azul cuida la botica. El rojo cuida pan.\n\nMariana deja el vaso junto al papel blanco. “El pan no toma plata ni firma papel”, avisa. Afuera espera la buseta.\n\nEl comprobante va al bolsillo lateral. El sobre queda ordenado. “La compra pequeña queda clara y limpia”, cuenta.\n\nAndrés entrega el sobre correcto. Ella sonríe poco. “Todo separado, todo amigo”, dice la vendedora. “Café, pan y plata van separados”, dice Andrés.",
+    "text": "La enfermera entra con un mandado. Mariana prepara café. La bolsa roja tiene pan.\n\nEl comprobante trae dos nombres. “Dos nombres, un sobre, y cero pelea”, dice la vendedora. Andrés mira la plata y el café. “Yo soy el otro renglón”, responde.\n\nHay tres papeles: azul, rojo y blanco. “Cada color cuida algo: botica, pan o vuelto”, explica. El azul cuida la botica. El rojo cuida pan.\n\nMariana deja el vaso junto al papel blanco. “El pan no toma plata ni firma papel”, avisa. Afuera espera la buseta.\n\nEl comprobante va al bolsillo lateral. El sobre queda ordenado. “La compra pequeña queda clara y limpia”, cuenta.\n\nAndrés entrega el sobre correcto. Nadie protesta. Ella sonríe poco. “Todo separado, todo amigo”, dice la vendedora. “Café, pan y plata van separados”, dice Andrés.",
     "vocab": [
       {
         "word": "mandado",
@@ -208,11 +208,11 @@
         "anchor": true
       },
       {
-        "word": "recibo",
-        "surface": "recibo",
+        "word": "renglón",
+        "surface": "renglón",
         "type": "noun",
         "register": "neutral",
-        "definition": "A paper showing payment."
+        "definition": "One written line on paper."
       },
       {
         "word": "separados",
