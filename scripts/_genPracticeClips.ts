@@ -12,6 +12,8 @@
  *
  * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--featured] [--force] [--only=word1,word2]
  * `--featured` renders only the 10 post-story exercises and skips the pool.
+ * `--solo-cloze` renders only the `fill_blank` sentences; the sentence of a
+ * `meaning_in_context` is never played on its own (see the filter below).
  * `--only` re-renders just those words (comma-separated, accent-insensitive)
  * even if they already have a clipUrl. Re-renders bump `audioClip.rev`, which
  * is part of the R2 key hash: R2 serves `immutable`, so a re-render MUST get a
@@ -437,6 +439,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   const slug = process.argv[2];
   const force = process.argv.includes("--force");
   const soloFeatured = process.argv.includes("--featured");
+  const soloCloze = process.argv.includes("--solo-cloze");
   const onlyArg = process.argv.find((a) => a.startsWith("--only="));
   const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map((w) => strip(w))) : null;
   const takesArg = process.argv.find((a) => a.startsWith("--takes="));
@@ -521,7 +524,19 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     // el pool, que solo aparece si el usuario toca la pestaña Practice. Se
     // pagaba el 55% del audio por material que puede no oír nadie. El pool se
     // rellena después, cuando se sepa si se abre.
-    .filter(({ e }) => !soloFeatured || e.featured !== false);
+    .filter(({ e }) => !soloFeatured || e.featured !== false)
+    // `--solo-cloze`: renderiza SOLO las frases de `fill_blank`.
+    // WHY (2026-09-23): la frase de un `meaning_in_context` no la reproduce
+    // ninguna superficie por su cuenta. En movil ese ejercicio es modo
+    // "meaning" (mapSharedExerciseToMobile) y su autoplay llama a
+    // playPracticeMeaningAudio, que suena `wordClipUrl` y nunca el clip de
+    // oracion; el autoplay de revelado sale antes por `mode !== "context"`.
+    // En web hay un boton de escucha, pero sin `clipUrl` cae al segmento del
+    // audio maestro de la historia, asi que no deja silencio. El gate de
+    // publicacion lo dice igual: pide `clipUrl` en fill_blank y solo
+    // `wordClipUrl` en meaning (decision del 2026-08-24, que ya se pago una
+    // vez en el PT-BR A1). En el Friends DE A2 son 273 de los 336 clips.
+    .filter(({ e }) => !soloCloze || e.type === "fill_blank");
   if (only && targets.length !== only.size)
     console.log(`WARN --only matched ${targets.length}/${only.size} words`);
 

@@ -1,433 +1,436 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Praxis,die Versichertenkarte,die Karteikarte,das Schaufenster",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Praxis",
-     "answer": "a doctor's surgery",
-     "options": [
-      "a doctor's surgery",
-      "a health card",
-      "a patient card",
-      "a shop window"
-     ]
-    },
-    {
-     "word": "die Versichertenkarte",
-     "answer": "a health card",
-     "options": [
-      "a doctor's surgery",
-      "a health card",
-      "a patient card",
-      "a shop window"
-     ]
-    },
-    {
-     "word": "die Karteikarte",
-     "answer": "a patient card",
-     "options": [
-      "a doctor's surgery",
-      "a health card",
-      "a patient card",
-      "a shop window"
-     ]
-    },
-    {
-     "word": "das Schaufenster",
-     "answer": "a shop window",
-     "options": [
-      "a doctor's surgery",
-      "a health card",
-      "a patient card",
-      "a shop window"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Praxis,die Versichertenkarte,die Karteikarte,das Schaufenster",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Praxis",
+          "answer": "a doctor's surgery",
+          "options": [
+            "a doctor's surgery",
+            "a health card",
+            "a patient card",
+            "a shop window"
+          ]
+        },
+        {
+          "word": "die Versichertenkarte",
+          "answer": "a health card",
+          "options": [
+            "a doctor's surgery",
+            "a health card",
+            "a patient card",
+            "a shop window"
+          ]
+        },
+        {
+          "word": "die Karteikarte",
+          "answer": "a patient card",
+          "options": [
+            "a doctor's surgery",
+            "a health card",
+            "a patient card",
+            "a shop window"
+          ]
+        },
+        {
+          "word": "das Schaufenster",
+          "answer": "a shop window",
+          "options": [
+            "a doctor's surgery",
+            "a health card",
+            "a patient card",
+            "a shop window"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Sprechstunde",
-  "sentence": "Die [[Sprechstunde]] fängt am Dienstag um acht an.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "surgery hours",
-   "options": [
-    "surgery hours",
-    "opening times",
-    "lunch breaks",
-    "night shifts"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Die Sprechstunde fängt am Dienstag um acht an.",
-    "targetWord": "Sprechstunde",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Unterschrift",
-  "sentence": "Sie will nur die [[Unterschrift]] und sonst nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a signature",
-   "options": [
-    "a signature",
-    "a receipt",
-    "a stamp",
-    "a copy"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Sie will nur die Unterschrift und sonst nichts.",
-    "targetWord": "Unterschrift",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Lunge",
-  "sentence": "Die Ärztin hört die [[Lunge]] lange ab.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the lung",
-   "options": [
-    "the lung",
-    "the elbow",
-    "the ankle",
-    "the wrist"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Die Ärztin hört die Lunge lange ab.",
-    "targetWord": "Lunge",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Gewissen",
-  "sentence": "Sie wartet auf das schlechte [[Gewissen]], aber es kommt nicht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "conscience",
-   "options": [
-    "conscience",
-    "appetite",
-    "memory",
-    "balance"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Sie wartet auf das schlechte Gewissen, aber es kommt nicht.",
-    "targetWord": "Gewissen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "stur",
-  "sentence": "Sie antwortet [[stur]] und will trotzdem arbeiten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stubbornly",
-   "options": [
-    "stubbornly",
-    "politely",
-    "quietly",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Sie antwortet stur und will trotzdem arbeiten.",
-    "targetWord": "stur",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "wegbleiben",
-  "sentence": "In der Probezeit kann sie nicht einfach _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wegbleiben",
-   "options": [
-    "wegbleiben",
-    "aufstehen",
-    "zuhören",
-    "nachfragen"
-   ],
-   "translation": "During the trial period she cannot simply _____.",
-   "optionTranslations": [
-    "stay away",
-    "get up",
-    "listen",
-    "ask again"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "In der Probezeit kann sie nicht einfach wegbleiben.",
-    "targetWord": "wegbleiben",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "wochenlang",
-  "sentence": "Ohne zwei Tage Ruhe schleppt sie die Grippe _____ mit.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wochenlang",
-   "options": [
-    "wochenlang",
-    "gestern",
-    "sofort",
-    "kaum"
-   ],
-   "translation": "Without two days of rest she carries the flu around _____.",
-   "optionTranslations": [
-    "for weeks",
-    "yesterday",
-    "at once",
-    "hardly"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Ohne zwei Tage Ruhe schleppt sie die Grippe wochenlang mit.",
-    "targetWord": "wochenlang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Fehler",
-  "sentence": "Krank sein ist kein [[Fehler]], sagt die Ärztin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a mistake",
-   "options": [
-    "a mistake",
-    "a favour",
-    "a habit",
-    "a secret"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Krank sein ist kein Fehler, sagt die Ärztin.",
-    "targetWord": "Fehler",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Chef",
-  "sentence": "Ihr [[Chef]] sieht die roten Wangen durch das Fenster.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the boss",
-   "options": [
-    "the boss",
-    "the patient",
-    "the neighbour",
-    "the courier"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Ihr Chef sieht die roten Wangen durch das Fenster.",
-    "targetWord": "Chef",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "wiederholen",
-  "sentence": "Die Ärztin [[wiederholt]] den Satz ganz ruhig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to repeat",
-   "options": [
-    "to repeat",
-    "to write",
-    "to read",
-    "to sign"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Die Ärztin wiederholt den Satz ganz ruhig.",
-    "targetWord": "wiederholt",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "krank",
-  "sentence": "[[Krank]] sein ist kein Fehler.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ill",
-   "options": [
-    "ill",
-    "late",
-    "wrong",
-    "rude"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Krank sein ist kein Fehler.",
-    "targetWord": "Krank",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Sprechstunde",
+    "sentence": "Die [[Sprechstunde]] fängt am Dienstag um acht an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surgery hours",
+      "options": [
+        "surgery hours",
+        "opening times",
+        "lunch breaks",
+        "night shifts"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Die Sprechstunde fängt am Dienstag um acht an.",
+        "targetWord": "Sprechstunde",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Laden",
-  "sentence": "Am Mittwoch soll sie wieder im [[Laden]] stehen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a shop",
-   "options": [
-    "a shop",
-    "a school",
-    "a bank",
-    "a hall"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Am Mittwoch soll sie wieder im Laden stehen.",
-    "targetWord": "Laden",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Unterschrift",
+    "sentence": "Sie will nur die [[Unterschrift]] und sonst nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a signature",
+      "options": [
+        "a signature",
+        "a receipt",
+        "a stamp",
+        "a copy"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Sie will nur die Unterschrift und sonst nichts.",
+        "targetWord": "Unterschrift",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Mittwoch",
-  "sentence": "Am [[Mittwoch]] fährt sie trotzdem los.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Wednesday",
-   "options": [
-    "Wednesday",
-    "Saturday",
-    "Sunday",
-    "Monday"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Am Mittwoch fährt sie trotzdem los.",
-    "targetWord": "Mittwoch",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "die Lunge",
+    "sentence": "Die Ärztin hört die [[Lunge]] lange ab.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lung",
+      "options": [
+        "the lung",
+        "the elbow",
+        "the ankle",
+        "the wrist"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Die Ärztin hört die Lunge lange ab.",
+        "targetWord": "Lunge",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "warten",
-  "sentence": "Sie [[wartet]] auf ein schlechtes Gefühl.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to wait",
-   "options": [
-    "to wait",
-    "to hope",
-    "to search",
-    "to repeat"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Sie wartet auf ein schlechtes Gefühl.",
-    "targetWord": "wartet",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "das Gewissen",
+    "sentence": "Sie wartet auf das schlechte [[Gewissen]], aber es kommt nicht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "conscience",
+      "options": [
+        "conscience",
+        "appetite",
+        "memory",
+        "balance"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Sie wartet auf das schlechte Gewissen, aber es kommt nicht.",
+        "targetWord": "Gewissen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nehmen",
-  "sentence": "Er [[nimmt]] ihr die Tasche aus der Hand.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to take",
-   "options": [
-    "to take",
-    "to hide",
-    "to lend",
-    "to fold"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Er nimmt ihr die Tasche aus der Hand.",
-    "targetWord": "nimmt",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "stur",
+    "sentence": "Sie antwortet [[stur]] und will trotzdem arbeiten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stubbornly",
+      "options": [
+        "stubbornly",
+        "politely",
+        "quietly",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Sie antwortet stur und will trotzdem arbeiten.",
+        "targetWord": "stur",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "zurück",
-  "sentence": "Der Chef schickt sie nach Hause, und sie fährt langsam _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zurück",
-   "options": [
-    "zurück",
-    "weiter",
-    "hoch",
-    "raus"
-   ],
-   "translation": "The boss sends her home and she drives slowly _____.",
-   "optionTranslations": [
-    "back",
-    "onwards",
-    "upstairs",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "die-praxis-am-dienstag",
-    "storySource": "user",
-    "sentence": "Der Chef schickt sie nach Hause, und sie fährt langsam zurück.",
-    "targetWord": "zurück",
-    "language": "german"
-   }
+  {
+    "type": "fill_blank",
+    "word": "wegbleiben",
+    "sentence": "In der Probezeit kann sie nicht einfach _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wegbleiben",
+      "options": [
+        "wegbleiben",
+        "aufstehen",
+        "zuhören",
+        "nachfragen"
+      ],
+      "translation": "During the trial period she cannot simply _____.",
+      "optionTranslations": [
+        "stay away",
+        "get up",
+        "listen",
+        "ask again"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "In der Probezeit kann sie nicht einfach wegbleiben.",
+        "targetWord": "wegbleiben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2715097a2fd9e9a0.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "wochenlang",
+    "sentence": "Ohne zwei Tage Ruhe schleppt sie die Grippe _____ mit.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wochenlang",
+      "options": [
+        "wochenlang",
+        "gestern",
+        "sofort",
+        "kaum"
+      ],
+      "translation": "Without two days of rest she carries the flu around _____.",
+      "optionTranslations": [
+        "for weeks",
+        "yesterday",
+        "at once",
+        "hardly"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Ohne zwei Tage Ruhe schleppt sie die Grippe wochenlang mit.",
+        "targetWord": "wochenlang",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cd03bd894d0b1b9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Fehler",
+    "sentence": "Krank sein ist kein [[Fehler]], sagt die Ärztin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mistake",
+      "options": [
+        "a mistake",
+        "a favour",
+        "a habit",
+        "a secret"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Krank sein ist kein Fehler, sagt die Ärztin.",
+        "targetWord": "Fehler",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Chef",
+    "sentence": "Ihr [[Chef]] sieht die roten Wangen durch das Fenster.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the boss",
+      "options": [
+        "the boss",
+        "the patient",
+        "the neighbour",
+        "the courier"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Ihr Chef sieht die roten Wangen durch das Fenster.",
+        "targetWord": "Chef",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wiederholen",
+    "sentence": "Die Ärztin [[wiederholt]] den Satz ganz ruhig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to repeat",
+      "options": [
+        "to repeat",
+        "to write",
+        "to read",
+        "to sign"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Die Ärztin wiederholt den Satz ganz ruhig.",
+        "targetWord": "wiederholt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "krank",
+    "sentence": "[[Krank]] sein ist kein Fehler.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ill",
+      "options": [
+        "ill",
+        "late",
+        "wrong",
+        "rude"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Krank sein ist kein Fehler.",
+        "targetWord": "Krank",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Laden",
+    "sentence": "Am Mittwoch soll sie wieder im [[Laden]] stehen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shop",
+      "options": [
+        "a shop",
+        "a school",
+        "a bank",
+        "a hall"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Am Mittwoch soll sie wieder im Laden stehen.",
+        "targetWord": "Laden",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Mittwoch",
+    "sentence": "Am [[Mittwoch]] fährt sie trotzdem los.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Wednesday",
+      "options": [
+        "Wednesday",
+        "Saturday",
+        "Sunday",
+        "Monday"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Am Mittwoch fährt sie trotzdem los.",
+        "targetWord": "Mittwoch",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "warten",
+    "sentence": "Sie [[wartet]] auf ein schlechtes Gefühl.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": [
+        "to wait",
+        "to hope",
+        "to search",
+        "to repeat"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Sie wartet auf ein schlechtes Gefühl.",
+        "targetWord": "wartet",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nehmen",
+    "sentence": "Er [[nimmt]] ihr die Tasche aus der Hand.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": [
+        "to take",
+        "to hide",
+        "to lend",
+        "to fold"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Er nimmt ihr die Tasche aus der Hand.",
+        "targetWord": "nimmt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zurück",
+    "sentence": "Der Chef schickt sie nach Hause, und sie fährt langsam _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zurück",
+      "options": [
+        "zurück",
+        "weiter",
+        "hoch",
+        "raus"
+      ],
+      "translation": "The boss sends her home and she drives slowly _____.",
+      "optionTranslations": [
+        "back",
+        "onwards",
+        "upstairs",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "die-praxis-am-dienstag",
+        "storySource": "user",
+        "sentence": "Der Chef schickt sie nach Hause, und sie fährt langsam zurück.",
+        "targetWord": "zurück",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1b140007f9998a4.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -1,433 +1,436 @@
 [
- {
-  "type": "match_meaning",
-  "word": "die Flasche,der Sperrmüll,die Delle,das Ding",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Flasche",
-     "answer": "a bottle",
-     "options": [
-      "a bottle",
-      "bulky waste",
-      "a dent",
-      "a thing"
-     ]
-    },
-    {
-     "word": "der Sperrmüll",
-     "answer": "bulky waste",
-     "options": [
-      "a bottle",
-      "bulky waste",
-      "a dent",
-      "a thing"
-     ]
-    },
-    {
-     "word": "die Delle",
-     "answer": "a dent",
-     "options": [
-      "a bottle",
-      "bulky waste",
-      "a dent",
-      "a thing"
-     ]
-    },
-    {
-     "word": "das Ding",
-     "answer": "a thing",
-     "options": [
-      "a bottle",
-      "bulky waste",
-      "a dent",
-      "a thing"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "die Flasche,der Sperrmüll,die Delle,das Ding",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Flasche",
+          "answer": "a bottle",
+          "options": [
+            "a bottle",
+            "bulky waste",
+            "a dent",
+            "a thing"
+          ]
+        },
+        {
+          "word": "der Sperrmüll",
+          "answer": "bulky waste",
+          "options": [
+            "a bottle",
+            "bulky waste",
+            "a dent",
+            "a thing"
+          ]
+        },
+        {
+          "word": "die Delle",
+          "answer": "a dent",
+          "options": [
+            "a bottle",
+            "bulky waste",
+            "a dent",
+            "a thing"
+          ]
+        },
+        {
+          "word": "das Ding",
+          "answer": "a thing",
+          "options": [
+            "a bottle",
+            "bulky waste",
+            "a dent",
+            "a thing"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quietschen",
-  "sentence": "Die alten Stühle [[quietschen]] bei jeder Bewegung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to squeak",
-   "options": [
-    "to squeak",
-    "to shine",
-    "to break",
-    "to fall"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Die alten Stühle quietschen bei jeder Bewegung.",
-    "targetWord": "quietschen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Neid",
-  "sentence": "Sie erzählt es ohne [[Neid]] und lacht dabei.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "envy",
-   "options": [
-    "envy",
-    "hunger",
-    "fear",
-    "shame"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Sie erzählt es ohne Neid und lacht dabei.",
-    "targetWord": "Neid",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "entschuldigen",
-  "sentence": "Früher hat sie sich für jedes alte Möbel [[entschuldigt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to apologise",
-   "options": [
-    "to apologise",
-    "to pay",
-    "to search",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Früher hat sie sich für jedes alte Möbel entschuldigt.",
-    "targetWord": "entschuldigt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "erklären",
-  "sentence": "Heute [[erklärt]] sie jedes Stück in der Wohnung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to explain",
-   "options": [
-    "to explain",
-    "to sell",
-    "to hide",
-    "to clean"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Heute erklärt sie jedes Stück in der Wohnung.",
-    "targetWord": "erklärt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "überlegen",
-  "sentence": "Sie [[überlegt]] kurz und antwortet dann ruhig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to think about it",
-   "options": [
-    "to think about it",
-    "to laugh about it",
-    "to shout about it",
-    "to forget about it"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Sie überlegt kurz und antwortet dann ruhig.",
-    "targetWord": "überlegt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "voll",
-  "sentence": "Endlich ist die Wohnung _____ und kein Zimmer leer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "voll",
-   "options": [
-    "voll",
-    "neu",
-    "warm",
-    "teuer"
-   ],
-   "translation": "At last the flat is _____ and no room empty.",
-   "optionTranslations": [
-    "full",
-    "new",
-    "warm",
-    "expensive"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Endlich ist die Wohnung voll und kein Zimmer leer.",
-    "targetWord": "voll",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "verschiedene",
-  "sentence": "Kein Teller passt zum anderen, sie stellt zwei _____ Teller hin.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verschiedene",
-   "options": [
-    "verschiedene",
-    "schmutzige",
-    "kleine",
-    "blaue"
-   ],
-   "translation": "No plate matches the other, she puts down two _____ plates.",
-   "optionTranslations": [
-    "different",
-    "dirty",
-    "small",
-    "blue"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Kein Teller passt zum anderen, sie stellt zwei verschiedene Teller hin.",
-    "targetWord": "verschiedene",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "werfen",
-  "sentence": "Die Lampe [[wirft]] einen warmen Kreis auf den Boden.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to throw",
-   "options": [
-    "to throw",
-    "to pull",
-    "to lose",
-    "to bring"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Die Lampe wirft einen warmen Kreis auf den Boden.",
-    "targetWord": "wirft",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ehrlich",
-  "sentence": "[[Ehrlich]] gesagt sieht alles wie ein Flohmarkt aus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "honest",
-   "options": [
-    "honest",
-    "sudden",
-    "quiet",
-    "formal"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Ehrlich gesagt sieht alles wie ein Flohmarkt aus.",
-    "targetWord": "Ehrlich",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "grinsen",
-  "sentence": "Sie [[grinst]] und stellt den zweiten Teller hin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to grin",
-   "options": [
-    "to grin",
-    "to groan",
-    "to yawn",
-    "to cough"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Sie grinst und stellt den zweiten Teller hin.",
-    "targetWord": "grinst",
-    "language": "german"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "warm",
-  "sentence": "Die Lampe macht ein [[warmes]] Licht im Zimmer.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "warm",
-   "options": [
-    "warm",
-    "white",
-    "weak",
-    "steady"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Die Lampe macht ein warmes Licht im Zimmer.",
-    "targetWord": "warmes",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "quietschen",
+    "sentence": "Die alten Stühle [[quietschen]] bei jeder Bewegung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to squeak",
+      "options": [
+        "to squeak",
+        "to shine",
+        "to break",
+        "to fall"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Die alten Stühle quietschen bei jeder Bewegung.",
+        "targetWord": "quietschen",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "früher",
-  "sentence": "[[Früher]] hat sie sich für alles entschuldigt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "before",
-   "options": [
-    "before",
-    "later",
-    "always",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Früher hat sie sich für alles entschuldigt.",
-    "targetWord": "Früher",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "der Neid",
+    "sentence": "Sie erzählt es ohne [[Neid]] und lacht dabei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "envy",
+      "options": [
+        "envy",
+        "hunger",
+        "fear",
+        "shame"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Sie erzählt es ohne Neid und lacht dabei.",
+        "targetWord": "Neid",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "einfach",
-  "sentence": "Sie stellt die Teller [[einfach]] hin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "simply",
-   "options": [
-    "simply",
-    "slowly",
-    "twice",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Sie stellt die Teller einfach hin.",
-    "targetWord": "einfach",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "entschuldigen",
+    "sentence": "Früher hat sie sich für jedes alte Möbel [[entschuldigt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to apologise",
+      "options": [
+        "to apologise",
+        "to pay",
+        "to search",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Früher hat sie sich für jedes alte Möbel entschuldigt.",
+        "targetWord": "entschuldigt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "vorsichtig",
-  "sentence": "Er fragt [[vorsichtig]] nach dem alten Sofa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "carefully",
-   "options": [
-    "carefully",
-    "angrily",
-    "proudly",
-    "suddenly"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Er fragt vorsichtig nach dem alten Sofa.",
-    "targetWord": "vorsichtig",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "erklären",
+    "sentence": "Heute [[erklärt]] sie jedes Stück in der Wohnung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to explain",
+      "options": [
+        "to explain",
+        "to sell",
+        "to hide",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Heute erklärt sie jedes Stück in der Wohnung.",
+        "targetWord": "erklärt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Moment",
-  "sentence": "Sie denkt einen [[Moment]] nach und schüttelt den Kopf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a moment",
-   "options": [
-    "a moment",
-    "a reason",
-    "a promise",
-    "a number"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Sie denkt einen Moment nach und schüttelt den Kopf.",
-    "targetWord": "Moment",
-    "language": "german"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "überlegen",
+    "sentence": "Sie [[überlegt]] kurz und antwortet dann ruhig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think about it",
+      "options": [
+        "to think about it",
+        "to laugh about it",
+        "to shout about it",
+        "to forget about it"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Sie überlegt kurz und antwortet dann ruhig.",
+        "targetWord": "überlegt",
+        "language": "german"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schön",
-  "sentence": "Alles ist alt und wackelt, die Wohnung ist wirklich nicht _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schön",
-   "options": [
-    "schön",
-    "leer",
-    "kalt",
-    "fertig"
-   ],
-   "translation": "Everything is old and wobbles, the flat really is not _____.",
-   "optionTranslations": [
-    "beautiful",
-    "empty",
-    "cold",
-    "finished"
-   ],
-   "audioClip": {
-    "storySlug": "zwei-stuehle-ein-teller",
-    "storySource": "user",
-    "sentence": "Alles ist alt und wackelt, die Wohnung ist wirklich nicht schön.",
-    "targetWord": "schön",
-    "language": "german"
-   }
+  {
+    "type": "fill_blank",
+    "word": "voll",
+    "sentence": "Endlich ist die Wohnung _____ und kein Zimmer leer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "voll",
+      "options": [
+        "voll",
+        "neu",
+        "warm",
+        "teuer"
+      ],
+      "translation": "At last the flat is _____ and no room empty.",
+      "optionTranslations": [
+        "full",
+        "new",
+        "warm",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Endlich ist die Wohnung voll und kein Zimmer leer.",
+        "targetWord": "voll",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fbbd665dd9014c6.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "verschiedene",
+    "sentence": "Kein Teller passt zum anderen, sie stellt zwei _____ Teller hin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verschiedene",
+      "options": [
+        "verschiedene",
+        "schmutzige",
+        "kleine",
+        "blaue"
+      ],
+      "translation": "No plate matches the other, she puts down two _____ plates.",
+      "optionTranslations": [
+        "different",
+        "dirty",
+        "small",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Kein Teller passt zum anderen, sie stellt zwei verschiedene Teller hin.",
+        "targetWord": "verschiedene",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/821bbafa92449d03.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "werfen",
+    "sentence": "Die Lampe [[wirft]] einen warmen Kreis auf den Boden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to throw",
+      "options": [
+        "to throw",
+        "to pull",
+        "to lose",
+        "to bring"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Die Lampe wirft einen warmen Kreis auf den Boden.",
+        "targetWord": "wirft",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ehrlich",
+    "sentence": "[[Ehrlich]] gesagt sieht alles wie ein Flohmarkt aus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honest",
+      "options": [
+        "honest",
+        "sudden",
+        "quiet",
+        "formal"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Ehrlich gesagt sieht alles wie ein Flohmarkt aus.",
+        "targetWord": "Ehrlich",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grinsen",
+    "sentence": "Sie [[grinst]] und stellt den zweiten Teller hin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grin",
+      "options": [
+        "to grin",
+        "to groan",
+        "to yawn",
+        "to cough"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Sie grinst und stellt den zweiten Teller hin.",
+        "targetWord": "grinst",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "warm",
+    "sentence": "Die Lampe macht ein [[warmes]] Licht im Zimmer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warm",
+      "options": [
+        "warm",
+        "white",
+        "weak",
+        "steady"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Die Lampe macht ein warmes Licht im Zimmer.",
+        "targetWord": "warmes",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "früher",
+    "sentence": "[[Früher]] hat sie sich für alles entschuldigt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "before",
+      "options": [
+        "before",
+        "later",
+        "always",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Früher hat sie sich für alles entschuldigt.",
+        "targetWord": "Früher",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einfach",
+    "sentence": "Sie stellt die Teller [[einfach]] hin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "simply",
+      "options": [
+        "simply",
+        "slowly",
+        "twice",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Sie stellt die Teller einfach hin.",
+        "targetWord": "einfach",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vorsichtig",
+    "sentence": "Er fragt [[vorsichtig]] nach dem alten Sofa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "carefully",
+      "options": [
+        "carefully",
+        "angrily",
+        "proudly",
+        "suddenly"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Er fragt vorsichtig nach dem alten Sofa.",
+        "targetWord": "vorsichtig",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Moment",
+    "sentence": "Sie denkt einen [[Moment]] nach und schüttelt den Kopf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a moment",
+      "options": [
+        "a moment",
+        "a reason",
+        "a promise",
+        "a number"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Sie denkt einen Moment nach und schüttelt den Kopf.",
+        "targetWord": "Moment",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schön",
+    "sentence": "Alles ist alt und wackelt, die Wohnung ist wirklich nicht _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schön",
+      "options": [
+        "schön",
+        "leer",
+        "kalt",
+        "fertig"
+      ],
+      "translation": "Everything is old and wobbles, the flat really is not _____.",
+      "optionTranslations": [
+        "beautiful",
+        "empty",
+        "cold",
+        "finished"
+      ],
+      "audioClip": {
+        "storySlug": "zwei-stuehle-ein-teller",
+        "storySource": "user",
+        "sentence": "Alles ist alt und wackelt, die Wohnung ist wirklich nicht schön.",
+        "targetWord": "schön",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d3e6440da229277.mp3"
+      }
+    },
+    "featured": false
+  }
 ]
