@@ -355,6 +355,29 @@ const NUM_WORDS: Record<string, number> = {
 // "compiere gli anni" fallaron las 4 tomas hasta anadir esto). Elision de
 // vocal en uno/otto ("venti"+"uno" -> "ventuno"), igual que
 // coverageCheckLib.ts canonNumbers() para el mismo idioma.
+// El aleman tenia zwanzig y dreissig y nada mas: faltaban vierzig a neunzig,
+// los adolescentes (vierzehn a neunzehn) y los compuestos, que van al reves
+// que en las otras lenguas ("einundzwanzig" = 1 y 20). Sin esto, cualquier
+// frase con una cifra de dos digitos quema las MAX_TRIES contra un falso miss
+// del STT, que normaliza a cifra. Pasado el 2026-09-23 en achtzig-fuer-drei-
+// beine: "Achtzig Euro fuer einen alten Tisch sind zu teuer" se oye como "80
+// Euro..." y las seis tomas murieron ahi, sin llegar al gate F0. Es el mismo
+// fallo que el-gallo-colorado (centenas) y una-torta-per-dodici (italiano).
+// La `ss` y la `sz` van las dos porque strip() no descompone la eszett.
+(function addGermanNumbers() {
+  const teens: Record<string, number> = { vierzehn: 14, sechzehn: 16, siebzehn: 17, achtzehn: 18, neunzehn: 19 };
+  for (const [w, n] of Object.entries(teens)) NUM_WORDS[w] = n;
+  const tens: Record<string, number> = {
+    zwanzig: 20, dreissig: 30, "dreißig": 30, vierzig: 40, funfzig: 50, fuenfzig: 50,
+    sechzig: 60, siebzig: 70, achtzig: 80, neunzig: 90,
+  };
+  for (const [w, n] of Object.entries(tens)) NUM_WORDS[w] = n;
+  const units: Record<string, number> = { ein: 1, zwei: 2, drei: 3, vier: 4, funf: 5, fuenf: 5, sechs: 6, sieben: 7, acht: 8, neun: 9 };
+  for (const [tenWord, ten] of Object.entries(tens))
+    for (const [unitWord, unit] of Object.entries(units))
+      NUM_WORDS[`${unitWord}und${tenWord}`] = ten + unit;
+})();
+
 (function addItalianCompounds() {
   const units = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove"];
   const tens: Record<number, string> = { 20: "venti", 30: "trenta", 40: "quaranta", 50: "cinquanta", 60: "sessanta", 70: "settanta", 80: "ottanta", 90: "novanta" };

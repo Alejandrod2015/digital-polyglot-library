@@ -185,7 +185,8 @@
         "storySource": "user",
         "sentence": "Achtzig Euro für einen alten Tisch sind zu teuer.",
         "targetWord": "teuer",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0e10b27759ddb6a.mp3"
       }
     }
   },
