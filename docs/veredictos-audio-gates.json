@@ -1,27 +1,202 @@
 {
   "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
   "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo.",
-  "_resumen": "19 juzgados: 18 falsos positivos, 1 defecto real. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca (juzgados en https://claude.ai/artifact/BaY1UqjSqShsxUsgVMg7P7).",
+  "_resumen": "29 juzgados: 27 falsos positivos, 2 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 10 del journey Conversations ES latam A0 (temas 1 y 2, 2026-09-21).",
   "veredictos": [
-    { "fragmento": "alle-3", "gate": "uptalk +6,6 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "fleck-0", "gate": "titulo, toma 2", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "fleck-5", "gate": "toma 3", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "jacke-0", "gate": "titulo re-tirado", "veredicto": "defecto_real", "fecha": "2026-09-16" },
-    { "fragmento": "lieber-1", "gate": "contenido", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "luft-1", "gate": "uptalk +4,4 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "luft-5", "gate": "uptalk +5,4 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "musk-2", "gate": "re-tirado", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "musk-5", "gate": "re-tirado", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "tee-1", "gate": "uptalk +6,0 st", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "zehn-5", "gate": "toma 2", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "zwei-0", "gate": "candado de cobertura", "veredicto": "falso_positivo", "fecha": "2026-09-16" },
-    { "fragmento": "es-a2-chaqueta-2", "gate": "ritmo 3.21 w/s (1.39x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-chaqueta-3", "gate": "ritmo 3.33 w/s (1.44x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-raul-2", "gate": "uptalk +8.0 st", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-carrito-1", "gate": "ritmo 3.27 w/s (1.49x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-huele-4", "gate": "ritmo 3.29 w/s (1.42x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-gafas-2", "gate": "ritmo 4.21 w/s (1.63x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" },
-    { "fragmento": "es-a2-rana-1", "gate": "ritmo 3.25 w/s (1.42x)", "veredicto": "falso_positivo", "fecha": "2026-09-17" }
+    {
+      "fragmento": "alle-3",
+      "gate": "uptalk +6,6 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "fleck-0",
+      "gate": "titulo, toma 2",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "fleck-5",
+      "gate": "toma 3",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "jacke-0",
+      "gate": "titulo re-tirado",
+      "veredicto": "defecto_real",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "lieber-1",
+      "gate": "contenido",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "luft-1",
+      "gate": "uptalk +4,4 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "luft-5",
+      "gate": "uptalk +5,4 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "musk-2",
+      "gate": "re-tirado",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "musk-5",
+      "gate": "re-tirado",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "tee-1",
+      "gate": "uptalk +6,0 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "zehn-5",
+      "gate": "toma 2",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "zwei-0",
+      "gate": "candado de cobertura",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-16"
+    },
+    {
+      "fragmento": "es-a2-chaqueta-2",
+      "gate": "ritmo 3.21 w/s (1.39x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-chaqueta-3",
+      "gate": "ritmo 3.33 w/s (1.44x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-raul-2",
+      "gate": "uptalk +8.0 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-carrito-1",
+      "gate": "ritmo 3.27 w/s (1.49x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-huele-4",
+      "gate": "ritmo 3.29 w/s (1.42x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-gafas-2",
+      "gate": "ritmo 4.21 w/s (1.63x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "es-a2-rana-1",
+      "gate": "ritmo 3.25 w/s (1.42x)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-17"
+    },
+    {
+      "fragmento": "gato-h1-f01",
+      "gate": "silencios internos 0,84 y 0,77 s",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h1-f02",
+      "gate": "pregunta que no sube (-1,7 st)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h1-f03",
+      "gate": "pregunta que no sube (+3,9 st)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h1-f12",
+      "gate": "ritmo lento 2,15 w/s vs 3,19",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h2-f02",
+      "gate": "pregunta que no sube (+1,8 st)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h2-f09",
+      "gate": "afirmacion que sube +4,68 st",
+      "veredicto": "defecto_real",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-h3-f05",
+      "gate": "afirmacion que sube +5,06 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-t2h2-f00",
+      "gate": "afirmacion que sube +3,98 st (titulo)",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-t2h2-f08",
+      "gate": "afirmacion que sube +2,46 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    },
+    {
+      "fragmento": "gato-t2h3-f08",
+      "gate": "afirmacion que sube +3,13 st",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-21",
+      "journey": "conversations-es-latam-a0",
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+    }
   ],
   "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
 }
