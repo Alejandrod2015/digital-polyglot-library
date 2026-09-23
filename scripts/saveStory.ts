@@ -23,6 +23,8 @@
  *   --title-only        acortar un título que se corta en la tarjeta
  *   --definition-only   corregir la definición de una entrada de vocabulario
  *   --dedupe-only       quitar una frase pegada dos veces seguidas en el cuerpo
+ *   --arctype-only      corregir un arcType mal puesto (no toca texto ni vocab,
+ *                       asi que no descuadra karaoke, glosas ni clips)
  *
  * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
  * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
@@ -130,6 +132,7 @@ function slugify(s: string, lang?: string): string {
   // exigencia de que el RESTO de la historia cumpla el estándar de hoy, que
   // es deuda anterior y ajena al cambio. Ver el bloque `titleOnly`.
   const titleOnly = flag("title-only");
+  const arctypeOnly = flag("arctype-only");
   // MODO SOLO-DEFINICION (2026-09-17). La glosa que sale al tocar una palabra
   // no se oye en el audio ni toca el cuerpo: es la unica pieza de contenido
   // que se puede corregir sin reescribir nada. Aqui tampoco basta con una
@@ -444,6 +447,80 @@ function slugify(s: string, lang?: string): string {
         await prisma.journeyStory.update({ where: { id: p.id }, data: { vocab: p.vocab as never } });
         console.log(`  ✓ ${p.slug}`);
       }
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  if (arctypeOnly) {
+    if (!journeyId) { console.error("FAIL: --arctype-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; antes: string; ahora: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true, arcType: true, level: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+
+        // Todo lo que no sea el arcType tiene que llegar identico. El arcType
+        // es la UNICA etiqueta de la historia que no se oye ni se lee: no toca
+        // el texto, asi que no descuadra el karaoke, ni el vocab, asi que no
+        // toca glosas ni clips. Por eso puede corregirse sin re-juzgar el
+        // cuerpo entero, igual que --title-only corrige un titulo.
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["title", "text", "synopsis", "vocab"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --arctype-only solo cambia el arcType`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) {
+          problemas.push(`${nombre}: el slug cambiaria (${slot.slug} -> ${d.slug})`);
+        }
+        if (typeof d.arcType !== "string" || !d.arcType.trim()) { problemas.push(`${nombre}: falta el arcType nuevo`); continue; }
+        if (d.arcType === slot.arcType) continue; // nada que hacer
+
+        // El valor nuevo pasa por el validador canonico.
+        const r = await validateGeneratedStory(
+          { ...d, arcType: d.arcType, slug: slot.slug ?? undefined },
+          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+        );
+        const malos = r.checks.filter((c) => c.id.startsWith("arctype-") && c.status === "fail");
+        if (malos.length) {
+          for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`);
+          continue;
+        }
+
+        // Este modo existe por el gate de continuidad, asi que no puede
+        // abrirlo: un mini-cliffhanger en el ultimo slot de su tema deja el
+        // tema colgado y bloquea la publicacion.
+        if (d.arcType === "mini-cliffhanger") {
+          const posterior = await prisma.journeyStory.findFirst({
+            where: { journeyId, topic: slot.topic ?? d.topic, level: slot.level, slotIndex: { gt: d.slotIndex } },
+            select: { id: true },
+          });
+          if (!posterior) problemas.push(`${nombre}: mini-cliffhanger en el ultimo slot de ${d.topic}; el tema quedaria colgado`);
+        }
+        plan.push({ id: slot.id, slug: nombre, antes: slot.arcType ?? "", ahora: d.arcType });
+      }
+
+      if (problemas.length) {
+        console.error(`✗ [arctype-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[arctype-only] ${plan.length}/${stories.length} arcType que cambiar.`);
+      for (const p of plan) console.log(`  · ${p.slug}: ${p.antes} -> ${p.ahora}`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { arcType: p.ahora } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[arctype-only] ${plan.length} arcType actualizados.`);
     } finally {
       await prisma.$disconnect();
     }
