@@ -1,0 +1,401 @@
+[
+ {
+  "topic": "packages-and-deliveries",
+  "slotIndex": 0,
+  "title": "Nadie pide este paquete",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "A package with no name on it waits in the entrance. Mariana and Nicolás argue about who ordered it, until the address tells them it belongs across the street.",
+  "text": "Un paquete llega al edificio el jueves. Nadie firma nada. Está en la entrada, sin nombre. Mariana baja y lo empuja un poco.\n\nMariana: Nicolás, este paquete no es mío.\nNicolás: El mío tampoco. Yo no pido nada.\nMariana: Yo tampoco espero nada esta semana.\nNicolás: La etiqueta no dice ningún nombre.\nMariana: Tráeme un cuchillo. A ver qué trae.\n\nNicolás corta la cinta con el cuchillo. Dentro hay doce bolsas iguales y pesadas. Los dos leen la marca en silencio.\n\nMariana: Es comida para gatos.\nNicolás: Entonces es para tu gata.\nMariana: Yo compro otra marca. Esta no.\nNicolás: Mira la dirección. Dice número cuarenta.\nMariana: Nosotros somos el treinta y ocho.\nNicolás: El cuarenta es la casa de enfrente.\nMariana: Ahí también vive un gato.\nNicolás: Entonces el paquete es suyo.\nMariana: Ese gato come mejor que nosotros.\nNicolás: Entonces cenamos ahí el jueves.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "el paquete",
+    "surface": "paquete",
+    "definition": "A package; a wrapped thing sent to you.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "firmar",
+    "surface": "firma",
+    "definition": "To sign; to write your name on paper."
+   },
+   {
+    "type": "expression",
+    "word": "sin nombre",
+    "surface": "sin nombre",
+    "definition": "With no name written on it."
+   },
+   {
+    "type": "verb",
+    "word": "empujar",
+    "surface": "empuja",
+    "definition": "To push; to move a thing with your hands."
+   },
+   {
+    "type": "expression",
+    "word": "un poco",
+    "surface": "un poco",
+    "definition": "A little; not very much."
+   },
+   {
+    "type": "adjective",
+    "word": "mío",
+    "surface": "mío",
+    "definition": "Mine; belonging to me."
+   },
+   {
+    "type": "verb",
+    "word": "pedir",
+    "surface": "pido",
+    "definition": "To order something; to ask for a thing."
+   },
+   {
+    "type": "verb",
+    "word": "esperar",
+    "surface": "espero",
+    "definition": "To wait for something; to expect it."
+   },
+   {
+    "type": "expression",
+    "word": "esta semana",
+    "surface": "esta semana",
+    "definition": "This week; in the next seven days."
+   },
+   {
+    "type": "expression",
+    "word": "a ver",
+    "surface": "A ver",
+    "definition": "Let's see; said before you look."
+   },
+   {
+    "type": "verb",
+    "word": "cortar",
+    "surface": "corta",
+    "definition": "To cut; to open with a blade."
+   },
+   {
+    "type": "adjective",
+    "word": "pesado",
+    "surface": "pesadas",
+    "definition": "Heavy; hard to lift or carry."
+   },
+   {
+    "type": "expression",
+    "word": "los dos",
+    "surface": "Los dos",
+    "definition": "Both of them; the two people together."
+   },
+   {
+    "type": "verb",
+    "word": "leer",
+    "surface": "leen",
+    "definition": "To read; to look at words."
+   },
+   {
+    "type": "expression",
+    "word": "en silencio",
+    "surface": "en silencio",
+    "definition": "In silence; without saying a word."
+   },
+   {
+    "type": "verb",
+    "word": "comprar",
+    "surface": "compro",
+    "definition": "To buy; to pay money for a thing."
+   },
+   {
+    "type": "noun",
+    "word": "la dirección",
+    "surface": "dirección",
+    "definition": "An address; the street and number of a home.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "ahí",
+    "surface": "Ahí",
+    "definition": "There; in that place near you."
+   },
+   {
+    "type": "adjective",
+    "word": "suyo",
+    "surface": "suyo",
+    "definition": "Theirs; belonging to them."
+   },
+   {
+    "type": "expression",
+    "word": "mejor que",
+    "surface": "mejor que",
+    "definition": "Better than; in a nicer way than someone."
+   }
+  ]
+ },
+ {
+  "topic": "packages-and-deliveries",
+  "slotIndex": 1,
+  "title": "Nicolás firma demasiado",
+  "arcType": "late-reveal",
+  "synopsis": "Nicolás signs for every parcel in the building, so eleven boxes now block his door. The one at the bottom carries no surname, and then Mariana reads the small paper on top.",
+  "text": "Nicolás vive abajo, al lado de la puerta. Sus vecinos lo saben. Por eso él firma sus paquetes. Hoy su casa está llena de cajas ajenas. Él ya no cabe.\n\nMariana: Nicolás, yo no camino aquí.\nNicolás: Yo tampoco. Hay once cajas juntas.\nMariana: ¿Tú firmas por todo el edificio?\nNicolás: Sí. Yo casi nunca salgo.\nMariana: ¿Y esta caja de abajo?\nNicolás: Esa no lleva ningún apellido.\n\nNicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta.\n\nMariana: Este papel lleva tu apellido.\nNicolás: ¿Mi apellido? Yo no pido nada.\nMariana: Pues alguien pide con tu apellido.\nNicolás: Un momento. Ahora recuerdo. Es de marzo.\nMariana: Ábrela. Yo quiero ver eso.\nNicolás: Es un felpudo. Dice bienvenido.\nMariana: Ponlo delante de tu puerta.\nNicolás: Ahí hay once cajas de vecinos.\nMariana: Entonces el felpudo tiene paciencia.\nNicolás: Bienvenido a mi propia casa.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "al lado de",
+    "surface": "al lado de",
+    "definition": "Next to; right beside something."
+   },
+   {
+    "type": "verb",
+    "word": "saber",
+    "surface": "saben",
+    "definition": "To know; to have the information."
+   },
+   {
+    "type": "adverb",
+    "word": "hoy",
+    "surface": "Hoy",
+    "definition": "Today; on this very day."
+   },
+   {
+    "type": "adjective",
+    "word": "ajeno",
+    "surface": "ajenas",
+    "definition": "Belonging to other people, not to you."
+   },
+   {
+    "type": "verb",
+    "word": "caber",
+    "surface": "cabe",
+    "definition": "To fit; to have enough room."
+   },
+   {
+    "type": "adverb",
+    "word": "aquí",
+    "surface": "aquí",
+    "definition": "Here; in this place."
+   },
+   {
+    "type": "adjective",
+    "word": "junto",
+    "surface": "juntas",
+    "definition": "Together; one next to the other."
+   },
+   {
+    "type": "expression",
+    "word": "casi nunca",
+    "surface": "casi nunca",
+    "definition": "Almost never; very rarely."
+   },
+   {
+    "type": "verb",
+    "word": "salir",
+    "surface": "salgo",
+    "definition": "To go out; to leave the house."
+   },
+   {
+    "type": "noun",
+    "word": "el apellido",
+    "surface": "apellido",
+    "definition": "A surname; the family part of a name.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "sacar",
+    "surface": "saca",
+    "definition": "To take something out of a place."
+   },
+   {
+    "type": "noun",
+    "word": "el papel",
+    "surface": "papel",
+    "definition": "Paper; a sheet you write or print on.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "doblado",
+    "surface": "doblado",
+    "definition": "Folded; bent over on itself."
+   },
+   {
+    "type": "adverb",
+    "word": "encima",
+    "surface": "Encima",
+    "definition": "On top; above the other things."
+   },
+   {
+    "type": "expression",
+    "word": "en voz alta",
+    "surface": "en voz alta",
+    "definition": "Out loud; so other people hear it."
+   },
+   {
+    "type": "verb",
+    "word": "recordar",
+    "surface": "recuerdo",
+    "definition": "To remember; to bring something back to mind."
+   },
+   {
+    "type": "noun",
+    "word": "el felpudo",
+    "surface": "felpudo",
+    "definition": "A doormat; you clean your shoes on it.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "bienvenido",
+    "surface": "bienvenido",
+    "definition": "Welcome; the word you say to a guest."
+   },
+   {
+    "type": "adverb",
+    "word": "delante",
+    "surface": "delante",
+    "definition": "In front; at the front part of something."
+   },
+   {
+    "type": "adjective",
+    "word": "propio",
+    "surface": "propia",
+    "definition": "Own; belonging to that same person."
+   }
+  ]
+ },
+ {
+  "topic": "packages-and-deliveries",
+  "slotIndex": 2,
+  "title": "Una caja sin tapa",
+  "arcType": "reframe-turn",
+  "synopsis": "An open box arrives with its lid on the floor and nothing inside. Mariana and Nicolás blame the postman, until something soft and grey moves at the bottom.",
+  "text": "Una caja abierta llega el martes. La tapa está suelta en el suelo. Mariana la mira desde arriba. Nicolás sube rápido por la escalera.\n\nMariana: Nicolás, mira esta caja.\nNicolás: Está abierta. Y está vacía.\nMariana: Alguien toma las cosas de adentro.\nNicolás: El cartero, seguro. Él corre mucho.\nMariana: Él no roba nada. Yo lo conozco.\nNicolás: Entonces hay un ladrón aquí.\n\nLos dos bajan la caja. Mariana toca el fondo. Algo blando se mueve dentro. Ella salta hacia atrás.\n\nNicolás: ¿Qué pasa? ¿Te asustas?\nMariana: Espera. Aquí hay algo gris.\nNicolás: ¿Gris? ¿Y se mueve?\nMariana: Sí. Es un gatito, y duerme.\nNicolás: ¿Otro gatito? ¿De dónde sale?\nMariana: Es de mi gata. Él entra aquí solo.\nNicolás: Entonces nadie roba nada.\nMariana: Al contrario. La caja gana un gato.\nNicolás: Pues este paquete viaja gratis.\nMariana: Y sin sello, claro.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "abierto",
+    "surface": "abierta",
+    "definition": "Open; not closed or shut."
+   },
+   {
+    "type": "noun",
+    "word": "la tapa",
+    "surface": "tapa",
+    "definition": "A lid; the part that closes a box.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "suelto",
+    "surface": "suelta",
+    "definition": "Loose; not held or fixed to anything."
+   },
+   {
+    "type": "expression",
+    "word": "desde arriba",
+    "surface": "desde arriba",
+    "definition": "From above; looking down on something."
+   },
+   {
+    "type": "adverb",
+    "word": "rápido",
+    "surface": "rápido",
+    "definition": "Fast; in very little time."
+   },
+   {
+    "type": "adjective",
+    "word": "vacío",
+    "surface": "vacía",
+    "definition": "Empty; with nothing inside."
+   },
+   {
+    "type": "verb",
+    "word": "tocar",
+    "surface": "toca",
+    "definition": "To touch; to put your hand on something."
+   },
+   {
+    "type": "noun",
+    "word": "el cartero",
+    "surface": "cartero",
+    "definition": "A postman; he brings letters and parcels.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "correr",
+    "surface": "corre",
+    "definition": "To run; to go very fast."
+   },
+   {
+    "type": "verb",
+    "word": "robar",
+    "surface": "roba",
+    "definition": "To steal; to take what is not yours."
+   },
+   {
+    "type": "noun",
+    "word": "el ladrón",
+    "surface": "ladrón",
+    "definition": "A thief; a person who steals things.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "blando",
+    "surface": "blando",
+    "definition": "Soft; easy to press with your fingers."
+   },
+   {
+    "type": "verb",
+    "word": "saltar",
+    "surface": "salta",
+    "definition": "To jump; to push yourself off the ground."
+   },
+   {
+    "type": "expression",
+    "word": "hacia atrás",
+    "surface": "hacia atrás",
+    "definition": "Backwards; away from what is in front."
+   },
+   {
+    "type": "verb",
+    "word": "moverse",
+    "surface": "se mueve",
+    "definition": "To move; to change place a little."
+   },
+   {
+    "type": "verb",
+    "word": "dormir",
+    "surface": "duerme",
+    "definition": "To sleep; to rest with closed eyes."
+   },
+   {
+    "type": "expression",
+    "word": "al contrario",
+    "surface": "Al contrario",
+    "definition": "On the contrary; the opposite is true."
+   },
+   {
+    "type": "verb",
+    "word": "ganar",
+    "surface": "gana",
+    "definition": "To gain; to get something new."
+   },
+   {
+    "type": "verb",
+    "word": "viajar",
+    "surface": "viaja",
+    "definition": "To travel; to go from one place to another."
+   },
+   {
+    "type": "noun",
+    "word": "el sello",
+    "surface": "sello",
+    "definition": "A stamp; you stick it on post to pay.",
+    "anchor": true
+   }
+  ]
+ }
+]

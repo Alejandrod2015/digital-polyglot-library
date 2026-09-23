@@ -1,0 +1,398 @@
+[
+ {
+  "topic": "clothes-and-laundry",
+  "slotIndex": 0,
+  "title": "Nunca tuve un barco",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Mariana hangs her washing on the roof terrace. The wind takes a white T-shirt down to Nicolás's balcony, and up close it is not hers.",
+  "text": "Mariana tiende su ropa en la terraza. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Cayó de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "tender",
+    "surface": "tiende",
+    "definition": "To hang clothes outside so they dry."
+   },
+   {
+    "type": "expression",
+    "word": "hace viento",
+    "surface": "Hace viento",
+    "definition": "It is windy; the wind blows hard."
+   },
+   {
+    "type": "verb",
+    "word": "volar",
+    "surface": "vuela",
+    "definition": "To fly; to move through the air."
+   },
+   {
+    "type": "adjective",
+    "word": "blanco",
+    "surface": "blanca",
+    "definition": "White; the color of milk or snow."
+   },
+   {
+    "type": "expression",
+    "word": "ya voy",
+    "surface": "Ya voy",
+    "definition": "I'm coming; I'll be there now."
+   },
+   {
+    "type": "adverb",
+    "word": "seguro",
+    "surface": "seguro",
+    "definition": "Surely; I am sure about that."
+   },
+   {
+    "type": "expression",
+    "word": "se la lleva",
+    "surface": "se la lleva",
+    "definition": "It takes it away; the wind carries it."
+   },
+   {
+    "type": "expression",
+    "word": "un momento",
+    "surface": "Un momento",
+    "definition": "Wait a second; hold on."
+   },
+   {
+    "type": "verb",
+    "word": "caer",
+    "surface": "Cayó",
+    "definition": "To fall; to drop down."
+   },
+   {
+    "type": "noun",
+    "word": "la cuerda",
+    "surface": "cuerda",
+    "definition": "A washing line; a rope for wet clothes.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "negro",
+    "surface": "negra",
+    "definition": "Black; the color of the night sky."
+   },
+   {
+    "type": "noun",
+    "word": "el barco",
+    "surface": "barco",
+    "definition": "A boat; it floats and goes on water.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "doblar",
+    "surface": "dobla",
+    "definition": "To fold; to bend cloth over itself."
+   },
+   {
+    "type": "verb",
+    "word": "dejar",
+    "surface": "deja",
+    "definition": "To leave; to put something in a place."
+   },
+   {
+    "type": "adjective",
+    "word": "limpio",
+    "surface": "limpia",
+    "definition": "Clean; with no dirt or stain."
+   },
+   {
+    "type": "expression",
+    "word": "ya está",
+    "surface": "Ya está",
+    "definition": "Done; it is finished now."
+   },
+   {
+    "type": "verb",
+    "word": "oler",
+    "surface": "huele",
+    "definition": "To smell; to have a smell of something."
+   },
+   {
+    "type": "adjective",
+    "word": "viejo",
+    "surface": "viejo",
+    "definition": "Old; used for a long time already."
+   },
+   {
+    "type": "verb",
+    "word": "venir",
+    "surface": "viene",
+    "definition": "To come; to arrive from a place."
+   },
+   {
+    "type": "adjective",
+    "word": "nuevo",
+    "surface": "nueva",
+    "definition": "New; nobody uses it before today."
+   }
+  ]
+ },
+ {
+  "topic": "clothes-and-laundry",
+  "slotIndex": 1,
+  "title": "Antes yo era flaco",
+  "arcType": "late-reveal",
+  "synopsis": "The note has been on the stairs for a week and nobody has answered. Then Nicolás looks at the little boat on the T-shirt again.",
+  "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Creo que conozco esta camiseta.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Antes soy más flaco.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nLos dos miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Gracias. Y no hablamos más de barcos.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "contestar",
+    "surface": "contesta",
+    "definition": "To answer; to reply to a question."
+   },
+   {
+    "type": "verb",
+    "word": "bajar",
+    "surface": "baja",
+    "definition": "To come down; to go down the stairs."
+   },
+   {
+    "type": "noun",
+    "word": "el dibujo",
+    "surface": "dibujo",
+    "definition": "A drawing; a picture on paper or cloth.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "otra vez",
+    "surface": "otra vez",
+    "definition": "Again; one more time."
+   },
+   {
+    "type": "verb",
+    "word": "creer",
+    "surface": "Creo",
+    "definition": "To think; to believe something is true."
+   },
+   {
+    "type": "verb",
+    "word": "conocer",
+    "surface": "conozco",
+    "definition": "To know; to recognize what you saw before."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "surface": "mira",
+    "definition": "To look at; to watch something closely."
+   },
+   {
+    "type": "adverb",
+    "word": "después",
+    "surface": "Después",
+    "definition": "After that; a moment later."
+   },
+   {
+    "type": "adjective",
+    "word": "tuyo",
+    "surface": "Tuya",
+    "definition": "Yours; that belongs to you."
+   },
+   {
+    "type": "expression",
+    "word": "de hace tres años",
+    "surface": "de hace tres años",
+    "definition": "From three years ago; quite old."
+   },
+   {
+    "type": "adverb",
+    "word": "antes",
+    "surface": "Antes",
+    "definition": "Before; in an earlier time."
+   },
+   {
+    "type": "adjective",
+    "word": "flaco",
+    "surface": "flaco",
+    "definition": "Thin; with little fat on the body."
+   },
+   {
+    "type": "expression",
+    "word": "yo también",
+    "surface": "Yo también",
+    "definition": "Me too; I do the same thing."
+   },
+   {
+    "type": "verb",
+    "word": "decir",
+    "surface": "dices",
+    "definition": "To say; to tell someone something."
+   },
+   {
+    "type": "adjective",
+    "word": "vacío",
+    "surface": "vacía",
+    "definition": "Empty; with nothing left on it."
+   },
+   {
+    "type": "noun",
+    "word": "la vergüenza",
+    "surface": "vergüenza",
+    "definition": "Shame; the feeling of being embarrassed.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "sentarse",
+    "surface": "Se sienta",
+    "definition": "To sit down; to take a seat somewhere."
+   },
+   {
+    "type": "expression",
+    "word": "me la llevo",
+    "surface": "Me la llevo",
+    "definition": "I take it with me; I keep it."
+   },
+   {
+    "type": "expression",
+    "word": "quedar bien",
+    "surface": "queda bien",
+    "definition": "To look good on someone; to fit nicely."
+   },
+   {
+    "type": "verb",
+    "word": "hablar",
+    "surface": "hablamos",
+    "definition": "To talk; to speak with another person."
+   }
+  ]
+ },
+ {
+  "topic": "clothes-and-laundry",
+  "slotIndex": 2,
+  "title": "Seis calcetines solos",
+  "arcType": "reframe-turn",
+  "synopsis": "The kittens now walk all over Mariana's flat, and this morning no sock in her wardrobe matches another one.",
+  "text": "Los gatitos ya caminan por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nLos dos buscan debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina.\nMariana: Aquí están. Todos, y bien escondidos.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "caminar",
+    "surface": "caminan",
+    "definition": "To walk; to go on foot."
+   },
+   {
+    "type": "verb",
+    "word": "abrir",
+    "surface": "abre",
+    "definition": "To open; to make something not closed."
+   },
+   {
+    "type": "adjective",
+    "word": "ningún",
+    "surface": "Ningún",
+    "definition": "No; not one single thing."
+   },
+   {
+    "type": "noun",
+    "word": "el calcetín",
+    "surface": "calcetín",
+    "definition": "A sock; you wear it inside your shoe.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "surface": "falta",
+    "definition": "To be missing; not to be there."
+   },
+   {
+    "type": "adjective",
+    "word": "izquierdo",
+    "surface": "izquierdo",
+    "definition": "Left; not the right one."
+   },
+   {
+    "type": "verb",
+    "word": "querer",
+    "surface": "quiere",
+    "definition": "To want; to wish for something."
+   },
+   {
+    "type": "adjective",
+    "word": "pequeño",
+    "surface": "pequeño",
+    "definition": "Small; not big in size."
+   },
+   {
+    "type": "expression",
+    "word": "debajo de",
+    "surface": "debajo de",
+    "definition": "Under; below something else."
+   },
+   {
+    "type": "verb",
+    "word": "buscar",
+    "surface": "buscan",
+    "definition": "To look for; to try to find."
+   },
+   {
+    "type": "expression",
+    "word": "detrás de",
+    "surface": "detrás de",
+    "definition": "Behind; at the back of something."
+   },
+   {
+    "type": "adjective",
+    "word": "escondido",
+    "surface": "escondidos",
+    "definition": "Hidden; put away so nobody sees it."
+   },
+   {
+    "type": "expression",
+    "word": "no están solos",
+    "surface": "no están solos",
+    "definition": "They are not alone; there is more."
+   },
+   {
+    "type": "noun",
+    "word": "la cuchara",
+    "surface": "cuchara",
+    "definition": "A spoon; you eat dessert with it.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "quedarse",
+    "surface": "se queda",
+    "definition": "To stay; to remain where it is."
+   },
+   {
+    "type": "pronoun",
+    "word": "nadie",
+    "surface": "Nadie",
+    "definition": "Nobody; not a single person."
+   },
+   {
+    "type": "pronoun",
+    "word": "alguien",
+    "surface": "Alguien",
+    "definition": "Somebody; some person, you don't know who."
+   },
+   {
+    "type": "adverb",
+    "word": "entonces",
+    "surface": "Entonces",
+    "definition": "Then; so, after knowing that."
+   },
+   {
+    "type": "expression",
+    "word": "¿para qué?",
+    "surface": "¿Para qué",
+    "definition": "What for?; for what reason?"
+   },
+   {
+    "type": "verb",
+    "word": "volver",
+    "surface": "vuelven",
+    "definition": "To come back; to return to someone."
+   }
+  ]
+ }
+]
