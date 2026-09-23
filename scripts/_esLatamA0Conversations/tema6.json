@@ -1,401 +1,401 @@
 [
- {
-  "topic": "wifi-and-passwords",
-  "slotIndex": 0,
-  "title": "Domingo sin señal",
-  "arcType": "juxtaposition-discovery",
-  "synopsis": "Mariana loses her internet and asks Nicolás for his password. She types the cat's name three times and nothing opens. One letter is to blame.",
-  "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nEn el sofá duerme la gata, que no ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo pruebo de nuevo.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
-  "vocab": [
-   {
-    "type": "noun",
-    "word": "la película",
-    "surface": "película",
-    "definition": "A movie; a film you watch for fun.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "gata",
-    "surface": "gata",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "interjection",
-    "word": "claro",
-    "surface": "Claro",
-    "definition": "Sure; of course, yes with no doubt."
-   },
-   {
-    "type": "noun",
-    "word": "la clave",
-    "surface": "clave",
-    "definition": "A password; the secret word you type to enter.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "pongo",
-    "surface": "pongo",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "quiere",
-    "surface": "quiere",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "nombres",
-    "surface": "nombres",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "regresar",
-    "surface": "regresa",
-    "definition": "To come back; to go back to a place."
-   },
-   {
-    "type": "phrase",
-    "word": "no entra",
-    "surface": "no entra",
-    "definition": "It does not get in; it does not open."
-   },
-   {
-    "type": "phrase",
-    "word": "a ver",
-    "surface": "A ver",
-    "definition": "Let me see; wait, I am thinking."
-   },
-   {
-    "type": "noun",
-    "word": "la erre",
-    "surface": "erres",
-    "definition": "The letter R; the name of that letter.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "la mayúscula",
-    "surface": "mayúscula",
-    "definition": "A big letter; A instead of a.",
-    "anchor": true
-   },
-   {
-    "type": "pronoun",
-    "word": "nadie",
-    "surface": "Nadie",
-    "definition": "Nobody; not one person at all."
-   },
-   {
-    "type": "adverb",
-    "word": "así",
-    "surface": "así",
-    "definition": "Like that; in that way."
-   },
-   {
-    "type": "phrase",
-    "word": "ya no",
-    "surface": "Ya no",
-    "definition": "Not anymore; I did before, now I stop."
-   },
-   {
-    "type": "verb",
-    "word": "cambiar",
-    "surface": "cambio",
-    "definition": "To change; to put a new one instead."
-   },
-   {
-    "type": "noun",
-    "word": "el aparato",
-    "surface": "aparatos",
-    "definition": "A machine; a phone, a TV, a radio.",
-    "anchor": true
-   },
-   {
-    "type": "phrase",
-    "word": "de nuevo",
-    "surface": "de nuevo",
-    "definition": "Again; one more time."
-   },
-   {
-    "type": "phrase",
-    "word": "en serio",
-    "surface": "en serio",
-    "definition": "I mean it; this is not a joke."
-   },
-   {
-    "type": "verb",
-    "word": "dormir",
-    "surface": "duerme",
-    "definition": "To sleep; to rest with your eyes closed."
-   }
-  ]
- },
- {
-  "topic": "wifi-and-passwords",
-  "slotIndex": 1,
-  "title": "La gata tapa la pantalla",
-  "arcType": "reframe-turn",
-  "synopsis": "Mariana shows her family her new home over video. The cat sits on the screen, Nicolás lifts her off, and her family decides he belongs to the house.",
-  "text": "Mariana habla por video con su familia. Nicolás sube a devolver un plato.\n\nMariana: Miren, esta es mi sala nueva.\nNicolás: Yo dejo el plato encima de la mesa.\nMariana: Mi familia quiere ver la casa.\n\nLa gata salta a la mesa. Se sienta sobre la pantalla.\n\nMariana: Quita la cola. Ella siempre busca la cámara.\nNicolás: Ven acá, Tigre. Yo la cargo.\n\nNicolás levanta a la gata. Ella pesa bastante. Su cara tapa la pantalla.\n\nMariana: Ay. Ahora te ven a ti.\nNicolás: ¿Qué dicen? Yo no oigo bien.\nMariana: Mi mamá pregunta si comes bien.\nNicolás: ¿Yo? Pero yo vivo abajo.\nMariana: Para ellos, tú vives aquí.\nNicolás: Entonces saludo. Buenas tardes a todos.\n\nLa familia sonríe en la pantalla.\n\nMariana: Mi tía te espera en diciembre.\nNicolás: ¿Con gata o sin gata?\nMariana: Con gata. A ellos les gusta más.\nNicolás: Entonces yo llevo a la gata.",
-  "vocab": [
-   {
-    "type": "adverb",
-    "word": "llevo",
-    "surface": "llevo",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "saltar",
-    "surface": "salta",
-    "definition": "To jump; to go up with your legs."
-   },
-   {
-    "type": "verb",
-    "word": "sonríe",
-    "surface": "sonríe",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "noun",
-    "word": "la pantalla",
-    "surface": "pantalla",
-    "definition": "A screen; the flat part of a phone you watch.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "la cola",
-    "surface": "cola",
-    "definition": "A tail; the long part behind an animal.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "siempre",
-    "surface": "siempre",
-    "definition": "Always; every time, with no exception."
-   },
-   {
-    "type": "phrase",
-    "word": "ven acá",
-    "surface": "Ven acá",
-    "definition": "Come here; come next to me now."
-   },
-   {
-    "type": "verb",
-    "word": "cargar",
-    "surface": "cargo",
-    "definition": "To carry; to hold and lift in your arms."
-   },
-   {
-    "type": "verb",
-    "word": "levantar",
-    "surface": "levanta",
-    "definition": "To lift; to raise something up."
-   },
-   {
-    "type": "verb",
-    "word": "pesar",
-    "surface": "pesa",
-    "definition": "To weigh; to be heavy or light."
-   },
-   {
-    "type": "adverb",
-    "word": "bastante",
-    "surface": "bastante",
-    "definition": "Quite a lot; more than a little."
-   },
-   {
-    "type": "verb",
-    "word": "tapar",
-    "surface": "tapa",
-    "definition": "To cover; to hide a thing behind another."
-   },
-   {
-    "type": "verb",
-    "word": "preguntar",
-    "surface": "pregunta",
-    "definition": "To ask; to say a question to someone."
-   },
-   {
-    "type": "phrase",
-    "word": "para ellos",
-    "surface": "Para ellos",
-    "definition": "In their eyes; the way they see it."
-   },
-   {
-    "type": "verb",
-    "word": "saludar",
-    "surface": "saludo",
-    "definition": "To greet; to say hello to people."
-   },
-   {
-    "type": "phrase",
-    "word": "buenas tardes",
-    "surface": "Buenas tardes",
-    "definition": "Good afternoon; hello after noon."
-   },
-   {
-    "type": "verb",
-    "word": "sonreír",
-    "surface": "sonríe",
-    "definition": "To smile; to show you are happy."
-   },
-   {
-    "type": "phrase",
-    "word": "les gusta",
-    "surface": "les gusta",
-    "definition": "They like it; it makes them happy."
-   },
-   {
-    "type": "adverb",
-    "word": "gusta",
-    "surface": "gusta",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "adverb",
-    "word": "vives",
-    "surface": "vives",
-    "definition": "Used here in this sentence of the story."
-   }
-  ]
- },
- {
-  "topic": "wifi-and-passwords",
-  "slotIndex": 2,
-  "title": "Cien avisos y una gata",
-  "arcType": "late-reveal",
-  "synopsis": "The building opens a message group and it rings all afternoon with cat photos. The one notice that matters is buried among them, and it is Nicolás who wrote it.",
-  "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nMariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
-  "vocab": [
-   {
-    "type": "verb",
-    "word": "sonar",
-    "surface": "suena",
-    "definition": "To ring; to make a sound, like a phone."
-   },
-   {
-    "type": "number",
-    "word": "cien",
-    "surface": "cien",
-    "definition": "One hundred; the number 100."
-   },
-   {
-    "type": "adverb",
-    "word": "apago",
-    "surface": "apago",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "mandar",
-    "surface": "mando",
-    "definition": "To send; to make a message go to someone."
-   },
-   {
-    "type": "verb",
-    "word": "apagar",
-    "surface": "apago",
-    "definition": "To turn off; to make a sound or light stop."
-   },
-   {
-    "type": "phrase",
-    "word": "toda la tarde",
-    "surface": "toda la tarde",
-    "definition": "All afternoon; the whole afternoon, hour after hour."
-   },
-   {
-    "type": "phrase",
-    "word": "a las ocho",
-    "surface": "a las ocho",
-    "definition": "At eight o'clock; at that hour of the day."
-   },
-   {
-    "type": "verb",
-    "word": "revisar",
-    "surface": "revisan",
-    "definition": "To go through; to look at thing after thing."
-   },
-   {
-    "type": "noun",
-    "word": "la lista",
-    "surface": "lista",
-    "definition": "A list; names or things one under another.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "junto",
-    "surface": "juntos",
-    "definition": "Together; the two of them side by side."
-   },
-   {
-    "type": "phrase",
-    "word": "entre foto y foto",
-    "surface": "Entre foto y foto",
-    "definition": "Between one photo and the next one."
-   },
-   {
-    "type": "noun",
-    "word": "el aviso",
-    "surface": "aviso",
-    "definition": "A notice; a short message that tells you news.",
-    "anchor": true
-   },
-   {
-    "type": "adjective",
-    "word": "corto",
-    "surface": "corto",
-    "definition": "Short; with very few words."
-   },
-   {
-    "type": "verb",
-    "word": "cortar",
-    "surface": "cortan",
-    "definition": "To cut off; to stop the water or power."
-   },
-   {
-    "type": "verb",
-    "word": "responder",
-    "surface": "responde",
-    "definition": "To answer; to say something back."
-   },
-   {
-    "type": "verb",
-    "word": "leer",
-    "surface": "lee",
-    "definition": "To read; to take words with your eyes."
-   },
-   {
-    "type": "phrase",
-    "word": "ahora mismo",
-    "surface": "ahora mismo",
-    "definition": "Right now; this very minute."
-   },
-   {
-    "type": "verb",
-    "word": "moverse",
-    "surface": "se mueve",
-    "definition": "To move; to change place or position."
-   },
-   {
-    "type": "phrase",
-    "word": "todo el edificio",
-    "surface": "todo el edificio",
-    "definition": "The whole building; every person who lives there."
-   },
-   {
-    "type": "verb",
-    "word": "suenan",
-    "surface": "suenan",
-    "definition": "Used here in this sentence of the story."
-   }
-  ]
- }
+  {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 0,
+    "title": "Domingo sin señal",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Mariana loses her internet and asks Nicolás for his password. She types the cat's name three times and nothing opens. One letter is to blame.",
+    "text": "Es domingo. Mariana quiere ver una película. El internet de su casa no anda. Ella baja al primer piso.\n\nMariana: Hola. Mi internet no anda hoy.\nNicolás: El mío sí anda. ¿Quieres mi clave?\nMariana: Claro. Yo escribo la clave ahora.\nNicolás: Es el nombre de mi gata. Todo junto.\n\nMariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta.\n\nMariana: Tu clave no entra. Yo pongo Tigre.\nNicolás: A ver... Mi clave dice Tigrre.\nMariana: ¿Tigrre? ¿Con dos erres?\nNicolás: Sí. Y sin mayúscula.\nMariana: Nadie escribe así un nombre.\n\nEn el sofá la gata duerme tranquila. No ayuda.\n\nNicolás: Ya no la cambio. Tengo diez aparatos.\nMariana: Yo escribo la clave de nuevo, despacio.\nNicolás: Pon dos erres. Es en serio.\nMariana: Ya entra. Tu gata abre mi internet.\nNicolás: Ella tiene tres nombres y una clave.\nMariana: Y la clave tiene una falta.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la película",
+        "surface": "película",
+        "definition": "A movie; a film you watch for fun.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "gata",
+        "surface": "gata",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "interjection",
+        "word": "claro",
+        "surface": "Claro",
+        "definition": "Sure; of course, yes with no doubt."
+      },
+      {
+        "type": "noun",
+        "word": "la clave",
+        "surface": "clave",
+        "definition": "A password; the secret word you type to enter.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "pongo",
+        "surface": "pongo",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "quiere",
+        "surface": "quiere",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adverb",
+        "word": "nombres",
+        "surface": "nombres",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "regresar",
+        "surface": "regresa",
+        "definition": "To come back; to go back to a place."
+      },
+      {
+        "type": "phrase",
+        "word": "no entra",
+        "surface": "no entra",
+        "definition": "It does not get in; it does not open."
+      },
+      {
+        "type": "phrase",
+        "word": "a ver",
+        "surface": "A ver",
+        "definition": "Let me see; wait, I am thinking."
+      },
+      {
+        "type": "noun",
+        "word": "la erre",
+        "surface": "erres",
+        "definition": "The letter R; the name of that letter.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la mayúscula",
+        "surface": "mayúscula",
+        "definition": "A big letter; A instead of a.",
+        "anchor": true
+      },
+      {
+        "type": "pronoun",
+        "word": "nadie",
+        "surface": "Nadie",
+        "definition": "Nobody; not one person at all."
+      },
+      {
+        "type": "adverb",
+        "word": "así",
+        "surface": "así",
+        "definition": "Like that; in that way."
+      },
+      {
+        "type": "phrase",
+        "word": "ya no",
+        "surface": "Ya no",
+        "definition": "Not anymore; I did before, now I stop."
+      },
+      {
+        "type": "verb",
+        "word": "cambiar",
+        "surface": "cambio",
+        "definition": "To change; to put a new one instead."
+      },
+      {
+        "type": "noun",
+        "word": "el aparato",
+        "surface": "aparatos",
+        "definition": "A machine; a phone, a TV, a radio.",
+        "anchor": true
+      },
+      {
+        "type": "phrase",
+        "word": "de nuevo",
+        "surface": "de nuevo",
+        "definition": "Again; one more time."
+      },
+      {
+        "type": "phrase",
+        "word": "en serio",
+        "surface": "en serio",
+        "definition": "I mean it; this is not a joke."
+      },
+      {
+        "type": "verb",
+        "word": "dormir",
+        "surface": "duerme",
+        "definition": "To sleep; to rest with your eyes closed."
+      }
+    ]
+  },
+  {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 1,
+    "title": "La gata tapa la pantalla",
+    "arcType": "reframe-turn",
+    "synopsis": "Mariana shows her family her new home over video. The cat sits on the screen, Nicolás lifts her off, and her family decides he belongs to the house.",
+    "text": "Mariana habla por video con su familia. Nicolás sube a devolver un plato.\n\nMariana: Miren, esta es mi sala nueva.\nNicolás: Yo dejo el plato encima de la mesa.\nMariana: Mi familia quiere ver la casa.\n\nLa gata salta a la mesa. Se sienta sobre la pantalla.\n\nMariana: Quita la cola. Ella siempre busca la cámara.\nNicolás: Ven acá, Tigre. Yo la cargo.\n\nNicolás levanta a la gata. Ella pesa bastante. Su cara tapa la pantalla.\n\nMariana: Ay. Ahora te ven a ti.\nNicolás: ¿Qué dicen? Yo no oigo bien.\nMariana: Mi mamá pregunta si comes bien.\nNicolás: ¿Yo? Pero yo vivo abajo.\nMariana: Para ellos, tú vives aquí.\nNicolás: Entonces saludo. Buenas tardes a todos.\n\nLa familia sonríe en la pantalla.\n\nMariana: Mi tía te espera en diciembre.\nNicolás: ¿Con gata o sin gata?\nMariana: Con gata. A ellos les gusta más.\nNicolás: Entonces yo llevo a la gata.",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "llevo",
+        "surface": "llevo",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "saltar",
+        "surface": "salta",
+        "definition": "To jump; to go up with your legs."
+      },
+      {
+        "type": "verb",
+        "word": "sonríe",
+        "surface": "sonríe",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "noun",
+        "word": "la pantalla",
+        "surface": "pantalla",
+        "definition": "A screen; the flat part of a phone you watch.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la cola",
+        "surface": "cola",
+        "definition": "A tail; the long part behind an animal.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "siempre",
+        "surface": "siempre",
+        "definition": "Always; every time, with no exception."
+      },
+      {
+        "type": "phrase",
+        "word": "ven acá",
+        "surface": "Ven acá",
+        "definition": "Come here; come next to me now."
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "cargo",
+        "definition": "To carry; to hold and lift in your arms."
+      },
+      {
+        "type": "verb",
+        "word": "levantar",
+        "surface": "levanta",
+        "definition": "To lift; to raise something up."
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "surface": "pesa",
+        "definition": "To weigh; to be heavy or light."
+      },
+      {
+        "type": "adverb",
+        "word": "bastante",
+        "surface": "bastante",
+        "definition": "Quite a lot; more than a little."
+      },
+      {
+        "type": "verb",
+        "word": "tapar",
+        "surface": "tapa",
+        "definition": "To cover; to hide a thing behind another."
+      },
+      {
+        "type": "verb",
+        "word": "preguntar",
+        "surface": "pregunta",
+        "definition": "To ask; to say a question to someone."
+      },
+      {
+        "type": "phrase",
+        "word": "para ellos",
+        "surface": "Para ellos",
+        "definition": "In their eyes; the way they see it."
+      },
+      {
+        "type": "verb",
+        "word": "saludar",
+        "surface": "saludo",
+        "definition": "To greet; to say hello to people."
+      },
+      {
+        "type": "phrase",
+        "word": "buenas tardes",
+        "surface": "Buenas tardes",
+        "definition": "Good afternoon; hello after noon."
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonríe",
+        "definition": "To smile; to show you are happy."
+      },
+      {
+        "type": "phrase",
+        "word": "les gusta",
+        "surface": "les gusta",
+        "definition": "They like it; it makes them happy."
+      },
+      {
+        "type": "adverb",
+        "word": "gusta",
+        "surface": "gusta",
+        "definition": "Used here in this sentence of the story."
+      },
+      {
+        "type": "adverb",
+        "word": "vives",
+        "surface": "vives",
+        "definition": "Used here in this sentence of the story."
+      }
+    ]
+  },
+  {
+    "topic": "wifi-and-passwords",
+    "slotIndex": 2,
+    "title": "Cien avisos y una gata",
+    "arcType": "late-reveal",
+    "synopsis": "The building opens a message group and it rings all afternoon with cat photos. The one notice that matters is buried among them, and it is Nicolás who wrote it.",
+    "text": "El edificio abre un grupo de mensajes. Todos los vecinos entran. En una tarde suenan cien avisos.\n\nMariana: Tu grupo suena sin parar.\nNicolás: No es mío. Cien avisos en una tarde.\nMariana: Mi celular tiembla toda la tarde.\nNicolás: Hay treinta fotos de tu gata.\nMariana: Yo mando dos. Las otras son de los vecinos.\nNicolás: Yo veo todas.\nMariana: Yo apago el sonido a las ocho.\n\nMariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto.\n\nMariana: Aquí dice: mañana cortan el agua.\nNicolás: Ese aviso es corto y es mío.\nMariana: Nadie responde.\nNicolás: Nadie lo lee. Todos ven a la gata.\nMariana: Entonces mañana nadie tiene agua.\nNicolás: Yo mando el aviso ahora mismo.\n\nEl celular suena otra vez. La gata no se mueve.\n\nMariana: No. Ponlo debajo de una foto.\nNicolás: ¿De una foto de tu gata?\nMariana: Sí. Así lo lee todo el edificio.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "sonar",
+        "surface": "suena",
+        "definition": "To ring; to make a sound, like a phone."
+      },
+      {
+        "type": "number",
+        "word": "cien",
+        "surface": "cien",
+        "definition": "One hundred; the number 100."
+      },
+      {
+        "type": "adverb",
+        "word": "apago",
+        "surface": "apago",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "mandar",
+        "surface": "mando",
+        "definition": "To send; to make a message go to someone."
+      },
+      {
+        "type": "verb",
+        "word": "apagar",
+        "surface": "apago",
+        "definition": "To turn off; to make a sound or light stop."
+      },
+      {
+        "type": "phrase",
+        "word": "toda la tarde",
+        "surface": "toda la tarde",
+        "definition": "All afternoon; the whole afternoon, hour after hour."
+      },
+      {
+        "type": "phrase",
+        "word": "a las ocho",
+        "surface": "a las ocho",
+        "definition": "At eight o'clock; at that hour of the day."
+      },
+      {
+        "type": "verb",
+        "word": "revisar",
+        "surface": "revisan",
+        "definition": "To go through; to look at thing after thing."
+      },
+      {
+        "type": "noun",
+        "word": "la lista",
+        "surface": "lista",
+        "definition": "A list; names or things one under another.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "junto",
+        "surface": "juntos",
+        "definition": "Together; the two of them side by side."
+      },
+      {
+        "type": "phrase",
+        "word": "entre foto y foto",
+        "surface": "Entre foto y foto",
+        "definition": "Between one photo and the next one."
+      },
+      {
+        "type": "noun",
+        "word": "el aviso",
+        "surface": "aviso",
+        "definition": "A notice; a short message that tells you news.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "corto",
+        "surface": "corto",
+        "definition": "Short; with very few words."
+      },
+      {
+        "type": "verb",
+        "word": "cortar",
+        "surface": "cortan",
+        "definition": "To cut off; to stop the water or power."
+      },
+      {
+        "type": "verb",
+        "word": "responder",
+        "surface": "responde",
+        "definition": "To answer; to say something back."
+      },
+      {
+        "type": "verb",
+        "word": "leer",
+        "surface": "lee",
+        "definition": "To read; to take words with your eyes."
+      },
+      {
+        "type": "phrase",
+        "word": "ahora mismo",
+        "surface": "ahora mismo",
+        "definition": "Right now; this very minute."
+      },
+      {
+        "type": "verb",
+        "word": "moverse",
+        "surface": "se mueve",
+        "definition": "To move; to change place or position."
+      },
+      {
+        "type": "phrase",
+        "word": "todo el edificio",
+        "surface": "todo el edificio",
+        "definition": "The whole building; every person who lives there."
+      },
+      {
+        "type": "verb",
+        "word": "suenan",
+        "surface": "suenan",
+        "definition": "Used here in this sentence of the story."
+      }
+    ]
+  }
 ]

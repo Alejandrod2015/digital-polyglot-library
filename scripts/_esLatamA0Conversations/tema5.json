@@ -1,404 +1,404 @@
 [
- {
-  "topic": "noise-and-sleep",
-  "slotIndex": 0,
-  "title": "Alguien mueve los muebles",
-  "arcType": "mini-cliffhanger",
-  "synopsis": "At two in the morning something heavy drags across the floor above Nicolás. Mariana blames the new neighbor. In her kitchen they find the real culprit, and it weighs two grams.",
-  "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube. Mariana y Nicolás caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. La gata guarda cosas.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
-  "vocab": [
-   {
-    "type": "noun",
-    "word": "la madrugada",
-    "surface": "madrugada",
-    "definition": "The small hours; the night time before sunrise.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "gata",
-    "surface": "gata",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "sonar",
-    "surface": "suena",
-    "definition": "To sound; to make a noise you hear."
-   },
-   {
-    "type": "verb",
-    "word": "viaja",
-    "surface": "viaja",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "noun",
-    "word": "el mueble",
-    "surface": "mueble",
-    "definition": "A piece of furniture, like a table or a shelf.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "el golpe",
-    "surface": "golpe",
-    "definition": "A bang; the sound of something hitting a surface.",
-    "anchor": true
-   },
-   {
-    "type": "expression",
-    "word": "de nuevo",
-    "surface": "de nuevo",
-    "definition": "Again; one more time, like before."
-   },
-   {
-    "type": "adjective",
-    "word": "corto",
-    "surface": "corto",
-    "definition": "Short; lasting very little time."
-   },
-   {
-    "type": "noun",
-    "word": "la canica",
-    "surface": "canica",
-    "definition": "A marble; a small glass ball children roll.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "jugar",
-    "surface": "juega",
-    "definition": "To play; to do something only for fun."
-   },
-   {
-    "type": "verb",
-    "word": "empujar",
-    "surface": "Empuja",
-    "definition": "To push; to move something away with force."
-   },
-   {
-    "type": "verb",
-    "word": "correr",
-    "surface": "corre",
-    "definition": "To run; to move fast on your feet."
-   },
-   {
-    "type": "verb",
-    "word": "pesar",
-    "surface": "pesa",
-    "definition": "To weigh; to have a certain weight."
-   },
-   {
-    "type": "noun",
-    "word": "el gramo",
-    "surface": "gramos",
-    "definition": "A gram; a very small unit of weight.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "juega",
-    "surface": "juega",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "nunca",
-    "surface": "nunca",
-    "definition": "Never; not at any time."
-   },
-   {
-    "type": "verb",
-    "word": "dormir",
-    "surface": "duerme",
-    "definition": "To sleep; to rest with your eyes closed."
-   },
-   {
-    "type": "adverb",
-    "word": "casi",
-    "surface": "casi",
-    "definition": "Almost; very near but not quite."
-   },
-   {
-    "type": "noun",
-    "word": "oyes",
-    "surface": "oyes",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "verb",
-    "word": "empieza",
-    "surface": "empieza",
-    "definition": "Used again later in the journey; see this sentence."
-   }
-  ]
- },
- {
-  "topic": "noise-and-sleep",
-  "slotIndex": 1,
-  "title": "Nadie me avisa nada",
-  "arcType": "late-reveal",
-  "synopsis": "Nicolás sets his alarm for six every morning and Mariana, who sleeps right above him, comes down to complain. His kitchen table explains everything in four small bottles.",
-  "text": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana vive encima. Hoy baja medio dormida y da un bostezo.\n\nMariana: Nicolás, tu despertador me despierta.\nNicolás: Perdón. Suena siempre.\nMariana: Mi cama está encima. Yo salto.\nNicolás: No puedo cambiar esa hora.\n\nMariana: ¿Tu trabajo empieza tan temprano?\nNicolás: No. Empiezo a las nueve.\nMariana: ¿Entonces por qué te levantas?\n\nNicolás abre la puerta de su cocina. Sobre la mesa hay cuatro biberones. Arriba empieza un maullido.\n\nMariana: ¿Biberones con leche?\nNicolás: Para tus gatitos. Comen a las seis.\nMariana: ¿Tú preparas la leche?\nNicolás: Sí. Subo a tu casa.\n\nMariana no dice nada. La cocina está tranquila.\n\nNicolás: Tú duermes como una piedra.\nMariana: ¿Y nadie me avisa nada?\nNicolás: Ahora ya sabes. ¿Apago el despertador?\nMariana: No. Mañana yo doy la leche a tiempo.\nNicolás: Entonces pongo dos despertadores.\nMariana: ¿Dos?\nNicolás: Uno para los gatitos. Otro para ti.",
-  "vocab": [
-   {
-    "type": "adjective",
-    "word": "fuerte",
-    "surface": "fuerte",
-    "definition": "Loud; strong enough to hear far away."
-   },
-   {
-    "type": "adverb",
-    "word": "encima",
-    "surface": "encima",
-    "definition": "Above; on the floor right over yours."
-   },
-   {
-    "type": "adverb",
-    "word": "gatitos",
-    "surface": "gatitos",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "noun",
-    "word": "el bostezo",
-    "surface": "bostezo",
-    "definition": "A yawn; the wide mouth of a tired person.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "empezar",
-    "surface": "empieza",
-    "definition": "To begin; to start doing something."
-   },
-   {
-    "type": "adverb",
-    "word": "pongo",
-    "surface": "pongo",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "cuatro",
-    "surface": "cuatro",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "duermes",
-    "surface": "duermes",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "levantarse",
-    "surface": "levantas",
-    "definition": "To get up; to leave the bed in the morning."
-   },
-   {
-    "type": "noun",
-    "word": "el biberón",
-    "surface": "biberones",
-    "definition": "A baby bottle; it gives milk to a small animal.",
-    "anchor": true
-   },
-   {
-    "type": "noun",
-    "word": "el maullido",
-    "surface": "maullido",
-    "definition": "A meow; the small sound a cat makes.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "preparar",
-    "surface": "preparas",
-    "definition": "To prepare; to get something ready before using it."
-   },
-   {
-    "type": "expression",
-    "word": "como una piedra",
-    "surface": "como una piedra",
-    "definition": "Like a log; very deeply, without waking up."
-   },
-   {
-    "type": "adjective",
-    "word": "tranquilo",
-    "surface": "tranquila",
-    "definition": "Calm; quiet and without worry."
-   },
-   {
-    "type": "verb",
-    "word": "avisar",
-    "surface": "avisa",
-    "definition": "To tell in advance; to let someone know."
-   },
-   {
-    "type": "expression",
-    "word": "ya sabes",
-    "surface": "ya sabes",
-    "definition": "Now you know; the thing is no secret."
-   },
-   {
-    "type": "verb",
-    "word": "apagar",
-    "surface": "Apago",
-    "definition": "To turn off; to stop a machine or a sound."
-   },
-   {
-    "type": "expression",
-    "word": "a tiempo",
-    "surface": "a tiempo",
-    "definition": "On time; at the right hour, not later."
-   },
-   {
-    "type": "adverb",
-    "word": "despierta",
-    "surface": "despierta",
-    "definition": "Used here in this sentence of the story."
-   },
-   {
-    "type": "adverb",
-    "word": "dormida",
-    "surface": "dormida",
-    "definition": "Used here in this sentence of the story."
-   }
-  ]
- },
- {
-  "topic": "noise-and-sleep",
-  "slotIndex": 2,
-  "title": "Demasiado silencio",
-  "arcType": "harmonic-close",
-  "synopsis": "The kittens leave for their new homes and the building goes completely quiet. At two in the morning neither Mariana nor Nicolás can sleep, and one small sound is left.",
-  "text": "Esta noche el edificio está en silencio. Mariana baja a las dos. Nicolás abre la puerta.\n\nMariana: ¿Tú tampoco duermes?\nNicolás: Todavía no duermo. Aquí hay demasiado silencio.\nMariana: Arriba también. Ahora mi cama es muy grande.\nNicolás: Los gatitos ya no están.\n\nNicolás mira su sofá.\n\nMariana: Hoy los regalo. Tres casas nuevas.\nNicolás: Qué raro. Mi sofá está triste.\nMariana: Yo me tapo la cabeza. No sirve.\n\nDebajo del sofá solo hay pelusa. Nadie juega.\n\nMariana: Apenas duermo sin ese ruido.\nNicolás: Escucha. Ahí hay algo.\n\nDel sofá llega un ronquido suave. Mariana sonríe.\n\nNicolás: Ese ronquido no es mío.\nMariana: Es tu gatito. Ronca como un camión.\nNicolás: Sueña todo el día.\n\nLos dos escuchan al gatito.\n\nMariana: Ese ruido sí lo extraño un poco.\nNicolás: Entonces subo con mi almohada.\nMariana: ¿De verdad?\nNicolás: De verdad. Pero el sofá se queda aquí.",
-  "vocab": [
-   {
-    "type": "noun",
-    "word": "el silencio",
-    "surface": "silencio",
-    "definition": "Silence; the total absence of any sound.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "gatito",
-    "surface": "gatito",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adverb",
-    "word": "están",
-    "surface": "están",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adjective",
-    "word": "grande",
-    "surface": "grande",
-    "definition": "Big; large in size or in space."
-   },
-   {
-    "type": "expression",
-    "word": "ya no",
-    "surface": "ya no",
-    "definition": "Not anymore; it was true before, not now."
-   },
-   {
-    "type": "adverb",
-    "word": "subo",
-    "surface": "subo",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "verb",
-    "word": "sonríe",
-    "surface": "sonríe",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "adjective",
-    "word": "triste",
-    "surface": "triste",
-    "definition": "Sad; feeling low and without joy."
-   },
-   {
-    "type": "adverb",
-    "word": "duermo",
-    "surface": "duermo",
-    "definition": "Used again later in the journey; see this sentence."
-   },
-   {
-    "type": "noun",
-    "word": "la pelusa",
-    "surface": "pelusa",
-    "definition": "Fluff; the soft grey dust under furniture.",
-    "anchor": true
-   },
-   {
-    "type": "adverb",
-    "word": "apenas",
-    "surface": "Apenas",
-    "definition": "Hardly; almost not at all."
-   },
-   {
-    "type": "adjective",
-    "word": "suave",
-    "surface": "suave",
-    "definition": "Soft; gentle and not loud."
-   },
-   {
-    "type": "noun",
-    "word": "el ronquido",
-    "surface": "ronquido",
-    "definition": "A snore; the rough sound of a sleeping body.",
-    "anchor": true
-   },
-   {
-    "type": "verb",
-    "word": "sonreír",
-    "surface": "sonríe",
-    "definition": "To smile; to move the mouth up with joy."
-   },
-   {
-    "type": "verb",
-    "word": "roncar",
-    "surface": "Ronca",
-    "definition": "To snore; to make noise while you sleep."
-   },
-   {
-    "type": "verb",
-    "word": "extrañar",
-    "surface": "extraño",
-    "definition": "To miss; to feel sad without someone near."
-   },
-   {
-    "type": "expression",
-    "word": "un poco",
-    "surface": "un poco",
-    "definition": "A little; a small amount, not much."
-   },
-   {
-    "type": "noun",
-    "word": "la almohada",
-    "surface": "almohada",
-    "definition": "A pillow; the soft thing under your head.",
-    "anchor": true
-   },
-   {
-    "type": "expression",
-    "word": "de verdad",
-    "surface": "De verdad",
-    "definition": "Really; truly, with no joke."
-   },
-   {
-    "type": "adverb",
-    "word": "tapo",
-    "surface": "tapo",
-    "definition": "Used here in this sentence of the story."
-   }
-  ]
- }
+  {
+    "topic": "noise-and-sleep",
+    "slotIndex": 0,
+    "title": "Alguien mueve los muebles",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "At two in the morning something heavy drags across the floor above Nicolás. Mariana blames the new neighbor. In her kitchen they find the real culprit, and it weighs two grams.",
+    "text": "Son las dos de la madrugada. Nicolás está despierto. Arriba suena algo pesado. Parece un mueble grande.\n\nMariana: Nicolás, ¿tú oyes eso?\nNicolás: Alguien arrastra muebles arriba.\nMariana: Sobre mi casa no vive nadie.\nNicolás: ¿Y el vecino nuevo?\nMariana: Él viaja. Su casa está vacía.\n\nNicolás sube sin hacer ruido. Mariana y Nicolás caminan hasta la cocina. El golpe empieza de nuevo. Es seco y corto.\n\nMariana: Ahí está, cerca de la puerta.\nNicolás: No es un mueble. Es una canica.\nMariana: Mi gata juega. Empuja la canica y corre.\n\nNicolás toma la canica con dos dedos.\n\nNicolás: Esta cosa pesa dos gramos.\nMariana: Y suena como un tren.\nNicolás: ¿De dónde sale?\nMariana: Ni idea. Ella trae cosas raras.\nNicolás: ¿Tu gata nunca duerme?\nMariana: Duerme todo el día. Por eso.\nNicolás: Yo casi no duermo hoy. Apenas descanso.\nMariana: Guardo la canica en mi cajón.\nNicolás: Ella abre los cajones.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la madrugada",
+        "surface": "madrugada",
+        "definition": "The small hours; the night time before sunrise.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "gata",
+        "surface": "gata",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "sonar",
+        "surface": "suena",
+        "definition": "To sound; to make a noise you hear."
+      },
+      {
+        "type": "verb",
+        "word": "viaja",
+        "surface": "viaja",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "noun",
+        "word": "el mueble",
+        "surface": "mueble",
+        "definition": "A piece of furniture, like a table or a shelf.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el golpe",
+        "surface": "golpe",
+        "definition": "A bang; the sound of something hitting a surface.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "de nuevo",
+        "surface": "de nuevo",
+        "definition": "Again; one more time, like before."
+      },
+      {
+        "type": "adjective",
+        "word": "corto",
+        "surface": "corto",
+        "definition": "Short; lasting very little time."
+      },
+      {
+        "type": "noun",
+        "word": "la canica",
+        "surface": "canica",
+        "definition": "A marble; a small glass ball children roll.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "jugar",
+        "surface": "juega",
+        "definition": "To play; to do something only for fun."
+      },
+      {
+        "type": "verb",
+        "word": "empujar",
+        "surface": "Empuja",
+        "definition": "To push; to move something away with force."
+      },
+      {
+        "type": "verb",
+        "word": "correr",
+        "surface": "corre",
+        "definition": "To run; to move fast on your feet."
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "surface": "pesa",
+        "definition": "To weigh; to have a certain weight."
+      },
+      {
+        "type": "noun",
+        "word": "el gramo",
+        "surface": "gramos",
+        "definition": "A gram; a very small unit of weight.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "juega",
+        "surface": "juega",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adverb",
+        "word": "nunca",
+        "surface": "nunca",
+        "definition": "Never; not at any time."
+      },
+      {
+        "type": "verb",
+        "word": "dormir",
+        "surface": "duerme",
+        "definition": "To sleep; to rest with your eyes closed."
+      },
+      {
+        "type": "adverb",
+        "word": "casi",
+        "surface": "casi",
+        "definition": "Almost; very near but not quite."
+      },
+      {
+        "type": "noun",
+        "word": "oyes",
+        "surface": "oyes",
+        "definition": "Used here in this sentence of the story."
+      },
+      {
+        "type": "verb",
+        "word": "empieza",
+        "surface": "empieza",
+        "definition": "Used again later in the journey; see this sentence."
+      }
+    ]
+  },
+  {
+    "topic": "noise-and-sleep",
+    "slotIndex": 1,
+    "title": "Nadie me avisa nada",
+    "arcType": "late-reveal",
+    "synopsis": "Nicolás sets his alarm for six every morning and Mariana, who sleeps right above him, comes down to complain. His kitchen table explains everything in four small bottles.",
+    "text": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana y su gata viven encima. Hoy baja medio dormida y da un bostezo.\n\nMariana: Tu despertador me despierta.\nNicolás: Perdón. Suena siempre.\nMariana: Mi cama está encima. Yo salto.\nNicolás: No puedo cambiar esa hora.\n\nMariana: ¿Tu trabajo empieza tan temprano?\nNicolás: No. Empiezo a las nueve.\nMariana: ¿Entonces por qué te levantas?\n\nNicolás abre la puerta de su cocina. Sobre la mesa hay cuatro biberones. Arriba empieza un maullido.\n\nMariana: ¿Biberones con leche?\nNicolás: Para tus gatitos. Comen a las seis.\nMariana: ¿Tú preparas la leche?\nNicolás: Sí. Subo a tu casa.\n\nMariana no dice nada. La cocina está tranquila.\n\nNicolás: Tú duermes como una piedra.\nMariana: ¿Y nadie me avisa nada?\nNicolás: Ahora ya sabes. ¿Apago el despertador?\nMariana: No. Mañana yo doy la leche a tiempo.\nNicolás: Entonces pongo dos despertadores.\nMariana: ¿Dos?\nNicolás: Uno para los gatitos. Otro para ti.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "fuerte",
+        "surface": "fuerte",
+        "definition": "Loud; strong enough to hear far away."
+      },
+      {
+        "type": "adverb",
+        "word": "encima",
+        "surface": "encima",
+        "definition": "Above; on the floor right over yours."
+      },
+      {
+        "type": "adverb",
+        "word": "gatitos",
+        "surface": "gatitos",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "noun",
+        "word": "el bostezo",
+        "surface": "bostezo",
+        "definition": "A yawn; the wide mouth of a tired person.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "empezar",
+        "surface": "empieza",
+        "definition": "To begin; to start doing something."
+      },
+      {
+        "type": "adverb",
+        "word": "pongo",
+        "surface": "pongo",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adverb",
+        "word": "cuatro",
+        "surface": "cuatro",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adverb",
+        "word": "duermes",
+        "surface": "duermes",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "levantarse",
+        "surface": "levantas",
+        "definition": "To get up; to leave the bed in the morning."
+      },
+      {
+        "type": "noun",
+        "word": "el biberón",
+        "surface": "biberones",
+        "definition": "A baby bottle; it gives milk to a small animal.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el maullido",
+        "surface": "maullido",
+        "definition": "A meow; the small sound a cat makes.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "preparar",
+        "surface": "preparas",
+        "definition": "To prepare; to get something ready before using it."
+      },
+      {
+        "type": "expression",
+        "word": "como una piedra",
+        "surface": "como una piedra",
+        "definition": "Like a log; very deeply, without waking up."
+      },
+      {
+        "type": "adjective",
+        "word": "tranquilo",
+        "surface": "tranquila",
+        "definition": "Calm; quiet and without worry."
+      },
+      {
+        "type": "verb",
+        "word": "avisar",
+        "surface": "avisa",
+        "definition": "To tell in advance; to let someone know."
+      },
+      {
+        "type": "expression",
+        "word": "ya sabes",
+        "surface": "ya sabes",
+        "definition": "Now you know; the thing is no secret."
+      },
+      {
+        "type": "verb",
+        "word": "apagar",
+        "surface": "Apago",
+        "definition": "To turn off; to stop a machine or a sound."
+      },
+      {
+        "type": "expression",
+        "word": "a tiempo",
+        "surface": "a tiempo",
+        "definition": "On time; at the right hour, not later."
+      },
+      {
+        "type": "adverb",
+        "word": "despierta",
+        "surface": "despierta",
+        "definition": "Used here in this sentence of the story."
+      },
+      {
+        "type": "adverb",
+        "word": "dormida",
+        "surface": "dormida",
+        "definition": "Used here in this sentence of the story."
+      }
+    ]
+  },
+  {
+    "topic": "noise-and-sleep",
+    "slotIndex": 2,
+    "title": "Demasiado silencio",
+    "arcType": "harmonic-close",
+    "synopsis": "The kittens leave for their new homes and the building goes completely quiet. At two in the morning neither Mariana nor Nicolás can sleep, and one small sound is left.",
+    "text": "Esta noche el edificio está en silencio. Mariana está despierta y baja a las dos. Nicolás abre la puerta.\n\nMariana: ¿Tú tampoco duermes?\nNicolás: Todavía no duermo. Aquí hay demasiado silencio.\nMariana: Arriba también. Ahora mi cama es muy grande.\nNicolás: Los gatitos ya no están.\n\nNicolás mira su sofá.\n\nMariana: Hoy los regalo. Tres casas nuevas.\nNicolás: Qué raro. Mi sofá está triste.\nMariana: Yo me tapo la cabeza. No sirve.\n\nDebajo del sofá solo hay pelusa. Nadie juega.\n\nMariana: Apenas duermo sin ese ruido.\nNicolás: Escucha. Ahí hay algo.\n\nDel sofá llega un ronquido suave. Mariana sonríe.\n\nNicolás: Ese ronquido no es mío.\nMariana: Es tu gatito. Ronca como un camión.\nNicolás: Sueña todo el día.\n\nLos dos escuchan al gatito.\n\nMariana: Ese ruido sí lo extraño un poco.\nNicolás: Entonces subo con mi almohada.\nMariana: ¿De verdad?\nNicolás: De verdad. El sofá se queda aquí para siempre.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "el silencio",
+        "surface": "silencio",
+        "definition": "Silence; the total absence of any sound.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "gatito",
+        "surface": "gatito",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adverb",
+        "word": "están",
+        "surface": "están",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adjective",
+        "word": "grande",
+        "surface": "grande",
+        "definition": "Big; large in size or in space."
+      },
+      {
+        "type": "expression",
+        "word": "ya no",
+        "surface": "ya no",
+        "definition": "Not anymore; it was true before, not now."
+      },
+      {
+        "type": "adverb",
+        "word": "subo",
+        "surface": "subo",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "verb",
+        "word": "sonríe",
+        "surface": "sonríe",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "adjective",
+        "word": "triste",
+        "surface": "triste",
+        "definition": "Sad; feeling low and without joy."
+      },
+      {
+        "type": "adverb",
+        "word": "duermo",
+        "surface": "duermo",
+        "definition": "Used again later in the journey; see this sentence."
+      },
+      {
+        "type": "noun",
+        "word": "la pelusa",
+        "surface": "pelusa",
+        "definition": "Fluff; the soft grey dust under furniture.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "apenas",
+        "surface": "Apenas",
+        "definition": "Hardly; almost not at all."
+      },
+      {
+        "type": "adjective",
+        "word": "suave",
+        "surface": "suave",
+        "definition": "Soft; gentle and not loud."
+      },
+      {
+        "type": "noun",
+        "word": "el ronquido",
+        "surface": "ronquido",
+        "definition": "A snore; the rough sound of a sleeping body.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonríe",
+        "definition": "To smile; to move the mouth up with joy."
+      },
+      {
+        "type": "verb",
+        "word": "roncar",
+        "surface": "Ronca",
+        "definition": "To snore; to make noise while you sleep."
+      },
+      {
+        "type": "verb",
+        "word": "extrañar",
+        "surface": "extraño",
+        "definition": "To miss; to feel sad without someone near."
+      },
+      {
+        "type": "expression",
+        "word": "un poco",
+        "surface": "un poco",
+        "definition": "A little; a small amount, not much."
+      },
+      {
+        "type": "noun",
+        "word": "la almohada",
+        "surface": "almohada",
+        "definition": "A pillow; the soft thing under your head.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "de verdad",
+        "surface": "De verdad",
+        "definition": "Really; truly, with no joke."
+      },
+      {
+        "type": "adverb",
+        "word": "tapo",
+        "surface": "tapo",
+        "definition": "Used here in this sentence of the story."
+      }
+    ]
+  }
 ]
