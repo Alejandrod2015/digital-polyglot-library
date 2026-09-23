@@ -2,7 +2,7 @@
  * Perfiles de narracion (journey, mapa de voces, bundle de glosas) y las dos
  * reglas que comparten la muestra (_muestraA2Titulo.ts), el runner
  * (_narraUnaA2.ts) y el modo en seco (_narraSeco.ts): con que voz se narra cada
- * historia, y en que paso del orden de narracion por tema esta. Aqui no se
+ * historia, y en que paso del orden de narracion esta. Aqui no se
  * sintetiza nada, y por eso el modo en seco puede importarlo sin tocar el guard
  * de audio.
  *
