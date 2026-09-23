@@ -8,8 +8,8 @@
   "kind": "uptalk",
   "texto": "A las cuatro sale la primera brasa, y nada está quemado. Comen a las nueve, con la linterna de Bruno colgada del asador.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Carbn_mojado_multivoice_1790191821841.mp3",
-  "start": 38.27,
-  "end": 45.611812
+  "start": 38.52,
+  "end": 45.261812
  },
  {
   "id": "mx-una-sola-vuelta-f02-uptalk",
@@ -20,8 +20,8 @@
   "kind": "uptalk",
   "texto": "“Voltéala ya,” dice Bruno. “Se quema abajo, yo veo el humo.” “Se voltea una vez,” dice Mauricio. “Una, y al final.”",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_sola_vuelta_multivoice_1790191877940.mp3",
-  "start": 14.11,
-  "end": 20.526979
+  "start": 14.36,
+  "end": 20.176979
  },
  {
   "id": "mx-la-salsa-no-se-apunta-f00-uptalk",
@@ -33,7 +33,7 @@
   "texto": "La salsa no se apunta.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
   "start": 0,
-  "end": 1.557
+  "end": 1.2069999999999999
  },
  {
   "id": "mx-la-salsa-no-se-apunta-f03-content",
@@ -44,8 +44,8 @@
   "kind": "content",
   "texto": "Itzel se pone al lado y apunta todo: tres chiles, un aguacate, media cebolla y un limón. Apunta también cuánto de cada cosa.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
-  "start": 17.79,
-  "end": 26.450000000000003
+  "start": 18.04,
+  "end": 26.1
  },
  {
   "id": "mx-la-salsa-no-se-apunta-s01-ritmo",
@@ -56,8 +56,8 @@
   "kind": "ritmo",
   "texto": "Itzel llega con un cuaderno y una pluma, y se sienta en una silla de la cochera.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
-  "start": 7.11,
-  "end": 11.932062
+  "start": 7.36,
+  "end": 11.582062
  },
  {
   "id": "mx-poquito-son-dos-dedos-f06-content",
@@ -68,8 +68,8 @@
   "kind": "content",
   "texto": "Bruno lee el cartel. Dice: “Poquito = dos dedos.” Nadie lee ese cartel nunca.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790185576227.mp3",
-  "start": 39.63,
-  "end": 44.587313
+  "start": 39.88,
+  "end": 44.237313
  },
  {
   "id": "mx-poquito-son-dos-dedos-f07-uptalk",
@@ -80,8 +80,8 @@
   "kind": "uptalk",
   "texto": "“La próxima vez pido dos dedos,” dice Bruno.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790185576227.mp3",
-  "start": 28.43,
-  "end": 47.29
+  "start": 29.126801999999998,
+  "end": 47.4002815
  },
  {
   "id": "mx-poquito-son-dos-dedos-f08-uptalk",
@@ -92,8 +92,8 @@
   "kind": "uptalk",
   "texto": "“La próxima vez corto tres,” dice Arturo. “Tus dedos son muy chicos.”",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790185576227.mp3",
-  "start": 46.71,
-  "end": 51.910000000000004
+  "start": 46.96,
+  "end": 51.56
  },
  {
   "id": "mx-nadie-se-queja-nunca-f00-uptalk",
@@ -105,7 +105,7 @@
   "texto": "Nadie se queja nunca.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
   "start": 0,
-  "end": 1.5110000000000001
+  "end": 1.161
  },
  {
   "id": "mx-nadie-se-queja-nunca-f01-uptalk",
@@ -116,8 +116,8 @@
   "kind": "uptalk",
   "texto": "Una gorra tapa el fleco de Itzel, que entra a las cinco. El sol de la tarde llena el espejo de luz. Arturo limpia el mueble con un trapo y Bruno espera su turno.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
-  "start": 0.67,
-  "end": 12.65
+  "start": 1.7572809999999999,
+  "end": 12.3
  },
  {
   "id": "mx-nadie-se-queja-nunca-s09-ritmo",
@@ -128,8 +128,8 @@
   "kind": "ritmo",
   "texto": "Arturo quita la gorra, la cuelga en un clavo y mide el fleco con el peine, de un lado y del otro.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
-  "start": 26.19,
-  "end": 31.799187
+  "start": 26.44,
+  "end": 31.449187
  },
  {
   "id": "mx-media-cara-rasurada-f04-uptalk",
@@ -140,8 +140,8 @@
   "kind": "uptalk",
   "texto": "“Es lo mismo, pero con nariz,” dice Itzel.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
-  "start": 20.47,
-  "end": 23.89
+  "start": 20.72,
+  "end": 23.54
  },
  {
   "id": "mx-media-cara-rasurada-f05-uptalk",
@@ -152,8 +152,8 @@
   "kind": "uptalk",
   "texto": "Bruno se sienta en la cocina. Itzel pone la brocha, el jabón y la espuma en fila, como en el hospital.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
-  "start": 23.31,
-  "end": 30.490000000000002
+  "start": 23.56,
+  "end": 30.14
  },
  {
   "id": "mx-peinate-como-en-la-foto-f02-uptalk",
@@ -164,8 +164,8 @@
   "kind": "uptalk",
   "texto": "“Es mía, y está a mi nombre,” dice Itzel. Omar revisa una caja gris y saca la credencial en dos segundos. “Aquí está,” dice él. “Pero no se la puedo entregar.”",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
-  "start": 15.43,
-  "end": 24.668583
+  "start": 15.68,
+  "end": 24.318583
  },
  {
   "id": "mx-peinate-como-en-la-foto-f04-uptalk",
@@ -176,8 +176,8 @@
   "kind": "uptalk",
   "texto": "En la foto, Itzel tiene el fleco derecho y una trenza. Ella se peina con los dedos, se hace la trenza y levanta la barbilla.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
-  "start": 32.91,
-  "end": 41.014313
+  "start": 33.16,
+  "end": 40.664313
  },
  {
   "id": "mx-tres-duenos-y-un-paraguas-f01-uptalk",
@@ -188,8 +188,8 @@
   "kind": "uptalk",
   "texto": "Fin de mes en la central, con un calor pesado, y la caja de Omar ya no cierra. Itzel y Bruno lo ayudan a vaciarla, al lado del recibo del día. Hay lentes, un guante, una pila, una pinza y un paraguas rojo.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tres_dueos_y_un_paraguas_multivoice_1790186703433.mp3",
-  "start": 2.51,
-  "end": 16.330000000000002
+  "start": 2.76,
+  "end": 15.980000000000002
  },
  {
   "id": "mx-el-timbre-si-suena-f02-uptalk",
@@ -200,8 +200,8 @@
   "kind": "uptalk",
   "texto": "Toca el timbre seis veces.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
-  "start": 9.55,
-  "end": 12.93
+  "start": 10.336125,
+  "end": 12.58
  },
  {
   "id": "mx-el-timbre-si-suena-f05-uptalk",
@@ -212,8 +212,8 @@
   "kind": "uptalk",
   "texto": "Itzel baja por los refrescos y encuentra a Citlali en el zaguán, con el recibo en la mano. “Nadie abre nunca aquí,” dice Citlali. “Y el timbre sí suena. Yo lo siento en el botón.”",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
-  "start": 27.51,
-  "end": 39.25
+  "start": 27.76,
+  "end": 38.9
  },
  {
   "id": "mx-el-timbre-si-suena-s06-ritmo",
@@ -224,8 +224,8 @@
   "kind": "ritmo",
   "texto": "Lo oye desde hace un año, cada dos o tres días, en el mismo rato.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
-  "start": 20.31,
-  "end": 24.490000000000002
+  "start": 17.9758435,
+  "end": 24.14
  },
  {
   "id": "mx-tu-propia-firma-f09-uptalk",
@@ -236,8 +236,8 @@
   "kind": "uptalk",
   "texto": "“Gracias,” dice Bruno en voz muy baja. “No digas nada de esto.” Itzel se ríe desde el tercer peldaño.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tu_propia_firma_multivoice_1790192588571.mp3",
-  "start": 44.15,
-  "end": 50.736917
+  "start": 44.4,
+  "end": 50.386917
  },
  {
   "id": "mx-pintan-el-14-f03-uptalk",
@@ -248,8 +248,8 @@
   "kind": "uptalk",
   "texto": "Bruno baja con el bote y una plantilla de cartón. Itzel se sube a la escalera y los dos copian el estilo del edificio de al lado.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
-  "start": 22.51,
-  "end": 30.93
+  "start": 22.76,
+  "end": 30.58
  },
  {
   "id": "mx-pintan-el-14-f04-content",
@@ -260,8 +260,8 @@
   "kind": "content",
   "texto": "“Catorce,” lee Bruno en voz alta. “¿Seguro que es el nuestro?” pregunta Itzel. “Catorce,” repite él. Ella pinta un catorce grande y derecho.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
-  "start": 30.35,
-  "end": 39.995667000000005
+  "start": 30.6,
+  "end": 39.645667
  },
  {
   "id": "mx-se-muere-de-amor-f03-uptalk",
@@ -272,8 +272,8 @@
   "kind": "uptalk",
   "texto": "Itzel pone la maceta en la ventana, al lado del tendedero. Después le echa agua tres veces al día, con mucho cariño.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
-  "start": 19.31,
-  "end": 26.650000000000002
+  "start": 19.56,
+  "end": 26.3
  },
  {
   "id": "mx-se-muere-de-amor-f04-uptalk",
@@ -284,8 +284,8 @@
   "kind": "uptalk",
   "texto": "A los once días, las hojas están amarillas y la tierra es un charco. Itzel regresa al vivero con la maceta.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
-  "start": 26.07,
-  "end": 32.898958
+  "start": 26.32,
+  "end": 32.548958
  },
  {
   "id": "mx-se-muere-de-amor-f07-uptalk",
@@ -296,8 +296,8 @@
   "kind": "uptalk",
   "texto": "Le da otra planta y guarda la regadera arriba, una semana.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
-  "start": 48.87,
-  "end": 52.910000000000004
+  "start": 49.12,
+  "end": 52.56
  },
  {
   "id": "mx-una-hora-en-el-vivero-f00-uptalk",
@@ -309,7 +309,7 @@
   "texto": "Una hora en el vivero.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
   "start": 0,
-  "end": 1.557
+  "end": 1.2069999999999999
  },
  {
   "id": "mx-una-hora-en-el-vivero-f01-uptalk",
@@ -320,8 +320,8 @@
   "kind": "uptalk",
   "texto": "Hoy Fernanda tiene que salir dos horas y el vivero no puede cerrar. Itzel y Bruno llegan puntuales, con la regadera y una cubeta llenas hasta el borde.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
-  "start": 2.23,
-  "end": 11.69
+  "start": 2.48,
+  "end": 11.34
  },
  {
   "id": "mx-una-hora-en-el-vivero-s11-ritmo",
@@ -332,8 +332,8 @@
   "kind": "ritmo",
   "texto": "Las hojas pesan y el agua cae al piso.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
-  "start": 37.79,
-  "end": 40.80999999999999
+  "start": 38.04,
+  "end": 40.45999999999999
  },
  {
   "id": "mx-dos-camisas-azules-f00-uptalk",
@@ -345,7 +345,7 @@
   "texto": "Dos camisas azules.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
   "start": 0,
-  "end": 1.678
+  "end": 1.3279999999999998
  },
  {
   "id": "mx-una-cuerda-no-hace-nudos-f02-uptalk",
@@ -356,8 +356,8 @@
   "kind": "uptalk",
   "texto": "Bruno toma café en su rincón, al lado del tinaco. Ahí pega el sol toda la mañana. Es el único sitio con sol de la azotea.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_cuerda_no_hace_nudos_multivoice_1790185101963.mp3",
-  "start": 9.27,
-  "end": 16.214812000000002
+  "start": 9.52,
+  "end": 15.864812000000002
  },
  {
   "id": "mx-gritale-es-su-trabajo-s16-ritmo",
@@ -368,7 +368,7 @@
   "kind": "ritmo",
   "texto": "Ensaya toda la semana en la azotea, con una voz de rudo que no le sale.",
   "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Grtale_es_su_trabajo_multivoice_1790190556927.mp3",
-  "start": 48.39,
-  "end": 52.75
+  "start": 48.64,
+  "end": 52.4
  }
 ]
