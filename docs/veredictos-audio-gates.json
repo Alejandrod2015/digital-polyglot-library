@@ -1,202 +1,452 @@
 {
-  "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
-  "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo.",
-  "_resumen": "29 juzgados: 27 falsos positivos, 2 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 10 del journey Conversations ES latam A0 (temas 1 y 2, 2026-09-21).",
-  "veredictos": [
-    {
-      "fragmento": "alle-3",
-      "gate": "uptalk +6,6 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "fleck-0",
-      "gate": "titulo, toma 2",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "fleck-5",
-      "gate": "toma 3",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "jacke-0",
-      "gate": "titulo re-tirado",
-      "veredicto": "defecto_real",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "lieber-1",
-      "gate": "contenido",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "luft-1",
-      "gate": "uptalk +4,4 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "luft-5",
-      "gate": "uptalk +5,4 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "musk-2",
-      "gate": "re-tirado",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "musk-5",
-      "gate": "re-tirado",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "tee-1",
-      "gate": "uptalk +6,0 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "zehn-5",
-      "gate": "toma 2",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "zwei-0",
-      "gate": "candado de cobertura",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-16"
-    },
-    {
-      "fragmento": "es-a2-chaqueta-2",
-      "gate": "ritmo 3.21 w/s (1.39x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-chaqueta-3",
-      "gate": "ritmo 3.33 w/s (1.44x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-raul-2",
-      "gate": "uptalk +8.0 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-carrito-1",
-      "gate": "ritmo 3.27 w/s (1.49x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-huele-4",
-      "gate": "ritmo 3.29 w/s (1.42x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-gafas-2",
-      "gate": "ritmo 4.21 w/s (1.63x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "es-a2-rana-1",
-      "gate": "ritmo 3.25 w/s (1.42x)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-17"
-    },
-    {
-      "fragmento": "gato-h1-f01",
-      "gate": "silencios internos 0,84 y 0,77 s",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h1-f02",
-      "gate": "pregunta que no sube (-1,7 st)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h1-f03",
-      "gate": "pregunta que no sube (+3,9 st)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h1-f12",
-      "gate": "ritmo lento 2,15 w/s vs 3,19",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h2-f02",
-      "gate": "pregunta que no sube (+1,8 st)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h2-f09",
-      "gate": "afirmacion que sube +4,68 st",
-      "veredicto": "defecto_real",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-h3-f05",
-      "gate": "afirmacion que sube +5,06 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-t2h2-f00",
-      "gate": "afirmacion que sube +3,98 st (titulo)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-t2h2-f08",
-      "gate": "afirmacion que sube +2,46 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    },
-    {
-      "fragmento": "gato-t2h3-f08",
-      "gate": "afirmacion que sube +3,13 st",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
-      "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
-    }
-  ],
-  "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
+ "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
+ "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo.",
+ "_resumen": "60 juzgados: 57 falsos positivos, 3 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca y 41 del Conversations ES latam A0, estos ultimos juzgados el 2026-09-23 con las 21 historias delante. De ese journey salen dos defectos reales, los dos de Mariana en el tema 1: una pregunta que no sube y una afirmacion que sube.",
+ "veredictos": [
+  {
+   "fragmento": "alle-3",
+   "gate": "uptalk +6,6 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "fleck-0",
+   "gate": "titulo, toma 2",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "fleck-5",
+   "gate": "toma 3",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "jacke-0",
+   "gate": "titulo re-tirado",
+   "veredicto": "defecto_real",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "lieber-1",
+   "gate": "contenido",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "luft-1",
+   "gate": "uptalk +4,4 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "luft-5",
+   "gate": "uptalk +5,4 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "musk-2",
+   "gate": "re-tirado",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "musk-5",
+   "gate": "re-tirado",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "tee-1",
+   "gate": "uptalk +6,0 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "zehn-5",
+   "gate": "toma 2",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "zwei-0",
+   "gate": "candado de cobertura",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-16"
+  },
+  {
+   "fragmento": "es-a2-chaqueta-2",
+   "gate": "ritmo 3.21 w/s (1.39x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-chaqueta-3",
+   "gate": "ritmo 3.33 w/s (1.44x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-raul-2",
+   "gate": "uptalk +8.0 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-carrito-1",
+   "gate": "ritmo 3.27 w/s (1.49x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-huele-4",
+   "gate": "ritmo 3.29 w/s (1.42x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-gafas-2",
+   "gate": "ritmo 4.21 w/s (1.63x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "es-a2-rana-1",
+   "gate": "ritmo 3.25 w/s (1.42x)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-17"
+  },
+  {
+   "fragmento": "gato-h1-f01",
+   "gate": "silencios internos 0,84 y 0,77 s",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-h1-f02",
+   "gate": "pregunta que no sube (-1,7 st)",
+   "veredicto": "defecto_real",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc",
+   "texto": "Perdón. ¿Tienes un gato gris?",
+   "nota": "juzgado falso positivo el 2026-09-21 y corregido a defecto real el 2026-09-23, con el journey entero delante"
+  },
+  {
+   "fragmento": "gato-h1-f03",
+   "gate": "pregunta que no sube (+3,9 st)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-h1-f12",
+   "gate": "ritmo lento 2,15 w/s vs 3,19",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-h2-f02",
+   "gate": "pregunta que no sube (+1,8 st)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-h2-f09",
+   "gate": "afirmacion que sube +4,68 st",
+   "veredicto": "defecto_real",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-h3-f05",
+   "gate": "afirmacion que sube +5,06 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-t2h2-f00",
+   "gate": "afirmacion que sube +3,98 st (titulo)",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-t2h2-f08",
+   "gate": "afirmacion que sube +2,46 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-t2h3-f08",
+   "gate": "afirmacion que sube +3,13 st",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-21",
+   "journey": "conversations-es-latam-a0",
+   "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+  },
+  {
+   "fragmento": "gato-t2h1-f06",
+   "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +3.62 st: pued",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Mariana y Nicolás miran el piso de la cocina. Está seco. Pero en un rincón hay un charco."
+  },
+  {
+   "fragmento": "gato-t3h1-f13",
+   "gate": "Final de afirmación que sube +2.97 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Y el olor viene de tu gato."
+  },
+  {
+   "fragmento": "gato-t3h1-f16",
+   "gate": "Pregunta cuyo final no sube (3.7 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y si nadie contesta en toda la semana?"
+  },
+  {
+   "fragmento": "gato-t3h2-f13",
+   "gate": "Pregunta cuyo final no sube (-0.3 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y por qué no dices nada el lunes?"
+  },
+  {
+   "fragmento": "gato-t3h3-f05",
+   "gate": "Pregunta cuyo final no sube (-0.2 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y quién quiere calcetines izquierdos?"
+  },
+  {
+   "fragmento": "gato-t3h3-f12",
+   "gate": "Pregunta cuyo final no sube (-2.8 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Y una cuchara. ¿Para qué quiere una cuchara?"
+  },
+  {
+   "fragmento": "gato-t4h1-f10",
+   "gate": "Final de afirmación que sube +2.82 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Yo compro otra marca. Esta no."
+  },
+  {
+   "fragmento": "gato-t4h2-f04",
+   "gate": "Pregunta cuyo final no sube (-0.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Tú firmas por todo el edificio?"
+  },
+  {
+   "fragmento": "gato-t4h2-f06",
+   "gate": "Pregunta cuyo final no sube (2.1 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y esta caja de abajo?"
+  },
+  {
+   "fragmento": "gato-t4h2-f08",
+   "gate": "Final de afirmación que sube +5.8 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Nicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta."
+  },
+  {
+   "fragmento": "gato-t4h3-f02",
+   "gate": "Final de afirmación que sube +5.16 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Nicolás, mira esta caja."
+  },
+  {
+   "fragmento": "gato-t4h3-f12",
+   "gate": "Final de afirmación que sube +3.24 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Sí. Es un gatito, y duerme."
+  },
+  {
+   "fragmento": "gato-t5h2-f01",
+   "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +5.02 st: pued",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana y su gata viven encima. Hoy baja medio dormida y da un bostezo."
+  },
+  {
+   "fragmento": "gato-t5h2-f08",
+   "gate": "Pregunta cuyo final no sube (-6.4 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Entonces por qué te levantas?"
+  },
+  {
+   "fragmento": "gato-t5h3-f02",
+   "gate": "Pregunta cuyo final no sube (1.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Tú tampoco duermes?"
+  },
+  {
+   "fragmento": "gato-t5h3-f13",
+   "gate": "Final de afirmación que sube +9.8 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Del sofá llega un ronquido suave. Mariana sonríe."
+  },
+  {
+   "fragmento": "gato-t6h1-f03",
+   "gate": "Pregunta cuyo final no sube (-3.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "El mío sí anda. ¿Quieres mi clave?"
+  },
+  {
+   "fragmento": "gato-t6h1-f06",
+   "gate": "Final de afirmación que sube +6.17 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Mariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta."
+  },
+  {
+   "fragmento": "gato-t6h1-f09",
+   "gate": "Pregunta cuyo final no sube (3.7 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Tigrre? ¿Con dos erres?"
+  },
+  {
+   "fragmento": "gato-t6h2-f02",
+   "gate": "Final de afirmación que sube +3.59 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Miren, esta es mi sala nueva."
+  },
+  {
+   "fragmento": "gato-t6h2-f17",
+   "gate": "Pregunta cuyo final no sube (-3.1 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Con gata o sin gata?"
+  },
+  {
+   "fragmento": "gato-t6h3-f09",
+   "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +4.02 st: pued",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Mariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto."
+  },
+  {
+   "fragmento": "gato-t7h1-f03",
+   "gate": "Final de afirmación que sube +5.51 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Sin problema. Yo paso una vez al día."
+  },
+  {
+   "fragmento": "gato-t7h1-f14",
+   "gate": "Pregunta cuyo final no sube (0.5 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y cada cuánto las riego?"
+  },
+  {
+   "fragmento": "gato-t7h2-f02",
+   "gate": "Pregunta cuyo final no sube (-5.9 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Hola, Nicolás. ¿Cómo va todo?"
+  },
+  {
+   "fragmento": "gato-t7h2-f06",
+   "gate": "Final de afirmación que sube +7.58 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Nicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio."
+  },
+  {
+   "fragmento": "gato-t7h2-f08",
+   "gate": "Pregunta cuyo final no sube (-0.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Y qué dice?"
+  },
+  {
+   "fragmento": "gato-t7h2-f14",
+   "gate": "Pregunta cuyo final no sube (-3.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿En tu casa? ¿Y por dónde entra?"
+  },
+  {
+   "fragmento": "gato-t7h3-f03",
+   "gate": "Final de afirmación que sube +6.31 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "Bienvenida. Tus plantas viven. Casi todas."
+  },
+  {
+   "fragmento": "gato-t7h3-f04",
+   "gate": "Final de afirmación que sube +2.27 st: puede sonar a pregunta",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Casi? ¿Y mi gata? No está en ningún lado."
+  },
+  {
+   "fragmento": "gato-t7h3-f12",
+   "gate": "Pregunta cuyo final no sube (-9.6 st): puede sonar a afirmación",
+   "veredicto": "falso_positivo",
+   "fecha": "2026-09-23",
+   "journey": "conversations-es-latam-a0",
+   "texto": "¿Una llave? ¿De qué puerta?"
+  }
+ ],
+ "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."
 }
