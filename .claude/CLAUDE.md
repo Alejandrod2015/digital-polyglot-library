@@ -217,21 +217,28 @@ than once, do NOT defend with the same metrics. Switch the frame of review
 user's concern is addressed or you can articulate what they're asking that
 you haven't measured.
 
-## Orden de narracion por tema (BLOQUEANTE, 2026-09-02)
+## Orden de narracion: una muestra por journey (BLOQUEANTE, 2026-09-02; aflojado el 2026-09-23)
 
-Un tema NUNCA se narra de golpe. Tres pasos, y entre cada uno **el usuario
-comprueba**:
+**Una muestra por JOURNEY, y a partir de ahi tema completo.** Dos pasos:
 
-1. **Muestra**: titulo y primer parrafo de la PRIMERA historia del tema.
-   `npx tsx scripts/_muestraA2Titulo.ts <slug>` (deja constancia en
-   `scripts/a2-muestras.json`).
-2. **La primera entera**, solo despues de que el usuario apruebe la muestra.
-3. **Las otras dos**, solo despues de que apruebe la primera.
+1. **Muestra**: titulo y primer parrafo de la primera historia que se vaya a
+   narrar del journey. `npx tsx scripts/_muestraA2Titulo.ts <slug>` (deja
+   constancia en `scripts/a2-muestras.json`, con el id del journey). **El
+   usuario la aprueba de oido**, una sola vez por journey.
+2. **Cada tema, entero**: sus tres historias seguidas, sin parar entre ellas.
+   Un verbo de audio del usuario por TEMA, no por historia.
 
-Enforced por `scripts/_narraUnaA2.ts`, que se PARA en seco: narrar una primera
-historia sin muestra registrada falla y escupe el comando de la muestra; narrar
-la segunda o la tercera de un tema cuya primera no tiene `audioUrl` tambien
-falla. Nada de esto se salta con una variable.
+**Los fragmentos marcados NO detienen nada.** Se guardan en
+`audioFragments[n].gateFlags`, se acumulan, y se juzgan de golpe al terminar el
+journey ENTERO, en el revisador de veredictos (ver `index_artifacts_de_trabajo`).
+Sigue sin haber re-tiro automatico: una toma por fragmento, y re-tirar lo decide
+el usuario sobre los veredictos.
+
+Enforced por `scripts/_narraUnaA2.ts`, que se PARA en seco: narrar en un journey
+sin muestra aprobada falla y escupe el comando de la muestra. Un journey que ya
+tiene historias narradas cuenta como aprobado (el usuario ya oyo esa voz ahi),
+para que aflojar la regla no bloquee de rebote una tanda en curso. No se salta
+con una variable, y el verbo de audio, el candado 6d y el gate F0 no se tocan.
 
 Ademas, el candado 6d del guard (audio completo, sample-first) miraba el NOMBRE
 del archivo (`*audio*.ts`) y por eso `_narraUnaA2.ts` narraba historias enteras
@@ -239,11 +246,23 @@ sin pasar por el. Ahora mira el CONTENIDO del `.ts` invocado: cualquier script
 que llame a `generateAndUploadMultiVoiceAudio`, `generateAndUploadAudio` o al
 endpoint de sintesis queda dentro del candado.
 
-WHY: el 2026-09-02, en dos ocasiones, lanze narraciones que el usuario no habia
+WHY (2026-09-02): en dos ocasiones lanze narraciones que el usuario no habia
 pedido (una probando que un gate se reabria, otra probando este mismo orden), y
 la segunda vez fue justo despues de que dijera "no". Cada tirada es dinero. El
 orden existe para que un error de voz, de ritmo o de texto se pague una vez y
 no veintiuna.
+
+POR QUE SE AFLOJA (2026-09-23, decision del usuario, literal): "quiero que
+podamos crearlos tema por tema, sin tener que parar para revisar el audio
+problematico. Eso lo quiero dejar para cuando se termine con el audio de todo
+el journey". Lo caro de verdad es la voz equivocada, y contra eso protege la
+muestra, que se queda. Parar entre historia e historia protegia contra los
+fragmentos marcados, y eso ya no compensa: de los 19 fragmentos juzgados de
+oido que hay rescatados, 18 eran falsos positivos y 1 defecto real
+(`docs/veredictos-audio-gates.json`, su propio `_resumen`). Se paraba veintiuna
+veces por un defecto que el revisador de veredictos encuentra igual al final.
+La regla no desaparece: baja de tres paradas por tema a una por journey, que es
+lo que el dato dice que hace falta.
 
 ## Karaoke y texto: el orden es texto primero (BLOQUEANTE, 2026-09-02)
 

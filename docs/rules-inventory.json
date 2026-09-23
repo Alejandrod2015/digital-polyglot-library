@@ -40,9 +40,9 @@
       "source": "CLAUDE.md"
     },
     {
-      "id": "claude-md-orden-de-narracion-por-tema-bloqueante-2026-09-02",
+      "id": "claude-md-orden-de-narracion-una-muestra-por-journey-bloqueante-2026-0",
       "domain": "audio",
-      "rule": "Orden de narracion por tema",
+      "rule": "Orden de narracion: una muestra por journey",
       "gate": "scripts/_muestraA2Titulo.ts",
       "source": "CLAUDE.md"
     },
@@ -105,7 +105,7 @@
     {
       "id": "feedback_narration_order_per_topic",
       "domain": "audio",
-      "rule": "\"REGLA DURA: un tema no se narra de golpe. Muestra, comprobacion, primera entera, comprobacion, y solo entonces el resto\"",
+      "rule": "\"REGLA DURA: UNA muestra por journey, aprobada de oido; a partir de ahi cada tema se narra entero, sin parar entre historias\"",
       "gate": "scripts/_narraUnaA2.ts",
       "source": "memory:feedback_narration_order_per_topic.md"
     },
