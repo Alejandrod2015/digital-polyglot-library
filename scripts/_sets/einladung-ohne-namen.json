@@ -1,16 +1,16 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Becher,der Kugelschreiber,der Fahrstuhl,die Bank",
+  "word": "der Aushang,der Kugelschreiber,der Fahrstuhl,die Bank",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Becher",
-     "answer": "a mug",
+     "word": "der Aushang",
+     "answer": "a notice",
      "options": [
-      "a mug",
+      "a notice",
       "a biro",
       "a lift",
       "a bench"
@@ -20,7 +20,7 @@
      "word": "der Kugelschreiber",
      "answer": "a biro",
      "options": [
-      "a mug",
+      "a notice",
       "a biro",
       "a lift",
       "a bench"
@@ -30,7 +30,7 @@
      "word": "der Fahrstuhl",
      "answer": "a lift",
      "options": [
-      "a mug",
+      "a notice",
       "a biro",
       "a lift",
       "a bench"
@@ -40,7 +40,7 @@
      "word": "die Bank",
      "answer": "a bench",
      "options": [
-      "a mug",
+      "a notice",
       "a biro",
       "a lift",
       "a bench"
@@ -96,22 +96,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Aushang",
-  "sentence": "Der [[Aushang]] hängt unten neben dem Fahrstuhl.",
+  "word": "unten",
+  "sentence": "Der Zettel hängt [[unten]] neben dem Fahrstuhl.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a notice",
+   "answer": "downstairs",
    "options": [
-    "a notice",
-    "a mirror",
-    "a mailbox",
-    "a clock"
+    "downstairs",
+    "outside",
+    "nearby",
+    "behind"
    ],
    "audioClip": {
     "storySlug": "einladung-ohne-namen",
     "storySource": "user",
-    "sentence": "Der Aushang hängt unten neben dem Fahrstuhl.",
-    "targetWord": "Aushang",
+    "sentence": "Der Zettel hängt unten neben dem Fahrstuhl.",
+    "targetWord": "unten",
     "language": "german"
    }
   }
@@ -140,22 +140,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Magen",
-  "sentence": "Die Angst sitzt ihr im [[Magen]].",
+  "word": "wieder",
+  "sentence": "Drei Zettel hängen da, und sie hofft [[wieder]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the stomach",
+   "answer": "again",
    "options": [
-    "the stomach",
-    "the throat",
-    "the shoulder",
-    "the knee"
+    "again",
+    "instead",
+    "hardly",
+    "later"
    ],
    "audioClip": {
     "storySlug": "einladung-ohne-namen",
     "storySource": "user",
-    "sentence": "Die Angst sitzt ihr im Magen.",
-    "targetWord": "Magen",
+    "sentence": "Drei Zettel hängen da, und sie hofft wieder.",
+    "targetWord": "wieder",
     "language": "german"
    }
   }
@@ -264,22 +264,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Tür",
-  "sentence": "Sie kennt die Leute hinter den meisten [[Türen]] nicht.",
+  "word": "herzlich",
+  "sentence": "Auf dem Zettel steht: jeder ist [[herzlich]] willkommen.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a door",
+   "answer": "warmly",
    "options": [
-    "a door",
-    "a wall",
-    "a roof",
-    "a stair"
+    "warmly",
+    "quickly",
+    "quietly",
+    "finally"
    ],
    "audioClip": {
     "storySlug": "einladung-ohne-namen",
     "storySource": "user",
-    "sentence": "Sie kennt die Leute hinter den meisten Türen nicht.",
-    "targetWord": "Türen",
+    "sentence": "Auf dem Zettel steht: jeder ist herzlich willkommen.",
+    "targetWord": "herzlich",
     "language": "german"
    }
   },
@@ -333,22 +333,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Uhr",
-  "sentence": "Auf dem Zettel steht neunzehn [[Uhr]], zweiter Stock.",
+  "word": "dreimal",
+  "sentence": "Sie liest den Text noch [[dreimal]] durch.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "o'clock",
+   "answer": "three times",
    "options": [
-    "o'clock",
-    "minutes",
-    "degrees",
-    "euros"
+    "three times",
+    "half aloud",
+    "far too fast",
+    "the other way"
    ],
    "audioClip": {
     "storySlug": "einladung-ohne-namen",
     "storySource": "user",
-    "sentence": "Auf dem Zettel steht neunzehn Uhr, zweiter Stock.",
-    "targetWord": "Uhr",
+    "sentence": "Sie liest den Text noch dreimal durch.",
+    "targetWord": "dreimal",
     "language": "german"
    }
   },
@@ -402,22 +402,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Freitagabend",
-  "sentence": "Am [[Freitagabend]] hängen drei Zettel unter dem Aushang.",
+  "word": "rufen",
+  "sentence": "Sie [[ruft]] es laut durch die leere Küche.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "Friday evening",
+   "answer": "to call out",
    "options": [
-    "Friday evening",
-    "Monday morning",
-    "Sunday noon",
-    "Tuesday night"
+    "to call out",
+    "to whisper",
+    "to write",
+    "to think"
    ],
    "audioClip": {
     "storySlug": "einladung-ohne-namen",
     "storySource": "user",
-    "sentence": "Am Freitagabend hängen drei Zettel unter dem Aushang.",
-    "targetWord": "Freitagabend",
+    "sentence": "Sie ruft es laut durch die leere Küche.",
+    "targetWord": "ruft",
     "language": "german"
    }
   },

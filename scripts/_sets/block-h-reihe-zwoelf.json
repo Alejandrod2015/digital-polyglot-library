@@ -242,44 +242,44 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Regel",
-  "sentence": "Sie versteht die [[Regeln]] des Spiels kaum.",
+  "word": "rot",
+  "sentence": "Er trägt bei jedem Wetter eine [[rote]] Mütze.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a rule",
+   "answer": "red",
    "options": [
-    "a rule",
-    "a score",
-    "a player",
-    "a prize"
+    "red",
+    "thick",
+    "cheap",
+    "damp"
    ],
    "audioClip": {
     "storySlug": "block-h-reihe-zwoelf",
     "storySource": "user",
-    "sentence": "Sie versteht die Regeln des Spiels kaum.",
-    "targetWord": "Regeln",
+    "sentence": "Er trägt bei jedem Wetter eine rote Mütze.",
+    "targetWord": "rote",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "der Platz",
-  "sentence": "Der leere [[Platz]] neben ihr trägt ihren Namen.",
+  "word": "der Fuß",
+  "sentence": "In der Kälte friert sie an den [[Füßen]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a seat",
+   "answer": "a foot",
    "options": [
-    "a seat",
-    "a shop",
-    "a train",
-    "a room"
+    "a foot",
+    "a hand",
+    "an ear",
+    "a knee"
    ],
    "audioClip": {
     "storySlug": "block-h-reihe-zwoelf",
     "storySource": "user",
-    "sentence": "Der leere Platz neben ihr trägt ihren Namen.",
-    "targetWord": "Platz",
+    "sentence": "In der Kälte friert sie an den Füßen.",
+    "targetWord": "Füßen",
     "language": "german"
    }
   },

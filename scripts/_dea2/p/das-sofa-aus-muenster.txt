@@ -2,7 +2,7 @@ MATCH|das Seil=a rope|der Filzstift=a marker pen|das Schild=a sign|die Lehne=the
 M|klemmen|Das Sofa [[klemmt]] zwischen zwei Wänden.|to jam|to fall|to shine|to float
 M|stecken|Der Rahmen bleibt in der Tür [[stecken]].|to be stuck|to be broken|to be ready|to be open
 M|der Knick|Die Treppe macht hier einen scharfen [[Knick]].|a bend|a hole|a step|a door
-M|der Rahmen|Der [[Rahmen]] ist breiter als die Tür.|a frame|a mirror|a curtain|a carpet
+M|leicht|Mit einem Seil geht das ganz [[leicht]].|easily|slowly|rarely|loudly
 M|das Möbelstück|Das Bett war ihr erstes [[Möbelstück]].|a piece of furniture|a kind of plant|a sort of cloth|a type of tool
 F|breit|Das Sofa ist zu _____ für die schmale Tür.|The sofa is too _____ for the narrow door.|wide|teuer=expensive|weich=soft|hell=bright
 F|müde|Am Ende des Umzugs sind alle so _____, dass sie sofort schlafen.|At the end of the move everybody is so _____ that they sleep at once.|tired|hungrig=hungry|nervös=nervous|froh=glad

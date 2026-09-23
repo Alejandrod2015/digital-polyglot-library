@@ -52,22 +52,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Sekt",
-  "sentence": "Zum Anstoßen öffnet er den [[Sekt]].",
+  "word": "bringen",
+  "sentence": "Fast jeder [[bringt]] Brot und Salz mit.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "sparkling wine",
+   "answer": "to bring along",
    "options": [
-    "sparkling wine",
-    "dark beer",
-    "cold water",
-    "black coffee"
+    "to bring along",
+    "to hand back",
+    "to put away",
+    "to ask for"
    ],
    "audioClip": {
     "storySlug": "salz-brot-und-sekt",
     "storySource": "user",
-    "sentence": "Zum Anstoßen öffnet er den Sekt.",
-    "targetWord": "Sekt",
+    "sentence": "Fast jeder bringt Brot und Salz mit.",
+    "targetWord": "bringt",
     "language": "german"
    }
   }
@@ -310,22 +310,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Schluck",
-  "sentence": "Sie trinkt den letzten [[Schluck]] und stellt das Glas hin.",
+  "word": "trinken",
+  "sentence": "Sie [[trinkt]] den letzten Rest aus dem Glas.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a sip",
+   "answer": "to drink",
    "options": [
-    "a sip",
-    "a slice",
-    "a spoon",
-    "a straw"
+    "to drink",
+    "to pour",
+    "to wash",
+    "to break"
    ],
    "audioClip": {
     "storySlug": "salz-brot-und-sekt",
     "storySource": "user",
-    "sentence": "Sie trinkt den letzten Schluck und stellt das Glas hin.",
-    "targetWord": "Schluck",
+    "sentence": "Sie trinkt den letzten Rest aus dem Glas.",
+    "targetWord": "trinkt",
     "language": "german"
    }
   },
@@ -356,22 +356,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Müll",
-  "sentence": "Der [[Müll]] bleibt bis zum nächsten Morgen stehen.",
+  "word": "letzt",
+  "sentence": "Sie nimmt den [[letzten]] Schluck aus dem Glas.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "rubbish",
+   "answer": "last",
    "options": [
-    "rubbish",
-    "luggage",
-    "laundry",
-    "furniture"
+    "last",
+    "second",
+    "warm",
+    "small"
    ],
    "audioClip": {
     "storySlug": "salz-brot-und-sekt",
     "storySource": "user",
-    "sentence": "Der Müll bleibt bis zum nächsten Morgen stehen.",
-    "targetWord": "Müll",
+    "sentence": "Sie nimmt den letzten Schluck aus dem Glas.",
+    "targetWord": "letzten",
     "language": "german"
    }
   },
@@ -402,29 +402,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "Tisch",
-  "sentence": "Auf dem _____ stehen die Teller und die Gläser.",
+  "word": "wandert",
+  "sentence": "Am Tisch _____ der Korkenzieher von einem zum anderen.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "Tisch",
+   "answer": "wandert",
    "options": [
-    "Tisch",
-    "Schrank",
-    "Sessel",
-    "Teppich"
+    "wandert",
+    "klirrt",
+    "fehlt",
+    "bricht"
    ],
-   "translation": "On the _____ stand the plates and the glasses.",
+   "translation": "At the table the corkscrew _____ from one person to the next.",
    "optionTranslations": [
-    "table",
-    "cupboard",
-    "armchair",
-    "carpet"
+    "passes",
+    "clinks",
+    "is missing",
+    "breaks"
    ],
    "audioClip": {
     "storySlug": "salz-brot-und-sekt",
     "storySource": "user",
-    "sentence": "Auf dem Tisch stehen die Teller und die Gläser.",
-    "targetWord": "Tisch",
+    "sentence": "Am Tisch wandert der Korkenzieher von einem zum anderen.",
+    "targetWord": "wandert",
     "language": "german"
    }
   },

@@ -220,22 +220,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Wahrheit",
-  "sentence": "Sie sagt die [[Wahrheit]], aber viel zu schnell.",
+  "word": "lesen",
+  "sentence": "Er [[liest]] das Papier zweimal und schaut auf.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the truth",
+   "answer": "to read",
    "options": [
-    "the truth",
-    "the price",
-    "the address",
-    "the answer"
+    "to read",
+    "to fold",
+    "to stamp",
+    "to keep"
    ],
    "audioClip": {
     "storySlug": "ein-loch-im-lebenslauf",
     "storySource": "user",
-    "sentence": "Sie sagt die Wahrheit, aber viel zu schnell.",
-    "targetWord": "Wahrheit",
+    "sentence": "Er liest das Papier zweimal und schaut auf.",
+    "targetWord": "liest",
     "language": "german"
    }
   }

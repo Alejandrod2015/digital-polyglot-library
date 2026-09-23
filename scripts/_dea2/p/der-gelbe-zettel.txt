@@ -1,9 +1,9 @@
-MATCH|das Thermometer=a thermometer|das Wartezimmer=a waiting room|die Bäckerei=a bakery|der Krankenschein=a sick note
+MATCH|das Thermometer=a thermometer|das Wartezimmer=a waiting room|die Bettruhe=bed rest|der Krankenschein=a sick note
 M|die Probezeit|In der [[Probezeit]] ist die Stelle noch nicht sicher.|a trial period|a lunch break|a night shift|a bank holiday
 M|die Hausärztin|Die [[Hausärztin]] hat am Montag noch einen Termin frei.|a family doctor|a head teacher|a shop owner|a bus driver
 M|die Halsschmerzen|Seit Sonntag hat sie starke [[Halsschmerzen]].|a sore throat|a bad cough|a weak knee|a light cold
 M|das Fieber|Das [[Fieber]] kommt in der Nacht dazu.|a fever|a rash|a bruise|a cramp
-M|die Bettruhe|Die Ärztin verschreibt drei Tage [[Bettruhe]].|bed rest|hot tea|fresh air|light work
+M|frei|Am Montag hat die Ärztin noch einen Termin [[frei]].|free|late|short|full
 F|misst|Die Ärztin _____ noch einmal und schaut auf die Karte.|The doctor _____ again and looks at the card.|measures|kocht=cooks|zahlt=pays|kauft=buys
 F|flüstert|Ihre Stimme ist weg, also _____ sie nur noch.|Her voice is gone, so she only _____.|whispers|singt=sings|ruft=shouts|lacht=laughs
 M|der Schweiß|Das Bett ist nass vom [[Schweiß]].|sweat|rain|soap|snow

@@ -7,8 +7,8 @@ M|die Halbzeit|In der zweiten [[Halbzeit]] wird es sehr kalt.|a half|a break|a r
 F|pünktlich|Der Bus kommt nie zu spät, er ist immer _____.|The bus is never late, it is always _____.|on time|leer=empty|teuer=expensive|neu=new
 F|friert|Auf der kalten Tribüne sitzt sie im Wind und _____.|In the cold stand she sits in the wind and _____.|freezes|kocht=cooks|singt=sings|schläft=sleeps
 M|schimpfen|Er [[schimpft]] neunzig Minuten über den Schiedsrichter.|to grumble loudly|to speak softly|to wave politely|to listen quietly
-M|die Regel|Sie versteht die [[Regeln]] des Spiels kaum.|a rule|a score|a player|a prize
-M|der Platz|Der leere [[Platz]] neben ihr trägt ihren Namen.|a seat|a shop|a train|a room
+M|rot|Er trägt bei jedem Wetter eine [[rote]] Mütze.|red|thick|cheap|damp
+M|der Fuß|In der Kälte friert sie an den [[Füßen]].|a foot|a hand|an ear|a knee
 M|die Karte|Er legt eine [[Karte]] neben die Kasse.|a ticket|a coin|a plate|a glove
 M|der Fußball|Von [[Fußball]] versteht sie wirklich gar nichts.|football|farming|cooking|painting
 M|gelb|Jeden Freitag kauft er drei [[gelbe]] Tulpen.|yellow|fresh|cheap|tall

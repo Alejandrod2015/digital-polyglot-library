@@ -118,22 +118,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Stapel",
-  "sentence": "Unter dem Arm hält er einen [[Stapel]] Kartons.",
+  "word": "suchen",
+  "sentence": "Er [[sucht]] seinen Schlüssel in allen Taschen.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a pile",
+   "answer": "to look for",
    "options": [
-    "a pile",
-    "a pair",
-    "a row",
-    "a bunch"
+    "to look for",
+    "to lock up",
+    "to hand over",
+    "to throw away"
    ],
    "audioClip": {
     "storySlug": "ein-kasten-im-hausflur",
     "storySource": "user",
-    "sentence": "Unter dem Arm hält er einen Stapel Kartons.",
-    "targetWord": "Stapel",
+    "sentence": "Er sucht seinen Schlüssel in allen Taschen.",
+    "targetWord": "sucht",
     "language": "german"
    }
   }
@@ -264,22 +264,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Montagmorgen",
-  "sentence": "Am [[Montagmorgen]] steht der Wagen vor dem Haus.",
+  "word": "außerdem",
+  "sentence": "Er hält [[außerdem]] Kartons unter dem Arm.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "Monday morning",
+   "answer": "besides",
    "options": [
-    "Monday morning",
-    "Friday night",
-    "Sunday noon",
-    "Saturday dawn"
+    "besides",
+    "instead",
+    "perhaps",
+    "rarely"
    ],
    "audioClip": {
     "storySlug": "ein-kasten-im-hausflur",
     "storySource": "user",
-    "sentence": "Am Montagmorgen steht der Wagen vor dem Haus.",
-    "targetWord": "Montagmorgen",
+    "sentence": "Er hält außerdem Kartons unter dem Arm.",
+    "targetWord": "außerdem",
     "language": "german"
    }
   },
@@ -402,29 +402,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "Abend",
-  "sentence": "Morgens ist die Tür leer, aber am _____ steht dort eine Flasche.",
+  "word": "Wandfarbe",
+  "sentence": "Der Nachbar hat gestrichen, im Haus riecht es nach _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "Abend",
+   "answer": "Wandfarbe",
    "options": [
-    "Abend",
-    "Bahnhof",
-    "Fenster",
-    "Schrank"
+    "Wandfarbe",
+    "Seife",
+    "Kaffee",
+    "Regen"
    ],
-   "translation": "In the morning the door is bare, but in the _____ a bottle stands there.",
+   "translation": "The neighbour has painted, the house smells of _____.",
    "optionTranslations": [
-    "evening",
-    "station",
-    "window",
-    "cupboard"
+    "wall paint",
+    "soap",
+    "coffee",
+    "rain"
    ],
    "audioClip": {
     "storySlug": "ein-kasten-im-hausflur",
     "storySource": "user",
-    "sentence": "Morgens ist die Tür leer, aber am Abend steht dort eine Flasche.",
-    "targetWord": "Abend",
+    "sentence": "Der Nachbar hat gestrichen, im Haus riecht es nach Wandfarbe.",
+    "targetWord": "Wandfarbe",
     "language": "german"
    }
   },

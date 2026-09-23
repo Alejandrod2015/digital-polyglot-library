@@ -1,27 +1,27 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Flohmarkt,der Nebel,der Klappstuhl,der Geldschein",
+  "word": "der Wagen,die Platte,der Klappstuhl,der Geldschein",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Flohmarkt",
-     "answer": "a flea market",
+     "word": "der Wagen",
+     "answer": "a cart of goods",
      "options": [
-      "a flea market",
-      "fog",
+      "a cart of goods",
+      "a table top",
       "a folding chair",
       "a banknote"
      ]
     },
     {
-     "word": "der Nebel",
-     "answer": "fog",
+     "word": "die Platte",
+     "answer": "a table top",
      "options": [
-      "a flea market",
-      "fog",
+      "a cart of goods",
+      "a table top",
       "a folding chair",
       "a banknote"
      ]
@@ -30,8 +30,8 @@
      "word": "der Klappstuhl",
      "answer": "a folding chair",
      "options": [
-      "a flea market",
-      "fog",
+      "a cart of goods",
+      "a table top",
       "a folding chair",
       "a banknote"
      ]
@@ -40,8 +40,8 @@
      "word": "der Geldschein",
      "answer": "a banknote",
      "options": [
-      "a flea market",
-      "fog",
+      "a cart of goods",
+      "a table top",
       "a folding chair",
       "a banknote"
      ]
@@ -96,22 +96,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Platte",
-  "sentence": "Die [[Platte]] des Tisches ist aus dunklem Holz.",
+  "word": "brauchen",
+  "sentence": "Für die leere Küche [[braucht]] sie einen Tisch.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the table top",
+   "answer": "to need",
    "options": [
-    "the table top",
-    "the front door",
-    "the back wall",
-    "the small key"
+    "to need",
+    "to paint",
+    "to rent",
+    "to sell"
    ],
    "audioClip": {
     "storySlug": "achtzig-fuer-drei-beine",
     "storySource": "user",
-    "sentence": "Die Platte des Tisches ist aus dunklem Holz.",
-    "targetWord": "Platte",
+    "sentence": "Für die leere Küche braucht sie einen Tisch.",
+    "targetWord": "braucht",
     "language": "german"
    }
   }

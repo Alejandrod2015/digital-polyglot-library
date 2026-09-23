@@ -2,10 +2,10 @@ MATCH|die Schachtel=a box|der Pappteller=a paper plate|die Tonne=a bin|die Wasch
 M|der Gefallen|Sie hat gerade einen [[Gefallen]] angenommen.|a favour|a warning|a mistake|a present
 M|schulden|Ich [[schulde]] dir noch zwei Kaffee.|to owe|to bring|to drink|to order
 M|die Hausordnung|In der [[Hausordnung]] steht alles über den Müll.|the house rules|the phone book|the price list|the train plan
-M|der Keller|Jede Wohnung hat unten einen [[Keller]].|a cellar|a garden|a garage|a balcony
+M|der Umzug|Für den [[Umzug]] rechnet hier niemand in Euro ab.|a move|a party|a repair|a delivery
 M|üblich|Geld für einen Umzug ist hier nicht [[üblich]].|usual|possible|enough|cheap
 F|peinlich|Sie dankt zu laut und findet das danach _____.|She thanks him too loudly and finds it _____ afterwards.|embarrassing|teuer=expensive|nützlich=useful|dringend=urgent
-F|flache|Pizza passt nur in breite und _____ Schachteln, nicht in hohe.|Pizza only fits in wide and _____ boxes, not in tall ones.|flat|kalte=cold|neue=new|blaue=blue
+F|flachen|Pizza passt nur in die _____ Schachteln, nicht in hohe.|Pizza only fits in the _____ boxes, not in tall ones.|flat|kalten=cold|neuen=new|blauen=blue
 M|umdrehen|Sie sitzen auf [[umgedrehten]] Kartons.|turned over|neatly stacked|carefully closed|badly painted
 M|einzig|Im ganzen Zimmer steht kein [[einziger]] Stuhl.|single|comfortable|expensive|free
 M|die Pizza|Der Käse klebt noch am Deckel der [[Pizza]].|pizza|bread|soup|cake

@@ -6,8 +6,8 @@ M|merken|Sie [[merkt]] sofort, dass etwas fehlt.|to notice|to forget|to explain|
 M|schaffen|Diesmal [[schaffe]] ich das ganz allein.|to manage|to try|to learn|to explain
 F|dünn|Die Wände sind so _____, dass man alles hört.|The walls are so _____ that you hear everything.|thin|alt=old|hell=bright|neu=new
 F|zittern|Sie ist so nervös, dass ihre Hände _____.|She is so nervous that her hands _____.|shake|frieren=are cold|brennen=burn|jucken=itch
-M|das Brett|Am schwarzen [[Brett]] hängen viele kleine Zettel.|a board|a window|a door|a shelf
-M|der Satz|Diesen [[Satz]] hat sie schon einmal gesagt.|a sentence|a promise|a question|a story
+M|murmeln|Sie [[murmelt]] etwas und liest den Zettel weiter.|to mutter|to shout|to sing|to sigh
+M|diesmal|[[Diesmal]] macht sie alles ohne Hilfe.|this time|last year|by chance|at once
 M|brummen|Die alten Maschinen [[brummen]] den ganzen Tag.|to hum|to shine|to smell|to drip
 M|der Streifen|Sie reißt den letzten [[Streifen]] vom Zettel ab.|a paper strip|a small coin|a thin nail|a blue stamp
 M|das Viereck|An der Wand bleibt ein helles [[Viereck]].|a square|a circle|a line|a hole

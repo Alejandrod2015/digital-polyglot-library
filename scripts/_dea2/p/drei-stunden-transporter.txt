@@ -1,4 +1,4 @@
-MATCH|der Transporter=a hired van|der Deckel=a lid|das Klebeband=sticky tape|der Nachbar=a neighbour
+MATCH|der Transporter=a hired van|das Erdgeschoss=the ground floor|das Klebeband=sticky tape|der Nachbar=a neighbour
 M|heben|Er [[hebt]] die schwere Kiste vom Boden.|to lift|to push|to drop|to open
 M|tragen|Sie [[trägt]] den Schrank durch den Flur.|to carry|to paint|to sell|to measure
 M|zögern|Sie [[zögert]] kurz und sagt dann ja.|to hesitate|to shout|to smile|to leave

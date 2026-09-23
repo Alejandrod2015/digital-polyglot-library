@@ -6,7 +6,7 @@ M|der Lohn|Der [[Lohn]] ist niedriger als früher.|the pay|the noise|the risk|th
 M|der Inhaber|Der [[Inhaber]] entscheidet selbst über neue Leute.|the owner|the cleaner|the customer|the courier
 F|weit|Das Geld liegt _____ unter dem alten Gehalt.|The money is _____ below the old salary.|far|kurz=briefly|gern=gladly|spät=late
 F|aufgeregt|Ihre Stimme wird hoch und klingt sehr _____.|Her voice goes high and sounds very _____.|excited|müde=tired|streng=stern|leise=quiet
-M|die Wahrheit|Sie sagt die [[Wahrheit]], aber viel zu schnell.|the truth|the price|the address|the answer
+M|lesen|Er [[liest]] das Papier zweimal und schaut auf.|to read|to fold|to stamp|to keep
 M|das Postfach|Die Briefe liegen in fremden [[Postfächern]].|an inbox|a cupboard|a suitcase|a drawer
 M|die Erde|Der Laden riecht nach [[Erde]] und kaltem Kaffee.|soil|smoke|bread|rain
 M|weiß|Er schneidet die Stiele von drei [[weißen]] Rosen.|white|round|cheap|dry

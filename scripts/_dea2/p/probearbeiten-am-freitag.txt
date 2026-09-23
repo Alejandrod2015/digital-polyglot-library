@@ -9,7 +9,7 @@ F|dunkel|Um sieben macht noch niemand das Licht an, der Laden ist _____.|At seve
 M|die Wut|Sie schluckt die [[Wut]] und arbeitet weiter.|anger|hunger|worry|doubt
 M|greifen|Sie [[greift]] wieder zum Eimer mit Wasser.|to grab|to point|to knock|to step
 M|der Daumen|Er hebt am Telefon nur den [[Daumen]].|the thumb|the elbow|the shoulder|the knee
-M|der Boden|Zuerst der [[Boden]], dann die Eimer.|the floor|the shelf|the window|the roof
+M|blau|Er gibt ihr einen [[blauen]] Kittel für die Arbeit.|blue|clean|warm|wide
 M|der Vormittag|Am [[Vormittag]] kommen die meisten Kunden.|the morning hours|the lunch break|the late night|the long weekend
 M|fertig|Nach zwei Minuten ist der Strauß [[fertig]].|finished|crooked|expensive|heavy
 M|vorne|[[Vorne]] am Eingang ist der Boden noch nass.|at the front|on the roof|in the cellar|past the corner
