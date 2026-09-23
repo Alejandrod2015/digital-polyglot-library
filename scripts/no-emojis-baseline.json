@@ -12,7 +12,7 @@
   "src/app/settings/page.tsx": 2,
   "src/app/studio/audio-editor/AudioEditorClient.tsx": 8,
   "src/app/studio/beta/BetaProgramClient.tsx": 1,
-  "src/app/studio/metrics/page.tsx": 15,
+  "src/app/studio/metrics/page.tsx": 13,
   "src/app/studio/notificaciones/NotificacionesClient.tsx": 1,
   "src/app/studio/planning/PlanningClient.tsx": 5,
   "src/app/studio/practice-sets/page.tsx": 1,
