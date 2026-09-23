@@ -27,6 +27,7 @@ import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
 import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
 import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
 import { VOZ_POR_TEMA_ES_A0_CULTURAL } from "./_esA0CulturalVoces";
+import { VOZ_POR_TEMA_ES_MX_A0 } from "./_esMxA0Voces";
 
 export type Perfil = {
   journey: string;
@@ -57,6 +58,7 @@ export const PERFILES: Record<string, Perfil> = {
   "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
   "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
   "es-a0-cultural": { journey: "cmu410zep000732szrw94t2sl", voces: VOZ_POR_TEMA_ES_A0_CULTURAL, bundle: "spanish-cultural-latam-a0", language: "spanish" },
+  "mx-a0": { journey: "cmud5qhu00006j81cmkl4u5ks", voces: VOZ_POR_TEMA_ES_MX_A0, bundle: "spanish-friends-mexico-a0", language: "spanish" },
 };
 
 export function perfilDeArgs(argv: string[]): Perfil {
