@@ -12350,8 +12350,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#cash-and-errands": {
-    "cerrado": "2026-09-23T21:52:23.012Z",
-    "hash": "ddecf41c7790899c",
+    "cerrado": "2026-09-23T21:55:04.426Z",
+    "hash": "ed6cebe690166123",
     "historias": [
       "cash-and-errands#0 el-platito-gira",
       "cash-and-errands#1 tres-papeles-mandan",
@@ -12415,7 +12415,7 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 55% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 53% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#coffee-and-bread": {
@@ -12626,8 +12626,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#phones-and-messages": {
-    "cerrado": "2026-09-23T21:52:16.730Z",
-    "hash": "d118d00a70076b2b",
+    "cerrado": "2026-09-23T21:54:57.367Z",
+    "hash": "0b4905e3761f329f",
     "historias": [
       "phones-and-messages#0 mesa-no-misa",
       "phones-and-messages#1 la-nota-con-campana",
@@ -12639,7 +12639,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 35%)",
-      "arranques de parrafo variados (mas repetido \"andrés\", 17%)",
+      "arranques de parrafo variados (mas repetido \"el\", 17%)",
       "densidad 5.7 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
@@ -12653,7 +12653,7 @@
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: phones-and-messages (Andrés, Mariana)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12691,12 +12691,12 @@
     },
     "avisos": [
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
-      "seguidilla: 62% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+      "seguidilla: 61% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#work-and-favors": {
-    "cerrado": "2026-09-23T21:52:10.498Z",
-    "hash": "75a1b5b8188ee026",
+    "cerrado": "2026-09-23T21:54:50.845Z",
+    "hash": "00b0d596b598b86a",
     "historias": [
       "work-and-favors#0 el-encargo-tapado",
       "work-and-favors#1 amiga-paga-poco",
@@ -12708,7 +12708,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"cuenta\" 18%)",
-      "arranques de parrafo variados (mas repetido \"el\", 28%)",
+      "arranques de parrafo variados (mas repetido \"el\", 33%)",
       "densidad 5.8 palabras por oracion (techo 9 en a0)",
       "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
@@ -12718,7 +12718,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.35 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 46/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.33 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 47/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
