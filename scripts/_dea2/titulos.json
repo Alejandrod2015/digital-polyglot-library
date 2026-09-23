@@ -1,0 +1,808 @@
+[
+ {
+  "topic": "second-hand-and-bargains",
+  "slotIndex": 2,
+  "slug": "zwei-stuehle-ein-teller",
+  "title": "Die Lampe vom Sperrmüll",
+  "synopsis": "By Friday the flat is full and nothing matches: the table wobbles, the chairs squeak, the cupboard has a dent. Malte laughs and says it looks like a flea market. Britta names where every piece came from, and hears herself finish the list without a single apology.",
+  "text": "Ihre Wohnung ist am Freitagabend endlich voll, aber nichts passt zusammen. Der Holztisch wackelt, die Klappstühle quietschen, und der Schrank hat eine tiefe Delle. Trotzdem riecht die Wohnung nach Suppe, und die Lampe wirft einen warmen Kreis auf den Boden.\n\nMalte kommt mit einer Flasche Rotwein und geht langsam durch die zwei Zimmer. “Kein Stück passt hier zum anderen, ehrlich gesagt sieht das aus wie ein Flohmarkt”, lacht er. Britta stellt zwei verschiedene Teller hin und grinst einfach mit.\n\nFrüher hat sie sich für jedes alte Ding entschuldigt. Heute erklärt sie jedes Stück: das Bett von Kerstin, den Tisch mit der Pappe, die Lampe vom Sperrmüll. Kein einziges davon kommt aus Münster.\n\n“Das grüne Sofa aus Münster fehlt dir kein bisschen, oder?”, fragt Malte vorsichtig. Britta überlegt einen Moment und schüttelt dann den Kopf. “Schön ist die Wohnung nicht, aber zum ersten Mal gehört jedes Ding darin mir”, antwortet sie ohne Neid.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "voll",
+    "surface": "voll",
+    "definition": "Full; with nothing missing and no empty corner left."
+   },
+   {
+    "type": "verb",
+    "word": "quietschen",
+    "surface": "quietschen",
+    "definition": "To squeak; to make a high thin noise when something moves."
+   },
+   {
+    "type": "noun",
+    "word": "die Delle",
+    "surface": "Delle",
+    "definition": "A dent; a small hollow where something hard hit the surface."
+   },
+   {
+    "type": "verb",
+    "word": "werfen",
+    "surface": "wirft",
+    "definition": "To throw; here a lamp throws a circle of light on the floor."
+   },
+   {
+    "type": "adjective",
+    "word": "warm",
+    "surface": "warmen",
+    "definition": "Warm; pleasantly hot, the way a lamp or a kitchen feels."
+   },
+   {
+    "type": "noun",
+    "word": "die Flasche",
+    "surface": "Flasche",
+    "definition": "A bottle; the tall glass container that wine comes in."
+   },
+   {
+    "type": "adjective",
+    "word": "ehrlich",
+    "surface": "ehrlich",
+    "definition": "Honest; saying the true thing even when it sounds rude."
+   },
+   {
+    "type": "adjective",
+    "word": "verschieden",
+    "surface": "verschiedene",
+    "definition": "Different; not the same as each other in colour or shape."
+   },
+   {
+    "type": "adverb",
+    "word": "einfach",
+    "surface": "einfach",
+    "definition": "Simply; without making a problem out of it at all."
+   },
+   {
+    "type": "verb",
+    "word": "grinsen",
+    "surface": "grinst",
+    "definition": "To grin; to smile widely, often when something is a bit funny."
+   },
+   {
+    "type": "adverb",
+    "word": "früher",
+    "surface": "Früher",
+    "definition": "Before; at an earlier time in your life, not any more."
+   },
+   {
+    "type": "verb",
+    "word": "entschuldigen",
+    "surface": "entschuldigt",
+    "definition": "To apologise; to say sorry for something you think is wrong."
+   },
+   {
+    "type": "verb",
+    "word": "erklären",
+    "surface": "erklärt",
+    "definition": "To explain; to tell somebody where a thing comes from."
+   },
+   {
+    "type": "noun",
+    "word": "der Sperrmüll",
+    "anchor": true,
+    "surface": "Sperrmüll",
+    "definition": "Bulky waste; the big things Germans leave on the street for free."
+   },
+   {
+    "type": "noun",
+    "word": "das Ding",
+    "surface": "Ding",
+    "definition": "A thing; any object when you do not name it exactly."
+   },
+   {
+    "type": "adverb",
+    "word": "vorsichtig",
+    "surface": "vorsichtig",
+    "definition": "Carefully; asking softly so the question does not hurt."
+   },
+   {
+    "type": "verb",
+    "word": "überlegen",
+    "surface": "überlegt",
+    "definition": "To think about it; to take a moment before you answer."
+   },
+   {
+    "type": "adjective",
+    "word": "schön",
+    "surface": "Schön",
+    "definition": "Beautiful; nice to look at, which this flat is not."
+   },
+   {
+    "type": "noun",
+    "word": "der Neid",
+    "surface": "Neid",
+    "definition": "Envy; the sour feeling when somebody else has more."
+   },
+   {
+    "type": "noun",
+    "word": "der Moment",
+    "surface": "Moment",
+    "definition": "A moment; a very short piece of time, a few seconds."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 1,
+  "slug": "ein-schal-zwei-lieder",
+  "title": "Zwei Strophen im Stadion",
+  "synopsis": "For the third home game Torben brings a second scarf and a folded sheet of paper with two songs on it. Britta sings the wrong words in front of thirty thousand people and nobody minds. At half time she buys the sausages, and for once she pays before anybody asks.",
+  "text": "Ein zweiter Schal liegt beim dritten Heimspiel in Torbens Tasche. Daneben steckt ein gefaltetes Blatt mit zwei Strophen darauf. “Den Text lernt hier jeder auswendig, spätestens nach dem vierten Spiel”, sagt er.\n\nBritta singt in der ersten Strophe fast jedes Wort falsch. “Ich klinge wie eine Krähe, und das hört man bestimmt bis ganz nach unten”, ruft sie. Dreißigtausend Leute brüllen weiter, und kein Einziger dreht sich um.\n\nTorben lacht und drückt ihr den Schal fester in die Hand. Zur Halbzeit geht Britta zum Wurststand und kauft zwei Bratwürste mit Senf. Sie zahlt beide, bevor Torben überhaupt nach seinem Geld sucht.\n\n“Nächstes Mal bin ich dran, so läuft das hier bei uns beiden”, sagt er nur. In der zweiten Strophe singt sie schon die Hälfte richtig mit. Beim Abpfiff ist ihre Kehle warm, und der fremde Schal riecht nach Zuhause.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Heimspiel",
+    "anchor": true,
+    "surface": "Heimspiel",
+    "definition": "A home game; a match your team plays in its own city."
+   },
+   {
+    "type": "noun",
+    "word": "der Schal",
+    "surface": "Schal",
+    "definition": "A scarf; the long piece of cloth fans wear round the neck."
+   },
+   {
+    "type": "verb",
+    "word": "falten",
+    "surface": "gefaltetes",
+    "definition": "To fold; to bend paper over itself so it becomes smaller."
+   },
+   {
+    "type": "verb",
+    "word": "lernen",
+    "surface": "lernt",
+    "definition": "To learn; to put something into your head so it stays."
+   },
+   {
+    "type": "noun",
+    "word": "der Text",
+    "surface": "Text",
+    "definition": "The words; everything a song says, without the music."
+   },
+   {
+    "type": "adverb",
+    "word": "auswendig",
+    "surface": "auswendig",
+    "definition": "By heart; so well that you need no paper to say it."
+   },
+   {
+    "type": "verb",
+    "word": "singen",
+    "surface": "singt",
+    "definition": "To sing; to make music with your voice and a song."
+   },
+   {
+    "type": "adjective",
+    "word": "falsch",
+    "surface": "falsch",
+    "definition": "Wrong; not the word or the note that should come there."
+   },
+   {
+    "type": "noun",
+    "word": "die Krähe",
+    "surface": "Krähe",
+    "definition": "A crow; the big black bird with a rough, ugly call."
+   },
+   {
+    "type": "adverb",
+    "word": "bestimmt",
+    "surface": "bestimmt",
+    "definition": "Surely; you are quite sure that this is the case."
+   },
+   {
+    "type": "verb",
+    "word": "brüllen",
+    "surface": "brüllen",
+    "definition": "To roar; to shout as loudly as a whole crowd can."
+   },
+   {
+    "type": "verb",
+    "word": "drücken",
+    "surface": "drückt",
+    "definition": "To press; to push a thing firmly into somebody's hand."
+   },
+   {
+    "type": "adjective",
+    "word": "fest",
+    "surface": "fester",
+    "definition": "Tight; held so firmly that it will not slip away."
+   },
+   {
+    "type": "noun",
+    "word": "der Wurststand",
+    "surface": "Wurststand",
+    "definition": "A sausage stall; the little booth that sells hot sausages."
+   },
+   {
+    "type": "noun",
+    "word": "die Bratwurst",
+    "anchor": true,
+    "surface": "Bratwürste",
+    "definition": "A fried sausage; the German snack sold at every match."
+   },
+   {
+    "type": "noun",
+    "word": "der Senf",
+    "surface": "Senf",
+    "definition": "Mustard; the sharp yellow sauce Germans put on sausages."
+   },
+   {
+    "type": "verb",
+    "word": "laufen",
+    "surface": "läuft",
+    "definition": "To go; here the way a thing is normally done here."
+   },
+   {
+    "type": "adjective",
+    "word": "richtig",
+    "surface": "richtig",
+    "definition": "Right; exactly as it should be and not wrong any more."
+   },
+   {
+    "type": "noun",
+    "word": "der Abpfiff",
+    "anchor": true,
+    "surface": "Abpfiff",
+    "definition": "The final whistle; the moment when the match is over."
+   },
+   {
+    "type": "noun",
+    "word": "die Kehle",
+    "surface": "Kehle",
+    "definition": "The throat; the inside of your neck, where the voice comes from."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "housewarming-and-toasts",
+  "slotIndex": 2,
+  "slug": "salz-brot-und-sekt",
+  "title": "Brot und Salz für die Neue",
+  "synopsis": "On Saturday the flat holds nineteen people and every one of them brings bread and salt. The table with the cardboard under its leg stands through the whole evening. Britta lifts a glass and says four sentences, and this time her voice does not shake at all.",
+  "text": "Neunzehn Leute passen am Samstag in zwei kleine Zimmer. Fast jeder bringt Brot und Salz mit, und die Wohnung riecht nach Hefe. Auf dem Tisch stehen Schüsseln mit Aufstrich, Gurken und ein Stapel Servietten.\n\nDer Korkenzieher wandert von Hand zu Hand, und die Gläser klirren im Zimmer. “Den Sekt aus dem Kasten schulde ich dir noch seit Montag”, lacht Hendrik. Der Tisch mit der Pappe wackelt nicht, obwohl alle gleichzeitig anstoßen wollen.\n\nBritta klopft mit einem Messer an ihr Glas, bis alle auf sie achten. Der Krach wird leiser, und neunzehn Gesichter drehen sich zu ihr. “Ich kenne die halben Namen noch nicht, aber das reicht mir, danke euch allen”, beginnt sie.\n\n“Ihr wisst schon, wer mir Suppe vor die Tür stellt und wer nicht”, sagt sie weiter. Später tanzt jemand in der Küche zwischen schmutzigen Tellern. Britta trinkt den letzten Schluck, räumt den Müll nicht auf und geht spät ins Bett.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Salz",
+    "surface": "Salz",
+    "definition": "Salt; the white grains Germans bring to a new home."
+   },
+   {
+    "type": "verb",
+    "word": "bringen",
+    "surface": "bringt",
+    "definition": "To bring; to carry something with you when you visit."
+   },
+   {
+    "type": "noun",
+    "word": "die Schüssel",
+    "surface": "Schüsseln",
+    "definition": "A bowl; the deep round dish you serve salad or dip in."
+   },
+   {
+    "type": "noun",
+    "word": "der Aufstrich",
+    "surface": "Aufstrich",
+    "definition": "A spread; the soft paste you put on a slice of bread."
+   },
+   {
+    "type": "noun",
+    "word": "die Gurke",
+    "surface": "Gurken",
+    "definition": "A cucumber; the long green vegetable cut into thin slices."
+   },
+   {
+    "type": "noun",
+    "word": "die Serviette",
+    "surface": "Servietten",
+    "definition": "A napkin; the small paper square you wipe your hands on."
+   },
+   {
+    "type": "noun",
+    "word": "der Korkenzieher",
+    "surface": "Korkenzieher",
+    "definition": "A corkscrew; the tool that pulls a cork out of a bottle."
+   },
+   {
+    "type": "verb",
+    "word": "klirren",
+    "surface": "klirren",
+    "definition": "To clink; the bright noise glasses make when they touch."
+   },
+   {
+    "type": "verb",
+    "word": "wandern",
+    "surface": "wandert",
+    "definition": "To wander; to pass slowly from one hand to the next."
+   },
+   {
+    "type": "verb",
+    "word": "anstoßen",
+    "surface": "anstoßen",
+    "definition": "To toast; to touch glasses before everybody drinks together."
+   },
+   {
+    "type": "verb",
+    "word": "achten",
+    "surface": "achten",
+    "definition": "To pay attention; to stop and listen to one person."
+   },
+   {
+    "type": "noun",
+    "word": "der Krach",
+    "surface": "Krach",
+    "definition": "Racket; a lot of loud noise made by many people at once."
+   },
+   {
+    "type": "verb",
+    "word": "reichen",
+    "surface": "reicht",
+    "definition": "To be enough; to be all that somebody needs or wants."
+   },
+   {
+    "type": "noun",
+    "word": "danke",
+    "surface": "danke",
+    "definition": "Thank you; the word you say when somebody has helped you."
+   },
+   {
+    "type": "verb",
+    "word": "tanzen",
+    "surface": "tanzt",
+    "definition": "To dance; to move to music, here in a small kitchen."
+   },
+   {
+    "type": "adjective",
+    "word": "schmutzig",
+    "surface": "schmutzigen",
+    "definition": "Dirty; used for eating and not washed up yet."
+   },
+   {
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkt",
+    "definition": "To drink; to take water, wine or tea into your mouth."
+   },
+   {
+    "type": "verb",
+    "word": "aufräumen",
+    "surface": "räumt",
+    "definition": "To tidy up; to put everything back where it belongs."
+   },
+   {
+    "type": "adjective",
+    "word": "letzt",
+    "surface": "letzten",
+    "definition": "Last; the one at the end, with nothing after it."
+   },
+   {
+    "type": "adverb",
+    "word": "spät",
+    "surface": "spät",
+    "definition": "Late; long after the hour when people usually go to bed."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 2,
+  "slug": "elf-minuten-nachspielzeit",
+  "title": "Heiser nach dem Derby",
+  "synopsis": "The derby is a cold Sunday in November and the whole stand is standing from the first minute. In the eleven minutes of stoppage time the visitors score, and Britta screams louder than anybody around her. On the way home she cannot finish a sentence, and Torben looks at her sideways.",
+  "text": "Das Derby gegen den Gegner aus der Nachbarstadt fällt auf einen kalten Sonntag. Ab dem Anpfiff steht die ganze Tribüne, und niemand setzt sich wieder hin. Britta kennt jetzt beide Lieder und braucht kein Papier mehr dafür.\n\nNach einer Stunde pfeift der Schiedsrichter einen Elfmeter gegen Hannover. “Das war nie im Leben ein Foul, der Mann braucht eine Brille”, brüllt Torben. In der Nachspielzeit steht das ganze Stadion und hofft noch einmal.\n\nDann fällt das zweite Tor, und der Lärm bricht sofort ab. Elf Minuten ziehen sich länger als die erste Stunde vorher. “Noch ein Tor, nur noch ein einziges, dann reden wir hier wieder”, schreit Britta.\n\nSie merkt dabei nicht, wie ihr Hals langsam zu brennen anfängt. Auf dem Heimweg ist ihre Stimme nur noch ein heiseres Flüstern. “Du klingst wie ein altes Radio, das seit Jahren im Keller steht”, sagt Torben.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Derby",
+    "anchor": true,
+    "surface": "Derby",
+    "definition": "A derby; the match against the team from the next city."
+   },
+   {
+    "type": "noun",
+    "word": "der Gegner",
+    "surface": "Gegner",
+    "definition": "The opponent; the other team you are playing against."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachbarstadt",
+    "surface": "Nachbarstadt",
+    "definition": "The neighbouring town; the city right next to your own."
+   },
+   {
+    "type": "noun",
+    "word": "der Anpfiff",
+    "anchor": true,
+    "surface": "Anpfiff",
+    "definition": "The kick off; the whistle that starts a football match."
+   },
+   {
+    "type": "verb",
+    "word": "kennen",
+    "surface": "kennt",
+    "definition": "To know; to have met a thing often enough to recognise it."
+   },
+   {
+    "type": "verb",
+    "word": "pfeifen",
+    "surface": "pfeift",
+    "definition": "To whistle; to blow so a sharp sound stops the game."
+   },
+   {
+    "type": "noun",
+    "word": "der Schiedsrichter",
+    "anchor": true,
+    "surface": "Schiedsrichter",
+    "definition": "The referee; the man who decides what counts in a match."
+   },
+   {
+    "type": "noun",
+    "word": "der Elfmeter",
+    "anchor": true,
+    "surface": "Elfmeter",
+    "definition": "A penalty; the free shot given for a foul near the goal."
+   },
+   {
+    "type": "noun",
+    "word": "das Foul",
+    "surface": "Foul",
+    "definition": "A foul; a move against the rules that the referee punishes."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachspielzeit",
+    "anchor": true,
+    "surface": "Nachspielzeit",
+    "definition": "Stoppage time; the extra minutes added at the end of a match."
+   },
+   {
+    "type": "noun",
+    "word": "das Tor",
+    "surface": "Tor",
+    "definition": "A goal; the moment the ball goes in and the score changes."
+   },
+   {
+    "type": "adjective",
+    "word": "zweite",
+    "surface": "zweite",
+    "definition": "Second; the one that comes after the first one."
+   },
+   {
+    "type": "noun",
+    "word": "der Lärm",
+    "surface": "Lärm",
+    "definition": "Noise; loud sound made by a lot of people at once."
+   },
+   {
+    "type": "verb",
+    "word": "brechen",
+    "surface": "bricht",
+    "definition": "To break off; to stop suddenly, the way noise stops at once."
+   },
+   {
+    "type": "verb",
+    "word": "schreien",
+    "surface": "schreit",
+    "definition": "To scream; to use your whole voice as loudly as possible."
+   },
+   {
+    "type": "adjective",
+    "word": "alt",
+    "surface": "altes",
+    "definition": "Old; here something kept for many years and out of date."
+   },
+   {
+    "type": "verb",
+    "word": "brennen",
+    "surface": "brennen",
+    "definition": "To burn; here the hot sore feeling inside a used throat."
+   },
+   {
+    "type": "noun",
+    "word": "der Heimweg",
+    "surface": "Heimweg",
+    "definition": "The way home; the trip back after an evening out."
+   },
+   {
+    "type": "adjective",
+    "word": "heiser",
+    "surface": "heiseres",
+    "definition": "Hoarse; with a rough voice after shouting for a long time."
+   },
+   {
+    "type": "noun",
+    "word": "das Radio",
+    "surface": "Radio",
+    "definition": "A radio; the box that plays music and news out loud."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "sports-and-match-days",
+  "slotIndex": 0,
+  "slug": "block-h-reihe-zwoelf",
+  "title": "Ein Platz mit ihrem Namen",
+  "synopsis": "Every Friday the same customer buys three yellow tulips and says two sentences about the weather. In October he leaves a season ticket next to the till, because his wife has stopped coming. Britta knows nothing about football, freezes through a bad game, and notices something else entirely.",
+  "text": "Drei gelbe Tulpen kauft derselbe Mann jeden Freitag im Laden. Torben, ein Stammkunde mit roter Mütze, kommt bei jedem Wetter vorbei. An einem Freitag im Oktober legt er eine Karte neben die Kasse.\n\n“Meine Frau kommt nicht mehr mit, und die zweite Dauerkarte verfällt sonst einfach im Oktober”, erklärt er. “Ich verstehe von Fußball wirklich gar nichts, das muss ich dir ganz ehrlich sagen”, antwortet Britta. Trotzdem steht sie am Samstag pünktlich um halb vier vor dem Stadion.\n\nBlock H, Reihe zwölf, und neben ihr wartet ein leerer Klappsitz. Das Spiel ist schlecht, der Rasen nass, und auf der Tribüne ist es kalt. Torben schimpft neunzig Minuten, und Britta versteht die Regeln kaum.\n\nIn der zweiten Halbzeit friert sie an den Füßen und merkt etwas anderes. Nicht das Spiel hält sie dort, sondern der leere Platz mit ihrem Namen. “Nächsten Samstag wieder, gleicher Block, gleiche Reihe, gleiche Zeit?”, fragt Torben.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Tulpe",
+    "surface": "Tulpen",
+    "definition": "A tulip; the smooth spring flower with a cup shaped head."
+   },
+   {
+    "type": "adjective",
+    "word": "gelb",
+    "surface": "gelbe",
+    "definition": "Yellow; the colour of butter and of ripe lemons."
+   },
+   {
+    "type": "noun",
+    "word": "der Stammkunde",
+    "anchor": true,
+    "surface": "Stammkunde",
+    "definition": "A regular; the customer who comes back every single week."
+   },
+   {
+    "type": "noun",
+    "word": "die Mütze",
+    "surface": "Mütze",
+    "definition": "A cap; the soft warm hat you pull over your head."
+   },
+   {
+    "type": "noun",
+    "word": "die Karte",
+    "surface": "Karte",
+    "definition": "A ticket; the card that lets you into a match or a train."
+   },
+   {
+    "type": "noun",
+    "word": "die Dauerkarte",
+    "anchor": true,
+    "surface": "Dauerkarte",
+    "definition": "A season ticket; one card for every home game of the year."
+   },
+   {
+    "type": "noun",
+    "word": "der Fußball",
+    "anchor": true,
+    "surface": "Fußball",
+    "definition": "Football; the game two teams of eleven play with one ball."
+   },
+   {
+    "type": "noun",
+    "word": "das Stadion",
+    "anchor": true,
+    "surface": "Stadion",
+    "definition": "A stadium; the big open ground where a city watches football."
+   },
+   {
+    "type": "adverb",
+    "word": "sonst",
+    "surface": "sonst",
+    "definition": "Otherwise; what will happen if nobody does anything about it."
+   },
+   {
+    "type": "adjective",
+    "word": "pünktlich",
+    "surface": "pünktlich",
+    "definition": "On time; arriving at exactly the hour that was agreed."
+   },
+   {
+    "type": "noun",
+    "word": "der Block",
+    "anchor": true,
+    "surface": "Block",
+    "definition": "A stand; one lettered part of the seats inside a stadium."
+   },
+   {
+    "type": "noun",
+    "word": "der Klappsitz",
+    "surface": "Klappsitz",
+    "definition": "A tip up seat; a seat that folds away when nobody sits there."
+   },
+   {
+    "type": "noun",
+    "word": "der Rasen",
+    "surface": "Rasen",
+    "definition": "The pitch; the short cut grass that the game is played on."
+   },
+   {
+    "type": "verb",
+    "word": "schimpfen",
+    "surface": "schimpft",
+    "definition": "To grumble loudly; to complain out loud about everything you see."
+   },
+   {
+    "type": "adjective",
+    "word": "rot",
+    "surface": "roter",
+    "definition": "Red; the colour of blood and of a warm winter cap."
+   },
+   {
+    "type": "noun",
+    "word": "die Halbzeit",
+    "anchor": true,
+    "surface": "Halbzeit",
+    "definition": "A half; one of the two parts a football match is split into."
+   },
+   {
+    "type": "verb",
+    "word": "frieren",
+    "surface": "friert",
+    "definition": "To be cold; to feel the cold so much that it hurts."
+   },
+   {
+    "type": "noun",
+    "word": "der Fuß",
+    "surface": "Füßen",
+    "definition": "A foot; the part of your body inside your shoe."
+   },
+   {
+    "type": "adjective",
+    "word": "gleich",
+    "surface": "gleicher",
+    "definition": "The same; not another one, but exactly this one again."
+   },
+   {
+    "type": "adjective",
+    "word": "nächste",
+    "surface": "Nächsten",
+    "definition": "Next; the one that comes right after this one."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "illness-and-sick-days",
+  "slotIndex": 0,
+  "slug": "der-gelbe-zettel",
+  "title": "Bettruhe in der Probezeit",
+  "synopsis": "Her throat is on fire before she is even awake and the thermometer says almost thirty nine. It is Monday and the fourth week of her trial period at the flower shop. The doctor two streets away writes three days of bed rest on a small yellow sheet of paper.",
+  "text": "Ihr Hals brennt schon beim Aufwachen, und das Bett ist nass vom Schweiß. Das Thermometer zeigt achtunddreißig Komma neun. Am Montag beginnt ihre vierte Woche in der Probezeit.\n\nBente, die Hausärztin über der Bäckerei, hat am Montag noch einen Termin frei. Im Wartezimmer sitzen neun Leute, und niemand sagt ein Wort. “Halsschmerzen seit Sonntag, Fieber seit heute Nacht, und die Stimme ist weg”, sagt Britta heiser.\n\nBente schaut in den Hals, misst noch einmal und tippt etwas in den Computer. “Drei Tage Bettruhe, viel trinken, und danach sehen wir noch einmal weiter”, erklärt sie ruhig. Der gelbe Krankenschein sagt ausruhen, die Probezeit sagt komm trotzdem.\n\nBritta steht auf der Straße und schaut das Papier lange an. Dann ruft sie im Blumenladen an und hört ihre eigene Stimme kaum. “Ich bin krankgeschrieben, drei Tage, und es tut mir wirklich sehr leid”, flüstert sie.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Schweiß",
+    "surface": "Schweiß",
+    "definition": "Sweat; the water your body makes when you are hot or ill."
+   },
+   {
+    "type": "noun",
+    "word": "das Thermometer",
+    "surface": "Thermometer",
+    "definition": "A thermometer; the small stick that tells you how warm you are."
+   },
+   {
+    "type": "verb",
+    "word": "zeigen",
+    "surface": "zeigt",
+    "definition": "To show; to put a number or a thing in front of you."
+   },
+   {
+    "type": "verb",
+    "word": "beginnen",
+    "surface": "beginnt",
+    "definition": "To begin; to be the first day of a longer period."
+   },
+   {
+    "type": "noun",
+    "word": "die Probezeit",
+    "anchor": true,
+    "surface": "Probezeit",
+    "definition": "A trial period; the first months when a job is not yet safe."
+   },
+   {
+    "type": "noun",
+    "word": "die Hausärztin",
+    "anchor": true,
+    "surface": "Hausärztin",
+    "definition": "A family doctor; the woman you see first for anything small."
+   },
+   {
+    "type": "noun",
+    "word": "das Wartezimmer",
+    "anchor": true,
+    "surface": "Wartezimmer",
+    "definition": "A waiting room; the room with chairs before you see the doctor."
+   },
+   {
+    "type": "noun",
+    "word": "die Halsschmerzen",
+    "surface": "Halsschmerzen",
+    "definition": "A sore throat; the pain inside your neck when you swallow."
+   },
+   {
+    "type": "noun",
+    "word": "das Fieber",
+    "surface": "Fieber",
+    "definition": "A fever; a body that is much warmer than it should be."
+   },
+   {
+    "type": "adjective",
+    "word": "frei",
+    "surface": "frei",
+    "definition": "Free; not taken yet, so somebody else can still have it."
+   },
+   {
+    "type": "verb",
+    "word": "messen",
+    "surface": "misst",
+    "definition": "To measure; to find out a number with a small machine."
+   },
+   {
+    "type": "verb",
+    "word": "tippen",
+    "surface": "tippt",
+    "definition": "To type; to write on a keyboard with your fingers."
+   },
+   {
+    "type": "noun",
+    "word": "die Bettruhe",
+    "anchor": true,
+    "surface": "Bettruhe",
+    "definition": "Bed rest; the doctor's order to stay in bed and do nothing."
+   },
+   {
+    "type": "verb",
+    "word": "ausruhen",
+    "surface": "ausruhen",
+    "definition": "To rest; to stop working so the body can get better."
+   },
+   {
+    "type": "noun",
+    "word": "der Krankenschein",
+    "anchor": true,
+    "surface": "Krankenschein",
+    "definition": "A sick note; the paper that tells your boss you may stay home."
+   },
+   {
+    "type": "verb",
+    "word": "hören",
+    "surface": "hört",
+    "definition": "To hear; to catch a sound, here her own weak voice."
+   },
+   {
+    "type": "verb",
+    "word": "flüstern",
+    "surface": "flüstert",
+    "definition": "To whisper; to speak so softly that it is almost air."
+   },
+   {
+    "type": "adverb",
+    "word": "lange",
+    "surface": "lange",
+    "definition": "For a long time; here standing still and not moving on."
+   },
+   {
+    "type": "adverb",
+    "word": "kaum",
+    "surface": "kaum",
+    "definition": "Hardly; so little that you almost cannot notice it."
+   },
+   {
+    "type": "adverb",
+    "word": "sehr",
+    "surface": "sehr",
+    "definition": "Very; used to make the word after it much stronger."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ }
+]
