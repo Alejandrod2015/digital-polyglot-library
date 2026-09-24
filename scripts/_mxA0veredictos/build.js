@@ -5,12 +5,12 @@ const fichas = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const blobs = fs.existsSync(process.argv[3]) ? JSON.parse(fs.readFileSync(process.argv[3], "utf8")) : {};
 
 const NOTAS = {
-  "mx-pintan-el-14-f04-content":
-    "Whisper, que es otro reconocedor distinto del que disparo el gate, tambien oye \"Libro\" donde el texto dice \"lee Bruno\". Dos reconocedores independientes coinciden, asi que de los tres avisos de contenido este es el que mas se parece a un defecto real.",
-  "mx-poquito-son-dos-dedos-f06-content":
-    "El texto escribe \"Poquito = dos dedos\" y el narrador lee el signo en voz alta: \"poquito igual a dos dedos\". El gate compara contra la cadena escrita, donde el \"=\" desaparece al normalizar, y por eso canta. Leer el signo es lo correcto.",
-  "mx-la-salsa-no-se-apunta-f03-content":
-    "El nombre Itzel: un reconocedor oye \"Ixchel\" y Whisper oye \"Excel\". Los dos tropiezan con el mismo nombre propio, que es lo que suele hacer un reconocedor con un nombre que no esta en su vocabulario.",
+  "mx2-pintan-el-14-f04-content":
+    "Whisper, otro reconocedor, tambien oye \"Libro\" donde el texto dice \"lee Bruno\". Ya lo marcaste como defecto real en la tanda anterior y la voz ha vuelto a hacerlo en la toma nueva.",
+  "mx2-poquito-son-dos-dedos-f06-content":
+    "El texto escribe \"Poquito = dos dedos\" y el narrador lee el signo: \"poquito igual a dos dedos\". El gate compara contra la cadena escrita, donde el \"=\" desaparece. Lo marcaste como defecto real.",
+  "mx2-nadie-se-queja-nunca-s01-ritmo":
+    "6,49 palabras por segundo contra una mediana de 3,33: el doble. Es la oracion mas disparada de todo el journey.",
 };
 
 const TEMAS = {
@@ -134,7 +134,7 @@ nav button:disabled{opacity:.35;cursor:default}
 
 <div class="wrap">
   <header><h1>Veredictos de Guadalajara</h1></header>
-  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; lo que marcaron los gates, mas las veces que el nombre Itzel no suena it-SEL. Una ficha a la vez, ninguna se re-tiro.</p>
+  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; tanda NUEVA, con Karla y Renata. Los 21 masteres se re-narraron el 24 de septiembre, asi que los veredictos de la tanda anterior no valen para este audio.</p>
 
   <div class="marcador" id="marcador"></div>
   <div class="barra"><i id="barra"></i></div>
@@ -188,8 +188,8 @@ function pinta(){
       '<p class="texto">' + esc(f.texto) + '</p>' +
       (f.nota ? '<p class="nota">' + esc(f.nota) + '</p>' : '') +
       '<div class="acciones">' +
-        '<button class="fp" id="b-fp">' + (f.kind === "nombre" ? "Suena it-SEL" : "Al oido esta bien") + '</button>' +
-        '<button class="real" id="b-real">' + (f.kind === "nombre" ? "Suena de otra forma" : "Defecto real") + '</button>' +
+        '<button class="fp" id="b-fp">Al oido esta bien</button>' +
+        '<button class="real" id="b-real">Defecto real</button>' +
       '</div>' +
       '<nav>' +
         '<button id="b-prev">&larr; anterior</button>' +
