@@ -1,0 +1,383 @@
+[
+  {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 0,
+    "title": "Nunca tuve un barco",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Mariana hangs her washing on the roof terrace. The wind takes a white T-shirt down to Nicolás's balcony, and up close it is not hers.",
+    "text": "En la terraza, Mariana tiende su ropa. Hace viento. Una camiseta blanca vuela. Cae al balcón de Nicolás.\n\nNicolás: Mariana, tengo una camiseta aquí.\nMariana: Ya voy. Es mía, seguro.\nNicolás: Baja rápido. El viento se la lleva.\nMariana: Un momento. Esta camiseta no es mía.\nNicolás: ¿No? Viene de tu cuerda.\nMariana: Mi ropa es negra o gris.\nNicolás: Esta tiene un barco pequeño.\nMariana: Yo nunca tuve un barco.\n\nNicolás dobla la camiseta. La deja limpia en una silla. El viento sigue fuerte en la terraza.\n\nNicolás: Ya está. Pero huele a balde viejo.\nMariana: Ese balde es tuyo, Nicolás.\nNicolás: Y el olor viene de tu gato.\nMariana: Pongo una nota en la escalera.\nNicolás: Alguien la busca, seguro. Es nueva.\nMariana: ¿Y si nadie contesta en toda la semana?\nNicolás: Entonces el barco vive en mi silla.",
+    "vocab": [
+      {
+        "word": "la terraza",
+        "type": "noun",
+        "definition": "A roof terrace; the flat open space upstairs.",
+        "surface": "terraza",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "volar",
+        "surface": "vuela",
+        "definition": "To fly; to move through the air."
+      },
+      {
+        "word": "el viento",
+        "type": "noun",
+        "definition": "The wind; air that moves outside.",
+        "surface": "viento"
+      },
+      {
+        "type": "expression",
+        "word": "ya voy",
+        "surface": "Ya voy",
+        "definition": "I'm coming; I'll be there now."
+      },
+      {
+        "type": "adverb",
+        "word": "seguro",
+        "surface": "seguro",
+        "definition": "Surely; I am sure about that."
+      },
+      {
+        "type": "expression",
+        "word": "se la lleva",
+        "surface": "se la lleva",
+        "definition": "It takes it away; the wind carries it."
+      },
+      {
+        "word": "la ropa",
+        "type": "noun",
+        "definition": "Clothes; the things you wear.",
+        "surface": "ropa"
+      },
+      {
+        "type": "adjective",
+        "word": "negro",
+        "surface": "negra",
+        "definition": "Black; the color of the night sky."
+      },
+      {
+        "type": "noun",
+        "word": "el barco",
+        "surface": "barco",
+        "definition": "A boat; it floats and goes on water.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "doblar",
+        "surface": "dobla",
+        "definition": "To fold; to bend cloth over itself."
+      },
+      {
+        "type": "verb",
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "To leave; to put something in a place."
+      },
+      {
+        "type": "adjective",
+        "word": "limpio",
+        "surface": "limpia",
+        "definition": "Clean; with no dirt or stain."
+      },
+      {
+        "type": "expression",
+        "word": "ya está",
+        "surface": "Ya está",
+        "definition": "Done; it is finished now."
+      },
+      {
+        "word": "el olor",
+        "type": "noun",
+        "definition": "A smell; what your nose notices.",
+        "surface": "olor"
+      },
+      {
+        "word": "blanco",
+        "type": "adjective",
+        "definition": "White; the colour of milk.",
+        "surface": "blanca"
+      },
+      {
+        "word": "hace viento",
+        "type": "expression",
+        "definition": "It is windy; the wind is blowing.",
+        "surface": "Hace viento"
+      },
+      {
+        "word": "tuve",
+        "type": "verb",
+        "definition": "I had; the past form used in the title."
+      },
+      {
+        "word": "seguir",
+        "type": "verb",
+        "definition": "To keep on; to go on doing the same.",
+        "surface": "sigue"
+      },
+      {
+        "word": "tender",
+        "type": "verb",
+        "definition": "To hang out washing; to put clothes on a line.",
+        "surface": "tiende"
+      },
+      {
+        "word": "un momento",
+        "type": "expression",
+        "definition": "One moment; wait a little.",
+        "surface": "Un momento"
+      }
+    ]
+  },
+  {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 1,
+    "title": "Ahora soy más gordo",
+    "arcType": "reframe-turn",
+    "synopsis": "The note has been on the stairs for a week and nobody has answered. Then Nicolás looks at the little boat on the T-shirt again.",
+    "text": "La nota está en la escalera desde el lunes. Nadie contesta.\n\nNicolás: Mariana, baja. Miro el dibujo otra vez.\nNicolás: Yo conozco esta camiseta. Ahora recuerdo.\nMariana: ¿Es de la señora del tercero?\nNicolás: No. Creo que es mía.\n\nMariana baja. Después mira la camiseta pequeña.\n\nMariana: ¿Tuya? Esta camiseta es de niño.\nNicolás: Mírala bien. Tiene mi nombre atrás.\nNicolás: Es de hace tres años. Ahora soy más gordo.\nMariana: ¿Tres años? Entonces no vuela de mi cuerda.\nNicolás: Vuela de mi balcón. Yo también tiendo ropa.\n\nMariana y Nicolás miran la cuerda, ya vacía.\n\nMariana: ¿Y por qué no dices nada el lunes?\nNicolás: Porque el barco me da vergüenza.\nEl gato sube a la silla. Se sienta encima. Mariana se ríe.\n\nMariana: Me la llevo yo. Al gato le queda bien.\nNicolás: Lo siento. Y no hablamos más de barcos.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "contestar",
+        "surface": "contesta",
+        "definition": "To answer; to reply to a question."
+      },
+      {
+        "word": "el tercero",
+        "type": "noun",
+        "definition": "The third floor of the building.",
+        "surface": "tercero"
+      },
+      {
+        "type": "noun",
+        "word": "el dibujo",
+        "surface": "dibujo",
+        "definition": "A drawing; a picture on paper or cloth.",
+        "anchor": true
+      },
+      {
+        "word": "el niño",
+        "type": "noun",
+        "definition": "A child; a young boy.",
+        "surface": "niño"
+      },
+      {
+        "word": "la cuerda",
+        "type": "noun",
+        "definition": "A washing line; the rope where clothes dry.",
+        "surface": "cuerda"
+      },
+      {
+        "type": "expression",
+        "word": "yo también",
+        "surface": "Yo también",
+        "definition": "Me too; I do the same thing."
+      },
+      {
+        "word": "el balcón",
+        "type": "noun",
+        "definition": "A balcony; the small open platform of a flat.",
+        "surface": "balcón",
+        "anchor": true
+      },
+      {
+        "word": "me da vergüenza",
+        "type": "expression",
+        "definition": "It makes me feel ashamed."
+      },
+      {
+        "type": "verb",
+        "word": "sentarse",
+        "surface": "Se sienta",
+        "definition": "To sit down; to take a seat somewhere."
+      },
+      {
+        "word": "conocer",
+        "type": "verb",
+        "definition": "To know; to recognise something you have seen before.",
+        "surface": "conozco"
+      },
+      {
+        "type": "expression",
+        "word": "quedar bien",
+        "surface": "queda bien",
+        "definition": "To look good on someone; to fit nicely."
+      },
+      {
+        "word": "otra vez",
+        "type": "expression",
+        "definition": "Again; one more time."
+      },
+      {
+        "word": "hace tres años",
+        "type": "expression",
+        "definition": "Three years ago; in the past."
+      },
+      {
+        "type": "adverb",
+        "word": "atrás",
+        "surface": "atrás",
+        "definition": "On the back; behind, on the other side."
+      },
+      {
+        "word": "pequeña",
+        "type": "adjective",
+        "definition": "Small; the size of a child."
+      },
+      {
+        "word": "creer",
+        "type": "verb",
+        "definition": "To think; to believe something is true.",
+        "surface": "Creo"
+      },
+      {
+        "word": "el lunes",
+        "type": "noun",
+        "definition": "Monday; the first day of the week.",
+        "surface": "lunes"
+      },
+      {
+        "word": "la señora",
+        "type": "noun",
+        "definition": "A lady; a grown-up woman.",
+        "surface": "señora"
+      },
+      {
+        "word": "el año",
+        "type": "noun",
+        "definition": "A year; twelve months.",
+        "surface": "años"
+      },
+      {
+        "word": "la silla",
+        "type": "noun",
+        "definition": "A chair; a seat with a back.",
+        "surface": "silla"
+      }
+    ]
+  },
+  {
+    "topic": "clothes-and-laundry",
+    "slotIndex": 2,
+    "title": "Seis calcetines solos",
+    "arcType": "recurring-character-callback",
+    "synopsis": "The kittens now walk all over Mariana's flat, and this morning no sock in her wardrobe matches another one.",
+    "text": "Cuatro gatitos caminan y corren por la casa. Hoy Mariana abre su armario. Ningún calcetín tiene pareja.\n\nMariana: Nicolás, ¿a ti te falta ropa?\nNicolás: Dos calcetines. Y un guante.\nMariana: A mí me faltan seis. Todos del pie izquierdo.\nNicolás: ¿Y quién quiere calcetines izquierdos?\nMariana: Nadie de dos piernas. Alguien pequeño, con cuatro patas.\n\nMariana busca debajo de la cama. Después miran detrás de la puerta. Y dentro del balde.\n\nNicolás: Falta un sitio, Mariana. La caja de los gatitos.\nMariana: Esa caja es su cama y su cocina. No está limpia.\nMariana: Aquí están las seis, juntas y escondidas.\nNicolás: Seis calcetines para cuatro gatitos. Y no están solos.\nMariana: Y una cuchara. ¿Para qué quiere una cuchara?\nNicolás: Para el postre, seguro. Ellos también quieren sábado.\nMariana: Entonces la cuchara se queda con ellos.\nNicolás: Y mis calcetines vuelven conmigo.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "caminar",
+        "surface": "caminan",
+        "definition": "To walk; to go on foot."
+      },
+      {
+        "word": "seis",
+        "type": "number",
+        "definition": "Six; the number after five."
+      },
+      {
+        "type": "adjective",
+        "word": "ningún",
+        "surface": "Ningún",
+        "definition": "No; not one single thing."
+      },
+      {
+        "word": "me faltan",
+        "type": "expression",
+        "definition": "I am missing them; I do not have them."
+      },
+      {
+        "type": "verb",
+        "word": "faltar",
+        "surface": "falta",
+        "definition": "To be missing; not to be there."
+      },
+      {
+        "word": "aquí están",
+        "type": "expression",
+        "definition": "Here they are; said when you find them.",
+        "surface": "Aquí están"
+      },
+      {
+        "type": "verb",
+        "word": "querer",
+        "surface": "quiere",
+        "definition": "To want; to wish for something."
+      },
+      {
+        "word": "cuatro patas",
+        "type": "expression",
+        "definition": "Four paws; an animal, not a person."
+      },
+      {
+        "word": "dentro",
+        "type": "adverb",
+        "definition": "Inside; in the box, not outside."
+      },
+      {
+        "word": "detrás",
+        "type": "adverb",
+        "definition": "Behind; at the back of something."
+      },
+      {
+        "word": "escondido",
+        "type": "adjective",
+        "definition": "Hidden; put where nobody can see them.",
+        "surface": "escondidas"
+      },
+      {
+        "word": "busca",
+        "type": "verb",
+        "definition": "She looks for it; she searches for it."
+      },
+      {
+        "word": "la cuchara",
+        "type": "noun",
+        "definition": "A spoon; you eat soup with it.",
+        "surface": "cuchara"
+      },
+      {
+        "word": "conmigo",
+        "type": "pronoun",
+        "definition": "With me; together with me."
+      },
+      {
+        "word": "también",
+        "type": "adverb",
+        "definition": "Too; as well as the others."
+      },
+      {
+        "type": "noun",
+        "word": "la pierna",
+        "surface": "piernas",
+        "definition": "A leg; you stand on two of them.",
+        "anchor": true
+      },
+      {
+        "word": "izquierdo",
+        "type": "adjective",
+        "definition": "Left; the left one of a pair."
+      },
+      {
+        "word": "el guante",
+        "type": "noun",
+        "definition": "A glove; you wear it on your hand.",
+        "surface": "guante"
+      },
+      {
+        "word": "el sábado",
+        "type": "noun",
+        "definition": "Saturday; the day before Sunday.",
+        "surface": "sábado"
+      },
+      {
+        "word": "la pareja",
+        "type": "noun",
+        "definition": "A pair; the other one that matches.",
+        "surface": "pareja"
+      }
+    ]
+  }
+]

@@ -1,0 +1,182 @@
+{
+ "una-caja-que-hace-ruido": {
+  "rey": {
+   "es": "¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.",
+   "en": "Tigre? Luna? Rey? He has three names and does not come."
+  },
+  "sí": {
+   "es": "Sí. Viene de la caja vieja, debajo de la escalera.",
+   "en": "Yes. It comes from the old box, under the stairs."
+  },
+  "luna": {
+   "es": "¿Tigre? ¿Luna? ¿Rey? Tiene tres nombres y no viene.",
+   "en": "Tigre? Luna? Rey? He has three names and does not come."
+  }
+ },
+ "mi-sofa-esta-mojado": {
+  "sí": {
+   "es": "Sí. Y mete la pata adentro todos los días.",
+   "en": "Yes. And she puts her paw in every day."
+  }
+ },
+ "el-agua-esta-caliente": {
+  "bien": {
+   "es": "Bien. Pagamos mitad y mitad.",
+   "en": "Fine. We pay half and half."
+  },
+  "hecho": {
+   "es": "Hecho. Pero el plomero lo llamas tú.",
+   "en": "Done. But you call the plumber."
+  },
+  "exacto": {
+   "es": "Exacto. Esto no es el plato. Es un tubo.",
+   "en": "Exactly. This is not the bowl. It is a pipe."
+  }
+ },
+ "la-manguera-gris": {
+  "tuya": {
+   "es": "¿Tuya? Entonces el agua caliente...",
+   "en": "Yours? So the hot water..."
+  },
+  "acepto": {
+   "es": "¿Comida el sábado? Acepto.",
+   "en": "Lunch on Saturday? I accept."
+  }
+ },
+ "domingo-sin-senal": {
+  "hola": {
+   "es": "Hola. Mi internet no anda hoy.",
+   "en": "Hello. My internet is not working today."
+  },
+  "claro": {
+   "es": "Claro. Yo escribo la clave ahora.",
+   "en": "Sure. I will write the password now."
+  }
+ },
+ "la-gata-tapa-la-pantalla": {
+  "ay": {
+   "es": "Ay. Ahora te ven a ti.",
+   "en": "Oh. Now they can see you."
+  }
+ },
+ "ahora-soy-mas-gordo": {
+  "tuya": {
+   "es": "¿Tuya? Esta camiseta es de niño.",
+   "en": "Yours? This is a child's t-shirt."
+  }
+ },
+ "seis-calcetines-solos": {
+  "seguro": {
+   "es": "Para el postre, seguro. Ellos también quieren sábado.",
+   "en": "For dessert, surely. They want Saturday too."
+  }
+ },
+ "dos-semanas-y-una-lista": {
+  "ah": {
+   "es": "¿Mis plantas? Ah, sí. Riega mis plantas.",
+   "en": "My plants? Oh, yes. Water my plants."
+  },
+  "sí": {
+   "es": "¿Mis plantas? Ah, sí. Riega mis plantas.",
+   "en": "My plants? Oh, yes. Water my plants."
+  },
+  "gracias": {
+   "es": "Gracias. Y lee esto. Son mis instrucciones.",
+   "en": "Thank you. And read this. These are my instructions."
+  },
+  "ninguno": {
+   "es": "La gata tiene veinte puntos. Ellas, ninguno.",
+   "en": "The cat gets twenty points. The plants, none."
+  },
+  "siempre": {
+   "es": "Siempre. Uno solo llora toda la noche.",
+   "en": "Always. On his own, one cries all night."
+  }
+ },
+ "el-punto-cuatro-miente": {
+  "ah": {
+   "es": "Ah. Los dos puntos no van juntos.",
+   "en": "Oh. The two points do not go together."
+  },
+  "hola": {
+   "es": "Hola, Nicolás. ¿Cómo va todo?",
+   "en": "Hello, Nicolas. How is everything going?"
+  }
+ },
+ "aqui-abajo-duerme-mejor": {
+  "toma": {
+   "es": "Toma. Esta llave es tuya, para siempre.",
+   "en": "Here. This key is yours, for good."
+  },
+  "bienvenida": {
+   "es": "Bienvenida. Tus plantas viven. Casi todas.",
+   "en": "Welcome back. Your plants are alive. Almost all."
+  }
+ },
+ "un-gato-con-dos-nombres": {
+  "sí": {
+   "es": "Sí. Se llama Tigre. Está aquí, en el sofá. ¿Por qué?",
+   "en": "Yes. His name is Tigre. He is here, on the sofa. Why?"
+  },
+  "bien": {
+   "es": "Bien. Pero el gato come una vez, no dos.",
+   "en": "Fine. But the cat eats once, not twice."
+  },
+  "perdón": {
+   "es": "Perdón. ¿Tienes un gato gris?",
+   "en": "Excuse me. Do you have a grey cat?"
+  }
+ },
+ "yo-no-le-doy-nada": {
+  "sí": {
+   "es": "Sí. Un rey muy gordo.",
+   "en": "Yes. A very fat king."
+  },
+  "dice": {
+   "es": "Aquí hay una nota. Dice: “Me llamo Rey. Ceno en la casa azul.”",
+   "en": "A note here. It says: My name is Rey. I dine at the blue house."
+  }
+ },
+ "nadie-me-avisa-nada": {
+  "sí": {
+   "es": "Sí. Subo a tu casa.",
+   "en": "Yes. I go up to your flat."
+  },
+  "perdón": {
+   "es": "Perdón. Suena siempre.",
+   "en": "Sorry. It always goes off."
+  }
+ },
+ "demasiado-silencio": {
+  "escucha": {
+   "es": "Escucha. Ahí hay algo.",
+   "en": "Listen. There is something there."
+  }
+ },
+ "nicolas-firma-demasiado": {
+  "sí": {
+   "es": "Sí. Yo casi nunca salgo.",
+   "en": "Yes. I hardly ever go out."
+  },
+  "ábrela": {
+   "es": "Ábrela. Yo quiero ver eso.",
+   "en": "Open it. I want to see that."
+  }
+ },
+ "una-caja-sin-tapa": {
+  "sí": {
+   "es": "Sí. Es un gatito, y duerme.",
+   "en": "Yes. It is a kitten, and he is asleep."
+  },
+  "espera": {
+   "es": "Espera. Aquí hay algo gris.",
+   "en": "Wait. There is something grey here."
+  }
+ },
+ "cien-avisos-y-una-gata": {
+  "sí": {
+   "es": "Sí. Así lo lee todo el edificio.",
+   "en": "Yes. That way the whole building reads it."
+  }
+ }
+}

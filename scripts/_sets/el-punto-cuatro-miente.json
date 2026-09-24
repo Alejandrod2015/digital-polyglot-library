@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la cesta,el teléfono,el bulto,el punto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la cesta",
+     "answer": "a basket bed",
+     "options": [
+      "a basket bed",
+      "a phone",
+      "a shape under something",
+      "a numbered line"
+     ]
+    },
+    {
+     "word": "el teléfono",
+     "answer": "a phone",
+     "options": [
+      "a basket bed",
+      "a phone",
+      "a shape under something",
+      "a numbered line"
+     ]
+    },
+    {
+     "word": "el bulto",
+     "answer": "a shape under something",
+     "options": [
+      "a basket bed",
+      "a phone",
+      "a shape under something",
+      "a numbered line"
+     ]
+    },
+    {
+     "word": "el punto",
+     "answer": "a numbered line",
+     "options": [
+      "a basket bed",
+      "a phone",
+      "a shape under something",
+      "a numbered line"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "se equivoca",
+  "sentence": "Tu hoja _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "se equivoca",
+   "options": [
+    "se equivoca",
+    "se escapa",
+    "descansa",
+    "vuelve"
+   ],
+   "translation": "Your sheet _____.",
+   "optionTranslations": [
+    "has it wrong",
+    "runs away",
+    "rests",
+    "comes back"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Tu hoja se equivoca.",
+    "targetWord": "se equivoca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "Se escapa",
+  "sentence": "Mi gata no se pierde. _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Se escapa",
+   "options": [
+    "Se escapa",
+    "Descansa",
+    "Espera",
+    "Pesa"
+   ],
+   "translation": "My cat does not get lost. She _____.",
+   "optionTranslations": [
+    "sneaks out",
+    "rests",
+    "waits",
+    "weighs"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Mi gata no se pierde. Se escapa.",
+    "targetWord": "Se escapa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "descansar",
+  "sentence": "Sube a comer. Después se va a _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "descansar",
+   "options": [
+    "descansar",
+    "equivocarse",
+    "escaparse",
+    "cerrar"
+   ],
+   "translation": "She goes up to eat. Then she goes off to _____.",
+   "optionTranslations": [
+    "rest",
+    "be wrong",
+    "run away",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Sube a comer. Después se va a descansar.",
+    "targetWord": "descansar",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerrada",
+  "sentence": "La ventana está [[cerrada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed",
+   "options": [
+    "closed",
+    "cracked",
+    "painted",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "La ventana está cerrada.",
+    "targetWord": "cerrada",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abierta",
+  "sentence": "Su ventana está [[abierta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open",
+   "options": [
+    "open",
+    "wide",
+    "broken",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Su ventana está abierta.",
+    "targetWord": "abierta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sale",
+  "sentence": "La gata [[sale]] sola y vuelve sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes out",
+   "options": [
+    "goes out",
+    "waits",
+    "eats",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "La gata sale sola y vuelve sola.",
+    "targetWord": "sale",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelve",
+  "sentence": "La gata sale sola y [[vuelve]] sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "comes back",
+   "options": [
+    "comes back",
+    "settles",
+    "hunts",
+    "grows"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "La gata sale sola y vuelve sola.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lado",
+  "sentence": "Tu gata no está en ningún [[lado]] desde ayer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "anywhere",
+   "options": [
+    "anywhere",
+    "hurry",
+    "danger",
+    "mood"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Tu gata no está en ningún lado desde ayer.",
+    "targetWord": "lado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sola",
+  "sentence": "La gata sale [[sola]] y vuelve sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on her own",
+   "options": [
+    "on her own",
+    "at dusk",
+    "in a hurry",
+    "every day"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "La gata sale sola y vuelve sola.",
+    "targetWord": "sola",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "siguiente",
+  "sentence": "Al día [[siguiente]], Nicolás sube a casa de Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "same",
+    "last",
+    "third"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Al día siguiente, Nicolás sube a casa de Mariana.",
+    "targetWord": "siguiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desde ayer",
+  "sentence": "Tu gata no está en ningún lado [[desde ayer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "since yesterday",
+   "options": [
+    "since yesterday",
+    "since June",
+    "since noon",
+    "since the move"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Tu gata no está en ningún lado desde ayer.",
+    "targetWord": "desde ayer",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diecisiete",
+  "sentence": "El punto [[diecisiete]] está al final.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seventeen",
+   "options": [
+    "seventeen",
+    "seventy",
+    "seven",
+    "nineteen"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "El punto diecisiete está al final.",
+    "targetWord": "diecisiete",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al final",
+  "sentence": "El punto diecisiete está [[al final]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the end",
+   "options": [
+    "at the end",
+    "in the margin",
+    "on the back",
+    "at the top"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "El punto diecisiete está al final.",
+    "targetWord": "al final",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "otra cosa",
+  "sentence": "El punto diecisiete dice [[otra cosa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something else",
+   "options": [
+    "something else",
+    "the same thing",
+    "almost nothing",
+    "too much"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "El punto diecisiete dice otra cosa.",
+    "targetWord": "otra cosa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "van",
+  "sentence": "Los dos puntos no [[van]] juntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "go",
+   "options": [
+    "go",
+    "count",
+    "read",
+    "arrive"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "Los dos puntos no van juntos.",
+    "targetWord": "van",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por dónde",
+  "sentence": "¿Y [[por dónde]] entra?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "which way",
+   "options": [
+    "which way",
+    "how often",
+    "what time",
+    "how far"
+   ],
+   "audioClip": {
+    "storySlug": "el-punto-cuatro-miente",
+    "storySource": "user",
+    "sentence": "¿Y por dónde entra?",
+    "targetWord": "por dónde",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

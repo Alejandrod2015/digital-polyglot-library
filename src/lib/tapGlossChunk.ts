@@ -95,3 +95,28 @@ export function uncoveredOccurrences(
     (o) => !trozos.some((t) => chunkCoversTap(t.es, texto, o.at, o.length))
   );
 }
+
+/**
+ * Si la aparición en `at` cae en un TURNO de una sola palabra tocable.
+ *
+ * En un journey de formato diálogo, media conversación son turnos de una
+ * palabra: "Sí.", "Gracias.", "¿Casi?", "Apagada.". Ahí no hay trozo de
+ * contexto que escribir, porque el trozo sería la palabra repitiendo su
+ * propia definición, que es justo lo que `checkGlossContextReal` prohíbe. No
+ * es un hueco de la capa: es la forma del texto.
+ *
+ * La condición es del TURNO, no de la palabra: "Sí." queda fuera del gate,
+ * pero "Sí, ya voy." no, porque ahí sí hay una frase que traducir.
+ *
+ * Turno = la línea, quitada la etiqueta del hablante ("Mariana: "). En prosa
+ * narrada no hay etiqueta y la línea entera es el turno, así que un párrafo
+ * normal nunca da 1 y el 95% del catálogo no se entera de esta rama.
+ */
+export function turnoDeUnaPalabra(texto: string, at: number): boolean {
+  const ini = texto.lastIndexOf("\n", at) + 1;
+  const finNl = texto.indexOf("\n", at);
+  const linea = texto.slice(ini, finNl >= 0 ? finNl : texto.length);
+  const sinEtiqueta = linea.replace(/^\s*[\p{Lu}][\p{L}]*\s*:\s*/u, "");
+  const tocables = sinEtiqueta.match(/\p{L}+(?:-\p{L}+)*/gu) ?? [];
+  return tocables.length === 1;
+}

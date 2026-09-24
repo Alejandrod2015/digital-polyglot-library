@@ -1982,6 +1982,38 @@
         "primero",
         "tres"
       ]
+    },
+    "spanish-conversations-latam-a0": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una"
+      ],
+      "characterNames": [
+        "mariana",
+        "nicolás"
+      ],
+      "numerals": [
+        "cien",
+        "cinco",
+        "cuarenta",
+        "cuatro",
+        "diecisiete",
+        "diez",
+        "doce",
+        "dos",
+        "nueve",
+        "ocho",
+        "once",
+        "seis",
+        "trece",
+        "treinta",
+        "tres",
+        "veinte"
+      ]
     }
   }
 }

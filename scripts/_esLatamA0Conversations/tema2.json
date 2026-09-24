@@ -1,0 +1,400 @@
+[
+  {
+    "topic": "home-and-neighbors",
+    "slotIndex": 0,
+    "title": "Mi sofá está mojado",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Nicolás finds a dark stain on his ceiling and water dripping on his sofa. Upstairs, Mariana's kitchen floor is dry, except for one corner.",
+    "text": "En el techo de Nicolás hay una mancha nueva. El agua cae, gota a gota, sobre su sofá. Arriba vive Mariana.\n\nNicolás sube y toca su puerta.\n\nMariana: Buenos días, Nicolás. Tienes cara de problema.\nNicolás: Buenos días. Mi sofá está mojado. En mi techo cae agua. Justo arriba está tu cocina.\nMariana: ¿Mi cocina? Hoy no lavo nada. Puedes pasar.\n\nMariana y Nicolás miran el piso de la cocina. Está seco. Pero en un rincón hay un charco.\n\nMariana: Hay algo ahí. Es el plato del gato.\nNicolás: ¿Medio litro de agua para un gato?\nMariana: Sí. Y mete la pata adentro todos los días.\nNicolás: Entonces mi mancha no es lluvia. Es tu gato.\nMariana: Nuestro gato. Pongo el plato en el lavadero.\nNicolás: Y yo pongo un balde en el sofá. Por si acaso.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "el techo",
+        "surface": "techo",
+        "definition": "The ceiling; the top surface inside a room.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la mancha",
+        "surface": "mancha",
+        "definition": "A stain; a dirty mark on a wall or ceiling.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "nuevo",
+        "surface": "nueva",
+        "definition": "New; that was not there before."
+      },
+      {
+        "type": "verb",
+        "word": "caer",
+        "surface": "cae",
+        "definition": "To fall; to drop down from above."
+      },
+      {
+        "word": "gota a gota",
+        "type": "expression",
+        "definition": "Drop by drop; slowly, one drop at a time."
+      },
+      {
+        "type": "adverb",
+        "word": "arriba",
+        "surface": "Arriba",
+        "definition": "Upstairs; on the floor above this one."
+      },
+      {
+        "type": "verb",
+        "word": "subir",
+        "surface": "sube",
+        "definition": "To go up; to climb to a higher floor."
+      },
+      {
+        "word": "la pata",
+        "type": "noun",
+        "definition": "A paw; the foot of an animal.",
+        "surface": "pata"
+      },
+      {
+        "type": "adjective",
+        "word": "mojado",
+        "surface": "mojado",
+        "definition": "Wet; with water on it."
+      },
+      {
+        "type": "adverb",
+        "word": "justo",
+        "surface": "Justo",
+        "definition": "Right; exactly in that place."
+      },
+      {
+        "type": "verb",
+        "word": "lavar",
+        "surface": "lavo",
+        "definition": "To wash; to clean something with water."
+      },
+      {
+        "type": "verb",
+        "word": "pasar",
+        "surface": "pasar",
+        "definition": "To come in; to enter a place."
+      },
+      {
+        "word": "el piso",
+        "type": "noun",
+        "definition": "The floor; the ground inside a room.",
+        "surface": "piso"
+      },
+      {
+        "type": "adjective",
+        "word": "seco",
+        "surface": "seco",
+        "definition": "Dry; with no water on it."
+      },
+      {
+        "type": "noun",
+        "word": "el charco",
+        "surface": "charco",
+        "definition": "A puddle; a small pool of water on the floor.",
+        "anchor": true
+      },
+      {
+        "word": "el litro",
+        "surface": "litro",
+        "type": "noun",
+        "definition": "A liter; a measure for water and other liquids.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "meter",
+        "surface": "mete",
+        "definition": "To put in; to push something inside."
+      },
+      {
+        "word": "por si acaso",
+        "type": "expression",
+        "definition": "Just in case; in case it happens again."
+      },
+      {
+        "type": "verb",
+        "word": "poner",
+        "surface": "Pongo",
+        "definition": "To put; to place something somewhere."
+      },
+      {
+        "type": "noun",
+        "word": "el lavadero",
+        "surface": "lavadero",
+        "definition": "A laundry sink, for washing things.",
+        "anchor": true
+      }
+    ]
+  },
+  {
+    "topic": "home-and-neighbors",
+    "slotIndex": 1,
+    "title": "El agua está caliente",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "A week later the bucket is full every morning. Nicolás puts a finger in the water and finds it warm, so the cat is not the problem this time.",
+    "text": "La mancha ya no es pequeña. El balde de Nicolás está lleno cada mañana.\n\nNicolás: Mariana, baja un momento. Mete un dedo aquí.\nMariana: ¿Para qué? El balde es tuyo, el dedo también.\nNicolás: Porque el agua está caliente.\n\nMariana baja la escalera y toca el agua. Está tibia, como un café de ayer.\n\nMariana: El gato no toma agua caliente.\nNicolás: Exacto. Esto no es el plato. Es un tubo.\nMariana: ¿Y quién paga un tubo? Yo vivo arriba, pero el tubo es del edificio.\nNicolás: El plomero cobra igual. Paga quien tiene la gotera.\nMariana: Tú tienes la gotera. Yo tengo el tubo.\n\nNadie habla durante un minuto largo.\n\nMariana: Bien. Pagamos mitad y mitad.\nNicolás: Y cerramos la llave hasta el lunes.\nMariana: Hecho. Pero el plomero lo llamas tú.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "el balde",
+        "surface": "balde",
+        "definition": "A bucket; you put water in it.",
+        "anchor": true
+      },
+      {
+        "word": "tener",
+        "type": "verb",
+        "definition": "To have; to be the one with it.",
+        "surface": "tienes"
+      },
+      {
+        "type": "expression",
+        "word": "cada mañana",
+        "surface": "cada mañana",
+        "definition": "Every morning; each morning again."
+      },
+      {
+        "type": "verb",
+        "word": "bajar",
+        "surface": "baja",
+        "definition": "To come down; to go to a lower floor."
+      },
+      {
+        "type": "adjective",
+        "word": "caliente",
+        "surface": "caliente",
+        "definition": "Hot; with a high temperature."
+      },
+      {
+        "type": "adjective",
+        "word": "tibio",
+        "surface": "tibia",
+        "definition": "Warm; a little hot, not cold."
+      },
+      {
+        "type": "noun",
+        "word": "el plomero",
+        "surface": "plomero",
+        "definition": "A plumber; the person who fixes water pipes.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "pagar",
+        "surface": "paga",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "surface": "cobra",
+        "definition": "To charge; to ask money for work."
+      },
+      {
+        "type": "noun",
+        "word": "la gotera",
+        "surface": "gotera",
+        "definition": "A leak; water coming through the ceiling.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "hablar",
+        "surface": "habla",
+        "definition": "To speak; to say something out loud."
+      },
+      {
+        "type": "adjective",
+        "word": "largo",
+        "surface": "largo",
+        "definition": "Long; here, a minute that feels long."
+      },
+      {
+        "type": "expression",
+        "word": "mitad y mitad",
+        "surface": "mitad y mitad",
+        "definition": "Half and half; each one pays the same."
+      },
+      {
+        "type": "verb",
+        "word": "cerrar",
+        "surface": "cerramos",
+        "definition": "To close; to shut something."
+      },
+      {
+        "type": "verb",
+        "word": "llamar",
+        "surface": "llamas",
+        "definition": "To call; to phone someone."
+      },
+      {
+        "type": "adverb",
+        "word": "igual",
+        "surface": "igual",
+        "definition": "All the same; anyway, in any case."
+      },
+      {
+        "type": "expression",
+        "word": "de ayer",
+        "surface": "de ayer",
+        "definition": "From yesterday; left from the day before."
+      },
+      {
+        "word": "el tubo",
+        "type": "noun",
+        "definition": "A pipe; the tube that carries water.",
+        "surface": "tubo",
+        "anchor": true
+      },
+      {
+        "word": "el dedo",
+        "type": "noun",
+        "definition": "A finger; part of your hand.",
+        "surface": "dedo"
+      },
+      {
+        "word": "quien",
+        "type": "pronoun",
+        "definition": "The one who; the person that does it."
+      }
+    ]
+  },
+  {
+    "topic": "home-and-neighbors",
+    "slotIndex": 2,
+    "title": "La manguera gris",
+    "arcType": "late-reveal",
+    "synopsis": "The plumber opens the ceiling at last. The pipe is dry, and his flashlight points at something else above it.",
+    "text": "El plomero llega y abre el techo. Mariana y Nicolás miran desde abajo, sin hablar.\n\nNicolás: ¿Está roto el tubo?\nMariana: Tiene que ser el tubo. Es viejo como el edificio.\n\nEl plomero toca el tubo con la mano. Está seco. Después apunta con la linterna a una manguera gris.\n\nMariana: Esa manguera es mía. Va a mi lavadora.\nNicolás: ¿Tuya? Entonces el agua caliente...\nMariana: Es mi lavadora. Lo siento mucho, Nicolás.\nNicolás: Una semana de baldes por una manguera.\nMariana: Pago yo al plomero. Y el sábado, comida en mi casa.\n\nEl plomero cierra su caja de herramientas. Después se va.\n\nNicolás: ¿Comida el sábado? Acepto.\nMariana: Con una condición: el postre lo traes tú.\nNicolás: ¿Y la lavadora apagada?\nMariana: Apagada. Y el gato, encerrado en mi cuarto.\nNicolás: Entonces llevo el postre. Y mi balde, por si acaso.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "llegar",
+        "surface": "llega",
+        "definition": "To arrive; to come to a place."
+      },
+      {
+        "type": "verb",
+        "word": "abrir",
+        "surface": "abre",
+        "definition": "To open; to make something open."
+      },
+      {
+        "word": "el postre",
+        "type": "noun",
+        "definition": "Dessert; the sweet dish after a meal.",
+        "surface": "postre"
+      },
+      {
+        "type": "adjective",
+        "word": "roto",
+        "surface": "roto",
+        "definition": "Broken; with a hole or a crack."
+      },
+      {
+        "type": "verb",
+        "word": "apuntar",
+        "surface": "apunta",
+        "definition": "To point at; to aim at something."
+      },
+      {
+        "type": "noun",
+        "word": "la manguera",
+        "surface": "manguera",
+        "definition": "A hose; a long soft tube for water.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la lavadora",
+        "surface": "lavadora",
+        "definition": "A washing machine; it washes clothes.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "lo siento",
+        "surface": "Lo siento",
+        "definition": "I'm sorry; I feel bad about it."
+      },
+      {
+        "type": "expression",
+        "word": "caja de herramientas",
+        "surface": "caja de herramientas",
+        "definition": "A toolbox; the box with tools inside."
+      },
+      {
+        "type": "verb",
+        "word": "irse",
+        "surface": "se va",
+        "definition": "To leave; to go away from a place."
+      },
+      {
+        "type": "verb",
+        "word": "aceptar",
+        "surface": "Acepto",
+        "definition": "To accept; to say yes to something."
+      },
+      {
+        "type": "verb",
+        "word": "traer",
+        "surface": "traes",
+        "definition": "To bring; to carry something to a place."
+      },
+      {
+        "type": "adjective",
+        "word": "apagado",
+        "surface": "apagada",
+        "definition": "Off; not working, with no power."
+      },
+      {
+        "type": "adjective",
+        "word": "encerrado",
+        "surface": "encerrado",
+        "definition": "Shut in; closed inside a room."
+      },
+      {
+        "type": "verb",
+        "word": "llevar",
+        "surface": "llevo",
+        "definition": "To bring along; to take something with you."
+      },
+      {
+        "type": "expression",
+        "word": "tiene que ser",
+        "surface": "Tiene que ser",
+        "definition": "It must be; there is no other answer."
+      },
+      {
+        "type": "adverb",
+        "word": "mucho",
+        "surface": "mucho",
+        "definition": "A lot; very much."
+      },
+      {
+        "type": "expression",
+        "word": "una semana de",
+        "surface": "Una semana de",
+        "definition": "A whole week of; seven days of the same thing."
+      },
+      {
+        "word": "la linterna",
+        "type": "noun",
+        "definition": "A torch; a lamp you hold in your hand.",
+        "surface": "linterna"
+      },
+      {
+        "word": "la condición",
+        "type": "noun",
+        "definition": "A condition; what you ask for in return.",
+        "surface": "condición"
+      }
+    ]
+  }
+]

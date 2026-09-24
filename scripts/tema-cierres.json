@@ -13707,5 +13707,474 @@
       "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
       "seguidilla: 51% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
     ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#clothes-and-laundry": {
+    "cerrado": "2026-09-23T17:14:43.525Z",
+    "hash": "0b97e9cd7e750654",
+    "historias": [
+      "clothes-and-laundry#0 nunca-tuve-un-barco",
+      "clothes-and-laundry#1 ahora-soy-mas-gordo",
+      "clothes-and-laundry#2 seis-calcetines-solos"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Una camiseta sin dueño pasa de misterio a confesión, y la ropa perdida acaba señalando a los gatitos.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"mariana\", 47%)",
+      "densidad 5.0 palabras por oracion (techo 9 en a0)",
+      "seguidilla 35/86 oraciones cortas narradas",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.20 sobre 55 plazas · 45 salen una sola vez | ancladas: 5/60 (8%) | cola: 45/55 portables con un solo encuentro (82%, tope 30%) | de un solo encuentro: viento, Ya voy, se la lleva, negra, dobla, deja, Ya está, olor, blanca, Hace viento, tuve, sigue, Un momento, tercero, niño, Yo también, me da vergüenza, Se sienta, conozco, queda bien, otra vez, hace tres años, atrás, pequeña, Creo, lunes, señora, años, caminan, seis…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: clothes-and-laundry (Mariana, Nicolás)"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Una camiseta sin dueño pasa de misterio a confesión, y la ropa perdida acaba señalando a los gatitos.",
+      "recursos": "terraza, cuerda, camiseta, nota, armario, calcetines",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "recuperar la camiseta que el viento se llevó al balcón de abajo",
+          "impide": "la camiseta no es suya y nadie sabe de quién es",
+          "cuesta": "dejar en la escalera una nota que quizá no conteste nadie",
+          "cambia": "la camiseta se queda esperando dueño en una silla",
+          "emocion": "curiosidad"
+        },
+        {
+          "slot": "1",
+          "quiere": "saber quién dejó una camiseta de niño con un barco",
+          "impide": "el dueño es Nicolás y le da vergüenza decirlo",
+          "cuesta": "admitir que hace tres años le quedaba bien",
+          "cambia": "la camiseta acaba puesta en el gato y el tema se cierra con risa",
+          "emocion": "vergüenza divertida"
+        },
+        {
+          "slot": "2",
+          "quiere": "encontrar seis calcetines que faltan del armario",
+          "impide": "todos los que faltan son del mismo pie y no hay ladrón humano",
+          "cuesta": "buscar por toda la casa antes de mirar donde tocaba",
+          "cambia": "los calcetines aparecen en la caja de los gatitos, con una cuchara",
+          "emocion": "humor"
+        }
+      ]
+    },
+    "avisos": [
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"conversacional neutro, humor seco, dos voces y un narrador breve\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#goodbyes-and-keys": {
+    "cerrado": "2026-09-23T17:54:43.060Z",
+    "hash": "a36934859f066126",
+    "historias": [
+      "goodbyes-and-keys#0 dos-semanas-y-una-lista",
+      "goodbyes-and-keys#1 el-punto-cuatro-miente",
+      "goodbyes-and-keys#2 aqui-abajo-duerme-mejor"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Dos semanas de llaves prestadas demuestran que la gata ya tenía dos casas, y al final sus dueños también.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"nicolás\", 50%)",
+      "densidad 4.6 palabras por oracion (techo 9 en a0)",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 51 plazas · 47 salen una sola vez | ancladas: 9/60 (15%) | cola: 47/51 portables con un solo encuentro (92%, tope 55% de dialogo) | de un solo encuentro: problema, guarda, espera, maletas, trece, instrucciones, minutos, basta, Riega, encanta, llora, entera, cada cuánto, se quejan, desdobla, siguiente, cerrada, teléfono, descansar, desde ayer, diecisiete, al final, sola, otra cosa, sale, vuelve, van, se equivoca, abierta, por dónde…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: goodbyes-and-keys (Nicolás, Mariana)"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Dos semanas de llaves prestadas demuestran que la gata ya tenía dos casas, y al final sus dueños también.",
+      "recursos": "maletas, llavero, hoja de instrucciones, plantas, ventana, rascador",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "dejar la casa y la gata en orden antes de irse dos semanas",
+          "impide": "la hoja tiene veinte puntos para la gata y ninguno para las plantas",
+          "cuesta": "reconocer lo que había olvidado delante del vecino",
+          "cambia": "las plantas entran en la lista, aunque nunca lloren de noche",
+          "emocion": "humor cariñoso"
+        },
+        {
+          "slot": "1",
+          "quiere": "encontrar a la gata, que no aparece desde ayer",
+          "impide": "dos puntos de la hoja se contradicen",
+          "cuesta": "admitir que sus propias instrucciones se equivocan",
+          "cambia": "la gata duerme abajo: no se pierde, se escapa",
+          "emocion": "susto que pasa"
+        },
+        {
+          "slot": "2",
+          "quiere": "volver a casa y recuperar su rutina con la gata",
+          "impide": "la gata ya duerme abajo, en un rascador nuevo",
+          "cuesta": "aceptar que la gata eligió dos casas",
+          "cambia": "se cambian las llaves para siempre y el timbre ya no hace falta",
+          "emocion": "cierre cálido"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "seguidilla: 56% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate.",
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"conversacional neutro, humor seco, dos voces y un narrador breve\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#home-and-neighbors": {
+    "cerrado": "2026-09-23T17:12:26.657Z",
+    "hash": "89fa25845c40634d",
+    "historias": [
+      "home-and-neighbors#0 mi-sofa-esta-mojado",
+      "home-and-neighbors#1 el-agua-esta-caliente",
+      "home-and-neighbors#2 la-manguera-gris"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Una gotera obliga a Mariana y Nicolás a repartir una culpa que va cambiando de dueño, hasta que resulta ser de ella.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"mariana\", 41%)",
+      "densidad 5.2 palabras por oracion (techo 9 en a0)",
+      "seguidilla 32/79 oraciones cortas narradas",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Nicolás): mi-sofa-esta-mojado, el-agua-esta-caliente, la-manguera-gris",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.20 sobre 49 plazas · 40 salen una sola vez | ancladas: 11/60 (18%) | cola: 40/49 portables con un solo encuentro (82%, tope 30%) | de un solo encuentro: nueva, cae, gota a gota, sube, pata, mojado, Justo, lavo, pasar, piso, Pongo, cada mañana, baja, tibia, cobra, largo, mitad y mitad, llamas, igual, de ayer, dedo, quien, llega, abre, postre, roto, apunta, Lo siento, caja de herramientas, se va…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Una gotera obliga a Mariana y Nicolás a repartir una culpa que va cambiando de dueño, hasta que resulta ser de ella.",
+      "recursos": "techo, balde, plato del gato, tubo, plomero, manguera",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "que pare el agua que cae sobre su sofá",
+          "impide": "la cocina de arriba está seca y nadie ha lavado nada",
+          "cuesta": "subir a acusar a la vecina sin pruebas",
+          "cambia": "la culpa no es de nadie: es el plato del gato que comparten",
+          "emocion": "alivio con risa"
+        },
+        {
+          "slot": "1",
+          "quiere": "saber de dónde sale tanta agua, ahora caliente",
+          "impide": "un gato no bebe agua caliente, así que no es el plato",
+          "cuesta": "hablar de quién paga antes de saber qué se rompió",
+          "cambia": "pagan mitad y mitad sin saber todavía de quién es la avería",
+          "emocion": "tensión contenida"
+        },
+        {
+          "slot": "2",
+          "quiere": "que el plomero encuentre el tubo roto",
+          "impide": "el tubo está seco; el agua viene de una manguera",
+          "cuesta": "reconocer delante del vecino que la manguera es suya",
+          "cambia": "la disculpa se convierte en una invitación a comer",
+          "emocion": "vergüenza que se vuelve cariño"
+        }
+      ]
+    }
+  },
+  "cmub5my8d000432ye0v6pv5ng#new-neighbors": {
+    "cerrado": "2026-09-23T17:11:57.155Z",
+    "hash": "155e36a630adcb27",
+    "historias": [
+      "new-neighbors#0 un-gato-con-dos-nombres",
+      "new-neighbors#1 yo-no-le-doy-nada",
+      "new-neighbors#2 una-caja-que-hace-ruido"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Mariana y Nicolás descubren que el gato que cada uno cree suyo vive de los dos, y el reparto del gato los convierte en vecinos.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"mariana\", 42%)",
+      "densidad 4.8 palabras por oracion (techo 9 en a0)",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.29 sobre 51 plazas · 38 salen una sola vez | ancladas: 9/60 (15%) | cola: 38/51 portables con un solo encuentro (75%, tope 30%) | de un solo encuentro: gris, entra, oye, ventana, vive, todos los días, sofá, dos veces, perder, Compartimos, Trato hecho, serios, toma, solo, huele, nota, pequeño, Dice, de enfrente, cocina, por nada, peleamos, Me llamo, buscan, Escucha, abajo, vieja, debajo de, despacio, Adentro…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: new-neighbors (Nicolás, Mariana)"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Mariana y Nicolás descubren que el gato que cada uno cree suyo vive de los dos, y el reparto del gato los convierte en vecinos.",
+      "recursos": "gato, ventana, escalera, collar, nota, caja",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "recuperar a su gato, que esta noche no llega a cenar",
+          "impide": "el gato vive también en casa del vecino y allí se llama Tigre",
+          "cuesta": "aceptar que el animal no es solo suyo y tocar la puerta de un desconocido",
+          "cambia": "de vecinos que no se hablan a socios del mismo gato, de día abajo y de noche arriba",
+          "emocion": "sorpresa divertida"
+        },
+        {
+          "slot": "1",
+          "quiere": "saber quién está engordando al gato pese al trato",
+          "impide": "los dos juran que no le dan comida y se sospechan mutuamente",
+          "cuesta": "acusarse en la escalera y quedar los dos en ridículo",
+          "cambia": "la nota del collar descubre una tercera casa y el enfado se vuelve risa",
+          "emocion": "humor"
+        },
+        {
+          "slot": "2",
+          "quiere": "encontrar al gato, que hoy no está en ninguna de las tres casas",
+          "impide": "un ruido sale de una caja vieja debajo de la escalera",
+          "cuesta": "abrir la caja sin saber qué hay dentro",
+          "cambia": "el gato es una gata con cuatro gatitos, y hay que repartir lo que nadie esperaba",
+          "emocion": "ternura"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "seguidilla: 51% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#noise-and-sleep": {
+    "cerrado": "2026-09-23T17:15:50.847Z",
+    "hash": "f23db9049c229255",
+    "historias": [
+      "noise-and-sleep#0 alguien-mueve-los-muebles",
+      "noise-and-sleep#1 nadie-me-avisa-nada",
+      "noise-and-sleep#2 demasiado-silencio"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Tres noches sin dormir por tres motivos distintos, y al final lo que no deja dormir es el silencio.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"mariana\", 43%)",
+      "densidad 4.6 palabras por oracion (techo 9 en a0)",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Nicolás): alguien-mueve-los-muebles, nadie-me-avisa-nada, demasiado-silencio",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 49 plazas · 44 salen una sola vez | ancladas: 11/60 (18%) | cola: 44/49 portables con un solo encuentro (90%, tope 30%) | de un solo encuentro: cajón, arrastra, oyes, de nuevo, corto, Parece, cerca, despierto, pesa, tren, corre, casi, Ni idea, fuerte, dormida, leche, despertador, mesa, a las seis, levantas, preparas, como una piedra, tranquila, avisa, ya sabes, Apago, a tiempo, trabajo, temprano, camión…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Tres noches sin dormir por tres motivos distintos, y al final lo que no deja dormir es el silencio.",
+      "recursos": "madrugada, canica, despertador, biberones, sofá, almohada",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "dormir sin un ruido de muebles arrastrados encima",
+          "impide": "sobre esa casa no vive nadie y el ruido sigue",
+          "cuesta": "subir de madrugada a buscar el origen",
+          "cambia": "el mueble pesado eran dos gramos de canica, y la gata los guarda",
+          "emocion": "humor"
+        },
+        {
+          "slot": "1",
+          "quiere": "que el despertador de las seis deje de despertarla a ella",
+          "impide": "Nicolás no puede cambiar esa hora y no dice por qué",
+          "cuesta": "enterarse de que él se levanta por los gatitos de ella",
+          "cambia": "ella toma el turno de la leche y él pone dos despertadores",
+          "emocion": "ternura"
+        },
+        {
+          "slot": "2",
+          "quiere": "dormir la primera noche sin gatitos en casa",
+          "impide": "el silencio que querían es justo lo que no los deja",
+          "cuesta": "reconocer que echan de menos el ruido",
+          "cambia": "queda un gatito que ronca, y Nicolás sube con su almohada",
+          "emocion": "melancolía cálida"
+        }
+      ]
+    },
+    "avisos": [
+      "seguidilla: 51% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate.",
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"conversacional neutro, humor seco, dos voces y un narrador breve\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#packages-and-deliveries": {
+    "cerrado": "2026-09-23T17:15:20.595Z",
+    "hash": "346bf683e939ba04",
+    "historias": [
+      "packages-and-deliveries#0 nadie-pide-este-paquete",
+      "packages-and-deliveries#1 nicolas-firma-demasiado",
+      "packages-and-deliveries#2 una-caja-sin-tapa"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"Los paquetes del edificio ponen a prueba quién firma por quién, y el último no traía nada: se llevaba un gatito.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"mariana\", 50%)",
+      "densidad 4.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 40/92 oraciones cortas narradas",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Nicolás): nadie-pide-este-paquete, nicolas-firma-demasiado, una-caja-sin-tapa",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 51 plazas · 47 salen una sola vez | ancladas: 9/60 (15%) | cola: 47/51 portables con un solo encuentro (92%, tope 30%) | de un solo encuentro: jueves, empuja, un poco, compro, marca, corta, pesadas, etiqueta, en silencio, cuchillo, mejor que, bolsas, cinta, entrada, treinta y ocho, once, vecinos, Hoy, paciencia, juntas, casi nunca, llena, saca, doblado, Encima, en voz alta, recuerdo, bienvenido, delante, salgo…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "Los paquetes del edificio ponen a prueba quién firma por quién, y el último no traía nada: se llevaba un gatito.",
+      "recursos": "entrada, etiqueta, cinta, cajas, felpudo, tapa",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "saber de quién es un paquete sin nombre",
+          "impide": "ninguno de los dos ha pedido nada esta semana",
+          "cuesta": "abrir una caja ajena para averiguarlo",
+          "cambia": "el paquete es del número cuarenta y el gato de enfrente come mejor que ellos",
+          "emocion": "humor"
+        },
+        {
+          "slot": "1",
+          "quiere": "poder caminar por una casa llena de cajas de otros",
+          "impide": "Nicolás firma por todo el edificio y ya no cabe",
+          "cuesta": "descubrir que una de las cajas lleva su propio apellido",
+          "cambia": "el felpudo de bienvenida no cabe delante de su puerta",
+          "emocion": "humor resignado"
+        },
+        {
+          "slot": "2",
+          "quiere": "entender por qué llega una caja abierta y vacía",
+          "impide": "sospechan de un ladrón y acusan al cartero",
+          "cuesta": "meter la mano en el fondo sin saber qué hay",
+          "cambia": "no falta nada: sobra un gatito que viaja gratis",
+          "emocion": "sorpresa tierna"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 4 parrafos exactos. Leelas seguidas antes de darlas por buenas.",
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"conversacional neutro, humor seco, dos voces y un narrador breve\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
+  },
+  "cmub5my8d000432ye0v6pv5ng#wifi-and-passwords": {
+    "cerrado": "2026-09-23T17:16:19.249Z",
+    "hash": "536519c5e7bc0be7",
+    "historias": [
+      "wifi-and-passwords#0 domingo-sin-senal",
+      "wifi-and-passwords#1 la-gata-tapa-la-pantalla",
+      "wifi-and-passwords#2 cien-avisos-y-una-gata"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"conversacional neutro, humor seco, dos voces y un narrador breve\", espina \"La gata se cuela en todo lo que pasa por una pantalla: la clave, la videollamada y el grupo del edificio.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "arranques de parrafo variados (mas repetido \"mariana\", 60%)",
+      "densidad 4.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 38/93 oraciones cortas narradas",
+      "banda gramatical a0 dentro: pretérito 0 · imperfecto 0 · condicional 0 · subj. presente 0",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): domingo-sin-senal, la-gata-tapa-la-pantalla, cien-avisos-y-una-gata",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 50 plazas · 47 salen una sola vez | ancladas: 10/60 (17%) | cola: 47/50 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: domingo, Claro, prueba, ayuda, regresa, no entra, internet, anda, cambio, error, en serio, escribo, familia, cámara, tía, siempre, Ven acá, cargo, levanta, cara, bastante, tapa, pregunta, Para ellos, saludo, Buenas tardes, video, les gusta, devolver, sala…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Conversations",
+      "nivel": "A0",
+      "variante": "latam",
+      "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+      "espina": "La gata se cuela en todo lo que pasa por una pantalla: la clave, la videollamada y el grupo del edificio.",
+      "recursos": "clave, celular, pantalla, videollamada, grupo de mensajes, aviso",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "ver una película con el internet del vecino",
+          "impide": "la clave que él dicta no entra",
+          "cuesta": "bajar dos veces a preguntar por una sola palabra",
+          "cambia": "la clave era el nombre de la gata con una falta de ortografía",
+          "emocion": "humor"
+        },
+        {
+          "slot": "1",
+          "quiere": "enseñar su casa nueva a la familia por videollamada",
+          "impide": "la gata se sienta encima de la pantalla",
+          "cuesta": "que el vecino acabe saliendo en la llamada por levantarla",
+          "cambia": "la familia lo adopta a él y lo espera en diciembre",
+          "emocion": "calidez divertida"
+        },
+        {
+          "slot": "2",
+          "quiere": "que el aviso del corte de agua lo lea alguien",
+          "impide": "el grupo del edificio solo mira fotos de la gata",
+          "cuesta": "aceptar que su aviso solo, nadie lo abre",
+          "cambia": "ponen el aviso debajo de una foto de la gata para que se lea",
+          "emocion": "humor"
+        }
+      ]
+    },
+    "avisos": [
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"conversacional neutro, humor seco, dos voces y un narrador breve\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
   }
 }

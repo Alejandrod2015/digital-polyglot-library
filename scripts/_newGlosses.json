@@ -29270,5 +29270,399 @@
       "g": "cost",
       "t": "noun"
     }
+  },
+  "spanish-conversations-latam-a0": {
+    "apagada": {
+      "g": "switched off (apagar)",
+      "t": "adjective"
+    },
+    "apago": {
+      "g": "I turn off (apagar)",
+      "t": "verb"
+    },
+    "aparatos": {
+      "g": "devices, gadgets",
+      "t": "noun"
+    },
+    "asustas": {
+      "g": "do you get scared (asustarse)",
+      "t": "verb"
+    },
+    "así": {
+      "g": "like that, that way",
+      "t": "adverb"
+    },
+    "avisos": {
+      "g": "alerts, notifications",
+      "t": "noun"
+    },
+    "baja": {
+      "g": "comes down (bajar); come down, as an order",
+      "t": "verb"
+    },
+    "bajan": {
+      "g": "they come down (bajar); they carry down",
+      "t": "verb"
+    },
+    "baldes": {
+      "g": "buckets, as said in Latin America",
+      "t": "noun"
+    },
+    "basta": {
+      "g": "is enough (bastar)",
+      "t": "verb"
+    },
+    "biberones": {
+      "g": "baby bottles",
+      "t": "noun"
+    },
+    "bostezo": {
+      "g": "yawn",
+      "t": "noun"
+    },
+    "buenas": {
+      "g": "good, in buenas tardes",
+      "t": "adjective"
+    },
+    "bulto": {
+      "g": "lump, a shape under something",
+      "t": "noun"
+    },
+    "calcetines": {
+      "g": "socks",
+      "t": "noun"
+    },
+    "calcetín": {
+      "g": "sock",
+      "t": "noun"
+    },
+    "canica": {
+      "g": "marble, the little glass ball",
+      "t": "noun"
+    },
+    "cartero": {
+      "g": "postman",
+      "t": "noun"
+    },
+    "cenamos": {
+      "g": "we have dinner (cenar)",
+      "t": "verb"
+    },
+    "ceno": {
+      "g": "I have dinner (cenar)",
+      "t": "verb"
+    },
+    "cepilla": {
+      "g": "brush, as an order (cepillar)",
+      "t": "verb"
+    },
+    "cerramos": {
+      "g": "we turn off, we shut (cerrar)",
+      "t": "verb"
+    },
+    "cesta": {
+      "g": "basket",
+      "t": "noun"
+    },
+    "charco": {
+      "g": "puddle",
+      "t": "noun"
+    },
+    "comes": {
+      "g": "you eat (comer)",
+      "t": "verb"
+    },
+    "compartimos": {
+      "g": "shall we share (compartir)",
+      "t": "verb"
+    },
+    "contrario": {
+      "g": "al contrario, on the contrary",
+      "t": "expression"
+    },
+    "cortan": {
+      "g": "they cut off (cortar)",
+      "t": "verb"
+    },
+    "creo": {
+      "g": "I think (creer)",
+      "t": "verb"
+    },
+    "descansar": {
+      "g": "to rest",
+      "t": "verb"
+    },
+    "desdobla": {
+      "g": "unfolds (desdoblar)",
+      "t": "verb"
+    },
+    "despertadores": {
+      "g": "alarm clocks",
+      "t": "noun"
+    },
+    "duermen": {
+      "g": "they sleep (dormir)",
+      "t": "verb"
+    },
+    "duermes": {
+      "g": "you sleep (dormir)",
+      "t": "verb"
+    },
+    "duermo": {
+      "g": "I sleep (dormir)",
+      "t": "verb"
+    },
+    "erres": {
+      "g": "the letter r, plural (erre)",
+      "t": "noun"
+    },
+    "escuchan": {
+      "g": "they listen to (escuchar)",
+      "t": "verb"
+    },
+    "espero": {
+      "g": "I am expecting (esperar)",
+      "t": "verb"
+    },
+    "están": {
+      "g": "they are (estar)",
+      "t": "verb"
+    },
+    "falta": {
+      "g": "is missing (faltar); no hace falta, there is no need",
+      "t": "verb"
+    },
+    "firmas": {
+      "g": "you sign for (firmar)",
+      "t": "verb"
+    },
+    "gata": {
+      "g": "female cat",
+      "t": "noun"
+    },
+    "gatito": {
+      "g": "kitten",
+      "t": "noun"
+    },
+    "gatitos": {
+      "g": "kittens",
+      "t": "noun"
+    },
+    "gato": {
+      "g": "cat",
+      "t": "noun"
+    },
+    "gatos": {
+      "g": "cats",
+      "t": "noun"
+    },
+    "gramos": {
+      "g": "grams",
+      "t": "noun"
+    },
+    "gratis": {
+      "g": "free, at no cost",
+      "t": "adjective"
+    },
+    "izquierdo": {
+      "g": "left",
+      "t": "adjective"
+    },
+    "lavadero": {
+      "g": "laundry sink",
+      "t": "noun"
+    },
+    "leen": {
+      "g": "they read (leer)",
+      "t": "verb"
+    },
+    "levantas": {
+      "g": "you get up (levantarse)",
+      "t": "verb"
+    },
+    "litro": {
+      "g": "litre",
+      "t": "noun"
+    },
+    "llamas": {
+      "g": "you call (llamar)",
+      "t": "verb"
+    },
+    "llamo": {
+      "g": "me llamo, my name is (llamarse)",
+      "t": "verb"
+    },
+    "llavero": {
+      "g": "keyring",
+      "t": "noun"
+    },
+    "llevo": {
+      "g": "I take, I carry (llevar)",
+      "t": "verb"
+    },
+    "lloran": {
+      "g": "they cry (llorar)",
+      "t": "verb"
+    },
+    "maletas": {
+      "g": "suitcases",
+      "t": "noun"
+    },
+    "maullido": {
+      "g": "meow",
+      "t": "noun"
+    },
+    "mayúscula": {
+      "g": "capital letter",
+      "t": "noun"
+    },
+    "mírala": {
+      "g": "look at her (mirar)",
+      "t": "verb"
+    },
+    "ni": {
+      "g": "nor, in a negative sentence (ni idea, no idea)",
+      "t": "conjunction"
+    },
+    "oigo": {
+      "g": "I hear (oir)",
+      "t": "verb"
+    },
+    "oyes": {
+      "g": "do you hear (oir)",
+      "t": "verb"
+    },
+    "pagamos": {
+      "g": "we pay (pagar)",
+      "t": "verb"
+    },
+    "paquetes": {
+      "g": "parcels",
+      "t": "noun"
+    },
+    "patas": {
+      "g": "paws",
+      "t": "noun"
+    },
+    "peleamos": {
+      "g": "we argue, we fight (pelear)",
+      "t": "verb"
+    },
+    "pelusa": {
+      "g": "fluff, dust under furniture",
+      "t": "noun"
+    },
+    "película": {
+      "g": "film, movie",
+      "t": "noun"
+    },
+    "pesadas": {
+      "g": "heavy (feminine plural)",
+      "t": "adjective"
+    },
+    "plomero": {
+      "g": "plumber, as said in Latin America",
+      "t": "noun"
+    },
+    "pon": {
+      "g": "put, type, as an order (poner)",
+      "t": "verb"
+    },
+    "postre": {
+      "g": "dessert",
+      "t": "noun"
+    },
+    "preparas": {
+      "g": "you get ready, you make (preparar)",
+      "t": "verb"
+    },
+    "quejan": {
+      "g": "they complain (quejarse)",
+      "t": "verb"
+    },
+    "rascador": {
+      "g": "scratching post",
+      "t": "noun"
+    },
+    "revisan": {
+      "g": "they go through, they check (revisar)",
+      "t": "verb"
+    },
+    "riega": {
+      "g": "water, as an order (regar)",
+      "t": "verb"
+    },
+    "ronca": {
+      "g": "snores (roncar)",
+      "t": "verb"
+    },
+    "ronquido": {
+      "g": "snore",
+      "t": "noun"
+    },
+    "roto": {
+      "g": "broken (romper)",
+      "t": "adjective"
+    },
+    "saca": {
+      "g": "takes out (sacar)",
+      "t": "verb"
+    },
+    "sienta": {
+      "g": "sits down (sentarse)",
+      "t": "verb"
+    },
+    "sube": {
+      "g": "goes up, climbs (subir); come up, as an order",
+      "t": "verb"
+    },
+    "suelta": {
+      "g": "loose, not fixed in place",
+      "t": "adjective"
+    },
+    "tapo": {
+      "g": "I cover (taparse)",
+      "t": "verb"
+    },
+    "tiendo": {
+      "g": "I hang out to dry (tender)",
+      "t": "verb"
+    },
+    "tigre": {
+      "g": "tiger, the name Nicolas gives the cat",
+      "t": "noun"
+    },
+    "tigrre": {
+      "g": "Tigre misspelled with two r's, the password as Nicolas wrote it",
+      "t": "noun"
+    },
+    "toco": {
+      "g": "I ring, I touch (tocar)",
+      "t": "verb"
+    },
+    "trato": {
+      "g": "deal (trato hecho, it is a deal)",
+      "t": "noun"
+    },
+    "tráeme": {
+      "g": "bring me (traer)",
+      "t": "verb"
+    },
+    "tuve": {
+      "g": "I had (tener), in the past",
+      "t": "verb"
+    },
+    "vieja": {
+      "g": "old (feminine)",
+      "t": "adjective"
+    },
+    "vives": {
+      "g": "you live (vivir)",
+      "t": "verb"
+    },
+    "voy": {
+      "g": "I am coming (ir); me voy, I am leaving",
+      "t": "verb"
+    }
   }
 }

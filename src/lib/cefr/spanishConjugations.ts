@@ -529,7 +529,14 @@ export function formasDeVerbo(infinitivo: string): Set<string> {
   const i = Math.max(stem.lastIndexOf("e"), stem.lastIndexOf("o"));
   if (i >= 0 && /^(?:ar|er|ir)$/.test(ending)) {
     const v = stem[i];
-    for (const nueva of v === "e" ? ["ie", "i"] : ["ue", "u"])
+    // El diptongo que abre la palabra lleva H de oficio: oler -> huele,
+    // oser -> hueso, errar -> yerra. Sin ella, "huele" no era ninguna forma de
+    // "oler" y la plaza perdia sus encuentros aunque el lector leyera el mismo
+    // verbo en dos historias (medido 2026-09-23 en el Conversations ES latam
+    // A0: dos plazas "oler" contadas como unicas con el verbo en dos cuerpos).
+    // Igual que el resto de esta funcion, genera de mas: una forma inventada
+    // solo cuenta si aparece literal en un cuerpo.
+    for (const nueva of v === "e" ? ["ie", "i", "ye"] : ["ue", "u", "hue"])
       for (const f of genRegularConjugations(stem.slice(0, i) + nueva + stem.slice(i + 1) + ending)) out.add(f);
   }
   for (const [forma, i2] of Object.entries(IRREGULAR_FORMS)) if (i2 === inf) out.add(forma);

@@ -1,7 +1,7 @@
 {
   "_que_es": "Veredictos del usuario, de oido, sobre fragmentos que los gates de audio marcaron. Rescatados del artifact 'Fragmentos marcados por los gates' (claude.ai/artifact/FjLMPvNpGCWbFQLTMsdCp1) el 2026-09-17, porque un artifact pertenece a la cuenta de Claude que lo publico y desde otra cuenta ni se lista ni se abre.",
   "_como_leerlo": "falso_positivo = el gate marco algo que al oido esta bien. defecto_real = habia que re-tirarlo. aprobado_de_oido = re-tirado y el usuario lo dio por bueno escuchandolo. aceptado_asi = el usuario lo deja como esta sabiendo lo que mide.",
-  "_resumen": "49 anotados: 36 falsos positivos, 6 defectos reales, 3 aprobados de oido tras re-tirar, 2 re-tirados ok, 1 aceptado asi, 1 tema limpio de gates. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 10 del journey Conversations ES latam A0 (temas 1 y 2, 2026-09-21), 20 del Friends DE A2. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura. HIPOTESIS ABIERTA (2026-09-23, un solo caso): entre los titulos preposicionales, los de LUGAR u ORIGEN caen solos (auf dem Sofa, im Waschsalon, im Treppenhaus, im Lebenslauf, aus Muenster, vom Sperrmuell) y el de TIEMPO sube y no se arregla re-tirando (am Freitag: +7,7 y tres re-tomas a +7,9, +6,7, +8,0). Si se confirma, el sospechoso que queda sin narrar es 'Die Praxis am Dienstag' del tema 6, y quiza 'Heiser nach dem Derby' del 5. La hipotesis suma un caso a favor: cambiar la cola temporal por una locativa en el mismo titulo lo llevo de +7,7 irreparable a -3,8 en una sola toma. HIPOTESIS REFUTADA (2026-09-23): 'Die Praxis am Dienstag' es el mismo molde temporal que 'Probearbeiten am Freitag' y salio SIN NINGUNA marca. Asi que no es la cola de tiempo lo que rompia un titulo; lo unico que sigue en pie es que el nominal pelado no se arregla re-tirando. Del 'am Freitag' no sabemos la causa. CIERRE del Friends DE A2 (2026-09-23): 21 de 21 narradas, 21 veredictos del usuario, ninguna oracion acelerada y ningun fragmento marcado sin juzgar. Los dos gates de CONTENIDO que quedaban resultaron falsos positivos del reconocedor: 'betrue' por 'Bettruhe' y el numero escrito en cifras donde la voz lo dice con palabras.",
+  "_resumen": "81 anotados (union de dos ramas, 2026-09-24): 67 falso_positivo, 7 defecto_real, 3 aprobado_de_oido, 1 aceptado_asi, 1 limpio_de_gates, 2 re-tirado_ok. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 20 del Friends DE A2 (Hannover) y 42 del Conversations ES latam A0. Los 10 fragmentos del Conversations que estaban anotados dos veces se quedan con el juicio del 2026-09-23, hecho con las 21 historias delante. Se conservan los dos analisis largos: 49 anotados: 36 falsos positivos, 6 defectos reales, 3 aprobados de oido tras re-tirar, 2 re-tirados ok, 1 aceptado asi, 1 tema limpio de gates. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca, 10 del journey Conversations ES latam A0 (temas 1 y 2, 2026-09-21), 20 del Friends DE A2. PATRON del Friends DE A2: lo que decide no es ser titulo, es la FORMA del titulo. Los nominales pelados (\"Drei Stunden Transporter\") no se arreglan re-tirando, cuatro tomas seguidas peores, y hay que reescribir el titulo; los preposicionales caen solos o a la segunda toma, y uno a +4,8 st resulto falso positivo. Los 6 fragmentos de PROSA marcados salieron falsos positivos, 6 de 6. TEMA 3 del DE A2: cero fragmentos marcados en las tres historias, el primer tema limpio del journey. Sus tres titulos llevan preposicion, uno de ellos por reescritura. HIPOTESIS ABIERTA (2026-09-23, un solo caso): entre los titulos preposicionales, los de LUGAR u ORIGEN caen solos (auf dem Sofa, im Waschsalon, im Treppenhaus, im Lebenslauf, aus Muenster, vom Sperrmuell) y el de TIEMPO sube y no se arregla re-tirando (am Freitag: +7,7 y tres re-tomas a +7,9, +6,7, +8,0). Si se confirma, el sospechoso que queda sin narrar es 'Die Praxis am Dienstag' del tema 6, y quiza 'Heiser nach dem Derby' del 5. La hipotesis suma un caso a favor: cambiar la cola temporal por una locativa en el mismo titulo lo llevo de +7,7 irreparable a -3,8 en una sola toma. HIPOTESIS REFUTADA (2026-09-23): 'Die Praxis am Dienstag' es el mismo molde temporal que 'Probearbeiten am Freitag' y salio SIN NINGUNA marca. Asi que no es la cola de tiempo lo que rompia un titulo; lo unico que sigue en pie es que el nominal pelado no se arregla re-tirando. Del 'am Freitag' no sabemos la causa. CIERRE del Friends DE A2 (2026-09-23): 21 de 21 narradas, 21 veredictos del usuario, ninguna oracion acelerada y ningun fragmento marcado sin juzgar. Los dos gates de CONTENIDO que quedaban resultaron falsos positivos del reconocedor: 'betrue' por 'Bettruhe' y el numero escrito en cifras donde la voz lo dice con palabras. || 61 juzgados: 58 falsos positivos, 3 defectos reales. 12 del Friends DE A1, 7 del ES A2 Friends Salamanca y 42 del Conversations ES latam A0, estos ultimos juzgados el 2026-09-23 con las 21 historias delante. De ese journey salieron dos defectos reales, los dos de Mariana en el tema 1; las dos segundas tomas quedaron aprobadas, una de ellas con el gate todavia marcandola.",
   "veredictos": [
     {
       "fragmento": "alle-3",
@@ -128,10 +128,12 @@
     {
       "fragmento": "gato-h1-f02",
       "gate": "pregunta que no sube (-1,7 st)",
-      "veredicto": "falso_positivo",
-      "fecha": "2026-09-21",
+      "veredicto": "defecto_real",
+      "fecha": "2026-09-23",
       "journey": "conversations-es-latam-a0",
-      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc"
+      "artifact": "https://claude.ai/artifact/QgbNBU8ADYQdmi3kDewspc",
+      "texto": "Perdón. ¿Tienes un gato gris?",
+      "nota": "juzgado falso positivo el 2026-09-21 y corregido a defecto real el 2026-09-23, con el journey entero delante"
     },
     {
       "fragmento": "gato-h1-f03",
@@ -321,6 +323,263 @@
       "veredicto": "re-tirado_ok",
       "fecha": "2026-09-23",
       "nota": "Las dos ultimas oraciones disparadas del journey. Con esto, 21 de 21 historias sin ninguna."
+    },
+    {
+      "fragmento": "gato-t2h1-f06",
+      "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +3.62 st: pued",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Mariana y Nicolás miran el piso de la cocina. Está seco. Pero en un rincón hay un charco."
+    },
+    {
+      "fragmento": "gato-t3h1-f13",
+      "gate": "Final de afirmación que sube +2.97 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Y el olor viene de tu gato."
+    },
+    {
+      "fragmento": "gato-t3h1-f16",
+      "gate": "Pregunta cuyo final no sube (3.7 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y si nadie contesta en toda la semana?"
+    },
+    {
+      "fragmento": "gato-t3h2-f13",
+      "gate": "Pregunta cuyo final no sube (-0.3 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y por qué no dices nada el lunes?"
+    },
+    {
+      "fragmento": "gato-t3h3-f05",
+      "gate": "Pregunta cuyo final no sube (-0.2 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y quién quiere calcetines izquierdos?"
+    },
+    {
+      "fragmento": "gato-t3h3-f12",
+      "gate": "Pregunta cuyo final no sube (-2.8 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Y una cuchara. ¿Para qué quiere una cuchara?"
+    },
+    {
+      "fragmento": "gato-t4h1-f10",
+      "gate": "Final de afirmación que sube +2.82 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Yo compro otra marca. Esta no."
+    },
+    {
+      "fragmento": "gato-t4h2-f04",
+      "gate": "Pregunta cuyo final no sube (-0.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Tú firmas por todo el edificio?"
+    },
+    {
+      "fragmento": "gato-t4h2-f06",
+      "gate": "Pregunta cuyo final no sube (2.1 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y esta caja de abajo?"
+    },
+    {
+      "fragmento": "gato-t4h2-f08",
+      "gate": "Final de afirmación que sube +5.8 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Nicolás saca la caja de abajo. Encima hay un papel doblado. Mariana lo lee en voz alta."
+    },
+    {
+      "fragmento": "gato-t4h3-f02",
+      "gate": "Final de afirmación que sube +5.16 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Nicolás, mira esta caja."
+    },
+    {
+      "fragmento": "gato-t4h3-f12",
+      "gate": "Final de afirmación que sube +3.24 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Sí. Es un gatito, y duerme."
+    },
+    {
+      "fragmento": "gato-t5h2-f01",
+      "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +5.02 st: pued",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "El despertador de Nicolás suena a las seis. Suena fuerte. Mariana y su gata viven encima. Hoy baja medio dormida y da un bostezo."
+    },
+    {
+      "fragmento": "gato-t5h2-f08",
+      "gate": "Pregunta cuyo final no sube (-6.4 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Entonces por qué te levantas?"
+    },
+    {
+      "fragmento": "gato-t5h3-f02",
+      "gate": "Pregunta cuyo final no sube (1.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Tú tampoco duermes?"
+    },
+    {
+      "fragmento": "gato-t5h3-f13",
+      "gate": "Final de afirmación que sube +9.8 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Del sofá llega un ronquido suave. Mariana sonríe."
+    },
+    {
+      "fragmento": "gato-t6h1-f03",
+      "gate": "Pregunta cuyo final no sube (-3.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "El mío sí anda. ¿Quieres mi clave?"
+    },
+    {
+      "fragmento": "gato-t6h1-f06",
+      "gate": "Final de afirmación que sube +6.17 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Mariana sube y prueba la clave. Su celular dice error. Ella regresa y toca la puerta."
+    },
+    {
+      "fragmento": "gato-t6h1-f09",
+      "gate": "Pregunta cuyo final no sube (3.7 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Tigrre? ¿Con dos erres?"
+    },
+    {
+      "fragmento": "gato-t6h2-f02",
+      "gate": "Final de afirmación que sube +3.59 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Miren, esta es mi sala nueva."
+    },
+    {
+      "fragmento": "gato-t6h2-f17",
+      "gate": "Pregunta cuyo final no sube (-3.1 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Con gata o sin gata?"
+    },
+    {
+      "fragmento": "gato-t6h3-f09",
+      "gate": "Re-tirado hoy tras editar el texto · Final de afirmación que sube +4.02 st: pued",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Mariana y Nicolás revisan la lista juntos. Entre foto y foto hay un aviso corto."
+    },
+    {
+      "fragmento": "gato-t7h1-f03",
+      "gate": "Final de afirmación que sube +5.51 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Sin problema. Yo paso una vez al día."
+    },
+    {
+      "fragmento": "gato-t7h1-f14",
+      "gate": "Pregunta cuyo final no sube (0.5 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y cada cuánto las riego?"
+    },
+    {
+      "fragmento": "gato-t7h2-f02",
+      "gate": "Pregunta cuyo final no sube (-5.9 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Hola, Nicolás. ¿Cómo va todo?"
+    },
+    {
+      "fragmento": "gato-t7h2-f06",
+      "gate": "Final de afirmación que sube +7.58 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Nicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio."
+    },
+    {
+      "fragmento": "gato-t7h2-f08",
+      "gate": "Pregunta cuyo final no sube (-0.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Y qué dice?"
+    },
+    {
+      "fragmento": "gato-t7h2-f14",
+      "gate": "Pregunta cuyo final no sube (-3.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿En tu casa? ¿Y por dónde entra?"
+    },
+    {
+      "fragmento": "gato-t7h3-f03",
+      "gate": "Final de afirmación que sube +6.31 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Bienvenida. Tus plantas viven. Casi todas."
+    },
+    {
+      "fragmento": "gato-t7h3-f04",
+      "gate": "Final de afirmación que sube +2.27 st: puede sonar a pregunta",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Casi? ¿Y mi gata? No está en ningún lado."
+    },
+    {
+      "fragmento": "gato-t7h3-f12",
+      "gate": "Pregunta cuyo final no sube (-9.6 st): puede sonar a afirmación",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "¿Una llave? ¿De qué puerta?"
+    },
+    {
+      "fragmento": "gato-h1-f02-toma2",
+      "gate": "pregunta que sube +1,7 st, por debajo del umbral",
+      "veredicto": "falso_positivo",
+      "fecha": "2026-09-23",
+      "journey": "conversations-es-latam-a0",
+      "texto": "Perdón. ¿Tienes un gato gris?",
+      "nota": "segunda toma; la primera bajaba -1,7 st y el usuario la dio por defecto real. Esta sube +1,7 st: el gate la sigue marcando y el oido la da por buena"
     }
   ],
   "_para_que_sirve": "Es la unica calibracion de oido humano que tienen los gates de audio. 18 de 19 marcas eran ruido: antes de endurecer un umbral, o de re-tirar por lo que diga un gate, se mira esta tabla."

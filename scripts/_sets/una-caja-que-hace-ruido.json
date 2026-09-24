@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el ruido,la caja,el gatito,la gata",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el ruido",
+     "answer": "a noise",
+     "options": [
+      "a noise",
+      "a box",
+      "a kitten",
+      "a female cat"
+     ]
+    },
+    {
+     "word": "la caja",
+     "answer": "a box",
+     "options": [
+      "a noise",
+      "a box",
+      "a kitten",
+      "a female cat"
+     ]
+    },
+    {
+     "word": "el gatito",
+     "answer": "a kitten",
+     "options": [
+      "a noise",
+      "a box",
+      "a kitten",
+      "a female cat"
+     ]
+    },
+    {
+     "word": "la gata",
+     "answer": "a female cat",
+     "options": [
+      "a noise",
+      "a box",
+      "a kitten",
+      "a female cat"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "despacio",
+  "sentence": "Mariana abre la caja muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "despacio",
+   "options": [
+    "despacio",
+    "fácil",
+    "abajo",
+    "adentro"
+   ],
+   "translation": "Mariana opens the box very _____.",
+   "optionTranslations": [
+    "slowly",
+    "easy",
+    "downstairs",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Mariana abre la caja muy despacio.",
+    "targetWord": "despacio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "buscan",
+  "sentence": "Los dos lo _____ por el edificio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "buscan",
+   "options": [
+    "buscan",
+    "abren",
+    "quedan",
+    "doblan"
+   ],
+   "translation": "The two of them _____ him around the building.",
+   "optionTranslations": [
+    "look for",
+    "open",
+    "keep",
+    "fold"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Los dos lo buscan por el edificio.",
+    "targetWord": "buscan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "vieja",
+  "sentence": "Viene de la caja _____, debajo de la escalera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vieja",
+   "options": [
+    "vieja",
+    "fácil",
+    "cuarta",
+    "despacio"
+   ],
+   "translation": "It comes from the _____ box, under the stairs.",
+   "optionTranslations": [
+    "old",
+    "easy",
+    "fourth",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Viene de la caja vieja, debajo de la escalera.",
+    "targetWord": "vieja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Escucha",
+  "sentence": "[[Escucha]], Nicolás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "listen",
+   "options": [
+    "listen",
+    "wait",
+    "look",
+    "answer"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Escucha, Nicolás.",
+    "targetWord": "Escucha",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abajo",
+  "sentence": "Hay un ruido [[abajo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "downstairs",
+   "options": [
+    "downstairs",
+    "outside",
+    "next door",
+    "far away"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Hay un ruido abajo.",
+    "targetWord": "abajo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debajo de",
+  "sentence": "Viene de la caja vieja, [[debajo de]] la escalera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under",
+   "options": [
+    "under",
+    "next to",
+    "on top of",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Viene de la caja vieja, debajo de la escalera.",
+    "targetWord": "debajo de",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Adentro",
+  "sentence": "[[Adentro]] está el gato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "nearby",
+    "underneath",
+    "upstairs"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Adentro está el gato.",
+    "targetWord": "Adentro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fácil",
+  "sentence": "Es [[fácil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "easy",
+   "options": [
+    "easy",
+    "urgent",
+    "strange",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Es fácil.",
+    "targetWord": "fácil",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Se queda",
+  "sentence": "[[Se queda]] con su mamá.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he stays",
+   "options": [
+    "he stays",
+    "he leaves",
+    "he cries",
+    "he grows"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Se queda con su mamá.",
+    "targetWord": "Se queda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Come por cinco",
+  "sentence": "[[Come por cinco]], no por uno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she eats for five",
+   "options": [
+    "she eats for five",
+    "she eats at five",
+    "she eats every five days",
+    "she eats the fifth one"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Come por cinco, no por uno.",
+    "targetWord": "Come por cinco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Y ahora",
+  "sentence": "¿[[Y ahora]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "and now what",
+   "options": [
+    "and now what",
+    "and where",
+    "and who",
+    "and how much"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "¿Y ahora?",
+    "targetWord": "Y ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuarto",
+  "sentence": "¿Y el [[cuarto]] gatito?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fourth",
+   "options": [
+    "fourth",
+    "quiet",
+    "grey",
+    "lost"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "¿Y el cuarto gatito?",
+    "targetWord": "cuarto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuatro",
+  "sentence": "[[Cuatro]] gatitos y tres casas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "four",
+   "options": [
+    "four",
+    "seven",
+    "twelve",
+    "twenty"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Cuatro gatitos y tres casas.",
+    "targetWord": "cuatro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ninguna",
+  "sentence": "Hoy el gato no está en [[ninguna]] casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not any",
+   "options": [
+    "not any",
+    "another",
+    "the same",
+    "his own"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Hoy el gato no está en ninguna casa.",
+    "targetWord": "ninguna",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nombres",
+  "sentence": "Tiene tres [[nombres]] y no viene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "names",
+   "options": [
+    "names",
+    "homes",
+    "bowls",
+    "collars"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Tiene tres nombres y no viene.",
+    "targetWord": "nombres",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Tiene",
+  "sentence": "[[Tiene]] tres nombres y no viene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he has",
+   "options": [
+    "he has",
+    "he wants",
+    "he hears",
+    "he loses"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-que-hace-ruido",
+    "storySource": "user",
+    "sentence": "Tiene tres nombres y no viene.",
+    "targetWord": "Tiene",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

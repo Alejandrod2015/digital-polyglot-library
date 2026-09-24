@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la maleta,el llavero,la hoja,el cepillo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la maleta",
+     "answer": "a suitcase",
+     "options": [
+      "a suitcase",
+      "a keyring",
+      "a sheet of paper",
+      "a brush"
+     ]
+    },
+    {
+     "word": "el llavero",
+     "answer": "a keyring",
+     "options": [
+      "a suitcase",
+      "a keyring",
+      "a sheet of paper",
+      "a brush"
+     ]
+    },
+    {
+     "word": "la hoja",
+     "answer": "a sheet of paper",
+     "options": [
+      "a suitcase",
+      "a keyring",
+      "a sheet of paper",
+      "a brush"
+     ]
+    },
+    {
+     "word": "el cepillo",
+     "answer": "a brush",
+     "options": [
+      "a suitcase",
+      "a keyring",
+      "a sheet of paper",
+      "a brush"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desdobla",
+  "sentence": "Nicolás [[desdobla]] la hoja. Cuenta veinte puntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unfolds",
+   "options": [
+    "unfolds",
+    "signs",
+    "tears up",
+    "hands back"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Nicolás desdobla la hoja. Cuenta veinte puntos.",
+    "targetWord": "desdobla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "Riega",
+  "sentence": "_____ mis plantas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Riega",
+   "options": [
+    "Riega",
+    "Desdobla",
+    "Guarda",
+    "Espera"
+   ],
+   "translation": "_____ my plants.",
+   "optionTranslations": [
+    "water",
+    "unfold",
+    "put away",
+    "wait for"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Riega mis plantas.",
+    "targetWord": "Riega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "espera",
+  "sentence": "Nicolás la _____ en el felpudo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "espera",
+   "options": [
+    "espera",
+    "riega",
+    "desdobla",
+    "guarda"
+   ],
+   "translation": "Nicolas _____ her on the doormat.",
+   "optionTranslations": [
+    "waits for",
+    "waters",
+    "unfolds",
+    "puts away"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Nicolás la espera en el felpudo.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guarda",
+  "sentence": "Punto veinte: [[guarda]] el cepillo arriba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "put away",
+   "options": [
+    "put away",
+    "rinse",
+    "share",
+    "replace"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Punto veinte: guarda el cepillo arriba.",
+    "targetWord": "guarda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basta",
+  "sentence": "Con tres minutos [[basta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is enough",
+   "options": [
+    "is enough",
+    "is too long",
+    "is the rule",
+    "is the limit"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Con tres minutos basta.",
+    "targetWord": "basta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encanta",
+  "sentence": "Le [[encanta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she loves it",
+   "options": [
+    "she loves it",
+    "she allows it",
+    "she expects it",
+    "she ignores it"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Le encanta.",
+    "targetWord": "encanta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llora",
+  "sentence": "Uno solo [[llora]] toda la noche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cries",
+   "options": [
+    "cries",
+    "purrs",
+    "wanders",
+    "shivers"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Uno solo llora toda la noche.",
+    "targetWord": "llora",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entera",
+  "sentence": "Nicolás lee la hoja [[entera]], de arriba abajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whole",
+   "options": [
+    "whole",
+    "aloud",
+    "twice",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Nicolás lee la hoja entera, de arriba abajo.",
+    "targetWord": "entera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se quejan",
+  "sentence": "Ellas no se [[quejan]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "complain",
+   "options": [
+    "complain",
+    "wander off",
+    "wake up",
+    "grow fast"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Ellas no se quejan.",
+    "targetWord": "se quejan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "problema",
+  "sentence": "Sin [[problema]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "problem",
+   "options": [
+    "problem",
+    "delay",
+    "charge",
+    "promise"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Sin problema.",
+    "targetWord": "problema",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos semanas",
+  "sentence": "Me voy [[dos semanas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for two weeks",
+   "options": [
+    "for two weeks",
+    "for the weekend",
+    "until spring",
+    "on Thursday"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Me voy dos semanas.",
+    "targetWord": "dos semanas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trece",
+  "sentence": "Punto [[trece]]: los gatitos duermen juntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thirteen",
+   "options": [
+    "thirteen",
+    "thirty",
+    "three",
+    "twelve"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Punto trece: los gatitos duermen juntos.",
+    "targetWord": "trece",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "instrucciones",
+  "sentence": "Son mis [[instrucciones]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "instructions",
+   "options": [
+    "instructions",
+    "introductions",
+    "measurements",
+    "reasons"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Son mis instrucciones.",
+    "targetWord": "instrucciones",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "minutos",
+  "sentence": "Con tres [[minutos]] basta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "minutes",
+   "options": [
+    "minutes",
+    "moments",
+    "days",
+    "tries"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Con tres minutos basta.",
+    "targetWord": "minutos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "planta",
+  "sentence": "Después mira las [[plantas]] tristes del balcón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plants",
+   "options": [
+    "plants",
+    "plans",
+    "curtains",
+    "boxes"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "Después mira las plantas tristes del balcón.",
+    "targetWord": "planta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cada cuánto",
+  "sentence": "¿Y [[cada cuánto]] las riego?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "how often",
+   "options": [
+    "how often",
+    "how much",
+    "how long",
+    "how many"
+   ],
+   "audioClip": {
+    "storySlug": "dos-semanas-y-una-lista",
+    "storySource": "user",
+    "sentence": "¿Y cada cuánto las riego?",
+    "targetWord": "cada cuánto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

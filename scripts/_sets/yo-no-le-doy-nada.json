@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la escalera,el pollo,la nota,el cuello",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la escalera",
+     "answer": "the stairs",
+     "options": [
+      "the stairs",
+      "chicken",
+      "a note",
+      "the neck"
+     ]
+    },
+    {
+     "word": "el pollo",
+     "answer": "chicken",
+     "options": [
+      "the stairs",
+      "chicken",
+      "a note",
+      "the neck"
+     ]
+    },
+    {
+     "word": "la nota",
+     "answer": "a note",
+     "options": [
+      "the stairs",
+      "chicken",
+      "a note",
+      "the neck"
+     ]
+    },
+    {
+     "word": "el cuello",
+     "answer": "the neck",
+     "options": [
+      "the stairs",
+      "chicken",
+      "a note",
+      "the neck"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "huele",
+  "sentence": "Tu cocina _____ a pollo todas las noches.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "huele",
+   "options": [
+    "huele",
+    "pelea",
+    "toca",
+    "busca"
+   ],
+   "translation": "Your kitchen _____ of chicken every night.",
+   "optionTranslations": [
+    "smells",
+    "argues",
+    "touches",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Tu cocina huele a pollo todas las noches.",
+    "targetWord": "huele",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "peleamos",
+  "sentence": "Y nosotros _____ por nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "peleamos",
+   "options": [
+    "peleamos",
+    "olemos",
+    "tocamos",
+    "damos"
+   ],
+   "translation": "And we _____ over nothing.",
+   "optionTranslations": [
+    "argue",
+    "smell",
+    "touch",
+    "give"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Y nosotros peleamos por nada.",
+    "targetWord": "peleamos",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "toca",
+  "sentence": "Entonces Nicolás _____ el cuello del gato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toca",
+   "options": [
+    "toca",
+    "pesa",
+    "pelea",
+    "dice"
+   ],
+   "translation": "Then Nicolas _____ the cat's neck.",
+   "optionTranslations": [
+    "touches",
+    "weighs",
+    "argues",
+    "says"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Entonces Nicolás toca el cuello del gato.",
+    "targetWord": "toca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serios",
+  "sentence": "Los dos están muy [[serios]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serious",
+   "options": [
+    "serious",
+    "curious",
+    "tired",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Los dos están muy serios.",
+    "targetWord": "serios",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das",
+  "sentence": "¿Tú le [[das]] comida a Luna?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "do you give",
+   "options": [
+    "do you give",
+    "do you buy",
+    "do you take",
+    "do you find"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "¿Tú le das comida a Luna?",
+    "targetWord": "das",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comida",
+  "sentence": "¿Tú le das [[comida]] a Luna?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "food",
+   "options": [
+    "food",
+    "water",
+    "a name",
+    "a home"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "¿Tú le das comida a Luna?",
+    "targetWord": "comida",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toma",
+  "sentence": "Solo [[toma]] agua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drinks",
+   "options": [
+    "drinks",
+    "carries",
+    "looks for",
+    "spills"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Solo toma agua.",
+    "targetWord": "toma",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Dice",
+  "sentence": "[[Dice]]: Me llamo Rey.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it says",
+   "options": [
+    "it says",
+    "it asks",
+    "it hides",
+    "it counts"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Dice: Me llamo Rey.",
+    "targetWord": "Dice",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "azul",
+  "sentence": "Ceno en la casa [[azul]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "green",
+    "quiet",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Ceno en la casa azul.",
+    "targetWord": "azul",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "solo",
+  "sentence": "Tigre come [[solo]] por la mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only",
+   "options": [
+    "only",
+    "never",
+    "slowly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Tigre come solo por la mañana.",
+    "targetWord": "solo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pequeño",
+  "sentence": "Hay un papel [[pequeño]] en el collar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "wet",
+    "yellow",
+    "torn"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Hay un papel pequeño en el collar.",
+    "targetWord": "pequeño",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Rey",
+  "sentence": "Me llamo [[Rey]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "King",
+   "options": [
+    "King",
+    "Neighbour",
+    "Shadow",
+    "Sunday"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Me llamo Rey.",
+    "targetWord": "Rey",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de enfrente",
+  "sentence": "La casa azul es la casa [[de enfrente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "across the street",
+   "options": [
+    "across the street",
+    "next door",
+    "upstairs",
+    "at the corner"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "La casa azul es la casa de enfrente.",
+    "targetWord": "de enfrente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cocina",
+  "sentence": "Tu [[cocina]] huele a pollo todas las noches.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kitchen",
+   "options": [
+    "kitchen",
+    "balcony",
+    "bedroom",
+    "hallway"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Tu cocina huele a pollo todas las noches.",
+    "targetWord": "cocina",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por nada",
+  "sentence": "Y nosotros peleamos [[por nada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over nothing",
+   "options": [
+    "over nothing",
+    "out loud",
+    "every day",
+    "on purpose"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Y nosotros peleamos por nada.",
+    "targetWord": "por nada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Me llamo",
+  "sentence": "[[Me llamo]] Rey.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "my name is",
+   "options": [
+    "my name is",
+    "I live in",
+    "I come from",
+    "I look like"
+   ],
+   "audioClip": {
+    "storySlug": "yo-no-le-doy-nada",
+    "storySource": "user",
+    "sentence": "Me llamo Rey.",
+    "targetWord": "Me llamo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

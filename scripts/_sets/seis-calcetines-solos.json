@@ -1,0 +1,429 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la cuchara,el guante,la pierna,la pareja",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la cuchara",
+     "answer": "a spoon",
+     "options": [
+      "a spoon",
+      "a glove",
+      "a leg",
+      "a matching pair"
+     ]
+    },
+    {
+     "word": "el guante",
+     "answer": "a glove",
+     "options": [
+      "a spoon",
+      "a glove",
+      "a leg",
+      "a matching pair"
+     ]
+    },
+    {
+     "word": "la pierna",
+     "answer": "a leg",
+     "options": [
+      "a spoon",
+      "a glove",
+      "a leg",
+      "a matching pair"
+     ]
+    },
+    {
+     "word": "la pareja",
+     "answer": "a matching pair",
+     "options": [
+      "a spoon",
+      "a glove",
+      "a leg",
+      "a matching pair"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "caminan",
+  "sentence": "Cuatro gatitos _____ y corren por la casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "caminan",
+   "options": [
+    "caminan",
+    "faltan",
+    "quieren",
+    "buscan"
+   ],
+   "translation": "Four kittens _____ and run around the flat.",
+   "optionTranslations": [
+    "walk",
+    "are missing",
+    "want",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Cuatro gatitos caminan y corren por la casa.",
+    "targetWord": "caminan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "falta",
+  "sentence": "[[Falta]] un sitio, Mariana. La caja de los gatitos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there is one place left",
+   "options": [
+    "there is one place left",
+    "there is no room",
+    "there is one too many",
+    "there is a better one"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Falta un sitio, Mariana. La caja de los gatitos.",
+    "targetWord": "falta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quiere",
+  "sentence": "¿Para qué [[quiere]] una cuchara?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "does it want",
+   "options": [
+    "does it want",
+    "does it hide",
+    "does it need",
+    "does it carry"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "¿Para qué quiere una cuchara?",
+    "targetWord": "quiere",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ningún",
+  "sentence": "[[Ningún]] calcetín tiene pareja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not one",
+   "options": [
+    "not one",
+    "almost every",
+    "the last",
+    "another"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Ningún calcetín tiene pareja.",
+    "targetWord": "Ningún",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escondidas",
+  "sentence": "Aquí están las seis, juntas y [[escondidas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hidden",
+   "options": [
+    "hidden",
+    "damp",
+    "ruined",
+    "counted"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Aquí están las seis, juntas y escondidas.",
+    "targetWord": "escondidas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "busca",
+  "sentence": "Mariana [[busca]] debajo de la cama.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks",
+   "options": [
+    "looks",
+    "sweeps",
+    "reaches",
+    "kneels"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Mariana busca debajo de la cama.",
+    "targetWord": "busca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "izquierdo",
+  "sentence": "Todos del pie [[izquierdo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "left",
+   "options": [
+    "left",
+    "bare",
+    "same",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Todos del pie izquierdo.",
+    "targetWord": "izquierdo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sábado",
+  "sentence": "Ellos también quieren [[sábado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Saturday",
+   "options": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Friday"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Ellos también quieren sábado.",
+    "targetWord": "sábado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seis",
+  "sentence": "A mí me faltan [[seis]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "six",
+   "options": [
+    "six",
+    "two",
+    "nine",
+    "twenty"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "A mí me faltan seis.",
+    "targetWord": "seis",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me faltan",
+  "sentence": "A mí [[me faltan]] seis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am missing",
+   "options": [
+    "I am missing",
+    "I found",
+    "I washed",
+    "I counted"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "A mí me faltan seis.",
+    "targetWord": "me faltan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Aquí están",
+  "sentence": "[[Aquí están]] las seis, juntas y escondidas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "here they are",
+   "options": [
+    "here they are",
+    "there they go",
+    "that is all",
+    "so it seems"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Aquí están las seis, juntas y escondidas.",
+    "targetWord": "Aquí están",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuatro patas",
+  "sentence": "Alguien pequeño, con [[cuatro patas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "four paws",
+   "options": [
+    "four paws",
+    "four fingers",
+    "four buttons",
+    "four names"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Alguien pequeño, con cuatro patas.",
+    "targetWord": "cuatro patas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "Y [[dentro]] del balde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "beside",
+    "beneath",
+    "around"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Y dentro del balde.",
+    "targetWord": "dentro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "detrás",
+  "sentence": "Después miran [[detrás]] de la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind",
+   "options": [
+    "behind",
+    "beside",
+    "beneath",
+    "through"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Después miran detrás de la puerta.",
+    "targetWord": "detrás",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conmigo",
+  "sentence": "Y mis calcetines vuelven [[conmigo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with me",
+   "options": [
+    "with me",
+    "for me",
+    "to me",
+    "like me"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Y mis calcetines vuelven conmigo.",
+    "targetWord": "conmigo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "también",
+  "sentence": "Ellos [[también]] quieren sábado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too",
+   "options": [
+    "too",
+    "only",
+    "still",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "seis-calcetines-solos",
+    "storySource": "user",
+    "sentence": "Ellos también quieren sábado.",
+    "targetWord": "también",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

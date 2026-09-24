@@ -22,7 +22,13 @@ const A2_LATAM = "cmtgelq560007j84n3ujx9bpd";
 (async () => {
   const i = process.argv.indexOf("--journey");
   const journeyId = i >= 0 ? process.argv[i + 1] : A2_LATAM;
-  const slugs = process.argv.slice(2).filter((a, n, all) => !a.startsWith("--") && all[n - 1] !== "--journey");
+  const jSlug = process.argv.indexOf("--slug");
+  // `--slug <slug>` (la forma de la rama del Conversations) y los sueltos
+  // posicionales valen igual; sin ninguno, el journey entero.
+  const slugs = [
+    ...(jSlug >= 0 && process.argv[jSlug + 1] ? [process.argv[jSlug + 1]] : []),
+    ...process.argv.slice(2).filter((a, n, all) => !a.startsWith("--") && all[n - 1] !== "--journey" && all[n - 1] !== "--slug"),
+  ];
   const ss = await p.journeyStory.findMany({
     where: {
       journeyId,

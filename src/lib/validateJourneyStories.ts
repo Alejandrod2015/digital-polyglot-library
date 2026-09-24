@@ -51,6 +51,7 @@ import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
+import { extractSpeakerNames } from "@/lib/validateGeneratedStory";
 import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
 import { formasDeVerbo } from "./cefr/spanishConjugations";
 
@@ -188,6 +189,20 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
         if (!cuentaHabla.has(m[1])) cuentaHabla.set(m[1], new Set());
         cuentaHabla.get(m[1])!.add(s.slug);
       }
+    }
+    // FORMATO DE DIALOGO (2026-09-23). Los dos patrones de arriba son de PROSA
+    // NARRADA: buscan una acotacion ("dice Mariana"). En un journey
+    // multipersonaje quien habla va en la ETIQUETA de la linea (`Mariana: ...`)
+    // y puede no haber una sola acotacion en las 21 historias: medido en el
+    // Conversations ES latam A0, los dos patrones devolvian once FALSOS (Tigre,
+    // Luna, Rey, Se, Me, Nadie, Que, Cien, Aqui, Ese, Tigrre) y ni un nombre de
+    // persona, asi que el reparto salia vacio y `journey-cast-protagonist-in-all`
+    // y el "(protagonista ?)" de `journey-closing-alone` median sobre nada.
+    // Las etiquetas SE SUMAN a las acotaciones, no las sustituyen: el 95% del
+    // catalogo es prosa y ese camino no cambia.
+    for (const nombre of extractSpeakerNames(s.text)) {
+      if (!cuentaHabla.has(nombre)) cuentaHabla.set(nombre, new Set());
+      cuentaHabla.get(nombre)!.add(s.slug);
     }
   }
   const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
@@ -571,7 +586,15 @@ export function validateJourneyStories(
   const langRaw = (ctx.language || "").toUpperCase();
   const lang = NOMBRE_A_CODIGO[langRaw] ?? langRaw;
   const level = (ctx.level || "").toUpperCase();
-  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN));
+  // PROSA NARRADA, y solo esa (2026-09-23). Una historia en formato de dialogo
+  // pone el habla en las ETIQUETAS (`Mariana: ...`), no entre comillas, asi que
+  // medirle la banda de habla citada es medir otra cosa: basta una nota leida
+  // en voz alta dentro del dialogo para que entre aqui y salga al 6%. Paso el
+  // 2026-09-23 con new-neighbors#1 del Conversations ES latam A0, que es
+  // dialogo entero y lleva una sola frase entrecomillada (la nota del collar).
+  const esDialogo = (t: string) =>
+    (t.match(/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S/gmu) ?? []).length >= 4;
+  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN) && !esDialogo(s.text));
 
   const push = (id: string, label: string, ok: boolean, detail?: string) =>
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });
@@ -1160,11 +1183,65 @@ export function validateJourneyStories(
   // con el si del usuario. Mismo caveat que el B1: no hay B2 publicado que
   // medir; se remide contra el primero que se publique.
   const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80, B2: 0.80 };
+  // FORMATO DIALOGO: otro tope, porque en dialogo esta regla y la de solape se
+  // contradicen (2026-09-23, autorizado por el usuario).
+  //
+  // Las dos reglas, juntas, piden cosas incompatibles: `vocab-taught-same-type`
+  // exige que las plazas del journey sean palabras DISTINTAS (21 x 20 = 420), y
+  // esta exige que la palabra de cada plaza aparezca en dos o mas CUERPOS. Con
+  // el tope del 30%, unas 294 de esas 420 tienen que ser palabras que se
+  // repiten entre historias, y las 21 historias del primer journey de dialogo
+  // contienen 220 palabras de contenido que salgan en dos o mas cuerpos. No
+  // alcanza, y no por descuido: un dialogo A0 es corto y cada escena trae su
+  // propio mobiliario, asi que el pozo de palabras que vuelven es mas pequeño
+  // que en prosa narrada, donde el narrador repite verbos y conectores.
+  //
+  // El precio de cumplirlo como estaba se vio en ese mismo journey: 95 de sus
+  // 420 plazas tenian por definicion "Used here in this sentence of the story",
+  // que es lo que el lector toca en la app. No eran un descuido del generador;
+  // eran la unica forma de que la plaza cayera en una palabra que se repite.
+  // Entre enseñar de verdad y pasar el tope, la regla estaba obligando a lo
+  // segundo.
+  //
+  // CALIBRADO CON UNA SOLA MUESTRA, y hay que decirlo: el unico journey de
+  // dialogo con el vocab limpio es el Conversations ES latam A0, que deja el
+  // 52%. El tope va en 0,55, justo por encima y sin holgura generosa, que es
+  // el mismo criterio con el que se pusieron el 0,70 del A1 y el 0,80 del A2.
+  // Los tres journeys de dialogo alemanes que existen NO sirven de referencia:
+  // su vocab no ha pasado por esta limpieza. Se remide con el segundo journey
+  // de dialogo que se escriba; si ese deja mucho menos, el tope baja.
+  const TOPE_COLA_DIALOGO = 0.55;
+  // La misma rama por el otro extremo: el SUELO de la media.
+  //
+  // La media cuenta en cuantos cuerpos aparece la palabra de cada plaza, asi
+  // que sufre lo mismo que la cola: con el vocab honesto, el journey de
+  // dialogo da 2,26 y el suelo A0 pide 2,5. Suelo de dialogo 2,2, justo por
+  // debajo de lo medido y sin holgura, que es como se pusieron todos los
+  // suelos del catalogo. Misma muestra unica, misma revision pendiente.
+  //
+  // LO QUE ESTE NUMERO NO SIGNIFICA, dicho aqui porque dentro de seis meses
+  // un 2,2 al lado de un 2,5 se lee como listón bajado: no significa que en
+  // dialogo se enseñe peor. La metrica se diseño sobre prosa narrada, donde
+  // una escena larga repite sus palabras sola y el narrador vuelve sobre los
+  // mismos verbos y conectores. En dialogo, la mitad del vocab son formulas
+  // de turno ("Ya voy", "Trato hecho", "De verdad", "Lo siento") que por
+  // naturaleza NO se repiten: si vuelven, suenan a plantilla, que es el
+  // defecto que el usuario caza siempre. Exigirles el numero de la prosa es
+  // pedirle a un formato el comportamiento de otro, y lo que se consigue es
+  // relleno: 95 plazas de este journey llegaron con la definicion vacia por
+  // eso. El listón de calidad de un journey de dialogo esta en otra parte
+  // (que la plaza valga la pena y su glosa enseñe), no en este numero.
+  const MEDIA_MINIMA_DIALOGO = 2.2;
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
   const TOPE_ANCLADAS = 0.30;
-  const suelo = MEDIA_MINIMA[level];
+  // Mismo criterio de formato que el tope de la cola, calculado una sola vez.
+  const journeyEnDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
+  const sueloNivel = MEDIA_MINIMA[level];
+  const suelo = journeyEnDialogo && sueloNivel !== undefined
+    ? Math.min(sueloNivel, MEDIA_MINIMA_DIALOGO)
+    : sueloNivel;
   if (suelo === undefined) {
     noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
@@ -1256,7 +1333,14 @@ export function validateJourneyStories(
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
-      const topeCola = TOPE_COLA_POR_NIVEL[level];
+      // El formato se decide por el journey, no por la historia suelta: un
+      // journey es de dialogo cuando la mitad o mas de sus historias lo son.
+      // Misma deteccion que usa la banda de habla citada, no una segunda.
+      const enDialogo = journeyEnDialogo;
+      const topeNivel = TOPE_COLA_POR_NIVEL[level];
+      const topeCola = enDialogo && topeNivel !== undefined
+        ? Math.max(topeNivel, TOPE_COLA_DIALOGO)
+        : topeNivel;
       const okCola = topeCola === undefined || cola <= topeCola;
       pushSetEscalera("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
@@ -1264,7 +1348,7 @@ export function validateJourneyStories(
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
-        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
+        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%${enDialogo ? " de dialogo" : ""}`})` +
         `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
         { valor: media, mejor: "alta" });

@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el mensaje,el grupo,la lista,el aviso",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el mensaje",
+     "answer": "a message",
+     "options": [
+      "a message",
+      "a group chat",
+      "a list",
+      "a notice"
+     ]
+    },
+    {
+     "word": "el grupo",
+     "answer": "a group chat",
+     "options": [
+      "a message",
+      "a group chat",
+      "a list",
+      "a notice"
+     ]
+    },
+    {
+     "word": "la lista",
+     "answer": "a list",
+     "options": [
+      "a message",
+      "a group chat",
+      "a list",
+      "a notice"
+     ]
+    },
+    {
+     "word": "el aviso",
+     "answer": "a notice",
+     "options": [
+      "a message",
+      "a group chat",
+      "a list",
+      "a notice"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "tiembla",
+  "sentence": "Mi celular _____ toda la tarde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tiembla",
+   "options": [
+    "tiembla",
+    "revisa",
+    "responde",
+    "manda"
+   ],
+   "translation": "My phone _____ all afternoon.",
+   "optionTranslations": [
+    "buzzes",
+    "goes through",
+    "answers",
+    "sends"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Mi celular tiembla toda la tarde.",
+    "targetWord": "tiembla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "revisan",
+  "sentence": "Mariana y Nicolás _____ la lista juntos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "revisan",
+   "options": [
+    "revisan",
+    "tiemblan",
+    "responden",
+    "mandan"
+   ],
+   "translation": "Mariana and Nicolas _____ the list together.",
+   "optionTranslations": [
+    "go through",
+    "shake",
+    "answer",
+    "send"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás revisan la lista juntos.",
+    "targetWord": "revisan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responde",
+  "sentence": "Nadie [[responde]]. Nadie lo lee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers",
+   "options": [
+    "answers",
+    "complains",
+    "notices",
+    "objects"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Nadie responde. Nadie lo lee.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cien",
+  "sentence": "En una tarde suenan [[cien]] avisos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hundred",
+   "options": [
+    "a hundred",
+    "a dozen",
+    "a thousand",
+    "a handful of"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "En una tarde suenan cien avisos.",
+    "targetWord": "cien",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mando",
+  "sentence": "Yo [[mando]] dos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I sent",
+   "options": [
+    "I sent",
+    "I saw",
+    "I deleted",
+    "I saved"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Yo mando dos.",
+    "targetWord": "mando",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tarde",
+  "sentence": "En una [[tarde]] suenan cien avisos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "afternoon",
+   "options": [
+    "afternoon",
+    "message",
+    "meeting",
+    "minute"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "En una tarde suenan cien avisos.",
+    "targetWord": "tarde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lee",
+  "sentence": "Nadie lo [[lee]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reads",
+   "options": [
+    "reads",
+    "forwards",
+    "believes",
+    "needs"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Nadie lo lee.",
+    "targetWord": "lee",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ven",
+  "sentence": "Todos [[ven]] a la gata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "look at",
+   "options": [
+    "look at",
+    "feed",
+    "know",
+    "photograph"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Todos ven a la gata.",
+    "targetWord": "ven",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se mueve",
+  "sentence": "La gata no [[se mueve]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moves",
+   "options": [
+    "moves",
+    "wakes up",
+    "cares",
+    "minds"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "La gata no se mueve.",
+    "targetWord": "se mueve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toda la tarde",
+  "sentence": "Mi celular tiembla [[toda la tarde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all afternoon",
+   "options": [
+    "all afternoon",
+    "every Sunday",
+    "once or twice",
+    "since lunch"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Mi celular tiembla toda la tarde.",
+    "targetWord": "toda la tarde",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a las ocho",
+  "sentence": "Yo apago el sonido [[a las ocho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at eight o'clock",
+   "options": [
+    "at eight o'clock",
+    "after supper",
+    "at bedtime",
+    "every evening"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Yo apago el sonido a las ocho.",
+    "targetWord": "a las ocho",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Entre foto y foto",
+  "sentence": "[[Entre foto y foto]] hay un aviso corto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "between one photo and the next",
+   "options": [
+    "between one photo and the next",
+    "under every photo",
+    "instead of a photo",
+    "before the photos"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Entre foto y foto hay un aviso corto.",
+    "targetWord": "Entre foto y foto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntos",
+  "sentence": "Mariana y Nicolás revisan la lista [[juntos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "twice over",
+    "in turn",
+    "out loud"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás revisan la lista juntos.",
+    "targetWord": "juntos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin parar",
+  "sentence": "Tu grupo suena [[sin parar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without stopping",
+   "options": [
+    "without stopping",
+    "from downstairs",
+    "at all hours",
+    "in the night"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Tu grupo suena sin parar.",
+    "targetWord": "sin parar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ahora mismo",
+  "sentence": "Yo mando el aviso [[ahora mismo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now",
+   "options": [
+    "right now",
+    "once more",
+    "in the morning",
+    "by hand"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Yo mando el aviso ahora mismo.",
+    "targetWord": "ahora mismo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todo el edificio",
+  "sentence": "Así lo lee [[todo el edificio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the whole building",
+   "options": [
+    "the whole building",
+    "the whole street",
+    "half the group",
+    "everyone upstairs"
+   ],
+   "audioClip": {
+    "storySlug": "cien-avisos-y-una-gata",
+    "storySource": "user",
+    "sentence": "Así lo lee todo el edificio.",
+    "targetWord": "todo el edificio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

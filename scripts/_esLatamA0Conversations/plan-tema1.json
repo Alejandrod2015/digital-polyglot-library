@@ -1,0 +1,34 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "Mariana y Nicolás descubren que el gato que cada uno cree suyo vive de los dos, y el reparto del gato los convierte en vecinos.",
+  "recursos": "gato, ventana, escalera, collar, nota, caja",
+  "historias": [
+    {
+      "slot": "0",
+      "quiere": "recuperar a su gato, que esta noche no llega a cenar",
+      "impide": "el gato vive también en casa del vecino y allí se llama Tigre",
+      "cuesta": "aceptar que el animal no es solo suyo y tocar la puerta de un desconocido",
+      "cambia": "de vecinos que no se hablan a socios del mismo gato, de día abajo y de noche arriba",
+      "emocion": "sorpresa divertida"
+    },
+    {
+      "slot": "1",
+      "quiere": "saber quién está engordando al gato pese al trato",
+      "impide": "los dos juran que no le dan comida y se sospechan mutuamente",
+      "cuesta": "acusarse en la escalera y quedar los dos en ridículo",
+      "cambia": "la nota del collar descubre una tercera casa y el enfado se vuelve risa",
+      "emocion": "humor"
+    },
+    {
+      "slot": "2",
+      "quiere": "encontrar al gato, que hoy no está en ninguna de las tres casas",
+      "impide": "un ruido sale de una caja vieja debajo de la escalera",
+      "cuesta": "abrir la caja sin saber qué hay dentro",
+      "cambia": "el gato es una gata con cuatro gatitos, y hay que repartir lo que nadie esperaba",
+      "emocion": "ternura"
+    }
+  ]
+}

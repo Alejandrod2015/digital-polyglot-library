@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la manguera,la lavadora,la linterna,el postre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la manguera",
+     "answer": "a hose",
+     "options": [
+      "a hose",
+      "a washing machine",
+      "a torch",
+      "dessert"
+     ]
+    },
+    {
+     "word": "la lavadora",
+     "answer": "a washing machine",
+     "options": [
+      "a hose",
+      "a washing machine",
+      "a torch",
+      "dessert"
+     ]
+    },
+    {
+     "word": "la linterna",
+     "answer": "a torch",
+     "options": [
+      "a hose",
+      "a washing machine",
+      "a torch",
+      "dessert"
+     ]
+    },
+    {
+     "word": "el postre",
+     "answer": "dessert",
+     "options": [
+      "a hose",
+      "a washing machine",
+      "a torch",
+      "dessert"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "apunta",
+  "sentence": "Después _____ con la linterna a una manguera gris.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apunta",
+   "options": [
+    "apunta",
+    "llega",
+    "acepta",
+    "trae"
+   ],
+   "translation": "Then he _____ the torch at a grey hose.",
+   "optionTranslations": [
+    "points",
+    "arrives",
+    "accepts",
+    "brings"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Después apunta con la linterna a una manguera gris.",
+    "targetWord": "apunta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "llega",
+  "sentence": "El plomero _____ y abre el techo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llega",
+   "options": [
+    "llega",
+    "apunta",
+    "acepta",
+    "dobla"
+   ],
+   "translation": "The plumber _____ and opens up the ceiling.",
+   "optionTranslations": [
+    "arrives",
+    "points",
+    "accepts",
+    "folds"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "El plomero llega y abre el techo.",
+    "targetWord": "llega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "traes",
+  "sentence": "Con una condición: el postre lo _____ tú.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "traes",
+   "options": [
+    "traes",
+    "apuntas",
+    "llegas",
+    "abres"
+   ],
+   "translation": "On one condition: you _____ the dessert.",
+   "optionTranslations": [
+    "bring",
+    "point",
+    "arrive",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Con una condición: el postre lo traes tú.",
+    "targetWord": "traes",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abre",
+  "sentence": "El plomero llega y [[abre]] el techo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens up",
+   "options": [
+    "opens up",
+    "paints",
+    "measures",
+    "knocks on"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "El plomero llega y abre el techo.",
+    "targetWord": "abre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roto",
+  "sentence": "¿Está [[roto]] el tubo?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broken",
+   "options": [
+    "broken",
+    "blocked",
+    "hidden",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "¿Está roto el tubo?",
+    "targetWord": "roto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se va",
+  "sentence": "Después [[se va]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he leaves",
+   "options": [
+    "he leaves",
+    "he waits",
+    "he sits down",
+    "he explains"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Después se va.",
+    "targetWord": "se va",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Acepto",
+  "sentence": "¿Comida el sábado? [[Acepto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I accept",
+   "options": [
+    "I accept",
+    "I refuse",
+    "I doubt it",
+    "I forgot"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "¿Comida el sábado? Acepto.",
+    "targetWord": "Acepto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apagada",
+  "sentence": "¿Y la lavadora [[apagada]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "switched off",
+   "options": [
+    "switched off",
+    "brand new",
+    "half full",
+    "repaired"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "¿Y la lavadora apagada?",
+    "targetWord": "apagada",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encerrado",
+  "sentence": "Y el gato, [[encerrado]] en mi cuarto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shut in",
+   "options": [
+    "shut in",
+    "asleep",
+    "fed",
+    "forgotten"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Y el gato, encerrado en mi cuarto.",
+    "targetWord": "encerrado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lo siento",
+  "sentence": "[[Lo siento]] mucho, Nicolás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am sorry",
+   "options": [
+    "I am sorry",
+    "I am sure",
+    "I agree",
+    "I noticed"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Lo siento mucho, Nicolás.",
+    "targetWord": "Lo siento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caja de herramientas",
+  "sentence": "El plomero cierra su [[caja de herramientas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "toolbox",
+   "options": [
+    "toolbox",
+    "lunchbox",
+    "notebook",
+    "ladder"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "El plomero cierra su caja de herramientas.",
+    "targetWord": "caja de herramientas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llevo",
+  "sentence": "Entonces [[llevo]] el postre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I will bring",
+   "options": [
+    "I will bring",
+    "I will bake",
+    "I will skip",
+    "I will choose"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Entonces llevo el postre.",
+    "targetWord": "llevo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Tiene que ser",
+  "sentence": "[[Tiene que ser]] el tubo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it must be",
+   "options": [
+    "it must be",
+    "it might be",
+    "it is never",
+    "it used to be"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Tiene que ser el tubo.",
+    "targetWord": "Tiene que ser",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mucho",
+  "sentence": "Lo siento [[mucho]], Nicolás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lot",
+   "options": [
+    "a lot",
+    "a little",
+    "as well",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Lo siento mucho, Nicolás.",
+    "targetWord": "mucho",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Una semana de",
+  "sentence": "[[Una semana de]] baldes por una manguera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a whole week of",
+   "options": [
+    "a whole week of",
+    "a quiet night of",
+    "a couple of",
+    "a good reason for"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Una semana de baldes por una manguera.",
+    "targetWord": "Una semana de",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "condición",
+  "sentence": "Con una [[condición]]: el postre lo traes tú.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "condition",
+   "options": [
+    "condition",
+    "decision",
+    "apology",
+    "promise"
+   ],
+   "audioClip": {
+    "storySlug": "la-manguera-gris",
+    "storySource": "user",
+    "sentence": "Con una condición: el postre lo traes tú.",
+    "targetWord": "condición",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

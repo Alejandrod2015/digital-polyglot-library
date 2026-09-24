@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la canica,el cajón,el mueble,el tren",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la canica",
+     "answer": "a marble",
+     "options": [
+      "a marble",
+      "a drawer",
+      "a piece of furniture",
+      "a train"
+     ]
+    },
+    {
+     "word": "el cajón",
+     "answer": "a drawer",
+     "options": [
+      "a marble",
+      "a drawer",
+      "a piece of furniture",
+      "a train"
+     ]
+    },
+    {
+     "word": "el mueble",
+     "answer": "a piece of furniture",
+     "options": [
+      "a marble",
+      "a drawer",
+      "a piece of furniture",
+      "a train"
+     ]
+    },
+    {
+     "word": "el tren",
+     "answer": "a train",
+     "options": [
+      "a marble",
+      "a drawer",
+      "a piece of furniture",
+      "a train"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrastra",
+  "sentence": "Alguien [[arrastra]] muebles arriba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is dragging",
+   "options": [
+    "is dragging",
+    "is stacking",
+    "is measuring",
+    "is covering"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Alguien arrastra muebles arriba.",
+    "targetWord": "arrastra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "pesa",
+  "sentence": "Esta cosa _____ dos gramos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pesa",
+   "options": [
+    "pesa",
+    "arrastra",
+    "juega",
+    "suena"
+   ],
+   "translation": "This thing _____ two grams.",
+   "optionTranslations": [
+    "weighs",
+    "drags",
+    "plays",
+    "sounds"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Esta cosa pesa dos gramos.",
+    "targetWord": "pesa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "juega",
+  "sentence": "Mi gata _____. Empuja la canica y corre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "juega",
+   "options": [
+    "juega",
+    "arrastra",
+    "pesa",
+    "descansa"
+   ],
+   "translation": "My cat _____. She pushes the marble and runs.",
+   "optionTranslations": [
+    "plays",
+    "drags",
+    "weighs",
+    "rests"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Mi gata juega. Empuja la canica y corre.",
+    "targetWord": "juega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madrugada",
+  "sentence": "Son las dos de la [[madrugada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the small hours",
+   "options": [
+    "the small hours",
+    "the afternoon",
+    "the weekend",
+    "the rush hour"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Son las dos de la madrugada.",
+    "targetWord": "madrugada",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suena",
+  "sentence": "Arriba [[suena]] algo pesado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "makes a noise",
+   "options": [
+    "makes a noise",
+    "falls over",
+    "moves about",
+    "gets stuck"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Arriba suena algo pesado.",
+    "targetWord": "suena",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Parece",
+  "sentence": "[[Parece]] un mueble grande.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it sounds like",
+   "options": [
+    "it sounds like",
+    "it damages",
+    "it fills",
+    "it blocks"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Parece un mueble grande.",
+    "targetWord": "Parece",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corto",
+  "sentence": "Es seco y [[corto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short",
+   "options": [
+    "short",
+    "regular",
+    "faint",
+    "familiar"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Es seco y corto.",
+    "targetWord": "corto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gramos",
+  "sentence": "Esta cosa pesa dos [[gramos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grams",
+   "options": [
+    "grams",
+    "kilos",
+    "coins",
+    "seconds"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Esta cosa pesa dos gramos.",
+    "targetWord": "gramos",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "casi",
+  "sentence": "Yo [[casi]] no duermo hoy.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hardly",
+   "options": [
+    "hardly",
+    "gladly",
+    "finally",
+    "usually"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Yo casi no duermo hoy.",
+    "targetWord": "casi",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oyes",
+  "sentence": "Nicolás, ¿tú [[oyes]] eso?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "do you hear",
+   "options": [
+    "do you hear",
+    "do you mind",
+    "do you believe",
+    "do you feel"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Nicolás, ¿tú oyes eso?",
+    "targetWord": "oyes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de nuevo",
+  "sentence": "El golpe empieza [[de nuevo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "at once",
+    "nearby",
+    "faintly"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "El golpe empieza de nuevo.",
+    "targetWord": "de nuevo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerca",
+  "sentence": "Ahí está, [[cerca]] de la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near",
+   "options": [
+    "near",
+    "short",
+    "quiet",
+    "loose"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Ahí está, cerca de la puerta.",
+    "targetWord": "cerca",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despierto",
+  "sentence": "Nicolás está [[despierto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awake",
+   "options": [
+    "awake",
+    "annoyed",
+    "downstairs",
+    "dressed"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Nicolás está despierto.",
+    "targetWord": "despierto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corre",
+  "sentence": "Empuja la canica y [[corre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she runs",
+   "options": [
+    "she runs",
+    "she hides",
+    "she waits",
+    "she watches"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Empuja la canica y corre.",
+    "targetWord": "corre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todo el día",
+  "sentence": "Duerme [[todo el día]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all day",
+   "options": [
+    "all day",
+    "all week",
+    "till noon",
+    "on the sofa"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Duerme todo el día.",
+    "targetWord": "todo el día",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ni idea",
+  "sentence": "[[Ni idea]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no idea",
+   "options": [
+    "no idea",
+    "no way",
+    "not again",
+    "never mind"
+   ],
+   "audioClip": {
+    "storySlug": "alguien-mueve-los-muebles",
+    "storySource": "user",
+    "sentence": "Ni idea.",
+    "targetWord": "Ni idea",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
