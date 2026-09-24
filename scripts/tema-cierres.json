@@ -12281,8 +12281,8 @@
     }
   },
   "cmud5qhu00006j81cmkl4u5ks#grills-and-backyards": {
-    "cerrado": "2026-09-22T22:23:50.517Z",
-    "hash": "7b49b2fed6d7749f",
+    "cerrado": "2026-09-24T10:48:06.882Z",
+    "hash": "06750b3181fb2fdd",
     "historias": [
       "grills-and-backyards#0 carbon-mojado",
       "grills-and-backyards#1 una-sola-vuelta",
@@ -12296,18 +12296,18 @@
       "arranques de parrafo variados (mas repetido \"el\", 17%)",
       "seguidilla 17/42 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 1 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.25 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 48/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.25 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 48/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: grills-and-backyards (Mauricio, Itzel)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: grills-and-backyards (Mauricio, Karla)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12349,8 +12349,8 @@
     ]
   },
   "cmud5qhu00006j81cmkl4u5ks#haircuts-and-barbershops": {
-    "cerrado": "2026-09-22T22:22:46.670Z",
-    "hash": "ba80d4215bb09b92",
+    "cerrado": "2026-09-24T10:49:39.262Z",
+    "hash": "fda60ffd1a44cb83",
     "historias": [
       "haircuts-and-barbershops#0 poquito-son-dos-dedos",
       "haircuts-and-barbershops#1 nadie-se-queja-nunca",
@@ -12362,21 +12362,20 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"la\", 17%)",
-      "densidad 9.0 palabras por oracion (techo 9 en a0)",
       "seguidilla 22/46 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 1 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 51/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 51/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: haircuts-and-barbershops (Arturo, Bruno, Itzel) · presentados tarde: Itzel (aparece en la 2a de haircuts-and-barbershops)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: haircuts-and-barbershops (Arturo, Bruno, Karla) · presentados tarde: Karla (aparece en la 2a de haircuts-and-barbershops)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12411,11 +12410,14 @@
           "emocion": "la dignidad de quien decide que el desastre era el plan"
         }
       ]
-    }
+    },
+    "avisos": [
+      "densidad alta para a0: 9.0 palabras por oracion (techo 9). En niveles bajos se recortan HECHOS, no se aprietan frases: quita un suceso de la escena."
+    ]
   },
   "cmud5qhu00006j81cmkl4u5ks#lost-and-found": {
-    "cerrado": "2026-09-22T22:31:23.604Z",
-    "hash": "b0920c815e6142b6",
+    "cerrado": "2026-09-24T10:50:03.111Z",
+    "hash": "0fa9328d74f67639",
     "historias": [
       "lost-and-found#0 peinate-como-en-la-foto",
       "lost-and-found#1 puestas-por-fuera",
@@ -12429,7 +12431,7 @@
       "arranques de parrafo variados (mas repetido \"a\", 17%)",
       "seguidilla 16/41 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 0 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
@@ -12440,7 +12442,7 @@
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: lost-and-found (Itzel, Omar, Bruno) · presentados tarde: Bruno (aparece en la 2a de lost-and-found)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: lost-and-found (Karla, Omar, Bruno) · presentados tarde: Bruno (aparece en la 2a de lost-and-found)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12482,8 +12484,8 @@
     ]
   },
   "cmud5qhu00006j81cmkl4u5ks#parcels-and-deliveries": {
-    "cerrado": "2026-09-22T22:30:17.000Z",
-    "hash": "e2c1ca59a49e3039",
+    "cerrado": "2026-09-24T10:49:44.965Z",
+    "hash": "f72ae9b2680ed082",
     "historias": [
       "parcels-and-deliveries#0 el-timbre-si-suena",
       "parcels-and-deliveries#1 tu-propia-firma",
@@ -12498,18 +12500,18 @@
       "densidad 8.2 palabras por oracion (techo 9 en a0)",
       "seguidilla 16/43 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 1 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 52/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.12 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 53/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: parcels-and-deliveries (Bruno, Citlali, Itzel)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: parcels-and-deliveries (Bruno, Renata, Karla)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12547,8 +12549,8 @@
     }
   },
   "cmud5qhu00006j81cmkl4u5ks#plants-and-balconies": {
-    "cerrado": "2026-09-22T22:23:02.248Z",
-    "hash": "759aebd3363446df",
+    "cerrado": "2026-09-24T10:49:57.392Z",
+    "hash": "d1dd9102e9443a0d",
     "historias": [
       "plants-and-balconies#0 se-muere-de-amor",
       "plants-and-balconies#1 verde-en-mi-ventana",
@@ -12559,21 +12561,21 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"itzel\", 11%)",
+      "arranques de parrafo variados (mas repetido \"karla\", 11%)",
       "seguidilla 18/44 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 3 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Itzel): se-muere-de-amor, verde-en-mi-ventana, una-hora-en-el-vivero",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.23 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 47/60 salen una sola vez · sin marcar ancladas",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Karla): se-muere-de-amor, verde-en-mi-ventana, una-hora-en-el-vivero",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.23 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 47/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: plants-and-balconies (Itzel, Fernanda, Bruno) · presentados tarde: Bruno (aparece en la 2a de plants-and-balconies)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: plants-and-balconies (Karla, Fernanda, Bruno) · presentados tarde: Bruno (aparece en la 2a de plants-and-balconies)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12614,8 +12616,8 @@
     ]
   },
   "cmud5qhu00006j81cmkl4u5ks#rooftops-and-laundry": {
-    "cerrado": "2026-09-22T22:25:19.685Z",
-    "hash": "07178be9e9ce69ba",
+    "cerrado": "2026-09-24T10:48:46.447Z",
+    "hash": "13c0fe9a1a8af092",
     "historias": [
       "rooftops-and-laundry#0 dos-camisas-azules",
       "rooftops-and-laundry#1 una-cuerda-no-hace-nudos",
@@ -12630,18 +12632,18 @@
       "densidad 7.9 palabras por oracion (techo 9 en a0)",
       "seguidilla 22/52 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 0 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.22 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 48/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.22 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 48/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rooftops-and-laundry (Itzel, Bruno)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rooftops-and-laundry (Karla, Bruno)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -12679,8 +12681,8 @@
     }
   },
   "cmud5qhu00006j81cmkl4u5ks#wrestling-and-masks": {
-    "cerrado": "2026-09-22T22:25:52.406Z",
-    "hash": "117c4625c77e4c54",
+    "cerrado": "2026-09-24T10:50:09.024Z",
+    "hash": "080134030fba7f6b",
     "historias": [
       "wrestling-and-masks#0 la-mascara-en-la-azotea",
       "wrestling-and-masks#1 gritale-es-su-trabajo",
@@ -12695,18 +12697,18 @@
       "densidad 8.7 palabras por oracion (techo 9 en a0)",
       "seguidilla 15/44 oraciones cortas narradas",
       "banda gramatical: sin banda medida para a0 (pretérito 0 · subj. imperfecto 0 · condicional 0 · estilo indirecto 0)",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+      "gate de conjunto sobre el tema: 13/20 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.22 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 49/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.22 encuentros por plaza (ideal 4, liston de los buenos 2.14) · 49/60 salen una sola vez · sin marcar ancladas",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: wrestling-and-masks (Itzel, Valeria)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: wrestling-and-masks (Karla, Valeria)"
     ],
     "plan": {
       "tipo": "Friends",
