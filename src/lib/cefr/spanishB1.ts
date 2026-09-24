@@ -405,3 +405,24 @@ export const SPANISH_B1_LEMMAS: ReadonlySet<string> = new Set([
   // adelante.
   "acá","adelante","clienta","contado","parado",
 ]);
+
+// BLOQUE CURADO: SPANISH_B1_CURATED (2026-09-21). Mismo metodo que el bloque
+// SPANISH_A1_A2_CURATED de spanishA1A2.ts, con la vara del nivel: el inventario
+// de NOCIONES ESPECIFICAS B1-B2 del Plan Curricular del Instituto Cervantes
+// (PCIC, seccion 9, cvc.cervantes.es/ensenanza/biblioteca_ele/plan_curricular/
+// niveles/09_nociones_especificas_inventario_b1-b2.htm), columna B1. Entra una
+// palabra solo si una historia del Friends ES spain B1
+// (docs/plan-es-b1-friends-spain.md) la usa como plaza, faltaba arriba y el
+// PCIC la pone en B1 CON EL SENTIDO de la historia. Una linea por palabra con
+// su nocion citada. Nada de la columna B2, y nada que no use una historia: el
+// resto de palabras de escena va en el texto.
+const SPANISH_B1_CURATED: readonly string[] = [
+  // Tema 2, Football & Matches
+  "árbitro",          // PCIC B1, 8.3 Deportes: "árbitro, entrenador"
+  "empatar",          // PCIC B1, 8.3 Deportes: "ganar, perder, empatar"
+  // Tema 4, Gardens & Allotments
+  "cultivar",         // PCIC B1, 20.3.2 Campo: "plantar, cultivar, regar"
+  "plantar",          // PCIC B1, 20.3.2 Campo: "plantar, cultivar, regar"; 20.6 Flora: "plantar un arbol"
+  "cosecha",          // PCIC B1, 20.3.2 Campo: "cosecha"
+];
+for (const w of SPANISH_B1_CURATED) (SPANISH_B1_LEMMAS as Set<string>).add(w);

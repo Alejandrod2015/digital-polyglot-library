@@ -106,12 +106,15 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  autoAcceptAt: 60,
+  // 73 y 29 son los viejos 60 y 24 llevados a la escala normalizada (x100/82,
+  // ver MAX_RAW_SCORE). Nadie cambia de veredicto por esto: lo unico que
+  // cambia es que el numero que se lee ya es el mismo numero que se compara.
+  autoAcceptAt: 73,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 24,
+  autoDeclineBelow: 29,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -257,6 +260,24 @@ function scoreApplicationReason(reason: string | null | undefined): {
     : clamped >= 6 ? "thin answer"
     : "low-effort answer";
   return { points: clamped, note };
+}
+
+/**
+ * El techo que la suma de senales puede alcanzar de verdad, senal por senal.
+ *
+ * El texto libre esta topado en 30 pero solo suma 27 en el mejor caso posible
+ * (14 de longitud + 5 de dos frases + 3 de primera persona + 5 de dato
+ * concreto), asi que los 30 del tope no son alcanzables y no cuentan aqui.
+ *
+ * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
+ * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
+ * parecer descartado a quien pedia justo lo que tenemos publicado.
+ */
+const MAX_RAW_SCORE = 27 + 20 + 20 + 12 + 3;
+
+/** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
+function normalizeScore(raw: number): number {
+  return Math.max(0, Math.min(100, Math.round((raw / MAX_RAW_SCORE) * 100)));
 }
 
 function scoreWeeklyHours(hours: string | null | undefined): number {
@@ -409,10 +430,9 @@ export function evaluateApplication(
     signals.push({ label: "Store account differs from contact email", points: 3 });
   }
 
-  const score = Math.max(
-    0,
-    Math.min(100, reason.points + hours + languagePoints + motivation + extras),
-  );
+  // Los puntos de cada senal siguen siendo los de siempre (y asi se listan en
+  // `signals`); lo que sale de aqui es su porcentaje del techo alcanzable.
+  const score = normalizeScore(reason.points + hours + languagePoints + motivation + extras);
 
   // ── Verdict ──
   if (!languageAccepted) {
