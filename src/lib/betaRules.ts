@@ -106,15 +106,19 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  // 73 y 29 son los viejos 60 y 24 llevados a la escala normalizada (x100/82,
-  // ver MAX_RAW_SCORE). Nadie cambia de veredicto por esto: lo unico que
-  // cambia es que el numero que se lee ya es el mismo numero que se compara.
-  autoAcceptAt: 73,
+  // 88 y 33, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
+  // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
+  // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
+  // con score paso de 48 a 78. 88 es el mismo percentil 86 que ocupaba el 60
+  // viejo, y 33 el mismo percentil 3 que ocupaba el 24. Quien entraba
+  // directo sigue entrando directo; quien se rechazaba sin leer, igual.
+  autoAcceptAt: 88,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 29,
+  autoDeclineBelow: 33,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -209,12 +213,19 @@ export type BetaVerdict = {
 };
 
 /**
- * Scores the free-text "why are you applying" answer, which is the single
- * most predictive field: someone who writes two specific sentences about
- * their own situation tests the app, and someone who writes "i want to test"
- * installs it once and never returns.
+ * Mide el texto libre de "por que quieres entrar", y mide poco a proposito.
  *
- * Worth up to 30 of the 100 points.
+ * Valia 27 de los 82 puntos porque se daba por hecho que quien escribe dos
+ * frases concretas prueba la app y quien escribe "i want to test" la instala
+ * una vez. Con 124 invitados y aceptados ya se puede comprobar, y no es
+ * cierto: la correlacion entre palabras escritas y actividad real es 0,01, y
+ * con el feedback enviado es -0,04. Los dos testers mas activos de todo el
+ * programa escribieron 7 y 5 palabras; el que escribio 115 esta el decimo.
+ *
+ * Asi que aqui solo queda el suelo: distinguir a quien contesto de verdad de
+ * quien no contesto. Diez puntos, y las restas son por las senales de
+ * respuesta tirada, no por brevedad. Nadie tiene tiempo de escribir un parrafo
+ * y eso nunca fue lo que separaba a un tester bueno de uno ausente.
  */
 function scoreApplicationReason(reason: string | null | undefined): {
   points: number;
@@ -226,38 +237,29 @@ function scoreApplicationReason(reason: string | null | undefined): {
   const lower = text.toLowerCase();
   const words = text.split(/\s+/).filter(Boolean);
 
-  let points = 0;
+  // Contesto: parte arriba y solo baja por las senales de respuesta tirada.
+  let points = REASON_MAX;
 
-  // Length, capped so an essay does not outrank a good short answer.
-  if (words.length >= 60) points += 14;
-  else if (words.length >= 30) points += 12;
-  else if (words.length >= 15) points += 8;
-  else if (words.length >= 8) points += 4;
+  // Menos de ocho palabras no es una respuesta corta, es un campo rellenado.
+  // Resta, pero no deja en cero: "Interested what it has to offer" dice menos
+  // que "I just moved to Las Vegas" y las dos dicen algo.
+  if (words.length < 8) points -= 5;
 
-  // Specificity: first person plus a concrete noun beats a generic pitch.
-  const sentences = text.split(/[.!?]+/).filter((s) => s.trim().length > 0);
-  if (sentences.length >= 2) points += 5;
-  if (/\b(i|my|me|we)\b/i.test(text)) points += 3;
-  // A number, a place, or a date is a strong tell that they are describing
-  // their own life rather than restating the question.
-  if (/\d/.test(text) || /\b(month|year|week|trip|move|moving|job|family|wife|husband|partner)\b/i.test(lower)) {
-    points += 5;
-  }
+  // Las frases hechas del que solo quiere la invitacion, cuando ademas no hay
+  // texto alrededor que las respalde.
+  if (LOW_EFFORT_MARKERS.some((m) => lower.includes(m)) && words.length < 25) points -= 5;
 
-  // Penalties for the tells of a throwaway answer.
-  if (LOW_EFFORT_MARKERS.some((m) => lower.includes(m)) && words.length < 25) points -= 8;
-  // No capital letter anywhere and no punctuation: typed to satisfy a
-  // validator, not to communicate.
-  if (text === lower && !/[.!?,]/.test(text)) points -= 4;
-  // The same word over and over is filler padding to clear the minimum.
+  // Ni una mayuscula ni un signo: tecleado para pasar el validador.
+  if (text === lower && !/[.!?,]/.test(text)) points -= 2;
+
+  // La misma palabra una y otra vez es relleno para llegar al minimo.
   const unique = new Set(words.map((w) => w.toLowerCase())).size;
-  if (words.length >= 12 && unique / words.length < 0.5) points -= 6;
+  if (words.length >= 12 && unique / words.length < 0.5) points -= 3;
 
-  const clamped = Math.max(0, Math.min(30, points));
+  const clamped = Math.max(0, Math.min(REASON_MAX, points));
   const note =
-    clamped >= 22 ? "specific, personal answer"
-    : clamped >= 12 ? "reasonable answer"
-    : clamped >= 6 ? "thin answer"
+    clamped >= REASON_MAX ? "answered properly"
+    : clamped >= 5 ? "short answer"
     : "low-effort answer";
   return { points: clamped, note };
 }
@@ -265,15 +267,21 @@ function scoreApplicationReason(reason: string | null | undefined): {
 /**
  * El techo que la suma de senales puede alcanzar de verdad, senal por senal.
  *
- * El texto libre esta topado en 30 pero solo suma 27 en el mejor caso posible
- * (14 de longitud + 5 de dos frases + 3 de primera persona + 5 de dato
- * concreto), asi que los 30 del tope no son alcanzables y no cuentan aqui.
+ * Cada constante es el maximo REAL de su senal, no un tope teorico: si una
+ * deja de ser alcanzable, esta suma miente y el `/100` vuelve a mentir con
+ * ella. La suma da 82, el mismo techo que antes del reparto del 2026-09-24,
+ * asi que los dos umbrales (73 y 29) siguen valiendo tal cual.
  *
  * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
  * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
  * parecer descartado a quien pedia justo lo que tenemos publicado.
  */
-const MAX_RAW_SCORE = 27 + 20 + 20 + 12 + 3;
+const REASON_MAX = 10;
+const HOURS_MAX = 20;
+const LANGUAGE_MAX = 37;
+const MOTIVATION_MAX = 12;
+const EXTRAS_MAX = 3;
+const MAX_RAW_SCORE = REASON_MAX + HOURS_MAX + LANGUAGE_MAX + MOTIVATION_MAX + EXTRAS_MAX;
 
 /** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
 function normalizeScore(raw: number): number {
@@ -290,26 +298,35 @@ function scoreWeeklyHours(hours: string | null | undefined): number {
 }
 
 function scoreMotivation(motivation: string | null | undefined): number {
-  // Stakes predict retention: someone moving abroad in October opens the app
-  // on a Tuesday night, someone learning "just for fun" does not.
+  // El orden ya no es una teoria sobre quien tiene mas en juego: es la mediana
+  // de eventos reales de los 124 invitados y aceptados, medida el 2026-09-24.
+  //
+  //   Keep up my level   n=6    mediana 31
+  //   Family connection  n=27   mediana 11
+  //   Move abroad        n=18   mediana 6,5
+  //   Just for fun       n=25   mediana 3
+  //   Travel             n=29   mediana 3
+  //   Work               n=9    mediana 0
+  //
+  // "Work" cobraba 11, la segunda nota mas alta del campo, y es la unica
+  // opcion cuya mediana de actividad es cero. La horquilla se estrecha a
+  // 7..12 porque con estas muestras no da para mas: los dos extremos tienen
+  // seis y nueve personas detras.
   switch ((motivation ?? "").trim().toLowerCase()) {
-    case "move abroad":
-      return 12;
-    case "work":
-      return 11;
     case "family connection":
-      return 10;
-    // Igual que trabajo y familia: quien lleva años con un idioma y no quiere
-    // perderlo abre la app un martes por la noche. Antes caía en "just for
-    // fun" y se llevaba 5, la peor nota del campo.
+      return 12;
     case "keep up my level":
+      return 12;
+    case "move abroad":
       return 10;
     case "travel":
-      return 8;
+      return 7;
     case "just for fun":
-      return 5;
+      return 7;
+    case "work":
+      return 7;
     default:
-      return 5;
+      return 7;
   }
 }
 
@@ -393,7 +410,10 @@ export function evaluateApplication(
   const variantServed =
     !pool || rules.acceptedVariantPools.length === 0 || rules.acceptedVariantPools.includes(pool);
   const languageAccepted = languageRecruited && variantServed;
-  const languagePoints = languageAccepted ? 20 : 0;
+  // 37, no 20. Los 17 que suben vienen del texto libre, que los cobraba sin
+  // predecir nada. Que tengamos publicado lo que la persona pide es lo unico
+  // que sabemos con certeza antes de invitarla.
+  const languagePoints = languageAccepted ? LANGUAGE_MAX : 0;
   signals.push({
     label: !languageRecruited
       ? `Target language ${app.targetLanguage} is not being recruited for`
