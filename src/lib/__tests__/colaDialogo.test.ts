@@ -73,12 +73,18 @@ describe("el tope de la cola distingue dialogo de prosa", () => {
     expect(cola(mezcla).detail ?? "").toContain("tope 30%");
   });
 
-  it("el suelo de la media tambien baja en dialogo, y en prosa no", () => {
+  it("en dialogo manda el suelo de dialogo, y en prosa el del nivel", () => {
     // La media cuenta en cuantos cuerpos sale la palabra de cada plaza, asi
     // que sufre lo mismo que la cola. No es un liston de calidad mas bajo:
     // en dialogo la mitad del vocab son formulas de turno que, si vuelven,
     // suenan a plantilla.
+    //
+    // Los dos numeros son medidas distintas y ninguno domina al otro: 2,2 es
+    // el unico journey de dialogo con el vocab limpio, y 2,14 es el peor de
+    // los seis A0 PUBLICADOS, que son prosa (commit 0af442fd, 2026-09-23).
+    // El 2,14 de aqui era 2,5 hasta ese commit; se actualiza a mano a
+    // proposito, para que bajar el suelo del nivel no pase en silencio.
     expect(cola(PALABRAS.map((p, i) => dialogo(`dialogo-${i}`, p))).label).toContain("media 2.2");
-    expect(cola(PALABRAS.map((p, i) => prosa(`prosa-${i}`, p))).label).toContain("media 2.5");
+    expect(cola(PALABRAS.map((p, i) => prosa(`prosa-${i}`, p))).label).toContain("media 2.14");
   });
 });

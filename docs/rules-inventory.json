@@ -2290,7 +2290,7 @@
       "id": "feedback_journey_cities_must_be_world_known",
       "domain": "vocab",
       "rule": "\"REGLA DURA (2026-09-24): la ciudad de un journey tiene que ser muy conocida FUERA de su pais, sobre todo para anglosajones, que son el grupo objetivo; una ciudad que el lector no reconoce no vende...",
-      "gate": "none",
+      "gate": "src/lib/approvedCities.ts",
       "source": "memory:feedback_journey_cities_must_be_world_known.md"
     },
     {

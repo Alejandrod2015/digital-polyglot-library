@@ -1239,9 +1239,14 @@ export function validateJourneyStories(
   // Mismo criterio de formato que el tope de la cola, calculado una sola vez.
   const journeyEnDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
   const sueloNivel = MEDIA_MINIMA[level];
-  const suelo = journeyEnDialogo && sueloNivel !== undefined
-    ? Math.min(sueloNivel, MEDIA_MINIMA_DIALOGO)
-    : sueloNivel;
+  // En un journey de dialogo manda el suelo de dialogo, TAL CUAL, no el menor
+  // de los dos (2026-09-24). Los dos numeros miden cosas distintas: el 2,14 del
+  // nivel salio de los seis A0 publicados, que son PROSA (commit 0af442fd), y
+  // el 2,2 salio del unico journey de dialogo con el vocab limpio. Con
+  // `Math.min` el 2,2 no llegaba a aplicarse nunca y quedaba como excepcion
+  // muerta: el siguiente que la leyera creeria que hay una regla de dialogo
+  // donde solo quedaba el numero de la prosa.
+  const suelo = journeyEnDialogo ? MEDIA_MINIMA_DIALOGO : sueloNivel;
   if (suelo === undefined) {
     noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
