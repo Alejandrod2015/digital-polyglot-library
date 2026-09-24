@@ -48,7 +48,7 @@
     "failing": 0
   },
   "cmubidgaf0007j8np6g7n89iu": {
-    "label": "german a2 germany Friends (draft)",
+    "label": "german a2 germany Friends (active)",
     "failing": 0
   },
   "cmu047bkz0007326jsgeptkox": {
@@ -189,6 +189,18 @@
   },
   "cmt70xfyt000l3283gxd70wck": {
     "label": "spanish a2 spain Traveler (active)",
-    "failing": 297
+    "failing": 0
+  },
+  "cmue7cgmf0007j8p6sh7f7xrh": {
+    "label": "spanish a0 colombia Friends (draft)",
+    "failing": 0
+  },
+  "cmud5qhu00006j81cmkl4u5ks": {
+    "label": "spanish a0 mexico Friends (active)",
+    "failing": 0
+  },
+  "cmufhdbsj0007j8rotoym061z": {
+    "label": "german b1 germany Friends (draft)",
+    "failing": 0
   }
 }
