@@ -306,7 +306,7 @@
  {
   "type": "meaning_in_context",
   "word": "caer lluvia",
-  "sentence": "El aguacero [[cae]] sobre Pereira.",
+  "sentence": "El aguacero [[cae]] sobre Medellín.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "rain comes down outside",
@@ -319,7 +319,7 @@
    "audioClip": {
     "storySlug": "llueve-y-nadie-se-va",
     "storySource": "journey",
-    "sentence": "El aguacero cae sobre Pereira.",
+    "sentence": "El aguacero cae sobre Medellín.",
     "targetWord": "cae",
     "language": "spanish"
    }

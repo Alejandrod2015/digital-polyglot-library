@@ -12281,7 +12281,7 @@
     }
   },
   "cmue7cgmf0007j8p6sh7f7xrh#buses-and-streets": {
-    "cerrado": "2026-09-23T21:48:31.758Z",
+    "cerrado": "2026-09-24T09:05:30.575Z",
     "hash": "db358ced0cf26c7e",
     "historias": [
       "buses-and-streets#0 la-buseta-de-andres",
@@ -12316,7 +12316,7 @@
       "variante": "colombia",
       "registro": "calle de barrio, buses pequenos y humor con senales",
       "espina": "Mariana y Andres usan palabras pequenas para que el grupo se mueva sin perder la mesa amiga.",
-      "recursos": "Pereira, Colombia; cafe, pan, mesa, nombre, papel, senal, amigo; entra Camilo, un conductor adulto de buseta del barrio.",
+      "recursos": "Medellin, Colombia; cafe, pan, mesa, nombre, papel, senal, amigo; entra Camilo, un conductor adulto de buseta del barrio.",
       "historias": [
         {
           "slot": "1",
@@ -12350,7 +12350,7 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#cash-and-errands": {
-    "cerrado": "2026-09-23T21:55:04.426Z",
+    "cerrado": "2026-09-24T09:05:47.699Z",
     "hash": "ed6cebe690166123",
     "historias": [
       "cash-and-errands#0 el-platito-gira",
@@ -12385,7 +12385,7 @@
       "variante": "colombia",
       "registro": "vueltas cortas, plata pequena y humor con cuentas",
       "espina": "Mariana y Andres hacen mandados simples y cada peso necesita una senal clara.",
-      "recursos": "Pereira, Colombia; tienda, vuelto, recibo, monedas, cafe, pan, botica, buseta.",
+      "recursos": "Medellin, Colombia; tienda, vuelto, recibo, monedas, cafe, pan, botica, buseta.",
       "historias": [
         {
           "slot": "1",
@@ -12419,8 +12419,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#coffee-and-bread": {
-    "cerrado": "2026-09-23T21:48:25.461Z",
-    "hash": "81932a92c98d7527",
+    "cerrado": "2026-09-24T08:58:33.540Z",
+    "hash": "30699ce130b8ea93",
     "historias": [
       "coffee-and-bread#0 vasito-sin-dueno",
       "coffee-and-bread#1 mesa-amiga",
@@ -12454,7 +12454,7 @@
       "variante": "colombia",
       "registro": "cafe de barrio, pedidos sencillos y humor con pan",
       "espina": "Mariana y Andres usan errores pequenos para cuidar mejor al grupo.",
-      "recursos": "Pereira, Colombia; cafe, pan, mesa, vaso, nombre, papel, amigo; entra Sofi, una panadera adulta del barrio.",
+      "recursos": "Medellin, Colombia; cafe, pan, mesa, vaso, nombre, papel, amigo; entra Sofi, una panadera adulta del barrio.",
       "historias": [
         {
           "slot": "1",
@@ -12488,8 +12488,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#greetings-and-introductions": {
-    "cerrado": "2026-09-23T21:48:19.022Z",
-    "hash": "47612751c504c6e8",
+    "cerrado": "2026-09-24T08:58:23.018Z",
+    "hash": "afbd25bf9266ba43",
     "historias": [
       "greetings-and-introductions#0 dos-vasos-y-un-nombre",
       "greetings-and-introductions#1 la-mesa-de-tres",
@@ -12523,7 +12523,7 @@
       "variante": "colombia",
       "registro": "cafe de barrio, humor suave de presentaciones",
       "espina": "Mariana y Andres convierten errores pequenos en formas de saludar mejor.",
-      "recursos": "Pereira, Colombia; dos fijos adultos, Mariana y Andres; A0 presente, frases cortas, habla citada breve; nucleo lexico de cafe, nombre, mesa, saludo, papel, amigo.",
+      "recursos": "Medellin, Colombia; dos fijos adultos, Mariana y Andres; A0 presente, frases cortas, habla citada breve; nucleo lexico de cafe, nombre, mesa, saludo, papel, amigo.",
       "historias": [
         {
           "slot": "1",
@@ -12557,8 +12557,8 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#parties-and-photos": {
-    "cerrado": "2026-09-23T21:48:56.879Z",
-    "hash": "0f40ec1a9510f4a7",
+    "cerrado": "2026-09-24T08:58:39.381Z",
+    "hash": "2b697f2c4a1a1a59",
     "historias": [
       "parties-and-photos#0 foto-con-vaso",
       "parties-and-photos#1 andres-sale-pequeno",
@@ -12592,7 +12592,7 @@
       "variante": "colombia",
       "registro": "fiesta de barrio, fotos sencillas y humor con poses",
       "espina": "Mariana y Andres cierran el journey con una foto donde cada error viejo encuentra su lugar.",
-      "recursos": "Pereira, Colombia; foto, mesa amiga, cafe, pan, buseta, celular, plata, lluvia.",
+      "recursos": "Medellin, Colombia; foto, mesa amiga, cafe, pan, buseta, celular, plata, lluvia.",
       "historias": [
         {
           "slot": "1",
@@ -12626,7 +12626,7 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#phones-and-messages": {
-    "cerrado": "2026-09-23T21:54:57.367Z",
+    "cerrado": "2026-09-24T09:05:42.010Z",
     "hash": "0b4905e3761f329f",
     "historias": [
       "phones-and-messages#0 mesa-no-misa",
@@ -12634,7 +12634,7 @@
       "phones-and-messages#2 pan-tiene-silla"
     ],
     "checks": [
-      "plan del tema completo (registro \"mensajes de celular, confusiones pequenas y humor seco\", espina \"Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Pereira.\")",
+      "plan del tema completo (registro \"mensajes de celular, confusiones pequenas y humor seco\", espina \"Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Medellin.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
@@ -12660,8 +12660,8 @@
       "nivel": "a0",
       "variante": "colombia",
       "registro": "mensajes de celular, confusiones pequenas y humor seco",
-      "espina": "Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Pereira.",
-      "recursos": "Pereira, Colombia; celular, mensaje, nombre, mesa amiga, cafe, pan, buseta y lluvia.",
+      "espina": "Mariana y Andres descubren que un mensaje corto puede mover a todo el grupo por Medellin.",
+      "recursos": "Medellin, Colombia; celular, mensaje, nombre, mesa amiga, cafe, pan, buseta y lluvia.",
       "historias": [
         {
           "slot": "1",
@@ -12695,7 +12695,7 @@
     ]
   },
   "cmue7cgmf0007j8p6sh7f7xrh#work-and-favors": {
-    "cerrado": "2026-09-23T21:54:50.845Z",
+    "cerrado": "2026-09-24T09:05:36.326Z",
     "hash": "00b0d596b598b86a",
     "historias": [
       "work-and-favors#0 el-encargo-tapado",
@@ -12730,7 +12730,7 @@
       "variante": "colombia",
       "registro": "favores de barrio, trabajo pequeno y humor con papeles",
       "espina": "Mariana y Andres usan la mesa amiga para ordenar favores sin perder nombres, pan ni cafe.",
-      "recursos": "Pereira, Colombia; cafe, pan, mesa, papel, buseta, maletin, botica; reparto adulto ya en uso.",
+      "recursos": "Medellin, Colombia; cafe, pan, mesa, papel, buseta, maletin, botica; reparto adulto ya en uso.",
       "historias": [
         {
           "slot": "1",

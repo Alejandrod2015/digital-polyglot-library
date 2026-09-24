@@ -29,7 +29,7 @@ practica sigue al pais" si se mira con lupa.
 
 ## Candidatas (maximo 3)
 
-Formato narrador, historias cortas de barrio en Pereira, reparto de ocho. Se
+Formato narrador, historias cortas de barrio en Medellín, reparto de ocho. Se
 busca calida y clara, que lea despacio sin sonar a leccion y que no aspire las
 eses (por eso queda fuera todo lo costeño; Bogota y el eje cafetero conservan
 la /s/).

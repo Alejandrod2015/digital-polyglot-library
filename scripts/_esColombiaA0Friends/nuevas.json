@@ -38,7 +38,7 @@
   "persona": { "g": "person", "t": "noun" },
   "aparece": { "g": "shows up (aparecer)", "t": "verb" },
   "remata": { "g": "caps it off (rematar)", "t": "verb" },
-  "pereira": { "g": "Pereira, a city in the Colombian coffee region", "t": "noun" },
+  "medellín": { "g": "Medellín, a big city in Colombia", "t": "noun" },
   "barista": { "g": "barista", "t": "noun" },
   "reparte": { "g": "delivers, hands out (repartir)", "t": "verb" },
   "paquetes": { "g": "packages", "t": "noun" },

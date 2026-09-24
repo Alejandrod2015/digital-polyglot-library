@@ -1,5 +1,5 @@
 /**
- * Monta el Friends ES Colombia A0 (Pereira): 7 temas x 3 historias = 21 slots, en draft.
+ * Monta el Friends ES Colombia A0 (Medellin): 7 temas x 3 historias = 21 slots, en draft.
  * Encargo: ENCARGO.md, fase 1 texto, 2026-09-23.
  *
  * Tipo `relationships`, nombre "Friends". El C1 colombiano publicado esta
@@ -78,7 +78,7 @@ async function main() {
   }
   if (conflictos.length) throw new Error(`CHOQUE DE TEMAS:\n  - ${conflictos.join("\n  - ")}`);
 
-  console.log("ciudad: Pereira, Colombia");
+  console.log("ciudad: Medellin, Colombia");
   console.log(`tipo: ${typeSlug} · 7 temas · 21 historias · nivel a0 · draft`);
   if (dry) {
     console.log("[--dry] nada escrito.");
