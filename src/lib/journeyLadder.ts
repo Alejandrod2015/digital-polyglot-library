@@ -15,12 +15,35 @@
  * crecer por encima: primero se rellena, luego se sube. Los archivados no
  * cuentan, como en toda la clasificación.
  *
+ * COHORTE (2026-09-22). Un journey LIVE sostiene su peldaño venga del molde
+ * que venga: al alumno que mide B1 le sirve igual un B1 del molde de ciudades.
+ * Un BORRADOR de un molde anterior, en cambio, no le sirve a nadie todavía, y
+ * bloquear por él un journey nuevo es pagar por contenido que no está en la
+ * calle. Así que un journey de otra cohorte solo deja de contar cuando además
+ * no está live. Regla del usuario para el Friends ES México C1, que es
+ * borrador del molde de siete ciudades y bloqueaba el A0 de su propia familia:
+ * "No quiero que se archive pero sí que se clasifique de forma que se pueda
+ * diferenciar porque el molde es viejo".
+ *
  * Se llama ANTES de journey.create; el hook
  * `.claude/safety/pre-journey-guard.sh` bloquea cualquier ejecución que
  * escriba un journey sin nombrarla, igual que el portón de temas.
  */
 
 export const ESCALERA = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"] as const;
+
+/**
+ * La cohorte del molde vigente. `null` en base significa esto mismo: la
+ * columna se añadió el 2026-09-22 y nadie va a rellenarla en 39 filas para
+ * decir "lo normal".
+ */
+export const COHORTE_ACTUAL = "domains-2026-09";
+
+/** Cohorte efectiva de un journey; `null` cuenta como la actual. */
+export function cohorteDe(valor?: string | null): string {
+  const v = (valor ?? "").trim();
+  return v === "" ? COHORTE_ACTUAL : v;
+}
 
 /**
  * Journeys que NO cuentan para la contigüidad. Cada entrada lleva su porqué y
@@ -52,17 +75,28 @@ export type JourneyExistente = {
   variant: string;
   levels: string[];
   status: string;
+  /** Molde editorial con el que se escribió; `null` es el molde vigente. */
+  generationCohort?: string | null;
 };
 
 export function assertLadderContiguous(
-  nuevo: { name: string; language: string; variant: string; levels: string[] },
+  nuevo: {
+    name: string;
+    language: string;
+    variant: string;
+    levels: string[];
+    generationCohort?: string | null;
+  },
   existentes: JourneyExistente[],
 ): void {
   const idx = (l: string) => ESCALERA.indexOf(l.toLowerCase() as (typeof ESCALERA)[number]);
+  const miCohorte = cohorteDe(nuevo.generationCohort);
   const propios = existentes.filter(
     (j) =>
       j.status !== "archived" &&
       !(j.id && FUERA_DE_ESCALERA.has(j.id)) &&
+      // Borrador de otro molde: no sostiene peldaño. Live sí, siempre.
+      (j.status === "active" || cohorteDe(j.generationCohort) === miCohorte) &&
       j.language.toLowerCase() === nuevo.language.toLowerCase() &&
       j.variant.toLowerCase() === nuevo.variant.toLowerCase() &&
       j.name.toLowerCase() === nuevo.name.toLowerCase(),

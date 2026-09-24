@@ -66,6 +66,9 @@ export type JourneyStoryInput = {
   topic?: string | null;
 };
 
+import { getNameBank } from "@/lib/characterNames";
+import { fueraDelIdioma, nombresVetados } from "@/lib/nameSpeakability";
+
 export type JourneyCheck = {
   id: string;
   label: string;
@@ -144,7 +147,20 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   ES: "dice|dijo|pregunta|pregunto|preguntó|responde|respondio|respondió|contesta|contesto|contestó|" +
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
-      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
+      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió|" +
+      // Ampliado el 2026-09-24 con los del Friends ES C1 latam, que narra en
+      // preterito y con verbos de habla mas ricos que un A0. Con la lista
+      // anterior ese journey daba reparto VACIO y sus cuatro checks de reparto
+      // aprobaban sin medir nada, incluido el del nombre: el C1 lleva "Itzel"
+      // en tres historias publicadas y salia en verde.
+      "confiesa|confeso|confesó|bromea|bromeo|bromeó|promete|prometio|prometió|" +
+      "admite|admitio|admitió|anade|añade|anadio|añadió|murmura|murmuro|murmuró|" +
+      "susurra|susurro|susurró|advierte|advirtio|advirtió|aclara|aclaro|aclaró|" +
+      "propone|propuso|comenta|comento|comentó|exclama|exclamo|exclamó|" +
+      "asegura|aseguro|aseguró|replica|replico|replicó|reclama|reclamo|reclamó|" +
+      "confirma|confirmo|confirmó|niega|nego|negó|suspira|suspiro|suspiró|" +
+      "reconoce|reconocio|reconoció|interrumpe|interrumpio|interrumpió|" +
+      "saluda|saludo|saludó|responde|contesta|diciendo",
   // Italiano (2026-09-14, Friends IT A0 de Genova; ampliado 2026-09-17 con el
   // IT A2 y el IT A1 de Milano). Sin esta lista castOf caia en la alemana y
   // el reparto salia VACIO, el mismo fallo de PT, FR y ES. Union de los
@@ -175,7 +191,21 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
     }
   }
   const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories, lang).filter((n) => hablan.has(n));
+  const legacy = castLegacy(stories, lang);
+  const conHabla = legacy.filter((n) => hablan.has(n));
+  // EL REPARTO NUNCA SALE VACIO (2026-09-24). El filtro de habla afina, pero
+  // cuando no casa con NADIE se lleva por delante a todo el reparto, y un
+  // reparto vacio no hace fallar ningun check: los hace PASAR, sin medir nada.
+  // Eso es peor que fallar, y ya paso cuatro veces, una por idioma (PT, FR, ES
+  // e IT), siempre igual: la lista de verbos no cubria como narra ese journey.
+  // La quinta la vio el usuario, no el gate: el Friends ES C1 latam daba cero
+  // hablantes con los verbos del A0, asi que su reparto era [] y el check de
+  // nombres lo aprobaba con "Itzel" en tres historias publicadas.
+  //
+  // Ampliar la lista de verbos arregla el caso de hoy; esto arregla la clase.
+  // Cuando el filtro deja el reparto en cero, se usa el de frecuencia, que es
+  // lo que habia antes de que el filtro existiera: mide peor, pero mide.
+  return conHabla.length ? conHabla : legacy;
 }
 function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
@@ -448,6 +478,9 @@ export function validateJourneyStories(
   stories: JourneyStoryInput[],
   ctx: {
     language: string;
+    /** Variante del journey (mexico, spain, latam...). Da la clave del banco
+     *  de nombres; sin ella el check del reparto no puede medir. */
+    variant?: string | null;
     level: string;
     /** Nombres de personas REALES (solicitantes de la beta). Los pasa
      *  saveStory.ts desde la base; sin ellos el check no puede medir. */
@@ -558,6 +591,79 @@ export function validateJourneyStories(
   }
 
   const cast = castOf(stories, lang);
+
+  // ── Reparto: nombres DEL IDIOMA del journey ────────────────
+  //
+  // La voz de TTS solo tiene aprendidos los nombres de su idioma. Uno de otra
+  // lengua, por muy usado que este en el pais, sale distinto cada vez que
+  // aparece, y un recurrente aparece decenas de veces por journey.
+  //
+  // Medido el 2026-09-23 en el Friends ES Mexico A0 con "Itzel", que es maya:
+  // 72 apariciones en 18 historias, de 0,12 s a 0,96 s para la misma palabra,
+  // tres reconocedores escribiendo Ixchel, Excel y Chelsea, y 12 de 21
+  // candidatas confirmadas malas por el oido del usuario. Paso todos los gates
+  // que habia, porque es mexicano, corriente y de la edad correcta. El usuario:
+  // "Las voces solo saben pronunciar nombres comunes para sus idiomas".
+  //
+  // Se mide contra el BANCO del idioma y la region, que es precisamente la
+  // lista de nombres de esa lengua, y solo sobre `cast`: los nombres que HABLAN
+  // en dos historias o mas. Asi los toponimos (Guadalajara, Tlaquepaque) y las
+  // fiestas no entran, que no los dice un personaje sino la prosa una vez.
+  {
+    // El banco se llama "spanish/mexico", y aqui el idioma puede llegar como
+    // "ES" (asi lo pasa saveStory) o como "spanish". Sin normalizar, el check
+    // salia SIN IMPLEMENTAR y bloqueaba el guardado entero del MX A0.
+    const CODIGO_A_NOMBRE: Record<string, string> = {
+      DE: "german", ES: "spanish", PT: "portuguese", IT: "italian", FR: "french", EN: "english",
+    };
+    const idiomaBanco = CODIGO_A_NOMBRE[lang] ?? (ctx.language ?? "").toLowerCase();
+    const bank = getNameBank(idiomaBanco, ctx.variant);
+    if (!bank) {
+      noImpl(
+        "journey-cast-names-in-language",
+        "El reparto sale del banco de nombres del idioma",
+        `No hay banco de nombres para ${idiomaBanco || "?"}/${(ctx.variant ?? "").toLowerCase() || "?"}. ` +
+        `Sin banco no se puede medir si un nombre es de esa lengua: anade la region en src/lib/characterNames.ts.`,
+      );
+    } else {
+      // BLOQUEA solo lo que el usuario veto de oido. Exigir pertenencia al
+      // banco tumbaba 20 journeys del catalogo por nombres impecables de su
+      // idioma (Marta, Sophie, Elisa), porque el banco tiene 10-24 nombres y
+      // es una referencia, no una lista cerrada. Medido el 2026-09-24.
+      // Sobre el TEXTO entero, no sobre `cast`. La lista de vetados es
+      // explicita y minuscula, asi que buscarla en todo el texto no puede dar
+      // falsos positivos, y cierra el hueco de `castOf`: en el Friends ES C1
+      // latam "Itzel" sale 13 veces en tres historias publicadas y NO habla en
+      // ninguna, asi que el filtro de reparto no la veia y el journey pasaba.
+      // Al narrador le da igual quien hable: tiene que decir el nombre igual.
+      const todoElTexto = new Set<string>();
+      for (const s of stories)
+        for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) todoElTexto.add(m[0]);
+      const vetados = nombresVetados(todoElTexto, idiomaBanco);
+      push(
+        "journey-cast-names-in-language",
+        "Ningun nombre del reparto esta vetado de oido",
+        vetados.length === 0,
+        vetados.map((v) => `${v.nombre}: ${v.porque}`).join(" ") +
+        ` La voz no sabe decirlo y lo dira distinto cada vez. Elige otro del banco ` +
+        `(src/lib/characterNames.ts).`,
+      );
+      // AVISA de los que no estan en el banco: no es un error, es que nadie ha
+      // comprobado que suenen. El aviso es lo que lleva a oirlos antes de narrar.
+      const fuera = fueraDelIdioma(cast, bank, idiomaBanco)
+        .filter((n) => !vetados.some((v) => v.nombre === n));
+      if (fuera.length) {
+        out.push({
+          id: "journey-cast-names-unheard",
+          label: "Nombres del reparto que nadie ha oido en esta voz",
+          status: "pass",
+          detail: `${fuera.join(", ")}: fuera del banco de ${idiomaBanco}/${(ctx.variant ?? "").toLowerCase()}. ` +
+            `Antes de narrar, una linea de muestra con cada uno en la voz del journey: ` +
+            `un nombre que la voz no tenga aprendido sale distinto cada vez y se paga en las 21.`,
+        });
+      }
+    }
+  }
 
   // ── 2 y 3. Presentacion de personajes y variedad de forma ───
   const FORMAS = FORMAS_POR_IDIOMA[lang];
@@ -745,9 +851,69 @@ export function validateJourneyStories(
       }
       push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
+    } else if (lang === "ES") {
+      // Suelo A0 espanol (2026-09-22, montando el Friends ES Mexico A0). La
+      // NARRACION va en presente; lo citado es habla real y queda fuera, igual
+      // que en frances y en italiano. Lo que NO se mide aqui: "sujeto primero"
+      // es una regla alemana (inversion V2) que en espanol no dice nada, y el
+      // largo de frase ya lo mide `body-a0-sentence-length` en el validador de
+      // historia. Aqui solo el tiempo verbal.
+      //
+      // LA TILDE ES EL DETECTOR, y por eso no se normaliza nada. Las dos
+      // unicas falsas alarmas que salieron al calibrar contra el Traveler ES
+      // latam A0 se caen solas con ella: "esta seria un momento" (adjetivo,
+      // frente al condicional "seria") y "Mira hacia el alebrije" (preposicion,
+      // frente al imperfecto "hacia"). Todo -ia de imperfecto y de condicional
+      // la lleva; ninguno de sus homografos, si.
+      //
+      // Otras dos trampas del espanol:
+      //   - el imperfecto en -ia choca ademas con media lista de tiendas
+      //     (taqueria, lavanderia, peluqueria) y con dia, tia o Maria, asi que
+      //     va por LISTA de verbos frecuentes y no por terminacion;
+      //   - el preterito en -o acentuada es seguro, pero -e acentuada no
+      //     (cafe, bebe, pure), y el futuro en -ra choca con detras y atras.
+      // Calibrado contra las 21 del Traveler ES latam A0 y las 21 del Cultural
+      // ES latam A0, que son el A0 espanol ya publicado: las 42 en verde.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const PART = "\\p{Ll}{2,}(?:ado|ada|ados|adas|ido|ida|idos|idas)";
+      const PERFECTO = new RegExp(`${L}(?:he|has|ha|hemos|han|había|habían)\\s+(?:ya\\s+|no\\s+)?${PART}${R}`, "iu");
+      const PRET_IRREG = new RegExp(
+        `${L}(?:fue|fueron|tuvo|tuvieron|hizo|hicieron|dijo|dijeron|vino|vinieron|` +
+        `estuvo|estuvieron|pudo|pudieron|puso|pusieron|quiso|quisieron|supo|supieron|` +
+        `anduvo|anduvieron|trajo|trajeron|dieron|vieron|hubo|condujo)${R}`, "iu");
+      const PRET_REG = new RegExp(`${L}\\p{Ll}{2,}(?:ó|aron|ieron|yeron)${R}`, "u");
+      const IMP_COND = new RegExp(
+        `${L}(?:era|eran|éramos|iba|iban|íbamos|había|habían|tenía|tenían|` +
+        `quería|querían|podía|podían|hacía|hacían|decía|decían|venía|venían|salía|salían|` +
+        `ponía|ponían|veía|veían|sabía|sabían|vivía|vivían|sentía|sentían|dormía|dormían|` +
+        `subía|subían|comía|comían|bebía|bebían|abría|abrían|seguía|seguían|servía|servían|` +
+        `traía|traían|oía|oían|reía|reían|creía|creían|leía|leían|corría|corrían|` +
+        `estaba|estabas|estaban|estábamos|` +
+        `sería|serían|tendría|tendrían|querría|querrían|gustaría|gustarían|podría|podrían|` +
+        `haría|harían|iría|irían|diría|dirían)${R}`, "iu");
+      const IMP_ABA = new RegExp(`${L}\\p{Ll}{3,}(?:aba|abas|aban|ábamos)${R}`, "u");
+      const NO_FUTURO = /^(?:detrás|atrás)$/i;
+      const FUTURO = new RegExp(`${L}(\\p{Ll}{2,}(?:rá|rán|rás|ré|remos|réis))${R}`, "u");
+      const malas: string[] = [];
+      for (const s of stories) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
+          if (f.length < 4) continue;
+          const flags: string[] = [];
+          if (PERFECTO.test(f)) flags.push("perfecto compuesto");
+          if (PRET_IRREG.test(f) || PRET_REG.test(f)) flags.push("preterito");
+          if (IMP_COND.test(f) || IMP_ABA.test(f)) flags.push("imperfecto o condicional");
+          const fut = f.match(FUTURO);
+          if (fut && !NO_FUTURO.test(fut[1])) flags.push("futuro");
+          if (flags.length) malas.push(`${s.slug}: [${[...new Set(flags)].join(" · ")}] ${f.slice(0, 70)}`);
+        }
+      }
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
+        malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
-        `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
+        `El suelo A0 solo esta implementado para DE, FR, IT y ES; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
     } else {
       const partFinal = new RegExp(`\\s(${A0_DE_PARTICULAS.join("|")})\\s*[.!?]$`);
       const malas: string[] = [];
@@ -899,7 +1065,28 @@ export function validateJourneyStories(
   // lo lleva marcado `provisional-b2`. Autorizado por el chat de planificacion
   // el 2026-09-06 con el si literal del usuario ("Sí, aplícalo"); ningun otro
   // suelo se toca.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
+  // A0 remedido el 2026-09-23, con el si literal del usuario ("dale, bajalo a
+  // 2,14"). El 2,5 no salia del catalogo: de los SEIS A0 vivos lo cumple uno
+  // solo, el Traveler PT (2,54); los otros cinco dan 2,33 (Cultural ES latam),
+  // 2,27 (Friends FR), 2,27 (Friends DE), 2,16 (Traveler DE) y 2,14 (Friends
+  // IT). Una vara que suspende a cinco de seis journeys publicados no es la
+  // vara del catalogo, es su mejor caso.
+  //
+  // El suelo pasa a 2,14, que es el PEOR A0 publicado, con el mismo criterio
+  // que el resto de la tabla: la vara se pone en lo que el catalogo ya hace,
+  // nunca en lo que un texto concreto necesita para pasar. El journey que
+  // destapo esto (Friends ES mexico A0) da 2,15 DESPUES de su pasada de
+  // recirculacion; el suelo queda por debajo de el porque tambien queda por
+  // debajo del peor publicado, no al reves. Medido con
+  // `scripts/_esMxA0/mideGold.ts`, que corre esta misma formula sobre los A0
+  // de la base.
+  //
+  // Lo que esto NO autoriza: escribir un A0 sin escalera. El techo medido sin
+  // tocar prosa en aquel journey era 1,86, y hubo que trabajarlo hasta 2,15
+  // (nucleo compartido en prosa, poda de plazas que no vuelven y plazas de
+  // verbo, que cuentan por todas sus formas). Remedir y subir el suelo en
+  // cuanto haya un A0 publicado que lo supere de forma estable.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.14, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //

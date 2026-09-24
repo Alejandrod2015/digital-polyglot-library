@@ -1925,6 +1925,7 @@ export async function validateGeneratedStory(
         detail: `${desconocidos.slice(0, 6).join(", ")}: not in the name bank for this region (src/lib/characterNames.ts). Not necessarily wrong, but nobody verified it reads as a real, current name there.`,
       });
     }
+
   }
 
   // ─── longitud de frase en A0 ───────────────────────────

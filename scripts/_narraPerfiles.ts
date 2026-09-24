@@ -2,7 +2,7 @@
  * Perfiles de narracion (journey, mapa de voces, bundle de glosas) y las dos
  * reglas que comparten la muestra (_muestraA2Titulo.ts), el runner
  * (_narraUnaA2.ts) y el modo en seco (_narraSeco.ts): con que voz se narra cada
- * historia, y en que paso del orden de narracion por tema esta. Aqui no se
+ * historia, y en que paso del orden de narracion esta. Aqui no se
  * sintetiza nada, y por eso el modo en seco puede importarlo sin tocar el guard
  * de audio.
  *
@@ -28,6 +28,7 @@ import { VOZ_POR_TEMA_DE_A2_FRIENDS } from "./_deA2FriendsVoces";
 import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
 import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
 import { VOZ_POR_TEMA_ES_A0_CULTURAL } from "./_esA0CulturalVoces";
+import { VOZ_POR_TEMA_ES_MX_A0 } from "./_esMxA0Voces";
 
 export type Perfil = {
   journey: string;
@@ -59,6 +60,7 @@ export const PERFILES: Record<string, Perfil> = {
   "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
   "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
   "es-a0-cultural": { journey: "cmu410zep000732szrw94t2sl", voces: VOZ_POR_TEMA_ES_A0_CULTURAL, bundle: "spanish-cultural-latam-a0", language: "spanish" },
+  "mx-a0": { journey: "cmud5qhu00006j81cmkl4u5ks", voces: VOZ_POR_TEMA_ES_MX_A0, bundle: "spanish-friends-mexico-a0", language: "spanish" },
 };
 
 export function perfilDeArgs(argv: string[]): Perfil {
@@ -94,23 +96,51 @@ export function muestrasRegistradas(): Record<string, unknown> {
     : {};
 }
 
-/** ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02): primero la muestra de
- *  titulo y primer parrafo, que el usuario comprueba; luego la primera historia
- *  entera, que vuelve a comprobar; y solo entonces el resto del tema.
- *  `bloqueo` dice por que la historia todavia no puede narrarse entera. */
-export function pasoDelOrden(
-  s: { slug: string | null; slotIndex: number; audioUrl?: string | null },
+/**
+ * La muestra registrada de ESTE journey, si la hay (2026-09-23: la muestra pasa
+ * de una por tema a UNA POR JOURNEY). El registro esta indexado por slug, asi
+ * que hay dos formas de saber a que journey pertenece una entrada:
+ *
+ *   - las nuevas guardan `journey` con el id, y ese campo manda;
+ *   - las viejas (todas las de antes del 2026-09-23) no lo traen, y se
+ *     reconocen porque su slug es el de una historia del journey. Por eso hay
+ *     que pasarle los slugs: es lo que deja seguir narrando, sin re-tirar
+ *     ninguna muestra, un journey empezado con el orden anterior.
+ */
+export function muestraDelJourney(
   muestras: Record<string, unknown>,
-  primeraDelTemaNarrada: boolean,
-  slotDeLaPrimera: number,
-): { paso: "ya narrada" | "muestra" | "primera entera" | "resto del tema"; bloqueo?: string } {
+  journeyId: string,
+  slugsDelJourney: Iterable<string | null | undefined>,
+): string | null {
+  const marcada = Object.entries(muestras).find(
+    ([, v]) => (v as { journey?: string } | null)?.journey === journeyId
+  );
+  if (marcada) return marcada[0];
+  const slugs = new Set([...slugsDelJourney].filter(Boolean) as string[]);
+  return Object.keys(muestras).find((slug) => slugs.has(slug)) ?? null;
+}
+
+/**
+ * Si la voz de este journey ya paso por el oido del usuario. Dos formas, y la
+ * segunda existe para no endurecer la regla a mitad de un journey: o hay
+ * muestra registrada, o ya hay historias narradas (entonces el usuario ya oyo
+ * esa voz en este journey, que es justo lo que la muestra protege). Sin
+ * ninguna de las dos, el journey esta virgen y la muestra es obligatoria.
+ */
+export function vozYaAprobada(muestra: string | null, narradas: number): boolean {
+  return !!muestra || narradas > 0;
+}
+
+/** ORDEN DE NARRACION (regla dura 2026-09-02, aflojada el 2026-09-23): una
+ *  muestra por JOURNEY, que el usuario aprueba de oido; a partir de ahi el tema
+ *  se narra entero, las tres historias seguidas. `bloqueo` dice por que la
+ *  historia todavia no puede narrarse. */
+export function pasoDelOrden(
+  s: { slug: string | null; audioUrl?: string | null },
+  aprobada: boolean,
+): { paso: "ya narrada" | "muestra" | "tema entero"; bloqueo?: string } {
   if (s.audioUrl) return { paso: "ya narrada" };
-  if (s.slotIndex === slotDeLaPrimera) {
-    return muestras[s.slug ?? ""]
-      ? { paso: "primera entera" }
-      : { paso: "muestra", bloqueo: "es la PRIMERA de su tema y no tiene muestra" };
-  }
-  return primeraDelTemaNarrada
-    ? { paso: "resto del tema" }
-    : { paso: "resto del tema", bloqueo: "la primera de este tema todavia no esta narrada" };
+  return aprobada
+    ? { paso: "tema entero" }
+    : { paso: "muestra", bloqueo: "este journey no tiene muestra aprobada todavia" };
 }

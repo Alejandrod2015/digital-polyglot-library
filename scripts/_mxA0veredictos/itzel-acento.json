@@ -1,0 +1,702 @@
+[
+ {
+  "n": 0,
+  "slug": "carbon-mojado",
+  "dur": 0.32,
+  "d1": 0.07,
+  "d2": 0.25,
+  "dNivel": 12.2,
+  "dTono": -144.3,
+  "dDur": 0.18
+ },
+ {
+  "n": 1,
+  "slug": "carbon-mojado",
+  "dur": 0.28,
+  "d1": 0.06,
+  "d2": 0.22,
+  "dNivel": 23.1,
+  "dTono": 1.1,
+  "dDur": 0.16
+ },
+ {
+  "n": 2,
+  "slug": "carbon-mojado",
+  "dur": 0.44,
+  "d1": 0.09,
+  "d2": 0.35,
+  "dNivel": 12.4,
+  "dTono": -97.2,
+  "dDur": 0.26
+ },
+ {
+  "n": 4,
+  "slug": "la-salsa-no-se-apunta",
+  "dur": 0.36,
+  "d1": 0.13,
+  "d2": 0.23,
+  "dNivel": 3.9,
+  "dTono": 7.3,
+  "dDur": 0.1
+ },
+ {
+  "n": 5,
+  "slug": "la-salsa-no-se-apunta",
+  "dur": 0.32,
+  "d1": 0.19,
+  "d2": 0.13,
+  "dNivel": 10.3,
+  "dTono": -6.9,
+  "dDur": -0.06
+ },
+ {
+  "n": 6,
+  "slug": "la-salsa-no-se-apunta",
+  "dur": 0.4,
+  "d1": 0.07,
+  "d2": 0.33,
+  "dNivel": 9.6,
+  "dTono": null,
+  "dDur": 0.26
+ },
+ {
+  "n": 7,
+  "slug": "la-salsa-no-se-apunta",
+  "dur": 0.4,
+  "d1": 0.21,
+  "d2": 0.19,
+  "dNivel": 5.1,
+  "dTono": 62.7,
+  "dDur": -0.02
+ },
+ {
+  "n": 8,
+  "slug": "nadie-se-queja-nunca",
+  "dur": 0.4,
+  "d1": 0.12,
+  "d2": 0.28,
+  "dNivel": 12.5,
+  "dTono": -93.1,
+  "dDur": 0.16
+ },
+ {
+  "n": 9,
+  "slug": "nadie-se-queja-nunca",
+  "dur": 0.48,
+  "d1": 0.1,
+  "d2": 0.38,
+  "dNivel": 7.4,
+  "dTono": -138.8,
+  "dDur": 0.28
+ },
+ {
+  "n": 10,
+  "slug": "nadie-se-queja-nunca",
+  "dur": 0.24,
+  "d1": 0.17,
+  "d2": 0.07,
+  "dNivel": -8.1,
+  "dTono": null,
+  "dDur": -0.1
+ },
+ {
+  "n": 11,
+  "slug": "nadie-se-queja-nunca",
+  "dur": 0.4,
+  "d1": 0.12,
+  "d2": 0.28,
+  "dNivel": 4.7,
+  "dTono": -88.9,
+  "dDur": 0.16
+ },
+ {
+  "n": 12,
+  "slug": "media-cara-rasurada",
+  "dur": 0.44,
+  "d1": 0.18,
+  "d2": 0.26,
+  "dNivel": 0.4,
+  "dTono": 4.7,
+  "dDur": 0.08
+ },
+ {
+  "n": 13,
+  "slug": "media-cara-rasurada",
+  "dur": 0.32,
+  "d1": 0.08,
+  "d2": 0.24,
+  "dNivel": 15.5,
+  "dTono": null,
+  "dDur": 0.16
+ },
+ {
+  "n": 14,
+  "slug": "media-cara-rasurada",
+  "dur": 0.96,
+  "d1": 0.38,
+  "d2": 0.58,
+  "dNivel": -37.1,
+  "dTono": null,
+  "dDur": 0.2
+ },
+ {
+  "n": 15,
+  "slug": "media-cara-rasurada",
+  "dur": 0.4,
+  "d1": 0.21,
+  "d2": 0.19,
+  "dNivel": 1.7,
+  "dTono": -50.7,
+  "dDur": -0.02
+ },
+ {
+  "n": 16,
+  "slug": "media-cara-rasurada",
+  "dur": 0.48,
+  "d1": 0.09,
+  "d2": 0.39,
+  "dNivel": 11.2,
+  "dTono": null,
+  "dDur": 0.3
+ },
+ {
+  "n": 17,
+  "slug": "peinate-como-en-la-foto",
+  "dur": 0.32,
+  "d1": 0.1,
+  "d2": 0.22,
+  "dNivel": -4.9,
+  "dTono": null,
+  "dDur": 0.12
+ },
+ {
+  "n": 18,
+  "slug": "peinate-como-en-la-foto",
+  "dur": 0.68,
+  "d1": 0.43,
+  "d2": 0.25,
+  "dNivel": -5.2,
+  "dTono": null,
+  "dDur": -0.18
+ },
+ {
+  "n": 19,
+  "slug": "peinate-como-en-la-foto",
+  "dur": 0.28,
+  "d1": 0.08,
+  "d2": 0.2,
+  "dNivel": 20.7,
+  "dTono": -104.3,
+  "dDur": 0.12
+ },
+ {
+  "n": 20,
+  "slug": "peinate-como-en-la-foto",
+  "dur": 0.36,
+  "d1": 0.21,
+  "d2": 0.15,
+  "dNivel": 2.1,
+  "dTono": -5.3,
+  "dDur": -0.06
+ },
+ {
+  "n": 21,
+  "slug": "peinate-como-en-la-foto",
+  "dur": 0.24,
+  "d1": 0.06,
+  "d2": 0.18,
+  "dNivel": 24.3,
+  "dTono": -26.9,
+  "dDur": 0.12
+ },
+ {
+  "n": 22,
+  "slug": "puestas-por-fuera",
+  "dur": 0.4,
+  "d1": 0.23,
+  "d2": 0.17,
+  "dNivel": -0.4,
+  "dTono": null,
+  "dDur": -0.06
+ },
+ {
+  "n": 23,
+  "slug": "puestas-por-fuera",
+  "dur": 0.36,
+  "d1": 0.08,
+  "d2": 0.28,
+  "dNivel": 12.1,
+  "dTono": 21.1,
+  "dDur": 0.2
+ },
+ {
+  "n": 24,
+  "slug": "puestas-por-fuera",
+  "dur": 0.32,
+  "d1": 0.16,
+  "d2": 0.16,
+  "dNivel": 0.5,
+  "dTono": 30.6,
+  "dDur": 0.0
+ },
+ {
+  "n": 26,
+  "slug": "tres-duenos-y-un-paraguas",
+  "dur": 0.56,
+  "d1": 0.11,
+  "d2": 0.45,
+  "dNivel": 2.0,
+  "dTono": null,
+  "dDur": 0.34
+ },
+ {
+  "n": 27,
+  "slug": "tres-duenos-y-un-paraguas",
+  "dur": 0.44,
+  "d1": 0.29,
+  "d2": 0.15,
+  "dNivel": -5.6,
+  "dTono": null,
+  "dDur": -0.14
+ },
+ {
+  "n": 28,
+  "slug": "tres-duenos-y-un-paraguas",
+  "dur": 0.36,
+  "d1": 0.08,
+  "d2": 0.28,
+  "dNivel": 4.7,
+  "dTono": null,
+  "dDur": 0.2
+ },
+ {
+  "n": 29,
+  "slug": "el-timbre-si-suena",
+  "dur": 0.36,
+  "d1": 0.18,
+  "d2": 0.18,
+  "dNivel": 0.2,
+  "dTono": -2.9,
+  "dDur": -0.0
+ },
+ {
+  "n": 30,
+  "slug": "el-timbre-si-suena",
+  "dur": 0.4,
+  "d1": 0.19,
+  "d2": 0.21,
+  "dNivel": 2.2,
+  "dTono": 50.2,
+  "dDur": 0.02
+ },
+ {
+  "n": 31,
+  "slug": "el-timbre-si-suena",
+  "dur": 0.36,
+  "d1": 0.08,
+  "d2": 0.28,
+  "dNivel": 9.8,
+  "dTono": null,
+  "dDur": 0.2
+ },
+ {
+  "n": 33,
+  "slug": "pintan-el-14",
+  "dur": 0.4,
+  "d1": 0.2,
+  "d2": 0.2,
+  "dNivel": 26.9,
+  "dTono": null,
+  "dDur": 0.0
+ },
+ {
+  "n": 34,
+  "slug": "pintan-el-14",
+  "dur": 0.36,
+  "d1": 0.07,
+  "d2": 0.29,
+  "dNivel": 6.1,
+  "dTono": null,
+  "dDur": 0.22
+ },
+ {
+  "n": 35,
+  "slug": "pintan-el-14",
+  "dur": 0.16,
+  "d1": 0.1,
+  "d2": 0.06,
+  "dNivel": -24.3,
+  "dTono": 120.4,
+  "dDur": -0.04
+ },
+ {
+  "n": 36,
+  "slug": "pintan-el-14",
+  "dur": 0.72,
+  "d1": 0.16,
+  "d2": 0.56,
+  "dNivel": -3.3,
+  "dTono": 26.1,
+  "dDur": 0.4
+ },
+ {
+  "n": 37,
+  "slug": "se-muere-de-amor",
+  "dur": 0.6,
+  "d1": 0.23,
+  "d2": 0.37,
+  "dNivel": 2.6,
+  "dTono": -8.8,
+  "dDur": 0.14
+ },
+ {
+  "n": 38,
+  "slug": "se-muere-de-amor",
+  "dur": 0.4,
+  "d1": 0.08,
+  "d2": 0.32,
+  "dNivel": 8.4,
+  "dTono": -102.2,
+  "dDur": 0.24
+ },
+ {
+  "n": 39,
+  "slug": "se-muere-de-amor",
+  "dur": 0.4,
+  "d1": 0.18,
+  "d2": 0.22,
+  "dNivel": -1.1,
+  "dTono": -20.0,
+  "dDur": 0.04
+ },
+ {
+  "n": 40,
+  "slug": "se-muere-de-amor",
+  "dur": 0.88,
+  "d1": 0.67,
+  "d2": 0.21,
+  "dNivel": 6.1,
+  "dTono": -43.2,
+  "dDur": -0.46
+ },
+ {
+  "n": 41,
+  "slug": "se-muere-de-amor",
+  "dur": 0.24,
+  "d1": 0.05,
+  "d2": 0.19,
+  "dNivel": 22.9,
+  "dTono": 48.9,
+  "dDur": 0.14
+ },
+ {
+  "n": 42,
+  "slug": "se-muere-de-amor",
+  "dur": 0.28,
+  "d1": 0.11,
+  "d2": 0.17,
+  "dNivel": -1.7,
+  "dTono": -11.1,
+  "dDur": 0.06
+ },
+ {
+  "n": 43,
+  "slug": "verde-en-mi-ventana",
+  "dur": 0.28,
+  "d1": 0.07,
+  "d2": 0.21,
+  "dNivel": 13.2,
+  "dTono": null,
+  "dDur": 0.14
+ },
+ {
+  "n": 44,
+  "slug": "verde-en-mi-ventana",
+  "dur": 0.28,
+  "d1": 0.07,
+  "d2": 0.21,
+  "dNivel": 15.6,
+  "dTono": -122.8,
+  "dDur": 0.14
+ },
+ {
+  "n": 45,
+  "slug": "verde-en-mi-ventana",
+  "dur": 0.36,
+  "d1": 0.09,
+  "d2": 0.27,
+  "dNivel": 11.5,
+  "dTono": null,
+  "dDur": 0.18
+ },
+ {
+  "n": 46,
+  "slug": "verde-en-mi-ventana",
+  "dur": 0.44,
+  "d1": 0.08,
+  "d2": 0.36,
+  "dNivel": 14.4,
+  "dTono": -133.7,
+  "dDur": 0.28
+ },
+ {
+  "n": 47,
+  "slug": "verde-en-mi-ventana",
+  "dur": 0.44,
+  "d1": 0.18,
+  "d2": 0.26,
+  "dNivel": 5.0,
+  "dTono": null,
+  "dDur": 0.08
+ },
+ {
+  "n": 48,
+  "slug": "una-hora-en-el-vivero",
+  "dur": 0.32,
+  "d1": 0.16,
+  "d2": 0.16,
+  "dNivel": -0.3,
+  "dTono": -27.8,
+  "dDur": -0.0
+ },
+ {
+  "n": 49,
+  "slug": "una-hora-en-el-vivero",
+  "dur": 0.4,
+  "d1": 0.08,
+  "d2": 0.32,
+  "dNivel": 12.9,
+  "dTono": null,
+  "dDur": 0.24
+ },
+ {
+  "n": 50,
+  "slug": "una-hora-en-el-vivero",
+  "dur": 0.24,
+  "d1": 0.09,
+  "d2": 0.15,
+  "dNivel": 15.2,
+  "dTono": -48.6,
+  "dDur": 0.06
+ },
+ {
+  "n": 51,
+  "slug": "dos-camisas-azules",
+  "dur": 0.32,
+  "d1": 0.08,
+  "d2": 0.24,
+  "dNivel": -2.5,
+  "dTono": null,
+  "dDur": 0.16
+ },
+ {
+  "n": 52,
+  "slug": "dos-camisas-azules",
+  "dur": 0.44,
+  "d1": 0.18,
+  "d2": 0.26,
+  "dNivel": -1.1,
+  "dTono": 3.3,
+  "dDur": 0.08
+ },
+ {
+  "n": 53,
+  "slug": "dos-camisas-azules",
+  "dur": 0.28,
+  "d1": 0.07,
+  "d2": 0.21,
+  "dNivel": 14.5,
+  "dTono": 23.6,
+  "dDur": 0.14
+ },
+ {
+  "n": 54,
+  "slug": "dos-camisas-azules",
+  "dur": 0.8,
+  "d1": 0.48,
+  "d2": 0.32,
+  "dNivel": 6.7,
+  "dTono": -53.5,
+  "dDur": -0.16
+ },
+ {
+  "n": 55,
+  "slug": "dos-camisas-azules",
+  "dur": 0.28,
+  "d1": 0.07,
+  "d2": 0.21,
+  "dNivel": 13.5,
+  "dTono": null,
+  "dDur": 0.14
+ },
+ {
+  "n": 57,
+  "slug": "una-cuerda-no-hace-nudos",
+  "dur": 0.32,
+  "d1": 0.07,
+  "d2": 0.25,
+  "dNivel": 13.9,
+  "dTono": -135.4,
+  "dDur": 0.18
+ },
+ {
+  "n": 58,
+  "slug": "una-cuerda-no-hace-nudos",
+  "dur": 0.4,
+  "d1": 0.21,
+  "d2": 0.19,
+  "dNivel": -2.1,
+  "dTono": -17.3,
+  "dDur": -0.02
+ },
+ {
+  "n": 59,
+  "slug": "una-cuerda-no-hace-nudos",
+  "dur": 0.56,
+  "d1": 0.11,
+  "d2": 0.45,
+  "dNivel": 5.2,
+  "dTono": 22.9,
+  "dDur": 0.34
+ },
+ {
+  "n": 60,
+  "slug": "el-cerro-esta-limpio",
+  "dur": 0.4,
+  "d1": 0.17,
+  "d2": 0.23,
+  "dNivel": 0.2,
+  "dTono": -19.4,
+  "dDur": 0.06
+ },
+ {
+  "n": 61,
+  "slug": "el-cerro-esta-limpio",
+  "dur": 0.84,
+  "d1": 0.46,
+  "d2": 0.38,
+  "dNivel": -16.1,
+  "dTono": null,
+  "dDur": -0.08
+ },
+ {
+  "n": 62,
+  "slug": "el-cerro-esta-limpio",
+  "dur": 0.4,
+  "d1": 0.08,
+  "d2": 0.32,
+  "dNivel": 16.8,
+  "dTono": -0.7,
+  "dDur": 0.24
+ },
+ {
+  "n": 63,
+  "slug": "el-cerro-esta-limpio",
+  "dur": 0.6,
+  "d1": 0.11,
+  "d2": 0.49,
+  "dNivel": 13.2,
+  "dTono": null,
+  "dDur": 0.38
+ },
+ {
+  "n": 64,
+  "slug": "el-cerro-esta-limpio",
+  "dur": 0.36,
+  "d1": 0.08,
+  "d2": 0.28,
+  "dNivel": 16.6,
+  "dTono": -107.2,
+  "dDur": 0.2
+ },
+ {
+  "n": 65,
+  "slug": "la-mascara-en-la-azotea",
+  "dur": 0.4,
+  "d1": 0.17,
+  "d2": 0.23,
+  "dNivel": -2.5,
+  "dTono": -38.4,
+  "dDur": 0.06
+ },
+ {
+  "n": 66,
+  "slug": "la-mascara-en-la-azotea",
+  "dur": 0.32,
+  "d1": 0.09,
+  "d2": 0.23,
+  "dNivel": 11.1,
+  "dTono": -4.5,
+  "dDur": 0.14
+ },
+ {
+  "n": 67,
+  "slug": "la-mascara-en-la-azotea",
+  "dur": 0.4,
+  "d1": 0.07,
+  "d2": 0.33,
+  "dNivel": 13.9,
+  "dTono": -24.7,
+  "dDur": 0.26
+ },
+ {
+  "n": 68,
+  "slug": "la-mascara-en-la-azotea",
+  "dur": 0.36,
+  "d1": 0.09,
+  "d2": 0.27,
+  "dNivel": 8.0,
+  "dTono": -36.1,
+  "dDur": 0.18
+ },
+ {
+  "n": 69,
+  "slug": "gritale-es-su-trabajo",
+  "dur": 0.32,
+  "d1": 0.07,
+  "d2": 0.25,
+  "dNivel": 21.6,
+  "dTono": -78.8,
+  "dDur": 0.18
+ },
+ {
+  "n": 70,
+  "slug": "gritale-es-su-trabajo",
+  "dur": 0.36,
+  "d1": 0.07,
+  "d2": 0.29,
+  "dNivel": 31.8,
+  "dTono": null,
+  "dDur": 0.22
+ },
+ {
+  "n": 71,
+  "slug": "vendas-de-enfermera",
+  "dur": 0.24,
+  "d1": 0.07,
+  "d2": 0.17,
+  "dNivel": 18.7,
+  "dTono": null,
+  "dDur": 0.1
+ },
+ {
+  "n": 72,
+  "slug": "vendas-de-enfermera",
+  "dur": 0.4,
+  "d1": 0.2,
+  "d2": 0.2,
+  "dNivel": -2.2,
+  "dTono": -7.7,
+  "dDur": -0.0
+ },
+ {
+  "n": 73,
+  "slug": "vendas-de-enfermera",
+  "dur": 0.36,
+  "d1": 0.08,
+  "d2": 0.28,
+  "dNivel": 21.2,
+  "dTono": 51.8,
+  "dDur": 0.2
+ }
+]

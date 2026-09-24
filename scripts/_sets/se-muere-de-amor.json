@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ventana",
+    "sentence": "Pone la maceta en la [[ventana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "window",
+      "options": [
+        "window",
+        "fridge",
+        "garden",
+        "street"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Pone la maceta en la ventana.",
+        "targetWord": "ventana",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eff5623e1c3e20c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hojas",
+    "sentence": "Las [[hojas]] están amarillas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaves",
+      "options": [
+        "leaves",
+        "roots",
+        "stones",
+        "bottles"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Las hojas están amarillas.",
+        "targetWord": "hojas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b44b82dd70f3af91.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tierra",
+    "sentence": "La [[tierra]] de la maceta es un charco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soil",
+      "options": [
+        "soil",
+        "glass",
+        "paper",
+        "metal"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "La tierra de la maceta es un charco.",
+        "targetWord": "tierra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f05f3ae8cd8e438f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sed",
+    "sentence": "La planta se murió de [[sed]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thirst",
+      "options": [
+        "thirst",
+        "fear",
+        "noise",
+        "age"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "La planta se murió de sed.",
+        "targetWord": "sed",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02baf8aa4c1b5d67.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lodo",
+    "sentence": "Saca el dedo con [[lodo]] hasta la uña.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mud",
+      "options": [
+        "mud",
+        "soap",
+        "paint",
+        "dust"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Saca el dedo con lodo hasta la uña.",
+        "targetWord": "lodo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/283cd723447948dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "echa",
+    "sentence": "La planta tiene sed y ella le _____ agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "echa",
+      "options": [
+        "echa",
+        "corta",
+        "guarda",
+        "cuenta"
+      ],
+      "translation": "The plant is thirsty and she _____ water on it.",
+      "optionTranslations": [
+        "pours",
+        "cuts",
+        "puts away",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "La planta tiene sed y ella le echa agua.",
+        "targetWord": "echa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a723f113d9f4ed5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "saca",
+    "sentence": "Mete un dedo en la tierra y lo _____ con lodo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "saca",
+      "options": [
+        "saca",
+        "lava",
+        "cuelga",
+        "cuenta"
+      ],
+      "translation": "She pushes a finger into the soil and _____ it out muddy.",
+      "optionTranslations": [
+        "pulls",
+        "washes",
+        "hangs up",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Mete un dedo en la tierra y lo saca con lodo.",
+        "targetWord": "saca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bc52a84c037540a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atiende",
+    "sentence": "Entre las macetas, una muchacha _____ a los clientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atiende",
+      "options": [
+        "atiende",
+        "pinta",
+        "rompe",
+        "cuelga"
+      ],
+      "translation": "Among the flowerpots, a young woman _____ the customers.",
+      "optionTranslations": [
+        "serves",
+        "paints",
+        "breaks",
+        "hangs up"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Entre las macetas, una muchacha atiende a los clientes.",
+        "targetWord": "atiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a5615f69ec5d273.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pide",
+    "sentence": "Entra al vivero y _____ una planta fácil.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pide",
+      "options": [
+        "pide",
+        "rompe",
+        "cuelga",
+        "mide"
+      ],
+      "translation": "She goes into the garden shop and _____ an easy plant.",
+      "optionTranslations": [
+        "asks for",
+        "breaks",
+        "hangs up",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Entra al vivero y pide una planta fácil.",
+        "targetWord": "pide",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c18efd0ebf69985.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "vivero,maceta,regadera,charco",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "vivero",
+          "answer": "a garden shop",
+          "options": [
+            "a garden shop",
+            "a flowerpot",
+            "a watering can",
+            "a puddle"
+          ]
+        },
+        {
+          "word": "maceta",
+          "answer": "a flowerpot",
+          "options": [
+            "a garden shop",
+            "a flowerpot",
+            "a watering can",
+            "a puddle"
+          ]
+        },
+        {
+          "word": "regadera",
+          "answer": "a watering can",
+          "options": [
+            "a garden shop",
+            "a flowerpot",
+            "a watering can",
+            "a puddle"
+          ]
+        },
+        {
+          "word": "charco",
+          "answer": "a puddle",
+          "options": [
+            "a garden shop",
+            "a flowerpot",
+            "a watering can",
+            "a puddle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "featured": false,
+    "sentence": "La muchacha [[conoce]] a todo el barrio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": [
+        "to know",
+        "to call",
+        "to pay",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "La muchacha conoce a todo el barrio.",
+        "targetWord": "conoce",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c82f485e956806b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarillas",
+    "featured": false,
+    "sentence": "La planta tiene las puntas [[amarillas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yellow",
+      "options": [
+        "yellow",
+        "wet",
+        "broken",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "La planta tiene las puntas amarillas.",
+        "targetWord": "amarillas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/563b114eb4998ffc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "triste",
+    "featured": false,
+    "sentence": "Ella lo dice [[triste]], con la maceta en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sad",
+      "options": [
+        "sad",
+        "angry",
+        "fast",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Ella lo dice triste, con la maceta en la mano.",
+        "targetWord": "triste",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7818b0943a2136b1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uña",
+    "featured": false,
+    "sentence": "El dedo tiene lodo hasta la [[uña]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fingernail",
+      "options": [
+        "fingernail",
+        "elbow",
+        "shoulder",
+        "ankle"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "El dedo tiene lodo hasta la uña.",
+        "targetWord": "uña",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bae619c86ad21520.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nada más",
+    "featured": false,
+    "sentence": "Agua los domingos, y [[nada más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing more",
+      "options": [
+        "nothing more",
+        "once again",
+        "very slowly",
+        "every morning"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Agua los domingos, y nada más.",
+        "targetWord": "nada más",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b570731c96c839eb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domingos",
+    "featured": false,
+    "sentence": "Riega la planta los [[domingos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Sundays",
+      "options": [
+        "Sundays",
+        "Mondays",
+        "evenings",
+        "holidays"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Riega la planta los domingos.",
+        "targetWord": "domingos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa3d030d69c27774.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tres veces al día",
+    "featured": false,
+    "sentence": "Ella le echa agua [[tres veces al día]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three times a day",
+      "options": [
+        "three times a day",
+        "once every week",
+        "after every meal",
+        "late at night"
+      ],
+      "audioClip": {
+        "storySlug": "se-muere-de-amor",
+        "storySource": "user",
+        "sentence": "Ella le echa agua tres veces al día.",
+        "targetWord": "tres veces al día",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00a02d75b44c1bcd.mp3"
+      }
+    }
+  }
+]

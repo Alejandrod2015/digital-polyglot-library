@@ -16,7 +16,9 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 
 import { PrismaClient } from "../src/generated/prisma";
-import { perfilDeArgs, vozDe, pasoDelOrden, muestrasRegistradas } from "./_narraPerfiles";
+import {
+  perfilDeArgs, vozDe, pasoDelOrden, muestrasRegistradas, muestraDelJourney, vozYaAprobada,
+} from "./_narraPerfiles";
 
 const NOMBRE: Record<string, string> = {
   JW8DGEuLp9WxIS5IdxMM: "Andreti MX",
@@ -38,16 +40,21 @@ const prisma = new PrismaClient();
   });
   hs.sort((a, b) => orden.indexOf(a.topic) - orden.indexOf(b.topic) || a.slotIndex - b.slotIndex);
   const muestras = muestrasRegistradas();
+  // La muestra es UNA POR JOURNEY desde el 2026-09-23, asi que se resuelve una
+  // vez para toda la tabla y no historia a historia.
+  const muestra = muestraDelJourney(muestras, PERFIL.journey, hs.map((x) => x.slug));
+  const aprobada = vozYaAprobada(muestra, hs.filter((x) => x.audioUrl).length);
 
   let coinciden = 0;
   console.log("| slug | tema | voz | paso |\n|---|---|---|---|");
   for (const s of hs) {
     const voz = vozDe(PERFIL, s);
     if (voz === PERFIL.voces[s.topic]) coinciden++;
-    const delTema = hs.filter((x) => x.topic === s.topic);
-    const primera = delTema.reduce((a, b) => (b.slotIndex < a.slotIndex ? b : a), delTema[0]);
-    const o = pasoDelOrden(s, muestras, !!primera?.audioUrl, primera.slotIndex);
+    const o = pasoDelOrden(s, aprobada);
     console.log(`| ${s.slug} | ${s.topic} | ${NOMBRE[voz] ?? voz} (${voz}) | ${o.paso}${o.bloqueo ? `: espera, ${o.bloqueo}` : ""} |`);
   }
-  console.log(`\nvoz = mapa del perfil: ${coinciden}/${hs.length} · sin sintesis`);
+  console.log(
+    `\nvoz = mapa del perfil: ${coinciden}/${hs.length} · muestra del journey: ${muestra ?? "ninguna"}` +
+    ` · voz aprobada de oido: ${aprobada ? "si" : "NO"} · sin sintesis`
+  );
 })().finally(() => prisma.$disconnect());

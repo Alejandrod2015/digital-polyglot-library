@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cara",
+    "sentence": "Un brazo no es una [[cara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a face",
+      "options": [
+        "a face",
+        "a knee",
+        "a shoe",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Un brazo no es una cara.",
+        "targetWord": "cara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffb0caa785d5d91d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "media",
+    "sentence": "Él tiene [[media]] cara rasurada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "every",
+        "this",
+        "another"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Él tiene media cara rasurada.",
+        "targetWord": "media",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c030c2d4b771fe67.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "semanas",
+    "sentence": "El cliente tiene barba de tres [[semanas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "weeks",
+      "options": [
+        "weeks",
+        "hours",
+        "kilos",
+        "pesos"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "El cliente tiene barba de tres semanas.",
+        "targetWord": "semanas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffbbfbcccef2b78b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "martes",
+    "sentence": "Nadie rasura barbas los [[martes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Tuesdays",
+      "options": [
+        "Tuesdays",
+        "Sundays",
+        "mornings",
+        "holidays"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Nadie rasura barbas los martes.",
+        "targetWord": "martes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9587e5861e82a972.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fría",
+    "sentence": "La navaja está limpia y [[fría]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "broken",
+        "heavy",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "La navaja está limpia y fría.",
+        "targetWord": "fría",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81aee0adf2657c09.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rasuro",
+    "sentence": "Con la navaja yo _____ brazos todos los días.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rasuro",
+      "options": [
+        "rasuro",
+        "cuento",
+        "cuelgo",
+        "mido"
+      ],
+      "translation": "With the razor I _____ arms every day.",
+      "optionTranslations": [
+        "shave",
+        "count",
+        "hang up",
+        "measure"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Con la navaja yo rasuro brazos todos los días.",
+        "targetWord": "rasuro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f2dbcbcbb52af80.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sienta",
+    "sentence": "Llega a la cocina y se _____ en una silla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sienta",
+      "options": [
+        "sienta",
+        "lava",
+        "peina",
+        "moja"
+      ],
+      "translation": "He gets to the kitchen and _____ on a chair.",
+      "optionTranslations": [
+        "sits down",
+        "washes",
+        "combs",
+        "gets wet"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Llega a la cocina y se sienta en una silla.",
+        "targetWord": "sienta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0b93c6bc071fcb9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acabó",
+    "sentence": "La navaja ya no corta; se _____ el filo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acabó",
+      "options": [
+        "acabó",
+        "guardó",
+        "mojó",
+        "contó"
+      ],
+      "translation": "The razor does not cut any more; the edge _____.",
+      "optionTranslations": [
+        "ran out",
+        "was put away",
+        "got wet",
+        "was counted"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "La navaja ya no corta; se acabó el filo.",
+        "targetWord": "acabó",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fa90785e35938da.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atreve",
+    "sentence": "Nadie le dice nada; nadie se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atreve",
+      "options": [
+        "atreve",
+        "moja",
+        "peina",
+        "sienta"
+      ],
+      "translation": "Nobody says anything to him; nobody _____.",
+      "optionTranslations": [
+        "dares",
+        "gets wet",
+        "combs",
+        "sits down"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Nadie le dice nada; nadie se atreve.",
+        "targetWord": "atreve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/897f05c8933170eb.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "navaja,brocha,filo,nariz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "navaja",
+          "answer": "a razor",
+          "options": [
+            "a razor",
+            "a shaving brush",
+            "a sharp edge",
+            "a nose"
+          ]
+        },
+        {
+          "word": "brocha",
+          "answer": "a shaving brush",
+          "options": [
+            "a razor",
+            "a shaving brush",
+            "a sharp edge",
+            "a nose"
+          ]
+        },
+        {
+          "word": "filo",
+          "answer": "a sharp edge",
+          "options": [
+            "a razor",
+            "a shaving brush",
+            "a sharp edge",
+            "a nose"
+          ]
+        },
+        {
+          "word": "nariz",
+          "answer": "a nose",
+          "options": [
+            "a razor",
+            "a shaving brush",
+            "a sharp edge",
+            "a nose"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brazos",
+    "featured": false,
+    "sentence": "La enfermera rasura [[brazos]] todos los días.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arms",
+      "options": [
+        "arms",
+        "plates",
+        "floors",
+        "walls"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "La enfermera rasura brazos todos los días.",
+        "targetWord": "brazos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4d3d68b651f5565.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrir",
+    "featured": false,
+    "sentence": "Al día siguiente, el barbero [[abre]] y no dice nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open up",
+      "options": [
+        "to open up",
+        "to answer",
+        "to pay",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Al día siguiente, el barbero abre y no dice nada.",
+        "targetWord": "abre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8bb5d011b7d9d4e9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descansar",
+    "featured": false,
+    "sentence": "El martes yo [[descanso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rest",
+      "options": [
+        "to rest",
+        "to work",
+        "to travel",
+        "to cook"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "El martes yo descanso.",
+        "targetWord": "descanso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed6ee3003e305da0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poner",
+    "featured": false,
+    "sentence": "Ella [[pone]] la brocha y el jabón en fila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lay out",
+      "options": [
+        "to lay out",
+        "to buy",
+        "to break",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Ella pone la brocha y el jabón en fila.",
+        "targetWord": "pone",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd44aa067355ba64.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al día siguiente",
+    "featured": false,
+    "sentence": "[[Al día siguiente]], el barbero mira esa cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the next day",
+      "options": [
+        "the next day",
+        "the same evening",
+        "every morning",
+        "last summer"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Al día siguiente, el barbero mira esa cara.",
+        "targetWord": "Al día siguiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/765f59b483ec6bd7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin decir nada",
+    "featured": false,
+    "sentence": "Mira esa cara [[sin decir nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without saying anything",
+      "options": [
+        "without saying anything",
+        "with a big smile",
+        "after a long wait",
+        "from the doorway"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Mira esa cara sin decir nada.",
+        "targetWord": "sin decir nada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bafa16de59772efb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar",
+    "featured": false,
+    "sentence": "Te la [[dejo]] a cero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to leave it",
+      "options": [
+        "to leave it",
+        "to sell it",
+        "to wash it",
+        "to count it"
+      ],
+      "audioClip": {
+        "storySlug": "media-cara-rasurada",
+        "storySource": "user",
+        "sentence": "Te la dejo a cero.",
+        "targetWord": "dejo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43528f1a67d64f1f.mp3"
+      }
+    }
+  }
+]

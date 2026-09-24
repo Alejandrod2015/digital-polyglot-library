@@ -60,6 +60,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-friends-argentina-a0",
     "spanish-friends-colombia",
     "spanish-friends-mexico",
+    "spanish-friends-mexico-a0",
     "spanish-friends-spain-a0",
     "spanish-friends-spain-a2",
     "spanish-traveler-latam",
@@ -235,6 +236,7 @@ async function main() {
 
   let totalAdded = 0;
   const blocked: string[] = [];
+  const faltantes = new Set<string>();
 
   for (const name of names) {
     const bundle = loadBundle(name);
@@ -244,7 +246,13 @@ async function main() {
     const sibling = new Map<string, { g: string; t?: string; rev?: boolean }>();
     for (const other of FAMILIES[familyOf(name)] ?? []) {
       if (other === name) continue;
-      for (const [k, v] of Object.entries(loadBundle(other).glosses)) {
+      // Un hermano de la tabla puede no existir todavia en la base (bundle
+      // planeado, o renombrado). Eso NO puede tumbar el rebuild del bundle que
+      // si existe: el 2026-09-23 `spanish-cultural-latam-b1`, que nunca llego a
+      // crearse, dejaba sin rebuild a los veinte bundles espanoles.
+      const hermano = CACHE?.get(other);
+      if (!hermano) { faltantes.add(other); continue; }
+      for (const [k, v] of Object.entries(hermano.glosses)) {
         const key = k.toLowerCase();
         if (!sibling.has(key)) sibling.set(key, v);
       }
@@ -329,6 +337,13 @@ async function main() {
       where: { bundle_slug: { bundle: name, slug: "" } },
       data: { glosses: merged as never },
     });
+  }
+
+  if (faltantes.size > 0) {
+    console.log(
+      `\naviso: ${faltantes.size} hermano(s) de FAMILIES no estan en la base y no se han copiado: ` +
+        `${[...faltantes].sort().join(", ")}`
+    );
   }
 
   if (check) {

@@ -86,8 +86,12 @@ scripts/tts/.venv/
 scripts/tts/.venv-*/
 # F5 cloned voice WAVs (per-user data, sourced manually)
 scripts/tts/cloned-voices/
-# Whisper.cpp ggml models (~465 MB, downloaded via scripts/tts/setup.sh)
-scripts/tts/whisper-models/
+# Whisper.cpp ggml models (~465 MB, downloaded via scripts/tts/setup.sh).
+# Sin barra final a proposito: en un worktree esto no es un directorio sino un
+# symlink al del checkout principal (bajarlos por worktree serian 465 MB cada
+# vez), y el patron con barra solo casa directorios, asi que el symlink salia
+# como sin seguir y podia frenar un push por el candado de lote.
+scripts/tts/whisper-models
 # Claude Code runtime artifacts
 .claude/scheduled_tasks.lock
 data/vocab-shorten/

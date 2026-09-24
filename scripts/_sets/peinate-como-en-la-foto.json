@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "segundos",
+    "sentence": "Saca la credencial en dos [[segundos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seconds",
+      "options": [
+        "seconds",
+        "weeks",
+        "boxes",
+        "pesos"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Saca la credencial en dos segundos.",
+        "targetWord": "segundos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eef85422fa269a2f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entregar",
+    "sentence": "No se la puede [[entregar]] sin la foto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hand over",
+      "options": [
+        "to hand over",
+        "to read out",
+        "to throw away",
+        "to pay for"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "No se la puede entregar sin la foto.",
+        "targetWord": "entregar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2790ec58b184e5d6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "La enfermera pregunta con toda la [[calma]] que le queda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the calm",
+      "options": [
+        "the calm",
+        "the money",
+        "the hunger",
+        "the hurry"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "La enfermera pregunta con toda la calma que le queda.",
+        "targetWord": "calma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdb542fb55025f7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trenza",
+    "sentence": "En la foto ella tiene una [[trenza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a braid",
+      "options": [
+        "a braid",
+        "a hat",
+        "a scarf",
+        "a ring"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "En la foto ella tiene una trenza.",
+        "targetWord": "trenza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d577d1ccb762302e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barbilla",
+    "sentence": "Ella levanta la [[barbilla]] y mira al frente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the chin",
+      "options": [
+        "the chin",
+        "the elbow",
+        "the ankle",
+        "the wrist"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Ella levanta la barbilla y mira al frente.",
+        "targetWord": "barbilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc8d652053c73bf1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apunta",
+    "sentence": "Para no olvidar nada, él lo _____ en su cuaderno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apunta",
+      "options": [
+        "apunta",
+        "paga",
+        "rompe",
+        "cuelga"
+      ],
+      "translation": "So he does not forget anything, he _____ it in his notebook.",
+      "optionTranslations": [
+        "writes down",
+        "pays",
+        "breaks",
+        "hangs up"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Para no olvidar nada, él lo apunta en su cuaderno.",
+        "targetWord": "apunta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7a36e72fe52dbc4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "revisa",
+    "sentence": "Busca la credencial y _____ una caja gris.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "revisa",
+      "options": [
+        "revisa",
+        "moja",
+        "vende",
+        "cuelga"
+      ],
+      "translation": "He looks for the card and _____ a gray box.",
+      "optionTranslations": [
+        "goes through",
+        "wets",
+        "sells",
+        "hangs up"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Busca la credencial y revisa una caja gris.",
+        "targetWord": "revisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b1ba68e3e156563.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "peina",
+    "sentence": "Antes de la foto, ella se _____ con los dedos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "peina",
+      "options": [
+        "peina",
+        "moja",
+        "sienta",
+        "ríe"
+      ],
+      "translation": "Before the photo, she _____ with her fingers.",
+      "optionTranslations": [
+        "combs her hair",
+        "gets wet",
+        "sits down",
+        "laughs"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Antes de la foto, ella se peina con los dedos.",
+        "targetWord": "peina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f35b7bf836826a8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "firma",
+    "sentence": "Para decir que está de acuerdo, el encargado _____ el cuaderno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firma",
+      "options": [
+        "firma",
+        "corta",
+        "guarda",
+        "mide"
+      ],
+      "translation": "To say that he agrees, the man in charge _____ the notebook.",
+      "optionTranslations": [
+        "signs",
+        "cuts",
+        "puts away",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Para decir que está de acuerdo, el encargado firma el cuaderno.",
+        "targetWord": "firma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96f73f10ee7030a1.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "central,hule,encargado,credencial",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "central",
+          "answer": "a bus station",
+          "options": [
+            "a bus station",
+            "a rubber mat",
+            "a person in charge",
+            "a work card"
+          ]
+        },
+        {
+          "word": "hule",
+          "answer": "a rubber mat",
+          "options": [
+            "a bus station",
+            "a rubber mat",
+            "a person in charge",
+            "a work card"
+          ]
+        },
+        {
+          "word": "encargado",
+          "answer": "a person in charge",
+          "options": [
+            "a bus station",
+            "a rubber mat",
+            "a person in charge",
+            "a work card"
+          ]
+        },
+        {
+          "word": "credencial",
+          "answer": "a work card",
+          "options": [
+            "a bus station",
+            "a rubber mat",
+            "a person in charge",
+            "a work card"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poder",
+    "featured": false,
+    "sentence": "No se la [[puedo]] entregar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be able to",
+      "options": [
+        "to be able to",
+        "to want to",
+        "to need to",
+        "to try to"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "No se la puedo entregar.",
+        "targetWord": "puedo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/604fbccc99b1e75c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "usted",
+    "featured": false,
+    "sentence": "[[Usted]] no se parece a la foto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you, politely",
+      "options": [
+        "you, politely",
+        "we, together",
+        "they, both",
+        "he, alone"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Usted no se parece a la foto.",
+        "targetWord": "Usted",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12e57b864eebae8f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parecerse",
+    "featured": false,
+    "sentence": "Ella no se [[parece]] a la de la foto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look like",
+      "options": [
+        "to look like",
+        "to speak to",
+        "to wait for",
+        "to pay for"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Ella no se parece a la de la foto.",
+        "targetWord": "parece",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d92ac0f83db363d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "¿ahora sí?",
+    "featured": false,
+    "sentence": "Se hace la trenza y pregunta: [[¿Ahora sí?]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Is it fine now?",
+      "options": [
+        "Is it fine now?",
+        "Are you tired?",
+        "Do you work here?",
+        "Is this the way?"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "Se hace la trenza y pregunta: ¿Ahora sí?",
+        "targetWord": "¿Ahora sí?",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e66d3d030d92bcc6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traer",
+    "featured": false,
+    "sentence": "La próxima vez, [[tráigala]] en la bolsa del uniforme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring",
+      "options": [
+        "to bring",
+        "to lose",
+        "to buy",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "La próxima vez, tráigala en la bolsa del uniforme.",
+        "targetWord": "tráigala",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ac331f19ec780d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cabeza",
+    "featured": false,
+    "sentence": "No la lleves en la [[cabeza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "head",
+      "options": [
+        "head",
+        "hand",
+        "pocket",
+        "bag"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "No la lleves en la cabeza.",
+        "targetWord": "cabeza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f071a206c85e757.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a mi nombre",
+    "featured": false,
+    "sentence": "La credencial está [[a mi nombre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in my name",
+      "options": [
+        "in my name",
+        "for one week",
+        "at the door",
+        "on the table"
+      ],
+      "audioClip": {
+        "storySlug": "peinate-como-en-la-foto",
+        "storySource": "user",
+        "sentence": "La credencial está a mi nombre.",
+        "targetWord": "a mi nombre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d776a000e00da3b.mp3"
+      }
+    }
+  }
+]

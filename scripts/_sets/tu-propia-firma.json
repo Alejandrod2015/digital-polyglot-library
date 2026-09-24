@@ -1,0 +1,442 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "firma",
+    "sentence": "En el papel hay una [[firma]] azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a signature",
+      "options": [
+        "a signature",
+        "a stamp",
+        "a number",
+        "a drawing"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "En el papel hay una firma azul.",
+        "targetWord": "firma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b583816a066b0e02.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "departamento",
+    "sentence": "El recibo dice tu nombre y tu [[departamento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flat",
+      "options": [
+        "flat",
+        "office",
+        "garden",
+        "garage"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "El recibo dice tu nombre y tu departamento.",
+        "targetWord": "departamento",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c79e315fbb29b5f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aluminio",
+    "sentence": "Adentro hay una escalera de [[aluminio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "aluminium",
+      "options": [
+        "aluminium",
+        "cardboard",
+        "cotton",
+        "rubber"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Adentro hay una escalera de aluminio.",
+        "targetWord": "aluminio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd9c3507d163ebb3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peldaño",
+    "sentence": "Ella se ríe desde el tercer [[peldaño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rung",
+      "options": [
+        "rung",
+        "window",
+        "corner",
+        "drawer"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Ella se ríe desde el tercer peldaño.",
+        "targetWord": "peldaño",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23167de117044642.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesos",
+    "sentence": "Yo pedí una broca de tres [[pesos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pesos",
+      "options": [
+        "pesos",
+        "hours",
+        "metres",
+        "kilos"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Yo pedí una broca de tres pesos.",
+        "targetWord": "pesos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e85afdbf3b8198e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "encargaste",
+    "sentence": "La caja trae tu nombre porque tú la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encargaste",
+      "options": [
+        "encargaste",
+        "lavaste",
+        "pintaste",
+        "contaste"
+      ],
+      "translation": "The box has your name on it because you _____ it.",
+      "optionTranslations": [
+        "ordered",
+        "washed",
+        "painted",
+        "counted"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "La caja trae tu nombre porque tú la encargaste.",
+        "targetWord": "encargaste",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29585fc9e10ca91a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pintar",
+    "sentence": "Necesita la escalera alta y un bote blanco para _____ la azotea.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pintar",
+      "options": [
+        "pintar",
+        "contar",
+        "vender",
+        "medir"
+      ],
+      "translation": "He needs the tall ladder and a white tin to _____ the roof.",
+      "optionTranslations": [
+        "paint",
+        "count",
+        "sell",
+        "measure"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Necesita la escalera alta y un bote blanco para pintar la azotea.",
+        "targetWord": "pintar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bd31e9a69932840.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chica",
+    "sentence": "El mecánico espera una broca [[chica]], de tres pesos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "wet",
+        "heavy",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "El mecánico espera una broca chica, de tres pesos.",
+        "targetWord": "chica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/345ef9ab833679ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alta",
+    "sentence": "Llega una caja [[alta]] como una silla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tall",
+      "options": [
+        "tall",
+        "cheap",
+        "open",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Llega una caja alta como una silla.",
+        "targetWord": "alta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b23d51c918ffdd48.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "recibo,meses,cuidado,contra la luz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "recibo",
+          "answer": "a paper receipt",
+          "options": [
+            "a paper receipt",
+            "the twelve months",
+            "the care you take",
+            "held up to the light"
+          ]
+        },
+        {
+          "word": "meses",
+          "answer": "the twelve months",
+          "options": [
+            "a paper receipt",
+            "the twelve months",
+            "the care you take",
+            "held up to the light"
+          ]
+        },
+        {
+          "word": "cuidado",
+          "answer": "the care you take",
+          "options": [
+            "a paper receipt",
+            "the twelve months",
+            "the care you take",
+            "held up to the light"
+          ]
+        },
+        {
+          "word": "contra la luz",
+          "answer": "held up to the light",
+          "options": [
+            "a paper receipt",
+            "the twelve months",
+            "the care you take",
+            "held up to the light"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con cuidado",
+    "featured": false,
+    "sentence": "La repartidora deja la caja en el suelo [[con cuidado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "carefully",
+      "options": [
+        "carefully",
+        "in a hurry",
+        "by mistake",
+        "for a moment"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "La repartidora deja la caja en el suelo con cuidado.",
+        "targetWord": "con cuidado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4b052e3f6c76489.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrada",
+    "featured": false,
+    "sentence": "La firma tiene la o [[cerrada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closed",
+      "options": [
+        "closed",
+        "narrow",
+        "blue",
+        "high"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "La firma tiene la o cerrada.",
+        "targetWord": "cerrada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f9bba3f7d2cbbde.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plegable",
+    "featured": false,
+    "sentence": "Es una escalera [[plegable]] y alta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "folding",
+      "options": [
+        "folding",
+        "wooden",
+        "second hand",
+        "very cheap"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Es una escalera plegable y alta.",
+        "targetWord": "plegable",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c770c515a1c91002.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tercer",
+    "featured": false,
+    "sentence": "Ella sube al [[tercer]] piso con la caja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "third",
+      "options": [
+        "third",
+        "wide",
+        "broken",
+        "last"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Ella sube al tercer piso con la caja.",
+        "targetWord": "tercer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1767714c47fc6075.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pues",
+    "featured": false,
+    "sentence": "[[Pues]] está mal, dice él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well then",
+      "options": [
+        "well then",
+        "of course",
+        "not yet",
+        "one more"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Pues está mal, dice él.",
+        "targetWord": "Pues",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74ad36c1970c1133.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "baja",
+    "featured": false,
+    "sentence": "Dice gracias en voz muy [[baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "low",
+      "options": [
+        "low",
+        "fast",
+        "sweet",
+        "clear"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Dice gracias en voz muy baja.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffdf7e6f3f7c9845.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viejo",
+    "featured": false,
+    "sentence": "Ella saca el recibo [[viejo]] de su cuaderno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "clean",
+        "blue",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "tu-propia-firma",
+        "storySource": "user",
+        "sentence": "Ella saca el recibo viejo de su cuaderno.",
+        "targetWord": "viejo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2746e675ab41dd16.mp3"
+      }
+    }
+  }
+]

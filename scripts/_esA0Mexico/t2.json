@@ -1,0 +1,375 @@
+[
+ {
+  "topic": "haircuts-and-barbershops",
+  "slotIndex": 0,
+  "title": "Poquito son dos dedos",
+  "slug": "poquito-son-dos-dedos",
+  "synopsis": "Bruno pide poquito y sale de la barbería con el pelo de otra persona. La palabra poquito tiene dueño, y no es él.",
+  "text": "La barbería de la esquina huele a jabón y a loción. Arturo es el barbero del barrio y trabaja solo. Bruno entra y se sienta en el sillón viejo.\n\n“Poquito, por favor,” dice Bruno. Arturo toma las tijeras y el peine. “Poquito,” repite Arturo, muy tranquilo.\n\nLa máquina suena cinco minutos. Bruno mira el espejo y abre mucho los ojos.\n\n“¡Esto no es poquito!” dice Bruno. “¡Esto es un mes de pelo!”\n\n“Poquito son dos dedos,” dice Arturo. Señala un cartel pegado en el espejo. El cartel está ahí desde siempre, entre dos fotos.\n\nBruno lee el cartel. Dice: “Poquito = dos dedos.” Nadie lee ese cartel nunca.\n\n“La próxima vez pido dos dedos,” dice Bruno.\n\n“La próxima vez corto tres,” dice Arturo. “Tus dedos son muy chicos.”",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "barbería",
+    "definition": "Barber shop; the place where men get their hair cut."
+   },
+   {
+    "type": "noun",
+    "word": "esquina",
+    "definition": "Corner; the place where two streets meet."
+   },
+   {
+    "type": "noun",
+    "word": "loción",
+    "definition": "Lotion; the liquid a barber puts on your face after."
+   },
+   {
+    "type": "verb",
+    "word": "entrar",
+    "surface": "entra",
+    "definition": "To go inside a room or a building."
+   },
+   {
+    "type": "noun",
+    "word": "sillón",
+    "definition": "Armchair; a big soft chair with arms."
+   },
+   {
+    "type": "adjective",
+    "word": "poquito",
+    "definition": "A tiny bit; a very small amount of something."
+   },
+   {
+    "type": "noun",
+    "word": "tijeras",
+    "definition": "Scissors; the tool with two blades for cutting."
+   },
+   {
+    "type": "noun",
+    "word": "peine",
+    "definition": "Comb; the flat thing with teeth for your hair."
+   },
+   {
+    "type": "verb",
+    "word": "repetir",
+    "surface": "repite",
+    "definition": "To say the same thing again."
+   },
+   {
+    "type": "adjective",
+    "word": "tranquilo",
+    "definition": "Calm; not worried and not in a hurry."
+   },
+   {
+    "type": "noun",
+    "word": "máquina",
+    "definition": "Machine; here, the small one that cuts hair."
+   },
+   {
+    "type": "verb",
+    "word": "sonar",
+    "surface": "suena",
+    "definition": "To make a noise."
+   },
+   {
+    "type": "noun",
+    "word": "espejo",
+    "definition": "Mirror; the glass where you see yourself."
+   },
+   {
+    "type": "noun",
+    "word": "ojos",
+    "definition": "Eyes; the part of your face you see with."
+   },
+   {
+    "type": "noun",
+    "word": "pelo",
+    "definition": "Hair; what grows on your head."
+   },
+   {
+    "type": "noun",
+    "word": "dedos",
+    "definition": "Fingers; the five thin parts of your hand."
+   },
+   {
+    "type": "verb",
+    "word": "señalar",
+    "surface": "señala",
+    "definition": "To point at something with your finger."
+   },
+   {
+    "type": "noun",
+    "word": "cartel",
+    "definition": "Sign; a paper on a wall with words on it."
+   },
+   {
+    "type": "verb",
+    "word": "leer",
+    "surface": "lee",
+    "definition": "To look at words and understand them."
+   },
+   {
+    "type": "expression",
+    "word": "la próxima vez",
+    "definition": "Next time; the time after this one."
+   },
+   {
+    "type": "adjective",
+    "word": "chicos",
+    "definition": "Small; the opposite of big."
+   },
+   {
+    "type": "noun",
+    "word": "minutos",
+    "definition": "Minutes; the sixty small parts of one hour."
+   }
+  ]
+ },
+ {
+  "topic": "haircuts-and-barbershops",
+  "slotIndex": 1,
+  "title": "Nadie se queja nunca",
+  "slug": "nadie-se-queja-nunca",
+  "synopsis": "Itzel llega a la barbería segura de que su fleco está chueco. Arturo lo mide dos veces y no le da la razón.",
+  "text": "Una gorra tapa el fleco de Itzel. Ella entra en la barbería a las cinco. El sol de la tarde llena el espejo de luz. Arturo limpia el mueble con un trapo y Bruno espera su turno.\n\n“Quiero el fleco derecho,” dice Itzel. “Lo tengo muy chueco.” “¿Quién te lo corta?” pregunta Arturo.\n\nItzel no contesta y mira para otro lado. Bruno se ríe despacio, con la boca cerrada. “Ella sola, en el baño, con las tijeras de la comida,” dice Bruno.\n\nArturo quita la gorra y mide el fleco con el peine, de un lado y del otro.\n\n“Tu fleco está derecho,” dice Arturo. “Perfecto, además.” “¿Lo mides otra vez?” pide Itzel. “Ya lo medí dos veces,” dice Arturo.\n\n“El chueco es el espejo,” dice Arturo. Está torcido desde el temblor. Abajo tiene un papel para que no baile. Medio barrio sale de esa barbería con el fleco chueco, y nadie se queja nunca.",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "gorra",
+    "definition": "Cap; a soft hat with a front piece for the sun."
+   },
+   {
+    "type": "verb",
+    "word": "limpiar",
+    "surface": "limpia",
+    "definition": "To take the dirt off something."
+   },
+   {
+    "type": "noun",
+    "word": "trapo",
+    "definition": "Cloth; a piece of old cloth you clean with."
+   },
+   {
+    "type": "verb",
+    "word": "esperar",
+    "surface": "espera",
+    "definition": "To stay until your moment comes."
+   },
+   {
+    "type": "noun",
+    "word": "fleco",
+    "definition": "Fringe; the hair that falls over your forehead."
+   },
+   {
+    "type": "adjective",
+    "word": "derecho",
+    "definition": "Straight; in a line, not bent or crooked."
+   },
+   {
+    "type": "adjective",
+    "word": "chueco",
+    "definition": "Crooked; not straight. Very common in Mexico."
+   },
+   {
+    "type": "verb",
+    "word": "contestar",
+    "surface": "contesta",
+    "definition": "To answer; to say something back."
+   },
+   {
+    "type": "adverb",
+    "word": "despacio",
+    "definition": "Slowly; not fast at all."
+   },
+   {
+    "type": "noun",
+    "word": "baño",
+    "definition": "Bathroom; the room with the toilet and the shower."
+   },
+   {
+    "type": "verb",
+    "word": "quitar",
+    "surface": "quita",
+    "definition": "To take something off or away."
+   },
+   {
+    "type": "verb",
+    "word": "medir",
+    "surface": "mide",
+    "definition": "To check how long or how big something is."
+   },
+   {
+    "type": "noun",
+    "word": "lado",
+    "definition": "Side; the left or the right part of something."
+   },
+   {
+    "type": "adjective",
+    "word": "torcido",
+    "definition": "Twisted; not in its right straight position."
+   },
+   {
+    "type": "noun",
+    "word": "temblor",
+    "definition": "Earth tremor; when the ground moves for a moment."
+   },
+   {
+    "type": "verb",
+    "word": "bailar",
+    "surface": "baile",
+    "definition": "To dance; here, to move from side to side."
+   },
+   {
+    "type": "expression",
+    "word": "medio barrio",
+    "definition": "Half the neighbourhood; a lot of the people nearby."
+   },
+   {
+    "type": "verb",
+    "word": "quejarse",
+    "surface": "queja",
+    "definition": "To say that you do not like something."
+   },
+   {
+    "type": "noun",
+    "word": "boca",
+    "definition": "Mouth; the part of your face you eat and talk with."
+   },
+   {
+    "type": "expression",
+    "word": "de un lado y del otro",
+    "definition": "From one side and from the other; on both sides."
+   },
+   {
+    "type": "verb",
+    "word": "reírse",
+    "surface": "ríe",
+    "definition": "To laugh; to make the sound of being amused."
+   }
+  ]
+ },
+ {
+  "topic": "haircuts-and-barbershops",
+  "slotIndex": 2,
+  "title": "Media cara rasurada",
+  "slug": "media-cara-rasurada",
+  "synopsis": "Bruno necesita la barba lista hoy y el único con navaja en el edificio rasura brazos de hospital, no caras.",
+  "text": "Nadie rasura barbas los martes: Arturo, el barbero, cierra ese día. Bruno tiene la barba de tres semanas y una comida a las seis. Itzel baja con su navaja del hospital, fría y limpia.\n\n“Yo rasuro bien,” dice Itzel. “Rasuro brazos todos los días.”\n\n“Un brazo no es una cara,” dice Bruno.\n\n“Es lo mismo, pero con nariz,” dice Itzel.\n\nBruno se sienta en la cocina. Itzel pone la brocha y la espuma en fila, como en el hospital.\n\nA los diez minutos, Bruno tiene media cara rasurada y la otra media con barba.\n\n“Se acabó el filo,” dice Itzel, seria. “¿Y la otra media cara?” pregunta Bruno. “Mañana,” dice ella.\n\nBruno va a la comida así. Nadie dice nada, porque nadie se atreve.\n\nAl día siguiente, Arturo abre y mira la cara de Bruno sin decir nada.\n\n“Te la dejo a cero,” dice Arturo. “Y el martes yo descanso, no la navaja.”",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "barba",
+    "definition": "Beard; the hair that grows on a man's face."
+   },
+   {
+    "type": "noun",
+    "word": "semanas",
+    "definition": "Weeks; groups of seven days."
+   },
+   {
+    "type": "noun",
+    "word": "navaja",
+    "definition": "Razor; the sharp blade used for shaving."
+   },
+   {
+    "type": "verb",
+    "word": "rasurar",
+    "surface": "rasuro",
+    "definition": "To shave; to cut hair off the skin. Used in Mexico."
+   },
+   {
+    "type": "noun",
+    "word": "brazos",
+    "definition": "Arms; the parts of your body with your hands at the end."
+   },
+   {
+    "type": "noun",
+    "word": "cara",
+    "definition": "Face; the front of your head."
+   },
+   {
+    "type": "noun",
+    "word": "nariz",
+    "definition": "Nose; the part of your face you breathe with."
+   },
+   {
+    "type": "verb",
+    "word": "sentarse",
+    "surface": "sienta",
+    "definition": "To sit down on a chair."
+   },
+   {
+    "type": "noun",
+    "word": "brocha",
+    "definition": "Brush; the soft round one for putting foam on a face."
+   },
+   {
+    "type": "adjective",
+    "word": "media",
+    "definition": "Half; one of the two equal parts."
+   },
+   {
+    "type": "verb",
+    "word": "acabarse",
+    "surface": "acabó",
+    "definition": "To run out; to be finished and gone."
+   },
+   {
+    "type": "noun",
+    "word": "filo",
+    "definition": "Edge; the sharp part of a blade."
+   },
+   {
+    "type": "verb",
+    "word": "atreverse",
+    "surface": "atreve",
+    "definition": "To dare; to be brave enough to do something."
+   },
+   {
+    "type": "verb",
+    "word": "abrir",
+    "surface": "abre",
+    "definition": "To open; to let people come in."
+   },
+   {
+    "type": "expression",
+    "word": "a cero",
+    "definition": "To zero; with all the hair cut off."
+   },
+   {
+    "type": "verb",
+    "word": "descansar",
+    "surface": "descanso",
+    "definition": "To rest; to stop working for a while."
+   },
+   {
+    "type": "noun",
+    "word": "martes",
+    "definition": "Tuesday; the second day of the week."
+   },
+   {
+    "type": "adjective",
+    "word": "fría",
+    "definition": "Cold; with a low temperature."
+   },
+   {
+    "type": "verb",
+    "word": "poner",
+    "surface": "pone",
+    "definition": "To place something somewhere."
+   },
+   {
+    "type": "expression",
+    "word": "al día siguiente",
+    "definition": "The next day; the day after this one."
+   },
+   {
+    "type": "expression",
+    "word": "sin decir nada",
+    "definition": "Without saying anything; in complete quiet."
+   }
+  ]
+ }
+]

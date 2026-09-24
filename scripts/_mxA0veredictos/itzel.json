@@ -1,0 +1,742 @@
+[
+ {
+  "slug": "carbon-mojado",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Carbn_mojado_multivoice_1790191821841.mp3",
+  "i": 20,
+  "start": 7.84,
+  "end": 8.16,
+  "dur": 0.32,
+  "antes": "él sube",
+  "despues": "En la"
+ },
+ {
+  "slug": "carbon-mojado",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Carbn_mojado_multivoice_1790191821841.mp3",
+  "i": 75,
+  "start": 25.52,
+  "end": 25.8,
+  "dur": 0.28,
+  "antes": "jueves dice",
+  "despues": "desde la"
+ },
+ {
+  "slug": "carbon-mojado",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Carbn_mojado_multivoice_1790191821841.mp3",
+  "i": 152,
+  "start": 49.44,
+  "end": 49.88,
+  "dur": 0.44,
+  "antes": "mejor contesta",
+  "despues": ""
+ },
+ {
+  "slug": "una-sola-vuelta",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_sola_vuelta_multivoice_1790191877940.mp3",
+  "i": 103,
+  "start": 33.64,
+  "end": 33.72,
+  "dur": 0.08,
+  "antes": "la carne",
+  "despues": "llega con"
+ },
+ {
+  "slug": "la-salsa-no-se-apunta",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
+  "i": 17,
+  "start": 7.36,
+  "end": 7.72,
+  "dur": 0.36,
+  "antes": "un trapo",
+  "despues": "llega con"
+ },
+ {
+  "slug": "la-salsa-no-se-apunta",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
+  "i": 49,
+  "start": 18.04,
+  "end": 18.36,
+  "dur": 0.32,
+  "antes": "Hay molcajete",
+  "despues": "se pone"
+ },
+ {
+  "slug": "la-salsa-no-se-apunta",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
+  "i": 77,
+  "start": 28.28,
+  "end": 28.68,
+  "dur": 0.4,
+  "antes": "pasado pregunta",
+  "despues": "El domingo"
+ },
+ {
+  "slug": "la-salsa-no-se-apunta",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_salsa_no_se_apunta_multivoice_1790191934325.mp3",
+  "i": 109,
+  "start": 40.52,
+  "end": 40.92,
+  "dur": 0.4,
+  "antes": "siguiente domingo",
+  "despues": "hace la"
+ },
+ {
+  "slug": "nadie-se-queja-nunca",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
+  "i": 6,
+  "start": 3.84,
+  "end": 4.24,
+  "dur": 0.4,
+  "antes": "fleco de",
+  "despues": "que entra"
+ },
+ {
+  "slug": "nadie-se-queja-nunca",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
+  "i": 39,
+  "start": 14.04,
+  "end": 14.52,
+  "dur": 0.48,
+  "antes": "derecho dice",
+  "despues": "Lo tengo"
+ },
+ {
+  "slug": "nadie-se-queja-nunca",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
+  "i": 50,
+  "start": 18.6,
+  "end": 18.84,
+  "dur": 0.24,
+  "antes": "pregunta Arturo",
+  "despues": "no contesta"
+ },
+ {
+  "slug": "nadie-se-queja-nunca",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Nadie_se_queja_nunca_multivoice_1790185639959.mp3",
+  "i": 111,
+  "start": 36.92,
+  "end": 37.32,
+  "dur": 0.4,
+  "antes": "vez pide",
+  "despues": "Ya lo"
+ },
+ {
+  "slug": "media-cara-rasurada",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
+  "i": 21,
+  "start": 9.48,
+  "end": 9.92,
+  "dur": 0.44,
+  "antes": "las seis",
+  "despues": "baja de"
+ },
+ {
+  "slug": "media-cara-rasurada",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
+  "i": 38,
+  "start": 15.4,
+  "end": 15.72,
+  "dur": 0.32,
+  "antes": "bien dice",
+  "despues": "Rasuro brazos"
+ },
+ {
+  "slug": "media-cara-rasurada",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
+  "i": 59,
+  "start": 22.6,
+  "end": 23.56,
+  "dur": 0.96,
+  "antes": "nariz dice",
+  "despues": "Bruno se"
+ },
+ {
+  "slug": "media-cara-rasurada",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
+  "i": 66,
+  "start": 25.32,
+  "end": 25.72,
+  "dur": 0.4,
+  "antes": "la cocina",
+  "despues": "pone la"
+ },
+ {
+  "slug": "media-cara-rasurada",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Media_cara_rasurada_multivoice_1790185723841.mp3",
+  "i": 99,
+  "start": 36.76,
+  "end": 37.24,
+  "dur": 0.48,
+  "antes": "filo dice",
+  "despues": "seria Y"
+ },
+ {
+  "slug": "peinate-como-en-la-foto",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
+  "i": 23,
+  "start": 10,
+  "end": 10.32,
+  "dur": 0.32,
+  "antes": "su cuaderno",
+  "despues": "llega con"
+ },
+ {
+  "slug": "peinate-como-en-la-foto",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
+  "i": 46,
+  "start": 17.48,
+  "end": 18.16,
+  "dur": 0.68,
+  "antes": "nombre dice",
+  "despues": "Omar revisa"
+ },
+ {
+  "slug": "peinate-como-en-la-foto",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
+  "i": 73,
+  "start": 26.6,
+  "end": 26.88,
+  "dur": 0.28,
+  "antes": "no pregunta",
+  "despues": "con toda"
+ },
+ {
+  "slug": "peinate-como-en-la-foto",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
+  "i": 99,
+  "start": 34.56,
+  "end": 34.92,
+  "dur": 0.36,
+  "antes": "la foto",
+  "despues": "tiene el"
+ },
+ {
+  "slug": "peinate-como-en-la-foto",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pinate_como_en_la_foto_multivoice_1790186578446.mp3",
+  "i": 131,
+  "start": 44.16,
+  "end": 44.4,
+  "dur": 0.24,
+  "antes": "mira a",
+  "despues": "y firma"
+ },
+ {
+  "slug": "puestas-por-fuera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Puestas_por_fuera_multivoice_1790186641674.mp3",
+  "i": 32,
+  "start": 11.84,
+  "end": 12.24,
+  "dur": 0.4,
+  "antes": "del tendedero",
+  "despues": "lo ve"
+ },
+ {
+  "slug": "puestas-por-fuera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Puestas_por_fuera_multivoice_1790186641674.mp3",
+  "i": 55,
+  "start": 19.04,
+  "end": 19.4,
+  "dur": 0.36,
+  "antes": "cosas dice",
+  "despues": "Piensa dónde"
+ },
+ {
+  "slug": "puestas-por-fuera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Puestas_por_fuera_multivoice_1790186641674.mp3",
+  "i": 86,
+  "start": 30.04,
+  "end": 30.36,
+  "dur": 0.32,
+  "antes": "las once",
+  "despues": "se para"
+ },
+ {
+  "slug": "tres-duenos-y-un-paraguas",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tres_dueos_y_un_paraguas_multivoice_1790186703433.mp3",
+  "i": 18,
+  "start": 7.48,
+  "end": 7.56,
+  "dur": 0.08,
+  "antes": "no cierra",
+  "despues": "y Bruno"
+ },
+ {
+  "slug": "tres-duenos-y-un-paraguas",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tres_dueos_y_un_paraguas_multivoice_1790186703433.mp3",
+  "i": 54,
+  "start": 19.68,
+  "end": 20.24,
+  "dur": 0.56,
+  "antes": "azul contesta",
+  "despues": "Itzel y"
+ },
+ {
+  "slug": "tres-duenos-y-un-paraguas",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tres_dueos_y_un_paraguas_multivoice_1790186703433.mp3",
+  "i": 55,
+  "start": 20.24,
+  "end": 20.68,
+  "dur": 0.44,
+  "antes": "contesta Itzel",
+  "despues": "y Bruno"
+ },
+ {
+  "slug": "tres-duenos-y-un-paraguas",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tres_dueos_y_un_paraguas_multivoice_1790186703433.mp3",
+  "i": 127,
+  "start": 46.72,
+  "end": 47.08,
+  "dur": 0.36,
+  "antes": "sacas pregunta",
+  "despues": "Porque aquí"
+ },
+ {
+  "slug": "el-timbre-si-suena",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
+  "i": 32,
+  "start": 13.88,
+  "end": 14.24,
+  "dur": 0.36,
+  "antes": "la azotea",
+  "despues": "tiende el"
+ },
+ {
+  "slug": "el-timbre-si-suena",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
+  "i": 76,
+  "start": 27.76,
+  "end": 28.16,
+  "dur": 0.4,
+  "antes": "alguien pregunta",
+  "despues": "baja por"
+ },
+ {
+  "slug": "el-timbre-si-suena",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790192523409.mp3",
+  "i": 128,
+  "start": 45.12,
+  "end": 45.48,
+  "dur": 0.36,
+  "antes": "esto pregunta",
+  "despues": "Ah dice"
+ },
+ {
+  "slug": "tu-propia-firma",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Tu_propia_firma_multivoice_1790192588571.mp3",
+  "i": 139,
+  "start": 48.28,
+  "end": 48.4,
+  "dur": 0.12,
+  "antes": "de esto",
+  "despues": "se ríe"
+ },
+ {
+  "slug": "pintan-el-14",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
+  "i": 31,
+  "start": 12.24,
+  "end": 12.64,
+  "dur": 0.4,
+  "antes": "algo más",
+  "despues": "y Bruno"
+ },
+ {
+  "slug": "pintan-el-14",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
+  "i": 54,
+  "start": 19.88,
+  "end": 20.24,
+  "dur": 0.36,
+  "antes": "arreglamos dice",
+  "despues": "Tengo pintura"
+ },
+ {
+  "slug": "pintan-el-14",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
+  "i": 71,
+  "start": 25.92,
+  "end": 26.08,
+  "dur": 0.16,
+  "antes": "de cartón",
+  "despues": "se sube"
+ },
+ {
+  "slug": "pintan-el-14",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Pintan_el_14_multivoice_1790192645043.mp3",
+  "i": 100,
+  "start": 34.48,
+  "end": 35.2,
+  "dur": 0.72,
+  "antes": "nuestro pregunta",
+  "despues": "Catorce repite"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 21,
+  "start": 9.52,
+  "end": 10.12,
+  "dur": 0.6,
+  "antes": "el barrio",
+  "despues": "entra y"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 35,
+  "start": 14.24,
+  "end": 14.64,
+  "dur": 0.4,
+  "antes": "muera dice",
+  "despues": "Trabajo de"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 49,
+  "start": 19.56,
+  "end": 19.96,
+  "dur": 0.4,
+  "antes": "nada más",
+  "despues": "pone la"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 85,
+  "start": 30.04,
+  "end": 30.92,
+  "dur": 0.88,
+  "antes": "un charco",
+  "despues": "regresa al"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 97,
+  "start": 34.64,
+  "end": 34.88,
+  "dur": 0.24,
+  "antes": "sed dice",
+  "despues": "triste Cuánta"
+ },
+ {
+  "slug": "se-muere-de-amor",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Se_muere_de_amor_multivoice_1790186001579.mp3",
+  "i": 110,
+  "start": 39.04,
+  "end": 39.32,
+  "dur": 0.28,
+  "antes": "día dice",
+  "despues": "Fernanda mete"
+ },
+ {
+  "slug": "verde-en-mi-ventana",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Verde_en_mi_ventana_multivoice_1790186066562.mp3",
+  "i": 24,
+  "start": 10.56,
+  "end": 10.84,
+  "dur": 0.28,
+  "antes": "ventana de",
+  "despues": "Bruno riega"
+ },
+ {
+  "slug": "verde-en-mi-ventana",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Verde_en_mi_ventana_multivoice_1790186066562.mp3",
+  "i": 42,
+  "start": 16.84,
+  "end": 17.12,
+  "dur": 0.28,
+  "antes": "sol dice",
+  "despues": "Corta un"
+ },
+ {
+  "slug": "verde-en-mi-ventana",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Verde_en_mi_ventana_multivoice_1790186066562.mp3",
+  "i": 64,
+  "start": 24.56,
+  "end": 24.92,
+  "dur": 0.36,
+  "antes": "es pregunta",
+  "despues": "Bruno señala"
+ },
+ {
+  "slug": "verde-en-mi-ventana",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Verde_en_mi_ventana_multivoice_1790186066562.mp3",
+  "i": 95,
+  "start": 35.88,
+  "end": 36.32,
+  "dur": 0.44,
+  "antes": "balcón de",
+  "despues": "Ella tiene"
+ },
+ {
+  "slug": "verde-en-mi-ventana",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Verde_en_mi_ventana_multivoice_1790186066562.mp3",
+  "i": 123,
+  "start": 44.8,
+  "end": 45.24,
+  "dur": 0.44,
+  "antes": "Es lista",
+  "despues": "mira la"
+ },
+ {
+  "slug": "una-hora-en-el-vivero",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
+  "i": 13,
+  "start": 6.28,
+  "end": 6.6,
+  "dur": 0.32,
+  "antes": "puede cerrar",
+  "despues": "y Bruno"
+ },
+ {
+  "slug": "una-hora-en-el-vivero",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
+  "i": 77,
+  "start": 31.84,
+  "end": 32.24,
+  "dur": 0.4,
+  "antes": "Pobres dice",
+  "despues": "Nadie las"
+ },
+ {
+  "slug": "una-hora-en-el-vivero",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_hora_en_el_vivero_multivoice_1790186129077.mp3",
+  "i": 135,
+  "start": 52.92,
+  "end": 53.16,
+  "dur": 0.24,
+  "antes": "se mueren",
+  "despues": "levanta una"
+ },
+ {
+  "slug": "dos-camisas-azules",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
+  "i": 9,
+  "start": 5.08,
+  "end": 5.4,
+  "dur": 0.32,
+  "antes": "a jabón",
+  "despues": "es una"
+ },
+ {
+  "slug": "dos-camisas-azules",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
+  "i": 59,
+  "start": 21.76,
+  "end": 22.2,
+  "dur": 0.44,
+  "antes": "la lleva",
+  "despues": "regresa con"
+ },
+ {
+  "slug": "dos-camisas-azules",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
+  "i": 73,
+  "start": 27.48,
+  "end": 27.76,
+  "dur": 0.28,
+  "antes": "camisa pregunta",
+  "despues": "Tengo la"
+ },
+ {
+  "slug": "dos-camisas-azules",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
+  "i": 111,
+  "start": 39.84,
+  "end": 40.64,
+  "dur": 0.8,
+  "antes": "mismo tiempo",
+  "despues": "revisa la"
+ },
+ {
+  "slug": "dos-camisas-azules",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Dos_camisas_azules_multivoice_1790184969334.mp3",
+  "i": 133,
+  "start": 47.28,
+  "end": 47.56,
+  "dur": 0.28,
+  "antes": "tuya dice",
+  "despues": "Ahora marco"
+ },
+ {
+  "slug": "una-cuerda-no-hace-nudos",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_cuerda_no_hace_nudos_multivoice_1790185101963.mp3",
+  "i": 0,
+  "start": 2.56,
+  "end": 2.68,
+  "dur": 0.12,
+  "antes": "",
+  "despues": "sube a"
+ },
+ {
+  "slug": "una-cuerda-no-hace-nudos",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_cuerda_no_hace_nudos_multivoice_1790185101963.mp3",
+  "i": 56,
+  "start": 19.08,
+  "end": 19.4,
+  "dur": 0.32,
+  "antes": "tendedero dice",
+  "despues": "Mi cuerda"
+ },
+ {
+  "slug": "una-cuerda-no-hace-nudos",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_cuerda_no_hace_nudos_multivoice_1790185101963.mp3",
+  "i": 68,
+  "start": 22.96,
+  "end": 23.36,
+  "dur": 0.4,
+  "antes": "cuerda vieja",
+  "despues": "mira la"
+ },
+ {
+  "slug": "una-cuerda-no-hace-nudos",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Una_cuerda_no_hace_nudos_multivoice_1790185101963.mp3",
+  "i": 122,
+  "start": 39.92,
+  "end": 40.48,
+  "dur": 0.56,
+  "antes": "la sombra",
+  "despues": "entiende todo"
+ },
+ {
+  "slug": "el-cerro-esta-limpio",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_cerro_est_limpio_multivoice_1790185161874.mp3",
+  "i": 9,
+  "start": 5.92,
+  "end": 6.32,
+  "dur": 0.4,
+  "antes": "hace frío",
+  "despues": "tiene el"
+ },
+ {
+  "slug": "el-cerro-esta-limpio",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_cerro_est_limpio_multivoice_1790185161874.mp3",
+  "i": 43,
+  "start": 17.84,
+  "end": 18.68,
+  "dur": 0.84,
+  "antes": "Seguro pregunta",
+  "despues": "Seguro dice"
+ },
+ {
+  "slug": "el-cerro-esta-limpio",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_cerro_est_limpio_multivoice_1790185161874.mp3",
+  "i": 79,
+  "start": 31.16,
+  "end": 31.56,
+  "dur": 0.4,
+  "antes": "la mañana",
+  "despues": "toca el"
+ },
+ {
+  "slug": "el-cerro-esta-limpio",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_cerro_est_limpio_multivoice_1790185161874.mp3",
+  "i": 100,
+  "start": 38.08,
+  "end": 38.68,
+  "dur": 0.6,
+  "antes": "veo dice",
+  "despues": "Gracias por"
+ },
+ {
+  "slug": "el-cerro-esta-limpio",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_cerro_est_limpio_multivoice_1790185161874.mp3",
+  "i": 131,
+  "start": 49,
+  "end": 49.36,
+  "dur": 0.36,
+  "antes": "blanco de",
+  "despues": "es rosa"
+ },
+ {
+  "slug": "la-mascara-en-la-azotea",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_mscara_en_la_azotea_multivoice_1790190499779.mp3",
+  "i": 39,
+  "start": 14.88,
+  "end": 15.28,
+  "dur": 0.4,
+  "antes": "hay alguien",
+  "despues": "termina su"
+ },
+ {
+  "slug": "la-mascara-en-la-azotea",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_mscara_en_la_azotea_multivoice_1790190499779.mp3",
+  "i": 75,
+  "start": 27.08,
+  "end": 27.4,
+  "dur": 0.32,
+  "antes": "días dice",
+  "despues": "tranquila Hay"
+ },
+ {
+  "slug": "la-mascara-en-la-azotea",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_mscara_en_la_azotea_multivoice_1790190499779.mp3",
+  "i": 96,
+  "start": 34.76,
+  "end": 35.16,
+  "dur": 0.4,
+  "antes": "allá dice",
+  "despues": "Mojada se"
+ },
+ {
+  "slug": "la-mascara-en-la-azotea",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/La_mscara_en_la_azotea_multivoice_1790190499779.mp3",
+  "i": 126,
+  "start": 44.08,
+  "end": 44.44,
+  "dur": 0.36,
+  "antes": "hora dice",
+  "despues": "Las dos"
+ },
+ {
+  "slug": "gritale-es-su-trabajo",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Grtale_es_su_trabajo_multivoice_1790190556927.mp3",
+  "i": 13,
+  "start": 6.36,
+  "end": 6.68,
+  "dur": 0.32,
+  "antes": "Bruno e",
+  "despues": "llegan con"
+ },
+ {
+  "slug": "gritale-es-su-trabajo",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Grtale_es_su_trabajo_multivoice_1790190556927.mp3",
+  "i": 47,
+  "start": 17.48,
+  "end": 17.84,
+  "dur": 0.36,
+  "antes": "Grítale dice",
+  "despues": "Todos le"
+ },
+ {
+  "slug": "vendas-de-enfermera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Vendas_de_enfermera_multivoice_1790190614616.mp3",
+  "i": 24,
+  "start": 9.6,
+  "end": 9.84,
+  "dur": 0.24,
+  "antes": "casa de",
+  "despues": "con las"
+ },
+ {
+  "slug": "vendas-de-enfermera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Vendas_de_enfermera_multivoice_1790190614616.mp3",
+  "i": 46,
+  "start": 18.16,
+  "end": 18.56,
+  "dur": 0.4,
+  "antes": "cosa sirve",
+  "despues": "abre su"
+ },
+ {
+  "slug": "vendas-de-enfermera",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Vendas_de_enfermera_multivoice_1790190614616.mp3",
+  "i": 72,
+  "start": 26.96,
+  "end": 27.32,
+  "dur": 0.36,
+  "antes": "enfermería dice",
+  "despues": "Se nota"
+ }
+]

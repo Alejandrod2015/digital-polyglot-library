@@ -2,9 +2,9 @@
  * MUESTRA: titulo + primer parrafo de UNA historia, para que el usuario juzgue
  * voz y ritmo ANTES de narrar la historia entera.
  *
- * Es el primer paso obligatorio del orden de narracion por tema (regla dura,
- * 2026-09-02): muestra -> historia completa -> resto del tema, con una
- * comprobacion del usuario entre paso y paso.
+ * Es el primer paso obligatorio del orden de narracion (regla dura 2026-09-02,
+ * aflojada el 2026-09-23): UNA muestra por journey, que el usuario aprueba de
+ * oido, y a partir de ahi cada tema se narra entero.
  *
  * Pasa por el pipeline de produccion a proposito: en un render de una sola voz
  * `generateAndUploadMultiVoiceAudio` FUERZA disableStitching + el gate F0
@@ -12,7 +12,7 @@
  * el hueco de 1,10 s tras el titulo. Asi la muestra suena como la toma final.
  *
  * Deja constancia en scripts/a2-muestras.json, que es lo que mira
- * `_narraUnaA2.ts` para no dejar narrar una primera historia sin muestra.
+ * `_narraUnaA2.ts` para no dejar narrar un journey sin muestra aprobada.
  *
  * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug> [--journey a2 | b1-latam | b2-latam]
  */
@@ -60,7 +60,9 @@ const prisma = new PrismaClient();
   });
 
   const reg = fs.existsSync(REGISTRO_MUESTRAS) ? JSON.parse(fs.readFileSync(REGISTRO_MUESTRAS, "utf8")) : {};
-  reg[slug] = { url: res.url, fecha: new Date().toISOString(), voiceId };
+  // `journey` desde el 2026-09-23: la muestra vale para el JOURNEY entero, y
+  // el runner necesita saber de cual es sin preguntarle a la base por el slug.
+  reg[slug] = { url: res.url, fecha: new Date().toISOString(), voiceId, journey: JOURNEY };
   fs.writeFileSync(REGISTRO_MUESTRAS, JSON.stringify(reg, null, 1) + "\n");
 
   // Los gateFlags del render se imprimian solo al narrar la historia entera,
