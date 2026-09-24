@@ -29,13 +29,11 @@ export function ResumenView({
   cohort,
   rangeLabel,
   platform,
-  grain,
 }: {
   data: DashboardData;
   cohort: MetricsCohort;
   rangeLabel: string;
   platform: "all" | "web" | "ios" | "android";
-  grain: "day" | "week";
 }) {
   const k = data.kpis;
   const p = data.prevKpis;
@@ -164,7 +162,6 @@ export function ResumenView({
           cohort={cohort}
           rangeLabel={rangeLabel}
           platform={platform}
-          mode={grain}
         />
         <LanguageSplitPanel rows={data.languageSplit ?? []} days={data.range.days} />
       </div>
@@ -869,7 +866,19 @@ function CrHistogram({ data }: { data: DashboardData }) {
 }
 
 // ── FunnelsView ──────────────────────────────────────────
-export function FunnelsView({ data }: { data: DashboardData }) {
+export function FunnelsView({
+  data,
+  activation,
+}: {
+  data: DashboardData;
+  /**
+   * El embudo de activacion (alta → onboarding → historia → audio → pagar).
+   * Llega como nodo porque se sirve de `/api/metrics/acquisition` y no del
+   * tablero, y su sitio es esta pestana: vivia en Adquisicion, donde competia
+   * con los embudos de verdad.
+   */
+  activation?: React.ReactNode;
+}) {
   const trialSteps = [
     { label: "Trial iniciado", value: data.trialFunnel.started },
     { label: "Con método de pago", value: data.trialFunnel.startedWithPm },
@@ -910,6 +919,7 @@ export function FunnelsView({ data }: { data: DashboardData }) {
 
   return (
     <div className="mx-view">
+      {activation}
       <div className="mx-row mx-row--2up">
         <div className="mx-panel">
           <div className="mx-panel__head">
