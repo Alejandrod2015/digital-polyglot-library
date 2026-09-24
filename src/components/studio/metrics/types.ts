@@ -74,6 +74,8 @@ export type MetricsKpiUser = {
 };
 
 export type DashboardData = {
+  /** Cuando se calcularon los numeros. Falta en respuestas cacheadas viejas. */
+  generatedAt?: string;
   range: { from: string; to: string; days: number };
   prevRange?: { from: string; to: string; days: number };
   kpis: DashboardKpis;
@@ -102,6 +104,15 @@ export type DashboardData = {
    * Usuarios, minutos y completion rate por idioma y VARIANTE del journey.
    * Falta en respuestas cacheadas de antes de que existiera.
    */
+  /** Personas, minutos y remate por LIBRO. Solo en la pestaña Audiobooks. */
+  audiobookSplit?: Array<{
+    book: string;
+    users: number;
+    started: number;
+    finished: number;
+    completionRate: number;
+    minutes: number;
+  }>;
   languageSplit?: Array<{
     language: string;
     variant: string;
@@ -317,4 +328,5 @@ export type MetricsSection =
   | "content"
   | "funnels"
   | "audience"
+  | "audiobooks"
   | "alerts";

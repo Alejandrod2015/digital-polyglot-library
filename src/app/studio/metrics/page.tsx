@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import StudioShell from "@/components/studio/StudioShell";
 import {
   ComingSoonView,
+  AudiobooksView,
   EngagementView,
   VanityView,
   FunnelsView,
@@ -186,15 +187,19 @@ const EMPTY_PIPELINE_DATA: PipelineData = {
  * ahora van los selectores globales.
  */
 const TABS: Array<{ key: MetricsSection; label: string }> = [
-  { key: "overview", label: "Resumen" },
-  { key: "vanity", label: "Vanity metrics" },
+  { key: "overview", label: "Summary" },
+  { key: "acquisition", label: "Acquisition" },
   { key: "engagement", label: "Engagement" },
   { key: "funnels", label: "Funnels" },
-  { key: "acquisition", label: "Adquisición" },
-  { key: "audience", label: "Audiencia" },
-  { key: "content", label: "Contenido" },
-  { key: "learning", label: "Aprendizaje" },
-  { key: "alerts", label: "Alertas" },
+  { key: "audience", label: "Audience" },
+  { key: "content", label: "Content" },
+  { key: "learning", label: "Learning" },
+  { key: "alerts", label: "Alerts" },
+  // La última a propósito: son los totales acumulados, y van detrás de todo
+  // lo que sí admite un mal dato.
+  { key: "vanity", label: "Vanity metrics" },
+  // Al final del todo: es el otro producto, y el resto del tablero lo excluye.
+  { key: "audiobooks", label: "Audiobooks" },
 ];
 
 /** Superficie. Vive aquí y no dentro de un panel: filtra TODO el tablero. */
@@ -390,25 +395,10 @@ export default function MetricsDashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [days, customFrom, customTo, cohort, platform, grain]);
 
-  function handleExport() {
-    const qs = new URLSearchParams();
-    qs.set("section", section);
-    if (isCustom) {
-      qs.set("from", new Date(customFrom).toISOString());
-      qs.set("to", new Date(`${customTo}T23:59:59`).toISOString());
-      const ms =
-        new Date(customTo).getTime() - new Date(customFrom).getTime();
-      qs.set("days", String(Math.max(1, Math.round(ms / 86400000) + 1)));
-    } else {
-      qs.set("days", days);
-    }
-    qs.set("cohort", cohort);
-    window.location.href = `/api/metrics/export?${qs.toString()}`;
-  }
-
   function renderActiveSection() {
     if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} platform={platform} grain={grain} />;
     if (section === "vanity") return <VanityView data={data} />;
+    if (section === "audiobooks") return <AudiobooksView data={data} />;
     if (section === "engagement") return <EngagementView data={data} />;
     if (section === "funnels") return <FunnelsView data={data} />;
 
@@ -434,6 +424,19 @@ export default function MetricsDashboard() {
 
   const periodLabel = formatRangeLabel(data.range.from, data.range.to);
   // Los extremos del rango vigente en el formato que pide <input type="date">.
+  // Cuanto hace que se calcularon estos numeros. `generatedAt` viaja dentro
+  // del payload, asi que un acierto de cache trae su hora original.
+  const frescura = (() => {
+    const t = data.generatedAt ? Date.parse(data.generatedAt) : NaN;
+    if (!Number.isFinite(t)) return { texto: "-", titulo: "sin sello de calculo" };
+    const seg = Math.max(0, Math.round((Date.now() - t) / 1000));
+    const titulo = `Calculado a las ${new Date(t).toLocaleTimeString("es-ES")}`;
+    if (seg < 10) return { texto: "ahora", titulo };
+    if (seg < 60) return { texto: `hace ${seg} s`, titulo };
+    const min = Math.round(seg / 60);
+    if (min < 60) return { texto: `hace ${min} min`, titulo };
+    return { texto: `hace ${Math.round(min / 60)} h`, titulo };
+  })();
   const rangoDesde = data.range.from ? data.range.from.slice(0, 10) : "";
   const rangoHasta = data.range.to ? data.range.to.slice(0, 10) : "";
 
@@ -570,14 +573,18 @@ export default function MetricsDashboard() {
       <span className="mx-filters__spacer" />
 
       <div className="mx-filters__actions">
-        <button
-          type="button"
-          className="mx-btn"
-          onClick={handleExport}
-          title="Exporta el rango actual como CSV"
-        >
-          ⤓ Exportar
-        </button>
+        {/*
+          El sello de frescura vive aqui, donde estaba "Exportar", y no en una
+          franja propia debajo: ocupaba una linea entera para tres palabras.
+          Y dice la HORA de calculo en vez de un "ahora" escrito a mano: antes
+          era un literal, asi que decia lo mismo con datos de hace un segundo
+          que de hace una hora. Ahora sale de `generatedAt`, que el servidor
+          sella al calcular y viaja dentro del payload.
+        */}
+        <span className="mx-live" title={frescura.titulo}>
+          <span className="mx-live__dot" />
+          <span className="mx-mono">{frescura.texto}</span>
+        </span>
         <button
           type="submit"
           className="mx-btn mx-btn--primary"
@@ -608,16 +615,6 @@ export default function MetricsDashboard() {
             flexWrap: "wrap",
           }}
         >
-          {/* El rango ya no se dice aquí: se ve, y se edita, en los dos campos
-              de "Personalizado", que vienen rellenos con el rango vigente. */}
-          <span />
-          <span className="mx-live">
-            <span className="mx-live__dot" />
-            Datos en vivo · actualizado{" "}
-            <span className="mx-mono" style={{ marginLeft: 4 }}>
-              ahora
-            </span>
-          </span>
         </div>
 
         {cohort !== "all" && COHORT_BLIND_SECTIONS.includes(section) ? (
