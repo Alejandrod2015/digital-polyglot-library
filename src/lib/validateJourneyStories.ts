@@ -610,12 +610,19 @@ export function validateJourneyStories(
   // en dos historias o mas. Asi los toponimos (Guadalajara, Tlaquepaque) y las
   // fiestas no entran, que no los dice un personaje sino la prosa una vez.
   {
-    const bank = getNameBank(ctx.language, ctx.variant);
+    // El banco se llama "spanish/mexico", y aqui el idioma puede llegar como
+    // "ES" (asi lo pasa saveStory) o como "spanish". Sin normalizar, el check
+    // salia SIN IMPLEMENTAR y bloqueaba el guardado entero del MX A0.
+    const CODIGO_A_NOMBRE: Record<string, string> = {
+      DE: "german", ES: "spanish", PT: "portuguese", IT: "italian", FR: "french", EN: "english",
+    };
+    const idiomaBanco = CODIGO_A_NOMBRE[lang] ?? (ctx.language ?? "").toLowerCase();
+    const bank = getNameBank(idiomaBanco, ctx.variant);
     if (!bank) {
       noImpl(
         "journey-cast-names-in-language",
         "El reparto sale del banco de nombres del idioma",
-        `No hay banco de nombres para ${ctx.language || "?"}/${ctx.variant || "?"}. ` +
+        `No hay banco de nombres para ${idiomaBanco || "?"}/${(ctx.variant ?? "").toLowerCase() || "?"}. ` +
         `Sin banco no se puede medir si un nombre es de esa lengua: anade la region en src/lib/characterNames.ts.`,
       );
     } else {
@@ -632,7 +639,7 @@ export function validateJourneyStories(
       const todoElTexto = new Set<string>();
       for (const s of stories)
         for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) todoElTexto.add(m[0]);
-      const vetados = nombresVetados(todoElTexto, ctx.language);
+      const vetados = nombresVetados(todoElTexto, idiomaBanco);
       push(
         "journey-cast-names-in-language",
         "Ningun nombre del reparto esta vetado de oido",
@@ -643,14 +650,14 @@ export function validateJourneyStories(
       );
       // AVISA de los que no estan en el banco: no es un error, es que nadie ha
       // comprobado que suenen. El aviso es lo que lleva a oirlos antes de narrar.
-      const fuera = fueraDelIdioma(cast, bank, ctx.language)
+      const fuera = fueraDelIdioma(cast, bank, idiomaBanco)
         .filter((n) => !vetados.some((v) => v.nombre === n));
       if (fuera.length) {
         out.push({
           id: "journey-cast-names-unheard",
           label: "Nombres del reparto que nadie ha oido en esta voz",
           status: "pass",
-          detail: `${fuera.join(", ")}: fuera del banco de ${ctx.language}/${ctx.variant}. ` +
+          detail: `${fuera.join(", ")}: fuera del banco de ${idiomaBanco}/${(ctx.variant ?? "").toLowerCase()}. ` +
             `Antes de narrar, una linea de muestra con cada uno en la voz del journey: ` +
             `un nombre que la voz no tenga aprendido sale distinto cada vez y se paga en las 21.`,
         });
