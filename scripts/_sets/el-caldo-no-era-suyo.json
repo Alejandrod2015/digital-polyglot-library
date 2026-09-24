@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "recipiente",
+    "sentence": "En la cocina hay tres [[recipientes]] y un trapo ajenos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a container",
+      "options": [
+        "a container",
+        "a chair",
+        "a towel",
+        "a candle"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "En la cocina hay tres recipientes y un trapo ajenos.",
+        "targetWord": "recipientes",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/acbfcd948037fae12d1e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse malo",
+    "sentence": "Yo no hago sopa en noviembre, que se me [[pone mala]] en dos días.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go off",
+      "options": [
+        "to go off",
+        "to run out",
+        "to cool down",
+        "to dry up"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Yo no hago sopa en noviembre, que se me pone mala en dos días.",
+        "targetWord": "pone mala",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e41f583189636281e433.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tetera",
+    "sentence": "Con la [[tetera]] en la mano, llama a la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a teapot",
+      "options": [
+        "a teapot",
+        "a broom",
+        "a lamp",
+        "a cushion"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Con la tetera en la mano, llama a la puerta.",
+        "targetWord": "tetera",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/076542008bdfc1a87d8b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camisa",
+    "sentence": "Abre con masa en las manos y ceniza en la [[camisa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shirt",
+      "options": [
+        "the shirt",
+        "the hair",
+        "the floor",
+        "the bread"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Abre con masa en las manos y ceniza en la camisa.",
+        "targetWord": "camisa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/081869f08d4d1c7df63b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hueso",
+    "sentence": "Hay una olla al fuego y [[hueso]] de ternera en la tabla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bone",
+      "options": [
+        "bone",
+        "skin",
+        "fat",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Hay una olla al fuego y hueso de ternera en la tabla.",
+        "targetWord": "hueso",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1f312e833d6b35c71ae2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer falta",
+    "sentence": "No [[hacía falta]] subirlo, mujer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be necessary",
+      "options": [
+        "to be necessary",
+        "to be easy",
+        "to be late",
+        "to be cheap"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "No hacía falta subirlo, mujer.",
+        "targetWord": "hacía falta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c285b92e321ebca4f1f4.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ceniza",
+    "sentence": "Después de la hoguera solo queda _____ gris en el suelo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ceniza",
+      "options": [
+        "ceniza",
+        "leche",
+        "arena",
+        "nieve"
+      ],
+      "translation": "After the bonfire only grey _____ is left on the ground.",
+      "optionTranslations": [
+        "ash",
+        "milk",
+        "sand",
+        "snow"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Después de la hoguera solo queda ceniza gris en el suelo.",
+        "targetWord": "ceniza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43e85d071381bd57.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tabla",
+    "sentence": "Corta la carne sobre una _____ de madera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tabla",
+      "options": [
+        "tabla",
+        "silla",
+        "cama",
+        "puerta"
+      ],
+      "translation": "He cuts the meat on a wooden _____.",
+      "optionTranslations": [
+        "board",
+        "chair",
+        "bed",
+        "door"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Corta la carne sobre una tabla de madera.",
+        "targetWord": "tabla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b7f57fa22067e6f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pila",
+    "sentence": "Deja una _____ de platos sucios junto al fregadero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pila",
+      "options": [
+        "pila",
+        "lata",
+        "taza",
+        "botella"
+      ],
+      "translation": "She leaves a _____ of dirty plates next to the sink.",
+      "optionTranslations": [
+        "stack",
+        "tin",
+        "cup",
+        "bottle"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Deja una pila de platos sucios junto al fregadero.",
+        "targetWord": "pila",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/559c94bb7a37368c.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sopa,nevera,trapo,ensaladera",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sopa",
+          "answer": "soup",
+          "options": [
+            "soup",
+            "a fridge",
+            "a rag",
+            "a salad bowl"
+          ]
+        },
+        {
+          "word": "nevera",
+          "answer": "a fridge",
+          "options": [
+            "soup",
+            "a fridge",
+            "a rag",
+            "a salad bowl"
+          ]
+        },
+        {
+          "word": "trapo",
+          "answer": "a rag",
+          "options": [
+            "soup",
+            "a fridge",
+            "a rag",
+            "a salad bowl"
+          ]
+        },
+        {
+          "word": "ensaladera",
+          "answer": "a salad bowl",
+          "options": [
+            "soup",
+            "a fridge",
+            "a rag",
+            "a salad bowl"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de par en par",
+    "sentence": "La nevera está [[de par en par]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide open",
+      "options": [
+        "wide open",
+        "half empty",
+        "switched off",
+        "still new"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "La nevera está de par en par.",
+        "targetWord": "de par en par",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2a05e8abb79a555f3a5d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juego",
+    "sentence": "Le sigue el [[juego]] cuando le da las gracias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the game",
+      "options": [
+        "the game",
+        "the bus",
+        "the recipe",
+        "the news"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Le sigue el juego cuando le da las gracias.",
+        "targetWord": "juego",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9a8a8ec16f8ebc15cbbb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arcilla",
+    "sentence": "La mía es de [[arcilla]] vieja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clay",
+      "options": [
+        "clay",
+        "wood",
+        "steel",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "La mía es de arcilla vieja.",
+        "targetWord": "arcilla",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0a0887e8b35e4e059572.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ternera",
+    "sentence": "Hueso de [[ternera]] en la tabla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "veal",
+      "options": [
+        "veal",
+        "pork",
+        "lamb",
+        "chicken"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Hueso de ternera en la tabla.",
+        "targetWord": "ternera",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1352a4a6a453ea39e037.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de comer",
+    "sentence": "La que le da [[de comer]] cada jueves.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "something to eat",
+      "options": [
+        "something to eat",
+        "somewhere to sleep",
+        "something to read",
+        "somewhere to sit"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "La que le da de comer cada jueves.",
+        "targetWord": "de comer",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a53b3395ffbccdc4d6bb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gracias",
+    "sentence": "Baja al patio sin saber a quién dar las [[gracias]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thanks",
+      "options": [
+        "thanks",
+        "keys",
+        "news",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Baja al patio sin saber a quién dar las gracias.",
+        "targetWord": "gracias",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b23b2c3ebc603ffe19a3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jueves",
+    "sentence": "Hoy es _____, mañana viernes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jueves",
+      "options": [
+        "jueves",
+        "lunes",
+        "martes",
+        "sábado"
+      ],
+      "translation": "Today is _____, tomorrow Friday.",
+      "optionTranslations": [
+        "Thursday",
+        "Monday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "audioClip": {
+        "storySlug": "el-caldo-no-era-suyo",
+        "storySource": "user",
+        "sentence": "Hoy es jueves, mañana viernes.",
+        "targetWord": "jueves",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f799c3f6a747c8df.mp3"
+      }
+    },
+    "featured": false
+  }
+]

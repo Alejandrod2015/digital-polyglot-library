@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "fuego",
+    "sentence": "Esa olla lleva cuarenta años en el mismo [[fuego]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the flame",
+      "options": [
+        "the flame",
+        "the shelf",
+        "the table",
+        "the corner"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Esa olla lleva cuarenta años en el mismo fuego.",
+        "targetWord": "fuego",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/de0c1e34e6af2452c44b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "revolver",
+    "sentence": "[[Revuelve]] con la cuchara vieja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stir",
+      "options": [
+        "to stir",
+        "to serve",
+        "to taste",
+        "to pour"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Revuelve con la cuchara vieja.",
+        "targetWord": "Revuelve",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/afc178b1d562abfbd548.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuchara",
+    "sentence": "Revuelve con la [[cuchara]] vieja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spoon",
+      "options": [
+        "a spoon",
+        "a fork",
+        "a knife",
+        "a lid"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Revuelve con la cuchara vieja.",
+        "targetWord": "cuchara",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5c38e958d3b3a290293e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aroma",
+    "sentence": "El [[aroma]] sube y se le pega a la ropa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the smell",
+      "options": [
+        "the smell",
+        "the steam",
+        "the noise",
+        "the dust"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "El aroma sube y se le pega a la ropa.",
+        "targetWord": "aroma",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f6945766780e6c3ed1a8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pimienta",
+    "sentence": "Dime si le falta sal o si le sobra [[pimienta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pepper",
+      "options": [
+        "pepper",
+        "sugar",
+        "vinegar",
+        "garlic"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Dime si le falta sal o si le sobra pimienta.",
+        "targetWord": "pimienta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/83aa9339ced750fba221.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojar",
+    "sentence": "[[Moja]] la cuchara y aguarda un ratito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dip",
+      "options": [
+        "to dip",
+        "to lift",
+        "to hide",
+        "to drop"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Moja la cuchara y aguarda un ratito.",
+        "targetWord": "Moja",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cdad21d74ad15c2c5879.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pela",
+    "sentence": "Ella _____ la naranja y tira la piel a la basura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pela",
+      "options": [
+        "pela",
+        "compra",
+        "lava",
+        "pinta"
+      ],
+      "translation": "She _____ the orange and throws the skin in the bin.",
+      "optionTranslations": [
+        "peels",
+        "buys",
+        "washes",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Ella pela la naranja y tira la piel a la basura.",
+        "targetWord": "pela",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c24afecdb69b33f0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hierva",
+    "sentence": "Espera a que el agua _____ y echa la pasta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hierva",
+      "options": [
+        "hierva",
+        "caiga",
+        "cambie",
+        "vuelva"
+      ],
+      "translation": "Wait for the water to _____ and add the pasta.",
+      "optionTranslations": [
+        "boil",
+        "fall",
+        "change",
+        "come back"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Espera a que el agua hierva y echa la pasta.",
+        "targetWord": "hierva",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf23c8b533dfdef5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pica",
+    "sentence": "Ella _____ la cebolla en trozos muy pequeños con el cuchillo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pica",
+      "options": [
+        "pica",
+        "lava",
+        "compra",
+        "guarda"
+      ],
+      "translation": "She _____ the onion into very small pieces with the knife.",
+      "optionTranslations": [
+        "chops",
+        "washes",
+        "buys",
+        "puts away"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Ella pica la cebolla en trozos muy pequeños con el cuchillo.",
+        "targetWord": "pica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5c03d04b0473456.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "olla,colador,sartén,mantel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "olla",
+          "answer": "a pot",
+          "options": [
+            "a pot",
+            "a colander",
+            "a frying pan",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "colador",
+          "answer": "a colander",
+          "options": [
+            "a pot",
+            "a colander",
+            "a frying pan",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "sartén",
+          "answer": "a frying pan",
+          "options": [
+            "a pot",
+            "a colander",
+            "a frying pan",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "mantel",
+          "answer": "a tablecloth",
+          "options": [
+            "a pot",
+            "a colander",
+            "a frying pan",
+            "a tablecloth"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcha",
+    "sentence": "La conversación no baja la [[marcha]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pace",
+      "options": [
+        "the pace",
+        "the voice",
+        "the price",
+        "the light"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "La conversación no baja la marcha.",
+        "targetWord": "marcha",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/57db2cc9631356cf3523.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fregadero",
+    "sentence": "Hay un colador en el [[fregadero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sink",
+      "options": [
+        "the sink",
+        "the oven",
+        "the fridge",
+        "the drawer"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Hay un colador en el fregadero.",
+        "targetWord": "fregadero",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4a0ce0bb1a3c5eada13e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patata",
+    "sentence": "Pela esas [[patatas]] y córtalas en rodajas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a potato",
+      "options": [
+        "a potato",
+        "a carrot",
+        "an apple",
+        "an egg"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Pela esas patatas y córtalas en rodajas.",
+        "targetWord": "patatas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a4be42692a959177e24e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caldo",
+    "sentence": "Échalas al [[caldo]] antes de que hierva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the broth",
+      "options": [
+        "the broth",
+        "the oven",
+        "the bin",
+        "the sink"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Échalas al caldo antes de que hierva.",
+        "targetWord": "caldo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1e81dc25a200eff30124.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse cuenta",
+    "sentence": "Al bajar, se [[da cuenta]] de que no ha traducido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to realise",
+      "options": [
+        "to realise",
+        "to forget",
+        "to complain",
+        "to pretend"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Al bajar, se da cuenta de que no ha traducido.",
+        "targetWord": "da cuenta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5d82cfbb6a77db7b21d3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al fuego",
+    "sentence": "Comen con la sartén todavía [[al fuego]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the hob",
+      "options": [
+        "on the hob",
+        "on the table",
+        "on the floor",
+        "on the shelf"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Comen con la sartén todavía al fuego.",
+        "targetWord": "al fuego",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cbb9dc36642472add8da.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "humo",
+    "sentence": "Sale _____ gris de la chimenea en invierno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "humo",
+      "options": [
+        "humo",
+        "agua",
+        "arena",
+        "leche"
+      ],
+      "translation": "Grey _____ comes out of the chimney in winter.",
+      "optionTranslations": [
+        "smoke",
+        "water",
+        "sand",
+        "milk"
+      ],
+      "audioClip": {
+        "storySlug": "esa-olla-no-se-friega",
+        "storySource": "user",
+        "sentence": "Sale humo gris de la chimenea en invierno.",
+        "targetWord": "humo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5d1c22fa2f83869.mp3"
+      }
+    },
+    "featured": false
+  }
+]

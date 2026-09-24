@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cartón",
+    "sentence": "Baja al bar con una carpeta de [[cartón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cardboard",
+      "options": [
+        "cardboard",
+        "leather",
+        "glass",
+        "wool"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Baja al bar con una carpeta de cartón.",
+        "targetWord": "cartón",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/739b4ccc36066ec9c85b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clip",
+    "sentence": "En la portada hay un [[clip]] y una fecha vieja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a paper clip",
+      "options": [
+        "a paper clip",
+        "a coffee stain",
+        "a phone number",
+        "a bus ticket"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "En la portada hay un clip y una fecha vieja.",
+        "targetWord": "clip",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9379be2e26ae75985cc0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estómago",
+    "sentence": "Reconoce el papel y se le cierra el [[estómago]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stomach",
+      "options": [
+        "the stomach",
+        "the window",
+        "the folder",
+        "the umbrella"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Reconoce el papel y se le cierra el estómago.",
+        "targetWord": "estómago",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/128810c340a8047357fb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermano",
+    "sentence": "Mi [[hermano]] quería el local para guardar cosas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a brother",
+      "options": [
+        "a brother",
+        "a boss",
+        "a cousin",
+        "a tenant"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Mi hermano quería el local para guardar cosas.",
+        "targetWord": "hermano",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e06f2846ea3ff399e32f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costar",
+    "sentence": "Le [[costaba]] menos que alquilar abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cost",
+      "options": [
+        "to cost",
+        "to weigh",
+        "to last",
+        "to hurt"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Le costaba menos que alquilar abajo.",
+        "targetWord": "costaba",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/15acbb2fa6b8c967c4a9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junta",
+    "sentence": "Ni para pagar la [[junta]] del año.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the owners' meeting",
+      "options": [
+        "the owners' meeting",
+        "the electricity bill",
+        "the summer trip",
+        "the birthday party"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Ni para pagar la junta del año.",
+        "targetWord": "junta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ab97acc208d080272bdb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rompe",
+    "sentence": "Se le cae el plato al suelo y se _____ en pedazos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rompe",
+      "options": [
+        "rompe",
+        "lava",
+        "seca",
+        "calienta"
+      ],
+      "translation": "The plate falls to the floor and _____ into pieces.",
+      "optionTranslations": [
+        "breaks",
+        "washes",
+        "dries",
+        "heats"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Se le cae el plato al suelo y se rompe en pedazos.",
+        "targetWord": "rompe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b079ede417ac2d69.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "caros",
+    "sentence": "Estos zapatos son muy _____; cuestan una fortuna.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caros",
+      "options": [
+        "caros",
+        "limpios",
+        "anchos",
+        "nuevos"
+      ],
+      "translation": "These shoes are very _____; they cost a fortune.",
+      "optionTranslations": [
+        "expensive",
+        "clean",
+        "wide",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Estos zapatos son muy caros; cuestan una fortuna.",
+        "targetWord": "caros",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90febd8df7883ffb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "delante",
+    "sentence": "Se sienta _____, en la primera fila del cine.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "delante",
+      "options": [
+        "delante",
+        "fuera",
+        "lejos",
+        "encima"
+      ],
+      "translation": "She sits _____, in the first row of the cinema.",
+      "optionTranslations": [
+        "at the front",
+        "outside",
+        "far away",
+        "on top"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Se sienta delante, en la primera fila del cine.",
+        "targetWord": "delante",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8650cde622e1c304.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "monedero,tarjetero,cajero,sueldo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "monedero",
+          "answer": "a purse",
+          "options": [
+            "a purse",
+            "a card holder",
+            "a cash machine",
+            "a salary"
+          ]
+        },
+        {
+          "word": "tarjetero",
+          "answer": "a card holder",
+          "options": [
+            "a purse",
+            "a card holder",
+            "a cash machine",
+            "a salary"
+          ]
+        },
+        {
+          "word": "cajero",
+          "answer": "a cash machine",
+          "options": [
+            "a purse",
+            "a card holder",
+            "a cash machine",
+            "a salary"
+          ]
+        },
+        {
+          "word": "sueldo",
+          "answer": "a salary",
+          "options": [
+            "a purse",
+            "a card holder",
+            "a cash machine",
+            "a salary"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en dos",
+    "sentence": "Coge el papel y lo rompe [[en dos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in two",
+      "options": [
+        "in two",
+        "at last",
+        "on purpose",
+        "at once"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Coge el papel y lo rompe en dos.",
+        "targetWord": "en dos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0e1b422cb91e25094790.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portada",
+    "sentence": "En la [[portada]] hay un clip y una mancha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cover",
+      "options": [
+        "the cover",
+        "the corner",
+        "the floor",
+        "the window"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "En la portada hay un clip y una mancha.",
+        "targetWord": "portada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a92db640940e32b111bb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "local",
+    "sentence": "Quería el [[local]] para guardar cosas en verano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shop unit",
+      "options": [
+        "the shop unit",
+        "the garden",
+        "the van",
+        "the attic"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Quería el local para guardar cosas en verano.",
+        "targetWord": "local",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6f0c12dbf92214c6baaf.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suma",
+    "sentence": "Le enseña una [[suma]] a mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sum",
+      "options": [
+        "a sum",
+        "a map",
+        "a song",
+        "a poem"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Le enseña una suma a mano.",
+        "targetWord": "suma",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/18f440a59534e38dd5f4.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a mano",
+    "sentence": "Le enseña una suma [[a mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by hand",
+      "options": [
+        "by hand",
+        "by chance",
+        "by heart",
+        "by car"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Le enseña una suma a mano.",
+        "targetWord": "a mano",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cfae71de4a95b77faa8d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "céntimo",
+    "sentence": "Lo que resta al mes: unos [[céntimos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cent",
+      "options": [
+        "a cent",
+        "a euro",
+        "a note",
+        "a stamp"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Lo que resta al mes: unos céntimos.",
+        "targetWord": "céntimos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/810402fb32918bbee880.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "resta",
+    "sentence": "Para saber el cambio, _____ el precio al dinero que das.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "resta",
+      "options": [
+        "resta",
+        "mide",
+        "pinta",
+        "lava"
+      ],
+      "translation": "To work out the change, _____ the price from the money you give.",
+      "optionTranslations": [
+        "subtract",
+        "measure",
+        "paint",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-rompe-su-papel",
+        "storySource": "user",
+        "sentence": "Para saber el cambio, resta el precio al dinero que das.",
+        "targetWord": "resta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6bef303aa9dac472.mp3"
+      }
+    },
+    "featured": false
+  }
+]

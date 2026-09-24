@@ -1,0 +1,518 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "a oscuras",
+    "sentence": "Le llena la bandeja con frascos, ya [[a oscuras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the dark",
+      "options": [
+        "in the dark",
+        "in a rush",
+        "in the rain",
+        "in silence"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Le llena la bandeja con frascos, ya a oscuras.",
+        "targetWord": "a oscuras",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/404495d8484d99c5538f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "envolver",
+    "sentence": "Queso [[envuelto]] en papel grueso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wrap",
+      "options": [
+        "to wrap",
+        "to cut",
+        "to weigh",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Queso envuelto en papel grueso.",
+        "targetWord": "envuelto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/97f903fc221aa3e55d6f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercar",
+    "sentence": "Dice, y le [[acerca]] el cesto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring closer",
+      "options": [
+        "to bring closer",
+        "to throw away",
+        "to turn over",
+        "to fill up"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Dice, y le acerca el cesto.",
+        "targetWord": "acerca",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c0e6f5cf185fe55d2884.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin falta",
+    "sentence": "Pásate por la panadería [[sin falta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without fail",
+      "options": [
+        "without fail",
+        "without paying",
+        "without shoes",
+        "without noise"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Pásate por la panadería sin falta.",
+        "targetWord": "sin falta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/865aed8e9f8dba8f3594.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muñeca",
+    "sentence": "Sube con la [[muñeca]] tensa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wrist",
+      "options": [
+        "the wrist",
+        "the knee",
+        "the neck",
+        "the elbow"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Sube con la muñeca tensa.",
+        "targetWord": "muñeca",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e54a1d262519c6dc7f3a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despedirse",
+    "sentence": "No le cobra nada y se [[despiden]] dando las gracias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say goodbye",
+      "options": [
+        "to say goodbye",
+        "to sit down",
+        "to shake hands",
+        "to fall asleep"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "No le cobra nada y se despiden dando las gracias.",
+        "targetWord": "despiden",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fdd2c4ac90050f5e5fc6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesado",
+    "sentence": "Este baúl es muy _____ y no puedo levantarlo solo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesado",
+      "options": [
+        "pesado",
+        "barato",
+        "viejo",
+        "limpio"
+      ],
+      "translation": "This trunk is very _____ and I can't lift it on my own.",
+      "optionTranslations": [
+        "heavy",
+        "cheap",
+        "old",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Este baúl es muy pesado y no puedo levantarlo solo.",
+        "targetWord": "pesado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/417e7a4f59088c22.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contesta",
+    "sentence": "Le hago una pregunta y él _____ enseguida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contesta",
+      "options": [
+        "contesta",
+        "camina",
+        "paga",
+        "duerme"
+      ],
+      "translation": "I ask him a question and he _____ right away.",
+      "optionTranslations": [
+        "answers",
+        "walks",
+        "pays",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Le hago una pregunta y él contesta enseguida.",
+        "targetWord": "contesta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f16928a42757507.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suelo",
+    "sentence": "Se le cae el vaso al _____ y se rompe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suelo",
+      "options": [
+        "suelo",
+        "techo",
+        "tejado",
+        "cielo"
+      ],
+      "translation": "The glass falls to the _____ and breaks.",
+      "optionTranslations": [
+        "floor",
+        "ceiling",
+        "roof",
+        "sky"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Se le cae el vaso al suelo y se rompe.",
+        "targetWord": "suelo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b694c2234451abf.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tarro,limón,lata,bandeja",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tarro",
+          "answer": "a jar",
+          "options": [
+            "a jar",
+            "a lemon",
+            "a tin",
+            "a tray"
+          ]
+        },
+        {
+          "word": "limón",
+          "answer": "a lemon",
+          "options": [
+            "a jar",
+            "a lemon",
+            "a tin",
+            "a tray"
+          ]
+        },
+        {
+          "word": "lata",
+          "answer": "a tin",
+          "options": [
+            "a jar",
+            "a lemon",
+            "a tin",
+            "a tray"
+          ]
+        },
+        {
+          "word": "bandeja",
+          "answer": "a tray",
+          "options": [
+            "a jar",
+            "a lemon",
+            "a tin",
+            "a tray"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miel",
+    "sentence": "Dentro hay un tarro de [[miel]] y dos limones.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honey",
+      "options": [
+        "honey",
+        "flour",
+        "salt",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Dentro hay un tarro de miel y dos limones.",
+        "targetWord": "miel",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4e815d628e947f08a5ec.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banqueta",
+    "sentence": "Se sienta en la [[banqueta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stool",
+      "options": [
+        "a stool",
+        "a bench",
+        "a step",
+        "a rug"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Se sienta en la banqueta.",
+        "targetWord": "banqueta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bbd3b169e2158db0096b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cordón",
+    "sentence": "Deja el cesto y el [[cordón]] en el suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cord",
+      "options": [
+        "a cord",
+        "a coin",
+        "a comb",
+        "a cup"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Deja el cesto y el cordón en el suelo.",
+        "targetWord": "cordón",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2b1dc80aa3d328a7d041.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saco",
+    "sentence": "Sube la cuesta con el [[saco]] pesado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sack",
+      "options": [
+        "a sack",
+        "a hat",
+        "a dog",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Sube la cuesta con el saco pesado.",
+        "targetWord": "saco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/54ac7138e59dd7866aa3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tenso",
+    "sentence": "Sube con la muñeca [[tensa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tight",
+      "options": [
+        "tight",
+        "clean",
+        "warm",
+        "bare"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Sube con la muñeca tensa.",
+        "targetWord": "tensa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f9fd928f2e38486cc83d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frasco",
+    "sentence": "Le llena la bandeja con [[frascos]] y una lata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small bottle",
+      "options": [
+        "a small bottle",
+        "a small towel",
+        "a small plate",
+        "a small brush"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Le llena la bandeja con frascos y una lata.",
+        "targetWord": "frascos",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/96756a0c1b6575486f36.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombro",
+    "sentence": "Le aprieta el [[hombro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shoulder",
+      "options": [
+        "the shoulder",
+        "the ankle",
+        "the cheek",
+        "the thumb"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Le aprieta el hombro.",
+        "targetWord": "hombro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9db4330dc80e7adf31aa.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "octubre",
+    "sentence": "Porque en [[octubre]] os vais todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "October",
+      "options": [
+        "October",
+        "August",
+        "Monday",
+        "Christmas"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "Porque en octubre os vais todos.",
+        "targetWord": "octubre",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/16d74ecd28358114ccce.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "grueso",
+    "sentence": "El jersey es tan _____ que no entra en la maleta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grueso",
+      "options": [
+        "grueso",
+        "rojo",
+        "barato",
+        "nuevo"
+      ],
+      "translation": "The jumper is so _____ that it doesn't fit in the suitcase.",
+      "optionTranslations": [
+        "thick",
+        "red",
+        "cheap",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "todos-le-llenan-el-cesto",
+        "storySource": "user",
+        "sentence": "El jersey es tan grueso que no entra en la maleta.",
+        "targetWord": "grueso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca1c9a8d54495a42.mp3"
+      }
+    },
+    "featured": false
+  }
+]
