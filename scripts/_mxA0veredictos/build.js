@@ -5,12 +5,8 @@ const fichas = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const blobs = fs.existsSync(process.argv[3]) ? JSON.parse(fs.readFileSync(process.argv[3], "utf8")) : {};
 
 const NOTAS = {
-  "mx2-pintan-el-14-f04-content":
-    "Whisper, otro reconocedor, tambien oye \"Libro\" donde el texto dice \"lee Bruno\". Ya lo marcaste como defecto real en la tanda anterior y la voz ha vuelto a hacerlo en la toma nueva.",
-  "mx2-poquito-son-dos-dedos-f06-content":
-    "El texto escribe \"Poquito = dos dedos\" y el narrador lee el signo: \"poquito igual a dos dedos\". El gate compara contra la cadena escrita, donde el \"=\" desaparece. Lo marcaste como defecto real.",
-  "mx2-nadie-se-queja-nunca-s01-ritmo":
-    "6,49 palabras por segundo contra una mediana de 3,33: el doble. Es la oracion mas disparada de todo el journey.",
+  "mx3-poquito-son-dos-dedos-f06-content":
+    "El texto escribe \"Poquito = dos dedos\" y el narrador lee el signo: \"poquito igual a dos dedos\". Lo marcaste como defecto real dos veces, y esta es una toma nueva de la historia entera.",
 };
 
 const TEMAS = {
@@ -135,7 +131,7 @@ nav button:disabled{opacity:.35;cursor:default}
 
 <div class="wrap">
   <header><h1>Veredictos de Guadalajara</h1></header>
-  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; tanda NUEVA, con Karla y Renata. Los 21 masteres se re-narraron el 24 de septiembre, asi que los veredictos de la tanda anterior no valen para este audio.</p>
+  <p class="sub">Friends ES Mexico A0 &middot; 21 historias, voz Andreti &middot; las dos ultimas historias, re-narradas enteras porque sus fragmentos ya no admitian empalme limpio. Es el audio que falta por juzgar del journey.</p>
 
   <div class="marcador" id="marcador"></div>
   <div class="barra"><i id="barra"></i></div>
@@ -198,12 +194,9 @@ function pinta(){
         '<button id="b-next">siguiente &rarr;</button>' +
       '</nav>' +
     '</div>';
-  const video = zona.querySelector("video");
-  if (video) {
-    // Suena sola al abrir la ficha. El navegador lo permite despues del primer
-    // gesto del usuario; antes de eso falla en silencio y queda el boton.
-    video.play().catch(() => {});
-  }
+  // NADA de autoplay: el clip suena cuando el usuario le da al play, y no
+  // antes. Lo puse yo por mi cuenta el 2026-09-24 creyendo que ahorraba clics,
+  // y el usuario lo corto en seco: "Solo cuando yo de click a play".
   document.getElementById("b-fp").onclick = () => juzga("fp");
   document.getElementById("b-real").onclick = () => juzga("real");
   const prev = document.getElementById("b-prev"), next = document.getElementById("b-next");
