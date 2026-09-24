@@ -139,7 +139,7 @@
       "autoPort": true
     },
     {
-      "_comment": "Medición de la tarjeta de vocabulario en el peor caso; borrar cuando se cierre el tema.",
+      "_comment": "Medici\u00f3n de la tarjeta de vocabulario en el peor caso; borrar cuando se cierre el tema.",
       "name": "medir-tarjeta-8901",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
@@ -325,6 +325,19 @@
       "env": {
         "NEXT_DIST_DIR": ".next-3012"
       }
+    },
+    {
+      "_comment": "Worktree feedback-fichas (fichas de feedback compactas). Quitar con el worktree.",
+      "name": "feedback-fichas-3000",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/alejandrodelcarpio/digital-polyglot-library/.claude/worktrees/feedback-fichas",
+        "run",
+        "dev:web"
+      ],
+      "port": 3000,
+      "autoPort": false
     }
   ]
 }
