@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "coloquial de coordinacion torpe",
+  "espina": "Lena intenta organizarse como recien llegada, pero Munich le exige confiar en codigos locales anteriores al movil.",
+  "recursos": "Wiesn, reserva de mesa en enero, Tracht prestada, Theresienwiese, punto de encuentro sin senal",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "entender por que se habla de Oktoberfest en enero",
+      "impide": "Miriam necesita reservar sin saber cuantos iran",
+      "cuesta": "Lena acepta entrar en una planificacion absurda y temprana",
+      "cambia": "aprende que la Wiesn local empieza meses antes",
+      "emocion": "desconcierto divertido"
+    },
+    {
+      "slot": "2",
+      "quiere": "ponerse una Tracht sin parecer disfrazada",
+      "impide": "la Tracht prestada le queda mal y se arregla con una Sicherheitsnadel",
+      "cuesta": "camina a la Theresienwiese sintiendose visible",
+      "cambia": "entiende que pertenecer no exige hacerlo perfecto",
+      "emocion": "pudor con alivio"
+    },
+    {
+      "slot": "3",
+      "quiere": "reunir al grupo por movil en la Theresienwiese",
+      "impide": "no hay senal y todos describen sitios distintos",
+      "cuesta": "deja de coordinar y obedece el Treffpunkt fijo",
+      "cambia": "acepta que una regla analogica puede ser mas eficaz",
+      "emocion": "rendicion practica"
+    }
+  ]
+}

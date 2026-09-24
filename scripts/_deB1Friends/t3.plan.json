@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "comedia de reglas culinarias",
+  "espina": "Lena empieza a distinguir entre una regla local como amenaza y una regla local como ritual compartido.",
+  "recursos": "Weisswurst vor Mittag, Wirtshaus, suesser Senf, Weissbier, llegar tarde",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "entender por que Tobias corre para desayunar salchichas",
+      "impide": "la regla de que la Weisswurst no debe oir el mediodia",
+      "cuesta": "Lena acepta un desayuno con presion de reloj",
+      "cambia": "ve que la tradicion se mide por tiempo, no por apetito",
+      "emocion": "asombro hambriento"
+    },
+    {
+      "slot": "2",
+      "quiere": "ayudar a Miriam a conseguir Weisswurst tarde",
+      "impide": "Tobias trata la regla como cierre absoluto",
+      "cuesta": "Lena negocia sin burlarse de la costumbre",
+      "cambia": "descubre que la regla puede tener cocina y no excepcion formal",
+      "emocion": "picardia contenida"
+    },
+    {
+      "slot": "3",
+      "quiere": "organizar ella misma el desayuno antes de las doce",
+      "impide": "Tobias, el planificador, se queda atras",
+      "cuesta": "decide empezar sin esperar al experto",
+      "cambia": "entiende que cumplir la regla tambien puede cuidar al amigo que falla",
+      "emocion": "confianza tranquila"
+    }
+  ]
+}
