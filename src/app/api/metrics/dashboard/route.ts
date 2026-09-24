@@ -2499,13 +2499,41 @@ export async function GET(req: NextRequest): Promise<Response> {
     ? await computeRatingsMetrics({ userScope, from, to, storySlug, bookSlug })
     : emptyRatingsMetrics();
 
-  const learningPayload = computeLearningMetrics({
+  const learningPayloadCrudo = computeLearningMetrics({
     practiceRows: practiceList,
     vocabRows: vocabList,
     languageMap: learningLanguageMap,
     levelMap: learningLevelMap,
     normalizeLanguage: normalizeLanguageCode,
   });
+
+  // Los sets flojos vienen con el slug tal cual lo manda la app, y la mitad
+  // son la forma `journey-<id>`: el id de una historia de journey viaja en dos
+  // formas y esa es una de ellas. Una tabla de trabajo con doce ids no sirve
+  // de nada, asi que se traducen a su slug real.
+  const learningPayload = await (async () => {
+    const pseudo = learningPayloadCrudo.practice.worstSets
+      .map((r) => r.storySlug)
+      .filter((slug) => slug.startsWith("journey-"));
+    if (pseudo.length === 0) return learningPayloadCrudo;
+    const historias = await prisma.journeyStory.findMany({
+      where: { id: { in: pseudo.map((slug) => slug.slice("journey-".length)) } },
+      select: { id: true, slug: true, title: true },
+    });
+    const porId = new Map(historias.map((h) => [h.id, h.slug ?? h.title ?? null]));
+    return {
+      ...learningPayloadCrudo,
+      practice: {
+        ...learningPayloadCrudo.practice,
+        worstSets: learningPayloadCrudo.practice.worstSets.map((r) => ({
+          ...r,
+          storySlug: r.storySlug.startsWith("journey-")
+            ? porId.get(r.storySlug.slice("journey-".length)) ?? r.storySlug
+            : r.storySlug,
+        })),
+      },
+    };
+  })();
 
 
   // ── Quién compone el DAU y el WAU ──

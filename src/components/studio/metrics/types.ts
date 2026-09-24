@@ -280,6 +280,12 @@ export type DashboardData = {
         avgAccuracyPercent: number;
       }>;
       accuracyDistribution: Array<{ bucket: string; sessions: number }>;
+      worstSets: Array<{
+        storySlug: string;
+        sessions: number;
+        avgAccuracyPercent: number;
+        users: number;
+      }>;
     };
     vocab: {
       lookups: number;

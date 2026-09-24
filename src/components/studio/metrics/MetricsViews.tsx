@@ -1157,10 +1157,6 @@ export function LearningView({
     1,
     ...practice.byMode.map((m) => m.started + m.completed)
   );
-  const maxBucketSessions = Math.max(
-    1,
-    ...practice.accuracyDistribution.map((b) => b.sessions)
-  );
   const maxWordLookups = Math.max(1, ...vocab.topWords.map((w) => w.lookups));
 
   if (!hasPractice && !hasVocab) {
@@ -1326,63 +1322,77 @@ export function LearningView({
           </>
         )}
 
-        {practice.completed > 0 && (
+        {/*
+          Aqui vivia la distribucion de precision en cuatro tramos. Decia
+          CUANTAS sesiones salen flojas y nunca CUALES, asi que no se podia
+          arreglar ninguna. Esta lista dice que set rehacer.
+        */}
+        {practice.worstSets.length > 0 && (
           <>
             <div className="mx-panel__sub">
-              Distribución de precisión (sesiones terminadas)
+              Sets que se fallan (3 sesiones o más)
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {practice.accuracyDistribution.map((row) => (
-                <div
-                  key={row.bucket}
-                  style={{ display: "flex", alignItems: "center", gap: 12 }}
-                >
-                  <span
-                    style={{
-                      width: 90,
-                      fontSize: 12,
-                      color: "var(--mx-muted)",
-                      fontFamily: "var(--mx-mono)",
-                    }}
-                  >
-                    {row.bucket}
-                  </span>
-                  <div
-                    style={{
-                      flex: 1,
-                      height: 18,
-                      borderRadius: 6,
-                      background: "var(--mx-bg-input)",
-                      border: "1px solid var(--mx-border)",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: `${Math.round(
-                          (row.sessions / maxBucketSessions) * 100
-                        )}%`,
-                        height: "100%",
-                        background: "var(--mx-xp)",
-                        opacity: 0.85,
-                      }}
-                    />
-                  </div>
-                  <span
-                    className="mx-mono"
-                    style={{
-                      width: 60,
-                      textAlign: "right",
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: "var(--mx-fg)",
-                    }}
-                  >
-                    {row.sessions}
-                  </span>
-                </div>
-              ))}
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+                <thead>
+                  <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                    <th style={{ padding: "4px 6px" }}>Historia</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>Precisión</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>Sesiones</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>Personas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {practice.worstSets.map((row) => (
+                    <tr
+                      key={row.storySlug}
+                      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                    >
+                      <td style={{ padding: "4px 6px" }} className="mx-mono">
+                        {row.storySlug}
+                      </td>
+                      <td
+                        style={{
+                          padding: "4px 6px",
+                          textAlign: "right",
+                          fontVariantNumeric: "tabular-nums",
+                          color:
+                            row.avgAccuracyPercent < 60
+                              ? "var(--mx-neg)"
+                              : row.avgAccuracyPercent < 80
+                                ? "var(--mx-gold)"
+                                : undefined,
+                        }}
+                      >
+                        {row.avgAccuracyPercent}%
+                      </td>
+                      <td
+                        style={{
+                          padding: "4px 6px",
+                          textAlign: "right",
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {row.sessions}
+                      </td>
+                      <td
+                        style={{
+                          padding: "4px 6px",
+                          textAlign: "right",
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {row.users}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)" }}>
+              De peor a mejor, sobre sesiones terminadas. Con menos de tres sesiones no
+              entra: una tirada mala no es un set malo.
+            </p>
           </>
         )}
       </div>

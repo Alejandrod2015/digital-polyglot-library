@@ -136,6 +136,7 @@ const EMPTY_DATA: DashboardData = {
       practicingUsers: 0,
       byMode: [],
       accuracyDistribution: [],
+      worstSets: [],
     },
     vocab: {
       lookups: 0,

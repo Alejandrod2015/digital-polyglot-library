@@ -44,6 +44,23 @@ export type LearningMetrics = {
       avgAccuracyPercent: number;
     }>;
     accuracyDistribution: Array<{ bucket: string; sessions: number }>;
+    /**
+     * Los sets que la gente falla, de peor a mejor.
+     *
+     * La distribucion por tramos decia CUANTAS sesiones salen flojas y
+     * nunca CUALES, asi que no se podia arreglar ninguna. Esto si: cada
+     * fila es una historia con su precision media y las sesiones sobre las
+     * que se mide, y el trabajo que sale de aqui es rehacer ese set.
+     *
+     * Con menos de 3 sesiones no entra: una sola tirada mala no es un set
+     * malo, es una tarde mala.
+     */
+    worstSets: Array<{
+      storySlug: string;
+      sessions: number;
+      avgAccuracyPercent: number;
+      users: number;
+    }>;
   };
   vocab: {
     lookups: number;
@@ -90,6 +107,10 @@ export type LearningMetrics = {
 };
 
 export const TOP_VOCAB_WORDS_LIMIT = 25;
+/** Cuantos sets flojos se listan. Mas de esto deja de ser una lista de trabajo. */
+export const WORST_SETS_LIMIT = 12;
+/** Una tirada mala no es un set malo. Tres ya es un patron. */
+export const MIN_SESSIONS_FOR_WORST_SET = 3;
 
 const ACCURACY_BUCKETS: Array<{ bucket: string; min: number; max: number }> = [
   { bucket: "0-59%", min: 0, max: 59 },
@@ -108,6 +129,7 @@ export function emptyLearningMetrics(): LearningMetrics {
       practicingUsers: 0,
       byMode: [],
       accuracyDistribution: [],
+      worstSets: [],
     },
     vocab: {
       lookups: 0,
@@ -339,6 +361,39 @@ export function computeLearningMetrics({
         bucket: b.bucket,
         sessions: accuracyValues.filter((v) => v >= b.min && v <= b.max).length,
       })),
+      worstSets: (() => {
+        const porHistoria = new Map<
+          string,
+          { accuracies: number[]; users: Set<string> }
+        >();
+        for (const row of practiceCompleted) {
+          const acc = readAccuracy(readMeta(row.metadata));
+          if (acc === null) continue;
+          // "practice" es el slug que manda la app cuando ningun ejercicio
+          // traia historia detras: no hay set que rehacer, asi que fuera.
+          if (!row.storySlug || row.storySlug === "practice") continue;
+          const agg = porHistoria.get(row.storySlug) ?? {
+            accuracies: [],
+            users: new Set<string>(),
+          };
+          agg.accuracies.push(acc);
+          agg.users.add(row.userId);
+          porHistoria.set(row.storySlug, agg);
+        }
+        return Array.from(porHistoria.entries())
+          .filter(([, v]) => v.accuracies.length >= MIN_SESSIONS_FOR_WORST_SET)
+          .map(([storySlug, v]) => ({
+            storySlug,
+            sessions: v.accuracies.length,
+            avgAccuracyPercent: avgOf(v.accuracies),
+            users: v.users.size,
+          }))
+          .sort(
+            (a, b) =>
+              a.avgAccuracyPercent - b.avgAccuracyPercent || b.sessions - a.sessions
+          )
+          .slice(0, WORST_SETS_LIMIT);
+      })(),
     },
     vocab: {
       lookups: vocabRows.length,
