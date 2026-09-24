@@ -122,7 +122,7 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  // 100 y 11, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // 100 y 1, recalibrados el 2026-09-24 con el reparto nuevo de senales.
   // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
   // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
   // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
@@ -131,19 +131,24 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   // directo sigue entrando directo; quien se rechazaba sin leer, igual.
   // (88 en el primer reparto; 90 al pasar 10 puntos de las horas declaradas
   // a la motivacion; 94 y 26 al sacar las horas y la cuenta de tienda; 100 y
-  // 11 al salir tambien la motivacion.)
+  // 11 al salir la motivacion; 100 y 1 al salir tambien el texto libre.)
   //
-  // Con dos senales el score solo puede tomar NUEVE valores, asi que el
-  // umbral de arriba acaba en el propio maximo: auto-aceptar significa ahora
-  // "su nivel esta publicado en su variante exacta y escribio algo". Es una
-  // consecuencia del reparto, no un descuido; el auto-invite lleva apagado
-  // desde antes, y si se enciende hay que mirar esto primero.
+  // Con una sola senal el score toma TRES valores (100, 70, 0), asi que:
+  //
+  // - Auto-aceptar significa "su nivel esta publicado en su variante exacta".
+  //   El auto-invite lleva apagado desde antes; si se enciende, esto es lo
+  //   primero que hay que mirar.
+  // - El suelo de rechazo queda INERTE a proposito, y por eso vale 1. Un 0
+  //   solo se llega con idioma, variante o nivel sin publicar, y esos casos
+  //   ya salen a la cola por su propia puerta, antes del suelo. Nadie se
+  //   rechaza por puntuacion: los unicos rechazos automaticos que quedan son
+  //   el correo desechable y pedir iOS sin iPhone.
   autoAcceptAt: 100,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 11,
+  autoDeclineBelow: 1,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -192,25 +197,6 @@ function emailDomain(email: string): string {
   return email.split("@")[1]?.toLowerCase().trim() ?? "";
 }
 
-// Phrases that show up verbatim in applications written to get past a form
-// rather than to say something. Matched on the lowercased reason.
-const LOW_EFFORT_MARKERS = [
-  "i want to test",
-  "i want to try",
-  "sounds good",
-  "sounds interesting",
-  "looks cool",
-  "looks interesting",
-  "nice app",
-  "good app",
-  "let me in",
-  "please accept",
-  "i like languages",
-  "i love languages",
-  "test the app",
-  "want to be a beta tester",
-];
-
 export type BetaApplication = {
   email: string;
   appleIdEmail?: string | null;
@@ -240,71 +226,18 @@ export type BetaVerdict = {
 };
 
 /**
- * Mide el texto libre de "por que quieres entrar", y mide poco a proposito.
- *
- * Valia 27 de los 82 puntos porque se daba por hecho que quien escribe dos
- * frases concretas prueba la app y quien escribe "i want to test" la instala
- * una vez. Con 124 invitados y aceptados ya se puede comprobar, y no es
- * cierto: la correlacion entre palabras escritas y actividad real es 0,01, y
- * con el feedback enviado es -0,04. Los dos testers mas activos de todo el
- * programa escribieron 7 y 5 palabras; el que escribio 115 esta el decimo.
- *
- * Asi que aqui solo queda el suelo: distinguir a quien contesto de verdad de
- * quien no contesto. Diez puntos, y las restas son por las senales de
- * respuesta tirada, no por brevedad. Nadie tiene tiempo de escribir un parrafo
- * y eso nunca fue lo que separaba a un tester bueno de uno ausente.
- */
-function scoreApplicationReason(reason: string | null | undefined): {
-  points: number;
-  note: string;
-} {
-  const text = (reason ?? "").trim();
-  if (!text) return { points: 0, note: "no reason given" };
-
-  const lower = text.toLowerCase();
-  const words = text.split(/\s+/).filter(Boolean);
-
-  // Contesto: parte arriba y solo baja por las senales de respuesta tirada.
-  let points = REASON_MAX;
-
-  // Menos de ocho palabras no es una respuesta corta, es un campo rellenado.
-  // Resta, pero no deja en cero: "Interested what it has to offer" dice menos
-  // que "I just moved to Las Vegas" y las dos dicen algo.
-  if (words.length < 8) points -= 5;
-
-  // Las frases hechas del que solo quiere la invitacion, cuando ademas no hay
-  // texto alrededor que las respalde.
-  if (LOW_EFFORT_MARKERS.some((m) => lower.includes(m)) && words.length < 25) points -= 5;
-
-  // Ni una mayuscula ni un signo: tecleado para pasar el validador.
-  if (text === lower && !/[.!?,]/.test(text)) points -= 2;
-
-  // La misma palabra una y otra vez es relleno para llegar al minimo.
-  const unique = new Set(words.map((w) => w.toLowerCase())).size;
-  if (words.length >= 12 && unique / words.length < 0.5) points -= 3;
-
-  const clamped = Math.max(0, Math.min(REASON_MAX, points));
-  const note =
-    clamped >= REASON_MAX ? "answered properly"
-    : clamped >= 5 ? "short answer"
-    : "low-effort answer";
-  return { points: clamped, note };
-}
-
-/**
  * El techo que la suma de senales puede alcanzar de verdad, senal por senal.
  *
  * Cada constante es el maximo REAL de su senal, no un tope teorico: si una
  * deja de ser alcanzable, esta suma miente y el `/100` vuelve a mentir con
- * ella. Quedan dos senales y la suma da 47; cada vez que sale una el techo
- * baja, y los umbrales se recalibran al percentil que ocupaban en vez de
- * quedarse donde estaban.
+ * ella. Queda UNA senal, la disponibilidad, asi que el score deja de fingir
+ * un ranking: 100 si tenemos su nivel en su variante, 70 si se lo damos desde
+ * el pool, 0 si no hay nada que darle.
  *
  * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
  * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
  * parecer descartado a quien pedia justo lo que tenemos publicado.
  */
-const REASON_MAX = 10;
 const LANGUAGE_MAX = 37;
 /**
  * Lo que vale que el nivel pedido exista en el POOL pero no en la variante
@@ -312,7 +245,7 @@ const LANGUAGE_MAX = 37;
  * bien que uno mexicano. Es el 70% de la nota entera, redondeado.
  */
 const LANGUAGE_POOL_MATCH = 26;
-const MAX_RAW_SCORE = REASON_MAX + LANGUAGE_MAX;
+const MAX_RAW_SCORE = LANGUAGE_MAX;
 
 /** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
 function normalizeScore(raw: number): number {
@@ -323,6 +256,13 @@ function normalizeScore(raw: number): number {
  * Aqui vivian tres senales que ya no se puntuan (2026-09-24, decision del
  * usuario):
  *
+ * - El TEXTO LIBRE de "por que quieres entrar", que valia 27 y acabo en 10.
+ *   Con 124 invitados y aceptados la correlacion entre palabras escritas y
+ *   actividad real es 0,01, y con el feedback enviado es -0,04: los dos
+ *   testers mas activos del programa escribieron 7 y 5 palabras. Mientras
+ *   hubo otras senales daba igual que pesara poco; al quedarse solo, ordenaba
+ *   la cola entera por quien habia escrito mas largo. Se sigue leyendo en la
+ *   ficha, que es donde decide una persona.
  * - La MOTIVACION del desplegable, que llego a valer 22. Fuera porque el
  *   programa necesita gente DISTINTA probando: puntuar el motivo convierte al
  *   scorer en un filtro de perfil y las plazas se irian todas al mismo tipo
@@ -405,9 +345,6 @@ export function evaluateApplication(
   }
 
   // ── Score ──
-  const reason = scoreApplicationReason(app.applicationReason);
-  signals.push({ label: `Application text: ${reason.note}`, points: reason.points });
-
   const languageRecruited = rules.acceptedTargetLanguages.some(
     (l) => l.toLowerCase() === app.targetLanguage.trim().toLowerCase(),
   );
@@ -459,7 +396,7 @@ export function evaluateApplication(
 
   // Los puntos de cada senal siguen siendo los de siempre (y asi se listan en
   // `signals`); lo que sale de aqui es su porcentaje del techo alcanzable.
-  const score = normalizeScore(reason.points + languagePoints);
+  const score = normalizeScore(languagePoints);
 
   // ── Verdict ──
   // A la cola, nunca al rechazo: que hoy no tengamos su nivel no dice nada de
