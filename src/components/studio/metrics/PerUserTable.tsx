@@ -36,9 +36,46 @@ function delta(actual: number, anterior: number, decimales: number): string | nu
   return d > 0 ? `+${d}` : String(d);
 }
 
+type Segmento = "apagados" | "bajaron" | "subieron" | "todos";
+
+/**
+ * En que grupo cae una persona comparando el periodo con el anterior.
+ *
+ * Los minutos mandan porque son lo unico continuo: dias activos e historias
+ * terminadas saltan de cero a uno y de uno a cero por un dia de diferencia.
+ */
+function segmentoDe(u: MetricsPerUserRow): Segmento {
+  if (u.minutes === 0 && u.prevMinutes > 0) return "apagados";
+  if (u.minutes < u.prevMinutes) return "bajaron";
+  if (u.minutes > u.prevMinutes) return "subieron";
+  return "todos";
+}
+
 export function PerUserTable({ rows, days }: { rows: MetricsPerUserRow[]; days: number }) {
   const [orden, setOrden] = useState<Columna>("minutes");
-  const ordenadas = [...rows].sort((a, b) => b[orden] - a[orden] || b.minutes - a.minutes);
+  // La tabla listaba a todo el mundo, y de 94 filas unas 60 estaban a cero en
+  // las cuatro columnas: ordenar por minutos dejaba arriba a quien ya sabias
+  // que iba bien y enterraba lo unico que pide accion, que es quien ESTABA y
+  // ya no esta. Se entra por ese grupo.
+  const [segmento, setSegmento] = useState<Segmento>("apagados");
+
+  const porSegmento = {
+    apagados: rows.filter((u) => segmentoDe(u) === "apagados"),
+    bajaron: rows.filter((u) => segmentoDe(u) === "bajaron"),
+    subieron: rows.filter((u) => segmentoDe(u) === "subieron"),
+    todos: rows,
+  };
+  const visibles = porSegmento[segmento];
+  const ordenadas = [...visibles].sort(
+    (a, b) => b[orden] - a[orden] || b.minutes - a.minutes
+  );
+
+  const CHIPS: Array<{ key: Segmento; label: string }> = [
+    { key: "apagados", label: "Se apagaron" },
+    { key: "bajaron", label: "Van a menos" },
+    { key: "subieron", label: "Van a más" },
+    { key: "todos", label: "Todos" },
+  ];
 
   return (
     <div className="mx-panel">
@@ -48,12 +85,33 @@ export function PerUserTable({ rows, days }: { rows: MetricsPerUserRow[]; days: 
           <h3 className="mx-panel__title">Quién va a más y quién a menos</h3>
         </div>
         <span className="mx-panel__hint">
-          {rows.length} {rows.length === 1 ? "persona activa" : "personas activas"} · variación contra los {days} días anteriores
+          contra los {days} días anteriores
         </span>
       </div>
 
-      {rows.length === 0 ? (
-        <p style={{ opacity: 0.6, fontSize: 13, margin: 0 }}>Nadie con actividad en el rango.</p>
+      <div className="mx-segmented" style={{ marginBottom: 12 }}>
+        {CHIPS.map((c) => (
+          <button
+            type="button"
+            key={c.key}
+            onClick={() => setSegmento(c.key)}
+            className={
+              segmento === c.key
+                ? "mx-segmented__btn mx-segmented__btn--active"
+                : "mx-segmented__btn"
+            }
+          >
+            {c.label} {porSegmento[c.key].length}
+          </button>
+        ))}
+      </div>
+
+      {ordenadas.length === 0 ? (
+        <p style={{ opacity: 0.6, fontSize: 13, margin: 0 }}>
+          {segmento === "apagados"
+            ? "Nadie que estuviera activo se ha apagado."
+            : "Nadie en este grupo."}
+        </p>
       ) : (
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>

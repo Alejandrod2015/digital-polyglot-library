@@ -661,69 +661,94 @@ export default function MetricsDashboard() {
 function AudienceView({ data }: { data: DashboardData }) {
   const ob = data.audience.onboardingFunnel;
   const wk = data.audience.weeklyActivity;
+
+  // Los pasos con la gente que se pierde EN cada uno, no su porcentaje sobre
+  // el arranque: lo accionable es el escalon, no la altura.
+  const pasosOnboarding = [
+    { label: "Empiezan", value: ob.started },
+    { label: "Paso 1", value: ob.step1Completed },
+    { label: "Paso 2", value: ob.step2Completed },
+    { label: "Paso 3", value: ob.step3Completed },
+    { label: "Terminan", value: ob.finished },
+  ].map((paso, i, todos) => ({
+    ...paso,
+    perdidos: i === 0 ? 0 : Math.max(0, todos[i - 1].value - paso.value),
+  }));
+  const peorPaso = pasosOnboarding
+    .slice(1)
+    .reduce<(typeof pasosOnboarding)[number] | null>(
+      (peor, paso) => (peor === null || paso.perdidos > peor.perdidos ? paso : peor),
+      null
+    );
   const maxBucketUsers = Math.max(
     1,
     ...wk.distribution.map((b) => b.users)
   );
   return (
     <div className="mx-view">
+      {/*
+        El onboarding estaba en siete tarjetas sueltas y cada una decia su
+        porcentaje "del start", asi que para saber DONDE se cae la gente
+        habia que restar de cabeza. Es una secuencia: se pinta como
+        secuencia, y el peor salto va marcado, que es el unico paso sobre el
+        que se puede hacer algo esta semana.
+      */}
       <div className="mx-panel">
         <div className="mx-panel__head">
           <div>
             <div className="mx-panel__eyebrow">Onboarding</div>
-            <h3 className="mx-panel__title">Drop-off por paso</h3>
+            <h3 className="mx-panel__title">Dónde se cae la gente</h3>
           </div>
           <span className="mx-panel__hint">
-            cuenta solo desde el deploy del tracking
+            {peorPaso
+              ? `peor salto: ${peorPaso.label} (-${peorPaso.perdidos})`
+              : "cuenta solo desde el deploy del tracking"}
           </span>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard label="Started" value={ob.started} />
-          <KpiCard
-            label="Step 1 → 2"
-            value={ob.step1Completed}
-            hint={`${ob.step1Rate}% del start`}
-          />
-          <KpiCard
-            label="Step 2 → 3"
-            value={ob.step2Completed}
-            hint={`${ob.step2Rate}% del start`}
-          />
-          <KpiCard
-            label="Step 3 → 4"
-            value={ob.step3Completed}
-            hint={`${ob.step3Rate}% del start`}
-          />
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-            marginTop: 10,
-          }}
-        >
-          <KpiCard
-            label="Finished"
-            value={ob.finished}
-            accent="xp"
-            hint={`${ob.finishRate}% completion`}
-          />
-          <KpiCard label="Abandoned (step 1)" value={ob.abandoned} />
-          <KpiCard label="Level test started" value={ob.levelTestStarted} />
-          <KpiCard
-            label="Level test completed"
-            value={ob.levelTestCompleted}
-            accent="cyan"
-            hint={`${ob.levelTestCompleteRate}% pass-through`}
-          />
-        </div>
+        {ob.started > 0 ? (
+          <>
+            {pasosOnboarding.map((paso) => (
+              <FunnelBar
+                key={paso.label}
+                label={paso.label}
+                value={paso.value}
+                base={ob.started}
+                accent={paso.label === peorPaso?.label ? "#e0653a" : "#5ad19a"}
+                note={
+                  paso.label === peorPaso?.label
+                    ? `se van ${paso.perdidos} aquí`
+                    : undefined
+                }
+              />
+            ))}
+            <div className="mx-rate-grid" style={{ marginTop: 12 }}>
+              <div className="mx-rate">
+                <span>Terminan</span>
+                <strong>{ob.finishRate}%</strong>
+              </div>
+              <div className="mx-rate">
+                <span>Abandonan en el paso 1</span>
+                <strong
+                  style={{ color: ob.abandoned > 0 ? "var(--mx-neg)" : undefined }}
+                >
+                  {ob.abandoned}
+                </strong>
+              </div>
+              <div className="mx-rate">
+                <span>Test de nivel: empiezan</span>
+                <strong>{ob.levelTestStarted}</strong>
+              </div>
+              <div className="mx-rate">
+                <span>Test de nivel: lo acaban</span>
+                <strong>{ob.levelTestCompleteRate}%</strong>
+              </div>
+            </div>
+          </>
+        ) : (
+          <p style={{ opacity: 0.6, fontSize: 13 }}>
+            Sin onboardings empezados en el rango.
+          </p>
+        )}
       </div>
 
       <div className="mx-panel">
