@@ -32,7 +32,7 @@
 /** Ciudades aprobadas por idioma. La clave es `Journey.language`. */
 export const APPROVED_CITIES: Record<string, string[]> = {
   french: ["Paris", "Marseille"],
-  german: ["Berlin", "Hamburg", "Frankfurt"],
+  german: ["Berlin", "Hamburg", "Frankfurt", "Munich"],
   italian: ["Milan"],
   spanish: ["Madrid", "Buenos Aires", "Guadalajara", "Santiago de Compostela"],
   portuguese: ["Brasilia"],
