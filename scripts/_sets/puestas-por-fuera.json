@@ -289,7 +289,7 @@
     "type": "meaning_in_context",
     "word": "ver",
     "featured": false,
-    "sentence": "¿Tú las [[viste]]?",
+    "sentence": "Bruno no [[ve]] las llaves en la azotea.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to see",
@@ -302,8 +302,8 @@
       "audioClip": {
         "storySlug": "puestas-por-fuera",
         "storySource": "user",
-        "sentence": "¿Tú las viste?",
-        "targetWord": "viste",
+        "sentence": "Bruno no ve las llaves en la azotea.",
+        "targetWord": "ve",
         "language": "spanish"
       }
     }
