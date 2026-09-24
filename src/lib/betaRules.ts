@@ -122,14 +122,16 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  // 88 y 33, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // 90 y 33, recalibrados el 2026-09-24 con el reparto nuevo de senales.
   // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
   // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
   // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
   // con score paso de 48 a 78. 88 es el mismo percentil 86 que ocupaba el 60
   // viejo, y 33 el mismo percentil 3 que ocupaba el 24. Quien entraba
   // directo sigue entrando directo; quien se rechazaba sin leer, igual.
-  autoAcceptAt: 88,
+  // (88 en el primer reparto; 90 tras pasar 10 puntos de las horas
+  // declaradas a la motivacion, que subio otro poco la distribucion.)
+  autoAcceptAt: 90,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
@@ -295,7 +297,7 @@ function scoreApplicationReason(reason: string | null | undefined): {
  * parecer descartado a quien pedia justo lo que tenemos publicado.
  */
 const REASON_MAX = 10;
-const HOURS_MAX = 20;
+const HOURS_MAX = 10;
 const LANGUAGE_MAX = 37;
 /**
  * Lo que vale que el nivel pedido exista en el POOL pero no en la variante
@@ -303,7 +305,7 @@ const LANGUAGE_MAX = 37;
  * bien que uno mexicano. Es el 70% de la nota entera, redondeado.
  */
 const LANGUAGE_POOL_MATCH = 26;
-const MOTIVATION_MAX = 12;
+const MOTIVATION_MAX = 22;
 const EXTRAS_MAX = 3;
 const MAX_RAW_SCORE = REASON_MAX + HOURS_MAX + LANGUAGE_MAX + MOTIVATION_MAX + EXTRAS_MAX;
 
@@ -312,12 +314,23 @@ function normalizeScore(raw: number): number {
   return Math.max(0, Math.min(100, Math.round((raw / MAX_RAW_SCORE) * 100)));
 }
 
+/**
+ * Las horas que la persona DICE que va a dedicar, que valen la mitad de lo
+ * que valian.
+ *
+ * Costaban 20 puntos y ordenaban al reves: entre los 124 invitados y
+ * aceptados, quien declaro 1-3 horas tiene mediana de 5,5 eventos y quien
+ * declaro 4-7 tiene 4, y cobraban 7 y 15. El unico tramo que rinde de verdad
+ * es "8+" (mediana 14,5), y son seis personas, asi que la ventaja que se le
+ * da es de cuatro puntos y no de trece. Los otros dos tramos empatan porque
+ * en el dato empatan.
+ */
 function scoreWeeklyHours(hours: string | null | undefined): number {
   // Values come from the form as "1-3" | "4-7" | "8+".
   const h = (hours ?? "").trim();
-  if (h.startsWith("8")) return 20;
-  if (h.startsWith("4")) return 15;
-  if (h.startsWith("1")) return 7;
+  if (h.startsWith("8")) return HOURS_MAX;
+  if (h.startsWith("4")) return 6;
+  if (h.startsWith("1")) return 6;
   return 0;
 }
 
@@ -333,24 +346,26 @@ function scoreMotivation(motivation: string | null | undefined): number {
   //   Work               n=9    mediana 0
   //
   // "Work" cobraba 11, la segunda nota mas alta del campo, y es la unica
-  // opcion cuya mediana de actividad es cero. La horquilla se estrecha a
-  // 7..12 porque con estas muestras no da para mas: los dos extremos tienen
-  // seis y nueve personas detras.
+  // opcion cuya mediana de actividad es cero. La horquilla se queda estrecha
+  // (13..22) porque con estas muestras no da para mas: los dos extremos
+  // tienen seis y nueve personas detras. El campo pesa 22 desde el
+  // 2026-09-24, que son los 10 que se le quitaron a las horas declaradas: lo
+  // que la persona dice que quiere separa mejor que las horas que promete.
   switch ((motivation ?? "").trim().toLowerCase()) {
     case "family connection":
-      return 12;
+      return MOTIVATION_MAX;
     case "keep up my level":
-      return 12;
+      return MOTIVATION_MAX;
     case "move abroad":
-      return 10;
+      return 18;
     case "travel":
-      return 7;
+      return 13;
     case "just for fun":
-      return 7;
+      return 13;
     case "work":
-      return 7;
+      return 13;
     default:
-      return 7;
+      return 13;
   }
 }
 
