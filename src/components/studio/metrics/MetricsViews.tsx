@@ -353,10 +353,14 @@ function LanguageSplitPanel({
             <tbody>
               {rows.map((fila) => (
                 <tr key={`${fila.language}/${fila.variant}`}>
-                  <td>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
+                  <td title={etiquetaIdioma(fila)}>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                       <LangTag code={LANG_CODE[fila.language] ?? null} />
-                      {etiquetaIdioma(fila)}
+                      {fila.variant ? (
+                        <LangTag code={VARIANT_CODE[fila.variant] ?? fila.variant.slice(0, 3)} />
+                      ) : (
+                        <span style={{ color: "var(--mx-muted)" }}>libros</span>
+                      )}
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>{fila.users}</td>
@@ -383,6 +387,30 @@ function LanguageSplitPanel({
 function etiquetaIdioma(fila: { language: string; variant: string }): string {
   return fila.variant ? `${fila.language} · ${fila.variant}` : fila.language;
 }
+
+/**
+ * La variante, en dos o cinco letras.
+ *
+ * La fila decía "spanish · latam" al lado de una etiqueta que ya ponía ES,
+ * así que el idioma salia dos veces. Ahora son dos códigos: el del idioma y el
+ * de la variante. `latam` no es un país y se queda con su token; el resto usa
+ * el codigo del país. El nombre largo sigue estando en el `title` de la celda.
+ */
+const VARIANT_CODE: Record<string, string> = {
+  latam: "LATAM",
+  spain: "ES",
+  mexico: "MX",
+  colombia: "CO",
+  argentina: "AR",
+  chile: "CL",
+  brazil: "BR",
+  france: "FR",
+  germany: "DE",
+  italy: "IT",
+  poland: "PL",
+  korea: "KR",
+  egypt: "EG",
+};
 
 /** El idioma viene entero de la base ("spanish"); la etiqueta quiere el código. */
 const LANG_CODE: Record<string, string> = {
