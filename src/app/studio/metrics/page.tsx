@@ -400,7 +400,13 @@ export default function MetricsDashboard() {
     if (section === "vanity") return <VanityView data={data} />;
     if (section === "audiobooks") return <AudiobooksView data={data} />;
     if (section === "engagement") return <EngagementView data={data} />;
-    if (section === "funnels") return <FunnelsView data={data} />;
+    if (section === "funnels")
+      return (
+        <FunnelsView
+          data={data}
+          activation={<ActivationFunnelPanel days={data.range.days} cohort={cohort} />}
+        />
+      );
 
     if (section === "audience") {
       return <AudienceView data={data} />;
@@ -1649,36 +1655,35 @@ function RetentionPanel({
   );
 }
 
-function AcquisitionView({
-  data,
+/**
+ * El embudo de activacion, que ahora se pinta en la pestana de Embudos.
+ *
+ * Se trae sus datos solo porque salen de `/api/metrics/acquisition` y no del
+ * tablero; el resto de embudos ya viajan dentro de `DashboardData`.
+ */
+function ActivationFunnelPanel({
+  days,
   cohort,
 }: {
-  data: DashboardData;
+  days: number;
   cohort: MetricsCohort;
 }) {
-  const cf = data.checkoutFunnel;
-  const days = data.range.days;
-  const [acq, setAcq] = useState<AcquisitionPayload | null>(null);
+  const [funnel, setFunnel] = useState<AcquisitionPayload["funnel"] | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  // Usuario cuya ficha está abierta. Cada fila de "Altas recientes" abre el
-  // panel lateral con todas sus métricas.
-  const [openUserId, setOpenUserId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    setError(null);
     fetch(`/api/metrics/acquisition?days=${days}&cohort=${cohort}`)
       .then(async (r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
-      .then((j) => {
-        if (!cancelled) setAcq(j as AcquisitionPayload);
+      .then((j: AcquisitionPayload) => {
+        if (!cancelled) setFunnel(j.funnel ?? null);
       })
-      .catch((e) => {
-        if (!cancelled) setError(e instanceof Error ? e.message : "error");
+      .catch(() => {
+        if (!cancelled) setFunnel(null);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -1688,60 +1693,77 @@ function AcquisitionView({
     };
   }, [days, cohort]);
 
-  const f = acq?.funnel;
+  const f = funnel;
+  return (
+    <div className="mx-panel" style={{ marginBottom: 12 }}>
+      <div className="mx-panel__head">
+        <div>
+          <div className="mx-panel__eyebrow">Activación</div>
+          <h3 className="mx-panel__title">Embudo signup → escuchar → pagar</h3>
+        </div>
+        <span className="mx-panel__hint">cohorte: altas en {days}d</span>
+      </div>
+      {f && f.signups > 0 ? (
+        <>
+          <FunnelBar label="Se registraron" value={f.signups} base={f.signups} accent="#6ea8fe" />
+          <FunnelBar label="Completaron onboarding (eligieron idioma)" value={f.onboarded} base={f.signups} accent="#5ad19a" />
+          <FunnelBar label="Abrieron una historia" value={f.openedStory} base={f.signups} accent="#5ad19a" />
+          <FunnelBar
+            label="Escucharon audio (progreso real)"
+            value={f.listened}
+            base={f.signups}
+            accent={f.listened === 0 ? "#e0653a" : "#5ad19a"}
+            note={f.listened === 0 ? "⚠ nadie escuchó (paywall)" : undefined}
+          />
+          <FunnelBar label="Vieron precios" value={f.viewedPlans} base={f.signups} accent="#d3a13a" />
+          <FunnelBar label="Pagaron" value={f.paid} base={f.signups} accent="#d3a13a" />
+        </>
+      ) : (
+        <p style={{ opacity: 0.6, fontSize: 13 }}>
+          {loading ? "Cargando…" : "Sin altas en el rango seleccionado."}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function AcquisitionView({
+  data,
+  cohort,
+}: {
+  data: DashboardData;
+  cohort: MetricsCohort;
+}) {
+  const days = data.range.days;
+  const [acq, setAcq] = useState<AcquisitionPayload | null>(null);
+  // Usuario cuya ficha está abierta. Cada fila de "Altas recientes" abre el
+  // panel lateral con todas sus métricas.
+  const [openUserId, setOpenUserId] = useState<string | null>(null);
+
+  // Ni carga ni error tienen ya donde pintarse: los dos sitios que los
+  // enseñaban (el panel de altas de Clerk y el embudo de activación) han
+  // salido de esta vista. Los dos paneles que quedan se dibujan solo cuando
+  // hay datos, asi que un fallo deja la vista vacia en vez de a medias.
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`/api/metrics/acquisition?days=${days}&cohort=${cohort}`)
+      .then(async (r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((j) => {
+        if (!cancelled) setAcq(j as AcquisitionPayload);
+      })
+      .catch(() => {
+        if (!cancelled) setAcq(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [days, cohort]);
+
   return (
     <div className="mx-view">
-      {/* Signups; sourced from Clerk (no depende del webhook) */}
-      <div className="mx-panel" style={{ marginBottom: 12 }}>
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Altas (fuente: Clerk)</div>
-            <h3 className="mx-panel__title">Cuentas creadas</h3>
-          </div>
-          <span className="mx-panel__hint">
-            {acq ? `instancia ${acq.clerkInstance}` : ""}
-            {error ? ` · error: ${error}` : loading ? " · cargando…" : ""}
-          </span>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
-          <KpiCard label="Total (histórico)" value={acq?.signups.totalAllTime ?? 0} />
-          <KpiCard label="Últimos 30 días" value={acq?.signups.last30d ?? 0} accent="cyan" />
-          <KpiCard label="Últimos 7 días" value={acq?.signups.last7d ?? 0} accent="xp" />
-          <KpiCard label={`En el rango (${days}d)`} value={acq?.signups.inWindow ?? 0} />
-        </div>
-      </div>
-
-      {/* Activation funnel */}
-      <div className="mx-panel" style={{ marginBottom: 12 }}>
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Activación</div>
-            <h3 className="mx-panel__title">Embudo signup → escuchar → pagar</h3>
-          </div>
-          <span className="mx-panel__hint">cohorte: altas en {days}d</span>
-        </div>
-        {f && f.signups > 0 ? (
-          <>
-            <FunnelBar label="Se registraron" value={f.signups} base={f.signups} accent="#6ea8fe" />
-            <FunnelBar label="Completaron onboarding (eligieron idioma)" value={f.onboarded} base={f.signups} accent="#5ad19a" />
-            <FunnelBar label="Abrieron una historia" value={f.openedStory} base={f.signups} accent="#5ad19a" />
-            <FunnelBar
-              label="Escucharon audio (progreso real)"
-              value={f.listened}
-              base={f.signups}
-              accent={f.listened === 0 ? "#e0653a" : "#5ad19a"}
-              note={f.listened === 0 ? "⚠ nadie escuchó (paywall)" : undefined}
-            />
-            <FunnelBar label="Vieron precios" value={f.viewedPlans} base={f.signups} accent="#d3a13a" />
-            <FunnelBar label="Pagaron" value={f.paid} base={f.signups} accent="#d3a13a" />
-          </>
-        ) : (
-          <p style={{ opacity: 0.6, fontSize: 13 }}>
-            {loading ? "Cargando…" : "Sin altas en el rango seleccionado."}
-          </p>
-        )}
-      </div>
-
       {/* Retención por cohorte de alta */}
       {acq?.retention && (
         <RetentionPanel
@@ -1969,22 +1991,6 @@ function AcquisitionView({
           </p>
         </div>
       )}
-
-      {/* Checkout funnel (existente) */}
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Checkout</div>
-            <h3 className="mx-panel__title">Embudo de pago</h3>
-          </div>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
-          <KpiCard label="Plans viewed" value={cf.plansViewed} />
-          <KpiCard label="Checkout started" value={cf.checkoutStarted} accent="cyan" hint={`${cf.checkoutStartRate}% del plans view`} />
-          <KpiCard label="Checkout redirected" value={cf.checkoutRedirected} accent="xp" hint={`${cf.checkoutRedirectRate}% del checkout start`} />
-          <KpiCard label="Checkout failed" value={cf.checkoutFailed} accent="accent" />
-        </div>
-      </div>
 
       {openUserId && (
         <UserDetailDrawer userId={openUserId} onClose={() => setOpenUserId(null)} />
