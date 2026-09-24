@@ -396,7 +396,7 @@ export default function MetricsDashboard() {
   }, [days, customFrom, customTo, cohort, platform, grain]);
 
   function renderActiveSection() {
-    if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} platform={platform} grain={grain} />;
+    if (section === "overview") return <ResumenView data={data} cohort={cohort} rangeLabel={periodLabel} platform={platform} />;
     if (section === "vanity") return <VanityView data={data} />;
     if (section === "audiobooks") return <AudiobooksView data={data} />;
     if (section === "engagement") return <EngagementView data={data} />;

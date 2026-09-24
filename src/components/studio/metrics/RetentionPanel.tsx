@@ -197,24 +197,31 @@ function dailyChip(days: CohortPoint[], m: (typeof MILESTONES)[number]): ChipInf
   };
 }
 
+const MODE_OPTIONS = [
+  { key: "day" as const, label: "Día" },
+  { key: "week" as const, label: "Semana" },
+];
+
 export function RetentionPanel({
   days,
   cohort,
   rangeLabel,
   platform,
-  mode,
 }: {
   days: number;
   cohort: MetricsCohort;
   rangeLabel: string;
-  /** Los dos selectores viven ahora en la cabecera del tablero, no aquí. */
+  /** El selector de plataforma sigue viviendo en la cabecera del tablero. */
   platform: Platform;
-  mode: Mode;
 }) {
   const [cohorts, setCohorts] = useState<RetentionDailyCohort[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [open, setOpen] = useState(true);
+  // Dia o semana es cosa de ESTE panel, no del grano global del tablero: una
+  // cohorte diaria con pocas altas salta tanto que no se lee, asi que entra
+  // en semana y quien quiera el detalle lo pide aqui.
+  const [mode, setMode] = useState<Mode>("week");
 
   useEffect(() => {
     let cancelled = false;
@@ -280,6 +287,22 @@ export function RetentionPanel({
                 ? "cargando…"
                 : `cohortes: ${totalUsers} altas, ${rangeLabel}`}
           </span>
+          <div className="mx-segmented">
+            {MODE_OPTIONS.map((o) => (
+              <button
+                type="button"
+                key={o.key}
+                onClick={() => setMode(o.key)}
+                className={
+                  mode === o.key
+                    ? "mx-segmented__btn mx-segmented__btn--active"
+                    : "mx-segmented__btn"
+                }
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

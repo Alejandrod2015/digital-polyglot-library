@@ -29,13 +29,11 @@ export function ResumenView({
   cohort,
   rangeLabel,
   platform,
-  grain,
 }: {
   data: DashboardData;
   cohort: MetricsCohort;
   rangeLabel: string;
   platform: "all" | "web" | "ios" | "android";
-  grain: "day" | "week";
 }) {
   const k = data.kpis;
   const p = data.prevKpis;
@@ -164,7 +162,6 @@ export function ResumenView({
           cohort={cohort}
           rangeLabel={rangeLabel}
           platform={platform}
-          mode={grain}
         />
         <LanguageSplitPanel rows={data.languageSplit ?? []} days={data.range.days} />
       </div>
