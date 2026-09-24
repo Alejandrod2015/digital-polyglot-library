@@ -204,7 +204,8 @@ export type DashboardData = {
     scheduled: number;
     tapped: number;
     destinationOpened: number;
-    tapRateFromScheduled: number;
+    usersWithReminder: number;
+    tapsPerUserWithReminder: number;
     openRateFromTap: number;
     destinationBreakdown: Array<{ destination: string; opens: number }>;
   };

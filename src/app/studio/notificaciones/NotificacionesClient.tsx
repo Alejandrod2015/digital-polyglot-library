@@ -710,7 +710,8 @@ type ReminderFunnel = {
   scheduled: number;
   tapped: number;
   destinationOpened: number;
-  tapRateFromScheduled: number;
+  usersWithReminder: number;
+  tapsPerUserWithReminder: number;
   openRateFromTap: number;
   destinationBreakdown: Array<{ destination: string; opens: number }>;
 };
@@ -863,11 +864,15 @@ function EffectivenessPanel() {
             gap: 12,
           }}
         >
-          <StatBlock value={funnel?.scheduled ?? 0} label="Programados" />
+          <StatBlock
+            value={funnel?.usersWithReminder ?? 0}
+            label="Con recordatorio puesto"
+            sub="personas, no eventos"
+          />
           <StatBlock
             value={funnel?.tapped ?? 0}
             label="Taps"
-            sub={`${funnel?.tapRateFromScheduled ?? 0}% de los programados`}
+            sub={`${funnel?.tapsPerUserWithReminder ?? 0} por persona`}
           />
           <StatBlock
             value={funnel?.destinationOpened ?? 0}

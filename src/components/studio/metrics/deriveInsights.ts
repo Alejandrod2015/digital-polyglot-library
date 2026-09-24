@@ -30,7 +30,8 @@ type ReminderFunnel = {
   scheduled: number;
   tapped: number;
   destinationOpened: number;
-  tapRateFromScheduled: number;
+  usersWithReminder: number;
+  tapsPerUserWithReminder: number;
 };
 
 type TopSavedStory = { storySlug: string; saves: number };
@@ -112,11 +113,15 @@ export function deriveInsights({
     });
   }
 
-  if (reminderFunnel.tapRateFromScheduled > 0 && reminderFunnel.tapRateFromScheduled < 25) {
+  // Antes miraba el tap rate "sobre programados", que comparaba taps contra
+  // un evento que solo se emite al configurar el recordatorio: saltaba o no
+  // saltaba por razones que no tenian que ver con el copy. Ahora avisa de lo
+  // unico que se puede leer: gente con el recordatorio puesto que no lo toca.
+  if (reminderFunnel.usersWithReminder >= 5 && reminderFunnel.tapsPerUserWithReminder < 1) {
     out.push({
       kind: "warn",
       title: "Recordatorios con poca apertura",
-      body: `Solo ${reminderFunnel.tapRateFromScheduled}% de los recordatorios programados generan tap. Iterar copy o timing.`,
+      body: `${reminderFunnel.usersWithReminder} personas tienen el recordatorio puesto y dan ${reminderFunnel.tapsPerUserWithReminder} taps cada una en el rango. Iterar copy o timing.`,
       tag: "Reminders",
     });
   }

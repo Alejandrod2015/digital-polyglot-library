@@ -96,7 +96,8 @@ const EMPTY_DATA: DashboardData = {
     scheduled: 0,
     tapped: 0,
     destinationOpened: 0,
-    tapRateFromScheduled: 0,
+    usersWithReminder: 0,
+    tapsPerUserWithReminder: 0,
     openRateFromTap: 0,
     destinationBreakdown: [],
   },
@@ -299,9 +300,12 @@ export default function MetricsDashboard() {
     targetSection: MetricsSection = section,
     force = false
   ) {
-    if (targetSection === "content") {
-      return loadPipelineMetrics();
-    }
+    // Contenido NO se sale por aquí. Su panel de pipeline se pide aparte (lo
+    // lanza el efecto de la sección), pero su primera tarjeta, "Catálogo
+    // tocado en el rango", sale del tablero como cualquier otra. Con el
+    // return de antes esa petición no se hacía nunca y la tarjeta leía el
+    // EMPTY_DATA inicial: enseñaba 0 historias y 0 libros mientras la base
+    // tenía 196 historias y 8 libros tocados en 30 días.
     if (!force && sectionCache[targetSection]) {
       setData(sectionCache[targetSection] ?? EMPTY_DATA);
       return;

@@ -21,9 +21,12 @@ const RECENT_ACTIVITY_LIMIT = 40;
 
 export type ReminderFunnel = {
   scheduled: number;
+  /** Personas distintas con el recordatorio diario puesto. */
+  usersWithReminder: number;
   tapped: number;
   destinationOpened: number;
-  tapRateFromScheduled: number;
+  /** Taps en el rango por cada persona con el recordatorio puesto. */
+  tapsPerUserWithReminder: number;
   openRateFromTap: number;
   destinationBreakdown: Array<{ destination: string; opens: number }>;
 };
@@ -147,6 +150,18 @@ export async function getNotificationEffectiveness(
   ]);
 
   // ── Reminder funnel ──
+  const usersWithReminder = (
+    await prisma.userMetric.findMany({
+      where: {
+        ...(internalIds.length > 0 ? { userId: { notIn: internalIds } } : {}),
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: "reminder_scheduled",
+      },
+      select: { userId: true },
+      distinct: ["userId"],
+    })
+  ).length;
   const reminderCounts = { scheduled: 0, tapped: 0, destinationOpened: 0 };
   for (const row of reminderFunnelRows) {
     if (row.eventType === "reminder_scheduled") reminderCounts.scheduled = row._count._all;
@@ -166,9 +181,17 @@ export async function getNotificationEffectiveness(
 
   const reminderFunnel: ReminderFunnel = {
     scheduled: reminderCounts.scheduled,
+    usersWithReminder,
     tapped: reminderCounts.tapped,
     destinationOpened: reminderCounts.destinationOpened,
-    tapRateFromScheduled: pct(reminderCounts.tapped, reminderCounts.scheduled),
+    // `reminder_scheduled` se emite al PROGRAMAR el recordatorio, una vez por
+    // configuracion, no cada vez que se enseña: comparar taps contra el daba
+    // "1000% de los programados" con 2 eventos y 22 taps. Lo que se puede
+    // leer es cuantos taps da cada persona que lo tiene puesto.
+    tapsPerUserWithReminder:
+      usersWithReminder > 0
+        ? Math.round((reminderCounts.tapped / usersWithReminder) * 10) / 10
+        : 0,
     openRateFromTap: pct(reminderCounts.destinationOpened, reminderCounts.tapped),
     destinationBreakdown,
   };

@@ -904,8 +904,12 @@ export function FunnelsView({
     { label: "Review CTA click", value: data.journeyFunnel.reviewCtaClicked },
   ];
 
+  // "Scheduled" ya no encabeza el embudo. Se emite cuando el movil PROGRAMA
+  // el recordatorio, una vez por configuracion, no cada vez que lo enseña: en
+  // 30 dias daba 2 eventos contra 22 taps y el panel anunciaba "1000% tap
+  // rate". Lo que si es una secuencia es tap → destino abierto; la gente con
+  // el recordatorio puesto se cuenta aparte, como personas.
   const reminderSteps = [
-    { label: "Scheduled", value: data.reminderFunnel.scheduled },
     { label: "Tapped", value: data.reminderFunnel.tapped },
     {
       label: "Destination opened",
@@ -1023,8 +1027,18 @@ export function FunnelsView({
               <h3 className="mx-panel__title">Reminders → Destination</h3>
             </div>
             <span className="mx-panel__hint">
-              {data.reminderFunnel.tapRateFromScheduled}% tap rate
+              {data.reminderFunnel.openRateFromTap}% llega al destino
             </span>
+          </div>
+          <div className="mx-rate-grid" style={{ marginBottom: 10 }}>
+            <div className="mx-rate">
+              <span>Con recordatorio puesto</span>
+              <strong>{data.reminderFunnel.usersWithReminder}</strong>
+            </div>
+            <div className="mx-rate">
+              <span>Taps por persona</span>
+              <strong>{data.reminderFunnel.tapsPerUserWithReminder}</strong>
+            </div>
           </div>
           <FunnelChart steps={reminderSteps} accent="var(--mx-gold)" />
           <div className="mx-panel__sub">Destination breakdown</div>

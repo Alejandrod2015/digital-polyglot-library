@@ -309,7 +309,10 @@ type DashboardResponse = {
     scheduled: number;
     tapped: number;
     destinationOpened: number;
-    tapRateFromScheduled: number;
+    /** Personas distintas con el recordatorio diario puesto. */
+    usersWithReminder: number;
+    /** Taps en el rango por cada una de esas personas. */
+    tapsPerUserWithReminder: number;
     openRateFromTap: number;
     destinationBreakdown: Array<{
       destination: string;
@@ -460,7 +463,8 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       scheduled: 0,
       tapped: 0,
       destinationOpened: 0,
-      tapRateFromScheduled: 0,
+      usersWithReminder: 0,
+      tapsPerUserWithReminder: 0,
       openRateFromTap: 0,
       destinationBreakdown: [],
     },
@@ -1039,6 +1043,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     journeyFunnelRows,
     reminderFunnelRows,
     reminderDestinationRows,
+    reminderUserRows,
     signupTotalCount,
     signupLast7dCount,
     signupLast30dCount,
@@ -1359,6 +1364,22 @@ export async function GET(req: NextRequest): Promise<Response> {
         metadata: true,
       },
       take: 5000,
+    }) : Promise.resolve([]),
+    // Gente DISTINTA con el recordatorio puesto. `reminder_scheduled` se
+    // emite cuando el movil programa el recordatorio, no cuando lo enseña:
+    // en 30 dias hay 2 eventos y 22 taps, asi que contarlos como base de un
+    // embudo daba un "1000% tap rate". Como personas si dice algo.
+    needsReminderFunnelData ? prisma.userMetric.findMany({
+      where: {
+        ...userScope,
+        ...platformFilter,
+        ...librosFilter,
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: "reminder_scheduled",
+      },
+      select: { userId: true },
+      distinct: ["userId"],
     }) : Promise.resolve([]),
     // Signup totals + rolling windows + recent signups list.
     needsSignupData
@@ -2750,9 +2771,10 @@ export async function GET(req: NextRequest): Promise<Response> {
     },
     reminderFunnel: {
       ...reminderCounts,
-      tapRateFromScheduled:
-        reminderCounts.scheduled > 0
-          ? Math.round((reminderCounts.tapped / reminderCounts.scheduled) * 100)
+      usersWithReminder: reminderUserRows.length,
+      tapsPerUserWithReminder:
+        reminderUserRows.length > 0
+          ? Math.round((reminderCounts.tapped / reminderUserRows.length) * 10) / 10
           : 0,
       openRateFromTap:
         reminderCounts.tapped > 0
