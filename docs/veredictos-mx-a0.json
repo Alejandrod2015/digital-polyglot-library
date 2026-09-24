@@ -1,0 +1,26 @@
+{
+  "_que_es": "Veredictos de oido del usuario sobre los fragmentos que marcaron los gates en el Friends ES Mexico A0 (Guadalajara). Rescatados del artifact 8XmHvibP5k61Sga3LLbTt2 porque un artifact solo se abre desde la cuenta que lo publico.",
+  "_dos_tandas": "La primera (ids mx-) era sobre el audio con Itzel y Citlali, que se re-narro entero el 2026-09-24; no vale para juzgar el audio de hoy y se guarda como historial. La segunda (ids mx2-) es la vigente.",
+  "tanda_vigente": {
+    "fecha": "2026-09-24",
+    "fichas": 34,
+    "defecto_real": 8,
+    "falso_positivo": 26,
+    "por_gate": {
+      "entonacion": "22 fichas, 6 defectos reales",
+      "contenido": "2 fichas, 2 defectos reales",
+      "ritmo": "10 fichas, 0 defectos reales"
+    },
+    "reales": [
+      "mx2-carbon-mojado-f05-uptalk",
+      "mx2-el-timbre-si-suena-f02-uptalk",
+      "mx2-la-salsa-no-se-apunta-f00-uptalk",
+      "mx2-pintan-el-14-f04-uptalk",
+      "mx2-pintan-el-14-f04-content",
+      "mx2-poquito-son-dos-dedos-f06-content",
+      "mx2-poquito-son-dos-dedos-f07-uptalk",
+      "mx2-una-sola-vuelta-f02-uptalk"
+    ]
+  },
+  "_lo_que_dice_el_dato": "El gate de RITMO va 0 de 10 en este journey: ninguna de las oraciones que marco, ni la de 6,49 palabras por segundo contra una mediana de 3,33, sonaba mal al oido. El de CONTENIDO va 2 de 2. El de entonacion, 6 de 22. Antes de endurecer un umbral o de re-tirar por lo que diga un gate, se mira esto."
+}

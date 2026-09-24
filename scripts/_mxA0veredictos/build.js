@@ -121,6 +121,7 @@ nav button{background:none;border:none;color:var(--muted);font:inherit;font-size
 nav button:hover:not(:disabled){color:var(--accent)}
 nav button:disabled{opacity:.35;cursor:default}
 .cuenta{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.teclas{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
 
 .fin{background:var(--card);border:1px solid var(--line);border-radius:14px;
   padding:30px 24px;text-align:center;box-shadow:var(--shadow)}
@@ -197,6 +198,12 @@ function pinta(){
         '<button id="b-next">siguiente &rarr;</button>' +
       '</nav>' +
     '</div>';
+  const video = zona.querySelector("video");
+  if (video) {
+    // Suena sola al abrir la ficha. El navegador lo permite despues del primer
+    // gesto del usuario; antes de eso falla en silencio y queda el boton.
+    video.play().catch(() => {});
+  }
   document.getElementById("b-fp").onclick = () => juzga("fp");
   document.getElementById("b-real").onclick = () => juzga("real");
   const prev = document.getElementById("b-prev"), next = document.getElementById("b-next");
@@ -205,8 +212,22 @@ function pinta(){
   next.onclick = () => { idx++; pinta(); };
 }
 
+let ultimo = null;
+
+function deshacer(){
+  if (!ultimo) return;
+  const { ficha, pos } = ultimo;
+  delete veredictos[ficha.id];
+  cola.splice(Math.min(pos, cola.length), 0, ficha);
+  idx = Math.min(pos, cola.length - 1);
+  ultimo = null;
+  pinta();
+  if (db) db.doc("verdicts/" + ficha.id).delete().catch(() => {});
+}
+
 async function juzga(v){
   const f = cola[idx];
+  ultimo = { ficha: f, pos: idx };
   veredictos[f.id] = v;
   cola.splice(idx, 1);
   pinta();
@@ -221,9 +242,18 @@ async function juzga(v){
 }
 
 document.addEventListener("keydown", (e) => {
+  if (e.key === "z" || e.key === "Z") { deshacer(); return; }
   if (!cola.length) return;
   if (e.key === "ArrowLeft" && idx > 0) { idx--; pinta(); }
   if (e.key === "ArrowRight" && idx < cola.length - 1) { idx++; pinta(); }
+  // Juzgar tambien con el teclado: con 34 fichas seguidas, ir al raton cada
+  // vez es lo que cansa.
+  if (e.key === "1" || e.key === "b" || e.key === "B") juzga("fp");
+  if (e.key === "2" || e.key === "m" || e.key === "M") juzga("real");
+  if (e.key === " ") {
+    const v = zona.querySelector("video");
+    if (v) { e.preventDefault(); v.paused ? v.play().catch(() => {}) : v.pause(); }
+  }
 });
 
 cola = FRAGMENTOS.slice();
