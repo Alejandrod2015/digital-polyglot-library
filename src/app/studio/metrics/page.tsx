@@ -12,7 +12,6 @@ import {
   ResumenView,
 } from "@/components/studio/metrics/MetricsViews";
 import {
-  fmt,
   KpiCard,
 } from "@/components/studio/metrics/MetricsPrimitives";
 import UserDetailDrawer from "@/components/studio/metrics/UserDetailDrawer";
@@ -20,7 +19,6 @@ import { PerUserTable } from "@/components/studio/metrics/PerUserTable";
 import type {
   DashboardData,
   MetricsSection,
-  PipelineData,
 } from "@/components/studio/metrics/types";
 // Solo el tipo: `@/lib/metricsCohort` importa Prisma y no puede viajar al
 // bundle del cliente. Las etiquetas se declaran aqui abajo.
@@ -151,33 +149,9 @@ const EMPTY_DATA: DashboardData = {
     byLevel: [],
     levelUnattributed: { sessions: 0, placeholder: 0, unknownStory: 0 },
   },
+  catalog: null,
 };
 
-const EMPTY_PIPELINE_DATA: PipelineData = {
-  agentRuns: {
-    total: 0,
-    byKind: { planner: 0, content: 0, qa: 0 },
-    byStatus: { completed: 0, failed: 0, running: 0 },
-    last7Days: [],
-  },
-  drafts: {
-    total: 0,
-    byStatus: {
-      draft: 0,
-      generated: 0,
-      qa_pass: 0,
-      qa_fail: 0,
-      needs_review: 0,
-      approved: 0,
-      published: 0,
-    },
-    avgQaScore: null,
-    qaPassRate: 0,
-    last7Days: [],
-  },
-  briefs: { total: 0, pending: 0, completed: 0 },
-  pipeline: { avgTimeToPublish: null, contentPerDay: 0 },
-};
 
 /**
  * Las once secciones, al mismo nivel y en una sola fila.
@@ -244,8 +218,6 @@ function formatRangeLabel(from: string, to: string) {
 
 export default function MetricsDashboard() {
   const [data, setData] = useState<DashboardData>(EMPTY_DATA);
-  const [pipelineData, setPipelineData] =
-    useState<PipelineData>(EMPTY_PIPELINE_DATA);
   const [sectionCache, setSectionCache] = useState<
     Partial<Record<MetricsSection, DashboardData>>
   >({});
@@ -271,30 +243,6 @@ export default function MetricsDashboard() {
   const sectionRef = useRef<MetricsSection>("overview");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  async function loadPipelineMetrics() {
-    setLoading(true);
-    setErrorMessage(null);
-    try {
-      const res = await fetch("/api/metrics/pipeline");
-      if (!res.ok) {
-        const body = await res.text().catch(() => "");
-        throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
-      }
-      const json = (await res.json()) as PipelineData;
-      setPipelineData(json);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      const message = msg.includes("403")
-        ? "No tienes acceso a métricas."
-        : `No se pudieron cargar las métricas de pipeline: ${msg}`;
-      setErrorMessage(message);
-      console.error("Error loading pipeline metrics:", err);
-      setPipelineData(EMPTY_PIPELINE_DATA);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   async function loadMetrics(
     targetSection: MetricsSection = section,
@@ -359,12 +307,6 @@ export default function MetricsDashboard() {
 
   useEffect(() => {
     sectionRef.current = section;
-    if (section === "content") {
-      // Contenido pinta DOS cosas: el pipeline editorial y, arriba, cuántas
-      // historias y libros distintos se consumieron en el rango. Lo segundo
-      // sale del dashboard, así que se piden los dos y no se sale de aquí.
-      void loadPipelineMetrics();
-    }
     if (sectionCache[section]) {
       setData(sectionCache[section] ?? EMPTY_DATA);
       return;
@@ -416,7 +358,7 @@ export default function MetricsDashboard() {
       return <AudienceView data={data} />;
     }
     if (section === "content") {
-      return <ContentView data={pipelineData} dashboard={data} />;
+      return <ContentView dashboard={data} />;
     }
     if (section === "acquisition") {
       return <AcquisitionView data={data} cohort={cohort} />;
@@ -2004,161 +1946,171 @@ function AcquisitionView({
 }
 
 // ── Content view: pipeline metrics ──
-function ContentView({
-  data,
-  dashboard,
-}: {
-  data: PipelineData;
-  dashboard: DashboardData;
-}) {
-  const k = dashboard.kpis;
-  const p = dashboard.prevKpis;
+/**
+ * Contenido: la salud del catalogo PUBLICADO.
+ *
+ * Hasta el 2026-09-24 esta pestaña medía nuestro propio taller: runs de
+ * agentes, borradores, throughput, QA pass rate. Eso dice como vamos
+ * nosotros y no cambia ninguna decision sobre el producto. Lo que si la
+ * cambia es que journey no abre nadie, que historia se queda sin terminar y
+ * si algo salio publicado con huecos.
+ *
+ * El panel del pipeline no se borra: vive en Studio, en su sitio, y esta
+ * pestaña es de metricas de producto.
+ */
+function ContentView({ dashboard }: { dashboard: DashboardData }) {
+  const c = dashboard.catalog;
+  if (!c) {
+    return (
+      <div className="mx-view">
+        <p style={{ opacity: 0.6, fontSize: 13 }}>Cargando catálogo…</p>
+      </div>
+    );
+  }
+
+  const pctTocado = c.stories > 0 ? Math.round((c.touchedStories / c.stories) * 100) : 0;
+  const maxLectores = Math.max(1, ...c.rows.map((r) => r.readers));
+
   return (
     <div className="mx-view">
       <div className="mx-panel">
         <div className="mx-panel__head">
           <div>
-            <div className="mx-panel__eyebrow">Consumo</div>
-            <h3 className="mx-panel__title">Catálogo tocado en el rango</h3>
+            <div className="mx-panel__eyebrow">Catálogo publicado</div>
+            <h3 className="mx-panel__title">Qué está vivo</h3>
           </div>
           <span className="mx-panel__hint">{dashboard.range.days}d</span>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 10,
-          }}
-        >
+        <div className="mx-hero-grid">
+          <KpiCard label="Journeys publicados" value={c.journeys} />
           <KpiCard
-            label="Unique stories"
-            value={k.uniqueStories}
-            prev={p?.uniqueStories}
-          />
-          <KpiCard
-            label="Unique books"
-            value={k.uniqueBooks}
-            prev={p?.uniqueBooks}
-          />
-        </div>
-      </div>
-
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Pipeline</div>
-            <h3 className="mx-panel__title">Agent runs</h3>
-          </div>
-          <span className="mx-panel__hint">
-            {data.agentRuns.total} runs · {data.agentRuns.byStatus.failed} failed
-          </span>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard label="Total runs" value={data.agentRuns.total} />
-          <KpiCard
-            label="Completed"
-            value={data.agentRuns.byStatus.completed}
-            accent="xp"
-          />
-          <KpiCard
-            label="Failed"
-            value={data.agentRuns.byStatus.failed}
-            accent="accent"
-          />
-          <KpiCard label="Running" value={data.agentRuns.byStatus.running} />
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 10,
-            marginTop: 10,
-          }}
-        >
-          <KpiCard label="Planner" value={data.agentRuns.byKind.planner} />
-          <KpiCard label="Content" value={data.agentRuns.byKind.content} />
-          <KpiCard label="QA" value={data.agentRuns.byKind.qa} />
-        </div>
-      </div>
-
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Drafts</div>
-            <h3 className="mx-panel__title">Story drafts</h3>
-          </div>
-          <span className="mx-panel__hint">
-            QA pass {data.drafts.qaPassRate}% · published{" "}
-            {data.drafts.byStatus.published}
-          </span>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard label="Total drafts" value={data.drafts.total} />
-          <KpiCard
-            label="QA pass rate"
-            value={data.drafts.qaPassRate}
-            suffix="%"
-            accent="xp"
-          />
-          <KpiCard
-            label="Avg QA score"
-            value={
-              data.drafts.avgQaScore !== null
-                ? data.drafts.avgQaScore.toFixed(2)
-                : "-"
-            }
-            accent="gold"
-          />
-          <KpiCard
-            label="Published"
-            value={data.drafts.byStatus.published}
-            accent="xp"
-          />
-        </div>
-      </div>
-
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Pipeline performance</div>
-            <h3 className="mx-panel__title">Throughput</h3>
-          </div>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard
-            label="Avg time to publish"
-            value={
-              data.pipeline.avgTimeToPublish !== null
-                ? Math.round(data.pipeline.avgTimeToPublish)
-                : "-"
-            }
-            suffix="min"
-            accent="gold"
-          />
-          <KpiCard
-            label="Content per day"
-            value={fmt(data.pipeline.contentPerDay)}
+            label="Historias tocadas"
+            value={c.touchedStories}
+            hint={`${pctTocado}% de ${c.stories}`}
             accent="cyan"
           />
+          <KpiCard
+            label="Journeys sin una apertura"
+            value={c.deadJourneys}
+            hint="nadie los abrió en el rango"
+            accent={c.deadJourneys > 0 ? "accent" : undefined}
+          />
+          <KpiCard
+            label="Huecos publicados"
+            value={c.emptySlots + c.storiesWithoutAudio + c.storiesWithoutPractice}
+            hint={`${c.emptySlots} sin texto · ${c.storiesWithoutAudio} sin audio · ${c.storiesWithoutPractice} sin práctica`}
+            accent={
+              c.emptySlots + c.storiesWithoutAudio + c.storiesWithoutPractice > 0
+                ? "accent"
+                : undefined
+            }
+          />
         </div>
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Journey a journey</div>
+            <h3 className="mx-panel__title">De lo que nadie abre a lo que se lee</h3>
+          </div>
+          <span className="mx-panel__hint">ordenado por historias tocadas</span>
+        </div>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+            <thead>
+              <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                <th style={{ padding: "4px 6px" }}>Journey</th>
+                <th style={{ padding: "4px 6px" }}>Nivel</th>
+                <th style={{ padding: "4px 6px", textAlign: "right" }}>Tocadas</th>
+                <th style={{ padding: "4px 6px", textAlign: "right" }}>Terminadas</th>
+                <th style={{ padding: "4px 6px", textAlign: "right" }}>Lectores</th>
+                <th style={{ padding: "4px 6px", width: "28%" }}></th>
+                <th style={{ padding: "4px 6px", textAlign: "right" }}>Huecos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {c.rows.map((r) => {
+                const huecos =
+                  r.slots - r.written + r.withoutAudio + r.withoutPractice;
+                return (
+                  <tr
+                    key={r.id}
+                    style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <td style={{ padding: "4px 6px" }}>{r.label}</td>
+                    <td style={{ padding: "4px 6px", opacity: 0.75 }}>
+                      {r.levels.join(", ").toUpperCase()}
+                    </td>
+                    <td
+                      style={{
+                        padding: "4px 6px",
+                        textAlign: "right",
+                        fontVariantNumeric: "tabular-nums",
+                        color: r.touched === 0 ? "var(--mx-neg)" : undefined,
+                      }}
+                    >
+                      {r.touched}/{r.written}
+                    </td>
+                    <td
+                      style={{
+                        padding: "4px 6px",
+                        textAlign: "right",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      {r.finished}
+                    </td>
+                    <td
+                      style={{
+                        padding: "4px 6px",
+                        textAlign: "right",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      {r.readers}
+                    </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      <div
+                        style={{
+                          height: 6,
+                          borderRadius: 3,
+                          background: "rgba(255,255,255,0.07)",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: `${Math.round((r.readers / maxLectores) * 100)}%`,
+                            height: "100%",
+                            borderRadius: 3,
+                            background: "var(--mx-cyan)",
+                          }}
+                        />
+                      </div>
+                    </td>
+                    <td
+                      style={{
+                        padding: "4px 6px",
+                        textAlign: "right",
+                        fontVariantNumeric: "tabular-nums",
+                        color: huecos > 0 ? "var(--mx-neg)" : "var(--mx-muted)",
+                      }}
+                    >
+                      {huecos || "-"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)" }}>
+          <strong style={{ fontWeight: 600 }}>Tocadas</strong>: historias con al menos una
+          apertura o un play en el rango, sobre las que tienen texto escrito.{" "}
+          <strong style={{ fontWeight: 600 }}>Huecos</strong>: slots sin texto, más historias
+          sin audio, más historias sin set de práctica. Un journey publicado no debería tener
+          ninguno.
+        </p>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess"
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
 import type { MetricsIdentityStatus } from "@/lib/metricsUserEmails";
+import type { CatalogHealth } from "@/components/studio/metrics/types";
 import { localDayKey, startOfLocalDay, startOfLocalDaysAgo } from "@/lib/metricsTime";
 import { ACTIVITY_EVENT_WHERE, isProgressEvent } from "@/lib/metricsActivity";
 import { books } from "@/data/books";
@@ -355,6 +356,7 @@ type DashboardResponse = {
   };
   learning: LearningMetrics;
   ratings: RatingsMetrics;
+  catalog: CatalogHealth | null;
 };
 
 type DashboardSection =
@@ -499,6 +501,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
     },
     learning: emptyLearningMetrics(),
     ratings: emptyRatingsMetrics(),
+    catalog: null,
   };
 }
 
@@ -2684,6 +2687,100 @@ export async function GET(req: NextRequest): Promise<Response> {
     })
     .sort((a, b) => b.minutes - a.minutes || b.activeDays - a.activeDays);
 
+  // ── Salud del catalogo publicado ──
+  // Contenido media hasta el 2026-09-24 nuestro propio taller (runs de
+  // agentes, borradores, throughput). Eso dice como vamos nosotros, no que
+  // pasa con lo publicado. Lo que decide trabajo es al reves: que journey
+  // vive, que journey no abre nadie, y si alguno salio a produccion con
+  // huecos. Hoy los 24 publicados estan completos, asi que las columnas de
+  // huecos salen a cero; existen para el dia que no sea asi.
+  const catalog = section === "content" ? await (async () => {
+    const journeys = await prisma.journey.findMany({
+      where: { status: "active" },
+      select: {
+        id: true,
+        name: true,
+        language: true,
+        variant: true,
+        levels: true,
+        stories: {
+          select: {
+            slug: true,
+            text: true,
+            audioUrl: true,
+            practiceSet: { select: { id: true } },
+          },
+        },
+      },
+    });
+
+    const slugs = journeys.flatMap((j) =>
+      j.stories.map((st) => st.slug).filter((x): x is string => Boolean(x))
+    );
+    const toques = slugs.length
+      ? await prisma.userMetric.findMany({
+          where: {
+            ...userScope,
+            ...platformFilter,
+            createdAt: { gte: from, lte: to },
+            eventType: { in: ["story_opened", "audio_play", "audio_complete"] },
+            storySlug: { in: slugs },
+          },
+          select: { storySlug: true, userId: true, eventType: true },
+        })
+      : [];
+
+    const lectoresPorSlug = new Map<string, Set<string>>();
+    const terminadaPorSlug = new Set<string>();
+    for (const t of toques as Array<{ storySlug: string; userId: string; eventType: string }>) {
+      const set = lectoresPorSlug.get(t.storySlug) ?? new Set<string>();
+      set.add(t.userId);
+      lectoresPorSlug.set(t.storySlug, set);
+      if (t.eventType === "audio_complete") terminadaPorSlug.add(t.storySlug);
+    }
+
+    const filas = journeys.map((j) => {
+      // Una historia "existe" cuando tiene texto: un slot vacio de un journey
+      // publicado no es contenido muerto, es contenido que falta.
+      const escritas = j.stories.filter((st) => st.text);
+      const conSlug = escritas
+        .map((st) => st.slug)
+        .filter((x): x is string => Boolean(x));
+      const lectores = new Set<string>();
+      for (const slug of conSlug) {
+        for (const u of lectoresPorSlug.get(slug) ?? []) lectores.add(u);
+      }
+      return {
+        id: j.id,
+        label: `${j.name} ${j.language}/${j.variant}`,
+        levels: j.levels,
+        slots: j.stories.length,
+        written: escritas.length,
+        withoutAudio: escritas.filter((st) => !st.audioUrl).length,
+        withoutPractice: escritas.filter((st) => !st.practiceSet).length,
+        touched: conSlug.filter((slug) => lectoresPorSlug.has(slug)).length,
+        finished: conSlug.filter((slug) => terminadaPorSlug.has(slug)).length,
+        readers: lectores.size,
+      };
+    });
+
+    // De menos tocado a mas: lo primero que hay que mirar es lo que no abre
+    // nadie, no lo que ya funciona.
+    filas.sort((a, b) => a.touched - b.touched || a.readers - b.readers);
+
+    const written = filas.reduce((n, f) => n + f.written, 0);
+    return {
+      journeys: filas.length,
+      stories: written,
+      touchedStories: filas.reduce((n, f) => n + f.touched, 0),
+      deadJourneys: filas.filter((f) => f.touched === 0).length,
+      storiesWithoutAudio: filas.reduce((n, f) => n + f.withoutAudio, 0),
+      storiesWithoutPractice: filas.reduce((n, f) => n + f.withoutPractice, 0),
+      emptySlots: filas.reduce((n, f) => n + (f.slots - f.written), 0),
+      rows: filas,
+    };
+  })() : null;
+
   const payload: DashboardResponse = {
     ...createEmptyDashboardResponse(from, to, daysReales),
     ...(prevKpisPayload
@@ -2809,6 +2906,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     },
     learning: learningPayload,
     ratings: ratingsPayload,
+    catalog,
   };
 
   metricsDashboardCache.set(cacheKey, {

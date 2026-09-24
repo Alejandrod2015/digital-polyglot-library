@@ -73,6 +73,32 @@ export type MetricsKpiUser = {
   lastAt: string | null;
 };
 
+/**
+ * Salud del catalogo PUBLICADO, no del taller que lo produce.
+ * `null` fuera de la seccion Contenido, que es la unica que lo pide.
+ */
+export type CatalogHealth = {
+  journeys: number;
+  stories: number;
+  touchedStories: number;
+  deadJourneys: number;
+  storiesWithoutAudio: number;
+  storiesWithoutPractice: number;
+  emptySlots: number;
+  rows: Array<{
+    id: string;
+    label: string;
+    levels: string[];
+    slots: number;
+    written: number;
+    withoutAudio: number;
+    withoutPractice: number;
+    touched: number;
+    finished: number;
+    readers: number;
+  }>;
+};
+
 export type DashboardData = {
   /** Cuando se calcularon los numeros. Falta en respuestas cacheadas viejas. */
   generatedAt?: string;
@@ -291,6 +317,7 @@ export type DashboardData = {
   };
   /** Falta en respuestas cacheadas de antes de que existiera el panel. */
   ratings?: RatingsMetrics;
+  catalog: CatalogHealth | null;
 };
 
 export type PipelineData = {
