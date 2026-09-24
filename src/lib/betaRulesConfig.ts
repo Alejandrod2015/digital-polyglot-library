@@ -6,6 +6,7 @@
 import { prisma } from "@/lib/prisma";
 import { DEFAULT_BETA_RULES, type BetaRulesConfig } from "@/lib/betaRules";
 import { variantPool } from "@domain/languageVariant";
+import { broadLevelFromCefr } from "@domain/cefr";
 
 export const BETA_RULES_CONFIG_KEY = "beta_rules_v1";
 
@@ -57,7 +58,17 @@ export async function getBetaRules(): Promise<BetaRulesConfig> {
 async function withDerivedLanguages(rules: BetaRulesConfig): Promise<BetaRulesConfig> {
   const derived = await deriveAcceptedLanguages();
   if (derived.length === 0) return rules;
-  return { ...rules, acceptedTargetLanguages: derived, acceptedVariantPools: await deriveAcceptedVariantPools() };
+  const [pools, niveles] = await Promise.all([
+    deriveAcceptedVariantPools(),
+    deriveAcceptedLevels(),
+  ]);
+  return {
+    ...rules,
+    acceptedTargetLanguages: derived,
+    acceptedVariantPools: pools,
+    acceptedLevelsByVariant: niveles.porVariante,
+    acceptedLevelsByPool: niveles.porPool,
+  };
 }
 
 /**
@@ -78,6 +89,43 @@ export async function deriveAcceptedVariantPools(): Promise<string[]> {
     if (pool) pools.add(pool);
   }
   return [...pools].sort();
+}
+
+/**
+ * Las bandas de nivel publicadas, por variante exacta y por pool.
+ *
+ * `Journey.levels` guarda codigos CEFR (a0..c2) y el formulario de beta
+ * pregunta por banda ancha (Beginner / Intermediate / Advanced), asi que la
+ * traduccion pasa por `broadLevelFromCefr` y no por una tabla propia: hay
+ * tres mapas distintos en el repo y este tiene que ser el mismo que usa el
+ * lector.
+ *
+ * Solo publicados, por lo mismo que las otras dos listas: un borrador no es
+ * algo que se le pueda dar a un tester.
+ */
+export async function deriveAcceptedLevels(): Promise<{
+  porVariante: Record<string, string[]>;
+  porPool: Record<string, string[]>;
+}> {
+  const rows = await prisma.journey.findMany({
+    where: { status: "active" },
+    select: { variant: true, levels: true },
+  });
+  const porVariante: Record<string, Set<string>> = {};
+  const porPool: Record<string, Set<string>> = {};
+  for (const row of rows) {
+    const variante = (row.variant ?? "").trim().toLowerCase();
+    const pool = variantPool(row.variant);
+    for (const nivel of row.levels ?? []) {
+      const banda = broadLevelFromCefr(nivel);
+      if (!banda) continue;
+      if (variante) (porVariante[variante] ??= new Set()).add(banda);
+      if (pool) (porPool[pool] ??= new Set()).add(banda);
+    }
+  }
+  const aplanar = (m: Record<string, Set<string>>) =>
+    Object.fromEntries(Object.entries(m).map(([k, v]) => [k, [...v].sort()]));
+  return { porVariante: aplanar(porVariante), porPool: aplanar(porPool) };
 }
 
 export async function saveBetaRules(

@@ -12,6 +12,7 @@
 // is betaRulesConfig.ts's, so the scoring can be run from a script or a test
 // without a database anywhere near it.
 import { variantPool } from "@domain/languageVariant";
+import { broadLevelFromCefr, normalizeBroadLevel } from "@domain/cefr";
 
 export type BetaRulesConfig = {
   /** Score at or above this is invited without a human ever seeing it. */
@@ -55,6 +56,21 @@ export type BetaRulesConfig = {
    * decide whether there was anything to invite the person to.
    */
   acceptedVariantPools: string[];
+  /**
+   * Bandas de nivel (beginner / intermediate / advanced) publicadas, por
+   * variante exacta y por pool. Derivadas junto a las dos listas de arriba.
+   *
+   * Sin esto, pedir un nivel que no existe salia gratis: una profesora de
+   * espanol de Espana que pedia avanzado cobraba los 37 puntos enteros de
+   * disponibilidad el 2026-09-24, y no hay ningun C1 de Espana publicado.
+   * El catalogo de Espana llega a B2 y ahi se acaba.
+   *
+   * Vacio significa "sin restriccion de nivel", que es lo que reciben el modo
+   * manual y las filas escritas antes de que el campo existiera.
+   */
+  acceptedLevelsByVariant: Record<string, string[]>;
+  /** Lo mismo por pool: un journey de Latam sirve a quien pidio Mexico. */
+  acceptedLevelsByPool: Record<string, string[]>;
   /** Master switch. Off = every application queues, nothing is auto-invited. */
   autoInviteEnabled: boolean;
 
@@ -123,6 +139,8 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
   acceptedVariantPools: [],
+  acceptedLevelsByVariant: {},
+  acceptedLevelsByPool: {},
   autoInviteEnabled: true,
   betaEndsAt: null,
   launchedAt: null,
@@ -279,6 +297,12 @@ function scoreApplicationReason(reason: string | null | undefined): {
 const REASON_MAX = 10;
 const HOURS_MAX = 20;
 const LANGUAGE_MAX = 37;
+/**
+ * Lo que vale que el nivel pedido exista en el POOL pero no en la variante
+ * exacta: un journey de Latam le sirve a quien pidio Mexico, y no igual de
+ * bien que uno mexicano. Es el 70% de la nota entera, redondeado.
+ */
+const LANGUAGE_POOL_MATCH = 26;
 const MOTIVATION_MAX = 12;
 const EXTRAS_MAX = 3;
 const MAX_RAW_SCORE = REASON_MAX + HOURS_MAX + LANGUAGE_MAX + MOTIVATION_MAX + EXTRAS_MAX;
@@ -407,19 +431,45 @@ export function evaluateApplication(
   // is live. One we do not ("other", a free-typed country, an old null row)
   // cannot be held against the applicant, so it falls through to the language.
   const pool = variantPool(app.targetVariant);
+  const normalizedVariant = (app.targetVariant ?? "").trim().toLowerCase() || null;
   const variantServed =
     !pool || rules.acceptedVariantPools.length === 0 || rules.acceptedVariantPools.includes(pool);
   const languageAccepted = languageRecruited && variantServed;
+  // La banda que pide, y donde la tenemos publicada. El formulario escribe
+  // "Beginner" / "Intermediate" / "Advanced"; los journeys guardan a0..c2, y
+  // el config trae ya las bandas por variante y por pool.
+  const banda = normalizeBroadLevel(app.currentLevel) ?? broadLevelFromCefr(app.currentLevel);
+  const bandasVariante = rules.acceptedLevelsByVariant[normalizedVariant ?? ""] ?? [];
+  const bandasPool = rules.acceptedLevelsByPool[pool ?? ""] ?? [];
+  const sinMapaDeNiveles =
+    Object.keys(rules.acceptedLevelsByVariant).length === 0 &&
+    Object.keys(rules.acceptedLevelsByPool).length === 0;
+  // Falla abierto por partida doble: sin mapa (modo manual, config vieja) y
+  // sin banda reconocible, el nivel no se le puede echar en cara a nadie.
+  const cobertura: "exacta" | "pool" | "ninguna" =
+    !languageAccepted ? "ninguna"
+    : sinMapaDeNiveles || !banda ? "exacta"
+    : bandasVariante.includes(banda) ? "exacta"
+    : bandasPool.includes(banda) ? "pool"
+    : "ninguna";
+
   // 37, no 20. Los 17 que suben vienen del texto libre, que los cobraba sin
   // predecir nada. Que tengamos publicado lo que la persona pide es lo unico
-  // que sabemos con certeza antes de invitarla.
-  const languagePoints = languageAccepted ? LANGUAGE_MAX : 0;
+  // que sabemos con certeza antes de invitarla, y por eso tiene que mirar las
+  // tres cosas que decide: idioma, variante y NIVEL.
+  const languagePoints =
+    cobertura === "exacta" ? LANGUAGE_MAX : cobertura === "pool" ? LANGUAGE_POOL_MATCH : 0;
+  const nivelServido = cobertura !== "ninguna";
   signals.push({
     label: !languageRecruited
       ? `Target language ${app.targetLanguage} is not being recruited for`
       : !variantServed
         ? `No published ${app.targetLanguage} journey for ${app.targetVariant} yet`
-        : `Target language ${app.targetLanguage} is in the beta`,
+        : cobertura === "ninguna"
+          ? `No ${banda} ${app.targetLanguage} journey for ${app.targetVariant} yet`
+          : cobertura === "pool"
+            ? `${banda} ${app.targetLanguage} is published, but not for ${app.targetVariant}`
+            : `Target language ${app.targetLanguage} is in the beta`,
     points: languagePoints,
   });
 
@@ -455,13 +505,18 @@ export function evaluateApplication(
   const score = normalizeScore(reason.points + hours + languagePoints + motivation + extras);
 
   // ── Verdict ──
-  if (!languageAccepted) {
+  // A la cola, nunca al rechazo: que hoy no tengamos su nivel no dice nada de
+  // la persona, y publicar ese journey lo arregla solo. El score se recalcula
+  // en cada lectura de la cola, asi que la ficha se corrige sola ese dia.
+  if (!languageAccepted || !nivelServido) {
     return {
       decision: "queue",
       score,
-      reason: languageRecruited
-        ? `No ${app.targetLanguage} (${app.targetVariant}) journey published yet`
-        : `Not recruiting ${app.targetLanguage} right now`,
+      reason: !languageRecruited
+        ? `Not recruiting ${app.targetLanguage} right now`
+        : !variantServed
+          ? `No ${app.targetLanguage} (${app.targetVariant}) journey published yet`
+          : `No ${banda} ${app.targetLanguage} journey for ${app.targetVariant} published yet`,
       signals,
     };
   }
