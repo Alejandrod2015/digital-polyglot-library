@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "espera",
+  "sentence": "Andrés [[espera]] en la mesa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waits for someone",
+   "options": [
+    "waits for someone",
+    "pays the bill",
+    "leaves the table",
+    "cleans the table"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Andrés espera en la mesa.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "panadera",
+  "sentence": "Espera Sofi, una [[panadera]] del barrio, con un pandebono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman who bakes bread",
+   "options": [
+    "a woman who bakes bread",
+    "a woman who sells flowers",
+    "a woman who drives a bus",
+    "a woman who teaches children"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Espera Sofi, una panadera del barrio, con un pandebono.",
+    "targetWord": "panadera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "pandebono",
+  "sentence": "Espera Sofi, una panadera del barrio, con un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pandebono",
+   "options": [
+    "pandebono",
+    "martillo",
+    "candado",
+    "ladrillo"
+   ],
+   "translation": "Sofi waits, a baker from the neighborhood, with a _____.",
+   "optionTranslations": [
+    "cheese bread roll",
+    "hammer",
+    "padlock",
+    "brick"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Espera Sofi, una panadera del barrio, con un pandebono.",
+    "targetWord": "pandebono",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "platito",
+  "sentence": "Mariana pone un vasito y un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "platito",
+   "options": [
+    "platito",
+    "cepillo",
+    "sombrero",
+    "zapato"
+   ],
+   "translation": "Mariana puts down a little cup and a _____.",
+   "optionTranslations": [
+    "little plate",
+    "hairbrush",
+    "hat",
+    "shoe"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Mariana pone un vasito y un platito.",
+    "targetWord": "platito",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "bandejita,cucharita,lechera,azucarera",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "bandejita",
+     "answer": "a very small tray",
+     "options": [
+      "a very small tray",
+      "a very small spoon",
+      "a small jug for milk",
+      "a small bowl for sugar"
+     ]
+    },
+    {
+     "word": "cucharita",
+     "answer": "a very small spoon",
+     "options": [
+      "a very small tray",
+      "a very small spoon",
+      "a small jug for milk",
+      "a small bowl for sugar"
+     ]
+    },
+    {
+     "word": "lechera",
+     "answer": "a small jug for milk",
+     "options": [
+      "a very small tray",
+      "a very small spoon",
+      "a small jug for milk",
+      "a small bowl for sugar"
+     ]
+    },
+    {
+     "word": "azucarera",
+     "answer": "a small bowl for sugar",
+     "options": [
+      "a very small tray",
+      "a very small spoon",
+      "a small jug for milk",
+      "a small bowl for sugar"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "miga",
+  "sentence": "Sofi deja una _____ y una migaja junto al platito.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "miga",
+   "options": [
+    "miga",
+    "silla",
+    "ventana",
+    "camisa"
+   ],
+   "translation": "Sofi leaves a _____ and a crumb next to the little plate.",
+   "optionTranslations": [
+    "bread bit",
+    "chair",
+    "window",
+    "shirt"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Sofi deja una miga y una migaja junto al platito.",
+    "targetWord": "miga",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responde",
+  "sentence": "Yo mando poco, [[responde]] Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers another person",
+   "options": [
+    "answers another person",
+    "asks a new question",
+    "opens the front door",
+    "counts the small coins"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Yo mando poco, responde Andrés.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "servilletero",
+  "sentence": "En el _____ hay una tapita y un pitillo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "servilletero",
+   "options": [
+    "servilletero",
+    "florero",
+    "monedero",
+    "llavero"
+   ],
+   "translation": "In the _____ there is a little lid and a straw.",
+   "optionTranslations": [
+    "napkin holder",
+    "flower vase",
+    "coin purse",
+    "key ring"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "En el servilletero hay una tapita y un pitillo.",
+    "targetWord": "servilletero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vitrina",
+  "sentence": "Sofi señala la [[vitrina]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a glass case for food",
+   "options": [
+    "a glass case for food",
+    "a small paper napkin",
+    "a warm cup of milk",
+    "a long wooden spoon"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Sofi señala la vitrina.",
+    "targetWord": "vitrina",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buñuelo",
+  "sentence": "Falta el [[buñuelo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a round fried bread ball",
+   "options": [
+    "a round fried bread ball",
+    "a thin slice of ham",
+    "a cold glass of juice",
+    "a small paper bag"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Falta el buñuelo.",
+    "targetWord": "buñuelo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agrega",
+  "sentence": "El vasito manda menos, [[agrega]] Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "adds more words",
+   "options": [
+    "adds more words",
+    "pays the whole bill",
+    "shuts the front door",
+    "takes the last seat"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "El vasito manda menos, agrega Andrés.",
+    "targetWord": "agrega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bocadillo",
+  "sentence": "Ella mira el [[bocadillo]] con arequipe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sweet guava paste block",
+   "options": [
+    "a sweet guava paste block",
+    "a small green salad",
+    "a hot corn soup",
+    "a fresh bread roll"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Ella mira el bocadillo con arequipe.",
+    "targetWord": "bocadillo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arequipe",
+  "sentence": "Ella mira la lechera, la azucarera y el bocadillo con [[arequipe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sweet milk caramel",
+   "options": [
+    "a sweet milk caramel",
+    "a salty green sauce",
+    "a strong black tea",
+    "a fresh white cheese"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Ella mira la lechera, la azucarera y el bocadillo con arequipe.",
+    "targetWord": "arequipe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toma un mordisco",
+  "sentence": "Andrés [[toma un mordisco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "takes one bite",
+   "options": [
+    "takes one bite",
+    "makes a phone call",
+    "pays with a card",
+    "sits on a chair"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Andrés toma un mordisco.",
+    "targetWord": "toma un mordisco",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "dueño",
+  "sentence": "El _____ soy yo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dueño",
+   "options": [
+    "dueño",
+    "vuelto",
+    "pedido",
+    "mordisco"
+   ],
+   "translation": "I am the _____.",
+   "optionTranslations": [
+    "owner",
+    "the change",
+    "order",
+    "bite"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "El dueño soy yo.",
+    "targetWord": "dueño",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nombre",
+  "sentence": "Mariana escribe el _____ y Andrés sonríe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nombre",
+   "options": [
+    "nombre",
+    "pitillo",
+    "tenedor",
+    "cuaderno"
+   ],
+   "translation": "Mariana writes the _____ and Andrés smiles.",
+   "optionTranslations": [
+    "name",
+    "straw",
+    "fork",
+    "notebook"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "Mariana escribe el nombre y Andrés sonríe.",
+    "targetWord": "nombre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pierde poder",
+  "sentence": "El vasito [[pierde poder]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stops being in charge",
+   "options": [
+    "stops being in charge",
+    "starts a new job",
+    "breaks into small pieces",
+    "costs a lot of money"
+   ],
+   "audioClip": {
+    "storySlug": "vasito-sin-dueno",
+    "storySource": "journey",
+    "sentence": "El vasito pierde poder.",
+    "targetWord": "pierde poder",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ }
+]

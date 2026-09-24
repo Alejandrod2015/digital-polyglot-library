@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "audio raro",
+  "sentence": "El [[audio queda raro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "audio that sounds strange",
+   "options": [
+    "audio that sounds strange",
+    "bread that tastes sweet",
+    "music that sounds loud",
+    "water that feels cold"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "El audio queda raro.",
+    "targetWord": "audio queda raro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hilito musical",
+  "sentence": "Esta vez toca una sola [[cuerda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thin line on an instrument",
+   "options": [
+    "a thin line on an instrument",
+    "a small key on a phone",
+    "a round hole in a wall",
+    "a long street in a town"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "Esta vez toca una sola cuerda.",
+    "targetWord": "cuerda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cantar",
+  "sentence": "“Mesa amiga aquí, con café”, [[canta]] bajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make music with your voice",
+   "options": [
+    "to make music with your voice",
+    "to send a note with your phone",
+    "to walk fast with your friends",
+    "to cook bread with your hands"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Mesa amiga aquí, con café”, canta bajo.",
+    "targetWord": "canta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguir",
+  "sentence": "“[[Seguí]] la campana y el olor de pan”, cuenta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go after a sign",
+   "options": [
+    "to go after a sign",
+    "to wait for a bus",
+    "to close a shop door",
+    "to fix a small mistake"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Seguí la campana y el olor de pan”, cuenta.",
+    "targetWord": "Seguí",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responder",
+  "sentence": "“Sirve por error”, [[responde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer another person",
+   "options": [
+    "to answer another person",
+    "to close the shop door",
+    "to break a glass cup",
+    "to carry the warm bread"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Sirve por error”, responde.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "limpio",
+  "sentence": "Al final, la buseta llega [[limpia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean and not dirty",
+   "options": [
+    "clean and not dirty",
+    "full and not empty",
+    "loud and not quiet",
+    "warm and not cold"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "Al final, la buseta llega limpia.",
+    "targetWord": "limpia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "habla grabada",
+  "sentence": "“Mesa amiga, café y pan; sigan mi [[voz]]”, dice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sound a person speaks with",
+   "options": [
+    "the sound a person speaks with",
+    "the smell a bread gives off",
+    "the light a lamp gives off",
+    "the noise a bell makes here"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Mesa amiga, café y pan; sigan mi voz”, dice.",
+    "targetWord": "voz",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servir",
+  "sentence": "“La nota [[sirve]] por error”, dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be useful now",
+   "options": [
+    "to be useful now",
+    "to be late again",
+    "to be far away",
+    "to be very old"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“La nota sirve por error”, dice Andrés.",
+    "targetWord": "sirve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aroma",
+  "sentence": "“Seguí la campana y el [[olor]] de pan”, cuenta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what your nose notices",
+   "options": [
+    "what your nose notices",
+    "what your ear notices",
+    "what your hand touches",
+    "what your eye follows"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Seguí la campana y el olor de pan”, cuenta.",
+    "targetWord": "olor",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "puerta de salida",
+  "sentence": "La campana busca [[salida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a way out of a place",
+   "options": [
+    "a way out of a place",
+    "a seat next to the door",
+    "a shop full of bread",
+    "a note with two words"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "La campana busca salida.",
+    "targetWord": "salida",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "paradero",
+  "sentence": "“La campana dice _____, pero la voz dice café”, responde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paradero",
+   "options": [
+    "paradero",
+    "instrumento",
+    "sonido",
+    "vaso"
+   ],
+   "translation": "“The bell says _____, but the voice says café”, he answers.",
+   "optionTranslations": [
+    "a bus stop place",
+    "a thing used for music",
+    "a sound you hear",
+    "a drinking glass"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“La campana dice paradero, pero la voz dice café”, responde.",
+    "targetWord": "paradero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vitrina",
+  "sentence": "“Es café, vaso y _____”, explica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vitrina",
+   "options": [
+    "vitrina",
+    "buseta",
+    "cuerda",
+    "salida"
+   ],
+   "translation": "“It is coffee, a cup and a _____”, he explains.",
+   "optionTranslations": [
+    "a glass display case",
+    "a small city bus",
+    "a thin music string",
+    "a way out of a place"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Es café, vaso y vitrina”, explica.",
+    "targetWord": "vitrina",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "instrumento",
+  "sentence": "El _____ espera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "instrumento",
+   "options": [
+    "instrumento",
+    "paradero",
+    "aguacero",
+    "sonido"
+   ],
+   "translation": "The _____ waits.",
+   "optionTranslations": [
+    "a thing used for music",
+    "a bus stop place",
+    "a heavy rain",
+    "a sound you hear"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "El instrumento espera.",
+    "targetWord": "instrumento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "olor de pan",
+  "sentence": "“Seguí la campana y el _____”, cuenta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "olor de pan",
+   "options": [
+    "olor de pan",
+    "color de cielo",
+    "precio de café",
+    "tamaño de vaso"
+   ],
+   "translation": "“I followed the bell and the _____”, he says.",
+   "optionTranslations": [
+    "the smell that bread makes",
+    "the color of the sky",
+    "the price of a coffee",
+    "the size of a glass"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "“Seguí la campana y el olor de pan”, cuenta.",
+    "targetWord": "olor de pan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nota de voz",
+  "sentence": "El músico hace una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nota de voz",
+   "options": [
+    "nota de voz",
+    "hoja de papel",
+    "silla de madera",
+    "lista de precios"
+   ],
+   "translation": "The musician makes a _____.",
+   "optionTranslations": [
+    "a short voice message",
+    "a sheet of white paper",
+    "a chair made of wood",
+    "a list of shop prices"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "El músico hace una nota de voz.",
+    "targetWord": "nota de voz",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "una sola cuerda",
+  "sentence": "Esta vez toca _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "una sola cuerda",
+   "options": [
+    "una sola cuerda",
+    "una sola tienda",
+    "una sola calle",
+    "una sola semana"
+   ],
+   "translation": "This time he plays _____.",
+   "optionTranslations": [
+    "one string played alone",
+    "one single small shop",
+    "one single long street",
+    "one single short week"
+   ],
+   "audioClip": {
+    "storySlug": "la-nota-con-campana",
+    "storySource": "journey",
+    "sentence": "Esta vez toca una sola cuerda.",
+    "targetWord": "una sola cuerda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "buscar,avisar,escuchar,mandar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "buscar",
+     "answer": "to try to find something",
+     "options": [
+      "to try to find something",
+      "to tell someone news",
+      "to listen to something",
+      "to send a message"
+     ]
+    },
+    {
+     "word": "avisar",
+     "answer": "to tell someone news",
+     "options": [
+      "to try to find something",
+      "to tell someone news",
+      "to listen to something",
+      "to send a message"
+     ]
+    },
+    {
+     "word": "escuchar",
+     "answer": "to listen to something",
+     "options": [
+      "to try to find something",
+      "to tell someone news",
+      "to listen to something",
+      "to send a message"
+     ]
+    },
+    {
+     "word": "mandar",
+     "answer": "to send a message",
+     "options": [
+      "to try to find something",
+      "to tell someone news",
+      "to listen to something",
+      "to send a message"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

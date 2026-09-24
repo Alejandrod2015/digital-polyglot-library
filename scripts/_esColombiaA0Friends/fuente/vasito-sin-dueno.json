@@ -1,0 +1,128 @@
+{
+ "slug": "vasito-sin-dueno",
+ "topic": "coffee-and-bread",
+ "title": "Vasito sin dueño",
+ "text": "El café de Medellín huele dulce. Mariana abre la puerta. Andrés espera en la mesa. Espera Sofi, una panadera del barrio, con un pandebono.\n\nMariana pone un vasito y un platito. “Esto es para Andrés”, dice. Sofi mira la bandejita. “¿El vasito manda?” pregunta.\n\nAndrés levanta la mano. “Yo mando poco”, responde. “El vasito manda menos”, agrega. Sofi deja una miga y una migaja junto al platito.\n\nMariana busca la cucharita. En el servilletero hay una tapita y un pitillo. “Tu pedido es pequeño”, avisa ella. “Pero serio”, responde Andrés.\n\nSofi señala la vitrina. “Falta el buñuelo”, explica. “También manda”, dice Mariana. “Y mira mucho”, agrega Sofi. Ella mira la lechera, la azucarera y el bocadillo con arequipe.\n\nAndrés toma un mordisco. “El dueño soy yo”, dice. “El vasito no paga mucho”, contesta Sofi. Mariana escribe el nombre y Andrés sonríe; el vasito pierde poder.",
+ "vocab": [
+  {
+   "word": "esperar",
+   "surface": "espera",
+   "type": "verb",
+   "def": "To stay until something happens."
+  },
+  {
+   "word": "panadera",
+   "surface": "panadera",
+   "type": "noun",
+   "def": "A woman who makes bread."
+  },
+  {
+   "word": "pandebono",
+   "surface": "pandebono",
+   "type": "noun",
+   "def": "Colombian cheese bread from a bakery."
+  },
+  {
+   "word": "perder poder",
+   "surface": "pierde poder",
+   "type": "expression",
+   "def": "To stop being in control."
+  },
+  {
+   "word": "platito",
+   "surface": "platito",
+   "type": "noun",
+   "def": "A very small plate."
+  },
+  {
+   "word": "bandejita",
+   "surface": "bandejita",
+   "type": "noun",
+   "def": "A very small tray."
+  },
+  {
+   "word": "miga",
+   "surface": "miga",
+   "type": "noun",
+   "def": "A soft bit of bread."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "cucharita",
+   "surface": "cucharita",
+   "type": "noun",
+   "def": "A very small spoon."
+  },
+  {
+   "word": "servilletero",
+   "surface": "servilletero",
+   "type": "noun",
+   "def": "A holder for paper napkins."
+  },
+  {
+   "word": "tomar mordisco",
+   "surface": "toma un mordisco",
+   "type": "expression",
+   "def": "To take one bite."
+  },
+  {
+   "word": "lechera",
+   "surface": "lechera",
+   "type": "noun",
+   "def": "A small thing for milk."
+  },
+  {
+   "word": "vitrina",
+   "surface": "vitrina",
+   "type": "noun",
+   "def": "A glass case for food."
+  },
+  {
+   "word": "buñuelo",
+   "surface": "buñuelo",
+   "type": "noun",
+   "def": "A round Colombian fried bread."
+  },
+  {
+   "word": "azucarera",
+   "surface": "azucarera",
+   "type": "noun",
+   "def": "A small thing for sugar."
+  },
+  {
+   "word": "agregar",
+   "surface": "agrega",
+   "type": "verb",
+   "def": "To add more words."
+  },
+  {
+   "word": "nombre",
+   "surface": "nombre",
+   "type": "noun",
+   "def": "The word for a person."
+  },
+  {
+   "word": "bocadillo",
+   "surface": "bocadillo",
+   "type": "noun",
+   "def": "Colombian guava paste candy."
+  },
+  {
+   "word": "arequipe",
+   "surface": "arequipe",
+   "type": "noun",
+   "def": "Colombian sweet milk caramel."
+  },
+  {
+   "word": "dueño",
+   "surface": "dueño",
+   "type": "noun",
+   "def": "The person something belongs to."
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "slug": "un-peso-canta",
+ "topic": "cash-and-errands",
+ "title": "Un peso canta",
+ "text": "Hay un peso en la mano abierta. Mariana sirve café. Andrés mira el pan amigo. Suena música suave en la mesa.\n\nEl peso cae en la bolsa del pan. Ella mete la mano. “No es propina ni drama; vuelve a mi mano”, dice. Andrés observa el pandebono y parte un pedacito horneado.\n\nCanta bajo para buscar. “Peso, peso, sal del pan”, repite. La miga y el papel señalan. “La plata no contesta”, explica.\n\nEl bolsillo, la silla y la nota quedan en revisión.\n\nEl peso aparece pegado a una tira roja. “El pan guarda vuelto, sin problema”, cuenta. Andrés levanta la moneda con cuidado.\n\nMariana pone el peso sobre el vaso vacío. “Para la próxima compra segura”, avisa. “Todos observan el último peso perdido”, remata la panadera. “¿Y mañana quién canta?”, pregunta Mariana.",
+ "vocab": [
+  {
+   "word": "peso cae",
+   "surface": "peso cae",
+   "type": "expression",
+   "def": "A coin falls down."
+  },
+  {
+   "word": "propina",
+   "surface": "propina",
+   "type": "noun",
+   "def": "Extra money for service."
+  },
+  {
+   "word": "roja",
+   "surface": "roja",
+   "type": "adjective",
+   "def": "Red in color, not blue."
+  },
+  {
+   "word": "pegado",
+   "surface": "pegado",
+   "type": "adjective",
+   "def": "Stuck to another thing."
+  },
+  {
+   "word": "tira roja",
+   "surface": "tira roja",
+   "type": "noun",
+   "def": "A thin red strip."
+  },
+  {
+   "word": "servir café",
+   "surface": "sirve café",
+   "type": "expression",
+   "def": "To give coffee to someone."
+  },
+  {
+   "word": "devolver",
+   "surface": "levanta la moneda",
+   "type": "verb",
+   "def": "To give something back."
+  },
+  {
+   "word": "bolsillo",
+   "surface": "bolsillo",
+   "type": "noun",
+   "def": "A small pocket in clothing."
+  },
+  {
+   "word": "plata pequeña",
+   "surface": "plata",
+   "type": "noun",
+   "def": "A small amount of money."
+  },
+  {
+   "word": "quedar pegado",
+   "surface": "pegado",
+   "type": "expression",
+   "def": "To stay stuck to something."
+  },
+  {
+   "word": "canción corta",
+   "surface": "canta",
+   "type": "expression",
+   "def": "A short song with words."
+  },
+  {
+   "word": "miga",
+   "surface": "miga",
+   "type": "noun",
+   "def": "A small piece of bread."
+  },
+  {
+   "word": "drama",
+   "surface": "drama",
+   "type": "noun",
+   "def": "A big emotional problem."
+  },
+  {
+   "word": "vaso vacío",
+   "surface": "vaso vacío",
+   "type": "expression",
+   "def": "A glass with nothing inside."
+  },
+  {
+   "word": "seguir en sitio",
+   "surface": "guarda vuelto",
+   "type": "expression",
+   "def": "To keep something in place."
+  },
+  {
+   "word": "bolsa de pan",
+   "surface": "bolsa del pan",
+   "type": "noun",
+   "def": "A bag used for bread."
+  },
+  {
+   "word": "todos observan",
+   "surface": "Todos observan",
+   "type": "expression",
+   "def": "Everyone looks at something."
+  },
+  {
+   "word": "sin problema",
+   "surface": "sin problema",
+   "type": "expression",
+   "def": "With no trouble at all."
+  },
+  {
+   "word": "mano abierta",
+   "surface": "mano abierta",
+   "type": "expression",
+   "def": "A hand held open."
+  },
+  {
+   "word": "último",
+   "surface": "último",
+   "type": "adjective",
+   "def": "Last after all the others."
+  }
+ ]
+}

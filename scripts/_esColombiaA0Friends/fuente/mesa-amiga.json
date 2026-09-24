@@ -1,0 +1,128 @@
+{
+ "slug": "mesa-amiga",
+ "topic": "coffee-and-bread",
+ "title": "Mesa amiga",
+ "text": "Una fila falsa mira la barra. Mariana pone café. Andrés mira la fila. Espera Sofi, una panadera del barrio, junto a la vitrinita. El tintico huele dulce.\n\nLa médica espera con un costalito. “La mesa amiga es aquí”, dice. Andrés mira otra mesa. “Esa mesa es redonda”, contesta.\n\nSofi muestra un amasijo y queso campesino. “La señal es el queso rayado”, explica. “Yo sigo la señal”, dice Andrés. Andrés duda.\n\nMariana deja un tintico en la mesita. “Este es reservado”, avisa. La médica pone el costalito al lado. “Ahora está separado”, agrega.\n\nSofi trae un jarrón con flores y un canelazo sin licor. “Mesa seria”, dice. “Yo mando el pedido”, responde Andrés.\n\nEl café queda en el lugar justo. “Mesa amiga”, responde Andrés. “La fila falsa espera”, agrega Mariana. Mariana parte un pan compartido y nadie protesta.",
+ "vocab": [
+  {
+   "word": "fila falsa",
+   "surface": "fila falsa",
+   "type": "expression",
+   "def": "A line that is not real."
+  },
+  {
+   "word": "barra",
+   "surface": "barra",
+   "type": "noun",
+   "def": "A long counter in a cafe."
+  },
+  {
+   "word": "costalito",
+   "surface": "costalito",
+   "type": "noun",
+   "def": "A small cloth sack."
+  },
+  {
+   "word": "mesa amiga",
+   "surface": "mesa amiga",
+   "type": "expression",
+   "def": "A friendly table for the group."
+  },
+  {
+   "word": "redonda",
+   "surface": "redonda",
+   "type": "adjective",
+   "def": "Round, like a small circle."
+  },
+  {
+   "word": "amasijo",
+   "surface": "amasijo",
+   "type": "noun",
+   "def": "Colombian bread or baked dough."
+  },
+  {
+   "word": "queso campesino",
+   "surface": "queso campesino",
+   "type": "noun",
+   "def": "Fresh Colombian white cheese."
+  },
+  {
+   "word": "mostrar",
+   "surface": "muestra",
+   "type": "verb",
+   "def": "To show something clearly."
+  },
+  {
+   "word": "dudar",
+   "surface": "duda",
+   "type": "verb",
+   "def": "To not feel sure."
+  },
+  {
+   "word": "tintico",
+   "surface": "tintico",
+   "type": "noun",
+   "def": "Small Colombian black coffee."
+  },
+  {
+   "word": "ahora",
+   "surface": "ahora",
+   "type": "adverb",
+   "def": "At this moment now."
+  },
+  {
+   "word": "reservado",
+   "surface": "reservado",
+   "type": "adjective",
+   "def": "Kept for one person or group."
+  },
+  {
+   "word": "separado",
+   "surface": "separado",
+   "type": "adjective",
+   "def": "Away from other things."
+  },
+  {
+   "word": "flores",
+   "surface": "flores",
+   "type": "noun",
+   "def": "Small colorful plant parts."
+  },
+  {
+   "word": "canelazo",
+   "surface": "canelazo",
+   "type": "noun",
+   "def": "Hot cinnamon drink from Colombia."
+  },
+  {
+   "word": "mandar",
+   "surface": "mando",
+   "type": "verb",
+   "def": "To send a message."
+  },
+  {
+   "word": "lugar justo",
+   "surface": "lugar justo",
+   "type": "expression",
+   "def": "The right place for something."
+  },
+  {
+   "word": "pan compartido",
+   "surface": "pan compartido",
+   "type": "expression",
+   "def": "Bread for more than one person."
+  },
+  {
+   "word": "protestar",
+   "surface": "protesta",
+   "type": "verb",
+   "def": "To complain or object."
+  },
+  {
+   "word": "vitrinita",
+   "surface": "vitrinita",
+   "type": "noun",
+   "def": "A very small display case."
+  }
+ ]
+}

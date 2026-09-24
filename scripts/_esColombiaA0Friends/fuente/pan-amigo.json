@@ -1,0 +1,128 @@
+{
+ "slug": "pan-amigo",
+ "topic": "coffee-and-bread",
+ "title": "Pan amigo",
+ "text": "Sofi llega con el hornito apagado. Ella es una panadera del barrio. Mariana mira una nota corta. Una médica espera al lado.\n\nAndrés ve un pan de yuca. “Ese pan es mío”, dice. Ella ve pan de queso. “Ese también”, contesta.\n\nSofi toca el pan blandito. “Hay una ración”, explica. “La ración alcanza”, agrega. Mariana marca una mitad justa con cinta roja.\n\nElla mira la nota. “La letra bonita no corta pan”, avisa. Andrés muestra una cara seria y luego una cara feliz.\n\nMariana dibuja un dibujo serio y un dibujo feliz. Sofi parte un pedacito crujiente. “Esto queda horneado”, agrega. “Yo respeto la cinta”, dice Andrés.\n\nEl pan tiene olor dulzón. “Es un pan amigo bueno”, dice Andrés. “Yo tomo poco pan”, agrega ella. “Mañana vuelve”, avisa Sofi.",
+ "vocab": [
+  {
+   "word": "hornito apagado",
+   "surface": "hornito apagado",
+   "type": "expression",
+   "def": "A small oven turned off."
+  },
+  {
+   "word": "nota corta",
+   "surface": "nota corta",
+   "type": "expression",
+   "def": "A note with few words."
+  },
+  {
+   "word": "pan de yuca",
+   "surface": "pan de yuca",
+   "type": "noun",
+   "def": "Colombian bread made with yuca."
+  },
+  {
+   "word": "queso",
+   "surface": "queso",
+   "type": "noun",
+   "def": "A soft white food from milk."
+  },
+  {
+   "word": "pan blandito",
+   "surface": "pan blandito",
+   "type": "expression",
+   "def": "Soft bread in the hand."
+  },
+  {
+   "word": "roja",
+   "surface": "roja",
+   "type": "adjective",
+   "def": "Red in color, not blue."
+  },
+  {
+   "word": "mitad justa",
+   "surface": "mitad justa",
+   "type": "expression",
+   "def": "A fair half part."
+  },
+  {
+   "word": "cinta roja",
+   "surface": "cinta roja",
+   "type": "noun",
+   "def": "A red strip of material."
+  },
+  {
+   "word": "letra bonita",
+   "surface": "letra bonita",
+   "type": "expression",
+   "def": "Pretty handwriting on paper."
+  },
+  {
+   "word": "cortar pan",
+   "surface": "corta pan",
+   "type": "expression",
+   "def": "To cut bread into parts."
+  },
+  {
+   "word": "cara seria",
+   "surface": "cara seria",
+   "type": "expression",
+   "def": "A face with no smile."
+  },
+  {
+   "word": "ración",
+   "surface": "ración",
+   "type": "noun",
+   "def": "One portion of food."
+  },
+  {
+   "word": "dibujo serio",
+   "surface": "dibujo serio",
+   "type": "expression",
+   "def": "A picture with no smile."
+  },
+  {
+   "word": "hecho a mano",
+   "surface": "dibuja",
+   "type": "expression",
+   "def": "Made by a person's hand."
+  },
+  {
+   "word": "pedacito",
+   "surface": "pedacito",
+   "type": "noun",
+   "def": "A very small piece."
+  },
+  {
+   "word": "crujiente",
+   "surface": "crujiente",
+   "type": "adjective",
+   "def": "Hard and noisy to bite."
+  },
+  {
+   "word": "horneado",
+   "surface": "horneado",
+   "type": "adjective",
+   "def": "Cooked inside an oven."
+  },
+  {
+   "word": "mañana vuelve",
+   "surface": "Mañana vuelve",
+   "type": "expression",
+   "def": "It comes back tomorrow."
+  },
+  {
+   "word": "pan amigo",
+   "surface": "pan amigo",
+   "type": "expression",
+   "def": "Bread treated like a friend."
+  },
+  {
+   "word": "olor",
+   "surface": "olor",
+   "type": "noun",
+   "def": "A smell from something."
+  }
+ ]
+}

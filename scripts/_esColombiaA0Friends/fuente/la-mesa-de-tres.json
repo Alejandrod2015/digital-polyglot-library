@@ -1,0 +1,128 @@
+{
+ "slug": "la-mesa-de-tres",
+ "topic": "greetings-and-introductions",
+ "title": "Tres platos esperan",
+ "text": "Mariana abre el café temprano. Andrés espera afuera, quieto, con pan. La mesa está libre. El pan huele dulce.\n\nLlega Lina, una médica nueva del barrio. Ella mira la mesa y pregunta bajo. “¿Es una reunión?” Andrés dice “sí” con calma. “Una reunión pequeña”, agrega. “La mesa espera”, avisa.\n\nMariana saluda a Lina. “Mucho gusto”, dice Mariana. Andrés repite muy rápido. “Mucho susto”, suelta él. Lina mira el pan.\n\nLina abre los ojos. Mariana mira a Andrés. En la mesa hay pan de queso, no miedo. “El pan no asusta”, explica Mariana. “Yo tampoco”, responde Andrés. “Me siento bien”, responde Lina.\n\nLina ríe. “Mucho gusto, no susto”, corrige ella. Andrés toca su pecho. “Yo tengo gusto y susto”, cuenta él. “Pero sigo aquí”, agrega.\n\nMariana trae café para todos. La mesa ya no parece grande. Lina escribe su nombre en una servilleta. “Yo escribo susto debajo”, avisa Andrés. Ahora los tres tienen un saludo propio.",
+ "vocab": [
+  {
+   "word": "esperar",
+   "surface": "espera",
+   "type": "verb",
+   "def": "To stay until someone comes."
+  },
+  {
+   "word": "temprano",
+   "surface": "temprano",
+   "type": "adverb",
+   "def": "Early, near the start of the day."
+  },
+  {
+   "word": "afuera",
+   "surface": "afuera",
+   "type": "adverb",
+   "def": "Outside, not in the room."
+  },
+  {
+   "word": "quieto",
+   "surface": "quieto",
+   "type": "adjective",
+   "def": "Still and not moving."
+  },
+  {
+   "word": "oler",
+   "surface": "huele",
+   "type": "verb",
+   "def": "To have a smell."
+  },
+  {
+   "word": "libre",
+   "surface": "libre",
+   "type": "adjective",
+   "def": "Free, not taken by anyone."
+  },
+  {
+   "word": "dulce",
+   "surface": "dulce",
+   "type": "adjective",
+   "def": "Sweet, like sugar or honey."
+  },
+  {
+   "word": "médica",
+   "surface": "médica",
+   "type": "noun",
+   "def": "A woman who helps sick people."
+  },
+  {
+   "word": "llegar",
+   "surface": "Llega",
+   "type": "verb",
+   "def": "To come to a place."
+  },
+  {
+   "word": "preguntar",
+   "surface": "pregunta",
+   "type": "verb",
+   "def": "To ask for words or news."
+  },
+  {
+   "word": "bajo",
+   "surface": "bajo",
+   "type": "adverb",
+   "def": "Under someone or something."
+  },
+  {
+   "word": "reunión",
+   "surface": "reunión",
+   "type": "noun",
+   "def": "A time when people meet."
+  },
+  {
+   "word": "saludar",
+   "surface": "saluda",
+   "type": "verb",
+   "def": "To say hello to someone."
+  },
+  {
+   "word": "soltar",
+   "surface": "suelta",
+   "type": "verb",
+   "def": "To say something suddenly."
+  },
+  {
+   "word": "rápido",
+   "surface": "rápido",
+   "type": "adverb",
+   "def": "Fast in movement or action."
+  },
+  {
+   "word": "susto",
+   "surface": "susto",
+   "type": "noun",
+   "def": "A sudden scared feeling."
+  },
+  {
+   "word": "abrir los ojos",
+   "surface": "abre los ojos",
+   "type": "expression",
+   "def": "To make your eyes wide."
+  },
+  {
+   "word": "parecer",
+   "surface": "parece",
+   "type": "verb",
+   "def": "To look or seem a certain way."
+  },
+  {
+   "word": "debajo",
+   "surface": "debajo",
+   "type": "adverb",
+   "def": "Under someone or something."
+  },
+  {
+   "word": "propio",
+   "surface": "propio",
+   "type": "adjective",
+   "def": "Your own, not another person's."
+  }
+ ]
+}

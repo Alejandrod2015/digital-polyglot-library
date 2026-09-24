@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "pagar",
+  "sentence": "Amiga no [[paga]] gratis, dice serio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give money for something",
+   "options": [
+    "to give money for something",
+    "to ask for a free coffee",
+    "to write on a small paper",
+    "to close the shop door"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Amiga no paga gratis, dice serio.",
+    "targetWord": "paga",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encima de",
+  "sentence": "Andrés deja una ficha [[sobre el]] platito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on top of",
+   "options": [
+    "on top of",
+    "under",
+    "far from",
+    "next to"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Andrés deja una ficha sobre el platito.",
+    "targetWord": "sobre el",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marcar",
+  "sentence": "La vendedora [[marca]] tres rayitas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a sign or line",
+   "options": [
+    "to make a sign or line",
+    "to clean a small table",
+    "to carry a heavy tray",
+    "to open a glass door"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "La vendedora marca tres rayitas.",
+    "targetWord": "marca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costo",
+  "sentence": "El [[costo]] queda en medio, agrega.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the money something costs",
+   "options": [
+    "the money something costs",
+    "the paper under the plate",
+    "the small line on a form",
+    "the voice behind the door"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "El costo queda en medio, agrega.",
+    "targetWord": "costo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juego",
+  "sentence": "Entre todos suena [[juego]], remata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a game or playful action",
+   "options": [
+    "a game or playful action",
+    "a bill with three lines",
+    "a plate under a glass",
+    "a coin inside a pocket"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Entre todos suena juego, remata.",
+    "targetWord": "juego",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por favor",
+  "sentence": "Una por café, una por pan y una [[por favor]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a polite way to ask",
+   "options": [
+    "a polite way to ask",
+    "a loud way to sing",
+    "a quick way to pay",
+    "a small way to write"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Una por café, una por pan y una por favor.",
+    "targetWord": "por favor",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejar",
+  "sentence": "Andrés [[deja]] una ficha sobre el platito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put something somewhere",
+   "options": [
+    "to put something somewhere",
+    "to take something away",
+    "to count the small coins",
+    "to read the paper form"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Andrés deja una ficha sobre el platito.",
+    "targetWord": "deja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en medio",
+  "sentence": "El costo queda [[en medio]], agrega.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the center place",
+   "options": [
+    "in the center place",
+    "at the front door",
+    "on the top shelf",
+    "under the small plate"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "El costo queda en medio, agrega.",
+    "targetWord": "en medio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "también cobra",
+  "sentence": "¿La cucharita [[también cobra]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it also asks for money",
+   "options": [
+    "it also asks for money",
+    "it also brings the bread",
+    "it also holds the coffee",
+    "it also cleans the table"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "¿La cucharita también cobra?",
+    "targetWord": "también cobra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "planilla doblada",
+  "sentence": "La vendedora trae una [[planilla doblada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a folded paper form",
+   "options": [
+    "a folded paper form",
+    "a clean white cup",
+    "a small metal coin",
+    "a warm cheese bread"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "La vendedora trae una planilla doblada.",
+    "targetWord": "planilla doblada",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "vendedora",
+  "sentence": "Para la cuenta, la _____ trae una planilla doblada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vendedora",
+   "options": [
+    "vendedora",
+    "cucharita",
+    "vitrina",
+    "bandeja"
+   ],
+   "translation": "For the bill, the _____ brings a folded paper form.",
+   "optionTranslations": [
+    "saleswoman",
+    "little spoon",
+    "display case",
+    "tray"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Para la cuenta, la vendedora trae una planilla doblada.",
+    "targetWord": "vendedora",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ficha",
+  "sentence": "Andrés deja una _____ sobre el platito.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ficha",
+   "options": [
+    "ficha",
+    "pregunta",
+    "mirada",
+    "risa"
+   ],
+   "translation": "Andrés leaves a _____ on the little plate.",
+   "optionTranslations": [
+    "token",
+    "question",
+    "look",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Andrés deja una ficha sobre el platito.",
+    "targetWord": "ficha",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vaso",
+  "sentence": "Mariana señala el _____, el pan y la cucharita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vaso",
+   "options": [
+    "vaso",
+    "costo",
+    "favor",
+    "juego"
+   ],
+   "translation": "Mariana points at the _____, the bread and the little spoon.",
+   "optionTranslations": [
+    "drinking glass",
+    "price",
+    "favor",
+    "game"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Mariana señala el vaso, el pan y la cucharita.",
+    "targetWord": "vaso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tres rayitas",
+  "sentence": "La vendedora marca _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tres rayitas",
+   "options": [
+    "tres rayitas",
+    "tres quesos",
+    "tres sillas",
+    "tres puertas"
+   ],
+   "translation": "The saleswoman marks _____.",
+   "optionTranslations": [
+    "three small lines",
+    "three cheeses",
+    "three chairs",
+    "three doors"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "La vendedora marca tres rayitas.",
+    "targetWord": "tres rayitas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mirada suave",
+  "sentence": "Andrés mira con _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mirada suave",
+   "options": [
+    "mirada suave",
+    "paso rápido",
+    "voz nueva",
+    "mano abierta"
+   ],
+   "translation": "Andrés looks with _____.",
+   "optionTranslations": [
+    "a gentle look",
+    "a quick step",
+    "a voice not heard before",
+    "an open hand"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "Andrés mira con mirada suave.",
+    "targetWord": "mirada suave",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "papel cae",
+  "sentence": "El _____ junto al servilletero.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "papel cae",
+   "options": [
+    "papel cae",
+    "costo crece",
+    "ruido crece",
+    "nombre vuelve"
+   ],
+   "translation": "The _____ next to the napkin holder.",
+   "optionTranslations": [
+    "a paper falls",
+    "a price grows",
+    "a noise grows",
+    "a name comes back"
+   ],
+   "audioClip": {
+    "storySlug": "amiga-paga-poco",
+    "storySource": "journey",
+    "sentence": "El papel cae junto al servilletero.",
+    "targetWord": "papel cae",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "trazo,conjunto,doblado,sonar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "trazo",
+     "answer": "small written line marks",
+     "options": [
+      "small written line marks",
+      "all the things together",
+      "folded and not flat",
+      "to make a sound"
+     ]
+    },
+    {
+     "word": "conjunto",
+     "answer": "all the things together",
+     "options": [
+      "small written line marks",
+      "all the things together",
+      "folded and not flat",
+      "to make a sound"
+     ]
+    },
+    {
+     "word": "doblado",
+     "answer": "folded and not flat",
+     "options": [
+      "small written line marks",
+      "all the things together",
+      "folded and not flat",
+      "to make a sound"
+     ]
+    },
+    {
+     "word": "sonar",
+     "answer": "to make a sound",
+     "options": [
+      "small written line marks",
+      "all the things together",
+      "folded and not flat",
+      "to make a sound"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

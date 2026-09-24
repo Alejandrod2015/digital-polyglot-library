@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "ahora",
+  "sentence": "[[Ahora]] sí trabaja y empuja fuerte, dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this moment",
+   "options": [
+    "at this moment",
+    "on the next day",
+    "before the long trip",
+    "after the last song"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Ahora sí trabaja y empuja fuerte, dice Andrés.",
+    "targetWord": "Ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "primero",
+  "sentence": "Sin drama y [[primero]], agrega Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "before all other people",
+   "options": [
+    "before all other people",
+    "next to the front door",
+    "under the wooden table",
+    "inside the cloth bag"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Sin drama y primero, agrega Mariana.",
+    "targetWord": "primero",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tomar",
+  "sentence": "Ella [[toma]] el otro extremo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take or hold something",
+   "options": [
+    "to take or hold something",
+    "to push with the arms",
+    "to clean a small cloth",
+    "to look at the door"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Ella toma el otro extremo.",
+    "targetWord": "toma",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "[[Dentro]] hay vasos y trapitos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside and not outside",
+   "options": [
+    "inside and not outside",
+    "over and not under",
+    "near and not far",
+    "late and not early"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Dentro hay vasos y trapitos.",
+    "targetWord": "Dentro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "empujar",
+  "sentence": "Ahora sí trabaja y [[empuja]] fuerte, dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move something with force",
+   "options": [
+    "to move something with force",
+    "to wait for a quiet hour",
+    "to carry a light box",
+    "to open a heavy door"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Ahora sí trabaja y empuja fuerte, dice Andrés.",
+    "targetWord": "empuja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en medio",
+  "sentence": "La tula queda [[en medio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the middle place",
+   "options": [
+    "in the middle place",
+    "at the back door",
+    "on the high shelf",
+    "under the wide bench"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "La tula queda en medio.",
+    "targetWord": "en medio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la tula saluda",
+  "sentence": "¿[[La tula saluda]]? pregunta Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the bag seems to say hello",
+   "options": [
+    "the bag seems to say hello",
+    "the door stays wide open",
+    "the cup falls on the floor",
+    "the song ends very soon"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "¿La tula saluda? pregunta Mariana.",
+    "targetWord": "La tula saluda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "campo en la mesa",
+  "sentence": "[[Hay campo en la mesa]] amiga.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there is space on the table",
+   "options": [
+    "there is space on the table",
+    "there is water in the glass",
+    "there is bread on the plate",
+    "there is music in the room"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Hay campo en la mesa amiga.",
+    "targetWord": "Hay campo en la mesa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roja",
+  "sentence": "Cinta [[roja]] y parche azul, observa Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red in color",
+   "options": [
+    "red in color",
+    "blue in color",
+    "green in color",
+    "white in color"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Cinta roja y parche azul, observa Andrés.",
+    "targetWord": "roja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuerte",
+  "sentence": "Ahora sí trabaja y empuja [[fuerte]], dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with a lot of power",
+   "options": [
+    "with a lot of power",
+    "with a soft touch",
+    "with a slow step",
+    "with a long wait"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Ahora sí trabaja y empuja fuerte, dice Andrés.",
+    "targetWord": "fuerte",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "tula",
+  "sentence": "Carga el conductor una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tula",
+   "options": [
+    "tula",
+    "puerta",
+    "ventana",
+    "calzada"
+   ],
+   "translation": "The driver carries a _____.",
+   "optionTranslations": [
+    "a cloth bag",
+    "a door",
+    "a window",
+    "the road surface"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Carga el conductor una tula.",
+    "targetWord": "tula",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vasos",
+  "sentence": "Dentro hay _____ y trapitos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vasos",
+   "options": [
+    "vasos",
+    "sillas",
+    "puertas",
+    "ventanas"
+   ],
+   "translation": "Inside there are _____ and small rags.",
+   "optionTranslations": [
+    "cups",
+    "chairs",
+    "doors",
+    "windows"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Dentro hay vasos y trapitos.",
+    "targetWord": "vasos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "muñeca",
+  "sentence": "Andrés levanta la tula, pero baja rápido la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "muñeca",
+   "options": [
+    "muñeca",
+    "mesa",
+    "puerta",
+    "campana"
+   ],
+   "translation": "Andrés lifts the bag, but drops the _____ fast.",
+   "optionTranslations": [
+    "wrist",
+    "table",
+    "door",
+    "bell"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Andrés levanta la tula, pero baja rápido la muñeca.",
+    "targetWord": "muñeca",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "extremo",
+  "sentence": "Ella toma el otro _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "extremo",
+   "options": [
+    "extremo",
+    "nombre",
+    "ruido",
+    "precio"
+   ],
+   "translation": "She takes the other _____.",
+   "optionTranslations": [
+    "end",
+    "name",
+    "noise",
+    "price"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Ella toma el otro extremo.",
+    "targetWord": "extremo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "parche azul",
+  "sentence": "Cinta roja y _____, observa Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parche azul",
+   "options": [
+    "parche azul",
+    "pan caliente",
+    "mesa amiga",
+    "vaso grande"
+   ],
+   "translation": "Red tape and _____, Andrés observes.",
+   "optionTranslations": [
+    "a blue patch",
+    "a warm bread roll",
+    "a friendly table",
+    "a big cup"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Cinta roja y parche azul, observa Andrés.",
+    "targetWord": "parche azul",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sin drama",
+  "sentence": "_____ y primero, agrega Mariana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sin drama",
+   "options": [
+    "sin drama",
+    "con música",
+    "por favor",
+    "en medio"
+   ],
+   "translation": "_____ and first, Mariana adds.",
+   "optionTranslations": [
+    "without a big fuss",
+    "with music",
+    "as a polite ask",
+    "in the middle"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-saluda",
+    "storySource": "journey",
+    "sentence": "Sin drama y primero, agrega Mariana.",
+    "targetWord": "sin drama",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "trapito,recto,levantarse,mover cabeza",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "trapito",
+     "answer": "a small cleaning cloth",
+     "options": [
+      "a small cleaning cloth",
+      "straight and not bent",
+      "to raise up from below",
+      "to move the head"
+     ]
+    },
+    {
+     "word": "recto",
+     "answer": "straight and not bent",
+     "options": [
+      "a small cleaning cloth",
+      "straight and not bent",
+      "to raise up from below",
+      "to move the head"
+     ]
+    },
+    {
+     "word": "levantarse",
+     "answer": "to raise up from below",
+     "options": [
+      "a small cleaning cloth",
+      "straight and not bent",
+      "to raise up from below",
+      "to move the head"
+     ]
+    },
+    {
+     "word": "mover cabeza",
+     "answer": "to move the head",
+     "options": [
+      "a small cleaning cloth",
+      "straight and not bent",
+      "to raise up from below",
+      "to move the head"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

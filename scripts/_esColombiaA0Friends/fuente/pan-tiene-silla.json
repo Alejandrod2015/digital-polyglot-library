@@ -1,0 +1,128 @@
+{
+ "slug": "pan-tiene-silla",
+ "topic": "phones-and-messages",
+ "title": "Pan tiene silla",
+ "text": "Dentro de la tienda de pan, la panadera mira el celular. Queda pan amigo y pandebono. Mariana espera con café. Hay un asiento libre.\n\nElla escribe: queda pan. El celular pone Pan grande y nombre propio. Ella lee el mensaje equivocado. “Pan llega tarde, pero yo le guardo puesto”, dice seria.\n\nEl respaldo de la silla vacía queda enfrente. Andrés lo ve. “Yo saludo a Pan y guardo el vaso”, responde. Un vaso queda debajo del papel.\n\nLlega música sin tilde. Suena el timbre. “¿Pan trae maletín o trae hambre?” pregunta. Mariana señala la vitrina y ríe poco.\n\nEntonces la panadera entra con el pan real. “Pan no es persona; es comida rica”, explica. Ella mira la silla. “Pero ya tiene silla”, contesta.\n\nAndrés parte el pan. El celular queda en silencio. Al final, la panadera quita el papel. “Pan aparece y pierde silla, pero gana mesa”, remata. “Todos comen despacio”, dice Mariana.",
+ "vocab": [
+  {
+   "word": "tienda de pan",
+   "surface": "tienda de pan",
+   "type": "expression",
+   "def": "A shop that sells bread."
+  },
+  {
+   "word": "adulto",
+   "surface": "persona",
+   "type": "noun",
+   "def": "A man or woman."
+  },
+  {
+   "word": "Pan grande",
+   "surface": "Pan grande",
+   "type": "expression",
+   "def": "A mistaken big name."
+  },
+  {
+   "word": "asiento libre",
+   "surface": "asiento libre",
+   "type": "expression",
+   "def": "A seat nobody uses."
+  },
+  {
+   "word": "ganar",
+   "surface": "gana",
+   "type": "verb",
+   "def": "To get something good."
+  },
+  {
+   "word": "perder",
+   "surface": "pierde",
+   "type": "verb",
+   "def": "To no longer have something."
+  },
+  {
+   "word": "queda pan",
+   "surface": "queda pan",
+   "type": "expression",
+   "def": "Bread is still left."
+  },
+  {
+   "word": "nombre propio",
+   "surface": "nombre propio",
+   "type": "expression",
+   "def": "A name for one person."
+  },
+  {
+   "word": "comer",
+   "surface": "comen",
+   "type": "verb",
+   "def": "To put food in your mouth."
+  },
+  {
+   "word": "respaldo",
+   "surface": "respaldo",
+   "type": "noun",
+   "def": "The back of a chair."
+  },
+  {
+   "word": "mayúscula",
+   "surface": "grande",
+   "type": "noun",
+   "def": "A big written letter."
+  },
+  {
+   "word": "gana mesa",
+   "surface": "gana mesa",
+   "type": "expression",
+   "def": "Gets a place at the table."
+  },
+  {
+   "word": "mensaje equivocado",
+   "surface": "mensaje equivocado",
+   "type": "expression",
+   "def": "A message with a mistake."
+  },
+  {
+   "word": "música sin tilde",
+   "surface": "música sin tilde",
+   "type": "expression",
+   "def": "Music with no accent mark."
+  },
+  {
+   "word": "entonces",
+   "surface": "entonces",
+   "type": "adverb",
+   "def": "At that time or because of that."
+  },
+  {
+   "word": "hambre",
+   "surface": "hambre",
+   "type": "noun",
+   "def": "The need to eat."
+  },
+  {
+   "word": "comida rica",
+   "surface": "comida rica",
+   "type": "expression",
+   "def": "Food that tastes good."
+  },
+  {
+   "word": "aparecer",
+   "surface": "aparece",
+   "type": "verb",
+   "def": "To come into view."
+  },
+  {
+   "word": "pan real",
+   "surface": "pan real",
+   "type": "noun",
+   "def": "Bread that is not a joke."
+  },
+  {
+   "word": "pierde silla",
+   "surface": "pierde silla",
+   "type": "expression",
+   "def": "Loses the saved seat."
+  }
+ ]
+}

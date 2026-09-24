@@ -1,0 +1,36 @@
+{
+ "dos-vasos-y-un-nombre": {
+  "dice": {
+   "es": "El vaso dice “Andrea”",
+   "en": "The cup says Andrea"
+  }
+ },
+ "el-amigo-de-papel": {
+  "dice": {
+   "es": "El papel dice “amigo nuevo”",
+   "en": "The paper says new friend"
+  },
+  "real": {
+   "es": "Ahora escribe “amigo real”",
+   "en": "Now it says real friend"
+  },
+  "escribe": {
+   "es": "Ahora escribe “amigo real”",
+   "en": "Now it says real friend"
+  }
+ },
+ "la-mesa-de-tres": {
+  "sí": {
+   "es": "Andrés dice “sí” con calma",
+   "en": "Andres calmly says yes"
+  },
+  "dice": {
+   "es": "Andrés dice “sí” con calma",
+   "en": "Andres calmly says yes"
+  },
+  "calma": {
+   "es": "Andrés dice “sí” con calma",
+   "en": "Andres calmly says yes"
+  }
+ }
+}

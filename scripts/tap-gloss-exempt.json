@@ -1955,6 +1955,33 @@
         "doce",
         "catorce"
       ]
+    },
+    "spanish-friends-colombia-a0": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una"
+      ],
+      "characterNames": [
+        "andrea",
+        "andrés",
+        "camilo",
+        "catalina",
+        "julián",
+        "lina",
+        "mariana",
+        "pilar",
+        "sofi"
+      ],
+      "numerals": [
+        "cero",
+        "dos",
+        "primero",
+        "tres"
+      ]
     }
   }
 }

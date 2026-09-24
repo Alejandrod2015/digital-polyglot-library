@@ -1,0 +1,457 @@
+[
+ {
+  "type": "fill_blank",
+  "word": "maletín",
+  "sentence": "Un _____ negro guarda un puesto libre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "maletín",
+   "options": [
+    "maletín",
+    "broche",
+    "esquinero",
+    "parche"
+   ],
+   "translation": "A black _____ keeps an empty seat.",
+   "optionTranslations": [
+    "a small work bag",
+    "a clasp that closes a bag",
+    "a small corner piece",
+    "a piece covering a hole"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Un maletín negro guarda un puesto libre.",
+    "targetWord": "maletín",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "puesto libre",
+  "sentence": "Un maletín negro guarda un [[puesto libre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an empty place to sit",
+   "options": [
+    "an empty place to sit",
+    "a heavy box of bread",
+    "a long line of people",
+    "a short walk to work"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Un maletín negro guarda un puesto libre.",
+    "targetWord": "puesto libre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "botica",
+  "sentence": "Pilar llega desde la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "botica",
+   "options": [
+    "botica",
+    "cremallera",
+    "tiranta",
+    "ruedita"
+   ],
+   "translation": "Pilar arrives from the _____.",
+   "optionTranslations": [
+    "a small old-style shop",
+    "a zipper on a bag",
+    "a strap on a bag",
+    "a very small wheel"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Pilar llega desde la botica.",
+    "targetWord": "botica",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cremallera",
+  "sentence": "Andrés abre el broche, sube la _____ y estira la tiranta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cremallera",
+   "options": [
+    "cremallera",
+    "harina",
+    "semana",
+    "sopa"
+   ],
+   "translation": "Andrés opens the clasp, pulls up the _____ and stretches the strap.",
+   "optionTranslations": [
+    "a zipper on a bag",
+    "white powder for making bread",
+    "seven days together",
+    "a warm liquid food"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Andrés abre el broche, sube la cremallera y estira la tiranta.",
+    "targetWord": "cremallera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "tiranta",
+  "sentence": "Andrés estira la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tiranta",
+   "options": [
+    "tiranta",
+    "tiza",
+    "ventana",
+    "cuchara"
+   ],
+   "translation": "Andrés stretches the _____.",
+   "optionTranslations": [
+    "a strap on a bag",
+    "chalk for making marks",
+    "a glass part of a wall",
+    "a tool for eating soup"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Andrés estira la tiranta.",
+    "targetWord": "tiranta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "espaldar",
+  "sentence": "Camilo mira el [[espaldar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the back part of a seat",
+   "options": [
+    "the back part of a seat",
+    "the small key of a box",
+    "the warm cup of tea",
+    "the long list of names"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Camilo mira el espaldar.",
+    "targetWord": "espaldar",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calle",
+  "sentence": "El maletín cuida el asiento y mira la [[calle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a street outside the bus",
+   "options": [
+    "a street outside the bus",
+    "a room inside the house",
+    "a chair under the table",
+    "a plate over the cloth"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "El maletín cuida el asiento y mira la calle.",
+    "targetWord": "calle",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ventanilla",
+  "sentence": "Andrés limpia la [[ventanilla]] y toca el marco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small bus window",
+   "options": [
+    "a small bus window",
+    "a thick cotton coat",
+    "a large stone wall",
+    "a short metal pipe"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Andrés limpia la ventanilla y toca el marco.",
+    "targetWord": "ventanilla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marco",
+  "sentence": "Andrés dobla el forro y toca el [[marco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an edge around something",
+   "options": [
+    "an edge around something",
+    "a bag for the books",
+    "a seat by the door",
+    "a light over the road"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Andrés dobla el forro y toca el marco.",
+    "targetWord": "marco",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agarradera",
+  "sentence": "La panadera prueba la [[agarradera]], el esquinero y una ruedita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a part you hold the bag by",
+   "options": [
+    "a part you hold the bag by",
+    "a pocket sewn on the side",
+    "a wheel under the bag",
+    "a clasp that shuts the bag"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "La panadera prueba la agarradera, el esquinero y una ruedita.",
+    "targetWord": "agarradera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "ruedita",
+  "sentence": "La panadera prueba la agarradera y una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ruedita",
+   "options": [
+    "ruedita",
+    "sopa",
+    "harina",
+    "lluvia"
+   ],
+   "translation": "The baker tries the handle and a _____.",
+   "optionTranslations": [
+    "a very small wheel",
+    "a warm liquid food",
+    "white powder for making bread",
+    "water falling from the sky"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "La panadera prueba la agarradera y una ruedita.",
+    "targetWord": "ruedita",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bolsillo lateral",
+  "sentence": "Pilar abre el [[bolsillo lateral]] y señala el parche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a side pocket on a bag",
+   "options": [
+    "a side pocket on a bag",
+    "a thin plastic card",
+    "a small paper note",
+    "a round glass jar"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Pilar abre el bolsillo lateral y señala el parche.",
+    "targetWord": "bolsillo lateral",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fina",
+  "sentence": "Pilar toca la tabla [[fina]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very thin and delicate",
+   "options": [
+    "very thin and delicate",
+    "very old and heavy",
+    "very wet and cold",
+    "very wide and long"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Pilar toca la tabla fina.",
+    "targetWord": "fina",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Veo un raspón",
+  "sentence": "[[Veo un raspón]] y una raspadura.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to notice a scrape mark",
+   "options": [
+    "to notice a scrape mark",
+    "to open a small door",
+    "to clean a glass table",
+    "to close a paper bag"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Veo un raspón y una raspadura.",
+    "targetWord": "Veo un raspón",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raspadura",
+  "sentence": "Veo un raspón y una [[raspadura]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scraped area on something",
+   "options": [
+    "a scraped area on something",
+    "a clean white cloth",
+    "a full cup of milk",
+    "a small green leaf"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Veo un raspón y una raspadura.",
+    "targetWord": "raspadura",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amigo de puesto",
+  "sentence": "Entonces el maletín es [[amigo de puesto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a seat friend in the joke",
+   "options": [
+    "a seat friend in the joke",
+    "a bag for the office",
+    "a card for the bus",
+    "a note on the door"
+   ],
+   "audioClip": {
+    "storySlug": "puesto-con-bolso",
+    "storySource": "journey",
+    "sentence": "Entonces el maletín es amigo de puesto.",
+    "targetWord": "amigo de puesto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "broche,esquinero,forro,parche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "broche",
+     "answer": "a clasp that closes a bag",
+     "options": [
+      "a clasp that closes a bag",
+      "a small corner piece",
+      "inner cloth inside a bag",
+      "a piece covering a hole"
+     ]
+    },
+    {
+     "word": "esquinero",
+     "answer": "a small corner piece",
+     "options": [
+      "a clasp that closes a bag",
+      "a small corner piece",
+      "inner cloth inside a bag",
+      "a piece covering a hole"
+     ]
+    },
+    {
+     "word": "forro",
+     "answer": "inner cloth inside a bag",
+     "options": [
+      "a clasp that closes a bag",
+      "a small corner piece",
+      "inner cloth inside a bag",
+      "a piece covering a hole"
+     ]
+    },
+    {
+     "word": "parche",
+     "answer": "a piece covering a hole",
+     "options": [
+      "a clasp that closes a bag",
+      "a small corner piece",
+      "inner cloth inside a bag",
+      "a piece covering a hole"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

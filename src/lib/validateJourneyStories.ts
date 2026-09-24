@@ -474,6 +474,54 @@ const A0_DE_SUJETO_OK = /^(?:Halb|Weiß|Grau|Kalt|Warm|Hoch|Tief|Lang|Kurz|Voll|
 const A0_DE_PARTICULAS = ["an","auf","aus","ein","mit","nach","vor","zu","ab","bei","hin","her","zurück","los","weiter","vorbei","herum","raus","rein","weg","nieder"];
 const A0_DE_PASADO = /\b(war|waren|hatte|hatten|ging|kam|sagte|machte|stand|sah|nahm|gab|fuhr|wurde|wurden)\b/;
 
+/**
+ * Suelo A0 espanol (2026-09-18): SOLO PRESENTE, tambien dentro de comillas.
+ * La tabla de criterios por nivel del spec da al A0 "solo presente" y reserva
+ * al A1 el pasado y los pronombres de objeto; a diferencia del frances, aqui
+ * no se exime lo citado, porque en un A0 espanol el alumno lee cada replica
+ * como modelo. `\b` de JavaScript es ASCII y parte "compro" de "compró", asi
+ * que los limites van con lookarounds Unicode. Lo que cada regex NO caza, y
+ * por que, esta al lado.
+ */
+const ES_L = "(?<![\\p{L}])";
+const ES_R = "(?![\\p{L}])";
+// Preterito: -ó / -aron / -ieron y los irregulares de siempre. La primera
+// persona (-é, -í) no se pide por terminacion: "café", "qué", "aquí", "así"
+// la disparan y en un A0 narrado en tercera persona casi no existe. "aló"
+// (el hola del telefono) acaba en -ó y no es verbo.
+const A0_ES_NO_PRETERITO = /^(?:aló|alo|adiós|jamón|balón|salón|rincón|melón|camión|avión|limón|corazón|canción|estación|montón)$/;
+const A0_ES_PRETERITO = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:ó|aron|ieron)|fue|fueron|tuvo|tuvieron|hizo|hicieron|dijo|dijeron|vino|vinieron|dio|dieron|puso|pusieron|quiso|quisieron|pudo|pudieron|supo|supieron|estuvo|estuvieron|hubo|trajo|trajeron|vio|vieron|anduvo)${ES_R}`, "u");
+// Imperfecto: -aba(s|n|mos) y la lista cerrada de -ía frecuentes. El -ía
+// generico NO: "día", "policía", "panadería", "alegría" son sustantivos.
+const A0_ES_IMPERFECTO = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:aba|abas|aban|ábamos)|era|eran|eras|iba|iban|tenía|tenían|había|habían|hacía|hacían|decía|decían|veía|veían|quería|querían|podía|podían|sabía|sabían|venía|venían|estaba|estaban|vivía|vivían|salía|salían|dormía|dormían|sentía|sentían)${ES_R}`, "u");
+// Perfecto: haber + participio, las dos piezas seguidas. "ha" suelto no
+// cuenta y "está cansado" tampoco: el participio con estar es adjetivo.
+const A0_ES_PERFECTO = new RegExp(`${ES_L}(?:he|has|ha|hemos|han)\\s+\\p{L}{2,}(?:ado|ido|to|cho|so)${ES_R}`, "iu");
+// Futuro: -rá/-rán/-ré/-rás/-remos. "está", "mamá", "sofá" acaban en -á sin
+// r y no entran; "puré" y "café" no acaban en -ré.
+const A0_ES_FUTURO = new RegExp(`${ES_L}\\p{L}{2,}(?:rá|rán|rás|ré|remos)${ES_R}`, "u");
+// Condicional: -aría(n)/-ería(n)/-iría(n) mas la lista irregular. Los
+// sustantivos en -ería (panadería, librería, frutería) se descartan por
+// lista, porque comparten terminacion con "comería".
+const A0_ES_NO_CONDICIONAL = /^(?:panadería|librería|frutería|carnicería|pastelería|cafetería|lavandería|ferretería|zapatería|joyería|papelería|galería|batería|lotería|artillería|sastrería|peluquería|tienda|sillería|cerería|cervecería|pescadería|verdulería|heladería|tortillería|tintorería|feria|serie)$/;
+const A0_ES_CONDICIONAL = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:aría|arían|ería|erían|iría|irían)|sería|serían|estaría|estarían|tendría|tendrían|habría|podría|podrían|querría|haría|harían|diría|dirían|vendría|vendrían|gustaría|saldría|pondría|sabría)${ES_R}`, "u");
+// Subjuntivo presente: solo la lista de irregulares inequivocos. Las formas
+// regulares (-e/-a) son indistinguibles del presente sin analisis.
+const A0_ES_SUBJUNTIVO = new RegExp(`${ES_L}(?:sea|sean|seas|tenga|tengan|tengas|haya|hayan|haga|hagan|hagas|pueda|puedan|puedas|venga|vengan|vengas|quiera|quieran|quieras|diga|digan|digas|vaya|vayan|vayas|sepa|sepan|ponga|pongan|salga|salgan)${ES_R}`, "u");
+// "ir a + infinitivo" es futuro perifrastico, A1 por la tabla del spec.
+const A0_ES_IR_A = new RegExp(`${ES_L}(?:voy|vas|va|vamos|van)\\s+a\\s+\\p{L}{2,}(?:ar|er|ir)${ES_R}`, "iu");
+// Pronombres de objeto antepuestos. Solo le/les: nunca son articulo ni
+// reflexivo. "la mira" y "la casa" no se distinguen sin analisis, y me/te/nos
+// son tambien reflexivos ("me equivoco", "nos sentamos"), que el suelo
+// permite; los cuatro quedan para el barrido a mano del cierre. Fuera las
+// formulas de dativo que todo A0 ensena el primer dia: le gusta(n),
+// le encanta(n), le duele(n).
+const A0_ES_OBJETO = new RegExp(
+  `${ES_L}(?:le|les)\\s+(?!(?:gusta|gustan|encanta|encantan|duele|duelen)${ES_R})\\p{L}{2,}${ES_R}`, "iu");
+
 export function validateJourneyStories(
   stories: JourneyStoryInput[],
   ctx: {

@@ -53,18 +53,17 @@ export function cohorteDe(valor?: string | null): string {
  *   la escalera del Friends DE empieza en el A0. Literal: "en realidad C1 fue
  *   un test para mí, pero ahora sí vamos a crear el journey bien". Sigue live
  *   en la base; solo deja de sostener la escalera.
- * - cmrdqk484000032r4rt2vw4ej (Friends ES C1, hoy variant="latam"): temporal,
- *   2026-09-19, pendiente de pasar a "latam-multi" en el flip de
- *   TAXONOMIA_variantes_latam (Journey.variant en BD, DESPUES del deploy web
- *   y de la build movil). Mientras su variant siga siendo literalmente
- *   "latam", cuenta como el mismo (idioma, variante, nombre) que un futuro
- *   "Friends" A1 latam NEUTRAL y bloquearia su creacion por hueco (B1/B2
- *   faltantes). Quitar esta entrada en el flip: a partir de ahi su variant
- *   real ("latam-multi") ya lo separa solo, sin necesitar la excepcion.
+ *
+ * - cmrpm0tra000032vgxcs33wrb (Friends ES Colombia C1): autorizado por el
+ *   usuario el 2026-09-23 para desbloquear el Friends ES Colombia A0. Nació
+ *   con el molde viejo de siete ciudades y no es el techo de una escalera que
+ *   empiece en A0. Sigue publicado y no se toca; solo deja de sostenerla.
+ *   Motivo del A0: la variante colombiana es la más vendida de la tienda en
+ *   2026 (320 unidades en tres productos) y en la app solo existe ese C1.
  */
 export const FUERA_DE_ESCALERA: ReadonlySet<string> = new Set([
   "cmroo4w4v0000324ow1o9qlcp",
-  "cmrdqk484000032r4rt2vw4ej",
+  "cmrpm0tra000032vgxcs33wrb",
 ]);
 
 export type JourneyExistente = {

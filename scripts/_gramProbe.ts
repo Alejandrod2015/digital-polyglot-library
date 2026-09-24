@@ -66,8 +66,16 @@ function esSubjImperfecto(w: string): boolean {
  * bloquea el cierre de un tema fuera de banda. El preterito no lleva banda porque mide
  * el modo de narrar (Traveler en presente, Friends en pasado), no el nivel. Un nivel
  * sin fila aqui solo se informa.
+ *
+ * A0 (2026-09-18): la banda es CERO en los cuatro marcadores, porque el spec da
+ * al A0 "solo presente". Aqui el preterito SI lleva banda, y es la excepcion a
+ * la frase de arriba: en A0 no hay modo de narrar en pasado, hay un nivel que
+ * no lo tiene. El check de conjunto journey-a0-floor (validateJourneyStories)
+ * mide lo mismo frase a frase al guardar; esta fila hace que cierraTema
+ * BLOQUEE ademas el cierre, en vez de solo informar.
  */
 export const BANDA_NIVEL: Record<string, Record<string, [number, number]>> = {
+  a0: { "pretérito": [0, 0], "imperfecto": [0, 0], "condicional": [0, 0], "subj. presente": [0, 0] },
   b2: { "subj. imperfecto": [3, 7], "condicional": [1, 5], "estilo indirecto": [1, 3] },
 };
 

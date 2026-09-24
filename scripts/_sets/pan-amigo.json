@@ -1,0 +1,464 @@
+[
+ {
+  "type": "fill_blank",
+  "word": "hornito apagado",
+  "sentence": "Sofi llega con el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hornito apagado",
+   "options": [
+    "hornito apagado",
+    "camino largo",
+    "techo roto",
+    "puente viejo"
+   ],
+   "translation": "Sofi arrives with the _____.",
+   "optionTranslations": [
+    "small oven turned off",
+    "long road",
+    "broken roof",
+    "old bridge"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Sofi llega con el hornito apagado.",
+    "targetWord": "hornito apagado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nota corta",
+  "sentence": "Mariana mira una [[nota corta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a note with few words",
+   "options": [
+    "a note with few words",
+    "a long green coat",
+    "a small metal key",
+    "a warm cup of tea"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mariana mira una nota corta.",
+    "targetWord": "nota corta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pan de yuca",
+  "sentence": "Andrés ve un [[pan de yuca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bread made with yuca",
+   "options": [
+    "a bread made with yuca",
+    "a cup of hot milk",
+    "a bag of white rice",
+    "a plate of fried eggs"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Andrés ve un pan de yuca.",
+    "targetWord": "pan de yuca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "match_meaning",
+  "word": "roja,queso,pedacito,olor",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "roja",
+     "answer": "red in color",
+     "options": [
+      "red in color",
+      "a white food from milk",
+      "a very small piece",
+      "a smell from something"
+     ]
+    },
+    {
+     "word": "queso",
+     "answer": "a white food from milk",
+     "options": [
+      "red in color",
+      "a white food from milk",
+      "a very small piece",
+      "a smell from something"
+     ]
+    },
+    {
+     "word": "pedacito",
+     "answer": "a very small piece",
+     "options": [
+      "red in color",
+      "a white food from milk",
+      "a very small piece",
+      "a smell from something"
+     ]
+    },
+    {
+     "word": "olor",
+     "answer": "a smell from something",
+     "options": [
+      "red in color",
+      "a white food from milk",
+      "a very small piece",
+      "a smell from something"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pan blandito",
+  "sentence": "Sofi toca el [[pan blandito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a soft loaf in the hand",
+   "options": [
+    "a soft loaf in the hand",
+    "a hard dry biscuit",
+    "a cold metal plate",
+    "a thin paper sheet"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Sofi toca el pan blandito.",
+    "targetWord": "pan blandito",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "ración",
+  "sentence": "La _____ alcanza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ración",
+   "options": [
+    "ración",
+    "puerta",
+    "ventana",
+    "camisa"
+   ],
+   "translation": "The _____ is enough.",
+   "optionTranslations": [
+    "portion",
+    "door",
+    "window",
+    "shirt"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "La ración alcanza.",
+    "targetWord": "ración",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mitad justa",
+  "sentence": "Mariana marca una _____ con cinta roja.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mitad justa",
+   "options": [
+    "mitad justa",
+    "lluvia fina",
+    "risa corta",
+    "nube gris"
+   ],
+   "translation": "Mariana marks a _____ with red tape.",
+   "optionTranslations": [
+    "fair half part",
+    "light rain",
+    "short laugh",
+    "gray cloud"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mariana marca una mitad justa con cinta roja.",
+    "targetWord": "mitad justa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cinta roja",
+  "sentence": "Mariana marca una mitad justa con [[cinta roja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a red strip of tape",
+   "options": [
+    "a red strip of tape",
+    "a short wooden stick",
+    "a small glass jar",
+    "a long metal chain"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mariana marca una mitad justa con cinta roja.",
+    "targetWord": "cinta roja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letra bonita",
+  "sentence": "La [[letra bonita]] no corta pan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice handwriting on paper",
+   "options": [
+    "nice handwriting on paper",
+    "loud talking in class",
+    "clean clothes for work",
+    "new ink in a pen"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "La letra bonita no corta pan.",
+    "targetWord": "letra bonita",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corta pan",
+  "sentence": "La letra bonita no [[corta pan]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cuts bread into parts",
+   "options": [
+    "cuts bread into parts",
+    "opens a locked door",
+    "fills a glass with milk",
+    "cleans a dirty floor"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "La letra bonita no corta pan.",
+    "targetWord": "corta pan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cara seria",
+  "sentence": "Andrés muestra una _____ y luego una cara feliz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cara seria",
+   "options": [
+    "cara seria",
+    "puerta vieja",
+    "silla rota",
+    "ventana sucia"
+   ],
+   "translation": "Andrés shows a _____ and then a happy face.",
+   "optionTranslations": [
+    "serious face",
+    "old door",
+    "broken chair",
+    "dirty window"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Andrés muestra una cara seria y luego una cara feliz.",
+    "targetWord": "cara seria",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dibujo serio",
+  "sentence": "Mariana dibuja un _____ y un dibujo feliz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dibujo serio",
+   "options": [
+    "dibujo serio",
+    "ruido fuerte",
+    "frío seco",
+    "calor lento"
+   ],
+   "translation": "Mariana draws a _____ and a happy drawing.",
+   "optionTranslations": [
+    "serious drawing",
+    "loud noise",
+    "dry cold",
+    "slow heat"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mariana dibuja un dibujo serio y un dibujo feliz.",
+    "targetWord": "dibujo serio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dibuja",
+  "sentence": "Mariana [[dibuja]] un dibujo serio y un dibujo feliz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "makes it by hand",
+   "options": [
+    "makes it by hand",
+    "buys it in a shop",
+    "sends it by post",
+    "throws it away"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mariana dibuja un dibujo serio y un dibujo feliz.",
+    "targetWord": "dibuja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "crujiente",
+  "sentence": "Sofi parte un pedacito _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "crujiente",
+   "options": [
+    "crujiente",
+    "azul",
+    "triste",
+    "lejano"
+   ],
+   "translation": "Sofi breaks off a little piece that is _____.",
+   "optionTranslations": [
+    "crunchy",
+    "blue",
+    "sad",
+    "far away"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Sofi parte un pedacito crujiente.",
+    "targetWord": "crujiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "horneado",
+  "sentence": "Esto queda [[horneado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cooked inside an oven",
+   "options": [
+    "cooked inside an oven",
+    "washed in cold water",
+    "sold at a low price",
+    "kept in a dark box"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Esto queda horneado.",
+    "targetWord": "horneado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pan amigo",
+  "sentence": "Es un [[pan amigo]] bueno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a loaf treated like a friend",
+   "options": [
+    "a loaf treated like a friend",
+    "a very old wooden box",
+    "a small cup of water",
+    "a long walk in town"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Es un pan amigo bueno.",
+    "targetWord": "pan amigo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mañana vuelve",
+  "sentence": "[[Mañana vuelve]], avisa Sofi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it comes back tomorrow",
+   "options": [
+    "it comes back tomorrow",
+    "it opens very early",
+    "it costs a lot",
+    "it tastes very sweet"
+   ],
+   "audioClip": {
+    "storySlug": "pan-amigo",
+    "storySource": "journey",
+    "sentence": "Mañana vuelve, avisa Sofi.",
+    "targetWord": "Mañana vuelve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ }
+]
