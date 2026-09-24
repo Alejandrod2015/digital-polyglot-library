@@ -568,7 +568,7 @@
       "id": "project_ads_variant_tour_rules",
       "domain": "comms",
       "rule": "\"Reglas del tour de variantes: una PALABRA por pais comparable con las otras, ventana en mitad de la historia y texto hasta el reproductor\"",
-      "gate": "process",
+      "gate": "scripts/_ads/_cleanCuts.ts",
       "source": "memory:project_ads_variant_tour_rules.md"
     },
     {
@@ -1020,6 +1020,13 @@
       "source": "story-rules:journey-character-introduction (feedback_introduce_characters) + validator:src/lib/validateJourneyStories.ts"
     },
     {
+      "id": "journey-city-known-abroad",
+      "domain": "journey",
+      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, vive en Journey.city/cityMode, y se declara ANTES de fijar los siete temas: assertTopicsGrounded tira si falta o si no esta en la lista aprobada por idioma",
+      "gate": "src/lib/approvedCities.ts",
+      "source": "manual (usuario, 2026-09-24; docs/auditoria-ciudades-journeys-2026-09-24.md)"
+    },
+    {
       "id": "journey-introduction-form-variety",
       "domain": "journey",
       "rule": "Las tres formas de presentacion se alternan; ninguna cubre mas de la mitad del reparto",
@@ -1074,20 +1081,6 @@
       "rule": "Cada plaza merece ensenarse",
       "gate": "src/lib/validateJourneyStories.ts#journey-vocab-worth-teaching",
       "source": "validator:src/lib/validateJourneyStories.ts"
-    },
-    {
-      "id": "journey-write-target",
-      "domain": "journey",
-      "rule": "saveStory comprueba el journey destino: el --level tiene que estar en journey.levels, y un journey active solo se escribe con DPL_WRITE_TO_LIVE_JOURNEY=1",
-      "gate": "scripts/journeyWriteTarget.ts#journey-write-target",
-      "source": "project_journey_pipeline_five_phases + saveStory.ts (2026-09-23)"
-    },
-    {
-      "id": "journey-city-known-abroad",
-      "domain": "journey",
-      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, vive en Journey.city/cityMode, y se declara ANTES de fijar los siete temas: assertTopicsGrounded tira si falta o si no esta en la lista aprobada por idioma",
-      "gate": "src/lib/approvedCities.ts",
-      "source": "manual (usuario, 2026-09-24; docs/auditoria-ciudades-journeys-2026-09-24.md)"
     },
     {
       "id": "journeys-table-canonical",
@@ -1723,7 +1716,7 @@
       "id": "project_launch_dashboard_weekly",
       "domain": "process",
       "rule": "\"Radar de lanzamiento: el artefacto donde se anota cada build semanal (embudo, adopcion, uso de lo nuevo), con su base de datos y la forma exacta de la ficha\"",
-      "gate": "process",
+      "gate": "scripts/launchRadar.ts",
       "source": "memory:project_launch_dashboard_weekly.md"
     },
     {
@@ -2294,6 +2287,13 @@
       "source": "memory:feedback_gloss_in_context.md"
     },
     {
+      "id": "feedback_journey_cities_must_be_world_known",
+      "domain": "vocab",
+      "rule": "\"REGLA DURA (2026-09-24): la ciudad de un journey tiene que ser muy conocida FUERA de su pais, sobre todo para anglosajones, que son el grupo objetivo; una ciudad que el lector no reconoce no vende...",
+      "gate": "none",
+      "source": "memory:feedback_journey_cities_must_be_world_known.md"
+    },
+    {
       "id": "feedback_missing_content_is_an_opportunity",
       "domain": "vocab",
       "rule": "\"Que falte contenido para un idioma, nivel o región NO es un problema ni un motivo para excluir a nadie; es una señal de qué crear\"",
@@ -2565,13 +2565,6 @@
       "rule": "Vulgar vocab is marked register vulgar",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-vulgar-register",
       "source": "validator:src/lib/validateGeneratedStory.ts"
-    },
-    {
-      "id": "project_distractor_gate",
-      "domain": "practice",
-      "rule": "Gate de distractores (2026-09-21): un ejercicio de practica no se puede acertar sin saber la palabra; reglas D1-D8 en scripts/distractorGate.ts, lint con trinquete por journey y sin --force en el s...",
-      "gate": "scripts/distractorGate.ts",
-      "source": "memory:project_distractor_gate.md"
     }
   ]
 }
