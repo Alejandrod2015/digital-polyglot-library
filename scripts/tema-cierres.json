@@ -12488,11 +12488,11 @@
     ]
   },
   "cmubidgaf0007j8np6g7n89iu#job-hunting-and-interviews": {
-    "cerrado": "2026-09-22T17:37:45.034Z",
-    "hash": "665908f3e5017e00",
+    "cerrado": "2026-09-23T17:49:23.278Z",
+    "hash": "af21fb5ad4e4ba0f",
     "historias": [
       "job-hunting-and-interviews#0 ein-loch-im-lebenslauf",
-      "job-hunting-and-interviews#1 probearbeiten-am-freitag",
+      "job-hunting-and-interviews#1 der-besen-im-blumenladen",
       "job-hunting-and-interviews#2 die-schere-aus-muenster"
     ],
     "checks": [
@@ -12554,8 +12554,8 @@
     }
   },
   "cmubidgaf0007j8np6g7n89iu#moving-and-helping-out": {
-    "cerrado": "2026-09-22T17:36:47.931Z",
-    "hash": "04fda48753efe5c7",
+    "cerrado": "2026-09-23T17:57:03.084Z",
+    "hash": "f4f2b4de0974550d",
     "historias": [
       "moving-and-helping-out#0 drei-stunden-transporter",
       "moving-and-helping-out#1 das-sofa-aus-muenster",
@@ -12692,12 +12692,12 @@
     ]
   },
   "cmubidgaf0007j8np6g7n89iu#sports-and-match-days": {
-    "cerrado": "2026-09-23T08:12:27.235Z",
+    "cerrado": "2026-09-23T17:50:08.000Z",
     "hash": "26b9c23e7948583b",
     "historias": [
-      "sports-and-match-days#0 block-h-reihe-zwoelf",
-      "sports-and-match-days#1 ein-schal-zwei-lieder",
-      "sports-and-match-days#2 elf-minuten-nachspielzeit"
+      "sports-and-match-days#0 ein-platz-mit-ihrem-namen",
+      "sports-and-match-days#1 zwei-strophen-im-stadion",
+      "sports-and-match-days#2 heiser-nach-dem-derby"
     ],
     "checks": [
       "plan del tema completo (registro \"colectivo y ruidoso: frases cortas de grada, canticos y quejas a voz en grito\", espina \"Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma\")",
