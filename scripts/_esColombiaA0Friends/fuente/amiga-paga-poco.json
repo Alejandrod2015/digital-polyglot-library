@@ -1,0 +1,128 @@
+{
+ "slug": "amiga-paga-poco",
+ "topic": "work-and-favors",
+ "title": "Amiga paga poco",
+ "text": "Para la cuenta, la vendedora trae una planilla doblada. Mariana prepara café. La panadera mira el pan de yuca.\n\nLa vendedora escribe planilla amiga en un papel. Andrés lee despacio. “Amiga no paga gratis”, dice serio. Ella pone un platito en el puesto reservado.\n\nMariana señala el vaso, el pan y la cucharita. “Todo trabaja”, explica. Andrés duda y mira la vitrina. “¿La cucharita también cobra?” pregunta.\n\nElla trae queso. La vendedora marca tres rayitas. “Una por café, una por pan y una por favor”, cuenta ella. “El costo queda en medio”, agrega.\n\nEl papel cae junto al servilletero. La planilla se lee despacio. “Amiga paga poco”, avisa. Andrés mira con mirada suave. “Pago poco”, responde.\n\nAndrés deja una ficha sobre el platito. Ella guarda la planilla. “Entre todos suena juego”, remata. “Pan compartido”, avisa la panadera.",
+ "vocab": [
+  {
+   "word": "planilla doblada",
+   "surface": "planilla doblada",
+   "type": "expression",
+   "def": "A folded paper form."
+  },
+  {
+   "word": "vendedora",
+   "surface": "vendedora",
+   "type": "noun",
+   "def": "A woman who sells things."
+  },
+  {
+   "word": "vaso",
+   "surface": "vaso",
+   "type": "noun",
+   "def": "A cup or glass for drinking."
+  },
+  {
+   "word": "pagar",
+   "surface": "paga",
+   "type": "verb",
+   "def": "To give money for something."
+  },
+  {
+   "word": "papel cae",
+   "surface": "papel cae",
+   "type": "expression",
+   "def": "A paper falls down."
+  },
+  {
+   "word": "encima de",
+   "surface": "sobre el",
+   "type": "expression",
+   "def": "On top of something."
+  },
+  {
+   "word": "marcar",
+   "surface": "marca",
+   "type": "verb",
+   "def": "To make a sign or line."
+  },
+  {
+   "word": "tres rayitas",
+   "surface": "tres rayitas",
+   "type": "expression",
+   "def": "Three small written lines."
+  },
+  {
+   "word": "conjunto",
+   "surface": "Todo",
+   "type": "pronoun",
+   "def": "All the things together."
+  },
+  {
+   "word": "ficha",
+   "surface": "ficha",
+   "type": "noun",
+   "def": "A small token or chip."
+  },
+  {
+   "word": "costo",
+   "surface": "costo",
+   "type": "noun",
+   "def": "The money something costs."
+  },
+  {
+   "word": "juego",
+   "surface": "juego",
+   "type": "noun",
+   "def": "A game or playful action."
+  },
+  {
+   "word": "por favor",
+   "surface": "por favor",
+   "type": "expression",
+   "def": "A polite way to ask."
+  },
+  {
+   "word": "dejar",
+   "surface": "deja",
+   "type": "verb",
+   "def": "To put something somewhere."
+  },
+  {
+   "word": "mirada suave",
+   "surface": "mirada suave",
+   "type": "expression",
+   "def": "A gentle look from the eyes."
+  },
+  {
+   "word": "trazo",
+   "surface": "rayitas",
+   "type": "noun",
+   "def": "Small written line marks."
+  },
+  {
+   "word": "sonar",
+   "surface": "suena",
+   "type": "verb",
+   "def": "To make or seem by sound."
+  },
+  {
+   "word": "en medio",
+   "surface": "en medio",
+   "type": "expression",
+   "def": "In the center place."
+  },
+  {
+   "word": "doblado",
+   "surface": "doblada",
+   "type": "adjective",
+   "def": "Folded and not flat."
+  },
+  {
+   "word": "también cobra",
+   "surface": "también cobra",
+   "type": "expression",
+   "def": "Also asks for money."
+  }
+ ]
+}

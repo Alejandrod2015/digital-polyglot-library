@@ -1,0 +1,11 @@
+{
+  "tipo": "Friends", "nivel": "a0", "variante": "MEXICO",
+  "registro": "terco y carinoso: dos personas que cuidan demasiado y una experta que les pide que cuiden menos",
+  "espina": "Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+  "recursos": "presente, frases cortas, el conflicto se discute en voz alta, y el giro sale de algo que ya estaba a la vista (la tierra encharcada, la direccion de la enredadera, el brillo de las hojas)",
+  "historias": [
+    { "slot": "0", "quiere": "Itzel quiere una planta que no se muera", "impide": "la riega tres veces al dia y la planta se ahoga", "cuesta": "pierde la planta y la teoria de que cuidar es echar agua", "cambia": "Fernanda le da otra y le prohibe la regadera una semana", "emocion": "el desconcierto de hacerlo todo bien y perderlo igual" },
+    { "slot": "1", "quiere": "Itzel quiere el sol que le tapa la enredadera de Bruno", "impide": "Bruno no piensa cortar una planta que el no planto", "cuesta": "Itzel pierde la razon: la enredadera sale de su propia maceta", "cambia": "la dejan crecer y las dos ventanas quedan verdes", "emocion": "la sorpresa de reconocer lo tuyo donde no lo buscabas" },
+    { "slot": "2", "quiere": "Fernanda quiere una hora libre y deja el vivero a los dos", "impide": "Itzel y Bruno riegan absolutamente todo, sin preguntar que es que", "cuesta": "Fernanda pierde la vitrina de la entrada, que ahora escurre agua", "cambia": "aprenden cuales son las plantas que nunca se mueren", "emocion": "la risa de descubrir que llevabas una hora cuidando plastico" }
+  ]
+}

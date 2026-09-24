@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "bajo y lento: voz rota, frases cortas, dias que se confunden unos con otros",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "aguantar el lunes y no faltar en periodo de prueba", "impide": "casi treinta y nueve de fiebre y la voz perdida", "cuesta": "tiene que llamar a su jefe en el primer mes y decir que esta enferma", "cambia": "obedece al papel amarillo en vez de a su miedo", "emocion": "la culpa caliente de fallar recien llegada" },
+  { "slot": "2", "quiere": "pasar la gripe sola, sin molestar a nadie", "impide": "tres dias sin poder levantarse ni hablar", "cuesta": "descubre que alguien la cuidaba sin que ella lo pidiera", "cambia": "llama ella, con la voz rota, y pregunta por que no llama al timbre", "emocion": "la vergüenza que se deshace al leer la nota" },
+  { "slot": "3", "quiere": "la firma para volver al trabajo el miercoles", "impide": "la medica le da dos dias mas y el jefe la manda a casa", "cuesta": "tiene que aceptar que el sitio no se gana estando presente", "cambia": "espera el mal sabor de la culpa y no llega", "emocion": "el alivio raro de no tener que pedir perdon" }
+ ]
+}

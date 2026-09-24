@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la tapa,el cartero,el ladrón,el sello",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la tapa",
+     "answer": "a lid",
+     "options": [
+      "a lid",
+      "a postman",
+      "a thief",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "el cartero",
+     "answer": "a postman",
+     "options": [
+      "a lid",
+      "a postman",
+      "a thief",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "el ladrón",
+     "answer": "a thief",
+     "options": [
+      "a lid",
+      "a postman",
+      "a thief",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "el sello",
+     "answer": "a stamp",
+     "options": [
+      "a lid",
+      "a postman",
+      "a thief",
+      "a stamp"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "roba",
+  "sentence": "Él no _____ nada. Yo lo conozco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "roba",
+   "options": [
+    "roba",
+    "salta",
+    "viaja",
+    "corta"
+   ],
+   "translation": "He does not _____ anything. I know him.",
+   "optionTranslations": [
+    "steal",
+    "jump",
+    "travel",
+    "cut"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Él no roba nada. Yo lo conozco.",
+    "targetWord": "roba",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "salta",
+  "sentence": "Ella _____ hacia atrás.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salta",
+   "options": [
+    "salta",
+    "roba",
+    "viaja",
+    "gana"
+   ],
+   "translation": "She _____ backwards.",
+   "optionTranslations": [
+    "jumps",
+    "steals",
+    "travels",
+    "gains"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Ella salta hacia atrás.",
+    "targetWord": "salta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "gana",
+  "sentence": "Al contrario. La caja _____ un gato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gana",
+   "options": [
+    "gana",
+    "roba",
+    "salta",
+    "asusta"
+   ],
+   "translation": "On the contrary. The box _____ a cat.",
+   "optionTranslations": [
+    "gains",
+    "steals",
+    "jumps",
+    "scares"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Al contrario. La caja gana un gato.",
+    "targetWord": "gana",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fondo",
+  "sentence": "El [[fondo]] está roto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bottom",
+   "options": [
+    "bottom",
+    "label",
+    "corner",
+    "handle"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "El fondo está roto.",
+    "targetWord": "fondo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vacía",
+  "sentence": "Está abierta y [[vacía]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": [
+    "empty",
+    "soaked",
+    "sealed",
+    "upside down"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Está abierta y vacía.",
+    "targetWord": "vacía",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suelo",
+  "sentence": "La tapa está suelta en el [[suelo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ground",
+   "options": [
+    "ground",
+    "shelf",
+    "step",
+    "landing"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "La tapa está suelta en el suelo.",
+    "targetWord": "suelo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suelta",
+  "sentence": "La tapa está [[suelta]] en el suelo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loose",
+   "options": [
+    "loose",
+    "missing",
+    "cracked",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "La tapa está suelta en el suelo.",
+    "targetWord": "suelta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "asustas",
+  "sentence": "¿Te [[asustas]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "are you scared",
+   "options": [
+    "are you scared",
+    "are you hurt",
+    "are you sure",
+    "are you joking"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "¿Te asustas?",
+    "targetWord": "asustas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viaja",
+  "sentence": "Pues este paquete [[viaja]] gratis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "travels",
+   "options": [
+    "travels",
+    "weighs",
+    "arrives",
+    "returns"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Pues este paquete viaja gratis.",
+    "targetWord": "viaja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "martes",
+  "sentence": "Una caja abierta llega el [[martes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Tuesday",
+   "options": [
+    "Tuesday",
+    "Sunday",
+    "Thursday",
+    "Saturday"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Una caja abierta llega el martes.",
+    "targetWord": "martes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rápido",
+  "sentence": "Nicolás sube [[rápido]] por la escalera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast",
+   "options": [
+    "fast",
+    "quietly",
+    "again",
+    "behind her"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Nicolás sube rápido por la escalera.",
+    "targetWord": "rápido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blando",
+  "sentence": "Algo [[blando]] se mueve dentro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soft",
+   "options": [
+    "soft",
+    "small",
+    "warm",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Algo blando se mueve dentro.",
+    "targetWord": "blando",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacia atrás",
+  "sentence": "Ella salta [[hacia atrás]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "backwards",
+   "options": [
+    "backwards",
+    "to one side",
+    "off the step",
+    "into the hall"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Ella salta hacia atrás.",
+    "targetWord": "hacia atrás",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gratis",
+  "sentence": "Pues este paquete viaja [[gratis]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free of charge",
+   "options": [
+    "free of charge",
+    "overnight",
+    "by mistake",
+    "without a lid"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Pues este paquete viaja gratis.",
+    "targetWord": "gratis",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "duerme",
+  "sentence": "Es un gatito, y [[duerme]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he is asleep",
+   "options": [
+    "he is asleep",
+    "he is grey",
+    "he is tiny",
+    "he is hidden"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Es un gatito, y duerme.",
+    "targetWord": "duerme",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Al contrario",
+  "sentence": "[[Al contrario]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the contrary",
+   "options": [
+    "on the contrary",
+    "in any case",
+    "for once",
+    "after all"
+   ],
+   "audioClip": {
+    "storySlug": "una-caja-sin-tapa",
+    "storySource": "user",
+    "sentence": "Al contrario.",
+    "targetWord": "Al contrario",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

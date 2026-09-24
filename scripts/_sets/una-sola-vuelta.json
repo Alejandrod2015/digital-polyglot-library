@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "parrilla",
+    "sentence": "La carne sigue cruda encima de la [[parrilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grill bars",
+      "options": [
+        "grill bars",
+        "oven doors",
+        "water taps",
+        "kitchen sinks"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La carne sigue cruda encima de la parrilla.",
+        "targetWord": "parrilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9bff073116ef7d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refrescos",
+    "sentence": "La enfermera llega con los [[refrescos]] fríos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fizzy drinks",
+      "options": [
+        "fizzy drinks",
+        "paper plates",
+        "clean glasses",
+        "white napkins"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La enfermera llega con los refrescos fríos.",
+        "targetWord": "refrescos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/361b385caa208ff1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanda",
+    "sentence": "La carne sale jugosa y [[blanda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "salty",
+        "cold",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La carne sale jugosa y blanda.",
+        "targetWord": "blanda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ba4265275e8aaed.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mano",
+    "sentence": "El primo tiene el volteador en la [[mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hand",
+      "options": [
+        "hand",
+        "foot",
+        "back",
+        "knee"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "El primo tiene el volteador en la mano.",
+        "targetWord": "mano",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/213021073343fb8c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Él no deja de [[mirar]] la carne.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": [
+        "to look at",
+        "to cook",
+        "to move",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Él no deja de mirar la carne.",
+        "targetWord": "mirar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a2f075ecf50f39d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quema",
+    "sentence": "Si dejas la carne mucho tiempo, se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quema",
+      "options": [
+        "quema",
+        "moja",
+        "guarda",
+        "llena"
+      ],
+      "translation": "If you leave the meat too long, it _____.",
+      "optionTranslations": [
+        "burns",
+        "gets wet",
+        "goes away",
+        "fills up"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Si dejas la carne mucho tiempo, se quema.",
+        "targetWord": "quema",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ced2c1ec43a6fd12.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "estira",
+    "sentence": "Para alcanzar el volteador, él _____ la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estira",
+      "options": [
+        "estira",
+        "guarda",
+        "moja",
+        "cuenta"
+      ],
+      "translation": "To reach the spatula, he _____ his hand.",
+      "optionTranslations": [
+        "stretches out",
+        "puts away",
+        "wets",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Para alcanzar el volteador, él estira la mano.",
+        "targetWord": "estira",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ba1fcaaa08e79f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "jugosa",
+    "sentence": "La carne no está seca; está _____ y blanda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jugosa",
+      "options": [
+        "jugosa",
+        "fría",
+        "vieja",
+        "dura"
+      ],
+      "translation": "The meat is not dry; it is _____ and soft.",
+      "optionTranslations": [
+        "juicy",
+        "cold",
+        "old",
+        "tough"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La carne no está seca; está jugosa y blanda.",
+        "targetWord": "jugosa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/522fb2bf881737ac.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "admite",
+    "sentence": "Come tres pedazos pero no _____ que salió bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "admite",
+      "options": [
+        "admite",
+        "pregunta",
+        "escucha",
+        "escribe"
+      ],
+      "translation": "He eats three pieces but does not _____ that it came out well.",
+      "optionTranslations": [
+        "admit",
+        "ask",
+        "listen",
+        "write"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Come tres pedazos pero no admite que salió bien.",
+        "targetWord": "admite",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba634d4e169466a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cebolla,volteador,alcance,método",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cebolla",
+          "answer": "an onion",
+          "options": [
+            "an onion",
+            "a spatula",
+            "arm's reach",
+            "a fixed way"
+          ]
+        },
+        {
+          "word": "volteador",
+          "answer": "a spatula",
+          "options": [
+            "an onion",
+            "a spatula",
+            "arm's reach",
+            "a fixed way"
+          ]
+        },
+        {
+          "word": "alcance",
+          "answer": "arm's reach",
+          "options": [
+            "an onion",
+            "a spatula",
+            "arm's reach",
+            "a fixed way"
+          ]
+        },
+        {
+          "word": "método",
+          "answer": "a fixed way",
+          "options": [
+            "an onion",
+            "a spatula",
+            "arm's reach",
+            "a fixed way"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frente a frente",
+    "featured": false,
+    "sentence": "Los dos se quedan [[frente a frente]], sin hablar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "face to face",
+      "options": [
+        "face to face",
+        "side by side",
+        "one behind",
+        "far apart"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Los dos se quedan frente a frente, sin hablar.",
+        "targetWord": "frente a frente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/831567c94517442c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una vez",
+    "featured": false,
+    "sentence": "La carne se voltea [[una vez]], no más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "once",
+      "options": [
+        "once",
+        "twice",
+        "slowly",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La carne se voltea una vez, no más.",
+        "targetWord": "una vez",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f4519bd98a2fbca.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "siguiente",
+    "featured": false,
+    "sentence": "El domingo [[siguiente]] huele a carne y cebolla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "quiet",
+        "cold",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "El domingo siguiente huele a carne y cebolla.",
+        "targetWord": "siguiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/774c8c1f2091ff47.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerca",
+    "featured": false,
+    "sentence": "Él mira el asador de [[cerca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "close",
+      "options": [
+        "close",
+        "above",
+        "behind",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Él mira el asador de cerca.",
+        "targetWord": "cerca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0306058414c1f8c3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costumbre",
+    "featured": false,
+    "sentence": "Es la [[costumbre]] de la casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the custom",
+      "options": [
+        "the custom",
+        "the kitchen",
+        "the problem",
+        "the answer"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Es la costumbre de la casa.",
+        "targetWord": "costumbre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ab5fc31762b1c05.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tres",
+    "featured": false,
+    "sentence": "Él come [[tres]] pedazos y calla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three",
+      "options": [
+        "three",
+        "seven",
+        "nine",
+        "four"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "Él come tres pedazos y calla.",
+        "targetWord": "tres",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b8a490efa2e66fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abajo",
+    "featured": false,
+    "sentence": "La carne se quema [[abajo]], donde está la brasa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "underneath",
+      "options": [
+        "underneath",
+        "outside",
+        "later",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "una-sola-vuelta",
+        "storySource": "user",
+        "sentence": "La carne se quema abajo, donde está la brasa.",
+        "targetWord": "abajo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe5fd2ffc60d12f.mp3"
+      }
+    }
+  }
+]

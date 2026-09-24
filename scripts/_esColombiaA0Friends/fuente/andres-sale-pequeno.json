@@ -1,0 +1,128 @@
+{
+ "slug": "andres-sale-pequeno",
+ "topic": "parties-and-photos",
+ "title": "Andrés sale pequeño",
+ "text": "Andrés se sienta serio en la mesa amiga. Mariana tiene el celular. Hay pan amigo y arepa entera. La vendedora cuida el vaso.\n\nLa panadera pone el pan delante de Andrés. “Primer plano”, dice ella. “No sonrío”, avisa Andrés. “Yo no soy cocinero”, responde.\n\nEl papel queda con el nombre. Suena una cuerda suave. Afuera, el andén queda vacío. El carro espera en el parqueadero. La mesa queda limpia.\n\nMariana limpia el lente y toma la foto. “El pan sale enorme y me tapa la cara”, cuenta. “Yo salgo pequeño detrás del pan”, dice Andrés. La enfermera mira y pregunta bajo. “¿La fiesta es de pan?”\n\nAndrés mira serio. Después, la panadera acomoda el pan. La arepa queda junto al vaso. “Ahora eres dueño de fiesta”, bromea la vendedora.\n\nAndrés sonríe al fin. “La foto queda propia”, remata Mariana. “Pan, café y cara seria a medias”, dice Andrés. El grupo aplaude bajo.",
+ "vocab": [
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "arepa",
+   "surface": "arepa",
+   "type": "noun",
+   "def": "A round Colombian corn cake."
+  },
+  {
+   "word": "parqueadero",
+   "surface": null,
+   "type": "noun",
+   "def": "A place where cars wait."
+  },
+  {
+   "word": "entera",
+   "surface": "entera",
+   "type": "adjective",
+   "def": "Whole and not cut."
+  },
+  {
+   "word": "andén",
+   "surface": null,
+   "type": "noun",
+   "def": "The walking path beside a street."
+  },
+  {
+   "word": "delante de",
+   "surface": "delante de",
+   "type": "expression",
+   "def": "In front of something."
+  },
+  {
+   "word": "pequeño",
+   "surface": "pequeño",
+   "type": "adjective",
+   "def": "Small and not large."
+  },
+  {
+   "word": "cocinero",
+   "surface": null,
+   "type": "noun",
+   "def": "A person who cooks food."
+  },
+  {
+   "word": "ahora",
+   "surface": "ahora",
+   "type": "adverb",
+   "def": "At this moment now."
+  },
+  {
+   "word": "acomodar",
+   "surface": "acomoda",
+   "type": "verb",
+   "def": "To put in a good place."
+  },
+  {
+   "word": "seria",
+   "surface": "seria",
+   "type": "adjective",
+   "def": "Not smiling or joking."
+  },
+  {
+   "word": "aplaudir",
+   "surface": "aplaude",
+   "type": "verb",
+   "def": "To hit hands together happily."
+  },
+  {
+   "word": "lente",
+   "surface": null,
+   "type": "noun",
+   "def": "The glass part of a camera."
+  },
+  {
+   "word": "cuerda suave",
+   "surface": "cuerda suave",
+   "type": "expression",
+   "def": "A soft musical string."
+  },
+  {
+   "word": "limpia",
+   "surface": "limpia",
+   "type": "adjective",
+   "def": "Clean and not dirty."
+  },
+  {
+   "word": "propio de grupo",
+   "surface": "propia",
+   "type": "expression",
+   "def": "Belonging to the group."
+  },
+  {
+   "word": "dueño de fiesta",
+   "surface": "dueño de fiesta",
+   "type": "expression",
+   "def": "The person like a party owner."
+  },
+  {
+   "word": "gente retratada",
+   "surface": "foto",
+   "type": "noun",
+   "def": "A picture of people."
+  },
+  {
+   "word": "pose",
+   "surface": "cara seria",
+   "type": "noun",
+   "def": "A way to stand or look."
+  },
+  {
+   "word": "mirar serio",
+   "surface": "mira serio",
+   "type": "expression",
+   "def": "To look without smiling."
+  }
+ ]
+}

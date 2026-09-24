@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "penumbra",
+    "sentence": "Ya hay [[penumbra]] en la escalera a las siete.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half darkness",
+      "options": [
+        "half darkness",
+        "loud music",
+        "cold air",
+        "fresh paint"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Ya hay penumbra en la escalera a las siete.",
+        "targetWord": "penumbra",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/547312407428ca0115bb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pantufla",
+    "sentence": "Sube perezosa, con [[pantuflas]] y poco sueño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a slipper",
+      "options": [
+        "a slipper",
+        "a hat",
+        "a scarf",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Sube perezosa, con pantuflas y poco sueño.",
+        "targetWord": "pantuflas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c2e0c1551299167d5a0b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primera vez",
+    "sentence": "Antes, la [[primera vez]], habría llenado ese silencio con tres preguntas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the first time",
+      "options": [
+        "the first time",
+        "the last night",
+        "the whole week",
+        "the next morning"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Antes, la primera vez, habría llenado ese silencio con tres preguntas.",
+        "targetWord": "primera vez",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/457c97f989b3551a8e33.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colocar",
+    "sentence": "Le acerca la butaca y [[coloca]] una sábana detrás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to place",
+      "options": [
+        "to place",
+        "to fold",
+        "to sew",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Le acerca la butaca y coloca una sábana detrás.",
+        "targetWord": "coloca",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1888fb49b975d9e7d960.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguardar",
+    "sentence": "Ahora solo [[aguarda]] con calma, sin buscar temas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": [
+        "to wait",
+        "to talk",
+        "to eat",
+        "to read"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+        "targetWord": "aguarda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ae2356ec8e706e4a8dd0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "siesta",
+    "sentence": "Lo he aprendido aquí, contigo y con la [[siesta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the nap",
+      "options": [
+        "the nap",
+        "the bread",
+        "the sea",
+        "the radio"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Lo he aprendido aquí, contigo y con la siesta.",
+        "targetWord": "siesta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a5612d422754d4d3ade9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "descansa",
+    "sentence": "Después de correr una hora, se tumba y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descansa",
+      "options": [
+        "descansa",
+        "cocina",
+        "paga",
+        "conduce"
+      ],
+      "translation": "After running for an hour, she lies down and _____.",
+      "optionTranslations": [
+        "rests",
+        "cooks",
+        "pays",
+        "drives"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Después de correr una hora, se tumba y descansa.",
+        "targetWord": "descansa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/978311ded1b0696f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "susurra",
+    "sentence": "El bebé duerme, así que ella _____ para no despertarlo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "susurra",
+      "options": [
+        "susurra",
+        "corre",
+        "come",
+        "lee"
+      ],
+      "translation": "The baby is sleeping, so she _____ so as not to wake him.",
+      "optionTranslations": [
+        "whispers",
+        "runs",
+        "eats",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "El bebé duerme, así que ella susurra para no despertarlo.",
+        "targetWord": "susurra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc037011e624b162.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sueño",
+    "sentence": "Bosteza porque tiene mucho _____ y quiere irse a la cama.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sueño",
+      "options": [
+        "sueño",
+        "dinero",
+        "pelo",
+        "ruido"
+      ],
+      "translation": "He yawns because he's very _____ and wants to go to bed.",
+      "optionTranslations": [
+        "sleepy",
+        "rich",
+        "hairy",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Bosteza porque tiene mucho sueño y quiere irse a la cama.",
+        "targetWord": "sueño",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3639efbcfae4f1f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "colcha,sábana,almohada,mejilla",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "colcha",
+          "answer": "a bedspread",
+          "options": [
+            "a bedspread",
+            "a sheet",
+            "a pillow",
+            "a cheek"
+          ]
+        },
+        {
+          "word": "sábana",
+          "answer": "a sheet",
+          "options": [
+            "a bedspread",
+            "a sheet",
+            "a pillow",
+            "a cheek"
+          ]
+        },
+        {
+          "word": "almohada",
+          "answer": "a pillow",
+          "options": [
+            "a bedspread",
+            "a sheet",
+            "a pillow",
+            "a cheek"
+          ]
+        },
+        {
+          "word": "mejilla",
+          "answer": "a cheek",
+          "options": [
+            "a bedspread",
+            "a sheet",
+            "a pillow",
+            "a cheek"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ladrido",
+    "sentence": "Fuera, un [[ladrido]] corto cruza el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bark",
+      "options": [
+        "a bark",
+        "a shadow",
+        "a smell",
+        "a car"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Fuera, un ladrido corto cruza el patio.",
+        "targetWord": "ladrido",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/17157c46fb95a6104b6c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luces",
+    "sentence": "Hasta que se apagan las [[luces]] de la terraza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lights",
+      "options": [
+        "lights",
+        "doors",
+        "tables",
+        "voices"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Hasta que se apagan las luces de la terraza.",
+        "targetWord": "luces",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/647abe20290819e81606.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perezoso",
+    "sentence": "Sube [[perezosa]], con pantuflas y poco sueño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lazy",
+      "options": [
+        "lazy",
+        "wet",
+        "late",
+        "rich"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Sube perezosa, con pantuflas y poco sueño.",
+        "targetWord": "perezosa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/584485368729273b6ca6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no pasa nada",
+    "sentence": "[[No pasa nada]], descansa un rato y ya hablamos mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it doesn't matter",
+      "options": [
+        "it doesn't matter",
+        "it's very late",
+        "it's your turn",
+        "it's too cold"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "No pasa nada, descansa un rato y ya hablamos mañana.",
+        "targetWord": "No pasa nada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/820166c748b835b0459d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despertar",
+    "sentence": "Susurra al [[despertar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wake up",
+      "options": [
+        "to wake up",
+        "to sit down",
+        "to go out",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Susurra al despertar.",
+        "targetWord": "despertar",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/051627bbd2afa6aa68a1.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "permanecer",
+    "sentence": "Las dos [[permanecen]] así hasta que se apagan las luces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay",
+      "options": [
+        "to stay",
+        "to laugh",
+        "to sing",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Las dos permanecen así hasta que se apagan las luces.",
+        "targetWord": "permanecen",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/32cb6e702b2b9e34a5b7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dormida",
+    "sentence": "Cierra los ojos y se queda _____ en el sofá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dormida",
+      "options": [
+        "dormida",
+        "limpia",
+        "rubia",
+        "alta"
+      ],
+      "translation": "She closes her eyes and stays _____ on the sofa.",
+      "optionTranslations": [
+        "asleep",
+        "clean",
+        "blonde",
+        "tall"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-le-pesa-callarse",
+        "storySource": "user",
+        "sentence": "Cierra los ojos y se queda dormida en el sofá.",
+        "targetWord": "dormida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c05de322715ea1d4.mp3"
+      }
+    },
+    "featured": false
+  }
+]

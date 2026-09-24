@@ -605,7 +605,10 @@ function desdeJson(fichero: string) {
       vocab: s.vocab as never,
       language, level, topic: s.topic,
     })),
-    { language, level, realPeople, conjuntoCompleto: false, previas: previasDelJourney }
+    // `variant` va aqui porque `journey-cast-names-in-language` busca el banco
+    // de nombres por idioma Y region: sin el, el banco sale vacio y el check no
+    // se puede medir, que este script cuenta como fallo (2026-09-24).
+    { language, level, variant, realPeople, conjuntoCompleto: false, previas: previasDelJourney }
   );
   console.log("");
   for (const c of jc) {

@@ -1,0 +1,17 @@
+MATCH|der Wagen=a cart of goods|die Platte=a table top|der Klappstuhl=a folding chair|der Geldschein=a banknote
+M|handeln|Auf dem Markt darf man immer [[handeln]].|to haggle|to shout|to borrow|to steal
+M|die Händlerin|Die [[Händlerin]] verkauft alte Tische und Betten.|a woman trader|a young nurse|a busy waiter|a tired driver
+M|brauchen|Für die leere Küche [[braucht]] sie einen Tisch.|to need|to paint|to rent|to sell
+M|wackeln|Der Tisch [[wackelt]] bei jeder Bewegung.|to wobble|to shine|to grow|to close
+M|schieben|Sie [[schiebt]] den Tisch bis nach Hause.|to push|to lift|to throw|to clean
+F|teuer|Achtzig Euro für einen alten Tisch sind zu _____.|Eighty euros for an old table is too _____.|expensive|schwer=heavy|dunkel=dark|klein=small
+F|kürzer|Ein Bein ist _____ als die anderen drei, deshalb wackelt der Tisch.|One leg is _____ than the other three, so the table wobbles.|shorter|dunkler=darker|weicher=softer|leiser=quieter
+M|streichen|Sie [[streicht]] mit der Hand über das Holz.|to stroke|to knock|to write|to cut
+M|glatt|Die Oberfläche ist kühl und ganz [[glatt]].|smooth|warm|dirty|soft
+M|massiv|Der Schrank ist [[massiv]] und hält viele Jahre.|solid|hollow|light|cheap
+M|das Möbel|Sie kauft ihre [[Möbel]] nur gebraucht.|furniture|clothing|jewellery|machinery
+M|grau|Über dem Fluss hängt ein [[grauer]] Nebel.|grey|green|golden|bright
+M|die Pappe|Unter dem Bein liegt ein Stück [[Pappe]].|cardboard|metal|glass|stone
+M|das Bein|Der Tisch steht auf drei guten [[Beinen]].|a leg|a wheel|a board|a nail
+M|unbedingt|Sie will [[unbedingt]] einen besseren Preis.|absolutely|probably|hardly|almost
+F|deutlich|Der Unterschied ist so _____, dass jeder ihn sieht.|The difference is so _____ that everybody sees it.|clear|klein=small|neu=new|teuer=expensive

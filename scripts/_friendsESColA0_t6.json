@@ -1,0 +1,489 @@
+[
+  {
+    "topic": "cash-and-errands",
+    "slotIndex": 0,
+    "title": "El platito gira",
+    "slug": "el-platito-gira",
+    "arcType": null,
+    "synopsis": "Andres saves bus money under a small plate, but the plate turns and sends the coins toward the bread.",
+    "text": "Con café y pan, Andrés mira dos monedas. Mariana pone un platito. También llega la panadera con pandebono tibio. El bus espera.\n\nAndrés deja vuelto bajo el platito. “Es plata para la buseta, no para pan ni miga”, dice serio. Mariana acerca el vaso y escucha.\n\nEl platito gira sobre la bandejita. Una moneda rueda junto a la cucharita. Lina señala la orilla. “La plata se esconde aquí, junto al pan”, cuenta.\n\nLuego la panadera pone pan encima del platito. “Así no veo la plata”, avisa. Andrés entiende. “Yo compro el tiquete, no el pan”, responde.\n\nMariana recoge el vuelto y lo mete en un monedero. El conductor toca el timbre cerca de la puerta. La enfermera guarda el maletín debajo de la silla.\n\nLas monedas vuelven a la mano de Andrés. “El bus recibe plata, no miga”, dice. “Después compra pan simple”, dice Mariana. “El platito queda libre y todos ríen sin cambio”, agrega.",
+    "vocab": [
+      {
+        "word": "regreso de dinero",
+        "surface": "vuelto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money given back after paying."
+      },
+      {
+        "word": "dinero diario",
+        "surface": "plata",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money in everyday speech."
+      },
+      {
+        "word": "platito",
+        "surface": "platito",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A very small plate."
+      },
+      {
+        "word": "cucharita",
+        "surface": "cucharita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A very small spoon."
+      },
+      {
+        "word": "esconderse",
+        "surface": "se esconde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hide from clear sight.",
+        "anchor": true
+      },
+      {
+        "word": "girar",
+        "surface": "gira",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To turn in a circle.",
+        "anchor": true
+      },
+      {
+        "word": "recibir",
+        "surface": "recibe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To get something from someone.",
+        "anchor": true
+      },
+      {
+        "word": "orilla",
+        "surface": "orilla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The edge of something.",
+        "anchor": true
+      },
+      {
+        "word": "rodar",
+        "surface": "rueda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To roll along a surface.",
+        "anchor": true
+      },
+      {
+        "word": "monedero",
+        "surface": "monedero",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small thing for money.",
+        "anchor": true
+      },
+      {
+        "word": "bandejita",
+        "surface": "bandejita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A very small tray."
+      },
+      {
+        "word": "responder",
+        "surface": "responde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer another person."
+      },
+      {
+        "word": "puerta cercana",
+        "surface": "cerca de la puerta",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Near the door of a place."
+      },
+      {
+        "word": "comprar",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To get something with money."
+      },
+      {
+        "word": "simple",
+        "surface": "simple",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Easy and not complicated.",
+        "anchor": true
+      },
+      {
+        "word": "campanita de bus",
+        "surface": "timbre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A bell sound from a vehicle."
+      },
+      {
+        "word": "dos monedas",
+        "surface": "dos monedas",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Two small metal coins.",
+        "anchor": true
+      },
+      {
+        "word": "sin cambio",
+        "surface": "sin cambio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "With no money change.",
+        "anchor": true
+      },
+      {
+        "word": "pieza redonda",
+        "surface": "moneda",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small round piece of money."
+      },
+      {
+        "word": "pan molido",
+        "surface": "miga",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A very small piece of bread."
+      }
+    ]
+  },
+  {
+    "topic": "cash-and-errands",
+    "slotIndex": 1,
+    "title": "Tres papeles mandan",
+    "slug": "tres-papeles-mandan",
+    "arcType": null,
+    "synopsis": "la enfermera brings a pharmacy errand with two names, and la vendedora uses colored papers to separate bread, coffee, and money.",
+    "text": "La enfermera entra con un mandado. Mariana prepara café. La bolsa roja tiene pan.\n\nEl comprobante trae dos nombres. “Dos nombres, un sobre, y cero pelea”, dice la vendedora. Andrés mira la plata y el café. “Yo soy el otro renglón”, responde.\n\nHay tres papeles: azul, rojo y blanco. “Cada color cuida algo: botica, pan o vuelto”, explica. El azul cuida la botica. El rojo cuida pan.\n\nMariana deja el vaso junto al papel blanco. “El pan no toma plata ni firma papel”, avisa. Afuera espera la buseta.\n\nEl comprobante va al bolsillo lateral. El sobre queda ordenado. “La compra pequeña queda clara y limpia”, cuenta.\n\nAndrés entrega el sobre correcto. Nadie protesta. Ella sonríe poco. “Todo separado, todo amigo”, dice la vendedora. “Café, pan y plata van separados”, dice Andrés.",
+    "vocab": [
+      {
+        "word": "mandado",
+        "surface": "mandado",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "An errand for someone.",
+        "anchor": true
+      },
+      {
+        "word": "comprobante",
+        "surface": "comprobante",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A paper showing payment.",
+        "anchor": true
+      },
+      {
+        "word": "sobre",
+        "surface": "sobre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A paper envelope for documents."
+      },
+      {
+        "word": "bolsa roja",
+        "surface": "bolsa roja",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A red bag for things.",
+        "anchor": true
+      },
+      {
+        "word": "papel blanco",
+        "surface": "papel blanco",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A white piece of paper.",
+        "anchor": true
+      },
+      {
+        "word": "renglón",
+        "surface": "renglón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "One written line on paper."
+      },
+      {
+        "word": "separados",
+        "surface": "separados",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Kept apart, not together.",
+        "anchor": true
+      },
+      {
+        "word": "cero pelea",
+        "surface": "cero pelea",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "No fight at all.",
+        "anchor": true
+      },
+      {
+        "word": "cada color",
+        "surface": "Cada color",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Each color by itself.",
+        "anchor": true
+      },
+      {
+        "word": "dos nombres",
+        "surface": "Dos nombres",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Two names on paper.",
+        "anchor": true
+      },
+      {
+        "word": "farmacia",
+        "surface": "botica",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A shop for medicine."
+      },
+      {
+        "word": "bolsillo lateral",
+        "surface": "bolsillo lateral",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A pocket on the side."
+      },
+      {
+        "word": "correcto",
+        "surface": "correcto",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Right for this task."
+      },
+      {
+        "word": "azul papel",
+        "surface": "azul",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "The color of clear sky."
+      },
+      {
+        "word": "queda ordenado",
+        "surface": "queda ordenado",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Becomes neat and ordered.",
+        "anchor": true
+      },
+      {
+        "word": "mercado corto",
+        "surface": "compra pequeña",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A small thing bought.",
+        "anchor": true
+      },
+      {
+        "word": "café pan y plata",
+        "surface": "Café, pan y plata",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Coffee, bread, and money.",
+        "anchor": true
+      },
+      {
+        "word": "limpia",
+        "surface": "limpia",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Clean, not dirty or marked."
+      },
+      {
+        "word": "todo separado",
+        "surface": "Todo separado",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Everything kept in different places.",
+        "anchor": true
+      },
+      {
+        "word": "lateral de bolso",
+        "surface": "bolsillo lateral",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A side pocket on a bag."
+      }
+    ]
+  },
+  {
+    "topic": "cash-and-errands",
+    "slotIndex": 2,
+    "title": "Un peso canta",
+    "slug": "un-peso-canta",
+    "arcType": null,
+    "synopsis": "la panadera tries to return one peso, but it falls into the bread bag while el músico turns the search into a tiny song.",
+    "text": "Hay un peso en la mano abierta. Mariana sirve café. Andrés mira el pan amigo. Suena música suave en la mesa.\n\nEl peso cae en la bolsa del pan. Ella mete la mano. “No es propina ni drama; vuelve a mi mano”, dice. Andrés observa el pandebono y parte un pedacito horneado.\n\nCanta bajo para buscar. “Peso, peso, sal del pan”, repite. La miga y el papel señalan. “La plata no contesta”, explica.\n\nEl bolsillo, la silla y la nota quedan en revisión.\n\nEl peso aparece pegado a una tira roja. “El pan guarda vuelto, sin problema”, cuenta. Andrés levanta la moneda con cuidado.\n\nMariana pone el peso sobre el vaso vacío. “Para la próxima compra segura”, avisa. “Todos observan el último peso perdido”, remata la panadera. “¿Y mañana quién canta?”, pregunta Mariana.",
+    "vocab": [
+      {
+        "word": "peso cae",
+        "surface": "peso cae",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A coin falls down.",
+        "anchor": true
+      },
+      {
+        "word": "propina",
+        "surface": "propina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Extra money for service.",
+        "anchor": true
+      },
+      {
+        "word": "roja",
+        "surface": "roja",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red in color, not blue."
+      },
+      {
+        "word": "pegado",
+        "surface": "pegado",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Stuck to another thing.",
+        "anchor": true
+      },
+      {
+        "word": "tira roja",
+        "surface": "tira roja",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A thin red strip.",
+        "anchor": true
+      },
+      {
+        "word": "servir café",
+        "surface": "sirve café",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To give coffee to someone."
+      },
+      {
+        "word": "devolver",
+        "surface": "levanta la moneda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To give something back.",
+        "anchor": true
+      },
+      {
+        "word": "bolsillo",
+        "surface": "bolsillo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small pocket in clothing."
+      },
+      {
+        "word": "plata pequeña",
+        "surface": "plata",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small amount of money."
+      },
+      {
+        "word": "quedar pegado",
+        "surface": "pegado",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To stay stuck to something.",
+        "anchor": true
+      },
+      {
+        "word": "canción corta",
+        "surface": "canta",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A short song with words."
+      },
+      {
+        "word": "miga",
+        "surface": "miga",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small piece of bread."
+      },
+      {
+        "word": "drama",
+        "surface": "drama",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A big emotional problem."
+      },
+      {
+        "word": "vaso vacío",
+        "surface": "vaso vacío",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A glass with nothing inside.",
+        "anchor": true
+      },
+      {
+        "word": "seguir en sitio",
+        "surface": "guarda vuelto",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To keep something in place.",
+        "anchor": true
+      },
+      {
+        "word": "bolsa de pan",
+        "surface": "bolsa del pan",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A bag used for bread.",
+        "anchor": true
+      },
+      {
+        "word": "todos observan",
+        "surface": "Todos observan",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Everyone looks at something.",
+        "anchor": true
+      },
+      {
+        "word": "sin problema",
+        "surface": "sin problema",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "With no trouble at all.",
+        "anchor": true
+      },
+      {
+        "word": "mano abierta",
+        "surface": "mano abierta",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A hand held open.",
+        "anchor": true
+      },
+      {
+        "word": "último",
+        "surface": "último",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Last after all the others.",
+        "anchor": true
+      }
+    ]
+  }
+]

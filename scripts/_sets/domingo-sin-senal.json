@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la clave,el celular,la erre,la mayúscula",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la clave",
+     "answer": "a password",
+     "options": [
+      "a password",
+      "a mobile phone",
+      "the letter R",
+      "a capital letter"
+     ]
+    },
+    {
+     "word": "el celular",
+     "answer": "a mobile phone",
+     "options": [
+      "a password",
+      "a mobile phone",
+      "the letter R",
+      "a capital letter"
+     ]
+    },
+    {
+     "word": "la erre",
+     "answer": "the letter R",
+     "options": [
+      "a password",
+      "a mobile phone",
+      "the letter R",
+      "a capital letter"
+     ]
+    },
+    {
+     "word": "la mayúscula",
+     "answer": "a capital letter",
+     "options": [
+      "a password",
+      "a mobile phone",
+      "the letter R",
+      "a capital letter"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prueba",
+  "sentence": "Mariana sube y [[prueba]] la clave. Su celular dice error.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tries out",
+   "options": [
+    "tries out",
+    "writes down",
+    "forgets",
+    "shares"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Mariana sube y prueba la clave. Su celular dice error.",
+    "targetWord": "prueba",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "regresa",
+  "sentence": "Ella _____ y toca la puerta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regresa",
+   "options": [
+    "regresa",
+    "prueba",
+    "ayuda",
+    "escribe"
+   ],
+   "translation": "She _____ and knocks on the door.",
+   "optionTranslations": [
+    "comes back",
+    "tries",
+    "helps",
+    "writes"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Ella regresa y toca la puerta.",
+    "targetWord": "regresa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "anda",
+  "sentence": "El internet de su casa no _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anda",
+   "options": [
+    "anda",
+    "prueba",
+    "regresa",
+    "escribe"
+   ],
+   "translation": "The internet at her flat does not _____.",
+   "optionTranslations": [
+    "work",
+    "try",
+    "come back",
+    "write"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "El internet de su casa no anda.",
+    "targetWord": "anda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "película",
+  "sentence": "Mariana quiere ver una [[película]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "film",
+   "options": [
+    "film",
+    "match",
+    "series",
+    "recipe"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Mariana quiere ver una película.",
+    "targetWord": "película",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ayuda",
+  "sentence": "En el sofá la gata duerme tranquila. No [[ayuda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she is no help",
+   "options": [
+    "she is no help",
+    "she is no trouble",
+    "she is not hers",
+    "she is not well"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "En el sofá la gata duerme tranquila. No ayuda.",
+    "targetWord": "ayuda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no entra",
+  "sentence": "Tu clave [[no entra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "does not work",
+   "options": [
+    "does not work",
+    "does not fit",
+    "does not matter",
+    "does not exist"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Tu clave no entra.",
+    "targetWord": "no entra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "así",
+  "sentence": "Nadie escribe [[así]] un nombre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like that",
+   "options": [
+    "like that",
+    "down",
+    "twice",
+    "by hand"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Nadie escribe así un nombre.",
+    "targetWord": "así",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cambio",
+  "sentence": "Ya no la [[cambio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am changing it",
+   "options": [
+    "I am changing it",
+    "I am saving it",
+    "I am sharing it",
+    "I am hiding it"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Ya no la cambio.",
+    "targetWord": "cambio",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aparatos",
+  "sentence": "Tengo diez [[aparatos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "devices",
+   "options": [
+    "devices",
+    "neighbours",
+    "windows",
+    "passwords"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Tengo diez aparatos.",
+    "targetWord": "aparatos",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domingo",
+  "sentence": "Es [[domingo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Sunday",
+   "options": [
+    "Sunday",
+    "Monday",
+    "Friday",
+    "Tuesday"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Es domingo.",
+    "targetWord": "domingo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Claro",
+  "sentence": "[[Claro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sure",
+   "options": [
+    "sure",
+    "hardly",
+    "maybe",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Claro.",
+    "targetWord": "Claro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "error",
+  "sentence": "Su celular dice [[error]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "error",
+   "options": [
+    "error",
+    "alarm",
+    "loading",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Su celular dice error.",
+    "targetWord": "error",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "internet",
+  "sentence": "Mi [[internet]] no anda hoy.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "internet",
+   "options": [
+    "internet",
+    "intercom",
+    "phone",
+    "heating"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Mi internet no anda hoy.",
+    "targetWord": "internet",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en serio",
+  "sentence": "Pon dos erres. Es [[en serio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I mean it",
+   "options": [
+    "I mean it",
+    "I am guessing",
+    "I forgot",
+    "I am joking"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Pon dos erres. Es en serio.",
+    "targetWord": "en serio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escribo",
+  "sentence": "Yo [[escribo]] la clave ahora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I will write down",
+   "options": [
+    "I will write down",
+    "I will guess",
+    "I will change",
+    "I will repeat"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Yo escribo la clave ahora.",
+    "targetWord": "escribo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ahora",
+  "sentence": "Yo escribo la clave [[ahora]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now",
+   "options": [
+    "right now",
+    "out loud",
+    "by heart",
+    "on paper"
+   ],
+   "audioClip": {
+    "storySlug": "domingo-sin-senal",
+    "storySource": "user",
+    "sentence": "Yo escribo la clave ahora.",
+    "targetWord": "ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

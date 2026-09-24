@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "adulto",
+  "sentence": "“Pan no es [[persona]]; es comida rica”, explica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a man or a woman",
+   "options": [
+    "a man or a woman",
+    "a bag or a box",
+    "a cup or a glass",
+    "a street or a park"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "“Pan no es persona; es comida rica”, explica.",
+    "targetWord": "persona",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Pan grande",
+  "sentence": "El celular pone [[Pan grande]] y nombre propio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mistaken big name",
+   "options": [
+    "a mistaken big name",
+    "a small written note",
+    "a warm bread roll",
+    "a long shop list"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "El celular pone Pan grande y nombre propio.",
+    "targetWord": "Pan grande",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "asiento libre",
+  "sentence": "Hay un [[asiento libre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a seat nobody uses",
+   "options": [
+    "a seat nobody uses",
+    "a shop nobody opens",
+    "a note nobody hears",
+    "a glass nobody fills"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Hay un asiento libre.",
+    "targetWord": "asiento libre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queda pan",
+  "sentence": "Ella escribe: [[queda pan]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bread is still left",
+   "options": [
+    "bread is still left",
+    "bread is very warm",
+    "coffee is almost cold",
+    "music is too loud"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Ella escribe: queda pan.",
+    "targetWord": "queda pan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mayúscula",
+  "sentence": "El celular pone Pan [[grande]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a big written letter",
+   "options": [
+    "a big written letter",
+    "a short spoken word",
+    "a wide open door",
+    "a full coffee cup"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "El celular pone Pan grande.",
+    "targetWord": "grande",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gana mesa",
+  "sentence": "“Pan aparece y pierde silla, pero [[gana mesa]]”, remata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gets a place at the table",
+   "options": [
+    "gets a place at the table",
+    "finds a bag under the chair",
+    "buys a bread at the shop",
+    "keeps a glass on the shelf"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "“Pan aparece y pierde silla, pero gana mesa”, remata.",
+    "targetWord": "gana mesa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "música sin tilde",
+  "sentence": "Llega [[música sin tilde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "music with no accent mark",
+   "options": [
+    "music with no accent mark",
+    "bread with no warm smell",
+    "coffee with no white sugar",
+    "paper with no written words"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Llega música sin tilde.",
+    "targetWord": "música sin tilde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entonces",
+  "sentence": "[[Entonces]] la panadera entra con el pan real.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at that point in time",
+   "options": [
+    "at that point in time",
+    "in a very slow way",
+    "at a place far away",
+    "for a very long while"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Entonces la panadera entra con el pan real.",
+    "targetWord": "Entonces",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hambre",
+  "sentence": "“¿Pan trae maletín o trae [[hambre]]?” pregunta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the need to eat",
+   "options": [
+    "the need to eat",
+    "the wish to sleep",
+    "the time to leave",
+    "the way to walk"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "“¿Pan trae maletín o trae hambre?” pregunta.",
+    "targetWord": "hambre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pan real",
+  "sentence": "Entonces la panadera entra con el [[pan real]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bread that is not a joke",
+   "options": [
+    "bread that is not a joke",
+    "coffee that is not hot",
+    "music that is not loud",
+    "paper that is not white"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Entonces la panadera entra con el pan real.",
+    "targetWord": "pan real",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "respaldo",
+  "sentence": "El _____ de la silla vacía queda enfrente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "respaldo",
+   "options": [
+    "respaldo",
+    "timbre",
+    "vaso",
+    "papel"
+   ],
+   "translation": "The _____ of the empty chair is in front.",
+   "optionTranslations": [
+    "the part you lean on",
+    "the ring of a doorbell",
+    "the glass for cold water",
+    "the paper from a notebook"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "El respaldo de la silla vacía queda enfrente.",
+    "targetWord": "respaldo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tienda de pan",
+  "sentence": "Dentro de la _____, la panadera mira el celular.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tienda de pan",
+   "options": [
+    "tienda de pan",
+    "sala de música",
+    "fila de sillas",
+    "bolsa de tela"
+   ],
+   "translation": "Inside the _____, the baker looks at her phone.",
+   "optionTranslations": [
+    "a shop that sells bread",
+    "a room used for music",
+    "a row of empty chairs",
+    "a bag made of cloth"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Dentro de la tienda de pan, la panadera mira el celular.",
+    "targetWord": "tienda de pan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mensaje equivocado",
+  "sentence": "Ella lee el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mensaje equivocado",
+   "options": [
+    "mensaje equivocado",
+    "vaso pequeño",
+    "timbre nuevo",
+    "respaldo blanco"
+   ],
+   "translation": "She reads the _____.",
+   "optionTranslations": [
+    "a message with a mistake",
+    "a small drinking glass",
+    "a new loud doorbell",
+    "a white chair back"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "Ella lee el mensaje equivocado.",
+    "targetWord": "mensaje equivocado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nombre propio",
+  "sentence": "El celular pone Pan grande y _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nombre propio",
+   "options": [
+    "nombre propio",
+    "vaso limpio",
+    "papel blanco",
+    "pan tibio"
+   ],
+   "translation": "The phone writes Pan grande and _____.",
+   "optionTranslations": [
+    "a name for one person",
+    "a clean drinking glass",
+    "a sheet of white paper",
+    "a piece of warm bread"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "El celular pone Pan grande y nombre propio.",
+    "targetWord": "nombre propio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "comida rica",
+  "sentence": "“Pan no es persona; es _____”, explica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "comida rica",
+   "options": [
+    "comida rica",
+    "silla vacía",
+    "tienda nueva",
+    "música alta"
+   ],
+   "translation": "“Pan is not a person; it is _____”, she explains.",
+   "optionTranslations": [
+    "food that tastes good",
+    "a chair with no one",
+    "a shop that just opened",
+    "music that sounds loud"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "“Pan no es persona; es comida rica”, explica.",
+    "targetWord": "comida rica",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pierde silla",
+  "sentence": "“Pan aparece y _____, pero gana mesa”, remata.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pierde silla",
+   "options": [
+    "pierde silla",
+    "saluda amigo",
+    "levanta vaso",
+    "come pan"
+   ],
+   "translation": "“Pan shows up and _____, but gets a table”, he ends.",
+   "optionTranslations": [
+    "loses the saved seat",
+    "greets a good friend",
+    "lifts the empty glass",
+    "eats the warm bread"
+   ],
+   "audioClip": {
+    "storySlug": "pan-tiene-silla",
+    "storySource": "journey",
+    "sentence": "“Pan aparece y pierde silla, pero gana mesa”, remata.",
+    "targetWord": "pierde silla",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "ganar,perder,comer,aparecer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "ganar",
+     "answer": "to get something good",
+     "options": [
+      "to get something good",
+      "to no longer have it",
+      "to put food in your mouth",
+      "to come into view"
+     ]
+    },
+    {
+     "word": "perder",
+     "answer": "to no longer have it",
+     "options": [
+      "to get something good",
+      "to no longer have it",
+      "to put food in your mouth",
+      "to come into view"
+     ]
+    },
+    {
+     "word": "comer",
+     "answer": "to put food in your mouth",
+     "options": [
+      "to get something good",
+      "to no longer have it",
+      "to put food in your mouth",
+      "to come into view"
+     ]
+    },
+    {
+     "word": "aparecer",
+     "answer": "to come into view",
+     "options": [
+      "to get something good",
+      "to no longer have it",
+      "to put food in your mouth",
+      "to come into view"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

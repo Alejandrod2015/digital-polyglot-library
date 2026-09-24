@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "cafe de barrio, pedidos sencillos y humor con pan",
+  "espina": "Mariana y Andres usan errores pequenos para cuidar mejor al grupo.",
+  "recursos": "Medellin, Colombia; cafe, pan, mesa, vaso, nombre, papel, amigo; entra Sofi, una panadera adulta del barrio.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Mariana quiere apartar pan para Andres.",
+      "impide": "El papel dice vaso y no pan.",
+      "cuesta": "Sofi cree que el pedido es imposible.",
+      "cambia": "El error crea una orden clara para todos.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Andres quiere llevar cafe a la mesa correcta.",
+      "impide": "Hay dos mesas con el mismo nombre.",
+      "cuesta": "Mariana casi entrega el cafe al grupo equivocado.",
+      "cambia": "El pan se vuelve senal de la mesa amiga.",
+      "emocion": "complicidad"
+    },
+    {
+      "slot": "3",
+      "quiere": "Sofi quiere vender el ultimo pan sin pelear.",
+      "impide": "Andres y Lina lo piden al mismo tiempo.",
+      "cuesta": "El grupo queda en silencio raro.",
+      "cambia": "Comparten el pan y le ponen nombre de amigo.",
+      "emocion": "bienvenida"
+    }
+  ]
+}

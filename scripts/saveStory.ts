@@ -23,6 +23,8 @@
  *   --title-only        acortar un título que se corta en la tarjeta
  *   --definition-only   corregir la definición de una entrada de vocabulario
  *   --dedupe-only       quitar una frase pegada dos veces seguidas en el cuerpo
+ *   --arctype-only      corregir un arcType mal puesto (no toca texto ni vocab,
+ *                       asi que no descuadra karaoke, glosas ni clips)
  *
  * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
  * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
@@ -89,9 +91,20 @@ function arg(name: string, fallback?: string): string | undefined {
 function flag(name: string): boolean {
   return process.argv.includes(`--${name}`);
 }
-function slugify(s: string): string {
-  return s
-    .toLowerCase()
+/** En ALEMAN la dieresis se translitera, no se tira: "ü" es "ue", no "u".
+ *  Quitarla a secas cambia la palabra ("Müll" basura -> "Mull" gasa) y rompe
+ *  la convencion del propio catalogo (das-sofa-aus-muenster, achtzig-fuer-
+ *  drei-beine). Solo se aplica al aleman: en espanol "pingüino" no lleva esa
+ *  regla. (2026-09-23, tras dos slugs mal derivados en el Friends DE A2.) */
+const TRANSLITERA_DE: Array<[RegExp, string]> = [
+  [/ä/g, "ae"], [/ö/g, "oe"], [/ü/g, "ue"], [/ß/g, "ss"],
+];
+function slugify(s: string, lang?: string): string {
+  let base = s.toLowerCase();
+  if ((lang ?? "").toUpperCase() === "DE") {
+    for (const [re, to] of TRANSLITERA_DE) base = base.replace(re, to);
+  }
+  return base
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
@@ -120,6 +133,7 @@ function slugify(s: string): string {
   // exigencia de que el RESTO de la historia cumpla el estándar de hoy, que
   // es deuda anterior y ajena al cambio. Ver el bloque `titleOnly`.
   const titleOnly = flag("title-only");
+  const arctypeOnly = flag("arctype-only");
   // MODO SOLO-DEFINICION (2026-09-17). La glosa que sale al tocar una palabra
   // no se oye en el audio ni toca el cuerpo: es la unica pieza de contenido
   // que se puede corregir sin reescribir nada. Aqui tampoco basta con una
@@ -441,7 +455,7 @@ function slugify(s: string): string {
         if (!cambios.length) continue;
 
         const base = { title: slot.title, slug: slot.slug ?? undefined, synopsis: slot.synopsis, text: slot.text, arcType: slot.arcType };
-        const ctxV = { language: ctx.language, level: ctx.level, variant: ctx.variant } as never;
+        const ctxV = { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never;
         const antes = await validateGeneratedStory({ ...base, vocab: viejo } as never, ctxV);
         const despues = await validateGeneratedStory({ ...base, vocab: nuevo } as never, ctxV);
         const estadoAntes = new Map(antes.checks.map((c) => [c.id, c.status]));
@@ -465,6 +479,80 @@ function slugify(s: string): string {
         await prisma.journeyStory.update({ where: { id: p.id }, data: { vocab: p.vocab as never } });
         console.log(`  ✓ ${p.slug}`);
       }
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  if (arctypeOnly) {
+    if (!journeyId) { console.error("FAIL: --arctype-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; antes: string; ahora: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true, arcType: true, level: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+
+        // Todo lo que no sea el arcType tiene que llegar identico. El arcType
+        // es la UNICA etiqueta de la historia que no se oye ni se lee: no toca
+        // el texto, asi que no descuadra el karaoke, ni el vocab, asi que no
+        // toca glosas ni clips. Por eso puede corregirse sin re-juzgar el
+        // cuerpo entero, igual que --title-only corrige un titulo.
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["title", "text", "synopsis", "vocab"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --arctype-only solo cambia el arcType`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) {
+          problemas.push(`${nombre}: el slug cambiaria (${slot.slug} -> ${d.slug})`);
+        }
+        if (typeof d.arcType !== "string" || !d.arcType.trim()) { problemas.push(`${nombre}: falta el arcType nuevo`); continue; }
+        if (d.arcType === slot.arcType) continue; // nada que hacer
+
+        // El valor nuevo pasa por el validador canonico.
+        const r = await validateGeneratedStory(
+          { ...d, arcType: d.arcType, slug: slot.slug ?? undefined },
+          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+        );
+        const malos = r.checks.filter((c) => c.id.startsWith("arctype-") && c.status === "fail");
+        if (malos.length) {
+          for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`);
+          continue;
+        }
+
+        // Este modo existe por el gate de continuidad, asi que no puede
+        // abrirlo: un mini-cliffhanger en el ultimo slot de su tema deja el
+        // tema colgado y bloquea la publicacion.
+        if (d.arcType === "mini-cliffhanger") {
+          const posterior = await prisma.journeyStory.findFirst({
+            where: { journeyId, topic: slot.topic ?? d.topic, level: slot.level, slotIndex: { gt: d.slotIndex } },
+            select: { id: true },
+          });
+          if (!posterior) problemas.push(`${nombre}: mini-cliffhanger en el ultimo slot de ${d.topic}; el tema quedaria colgado`);
+        }
+        plan.push({ id: slot.id, slug: nombre, antes: slot.arcType ?? "", ahora: d.arcType });
+      }
+
+      if (problemas.length) {
+        console.error(`✗ [arctype-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[arctype-only] ${plan.length}/${stories.length} arcType que cambiar.`);
+      for (const p of plan) console.log(`  · ${p.slug}: ${p.antes} -> ${p.ahora}`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { arcType: p.ahora } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[arctype-only] ${plan.length} arcType actualizados.`);
     } finally {
       await prisma.$disconnect();
     }
@@ -506,7 +594,7 @@ function slugify(s: string): string {
         // El título nuevo pasa por el validador canónico; se exigen sus checks de título.
         const r = await validateGeneratedStory(
           { ...d, title: d.title, slug: slot.slug ?? undefined },
-          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+          { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never
         );
         const malos = r.checks.filter((c) => c.id.startsWith("title-") && c.status === "fail");
         if (malos.length) {
@@ -583,7 +671,7 @@ function slugify(s: string): string {
         // La definición nueva pasa por el validador CANÓNICO; se exige su check.
         const r = await validateGeneratedStory(
           { ...d, title: slot.title ?? d.title, slug: slot.slug ?? undefined },
-          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+          { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never
         );
         const malos = r.checks.filter((c) => c.id === "vocab-definitions" && c.status === "fail");
         if (malos.length) { for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`); continue; }
@@ -694,7 +782,7 @@ function slugify(s: string): string {
         if (slot.status !== "draft") { problemas.push(`${nombre}: status ${slot.status}; el slug de una publicada es URL viva`); continue; }
         if (slot.audioUrl || slot.audioWordTimings) { problemas.push(`${nombre}: narrada; hay copias alineadas que citan el slug`); continue; }
         if (!slot.title) { problemas.push(`${nombre}: sin título`); continue; }
-        const nuevo = slugify(slot.title);
+        const nuevo = slugify(slot.title, ctx.language);
         if (!nuevo) { problemas.push(`${nombre}: el título no da slug`); continue; }
         if (nuevo === slot.slug) continue;
         plan.push({ id: slot.id, antes: slot.slug ?? "", ahora: nuevo, titulo: slot.title });
@@ -899,7 +987,7 @@ function slugify(s: string): string {
   for (const d of stories) {
     const payload = { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType };
     const r = await validateGeneratedStory(payload as any, {
-      language: ctx.language, level: ctx.level, variant: ctx.variant, topic: d.topic,
+      language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant, topic: d.topic,
       journeyId: journeyId ?? undefined, slotIndex: d.slotIndex,
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
@@ -1116,14 +1204,14 @@ function slugify(s: string): string {
         const text = d ? String(d.text) : String(f.text ?? "");
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
-                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level,
+                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, variant: ctx.variant, level: ctx.level,
                      topic: f.topic });
         // El MISMO conjunto sin la edición encima, para poder medir el antes.
         // Solo las filas que ya existen: una historia que solo está en la
         // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
         if (String(f.text ?? "").trim()) {
           base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
-                      vocab: f.vocab as never, language: ctx.language, level: ctx.level, topic: f.topic });
+                      vocab: f.vocab as never, language: ctx.language, variant: ctx.variant, level: ctx.level, topic: f.topic });
         }
       }
       // CON SU `topic`. Una historia de la tanda cuya fila esta vacia no pasa
@@ -1134,7 +1222,7 @@ function slugify(s: string): string {
       // falta ir a buscarlo. (2026-09-05, escribiendo el tema 2 del B1 ES.)
       for (const [k, d] of enTanda) if (!vistos.has(k))
         todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), vocab: d.vocab,
-                     language: ctx.language, level: ctx.level, topic: d.topic });
+                     language: ctx.language, variant: ctx.variant, level: ctx.level, topic: d.topic });
       // Personas REALES: el check de personajes no puede medir sin ellas, y sin
       // la lista devuelve `not-implemented`, que bloquea igual que un fallo.
       // `BetaSignup` no guarda el nombre, solo el correo, asi que el nombre se
@@ -1171,7 +1259,7 @@ function slugify(s: string): string {
       // necesita para saber si el journey esta entero. Ver el comentario de
       // `pushSetEscalera` en validateJourneyStories.
       const jc = validateJourneyStories(todas, {
-        language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+        language: ctx.language, variant: ctx.variant, level: ctx.level, realPeople, conjuntoCompleto: completo,
         journeyType: tipoJourney, journeyId,
         plazasDelJourney: plazasJourney || undefined,
       });
@@ -1204,7 +1292,7 @@ function slugify(s: string): string {
         // "pass" en la base por no saber el tipo, y entonces cualquier fallo
         // posterior se leía como EMPEORA por la primera linea de empeora().
         const antes = validateJourneyStories(base, {
-          language: ctx.language, level: ctx.level, realPeople,
+          language: ctx.language, variant: ctx.variant, level: ctx.level, realPeople,
           conjuntoCompleto: completo, journeyType: tipoJourney, journeyId,
         });
         const porId = new Map(antes.map((c) => [c.id, c]));
@@ -1240,7 +1328,7 @@ function slugify(s: string): string {
     for (const { d } of results) {
       const slot = await prisma.journeyStory.findFirst({ where: { journeyId, topic: d.topic, slotIndex: d.slotIndex } });
       if (!slot) { console.log(`  NO slot for ${d.topic}#${d.slotIndex} (skipped)`); continue; }
-      const slug = d.slug || slugify(d.title);
+      const slug = d.slug || slugify(d.title, ctx.language);
       await prisma.journeyStory.update({
         where: { id: slot.id },
         data: {

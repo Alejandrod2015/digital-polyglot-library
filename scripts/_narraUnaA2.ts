@@ -27,7 +27,7 @@ import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { rapidasDe, informe } from "./checkNarrationPace";
 import { checkMasterCoverage } from "./coverageWhisperCheck";
-import { perfilDeArgs, vozDe, muestrasRegistradas } from "./_narraPerfiles";
+import { perfilDeArgs, vozDe, muestrasRegistradas, muestraDelJourney, vozYaAprobada } from "./_narraPerfiles";
 
 // Ampliado el 2026-09-07 para el B1 latam y el 2026-09-11 para el B2 latam
 // (pedir-una-vez): los perfiles viven en _narraPerfiles.ts; sin flag, el A2.
@@ -53,34 +53,27 @@ const prisma = new PrismaClient();
 
   const voiceId = vozDe(PERFIL, s);
 
-  // ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02). Primero la muestra
-  // de titulo y primer parrafo, que el usuario comprueba; luego la primera
-  // historia entera, que vuelve a comprobar; y solo entonces el resto del
-  // tema. Cada paso se para hasta que el anterior existe, porque narrar de
-  // golpe y equivocarse cuesta creditos y ya paso dos veces.
+  // ORDEN DE NARRACION (regla dura 2026-09-02, aflojada el 2026-09-23). La
+  // muestra es UNA POR JOURNEY, no por tema: protege contra la voz equivocada,
+  // que es el error caro de verdad, y se aprueba de oido una sola vez. Con esa
+  // muestra registrada, el tema se narra ENTERO, las tres seguidas. Lo que los
+  // gates marquen no para nada: se guarda en audioFragments[n].gateFlags y se
+  // juzga al final del journey, en el revisador de veredictos.
+  //
+  // Lo que NO se afloja: sin muestra de este journey esto se para en seco, y
+  // sigue sin haber variable de escape.
   const muestras = muestrasRegistradas();
-  // CUAL es la primera del tema sale del DATO, no de un numero fijo. El A2 y el
-  // B1 latam numeran sus slots desde 1, pero el Friends FR A0 lo hace desde 0:
-  // con `slotIndex === 1` a fuego, la SEGUNDA historia se tomaba por la primera
-  // y pedia muestra, y la tercera exigia que estuviera narrada la segunda
-  // (2026-09-12, se paro la tanda del frances en 1 de 21).
-  const primera = await prisma.journeyStory.findFirst({
-    where: { journeyId: JOURNEY, topic: s.topic },
-    orderBy: { slotIndex: "asc" },
-    select: { slug: true, slotIndex: true, audioUrl: true },
+  const delJourney = await prisma.journeyStory.findMany({
+    where: { journeyId: JOURNEY },
+    select: { slug: true, audioUrl: true },
   });
-  const esPrimera = s.slotIndex === primera?.slotIndex;
-  if (esPrimera && !muestras[s.slug ?? ""] && !rehacer) {
+  const muestra = muestraDelJourney(muestras, JOURNEY, delJourney.map((x) => x.slug));
+  const narradas = delJourney.filter((x) => x.audioUrl).length;
+  if (!vozYaAprobada(muestra, narradas) && !rehacer) {
     throw new Error(
-      `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
+      `este journey no tiene muestra aprobada; empieza por la de ${slug}.\n` +
       `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}` +
       (process.argv.includes("--journey") ? ` --journey ${process.argv[process.argv.indexOf("--journey") + 1]}` : "")
-    );
-  }
-  if (!esPrimera && !primera?.audioUrl) {
-    throw new Error(
-      `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
-      `  El orden es: muestra, primera entera, y luego el resto.`
     );
   }
 

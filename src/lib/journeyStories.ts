@@ -101,6 +101,7 @@ function readerStatusWhere() {
   // journey is "archived". Keep in-progress journeys' stories in "draft" and
   // preview them via this list instead of publishing them.
   const PREVIEW_JOURNEY_IDS = [
+      "cmubidgaf0007j8np6g7n89iu", // Friends DE A2 hannover (narracion en curso, 2026-09)
       "cmtwo6cys0007j8yzg6ni3fsc", // Friends FR A0 france (en obra, 2026-09)
       "cmtgelq560007j84n3ujx9bpd", // Traveler ES A2 latam (en obra, 2026-08)
       "cmtmylg7k0007321h6t7njesx", // Traveler ES B1 latam (narracion en curso, 2026-09)
@@ -128,6 +129,7 @@ function readerStatusWhere() {
     "cmu0dpa3i0007j80ugstn0jf0", // Friends IT A0 italy (narracion en curso, 2026-09)
     "cmu36dk1d0007j8p7grgcyiok", // Friends ES A2 spain (narracion en curso, 2026-09)
     "cmt5wqsf7000032ghesowd0jy", // Traveler IT A2 italy (en obra, 2026-09)
+    "cmud5qhu00006j81cmkl4u5ks", // Friends ES A0 mexico (narracion en curso, 2026-09)
   ];
   return process.env.NODE_ENV !== "production"
     ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }

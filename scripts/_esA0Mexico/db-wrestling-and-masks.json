@@ -1,0 +1,350 @@
+[
+ {
+  "topic": "wrestling-and-masks",
+  "slotIndex": 0,
+  "slug": "la-mascara-en-la-azotea",
+  "title": "La máscara en la azotea",
+  "synopsis": "Valeria lava su máscara arriba, donde no hay nadie a esa hora. Esa mañana sí hay alguien, y es Itzel.",
+  "text": "Valeria es luchadora y entrena cada mañana en el gimnasio de enfrente. Nadie del edificio le ha visto la cara. Ella sube la escalera a la azotea a las seis, cuando arriba no hay nadie.\n\nHoy sí hay alguien. Itzel termina su turno, cuelga el uniforme y oye pasos atrás. Valeria trae la máscara plateada en la mano, mojada, y el pelo pegado a la frente.\n\nSe queda quieta junto al tinaco. “Buenos días,” dice Itzel, tranquila. “Hay sitio en mi tendedero, el del rincón.” “¿No me vas a preguntar nada?” dice Valeria.\n\n“Cuélgala allá,” dice Itzel. “Mojada se echa a perder, y el brillo se va. Yo aquí no veo nada, nunca.” Valeria la cuelga con dos pinzas.\n\n“Aquí nadie sube a esta hora,” dice Itzel. Las dos miran la colonia un rato, sin hablar. “Gracias,” dice Valeria, y baja al gimnasio a entrenar con el pelo suelto.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "luchadora",
+    "definition": "Woman wrestler; she fights in a ring for the public."
+   },
+   {
+    "type": "verb",
+    "word": "entrenar",
+    "surface": "entrena",
+    "definition": "To train; to practise a sport every day."
+   },
+   {
+    "type": "noun",
+    "word": "gimnasio",
+    "definition": "Gym; the place where people train their body."
+   },
+   {
+    "type": "adverb",
+    "word": "enfrente",
+    "definition": "Opposite; on the other side of the street."
+   },
+   {
+    "type": "adverb",
+    "word": "arriba",
+    "definition": "Up there; in a higher place."
+   },
+   {
+    "type": "verb",
+    "word": "terminar",
+    "surface": "termina",
+    "definition": "To finish; to come to the end of something."
+   },
+   {
+    "type": "verb",
+    "word": "oír",
+    "surface": "oye",
+    "definition": "To hear; to notice a sound with your ears."
+   },
+   {
+    "type": "noun",
+    "word": "pasos",
+    "definition": "Steps; the sound of feet walking."
+   },
+   {
+    "type": "adverb",
+    "word": "atrás",
+    "definition": "Behind; at your back."
+   },
+   {
+    "type": "noun",
+    "word": "máscara",
+    "definition": "Mask; the cloth face a wrestler never takes off in public."
+   },
+   {
+    "type": "adjective",
+    "word": "plateada",
+    "definition": "Silver coloured; shiny grey like a coin."
+   },
+   {
+    "type": "noun",
+    "word": "frente",
+    "definition": "Forehead; the part of your face above your eyes."
+   },
+   {
+    "type": "adjective",
+    "word": "quieta",
+    "definition": "Still; not moving at all."
+   },
+   {
+    "type": "expression",
+    "word": "buenos días",
+    "definition": "Good morning; what you say before noon."
+   },
+   {
+    "type": "expression",
+    "word": "se echa a perder",
+    "definition": "It goes bad; it stops being good to use."
+   },
+   {
+    "type": "noun",
+    "word": "brillo",
+    "definition": "Shine; the light that comes off a bright thing."
+   },
+   {
+    "type": "noun",
+    "word": "colonia",
+    "definition": "Neighbourhood; a part of a Mexican city with a name."
+   },
+   {
+    "type": "expression",
+    "word": "a las seis",
+    "definition": "At six; the hour written on a clock."
+   },
+   {
+    "type": "adjective",
+    "word": "suelto",
+    "definition": "Loose; free and not tied up."
+   },
+   {
+    "type": "noun",
+    "word": "edificio",
+    "definition": "Building; the house with many homes inside."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "wrestling-and-masks",
+  "slotIndex": 1,
+  "slug": "gritale-es-su-trabajo",
+  "title": "Grítale, es su trabajo",
+  "synopsis": "En la arena todos insultan al rudo. Bruno no puede: el rudo vive dos pisos abajo y le presta el taladro.",
+  "text": "La arena de la colonia está llena y huele a fritanga. Bruno e Itzel llegan con boletos de gradas altas. Abajo, en el ring, Valeria entra de ruda, con botas rojas.\n\nTodo el público le silba. Bruno abre la boca y no le sale nada. “Grítale,” dice Itzel. “Todos le gritan.” “Es mi vecina,” dice Bruno. “Me presta el taladro y me riega las macetas.”\n\nValeria tira al técnico con un brinco. “¡Fuera la ruda!” grita toda la fila de atrás. Bruno aplaude bajito, con la gorra entre las manos.\n\nAl final de la función, Valeria sube a las gradas con la venda todavía puesta. “Te oí aplaudir,” dice ella. “Eso me arruina el trabajo.”\n\n“Perdón,” dice Bruno. “La próxima me insultas,” dice Valeria. “Bien fuerte, desde arriba.”\n\n“Lo voy a intentar,” dice Bruno. Ensaya toda la semana en la azotea, con una voz de rudo que no le sale.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "arena",
+    "definition": "Arena; the round hall where wrestling happens."
+   },
+   {
+    "type": "noun",
+    "word": "ring",
+    "definition": "Ring; the square platform where wrestlers fight."
+   },
+   {
+    "type": "noun",
+    "word": "botas",
+    "definition": "Boots; strong shoes that cover your ankle."
+   },
+   {
+    "type": "noun",
+    "word": "público",
+    "definition": "Audience; all the people watching together."
+   },
+   {
+    "type": "verb",
+    "word": "silbar",
+    "surface": "silba",
+    "definition": "To make a sharp sound with your mouth."
+   },
+   {
+    "type": "verb",
+    "word": "gritar",
+    "surface": "grítale",
+    "definition": "To say something very loudly."
+   },
+   {
+    "type": "verb",
+    "word": "prestar",
+    "surface": "presta",
+    "definition": "To give something for a while and get it back."
+   },
+   {
+    "type": "noun",
+    "word": "taladro",
+    "definition": "Drill; the tool that makes holes in a wall."
+   },
+   {
+    "type": "verb",
+    "word": "tirar",
+    "surface": "tira",
+    "definition": "To throw someone to the ground."
+   },
+   {
+    "type": "noun",
+    "word": "técnico",
+    "definition": "Good guy; the wrestler the public is meant to love."
+   },
+   {
+    "type": "noun",
+    "word": "brinco",
+    "definition": "Jump; one quick move up into the air."
+   },
+   {
+    "type": "adjective",
+    "word": "fuerte",
+    "definition": "Loud; with a lot of sound. Also strong."
+   },
+   {
+    "type": "verb",
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "definition": "To hit your hands together to show you like it."
+   },
+   {
+    "type": "adverb",
+    "word": "bajito",
+    "definition": "Very quietly; with almost no sound."
+   },
+   {
+    "type": "noun",
+    "word": "función",
+    "definition": "Show; one evening of wrestling from start to end."
+   },
+   {
+    "type": "noun",
+    "word": "venda",
+    "definition": "Bandage; the long cloth wrapped around a hand."
+   },
+   {
+    "type": "verb",
+    "word": "arruinar",
+    "surface": "arruina",
+    "definition": "To spoil something completely."
+   },
+   {
+    "type": "verb",
+    "word": "insultar",
+    "surface": "insultas",
+    "definition": "To say hard words against a person."
+   },
+   {
+    "type": "verb",
+    "word": "ensayar",
+    "surface": "ensaya",
+    "definition": "To practise something before doing it for real."
+   },
+   {
+    "type": "noun",
+    "word": "ruda",
+    "definition": "Bad girl; the wrestler the public is meant to hate."
+   }
+  ],
+  "arcType": null
+ },
+ {
+  "topic": "wrestling-and-masks",
+  "slotIndex": 2,
+  "slug": "vendas-de-enfermera",
+  "title": "Vendas de enfermera",
+  "synopsis": "Valeria necesita vendas nuevas para el sábado y la única persona con vendas en el edificio trabaja en un hospital.",
+  "text": "Sábado, once de la mañana. La tienda de deportes tiene la cortina abajo y un letrero pegado con cinta. Valeria toca en casa de Itzel con las vendas viejas. Están duras y grises, como una cuerda vieja.\n\n“Necesito vendas para hoy,” dice Valeria. “Cualquier cosa sirve.”\n\nItzel abre su caja del hospital, arriba de la lavadora. “Solo tengo de estas,” dice. “Blancas, de algodón, con una raya azul.”\n\n“Son de enfermería,” dice Itzel. “Se nota mucho.” “Se nota,” dice Valeria. “Pero el sábado no espera.” Se venda las manos ahí mismo, en la puerta, con cuidado.\n\nEsa noche, Valeria sale al ring con las manos blancas y la raya azul a la vista. El público se queda callado un momento largo.\n\nDespués, alguien grita desde arriba: “¡Es la enfermera! ¡Que la operen!” El apodo le queda. Ahora Valeria pide las vendas por caja, y con raya.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "letrero",
+    "definition": "Sign; a paper or board with words on it."
+   },
+   {
+    "type": "noun",
+    "word": "cinta",
+    "definition": "Tape; the sticky strip that holds paper to a wall."
+   },
+   {
+    "type": "noun",
+    "word": "vendas",
+    "definition": "Bandages; the long cloth you wrap around a hand."
+   },
+   {
+    "type": "adjective",
+    "word": "duras",
+    "definition": "Hard; not soft to the touch."
+   },
+   {
+    "type": "adjective",
+    "word": "grises",
+    "definition": "Grey; the colour between black and white."
+   },
+   {
+    "type": "verb",
+    "word": "necesitar",
+    "surface": "necesito",
+    "definition": "To need something you cannot do without."
+   },
+   {
+    "type": "verb",
+    "word": "servir",
+    "surface": "sirve",
+    "definition": "To be good enough for what you want."
+   },
+   {
+    "type": "noun",
+    "word": "algodón",
+    "definition": "Cotton; the soft white material of a bandage."
+   },
+   {
+    "type": "noun",
+    "word": "raya",
+    "definition": "Stripe; a straight line of colour on something."
+   },
+   {
+    "type": "noun",
+    "word": "enfermería",
+    "definition": "Nursing; the work of caring for sick people."
+   },
+   {
+    "type": "expression",
+    "word": "se nota",
+    "definition": "It shows; people can see it at once."
+   },
+   {
+    "type": "expression",
+    "word": "a la vista",
+    "definition": "In plain sight; where everybody can see it."
+   },
+   {
+    "type": "noun",
+    "word": "apodo",
+    "definition": "Nickname; the name people give you instead of yours."
+   },
+   {
+    "type": "verb",
+    "word": "quedar",
+    "surface": "queda",
+    "definition": "To suit; to fit a person well."
+   },
+   {
+    "type": "noun",
+    "word": "manos",
+    "definition": "Hands; the parts of your arms with fingers."
+   },
+   {
+    "type": "adjective",
+    "word": "blancas",
+    "definition": "White; the colour of milk."
+   },
+   {
+    "type": "verb",
+    "word": "gritar",
+    "surface": "grita",
+    "definition": "To say something very loudly."
+   },
+   {
+    "type": "adverb",
+    "word": "arriba",
+    "definition": "Above; in a higher place."
+   },
+   {
+    "type": "adjective",
+    "word": "callado",
+    "definition": "Quiet; not saying a word."
+   },
+   {
+    "type": "expression",
+    "word": "cualquier cosa",
+    "definition": "Anything; it does not matter which one."
+   }
+  ],
+  "arcType": null
+ }
+]

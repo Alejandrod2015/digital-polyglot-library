@@ -300,6 +300,16 @@ model Journey {
   /// NULL no es "no aplica": es "nadie lo ha rellenado todavia". La diferencia
   /// es justo lo que se pierde si se mira solo `city`.
   cityMode         JourneyCityMode?
+  /// Cohorte de generacion del journey: con que molde editorial se escribio.
+  /// `null` y "domains-2026-09" son el molde actual (siete temas que nombran
+  /// un dominio lexico). "cities-2026-07" son los primeros Friends, donde los
+  /// siete temas eran siete ciudades y el protagonista viajaba de una a otra.
+  /// Sirve para dos cosas: que la tabla del catalogo distinga a simple vista
+  /// lo viejo de lo nuevo sin archivarlo, y que el porton de escalera
+  /// (src/lib/journeyLadder.ts) no deje que un BORRADOR del molde viejo
+  /// bloquee el peldano de un journey nuevo. Un journey LIVE sostiene su
+  /// peldano venga del molde que venga: al alumno le sirve igual.
+  generationCohort String?
   /// Journey que se ofrece al terminar ESTE. Hoy, al completar las 21
   /// historias no pasa nada: el 2026-08-18 un beta tester iba 13/21 en el A0
   /// de España y 0/21 en el A1 recién publicado, sin que nada le dijera que

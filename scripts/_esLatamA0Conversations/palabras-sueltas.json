@@ -1,0 +1,23 @@
+{
+ "una-caja-que-hace-ruido": {
+  "escucha": { "es": "Escucha, Nicolás", "en": "Listen, Nicolas" },
+  "aquí": { "es": "Aquí, en el edificio", "en": "Here, in the building" }
+ },
+ "domingo-sin-senal": {
+  "despacio": { "es": "Yo escribo la clave de nuevo, despacio", "en": "I type the password again, slowly" }
+ },
+ "la-gata-tapa-la-pantalla": {
+  "miren": { "es": "Miren, esta es mi sala nueva", "en": "Look, this is my new living room" },
+  "tigre": { "es": "Ven acá, Tigre", "en": "Come here, Tigre" }
+ },
+ "nunca-tuve-un-barco": {
+  "seguro": { "es": "Es mía, seguro", "en": "It is mine, for sure" }
+ },
+ "un-gato-con-dos-nombres": {
+  "abre": { "es": "Nicolás, el vecino, abre", "en": "Nicolas, the neighbour, opens the door" }
+ },
+ "una-caja-sin-tapa": {
+  "seguro": { "es": "El cartero, seguro", "en": "The postman, for sure" },
+  "claro": { "es": "Y sin sello, claro", "en": "And with no stamp, of course" }
+ }
+}

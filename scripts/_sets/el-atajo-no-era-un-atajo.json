@@ -1,0 +1,518 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "de pasada",
+    "sentence": "Un atajo aquí no se cuenta [[de pasada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in passing",
+      "options": [
+        "in passing",
+        "in secret",
+        "in writing",
+        "in public"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Un atajo aquí no se cuenta de pasada.",
+        "targetWord": "de pasada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bfc88e92e4dede8d905b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barranco",
+    "sentence": "¡Por ahí no, que eso baja al [[barranco]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ravine",
+      "options": [
+        "the ravine",
+        "the market",
+        "the harbour",
+        "the station"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "¡Por ahí no, que eso baja al barranco!",
+        "targetWord": "barranco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1a3dbd9f4eb521e728f8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuneta",
+    "sentence": "Sigue la huella de una rueda por la [[cuneta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ditch",
+      "options": [
+        "the ditch",
+        "the beach",
+        "the square",
+        "the tunnel"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Sigue la huella de una rueda por la cuneta.",
+        "targetWord": "cuneta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ce868803b9ab711fa4a7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arboleda",
+    "sentence": "Busca la [[arboleda]] de arriba y no te salgas de ahí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grove",
+      "options": [
+        "a grove",
+        "a bridge",
+        "a church",
+        "a tower"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Busca la arboleda de arriba y no te salgas de ahí.",
+        "targetWord": "arboleda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f25a51c19a9c36ecf846.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerro",
+    "sentence": "Ella se queda en el [[cerro]], mirando el horizonte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hill",
+      "options": [
+        "the hill",
+        "the pier",
+        "the roof",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Ella se queda en el cerro, mirando el horizonte.",
+        "targetWord": "cerro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8147ee5bd0c98e3cbecc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desvío",
+    "sentence": "El [[desvío]] la deja en un arroyo seco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a detour",
+      "options": [
+        "a detour",
+        "a storm",
+        "a lorry",
+        "a letter"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "El desvío la deja en un arroyo seco.",
+        "targetWord": "desvío",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3f0e895644d11e5f7ce8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atajo",
+    "sentence": "Este _____ es más corto que la carretera y llegas antes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atajo",
+      "options": [
+        "atajo",
+        "museo",
+        "jardín",
+        "tejado"
+      ],
+      "translation": "This _____ is shorter than the road and you get there sooner.",
+      "optionTranslations": [
+        "shortcut",
+        "museum",
+        "garden",
+        "roof"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Este atajo es más corto que la carretera y llegas antes.",
+        "targetWord": "atajo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07740155eedba494.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "roca",
+    "sentence": "Tropieza con una _____ enorme que sale de la tierra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "roca",
+      "options": [
+        "roca",
+        "nube",
+        "ola",
+        "ventana"
+      ],
+      "translation": "She trips over an enormous _____ sticking out of the ground.",
+      "optionTranslations": [
+        "rock",
+        "cloud",
+        "wave",
+        "window"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Tropieza con una roca enorme que sale de la tierra.",
+        "targetWord": "roca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c31a05db962887e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "horizonte",
+    "sentence": "El sol se esconde por el _____ al final del día.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "horizonte",
+      "options": [
+        "horizonte",
+        "bolsillo",
+        "techo",
+        "armario"
+      ],
+      "translation": "The sun hides behind the _____ at the end of the day.",
+      "optionTranslations": [
+        "horizon",
+        "pocket",
+        "ceiling",
+        "wardrobe"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "El sol se esconde por el horizonte al final del día.",
+        "targetWord": "horizonte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7477e7c3a8cb384.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cabra,oveja,rueda,carpeta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cabra",
+          "answer": "a goat",
+          "options": [
+            "a goat",
+            "a sheep",
+            "a wheel",
+            "a folder"
+          ]
+        },
+        {
+          "word": "oveja",
+          "answer": "a sheep",
+          "options": [
+            "a goat",
+            "a sheep",
+            "a wheel",
+            "a folder"
+          ]
+        },
+        {
+          "word": "rueda",
+          "answer": "a wheel",
+          "options": [
+            "a goat",
+            "a sheep",
+            "a wheel",
+            "a folder"
+          ]
+        },
+        {
+          "word": "carpeta",
+          "answer": "a folder",
+          "options": [
+            "a goat",
+            "a sheep",
+            "a wheel",
+            "a folder"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la izquierda",
+    "sentence": "Deja el sendero bueno [[a la izquierda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the left",
+      "options": [
+        "on the left",
+        "up ahead",
+        "far behind",
+        "down below"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Deja el sendero bueno a la izquierda.",
+        "targetWord": "a la izquierda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/91d4223c03cfbc94364d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "sentence": "Una cabra la mira y no se mueve del [[camino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the track",
+      "options": [
+        "the track",
+        "the roof",
+        "the bridge",
+        "the bed"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Una cabra la mira y no se mueve del camino.",
+        "targetWord": "camino",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b7b7ac55d193b1cb9250.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prado",
+    "sentence": "Le grita desde el [[prado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the meadow",
+      "options": [
+        "the meadow",
+        "the balcony",
+        "the kitchen",
+        "the corner"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Le grita desde el prado.",
+        "targetWord": "prado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5a7d758f93a5726a822b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "huella",
+    "sentence": "Sigue la [[huella]] de una rueda por la cuneta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mark",
+      "options": [
+        "a mark",
+        "a smell",
+        "a sound",
+        "a light"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Sigue la huella de una rueda por la cuneta.",
+        "targetWord": "huella",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a52a1900fca45517fc9c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arroyo",
+    "sentence": "El desvío la deja en un [[arroyo]] seco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stream",
+      "options": [
+        "a stream",
+        "a hut",
+        "a field",
+        "a well"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "El desvío la deja en un arroyo seco.",
+        "targetWord": "arroyo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ed2813c1b403c7d48073.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tronco",
+    "sentence": "Se agarra a un [[tronco]] áspero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trunk",
+      "options": [
+        "a trunk",
+        "a rope",
+        "a rail",
+        "a wall"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Se agarra a un tronco áspero.",
+        "targetWord": "tronco",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4a916cf23ee09ce60138.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ninguna parte",
+    "sentence": "El atajo de ayer no aparece por [[ninguna parte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nowhere",
+      "options": [
+        "nowhere",
+        "nearby",
+        "upstairs",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "El atajo de ayer no aparece por ninguna parte.",
+        "targetWord": "ninguna parte",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bc3b2452347bd08c47c7.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guapo",
+    "sentence": "¡Por ahí no, [[guapa]], que eso baja al barranco!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dear",
+      "options": [
+        "dear",
+        "madam",
+        "boss",
+        "kid"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "¡Por ahí no, guapa, que eso baja al barranco!",
+        "targetWord": "guapa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6902d1b3755af8c5af3f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "parado",
+    "sentence": "Espera a que el tren esté _____ para bajar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parado",
+      "options": [
+        "parado",
+        "limpio",
+        "caro",
+        "nuevo"
+      ],
+      "translation": "Wait until the train is _____ before getting off.",
+      "optionTranslations": [
+        "stopped",
+        "clean",
+        "expensive",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "storySource": "user",
+        "sentence": "Espera a que el tren esté parado para bajar.",
+        "targetWord": "parado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b72b3a7d44ed0bd8.mp3"
+      }
+    },
+    "featured": false
+  }
+]

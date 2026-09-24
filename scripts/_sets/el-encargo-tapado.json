@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "desaparecer",
+  "sentence": "Mi nombre [[desaparece]], dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go away from sight",
+   "options": [
+    "to go away from sight",
+    "to come back to the table",
+    "to stay in one place",
+    "to write on paper"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Mi nombre desaparece, dice Andrés.",
+    "targetWord": "desaparece",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apunte",
+  "sentence": "La [[nota]] corta se lee despacio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a short written note",
+   "options": [
+    "a short written note",
+    "a small coin for the bus",
+    "a warm cheese bread roll",
+    "a cup for hot coffee"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "La nota corta se lee despacio.",
+    "targetWord": "nota",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responder",
+  "sentence": "Yo sigo el papel, [[responde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer another person",
+   "options": [
+    "to answer another person",
+    "to ask a new question",
+    "to carry a heavy bag",
+    "to clean the small table"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Yo sigo el papel, responde.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "junto a",
+  "sentence": "El recado queda [[junto al]] maletín negro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to",
+   "options": [
+    "next to",
+    "on top of",
+    "under",
+    "in front of"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "El recado queda junto al maletín negro.",
+    "targetWord": "junto al",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerca de",
+  "sentence": "Mariana pone café [[junto al]] papel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "close to something",
+   "options": [
+    "close to something",
+    "far from the door",
+    "inside a small bag",
+    "behind the counter"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Mariana pone café junto al papel.",
+    "targetWord": "junto al",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedar",
+  "sentence": "La ayuda [[queda]] clara, dice Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay in a place",
+   "options": [
+    "to stay in a place",
+    "to leave the room",
+    "to open a door",
+    "to pay for coffee"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "La ayuda queda clara, dice Mariana.",
+    "targetWord": "queda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agregar",
+  "sentence": "El favor sigue aquí, [[agrega]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to add more words",
+   "options": [
+    "to add more words",
+    "to stop talking",
+    "to read a paper",
+    "to hold a cup"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "El favor sigue aquí, agrega.",
+    "targetWord": "agrega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pequeña",
+  "sentence": "Mariana y Andrés trabajan en la mesa [[pequeña]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small and not big",
+   "options": [
+    "small and not big",
+    "empty and not full",
+    "black and not white",
+    "new and not old"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Mariana y Andrés trabajan en la mesa pequeña.",
+    "targetWord": "pequeña",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trabajar",
+  "sentence": "Mariana y Andrés [[trabajan]] en la mesa pequeña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to do a job",
+   "options": [
+    "to do a job",
+    "to take a rest",
+    "to drink a coffee",
+    "to close a door"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Mariana y Andrés trabajan en la mesa pequeña.",
+    "targetWord": "trabajan",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ayuda clara",
+  "sentence": "La [[ayuda queda clara]], dice Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "help that is easy to understand",
+   "options": [
+    "help that is easy to understand",
+    "work that is easy to finish",
+    "music that is hard to hear",
+    "bread that is easy to share"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "La ayuda queda clara, dice Mariana.",
+    "targetWord": "ayuda queda clara",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "enfermera",
+  "sentence": "Por el recado, la _____ entra al café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "enfermera",
+   "options": [
+    "enfermera",
+    "campana",
+    "botica",
+    "cubierta"
+   ],
+   "translation": "For the errand, the _____ walks into the coffee shop.",
+   "optionTranslations": [
+    "nurse",
+    "bell",
+    "pharmacy",
+    "cover"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Por el recado, la enfermera entra al café.",
+    "targetWord": "enfermera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "recado",
+  "sentence": "El _____ queda junto al maletín negro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recado",
+   "options": [
+    "recado",
+    "favor",
+    "silencio",
+    "juego"
+   ],
+   "translation": "The _____ stays next to the black briefcase.",
+   "optionTranslations": [
+    "message",
+    "favor",
+    "a time with no sound",
+    "game"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "El recado queda junto al maletín negro.",
+    "targetWord": "recado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "silla vacía",
+  "sentence": "El paquetico cae debajo de la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "silla vacía",
+   "options": [
+    "silla vacía",
+    "enfermera",
+    "botica",
+    "vendedora"
+   ],
+   "translation": "The tiny package falls under the _____.",
+   "optionTranslations": [
+    "empty chair",
+    "nurse",
+    "pharmacy",
+    "saleswoman"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "El paquetico cae debajo de la silla vacía.",
+    "targetWord": "silla vacía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hace caso",
+  "sentence": "Ahora la botica _____, contesta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hace caso",
+   "options": [
+    "hace caso",
+    "suena suave",
+    "queda clara",
+    "entra al café"
+   ],
+   "translation": "Now the pharmacy _____, he answers.",
+   "optionTranslations": [
+    "pays attention",
+    "sounds soft",
+    "stays clear",
+    "goes into the shop"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Ahora la botica hace caso, contesta.",
+    "targetWord": "hace caso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "correcto",
+  "sentence": "Nombre _____, agrega Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "correcto",
+   "options": [
+    "correcto",
+    "negro",
+    "suave",
+    "vacío"
+   ],
+   "translation": "A _____ name, Andrés adds.",
+   "optionTranslations": [
+    "right",
+    "black",
+    "soft",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Nombre correcto, agrega Andrés.",
+    "targetWord": "correcto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "paquetico",
+  "sentence": "Mariana recoge el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paquetico",
+   "options": [
+    "paquetico",
+    "favor",
+    "nombre",
+    "lugar"
+   ],
+   "translation": "Mariana picks up the _____.",
+   "optionTranslations": [
+    "small package",
+    "favor",
+    "name",
+    "place"
+   ],
+   "audioClip": {
+    "storySlug": "el-encargo-tapado",
+    "storySource": "journey",
+    "sentence": "Mariana recoge el paquetico.",
+    "targetWord": "paquetico",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "rótulo,cubierta,faltriquera,favor",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "rótulo",
+     "answer": "a small written label",
+     "options": [
+      "a small written label",
+      "a cover over something",
+      "a cloth pocket for small things",
+      "help that one person gives another"
+     ]
+    },
+    {
+     "word": "cubierta",
+     "answer": "a cover over something",
+     "options": [
+      "a small written label",
+      "a cover over something",
+      "a cloth pocket for small things",
+      "help that one person gives another"
+     ]
+    },
+    {
+     "word": "faltriquera",
+     "answer": "a cloth pocket for small things",
+     "options": [
+      "a small written label",
+      "a cover over something",
+      "a cloth pocket for small things",
+      "help that one person gives another"
+     ]
+    },
+    {
+     "word": "favor",
+     "answer": "help that one person gives another",
+     "options": [
+      "a small written label",
+      "a cover over something",
+      "a cloth pocket for small things",
+      "help that one person gives another"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

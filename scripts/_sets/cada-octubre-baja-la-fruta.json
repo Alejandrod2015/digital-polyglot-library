@@ -1,0 +1,518 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "sendero",
+    "sentence": "Cada octubre baja alguien por el [[sendero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the path",
+      "options": [
+        "the path",
+        "the river",
+        "the roof",
+        "the wall"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Cada octubre baja alguien por el sendero.",
+        "targetWord": "sendero",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6978079691ca78d59e2a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "huerto",
+    "sentence": "El del [[huerto]] de arriba arrastra un canasto hasta el bar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the vegetable garden",
+      "options": [
+        "the vegetable garden",
+        "the petrol station",
+        "the swimming pool",
+        "the bus stop"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "El del huerto de arriba arrastra un canasto hasta el bar.",
+        "targetWord": "huerto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/124ce26b74ebd7a2b4fc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aljibe",
+    "sentence": "Hoy toca regar y el [[aljibe]] está hasta arriba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a water tank",
+      "options": [
+        "a water tank",
+        "a bread oven",
+        "a wine cellar",
+        "a car park"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Hoy toca regar y el aljibe está hasta arriba.",
+        "targetWord": "aljibe",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c7babf1463edd273e623.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rama",
+    "sentence": "Toca la [[rama]] del limonero, que pincha bastante menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a branch",
+      "options": [
+        "a branch",
+        "a shadow",
+        "a flower",
+        "a fence"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Toca la rama del limonero, que pincha bastante menos.",
+        "targetWord": "rama",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9ae55dabef8e5633ad3d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raíz",
+    "sentence": "Le entrega una [[raíz]] seca y un grano diminuto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a root",
+      "options": [
+        "a root",
+        "a leaf",
+        "a stone",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Le entrega una raíz seca y un grano diminuto.",
+        "targetWord": "raíz",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/812b618c020992ae0026.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "loma",
+    "sentence": "Desde la [[loma]] se ve la playa vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a low hill",
+      "options": [
+        "a low hill",
+        "a high wall",
+        "a back door",
+        "a top floor"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Desde la loma se ve la playa vacía.",
+        "targetWord": "loma",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2a16538c0b2aa3482c55.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regar",
+    "sentence": "Hay que _____ las plantas cada día para que no se sequen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regar",
+      "options": [
+        "regar",
+        "vender",
+        "contar",
+        "pintar"
+      ],
+      "translation": "You have to _____ the plants every day so they don't dry out.",
+      "optionTranslations": [
+        "to water",
+        "to sell",
+        "to count",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Hay que regar las plantas cada día para que no se sequen.",
+        "targetWord": "regar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ec0c738caf2e414.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tierra",
+    "sentence": "Las raíces de la planta crecen bajo la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tierra",
+      "options": [
+        "tierra",
+        "mesa",
+        "puerta",
+        "cama"
+      ],
+      "translation": "The roots of the plant grow under the _____.",
+      "optionTranslations": [
+        "soil",
+        "table",
+        "door",
+        "bed"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Las raíces de la planta crecen bajo la tierra.",
+        "targetWord": "tierra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c03281fde5d18471.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hierba",
+    "sentence": "Las vacas comen _____ verde en el prado todo el día.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hierba",
+      "options": [
+        "hierba",
+        "arena",
+        "leche",
+        "nieve"
+      ],
+      "translation": "The cows eat green _____ in the meadow all day long.",
+      "optionTranslations": [
+        "grass",
+        "sand",
+        "milk",
+        "snow"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Las vacas comen hierba verde en el prado todo el día.",
+        "targetWord": "hierba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a948f76cdd61ee0f.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cebolla,zanahoria,pepino,calabaza",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cebolla",
+          "answer": "an onion",
+          "options": [
+            "an onion",
+            "a carrot",
+            "a cucumber",
+            "a pumpkin"
+          ]
+        },
+        {
+          "word": "zanahoria",
+          "answer": "a carrot",
+          "options": [
+            "an onion",
+            "a carrot",
+            "a cucumber",
+            "a pumpkin"
+          ]
+        },
+        {
+          "word": "pepino",
+          "answer": "a cucumber",
+          "options": [
+            "an onion",
+            "a carrot",
+            "a cucumber",
+            "a pumpkin"
+          ]
+        },
+        {
+          "word": "calabaza",
+          "answer": "a pumpkin",
+          "options": [
+            "an onion",
+            "a carrot",
+            "a cucumber",
+            "a pumpkin"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mar",
+    "sentence": "Suben por un atajo que deja el [[mar]] abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sea",
+      "options": [
+        "the sea",
+        "the sky",
+        "the town",
+        "the bus"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Suben por un atajo que deja el mar abajo.",
+        "targetWord": "mar",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0851b3456cdea1b7e6f3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdura",
+    "sentence": "Mira las [[verduras]] que asoman por el borde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a vegetable",
+      "options": [
+        "a vegetable",
+        "a letter",
+        "a coin",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Mira las verduras que asoman por el borde.",
+        "targetWord": "verduras",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5be0ff6628873c09aee5.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hasta arriba",
+    "sentence": "El aljibe está [[hasta arriba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full to the top",
+      "options": [
+        "full to the top",
+        "out of order",
+        "far from here",
+        "under the ground"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "El aljibe está hasta arriba.",
+        "targetWord": "hasta arriba",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f8974891568d5721baae.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perejil",
+    "sentence": "Hay una parcela larga, con [[perejil]] y un limonero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "parsley",
+      "options": [
+        "parsley",
+        "honey",
+        "butter",
+        "pepper"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Hay una parcela larga, con perejil y un limonero.",
+        "targetWord": "perejil",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/039dc67a6f98bd4995c2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limonero",
+    "sentence": "Toca la rama del [[limonero]], que pincha poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lemon tree",
+      "options": [
+        "a lemon tree",
+        "a fig tree",
+        "a pine tree",
+        "an olive tree"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Toca la rama del limonero, que pincha poco.",
+        "targetWord": "limonero",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/369a49565b3246f0a2c0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grano",
+    "sentence": "Le entrega una raíz seca y un [[grano]] diminuto en la palma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grain",
+      "options": [
+        "a grain",
+        "a nail",
+        "a button",
+        "a ring"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Le entrega una raíz seca y un grano diminuto en la palma.",
+        "targetWord": "grano",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b9b7f16153a8effabf4e.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "falda",
+    "sentence": "Baja con la [[falda]] sucia y el canasto lleno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a skirt",
+      "options": [
+        "a skirt",
+        "a jacket",
+        "a scarf",
+        "a boot"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Baja con la falda sucia y el canasto lleno.",
+        "targetWord": "falda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f14a540ae7a643629f33.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al lado",
+    "sentence": "Aguarda [[al lado]] mientras él deja el canasto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right beside",
+      "options": [
+        "right beside",
+        "far away",
+        "up above",
+        "down below"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Aguarda al lado mientras él deja el canasto.",
+        "targetWord": "al lado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b070738b8233d9f3624c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sucia",
+    "sentence": "Tiene la camisa _____ porque jugó con barro toda la tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sucia",
+      "options": [
+        "sucia",
+        "nueva",
+        "larga",
+        "azul"
+      ],
+      "translation": "His shirt is _____ because he played in the mud all afternoon.",
+      "optionTranslations": [
+        "dirty",
+        "new",
+        "long",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "storySource": "user",
+        "sentence": "Tiene la camisa sucia porque jugó con barro toda la tarde.",
+        "targetWord": "sucia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e2a91732894c58a.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,128 @@
+{
+ "slug": "puesto-con-bolso",
+ "topic": "buses-and-streets",
+ "title": "El bolso no saluda",
+ "text": "Un maletín negro guarda un puesto libre. Huele a pan. Camilo mira el puesto. Pilar, una enfermera del barrio, llega desde la botica.\n\nAndrés abre el broche, sube la cremallera y estira la tiranta. “¿Es otro amigo nuevo?” pregunta. La médica toca el papel. “No saluda, pero trabaja”, responde.\n\nCamilo mira el espaldar. “El maletín cuida el asiento. También mira la calle”, comenta. Andrés limpia la ventanilla, dobla el forro y toca el marco.\n\nMariana pone el vaso junto al maletín. La bolsa queda debajo. La panadera prueba la agarradera, el esquinero y una ruedita. “Come poco y guarda mucho”, avisa.\n\nPilar abre el bolsillo lateral, señala el parche y toca la tabla fina. “Yo guardo puesto, no amigos”, aclara. Mariana trae café y la panadera trae pan.\n\n“Veo un raspón y una raspadura”, observa Andrés. Pilar sonríe. “Entonces el maletín es amigo de puesto”, remata Andrés. Pilar se sienta y la buseta sale.",
+ "vocab": [
+  {
+   "word": "broche",
+   "surface": "broche",
+   "type": "noun",
+   "def": "A clasp that closes a bag."
+  },
+  {
+   "word": "maletín",
+   "surface": "maletín",
+   "type": "noun",
+   "def": "A small work bag."
+  },
+  {
+   "word": "cremallera",
+   "surface": "cremallera",
+   "type": "noun",
+   "def": "A zipper on a bag."
+  },
+  {
+   "word": "esquinero",
+   "surface": "esquinero",
+   "type": "noun",
+   "def": "A small corner piece."
+  },
+  {
+   "word": "tiranta",
+   "surface": "tiranta",
+   "type": "noun",
+   "def": "A strap on a bag."
+  },
+  {
+   "word": "espaldar",
+   "surface": "espaldar",
+   "type": "noun",
+   "def": "The back part of a seat."
+  },
+  {
+   "word": "ventanilla",
+   "surface": "ventanilla",
+   "type": "noun",
+   "def": "A small bus window."
+  },
+  {
+   "word": "forro",
+   "surface": "forro",
+   "type": "noun",
+   "def": "Inner cloth inside a bag."
+  },
+  {
+   "word": "agarradera",
+   "surface": "agarradera",
+   "type": "noun",
+   "def": "A part held by hand."
+  },
+  {
+   "word": "puesto libre",
+   "surface": "puesto libre",
+   "type": "expression",
+   "def": "An empty place to sit."
+  },
+  {
+   "word": "bolsillo lateral",
+   "surface": "bolsillo lateral",
+   "type": "noun",
+   "def": "A side pocket on a bag."
+  },
+  {
+   "word": "parche",
+   "surface": "parche",
+   "type": "noun",
+   "def": "A piece covering a hole."
+  },
+  {
+   "word": "observa raspón",
+   "surface": "Veo un raspón",
+   "type": "expression",
+   "def": "To notice a scrape mark."
+  },
+  {
+   "word": "raspadura",
+   "surface": "raspadura",
+   "type": "noun",
+   "def": "A scraped area on something."
+  },
+  {
+   "word": "marco",
+   "surface": "marco",
+   "type": "noun",
+   "def": "An edge around something."
+  },
+  {
+   "word": "calle",
+   "surface": "calle",
+   "type": "noun",
+   "def": "A street outside the bus."
+  },
+  {
+   "word": "ruedita",
+   "surface": "ruedita",
+   "type": "noun",
+   "def": "A very small wheel."
+  },
+  {
+   "word": "botica",
+   "surface": "botica",
+   "type": "noun",
+   "def": "A small old-style shop."
+  },
+  {
+   "word": "amigo de puesto",
+   "surface": "amigo de puesto",
+   "type": "expression",
+   "def": "A seat friend in the joke."
+  },
+  {
+   "word": "fina",
+   "surface": "fina",
+   "type": "adjective",
+   "def": "Very thin and delicate."
+  }
+ ]
+}

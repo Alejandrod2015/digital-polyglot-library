@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "responder",
+  "sentence": "“Yo no soy cocinero”, [[responde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer another person",
+   "options": [
+    "to answer another person",
+    "to pay for the food",
+    "to leave the table",
+    "to close the door"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Yo no soy cocinero”, responde.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "delante de",
+  "sentence": "La panadera pone el pan [[delante de]] Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front of something",
+   "options": [
+    "in front of something",
+    "on top of something",
+    "far from the table",
+    "under a big chair"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "La panadera pone el pan delante de Andrés.",
+    "targetWord": "delante de",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ahora",
+  "sentence": "“[[Ahora]] eres dueño de fiesta”, bromea la vendedora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this moment now",
+   "options": [
+    "at this moment now",
+    "on the next day",
+    "very late at night",
+    "once every long week"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Ahora eres dueño de fiesta”, bromea la vendedora.",
+    "targetWord": "Ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acomodar",
+  "sentence": "Después, la panadera [[acomoda]] el pan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put in a good place",
+   "options": [
+    "to put in a good place",
+    "to eat with a small fork",
+    "to pay with a big coin",
+    "to walk to the main door"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "Después, la panadera acomoda el pan.",
+    "targetWord": "acomoda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aplaudir",
+  "sentence": "El grupo [[aplaude]] bajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hit hands together happily",
+   "options": [
+    "to hit hands together happily",
+    "to walk away in silence",
+    "to sit down at a table",
+    "to speak with a loud voice"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "El grupo aplaude bajo.",
+    "targetWord": "aplaude",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gente retratada",
+  "sentence": "Mariana limpia el lente y toma la [[foto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a picture of people",
+   "options": [
+    "a picture of people",
+    "a cup of hot coffee",
+    "a bag full of bread",
+    "a coin from the street"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "Mariana limpia el lente y toma la foto.",
+    "targetWord": "foto",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "parqueadero",
+  "sentence": "El carro espera en el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parqueadero",
+   "options": [
+    "parqueadero",
+    "vaso",
+    "mantel",
+    "plato"
+   ],
+   "translation": "The car waits in the _____.",
+   "optionTranslations": [
+    "a paved space off the street",
+    "a cup for cold drinks",
+    "a cloth for the table",
+    "a dish for warm food"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "El carro espera en el parqueadero.",
+    "targetWord": "parqueadero",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "arepa",
+  "sentence": "Hay pan amigo y _____ entera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arepa",
+   "options": [
+    "arepa",
+    "sombrilla",
+    "moneda",
+    "campana"
+   ],
+   "translation": "There is friend bread and a whole _____.",
+   "optionTranslations": [
+    "a round corn cake",
+    "a small folding umbrella",
+    "a small round coin",
+    "a small metal bell"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "Hay pan amigo y arepa entera.",
+    "targetWord": "arepa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "andén",
+  "sentence": "Afuera, el _____ queda vacío.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "andén",
+   "options": [
+    "andén",
+    "pandebono",
+    "músico",
+    "mantel"
+   ],
+   "translation": "Outside, the _____ stays empty.",
+   "optionTranslations": [
+    "a walking path beside a street",
+    "a warm cheese bread roll",
+    "a man who plays music",
+    "a cloth for the table"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "Afuera, el andén queda vacío.",
+    "targetWord": "andén",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "pequeño",
+  "sentence": "“Yo salgo _____ detrás del pan”, dice Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pequeño",
+   "options": [
+    "pequeño",
+    "redondo",
+    "mojado",
+    "caliente"
+   ],
+   "translation": "“I come out _____ behind the bread,” says Andrés.",
+   "optionTranslations": [
+    "small and not large",
+    "round in its shape",
+    "wet from the rain",
+    "warm from the oven"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Yo salgo pequeño detrás del pan”, dice Andrés.",
+    "targetWord": "pequeño",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propio de grupo",
+  "sentence": "“La foto queda [[propia]]”, remata Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "belonging to the group",
+   "options": [
+    "belonging to the group",
+    "made of thin paper",
+    "kept inside a bag",
+    "sold at a good price"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“La foto queda propia”, remata Mariana.",
+    "targetWord": "propia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dueño de fiesta",
+  "sentence": "“Ahora eres [[dueño de fiesta]]”, bromea la vendedora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the person like a party owner",
+   "options": [
+    "the person like a party owner",
+    "the man who drives the bus",
+    "the woman who sells the bread",
+    "the guest who arrives late"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Ahora eres dueño de fiesta”, bromea la vendedora.",
+    "targetWord": "dueño de fiesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pose",
+  "sentence": "“Pan, café y [[cara seria]] a medias”, dice Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a way to stand or look",
+   "options": [
+    "a way to stand or look",
+    "a way to cook the food",
+    "a way to pay the bill",
+    "a way to open the door"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Pan, café y cara seria a medias”, dice Andrés.",
+    "targetWord": "cara seria",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mirar serio",
+  "sentence": "Andrés [[mira serio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look without smiling",
+   "options": [
+    "to look without smiling",
+    "to speak without stopping",
+    "to walk without shoes",
+    "to eat without a plate"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "Andrés mira serio.",
+    "targetWord": "mira serio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "limpia",
+  "sentence": "La mesa queda _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limpia",
+   "options": [
+    "limpia",
+    "lenta",
+    "dulce",
+    "amarga"
+   ],
+   "translation": "The table stays _____.",
+   "optionTranslations": [
+    "clean and not dirty",
+    "slow to move",
+    "sweet like sugar",
+    "bitter in taste"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "La mesa queda limpia.",
+    "targetWord": "limpia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "seria",
+  "sentence": "“Pan, café y cara _____ a medias”, dice Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "seria",
+   "options": [
+    "seria",
+    "redonda",
+    "barata",
+    "lenta"
+   ],
+   "translation": "“Bread, coffee and a _____ face by halves,” says Andrés.",
+   "optionTranslations": [
+    "not smiling or joking",
+    "with a round shape",
+    "cheap and not costly",
+    "slow to move"
+   ],
+   "audioClip": {
+    "storySlug": "andres-sale-pequeno",
+    "storySource": "journey",
+    "sentence": "“Pan, café y cara seria a medias”, dice Andrés.",
+    "targetWord": "seria",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "lente,cocinero,entera,cuerda suave",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "lente",
+     "answer": "the glass part of a camera",
+     "options": [
+      "the glass part of a camera",
+      "a person who cooks food",
+      "whole and not cut",
+      "a soft musical string"
+     ]
+    },
+    {
+     "word": "cocinero",
+     "answer": "a person who cooks food",
+     "options": [
+      "the glass part of a camera",
+      "a person who cooks food",
+      "whole and not cut",
+      "a soft musical string"
+     ]
+    },
+    {
+     "word": "entera",
+     "answer": "whole and not cut",
+     "options": [
+      "the glass part of a camera",
+      "a person who cooks food",
+      "whole and not cut",
+      "a soft musical string"
+     ]
+    },
+    {
+     "word": "cuerda suave",
+     "answer": "a soft musical string",
+     "options": [
+      "the glass part of a camera",
+      "a person who cooks food",
+      "whole and not cut",
+      "a soft musical string"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

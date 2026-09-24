@@ -1,0 +1,436 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "der Wagen,die Platte,der Klappstuhl,der Geldschein",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Wagen",
+          "answer": "a cart of goods",
+          "options": [
+            "a cart of goods",
+            "a table top",
+            "a folding chair",
+            "a banknote"
+          ]
+        },
+        {
+          "word": "die Platte",
+          "answer": "a table top",
+          "options": [
+            "a cart of goods",
+            "a table top",
+            "a folding chair",
+            "a banknote"
+          ]
+        },
+        {
+          "word": "der Klappstuhl",
+          "answer": "a folding chair",
+          "options": [
+            "a cart of goods",
+            "a table top",
+            "a folding chair",
+            "a banknote"
+          ]
+        },
+        {
+          "word": "der Geldschein",
+          "answer": "a banknote",
+          "options": [
+            "a cart of goods",
+            "a table top",
+            "a folding chair",
+            "a banknote"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "handeln",
+    "sentence": "Auf dem Markt darf man immer [[handeln]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to haggle",
+      "options": [
+        "to haggle",
+        "to shout",
+        "to borrow",
+        "to steal"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Auf dem Markt darf man immer handeln.",
+        "targetWord": "handeln",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Händlerin",
+    "sentence": "Die [[Händlerin]] verkauft alte Tische und Betten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a woman trader",
+      "options": [
+        "a woman trader",
+        "a young nurse",
+        "a busy waiter",
+        "a tired driver"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Die Händlerin verkauft alte Tische und Betten.",
+        "targetWord": "Händlerin",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brauchen",
+    "sentence": "Für die leere Küche [[braucht]] sie einen Tisch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to need",
+      "options": [
+        "to need",
+        "to paint",
+        "to rent",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Für die leere Küche braucht sie einen Tisch.",
+        "targetWord": "braucht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wackeln",
+    "sentence": "Der Tisch [[wackelt]] bei jeder Bewegung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wobble",
+      "options": [
+        "to wobble",
+        "to shine",
+        "to grow",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Der Tisch wackelt bei jeder Bewegung.",
+        "targetWord": "wackelt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schieben",
+    "sentence": "Sie [[schiebt]] den Tisch bis nach Hause.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to push",
+      "options": [
+        "to push",
+        "to lift",
+        "to throw",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Sie schiebt den Tisch bis nach Hause.",
+        "targetWord": "schiebt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "teuer",
+    "sentence": "Achtzig Euro für einen alten Tisch sind zu _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "teuer",
+      "options": [
+        "teuer",
+        "schwer",
+        "dunkel",
+        "klein"
+      ],
+      "translation": "Eighty euros for an old table is too _____.",
+      "optionTranslations": [
+        "expensive",
+        "heavy",
+        "dark",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Achtzig Euro für einen alten Tisch sind zu teuer.",
+        "targetWord": "teuer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0e10b27759ddb6a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "kürzer",
+    "sentence": "Ein Bein ist _____ als die anderen drei, deshalb wackelt der Tisch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kürzer",
+      "options": [
+        "kürzer",
+        "dunkler",
+        "weicher",
+        "leiser"
+      ],
+      "translation": "One leg is _____ than the other three, so the table wobbles.",
+      "optionTranslations": [
+        "shorter",
+        "darker",
+        "softer",
+        "quieter"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Ein Bein ist kürzer als die anderen drei, deshalb wackelt der Tisch.",
+        "targetWord": "kürzer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12c75ce5f6a987db.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "streichen",
+    "sentence": "Sie [[streicht]] mit der Hand über das Holz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stroke",
+      "options": [
+        "to stroke",
+        "to knock",
+        "to write",
+        "to cut"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Sie streicht mit der Hand über das Holz.",
+        "targetWord": "streicht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "glatt",
+    "sentence": "Die Oberfläche ist kühl und ganz [[glatt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smooth",
+      "options": [
+        "smooth",
+        "warm",
+        "dirty",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Die Oberfläche ist kühl und ganz glatt.",
+        "targetWord": "glatt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "massiv",
+    "sentence": "Der Schrank ist [[massiv]] und hält viele Jahre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "solid",
+      "options": [
+        "solid",
+        "hollow",
+        "light",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Der Schrank ist massiv und hält viele Jahre.",
+        "targetWord": "massiv",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Möbel",
+    "sentence": "Sie kauft ihre [[Möbel]] nur gebraucht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "furniture",
+      "options": [
+        "furniture",
+        "clothing",
+        "jewellery",
+        "machinery"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Sie kauft ihre Möbel nur gebraucht.",
+        "targetWord": "Möbel",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grau",
+    "sentence": "Über dem Fluss hängt ein [[grauer]] Nebel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grey",
+      "options": [
+        "grey",
+        "green",
+        "golden",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Über dem Fluss hängt ein grauer Nebel.",
+        "targetWord": "grauer",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Pappe",
+    "sentence": "Unter dem Bein liegt ein Stück [[Pappe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cardboard",
+      "options": [
+        "cardboard",
+        "metal",
+        "glass",
+        "stone"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Unter dem Bein liegt ein Stück Pappe.",
+        "targetWord": "Pappe",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Bein",
+    "sentence": "Der Tisch steht auf drei guten [[Beinen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a leg",
+      "options": [
+        "a leg",
+        "a wheel",
+        "a board",
+        "a nail"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Der Tisch steht auf drei guten Beinen.",
+        "targetWord": "Beinen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unbedingt",
+    "sentence": "Sie will [[unbedingt]] einen besseren Preis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "absolutely",
+      "options": [
+        "absolutely",
+        "probably",
+        "hardly",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Sie will unbedingt einen besseren Preis.",
+        "targetWord": "unbedingt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "deutlich",
+    "sentence": "Der Unterschied ist so _____, dass jeder ihn sieht.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deutlich",
+      "options": [
+        "deutlich",
+        "klein",
+        "neu",
+        "teuer"
+      ],
+      "translation": "The difference is so _____ that everybody sees it.",
+      "optionTranslations": [
+        "clear",
+        "small",
+        "new",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "achtzig-fuer-drei-beine",
+        "storySource": "user",
+        "sentence": "Der Unterschied ist so deutlich, dass jeder ihn sieht.",
+        "targetWord": "deutlich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34cae8a1f05da401.mp3"
+      }
+    },
+    "featured": false
+  }
+]

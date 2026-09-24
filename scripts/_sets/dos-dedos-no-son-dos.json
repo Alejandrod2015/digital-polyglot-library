@@ -1,0 +1,493 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "alzar",
+    "sentence": "Dos dedos [[alzados]] en la pescadería significan otra cosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to raise",
+      "options": [
+        "to raise",
+        "to hide",
+        "to wash",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Dos dedos alzados en la pescadería significan otra cosa.",
+        "targetWord": "alzados",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d6a4ed79ccc5c9c2850f.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mano",
+    "sentence": "Alza la [[mano]] firme, sin curva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hand",
+      "options": [
+        "the hand",
+        "the head",
+        "the voice",
+        "the glass"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Alza la mano firme, sin curva.",
+        "targetWord": "mano",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d12a127a617a6e5ae846.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brazo",
+    "sentence": "Levanta el [[brazo]] y pone la palma hacia dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the arm",
+      "options": [
+        "the arm",
+        "the leg",
+        "the plate",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Levanta el brazo y pone la palma hacia dentro.",
+        "targetWord": "brazo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/16e3300240b0fcb21328.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar",
+    "sentence": "Le [[marca]] el orden de los dedos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to mark out",
+      "options": [
+        "to mark out",
+        "to forget",
+        "to break",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Le marca el orden de los dedos.",
+        "targetWord": "marca",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d2151980a65d1c786da3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cazuela",
+    "sentence": "Lo hondo de una [[cazuela]] no se dice con palabras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cooking pot",
+      "options": [
+        "a cooking pot",
+        "a wine glass",
+        "a bread knife",
+        "a paper bag"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Lo hondo de una cazuela no se dice con palabras.",
+        "targetWord": "cazuela",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a9007f069a3cf79e02f6.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "signo",
+    "sentence": "Copia el [[signo]] y le sale torcido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sign",
+      "options": [
+        "the sign",
+        "the song",
+        "the joke",
+        "the path"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Copia el signo y le sale torcido.",
+        "targetWord": "signo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2833f3dad8c9725ae8cc.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hondo",
+    "sentence": "El pozo es muy _____ y no se ve el fondo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hondo",
+      "options": [
+        "hondo",
+        "ancho",
+        "limpio",
+        "nuevo"
+      ],
+      "translation": "The well is very _____ and you can't see the bottom.",
+      "optionTranslations": [
+        "deep",
+        "wide",
+        "clean",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "El pozo es muy hondo y no se ve el fondo.",
+        "targetWord": "hondo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecf8c52a0cc7d0ce.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "firme",
+    "sentence": "Sujeta la escalera con la mano _____ para que no se mueva.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firme",
+      "options": [
+        "firme",
+        "fría",
+        "sucia",
+        "abierta"
+      ],
+      "translation": "Hold the ladder with a _____ hand so it doesn't move.",
+      "optionTranslations": [
+        "steady",
+        "cold",
+        "dirty",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Sujeta la escalera con la mano firme para que no se mueva.",
+        "targetWord": "firme",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b8acbe157f18936.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "agita",
+    "sentence": "Ella _____ la botella para mezclar el zumo con el agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agita",
+      "options": [
+        "agita",
+        "rompe",
+        "compra",
+        "guarda"
+      ],
+      "translation": "She _____ the bottle to mix the juice with the water.",
+      "optionTranslations": [
+        "shakes",
+        "breaks",
+        "buys",
+        "puts away"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Ella agita la botella para mezclar el zumo con el agua.",
+        "targetWord": "agita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac96e615509d8ca5.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "dedo,calamar,pescadería,mercado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "dedo",
+          "answer": "a finger",
+          "options": [
+            "a finger",
+            "a squid",
+            "a fish shop",
+            "a market"
+          ]
+        },
+        {
+          "word": "calamar",
+          "answer": "a squid",
+          "options": [
+            "a finger",
+            "a squid",
+            "a fish shop",
+            "a market"
+          ]
+        },
+        {
+          "word": "pescadería",
+          "answer": "a fish shop",
+          "options": [
+            "a finger",
+            "a squid",
+            "a fish shop",
+            "a market"
+          ]
+        },
+        {
+          "word": "mercado",
+          "answer": "a market",
+          "options": [
+            "a finger",
+            "a squid",
+            "a fish shop",
+            "a market"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ya está",
+    "sentence": "Se abre así y [[ya está]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that's it",
+      "options": [
+        "that's it",
+        "not yet",
+        "well done",
+        "come on"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Se abre así y ya está.",
+        "targetWord": "ya está",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b3c249688e03f8242478.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "girar",
+    "sentence": "Le sale torcido, con la muñeca [[girada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn",
+      "options": [
+        "to turn",
+        "to hurt",
+        "to wash",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Le sale torcido, con la muñeca girada.",
+        "targetWord": "girada",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/27e6919d28336f7ca1dd.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recto",
+    "sentence": "Más [[recto]], que estás diciendo otra cosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight",
+      "options": [
+        "straight",
+        "quiet",
+        "slow",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Más recto, que estás diciendo otra cosa.",
+        "targetWord": "recto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/65b23ad53a92bc5b806b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "liso",
+    "sentence": "Lo intenta de nuevo hasta que le sale [[liso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smooth",
+      "options": [
+        "smooth",
+        "loud",
+        "wet",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Lo intenta de nuevo hasta que le sale liso.",
+        "targetWord": "liso",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/897164c9fcd2eec34fe8.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al día siguiente",
+    "sentence": "[[Al día siguiente]] vuelve a la pescadería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the next day",
+      "options": [
+        "the next day",
+        "the same night",
+        "a week later",
+        "an hour before"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Al día siguiente vuelve a la pescadería.",
+        "targetWord": "Al día siguiente",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5e9f84b6939c7ea7ad52.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curva",
+    "sentence": "Alza la mano firme, sin [[curva]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bend",
+      "options": [
+        "a bend",
+        "a ring",
+        "a glove",
+        "a break"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Alza la mano firme, sin curva.",
+        "targetWord": "curva",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6c2c21039f6737fcf43a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temblor",
+    "sentence": "Sale con un [[temblor]] tonto en el pecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shaking",
+      "options": [
+        "a shaking",
+        "a burning",
+        "a whisper",
+        "a weight"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "Sale con un temblor tonto en el pecho.",
+        "targetWord": "temblor",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/48e73c9cf7171f3fbe14.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "torcido",
+    "sentence": "El clavo está _____ y ya no entra en la pared.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "torcido",
+      "options": [
+        "torcido",
+        "limpio",
+        "caro",
+        "seco"
+      ],
+      "translation": "The nail is _____ and won't go into the wall any more.",
+      "optionTranslations": [
+        "bent",
+        "clean",
+        "expensive",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "dos-dedos-no-son-dos",
+        "storySource": "user",
+        "sentence": "El clavo está torcido y ya no entra en la pared.",
+        "targetWord": "torcido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9eefb76d3bcc766.mp3"
+      }
+    },
+    "featured": false
+  }
+]

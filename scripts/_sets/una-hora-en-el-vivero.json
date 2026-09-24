@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "aparador",
+    "sentence": "El vecino mira las plantas del [[aparador]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shop window",
+      "options": [
+        "the shop window",
+        "the back room",
+        "the front door",
+        "the side street"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "El vecino mira las plantas del aparador.",
+        "targetWord": "aparador",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed784502b02c1044.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secas",
+    "sentence": "Las plantas del aparador están [[secas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dry",
+      "options": [
+        "dry",
+        "cheap",
+        "heavy",
+        "tall"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Las plantas del aparador están secas.",
+        "targetWord": "secas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f9cff0213a5bd24.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desastre",
+    "sentence": "La muchacha regresa y ve el [[desastre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mess",
+      "options": [
+        "the mess",
+        "the price",
+        "the queue",
+        "the answer"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "La muchacha regresa y ve el desastre.",
+        "targetWord": "desastre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80d7d843644b046d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banqueta",
+    "sentence": "El agua llega hasta la [[banqueta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pavement",
+      "options": [
+        "the pavement",
+        "the ceiling",
+        "the balcony",
+        "the staircase"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "El agua llega hasta la banqueta.",
+        "targetWord": "banqueta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d92f5cf49625675.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plástico",
+    "sentence": "Esas plantas son de [[plástico]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plastic",
+      "options": [
+        "plastic",
+        "cotton",
+        "glass",
+        "stone"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Esas plantas son de plástico.",
+        "targetWord": "plástico",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aba7924d21e70af9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobren",
+    "sentence": "No hagan nada más; solo _____ a los clientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobren",
+      "options": [
+        "cobren",
+        "pinten",
+        "tapen",
+        "midan"
+      ],
+      "translation": "Do not do anything else; just _____ the customers.",
+      "optionTranslations": [
+        "charge",
+        "paint",
+        "cover",
+        "measure"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "No hagan nada más; solo cobren a los clientes.",
+        "targetWord": "cobren",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20624b697a633f5c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escurre",
+    "sentence": "El mueble está mojado y le _____ agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escurre",
+      "options": [
+        "escurre",
+        "canta",
+        "pesa",
+        "vende"
+      ],
+      "translation": "The unit is wet and water _____ off it.",
+      "optionTranslations": [
+        "drips",
+        "sings",
+        "weighs",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "El mueble está mojado y le escurre agua.",
+        "targetWord": "escurre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0b4c861ffd601db.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Para ver la hoja de cerca, ella la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "cuenta",
+        "paga",
+        "tapa"
+      ],
+      "translation": "To see the leaf up close, she _____ it.",
+      "optionTranslations": [
+        "lifts",
+        "counts",
+        "pays for",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Para ver la hoja de cerca, ella la levanta.",
+        "targetWord": "levanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26f49a2b613344fd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacude",
+    "sentence": "La hoja tiene polvo y ella la _____ despacio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacude",
+      "options": [
+        "sacude",
+        "cuenta",
+        "paga",
+        "mide"
+      ],
+      "translation": "The leaf is dusty and she _____ it gently.",
+      "optionTranslations": [
+        "shakes",
+        "counts",
+        "pays for",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "La hoja tiene polvo y ella la sacude despacio.",
+        "targetWord": "sacude",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f63e3dd9f9441b33.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tocar,caer,llegar,llevar",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tocar",
+          "answer": "to touch",
+          "options": [
+            "to touch",
+            "to fall",
+            "to arrive",
+            "to carry"
+          ]
+        },
+        {
+          "word": "caer",
+          "answer": "to fall",
+          "options": [
+            "to touch",
+            "to fall",
+            "to arrive",
+            "to carry"
+          ]
+        },
+        {
+          "word": "llegar",
+          "answer": "to arrive",
+          "options": [
+            "to touch",
+            "to fall",
+            "to arrive",
+            "to carry"
+          ]
+        },
+        {
+          "word": "llevar",
+          "answer": "to carry",
+          "options": [
+            "to touch",
+            "to fall",
+            "to arrive",
+            "to carry"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillantes",
+    "featured": false,
+    "sentence": "Las plantas están secas y [[brillantes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shiny",
+      "options": [
+        "shiny",
+        "sour",
+        "narrow",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Las plantas están secas y brillantes.",
+        "targetWord": "brillantes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cad24a0ba741e5a8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perfectas",
+    "featured": false,
+    "sentence": "Se ven [[perfectas]], sin una gota encima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "perfect",
+      "options": [
+        "perfect",
+        "empty",
+        "cheap",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Se ven perfectas, sin una gota encima.",
+        "targetWord": "perfectas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/880c0a7625308d3e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "planta por planta",
+    "featured": false,
+    "sentence": "Riegan el aparador [[planta por planta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one plant at a time",
+      "options": [
+        "one plant at a time",
+        "from the back room",
+        "with a small cup",
+        "after the last client"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Riegan el aparador planta por planta.",
+        "targetWord": "planta por planta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a50a7126b6773dcc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mueble",
+    "featured": false,
+    "sentence": "Del [[mueble]] de la entrada escurre agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shelf unit",
+      "options": [
+        "the shelf unit",
+        "the front gate",
+        "the wall clock",
+        "the glass door"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Del mueble de la entrada escurre agua.",
+        "targetWord": "mueble",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a4719efe4393c55.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "únicas",
+    "featured": false,
+    "sentence": "Son las [[únicas]] que nunca se mueren.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the only ones",
+      "options": [
+        "the only ones",
+        "the last ones",
+        "the small ones",
+        "the cheap ones"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Son las únicas que nunca se mueren.",
+        "targetWord": "únicas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e97859c05cbd80c0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nunca se mueren",
+    "featured": false,
+    "sentence": "Esas plantas [[nunca se mueren]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never die",
+      "options": [
+        "never die",
+        "never grow",
+        "never open",
+        "never move"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "Esas plantas nunca se mueren.",
+        "targetWord": "nunca se mueren",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/373da774fb804b4d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsa",
+    "featured": false,
+    "sentence": "La hoja suena como una [[bolsa]] del mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bag",
+      "options": [
+        "a bag",
+        "a bell",
+        "a coin",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "una-hora-en-el-vivero",
+        "storySource": "user",
+        "sentence": "La hoja suena como una bolsa del mercado.",
+        "targetWord": "bolsa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/424a0a774225f9d6.mp3"
+      }
+    }
+  }
+]

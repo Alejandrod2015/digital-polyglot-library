@@ -1,0 +1,17 @@
+MATCH|der Wasserhahn=a tap|die Mappe=a folder|die Miete=the rent|der Bürgersteig=the pavement
+M|der Bewerber|Dreißig [[Bewerber]] warten vor der Tür.|an applicant|a landlord|a neighbour|a visitor
+M|die Maklerin|Die [[Maklerin]] zeigt heute drei Wohnungen.|an estate agent|a cleaner|a teacher|a driver
+M|die Schufa|Der Vermieter fragt zuerst nach der [[Schufa]].|a credit record|a work contract|a phone bill|a bank card
+M|der Gehaltszettel|Jeden Monat kommt ein neuer [[Gehaltszettel]] per Post.|a payslip|a rent bill|a train ticket|a shopping list
+M|spüren|Sie [[spürt]] die Wärme im Gesicht.|to feel|to hide|to count|to wash
+F|nass|Ich stelle die Schuhe an die Heizung, sie sind ganz _____.|I put the shoes by the heater, they are completely _____.|wet|eng=tight|neu=new|dunkel=dark
+F|winzig|Das Zimmer hat nur zwei Meter Platz, es ist _____.|The room has only two metres of space, it is _____.|tiny|teuer=expensive|ruhig=quiet|hell=bright
+M|eigen|Endlich hat sie eine [[eigene]] Wohnung.|one's own|brand new|quite cheap|rather small
+M|trotzdem|Es regnet stark, [[trotzdem]] geht sie zu Fuß.|all the same|for example|at first|by chance
+M|dick|Sie trägt eine [[dicke]] Mappe unter dem Arm.|thick|light|empty|shiny
+M|heiß|Der Kaffee ist noch zu [[heiß]] zum Trinken.|hot|sweet|strong|dark
+M|bisher|[[Bisher]] hat niemand auf die Anzeige geantwortet.|until now|since then|by tomorrow|every year
+M|umsonst|Der zweite Kaffee ist heute [[umsonst]].|for free|for later|too strong|very small
+M|wirklich|Das ist [[wirklich]] kein Problem für mich.|really|almost|hardly|maybe
+F|leise|Die Nachbarn hören alles, deshalb sprechen wir hier sehr _____.|The neighbours hear everything, so we speak very _____ here.|quietly|kurz=briefly|langsam=slowly|allein=alone
+F|zugegeben|Er hat den Fehler vor allen _____ und sich entschuldigt.|In front of everybody he _____ the mistake and apologised.|admitted|vergessen=forgotten|gesucht=looked for|bezahlt=paid for

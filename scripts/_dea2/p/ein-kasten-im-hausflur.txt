@@ -1,0 +1,17 @@
+MATCH|der Umzugswagen=a removal van|der Kasten=a crate of bottles|das Geländer=a handrail|der Saft=juice
+M|der Treppenabsatz|Auf dem [[Treppenabsatz]] steht ein Kasten im Weg.|a landing|a cellar|a balcony|a garage
+M|die Farbe|Er hat frische [[Farbe]] an den Händen.|paint|glue|soap|oil
+M|retten|Sie [[rettet]] fremde Leute im Treppenhaus.|to rescue|to avoid|to follow|to count
+M|suchen|Er [[sucht]] seinen Schlüssel in allen Taschen.|to look for|to lock up|to hand over|to throw away
+M|lehnen|Er [[lehnt]] sich kurz an das Geländer.|to lean|to jump|to kneel|to crawl
+F|leer|Ihre Küche hat kaum Möbel und ist immer noch halb _____.|Her kitchen has hardly any furniture and is still half _____.|empty|warm=warm|dunkel=dark|offen=open
+F|frischer|Der Nachbar hat gerade gestrichen, es riecht nach _____ Wandfarbe.|The neighbour has just painted, it smells of _____ wall paint.|fresh|teurer=expensive|dunkler=dark|alter=old
+M|deuten|Sie [[deutet]] nach oben auf ihre eigene Tür.|to point|to knock|to wave|to reach
+M|egal|Im Februar war ihr so ein Kasten noch [[egal]].|not important|quite new|very heavy|rather cheap
+M|außerdem|Er hält [[außerdem]] Kartons unter dem Arm.|besides|instead|perhaps|rarely
+M|neu|Der [[neue]] Nachbar sucht seinen Schlüssel.|new|tall|quiet|tired
+M|hoch|Sie nimmt den Kasten mit [[hoch]] in den zweiten Stock.|up|out|across|around
+M|völlig|Das war ihr damals [[völlig]] gleich.|completely|nearly|rarely|briefly
+M|oben|[[Oben]] riecht es nach frischer Farbe.|upstairs|outside|nearby|behind
+M|fröhlich|Sie antwortet [[fröhlich]] und lacht dabei.|cheerfully|angrily|nervously|coldly
+F|Wandfarbe|Der Nachbar hat gestrichen, im Haus riecht es nach _____.|The neighbour has painted, the house smells of _____.|wall paint|Seife=soap|Kaffee=coffee|Regen=rain

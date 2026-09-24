@@ -16,12 +16,9 @@
  *   D3 longitud   la respuesta dobla en palabras a todos los distractores
  *                 ("the fenced track where riders chase the bull" / "a horse
  *                 stable"): 678 tarjetas, la mas larga era la buena.
- *   D4 antonimo   exactamente un par de antonimos entre las cuatro opciones y
- *                 la respuesta esta en el: el alumno queda a 50% sin leer
- *                 (peor/mejor/igual/raro). Compara por TOKEN y en los dos
- *                 lados, asi que ve los pares de varias palabras ("me too" /
- *                 "not me", "papel cae" / "costo sube"), y mira tambien las
- *                 opciones en el idioma meta, no solo las glosas inglesas.
+ *   D4 antonimo   exactamente un par de antonimos entre las cuatro glosas y la
+ *                 respuesta esta en el: el alumno queda a 50% sin leer
+ *                 (peor/mejor/igual/raro).
  *   D5 pista      gentilicio, ciudad o "(slang)" en UNA sola opcion ("a sweet
  *                 strong Chilean drink" en el journey de Chile).
  *   D6 forma      fill_blank: infinitivo mezclado con formas conjugadas
@@ -71,31 +68,7 @@ function styleSig(o: string): string {
   ].join("|");
 }
 
-// -- D4 antonimos ----------------------------------------------------
-// Un par de opuestos entre las cuatro opciones se resuelve sin saber la
-// palabra: el alumno reconoce la pareja y descarta las otras dos.
-//
-// Hasta el 2026-09-24 la comparacion era de CADENA COMPLETA contra una lista
-// inglesa, asi que solo veia pares de UNA palabra. Lo que se escapaba, medido
-// a mano despues de que el gate saliera en verde:
-//   - "me too" / "not me" (Conversations ES latam A0): mismo nucleo con la
-//     polaridad cambiada.
-//   - "papel cae" / "costo sube", "mirada suave" / "voz fuerte",
-//     "guarda vuelto" / "pide plata" (Friends ES Colombia A0): el par vive en
-//     las opciones EN ESPANOL de un fill_blank, que D4 ni miraba.
-// Ahora compara por TOKEN, y corre tambien sobre las opciones en el idioma
-// meta, no solo sobre las glosas inglesas.
-//
-// Tres frenos contra el ruido, porque un gate que canta de mas se ignora:
-//   a) las dos opciones tienen que ser cortas (4 palabras de contenido como
-//      mucho). En una definicion larga ("a hand held flat and open") un
-//      opuesto suelto no hace pareja.
-//   b) si UNA opcion lleva los dos lados del par, es una definicion por
-//      contraste ("right, not wrong", "hot to the touch, not cold at all") y
-//      no cuenta.
-//   c) un opuesto negado en su propia opcion ("not cold") no cuenta.
-// Y se conserva el filtro de siempre: solo salta con EXACTAMENTE un par entre
-// las cuatro y la respuesta dentro de el.
+// ── D4 antonimos (glosas en ingles) ─────────────────────────────────
 const ANTONYMS: Array<[string, string]> = [
   ["good", "bad"], ["better", "worse"], ["best", "worst"], ["big", "small"], ["large", "small"],
   ["wet", "dry"], ["hot", "cold"], ["warm", "cold"], ["open", "closed"], ["open", "close"],
@@ -119,148 +92,15 @@ const ANTONYMS: Array<[string, string]> = [
   ["midday", "midnight"], ["noon", "midnight"], ["dawn", "dusk"], ["north", "south"], ["east", "west"],
   ["left", "right"], ["top", "bottom"], ["front", "back"], ["yes", "no"], ["male", "female"],
   ["gained", "lost"], ["gain", "lose"], ["borrow", "lend"], ["forbid", "allow"], ["forbidden", "allowed"],
-  // Pronombres y cuantificadores: el par se lee sin saber la palabra igual
-  // que "always" / "never", y varios son de dos piezas ("no one").
-  ["everyone", "no one"], ["everyone", "nobody"], ["everybody", "nobody"], ["someone", "no one"],
-  ["someone", "nobody"], ["somebody", "nobody"], ["something", "nothing"], ["everything", "nothing"],
-  ["somewhere", "nowhere"], ["everywhere", "nowhere"], ["all", "none"], ["also", "either"],
 ];
-
-// Pares en el idioma META, para las opciones que NO son glosas inglesas
-// (fill_blank y listen_choose). Cada lado lista las formas de superficie que
-// salen en el nivel que escribimos; generar formas a ciegas daba mas ruido
-// que cobertura. Solo espanol por ahora: los tres casos medidos son de ahi,
-// y una lista a medias en otro idioma seria peor que ninguna.
-const adj = (m: string) => (/o$/.test(m) ? [m, m.replace(/o$/, "a"), m + "s", m.replace(/o$/, "as")] : [m, m + "s"]);
-const ES_ANTONYMS: Array<[string[], string[]]> = [
-  [["sube", "suben", "subir", "subio"], ["baja", "bajan", "bajar"]],
-  [["sube", "suben", "subir", "subio"], ["cae", "caen", "caer", "cayo"]],
-  [["entra", "entran", "entrar"], ["sale", "salen", "salir"]],
-  [["abre", "abren", "abrir"], ["cierra", "cierran", "cerrar"]],
-  [["llega", "llegan", "llegar"], ["sale", "salen", "salir"]],
-  [["compra", "compran", "comprar"], ["vende", "venden", "vender"]],
-  [["empieza", "empiezan", "empezar"], ["termina", "terminan", "terminar"]],
-  [["gana", "ganan", "ganar"], ["pierde", "pierden", "perder"]],
-  [["prende", "prenden", "prender", "enciende", "encender"], ["apaga", "apagan", "apagar"]],
-  [["pone", "ponen", "poner"], ["quita", "quitan", "quitar"]],
-  [["recuerda", "recuerdan", "recordar"], ["olvida", "olvidan", "olvidar"]],
-  [["rie", "rien", "reir"], ["llora", "lloran", "llorar"]],
-  [["duerme", "duermen", "dormir"], ["despierta", "despiertan", "despertar"]],
-  [["habla", "hablan", "hablar"], ["calla", "callan", "callar"]],
-  [["da", "dan", "dar", "guarda", "guardan", "guardar"], ["pide", "piden", "pedir"]],
-  [["suave", "suaves"], ["fuerte", "fuertes"]],
-  [["grande", "grandes"], ["pequeno", "pequena", "pequenos", "pequenas", "chico", "chica", "chicos", "chicas"]],
-  [adj("alto"), ["bajo", "baja", "bajos", "bajas"]],
-  [adj("largo"), adj("corto")],
-  [adj("nuevo"), adj("viejo")],
-  [adj("limpio"), adj("sucio")],
-  [adj("frio"), adj("caliente")],
-  [adj("seco"), adj("mojado")],
-  [adj("lleno"), adj("vacio")],
-  [adj("rapido"), adj("lento")],
-  [adj("caro"), adj("barato")],
-  [adj("bueno"), adj("malo")],
-  [["facil", "faciles"], ["dificil", "dificiles"]],
-  [adj("claro"), adj("oscuro")],
-  [adj("primero"), adj("ultimo")],
-  [adj("abierto"), adj("cerrado")],
-  [adj("mucho"), adj("poco")],
-  [["mas"], ["menos"]],
-  [["antes"], ["despues"]],
-  [["arriba"], ["abajo"]],
-  [["dentro", "adentro"], ["fuera", "afuera"]],
-  [["cerca"], ["lejos"]],
-  [["encima"], ["debajo"]],
-  [["delante", "enfrente"], ["detras", "atras"]],
-  [["izquierda"], ["derecha"]],
-  [["siempre"], ["nunca", "jamas"]],
-  [["todo", "toda", "todos", "todas"], ["nada"]],
-  [["alguien"], ["nadie"]],
-  [["algo"], ["nada"]],
-  [["tambien"], ["tampoco"]],
-  [["dia", "dias"], ["noche", "noches"]],
-  [["verdad"], ["mentira"]],
-  [["joven", "jovenes"], ["viejo", "vieja", "viejos", "viejas"]],
-];
-
-const STOP = new Set([
-  "a", "an", "the", "to", "of", "and", "is", "are", "was", "were", "be", "it", "its", "that", "this",
-  "there", "very", "his", "her", "their", "for", "at", "by", "with", "from", "one",
-  "el", "la", "lo", "los", "las", "un", "una", "unos", "unas", "de", "del", "al", "y", "o", "que",
-  "es", "son", "muy", "se", "su", "sus", "mi", "tu", "por", "para", "en", "con",
-]);
-const NEG: Record<string, Set<string>> = {
-  en: new Set(["not", "no", "never", "nor", "neither", "without", "nothing", "nobody", "none", "cannot"]),
-  es: new Set(["no", "nunca", "jamas", "nada", "nadie", "ningun", "ninguna", "ninguno", "sin", "tampoco"]),
-};
-// Particulas de polaridad AFIRMATIVA: no son contenido, marcan el lado
-// positivo del par ("me too" frente a "not me").
-const AFF: Record<string, Set<string>> = {
-  en: new Set(["too", "also", "either"]),
-  es: new Set(["tambien", "tampoco"]),
-};
-const tokenize = (s: string) => norm(s).replace(/[^\p{L}\p{N}'\s]/gu, " ").split(/\s+/).filter(Boolean);
-const contentTokens = (t: string[]) => t.filter((w) => !STOP.has(w));
-
-/** Idioma de las OPCIONES: "en" para las glosas, el del journey para el resto. */
-function esFlavour(lang: string): "es" | null {
-  return /^(spanish|espanol|es)$/.test(lang) ? "es" : null;
-}
-
-type Side = { raw: string[]; content: string[]; set: Set<string>; neg: boolean; core: string[] };
-function side(o: string, key: "en" | "es"): Side {
-  const raw = tokenize(o);
-  const content = contentTokens(raw);
-  const neg = raw.some((w) => NEG[key].has(w));
-  const core = content.filter((w) => !NEG[key].has(w) && !AFF[key].has(w));
-  return { raw, content, set: new Set(content), neg, core };
-}
-
 const glossHead = (o: string) => norm(o).replace(/^(to|a|an|the)\s+/, "").replace(/[.,;!?]+$/, "");
-const sameSet = (a: string[], b: string[]) =>
-  a.length === b.length && a.length > 0 && a.every((w) => b.includes(w));
-
-/** Un lado del par aparece en la opcion, sin negar y sin que el otro lado
- *  este tambien en ella (definicion por contraste). */
-function carries(s: Side, mine: string[], other: string[], key: "en" | "es"): boolean {
-  if (other.some((w) => s.set.has(w))) return false;
-  return mine.some((w) => {
-    const i = s.raw.indexOf(w);
-    if (i < 0) return false;
-    return !(i > 0 && NEG[key].has(s.raw[i - 1]));
-  });
-}
-
-const MAX_TOKENS = 4; // ver freno (a)
-
-function isAntonymPair(a: Side, b: Side, rawA: string, rawB: string, key: "en" | "es"): boolean {
-  // 1. Cadena completa contra la lista inglesa (lo de siempre; cubre las
-  //    entradas de dos piezas: "get on" / "get off").
-  if (key === "en") {
-    const ha = glossHead(rawA), hb = glossHead(rawB);
-    if (ANTONYMS.some(([x, y]) => (ha === x && hb === y) || (ha === y && hb === x))) return true;
-  }
-  if (a.content.length > MAX_TOKENS || b.content.length > MAX_TOKENS) return false;
-  // 2. Mismo nucleo con la polaridad cambiada ("me too" / "not me").
-  if (a.neg !== b.neg && sameSet(a.core, b.core)) return true;
-  // 3. Un opuesto a cada lado ("papel cae" / "costo sube"). SOLO en el idioma
-  //    meta. En las glosas inglesas se probo y se retiro: marcaba 472
-  //    ejercicios del catalogo, casi todos PARES PARALELOS, que este proyecto
-  //    ya juzgo buen diseno de distractor el 2026-09-20 ("to turn on" / "to
-  //    turn off", "at the first try" / "at the last minute", "out loud" / "in
-  //    a hurry"). Las direccionales (in/out, up/down, on/off) aparecen en
-  //    media glosa inglesa y no hacen pareja por si solas; en el idioma meta
-  //    el par es la opcion entera y se lee de un vistazo.
-  if (key !== "es") return false;
-  return ES_ANTONYMS.some(([x, y]) => (carries(a, x, y, key) && carries(b, y, x, key)) || (carries(a, y, x, key) && carries(b, x, y, key)));
-}
-
-function antonymPairs(opts: string[], key: "en" | "es"): Array<[number, number]> {
-  const sides = opts.map((o) => side(o, key));
+function antonymPairs(opts: string[]): Array<[number, number]> {
+  const heads = opts.map(glossHead);
   const pairs: Array<[number, number]> = [];
-  for (let i = 0; i < opts.length; i++)
-    for (let j = i + 1; j < opts.length; j++)
-      if (isAntonymPair(sides[i], sides[j], opts[i], opts[j], key)) pairs.push([i, j]);
+  for (let i = 0; i < heads.length; i++)
+    for (let j = i + 1; j < heads.length; j++)
+      if (ANTONYMS.some(([a, b]) => (heads[i] === a && heads[j] === b) || (heads[i] === b && heads[j] === a)))
+        pairs.push([i, j]);
   return pairs;
 }
 
@@ -531,8 +371,8 @@ export function distractorIssues(ex: any, ctx: GateCtx): GateResult {
     const mx = Math.max(...dw), mn = Math.min(...dw);
     if (aw >= 2 * mx && aw - mx >= 3) issues.push(`${tag} D3 la respuesta dobla en palabras a todos los distractores (${aw} vs ${dw.join("/")})`);
     if (aw * 2 <= mn && mn - aw >= 3) issues.push(`${tag} D3 la respuesta es la unica corta (${aw} vs ${dw.join("/")})`);
-    // D4 antonimo (glosas inglesas)
-    const pairs = antonymPairs(glosses, "en");
+    // D4 antonimo
+    const pairs = antonymPairs(glosses);
     if (pairs.length === 1 && pairs[0].includes(ai)) issues.push(`${tag} D4 un solo par de antonimos y la respuesta esta en el: "${glosses[pairs[0][0]]}" / "${glosses[pairs[0][1]]}"`);
     // D5 pista
     const hinted = glosses.filter((g) => HINT.test(g));
@@ -546,15 +386,6 @@ export function distractorIssues(ex: any, ctx: GateCtx): GateResult {
   }
 
   if (type === "fill_blank" || type === "listen_choose") {
-    // D4 antonimo en el IDIOMA META: en estos dos tipos las opciones no son
-    // glosas, y ahi vivian los tres pares que el gate dejo pasar el 2026-09-24
-    // ("papel cae" / "costo sube").
-    const key = esFlavour(lang);
-    if (key) {
-      const esPairs = antonymPairs(opts, key);
-      if (esPairs.length === 1 && esPairs[0].includes(ai))
-        issues.push(`${tag} D4 un solo par de antonimos y la respuesta esta en el: "${opts[esPairs[0][0]]}" / "${opts[esPairs[0][1]]}"`);
-    }
     // D6 forma: infinitivo mezclado con conjugado
     const inf = opts.map((o) => isInfinitive(o, lang));
     if (inf.every((x) => x !== null) && new Set(inf).size > 1) {

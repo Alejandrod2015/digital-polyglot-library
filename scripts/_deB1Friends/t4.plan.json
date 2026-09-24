@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "calor urbano con humor seco",
+  "espina": "Lena aprende que el verano muniques usa reglas practicas para dejar espacio a una libertad muy fisica.",
+  "recursos": "Isar, Flaucher, Kiesbank, parrilla, agua fria de los Alpes, Eisbachwelle",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "sentarse comoda junto al rio",
+      "impide": "el Flaucher ofrece piedras, humo y agua helada, no comodidad",
+      "cuesta": "Lena renuncia a controlar el entorno",
+      "cambia": "acepta la incomodidad como parte del verano local",
+      "emocion": "resistencia que se derrite"
+    },
+    {
+      "slot": "2",
+      "quiere": "mirar la ola del Eisbach como espectaculo relajado",
+      "impide": "los surfistas y espectadores siguen una cola silenciosa",
+      "cuesta": "Lena aprende a no llenar el silencio con comentarios",
+      "cambia": "entiende que tambien mirar tiene protocolo",
+      "emocion": "curiosidad disciplinada"
+    },
+    {
+      "slot": "3",
+      "quiere": "hacer un grillabend ordenado en la Isar",
+      "impide": "faltan cosas, sobran normas y el grupo se dispersa hacia el agua",
+      "cuesta": "Lena abandona la idea de una tarde perfecta",
+      "cambia": "descubre que el desorden tambien puede cerrar el dia",
+      "emocion": "satisfaccion cansada"
+    }
+  ]
+}

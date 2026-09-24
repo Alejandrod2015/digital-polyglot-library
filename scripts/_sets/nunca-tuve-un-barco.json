@@ -1,0 +1,429 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la terraza,el viento,la ropa,el barco",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la terraza",
+     "answer": "a roof terrace",
+     "options": [
+      "a roof terrace",
+      "the wind",
+      "clothes",
+      "a boat"
+     ]
+    },
+    {
+     "word": "el viento",
+     "answer": "the wind",
+     "options": [
+      "a roof terrace",
+      "the wind",
+      "clothes",
+      "a boat"
+     ]
+    },
+    {
+     "word": "la ropa",
+     "answer": "clothes",
+     "options": [
+      "a roof terrace",
+      "the wind",
+      "clothes",
+      "a boat"
+     ]
+    },
+    {
+     "word": "el barco",
+     "answer": "a boat",
+     "options": [
+      "a roof terrace",
+      "the wind",
+      "clothes",
+      "a boat"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiende",
+  "sentence": "En la terraza, Mariana [[tiende]] su ropa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hangs out to dry",
+   "options": [
+    "hangs out to dry",
+    "takes in",
+    "sorts out",
+    "counts"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "En la terraza, Mariana tiende su ropa.",
+    "targetWord": "tiende",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "vuela",
+  "sentence": "Una camiseta blanca _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuela",
+   "options": [
+    "vuela",
+    "tiende",
+    "dobla",
+    "huele"
+   ],
+   "translation": "A white t-shirt _____.",
+   "optionTranslations": [
+    "flies off",
+    "hangs out",
+    "folds",
+    "smells"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Una camiseta blanca vuela.",
+    "targetWord": "vuela",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dobla",
+  "sentence": "Nicolás [[dobla]] la camiseta. La deja limpia en una silla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "folds",
+   "options": [
+    "folds",
+    "shakes out",
+    "hands over",
+    "hangs up"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Nicolás dobla la camiseta. La deja limpia en una silla.",
+    "targetWord": "dobla",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blanca",
+  "sentence": "Una camiseta [[blanca]] vuela.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "torn",
+    "striped",
+    "borrowed"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Una camiseta blanca vuela.",
+    "targetWord": "blanca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negra",
+  "sentence": "Mi ropa es [[negra]] o gris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "black",
+   "options": [
+    "black",
+    "thick",
+    "plain",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Mi ropa es negra o gris.",
+    "targetWord": "negra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deja",
+  "sentence": "La [[deja]] limpia en una silla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he leaves it",
+   "options": [
+    "he leaves it",
+    "he washes it",
+    "he hides it",
+    "he throws it"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "La deja limpia en una silla.",
+    "targetWord": "deja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "limpia",
+  "sentence": "La deja [[limpia]] en una silla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean",
+   "options": [
+    "clean",
+    "folded",
+    "damp",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "La deja limpia en una silla.",
+    "targetWord": "limpia",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olor",
+  "sentence": "Pero huele a balde viejo. Y el [[olor]] viene de tu gato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smell",
+   "options": [
+    "smell",
+    "stain",
+    "noise",
+    "water"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Pero huele a balde viejo. Y el olor viene de tu gato.",
+    "targetWord": "olor",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sigue",
+  "sentence": "El viento [[sigue]] fuerte en la terraza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "keeps on being",
+   "options": [
+    "keeps on being",
+    "turns",
+    "dies down",
+    "starts"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "El viento sigue fuerte en la terraza.",
+    "targetWord": "sigue",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ya voy",
+  "sentence": "[[Ya voy]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am coming",
+   "options": [
+    "I am coming",
+    "I am done",
+    "I am busy",
+    "I am home"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Ya voy.",
+    "targetWord": "Ya voy",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguro",
+  "sentence": "Es mía, [[seguro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surely",
+   "options": [
+    "surely",
+    "almost",
+    "at last",
+    "perhaps"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Es mía, seguro.",
+    "targetWord": "seguro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se la lleva",
+  "sentence": "El viento [[se la lleva]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is carrying it away",
+   "options": [
+    "is carrying it away",
+    "is drying it out",
+    "is tearing it up",
+    "is blowing it open"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "El viento se la lleva.",
+    "targetWord": "se la lleva",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ya está",
+  "sentence": "[[Ya está]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there you go",
+   "options": [
+    "there you go",
+    "hold on",
+    "watch out",
+    "come back"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Ya está.",
+    "targetWord": "Ya está",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hace viento",
+  "sentence": "[[Hace viento]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is windy",
+   "options": [
+    "it is windy",
+    "it is raining",
+    "it is late",
+    "it is cold"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Hace viento.",
+    "targetWord": "Hace viento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tuve",
+  "sentence": "Yo nunca [[tuve]] un barco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I had",
+   "options": [
+    "I had",
+    "I wanted",
+    "I drew",
+    "I saw"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Yo nunca tuve un barco.",
+    "targetWord": "tuve",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Un momento",
+  "sentence": "[[Un momento]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hold on a second",
+   "options": [
+    "hold on a second",
+    "right away",
+    "once again",
+    "over here"
+   ],
+   "audioClip": {
+    "storySlug": "nunca-tuve-un-barco",
+    "storySource": "user",
+    "sentence": "Un momento.",
+    "targetWord": "Un momento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

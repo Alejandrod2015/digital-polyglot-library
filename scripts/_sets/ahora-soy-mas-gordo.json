@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el dibujo,la cuerda,el balcón,la silla",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el dibujo",
+     "answer": "a drawing",
+     "options": [
+      "a drawing",
+      "a washing line",
+      "a balcony",
+      "a chair"
+     ]
+    },
+    {
+     "word": "la cuerda",
+     "answer": "a washing line",
+     "options": [
+      "a drawing",
+      "a washing line",
+      "a balcony",
+      "a chair"
+     ]
+    },
+    {
+     "word": "el balcón",
+     "answer": "a balcony",
+     "options": [
+      "a drawing",
+      "a washing line",
+      "a balcony",
+      "a chair"
+     ]
+    },
+    {
+     "word": "la silla",
+     "answer": "a chair",
+     "options": [
+      "a drawing",
+      "a washing line",
+      "a balcony",
+      "a chair"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "contesta",
+  "sentence": "La nota está en la escalera desde el lunes. Nadie _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contesta",
+   "options": [
+    "contesta",
+    "conoce",
+    "dobla",
+    "vuela"
+   ],
+   "translation": "The note has been on the stairs since Monday. Nobody _____.",
+   "optionTranslations": [
+    "answers",
+    "knows",
+    "folds",
+    "flies"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "La nota está en la escalera desde el lunes. Nadie contesta.",
+    "targetWord": "contesta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conozco",
+  "sentence": "Yo [[conozco]] esta camiseta. Ahora recuerdo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I know",
+   "options": [
+    "I know",
+    "I want",
+    "I washed",
+    "I lost"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Yo conozco esta camiseta. Ahora recuerdo.",
+    "targetWord": "conozco",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "Se sienta",
+  "sentence": "El gato sube a la silla. _____ encima.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Se sienta",
+   "options": [
+    "Se sienta",
+    "Contesta",
+    "Conoce",
+    "Cree"
+   ],
+   "translation": "The cat climbs onto the chair. It _____ on top.",
+   "optionTranslations": [
+    "sits down",
+    "answers",
+    "knows",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "El gato sube a la silla. Se sienta encima.",
+    "targetWord": "Se sienta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tercero",
+  "sentence": "¿Es de la señora del [[tercero]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the third floor",
+   "options": [
+    "the third floor",
+    "the back flat",
+    "the shop",
+    "the next street"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "¿Es de la señora del tercero?",
+    "targetWord": "tercero",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "niño",
+  "sentence": "Esta camiseta es de [[niño]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a child",
+   "options": [
+    "a child",
+    "a workman",
+    "a stranger",
+    "a guest"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Esta camiseta es de niño.",
+    "targetWord": "niño",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atrás",
+  "sentence": "Tiene mi nombre [[atrás]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the back",
+   "options": [
+    "on the back",
+    "in ink",
+    "in a corner",
+    "twice over"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Tiene mi nombre atrás.",
+    "targetWord": "atrás",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Creo",
+  "sentence": "[[Creo]] que es mía.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I think",
+   "options": [
+    "I think",
+    "I hope",
+    "I doubt",
+    "I insist"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Creo que es mía.",
+    "targetWord": "Creo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señora",
+  "sentence": "¿Es de la [[señora]] del tercero?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the lady",
+   "options": [
+    "the lady",
+    "the caretaker",
+    "the owner",
+    "the visitor"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "¿Es de la señora del tercero?",
+    "targetWord": "señora",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lunes",
+  "sentence": "La nota está en la escalera desde el [[lunes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Monday",
+   "options": [
+    "Monday",
+    "Friday",
+    "Easter",
+    "the summer"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "La nota está en la escalera desde el lunes.",
+    "targetWord": "lunes",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Yo también",
+  "sentence": "[[Yo también]] tiendo ropa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "me too",
+   "options": [
+    "me too",
+    "every week",
+    "of course",
+    "back then"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Yo también tiendo ropa.",
+    "targetWord": "Yo también",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me da vergüenza",
+  "sentence": "Porque el barco [[me da vergüenza]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "makes me feel ashamed",
+   "options": [
+    "makes me feel ashamed",
+    "makes me laugh",
+    "reminds me of home",
+    "is not mine"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Porque el barco me da vergüenza.",
+    "targetWord": "me da vergüenza",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queda bien",
+  "sentence": "Al gato le [[queda bien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it looks good on him",
+   "options": [
+    "it looks good on him",
+    "it belongs to him",
+    "it bothers him",
+    "it is too small for him"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Al gato le queda bien.",
+    "targetWord": "queda bien",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "otra vez",
+  "sentence": "Miro el dibujo [[otra vez]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "closely",
+    "at last",
+    "in the light"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Miro el dibujo otra vez.",
+    "targetWord": "otra vez",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hace tres años",
+  "sentence": "Es de [[hace tres años]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from three years ago",
+   "options": [
+    "from three years ago",
+    "from last winter",
+    "from my school days",
+    "from before the move"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Es de hace tres años.",
+    "targetWord": "hace tres años",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pequeña",
+  "sentence": "Después mira la camiseta [[pequeña]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "faded",
+    "folded",
+    "damp"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Después mira la camiseta pequeña.",
+    "targetWord": "pequeña",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "años",
+  "sentence": "Es de hace tres [[años]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "years",
+   "options": [
+    "years",
+    "sizes",
+    "washes",
+    "summers"
+   ],
+   "audioClip": {
+    "storySlug": "ahora-soy-mas-gordo",
+    "storySource": "user",
+    "sentence": "Es de hace tres años.",
+    "targetWord": "años",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

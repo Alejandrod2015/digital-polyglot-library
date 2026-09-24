@@ -1,0 +1,128 @@
+{
+ "slug": "mesa-no-misa",
+ "topic": "phones-and-messages",
+ "title": "Mesa no misa",
+ "text": "Lina mira el celular. Mariana prepara café con luz. Andrés trae pan. La mesa queda libre.\n\nLina escribe mesa, pero el celular manda misa. Andrés lee el mensaje serio. “Yo traigo pan, no silencio, y busco la mesa”, dice. “Mesa”, agrega.\n\nMariana mira el vaso y la servilleta. “Aquí hay café, campana y pan para la mesa”, explica. Señala el pandebono. “No hay misa”, agrega.\n\nLee la pantalla. La palabra está rara. La ubicación sale sin ruido. “El bus entiende mesa, no misa”, cuenta. Andrés toca una tecla y asiente.\n\nElla borra una letra. El mensaje ahora dice mesa amiga aquí. El celular queda bajo el maletín. “Ahora no cambia y todos llegan”, avisa. Ella corrige.\n\n“Mesa no misa, mesa amiga”, repite Andrés con el pan en la mano. Todos saludan bajo y ríen. “Palabra propia”, dice Mariana. “La mesa tiene palabra propia”, dice Mariana.",
+ "vocab": [
+  {
+   "word": "telefonito",
+   "surface": "celular",
+   "type": "noun",
+   "def": "A small phone you carry."
+  },
+  {
+   "word": "texto corto",
+   "surface": "mensaje",
+   "type": "noun",
+   "def": "Words sent to another person."
+  },
+  {
+   "word": "servilleta",
+   "surface": "servilleta",
+   "type": "noun",
+   "def": "Paper used at a table."
+  },
+  {
+   "word": "callado",
+   "surface": "silencio",
+   "type": "noun",
+   "def": "A time with no sound."
+  },
+  {
+   "word": "visor",
+   "surface": "pantalla",
+   "type": "noun",
+   "def": "The lit part of a phone."
+  },
+  {
+   "word": "signo",
+   "surface": "letra",
+   "type": "noun",
+   "def": "One written sign in a word."
+  },
+  {
+   "word": "misa",
+   "surface": "misa",
+   "type": "noun",
+   "def": "A quiet church service."
+  },
+  {
+   "word": "palabra rara",
+   "surface": "palabra está rara",
+   "type": "expression",
+   "def": "A word that looks wrong."
+  },
+  {
+   "word": "cambiar",
+   "surface": "cambia",
+   "type": "verb",
+   "def": "To become different now."
+  },
+  {
+   "word": "mensaje serio",
+   "surface": "mensaje serio",
+   "type": "expression",
+   "def": "A serious phone message."
+  },
+  {
+   "word": "agregar",
+   "surface": "agrega",
+   "type": "verb",
+   "def": "To add more words."
+  },
+  {
+   "word": "repetir",
+   "surface": "repite",
+   "type": "verb",
+   "def": "To say or do again."
+  },
+  {
+   "word": "ubicación",
+   "surface": "ubicación",
+   "type": "noun",
+   "def": "A place shown on a phone."
+  },
+  {
+   "word": "aquí",
+   "surface": "aquí",
+   "type": "adverb",
+   "def": "In this place here."
+  },
+  {
+   "word": "sin ruido",
+   "surface": "sin ruido",
+   "type": "expression",
+   "def": "With no sound nearby."
+  },
+  {
+   "word": "maletín",
+   "surface": "maletín",
+   "type": "noun",
+   "def": "A small work bag."
+  },
+  {
+   "word": "claridad",
+   "surface": "luz",
+   "type": "noun",
+   "def": "Brightness that helps you see."
+  },
+  {
+   "word": "tecla",
+   "surface": "tecla",
+   "type": "noun",
+   "def": "A phone or computer button."
+  },
+  {
+   "word": "corregir",
+   "surface": "corrige",
+   "type": "verb",
+   "def": "To make a mistake right."
+  },
+  {
+   "word": "propia palabra",
+   "surface": "palabra propia",
+   "type": "expression",
+   "def": "A word that belongs to someone."
+  }
+ ]
+}

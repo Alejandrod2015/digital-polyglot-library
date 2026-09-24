@@ -1,0 +1,135 @@
+[
+ {
+  "topic": "moving-and-helping-out",
+  "slotIndex": 0,
+  "title": "Zu dritt im Treppenhaus",
+  "slug": "drei-stunden-transporter",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "The hired van is Malte's only until three in the afternoon, and Britta insists the two of them can manage the whole move alone. After three trips up the stairs Malte's back gives out and half the boxes are still down in the yard. A neighbour from the ground floor turns up with work gloves.",
+  "text": "Am Samstagmorgen gehört der Transporter Malte nur bis drei Uhr. Britta hat alles selbst gepackt und jeden Deckel mit Klebeband zugemacht. Ingo ist ein Nachbar aus dem Erdgeschoss und wartet unten im Hinterhof, wo es nach Regen riecht.\n\n“Wir schaffen das gut zu zweit, so haben wir das früher immer gemacht”, meint Britta. Malte hebt die erste Kiste und stöhnt leise. Nach dem dritten Gang tut ihm der Rücken weh, und unten steht noch die Hälfte.\n\nPlötzlich steht Ingo mit dicken Handschuhen neben dem Transporter. “Ich habe heute sowieso Zeit, und zu dritt geht das doppelt so schnell”, bietet er an. Britta zögert, denkt an die Rechnung und nickt dann doch.\n\nIngo trägt den schweren Schrank allein durch das enge Treppenhaus. Um Viertel vor drei steht der letzte Karton in der Küche. “Morgen kommt noch dein Sofa, und das passt hier nirgendwo durch”, warnt Malte.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Transporter",
+    "anchor": true,
+    "surface": "Transporter",
+    "definition": "A hired van; the small truck people rent for one day to move."
+   },
+   {
+    "type": "verb",
+    "word": "packen",
+    "surface": "gepackt",
+    "definition": "To pack; to put all your things into boxes before a move."
+   },
+   {
+    "type": "noun",
+    "word": "das Erdgeschoss",
+    "surface": "Erdgeschoss",
+    "definition": "The ground floor; the level of a building at street height."
+   },
+   {
+    "type": "noun",
+    "word": "das Klebeband",
+    "surface": "Klebeband",
+    "definition": "Sticky tape; the roll you use to close a cardboard box."
+   },
+   {
+    "type": "noun",
+    "word": "der Nachbar",
+    "surface": "Nachbar",
+    "definition": "A neighbour; a person who lives in the same house as you."
+   },
+   {
+    "type": "verb",
+    "word": "heben",
+    "surface": "hebt",
+    "definition": "To lift; to take something heavy up from the floor."
+   },
+   {
+    "type": "verb",
+    "word": "stöhnen",
+    "surface": "stöhnt",
+    "definition": "To groan; to make a low sound when something hurts you."
+   },
+   {
+    "type": "noun",
+    "word": "der Gang",
+    "surface": "Gang",
+    "definition": "A trip on foot; one walk up and down carrying something."
+   },
+   {
+    "type": "adverb",
+    "word": "weh",
+    "surface": "weh",
+    "definition": "Painfully; a part of your body hurts when you say this."
+   },
+   {
+    "type": "adverb",
+    "word": "plötzlich",
+    "surface": "plötzlich",
+    "definition": "Suddenly; from one moment to the next, with no warning."
+   },
+   {
+    "type": "adverb",
+    "word": "doppelt",
+    "surface": "doppelt",
+    "definition": "Twice as much; two times the speed, the size or the price."
+   },
+   {
+    "type": "verb",
+    "word": "zögern",
+    "surface": "zögert",
+    "definition": "To hesitate; to wait a moment because you are not sure."
+   },
+   {
+    "type": "noun",
+    "word": "die Rechnung",
+    "anchor": true,
+    "surface": "Rechnung",
+    "definition": "The bill; the paper that says how much you have to pay."
+   },
+   {
+    "type": "verb",
+    "word": "nicken",
+    "surface": "nickt",
+    "definition": "To nod; to move your head down once to say yes."
+   },
+   {
+    "type": "verb",
+    "word": "tragen",
+    "surface": "trägt",
+    "definition": "To carry; to hold something heavy in your arms and walk."
+   },
+   {
+    "type": "adjective",
+    "word": "schwer",
+    "surface": "schweren",
+    "definition": "Heavy; hard to lift, so you need both arms for it."
+   },
+   {
+    "type": "adjective",
+    "word": "eng",
+    "surface": "enge",
+    "definition": "Narrow; with so little room that big things get stuck."
+   },
+   {
+    "type": "verb",
+    "word": "passen",
+    "surface": "passt",
+    "definition": "To fit; to go through a door or into a space without trouble."
+   },
+   {
+    "type": "adverb",
+    "word": "nirgendwo",
+    "surface": "nirgendwo",
+    "definition": "Nowhere; in no place at all, however hard you try."
+   },
+   {
+    "type": "verb",
+    "word": "warnen",
+    "surface": "warnt",
+    "definition": "To warn; to tell somebody early that a problem is coming."
+   }
+  ]
+ }
+]

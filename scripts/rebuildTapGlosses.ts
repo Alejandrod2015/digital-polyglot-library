@@ -60,6 +60,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-friends-argentina-a0",
     "spanish-friends-colombia",
     "spanish-friends-mexico",
+    "spanish-friends-mexico-a0",
     "spanish-friends-spain-a0",
     "spanish-friends-spain-a2",
     "spanish-traveler-latam",
@@ -76,9 +77,13 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-latam-b1",
     "spanish-traveler-latam-b2",
     "spanish-traveler-spain-b2",
-    "spanish-cultural-latam-b1",
+    // Conversations ES latam A0 (el de formato dialogo). Entra AQUI antes del
+    // primer rebuild: sin su fila, familyOf devuelve "" y no copia nada de los
+    // hermanos latam. Registrarlo lo mete en los gates del pre-push, asi que
+    // cierra solo con sus huecos a cero (ver el revert b28c99e1).
+    "spanish-conversations-latam-a0",
   ],
-  german: ["german-expat", "german-friends", "german-friends-a0", "german-friends-a1", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
+  german: ["german-expat", "german-friends", "german-friends-a0", "german-friends-a1", "german-friends-a2", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
   french: ["french-traveler", "french-expat-lyon", "french-friends-a0", "french-friends-france-a1", "french-friends-france-a2", "french-friends-france-b1"],
   italian: ["italian-friends-a0", "italian-friends-italy-a0", "italian-friends-italy-a1", "italian-traveler-a0", "italian-traveler-a1"],
   // El a2 entra AQUI antes del primer rebuild, no despues: sin su fila,
@@ -235,6 +240,7 @@ async function main() {
 
   let totalAdded = 0;
   const blocked: string[] = [];
+  const faltantes = new Set<string>();
 
   for (const name of names) {
     const bundle = loadBundle(name);
@@ -244,7 +250,13 @@ async function main() {
     const sibling = new Map<string, { g: string; t?: string; rev?: boolean }>();
     for (const other of FAMILIES[familyOf(name)] ?? []) {
       if (other === name) continue;
-      for (const [k, v] of Object.entries(loadBundle(other).glosses)) {
+      // Un hermano de la tabla puede no existir todavia en la base (bundle
+      // planeado, o renombrado). Eso NO puede tumbar el rebuild del bundle que
+      // si existe: el 2026-09-23 `spanish-cultural-latam-b1`, que nunca llego a
+      // crearse, dejaba sin rebuild a los veinte bundles espanoles.
+      const hermano = CACHE?.get(other);
+      if (!hermano) { faltantes.add(other); continue; }
+      for (const [k, v] of Object.entries(hermano.glosses)) {
         const key = k.toLowerCase();
         if (!sibling.has(key)) sibling.set(key, v);
       }
@@ -329,6 +341,13 @@ async function main() {
       where: { bundle_slug: { bundle: name, slug: "" } },
       data: { glosses: merged as never },
     });
+  }
+
+  if (faltantes.size > 0) {
+    console.log(
+      `\naviso: ${faltantes.size} hermano(s) de FAMILIES no estan en la base y no se han copiado: ` +
+        `${[...faltantes].sort().join(", ")}`
+    );
   }
 
   if (check) {

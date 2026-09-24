@@ -1,0 +1,11 @@
+{
+  "tipo": "Friends", "nivel": "a0", "variante": "MEXICO",
+  "registro": "administrativo y absurdo: reglas de reparto aplicadas a un edificio que no coopera",
+  "espina": "Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+  "recursos": "presente, frases cortas, el conflicto se discute en voz alta, y el giro sale de algo que el lector ya vio (el timbre, la firma de la guia, el numero pintado)",
+  "historias": [
+    { "slot": "0", "quiere": "Citlali quiere entregar un paquete y que alguien firme", "impide": "nadie abre: el timbre del edificio no suena donde deberia", "cuesta": "Bruno pierde la teoria de que ese ruido venia de la calle", "cambia": "descubren que el timbre suena en su cocina desde hace un ano", "emocion": "la vergueenza de haber ignorado algo durante meses" },
+    { "slot": "1", "quiere": "Bruno quiere una broca y le llega una caja enorme", "impide": "la caja no es lo que pidio y el reclama con toda la razon", "cuesta": "pierde la razon al ver su propia firma en la guia", "cambia": "se queda con lo que pidio hace tres meses y ya no recordaba", "emocion": "el ridiculo privado de discutir contra uno mismo" },
+    { "slot": "2", "quiere": "Citlali quiere encontrar el edificio sin dar tres vueltas", "impide": "el numero de la fachada esta borrado desde siempre", "cuesta": "Itzel y Bruno pintan el numero y lo copian del edificio de al lado", "cambia": "ahora llegan puntuales los paquetes de los vecinos", "emocion": "la satisfaccion de arreglar algo, antes de mirar bien" }
+  ]
+}

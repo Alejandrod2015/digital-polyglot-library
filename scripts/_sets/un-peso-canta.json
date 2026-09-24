@@ -1,0 +1,450 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "peso cae",
+  "sentence": "El [[peso cae]] en la bolsa del pan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a coin falls down",
+   "options": [
+    "a coin falls down",
+    "a door opens wide",
+    "a bird sings loudly",
+    "a light goes out"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El peso cae en la bolsa del pan.",
+    "targetWord": "peso cae",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roja",
+  "sentence": "El peso aparece pegado a una tira [[roja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red in color",
+   "options": [
+    "red in color",
+    "blue in color",
+    "green in color",
+    "black in color"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El peso aparece pegado a una tira roja.",
+    "targetWord": "roja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tira roja",
+  "sentence": "El peso aparece pegado a una [[tira roja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thin red strip",
+   "options": [
+    "a thin red strip",
+    "a small paper bag",
+    "a round metal coin",
+    "a warm bread roll"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El peso aparece pegado a una tira roja.",
+    "targetWord": "tira roja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sirve café",
+  "sentence": "Mariana [[sirve café]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give coffee to someone",
+   "options": [
+    "to give coffee to someone",
+    "to wash the dirty cups",
+    "to open the small shop",
+    "to sing a short song"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Mariana sirve café.",
+    "targetWord": "sirve café",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "levanta la moneda",
+  "sentence": "Andrés [[levanta la moneda]] con cuidado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pick the coin up",
+   "options": [
+    "to pick the coin up",
+    "to hide the coin well",
+    "to count the coins twice",
+    "to clean the table fast"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Andrés levanta la moneda con cuidado.",
+    "targetWord": "levanta la moneda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plata",
+  "sentence": "La [[plata]] no contesta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "money in daily speech",
+   "options": [
+    "money in daily speech",
+    "bread from the oven",
+    "music from a radio",
+    "paper from a shop"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "La plata no contesta.",
+    "targetWord": "plata",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "miga",
+  "sentence": "La [[miga]] y el papel señalan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small piece of bread",
+   "options": [
+    "a small piece of bread",
+    "a thin line of paper",
+    "a large glass of water",
+    "a short walk to work"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "La miga y el papel señalan.",
+    "targetWord": "miga",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin problema",
+  "sentence": "El pan guarda vuelto, [[sin problema]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with no trouble at all",
+   "options": [
+    "with no trouble at all",
+    "with a lot of noise",
+    "with two new friends",
+    "with a warm drink"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El pan guarda vuelto, sin problema.",
+    "targetWord": "sin problema",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bolsa del pan",
+  "sentence": "El peso cae en la [[bolsa del pan]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bag used for bread",
+   "options": [
+    "a bag used for bread",
+    "a box used for tools",
+    "a cup used for water",
+    "a shelf used for books"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El peso cae en la bolsa del pan.",
+    "targetWord": "bolsa del pan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todos observan",
+  "sentence": "[[Todos observan]] el último peso perdido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "everyone looks at something",
+   "options": [
+    "everyone looks at something",
+    "nobody hears the music",
+    "someone opens the door",
+    "everybody leaves the room"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Todos observan el último peso perdido.",
+    "targetWord": "Todos observan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pegado",
+  "sentence": "El peso aparece _____ a una tira roja.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pegado",
+   "options": [
+    "pegado",
+    "mojado",
+    "frío",
+    "nuevo"
+   ],
+   "translation": "The coin shows up _____ to a red strip.",
+   "optionTranslations": [
+    "stuck to a thing",
+    "wet from the rain",
+    "cold like ice",
+    "new and clean"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El peso aparece pegado a una tira roja.",
+    "targetWord": "pegado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "último",
+  "sentence": "Todos observan el _____ peso perdido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "último",
+   "options": [
+    "último",
+    "dulce",
+    "tibio",
+    "mojado"
+   ],
+   "translation": "Everyone looks at the _____ lost coin.",
+   "optionTranslations": [
+    "last of all",
+    "sweet like sugar",
+    "warm to the touch",
+    "wet from the rain"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Todos observan el último peso perdido.",
+    "targetWord": "último",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "canta",
+  "sentence": "_____ bajo para buscar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "canta",
+   "options": [
+    "canta",
+    "come",
+    "paga",
+    "lava"
+   ],
+   "translation": "_____ softly to look for it.",
+   "optionTranslations": [
+    "sings",
+    "eats",
+    "pays",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Canta bajo para buscar.",
+    "targetWord": "canta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "guarda vuelto",
+  "sentence": "El pan _____, sin problema.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda vuelto",
+   "options": [
+    "guarda vuelto",
+    "cuenta plata",
+    "abre puertas",
+    "canta bajo"
+   ],
+   "translation": "The bread _____, with no trouble.",
+   "optionTranslations": [
+    "keeps the change",
+    "counts the money",
+    "opens the doors",
+    "sings very softly"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "El pan guarda vuelto, sin problema.",
+    "targetWord": "guarda vuelto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mano abierta",
+  "sentence": "Hay un peso en la [[mano abierta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hand held flat and open",
+   "options": [
+    "a hand held flat and open",
+    "a hand closed into a fist",
+    "a hand raised to wave",
+    "a hand hidden in a pocket"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Hay un peso en la mano abierta.",
+    "targetWord": "mano abierta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vaso vacío",
+  "sentence": "Mariana pone el peso sobre el [[vaso vacío]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cup with nothing left in it",
+   "options": [
+    "a cup with nothing left in it",
+    "a cup filled to the top",
+    "a cup that is still warm",
+    "a cup with a broken edge"
+   ],
+   "audioClip": {
+    "storySlug": "un-peso-canta",
+    "storySource": "journey",
+    "sentence": "Mariana pone el peso sobre el vaso vacío.",
+    "targetWord": "vaso vacío",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "propina,drama,bolsillo,quedar pegado",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "propina",
+     "answer": "extra money for a service",
+     "options": [
+      "extra money for a service",
+      "a big emotional problem",
+      "a small pocket in clothing",
+      "to stay stuck to something"
+     ]
+    },
+    {
+     "word": "drama",
+     "answer": "a big emotional problem",
+     "options": [
+      "extra money for a service",
+      "a big emotional problem",
+      "a small pocket in clothing",
+      "to stay stuck to something"
+     ]
+    },
+    {
+     "word": "bolsillo",
+     "answer": "a small pocket in clothing",
+     "options": [
+      "extra money for a service",
+      "a big emotional problem",
+      "a small pocket in clothing",
+      "to stay stuck to something"
+     ]
+    },
+    {
+     "word": "quedar pegado",
+     "answer": "to stay stuck to something",
+     "options": [
+      "extra money for a service",
+      "a big emotional problem",
+      "a small pocket in clothing",
+      "to stay stuck to something"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

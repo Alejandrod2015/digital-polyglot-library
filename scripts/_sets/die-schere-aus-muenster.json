@@ -1,0 +1,436 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "die Schere,die Holzkiste,der Schuppen,das Werkzeug",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Schere",
+          "answer": "scissors",
+          "options": [
+            "scissors",
+            "a wooden crate",
+            "a shed",
+            "tools"
+          ]
+        },
+        {
+          "word": "die Holzkiste",
+          "answer": "a wooden crate",
+          "options": [
+            "scissors",
+            "a wooden crate",
+            "a shed",
+            "tools"
+          ]
+        },
+        {
+          "word": "der Schuppen",
+          "answer": "a shed",
+          "options": [
+            "scissors",
+            "a wooden crate",
+            "a shed",
+            "tools"
+          ]
+        },
+        {
+          "word": "das Werkzeug",
+          "answer": "tools",
+          "options": [
+            "scissors",
+            "a wooden crate",
+            "a shed",
+            "tools"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einstellen",
+    "sentence": "Der Inhaber [[stellt]] sie für vier Tage die Woche ein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hire",
+      "options": [
+        "to hire",
+        "to train",
+        "to pay",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Der Inhaber stellt sie für vier Tage die Woche ein.",
+        "targetWord": "stellt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Anruf",
+    "sentence": "Der [[Anruf]] kommt am Montag um halb elf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a phone call",
+      "options": [
+        "a phone call",
+        "a delivery",
+        "a meeting",
+        "a visit"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Der Anruf kommt am Montag um halb elf.",
+        "targetWord": "Anruf",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Erleichterung",
+    "sentence": "Sie weint fast vor [[Erleichterung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relief",
+      "options": [
+        "relief",
+        "anger",
+        "hunger",
+        "pride"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Sie weint fast vor Erleichterung.",
+        "targetWord": "Erleichterung",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Handelskammer",
+    "sentence": "Er kennt jemanden bei der [[Handelskammer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the chamber of commerce",
+      "options": [
+        "the chamber of commerce",
+        "the housing office",
+        "the local library",
+        "the train company"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Er kennt jemanden bei der Handelskammer.",
+        "targetWord": "Handelskammer",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Angebot",
+    "sentence": "Im Februar hat sie dieses [[Angebot]] noch abgelehnt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an offer",
+      "options": [
+        "an offer",
+        "a warning",
+        "a bill",
+        "a rule"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Im Februar hat sie dieses Angebot noch abgelehnt.",
+        "targetWord": "Angebot",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "geduldig",
+    "sentence": "Er hört ihr zwei Stunden lang _____ zu.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "geduldig",
+      "options": [
+        "geduldig",
+        "laut",
+        "kurz",
+        "streng"
+      ],
+      "translation": "He listens to her _____ for two hours.",
+      "optionTranslations": [
+        "patiently",
+        "loudly",
+        "briefly",
+        "sternly"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Er hört ihr zwei Stunden lang geduldig zu.",
+        "targetWord": "geduldig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98abcd5b605a60d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dringend",
+    "sentence": "Am Sonntag braucht sie seine Hilfe _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dringend",
+      "options": [
+        "dringend",
+        "selten",
+        "später",
+        "gern"
+      ],
+      "translation": "On Sunday she needs his help _____.",
+      "optionTranslations": [
+        "urgently",
+        "rarely",
+        "later",
+        "gladly"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Am Sonntag braucht sie seine Hilfe dringend.",
+        "targetWord": "dringend",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ef360efe8e4d394.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "weinen",
+    "sentence": "Sie [[weint]] fast, sagt aber nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cry",
+      "options": [
+        "to cry",
+        "to blink",
+        "to shout",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Sie weint fast, sagt aber nichts.",
+        "targetWord": "weint",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "still",
+    "sentence": "Sie steht ganz [[still]] vor dem Supermarkt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "proud",
+        "cold",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Sie steht ganz still vor dem Supermarkt.",
+        "targetWord": "still",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entspannt",
+    "sentence": "Heute bleibt sie [[entspannt]] sitzen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relaxed",
+      "options": [
+        "relaxed",
+        "nervous",
+        "bored",
+        "busy"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Heute bleibt sie entspannt sitzen.",
+        "targetWord": "entspannt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "holen",
+    "sentence": "Am Sonntag [[holen]] sie die Kiste zusammen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fetch",
+      "options": [
+        "to fetch",
+        "to sell",
+        "to open",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Am Sonntag holen sie die Kiste zusammen.",
+        "targetWord": "holen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bitten",
+    "sentence": "Zum ersten Mal [[bittet]] sie um Hilfe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask for",
+      "options": [
+        "to ask for",
+        "to pay for",
+        "to wait for",
+        "to look for"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Zum ersten Mal bittet sie um Hilfe.",
+        "targetWord": "bittet",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schämen",
+    "sentence": "Sie [[schämt]] sich diesmal nicht dafür.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be ashamed",
+      "options": [
+        "to be ashamed",
+        "to be sorry",
+        "to be late",
+        "to be sure"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Sie schämt sich diesmal nicht dafür.",
+        "targetWord": "schämt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "genau",
+    "sentence": "Es ist [[genau]] dasselbe Angebot wie im Februar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly",
+      "options": [
+        "exactly",
+        "almost",
+        "nearly",
+        "hardly"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Es ist genau dasselbe Angebot wie im Februar.",
+        "targetWord": "genau",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gern",
+    "sentence": "Er fragt [[gern]] nächste Woche dort nach.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gladly",
+      "options": [
+        "gladly",
+        "rarely",
+        "secretly",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Er fragt gern nächste Woche dort nach.",
+        "targetWord": "gern",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "eben",
+    "sentence": "Dann fahren wir _____ am Sonntag hoch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "eben",
+      "options": [
+        "eben",
+        "nie",
+        "kaum",
+        "fast"
+      ],
+      "translation": "Then we will _____ drive up on Sunday.",
+      "optionTranslations": [
+        "just",
+        "never",
+        "hardly",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "die-schere-aus-muenster",
+        "storySource": "user",
+        "sentence": "Dann fahren wir eben am Sonntag hoch.",
+        "targetWord": "eben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53643b50b81405cd.mp3"
+      }
+    },
+    "featured": false
+  }
+]

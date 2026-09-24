@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "panela",
+  "sentence": "El café huele a [[panela]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brown sugar from cane",
+   "options": [
+    "brown sugar from cane",
+    "white salt from the sea",
+    "black pepper from a mill",
+    "green tea from a box"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "El café huele a panela.",
+    "targetWord": "panela",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vacía",
+  "sentence": "Julián mira la silla [[vacía]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty with nothing on it",
+   "options": [
+    "empty with nothing on it",
+    "wet from the rain",
+    "broken on one leg",
+    "heavy and hard to move"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián mira la silla vacía.",
+    "targetWord": "vacía",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "espera",
+  "sentence": "“El papel [[espera]] a alguien”, explica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wait for someone",
+   "options": [
+    "to wait for someone",
+    "to look for someone",
+    "to pay for someone",
+    "to call for someone"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "“El papel espera a alguien”, explica.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ve",
+  "sentence": "Julián [[ve]] el papel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look and notice",
+   "options": [
+    "to look and notice",
+    "to fold and keep",
+    "to tear and drop",
+    "to sign and send"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián ve el papel.",
+    "targetWord": "ve",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "papel",
+  "sentence": "El [[papel]] dice “amigo nuevo”.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sheet for writing",
+   "options": [
+    "a sheet for writing",
+    "a cup for coffee",
+    "a bag for bread",
+    "a box for coins"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "El papel dice “amigo nuevo”.",
+    "targetWord": "papel",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se queda de pie",
+  "sentence": "Julián ve el papel y [[se queda de pie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay standing up",
+   "options": [
+    "to stay standing up",
+    "to run to the door",
+    "to clap with both hands",
+    "to look at the floor"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián ve el papel y se queda de pie.",
+    "targetWord": "se queda de pie",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Yo",
+  "sentence": "“[[Yo]] soy Julián”, dice él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I, the one speaking",
+   "options": [
+    "I, the one speaking",
+    "you, the one listening",
+    "he, another person",
+    "we, the whole group"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "“Yo soy Julián”, dice él.",
+    "targetWord": "Yo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responde",
+  "sentence": "“Ahora espera abajo”, [[responde]] Julián.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer a person",
+   "options": [
+    "to answer a person",
+    "to greet a person",
+    "to follow a person",
+    "to draw a person"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "“Ahora espera abajo”, responde Julián.",
+    "targetWord": "responde",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se sienta",
+  "sentence": "Julián [[se sienta]] despacio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down on a seat",
+   "options": [
+    "to sit down on a seat",
+    "to lean on a wall",
+    "to walk across the room",
+    "to knock on the door"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián se sienta despacio.",
+    "targetWord": "se sienta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "real",
+  "sentence": "Ahora escribe “amigo [[real]]”.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "true and not pretend",
+   "options": [
+    "true and not pretend",
+    "new and not used",
+    "small and very light",
+    "loud and very clear"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Ahora escribe “amigo real”.",
+    "targetWord": "real",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pone",
+  "sentence": "Andrés _____ un papel en la silla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pone",
+   "options": [
+    "pone",
+    "canta",
+    "duerme",
+    "llora"
+   ],
+   "translation": "Andrés _____ a paper on the chair.",
+   "optionTranslations": [
+    "puts",
+    "sings",
+    "sleeps",
+    "cries"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Andrés pone un papel en la silla.",
+    "targetWord": "pone",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "recoge",
+  "sentence": "Mariana _____ el papel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recoge",
+   "options": [
+    "recoge",
+    "salta",
+    "tose",
+    "ríe"
+   ],
+   "translation": "Mariana _____ the paper.",
+   "optionTranslations": [
+    "picks up",
+    "jumps",
+    "coughs",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Mariana recoge el papel.",
+    "targetWord": "recoge",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cae",
+  "sentence": "El papel _____ al suelo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cae",
+   "options": [
+    "cae",
+    "canta",
+    "grita",
+    "tiembla"
+   ],
+   "translation": "The paper _____ to the floor.",
+   "optionTranslations": [
+    "falls",
+    "sings",
+    "shouts",
+    "shakes"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "El papel cae al suelo.",
+    "targetWord": "cae",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "guarda",
+  "sentence": "Julián ríe y _____ el papel en su bolsillo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda",
+   "options": [
+    "guarda",
+    "silba",
+    "tose",
+    "sopla"
+   ],
+   "translation": "Julián laughs and _____ the paper in his pocket.",
+   "optionTranslations": [
+    "keeps",
+    "whistles",
+    "coughs",
+    "blows"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián ríe y guarda el papel en su bolsillo.",
+    "targetWord": "guarda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "toca",
+  "sentence": "Julián _____ su gorra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toca",
+   "options": [
+    "toca",
+    "corre",
+    "salta",
+    "grita"
+   ],
+   "translation": "Julián _____ his cap.",
+   "optionTranslations": [
+    "touches",
+    "runs",
+    "jumps",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Julián toca su gorra.",
+    "targetWord": "toca",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "baja",
+  "sentence": "Andrés _____ la voz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "baja",
+   "options": [
+    "baja",
+    "come",
+    "bebe",
+    "lava"
+   ],
+   "translation": "Andrés _____ his voice.",
+   "optionTranslations": [
+    "lowers",
+    "eats",
+    "drinks",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "el-amigo-de-papel",
+    "storySource": "journey",
+    "sentence": "Andrés baja la voz.",
+    "targetWord": "baja",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "tímido,despacio,luego,nuevo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tímido",
+     "answer": "shy and not bold",
+     "options": [
+      "shy and not bold",
+      "slowly, not fast",
+      "after that, not before",
+      "new and not seen before"
+     ]
+    },
+    {
+     "word": "despacio",
+     "answer": "slowly, not fast",
+     "options": [
+      "shy and not bold",
+      "slowly, not fast",
+      "after that, not before",
+      "new and not seen before"
+     ]
+    },
+    {
+     "word": "luego",
+     "answer": "after that, not before",
+     "options": [
+      "shy and not bold",
+      "slowly, not fast",
+      "after that, not before",
+      "new and not seen before"
+     ]
+    },
+    {
+     "word": "nuevo",
+     "answer": "new and not seen before",
+     "options": [
+      "shy and not bold",
+      "slowly, not fast",
+      "after that, not before",
+      "new and not seen before"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

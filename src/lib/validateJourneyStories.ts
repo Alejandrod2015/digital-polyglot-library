@@ -51,6 +51,7 @@ import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
+import { extractSpeakerNames } from "@/lib/validateGeneratedStory";
 import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
 import { formasDeVerbo } from "./cefr/spanishConjugations";
 
@@ -65,6 +66,9 @@ export type JourneyStoryInput = {
    *  reparto por tema no se pueden medir y salen como no implementadas. */
   topic?: string | null;
 };
+
+import { getNameBank } from "@/lib/characterNames";
+import { fueraDelIdioma, nombresVetados } from "@/lib/nameSpeakability";
 
 export type JourneyCheck = {
   id: string;
@@ -144,7 +148,20 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   ES: "dice|dijo|pregunta|pregunto|preguntó|responde|respondio|respondió|contesta|contesto|contestó|" +
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
-      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
+      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió|" +
+      // Ampliado el 2026-09-24 con los del Friends ES C1 latam, que narra en
+      // preterito y con verbos de habla mas ricos que un A0. Con la lista
+      // anterior ese journey daba reparto VACIO y sus cuatro checks de reparto
+      // aprobaban sin medir nada, incluido el del nombre: el C1 lleva "Itzel"
+      // en tres historias publicadas y salia en verde.
+      "confiesa|confeso|confesó|bromea|bromeo|bromeó|promete|prometio|prometió|" +
+      "admite|admitio|admitió|anade|añade|anadio|añadió|murmura|murmuro|murmuró|" +
+      "susurra|susurro|susurró|advierte|advirtio|advirtió|aclara|aclaro|aclaró|" +
+      "propone|propuso|comenta|comento|comentó|exclama|exclamo|exclamó|" +
+      "asegura|aseguro|aseguró|replica|replico|replicó|reclama|reclamo|reclamó|" +
+      "confirma|confirmo|confirmó|niega|nego|negó|suspira|suspiro|suspiró|" +
+      "reconoce|reconocio|reconoció|interrumpe|interrumpio|interrumpió|" +
+      "saluda|saludo|saludó|responde|contesta|diciendo",
   // Italiano (2026-09-14, Friends IT A0 de Genova; ampliado 2026-09-17 con el
   // IT A2 y el IT A1 de Milano). Sin esta lista castOf caia en la alemana y
   // el reparto salia VACIO, el mismo fallo de PT, FR y ES. Union de los
@@ -160,88 +177,52 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "ha riso|hanno riso|ha chiamato|hanno chiamato|ha proposto|hanno proposto|ha letto|hanno letto|" +
       "ha sussurrato|hanno sussurrato|ha continuato|hanno continuato|ha confermato|hanno confermato|ha salutato|hanno salutato",
 };
-/**
- * Las TRES formas de atribuir habla que hay en el catalogo. Medido el
- * 2026-09-24 sobre los 48 journeys live+draft con texto
- * (`docs/medicion-castof-2026-09-24.md`): mirando solo la primera,
- * `castOf` perdia 139 de 335 personajes, y no inventaba ninguno. Los tres
- * caminos SE SUMAN; el primero es el que cubre el 95% del catalogo y no se
- * toca.
- *
- *   1. narrada       Bastian sagt, dass ... / dice Marisol
- *   2. etiqueta      Lena: Der Tegernsee laeuft nicht weg.
- *   3. cita sin verbo   Marta mira el mapa. "Vamos por aqui."
- *
- * El 3 va apretado a proposito: solo cuenta el nombre que ABRE una frase
- * (sujeto) dentro de un parrafo que lleva habla citada. Sin esa ancla
- * entraban los toponimos, que es el fallo que el filtro de habla vino a
- * arreglar ("llegan a Oaxaca. `Que calor`").
- */
-/** Exportada para medir cuanto recupera cada camino. */
-export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
-  hablan: Map<string, Set<string>>; sinMid: Map<string, Set<string>>; cita: Map<string, Set<string>>;
-} {
+function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
-  const hablan = new Map<string, Set<string>>();
-  // Camino 2 aparte: una etiqueta va SIEMPRE al empezar linea, nunca tras
-  // una minuscula, asi que el contador de menciones de `castLegacy` no la ve
-  // y un journey en formato dialogo salia con el reparto vacio.
-  //
-  // Los caminos 1 y 3 NO entran aqui, a proposito. Los dos cazan palabras que
-  // no son nadie ("Despues dice", "Regresa a casa. `Ya voy`"), y lo que las
-  // mantiene fuera del reparto es justo la minuscula que les falta delante.
-  // Al darles credito de mencion entraban 17 falsos positivos en los 48
-  // journeys: Despues, Hoy, Luego, Dentro, Echa, Quedan, Regresa, Cerraron.
-  // El precio de no darselo son 5 personajes que solo aparecen al empezar
-  // frase; se prefiere perderlos a inventar.
-  const sinMid = new Map<string, Set<string>>();
-  const cita = new Map<string, Set<string>>();
-  const anota = (mapa: Map<string, Set<string>>, n: string, slug: string) => {
-    if (!mapa.has(n)) mapa.set(n, new Set());
-    mapa.get(n)!.add(slug);
-  };
-  const CITA = new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}?`, "gu");
-  // Un nombre propio NO se escribe en minuscula. El camino 3 (sujeto al
-  // empezar frase) es el unico que no trae una marca de habla explicita, asi
-  // que se le pide esto ademas: sin ello entraban `Sie`, `Chocolate` y `Nube`,
-  // que son pronombre y sustantivos comunes al empezar frase. Los caminos 1 y
-  // 2 NO pasan por aqui, porque un `dice Rosa` o un `Rosa:` no dejan duda
-  // aunque `rosa` sea tambien un color.
-  const minusculas = new Set<string>();
-  for (const s of stories)
-    for (const m of s.text.matchAll(/(?<!\p{L})\p{Ll}{2,}(?!\p{L})/gu)) minusculas.add(m[0]);
+  const cuentaHabla = new Map<string, Set<string>>();
   for (const s of stories) {
-    // 1. narracion: verbo de habla pegado al nombre, en los dos ordenes.
     for (const re of [
       new RegExp(`(?:${HABLA})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
       new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+(?:${HABLA})`, "gu"),
-    ]) for (const m of s.text.matchAll(re)) anota(hablan, m[1], s.slug);
-    // 2. etiqueta de dialogo: UNA palabra al empezar linea y sus dos puntos.
-    //    Anclada al principio de linea y sin nada delante, que es lo que
-    //    separa a un hablante de un "Aqui:" en mitad de una frase.
-    for (const m of s.text.matchAll(/(?:^|\n)[ \t]*(\p{Lu}\p{Ll}{2,})[ \t]*:[ \t]*(?=\S)/gu)) {
-      anota(hablan, m[1], s.slug);
-      anota(sinMid, m[1], s.slug);
+    ]) {
+      for (const m of s.text.matchAll(re)) {
+        if (!cuentaHabla.has(m[1])) cuentaHabla.set(m[1], new Set());
+        cuentaHabla.get(m[1])!.add(s.slug);
+      }
     }
-    // 3. habla citada sin verbo de atribucion: el nombre ABRE una frase
-    //    dentro de un parrafo que lleva cita, y le sigue un verbo.
-    for (const parrafo of s.text.split(/\n{2,}/)) {
-      if (!parrafo.includes(QUOTE_OPEN)) continue;
-      const narr = parrafo.replace(CITA, " ");
-      for (const m of narr.matchAll(/(?:^|[.!?…]["»”]?\s+)(\p{Lu}\p{Ll}{2,})\s+\p{Ll}/gu))
-        if (!minusculas.has(m[1].toLowerCase())) { anota(hablan, m[1], s.slug); anota(cita, m[1], s.slug); }
+    // FORMATO DE DIALOGO (2026-09-23). Los dos patrones de arriba son de PROSA
+    // NARRADA: buscan una acotacion ("dice Mariana"). En un journey
+    // multipersonaje quien habla va en la ETIQUETA de la linea (`Mariana: ...`)
+    // y puede no haber una sola acotacion en las 21 historias: medido en el
+    // Conversations ES latam A0, los dos patrones devolvian once FALSOS (Tigre,
+    // Luna, Rey, Se, Me, Nadie, Que, Cien, Aqui, Ese, Tigrre) y ni un nombre de
+    // persona, asi que el reparto salia vacio y `journey-cast-protagonist-in-all`
+    // y el "(protagonista ?)" de `journey-closing-alone` median sobre nada.
+    // Las etiquetas SE SUMAN a las acotaciones, no las sustituyen: el 95% del
+    // catalogo es prosa y ese camino no cambia.
+    for (const nombre of extractSpeakerNames(s.text)) {
+      if (!cuentaHabla.has(nombre)) cuentaHabla.set(nombre, new Set());
+      cuentaHabla.get(nombre)!.add(s.slug);
     }
   }
-  return { hablan, sinMid, cita };
+  const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
+  const legacy = castLegacy(stories, lang);
+  const conHabla = legacy.filter((n) => hablan.has(n));
+  // EL REPARTO NUNCA SALE VACIO (2026-09-24). El filtro de habla afina, pero
+  // cuando no casa con NADIE se lleva por delante a todo el reparto, y un
+  // reparto vacio no hace fallar ningun check: los hace PASAR, sin medir nada.
+  // Eso es peor que fallar, y ya paso cuatro veces, una por idioma (PT, FR, ES
+  // e IT), siempre igual: la lista de verbos no cubria como narra ese journey.
+  // La quinta la vio el usuario, no el gate: el Friends ES C1 latam daba cero
+  // hablantes con los verbos del A0, asi que su reparto era [] y el check de
+  // nombres lo aprobaba con "Itzel" en tres historias publicadas.
+  //
+  // Ampliar la lista de verbos arregla el caso de hoy; esto arregla la clase.
+  // Cuando el filtro deja el reparto en cero, se usa el de frecuencia, que es
+  // lo que habia antes de que el filtro existiera: mide peor, pero mide.
+  return conHabla.length ? conHabla : legacy;
 }
-
-/** Exportada para el test de los tres caminos (`castOf.test.ts`). */
-export function castOf(stories: JourneyStoryInput[], lang: string): string[] {
-  const { hablan, sinMid, cita } = hablaPorHistoria(stories, lang);
-  const dosHistorias = new Set([...hablan].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories, lang, sinMid, cita).filter((n) => dosHistorias.has(n));
-}
-function castLegacy(stories: JourneyStoryInput[], lang = "", sinMid?: Map<string, Set<string>>, cita?: Map<string, Set<string>>): string[] {
+function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
   // CONJUNCION en espanol. Con la lista comun, "presenta a Marisol",
   // "pregunta a Yolanda" o "busca a Fabian" metian a todo el reparto en
@@ -260,42 +241,20 @@ function castLegacy(stories: JourneyStoryInput[], lang = "", sinMid?: Map<string
   // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
   // check de cierres degeneró a "todas las historias terminan a solas".
   const MID = /[\p{Ll}],?\s+$/u;
-  // El articulo PESA, no fulmina (2026-09-24). Era un Set: un solo "die
-  // Nadia" o "o Caio" en 21 historias borraba del reparto a la protagonista
-  // del journey, y asi se perdieron Nadia (21/21, Friends DE C1), Timo
-  // (15/21) y Caio (14/21). Lo que separa a una persona de "der Tisch" no es
-  // que el articulo no aparezca NUNCA, es que casi siempre falta: se compara
-  // cuantas veces va con articulo contra cuantas va suelta.
-  const conArticulo = new Map<string, number>();
-  const sueltas = new Map<string, number>();
+  const conArticulo = new Set<string>();
   const cuenta = new Map<string, number>();
   for (const s of stories) {
     const vistos = new Set<string>();
     for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) {
       const i = m.index ?? 0;
       const antes = s.text.slice(Math.max(0, i - 14), i);
-      if (ART.test(antes)) { conArticulo.set(m[0], (conArticulo.get(m[0]) ?? 0) + 1); continue; }
-      if (MID.test(antes)) { vistos.add(m[0]); sueltas.set(m[0], (sueltas.get(m[0]) ?? 0) + 1); }
+      if (ART.test(antes)) { conArticulo.add(m[0]); continue; }
+      if (MID.test(antes)) vistos.add(m[0]);
     }
     for (const w of vistos) cuenta.set(w, (cuenta.get(w) ?? 0) + 1);
   }
-  // A QUIEN SE LE ATRIBUYE HABLA, se le cuenta la aparicion. `cuenta` solo
-  // sabia ver menciones con una minuscula delante, y eso deja fuera dos
-  // formas enteras de nombrar a alguien: la etiqueta de dialogo (`Lena:`) y
-  // el nombre que abre frase (`Marta mira el mapa`). Un journey escrito en
-  // formato dialogo salia con el reparto VACIO aunque el hablante fuera en
-  // cada linea (Traveler DE A1, Conversations ES latam A0). El filtro de
-  // habla ya decidio que esa palabra es alguien que habla; aqui solo se
-  // cuenta cuantas historias.
-  for (const [n, slugs] of sinMid ?? []) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
-  // El camino 3 (sujeto al empezar frase junto a una cita) solo cuenta como
-  // mencion si ESA palabra aparece alguna vez en mitad de frase con
-  // mayuscula, que es lo que hace un nombre propio y no hace un verbo. Sin
-  // esta condicion entraban `Regresa`, `Cerraron`, `Despues` y `Luego`.
-  for (const [n, slugs] of cita ?? [])
-    if ((sueltas.get(n) ?? 0) >= 1) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
   return [...cuenta.entries()]
-    .filter(([w, n]) => n >= 2 && (sueltas.get(w) ?? 0) + (sinMid?.get(w)?.size ?? 0) > (conArticulo.get(w) ?? 0))
+    .filter(([w, n]) => n >= 2 && !conArticulo.has(w))
     .sort((a, b) => b[1] - a[1])
     .map(([w]) => w);
 }
@@ -530,10 +489,61 @@ const A0_DE_SUJETO_OK = /^(?:Halb|Weiß|Grau|Kalt|Warm|Hoch|Tief|Lang|Kurz|Voll|
 const A0_DE_PARTICULAS = ["an","auf","aus","ein","mit","nach","vor","zu","ab","bei","hin","her","zurück","los","weiter","vorbei","herum","raus","rein","weg","nieder"];
 const A0_DE_PASADO = /\b(war|waren|hatte|hatten|ging|kam|sagte|machte|stand|sah|nahm|gab|fuhr|wurde|wurden)\b/;
 
+/**
+ * Suelo A0 espanol (2026-09-18): SOLO PRESENTE, tambien dentro de comillas.
+ * La tabla de criterios por nivel del spec da al A0 "solo presente" y reserva
+ * al A1 el pasado y los pronombres de objeto; a diferencia del frances, aqui
+ * no se exime lo citado, porque en un A0 espanol el alumno lee cada replica
+ * como modelo. `\b` de JavaScript es ASCII y parte "compro" de "compró", asi
+ * que los limites van con lookarounds Unicode. Lo que cada regex NO caza, y
+ * por que, esta al lado.
+ */
+const ES_L = "(?<![\\p{L}])";
+const ES_R = "(?![\\p{L}])";
+// Preterito: -ó / -aron / -ieron y los irregulares de siempre. La primera
+// persona (-é, -í) no se pide por terminacion: "café", "qué", "aquí", "así"
+// la disparan y en un A0 narrado en tercera persona casi no existe. "aló"
+// (el hola del telefono) acaba en -ó y no es verbo.
+const A0_ES_NO_PRETERITO = /^(?:aló|alo|adiós|jamón|balón|salón|rincón|melón|camión|avión|limón|corazón|canción|estación|montón)$/;
+const A0_ES_PRETERITO = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:ó|aron|ieron)|fue|fueron|tuvo|tuvieron|hizo|hicieron|dijo|dijeron|vino|vinieron|dio|dieron|puso|pusieron|quiso|quisieron|pudo|pudieron|supo|supieron|estuvo|estuvieron|hubo|trajo|trajeron|vio|vieron|anduvo)${ES_R}`, "u");
+// Imperfecto: -aba(s|n|mos) y la lista cerrada de -ía frecuentes. El -ía
+// generico NO: "día", "policía", "panadería", "alegría" son sustantivos.
+const A0_ES_IMPERFECTO = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:aba|abas|aban|ábamos)|era|eran|eras|iba|iban|tenía|tenían|había|habían|hacía|hacían|decía|decían|veía|veían|quería|querían|podía|podían|sabía|sabían|venía|venían|estaba|estaban|vivía|vivían|salía|salían|dormía|dormían|sentía|sentían)${ES_R}`, "u");
+// Perfecto: haber + participio, las dos piezas seguidas. "ha" suelto no
+// cuenta y "está cansado" tampoco: el participio con estar es adjetivo.
+const A0_ES_PERFECTO = new RegExp(`${ES_L}(?:he|has|ha|hemos|han)\\s+\\p{L}{2,}(?:ado|ido|to|cho|so)${ES_R}`, "iu");
+// Futuro: -rá/-rán/-ré/-rás/-remos. "está", "mamá", "sofá" acaban en -á sin
+// r y no entran; "puré" y "café" no acaban en -ré.
+const A0_ES_FUTURO = new RegExp(`${ES_L}\\p{L}{2,}(?:rá|rán|rás|ré|remos)${ES_R}`, "u");
+// Condicional: -aría(n)/-ería(n)/-iría(n) mas la lista irregular. Los
+// sustantivos en -ería (panadería, librería, frutería) se descartan por
+// lista, porque comparten terminacion con "comería".
+const A0_ES_NO_CONDICIONAL = /^(?:panadería|librería|frutería|carnicería|pastelería|cafetería|lavandería|ferretería|zapatería|joyería|papelería|galería|batería|lotería|artillería|sastrería|peluquería|tienda|sillería|cerería|cervecería|pescadería|verdulería|heladería|tortillería|tintorería|feria|serie)$/;
+const A0_ES_CONDICIONAL = new RegExp(
+  `${ES_L}(?:\\p{L}{2,}(?:aría|arían|ería|erían|iría|irían)|sería|serían|estaría|estarían|tendría|tendrían|habría|podría|podrían|querría|haría|harían|diría|dirían|vendría|vendrían|gustaría|saldría|pondría|sabría)${ES_R}`, "u");
+// Subjuntivo presente: solo la lista de irregulares inequivocos. Las formas
+// regulares (-e/-a) son indistinguibles del presente sin analisis.
+const A0_ES_SUBJUNTIVO = new RegExp(`${ES_L}(?:sea|sean|seas|tenga|tengan|tengas|haya|hayan|haga|hagan|hagas|pueda|puedan|puedas|venga|vengan|vengas|quiera|quieran|quieras|diga|digan|digas|vaya|vayan|vayas|sepa|sepan|ponga|pongan|salga|salgan)${ES_R}`, "u");
+// "ir a + infinitivo" es futuro perifrastico, A1 por la tabla del spec.
+const A0_ES_IR_A = new RegExp(`${ES_L}(?:voy|vas|va|vamos|van)\\s+a\\s+\\p{L}{2,}(?:ar|er|ir)${ES_R}`, "iu");
+// Pronombres de objeto antepuestos. Solo le/les: nunca son articulo ni
+// reflexivo. "la mira" y "la casa" no se distinguen sin analisis, y me/te/nos
+// son tambien reflexivos ("me equivoco", "nos sentamos"), que el suelo
+// permite; los cuatro quedan para el barrido a mano del cierre. Fuera las
+// formulas de dativo que todo A0 ensena el primer dia: le gusta(n),
+// le encanta(n), le duele(n).
+const A0_ES_OBJETO = new RegExp(
+  `${ES_L}(?:le|les)\\s+(?!(?:gusta|gustan|encanta|encantan|duele|duelen)${ES_R})\\p{L}{2,}${ES_R}`, "iu");
+
 export function validateJourneyStories(
   stories: JourneyStoryInput[],
   ctx: {
     language: string;
+    /** Variante del journey (mexico, spain, latam...). Da la clave del banco
+     *  de nombres; sin ella el check del reparto no puede medir. */
+    variant?: string | null;
     level: string;
     /** Nombres de personas REALES (solicitantes de la beta). Los pasa
      *  saveStory.ts desde la base; sin ellos el check no puede medir. */
@@ -576,7 +586,15 @@ export function validateJourneyStories(
   const langRaw = (ctx.language || "").toUpperCase();
   const lang = NOMBRE_A_CODIGO[langRaw] ?? langRaw;
   const level = (ctx.level || "").toUpperCase();
-  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN));
+  // PROSA NARRADA, y solo esa (2026-09-23). Una historia en formato de dialogo
+  // pone el habla en las ETIQUETAS (`Mariana: ...`), no entre comillas, asi que
+  // medirle la banda de habla citada es medir otra cosa: basta una nota leida
+  // en voz alta dentro del dialogo para que entre aqui y salga al 6%. Paso el
+  // 2026-09-23 con new-neighbors#1 del Conversations ES latam A0, que es
+  // dialogo entero y lleva una sola frase entrecomillada (la nota del collar).
+  const esDialogo = (t: string) =>
+    (t.match(/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S/gmu) ?? []).length >= 4;
+  const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN) && !esDialogo(s.text));
 
   const push = (id: string, label: string, ok: boolean, detail?: string) =>
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });
@@ -644,6 +662,79 @@ export function validateJourneyStories(
   }
 
   const cast = castOf(stories, lang);
+
+  // ── Reparto: nombres DEL IDIOMA del journey ────────────────
+  //
+  // La voz de TTS solo tiene aprendidos los nombres de su idioma. Uno de otra
+  // lengua, por muy usado que este en el pais, sale distinto cada vez que
+  // aparece, y un recurrente aparece decenas de veces por journey.
+  //
+  // Medido el 2026-09-23 en el Friends ES Mexico A0 con "Itzel", que es maya:
+  // 72 apariciones en 18 historias, de 0,12 s a 0,96 s para la misma palabra,
+  // tres reconocedores escribiendo Ixchel, Excel y Chelsea, y 12 de 21
+  // candidatas confirmadas malas por el oido del usuario. Paso todos los gates
+  // que habia, porque es mexicano, corriente y de la edad correcta. El usuario:
+  // "Las voces solo saben pronunciar nombres comunes para sus idiomas".
+  //
+  // Se mide contra el BANCO del idioma y la region, que es precisamente la
+  // lista de nombres de esa lengua, y solo sobre `cast`: los nombres que HABLAN
+  // en dos historias o mas. Asi los toponimos (Guadalajara, Tlaquepaque) y las
+  // fiestas no entran, que no los dice un personaje sino la prosa una vez.
+  {
+    // El banco se llama "spanish/mexico", y aqui el idioma puede llegar como
+    // "ES" (asi lo pasa saveStory) o como "spanish". Sin normalizar, el check
+    // salia SIN IMPLEMENTAR y bloqueaba el guardado entero del MX A0.
+    const CODIGO_A_NOMBRE: Record<string, string> = {
+      DE: "german", ES: "spanish", PT: "portuguese", IT: "italian", FR: "french", EN: "english",
+    };
+    const idiomaBanco = CODIGO_A_NOMBRE[lang] ?? (ctx.language ?? "").toLowerCase();
+    const bank = getNameBank(idiomaBanco, ctx.variant);
+    if (!bank) {
+      noImpl(
+        "journey-cast-names-in-language",
+        "El reparto sale del banco de nombres del idioma",
+        `No hay banco de nombres para ${idiomaBanco || "?"}/${(ctx.variant ?? "").toLowerCase() || "?"}. ` +
+        `Sin banco no se puede medir si un nombre es de esa lengua: anade la region en src/lib/characterNames.ts.`,
+      );
+    } else {
+      // BLOQUEA solo lo que el usuario veto de oido. Exigir pertenencia al
+      // banco tumbaba 20 journeys del catalogo por nombres impecables de su
+      // idioma (Marta, Sophie, Elisa), porque el banco tiene 10-24 nombres y
+      // es una referencia, no una lista cerrada. Medido el 2026-09-24.
+      // Sobre el TEXTO entero, no sobre `cast`. La lista de vetados es
+      // explicita y minuscula, asi que buscarla en todo el texto no puede dar
+      // falsos positivos, y cierra el hueco de `castOf`: en el Friends ES C1
+      // latam "Itzel" sale 13 veces en tres historias publicadas y NO habla en
+      // ninguna, asi que el filtro de reparto no la veia y el journey pasaba.
+      // Al narrador le da igual quien hable: tiene que decir el nombre igual.
+      const todoElTexto = new Set<string>();
+      for (const s of stories)
+        for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) todoElTexto.add(m[0]);
+      const vetados = nombresVetados(todoElTexto, idiomaBanco);
+      push(
+        "journey-cast-names-in-language",
+        "Ningun nombre del reparto esta vetado de oido",
+        vetados.length === 0,
+        vetados.map((v) => `${v.nombre}: ${v.porque}`).join(" ") +
+        ` La voz no sabe decirlo y lo dira distinto cada vez. Elige otro del banco ` +
+        `(src/lib/characterNames.ts).`,
+      );
+      // AVISA de los que no estan en el banco: no es un error, es que nadie ha
+      // comprobado que suenen. El aviso es lo que lleva a oirlos antes de narrar.
+      const fuera = fueraDelIdioma(cast, bank, idiomaBanco)
+        .filter((n) => !vetados.some((v) => v.nombre === n));
+      if (fuera.length) {
+        out.push({
+          id: "journey-cast-names-unheard",
+          label: "Nombres del reparto que nadie ha oido en esta voz",
+          status: "pass",
+          detail: `${fuera.join(", ")}: fuera del banco de ${idiomaBanco}/${(ctx.variant ?? "").toLowerCase()}. ` +
+            `Antes de narrar, una linea de muestra con cada uno en la voz del journey: ` +
+            `un nombre que la voz no tenga aprendido sale distinto cada vez y se paga en las 21.`,
+        });
+      }
+    }
+  }
 
   // ── 2 y 3. Presentacion de personajes y variedad de forma ───
   const FORMAS = FORMAS_POR_IDIOMA[lang];
@@ -831,9 +922,69 @@ export function validateJourneyStories(
       }
       push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
+    } else if (lang === "ES") {
+      // Suelo A0 espanol (2026-09-22, montando el Friends ES Mexico A0). La
+      // NARRACION va en presente; lo citado es habla real y queda fuera, igual
+      // que en frances y en italiano. Lo que NO se mide aqui: "sujeto primero"
+      // es una regla alemana (inversion V2) que en espanol no dice nada, y el
+      // largo de frase ya lo mide `body-a0-sentence-length` en el validador de
+      // historia. Aqui solo el tiempo verbal.
+      //
+      // LA TILDE ES EL DETECTOR, y por eso no se normaliza nada. Las dos
+      // unicas falsas alarmas que salieron al calibrar contra el Traveler ES
+      // latam A0 se caen solas con ella: "esta seria un momento" (adjetivo,
+      // frente al condicional "seria") y "Mira hacia el alebrije" (preposicion,
+      // frente al imperfecto "hacia"). Todo -ia de imperfecto y de condicional
+      // la lleva; ninguno de sus homografos, si.
+      //
+      // Otras dos trampas del espanol:
+      //   - el imperfecto en -ia choca ademas con media lista de tiendas
+      //     (taqueria, lavanderia, peluqueria) y con dia, tia o Maria, asi que
+      //     va por LISTA de verbos frecuentes y no por terminacion;
+      //   - el preterito en -o acentuada es seguro, pero -e acentuada no
+      //     (cafe, bebe, pure), y el futuro en -ra choca con detras y atras.
+      // Calibrado contra las 21 del Traveler ES latam A0 y las 21 del Cultural
+      // ES latam A0, que son el A0 espanol ya publicado: las 42 en verde.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const PART = "\\p{Ll}{2,}(?:ado|ada|ados|adas|ido|ida|idos|idas)";
+      const PERFECTO = new RegExp(`${L}(?:he|has|ha|hemos|han|había|habían)\\s+(?:ya\\s+|no\\s+)?${PART}${R}`, "iu");
+      const PRET_IRREG = new RegExp(
+        `${L}(?:fue|fueron|tuvo|tuvieron|hizo|hicieron|dijo|dijeron|vino|vinieron|` +
+        `estuvo|estuvieron|pudo|pudieron|puso|pusieron|quiso|quisieron|supo|supieron|` +
+        `anduvo|anduvieron|trajo|trajeron|dieron|vieron|hubo|condujo)${R}`, "iu");
+      const PRET_REG = new RegExp(`${L}\\p{Ll}{2,}(?:ó|aron|ieron|yeron)${R}`, "u");
+      const IMP_COND = new RegExp(
+        `${L}(?:era|eran|éramos|iba|iban|íbamos|había|habían|tenía|tenían|` +
+        `quería|querían|podía|podían|hacía|hacían|decía|decían|venía|venían|salía|salían|` +
+        `ponía|ponían|veía|veían|sabía|sabían|vivía|vivían|sentía|sentían|dormía|dormían|` +
+        `subía|subían|comía|comían|bebía|bebían|abría|abrían|seguía|seguían|servía|servían|` +
+        `traía|traían|oía|oían|reía|reían|creía|creían|leía|leían|corría|corrían|` +
+        `estaba|estabas|estaban|estábamos|` +
+        `sería|serían|tendría|tendrían|querría|querrían|gustaría|gustarían|podría|podrían|` +
+        `haría|harían|iría|irían|diría|dirían)${R}`, "iu");
+      const IMP_ABA = new RegExp(`${L}\\p{Ll}{3,}(?:aba|abas|aban|ábamos)${R}`, "u");
+      const NO_FUTURO = /^(?:detrás|atrás)$/i;
+      const FUTURO = new RegExp(`${L}(\\p{Ll}{2,}(?:rá|rán|rás|ré|remos|réis))${R}`, "u");
+      const malas: string[] = [];
+      for (const s of stories) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
+          if (f.length < 4) continue;
+          const flags: string[] = [];
+          if (PERFECTO.test(f)) flags.push("perfecto compuesto");
+          if (PRET_IRREG.test(f) || PRET_REG.test(f)) flags.push("preterito");
+          if (IMP_COND.test(f) || IMP_ABA.test(f)) flags.push("imperfecto o condicional");
+          const fut = f.match(FUTURO);
+          if (fut && !NO_FUTURO.test(fut[1])) flags.push("futuro");
+          if (flags.length) malas.push(`${s.slug}: [${[...new Set(flags)].join(" · ")}] ${f.slice(0, 70)}`);
+        }
+      }
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
+        malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
-        `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
+        `El suelo A0 solo esta implementado para DE, FR, IT y ES; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
     } else {
       const partFinal = new RegExp(`\\s(${A0_DE_PARTICULAS.join("|")})\\s*[.!?]$`);
       const malas: string[] = [];
@@ -985,7 +1136,28 @@ export function validateJourneyStories(
   // lo lleva marcado `provisional-b2`. Autorizado por el chat de planificacion
   // el 2026-09-06 con el si literal del usuario ("Sí, aplícalo"); ningun otro
   // suelo se toca.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
+  // A0 remedido el 2026-09-23, con el si literal del usuario ("dale, bajalo a
+  // 2,14"). El 2,5 no salia del catalogo: de los SEIS A0 vivos lo cumple uno
+  // solo, el Traveler PT (2,54); los otros cinco dan 2,33 (Cultural ES latam),
+  // 2,27 (Friends FR), 2,27 (Friends DE), 2,16 (Traveler DE) y 2,14 (Friends
+  // IT). Una vara que suspende a cinco de seis journeys publicados no es la
+  // vara del catalogo, es su mejor caso.
+  //
+  // El suelo pasa a 2,14, que es el PEOR A0 publicado, con el mismo criterio
+  // que el resto de la tabla: la vara se pone en lo que el catalogo ya hace,
+  // nunca en lo que un texto concreto necesita para pasar. El journey que
+  // destapo esto (Friends ES mexico A0) da 2,15 DESPUES de su pasada de
+  // recirculacion; el suelo queda por debajo de el porque tambien queda por
+  // debajo del peor publicado, no al reves. Medido con
+  // `scripts/_esMxA0/mideGold.ts`, que corre esta misma formula sobre los A0
+  // de la base.
+  //
+  // Lo que esto NO autoriza: escribir un A0 sin escalera. El techo medido sin
+  // tocar prosa en aquel journey era 1,86, y hubo que trabajarlo hasta 2,15
+  // (nucleo compartido en prosa, poda de plazas que no vuelven y plazas de
+  // verbo, que cuentan por todas sus formas). Remedir y subir el suelo en
+  // cuanto haya un A0 publicado que lo supere de forma estable.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.14, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
@@ -1011,11 +1183,70 @@ export function validateJourneyStories(
   // con el si del usuario. Mismo caveat que el B1: no hay B2 publicado que
   // medir; se remide contra el primero que se publique.
   const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80, B2: 0.80 };
+  // FORMATO DIALOGO: otro tope, porque en dialogo esta regla y la de solape se
+  // contradicen (2026-09-23, autorizado por el usuario).
+  //
+  // Las dos reglas, juntas, piden cosas incompatibles: `vocab-taught-same-type`
+  // exige que las plazas del journey sean palabras DISTINTAS (21 x 20 = 420), y
+  // esta exige que la palabra de cada plaza aparezca en dos o mas CUERPOS. Con
+  // el tope del 30%, unas 294 de esas 420 tienen que ser palabras que se
+  // repiten entre historias, y las 21 historias del primer journey de dialogo
+  // contienen 220 palabras de contenido que salgan en dos o mas cuerpos. No
+  // alcanza, y no por descuido: un dialogo A0 es corto y cada escena trae su
+  // propio mobiliario, asi que el pozo de palabras que vuelven es mas pequeño
+  // que en prosa narrada, donde el narrador repite verbos y conectores.
+  //
+  // El precio de cumplirlo como estaba se vio en ese mismo journey: 95 de sus
+  // 420 plazas tenian por definicion "Used here in this sentence of the story",
+  // que es lo que el lector toca en la app. No eran un descuido del generador;
+  // eran la unica forma de que la plaza cayera en una palabra que se repite.
+  // Entre enseñar de verdad y pasar el tope, la regla estaba obligando a lo
+  // segundo.
+  //
+  // CALIBRADO CON UNA SOLA MUESTRA, y hay que decirlo: el unico journey de
+  // dialogo con el vocab limpio es el Conversations ES latam A0, que deja el
+  // 52%. El tope va en 0,55, justo por encima y sin holgura generosa, que es
+  // el mismo criterio con el que se pusieron el 0,70 del A1 y el 0,80 del A2.
+  // Los tres journeys de dialogo alemanes que existen NO sirven de referencia:
+  // su vocab no ha pasado por esta limpieza. Se remide con el segundo journey
+  // de dialogo que se escriba; si ese deja mucho menos, el tope baja.
+  const TOPE_COLA_DIALOGO = 0.55;
+  // La misma rama por el otro extremo: el SUELO de la media.
+  //
+  // La media cuenta en cuantos cuerpos aparece la palabra de cada plaza, asi
+  // que sufre lo mismo que la cola: con el vocab honesto, el journey de
+  // dialogo da 2,26 y el suelo A0 pide 2,5. Suelo de dialogo 2,2, justo por
+  // debajo de lo medido y sin holgura, que es como se pusieron todos los
+  // suelos del catalogo. Misma muestra unica, misma revision pendiente.
+  //
+  // LO QUE ESTE NUMERO NO SIGNIFICA, dicho aqui porque dentro de seis meses
+  // un 2,2 al lado de un 2,5 se lee como listón bajado: no significa que en
+  // dialogo se enseñe peor. La metrica se diseño sobre prosa narrada, donde
+  // una escena larga repite sus palabras sola y el narrador vuelve sobre los
+  // mismos verbos y conectores. En dialogo, la mitad del vocab son formulas
+  // de turno ("Ya voy", "Trato hecho", "De verdad", "Lo siento") que por
+  // naturaleza NO se repiten: si vuelven, suenan a plantilla, que es el
+  // defecto que el usuario caza siempre. Exigirles el numero de la prosa es
+  // pedirle a un formato el comportamiento de otro, y lo que se consigue es
+  // relleno: 95 plazas de este journey llegaron con la definicion vacia por
+  // eso. El listón de calidad de un journey de dialogo esta en otra parte
+  // (que la plaza valga la pena y su glosa enseñe), no en este numero.
+  const MEDIA_MINIMA_DIALOGO = 2.2;
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
   const TOPE_ANCLADAS = 0.30;
-  const suelo = MEDIA_MINIMA[level];
+  // Mismo criterio de formato que el tope de la cola, calculado una sola vez.
+  const journeyEnDialogo = stories.filter((s) => esDialogo(s.text)).length * 2 >= stories.length;
+  const sueloNivel = MEDIA_MINIMA[level];
+  // En un journey de dialogo manda el suelo de dialogo, TAL CUAL, no el menor
+  // de los dos (2026-09-24). Los dos numeros miden cosas distintas: el 2,14 del
+  // nivel salio de los seis A0 publicados, que son PROSA (commit 0af442fd), y
+  // el 2,2 salio del unico journey de dialogo con el vocab limpio. Con
+  // `Math.min` el 2,2 no llegaba a aplicarse nunca y quedaba como excepcion
+  // muerta: el siguiente que la leyera creeria que hay una regla de dialogo
+  // donde solo quedaba el numero de la prosa.
+  const suelo = journeyEnDialogo ? MEDIA_MINIMA_DIALOGO : sueloNivel;
   if (suelo === undefined) {
     noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
@@ -1107,7 +1338,14 @@ export function validateJourneyStories(
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
-      const topeCola = TOPE_COLA_POR_NIVEL[level];
+      // El formato se decide por el journey, no por la historia suelta: un
+      // journey es de dialogo cuando la mitad o mas de sus historias lo son.
+      // Misma deteccion que usa la banda de habla citada, no una segunda.
+      const enDialogo = journeyEnDialogo;
+      const topeNivel = TOPE_COLA_POR_NIVEL[level];
+      const topeCola = enDialogo && topeNivel !== undefined
+        ? Math.max(topeNivel, TOPE_COLA_DIALOGO)
+        : topeNivel;
       const okCola = topeCola === undefined || cola <= topeCola;
       pushSetEscalera("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
@@ -1115,7 +1353,7 @@ export function validateJourneyStories(
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
-        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
+        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%${enDialogo ? " de dialogo" : ""}`})` +
         `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
         { valor: media, mejor: "alta" });

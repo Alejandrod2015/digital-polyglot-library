@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "cafe de barrio, humor suave de presentaciones",
+  "espina": "Mariana y Andres convierten errores pequenos en formas de saludar mejor.",
+  "recursos": "Medellin, Colombia; dos fijos adultos, Mariana y Andres; A0 presente, frases cortas, habla citada breve; nucleo lexico de cafe, nombre, mesa, saludo, papel, amigo.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Andres quiere comprar cafe sin quedar raro.",
+      "impide": "El vaso trae otro nombre.",
+      "cuesta": "Mariana se averguenza y Andres queda expuesto.",
+      "cambia": "El nombre equivocado se vuelve broma compartida.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Mariana quiere recibir bien a Lina.",
+      "impide": "Andres confunde gusto con susto.",
+      "cuesta": "La presentacion parece incomoda.",
+      "cambia": "La confusion crea un saludo propio.",
+      "emocion": "ternura"
+    },
+    {
+      "slot": "3",
+      "quiere": "Andres quiere presentar a un nuevo amigo.",
+      "impide": "El amigo primero es solo un papel.",
+      "cuesta": "Julian no sabe si la silla es para el.",
+      "cambia": "El papel ayuda a Julian a entrar al grupo.",
+      "emocion": "bienvenida"
+    }
+  ]
+}

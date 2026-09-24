@@ -45,6 +45,24 @@ export const CHARACTER_NAMES: Record<string, NameBank> = {
     young: ["Lucía", "Martina", "Paula", "Claudia", "Alba", "Carla", "Hugo", "Pablo", "Álvaro", "Mateo", "Marcos", "Iván"],
     older: ["Amparo", "Vicente", "Encarna", "Paco"],
   },
+  // Mexico (2026-09-22, montando el Friends ES Mexico A0). El banco de
+  // "spanish/latam" no sirve para un journey de un solo pais: Antonella,
+  // Benjamin y Matias suenan del cono sur y no a Guadalajara. Los `young` son
+  // nombres corrientes entre adultos de veinte a cuarenta alli; no salen de un
+  // registro civil, salen de criterio, y por eso el check solo AVISA.
+  "spanish/mexico": {
+    young: [
+      // "Itzel" salio de aqui el 2026-09-23: es mexicano, comun y de la edad,
+      // pero la voz de TTS no lo sabe decir dos veces igual (maya, grupo "tz").
+      // Ver src/lib/nameSpeakability.ts. Un banco de nombres para historias
+      // NARRADAS no puede ofrecer nombres que la voz no pronuncie.
+      "Ximena", "Fernanda", "Valeria", "Montserrat", "Andrea", "Jimena",
+      "Paola", "Karla", "Abril", "Mariana", "Diana", "Renata",
+      "Diego", "Emiliano", "Santiago", "Bruno", "Mauricio", "Arturo", "Iván",
+      "César", "Omar", "Alan", "Rodrigo", "Héctor",
+    ],
+    older: ["Guadalupe", "Alfonso", "Socorro", "Everardo"],
+  },
   "spanish/latam": {
     young: ["Valentina", "Camila", "Sofía", "Mariana", "Antonella", "Matías", "Santiago", "Benjamín", "Nicolás", "Emiliano"],
     older: ["Rosario", "Hernán", "Graciela", "Ramón"],

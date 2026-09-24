@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "burocracia intima con humor seco",
+  "espina": "Lena deja de medir pertenencia por conseguir piso y empieza a verla en quienes esperan con ella.",
+  "recursos": "mercado caro, Schufa, aval, Kaution, sofa temporal, Warteliste, papeleo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "tener una carpeta de solicitud impecable",
+      "impide": "cada documento abre otra exigencia",
+      "cuesta": "Lena se siente reducida a papeles y solvencia",
+      "cambia": "entiende que el mercado empieza antes de cualquier visita",
+      "emocion": "ansiedad ordenada"
+    },
+    {
+      "slot": "2",
+      "quiere": "mantener dignidad mientras duerme en el sofa de Miriam",
+      "impide": "las respuestas automaticas y la necesidad de una Bürgschaft",
+      "cuesta": "depende de una amiga sin fecha de salida",
+      "cambia": "acepta la ayuda sin llamarla fracaso",
+      "emocion": "gratitud incomoda"
+    },
+    {
+      "slot": "3",
+      "quiere": "recibir una respuesta definitiva",
+      "impide": "solo obtiene un lugar en la Warteliste",
+      "cuesta": "renuncia a resolver la espera con mas documentos",
+      "cambia": "ve que su red de amigos tambien es una forma de casa",
+      "emocion": "alivio imperfecto"
+    }
+  ]
+}

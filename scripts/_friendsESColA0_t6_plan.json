@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "colombia",
+  "registro": "vueltas cortas, plata pequena y humor con cuentas",
+  "espina": "Mariana y Andres hacen mandados simples y cada peso necesita una senal clara.",
+  "recursos": "Medellin, Colombia; tienda, vuelto, recibo, monedas, cafe, pan, botica, buseta.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Andres quiere pagar el cafe y guardar vuelto para la buseta.",
+      "impide": "Las monedas quedan debajo del platito.",
+      "cuesta": "Mariana casi da el vuelto con el pandebono.",
+      "cambia": "El platito se vuelve caja de viaje.",
+      "emocion": "alivio comico"
+    },
+    {
+      "slot": "2",
+      "quiere": "Pilar quiere mandar una compra pequena a la botica.",
+      "impide": "El recibo trae dos nombres y un solo sobre.",
+      "cuesta": "Catalina separa cafe, pan y plata tres veces.",
+      "cambia": "La mesa amiga ordena el mandado por colores.",
+      "emocion": "complicidad"
+    },
+    {
+      "slot": "3",
+      "quiere": "Sofi quiere devolver un peso sin hacer drama.",
+      "impide": "El peso cae en la bolsa del pan amigo.",
+      "cuesta": "Julian canta para encontrarlo y todos miran.",
+      "cambia": "El peso vuelve como senal de proxima compra.",
+      "emocion": "bienvenida"
+    }
+  ]
+}

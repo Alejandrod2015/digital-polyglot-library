@@ -1,0 +1,345 @@
+[
+ {
+  "topic": "parcels-and-deliveries",
+  "slotIndex": 0,
+  "title": "El timbre sí suena",
+  "slug": "el-timbre-si-suena",
+  "synopsis": "Citlali lleva veinte minutos tocando un timbre que nadie contesta. Alguien en el edificio lo oye todos los días.",
+  "text": "Citlali reparte paquetes en moto y conoce la colonia de memoria. Hoy espera con el casco puesto y una caja en el hombro.\n\nToca el timbre seis veces.\n\nArriba, en la azotea, Itzel tiende el uniforme y no oye nada. Abajo, Bruno toma café.\n\nBruno oye un pitido corto, ahí dentro. Lo oye desde hace un año, cada dos o tres días, en el mismo rato. “Es la bocina de la calle,” dice cuando alguien pregunta.\n\nItzel baja por los refrescos y encuentra a Citlali en el zaguán, con el recibo en la mano. “Nadie abre nunca aquí,” dice Citlali. “Y el timbre sí suena. Yo lo siento en el botón.”\n\nLas dos suben. El pitido está arriba de su puerta, detrás de una caja. “¿Y esto?” pregunta Itzel.\n\n“Ah,” dice Bruno. “Entonces sí era eso. Y yo culpando a la calle todo este tiempo. Perdón, Citlali.”",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "repartir",
+    "surface": "reparte",
+    "definition": "To take things to the people who wait for them."
+   },
+   {
+    "type": "noun",
+    "word": "moto",
+    "definition": "Motorbike; the two wheel machine with an engine."
+   },
+   {
+    "type": "expression",
+    "word": "de memoria",
+    "definition": "By heart; without looking at anything to remember."
+   },
+   {
+    "type": "noun",
+    "word": "casco",
+    "definition": "Helmet; the hard hat you wear on a motorbike."
+   },
+   {
+    "type": "noun",
+    "word": "timbre",
+    "definition": "Doorbell; the button that rings inside a home."
+   },
+   {
+    "type": "verb",
+    "word": "tender",
+    "surface": "tiende",
+    "definition": "To hang wet clothes so the air dries them."
+   },
+   {
+    "type": "adjective",
+    "word": "corto",
+    "definition": "Short; lasting very little time."
+   },
+   {
+    "type": "noun",
+    "word": "bocina",
+    "definition": "Speaker; the thing a sound comes out of."
+   },
+   {
+    "type": "noun",
+    "word": "recibo",
+    "definition": "Receipt; the paper you sign when you get a parcel."
+   },
+   {
+    "type": "verb",
+    "word": "encontrar",
+    "surface": "encuentra",
+    "definition": "To find; to see the thing you are looking for."
+   },
+   {
+    "type": "verb",
+    "word": "sentir",
+    "surface": "siento",
+    "definition": "To feel something with your body."
+   },
+   {
+    "type": "noun",
+    "word": "paquetes",
+    "definition": "Parcels; boxes sent to a person by post."
+   },
+   {
+    "type": "expression",
+    "word": "cada dos o tres días",
+    "definition": "Every second or third day; quite often."
+   },
+   {
+    "type": "verb",
+    "word": "culpar",
+    "surface": "culpando",
+    "definition": "To say that somebody or something is the cause."
+   },
+   {
+    "type": "expression",
+    "word": "seis veces",
+    "definition": "Six times; one after another, six times over."
+   },
+   {
+    "type": "noun",
+    "word": "hombro",
+    "definition": "Shoulder; where your arm joins your body."
+   },
+   {
+    "type": "noun",
+    "word": "pitido",
+    "definition": "Beep; a short high sound from a machine."
+   },
+   {
+    "type": "noun",
+    "word": "botón",
+    "definition": "Button; the small part you press with a finger."
+   },
+   {
+    "type": "expression",
+    "word": "en el mismo rato",
+    "definition": "Around the same time of day, more or less."
+   },
+   {
+    "type": "noun",
+    "word": "zaguán",
+    "definition": "Hallway just inside the street door of a building."
+   }
+  ]
+ },
+ {
+  "topic": "parcels-and-deliveries",
+  "slotIndex": 1,
+  "title": "Tu propia firma",
+  "slug": "tu-propia-firma",
+  "synopsis": "Bruno espera una broca de tres pesos y recibe una caja que no cabe por la puerta. Reclama, con toda la razón del mundo.",
+  "text": "Una caja alta como una silla llega al zaguán. Bruno espera una broca chica y Citlali la deja en el suelo, con cuidado.\n\n“Esa no es mía,” dice Bruno. “Yo pedí una broca.”\n\n“Dice tu nombre,” dice Citlali. “Y tu departamento.”\n\n“Pues está mal,” dice Bruno. “Yo reclamo. Yo pedí una broca de tres pesos.”\n\nCitlali saca el recibo viejo de su cuaderno y lo pone contra la luz. En el papel hay una firma azul, con la B grande y la o cerrada. Es la firma de Bruno.\n\n“Tres meses,” dice Citlali. “Tú la encargaste, en junio.”\n\nBruno mira la caja, mira la firma y no dice nada.\n\nAdentro hay una escalera de aluminio, plegable y alta, la que necesita desde junio para pintar la azotea.\n\n“Gracias,” dice Bruno en voz muy baja. “No digas nada de esto.” Itzel se ríe desde el tercer peldaño.",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "chica",
+    "definition": "Small; not big at all. Common in Mexico."
+   },
+   {
+    "type": "adjective",
+    "word": "alta",
+    "definition": "Tall; with a lot of height."
+   },
+   {
+    "type": "expression",
+    "word": "con cuidado",
+    "definition": "Carefully; slowly so nothing breaks."
+   },
+   {
+    "type": "noun",
+    "word": "departamento",
+    "definition": "Flat; one home inside a building. Mexican word."
+   },
+   {
+    "type": "noun",
+    "word": "firma",
+    "definition": "Signature; your name written in your own way."
+   },
+   {
+    "type": "adjective",
+    "word": "cerrada",
+    "definition": "Closed; with no opening left."
+   },
+   {
+    "type": "noun",
+    "word": "meses",
+    "definition": "Months; the twelve parts of a year."
+   },
+   {
+    "type": "noun",
+    "word": "aluminio",
+    "definition": "Aluminium; a light grey metal."
+   },
+   {
+    "type": "adjective",
+    "word": "plegable",
+    "definition": "Folding; it closes to take up less room."
+   },
+   {
+    "type": "verb",
+    "word": "pintar",
+    "surface": "pintar",
+    "definition": "To put colour on a wall with a brush."
+   },
+   {
+    "type": "adjective",
+    "word": "tercer",
+    "definition": "Third; the one after the second."
+   },
+   {
+    "type": "expression",
+    "word": "contra la luz",
+    "definition": "Against the light; held up so the light goes through."
+   },
+   {
+    "type": "adverb",
+    "word": "pues",
+    "definition": "Well then; a word that starts an answer."
+   },
+   {
+    "type": "verb",
+    "word": "encargar",
+    "surface": "encargaste",
+    "definition": "To order something so it comes to you later."
+   },
+   {
+    "type": "noun",
+    "word": "peldaño",
+    "definition": "Rung; one of the steps of a ladder."
+   },
+   {
+    "type": "noun",
+    "word": "pesos",
+    "definition": "Pesos; the money used in Mexico."
+   },
+   {
+    "type": "adjective",
+    "word": "baja",
+    "definition": "Low; with very little sound."
+   },
+   {
+    "type": "noun",
+    "word": "recibo",
+    "definition": "Receipt; the paper you sign when you get a parcel."
+   },
+   {
+    "type": "adjective",
+    "word": "viejo",
+    "definition": "Old; from a long time ago."
+   },
+   {
+    "type": "noun",
+    "word": "cuidado",
+    "definition": "Care; the attention you put so nothing breaks."
+   }
+  ]
+ },
+ {
+  "topic": "parcels-and-deliveries",
+  "slotIndex": 2,
+  "title": "Pintan el 14",
+  "slug": "pintan-el-14",
+  "synopsis": "El número del edificio se borró hace años y Citlali da tres vueltas cada vez. Itzel y Bruno deciden arreglarlo en una tarde.",
+  "text": "En la fachada del edificio, el número está borrado. Citlali se para enfrente y lo busca otra vez, despacito. Solo queda una marca clara, con forma de uno y algo más. Itzel y Bruno bajan a verla.\n\n“Doy tres vueltas cada vez,” dice Citlali. “Y luego pregunto en la esquina.” “Hoy lo arreglamos,” dice Itzel. “Tengo pintura blanca de la azotea.”\n\nBruno baja con el bote y una plantilla de cartón. Itzel se sube a la escalera y los dos copian el estilo del edificio de al lado.\n\n“Catorce,” lee Bruno en voz alta. “¿Seguro que es el nuestro?” pregunta Itzel. “Catorce,” repite él. Ella pinta un catorce grande y derecho.\n\n“Quedó bonito,” dice Bruno. “Se ve desde lejos, hasta de noche.” La pintura seca rápido.\n\nEl lunes, Citlali entrega tres paquetes sin dar ni una vuelta. “Ninguno es para ustedes,” dice, y sube al edificio de al lado.",
+  "arcType": null,
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "fachada",
+    "definition": "Front wall; the side of a building you see from the street."
+   },
+   {
+    "type": "adjective",
+    "word": "borrado",
+    "definition": "Rubbed out; no longer possible to read."
+   },
+   {
+    "type": "noun",
+    "word": "forma",
+    "definition": "Shape; the outline of a thing."
+   },
+   {
+    "type": "noun",
+    "word": "vueltas",
+    "definition": "Turns; times going round the same block."
+   },
+   {
+    "type": "verb",
+    "word": "arreglar",
+    "surface": "arreglamos",
+    "definition": "To fix; to make something work well again."
+   },
+   {
+    "type": "noun",
+    "word": "plantilla",
+    "definition": "Stencil; card with a shape cut out, to paint through."
+   },
+   {
+    "type": "expression",
+    "word": "al lado",
+    "definition": "Next door; right beside this one."
+   },
+   {
+    "type": "verb",
+    "word": "copiar",
+    "surface": "copian",
+    "definition": "To make the same thing as the one you see."
+   },
+   {
+    "type": "noun",
+    "word": "estilo",
+    "definition": "Style; the way a thing is made or drawn."
+   },
+   {
+    "type": "expression",
+    "word": "en voz alta",
+    "definition": "Out loud; so other people can hear you."
+   },
+   {
+    "type": "noun",
+    "word": "catorce",
+    "definition": "Fourteen; the number after thirteen."
+   },
+   {
+    "type": "adjective",
+    "word": "bonito",
+    "definition": "Pretty; nice to look at."
+   },
+   {
+    "type": "adverb",
+    "word": "rápido",
+    "definition": "Fast; in very little time."
+   },
+   {
+    "type": "pronoun",
+    "word": "ninguno",
+    "definition": "Not one; none of them."
+   },
+   {
+    "type": "adjective",
+    "word": "clara",
+    "definition": "Light; not dark in colour."
+   },
+   {
+    "type": "noun",
+    "word": "bote",
+    "definition": "Tin; the metal container the paint comes in."
+   },
+   {
+    "type": "adverb",
+    "word": "lejos",
+    "definition": "Far; at a long distance from here."
+   },
+   {
+    "type": "verb",
+    "word": "pintar",
+    "surface": "pinta",
+    "definition": "To put colour on a wall with a brush."
+   },
+   {
+    "type": "noun",
+    "word": "cartón",
+    "definition": "Cardboard; the thick brown paper of boxes."
+   },
+   {
+    "type": "adverb",
+    "word": "despacito",
+    "definition": "Slowly and carefully; taking your time."
+   }
+  ]
+ }
+]

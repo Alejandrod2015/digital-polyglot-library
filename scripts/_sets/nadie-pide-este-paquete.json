@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el cuchillo,la etiqueta,la cinta,la entrada",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el cuchillo",
+     "answer": "a knife",
+     "options": [
+      "a knife",
+      "a label",
+      "packing tape",
+      "the entrance"
+     ]
+    },
+    {
+     "word": "la etiqueta",
+     "answer": "a label",
+     "options": [
+      "a knife",
+      "a label",
+      "packing tape",
+      "the entrance"
+     ]
+    },
+    {
+     "word": "la cinta",
+     "answer": "packing tape",
+     "options": [
+      "a knife",
+      "a label",
+      "packing tape",
+      "the entrance"
+     ]
+    },
+    {
+     "word": "la entrada",
+     "answer": "the entrance",
+     "options": [
+      "a knife",
+      "a label",
+      "packing tape",
+      "the entrance"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "firma",
+  "sentence": "Nadie _____ nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "firma",
+   "options": [
+    "firma",
+    "empuja",
+    "pesa",
+    "corta"
+   ],
+   "translation": "Nobody _____ for anything.",
+   "optionTranslations": [
+    "signs",
+    "pushes",
+    "weighs",
+    "cuts"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Nadie firma nada.",
+    "targetWord": "firma",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "empuja",
+  "sentence": "Mariana baja y lo _____ un poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "empuja",
+   "options": [
+    "empuja",
+    "firma",
+    "corta",
+    "pide"
+   ],
+   "translation": "Mariana comes down and _____ it a little.",
+   "optionTranslations": [
+    "nudges",
+    "signs",
+    "cuts",
+    "orders"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Mariana baja y lo empuja un poco.",
+    "targetWord": "empuja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "corta",
+  "sentence": "Nicolás _____ la cinta con el cuchillo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corta",
+   "options": [
+    "corta",
+    "firma",
+    "empuja",
+    "pide"
+   ],
+   "translation": "Nicolas _____ the tape with the knife.",
+   "optionTranslations": [
+    "cuts",
+    "signs",
+    "pushes",
+    "orders"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Nicolás corta la cinta con el cuchillo.",
+    "targetWord": "corta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paquete",
+  "sentence": "Un [[paquete]] llega al edificio el jueves.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "parcel",
+   "options": [
+    "parcel",
+    "neighbour",
+    "letter",
+    "lorry"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Un paquete llega al edificio el jueves.",
+    "targetWord": "paquete",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compro",
+  "sentence": "Yo [[compro]] otra marca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I buy",
+   "options": [
+    "I buy",
+    "I prefer",
+    "I tried",
+    "I ordered"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Yo compro otra marca.",
+    "targetWord": "compro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pido",
+  "sentence": "Yo no [[pido]] nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I order",
+   "options": [
+    "I order",
+    "I open",
+    "I expect",
+    "I owe"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Yo no pido nada.",
+    "targetWord": "pido",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marca",
+  "sentence": "Mariana y Nicolás leen la [[marca]] en silencio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brand",
+   "options": [
+    "brand",
+    "warning",
+    "weight",
+    "date"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás leen la marca en silencio.",
+    "targetWord": "marca",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pesadas",
+  "sentence": "Dentro hay doce bolsas iguales y bastante [[pesadas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "heavy",
+   "options": [
+    "heavy",
+    "torn",
+    "sealed",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Dentro hay doce bolsas iguales y bastante pesadas.",
+    "targetWord": "pesadas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dirección",
+  "sentence": "Mira la [[dirección]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "address",
+   "options": [
+    "address",
+    "price",
+    "postmark",
+    "receipt"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Mira la dirección.",
+    "targetWord": "dirección",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jueves",
+  "sentence": "Un paquete llega al edificio el [[jueves]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Thursday",
+   "options": [
+    "Thursday",
+    "Monday",
+    "Sunday",
+    "Tuesday"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Un paquete llega al edificio el jueves.",
+    "targetWord": "jueves",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un poco",
+  "sentence": "Mariana baja y lo empuja [[un poco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little",
+   "options": [
+    "a little",
+    "a lot",
+    "a bit later",
+    "a second time"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Mariana baja y lo empuja un poco.",
+    "targetWord": "un poco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "A ver",
+  "sentence": "[[A ver]] qué trae.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "let us see",
+   "options": [
+    "let us see",
+    "let us wait",
+    "let us ask",
+    "let us call"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "A ver qué trae.",
+    "targetWord": "A ver",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en silencio",
+  "sentence": "Mariana y Nicolás leen la marca [[en silencio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in silence",
+   "options": [
+    "in silence",
+    "in a hurry",
+    "in turn",
+    "in the dark"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás leen la marca en silencio.",
+    "targetWord": "en silencio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mejor que",
+  "sentence": "Ese gato come [[mejor que]] nosotros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "better than",
+   "options": [
+    "better than",
+    "more often than",
+    "as much as",
+    "instead of"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Ese gato come mejor que nosotros.",
+    "targetWord": "mejor que",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bolsas",
+  "sentence": "Dentro hay doce [[bolsas]] iguales y bastante pesadas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bags",
+   "options": [
+    "bags",
+    "tins",
+    "boxes",
+    "trays"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Dentro hay doce bolsas iguales y bastante pesadas.",
+    "targetWord": "bolsas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "treinta y ocho",
+  "sentence": "Nosotros somos el [[treinta y ocho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thirty-eight",
+   "options": [
+    "thirty-eight",
+    "thirty-nine",
+    "forty-eight",
+    "twenty-eight"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-pide-este-paquete",
+    "storySource": "user",
+    "sentence": "Nosotros somos el treinta y ocho.",
+    "targetWord": "treinta y ocho",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

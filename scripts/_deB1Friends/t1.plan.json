@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "coloquial muniques sobrio",
+  "espina": "Lena quiere pertenecer sin convertir cada codigo local en una norma escrita, y Bastian le muestra reglas que se entienden mejor usandolas.",
+  "recursos": "Biergarten, Brotzeit, Maß, Stammtisch, mesas compartidas",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "comer su propia Brotzeit sin sentirse fuera de lugar",
+      "impide": "cree que llevar comida al Biergarten es hacer trampa",
+      "cuesta": "queda expuesta como recien llegada delante de la Schankkellnerin",
+      "cambia": "entiende que la bebida se compra alli y la comida puede venir de casa",
+      "emocion": "alivio con verguenza leve"
+    },
+    {
+      "slot": "2",
+      "quiere": "elegir una buena mesa y parecer segura",
+      "impide": "elige el Stammtisch reservado para habituales",
+      "cuesta": "tiene que levantarse y disculparse sin drama",
+      "cambia": "aprende a leer la pertenencia local sin apropiarsela",
+      "emocion": "incomodidad contenida"
+    },
+    {
+      "slot": "3",
+      "quiere": "guardar una banco para sus amigos",
+      "impide": "la logica compartida del Biergarten no acepta posesion privada de la mesa",
+      "cuesta": "renuncia a controlar el espacio",
+      "cambia": "descubre que compartir mesa no exige intimidad inmediata",
+      "emocion": "calma ganada"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "MEXICO",
+  "registro": "gremial y terco: un oficio con reglas propias que nadie de fuera entiende",
+  "espina": "Itzel y Bruno resuelven asuntos minusculos con una seriedad desproporcionada; cada tema los deja empatados y peor que antes",
+  "recursos": "presente, frases cortas, el conflicto se discute en voz alta, y el giro sale de un objeto que ya estaba en la escena (el cartel del espejo, el espejo torcido, la maquina)",
+  "historias": [
+    { "slot": "0", "quiere": "Bruno quiere que le corten poquito", "impide": "para Arturo poquito son dos dedos y para Bruno son dos milimetros", "cuesta": "pierde el pelo de un mes y la discusion, porque la regla estaba escrita", "cambia": "Bruno aprende a pedir en dedos y sigue perdiendo", "emocion": "la indignacion de quien descubre que la regla existia y nadie se la dijo" },
+    { "slot": "1", "quiere": "Itzel quiere el fleco derecho antes del turno", "impide": "ya se lo corto ella sola en el bano y le quedo chueco", "cuesta": "acepta delante de Bruno que se lo corto ella", "cambia": "Arturo jura que esta derecho, y lo esta: el torcido es el espejo", "emocion": "el alivio incomodo de tener razon por un motivo que no es el tuyo" },
+    { "slot": "2", "quiere": "Bruno quiere la barba lista y la barberia esta cerrada", "impide": "solo queda Itzel, que rasura como se rasura en un hospital", "cuesta": "pierde media barba y la posibilidad de negarlo", "cambia": "Arturo abre al dia siguiente y termina el trabajo a cero", "emocion": "la dignidad de quien decide que el desastre era el plan" }
+  ]
+}

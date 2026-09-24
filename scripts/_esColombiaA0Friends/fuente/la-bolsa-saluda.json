@@ -1,0 +1,128 @@
+{
+ "slug": "la-bolsa-saluda",
+ "topic": "work-and-favors",
+ "title": "La bolsa saluda",
+ "text": "Carga el conductor una tula. Mariana espera cerca de la puerta. La tula queda en medio.\n\nAndrés guarda pan y mira el café. El músico toca la mesa. “Cinta roja y parche azul”, observa Andrés. El conductor mueve la cabeza. “Trae trabajo, no amigo”, contesta.\n\nEl maletín y la tula quedan juntos. “¿La tula saluda?” pregunta Mariana. “Suena suave”, cuenta Andrés.\n\nLa tula queda junto al andén. Dentro hay vasos y trapitos. Una ración de pan va encima. “Todo va al café”, explica. “Abro el portalito”, avisa Mariana.\n\nAndrés levanta la tula, pero baja rápido la muñeca. “Pesa como reunión grande”, cuenta. Ella toma el otro extremo. “Recta y lista”, responde ella.\n\nEl músico guarda la música. Hay campo en la mesa amiga. “Ahora sí trabaja y empuja fuerte”, dice Andrés. “Sin drama y primero”, agrega Mariana.",
+ "vocab": [
+  {
+   "word": "tula",
+   "surface": "tula",
+   "type": "noun",
+   "def": "A cloth bag for carrying things."
+  },
+  {
+   "word": "parche azul",
+   "surface": "parche azul",
+   "type": "expression",
+   "def": "A blue patch on something."
+  },
+  {
+   "word": "vasos",
+   "surface": "vasos",
+   "type": "noun",
+   "def": "Cups used for drinking."
+  },
+  {
+   "word": "trapito",
+   "surface": "trapitos",
+   "type": "noun",
+   "def": "Small cloth used to clean things."
+  },
+  {
+   "word": "ahora",
+   "surface": "ahora",
+   "type": "adverb",
+   "def": "At this moment now."
+  },
+  {
+   "word": "recto",
+   "surface": "recta",
+   "type": "adjective",
+   "def": "Straight, not bent or leaning."
+  },
+  {
+   "word": "primero",
+   "surface": "primero",
+   "type": "adverb",
+   "def": "Before all other people."
+  },
+  {
+   "word": "tomar",
+   "surface": "toma",
+   "type": "verb",
+   "def": "To take or hold something."
+  },
+  {
+   "word": "dentro",
+   "surface": "Dentro",
+   "type": "adverb",
+   "def": "Inside and not outside."
+  },
+  {
+   "word": "levantarse",
+   "surface": "levanta",
+   "type": "verb",
+   "def": "To raise up from below."
+  },
+  {
+   "word": "empujar",
+   "surface": "empuja",
+   "type": "verb",
+   "def": "To move something with force."
+  },
+  {
+   "word": "muñeca",
+   "surface": "muñeca",
+   "type": "noun",
+   "def": "The joint near the hand."
+  },
+  {
+   "word": "mover cabeza",
+   "surface": "mueve la cabeza",
+   "type": "expression",
+   "def": "To move the head."
+  },
+  {
+   "word": "en medio",
+   "surface": "en medio",
+   "type": "expression",
+   "def": "In the middle place."
+  },
+  {
+   "word": "la tula saluda",
+   "surface": "La tula saluda",
+   "type": "expression",
+   "def": "The bag seems to say hello."
+  },
+  {
+   "word": "sin drama",
+   "surface": "sin drama",
+   "type": "expression",
+   "def": "Without making a big problem."
+  },
+  {
+   "word": "extremo",
+   "surface": "extremo",
+   "type": "noun",
+   "def": "One end of something."
+  },
+  {
+   "word": "campo en la mesa",
+   "surface": "Hay campo en la mesa",
+   "type": "expression",
+   "def": "There is space on the table."
+  },
+  {
+   "word": "roja",
+   "surface": "roja",
+   "type": "adjective",
+   "def": "Red in color, not blue."
+  },
+  {
+   "word": "fuerte",
+   "surface": "fuerte",
+   "type": "adjective",
+   "def": "With a lot of power."
+  }
+ ]
+}

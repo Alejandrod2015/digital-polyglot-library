@@ -1,0 +1,464 @@
+[
+ {
+  "type": "fill_blank",
+  "word": "fila falsa",
+  "sentence": "Una _____ mira la barra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fila falsa",
+   "options": [
+    "fila falsa",
+    "mesa larga",
+    "puerta abierta",
+    "silla rota"
+   ],
+   "translation": "A _____ looks at the counter.",
+   "optionTranslations": [
+    "fake line",
+    "long table",
+    "open door",
+    "broken chair"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Una fila falsa mira la barra.",
+    "targetWord": "fila falsa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "barra,vitrinita,costalito,flores",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "barra",
+     "answer": "a long counter for drinks",
+     "options": [
+      "a long counter for drinks",
+      "a very small display case",
+      "a small cloth sack",
+      "small colorful plant parts"
+     ]
+    },
+    {
+     "word": "vitrinita",
+     "answer": "a very small display case",
+     "options": [
+      "a long counter for drinks",
+      "a very small display case",
+      "a small cloth sack",
+      "small colorful plant parts"
+     ]
+    },
+    {
+     "word": "costalito",
+     "answer": "a small cloth sack",
+     "options": [
+      "a long counter for drinks",
+      "a very small display case",
+      "a small cloth sack",
+      "small colorful plant parts"
+     ]
+    },
+    {
+     "word": "flores",
+     "answer": "small colorful plant parts",
+     "options": [
+      "a long counter for drinks",
+      "a very small display case",
+      "a small cloth sack",
+      "small colorful plant parts"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tintico",
+  "sentence": "Mariana deja un _____ en la mesita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tintico",
+   "options": [
+    "tintico",
+    "candado",
+    "ladrillo",
+    "martillo"
+   ],
+   "translation": "Mariana leaves a _____ on the little table.",
+   "optionTranslations": [
+    "small black coffee",
+    "padlock",
+    "brick",
+    "hammer"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Mariana deja un tintico en la mesita.",
+    "targetWord": "tintico",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mesa amiga",
+  "sentence": "La [[mesa amiga]] es aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a friendly table for everyone",
+   "options": [
+    "a friendly table for everyone",
+    "a table with broken legs",
+    "a table near the cold window",
+    "a table only for workers"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "La mesa amiga es aquí.",
+    "targetWord": "mesa amiga",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "redonda",
+  "sentence": "Esa mesa es [[redonda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "round like a circle",
+   "options": [
+    "round like a circle",
+    "long and very narrow",
+    "made of dark glass",
+    "very high and thin"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Esa mesa es redonda.",
+    "targetWord": "redonda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amasijo",
+  "sentence": "Sofi muestra un [[amasijo]] y queso campesino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a ball of bread dough",
+   "options": [
+    "a ball of bread dough",
+    "a paper napkin",
+    "a metal spoon",
+    "a glass bottle"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Sofi muestra un amasijo y queso campesino.",
+    "targetWord": "amasijo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "queso campesino",
+  "sentence": "Sofi muestra un amasijo y _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "queso campesino",
+   "options": [
+    "queso campesino",
+    "papel blanco",
+    "hilo negro",
+    "humo gris"
+   ],
+   "translation": "Sofi shows a ball of dough and _____.",
+   "optionTranslations": [
+    "fresh white cheese",
+    "white paper",
+    "black thread",
+    "gray smoke"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Sofi muestra un amasijo y queso campesino.",
+    "targetWord": "queso campesino",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muestra",
+  "sentence": "Sofi [[muestra]] un amasijo y queso campesino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shows something clearly",
+   "options": [
+    "shows something clearly",
+    "hides it away",
+    "eats it quickly",
+    "pays for it"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Sofi muestra un amasijo y queso campesino.",
+    "targetWord": "muestra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "duda",
+  "sentence": "Andrés [[duda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "does not feel sure",
+   "options": [
+    "does not feel sure",
+    "runs to the door",
+    "laughs at the joke",
+    "counts the small coins"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Andrés duda.",
+    "targetWord": "duda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ahora",
+  "sentence": "[[Ahora]] está separado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this moment",
+   "options": [
+    "at this moment",
+    "many years ago",
+    "once a week",
+    "late last night"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Ahora está separado.",
+    "targetWord": "Ahora",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reservado",
+  "sentence": "Este es [[reservado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kept for one group",
+   "options": [
+    "kept for one group",
+    "made of old wood",
+    "found in the street",
+    "washed every morning"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Este es reservado.",
+    "targetWord": "reservado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "separado",
+  "sentence": "Ahora está [[separado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "away from other things",
+   "options": [
+    "away from other things",
+    "full of warm milk",
+    "made of thin paper",
+    "covered in white sugar"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Ahora está separado.",
+    "targetWord": "separado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "canelazo",
+  "sentence": "Sofi trae un jarrón con flores y un _____ sin licor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "canelazo",
+   "options": [
+    "canelazo",
+    "florero",
+    "llavero",
+    "monedero"
+   ],
+   "translation": "Sofi brings a vase with flowers and a _____ with no liquor.",
+   "optionTranslations": [
+    "hot cinnamon drink",
+    "flower vase",
+    "key ring",
+    "coin purse"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Sofi trae un jarrón con flores y un canelazo sin licor.",
+    "targetWord": "canelazo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mando",
+  "sentence": "Yo [[mando]] el pedido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am in charge",
+   "options": [
+    "I am in charge",
+    "I am very late",
+    "I am quite tired",
+    "I am far away"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Yo mando el pedido.",
+    "targetWord": "mando",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "lugar justo",
+  "sentence": "El café queda en el _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lugar justo",
+   "options": [
+    "lugar justo",
+    "zapato viejo",
+    "sombrero negro",
+    "bolsillo roto"
+   ],
+   "translation": "The coffee stays in the _____.",
+   "optionTranslations": [
+    "right spot",
+    "old shoe",
+    "black hat",
+    "torn pocket"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "El café queda en el lugar justo.",
+    "targetWord": "lugar justo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pan compartido",
+  "sentence": "Mariana parte un [[pan compartido]] y nadie protesta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a loaf shared by everyone",
+   "options": [
+    "a loaf shared by everyone",
+    "a very old coin",
+    "a long wooden bench",
+    "a small paper bag"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Mariana parte un pan compartido y nadie protesta.",
+    "targetWord": "pan compartido",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "protesta",
+  "sentence": "Mariana parte un pan compartido y nadie _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "protesta",
+   "options": [
+    "protesta",
+    "cocina",
+    "camina",
+    "escribe"
+   ],
+   "translation": "Mariana breaks a shared loaf and nobody _____.",
+   "optionTranslations": [
+    "complains",
+    "cooks",
+    "walks",
+    "writes"
+   ],
+   "audioClip": {
+    "storySlug": "mesa-amiga",
+    "storySource": "journey",
+    "sentence": "Mariana parte un pan compartido y nadie protesta.",
+    "targetWord": "protesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

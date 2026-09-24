@@ -1,0 +1,468 @@
+[
+  {
+    "topic": "parties-and-photos",
+    "slotIndex": 0,
+    "title": "Foto con vaso",
+    "slug": "foto-con-vaso",
+    "arcType": null,
+    "synopsis": "Mariana wants a clear photo of the group, but Andrés's cup covers el músico's face. Old cafe objects become the signs everyone needs.",
+    "text": "La lámpara da luz sobre el pan. El vaso hace reflejo. Mariana mira el celular. Andrés trae el vaso de Andrea. El músico espera.\n\nCatalina pone la campana junto al pandebono. Lina guarda el papel con el nombre. La panadera mira. “El grupo posa y quiere salir en foto”, avisa Mariana. Todos miran la pantalla.\n\nMariana toma la foto. El vaso tapa al músico. “Yo soy café y salgo sin cara”, responde el músico bajo. Andrés abre los ojos.\n\nEl maletín negro sube. El bus espera cerca. “Falta la señal correcta”, explica. “Objeto viejo parece raro”, comenta.\n\nMariana coloca vaso, pan, papel y campana. “Mantel limpio”, dice Mariana. Andrés baja el vaso. El músico sonríe. “Ahora tengo cara”, cuenta.\n\nLa nueva foto queda clara. El vaso viejo ya no tapa. “Nada sale borroso; el músico queda sin tapar”, agrega la panadera. “Campana, pan y papel saludan”, dice Mariana.",
+    "vocab": [
+      {
+        "word": "imagen de celular",
+        "surface": "foto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A picture made with a camera."
+      },
+      {
+        "word": "rostro",
+        "surface": "cara",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The front part of the head."
+      },
+      {
+        "word": "reflejo",
+        "type": "noun",
+        "definition": "Light bouncing off a surface."
+      },
+      {
+        "word": "cerca",
+        "type": "adverb",
+        "definition": "At a short distance."
+      },
+      {
+        "word": "tomar foto",
+        "surface": "toma la foto",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To make a picture."
+      },
+      {
+        "word": "subir",
+        "surface": "sube",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To move upward slowly."
+      },
+      {
+        "word": "nombre escrito",
+        "surface": "nombre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A written name on paper."
+      },
+      {
+        "word": "cámara",
+        "surface": "celular",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A tool that takes pictures."
+      },
+      {
+        "word": "tapar",
+        "surface": "tapa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cover something from view.",
+        "anchor": true
+      },
+      {
+        "word": "maletín negro",
+        "surface": "maletín negro",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A small black work bag."
+      },
+      {
+        "word": "mantel",
+        "type": "noun",
+        "definition": "A cloth on top of a table."
+      },
+      {
+        "word": "salir en foto",
+        "surface": "salir en foto",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To be in a picture.",
+        "anchor": true
+      },
+      {
+        "word": "gente junta",
+        "surface": "grupo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People together in one place."
+      },
+      {
+        "word": "señal correcta",
+        "surface": "señal correcta",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "The right sign to show."
+      },
+      {
+        "word": "viejo",
+        "surface": "viejo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Old and not new.",
+        "anchor": true
+      },
+      {
+        "word": "sin tapar",
+        "surface": "sin tapar",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "With nothing covering it.",
+        "anchor": true
+      },
+      {
+        "word": "sin cara",
+        "surface": "sin cara",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "With the face not showing.",
+        "anchor": true
+      },
+      {
+        "word": "borroso",
+        "type": "adjective",
+        "definition": "Not clear to see."
+      },
+      {
+        "word": "quedar claro",
+        "surface": "queda clara",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To become easy to see."
+      },
+      {
+        "word": "pantalla final",
+        "surface": "pantalla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The phone screen at the end."
+      }
+    ]
+  },
+  {
+    "topic": "parties-and-photos",
+    "slotIndex": 1,
+    "title": "Andrés sale pequeño",
+    "slug": "andres-sale-pequeno",
+    "arcType": null,
+    "synopsis": "Andrés wants to look serious in the party picture, but la panadera puts friendly bread in front. The group laughs and the photo becomes more theirs.",
+    "text": "Andrés se sienta serio en la mesa amiga. Mariana tiene el celular. Hay pan amigo y arepa entera. La vendedora cuida el vaso.\n\nLa panadera pone el pan delante de Andrés. “Primer plano”, dice ella. “No sonrío”, avisa Andrés. “Yo no soy cocinero”, responde.\n\nEl papel queda con el nombre. Suena una cuerda suave. Afuera, el andén queda vacío. El carro espera en el parqueadero. La mesa queda limpia.\n\nMariana limpia el lente y toma la foto. “El pan sale enorme y me tapa la cara”, cuenta. “Yo salgo pequeño detrás del pan”, dice Andrés. La enfermera mira y pregunta bajo. “¿La fiesta es de pan?”\n\nAndrés mira serio. Después, la panadera acomoda el pan. La arepa queda junto al vaso. “Ahora eres dueño de fiesta”, bromea la vendedora.\n\nAndrés sonríe al fin. “La foto queda propia”, remata Mariana. “Pan, café y cara seria a medias”, dice Andrés. El grupo aplaude bajo.",
+    "vocab": [
+      {
+        "word": "responder",
+        "surface": "responde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer another person."
+      },
+      {
+        "word": "arepa",
+        "surface": "arepa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "A round Colombian corn cake."
+      },
+      {
+        "word": "parqueadero",
+        "type": "noun",
+        "definition": "A place where cars wait."
+      },
+      {
+        "word": "entera",
+        "surface": "entera",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Whole and not cut.",
+        "anchor": true
+      },
+      {
+        "word": "andén",
+        "type": "noun",
+        "definition": "The walking path beside a street."
+      },
+      {
+        "word": "delante de",
+        "surface": "delante de",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "In front of something.",
+        "anchor": true
+      },
+      {
+        "word": "pequeño",
+        "surface": "pequeño",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Small and not large."
+      },
+      {
+        "word": "cocinero",
+        "type": "noun",
+        "definition": "A person who cooks food."
+      },
+      {
+        "word": "ahora",
+        "surface": "ahora",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "At this moment now."
+      },
+      {
+        "word": "acomodar",
+        "surface": "acomoda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put in a good place.",
+        "anchor": true
+      },
+      {
+        "word": "seria",
+        "surface": "seria",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Not smiling or joking."
+      },
+      {
+        "word": "aplaudir",
+        "surface": "aplaude",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hit hands together happily.",
+        "anchor": true
+      },
+      {
+        "word": "lente",
+        "type": "noun",
+        "definition": "The glass part of a camera."
+      },
+      {
+        "word": "cuerda suave",
+        "surface": "cuerda suave",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A soft musical string.",
+        "anchor": true
+      },
+      {
+        "word": "limpia",
+        "surface": "limpia",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Clean and not dirty.",
+        "anchor": true
+      },
+      {
+        "word": "propio de grupo",
+        "surface": "propia",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Belonging to the group."
+      },
+      {
+        "word": "dueño de fiesta",
+        "surface": "dueño de fiesta",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "The person like a party owner.",
+        "anchor": true
+      },
+      {
+        "word": "gente retratada",
+        "surface": "foto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A picture of people."
+      },
+      {
+        "word": "pose",
+        "surface": "cara seria",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A way to stand or look."
+      },
+      {
+        "word": "mirar serio",
+        "surface": "mira serio",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To look without smiling.",
+        "anchor": true
+      }
+    ]
+  },
+  {
+    "topic": "parties-and-photos",
+    "slotIndex": 2,
+    "title": "Llueve y nadie se va",
+    "slug": "llueve-y-nadie-se-va",
+    "arcType": null,
+    "synopsis": "Everyone wants one final photo at the friendly table, but rain pushes the group under an umbrella. The imperfect picture shows that the group now works.",
+    "text": "El aguacero cae sobre Medellín. El final empieza mojado. Mariana guarda el celular bajo la sombrilla. Andrés trae café. Hay pan crujiente. El bus espera.\n\nLa mesa amiga está mojada por lluvia. Las flores aguantan. El papel sube con el nombre. El maletín espera. Suena una nota suave.\n\nLa bolsa mira el barro. “La foto sale fea, pero nuestra”, cuenta. Mariana sonríe poco. “Sale nuestra, perfecta no, pero completa”, responde.\n\nTodos entran bajo la sombrilla con caras juntas. El vaso queda junto al pan. “El recibo y la moneda quedan”, dice Andrés.\n\nSuena el timbre. La arepa sube. Andrés levanta el papel. Mariana toma la imagen final con una mano. “Una mano sirve”, avisa.\n\n“La imagen tiene lluvia y barro. No sale perfecta; sale imperfecta”, dice Mariana. “Pero funciona”, repite Mariana. “Juntos es cierre”, agrega Andrés. Todos se quedan y la mesa amiga queda completa.",
+    "vocab": [
+      {
+        "word": "celular bajo la sombrilla",
+        "surface": "celular bajo la sombrilla",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A phone kept under the umbrella.",
+        "anchor": true
+      },
+      {
+        "word": "fea",
+        "surface": "fea",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Not pretty or nice.",
+        "anchor": true
+      },
+      {
+        "word": "levantar papel",
+        "surface": "levanta el papel",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To raise the paper up.",
+        "anchor": true
+      },
+      {
+        "word": "perfecta",
+        "surface": "perfecta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "With nothing wrong in it.",
+        "anchor": true
+      },
+      {
+        "word": "funcionar",
+        "surface": "funciona",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To work well enough.",
+        "anchor": true
+      },
+      {
+        "word": "completa",
+        "surface": "completa",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "With all parts present."
+      },
+      {
+        "word": "bajo la sombrilla",
+        "surface": "bajo la sombrilla",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Under the umbrella together.",
+        "anchor": true
+      },
+      {
+        "word": "caras juntas",
+        "surface": "caras juntas",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Faces close in one picture.",
+        "anchor": true
+      },
+      {
+        "word": "imagen final",
+        "surface": "imagen final",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "The last picture taken.",
+        "anchor": true
+      },
+      {
+        "word": "tomar",
+        "surface": "toma",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take or hold something."
+      },
+      {
+        "word": "moneda",
+        "surface": "moneda",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A small round piece of money."
+      },
+      {
+        "word": "imperfecta",
+        "surface": "imperfecta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Not perfect at all.",
+        "anchor": true
+      },
+      {
+        "word": "juntos",
+        "surface": "Juntos",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Together and not separate."
+      },
+      {
+        "word": "una mano",
+        "surface": "una mano",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "One hand doing the job.",
+        "anchor": true
+      },
+      {
+        "word": "queda completa",
+        "surface": "queda completa",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Ends with all parts present.",
+        "anchor": true
+      },
+      {
+        "word": "guardar seco",
+        "surface": "guarda el celular",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To keep something dry.",
+        "anchor": true
+      },
+      {
+        "word": "nota suave",
+        "surface": "nota suave",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A soft musical note.",
+        "anchor": true
+      },
+      {
+        "word": "caer lluvia",
+        "surface": "cae",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Rain comes down outside."
+      },
+      {
+        "word": "tener lluvia",
+        "surface": "tiene lluvia",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To show rain inside it.",
+        "anchor": true
+      },
+      {
+        "word": "cierre",
+        "surface": "cierre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The ending part of something.",
+        "anchor": true
+      }
+    ]
+  }
+]

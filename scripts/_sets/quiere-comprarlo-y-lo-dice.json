@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "en alto",
+    "sentence": "Nunca había dicho [[en alto]] que quiere el piso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": [
+        "out loud",
+        "in time",
+        "for sure",
+        "at all"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Nunca había dicho en alto que quiere el piso.",
+        "targetWord": "en alto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b1e1ad3a2d5112912c7a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deseo",
+    "sentence": "Llega sin frase preparada y con el [[deseo]] suelto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wish",
+      "options": [
+        "a wish",
+        "a coat",
+        "a dog",
+        "a knot"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Llega sin frase preparada y con el deseo suelto.",
+        "targetWord": "deseo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6b0b63d1c3e834597279.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emoción",
+    "sentence": "La [[emoción]] sale entera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the emotion",
+      "options": [
+        "the emotion",
+        "the truth",
+        "the answer",
+        "the shopping"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "La emoción sale entera.",
+        "targetWord": "emoción",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/461271d5a0b5deaa3677.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amable",
+    "sentence": "Se apoya en el aparador, [[amable]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "tired",
+        "wet",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Se apoya en el aparador, amable.",
+        "targetWord": "amable",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fa0ae092ed6104aa6ea0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acostumbrarse",
+    "sentence": "Te faltaba [[acostumbrarte]] a querer algo en alto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get used to",
+      "options": [
+        "to get used to",
+        "to get lost",
+        "to get paid",
+        "to get dressed"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Te faltaba acostumbrarte a querer algo en alto.",
+        "targetWord": "acostumbrarte",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8929a11fff6a028e2268.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por dentro",
+    "sentence": "[[Por dentro]] ya no hay nada que guardar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "inside",
+      "options": [
+        "inside",
+        "upstairs",
+        "tomorrow",
+        "nearby"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Por dentro ya no hay nada que guardar.",
+        "targetWord": "Por dentro",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e38090202cd1b44e7051.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "preocupada",
+    "sentence": "Está _____ porque su hijo no llama desde hace días.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "preocupada",
+      "options": [
+        "preocupada",
+        "contenta",
+        "dormida",
+        "cansada"
+      ],
+      "translation": "She is _____ because her son hasn't called for days.",
+      "optionTranslations": [
+        "worried",
+        "happy",
+        "asleep",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Está preocupada porque su hijo no llama desde hace días.",
+        "targetWord": "preocupada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53d54b1f183ada04.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "asusta",
+    "sentence": "El trueno _____ al perro y se esconde debajo de la cama.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "asusta",
+      "options": [
+        "asusta",
+        "lava",
+        "alimenta",
+        "peina"
+      ],
+      "translation": "The thunder _____ the dog and it hides under the bed.",
+      "optionTranslations": [
+        "frightens",
+        "washes",
+        "feeds",
+        "combs"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "El trueno asusta al perro y se esconde debajo de la cama.",
+        "targetWord": "asusta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/703e1f82181d5f60.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "helada",
+    "sentence": "El agua de la fuente está _____ en pleno invierno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "helada",
+      "options": [
+        "helada",
+        "dulce",
+        "sucia",
+        "cara"
+      ],
+      "translation": "The water in the fountain is _____ in the middle of winter.",
+      "optionTranslations": [
+        "freezing",
+        "sweet",
+        "dirty",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "El agua de la fuente está helada en pleno invierno.",
+        "targetWord": "helada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec3cf566de0c1c61.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "aparador,sonrisa,amistad,paz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "aparador",
+          "answer": "a sideboard",
+          "options": [
+            "a sideboard",
+            "a smile",
+            "a friendship",
+            "peace"
+          ]
+        },
+        {
+          "word": "sonrisa",
+          "answer": "a smile",
+          "options": [
+            "a sideboard",
+            "a smile",
+            "a friendship",
+            "peace"
+          ]
+        },
+        {
+          "word": "amistad",
+          "answer": "a friendship",
+          "options": [
+            "a sideboard",
+            "a smile",
+            "a friendship",
+            "peace"
+          ]
+        },
+        {
+          "word": "paz",
+          "answer": "peace",
+          "options": [
+            "a sideboard",
+            "a smile",
+            "a friendship",
+            "peace"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entero",
+    "sentence": "La emoción sale [[entera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "late",
+        "cheap",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "La emoción sale entera.",
+        "targetWord": "entera",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/77cefe2ddf2f04a6b8d3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valor",
+    "sentence": "Llega sin [[valor]] de reserva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "courage",
+      "options": [
+        "courage",
+        "water",
+        "bread",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Llega sin valor de reserva.",
+        "targetWord": "valor",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fd8f87c53420fb962308.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentimiento",
+    "sentence": "Era el [[sentimiento]] de soltar algo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the feeling",
+      "options": [
+        "the feeling",
+        "the price",
+        "the smell",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Era el sentimiento de soltar algo.",
+        "targetWord": "sentimiento",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4f972aedf2cc4662b82b.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tristeza",
+    "sentence": "Contesta ella, sin [[tristeza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sadness",
+      "options": [
+        "sadness",
+        "sugar",
+        "hurry",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Contesta ella, sin tristeza.",
+        "targetWord": "tristeza",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2e1597d6e7b83e3fb54a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegrar",
+    "sentence": "A ella la [[alegra]] esa paz nueva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cheer up",
+      "options": [
+        "to cheer up",
+        "to wake up",
+        "to tidy up",
+        "to wear out"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "A ella la alegra esa paz nueva.",
+        "targetWord": "alegra",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f92916dbe4096ae8334a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escoba",
+    "sentence": "Friega preocupada, con la [[escoba]] apoyada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a broom",
+      "options": [
+        "a broom",
+        "a ladder",
+        "a bike",
+        "a coat"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Friega preocupada, con la escoba apoyada.",
+        "targetWord": "escoba",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/41a5f86b3e4cb1c55468.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "débil",
+    "sentence": "Después de la gripe se siente _____ y sin fuerza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "débil",
+      "options": [
+        "débil",
+        "feliz",
+        "joven",
+        "azul"
+      ],
+      "translation": "After the flu he feels _____ and without any strength.",
+      "optionTranslations": [
+        "weak",
+        "happy",
+        "young",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "quiere-comprarlo-y-lo-dice",
+        "storySource": "user",
+        "sentence": "Después de la gripe se siente débil y sin fuerza.",
+        "targetWord": "débil",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a59750675ca76d9.mp3"
+      }
+    },
+    "featured": false
+  }
+]

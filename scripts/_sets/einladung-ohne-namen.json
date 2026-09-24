@@ -1,0 +1,428 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "der Aushang,der Kugelschreiber,der Fahrstuhl,die Bank",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Aushang",
+          "answer": "a notice",
+          "options": [
+            "a notice",
+            "a biro",
+            "a lift",
+            "a bench"
+          ]
+        },
+        {
+          "word": "der Kugelschreiber",
+          "answer": "a biro",
+          "options": [
+            "a notice",
+            "a biro",
+            "a lift",
+            "a bench"
+          ]
+        },
+        {
+          "word": "der Fahrstuhl",
+          "answer": "a lift",
+          "options": [
+            "a notice",
+            "a biro",
+            "a lift",
+            "a bench"
+          ]
+        },
+        {
+          "word": "die Bank",
+          "answer": "a bench",
+          "options": [
+            "a notice",
+            "a biro",
+            "a lift",
+            "a bench"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Einstand",
+    "sentence": "Ein [[Einstand]] ist in diesem Haus keine Idee.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a housewarming",
+      "options": [
+        "a housewarming",
+        "a house rule",
+        "a rent rise",
+        "a spring clean"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Ein Einstand ist in diesem Haus keine Idee.",
+        "targetWord": "Einstand",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Pflicht",
+    "sentence": "Hier ist so ein Fest eine [[Pflicht]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a duty",
+      "options": [
+        "a duty",
+        "a habit",
+        "a favour",
+        "a chance"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Hier ist so ein Fest eine Pflicht.",
+        "targetWord": "Pflicht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unten",
+    "sentence": "Der Zettel hängt [[unten]] neben dem Fahrstuhl.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downstairs",
+      "options": [
+        "downstairs",
+        "outside",
+        "nearby",
+        "behind"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Der Zettel hängt unten neben dem Fahrstuhl.",
+        "targetWord": "unten",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Zweifel",
+    "sentence": "Der [[Zweifel]] wird jede Stunde größer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a doubt",
+      "options": [
+        "a doubt",
+        "a hunger",
+        "a headache",
+        "a rumour"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Der Zweifel wird jede Stunde größer.",
+        "targetWord": "Zweifel",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wieder",
+    "sentence": "Drei Zettel hängen da, und sie hofft [[wieder]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "instead",
+        "hardly",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Drei Zettel hängen da, und sie hofft wieder.",
+        "targetWord": "wieder",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mutig",
+    "sentence": "Sie hat Angst und macht es trotzdem, das ist sehr _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mutig",
+      "options": [
+        "mutig",
+        "müde",
+        "krank",
+        "nass"
+      ],
+      "translation": "She is afraid and does it anyway, that is very _____.",
+      "optionTranslations": [
+        "brave",
+        "tired",
+        "ill",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Sie hat Angst und macht es trotzdem, das ist sehr mutig.",
+        "targetWord": "mutig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cc58c156738fdfb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hofft",
+    "sentence": "Drei Zettel hängen unter dem Aushang, und sie _____ wieder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hofft",
+      "options": [
+        "hofft",
+        "zahlt",
+        "kocht",
+        "putzt"
+      ],
+      "translation": "Three notes hang under the notice and she _____ again.",
+      "optionTranslations": [
+        "hopes",
+        "pays",
+        "cooks",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Drei Zettel hängen unter dem Aushang, und sie hofft wieder.",
+        "targetWord": "hofft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/687526433e43a743.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Treppenlicht",
+    "sentence": "Im [[Treppenlicht]] liest sie den Text noch dreimal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stair light",
+      "options": [
+        "the stair light",
+        "the shop window",
+        "the front door",
+        "the back yard"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Im Treppenlicht liest sie den Text noch dreimal.",
+        "targetWord": "Treppenlicht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Spruch",
+    "sentence": "Sie liest ihren eigenen [[Spruch]] noch einmal durch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a line",
+      "options": [
+        "a line",
+        "a price",
+        "a name",
+        "a game"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Sie liest ihren eigenen Spruch noch einmal durch.",
+        "targetWord": "Spruch",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "herzlich",
+    "sentence": "Auf dem Zettel steht: jeder ist [[herzlich]] willkommen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warmly",
+      "options": [
+        "warmly",
+        "quickly",
+        "quietly",
+        "finally"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Auf dem Zettel steht: jeder ist herzlich willkommen.",
+        "targetWord": "herzlich",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hängen",
+    "sentence": "Drei kleine Zettel [[hängen]] unter dem Aushang.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hang",
+      "options": [
+        "to hang",
+        "to fall",
+        "to fly",
+        "to melt"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Drei kleine Zettel hängen unter dem Aushang.",
+        "targetWord": "hängen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sitzen",
+    "sentence": "Er [[sitzt]] auf demselben Klappstuhl wie im Oktober.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sit",
+      "options": [
+        "to sit",
+        "to kneel",
+        "to lean",
+        "to lie"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Er sitzt auf demselben Klappstuhl wie im Oktober.",
+        "targetWord": "sitzt",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dreimal",
+    "sentence": "Sie liest den Text noch [[dreimal]] durch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three times",
+      "options": [
+        "three times",
+        "half aloud",
+        "far too fast",
+        "the other way"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Sie liest den Text noch dreimal durch.",
+        "targetWord": "dreimal",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "willkommen",
+    "sentence": "Jeder ist herzlich [[willkommen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "welcome",
+      "options": [
+        "welcome",
+        "punctual",
+        "curious",
+        "polite"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Jeder ist herzlich willkommen.",
+        "targetWord": "willkommen",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "laut",
+    "sentence": "Sie ruft es [[laut]] durch die leere Küche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loudly",
+      "options": [
+        "loudly",
+        "slowly",
+        "calmly",
+        "shyly"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Sie ruft es laut durch die leere Küche.",
+        "targetWord": "laut",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rufen",
+    "sentence": "Sie [[ruft]] es laut durch die leere Küche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to call out",
+      "options": [
+        "to call out",
+        "to whisper",
+        "to write",
+        "to think"
+      ],
+      "audioClip": {
+        "storySlug": "einladung-ohne-namen",
+        "storySource": "user",
+        "sentence": "Sie ruft es laut durch die leere Küche.",
+        "targetWord": "ruft",
+        "language": "german"
+      }
+    },
+    "featured": false
+  }
+]

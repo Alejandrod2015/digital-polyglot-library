@@ -1,0 +1,436 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el techo,el charco,la pata,el lavadero",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el techo",
+     "answer": "the ceiling",
+     "options": [
+      "the ceiling",
+      "a puddle",
+      "a paw",
+      "a laundry sink"
+     ]
+    },
+    {
+     "word": "el charco",
+     "answer": "a puddle",
+     "options": [
+      "the ceiling",
+      "a puddle",
+      "a paw",
+      "a laundry sink"
+     ]
+    },
+    {
+     "word": "la pata",
+     "answer": "a paw",
+     "options": [
+      "the ceiling",
+      "a puddle",
+      "a paw",
+      "a laundry sink"
+     ]
+    },
+    {
+     "word": "el lavadero",
+     "answer": "a laundry sink",
+     "options": [
+      "the ceiling",
+      "a puddle",
+      "a paw",
+      "a laundry sink"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavo",
+  "sentence": "¿Mi cocina? Hoy no [[lavo]] nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I am washing",
+   "options": [
+    "I am washing",
+    "I am cooking",
+    "I am moving",
+    "I am spilling"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "¿Mi cocina? Hoy no lavo nada.",
+    "targetWord": "lavo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "cae",
+  "sentence": "El agua _____, gota a gota, sobre su sofá.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cae",
+   "options": [
+    "cae",
+    "lava",
+    "pasa",
+    "mete"
+   ],
+   "translation": "The water _____, drop by drop, onto his sofa.",
+   "optionTranslations": [
+    "falls",
+    "washes",
+    "comes in",
+    "puts in"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "El agua cae, gota a gota, sobre su sofá.",
+    "targetWord": "cae",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "sube",
+  "sentence": "Nicolás _____ y toca su puerta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sube",
+   "options": [
+    "sube",
+    "lava",
+    "mete",
+    "cae"
+   ],
+   "translation": "Nicolas _____ and knocks on her door.",
+   "optionTranslations": [
+    "goes up",
+    "washes",
+    "puts in",
+    "falls"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Nicolás sube y toca su puerta.",
+    "targetWord": "sube",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mancha",
+  "sentence": "En el techo de Nicolás hay una [[mancha]] nueva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stain",
+   "options": [
+    "stain",
+    "lamp",
+    "window",
+    "crack"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "En el techo de Nicolás hay una mancha nueva.",
+    "targetWord": "mancha",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nueva",
+  "sentence": "En el techo de Nicolás hay una mancha [[nueva]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new",
+   "options": [
+    "new",
+    "round",
+    "dark",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "En el techo de Nicolás hay una mancha nueva.",
+    "targetWord": "nueva",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mojado",
+  "sentence": "Mi sofá está [[mojado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": [
+    "wet",
+    "broken",
+    "old",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Mi sofá está mojado.",
+    "targetWord": "mojado",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seco",
+  "sentence": "Está [[seco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry",
+   "options": [
+    "dry",
+    "clean",
+    "warm",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Está seco.",
+    "targetWord": "seco",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piso",
+  "sentence": "Mariana y Nicolás miran el [[piso]] de la cocina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "floor",
+   "options": [
+    "floor",
+    "window",
+    "door",
+    "wall"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Mariana y Nicolás miran el piso de la cocina.",
+    "targetWord": "piso",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "litro",
+  "sentence": "¿Medio [[litro]] de agua para un gato?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "litre",
+   "options": [
+    "litre",
+    "metre",
+    "hour",
+    "step"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "¿Medio litro de agua para un gato?",
+    "targetWord": "litro",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Arriba",
+  "sentence": "[[Arriba]] vive Mariana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "upstairs",
+   "options": [
+    "upstairs",
+    "next door",
+    "across the street",
+    "at the back"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Arriba vive Mariana.",
+    "targetWord": "Arriba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Justo",
+  "sentence": "[[Justo]] arriba está tu cocina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right",
+   "options": [
+    "right",
+    "almost",
+    "never",
+    "sometimes"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Justo arriba está tu cocina.",
+    "targetWord": "Justo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasar",
+  "sentence": "Puedes [[pasar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come in",
+   "options": [
+    "come in",
+    "sit down",
+    "wait here",
+    "come back"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Puedes pasar.",
+    "targetWord": "pasar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mete",
+  "sentence": "Y [[mete]] la pata adentro todos los días.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she puts in",
+   "options": [
+    "she puts in",
+    "she pulls out",
+    "she washes",
+    "she hides"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Y mete la pata adentro todos los días.",
+    "targetWord": "mete",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Pongo",
+  "sentence": "[[Pongo]] el plato en el lavadero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I will put",
+   "options": [
+    "I will put",
+    "I will wash",
+    "I will fill",
+    "I will throw away"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Pongo el plato en el lavadero.",
+    "targetWord": "Pongo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gota a gota",
+  "sentence": "El agua cae, [[gota a gota]], sobre su sofá.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drop by drop",
+   "options": [
+    "drop by drop",
+    "all at once",
+    "now and then",
+    "little by little"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "El agua cae, gota a gota, sobre su sofá.",
+    "targetWord": "gota a gota",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por si acaso",
+  "sentence": "[[Por si acaso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "just in case",
+   "options": [
+    "just in case",
+    "for once",
+    "as usual",
+    "no wonder"
+   ],
+   "audioClip": {
+    "storySlug": "mi-sofa-esta-mojado",
+    "storySource": "user",
+    "sentence": "Por si acaso.",
+    "targetWord": "por si acaso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

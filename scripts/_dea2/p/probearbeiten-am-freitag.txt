@@ -1,0 +1,17 @@
+MATCH|der Kittel=a work coat|der Besen=a broom|der Eimer=a bucket|das Band=a ribbon
+M|fegen|Vier Stunden lang [[fegt]] sie den ganzen Laden.|to sweep|to paint|to count|to lock
+M|schleppen|Sie [[schleppt]] schwere Eimer mit Wasser.|to lug|to fill|to empty|to order
+M|der Strauß|Eine Kundin will einen [[Strauß]] für eine Beerdigung.|a bouquet|a candle|a basket|a card
+M|die Beerdigung|Für eine [[Beerdigung]] nimmt man weiße Blumen.|a funeral|a wedding|a concert|a meeting
+M|schneiden|Sie [[schneidet]] die Stiele in zwei Minuten.|to cut|to wash|to weigh|to wrap
+F|schräg|Der Schnitt geht nicht gerade durch den Stiel, sondern _____.|The cut does not go straight through the stem, but _____.|at an angle|kurz=short|nass=wet|dünn=thin
+F|dunkel|Um sieben macht noch niemand das Licht an, der Laden ist _____.|At seven nobody turns the light on yet, the shop is _____.|dark|voll=full|warm=warm|offen=open
+M|die Wut|Sie schluckt die [[Wut]] und arbeitet weiter.|anger|hunger|worry|doubt
+M|greifen|Sie [[greift]] wieder zum Eimer mit Wasser.|to grab|to point|to knock|to step
+M|der Daumen|Er hebt am Telefon nur den [[Daumen]].|the thumb|the elbow|the shoulder|the knee
+M|blau|Er gibt ihr einen [[blauen]] Kittel für die Arbeit.|blue|clean|warm|wide
+M|der Vormittag|Am [[Vormittag]] kommen die meisten Kunden.|the morning hours|the lunch break|the late night|the long weekend
+M|fertig|Nach zwei Minuten ist der Strauß [[fertig]].|finished|crooked|expensive|heavy
+M|vorne|[[Vorne]] am Eingang ist der Boden noch nass.|at the front|on the roof|in the cellar|past the corner
+M|später|[[Später]] sagt er es ihr an der Kasse.|later|sooner|meanwhile|already
+F|Kasse|Beim Bezahlen legt er die Karte auf die _____.|When paying he puts the card on the _____.|till|Tür=door|Blume=flower|Tasche=bag

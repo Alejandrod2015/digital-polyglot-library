@@ -1,0 +1,443 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "el despertador,el biberón,el maullido,la mesa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "el despertador",
+     "answer": "an alarm clock",
+     "options": [
+      "an alarm clock",
+      "a baby bottle",
+      "a meow",
+      "a table"
+     ]
+    },
+    {
+     "word": "el biberón",
+     "answer": "a baby bottle",
+     "options": [
+      "an alarm clock",
+      "a baby bottle",
+      "a meow",
+      "a table"
+     ]
+    },
+    {
+     "word": "el maullido",
+     "answer": "a meow",
+     "options": [
+      "an alarm clock",
+      "a baby bottle",
+      "a meow",
+      "a table"
+     ]
+    },
+    {
+     "word": "la mesa",
+     "answer": "a table",
+     "options": [
+      "an alarm clock",
+      "a baby bottle",
+      "a meow",
+      "a table"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "preparas",
+  "sentence": "¿Tú _____ la leche?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "preparas",
+   "options": [
+    "preparas",
+    "avisas",
+    "apagas",
+    "empiezas"
+   ],
+   "translation": "Do you _____ the milk?",
+   "optionTranslations": [
+    "make up",
+    "warn",
+    "turn off",
+    "begin"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Tú preparas la leche?",
+    "targetWord": "preparas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "Apago",
+  "sentence": "¿_____ el despertador?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Apago",
+   "options": [
+    "Apago",
+    "Aviso",
+    "Preparo",
+    "Empiezo"
+   ],
+   "translation": "Shall I _____ the alarm clock?",
+   "optionTranslations": [
+    "turn off",
+    "warn",
+    "make up",
+    "begin"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Apago el despertador?",
+    "targetWord": "Apago",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "levantas",
+  "sentence": "¿Entonces por qué te _____?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "levantas",
+   "options": [
+    "levantas",
+    "apagas",
+    "preparas",
+    "avisas"
+   ],
+   "translation": "Then why do you _____?",
+   "optionTranslations": [
+    "get up",
+    "turn off",
+    "make up",
+    "warn"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Entonces por qué te levantas?",
+    "targetWord": "levantas",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuerte",
+  "sentence": "Suena [[fuerte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud",
+   "options": [
+    "loud",
+    "early",
+    "twice",
+    "briefly"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Suena fuerte.",
+    "targetWord": "fuerte",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dormida",
+  "sentence": "Hoy baja medio [[dormida]] y da un bostezo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asleep",
+   "options": [
+    "asleep",
+    "dressed",
+    "annoyed",
+    "barefoot"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Hoy baja medio dormida y da un bostezo.",
+    "targetWord": "dormida",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "empieza",
+  "sentence": "¿Tu trabajo [[empieza]] tan temprano?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "starts",
+   "options": [
+    "starts",
+    "pays",
+    "ends",
+    "matters"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Tu trabajo empieza tan temprano?",
+    "targetWord": "empieza",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avisa",
+  "sentence": "¿Y nadie me [[avisa]] nada?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tells in advance",
+   "options": [
+    "tells in advance",
+    "owes",
+    "asks",
+    "explains"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Y nadie me avisa nada?",
+    "targetWord": "avisa",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tranquila",
+  "sentence": "La cocina está [[tranquila]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "tidy",
+    "dark",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "La cocina está tranquila.",
+    "targetWord": "tranquila",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trabajo",
+  "sentence": "¿Tu [[trabajo]] empieza tan temprano?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "job",
+   "options": [
+    "job",
+    "bus",
+    "class",
+    "shift"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Tu trabajo empieza tan temprano?",
+    "targetWord": "trabajo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leche",
+  "sentence": "¿Biberones con [[leche]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "milk",
+   "options": [
+    "milk",
+    "water",
+    "juice",
+    "soup"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Biberones con leche?",
+    "targetWord": "leche",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bostezo",
+  "sentence": "Hoy baja medio dormida y da un [[bostezo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yawn",
+   "options": [
+    "yawn",
+    "shrug",
+    "sigh",
+    "wave"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Hoy baja medio dormida y da un bostezo.",
+    "targetWord": "bostezo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a las seis",
+  "sentence": "Comen [[a las seis]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at six o'clock",
+   "options": [
+    "at six o'clock",
+    "in the evening",
+    "once a day",
+    "after me"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Comen a las seis.",
+    "targetWord": "a las seis",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "como una piedra",
+  "sentence": "Tú duermes [[como una piedra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like a log",
+   "options": [
+    "like a log",
+    "with the light on",
+    "in the armchair",
+    "for ten hours"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Tú duermes como una piedra.",
+    "targetWord": "como una piedra",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ya sabes",
+  "sentence": "Ahora [[ya sabes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "now you know",
+   "options": [
+    "now you know",
+    "now you decide",
+    "now you owe me",
+    "now you see them"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Ahora ya sabes.",
+    "targetWord": "ya sabes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a tiempo",
+  "sentence": "Mañana yo doy la leche [[a tiempo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on time",
+   "options": [
+    "on time",
+    "in silence",
+    "by hand",
+    "as well"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "Mañana yo doy la leche a tiempo.",
+    "targetWord": "a tiempo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "temprano",
+  "sentence": "¿Tu trabajo empieza tan [[temprano]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "often",
+    "suddenly",
+    "far away"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-me-avisa-nada",
+    "storySource": "user",
+    "sentence": "¿Tu trabajo empieza tan temprano?",
+    "targetWord": "temprano",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

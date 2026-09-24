@@ -1,0 +1,436 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "der Umzugswagen,der Kasten,das Geländer,der Saft",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Umzugswagen",
+          "answer": "a removal van",
+          "options": [
+            "a removal van",
+            "a crate of bottles",
+            "a handrail",
+            "juice"
+          ]
+        },
+        {
+          "word": "der Kasten",
+          "answer": "a crate of bottles",
+          "options": [
+            "a removal van",
+            "a crate of bottles",
+            "a handrail",
+            "juice"
+          ]
+        },
+        {
+          "word": "das Geländer",
+          "answer": "a handrail",
+          "options": [
+            "a removal van",
+            "a crate of bottles",
+            "a handrail",
+            "juice"
+          ]
+        },
+        {
+          "word": "der Saft",
+          "answer": "juice",
+          "options": [
+            "a removal van",
+            "a crate of bottles",
+            "a handrail",
+            "juice"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Treppenabsatz",
+    "sentence": "Auf dem [[Treppenabsatz]] steht ein Kasten im Weg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a landing",
+      "options": [
+        "a landing",
+        "a cellar",
+        "a balcony",
+        "a garage"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Auf dem Treppenabsatz steht ein Kasten im Weg.",
+        "targetWord": "Treppenabsatz",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Farbe",
+    "sentence": "Er hat frische [[Farbe]] an den Händen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paint",
+      "options": [
+        "paint",
+        "glue",
+        "soap",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Er hat frische Farbe an den Händen.",
+        "targetWord": "Farbe",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "retten",
+    "sentence": "Sie [[rettet]] fremde Leute im Treppenhaus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rescue",
+      "options": [
+        "to rescue",
+        "to avoid",
+        "to follow",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Sie rettet fremde Leute im Treppenhaus.",
+        "targetWord": "rettet",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suchen",
+    "sentence": "Er [[sucht]] seinen Schlüssel in allen Taschen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to lock up",
+        "to hand over",
+        "to throw away"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Er sucht seinen Schlüssel in allen Taschen.",
+        "targetWord": "sucht",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lehnen",
+    "sentence": "Er [[lehnt]] sich kurz an das Geländer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lean",
+      "options": [
+        "to lean",
+        "to jump",
+        "to kneel",
+        "to crawl"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Er lehnt sich kurz an das Geländer.",
+        "targetWord": "lehnt",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "leer",
+    "sentence": "Ihre Küche hat kaum Möbel und ist immer noch halb _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "leer",
+      "options": [
+        "leer",
+        "warm",
+        "dunkel",
+        "offen"
+      ],
+      "translation": "Her kitchen has hardly any furniture and is still half _____.",
+      "optionTranslations": [
+        "empty",
+        "warm",
+        "dark",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Ihre Küche hat kaum Möbel und ist immer noch halb leer.",
+        "targetWord": "leer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea19da8e4cb5e4f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frischer",
+    "sentence": "Der Nachbar hat gerade gestrichen, es riecht nach _____ Wandfarbe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frischer",
+      "options": [
+        "frischer",
+        "teurer",
+        "dunkler",
+        "alter"
+      ],
+      "translation": "The neighbour has just painted, it smells of _____ wall paint.",
+      "optionTranslations": [
+        "fresh",
+        "expensive",
+        "dark",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Der Nachbar hat gerade gestrichen, es riecht nach frischer Wandfarbe.",
+        "targetWord": "frischer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c46f56e6555a1e3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deuten",
+    "sentence": "Sie [[deutet]] nach oben auf ihre eigene Tür.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to point",
+      "options": [
+        "to point",
+        "to knock",
+        "to wave",
+        "to reach"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Sie deutet nach oben auf ihre eigene Tür.",
+        "targetWord": "deutet",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "egal",
+    "sentence": "Im Februar war ihr so ein Kasten noch [[egal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not important",
+      "options": [
+        "not important",
+        "quite new",
+        "very heavy",
+        "rather cheap"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Im Februar war ihr so ein Kasten noch egal.",
+        "targetWord": "egal",
+        "language": "german"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "außerdem",
+    "sentence": "Er hält [[außerdem]] Kartons unter dem Arm.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "besides",
+      "options": [
+        "besides",
+        "instead",
+        "perhaps",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Er hält außerdem Kartons unter dem Arm.",
+        "targetWord": "außerdem",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "neu",
+    "sentence": "Der [[neue]] Nachbar sucht seinen Schlüssel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "tall",
+        "quiet",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Der neue Nachbar sucht seinen Schlüssel.",
+        "targetWord": "neue",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hoch",
+    "sentence": "Sie nimmt den Kasten mit [[hoch]] in den zweiten Stock.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "up",
+      "options": [
+        "up",
+        "out",
+        "across",
+        "around"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Sie nimmt den Kasten mit hoch in den zweiten Stock.",
+        "targetWord": "hoch",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "völlig",
+    "sentence": "Das war ihr damals [[völlig]] gleich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "completely",
+      "options": [
+        "completely",
+        "nearly",
+        "rarely",
+        "briefly"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Das war ihr damals völlig gleich.",
+        "targetWord": "völlig",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oben",
+    "sentence": "[[Oben]] riecht es nach frischer Farbe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "upstairs",
+      "options": [
+        "upstairs",
+        "outside",
+        "nearby",
+        "behind"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Oben riecht es nach frischer Farbe.",
+        "targetWord": "Oben",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fröhlich",
+    "sentence": "Sie antwortet [[fröhlich]] und lacht dabei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheerfully",
+      "options": [
+        "cheerfully",
+        "angrily",
+        "nervously",
+        "coldly"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Sie antwortet fröhlich und lacht dabei.",
+        "targetWord": "fröhlich",
+        "language": "german"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Wandfarbe",
+    "sentence": "Der Nachbar hat gestrichen, im Haus riecht es nach _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Wandfarbe",
+      "options": [
+        "Wandfarbe",
+        "Seife",
+        "Kaffee",
+        "Regen"
+      ],
+      "translation": "The neighbour has painted, the house smells of _____.",
+      "optionTranslations": [
+        "wall paint",
+        "soap",
+        "coffee",
+        "rain"
+      ],
+      "audioClip": {
+        "storySlug": "ein-kasten-im-hausflur",
+        "storySource": "user",
+        "sentence": "Der Nachbar hat gestrichen, im Haus riecht es nach Wandfarbe.",
+        "targetWord": "Wandfarbe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff545d5661bacc20.mp3"
+      }
+    },
+    "featured": false
+  }
+]

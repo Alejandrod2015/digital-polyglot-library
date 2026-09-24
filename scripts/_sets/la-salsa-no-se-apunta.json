@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "chiles",
+    "sentence": "La enfermera apunta tres [[chiles]] en el cuaderno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chillies",
+      "options": [
+        "chillies",
+        "onions",
+        "limes",
+        "spoons"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "La enfermera apunta tres chiles en el cuaderno.",
+        "targetWord": "chiles",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69687e74d6e1f54e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limón",
+    "sentence": "La salsa lleva media cebolla y un [[limón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lime",
+      "options": [
+        "a lime",
+        "a carrot",
+        "a plate",
+        "a knife"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "La salsa lleva media cebolla y un limón.",
+        "targetWord": "limón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d72987933699e222.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refrigerador",
+    "sentence": "El primo esconde el cuaderno arriba del [[refrigerador]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fridge",
+      "options": [
+        "the fridge",
+        "the oven",
+        "the sink",
+        "the table"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "El primo esconde el cuaderno arriba del refrigerador.",
+        "targetWord": "refrigerador",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bab150be2b7a1d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faltar",
+    "sentence": "A la salsa le [[falta]] domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be missing",
+      "options": [
+        "to be missing",
+        "to cost",
+        "to arrive",
+        "to help"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "A la salsa le falta domingo.",
+        "targetWord": "falta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/601ffc972731cfa5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer",
+    "sentence": "Ella [[hace]] la salsa con el cuaderno abierto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make",
+      "options": [
+        "to make",
+        "to sell",
+        "to carry",
+        "to find"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Ella hace la salsa con el cuaderno abierto.",
+        "targetWord": "hace",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b84e51d811e2dd90.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prueba",
+    "sentence": "Antes de servir la salsa, él la _____ con una cuchara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prueba",
+      "options": [
+        "prueba",
+        "guarda",
+        "corta",
+        "tira"
+      ],
+      "translation": "Before serving the salsa, he _____ it with a spoon.",
+      "optionTranslations": [
+        "tastes",
+        "puts away",
+        "cuts",
+        "throws away"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Antes de servir la salsa, él la prueba con una cuchara.",
+        "targetWord": "prueba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1958f8d3aa38164.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esconde",
+    "sentence": "No quiere dar la receta y _____ el cuaderno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esconde",
+      "options": [
+        "esconde",
+        "lava",
+        "moja",
+        "lee"
+      ],
+      "translation": "He does not want to give the recipe and _____ the notebook.",
+      "optionTranslations": [
+        "hides",
+        "washes",
+        "wets",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "No quiere dar la receta y esconde el cuaderno.",
+        "targetWord": "esconde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e5eb9ae23f52ed1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tostado",
+    "sentence": "El chile estuvo en el fuego y quedó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tostado",
+      "options": [
+        "tostado",
+        "mojado",
+        "frío",
+        "nuevo"
+      ],
+      "translation": "The chili was on the fire and came out _____.",
+      "optionTranslations": [
+        "toasted",
+        "wet",
+        "cold",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "El chile estuvo en el fuego y quedó tostado.",
+        "targetWord": "tostado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d598f4802b4194b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "duro",
+    "sentence": "El molcajete de piedra suena _____, como un martillo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "duro",
+      "options": [
+        "duro",
+        "bajito",
+        "lejos",
+        "despacio"
+      ],
+      "translation": "The stone mortar sounds _____, like a hammer.",
+      "optionTranslations": [
+        "hard",
+        "very quietly",
+        "far away",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "El molcajete de piedra suena duro, como un martillo.",
+        "targetWord": "duro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c23617d30bd18173.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "molcajete,pluma,aguacate,cucharada",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "molcajete",
+          "answer": "a stone mortar",
+          "options": [
+            "a stone mortar",
+            "a pen",
+            "an avocado",
+            "a spoonful"
+          ]
+        },
+        {
+          "word": "pluma",
+          "answer": "a pen",
+          "options": [
+            "a stone mortar",
+            "a pen",
+            "an avocado",
+            "a spoonful"
+          ]
+        },
+        {
+          "word": "aguacate",
+          "answer": "an avocado",
+          "options": [
+            "a stone mortar",
+            "a pen",
+            "an avocado",
+            "a spoonful"
+          ]
+        },
+        {
+          "word": "cucharada",
+          "answer": "a spoonful",
+          "options": [
+            "a stone mortar",
+            "a pen",
+            "an avocado",
+            "a spoonful"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "distinta",
+    "featured": false,
+    "sentence": "Cada salsa es [[distinta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "different",
+      "options": [
+        "different",
+        "cold",
+        "ready",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Cada salsa es distinta.",
+        "targetWord": "distinta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4db483e559e8511.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasado",
+    "featured": false,
+    "sentence": "El año [[pasado]] la receta era otra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last",
+      "options": [
+        "last",
+        "quiet",
+        "cold",
+        "big"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "El año pasado la receta era otra.",
+        "targetWord": "pasado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/394407687d3fcff9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "menos",
+    "featured": false,
+    "sentence": "Esta salsa lleva [[menos]] limón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "less",
+      "options": [
+        "less",
+        "again",
+        "already",
+        "only"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Esta salsa lleva menos limón.",
+        "targetWord": "menos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7343fa671373dc47.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el domingo pasado",
+    "featured": false,
+    "sentence": "[[El domingo pasado]] la salsa estaba más dulce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last Sunday",
+      "options": [
+        "last Sunday",
+        "every Sunday",
+        "next Saturday",
+        "this morning"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "El domingo pasado la salsa estaba más dulce.",
+        "targetWord": "El domingo pasado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df0aef3590cee7f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entonces",
+    "featured": false,
+    "sentence": "No hay receta; [[entonces]] cada salsa es distinta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so",
+      "options": [
+        "so",
+        "but",
+        "never",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "No hay receta; entonces cada salsa es distinta.",
+        "targetWord": "entonces",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ff682cf32b989e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuánto de cada cosa",
+    "featured": false,
+    "sentence": "Ella apunta [[cuánto de cada cosa]] lleva la salsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how much of each thing",
+      "options": [
+        "how much of each thing",
+        "who cooks it",
+        "where it comes from",
+        "when it is ready"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Ella apunta cuánto de cada cosa lleva la salsa.",
+        "targetWord": "cuánto de cada cosa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c32f3b805c4dabc6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "featured": false,
+    "sentence": "Cocina con el cuaderno [[abierto]] en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "clean",
+        "empty",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-no-se-apunta",
+        "storySource": "user",
+        "sentence": "Cocina con el cuaderno abierto en la mesa.",
+        "targetWord": "abierto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e57d106ee93852a.mp3"
+      }
+    }
+  }
+]

@@ -1,0 +1,128 @@
+{
+ "slug": "el-encargo-tapado",
+ "topic": "work-and-favors",
+ "title": "El encargo tapado",
+ "text": "Por el recado, la enfermera entra al café. Mariana y Andrés miran el papel. “La campana suena suave”, cuenta Mariana.\n\nEl recado queda junto al maletín negro. “Mi nombre desaparece”, dice Andrés. La enfermera señala el rótulo. “¿La botica espera?” pregunta bajo.\n\nMariana pone café junto al papel. “El vaso dice Andrés grande”, avisa. “Yo miro el recado”, cuenta ella.\n\nLa nota corta se lee despacio. “La mesa amiga es lugar justo”, avisa. Andrés toca el bolsillo. “Yo sigo el papel”, responde.\n\nEl paquetico cae debajo de la silla vacía. Mariana recoge el paquetico. “No pasa nada”, responde la enfermera. “El favor sigue aquí”, agrega. “La ayuda queda clara”, dice Mariana.\n\nEl café, el pan y el papel van en las manos de Andrés. La enfermera muestra la cubierta. “Ahora la botica hace caso”, contesta. “Nombre correcto”, agrega Andrés. Mariana y Andrés trabajan en la mesa pequeña.",
+ "vocab": [
+  {
+   "word": "recado",
+   "surface": "recado",
+   "type": "noun",
+   "def": "A short message or errand."
+  },
+  {
+   "word": "rótulo",
+   "surface": "rótulo",
+   "type": "noun",
+   "def": "A small written label."
+  },
+  {
+   "word": "desaparecer",
+   "surface": "desaparece",
+   "type": "verb",
+   "def": "To go away from sight."
+  },
+  {
+   "word": "apunte",
+   "surface": "nota",
+   "type": "noun",
+   "def": "A short written note."
+  },
+  {
+   "word": "faltriquera",
+   "surface": "bolsillo",
+   "type": "noun",
+   "def": "A cloth place for small things."
+  },
+  {
+   "word": "enfermera",
+   "surface": "enfermera",
+   "type": "noun",
+   "def": "A woman who helps sick people."
+  },
+  {
+   "word": "responder",
+   "surface": "responde",
+   "type": "verb",
+   "def": "To answer another person."
+  },
+  {
+   "word": "favor",
+   "surface": "favor",
+   "type": "noun",
+   "def": "Help someone gives another person."
+  },
+  {
+   "word": "paquetico",
+   "surface": "paquetico",
+   "type": "noun",
+   "def": "A very small package."
+  },
+  {
+   "word": "junto a",
+   "surface": "junto al",
+   "type": "expression",
+   "def": "Next to something or someone."
+  },
+  {
+   "word": "cerca de",
+   "surface": "junto al",
+   "type": "expression",
+   "def": "Next to something else."
+  },
+  {
+   "word": "quedar",
+   "surface": "queda",
+   "type": "verb",
+   "def": "To stay in a place."
+  },
+  {
+   "word": "correcto",
+   "surface": "correcto",
+   "type": "adjective",
+   "def": "Right and not wrong."
+  },
+  {
+   "word": "agregar",
+   "surface": "agrega",
+   "type": "verb",
+   "def": "To add more words."
+  },
+  {
+   "word": "pequeña",
+   "surface": "pequeña",
+   "type": "adjective",
+   "def": "Small and not big."
+  },
+  {
+   "word": "trabajar",
+   "surface": "trabaja",
+   "type": "verb",
+   "def": "To do a job."
+  },
+  {
+   "word": "silla vacía",
+   "surface": "silla vacía",
+   "type": "expression",
+   "def": "An empty chair in the room."
+  },
+  {
+   "word": "cubierta",
+   "surface": "cubierta",
+   "type": "noun",
+   "def": "A cover over something."
+  },
+  {
+   "word": "hace caso",
+   "surface": "hace caso",
+   "type": "expression",
+   "def": "It pays attention now."
+  },
+  {
+   "word": "ayuda clara",
+   "surface": "ayuda queda clara",
+   "type": "expression",
+   "def": "Help that is easy to understand."
+  }
+ ]
+}

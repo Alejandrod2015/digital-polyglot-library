@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "dulce",
+  "sentence": "El pan huele [[dulce]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet like brown sugar",
+   "options": [
+    "sweet like brown sugar",
+    "salty like the sea",
+    "sour like a lemon",
+    "bitter like a pill"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "El pan huele dulce.",
+    "targetWord": "dulce",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "médica",
+  "sentence": "Llega Lina, una [[médica]] nueva del barrio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman who helps sick people",
+   "options": [
+    "a woman who helps sick people",
+    "a woman who bakes fresh bread",
+    "a woman who sells bus tickets",
+    "a woman who cleans the tables"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Llega Lina, una médica nueva del barrio.",
+    "targetWord": "médica",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Llega",
+  "sentence": "[[Llega]] Lina, una médica nueva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come to a place",
+   "options": [
+    "to come to a place",
+    "to pay for a drink",
+    "to fix a broken chair",
+    "to hide behind a door"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Llega Lina, una médica nueva.",
+    "targetWord": "Llega",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pregunta",
+  "sentence": "Ella [[pregunta]] bajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask for news",
+   "options": [
+    "to ask for news",
+    "to sing a short song",
+    "to count the chairs",
+    "to wipe the glass"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Ella pregunta bajo.",
+    "targetWord": "pregunta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajo",
+  "sentence": "Ella mira la mesa y pregunta [[bajo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a quiet low voice",
+   "options": [
+    "in a quiet low voice",
+    "with a big smile",
+    "for the third time",
+    "from the next table"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Ella mira la mesa y pregunta bajo.",
+    "targetWord": "bajo",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reunión",
+  "sentence": "“Una [[reunión]] pequeña”, agrega.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a time when people meet",
+   "options": [
+    "a time when people meet",
+    "a drink with hot milk",
+    "a paper with a name",
+    "a chair near the door"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "“Una reunión pequeña”, agrega.",
+    "targetWord": "reunión",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suelta",
+  "sentence": "“Mucho susto”, [[suelta]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to blurt out words",
+   "options": [
+    "to blurt out words",
+    "to write a short note",
+    "to lock the front door",
+    "to clean the coffee cups"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "“Mucho susto”, suelta él.",
+    "targetWord": "suelta",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rápido",
+  "sentence": "Andrés repite muy [[rápido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast and in a hurry",
+   "options": [
+    "fast and in a hurry",
+    "soft and very shy",
+    "loud and out of tune",
+    "late and out of breath"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Andrés repite muy rápido.",
+    "targetWord": "rápido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "susto",
+  "sentence": "“Yo tengo gusto y [[susto]]”, cuenta él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sudden scared feeling",
+   "options": [
+    "a sudden scared feeling",
+    "a warm happy feeling",
+    "a long boring wait",
+    "a small paper note"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "“Yo tengo gusto y susto”, cuenta él.",
+    "targetWord": "susto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abre los ojos",
+  "sentence": "Lina [[abre los ojos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to open your eyes wide",
+   "options": [
+    "to open your eyes wide",
+    "to fold your arms tight",
+    "to shake your head twice",
+    "to tap your foot fast"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Lina abre los ojos.",
+    "targetWord": "abre los ojos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "huele",
+  "sentence": "El pan _____ dulce.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "huele",
+   "options": [
+    "huele",
+    "suena",
+    "corre",
+    "gotea"
+   ],
+   "translation": "The bread _____ sweet.",
+   "optionTranslations": [
+    "smells",
+    "sounds",
+    "runs",
+    "drips"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "El pan huele dulce.",
+    "targetWord": "huele",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "libre",
+  "sentence": "La mesa está _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "libre",
+   "options": [
+    "libre",
+    "alegre",
+    "tímida",
+    "lenta"
+   ],
+   "translation": "The table is _____.",
+   "optionTranslations": [
+    "free and not taken",
+    "cheerful and glad",
+    "shy and quiet",
+    "slow and calm"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "La mesa está libre.",
+    "targetWord": "libre",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "saluda",
+  "sentence": "Mariana _____ a Lina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "saluda",
+   "options": [
+    "saluda",
+    "corre",
+    "salta",
+    "llora"
+   ],
+   "translation": "Mariana _____ Lina.",
+   "optionTranslations": [
+    "greets",
+    "runs",
+    "jumps",
+    "cries"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "Mariana saluda a Lina.",
+    "targetWord": "saluda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "espera",
+  "sentence": "“La mesa _____”, avisa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "espera",
+   "options": [
+    "espera",
+    "canta",
+    "vuela",
+    "llueve"
+   ],
+   "translation": "The table _____, he warns.",
+   "optionTranslations": [
+    "waits",
+    "sings",
+    "flies",
+    "rains"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "“La mesa espera”, avisa.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "parece",
+  "sentence": "La mesa ya no _____ grande.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parece",
+   "options": [
+    "parece",
+    "tiembla",
+    "gotea",
+    "pesa"
+   ],
+   "translation": "The table no longer _____ big.",
+   "optionTranslations": [
+    "seems",
+    "shakes",
+    "drips",
+    "weighs"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "La mesa ya no parece grande.",
+    "targetWord": "parece",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "debajo",
+  "sentence": "“Yo escribo susto _____”, avisa Andrés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "debajo",
+   "options": [
+    "debajo",
+    "apenas",
+    "casi",
+    "nunca"
+   ],
+   "translation": "I write susto _____, Andrés warns.",
+   "optionTranslations": [
+    "underneath",
+    "barely",
+    "almost",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "la-mesa-de-tres",
+    "storySource": "journey",
+    "sentence": "“Yo escribo susto debajo”, avisa Andrés.",
+    "targetWord": "debajo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "temprano,afuera,quieto,propio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "temprano",
+     "answer": "early in the day",
+     "options": [
+      "early in the day",
+      "outside the room",
+      "still and not moving",
+      "your own, not another one"
+     ]
+    },
+    {
+     "word": "afuera",
+     "answer": "outside the room",
+     "options": [
+      "early in the day",
+      "outside the room",
+      "still and not moving",
+      "your own, not another one"
+     ]
+    },
+    {
+     "word": "quieto",
+     "answer": "still and not moving",
+     "options": [
+      "early in the day",
+      "outside the room",
+      "still and not moving",
+      "your own, not another one"
+     ]
+    },
+    {
+     "word": "propio",
+     "answer": "your own, not another one",
+     "options": [
+      "early in the day",
+      "outside the room",
+      "still and not moving",
+      "your own, not another one"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

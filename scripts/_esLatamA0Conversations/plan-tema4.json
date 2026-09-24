@@ -1,0 +1,28 @@
+{
+  "tipo": "Conversations",
+  "nivel": "A0",
+  "variante": "latam",
+  "registro": "conversacional neutro, humor seco, dos voces y un narrador breve",
+  "espina": "Los paquetes del edificio ponen a prueba quién firma por quién, y el último no traía nada: se llevaba un gatito.",
+  "recursos": "entrada, etiqueta, cinta, cajas, felpudo, tapa",
+  "historias": [
+    { "slot": "0",
+      "quiere": "saber de quién es un paquete sin nombre",
+      "impide": "ninguno de los dos ha pedido nada esta semana",
+      "cuesta": "abrir una caja ajena para averiguarlo",
+      "cambia": "el paquete es del número cuarenta y el gato de enfrente come mejor que ellos",
+      "emocion": "humor" },
+    { "slot": "1",
+      "quiere": "poder caminar por una casa llena de cajas de otros",
+      "impide": "Nicolás firma por todo el edificio y ya no cabe",
+      "cuesta": "descubrir que una de las cajas lleva su propio apellido",
+      "cambia": "el felpudo de bienvenida no cabe delante de su puerta",
+      "emocion": "humor resignado" },
+    { "slot": "2",
+      "quiere": "entender por qué llega una caja abierta y vacía",
+      "impide": "sospechan de un ladrón y acusan al cartero",
+      "cuesta": "meter la mano en el fondo sin saber qué hay",
+      "cambia": "no falta nada: sobra un gatito que viaja gratis",
+      "emocion": "sorpresa tierna" }
+  ]
+}

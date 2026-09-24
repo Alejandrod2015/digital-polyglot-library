@@ -1,0 +1,367 @@
+[
+ {
+  "slug": "tres-papeles-mandan",
+  "es": "El rojo cuida pan",
+  "en": "The red one looks after bread"
+ },
+ {
+  "slug": "tres-papeles-mandan",
+  "es": "Hay tres papeles: azul, rojo y blanco",
+  "en": "There are three papers: blue, red and white"
+ },
+ {
+  "slug": "tres-papeles-mandan",
+  "es": "“Café, pan y plata van separados”, dice Andrés",
+  "en": "“Coffee, bread and money go separately,” says Andres"
+ },
+ {
+  "slug": "tres-papeles-mandan",
+  "es": "“Dos nombres, un sobre, y cero pelea”, dice",
+  "en": "“Two names, one envelope, and zero arguing,” she says"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "un jarrón con flores y un canelazo sin",
+  "en": "a vase with flowers and a cinnamon drink without"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "“La mesa amiga es aquí”, dice",
+  "en": "“The friendly table is here,” she says"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "“Mesa seria”, dice",
+  "en": "“Serious table,” he says"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "Andrés mira la fila",
+  "en": "Andres looks at the line"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "“La fila falsa espera”, agrega Mariana",
+  "en": "“The fake line is waiting,” Mariana adds"
+ },
+ {
+  "slug": "mesa-amiga",
+  "es": "“Ahora está separado”, agrega",
+  "en": "“Now it is set apart,” she adds"
+ },
+ {
+  "slug": "pan-tiene-silla",
+  "es": "Ella escribe: queda pan",
+  "en": "She types: bread is left"
+ },
+ {
+  "slug": "pan-tiene-silla",
+  "es": "“Todos comen despacio”, dice Mariana",
+  "en": "“Everyone eats slowly,” says Mariana"
+ },
+ {
+  "slug": "pan-tiene-silla",
+  "es": "Ella mira la silla",
+  "en": "She looks at the chair"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "Sofi deja una miga y una migaja junto",
+  "en": "Sofi leaves a crumb and a tiny crumb beside"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "el servilletero hay una tapita y un pitillo",
+  "en": "the napkin holder there is a lid and a straw"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "“Esto es para Andrés”, dice",
+  "en": "“This is for Andres,” she says"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "“El dueño soy yo”, dice",
+  "en": "“I am the owner,” he says"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "“El vasito manda menos”, agrega",
+  "en": "“The little cup rules less,” he adds"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "Espera Sofi, una panadera del barrio, con un",
+  "en": "Sofi waits, a baker from the neighborhood, with a"
+ },
+ {
+  "slug": "vasito-sin-dueno",
+  "es": "“Yo mando poco”, responde",
+  "en": "“I am barely in charge,” he replies"
+ },
+ {
+  "slug": "el-platito-gira",
+  "es": "Mariana recoge el vuelto y lo mete en",
+  "en": "Mariana picks up the change and puts it in"
+ },
+ {
+  "slug": "el-platito-gira",
+  "es": "“El bus recibe plata, no miga”, dice",
+  "en": "“The bus takes money, not crumbs,” he says"
+ },
+ {
+  "slug": "el-platito-gira",
+  "es": "“Después compra pan simple”, dice Mariana",
+  "en": "“Afterwards he buys plain bread,” says Mariana"
+ },
+ {
+  "slug": "el-amigo-de-papel",
+  "es": "Julián ve el papel y se queda de",
+  "en": "Julian sees the paper and stays standing"
+ },
+ {
+  "slug": "el-amigo-de-papel",
+  "es": "Julián ríe y guarda el papel en su",
+  "en": "Julian laughs and puts the paper in his"
+ },
+ {
+  "slug": "el-amigo-de-papel",
+  "es": "Julián mira la silla vacía",
+  "en": "Julian looks at the empty chair"
+ },
+ {
+  "slug": "llueve-y-nadie-se-va",
+  "es": "Todos se quedan y la mesa amiga queda",
+  "en": "Everyone stays and the friendly table ends up"
+ },
+ {
+  "slug": "llueve-y-nadie-se-va",
+  "es": "No sale perfecta; sale imperfecta”, dice Mariana",
+  "en": "It does not come out perfect; it comes out imperfect,” says Mariana"
+ },
+ {
+  "slug": "llueve-y-nadie-se-va",
+  "es": "se quedan y la mesa amiga queda completa",
+  "en": "they stay and the friendly table ends up complete"
+ },
+ {
+  "slug": "el-encargo-tapado",
+  "es": "El café, el pan y el papel van",
+  "en": "The coffee, the bread and the paper go"
+ },
+ {
+  "slug": "el-encargo-tapado",
+  "es": "“La ayuda queda clara”, dice Mariana",
+  "en": "“The help is clear,” says Mariana"
+ },
+ {
+  "slug": "el-encargo-tapado",
+  "es": "“La mesa amiga es lugar justo”, avisa",
+  "en": "“The friendly table is the right place,” she notes"
+ },
+ {
+  "slug": "el-encargo-tapado",
+  "es": "“El favor sigue aquí”, agrega",
+  "en": "“The favor is still here,” she adds"
+ },
+ {
+  "slug": "el-encargo-tapado",
+  "es": "“Yo sigo el papel”, responde",
+  "en": "“I follow the paper,” he replies"
+ },
+ {
+  "slug": "mesa-no-misa",
+  "es": "“No hay misa”, agrega",
+  "en": "“There is no mass,” she adds"
+ },
+ {
+  "slug": "mesa-no-misa",
+  "es": "pan, no silencio, y busco la mesa”, dice",
+  "en": "bread, not silence, and I look for the table,” he says"
+ },
+ {
+  "slug": "mesa-no-misa",
+  "es": "“Palabra propia”, dice Mariana",
+  "en": "“A word of its own,” says Mariana"
+ },
+ {
+  "slug": "mesa-no-misa",
+  "es": "“La mesa tiene palabra propia”, dice Mariana",
+  "en": "“The table has a word of its own,” says Mariana"
+ },
+ {
+  "slug": "mesa-no-misa",
+  "es": "“Mesa no misa, mesa amiga”, repite Andrés con",
+  "en": "“Table not mass, friendly table,” Andres repeats with"
+ },
+ {
+  "slug": "andres-sale-pequeno",
+  "es": "“Pan, café y cara seria a medias”, dice",
+  "en": "“Bread, coffee and a half serious face,” he says"
+ },
+ {
+  "slug": "andres-sale-pequeno",
+  "es": "“Yo salgo pequeño detrás del pan”, dice Andrés",
+  "en": "“I come out small behind the bread,” says Andres"
+ },
+ {
+  "slug": "andres-sale-pequeno",
+  "es": "café y cara seria a medias”, dice Andrés",
+  "en": "coffee and a half serious face,” says Andres"
+ },
+ {
+  "slug": "andres-sale-pequeno",
+  "es": "Andrés mira serio",
+  "en": "Andres looks serious"
+ },
+ {
+  "slug": "la-nota-con-campana",
+  "es": "“Mesa amiga aquí, con café”, canta bajo",
+  "en": "“Friendly table here, with coffee,” he sings quietly"
+ },
+ {
+  "slug": "la-nota-con-campana",
+  "es": "amiga, café y pan; sigan mi voz”, dice",
+  "en": "table, coffee and bread; follow my voice,” he says"
+ },
+ {
+  "slug": "la-nota-con-campana",
+  "es": "“Suena cerca”, dice",
+  "en": "“It sounds close,” he says"
+ },
+ {
+  "slug": "la-nota-con-campana",
+  "es": "“La nota sirve por error”, dice Andrés",
+  "en": "“The voice note works by mistake,” says Andres"
+ },
+ {
+  "slug": "la-nota-con-campana",
+  "es": "“Sirve por error”, responde",
+  "en": "“It works by mistake,” he replies"
+ },
+ {
+  "slug": "un-peso-canta",
+  "es": "Andrés observa el pandebono y parte un pedacito",
+  "en": "Andres studies the cheese bread and breaks a little piece"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "Mariana mira a Andrés",
+  "en": "Mariana looks at Andres"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "“Mucho gusto, no susto”, corrige ella",
+  "en": "“Nice to meet you, not a scare,” she corrects"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "Lina mira el pan",
+  "en": "Lina looks at the bread"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "“Mucho gusto”, dice Mariana",
+  "en": "“Nice to meet you,” says Mariana"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "“La mesa espera”, avisa",
+  "en": "“The table is waiting,” she notes"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "“Pero sigo aquí”, agrega",
+  "en": "“But I am still here,” he adds"
+ },
+ {
+  "slug": "la-mesa-de-tres",
+  "es": "“Me siento bien”, responde Lina",
+  "en": "“I feel fine,” replies Lina"
+ },
+ {
+  "slug": "tiza-bajo-la-lluvia",
+  "es": "baja por la calzada y toca la manija",
+  "en": "comes down the roadway and touches the door handle"
+ },
+ {
+  "slug": "tiza-bajo-la-lluvia",
+  "es": "“Aquí hay tres aquí, pero yo sigo el",
+  "en": "“There are three here, but I follow the"
+ },
+ {
+  "slug": "tiza-bajo-la-lluvia",
+  "es": "La tiza nada”, lamenta la médica",
+  "en": "The chalk is swimming,” the doctor says sadly"
+ },
+ {
+  "slug": "la-bolsa-saluda",
+  "es": "“¿La tula saluda?” pregunta Mariana",
+  "en": "“Does the duffel bag say hello?” asks Mariana"
+ },
+ {
+  "slug": "la-bolsa-saluda",
+  "es": "“Pesa como reunión grande”, cuenta",
+  "en": "“It weighs like a big meeting,” he says"
+ },
+ {
+  "slug": "amiga-paga-poco",
+  "es": "por pan y una por favor”, cuenta ella",
+  "en": "for bread and one for the favor,” she says"
+ },
+ {
+  "slug": "amiga-paga-poco",
+  "es": "“Amiga paga poco”, avisa",
+  "en": "“A friend pays little,” she notes"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "dibuja un dibujo serio y un dibujo feliz",
+  "en": "draws a serious drawing and a happy drawing"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "“Ese pan es mío”, dice",
+  "en": "“That bread is mine,” he says"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "Ella mira la nota",
+  "en": "She looks at the note"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "“La letra bonita no corta pan”, avisa",
+  "en": "“Nice handwriting does not cut bread,” she notes"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "“La ración alcanza”, agrega",
+  "en": "“The portion is enough,” she adds"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "“Esto queda horneado”, agrega",
+  "en": "“This one stays baked,” she adds"
+ },
+ {
+  "slug": "pan-amigo",
+  "es": "Mariana dibuja un dibujo serio y un dibujo",
+  "en": "Mariana draws a serious drawing and a happy one"
+ },
+ {
+  "slug": "dos-vasos-y-un-nombre",
+  "es": "“Yo pago por ella”, agrega",
+  "en": "“I pay for her,” he adds"
+ },
+ {
+  "slug": "foto-con-vaso",
+  "es": "Mariana coloca vaso, pan, papel y campana",
+  "en": "Mariana places cup, bread, paper and bell"
+ },
+ {
+  "slug": "foto-con-vaso",
+  "es": "“Campana, pan y papel saludan”, dice Mariana",
+  "en": "“Bell, bread and paper say hello,” says Mariana"
+ }
+]

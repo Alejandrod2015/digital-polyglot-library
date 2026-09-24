@@ -157,6 +157,17 @@ EOM
   done || exit 1
 fi
 
+# -- Cola del lote ------------------------------------------------------
+# Commits que otro chat dejo apuntados (refs/lote/*) para el siguiente push a
+# main. Si no van en este, se para. Ver scripts/git-hooks/lote-pendiente.sh.
+if [ "$TARGETS_MAIN" = "1" ]; then
+  LOCAL_SHA=$(printf '%s\n' "$REFS_STDIN" | awk '$3 == "refs/heads/main" {print $2}' | head -1)
+  HOOK_DIR=$(cd "$(dirname "$0")" && pwd)
+  if [ -x "$HOOK_DIR/lote-pendiente.sh" ]; then
+    "$HOOK_DIR/lote-pendiente.sh" "$LOCAL_SHA" || exit 1
+  fi
+fi
+
 # -- Manifiesto de candados -------------------------------------------
 # Un lint por linea: script | que necesita para correr (db, memoria o nada).
 # Antes cada lint iba envuelto en `if [ -f scripts/X.ts ]`, asi que un

@@ -1,0 +1,34 @@
+{
+  "global": {
+    "sucht": { "g": "looks for, tries to find (suchen)" },
+    "bringt": { "g": "brings along (mitbringen)" },
+    "wandert": { "g": "passes from hand to hand (wandern)" },
+    "wellen": { "g": "a wave (in Wellen, in waves)" },
+    "leicht": { "g": "easily, without trouble (geht ganz leicht)" },
+    "wagen": { "g": "a cart full of goods (der Wagen)" },
+    "füßen": { "g": "a foot (an den Füßen, on her feet)" },
+    "altes": { "g": "old, from years back (ein altes Radio)" },
+    "morgens": { "g": "in the morning, early in the day" },
+    "herzlich": { "g": "warmly, in a friendly way (herzlich willkommen)", "t": "adverb" }
+  },
+  "porHistoria": {
+    "ein-kasten-im-hausflur": { "sucht": { "g": "looks for, tries to find (suchen)" } },
+    "ein-schal-zwei-lieder": { "sucht": { "g": "looks for, tries to find (suchen)" }, "ruft": { "g": "calls out (rufen)" } },
+    "salz-brot-und-sekt": { "bringt": { "g": "brings along (mitbringen)" }, "wandert": { "g": "passes from hand to hand (wandern)" } },
+    "drei-tage-ohne-stimme": { "wellen": { "g": "a wave (in Wellen, in waves)" }, "morgens": { "g": "in the morning, early in the day" }, "ruft": { "g": "phones, calls up (anrufen)" } },
+    "das-sofa-aus-muenster": { "leicht": { "g": "easily, without trouble (geht ganz leicht)" } },
+    "achtzig-fuer-drei-beine": { "wagen": { "g": "a cart full of goods (der Wagen)" } },
+    "block-h-reihe-zwoelf": { "füßen": { "g": "a foot (an den Füßen, on her feet)" } },
+    "elf-minuten-nachspielzeit": { "altes": { "g": "old, from years back (ein altes Radio)" } },
+    "einladung-ohne-namen": {
+      "herzlich": { "g": "warmly, in a friendly way (herzlich willkommen)", "t": "adverb" },
+      "ruft": { "g": "calls out (rufen)" },
+      "unten": { "cen": "since Thursday downstairs next to the lift" }
+    },
+    "der-gelbe-zettel": { "ruft": { "g": "phones, calls up (anrufen)" } },
+    "der-zettel-am-bett": { "ruft": { "g": "phones, calls up (anrufen)" } },
+    "der-zettel-im-waschsalon": { "ruft": { "g": "phones, calls up (anrufen)" } },
+    "die-mappe-auf-dem-sofa": { "ruft": { "g": "phones, calls up (anrufen)" } },
+    "ein-loch-im-lebenslauf": { "ruft": { "g": "calls back (zurückrufen)" } }
+  }
+}

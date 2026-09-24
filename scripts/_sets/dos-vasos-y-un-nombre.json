@@ -1,0 +1,464 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "entra",
+  "sentence": "Andrés [[entra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go inside a place",
+   "options": [
+    "to go inside a place",
+    "to sweep the floor",
+    "to lock the door",
+    "to pay the bill"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Andrés entra.",
+    "targetWord": "entra",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dice",
+  "sentence": "“Yo soy Andrés”, [[dice]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say words out loud",
+   "options": [
+    "to say words out loud",
+    "to write words on paper",
+    "to hear words from far",
+    "to count words on a list"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "“Yo soy Andrés”, dice él.",
+    "targetWord": "dice",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mira",
+  "sentence": "Mariana [[mira]] el vaso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use your eyes on something",
+   "options": [
+    "to use your eyes on something",
+    "to hold something in your hand",
+    "to throw something on the floor",
+    "to wash something with water"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Mariana mira el vaso.",
+    "targetWord": "mira",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonríe",
+  "sentence": "Andrés mira el nombre y [[sonríe]] poco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a happy face",
+   "options": [
+    "to make a happy face",
+    "to shake your head hard",
+    "to close your eyes tight",
+    "to raise your hand high"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Andrés mira el nombre y sonríe poco.",
+    "targetWord": "sonríe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roja",
+  "sentence": "Mariana está [[roja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red in the face",
+   "options": [
+    "red in the face",
+    "new in the city",
+    "far from the door",
+    "quiet at the table"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Mariana está roja.",
+    "targetWord": "roja",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señala",
+  "sentence": "Andrés [[señala]] el vaso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to show with your finger",
+   "options": [
+    "to show with your finger",
+    "to fill with hot water",
+    "to clean with a cloth",
+    "to carry with both hands"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Andrés señala el vaso.",
+    "targetWord": "señala",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escribe",
+  "sentence": "[[Escribe]] Andrés grande.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make words with a pen",
+   "options": [
+    "to make words with a pen",
+    "to read words in a book",
+    "to say words in a song",
+    "to count words on a page"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Escribe Andrés grande.",
+    "targetWord": "escribe",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelve",
+  "sentence": "“Ella [[vuelve]] mañana”, explica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back again",
+   "options": [
+    "to come back again",
+    "to wake up early",
+    "to lose a paper",
+    "to break a cup"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "“Ella vuelve mañana”, explica.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dibuja",
+  "sentence": "También [[dibuja]] una cara feliz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a picture by hand",
+   "options": [
+    "to make a picture by hand",
+    "to fold a paper in two",
+    "to open a window wide",
+    "to cut a bread in half"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "También dibuja una cara feliz.",
+    "targetWord": "dibuja",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "levanta",
+  "sentence": "Andrés [[levanta]] los dos vasos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to raise something up",
+   "options": [
+    "to raise something up",
+    "to hide something away",
+    "to count something twice",
+    "to paint something blue"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Andrés levanta los dos vasos.",
+    "targetWord": "levanta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "recuerda",
+  "sentence": "Mariana ya _____ su nombre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recuerda",
+   "options": [
+    "recuerda",
+    "camina",
+    "llora",
+    "tose"
+   ],
+   "translation": "Mariana already _____ his name.",
+   "optionTranslations": [
+    "remembers",
+    "walks",
+    "cries",
+    "coughs"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Mariana ya recuerda su nombre.",
+    "targetWord": "recuerda",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "trae",
+  "sentence": "“Andrés _____ paquetes”, avisa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trae",
+   "options": [
+    "trae",
+    "canta",
+    "corre",
+    "duerme"
+   ],
+   "translation": "Andrés _____ packages, he says.",
+   "optionTranslations": [
+    "brings",
+    "sings",
+    "runs",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "“Andrés trae paquetes”, avisa.",
+    "targetWord": "trae",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "prepara",
+  "sentence": "Mariana _____ otro café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prepara",
+   "options": [
+    "prepara",
+    "salta",
+    "grita",
+    "tiembla"
+   ],
+   "translation": "Mariana _____ another coffee.",
+   "optionTranslations": [
+    "prepares",
+    "jumps",
+    "shouts",
+    "shakes"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Mariana prepara otro café.",
+    "targetWord": "prepara",
+    "language": "spanish"
+   }
+  },
+  "featured": true
+ },
+ {
+  "type": "fill_blank",
+  "word": "mañana",
+  "sentence": "“Ella vuelve _____”, explica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mañana",
+   "options": [
+    "mañana",
+    "nunca",
+    "tampoco",
+    "casi"
+   ],
+   "translation": "She comes back _____, he explains.",
+   "optionTranslations": [
+    "tomorrow",
+    "never",
+    "not either",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "“Ella vuelve mañana”, explica.",
+    "targetWord": "mañana",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "suave",
+  "sentence": "La campana suena _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suave",
+   "options": [
+    "suave",
+    "verde",
+    "mojado",
+    "redondo"
+   ],
+   "translation": "The bell sounds _____.",
+   "optionTranslations": [
+    "soft",
+    "green",
+    "wet",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "La campana suena suave.",
+    "targetWord": "suave",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "poco",
+  "sentence": "Andrés mira el nombre y sonríe _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "poco",
+   "options": [
+    "poco",
+    "tarde",
+    "lejos",
+    "fuerte"
+   ],
+   "translation": "Andrés looks at the name and smiles _____.",
+   "optionTranslations": [
+    "only a bit",
+    "very late",
+    "far away",
+    "out loud"
+   ],
+   "audioClip": {
+    "storySlug": "dos-vasos-y-un-nombre",
+    "storySource": "journey",
+    "sentence": "Andrés mira el nombre y sonríe poco.",
+    "targetWord": "poco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "feliz,serio,no pasa nada,dos vasos",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "feliz",
+     "answer": "happy and glad",
+     "options": [
+      "happy and glad",
+      "not joking at all",
+      "it is okay, no problem",
+      "two cups held together"
+     ]
+    },
+    {
+     "word": "serio",
+     "answer": "not joking at all",
+     "options": [
+      "happy and glad",
+      "not joking at all",
+      "it is okay, no problem",
+      "two cups held together"
+     ]
+    },
+    {
+     "word": "no pasa nada",
+     "answer": "it is okay, no problem",
+     "options": [
+      "happy and glad",
+      "not joking at all",
+      "it is okay, no problem",
+      "two cups held together"
+     ]
+    },
+    {
+     "word": "dos vasos",
+     "answer": "two cups held together",
+     "options": [
+      "happy and glad",
+      "not joking at all",
+      "it is okay, no problem",
+      "two cups held together"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

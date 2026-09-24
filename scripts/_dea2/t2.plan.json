@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "fisico y con prisa; frases cortas de gente que carga cosas y mira el reloj",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple y espejo concreto (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "hacer la mudanza solo con Malte, sin deber nada a nadie", "impide": "la furgoneta se acaba a las tres y a Malte se le rompe la espalda al tercer viaje", "cuesta": "tiene que dejar entrar en su vida a medio empaquetar a un vecino que no conoce", "cambia": "acepta por calculo, no por confianza, y eso ya es un cambio", "emocion": "la prisa que tapa la verguenza de no poder sola" },
+  { "slot": "2", "quiere": "subir a casa el sofa que trajo de Muenster", "impide": "el codo de la escalera; el sofa no pasa de ninguna manera", "cuesta": "regala el ultimo mueble de su vida anterior y lo ve irse en un carro", "cambia": "deja de cargar con Muenster, literalmente", "emocion": "el desapego seco de quien ya no puede permitirse la nostalgia" },
+  { "slot": "3", "quiere": "saldar la cuenta del dia y quedar en paz", "impide": "aqui los favores no se pagan en euros y preguntarlo suena mal", "cuesta": "se queda debiendo un favor abierto, que es justo lo que evitaba", "cambia": "el orgullo no desaparece, pero deja de mandar en la escena", "emocion": "la incomodidad que afloja al final de la noche" }
+ ]
+}

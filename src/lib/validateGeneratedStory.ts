@@ -384,7 +384,15 @@ const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
     taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)\b/i,
   };
 
-function extractSpeakerNames(text: string): string[] {
+// Se exporta porque `validateJourneyStories.castOf` necesita EXACTAMENTE este
+// criterio de "quien habla" para el formato de dialogo (2026-09-23). Antes
+// castOf solo miraba acotaciones de prosa ("dice Mariana"), asi que en un
+// journey multipersonaje, donde quien habla va en la etiqueta de la linea, el
+// reparto salia VACIO y dos checks de conjunto (journey-cast-protagonist-in-all
+// y el "(protagonista ?)" de journey-closing-alone) se apoyaban en nada. Dos
+// detectores distintos de lo mismo es como se colo el fallo; por eso se reusa
+// este y no se escribe otro.
+export function extractSpeakerNames(text: string): string[] {
   const re = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S/gmu;
   const set = new Set<string>();
   let m: RegExpExecArray | null;
@@ -1925,6 +1933,7 @@ export async function validateGeneratedStory(
         detail: `${desconocidos.slice(0, 6).join(", ")}: not in the name bank for this region (src/lib/characterNames.ts). Not necessarily wrong, but nobody verified it reads as a real, current name there.`,
       });
     }
+
   }
 
   // ─── longitud de frase en A0 ───────────────────────────

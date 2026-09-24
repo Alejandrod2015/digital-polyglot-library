@@ -40,9 +40,9 @@
       "source": "CLAUDE.md"
     },
     {
-      "id": "claude-md-orden-de-narracion-por-tema-bloqueante-2026-09-02",
+      "id": "claude-md-orden-de-narracion-una-muestra-por-journey-bloqueante-2026-0",
       "domain": "audio",
-      "rule": "Orden de narracion por tema",
+      "rule": "Orden de narracion: una muestra por journey",
       "gate": "scripts/_muestraA2Titulo.ts",
       "source": "CLAUDE.md"
     },
@@ -103,11 +103,11 @@
       "source": "memory:feedback_exercise_audio_narrator_voice.md"
     },
     {
-      "id": "feedback_narration_order_per_topic",
+      "id": "feedback_narration_order_one_sample_per_journey",
       "domain": "audio",
-      "rule": "\"REGLA DURA: un tema no se narra de golpe. Muestra, comprobacion, primera entera, comprobacion, y solo entonces el resto\"",
+      "rule": "\"REGLA DURA: UNA muestra por journey, aprobada de oido; a partir de ahi cada tema se narra entero, sin parar entre historias\"",
       "gate": "scripts/_narraUnaA2.ts",
-      "source": "memory:feedback_narration_order_per_topic.md"
+      "source": "memory:feedback_narration_order_one_sample_per_journey.md"
     },
     {
       "id": "feedback_narrator_first_person",
@@ -194,6 +194,13 @@
       "source": "memory:feedback_reader_legacy_flash.md"
     },
     {
+      "id": "feedback_spend_the_whole_audio_quota",
+      "domain": "audio",
+      "rule": "\"La cuota de ElevenLabs esta para gastarse entera: que sobre es el desperdicio, quedarse corto no es problema\"",
+      "gate": "process",
+      "source": "memory:feedback_spend_the_whole_audio_quota.md"
+    },
+    {
       "id": "feedback_story_arc_continuity_gate",
       "domain": "audio",
       "rule": "\"Antes de dar por listo cualquier topic (o regenerar audio), leer TODAS las historias del arco 1→N en secuencia como el usuario; un validator verde NO basta\"",
@@ -206,6 +213,13 @@
       "rule": "\"ORO: el 'aire'/respiración en ElevenLabs lo causa el stitching; NARRADOR = disableStitching:true + antiUptalkGate:true (sin aire Y finales cerrados)\"",
       "gate": "src/lib/elevenlabs.ts",
       "source": "memory:feedback_tts_aire_stitching.md"
+    },
+    {
+      "id": "feedback_tts_only_says_common_names",
+      "domain": "audio",
+      "rule": "\"REGLA DURA: nada de nombres raros en un journey; la voz solo sabe pronunciar los nombres corrientes de su idioma y los demas los dice distinto cada vez\"",
+      "gate": "src/lib/nameSpeakability.ts",
+      "source": "memory:feedback_tts_only_says_common_names.md"
     },
     {
       "id": "feedback_voice_audition_inline_player",
@@ -341,6 +355,13 @@
       "source": "memory:project_karaoke_drift_correction_removed.md"
     },
     {
+      "id": "project_level_test_rebuild_2026_09_20",
+      "domain": "audio",
+      "rule": "\"Prueba de nivel ES (en main y en build 339 / Android 28, 2026-09-21): opcional, corre en la sesion de practica con los 4 formatos, banco propio bank.es.ts igual para Spain y latam, sin cognados, a...",
+      "gate": "src/lib/cefr/spanishLevels.ts",
+      "source": "memory:project_level_test_rebuild_2026_09_20.md"
+    },
+    {
       "id": "project_narrator_candidate_giacomo",
       "domain": "audio",
       "rule": "\"Spanish-journey male narrator search; front-runner Andreti, backups Giacomo + Ricardo\"",
@@ -367,20 +388,6 @@
       "rule": "Los clips de práctica se descargan a un temporal y se renombran; escribir directo daba media palabra",
       "gate": "none",
       "source": "memory:project_practice_audio_atomic_download.md"
-    },
-    {
-      "id": "project_practice_audio_open_issues",
-      "domain": "audio",
-      "rule": "\"Problemas ABIERTOS del audio de práctica (2026-07-24) y la auditoría comprehensiva pendiente. El eje grave sin resolver: el endpoint devuelve 200 pero el device queda MUDO (bug de cliente, necesit...",
-      "gate": "none",
-      "source": "memory:project_practice_audio_open_issues.md"
-    },
-    {
-      "id": "project_practice_audio_web_handoff",
-      "domain": "audio",
-      "rule": "\"Estado del trabajo de practice web + audio (sets curados, sentence-clips, word-tts, voz por país) para retomar en otro chat\"",
-      "gate": "scripts/_validateSets.ts",
-      "source": "memory:project_practice_audio_web_handoff.md"
     },
     {
       "id": "project_practice_db_native_sets_pipeline",
@@ -418,6 +425,13 @@
       "source": "memory:project_seed_all_sets_wipes_catalog.md"
     },
     {
+      "id": "project_setjourneystatus_bypasses_publish_gate",
+      "domain": "audio",
+      "rule": "\"setJourneyStatus.ts pone un journey en active sin mirar el gate de publicacion, asi que dos journeys llegaron a produccion sin audio de practica; y el runtime tapa el agujero sintetizando al tocar...",
+      "gate": "scripts/publishJourney.ts",
+      "source": "memory:project_setjourneystatus_bypasses_publish_gate.md"
+    },
+    {
       "id": "project_spain_voice_bank",
       "domain": "audio",
       "rule": "\"Banco PROVISIONAL de voces español de España (Traveler ES Spain) + feedback \\\"sobreactuadas\\\"\"",
@@ -437,6 +451,13 @@
       "rule": "\"Plan investigado (2026-07-02) para QA automático de audio TTS: modelo v2, alignment+VAD, F0 uptalk, juez Gemini; qué atrapa cada capa\"",
       "gate": "pre-bash-guard.sh",
       "source": "memory:project_tts_qa_auto_ear.md"
+    },
+    {
+      "id": "project_ve_report_is_spanish_phonetics",
+      "domain": "audio",
+      "rule": "\"El 've' que un tester no oye no es audio roto: es la v espanola, medida sobre su propio mp3 el 2026-09-23\"",
+      "gate": "process",
+      "source": "memory:project_ve_report_is_spanish_phonetics.md"
     },
     {
       "id": "project_voice_library_removals",
@@ -523,6 +544,13 @@
       "source": "memory:feedback_notification_copy_teases.md"
     },
     {
+      "id": "feedback_task_naming_format",
+      "domain": "comms",
+      "rule": "\"TODO chat lleva convención de nombre: journeys IDIOMA_Variante_Nivel_Tipo_N-Fase; el resto ÁREA_Tema_N-Fase (BETA_Testers_Silenciosos_1-Enlace); nunca prosa ni título de la app\"",
+      "gate": "process",
+      "source": "memory:feedback_task_naming_format.md"
+    },
+    {
       "id": "feedback_thank_the_feedback_dont_report_on_it",
       "domain": "comms",
       "rule": "\"El correo de mejoras agradece el feedback y enseña la mejora; nunca detalla el expediente de quien la pidió ni suena a \\\"hacemos lo que nos piden\\\"\"",
@@ -535,6 +563,13 @@
       "rule": "Ninguna persona real de BetaSignup entra como personaje",
       "gate": "src/lib/validateJourneyStories.ts#journey-no-real-users",
       "source": "story-rules:journey-no-real-users (feedback_no_real_users_in_stories) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "project_ads_variant_tour_rules",
+      "domain": "comms",
+      "rule": "\"Reglas del tour de variantes: una PALABRA por pais comparable con las otras, ventana en mitad de la historia y texto hasta el reproductor\"",
+      "gate": "scripts/_ads/_cleanCuts.ts",
+      "source": "memory:project_ads_variant_tour_rules.md"
     },
     {
       "id": "project_beta_android_design",
@@ -598,6 +633,13 @@
       "rule": "El feedback de la beta venia todo del formulario web; el 2026-09-06 la hoja in-app dio su primera fila y el 2026-09-08 llego el primer pulgar de un tester.",
       "gate": "process",
       "source": "memory:project_feedback_channels_reality.md"
+    },
+    {
+      "id": "project_feedback_status_is_now_true",
+      "domain": "comms",
+      "rule": "El status de BetaFeedback se puso al dia el 2026-09-23 y ya se puede filtrar por el; releaseId sigue vacio en las 24 filas porque no hay ni una fila en BetaRelease",
+      "gate": "process",
+      "source": "memory:project_feedback_status_is_now_true.md"
     },
     {
       "id": "project_meta_ads_beta_campaign",
@@ -810,6 +852,13 @@
       "source": "memory:project_planning_handoff_2026_09_15.md"
     },
     {
+      "id": "project_tap_gloss_bubble_covers_word",
+      "domain": "cover",
+      "rule": "\"Movil: la tarjeta de tap-word vive pegada al fondo y tapaba la palabra tocada (Ty, 2026-09-15). Diagnosticado y arreglado el 2026-09-21 en la rama claude/glosas-burbuja-y-deuda; sin comprobar en d...",
+      "gate": "process",
+      "source": "memory:project_tap_gloss_bubble_covers_word.md"
+    },
+    {
       "id": "arc-continuity",
       "domain": "journey",
       "rule": "Las tres historias de un tema se leen en secuencia 1 a N y encajan",
@@ -936,6 +985,20 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
+      "id": "journey-cast-names-in-language",
+      "domain": "journey",
+      "rule": "El reparto sale del banco de nombres del idioma",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-names-in-language",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-names-unheard",
+      "domain": "journey",
+      "rule": "Nombres del reparto que nadie ha oido en esta voz",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-names-unheard",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
       "id": "journey-cast-one-new-per-topic",
       "domain": "journey",
       "rule": "Un personaje nuevo por tema, en su primera historia",
@@ -955,6 +1018,13 @@
       "rule": "Cada personaje entra con un sintagma que dice QUE ES, antes de su primera linea citada",
       "gate": "src/lib/validateJourneyStories.ts#journey-character-introduction",
       "source": "story-rules:journey-character-introduction (feedback_introduce_characters) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-city-known-abroad",
+      "domain": "journey",
+      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, vive en Journey.city/cityMode, y se declara ANTES de fijar los siete temas: assertTopicsGrounded tira si falta o si no esta en la lista aprobada por idioma",
+      "gate": "src/lib/approvedCities.ts",
+      "source": "manual (usuario, 2026-09-24; docs/auditoria-ciudades-journeys-2026-09-24.md)"
     },
     {
       "id": "journey-introduction-form-variety",
@@ -1013,20 +1083,6 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
-      "id": "journey-write-target",
-      "domain": "journey",
-      "rule": "saveStory comprueba el journey destino: el --level tiene que estar en journey.levels, y un journey active solo se escribe con DPL_WRITE_TO_LIVE_JOURNEY=1",
-      "gate": "scripts/journeyWriteTarget.ts#journey-write-target",
-      "source": "project_journey_pipeline_five_phases + saveStory.ts (2026-09-23)"
-    },
-    {
-      "id": "journey-city-known-abroad",
-      "domain": "journey",
-      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, vive en Journey.city/cityMode, y se declara ANTES de fijar los siete temas: assertTopicsGrounded tira si falta o si no esta en la lista aprobada por idioma",
-      "gate": "src/lib/approvedCities.ts",
-      "source": "manual (usuario, 2026-09-24; docs/auditoria-ciudades-journeys-2026-09-24.md)"
-    },
-    {
       "id": "journeys-table-canonical",
       "domain": "journey",
       "rule": "La tabla de journeys la genera scripts/journeysTable.ts; componerla a mano esta prohibido y los archivados solo salen con --archived",
@@ -1079,7 +1135,7 @@
       "id": "project_journey_es_a1_friends_latam_neutral",
       "domain": "journey",
       "rule": "\"Friends ES latam NEUTRAL A1 (cmu8gjgax0007j8yhcnsrr2wl): primer journey sin ciudad ni pais, lexico neutro con lint propio, texto cerrado 2026-09-19 en rama claude/es-a1-friends-latam-neutral sin p...",
-      "gate": "journey-cast-fixed-max-two",
+      "gate": "process",
       "source": "memory:project_journey_es_a1_friends_latam_neutral.md"
     },
     {
@@ -1146,18 +1202,18 @@
       "source": "memory:project_levels_raised_2026_09_10.md"
     },
     {
-      "id": "project_planning_handoff_2026_09_14",
-      "domain": "journey",
-      "rule": "\"Traspaso del chat de planificación (Journey-planning) del 2026-09-14: estado de los 5 Friends nuevos, chats abiertos, pendientes y reglas de proceso\"",
-      "gate": "process",
-      "source": "memory:project_planning_handoff_2026_09_14.md"
-    },
-    {
       "id": "project_planning_handoff_2026_09_17",
       "domain": "journey",
       "rule": "\"Estado del chat de planificacion Journey-planning-2 el 2026-09-17: ES A2 narrando 12/21, integracion de 69 commits sin push, QA de oido caido, limpieza de chats OLD\"",
       "gate": "process",
       "source": "memory:project_planning_handoff_2026_09_17.md"
+    },
+    {
+      "id": "project_planning_ownership_2026_09_21",
+      "domain": "journey",
+      "rule": "\"REPARTO DE JOURNEYS ENTRE USUARIOS DE CLAUDE (2026-09-21): los 5 journeys y 2 frentes que lleva Journey-planning-2 en esta cuenta; otro usuario/cuenta trabaja OTROS journeys, nunca estos. Leer ant...",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:project_planning_ownership_2026_09_21.md"
     },
     {
       "id": "project_story_id_two_forms",
@@ -1242,6 +1298,13 @@
       "rule": "\"Tres cosas que muerden al sembrar un set curado fuera del A2 espanol: el idioma escrito a fuego, los distractores que se repiten y los numerales que rechaza Scribe\"",
       "gate": "none",
       "source": "memory:project_curated_sets_gotchas.md"
+    },
+    {
+      "id": "project_distractor_gate",
+      "domain": "practice",
+      "rule": "Gate de distractores (2026-09-21): un ejercicio de practica no se puede acertar sin saber la palabra; reglas D1-D8 en scripts/distractorGate.ts, lint con trinquete por journey y sin --force en el s...",
+      "gate": "scripts/distractorGate.ts",
+      "source": "memory:project_distractor_gate.md"
     },
     {
       "id": "project_practice_word_speed",
@@ -1396,6 +1459,13 @@
       "rule": "\"Una regla dura va donde se TOMA la decisión (el plan/brief), no solo en el último checkpoint; el usuario pregunta \\\"¿lo pusiste a la hora de planear?\\\"\"",
       "gate": "src/lib/journeyCasts.ts",
       "source": "memory:feedback_enforce_rules_at_planning_stage.md"
+    },
+    {
+      "id": "feedback_flagged_fragments_need_the_reviewer",
+      "domain": "process",
+      "rule": "Tras narrar, los fragmentos marcados por los gates se entregan en el artifact revisor de veredictos, no como lista en el chat",
+      "gate": "process",
+      "source": "memory:feedback_flagged_fragments_need_the_reviewer.md"
     },
     {
       "id": "feedback_incremental_when_testing",
@@ -1643,6 +1713,13 @@
       "source": "memory:project_insider_group_plan.md"
     },
     {
+      "id": "project_launch_dashboard_weekly",
+      "domain": "process",
+      "rule": "\"Radar de lanzamiento: el artefacto donde se anota cada build semanal (embudo, adopcion, uso de lo nuevo), con su base de datos y la forma exacta de la ficha\"",
+      "gate": "scripts/launchRadar.ts",
+      "source": "memory:project_launch_dashboard_weekly.md"
+    },
+    {
       "id": "project_local_android_build",
       "domain": "process",
       "rule": "\"Local Android builds enabled on this Mac (no EAS); toolchain paths, prebuild/gradle/adb workflow, wireless adb\"",
@@ -1690,6 +1767,13 @@
       "rule": "# Posicionamiento de DPL: lenguaje auténtico, NO \"lectura\"",
       "gate": "none",
       "source": "memory:project_positioning.md"
+    },
+    {
+      "id": "project_reply_to_a_tester_from_a_chat",
+      "domain": "process",
+      "rule": "Como responde un chat a UN reporte de feedback (scripts/_replyToFeedback.ts) y por que el envio sale de un worktree limpio; es disciplina, ningun porton lo comprueba",
+      "gate": "process",
+      "source": "memory:project_reply_to_a_tester_from_a_chat.md"
     },
     {
       "id": "project_simulator_hardware_keyboard_at_sign",
@@ -2203,11 +2287,11 @@
       "source": "memory:feedback_gloss_in_context.md"
     },
     {
-      "id": "project_gloss_chunk_per_occurrence",
+      "id": "feedback_journey_cities_must_be_world_known",
       "domain": "vocab",
-      "rule": "\"Trozo de contexto por APARICION de la palabra, no por palabra: `c` (primera) + `cs` (las demas); la tarjeta elige el que cubre la posicion tocada y nunca ensena uno ajeno. Regla dura desde 2026-09...",
-      "gate": "scripts/checkGlossOccurrences.ts",
-      "source": "memory:project_gloss_chunk_per_occurrence.md"
+      "rule": "\"REGLA DURA (2026-09-24): la ciudad de un journey tiene que ser muy conocida FUERA de su pais, sobre todo para anglosajones, que son el grupo objetivo; una ciudad que el lector no reconoce no vende...",
+      "gate": "src/lib/approvedCities.ts",
+      "source": "memory:feedback_journey_cities_must_be_world_known.md"
     },
     {
       "id": "feedback_missing_content_is_an_opportunity",
@@ -2259,6 +2343,13 @@
       "source": "story-rules:journey-vocab-recirculation (project_vocab_recirculation_ladder)"
     },
     {
+      "id": "project_gloss_chunk_per_occurrence",
+      "domain": "vocab",
+      "rule": "\"Trozo de contexto por APARICION de la palabra, no por palabra: `c` (primera) + `cs` (las demas); la tarjeta elige el que cubre la posicion tocada y nunca ensena uno ajeno. Regla dura desde 2026-09...",
+      "gate": "scripts/checkGlossOccurrences.ts",
+      "source": "memory:project_gloss_chunk_per_occurrence.md"
+    },
+    {
       "id": "project_gloss_mood_layer",
       "domain": "vocab",
       "rule": "\"La capa gramatical de las glosas (modo y par de formas), lo que decide si una forma es orden, y por que el lint importa el generador en vez de copiarlo\"",
@@ -2266,11 +2357,39 @@
       "source": "memory:project_gloss_mood_layer.md"
     },
     {
+      "id": "project_gloss_sibling_copies_carry_wrong_sense",
+      "domain": "vocab",
+      "rule": "\"rebuildTapGlosses copia glosas de journeys hermanos y 71 de 530 traian el sentido de OTRO journey; y la lectura a mano de respuesta unica necesita DOS pasadas, la segunda encontro 8 que la primera...",
+      "gate": "process",
+      "source": "memory:project_gloss_sibling_copies_carry_wrong_sense.md"
+    },
+    {
       "id": "project_journey_vocab_audit",
       "domain": "vocab",
       "rule": "Snapshot of vocab quality across published JourneyStories; uneven length per level, inflated definitions driven by conflicting prompts. Pending fix.",
       "gate": "none",
       "source": "memory:project_journey_vocab_audit.md"
+    },
+    {
+      "id": "project_push_from_worktree_hooks_and_gloss_gates",
+      "domain": "vocab",
+      "rule": "\"Push a main desde un worktree: el hook instalado es el del checkout raiz (core.hooksPath absoluto) y va atras; los gates de glosas leen la BASE pero desde 2026-09-21 solo miden bundles de journeys...",
+      "gate": "process",
+      "source": "memory:project_push_from_worktree_hooks_and_gloss_gates.md"
+    },
+    {
+      "id": "project_release_340_and_newsletter_2026_09_21",
+      "domain": "vocab",
+      "rule": "\"Estado del 2026-09-21: iOS 340 en TestFlight (Beta App Review aprobada) y Android 28 en alpha de Play, con speaking (premium+polyglot), prueba de nivel nueva, glosa por aparicion; boletin de septi...",
+      "gate": "scripts/levelTestItemStats.ts",
+      "source": "memory:project_release_340_and_newsletter_2026_09_21.md"
+    },
+    {
+      "id": "project_savestory_dry_passes_blind_without_db",
+      "domain": "vocab",
+      "rule": "\"saveStory --dry sin DATABASE_URL canta 'All stories pass' y se salta vocab-taught-same-type y vocab-taught-elsewhere, que son los dos checks que necesitan base; los worktrees solo enlazan .env.loc...",
+      "gate": "scripts/saveStory.ts",
+      "source": "memory:project_savestory_dry_passes_blind_without_db.md"
     },
     {
       "id": "project_spanish_cefr_judge_gaps",
@@ -2446,13 +2565,6 @@
       "rule": "Vulgar vocab is marked register vulgar",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-vulgar-register",
       "source": "validator:src/lib/validateGeneratedStory.ts"
-    },
-    {
-      "id": "project_distractor_gate",
-      "domain": "practice",
-      "rule": "Gate de distractores (2026-09-21): un ejercicio de practica no se puede acertar sin saber la palabra; reglas D1-D8 en scripts/distractorGate.ts, lint con trinquete por journey y sin --force en el s...",
-      "gate": "scripts/distractorGate.ts",
-      "source": "memory:project_distractor_gate.md"
     }
   ]
 }

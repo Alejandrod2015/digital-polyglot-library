@@ -1,0 +1,468 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "amargo",
+    "sentence": "Esta lechuga se pasa de [[amarga]] y no vale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bitter",
+      "options": [
+        "bitter",
+        "small",
+        "cheap",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Esta lechuga se pasa de amarga y no vale.",
+        "targetWord": "amarga",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0b48cb277244c82485ad.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pera",
+    "sentence": "Junta las [[peras]] y las coloca en el canasto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a pear",
+      "options": [
+        "a pear",
+        "a spoon",
+        "a sock",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Junta las peras y las coloca en el canasto.",
+        "targetWord": "peras",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d63f338f535d5349c19a.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espinaca",
+    "sentence": "Le llena el cesto de [[espinacas]] y no pesa nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spinach",
+      "options": [
+        "spinach",
+        "cheese",
+        "flour",
+        "rice"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Le llena el cesto de espinacas y no pesa nada.",
+        "targetWord": "espinacas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b93b0d8f1b9c5f7bb2e5.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pala",
+    "sentence": "Le pone encima una [[pala]] pequeña y dos semillas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spade",
+      "options": [
+        "a spade",
+        "a cup",
+        "a lamp",
+        "a scarf"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Le pone encima una pala pequeña y dos semillas.",
+        "targetWord": "pala",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8193ada85edc7a6591db.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar vueltas",
+    "sentence": "Baja despacio con la frase [[dando vueltas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "going round and round",
+      "options": [
+        "going round and round",
+        "fading away",
+        "coming back",
+        "sinking in"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Baja despacio con la frase dando vueltas.",
+        "targetWord": "dando vueltas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2473828e6887705beac3.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar con",
+    "sentence": "Aquí alguien empieza a [[contar con]] ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to count on",
+      "options": [
+        "to count on",
+        "to look after",
+        "to laugh at",
+        "to wait for"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Aquí alguien empieza a contar con ella.",
+        "targetWord": "contar con",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/abd9a28c1b1e4c4ab1cb.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calienta",
+    "sentence": "El sol de mediodía _____ el agua de la piscina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calienta",
+      "options": [
+        "calienta",
+        "rompe",
+        "vende",
+        "esconde"
+      ],
+      "translation": "The midday sun _____ the water in the pool.",
+      "optionTranslations": [
+        "warms",
+        "breaks",
+        "sells",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "El sol de mediodía calienta el agua de la piscina.",
+        "targetWord": "calienta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be1908a0371c84dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "húmeda",
+    "sentence": "La toalla sigue _____ porque no le ha dado el sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "húmeda",
+      "options": [
+        "húmeda",
+        "rota",
+        "cara",
+        "negra"
+      ],
+      "translation": "The towel is still _____ because it hasn't been in the sun.",
+      "optionTranslations": [
+        "damp",
+        "torn",
+        "expensive",
+        "black"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "La toalla sigue húmeda porque no le ha dado el sol.",
+        "targetWord": "húmeda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac21f55b0c3dc4bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plantas",
+    "sentence": "Riega las _____ del balcón para que no se sequen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plantas",
+      "options": [
+        "plantas",
+        "mesas",
+        "puertas",
+        "camas"
+      ],
+      "translation": "Water the _____ on the balcony so they don't dry out.",
+      "optionTranslations": [
+        "plants",
+        "tables",
+        "doors",
+        "beds"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Riega las plantas del balcón para que no se sequen.",
+        "targetWord": "plantas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e43e4d8ffb950c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "lechuga,uva,tijera,ramo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "lechuga",
+          "answer": "a lettuce",
+          "options": [
+            "a lettuce",
+            "a grape",
+            "a pair of scissors",
+            "a bouquet"
+          ]
+        },
+        {
+          "word": "uva",
+          "answer": "a grape",
+          "options": [
+            "a lettuce",
+            "a grape",
+            "a pair of scissors",
+            "a bouquet"
+          ]
+        },
+        {
+          "word": "tijera",
+          "answer": "a pair of scissors",
+          "options": [
+            "a lettuce",
+            "a grape",
+            "a pair of scissors",
+            "a bouquet"
+          ]
+        },
+        {
+          "word": "ramo",
+          "answer": "a bouquet",
+          "options": [
+            "a lettuce",
+            "a grape",
+            "a pair of scissors",
+            "a bouquet"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por lo bajo",
+    "sentence": "Se agacha y corta [[por lo bajo]], con calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "down low",
+      "options": [
+        "down low",
+        "in half",
+        "at once",
+        "by hand"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Se agacha y corta por lo bajo, con calma.",
+        "targetWord": "por lo bajo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/49f0119db9c180ad41f9.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de rodillas",
+    "sentence": "Está [[de rodillas]] entre dos filas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on his knees",
+      "options": [
+        "on his knees",
+        "on his feet",
+        "on his back",
+        "on his side"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Está de rodillas entre dos filas.",
+        "targetWord": "de rodillas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3db27095ae500d22d267.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fila",
+    "sentence": "Está de rodillas entre dos [[filas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a row",
+      "options": [
+        "a row",
+        "a box",
+        "a bag",
+        "a wall"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Está de rodillas entre dos filas.",
+        "targetWord": "filas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/83f0fc94380efbaa8298.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cáscara",
+    "sentence": "Las uvas se cogen por arriba, que si no se rompe la [[cáscara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the skin",
+      "options": [
+        "the skin",
+        "the box",
+        "the stem",
+        "the table"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Las uvas se cogen por arriba, que si no se rompe la cáscara.",
+        "targetWord": "cáscara",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f8ed7115486c37833092.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brisa",
+    "sentence": "La [[brisa]] huele a tierra húmeda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a breeze",
+      "options": [
+        "a breeze",
+        "a cellar",
+        "a coat",
+        "a dog"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "La brisa huele a tierra húmeda.",
+        "targetWord": "brisa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/60a5fa5b295a380edf72.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "febrero",
+    "sentence": "Guarda esas dos para [[febrero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "February",
+      "options": [
+        "February",
+        "October",
+        "Tuesday",
+        "Easter"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Guarda esas dos para febrero.",
+        "targetWord": "febrero",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/97714951ac9b0bc90912.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mes",
+    "sentence": "Enero es el primer _____ del año.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mes",
+      "options": [
+        "mes",
+        "vaso",
+        "piso",
+        "coche"
+      ],
+      "translation": "January is the first _____ of the year.",
+      "optionTranslations": [
+        "month",
+        "glass",
+        "floor",
+        "car"
+      ],
+      "audioClip": {
+        "storySlug": "baja-con-el-canasto-lleno",
+        "storySource": "user",
+        "sentence": "Enero es el primer mes del año.",
+        "targetWord": "mes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/929237d6c1c734ff.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "mx3-poquito-son-dos-dedos-f06-content",
+  "slug": "poquito-son-dos-dedos",
+  "titulo": "Poquito son dos dedos",
+  "tema": "haircuts-and-barbershops",
+  "gate": "contenido, se oye \"igual\"",
+  "kind": "content",
+  "texto": "Bruno lee el cartel. Dice: “Poquito = dos dedos.” Nadie lee ese cartel nunca.",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790246073133.mp3",
+  "start": 39.88,
+  "end": 44.237313
+ },
+ {
+  "id": "mx3-poquito-son-dos-dedos-f07-uptalk",
+  "slug": "poquito-son-dos-dedos",
+  "titulo": "Poquito son dos dedos",
+  "tema": "haircuts-and-barbershops",
+  "gate": "entonacion, sube +8.3 st",
+  "kind": "uptalk",
+  "texto": "“La próxima vez pido dos dedos,” dice Bruno.",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790246073133.mp3",
+  "start": 44.116,
+  "end": 46.834
+ },
+ {
+  "id": "mx3-poquito-son-dos-dedos-f08-uptalk",
+  "slug": "poquito-son-dos-dedos",
+  "titulo": "Poquito son dos dedos",
+  "tema": "haircuts-and-barbershops",
+  "gate": "entonacion, sube +22.7 st",
+  "kind": "uptalk",
+  "texto": "“La próxima vez corto tres,” dice Arturo. “Tus dedos son muy chicos.”",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Poquito_son_dos_dedos_multivoice_1790246073133.mp3",
+  "start": 46.96,
+  "end": 51.56
+ },
+ {
+  "id": "mx3-el-timbre-si-suena-f01-uptalk",
+  "slug": "el-timbre-si-suena",
+  "titulo": "El timbre sí suena",
+  "tema": "parcels-and-deliveries",
+  "gate": "entonacion, sube +11.4 st",
+  "kind": "uptalk",
+  "texto": "Renata reparte paquetes en moto y conoce la colonia de memoria. Hoy espera con el casco puesto y una caja en el hombro.",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790246027635.mp3",
+  "start": 2.48,
+  "end": 10.0333645
+ },
+ {
+  "id": "mx3-el-timbre-si-suena-f02-uptalk",
+  "slug": "el-timbre-si-suena",
+  "titulo": "El timbre sí suena",
+  "tema": "parcels-and-deliveries",
+  "gate": "entonacion, sube +8.3 st",
+  "kind": "uptalk",
+  "texto": "Toca el timbre seis veces.",
+  "master": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/El_timbre_s_suena_multivoice_1790246027635.mp3",
+  "start": 10.0333645,
+  "end": 12.22
+ }
+]

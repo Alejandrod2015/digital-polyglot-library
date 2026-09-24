@@ -1,0 +1,400 @@
+[
+ {
+  "topic": "illness-and-sick-days",
+  "slotIndex": 0,
+  "title": "Bettruhe in der Probezeit",
+  "slug": "bettruhe-in-der-probezeit",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Her throat is on fire before she is even awake and the thermometer says almost thirty nine. It is Monday and the fourth week of her trial period at the flower shop. The doctor two streets away writes three days of bed rest on a small yellow sheet of paper.",
+  "text": "Ihr Hals brennt schon beim Aufwachen, und das Bett ist nass vom Schweiß. Das Thermometer zeigt achtunddreißig Komma neun. Am Montag beginnt ihre vierte Woche in der Probezeit.\n\nBente, die Hausärztin über der Bäckerei, hat am Montag noch einen Termin frei. Im Wartezimmer sitzen neun Leute, und niemand sagt ein Wort. “Halsschmerzen seit Sonntag, Fieber seit heute Nacht, und die Stimme ist weg”, sagt Britta heiser.\n\nBente schaut in den Hals, misst noch einmal und tippt etwas in den Computer. “Drei Tage Bettruhe, viel trinken, und danach sehen wir noch einmal weiter”, erklärt sie ruhig. Der gelbe Krankenschein sagt ausruhen, die Probezeit sagt komm trotzdem.\n\nBritta steht auf der Straße und schaut das Papier lange an. Dann ruft sie im Blumenladen an und hört ihre eigene Stimme kaum. “Ich bin krankgeschrieben, drei Tage, und es tut mir wirklich sehr leid”, flüstert sie.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Schweiß",
+    "surface": "Schweiß",
+    "definition": "Sweat; the water your body makes when you are hot or ill."
+   },
+   {
+    "type": "noun",
+    "word": "das Thermometer",
+    "surface": "Thermometer",
+    "definition": "A thermometer; the small stick that tells you how warm you are."
+   },
+   {
+    "type": "verb",
+    "word": "zeigen",
+    "surface": "zeigt",
+    "definition": "To show; to put a number or a thing in front of you."
+   },
+   {
+    "type": "verb",
+    "word": "beginnen",
+    "surface": "beginnt",
+    "definition": "To begin; to be the first day of a longer period."
+   },
+   {
+    "type": "noun",
+    "word": "die Probezeit",
+    "anchor": true,
+    "surface": "Probezeit",
+    "definition": "A trial period; the first months when a job is not yet safe."
+   },
+   {
+    "type": "noun",
+    "word": "die Hausärztin",
+    "anchor": true,
+    "surface": "Hausärztin",
+    "definition": "A family doctor; the woman you see first for anything small."
+   },
+   {
+    "type": "noun",
+    "word": "das Wartezimmer",
+    "anchor": true,
+    "surface": "Wartezimmer",
+    "definition": "A waiting room; the room with chairs before you see the doctor."
+   },
+   {
+    "type": "noun",
+    "word": "die Halsschmerzen",
+    "surface": "Halsschmerzen",
+    "definition": "A sore throat; the pain inside your neck when you swallow."
+   },
+   {
+    "type": "noun",
+    "word": "das Fieber",
+    "surface": "Fieber",
+    "definition": "A fever; a body that is much warmer than it should be."
+   },
+   {
+    "type": "adjective",
+    "word": "frei",
+    "surface": "frei",
+    "definition": "Free; not taken yet, so somebody else can still have it."
+   },
+   {
+    "type": "verb",
+    "word": "messen",
+    "surface": "misst",
+    "definition": "To measure; to find out a number with a small machine."
+   },
+   {
+    "type": "verb",
+    "word": "tippen",
+    "surface": "tippt",
+    "definition": "To type; to write on a keyboard with your fingers."
+   },
+   {
+    "type": "noun",
+    "word": "die Bettruhe",
+    "anchor": true,
+    "surface": "Bettruhe",
+    "definition": "Bed rest; the doctor's order to stay in bed and do nothing."
+   },
+   {
+    "type": "verb",
+    "word": "ausruhen",
+    "surface": "ausruhen",
+    "definition": "To rest; to stop working so the body can get better."
+   },
+   {
+    "type": "noun",
+    "word": "der Krankenschein",
+    "anchor": true,
+    "surface": "Krankenschein",
+    "definition": "A sick note; the paper that tells your boss you may stay home."
+   },
+   {
+    "type": "verb",
+    "word": "hören",
+    "surface": "hört",
+    "definition": "To hear; to catch a sound, here her own weak voice."
+   },
+   {
+    "type": "verb",
+    "word": "flüstern",
+    "surface": "flüstert",
+    "definition": "To whisper; to speak so softly that it is almost air."
+   },
+   {
+    "type": "adverb",
+    "word": "lange",
+    "surface": "lange",
+    "definition": "For a long time; here standing still and not moving on."
+   },
+   {
+    "type": "adverb",
+    "word": "kaum",
+    "surface": "kaum",
+    "definition": "Hardly; so little that you almost cannot notice it."
+   },
+   {
+    "type": "adverb",
+    "word": "sehr",
+    "surface": "sehr",
+    "definition": "Very; used to make the word after it much stronger."
+   }
+  ]
+ },
+ {
+  "topic": "illness-and-sick-days",
+  "slotIndex": 1,
+  "title": "Drei Tage ohne Stimme",
+  "slug": "drei-tage-ohne-stimme",
+  "arcType": "late-reveal",
+  "synopsis": "For three days the flat is as quiet as a waiting room and Britta never knows which day it is. On Tuesday there is a small noise at the door, on Wednesday cold noodle soup, on Thursday a bag with tissues. Only on Friday does she find the note underneath.",
+  "text": "Drei Tage liegt in der Wohnung eine Stille wie im Wartezimmer. Die Grippe kommt in Wellen: erst friert sie, dann schwitzt sie. Sobald sie sich aufsetzt, dreht sich das Zimmer.\n\nSie kann kaum schlucken und nimmt die Tabletten mit warmer Milch. Sie niest und weiß nie, welcher Tag ist. Am Dienstag hört sie morgens ein leises Geräusch an der Tür.\n\nAm Mittwoch steht eine kalte Nudelsuppe vor der Tür. Am Donnerstag wartet dort eine Tüte mit Taschentüchern und zwei Äpfeln. Am Freitag findet sie darunter einen Zettel in Maltes Handschrift: “Nicht klingeln, schlaf du lieber weiter, ich stelle es dir einfach vor die Tür.”\n\nEr war jeden Morgen da, bevor sein Dienst anfing, und sie war nie wach dabei. Britta ruft ihn an, und ihre Stimme kratzt: “Warum klingelst du eigentlich nie, ich mache dir doch wirklich sehr gern auf?” “Weil du dann aufstehst, und aufstehen sollst du diese ganze Woche nicht”, antwortet er ruhig.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Welle",
+    "surface": "Wellen",
+    "definition": "A wave; here the illness coming back again and again."
+   },
+   {
+    "type": "noun",
+    "word": "die Grippe",
+    "surface": "Grippe",
+    "definition": "Flu; the illness with fever that keeps you in bed for days."
+   },
+   {
+    "type": "verb",
+    "word": "schwitzen",
+    "surface": "schwitzt",
+    "definition": "To sweat; to get wet all over because your body is hot."
+   },
+   {
+    "type": "verb",
+    "word": "aufsetzen",
+    "surface": "aufsetzt",
+    "definition": "To sit up; to lift your body upright while still in bed."
+   },
+   {
+    "type": "verb",
+    "word": "schlucken",
+    "surface": "schlucken",
+    "definition": "To swallow; to move food or water down your throat."
+   },
+   {
+    "type": "noun",
+    "word": "die Tablette",
+    "surface": "Tabletten",
+    "definition": "A tablet; the small hard pill you take for an illness."
+   },
+   {
+    "type": "adverb",
+    "word": "morgens",
+    "surface": "morgens",
+    "definition": "In the mornings; early in the day, before the work starts."
+   },
+   {
+    "type": "verb",
+    "word": "niesen",
+    "surface": "niest",
+    "definition": "To sneeze; to blow air out of your nose very suddenly."
+   },
+   {
+    "type": "adjective",
+    "word": "wach",
+    "surface": "wach",
+    "definition": "Awake; not sleeping, even if only for a short moment."
+   },
+   {
+    "type": "noun",
+    "word": "das Geräusch",
+    "surface": "Geräusch",
+    "definition": "A noise; a small sound that you hear but cannot place."
+   },
+   {
+    "type": "noun",
+    "word": "die Nudelsuppe",
+    "surface": "Nudelsuppe",
+    "definition": "Noodle soup; the warm soup people bring to somebody ill."
+   },
+   {
+    "type": "noun",
+    "word": "die Tüte",
+    "surface": "Tüte",
+    "definition": "A bag; the paper bag somebody leaves at your door."
+   },
+   {
+    "type": "noun",
+    "word": "das Taschentuch",
+    "surface": "Taschentüchern",
+    "definition": "A tissue; the soft paper you use for a running nose."
+   },
+   {
+    "type": "noun",
+    "word": "der Apfel",
+    "surface": "Äpfeln",
+    "definition": "An apple; the round fruit you eat when nothing else works."
+   },
+   {
+    "type": "noun",
+    "word": "die Handschrift",
+    "surface": "Handschrift",
+    "definition": "Handwriting; the way one person's letters look on paper."
+   },
+   {
+    "type": "verb",
+    "word": "klingeln",
+    "surface": "klingeln",
+    "definition": "To ring; to press the bell so somebody opens the door."
+   },
+   {
+    "type": "noun",
+    "word": "der Dienst",
+    "surface": "Dienst",
+    "definition": "A shift; the hours somebody has to be at their work."
+   },
+   {
+    "type": "verb",
+    "word": "kratzen",
+    "surface": "kratzt",
+    "definition": "To scratch; here a voice that comes out rough and dry."
+   },
+   {
+    "type": "verb",
+    "word": "aufstehen",
+    "surface": "aufstehst",
+    "definition": "To get up; to leave the bed and stand on your feet."
+   },
+   {
+    "type": "adjective",
+    "word": "ganz",
+    "surface": "ganze",
+    "definition": "Whole; all of it, from the first day to the very last."
+   }
+  ]
+ },
+ {
+  "topic": "illness-and-sick-days",
+  "slotIndex": 2,
+  "title": "Die Praxis am Dienstag",
+  "slug": "die-praxis-am-dienstag",
+  "arcType": "reframe-turn",
+  "synopsis": "Britta goes back to the doctor on Tuesday for one signature, so that she can work again on Wednesday. Bente listens to her lungs and gives her two more days instead. Britta cycles to the shop anyway, and her boss takes the bag out of her hand at the door.",
+  "text": "Die Sprechstunde fängt am Dienstag um acht an, und die Praxis ist voll. Britta legt die Versichertenkarte hin und will nur die Unterschrift. Am Mittwoch soll sie wieder im Laden stehen, mehr nicht.\n\nBente hört die Lunge ab und schaut lange auf die Karteikarte. “Zwei Tage noch, sonst schleppen Sie diese Grippe hier wochenlang mit sich herum”, meint sie. “Ich bin noch in der Probezeit, ich kann da doch nicht einfach wegbleiben”, antwortet Britta stur.\n\n“Krank sein ist kein Fehler, und Ihr Chef weiß das besser als Sie”, wiederholt Bente. Am Mittwoch fährt Britta trotzdem los, obwohl ihr Rücken bei jeder Kurve zieht. Ihr Chef sieht die heißen Wangen schon durch das Schaufenster.\n\nEr nimmt ihr die Tasche aus der Hand und zeigt ohne ein Wort zur Straße. Britta wartet auf das schlechte Gewissen, aber es kommt nicht. Sie fährt langsam zurück und schläft bis zum Donnerstagmorgen durch.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Sprechstunde",
+    "surface": "Sprechstunde",
+    "definition": "Surgery hours; the times a doctor sees patients each day."
+   },
+   {
+    "type": "noun",
+    "word": "die Praxis",
+    "surface": "Praxis",
+    "definition": "A doctor's surgery; the rooms where a doctor sees people."
+   },
+   {
+    "type": "noun",
+    "word": "die Versichertenkarte",
+    "surface": "Versichertenkarte",
+    "definition": "The health card every patient hands in at a German surgery."
+   },
+   {
+    "type": "noun",
+    "word": "die Unterschrift",
+    "surface": "Unterschrift",
+    "definition": "A signature; your name written to make a paper count."
+   },
+   {
+    "type": "noun",
+    "word": "der Mittwoch",
+    "surface": "Mittwoch",
+    "definition": "Wednesday; the day in the middle of the working week."
+   },
+   {
+    "type": "noun",
+    "word": "die Lunge",
+    "surface": "Lunge",
+    "definition": "The lung; the part inside your chest that takes in air."
+   },
+   {
+    "type": "noun",
+    "word": "die Karteikarte",
+    "surface": "Karteikarte",
+    "definition": "A patient card; the card a surgery keeps your history on."
+   },
+   {
+    "type": "adverb",
+    "word": "wochenlang",
+    "surface": "wochenlang",
+    "definition": "For weeks; going on week after week without stopping."
+   },
+   {
+    "type": "verb",
+    "word": "wegbleiben",
+    "surface": "wegbleiben",
+    "definition": "To stay away; to not turn up where people expect you."
+   },
+   {
+    "type": "adjective",
+    "word": "stur",
+    "surface": "stur",
+    "definition": "Stubborn; holding on to your own idea whatever anybody says."
+   },
+   {
+    "type": "noun",
+    "word": "der Fehler",
+    "surface": "Fehler",
+    "definition": "A mistake; something you did wrong and should not repeat."
+   },
+   {
+    "type": "verb",
+    "word": "wiederholen",
+    "surface": "wiederholt",
+    "definition": "To repeat; to say the same thing again, slowly and calmly."
+   },
+   {
+    "type": "adjective",
+    "word": "krank",
+    "surface": "Krank",
+    "definition": "Ill; not well enough to work, and allowed to stay home."
+   },
+   {
+    "type": "noun",
+    "word": "das Schaufenster",
+    "surface": "Schaufenster",
+    "definition": "A shop window; the big glass front that shows the goods."
+   },
+   {
+    "type": "noun",
+    "word": "der Laden",
+    "surface": "Laden",
+    "definition": "A shop; the small place where things are sold."
+   },
+   {
+    "type": "noun",
+    "word": "der Chef",
+    "surface": "Chef",
+    "definition": "The boss; the person who decides who works and when."
+   },
+   {
+    "type": "noun",
+    "word": "das Gewissen",
+    "surface": "Gewissen",
+    "definition": "Your conscience; the voice inside that tells you off."
+   },
+   {
+    "type": "verb",
+    "word": "zurückfahren",
+    "surface": "zurück",
+    "definition": "To ride back; to go home again the way you came."
+   },
+   {
+    "type": "verb",
+    "word": "warten",
+    "surface": "wartet",
+    "definition": "To wait; to stay and expect something that does not come."
+   },
+   {
+    "type": "verb",
+    "word": "nehmen",
+    "surface": "nimmt",
+    "definition": "To take; to put your hand on something and hold it."
+   }
+  ]
+ }
+]

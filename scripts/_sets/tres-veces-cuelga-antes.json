@@ -1,0 +1,518 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "en voz baja",
+    "sentence": "Escribe la frase y la dice [[en voz baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a low voice",
+      "options": [
+        "in a low voice",
+        "in a hurry",
+        "in a bad mood",
+        "in a straight line"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Escribe la frase y la dice en voz baja.",
+        "targetWord": "en voz baja",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c35a7fc9efd4bd0f9bfe.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atascarse",
+    "sentence": "Y si te [[atascas]], te atascas, que aquí no se ha muerto nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get stuck",
+      "options": [
+        "to get stuck",
+        "to get lost",
+        "to get wet",
+        "to get bored"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Y si te atascas, te atascas, que aquí no se ha muerto nadie.",
+        "targetWord": "atascas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/319dc0de825cdf639712.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aliento",
+    "sentence": "Toma [[aliento]], se ajusta la camisa y disimula el susto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "breath",
+      "options": [
+        "breath",
+        "notes",
+        "coffee",
+        "shelter"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Toma aliento, se ajusta la camisa y disimula el susto.",
+        "targetWord": "aliento",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ba11155613b6781570b5.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corazón",
+    "sentence": "El [[corazón]] le golpea muy fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the heart",
+      "options": [
+        "the heart",
+        "the wind",
+        "the door",
+        "the rain"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "El corazón le golpea muy fuerte.",
+        "targetWord": "corazón",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2c28e23ce0c6835cde18.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descolgar",
+    "sentence": "Alguien [[descuelga]] al otro lado y saluda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pick up",
+      "options": [
+        "to pick up",
+        "to call back",
+        "to shout out",
+        "to write down"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Alguien descuelga al otro lado y saluda.",
+        "targetWord": "descuelga",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/329e1cbb0980cc0fff74.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coraje",
+    "sentence": "No es vergüenza, es [[coraje]] lo que me falta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "courage",
+      "options": [
+        "courage",
+        "sleep",
+        "practice",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "No es vergüenza, es coraje lo que me falta.",
+        "targetWord": "coraje",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/db63ac3066591253b64c.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "marca",
+    "sentence": "Ella _____ el número de su madre y espera el tono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "marca",
+      "options": [
+        "marca",
+        "rompe",
+        "borra",
+        "pinta"
+      ],
+      "translation": "She _____ her mother's number and waits for the tone.",
+      "optionTranslations": [
+        "dials",
+        "breaks",
+        "erases",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Ella marca el número de su madre y espera el tono.",
+        "targetWord": "marca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fa6fa12fa60cea5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tímida",
+    "sentence": "Es muy _____ y no habla con gente que no conoce.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tímida",
+      "options": [
+        "tímida",
+        "alta",
+        "rubia",
+        "rica"
+      ],
+      "translation": "She's very _____ and doesn't talk to people she doesn't know.",
+      "optionTranslations": [
+        "shy",
+        "tall",
+        "blonde",
+        "rich"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Es muy tímida y no habla con gente que no conoce.",
+        "targetWord": "tímida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/422ecf11ffaf506c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "valiente",
+    "sentence": "El bombero entra en la casa en llamas; es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "valiente",
+      "options": [
+        "valiente",
+        "lento",
+        "gordo",
+        "joven"
+      ],
+      "translation": "The firefighter goes into the burning house; he's very _____.",
+      "optionTranslations": [
+        "brave",
+        "slow",
+        "fat",
+        "young"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "El bombero entra en la casa en llamas; es muy valiente.",
+        "targetWord": "valiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dc2768da76d7799.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "auricular,sangre,cristal,lado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "auricular",
+          "answer": "a telephone receiver",
+          "options": [
+            "a telephone receiver",
+            "blood",
+            "a pane of glass",
+            "a side"
+          ]
+        },
+        {
+          "word": "sangre",
+          "answer": "blood",
+          "options": [
+            "a telephone receiver",
+            "blood",
+            "a pane of glass",
+            "a side"
+          ]
+        },
+        {
+          "word": "cristal",
+          "answer": "a pane of glass",
+          "options": [
+            "a telephone receiver",
+            "blood",
+            "a pane of glass",
+            "a side"
+          ]
+        },
+        {
+          "word": "lado",
+          "answer": "a side",
+          "options": [
+            "a telephone receiver",
+            "blood",
+            "a pane of glass",
+            "a side"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a solas",
+    "sentence": "[[A solas]], sin nadie detrás, le entra un temor nuevo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "asleep",
+        "outside",
+        "upstairs"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "A solas, sin nadie detrás, le entra un temor nuevo.",
+        "targetWord": "A solas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2b81bf72f0ed0a6db748.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temor",
+    "sentence": "Le entra un [[temor]] nuevo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fear",
+      "options": [
+        "a fear",
+        "a cough",
+        "a plan",
+        "a debt"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Le entra un temor nuevo.",
+        "targetWord": "temor",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9017bbad22d235c6e067.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ánimo",
+    "sentence": "Un poco de [[ánimo]], hija, que es una pregunta de dos líneas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "encouragement",
+      "options": [
+        "encouragement",
+        "patience",
+        "silence",
+        "attention"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Un poco de ánimo, hija, que es una pregunta de dos líneas.",
+        "targetWord": "ánimo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d1b8359948d2f3cfa3f0.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "disimular",
+    "sentence": "Se ajusta la camisa y [[disimula]] el susto ante el cristal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hide",
+      "options": [
+        "to hide",
+        "to enjoy",
+        "to share",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Se ajusta la camisa y disimula el susto ante el cristal.",
+        "targetWord": "disimula",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9f78688d1b6f302e853d.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "susto",
+    "sentence": "Disimula el [[susto]] ante el cristal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fright",
+      "options": [
+        "a fright",
+        "a smile",
+        "a stain",
+        "a yawn"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Disimula el susto ante el cristal.",
+        "targetWord": "susto",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c5acf140c554a9fb5691.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vergüenza",
+    "sentence": "No es [[vergüenza]], es coraje lo que me falta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shame",
+      "options": [
+        "shame",
+        "hunger",
+        "money",
+        "time"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "No es vergüenza, es coraje lo que me falta.",
+        "targetWord": "vergüenza",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9a154bf6fa915e5df488.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intención",
+    "sentence": "A la cuarta marca con toda la [[intención]] y no cuelga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "intention",
+      "options": [
+        "intention",
+        "interest",
+        "patience",
+        "family"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "A la cuarta marca con toda la intención y no cuelga.",
+        "targetWord": "intención",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ad60a47ed403ccd47ae2.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cobarde",
+    "sentence": "No cuelga: ni valiente ni [[cobarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cowardly",
+      "options": [
+        "cowardly",
+        "sleepy",
+        "hungry",
+        "clumsy"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "No cuelga: ni valiente ni cobarde.",
+        "targetWord": "cobarde",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9dfd01a5bccf60e1bfe1.mp3",
+        "wordVoiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reconoce",
+    "sentence": "Oye la voz y la _____ enseguida: es su hermano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reconoce",
+      "options": [
+        "reconoce",
+        "esconde",
+        "vende",
+        "cocina"
+      ],
+      "translation": "She hears the voice and _____ it at once: it's her brother.",
+      "optionTranslations": [
+        "recognises",
+        "hides",
+        "sells",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-cuelga-antes",
+        "storySource": "user",
+        "sentence": "Oye la voz y la reconoce enseguida: es su hermano.",
+        "targetWord": "reconoce",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94e71ddd034c188a.mp3"
+      }
+    },
+    "featured": false
+  }
+]

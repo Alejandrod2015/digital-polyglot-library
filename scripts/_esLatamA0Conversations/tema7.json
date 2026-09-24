@@ -1,0 +1,391 @@
+[
+  {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 0,
+    "title": "Dos semanas y una lista",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Mariana leaves for two weeks and hands Nicolás her keys with a list of twenty points. He reads the whole page out loud and notices what is missing.",
+    "text": "Mariana baja con dos maletas pesadas. Nicolás la espera en el felpudo. La gata los mira desde la escalera.\n\nMariana: Me voy dos semanas. Aquí tienes mi llavero.\nNicolás: Sin problema. Yo paso una vez al día.\nMariana: Gracias. Y lee esto. Son mis instrucciones.\n\nNicolás desdobla la hoja. Cuenta veinte puntos. Después lee en voz alta.\n\nNicolás: Punto seis: cepilla a la gata.\nMariana: Le encanta. Con tres minutos basta.\nNicolás: Punto trece: los gatitos duermen juntos.\nMariana: Siempre. Uno solo llora toda la noche.\nNicolás: Punto veinte: guarda el cepillo arriba.\n\nNicolás lee la hoja entera, de arriba abajo. Después mira las plantas tristes del balcón.\n\nNicolás: Mariana, tus plantas no están en la hoja.\nMariana: ¿Mis plantas? Ah, sí. Riega mis plantas.\nNicolás: ¿Y cada cuánto las riego?\nMariana: Una vez por semana. Ellas no se quejan.\nNicolás: La gata tiene veinte puntos. Ellas, ninguno.\nMariana: Ellas nunca lloran de noche.",
+    "vocab": [
+      {
+        "word": "el problema",
+        "type": "noun",
+        "definition": "A problem; something that goes wrong.",
+        "surface": "problema"
+      },
+      {
+        "word": "guardar",
+        "surface": "guarda",
+        "type": "verb",
+        "definition": "To put away; to keep it in its place."
+      },
+      {
+        "type": "verb",
+        "word": "esperar",
+        "surface": "espera",
+        "definition": "to wait for someone or something"
+      },
+      {
+        "type": "expression",
+        "word": "dos semanas",
+        "surface": "dos semanas",
+        "definition": "two weeks; fourteen days in a row"
+      },
+      {
+        "type": "noun",
+        "word": "el llavero",
+        "surface": "llavero",
+        "definition": "a ring that holds all your keys together",
+        "anchor": true
+      },
+      {
+        "word": "la maleta",
+        "type": "noun",
+        "definition": "A suitcase; the bag you travel with.",
+        "surface": "maletas"
+      },
+      {
+        "word": "la hoja",
+        "type": "noun",
+        "definition": "A sheet of paper; the page with the list.",
+        "surface": "hoja"
+      },
+      {
+        "word": "trece",
+        "type": "number",
+        "definition": "Thirteen; the number after twelve."
+      },
+      {
+        "word": "las instrucciones",
+        "type": "noun",
+        "definition": "Instructions; the steps that say what to do.",
+        "surface": "instrucciones"
+      },
+      {
+        "word": "el minuto",
+        "type": "noun",
+        "definition": "A minute; sixty seconds of time.",
+        "surface": "minutos"
+      },
+      {
+        "type": "verb",
+        "word": "bastar",
+        "surface": "basta",
+        "definition": "to be enough; nothing more is needed"
+      },
+      {
+        "type": "noun",
+        "word": "el cepillo",
+        "surface": "cepillo",
+        "definition": "a tool with short hard hairs for brushing",
+        "anchor": true
+      },
+      {
+        "word": "regar",
+        "type": "verb",
+        "definition": "To water; to give water to plants.",
+        "surface": "Riega"
+      },
+      {
+        "word": "encantar",
+        "type": "verb",
+        "definition": "To love it; to like something very much.",
+        "surface": "encanta"
+      },
+      {
+        "word": "llorar",
+        "type": "verb",
+        "definition": "To cry; to make tears and sad sounds.",
+        "surface": "llora"
+      },
+      {
+        "word": "entero",
+        "type": "adjective",
+        "definition": "Whole; complete from start to end.",
+        "surface": "entera"
+      },
+      {
+        "type": "noun",
+        "word": "la planta",
+        "surface": "planta",
+        "definition": "a green living thing that grows in soil",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "cada cuánto",
+        "surface": "cada cuánto",
+        "definition": "how often; after how much time"
+      },
+      {
+        "type": "verb",
+        "word": "quejarse",
+        "surface": "se quejan",
+        "definition": "to complain; to say you are not happy"
+      },
+      {
+        "word": "desdoblar",
+        "type": "verb",
+        "definition": "To unfold; to open a folded paper.",
+        "surface": "desdobla"
+      }
+    ]
+  },
+  {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 1,
+    "title": "El punto cuatro miente",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Nicolás is in charge and the cat is gone. On the phone Mariana reads him point four. Point seventeen says the opposite, so Nicolás looks somewhere else.",
+    "text": "Al día siguiente, Nicolás sube a casa de Mariana. La cesta de la gata está vacía. Entonces suena el teléfono.\n\nMariana: Hola, Nicolás. ¿Cómo va todo?\nNicolás: Tu gata no está en ningún lado desde ayer.\nMariana: Punto cuatro: cierra siempre la ventana.\nNicolás: La ventana está cerrada.\n\nNicolás toma la hoja. El punto diecisiete está al final. Lo lee en silencio.\n\nNicolás: El punto diecisiete dice otra cosa.\nMariana: ¿Y qué dice?\nNicolás: La gata sale sola y vuelve sola.\nMariana: Ah. Los dos puntos no van juntos.\nNicolás: Tu hoja se equivoca. Yo miro abajo.\n\nNicolás baja. Su ventana está abierta. En el sofá hay un bulto gris.\n\nNicolás: Mariana, ya está. Tu gata duerme aquí.\nMariana: ¿En tu casa? ¿Y por dónde entra?\nNicolás: Por mi ventana. Casi nunca la cierro.\nMariana: ¿Y los gatitos?\nNicolás: Sube a comer. Después se va a descansar.\nMariana: Mi gata no se pierde. Se escapa.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la cesta",
+        "surface": "cesta",
+        "definition": "a soft round bed made like a basket",
+        "anchor": true
+      },
+      {
+        "word": "siguiente",
+        "type": "adjective",
+        "definition": "Next; the day right after this one."
+      },
+      {
+        "word": "cerrado",
+        "type": "adjective",
+        "definition": "Closed; shut, not open.",
+        "surface": "cerrada"
+      },
+      {
+        "word": "el teléfono",
+        "type": "noun",
+        "definition": "A phone; you call people with it.",
+        "surface": "teléfono"
+      },
+      {
+        "word": "descansar",
+        "type": "verb",
+        "definition": "To rest; to stop and do nothing."
+      },
+      {
+        "type": "expression",
+        "word": "desde ayer",
+        "surface": "desde ayer",
+        "definition": "since yesterday; from the day before today"
+      },
+      {
+        "word": "diecisiete",
+        "type": "number",
+        "definition": "Seventeen; the number after sixteen."
+      },
+      {
+        "type": "expression",
+        "word": "al final",
+        "surface": "al final",
+        "definition": "at the end; in the last part"
+      },
+      {
+        "word": "sola",
+        "type": "adjective",
+        "definition": "On her own; with nobody with her."
+      },
+      {
+        "type": "noun",
+        "word": "el punto",
+        "surface": "punto",
+        "definition": "one short line of a list, with its number",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "otra cosa",
+        "surface": "otra cosa",
+        "definition": "something else; a different thing"
+      },
+      {
+        "type": "verb",
+        "word": "salir",
+        "surface": "sale",
+        "definition": "to go out; to leave a place"
+      },
+      {
+        "type": "verb",
+        "word": "volver",
+        "surface": "vuelve",
+        "definition": "to come back; to return to a place"
+      },
+      {
+        "word": "van",
+        "type": "verb",
+        "definition": "They go together; here, two points that disagree."
+      },
+      {
+        "type": "verb",
+        "word": "equivocarse",
+        "surface": "se equivoca",
+        "definition": "to be wrong; to say something not true"
+      },
+      {
+        "type": "noun",
+        "word": "el bulto",
+        "surface": "bulto",
+        "definition": "a round shape you cannot name yet",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "abierto",
+        "surface": "abierta",
+        "definition": "open; not shut, so anyone can pass"
+      },
+      {
+        "word": "el lado",
+        "type": "noun",
+        "definition": "A side; in 'ningun lado' it means anywhere.",
+        "surface": "lado"
+      },
+      {
+        "type": "expression",
+        "word": "por dónde",
+        "surface": "por dónde",
+        "definition": "through what way; by which road or hole"
+      },
+      {
+        "type": "verb",
+        "word": "escaparse",
+        "surface": "Se escapa",
+        "definition": "to run away; to leave without telling anyone"
+      }
+    ]
+  },
+  {
+    "topic": "goodbyes-and-keys",
+    "slotIndex": 2,
+    "title": "Aquí abajo duerme mejor",
+    "arcType": "harmonic-close",
+    "synopsis": "Mariana comes home after two weeks. Her plants are almost fine, her cat is not upstairs, and Nicolás has a small surprise waiting in his pocket.",
+    "text": "Dos semanas después, Mariana abre su puerta por fin. Los gatitos corren por toda la casa.\n\nMariana: Nicolás, gracias por todo. Todo está en orden.\nNicolás: Bienvenida. Tus plantas viven. Casi todas.\nMariana: ¿Casi? ¿Y mi gata? No está en ningún lado.\nNicolás: Abajo. En mi sofá. Desde el jueves.\n\nMariana y Nicolás bajan sin hacer ruido. Hay un rascador nuevo. La gata duerme encima y no se mueve.\n\nMariana: Ya tiene dos casas. Yo no digo nada.\nNicolás: Come arriba. Duerme aquí abajo.\nMariana: Toma. Esta llave es tuya, para siempre.\nNicolás: Gracias. Yo también tengo algo para ti.\n\nNicolás busca en su bolsillo. Saca una llave dorada y se ríe.\n\nMariana: ¿Una llave? ¿De qué puerta?\nNicolás: De la mía. Tu gata vive abajo.\nMariana: Ella no necesita llave. Tiene la ventana.\nNicolás: La llave es para ti.\nMariana: Entonces toco el timbre igual.\nNicolás: No hace falta. La gata nunca toca.",
+    "vocab": [
+      {
+        "word": "en orden",
+        "type": "expression",
+        "definition": "In order; everything as it should be."
+      },
+      {
+        "word": "el bolsillo",
+        "type": "noun",
+        "definition": "A pocket; the small bag in your clothes.",
+        "surface": "bolsillo"
+      },
+      {
+        "word": "por fin",
+        "type": "expression",
+        "definition": "At last; after a long wait."
+      },
+      {
+        "word": "la casa",
+        "type": "noun",
+        "definition": "A house; the place where someone lives.",
+        "surface": "casas"
+      },
+      {
+        "type": "expression",
+        "word": "en ningún lado",
+        "surface": "en ningún lado",
+        "definition": "nowhere; not in any place at all"
+      },
+      {
+        "type": "expression",
+        "word": "sin hacer ruido",
+        "surface": "sin hacer ruido",
+        "definition": "quietly; without waking anyone up"
+      },
+      {
+        "type": "noun",
+        "word": "el rascador",
+        "surface": "rascador",
+        "definition": "a tall post where a cat sharpens its nails",
+        "anchor": true
+      },
+      {
+        "word": "tuyo",
+        "type": "adjective",
+        "definition": "Yours; it belongs to you.",
+        "surface": "tuya"
+      },
+      {
+        "type": "expression",
+        "word": "yo no digo nada",
+        "surface": "Yo no digo nada",
+        "definition": "I say nothing; I let it happen"
+      },
+      {
+        "type": "noun",
+        "word": "la llave",
+        "surface": "llave",
+        "definition": "the small metal thing that opens a door",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "para siempre",
+        "surface": "para siempre",
+        "definition": "forever; from now on with no end"
+      },
+      {
+        "type": "expression",
+        "word": "algo para ti",
+        "surface": "algo para ti",
+        "definition": "something for you; a small gift"
+      },
+      {
+        "word": "todas",
+        "type": "pronoun",
+        "definition": "All of them; every single one."
+      },
+      {
+        "type": "adjective",
+        "word": "dorado",
+        "surface": "dorada",
+        "definition": "golden; with the yellow color of gold"
+      },
+      {
+        "type": "verb",
+        "word": "reírse",
+        "surface": "se ríe",
+        "definition": "to laugh; to show that something is funny"
+      },
+      {
+        "type": "verb",
+        "word": "necesitar",
+        "surface": "necesita",
+        "definition": "to need; to not be able without it"
+      },
+      {
+        "type": "noun",
+        "word": "el timbre",
+        "surface": "timbre",
+        "definition": "the button you press outside a door",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "no hace falta",
+        "surface": "No hace falta",
+        "definition": "there is no need; do not bother"
+      },
+      {
+        "word": "correr",
+        "type": "verb",
+        "definition": "To run; to move fast on your feet.",
+        "surface": "corren"
+      },
+      {
+        "word": "gracias por todo",
+        "type": "expression",
+        "definition": "Thanks for everything; said when someone helped a lot."
+      }
+    ]
+  }
+]
