@@ -189,6 +189,15 @@ export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
     mapa.get(n)!.add(slug);
   };
   const CITA = new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}?`, "gu");
+  // Un nombre propio NO se escribe en minuscula. El camino 3 (sujeto al
+  // empezar frase) es el unico que no trae una marca de habla explicita, asi
+  // que se le pide esto ademas: sin ello entraban `Sie`, `Chocolate` y `Nube`,
+  // que son pronombre y sustantivos comunes al empezar frase. Los caminos 1 y
+  // 2 NO pasan por aqui, porque un `dice Rosa` o un `Rosa:` no dejan duda
+  // aunque `rosa` sea tambien un color.
+  const minusculas = new Set<string>();
+  for (const s of stories)
+    for (const m of s.text.matchAll(/(?<!\p{L})\p{Ll}{3,}(?!\p{L})/gu)) minusculas.add(m[0]);
   for (const s of stories) {
     // 1. narracion: verbo de habla pegado al nombre, en los dos ordenes.
     for (const re of [
@@ -208,7 +217,7 @@ export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
       if (!parrafo.includes(QUOTE_OPEN)) continue;
       const narr = parrafo.replace(CITA, " ");
       for (const m of narr.matchAll(/(?:^|[.!?…]["»”]?\s+)(\p{Lu}\p{Ll}+)\s+\p{Ll}/gu))
-        anota(hablan, m[1], s.slug);
+        if (!minusculas.has(m[1].toLowerCase())) anota(hablan, m[1], s.slug);
     }
   }
   return { hablan, etiquetas };

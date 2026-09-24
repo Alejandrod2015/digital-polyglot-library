@@ -182,6 +182,9 @@ export function ResumenView({
 export function AudiobooksView({ data }: { data: DashboardData }) {
   const k = data.kpis;
   const filas = data.audiobookSplit ?? [];
+  // Un libro publicado que nadie reprodujo en el rango. El catalogo de libros
+  // es corto, asi que cada uno que no suena pesa.
+  const librosMuertos = filas.filter((f) => f.users === 0).length;
   const dias = useMemo(() => sparkDates(data.daily), [data.daily]);
   const sparkMinutos = useMemo(
     () => sparkSeries(data.daily, "listenedMinutes"),
@@ -226,17 +229,18 @@ export function AudiobooksView({ data }: { data: DashboardData }) {
           accent="xp"
           hint={`${k.storiesFinished ?? 0} de ${k.storiesStarted ?? 0} empezadas`}
         />
+        {/*
+          Aqui estaba "Total escuchado", la suma de minutos. Un total solo
+          puede subir mientras entre gente, asi que dice que los audiolibros
+          existen y no dice si funcionan; su sitio es Vanity metrics. Lo que
+          si decide trabajo es cuantos libros del catalogo no escucha nadie.
+        */}
         <KpiCard
           hero
-          label="Total escuchado"
-          value={k.totalListenedMinutes}
-          suffix="min"
-          spark={sparkMinutos}
-          sparkDates={dias}
-          sparkLabel="minutos de audiolibro por día"
-          sparkSuffix="min"
-          accent="accent"
-          hint="suma de minutos"
+          label="Libros sin oyentes"
+          value={librosMuertos}
+          accent={librosMuertos > 0 ? "accent" : "cyan"}
+          hint={`de ${filas.length} en el catálogo · ${data.range.days}d`}
         />
       </div>
 
