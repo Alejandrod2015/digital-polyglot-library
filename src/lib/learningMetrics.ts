@@ -75,6 +75,24 @@ export type LearningMetrics = {
       users: number;
     }>;
     bySource: Array<{ source: string; lookups: number }>;
+    /**
+     * Palabras que la gente toca en el texto y que NO estan en el vocab de
+     * esa historia: el hueco de glosa, ordenado por cuanta gente distinta
+     * tropezo con ella.
+     *
+     * Las 25 palabras mas consultadas no llevaban a nada, porque la mayoria
+     * SI tienen glosa y que se consulten es justo lo que se espera. Lo que
+     * pide trabajo es lo contrario.
+     *
+     * Lo rellena el route, que es quien puede leer `JourneyStory.vocab`.
+     */
+    gaps: Array<{
+      word: string;
+      storySlug: string;
+      language: string | null;
+      lookups: number;
+      users: number;
+    }>;
   };
   byLanguage: Array<{
     language: string;
@@ -138,6 +156,7 @@ export function emptyLearningMetrics(): LearningMetrics {
       lookupsPerReader: 0,
       topWords: [],
       bySource: [],
+      gaps: [],
     },
     byLanguage: [],
     byLevel: [],
@@ -416,6 +435,9 @@ export function computeLearningMetrics({
       bySource: Array.from(vocabSourceAgg.entries())
         .map(([source, lookups]) => ({ source, lookups }))
         .sort((a, b) => b.lookups - a.lookups),
+      // Lo rellena el route: aqui no hay base de datos y el vocab de cada
+      // historia vive en `JourneyStory`.
+      gaps: [],
     },
     byLanguage: Array.from(languageAgg.entries())
       .map(([language, v]) => ({

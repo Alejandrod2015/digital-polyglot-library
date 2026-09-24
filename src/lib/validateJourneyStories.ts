@@ -160,24 +160,67 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "ha riso|hanno riso|ha chiamato|hanno chiamato|ha proposto|hanno proposto|ha letto|hanno letto|" +
       "ha sussurrato|hanno sussurrato|ha continuato|hanno continuato|ha confermato|hanno confermato|ha salutato|hanno salutato",
 };
-function castOf(stories: JourneyStoryInput[], lang: string): string[] {
+/**
+ * Las TRES formas de atribuir habla que hay en el catalogo. Medido el
+ * 2026-09-24 sobre los 48 journeys live+draft con texto
+ * (`docs/medicion-castof-2026-09-24.md`): mirando solo la primera,
+ * `castOf` perdia 139 de 335 personajes, y no inventaba ninguno. Los tres
+ * caminos SE SUMAN; el primero es el que cubre el 95% del catalogo y no se
+ * toca.
+ *
+ *   1. narrada       Bastian sagt, dass ... / dice Marisol
+ *   2. etiqueta      Lena: Der Tegernsee laeuft nicht weg.
+ *   3. cita sin verbo   Marta mira el mapa. "Vamos por aqui."
+ *
+ * El 3 va apretado a proposito: solo cuenta el nombre que ABRE una frase
+ * (sujeto) dentro de un parrafo que lleva habla citada. Sin esa ancla
+ * entraban los toponimos, que es el fallo que el filtro de habla vino a
+ * arreglar ("llegan a Oaxaca. `Que calor`").
+ */
+/** Exportada para medir cuanto recupera cada camino. */
+export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
+  hablan: Map<string, Set<string>>; etiquetas: Map<string, Set<string>>;
+} {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
-  const cuentaHabla = new Map<string, Set<string>>();
+  const hablan = new Map<string, Set<string>>();
+  const etiquetas = new Map<string, Set<string>>();
+  const anota = (mapa: Map<string, Set<string>>, n: string, slug: string) => {
+    if (!mapa.has(n)) mapa.set(n, new Set());
+    mapa.get(n)!.add(slug);
+  };
+  const CITA = new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}?`, "gu");
   for (const s of stories) {
+    // 1. narracion: verbo de habla pegado al nombre, en los dos ordenes.
     for (const re of [
       new RegExp(`(?:${HABLA})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
       new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+(?:${HABLA})`, "gu"),
-    ]) {
-      for (const m of s.text.matchAll(re)) {
-        if (!cuentaHabla.has(m[1])) cuentaHabla.set(m[1], new Set());
-        cuentaHabla.get(m[1])!.add(s.slug);
-      }
+    ]) for (const m of s.text.matchAll(re)) anota(hablan, m[1], s.slug);
+    // 2. etiqueta de dialogo: UNA palabra al empezar linea y sus dos puntos.
+    //    Anclada al principio de linea y sin nada delante, que es lo que
+    //    separa a un hablante de un "Aqui:" en mitad de una frase.
+    for (const m of s.text.matchAll(/(?:^|\n)[ \t]*(\p{Lu}\p{Ll}+)[ \t]*:[ \t]*(?=\S)/gu)) {
+      anota(hablan, m[1], s.slug);
+      anota(etiquetas, m[1], s.slug);
+    }
+    // 3. habla citada sin verbo de atribucion: el nombre ABRE una frase
+    //    dentro de un parrafo que lleva cita, y le sigue un verbo.
+    for (const parrafo of s.text.split(/\n{2,}/)) {
+      if (!parrafo.includes(QUOTE_OPEN)) continue;
+      const narr = parrafo.replace(CITA, " ");
+      for (const m of narr.matchAll(/(?:^|[.!?…]["»”]?\s+)(\p{Lu}\p{Ll}+)\s+\p{Ll}/gu))
+        anota(hablan, m[1], s.slug);
     }
   }
-  const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories, lang).filter((n) => hablan.has(n));
+  return { hablan, etiquetas };
 }
-function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
+
+/** Exportada para el test de los tres caminos (`castOf.test.ts`). */
+export function castOf(stories: JourneyStoryInput[], lang: string): string[] {
+  const { hablan, etiquetas } = hablaPorHistoria(stories, lang);
+  const dosHistorias = new Set([...hablan].filter(([, v]) => v.size >= 2).map(([k]) => k));
+  return castLegacy(stories, lang, etiquetas).filter((n) => dosHistorias.has(n));
+}
+function castLegacy(stories: JourneyStoryInput[], lang = "", etiquetas?: Map<string, Set<string>>): string[] {
   // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
   // CONJUNCION en espanol. Con la lista comun, "presenta a Marisol",
   // "pregunta a Yolanda" o "busca a Fabian" metian a todo el reparto en
@@ -196,20 +239,32 @@ function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
   // check de cierres degeneró a "todas las historias terminan a solas".
   const MID = /[\p{Ll}],?\s+$/u;
-  const conArticulo = new Set<string>();
+  // El articulo PESA, no fulmina (2026-09-24). Era un Set: un solo "die
+  // Nadia" o "o Caio" en 21 historias borraba del reparto a la protagonista
+  // del journey, y asi se perdieron Nadia (21/21, Friends DE C1), Timo
+  // (15/21) y Caio (14/21). Lo que separa a una persona de "der Tisch" no es
+  // que el articulo no aparezca NUNCA, es que casi siempre falta: se compara
+  // cuantas veces va con articulo contra cuantas va suelta.
+  const conArticulo = new Map<string, number>();
+  const sueltas = new Map<string, number>();
   const cuenta = new Map<string, number>();
   for (const s of stories) {
     const vistos = new Set<string>();
     for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) {
       const i = m.index ?? 0;
       const antes = s.text.slice(Math.max(0, i - 14), i);
-      if (ART.test(antes)) { conArticulo.add(m[0]); continue; }
-      if (MID.test(antes)) vistos.add(m[0]);
+      if (ART.test(antes)) { conArticulo.set(m[0], (conArticulo.get(m[0]) ?? 0) + 1); continue; }
+      if (MID.test(antes)) { vistos.add(m[0]); sueltas.set(m[0], (sueltas.get(m[0]) ?? 0) + 1); }
     }
     for (const w of vistos) cuenta.set(w, (cuenta.get(w) ?? 0) + 1);
   }
+  // Una etiqueta de dialogo (`Lena:`) es una mencion tan buena como cualquier
+  // otra, y NUNCA lleva minuscula delante: sin esto, un journey escrito en
+  // formato dialogo salia con el reparto vacio aunque el hablante fuera en
+  // cada linea (Traveler DE A1, Conversations ES latam A0).
+  for (const [n, slugs] of etiquetas ?? []) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
   return [...cuenta.entries()]
-    .filter(([w, n]) => n >= 2 && !conArticulo.has(w))
+    .filter(([w, n]) => n >= 2 && (sueltas.get(w) ?? 0) + (etiquetas?.get(w)?.size ?? 0) > (conArticulo.get(w) ?? 0))
     .sort((a, b) => b[1] - a[1])
     .map(([w]) => w);
 }

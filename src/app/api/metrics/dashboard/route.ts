@@ -988,7 +988,11 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   // Audiobooks pinta las mismas cifras que el Resumen, con el filtro dado la
   // vuelta, así que necesita exactamente los mismos datos.
-  const needsOverviewData = section === "overview" || esAudiobooks;
+  // Alertas no tiene datos propios: mira lo que ya calculan el Resumen
+  // (tendencia), Contenido (catalogo) y Aprendizaje (sets flojos). Pedir las
+  // tres cosas en una peticion es mas barato que tres pestañas abiertas.
+  const needsOverviewData =
+    section === "overview" || section === "alerts" || esAudiobooks;
   const needsEngagementData = section === "engagement";
   const needsAcquisitionData = section === "acquisition";
   const needsFunnelsData = section === "funnels";
@@ -1006,7 +1010,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const needsReminderFunnelData = needsFunnelsData;
   const needsTrialData = needsFunnelsData;
   const needsSignupData = needsOverviewData || needsAcquisitionData;
-  const needsLearningData = section === "learning";
+  const needsLearningData = section === "learning" || section === "alerts";
 
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
@@ -2535,6 +2539,98 @@ export async function GET(req: NextRequest): Promise<Response> {
     };
   })();
 
+  // ── Huecos de glosa ──
+  // Palabras que alguien toca en el texto y que NO estan en el vocab de esa
+  // historia. Las 25 mas consultadas no llevaban a ninguna accion: la mayoria
+  // tienen glosa y que se consulten es exactamente lo que se espera. Esto es
+  // lo contrario, y cada fila es una glosa que falta.
+  const vocabGaps = needsLearningData && vocabList.length > 0
+    ? await (async () => {
+        const slugs = [
+          ...new Set(
+            (vocabList as Array<{ storySlug: string }>)
+              .map((r) => r.storySlug)
+              .filter(Boolean)
+          ),
+        ];
+        const historias = await prisma.journeyStory.findMany({
+          where: {
+            OR: [
+              { slug: { in: slugs } },
+              {
+                id: {
+                  in: slugs
+                    .filter((x) => x.startsWith("journey-"))
+                    .map((x) => x.slice("journey-".length)),
+                },
+              },
+            ],
+          },
+          select: { id: true, slug: true, vocab: true },
+        });
+        // Se indexa por las DOS formas del id porque las dos llegan en los
+        // eventos, y se guardan `word` y `surface`: la glosa existe aunque el
+        // lector toque la forma conjugada.
+        const porSlug = new Map<string, Set<string>>();
+        for (const h of historias) {
+          const palabras = new Set(
+            (Array.isArray(h.vocab) ? h.vocab : []).flatMap((v) => {
+              const o = (v ?? {}) as Record<string, unknown>;
+              return [o.word, o.surface]
+                .filter((x): x is string => typeof x === "string")
+                .map((x) => x.toLowerCase());
+            })
+          );
+          if (h.slug) porSlug.set(h.slug, palabras);
+          porSlug.set(`journey-${h.id}`, palabras);
+        }
+
+        const agg = new Map<
+          string,
+          { word: string; storySlug: string; language: string | null; lookups: number; users: Set<string> }
+        >();
+        for (const row of vocabList as Array<{
+          storySlug: string;
+          userId: string;
+          metadata: unknown;
+        }>) {
+          const meta = (row.metadata ?? {}) as Record<string, unknown>;
+          const word = typeof meta.word === "string" ? meta.word.toLowerCase() : null;
+          if (!word) continue;
+          const conocidas = porSlug.get(row.storySlug);
+          // Sin vocab conocido no se puede decir que falte: puede ser un libro
+          // del catalogo o una historia borrada.
+          if (!conocidas || conocidas.has(word)) continue;
+          const key = `${row.storySlug}::${word}`;
+          const entry = agg.get(key) ?? {
+            word,
+            storySlug: row.storySlug,
+            language: typeof meta.language === "string" ? meta.language : null,
+            lookups: 0,
+            users: new Set<string>(),
+          };
+          entry.lookups += 1;
+          entry.users.add(row.userId);
+          agg.set(key, entry);
+        }
+
+        return Array.from(agg.values())
+          // Una sola persona puede tropezar con cualquier cosa; dos ya es la
+          // palabra y no el lector.
+          .filter((r) => r.users.size >= 2)
+          .map((r) => ({
+            word: r.word,
+            storySlug: r.storySlug,
+            language: r.language,
+            lookups: r.lookups,
+            users: r.users.size,
+          }))
+          .sort((a, b) => b.users - a.users || b.lookups - a.lookups)
+          .slice(0, 20);
+      })()
+    : [];
+  learningPayload.vocab.gaps = vocabGaps;
+
 
   // ── Quién compone el DAU y el WAU ──
   // Los ids se resuelven contra Clerk una sola vez para los dos conjuntos:
@@ -2722,7 +2818,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   // vive, que journey no abre nadie, y si alguno salio a produccion con
   // huecos. Hoy los 24 publicados estan completos, asi que las columnas de
   // huecos salen a cero; existen para el dia que no sea asi.
-  const catalog = section === "content" ? await (async () => {
+  const catalog = section === "content" || section === "alerts" ? await (async () => {
     const journeys = await prisma.journey.findMany({
       where: { status: "active" },
       select: {

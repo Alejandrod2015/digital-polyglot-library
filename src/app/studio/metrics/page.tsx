@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import StudioShell from "@/components/studio/StudioShell";
 import {
-  ComingSoonView,
+  AlertsView,
   AudiobooksView,
   EngagementView,
   VanityView,
@@ -144,6 +144,7 @@ const EMPTY_DATA: DashboardData = {
       lookingUpUsers: 0,
       lookupsPerReader: 0,
       topWords: [],
+      gaps: [],
       bySource: [],
     },
     byLanguage: [],
@@ -367,12 +368,7 @@ export default function MetricsDashboard() {
     if (section === "learning") {
       return <LearningView learning={data.learning} />;
     }
-    return (
-      <ComingSoonView
-        title="Alertas"
-        description="Umbrales para caídas de completion rate, anomalías de tráfico y fallos de pipeline o API."
-      />
-    );
+    return <AlertsView data={data} />;
   }
 
   const periodLabel = formatRangeLabel(data.range.from, data.range.to);

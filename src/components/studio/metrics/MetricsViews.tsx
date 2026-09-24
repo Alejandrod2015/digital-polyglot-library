@@ -1082,17 +1082,157 @@ export function FunnelsView({
   );
 }
 
-// ── Placeholder for tabs that don't have a dedicated view yet ──
-export function ComingSoonView({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+// ── AlertsView ───────────────────────────────────────────
+/**
+ * Lo que hay que mirar hoy, con su umbral escrito al lado.
+ *
+ * Era un cartel de "proximamente". Las reglas no necesitan infraestructura
+ * nueva: las tres fuentes (tendencia del Resumen, catalogo de Contenido,
+ * sets de Aprendizaje) ya se calculan, y la pestaña las pide juntas.
+ *
+ * Una alerta que no se puede accionar no es una alerta, asi que cada fila
+ * dice que pasa, contra que umbral, y que hacer.
+ */
+type Alerta = {
+  nivel: "roja" | "ambar";
+  titulo: string;
+  detalle: string;
+  accion: string;
+};
+
+export function AlertsView({ data }: { data: DashboardData }) {
+  const k = data.kpis;
+  const p = data.prevKpis;
+  const alertas: Alerta[] = [];
+
+  // 1. La lectura se cae. Cinco puntos es el ruido de una semana floja; mas
+  //    que eso ya no lo explica el calendario.
+  if (p && p.completionRate > 0 && k.completionRate < p.completionRate - 5) {
+    alertas.push({
+      nivel: "roja",
+      titulo: "El completion rate baja",
+      detalle: `${k.completionRate}% frente a ${p.completionRate}% del periodo anterior`,
+      accion: "Mirar qué historias se empezaron y no se acabaron en Contenido.",
+    });
+  }
+
+  // 2. Pegajosidad. Por debajo de 10% la gente entra una vez al mes.
+  const mau = k.mau ?? 0;
+  const dauMau = k.dauMauPct ?? 0;
+  if (mau > 0 && dauMau > 0 && dauMau < 10) {
+    alertas.push({
+      nivel: "ambar",
+      titulo: "DAU/MAU por debajo del 10%",
+      detalle: `${dauMau}% · ${k.dau} de ${mau}`,
+      accion: "Revisar recordatorios y la lista de quien se apagó en Audiencia.",
+    });
+  }
+
+  // 3. Catalogo publicado que nadie abre.
+  if (data.catalog && data.catalog.deadJourneys > 0) {
+    alertas.push({
+      nivel: "roja",
+      titulo: `${data.catalog.deadJourneys} journeys sin una sola apertura`,
+      detalle: `de ${data.catalog.journeys} publicados, en ${data.range.days} días`,
+      accion: "Contenido lista cuáles. O se promocionan o se despublican.",
+    });
+  }
+
+  // 4. Huecos en lo que ya esta en produccion.
+  const huecos = data.catalog
+    ? data.catalog.emptySlots +
+      data.catalog.storiesWithoutAudio +
+      data.catalog.storiesWithoutPractice
+    : 0;
+  if (huecos > 0) {
+    alertas.push({
+      nivel: "roja",
+      titulo: `${huecos} huecos en journeys publicados`,
+      detalle: "historias sin texto, sin audio o sin set de práctica, ya en producción",
+      accion: "Contenido dice en qué journey están.",
+    });
+  }
+
+  // 5. Sets que se fallan. El 60% es el suelo del proyecto para dar por bueno
+  //    un set, y por debajo de ahi el ejercicio estorba en vez de enseñar.
+  const setsFlojos = data.learning.practice.worstSets.filter(
+    (s) => s.avgAccuracyPercent < 60
+  );
+  if (setsFlojos.length > 0) {
+    alertas.push({
+      nivel: "ambar",
+      titulo: `${setsFlojos.length} sets por debajo del 60% de precisión`,
+      detalle: `el peor, ${setsFlojos[0].storySlug}, con ${setsFlojos[0].avgAccuracyPercent}%`,
+      accion: "Aprendizaje los lista de peor a mejor.",
+    });
+  }
+
+  // 6. Glosas que faltan donde la gente tropieza.
+  const huecosGlosa = data.learning.vocab.gaps.length;
+  if (huecosGlosa > 0) {
+    alertas.push({
+      nivel: "ambar",
+      titulo: `${huecosGlosa} palabras sin glosa que dos personas o más tocaron`,
+      detalle: `la más tocada, "${data.learning.vocab.gaps[0].word}", por ${data.learning.vocab.gaps[0].users} personas`,
+      accion: "Aprendizaje da la palabra y su historia.",
+    });
+  }
+
+  const rojas = alertas.filter((a) => a.nivel === "roja").length;
+
   return (
     <div className="mx-view">
-      <EmptyPanel title={title} description={description} />
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Alertas</div>
+            <h3 className="mx-panel__title">
+              {alertas.length === 0 ? "Nada que mirar hoy" : "Qué mirar hoy"}
+            </h3>
+          </div>
+          <span className="mx-panel__hint">
+            {alertas.length === 0
+              ? `${data.range.days}d sin nada fuera de umbral`
+              : `${rojas} rojas · ${alertas.length - rojas} ámbar`}
+          </span>
+        </div>
+
+        {alertas.length === 0 ? (
+          <p style={{ opacity: 0.6, fontSize: 13, margin: 0 }}>
+            Ninguna regla saltó en este rango. Las seis miran: caída del completion
+            rate, DAU/MAU bajo el 10%, journeys publicados sin aperturas, huecos en
+            producción, sets bajo el 60% y palabras sin glosa.
+          </p>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {alertas.map((a) => (
+              <div
+                key={a.titulo}
+                style={{
+                  display: "flex",
+                  gap: 12,
+                  padding: "10px 12px",
+                  borderRadius: 8,
+                  background: "var(--mx-bg-input)",
+                  borderLeft: `3px solid ${
+                    a.nivel === "roja" ? "var(--mx-neg)" : "var(--mx-gold)"
+                  }`,
+                }}
+              >
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600 }}>{a.titulo}</div>
+                  <div style={{ fontSize: 12, color: "var(--mx-muted)", marginTop: 2 }}>
+                    {a.detalle}
+                  </div>
+                  <div style={{ fontSize: 12, marginTop: 6, opacity: 0.85 }}>
+                    {a.accion}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -1112,22 +1252,6 @@ const PRACTICE_MODE_LABELS: Record<string, string> = {
  * que no esté en el mapa cae tal cual: es preferible una etiqueta en
  * inglés a un hueco.
  */
-const WORD_TYPE_LABELS: Record<string, string> = {
-  noun: "sustantivo",
-  verb: "verbo",
-  adjective: "adjetivo",
-  adverb: "adverbio",
-  pronoun: "pronombre",
-  preposition: "preposición",
-  conjunction: "conjunción",
-  article: "artículo",
-  interjection: "interjección",
-  expression: "expresión",
-  phrase: "expresión",
-  idiom: "modismo",
-  number: "número",
-  determiner: "determinante",
-};
 
 const VOCAB_SOURCE_LABELS: Record<string, string> = {
   karaoke: "Karaoke",
@@ -1157,7 +1281,6 @@ export function LearningView({
     1,
     ...practice.byMode.map((m) => m.started + m.completed)
   );
-  const maxWordLookups = Math.max(1, ...vocab.topWords.map((w) => w.lookups));
 
   if (!hasPractice && !hasVocab) {
     return (
@@ -1450,9 +1573,18 @@ export function LearningView({
           </>
         )}
 
-        {vocab.topWords.length > 0 ? (
+        {/*
+          Aqui estaba la tabla de las 25 palabras mas consultadas. No llevaba
+          a ninguna accion: la mayoria SI tienen glosa, y que se consulten es
+          exactamente lo que se espera de ellas. Lo que pide trabajo es lo
+          contrario, una palabra que la gente toca y que no tiene glosa en su
+          historia. Cada fila de abajo es una glosa que falta.
+        */}
+        {vocab.gaps.length > 0 ? (
           <>
-            <div className="mx-panel__sub">Las 25 más consultadas</div>
+            <div className="mx-panel__sub">
+              Palabras sin glosa que la gente toca igual
+            </div>
             <div style={{ overflowX: "auto" }}>
               <table
                 style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}
@@ -1460,83 +1592,48 @@ export function LearningView({
                 <thead>
                   <tr style={{ textAlign: "left", opacity: 0.6 }}>
                     <th style={{ padding: "4px 6px" }}>Palabra</th>
-                    <th style={{ padding: "4px 6px" }}>Idioma</th>
-                    <th style={{ padding: "4px 6px" }}>Tipo</th>
-                    <th style={{ padding: "4px 6px" }}>Consultas</th>
-                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
-                      Usuarios
-                    </th>
+                    <th style={{ padding: "4px 6px" }}>Historia</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>Personas</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>Consultas</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {vocab.topWords.map((w) => (
+                  {vocab.gaps.map((g) => (
                     <tr
-                      key={`${w.language ?? "?"}-${w.word}`}
+                      key={`${g.storySlug}-${g.word}`}
                       style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
                     >
-                      <td style={{ padding: "4px 6px", fontWeight: 600 }}>
-                        {w.word}
-                      </td>
-                      <td style={{ padding: "4px 6px" }}>
-                        <LangTag code={w.language} />
-                      </td>
-                      <td style={{ padding: "4px 6px", color: "var(--mx-muted)" }}>
-                        {w.wordType
-                          ? WORD_TYPE_LABELS[w.wordType.toLowerCase()] ?? w.wordType
-                          : "-"}
-                      </td>
-                      <td style={{ padding: "4px 6px", width: "38%" }}>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 8,
-                          }}
-                        >
-                          <div
-                            style={{
-                              flex: 1,
-                              height: 12,
-                              borderRadius: 5,
-                              background: "var(--mx-bg-input)",
-                              border: "1px solid var(--mx-border)",
-                              overflow: "hidden",
-                            }}
-                          >
-                            <div
-                              style={{
-                                width: `${Math.round(
-                                  (w.lookups / maxWordLookups) * 100
-                                )}%`,
-                                height: "100%",
-                                background: "var(--mx-cyan)",
-                                opacity: 0.85,
-                              }}
-                            />
-                          </div>
-                          <span
-                            className="mx-mono"
-                            style={{ width: 32, textAlign: "right", fontWeight: 700 }}
-                          >
-                            {w.lookups}
-                          </span>
-                        </div>
+                      <td style={{ padding: "4px 6px", fontWeight: 600 }}>{g.word}</td>
+                      <td className="mx-mono" style={{ padding: "4px 6px", opacity: 0.8 }}>
+                        {g.storySlug}
                       </td>
                       <td
                         className="mx-mono"
-                        style={{ padding: "4px 6px", textAlign: "right" }}
+                        style={{ padding: "4px 6px", textAlign: "right", fontWeight: 700 }}
                       >
-                        {w.users}
+                        {g.users}
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{ padding: "4px 6px", textAlign: "right", opacity: 0.8 }}
+                      >
+                        {g.lookups}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)" }}>
+              Solo entran las que tocaron dos personas distintas o más: una sola puede
+              tropezar con cualquier cosa, dos ya es la palabra y no el lector.
+            </p>
           </>
         ) : (
           <p style={{ fontSize: 12.5, color: "var(--mx-muted)", margin: 0 }}>
-            Ninguna consulta de vocabulario en el rango.
+            {vocab.lookups > 0
+              ? "Ninguna palabra sin glosa la tocaron dos personas distintas."
+              : "Ninguna consulta de vocabulario en el rango."}
           </p>
         )}
       </div>

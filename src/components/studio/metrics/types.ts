@@ -299,6 +299,13 @@ export type DashboardData = {
         lookups: number;
         users: number;
       }>;
+      gaps: Array<{
+        word: string;
+        storySlug: string;
+        language: string | null;
+        lookups: number;
+        users: number;
+      }>;
       bySource: Array<{ source: string; lookups: number }>;
     };
     byLanguage: Array<{
