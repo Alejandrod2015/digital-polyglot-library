@@ -161,3 +161,31 @@ puntero en el payload.
 restaurador de `wordClipUrl` analogo a `_restoreClipUrls.ts`. Cuesta cero
 creditos, baja el hueco de 604 a 497 y deja la decision de gastar reducida a un
 solo numero limpio.
+
+## 6. Recuperacion de los 107 punteros (encargo del chat de planificacion)
+
+Ejecutado el 2026-09-24 con `scripts/_restoreWordClipUrls.ts` (nuevo, hermano de
+`_restoreClipUrls.ts`) para los clips de palabra y con `_restoreClipUrls.ts
+--apply` para las frases. Cada fila se escribe SOLO tras un HEAD 200 contra R2;
+las 497 cuya sonda falla quedan intactas. No se sintetizo nada, no se corrio
+`_seedAllSets`, no se hizo push.
+
+| Journey | Escritos | Sonda fallida (sin tocar) | Clips antes | Clips ahora |
+|---|---|---|---|---|
+| `spanish/spain traveler a1` | 95 (palabra) | 218 | 96/409 | 191/409 |
+| `spanish/latam traveler a2` | 8 (palabra) | 244 | 84/336 | 92/336 |
+| `spanish/latam relationships c1` | 4 (frase) | 28 | 320/352 | 324/352 |
+| `french/france relationships a1` | 0 | 6 | 334/340 | 334/340 |
+| `spanish/mexico traveler a1` | 0 | 1 | 559/560 | 559/560 |
+| **TOTAL** | **107** | **497** | | |
+
+Tabla de "Clips ahora" tomada de la salida de `scripts/auditoriaCatalogo.ts`, no
+compuesta a mano.
+
+verified: 107 filas escritas, cada una con HEAD 200 previo contra su clave
+deterministica; 497 sondas fallidas y ninguna de esas filas tocada; los cinco
+journeys recontados con el script canonico despues de escribir.
+not verified: no se escucho ninguno de los 107 clips recuperados; no se abrio la
+app para confirmar que el ejercicio ya suena con el clip prehorneado; no se
+revalido la cache de la web (los 107 punteros viven en la base, pero si alguna
+superficie cachea el set, ahi se vera con retraso).
