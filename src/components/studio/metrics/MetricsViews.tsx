@@ -879,23 +879,6 @@ export function FunnelsView({
    */
   activation?: React.ReactNode;
 }) {
-  const trialSteps = [
-    { label: "Trial iniciado", value: data.trialFunnel.started },
-    { label: "Con método de pago", value: data.trialFunnel.startedWithPm },
-    { label: "Activación día 1", value: data.trialFunnel.day1Active },
-    { label: "Convertidos", value: data.trialFunnel.converted },
-  ];
-
-  const checkoutSteps = [
-    { label: "Plans viewed", value: data.checkoutFunnel.plansViewed },
-    { label: "Checkout started", value: data.checkoutFunnel.checkoutStarted },
-    {
-      label: "Checkout redirected",
-      value: data.checkoutFunnel.checkoutRedirected,
-    },
-    { label: "Checkout failed", value: data.checkoutFunnel.checkoutFailed },
-  ];
-
   const journeySteps = [
     { label: "Variant seleccionada", value: data.journeyFunnel.variantSelected },
     { label: "Nivel seleccionado", value: data.journeyFunnel.levelSelected },
@@ -924,66 +907,66 @@ export function FunnelsView({
   return (
     <div className="mx-view">
       {activation}
-      <div className="mx-row mx-row--2up">
-        <div className="mx-panel">
-          <div className="mx-panel__head">
-            <div>
-              <div className="mx-panel__eyebrow">Acquisition · Trial</div>
-              <h3 className="mx-panel__title">Trial → Conversión</h3>
-            </div>
-            <span className="mx-panel__hint">
-              {data.trialFunnel.conversionRate}% conversión
-            </span>
+      {/*
+        Trial y checkout eran dos paneles con ocho tarjetas y cuatro tasas
+        entre los dos, todo a cero porque todavia no hay ni un trial ni un
+        pago. Ocho ceros no dicen mas que uno. Se funden en una fila de seis
+        cifras que, el dia que haya dinero, dice donde se cae la gente sin
+        ocupar media pantalla mientras no lo hay.
+      */}
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Monetización</div>
+            <h3 className="mx-panel__title">Trial y checkout</h3>
           </div>
-          <FunnelChart steps={trialSteps} accent="var(--mx-accent)" />
-          <div className="mx-rate-grid">
-            <div className="mx-rate">
-              <span>Day-1 activation</span>
-              <strong>{data.trialFunnel.day1ActivationRate}%</strong>
-            </div>
-            <div className="mx-rate">
-              <span>Conversión final</span>
-              <strong style={{ color: "var(--mx-pos)" }}>
-                {data.trialFunnel.conversionRate}%
-              </strong>
-            </div>
-            <div className="mx-rate">
-              <span>Cancel rate</span>
-              <strong style={{ color: "var(--mx-neg)" }}>
-                {data.trialFunnel.cancelRate}%
-              </strong>
-            </div>
-          </div>
+          <span className="mx-panel__hint">
+            {data.trialFunnel.started === 0 &&
+            data.checkoutFunnel.plansViewed === 0
+              ? "sin actividad de pago en el rango"
+              : `${data.checkoutFunnel.checkoutStartRate}% start rate`}
+          </span>
         </div>
-
-        <div className="mx-panel">
-          <div className="mx-panel__head">
-            <div>
-              <div className="mx-panel__eyebrow">Acquisition · Checkout</div>
-              <h3 className="mx-panel__title">Plans → Stripe</h3>
-            </div>
-            <span className="mx-panel__hint">
-              {data.checkoutFunnel.checkoutStartRate}% start rate
-            </span>
+        <div className="mx-rate-grid">
+          <div className="mx-rate">
+            <span>Vieron precios</span>
+            <strong>{data.checkoutFunnel.plansViewed}</strong>
           </div>
-          <FunnelChart steps={checkoutSteps} accent="var(--mx-cyan)" />
-          <div className="mx-rate-grid">
-            <div className="mx-rate">
-              <span>Plans → Checkout</span>
-              <strong>{data.checkoutFunnel.checkoutStartRate}%</strong>
-            </div>
-            <div className="mx-rate">
-              <span>Checkout → Redirect</span>
-              <strong style={{ color: "var(--mx-pos)" }}>
-                {data.checkoutFunnel.checkoutRedirectRate}%
-              </strong>
-            </div>
-            <div className="mx-rate">
-              <span>Failed</span>
-              <strong style={{ color: "var(--mx-neg)" }}>
-                {data.checkoutFunnel.checkoutFailed}
-              </strong>
-            </div>
+          <div className="mx-rate">
+            <span>Empezaron checkout</span>
+            <strong>{data.checkoutFunnel.checkoutStarted}</strong>
+          </div>
+          <div className="mx-rate">
+            <span>Llegaron a Stripe</span>
+            <strong>{data.checkoutFunnel.checkoutRedirected}</strong>
+          </div>
+          <div className="mx-rate">
+            <span>Fallos</span>
+            <strong
+              style={{
+                color:
+                  data.checkoutFunnel.checkoutFailed > 0
+                    ? "var(--mx-neg)"
+                    : undefined,
+              }}
+            >
+              {data.checkoutFunnel.checkoutFailed}
+            </strong>
+          </div>
+          <div className="mx-rate">
+            <span>Trials abiertos</span>
+            <strong>{data.trialFunnel.started}</strong>
+          </div>
+          <div className="mx-rate">
+            <span>Convertidos</span>
+            <strong
+              style={{
+                color:
+                  data.trialFunnel.converted > 0 ? "var(--mx-pos)" : undefined,
+              }}
+            >
+              {data.trialFunnel.converted}
+            </strong>
           </div>
         </div>
       </div>
@@ -994,8 +977,14 @@ export function FunnelsView({
             <div className="mx-panel__eyebrow">Journey</div>
             <h3 className="mx-panel__title">Journey funnel</h3>
           </div>
+          {/*
+            Estos cinco eventos los emite SOLO el lector web
+            (`src/app/journey/JourneyClient.tsx`). La app movil no los manda,
+            asi que el embudo mide la web y nada mas. Decirlo en la cabecera
+            evita leer sus ceros como "nadie navega los journeys".
+          */}
           <span className="mx-panel__hint">
-            desde variant select hasta review CTA
+            solo web · la app no emite estos eventos
           </span>
         </div>
         <FunnelChart steps={journeySteps} accent="var(--mx-xp)" />
@@ -1089,64 +1078,6 @@ export function FunnelsView({
         </div>
       </div>
 
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Reminders · Recent</div>
-            <h3 className="mx-panel__title">Últimos taps de notificaciones</h3>
-          </div>
-          <span className="mx-panel__hint">señal cruda</span>
-        </div>
-        <div style={{ overflowX: "auto" }}>
-          <table className="mx-table">
-            <thead>
-              <tr>
-                <th style={{ width: 140 }}>Cuándo</th>
-                <th>Email</th>
-                <th>User ID</th>
-                <th>Destino</th>
-                <th>Origen</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.recentReminderTaps.map((row) => (
-                <tr
-                  key={`${row.userId}-${row.createdAt}-${row.destination ?? "?"}`}
-                >
-                  <td className="mx-table__when">
-                    {new Date(row.createdAt).toLocaleString("es-ES", {
-                      day: "2-digit",
-                      month: "short",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </td>
-                  <td>{row.email ?? "-"}</td>
-                  <td className="mx-mono">{row.userId}</td>
-                  <td>{row.destination ?? "-"}</td>
-                  <td style={{ color: "var(--mx-muted)" }}>
-                    {row.source ?? "-"}
-                  </td>
-                </tr>
-              ))}
-              {data.recentReminderTaps.length === 0 && (
-                <tr>
-                  <td
-                    colSpan={5}
-                    style={{
-                      padding: 24,
-                      color: "var(--mx-muted)",
-                      textAlign: "center",
-                    }}
-                  >
-                    Sin taps recientes.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
   );
 }
