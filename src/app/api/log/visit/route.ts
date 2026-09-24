@@ -90,9 +90,17 @@ export async function POST(req: NextRequest) {
   const path = asTrimmedString(body.path, 500);
   if (!path) return NextResponse.json({ ok: true });
 
-  // Skip our own admin/log/api paths so the table stays clean.
+  // Rutas que no son una pagina: no dicen nada de nadie.
+  //
+  // `/studio` SÍ se registra desde el 2026-09-24. Se saltaba para que la
+  // analítica pública no contara al equipo navegando su propio panel, y el
+  // efecto secundario era que nadie sabía qué páginas del Studio se usan: 42
+  // páginas en el menu y cero filas para decidir cuáles sobran.
+  //
+  // Se queda fuera del tráfico público por la RUTA, no por no existir: quien
+  // lee `PageVisit` para hablar de visitantes tiene que excluirla con
+  // `SIN_STUDIO` (`src/lib/pageVisitScope.ts`).
   if (
-    path.startsWith("/studio") ||
     path.startsWith("/api") ||
     path.startsWith("/_next") ||
     path.startsWith("/auth")

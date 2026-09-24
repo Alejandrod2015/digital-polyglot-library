@@ -3,6 +3,7 @@
 // countries, top sources, top paths) for the chosen window.
 
 import { requireStudioUser } from "@/lib/requireStudioUser";
+import { SIN_STUDIO } from "@/lib/pageVisitScope";
 import StudioShell from "@/components/studio/StudioShell";
 import { prisma } from "@/lib/prisma";
 
@@ -51,7 +52,7 @@ async function loadData(days: number) {
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
   const [recent, byCountry, bySource, byPath] = await Promise.all([
     prisma.pageVisit.findMany({
-      where: { createdAt: { gte: since } },
+      where: { createdAt: { gte: since }, ...SIN_STUDIO },
       orderBy: { createdAt: "desc" },
       take: 200,
       select: {
@@ -72,21 +73,21 @@ async function loadData(days: number) {
     }),
     prisma.pageVisit.groupBy({
       by: ["country"],
-      where: { createdAt: { gte: since } },
+      where: { createdAt: { gte: since }, ...SIN_STUDIO },
       _count: { _all: true },
       orderBy: { _count: { country: "desc" } },
       take: 15,
     }),
     prisma.pageVisit.groupBy({
       by: ["utmSource", "utmMedium"],
-      where: { createdAt: { gte: since } },
+      where: { createdAt: { gte: since }, ...SIN_STUDIO },
       _count: { _all: true },
       orderBy: { _count: { utmSource: "desc" } },
       take: 15,
     }),
     prisma.pageVisit.groupBy({
       by: ["path"],
-      where: { createdAt: { gte: since } },
+      where: { createdAt: { gte: since }, ...SIN_STUDIO },
       _count: { _all: true },
       orderBy: { _count: { path: "desc" } },
       take: 15,
