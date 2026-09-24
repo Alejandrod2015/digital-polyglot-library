@@ -224,6 +224,17 @@ model QAReview {
   @@map("dp_qa_reviews_v1")
 }
 
+/// Que tipo de sitio enmarca un journey. Ver `Journey.cityMode`.
+enum JourneyCityMode {
+  /// Una sola ciudad marco, escrita en `Journey.city`.
+  single
+  /// Gira: los siete temas son siete sitios. La regla de la ciudad se aplica
+  /// sitio a sitio, no al journey entero.
+  multi
+  /// Sin ciudad a proposito (lugares por TIPO, sin pais ni anclas).
+  none
+}
+
 enum JourneyStatus {
   active
   completed
@@ -247,10 +258,10 @@ model ClonedVoice {
 }
 
 model Journey {
-  id              String        @id @default(cuid())
-  name            String
-  language        String
-  variant         String
+  id               String           @id @default(cuid())
+  name             String
+  language         String
+  variant          String
   /// Slug de `JourneyType` (viajero, expatriado, cultural...). Los journeys NO
   /// tienen nombre propio: `name` lleva la etiqueta del tipo (Traveler,
   /// Friends, Expat) y un journey se identifica por tipo + idioma + variante +
@@ -258,23 +269,50 @@ model Journey {
   /// cuántos personajes fijos lleva, si el orden de temas es obligado y qué
   /// son los siete temas. Cuando un journey llevaba título inventado
   /// ("Hanseat", "New Life in Lyon") el tipo real quedaba tapado.
-  typeSlug        String?
-  levels          String[]
-  topics          String[]
-  storiesPerTopic Int           @default(1)
+  typeSlug         String?
+  levels           String[]
+  topics           String[]
+  storiesPerTopic  Int              @default(1)
+  /// Ciudad que ENMARCA el journey: la que sale en la tienda, en la portada y
+  /// en el arranque de las historias. Regla dura del usuario (2026-09-24): NO
+  /// vale cualquiera, tiene que ser reconocible FUERA de su pais por el
+  /// publico anglosajon. Los barrios y sitios de dentro de las historias
+  /// siguen siendo pequenos y especificos; lo que se mide es esta columna.
+  ///
+  /// Solo se rellena cuando `cityMode` es `single`. Existe porque hasta el
+  /// 2026-09-24 el dato no tenia sitio donde vivir: estaba repartido por 21
+  /// textos, por la memoria y por los prompts de portada, y auditarlo costaba
+  /// tres pasadas sobre toda la base.
+  ///
+  /// No se deduce contando apariciones. La ciudad MAS nombrada suele ser el
+  /// origen o el destino del hilo conductor, no el escenario: el Friends DE A1
+  /// dice "Rostock" en 10 historias y transcurre en Frankfurt, y el Friends FR
+  /// A0 dice "Paris" en 11 y transcurre en Marsella. Y al reves, el Friends ES
+  /// argentina A1 transcurre en Buenos Aires (Villa Crespo, Warnes, Araoz) sin
+  /// nombrarla NI UNA VEZ en las 21: cumplir la regla no sirve de nada si el
+  /// lector no puede saberlo.
+  city             String?
+  /// Si este journey tiene UNA ciudad marco (`single`), es una gira por varios
+  /// sitios (`multi`, 21 journeys: los siete temas son siete ciudades) o no
+  /// tiene ciudad a proposito (`none`, 3 journeys, p.ej. el Friends ES latam
+  /// neutral, sin ciudad ni pais por decision explicita).
+  ///
+  /// NULL no es "no aplica": es "nadie lo ha rellenado todavia". La diferencia
+  /// es justo lo que se pierde si se mira solo `city`.
+  cityMode         JourneyCityMode?
   /// Journey que se ofrece al terminar ESTE. Hoy, al completar las 21
   /// historias no pasa nada: el 2026-08-18 un beta tester iba 13/21 en el A0
   /// de España y 0/21 en el A1 recién publicado, sin que nada le dijera que
   /// existía. No se resuelve metiendo los dos niveles en una fila porque son
   /// tipos distintos (conversacional y viajero) con otros personajes y otra
   /// ciudad; el puente es un puntero, no una fusión.
-  nextJourneyId   String?
-  nextJourney     Journey?      @relation("JourneyChain", fields: [nextJourneyId], references: [id], onDelete: SetNull)
-  previousJourneys Journey[]    @relation("JourneyChain")
-  status          JourneyStatus @default(active)
-  createdBy       String?
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+  nextJourneyId    String?
+  nextJourney      Journey?         @relation("JourneyChain", fields: [nextJourneyId], references: [id], onDelete: SetNull)
+  previousJourneys Journey[]        @relation("JourneyChain")
+  status           JourneyStatus    @default(active)
+  createdBy        String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
 
   stories JourneyStory[]
 
@@ -286,70 +324,70 @@ model Journey {
 }
 
 model JourneyStory {
-  id                   String              @id @default(cuid())
-  journeyId            String
-  level                String
-  topic                String
-  slotIndex            Int
-  status               AgentArtifactStatus @default(draft)
-  title                String?
-  slug                 String?
-  text                 String?
-  synopsis             String?
-  vocab                Json?
-  wordCount            Int?
-  vocabCount           Int?
-  arcType              String?
+  id                     String              @id @default(cuid())
+  journeyId              String
+  level                  String
+  topic                  String
+  slotIndex              Int
+  status                 AgentArtifactStatus @default(draft)
+  title                  String?
+  slug                   String?
+  text                   String?
+  synopsis               String?
+  vocab                  Json?
+  wordCount              Int?
+  vocabCount             Int?
+  arcType                String?
   // Dialect/register asset metadata. All optional; backfilled by the
   // editorial workflow as content is tagged. Foundation for filtering
   // the corpus by register, cohort, or cultural variant.
-  register             String[]            @default([])
-  generationCohort     String?
-  culturalTags         String[]            @default([])
-  voiceProvenance      Json?
-  sanityId             String?
-  coverDone            Boolean             @default(false)
-  coverUrl             String?
+  register               String[]            @default([])
+  generationCohort       String?
+  culturalTags           String[]            @default([])
+  voiceProvenance        Json?
+  sanityId               String?
+  coverDone              Boolean             @default(false)
+  coverUrl               String?
   /// Base64 thumbhash (~25 bytes) of coverUrl, computed once when the cover is
   /// set. Shipped in the mobile journey payload so cards render an instant
   /// blurred preview of the real cover on cold start (no network wait), while
   /// the full image downloads + disk-caches. See src/lib/coverThumbhash.ts.
-  coverThumbhash       String?
-  audioUrl             String?
-  audioSegments        Json?
-  audioWordTimings     Json?
-  audioFilename        String?
-  audioStatus          String              @default("pending")
-  audioUrlPreview      String?
-  audioFilenamePreview String?
-  ambientTag           String?
-  voiceId              String?
+  coverThumbhash         String?
+  audioUrl               String?
+  audioSegments          Json?
+  audioWordTimings       Json?
+  audioFilename          String?
+  audioStatus            String              @default("pending")
+  audioUrlPreview        String?
+  audioFilenamePreview   String?
+  ambientTag             String?
+  voiceId                String?
   /// Voice override for the practice exercises' TTS. When null, the
   /// practice pipeline falls back to the per-language default (Paola
   /// for italian, Dora for spanish, Cadu for portuguese). Independent
   /// from `voiceId` (which is the narration voice for the full story).
-  practiceVoiceId      String?
-  dialogueSpec         Json?
+  practiceVoiceId        String?
+  dialogueSpec           Json?
   /// Single source of truth for the story's characters: name, role, age band
   /// and gender. Both the cover prompt (character ages/genders + faithful
   /// names) and the voice-selection pipeline read this so the two modalities
   /// never drift. Shape: { characters: { name, role, ageBand, gender,
   /// present }[] }. Migrated 2026-06-05 (migration
   /// 20260605160000_add_journey_story_cast); seeded via src/lib/storyCast.ts.
-  cast                 Json?
-  audioQaStatus        String?
-  audioQaScore         Float?
-  audioQaNotes         String?
+  cast                   Json?
+  audioQaStatus          String?
+  audioQaScore           Float?
+  audioQaNotes           String?
   // Free-form operator note for the audio editor ("re-grabar bloque 3",
   // "subir título"). Manual reminder, distinct from audioQaNotes (which
   // automated QA overwrites). Never touched by generation/QA.
-  audioEditorNote      String?
+  audioEditorNote        String?
   // Ground-truth per-fragment offsets in the merged master timeline,
   // captured at multi-voice generation (index 0 = title, then one per
   // dialogue turn). The audio editor uses these as exact block
   // boundaries instead of reconstructing them from aeneas word timings.
   // Null for stories generated before this was added.
-  audioFragments       Json?
+  audioFragments         Json?
   // Per-segment ElevenLabs regenerate counter for the audio editor,
   // keyed by fragment index (e.g. {"0":2,"5":1}). Caps in-app regen
   // spend at 3 per segment; manual uploads don't count (no API cost).
@@ -358,15 +396,15 @@ model JourneyStory {
   // index (e.g. {"0":"subí manual","5":"falta regenerar"}). Free-form
   // reminders the worker leaves on individual blocks; never touched by
   // generation/QA.
-  audioEditorComments  Json?
+  audioEditorComments    Json?
   // Vocabulary-level audit (LLM-as-judge against story.level CEFR).
   // Cleared whenever text is regenerated; refilled by /audit-level.
-  auditScore           Float?
-  auditOffenders       Json?
-  auditedAt            DateTime?
-  error                String?
-  createdAt            DateTime            @default(now())
-  updatedAt            DateTime            @updatedAt
+  auditScore             Float?
+  auditOffenders         Json?
+  auditedAt              DateTime?
+  error                  String?
+  createdAt              DateTime            @default(now())
+  updatedAt              DateTime            @updatedAt
 
   journey Journey @relation(fields: [journeyId], references: [id], onDelete: Cascade)
 
@@ -383,13 +421,13 @@ model JourneyStory {
 /// reads from this set instead of generating exercises on the fly. Lets
 /// us edit individual exercises in Studio without redeploying.
 model StoryPracticeSet {
-  id        String   @id @default(cuid())
-  storyId   String   @unique
-  story     JourneyStory @relation(fields: [storyId], references: [id], onDelete: Cascade)
-  exercises StoryPracticeExercise[]
+  id                   String                  @id @default(cuid())
+  storyId              String                  @unique
+  story                JourneyStory            @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  exercises            StoryPracticeExercise[]
   /// When false, the seed script will overwrite this set the next time
   /// it runs. Set to true once an editor has reviewed/approved.
-  locked    Boolean  @default(false)
+  locked               Boolean                 @default(false)
   /// Traducciones al ingles de la frase de cada palabra, escritas a mano.
   ///
   /// Forma: `{ [palabraNormalizada]: "English sentence" }`, con la clave igual
@@ -402,8 +440,8 @@ model StoryPracticeSet {
   /// chat ejecutor por journey y necesitan sitio propio, independiente de que
   /// esa palabra tenga o no ejercicio de contexto.
   sentenceTranslations Json?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt            DateTime                @default(now())
+  updatedAt            DateTime                @updatedAt
 
   @@map("dp_story_practice_sets_v1")
 }
@@ -411,45 +449,45 @@ model StoryPracticeSet {
 /// Individual exercise inside a StoryPracticeSet. `orderIndex` is the
 /// position in the session (0..N-1, typically 0..9).
 model StoryPracticeExercise {
-  id         String   @id @default(cuid())
-  setId      String
-  set        StoryPracticeSet @relation(fields: [setId], references: [id], onDelete: Cascade)
-  orderIndex Int
+  id               String           @id @default(cuid())
+  setId            String
+  set              StoryPracticeSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+  orderIndex       Int
   /// One of: fill_blank | meaning_in_context | listen_choose | match_meaning
-  type       String
+  type             String
   /// Target vocab word (the right answer for fill_blank/natural, the
   /// prompt for meaning/listening).
-  word       String
+  word             String
   /// Sentence shown on screen. For fill_blank this contains "_____".
-  sentence   String
+  sentence         String
   /// Pre-rendered mp3 in R2 (clean Piper + 150 ms tail). Null until the
   /// audio job runs.
-  audioUrl   String?
+  audioUrl         String?
   /// `{ options: string[], answer: string }` for choice exercises;
   /// `{ pairs: [{word, meaning}], extras: string[] }` for match.
-  payload    Json
+  payload          Json
   /// Whether this exercise appears on the end-of-story screen. The 10
   /// editor-approved ones are featured=true; the rest live in the pool
   /// and only surface in the Practice tab. Default true so the legacy
   /// 10-exercise sets behave identically pre/post migration.
-  featured   Boolean  @default(true)
+  featured         Boolean          @default(true)
   /// Denormalized from JourneyStory.journey.language. Lets the Practice
   /// tab query the pool by language without 3-table joins. Nullable for
   /// resilience; backfilled at migration time.
-  language   String?
+  language         String?
   /// CEFR band of this item (a0..c2), from the source story level. Drives
   /// distractor-band filtering and validation. Phase-1 scaffolding; backfilled.
-  cefr       String?
+  cefr             String?
   /// Exact text rendered to audio (for cloze, the full correct sentence, no
   /// speaker label). Enables deterministic, content-addressed re-render.
-  audioText  String?
+  audioText        String?
   /// Voice used for the audio (character voice from the story's cast).
-  audioVoiceId String?
+  audioVoiceId     String?
   /// Provenance of the distractors: "authored" (curated) | "pool" (generated).
   /// Lets us audit which sets still rely on the legacy sampler.
   distractorSource String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
 
   @@unique([setId, orderIndex])
   @@index([setId])
@@ -525,10 +563,14 @@ model FavoriteCollection {
   id        String   @id @default(cuid())
   userId    String
   name      String
-  /** Canonical language name ("Spanish", "German", ...). Optional for
-   *  backward compat with collections created without a language tag. */
+  /**
+   * Canonical language name ("Spanish", "German", ...). Optional for
+   * backward compat with collections created without a language tag.
+   */
   language  String?
-  /** "${language}::${word}" lowercased entries. */
+  /**
+   * "${language}::${word}" lowercased entries.
+   */
   wordKeys  String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -587,14 +629,14 @@ model CatalogStoryAudioTimings {
   // que la segunda historia no podia tener karaoke ni aunque se alineara.
   // El comentario viejo decia que no habia tabla padre a la que colgarse;
   // ahora si la hay (CatalogStory), asi que la relacion es real.
-  storyId           String   @id
+  storyId          String   @id
   // Se conserva por trazabilidad y para las apps viejas, que solo saben pedir
   // por slug. NO es unico: al buscar por slug hay que comprobar antes que ese
   // slug no este en colision.
-  slug              String
-  audioWordTimings  Json
-  audioDurationSec  Float?
-  updatedAt         DateTime @updatedAt
+  slug             String
+  audioWordTimings Json
+  audioDurationSec Float?
+  updatedAt        DateTime @updatedAt
 
   story CatalogStory @relation(fields: [storyId], references: [id], onDelete: Cascade)
 
@@ -606,19 +648,19 @@ model CatalogStoryAudioTimings {
 // it to TestFlight automatically or parks it for review at /studio/beta.
 // `status` lifecycle: pending -> waitlist | invited -> accepted | declined.
 model BetaSignup {
-  id                String    @id @default(cuid())
-  email             String    @unique
-  nativeLanguage    String
-  targetLanguage    String
-  currentLevel      String
-  hasIPhone         Boolean
-  currentApps       String?
-  weeklyHours       String?
-  referralSource    String?
+  id                 String    @id @default(cuid())
+  email              String    @unique
+  nativeLanguage     String
+  targetLanguage     String
+  currentLevel       String
+  hasIPhone          Boolean
+  currentApps        String?
+  weeklyHours        String?
+  referralSource     String?
   // New required fields (added 2026-05-17). Existing rows pre-migration
   // will have these NULL; the form going forward requires them.
-  motivation        String?
-  applicationReason String?
+  motivation         String?
+  applicationReason  String?
   // RETIRADO del formulario el 2026-08-23: en tres días recogió cinco
   // respuestas y solo dos nombraban un dominio ("slang de Colombia, México y
   // Paraguay"); el resto eran objetivos de nivel. La columna se queda por las
@@ -628,29 +670,29 @@ model BetaSignup {
   // así que ninguno dice de qué habla la persona: los cinco solicitantes de
   // portugués contestaron sobre la app. Esta es la única columna con señal de
   // dominio, y es la que lee el portón de temas (`src/lib/topicEvidence.ts`).
-  learningGoal      String?
+  learningGoal       String?
   // Los dominios que marcó en el formulario (slugs de `Topic` universales, más
   // lo que escriba por "Other"). Es la única señal COMPARABLE entre
   // solicitantes: `applicationReason` cuenta una vida, esto se suma y se
   // ordena. Vacío en las filas anteriores al 2026-08-23.
-  topicInterests    String[]
+  topicInterests     String[]
   // Silent attribution captured from the browser at form mount:
   // utm_source/medium/campaign/content/term, document.referrer, and the
   // landing URL the visitor first arrived at. Lets us source traffic
   // without asking.
-  attribution       Json?
-  consentedAt       DateTime
+  attribution        Json?
+  consentedAt        DateTime
   // Segundo permiso, OPCIONAL y desmarcado por defecto (2026-08-31): ofertas
   // para testers y novedades del producto. La casilla obligatoria de arriba
   // solo cubre el programa de beta, asi que sin esta fecha no se le puede
   // escribir nada promocional, ni siquiera una peticion de resena fuera de
   // la secuencia de cierre. Null = no lo marco.
   marketingConsentAt DateTime?
-  status            String    @default("pending")
-  notes             String?
-  invitedAt         DateTime?
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
+  status             String    @default("pending")
+  notes              String?
+  invitedAt          DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
 
   // ── Promoted from `attribution` JSON (2026-07-30). The triage engine and
   // the App Store Connect invite both read these on every row, which is
@@ -695,13 +737,13 @@ model BetaSignup {
   // mobile session pings, not from Apple: it is the only engagement signal
   // we control. `planRevokedAt` is stamped when the beta closes and the
   // temporary premium grant is taken back. ──
-  clerkUserId   String?
+  clerkUserId     String?
   // Segundas cuentas del mismo tester (web con su correo + app iOS con
   // "Hide My Email"). El plan beta y la actividad cuentan en todas.
-  altClerkUserIds String[] @default([])
-  planGrantedAt DateTime?
-  planRevokedAt DateTime?
-  lastActiveAt  DateTime?
+  altClerkUserIds String[]  @default([])
+  planGrantedAt   DateTime?
+  planRevokedAt   DateTime?
+  lastActiveAt    DateTime?
 
   emails   BetaEmailLog[]
   feedback BetaFeedback[]
@@ -718,17 +760,17 @@ model BetaSignup {
 // tracks the same thing via UserMetric rows, but beta applicants often have
 // no Clerk account yet, so they need their own ledger keyed by signup.
 model BetaEmailLog {
-  id       String     @id @default(cuid())
-  signupId String
-  signup   BetaSignup @relation(fields: [signupId], references: [id], onDelete: Cascade)
+  id         String     @id @default(cuid())
+  signupId   String
+  signup     BetaSignup @relation(fields: [signupId], references: [id], onDelete: Cascade)
   // accepted | waitlist | declined | install_nudge | feedback_ask |
   // mid_survey | release_note | final_survey | review_ask | review_recover
-  kind     String
+  kind       String
   // Set only for kind = release_note, so one tester can receive one note per
   // build. Empty string (not NULL) for every other kind: Postgres treats
   // NULLs as distinct in a unique index, which would defeat the constraint.
-  releaseId String   @default("")
-  sentAt    DateTime @default(now())
+  releaseId  String     @default("")
+  sentAt     DateTime   @default(now())
   // Resend's id for this send. Without it, answering "did it actually arrive?"
   // means listing every email the account ever sent and filtering by address,
   // which is what it took on 2026-08-03. With it, it is one lookup.
@@ -767,7 +809,7 @@ model BetaFeedback {
   context Json?
 
   // new | triaged | in_progress | fixed | wont_fix | duplicate
-  status     String  @default("new")
+  status     String       @default("new")
   adminNotes String?
   // The release that fixed this. Set from the release editor; drives the
   // personalized "you reported this, it's fixed" line in the build note.
@@ -797,8 +839,8 @@ model BetaFeedback {
 // One row per build you ship to testers. Publishing a release is what fires
 // the build note (email + push) to every active tester.
 model BetaRelease {
-  id          String @id @default(cuid())
-  platform    String @default("ios")
+  id          String  @id @default(cuid())
+  platform    String  @default("ios")
   version     String
   buildNumber String
   headline    String
@@ -879,30 +921,40 @@ model PageVisit {
 // pedido de Shopify por `utmCampaign`, que ya viaja en el enlace y llega al
 // landing_site del pedido.
 model OutboundClick {
-  id       String @id @default(cuid())
-  /** Pagina desde la que se hizo clic, p. ej. /blog/25-colombian-slang-phrases-to-sound-local. */
-  fromPath String
-  /** Destino completo, con sus UTM. */
-  href     String
-  destHost String
-  /** Handle del producto de Shopify cuando el destino es una ficha. */
-  product     String?
-  utmCampaign String?
+  id             String   @id @default(cuid())
+  /**
+   * Pagina desde la que se hizo clic, p. ej. /blog/25-colombian-slang-phrases-to-sound-local.
+   */
+  fromPath       String
+  /**
+   * Destino completo, con sus UTM.
+   */
+  href           String
+  destHost       String
+  /**
+   * Handle del producto de Shopify cuando el destino es una ficha.
+   */
+  product        String?
+  utmCampaign    String?
   /**
    * Cual de los enlaces a la tienda de esa pagina se pulso, contando desde
    * arriba. Los posts llevan el mismo enlace a mitad del articulo y otra vez
    * al final; sin esto no se sabe cual de las dos posiciones funciona.
    */
-  linkIndex Int?
-  /** Texto del enlace, para comparar redacciones del reclamo. */
+  linkIndex      Int?
+  /**
+   * Texto del enlace, para comparar redacciones del reclamo.
+   */
   label          String?
   country        String?
   deviceCategory String?
   userAgent      String?
   ipHashed       String?
-  /** Mismo cookie de sesion que dp_page_visits_v1, para cruzar lectura y clic. */
-  sessionId String?
-  createdAt DateTime @default(now())
+  /**
+   * Mismo cookie de sesion que dp_page_visits_v1, para cruzar lectura y clic.
+   */
+  sessionId      String?
+  createdAt      DateTime @default(now())
 
   @@index([createdAt])
   @@index([fromPath])
@@ -917,18 +969,28 @@ model OutboundClick {
 // veia abriendo cada pedido en el admin de Shopify. El token de Admin API no
 // tiene read_orders, asi que esta tabla es la unica fuente fuera de Shopify.
 model ShopifyOrder {
-  /** id numerico del pedido en Shopify, como texto. Clave para el upsert. */
+  /**
+   * id numerico del pedido en Shopify, como texto. Clave para el upsert.
+   */
   id            String   @id
-  /** Numero visible, p. ej. "#3956". */
+  /**
+   * Numero visible, p. ej. "#3956".
+   */
   name          String
   orderedAt     DateTime
-  /** Total en la moneda de la tienda (EUR). */
+  /**
+   * Total en la moneda de la tienda (EUR).
+   */
   totalShop     Decimal  @db.Decimal(12, 2)
   shopCurrency  String
-  /** Total en la moneda que pago el cliente. */
+  /**
+   * Total en la moneda que pago el cliente.
+   */
   totalPaid     Decimal  @db.Decimal(12, 2)
   paidCurrency  String
-  /** meta_paid | meta_organic | dp_web | google | email | referral | direct | unknown */
+  /**
+   * meta_paid | meta_organic | dp_web | google | email | referral | direct | unknown
+   */
   channel       String
   landingSite   String?
   referringSite String?
@@ -940,7 +1002,9 @@ model ShopifyOrder {
   utmTerm       String?
   hasFbclid     Boolean  @default(false)
   country       String?
-  /** Titulos de las lineas, en orden. */
+  /**
+   * Titulos de las lineas, en orden.
+   */
   items         String[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
@@ -1230,7 +1294,7 @@ model CatalogStory {
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 
-  book       CatalogBook               @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  book         CatalogBook               @relation(fields: [bookId], references: [id], onDelete: Cascade)
   audioTimings CatalogStoryAudioTimings?
 
   @@unique([bookId, slug])
@@ -1246,34 +1310,34 @@ model CatalogStory {
 // reports are preserved as-is to keep the door open for re-implementing the
 // Sanity editor inside Studio (Next.js) later.
 model StandaloneStory {
-  id                String    @id
-  slug              String    @unique
-  sourceType        String    @default("sanity")
-  createStoryId     String?
-  createStoryUserId String?
-  language          String?
-  variant           String?
-  region            String?
-  level             String?
-  cefrLevel         String?
-  focus             String?
-  topic             String?
-  journeyEligible   Boolean   @default(false)
-  journeyTopic      String?
-  journeyOrder      Int?
-  journeyFocus      String?
-  title             String
-  synopsis          String?
-  text              String    @default("")
-  vocabRaw          String?
-  vocab             Json?
-  cover             String?
-  coverUrl          String?
+  id                       String    @id
+  slug                     String    @unique
+  sourceType               String    @default("sanity")
+  createStoryId            String?
+  createStoryUserId        String?
+  language                 String?
+  variant                  String?
+  region                   String?
+  level                    String?
+  cefrLevel                String?
+  focus                    String?
+  topic                    String?
+  journeyEligible          Boolean   @default(false)
+  journeyTopic             String?
+  journeyOrder             Int?
+  journeyFocus             String?
+  title                    String
+  synopsis                 String?
+  text                     String    @default("")
+  vocabRaw                 String?
+  vocab                    Json?
+  cover                    String?
+  coverUrl                 String?
   /// Base64 thumbhash of coverUrl for instant blurred placeholders on mobile.
   /// See src/lib/coverThumbhash.ts and JourneyStory.coverThumbhash.
-  coverThumbhash    String?
-  audio             String?
-  audioUrl          String?
+  coverThumbhash           String?
+  audio                    String?
+  audioUrl                 String?
   audioQaStatus            String?
   audioQaScore             Float?
   audioQaNotes             String?
@@ -1285,13 +1349,13 @@ model StandaloneStory {
   audioDeliveryQaCheckedAt DateTime?
   storyVocabQualityRaw     String?
   vocabValidationRaw       String?
-  published         Boolean   @default(false)
-  sanityId          String?
-  migratedFrom      String?
-  sourceCreatedAt   DateTime?
-  sourceUpdatedAt   DateTime?
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
+  published                Boolean   @default(false)
+  sanityId                 String?
+  migratedFrom             String?
+  sourceCreatedAt          DateTime?
+  sourceUpdatedAt          DateTime?
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
 
   @@index([language, level])
   @@index([cefrLevel])
@@ -1347,7 +1411,7 @@ model StoryRating {
   /// una historia puede gustar y sus ejercicios no. Sin esta columna el pulgar
   /// de la práctica pisaba el de la historia, porque la clave única era solo
   /// (userId, storySlug).
-  surface String  @default("story")
+  surface String @default("story")
 
   liked   Boolean
   comment String?

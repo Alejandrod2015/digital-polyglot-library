@@ -26,7 +26,8 @@
  * linea de barras para lo que la parsee. Una sola tabla, con idioma y variante
  * en columnas propias (usuario, 2026-09-06).
  *
- * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Estructura |
+ * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Ciudad |
+ *           Estructura |
  *           Estilo | %Citado | No nativos | Voz narrador | Voz práctica |
  *           Hist. pub | Narración | Covers | Ambient | Clips práctica
  *
@@ -50,6 +51,23 @@ import { extractStoryPlainText, findSpeakerLabelRanges } from "../src/lib/storyP
 const p = new PrismaClient();
 
 const W = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+
+/**
+ * Columna Ciudad. La ciudad que ENMARCA el journey (regla dura del usuario,
+ * 2026-09-24: reconocible FUERA de su pais por un anglosajon). Los tres estados
+ * se leen distinto a proposito:
+ *
+ *   Madrid       una ciudad marco
+ *   (gira)       los siete temas son siete sitios; la regla va sitio a sitio
+ *   (sin ciudad) sin ciudad A PROPOSITO (lugares por tipo, sin pais)
+ *   ?            NADIE LO HA RELLENADO. No es lo mismo que "no aplica"
+ *
+ * Existe para que la proxima auditoria sea leer esta tabla. La de septiembre
+ * costo tres pasadas sobre toda la base porque el dato solo vivia repartido por
+ * 21 textos, la memoria y los prompts de portada.
+ */
+const ciudad = (city: string | null, mode: "single" | "multi" | "none" | null) =>
+  mode === "multi" ? "(gira)" : mode === "none" ? "(sin ciudad)" : city ?? "?";
 
 const arg = (n: string): string | undefined => {
   const i = process.argv.indexOf(`--${n}`);
@@ -220,7 +238,7 @@ async function main() {
     where: { status: { in: ESTADOS() }, ...filtroIdioma(), ...filtroIds() }, // live + draft; archived solo con --archived
     select: {
       id: true, name: true, language: true, variant: true, status: true, levels: true,
-      topics: true, storiesPerTopic: true,
+      topics: true, storiesPerTopic: true, city: true, cityMode: true,
       stories: {
         select: {
           status: true, audioUrl: true, coverUrl: true, cast: true, text: true,
@@ -261,10 +279,10 @@ async function main() {
     (ids ? ` · filtrado: ${ids.length} journeys por id` : "") + (crudo ? "" : "\n")
   );
   if (crudo) {
-    console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+    console.log("Estado|Idioma|Variante|Tipo|Nivel|Ciudad|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
   } else {
-    console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
-    console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
+    console.log("| Estado | Idioma | Variante | Tipo | Nivel | Ciudad | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
+    console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
   }
   const notas: string[] = [];
   for (const j of js) {
@@ -297,6 +315,7 @@ async function main() {
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
     const campos = [est, j.language, j.variant, j.name, j.levels.join("/") || "-",
+      ciudad(j.city, j.cityMode),
       estructura, estilo, citado, String(nn.n), vname(mode(S.map((s) => s.voiceId))),
       vname(mode(S.map((s) => s.practiceVoiceId))), `${pub}/${S.length}`, String(narr),
       String(cov), `${amb}/${S.length}`, String(clips)];
@@ -324,7 +343,7 @@ async function tablaDeUnJourney(id: string) {
   const j = await p.journey.findUnique({
     where: { id },
     select: { name: true, language: true, variant: true, levels: true, status: true,
-              topics: true, storiesPerTopic: true },
+              topics: true, storiesPerTopic: true, city: true, cityMode: true },
   });
   if (!j) throw new Error(`no encuentro el journey ${id}`);
   if (j.status === "archived" && !flag("archived"))
