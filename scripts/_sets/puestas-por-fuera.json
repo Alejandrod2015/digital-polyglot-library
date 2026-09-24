@@ -304,7 +304,8 @@
         "storySource": "user",
         "sentence": "Bruno no ve las llaves en la azotea.",
         "targetWord": "ve",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10af3adf2038b23a.mp3"
       }
     }
   },
