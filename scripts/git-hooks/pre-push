@@ -97,6 +97,66 @@ EOM
   fi
 fi
 
+# -- Batch gate, segunda mitad: commits desplegables que se quedan atras --
+# El candado de arriba mira el arbol de trabajo. No miraba los COMMITS: un
+# `git push origin <sha>:main` con mas commits detras sale limpio y deja el
+# resto para otro build.
+#
+# Paso el 2026-09-24. Un lote subio hasta 940a8cf2 y dejo diez commits del
+# tablero de metricas en la rama, incluido el que hacia que las tarjetas
+# comparasen con el periodo anterior. El usuario recargo produccion, vio las
+# tarjetas sin comparacion, y hubo que pagar un segundo build. Ninguno de los
+# dos candados que existian entonces podia verlo: el arbol estaba limpio.
+#
+# Ahora, para cada ref que apunte a main, se mira que commits desplegables
+# quedan entre lo que se sube y HEAD. Mismo escape visible que el de arriba,
+# porque es la misma decision: dejar fuera trabajo desplegable a proposito.
+if [ "$DPL_PUSH_PARTIAL_OK" != "1" ]; then
+  HEAD_SHA=$(git rev-parse HEAD 2>/dev/null)
+  printf '%s\n' "$REFS_STDIN" | while read -r LOCAL_REF LOCAL_SHA REMOTE_REF REMOTE_SHA; do
+    [ "$REMOTE_REF" = "refs/heads/main" ] || continue
+    [ -n "$LOCAL_SHA" ] || continue
+    case "$LOCAL_SHA" in *[!0]*) ;; *) continue ;; esac
+    [ "$LOCAL_SHA" = "$HEAD_SHA" ] && continue
+
+    # Los mismos arboles que construye Vercel, y las mismas exclusiones.
+    QUEDAN=$(git rev-list --no-merges "$LOCAL_SHA..$HEAD_SHA" 2>/dev/null | while read -r C; do
+      if git show --name-only --format="" "$C" 2>/dev/null \
+        | grep -E '^(src/|prisma/|middleware\.|next\.config|next-sitemap|package\.json|package-lock\.json|vercel\.json|tsconfig)' \
+        | grep -qvE '^scripts/_'; then
+        printf '%s %s\n' "$(git log -1 --format=%h "$C")" "$(git log -1 --format=%s "$C")"
+      fi
+    done)
+
+    if [ -n "$QUEDAN" ]; then
+      cat >&2 <<EOM
+
+══════════════════════════════════════════════════════════════════════
+  PUSH BLOCKED: te dejas commits desplegables detras
+
+  Estas subiendo $(git log -1 --format=%h "$LOCAL_SHA"), y estos commits
+  de la rama TAMBIEN tocan lo que Vercel construye y se quedan fuera.
+  Subirlos despues es un segundo build pagado:
+
+$(printf '%s\n' "$QUEDAN" | sed 's/^/      • /')
+
+  Para llevartelos: sube HEAD.
+
+      DPL_PUSH_AUTHORIZED=1 git push origin HEAD:main
+
+  Para dejarlos fuera a proposito, el mismo escape visible de siempre:
+
+      DPL_PUSH_AUTHORIZED=1 DPL_PUSH_PARTIAL_OK=1 git push origin <sha>:main
+
+  Registro: .git/push-audit.log
+══════════════════════════════════════════════════════════════════════
+
+EOM
+      exit 1
+    fi
+  done || exit 1
+fi
+
 # -- Manifiesto de candados -------------------------------------------
 # Un lint por linea: script | que necesita para correr (db, memoria o nada).
 # Antes cada lint iba envuelto en `if [ -f scripts/X.ts ]`, asi que un
