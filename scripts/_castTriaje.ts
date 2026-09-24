@@ -1,6 +1,6 @@
 import { PrismaClient } from "../src/generated/prisma";
 import { castOf } from "../src/lib/validateJourneyStories";
-import GATES from "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/630369fb-d47e-4a5f-9c4c-452dc32c38cf/scratchpad/gates2.json";
+import GATES from "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/630369fb-d47e-4a5f-9c4c-452dc32c38cf/scratchpad/gates4.json";
 const p = new PrismaClient();
 const LANG: Record<string, string> = { german: "DE", spanish: "ES", portuguese: "PT", french: "FR", italian: "IT" };
 
@@ -9,10 +9,12 @@ async function main() {
   for (const g of GATES as any[]) {
     if (!g.fallan.length) continue;
     const j = await p.journey.findUnique({ where: { id: g.id },
-      select: { language: true, levels: true, stories: { orderBy: [{ topic: "asc" }, { slotIndex: "asc" }],
+      select: { language: true, levels: true, topics: true, stories: { orderBy: [{ topic: "asc" }, { slotIndex: "asc" }],
         select: { slug: true, text: true, topic: true, audioUrl: true, coverUrl: true } } } });
+    const ordenTema = (t: string | null) => { const i = j!.topics.indexOf(t ?? ""); return i < 0 ? 99 : i; };
     const stories = j!.stories.filter((s) => (s.text ?? "").length > 200)
       .map((s) => ({ slug: s.slug ?? "", title: "", text: s.text ?? "", language: j!.language, level: "", topic: s.topic }));
+    stories.sort((a, b) => ordenTema(a.topic) - ordenTema(b.topic));
     const cast = castOf(stories as any, LANG[j!.language]);
     const cuantos = (t: string) => cast.filter((n) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(t)).length;
     const primerTema = stories[0].topic;

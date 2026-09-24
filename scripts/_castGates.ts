@@ -7,14 +7,16 @@ const CAST = ["journey-cast-protagonist-in-all", "journey-cast-fixed-max-two",
 async function main() {
   const js = await p.journey.findMany({ where: { status: { in: ["active", "draft"] } },
     orderBy: [{ language: "asc" }, { levels: "asc" }],
-    select: { id: true, name: true, language: true, variant: true, levels: true, status: true, typeSlug: true,
+    select: { id: true, name: true, language: true, variant: true, levels: true, status: true, typeSlug: true, topics: true,
       stories: { orderBy: [{ topic: "asc" }, { slotIndex: "asc" }],
         select: { slug: true, title: true, text: true, topic: true, level: true, vocab: true, audioUrl: true, coverUrl: true } } } });
   const out: any[] = [];
   for (const j of js) {
+    const ordenTema = (t: string | null) => { const i = (j as any).topics.indexOf(t ?? ""); return i < 0 ? 99 : i; };
     const stories = j.stories.filter((s) => (s.text ?? "").length > 200).map((s) => ({
       slug: s.slug ?? "", title: s.title ?? "", text: s.text ?? "", language: j.language,
       level: s.level ?? j.levels[0] ?? "", topic: s.topic, vocab: (s.vocab as any) ?? null }));
+    stories.sort((a, b) => ordenTema(a.topic) - ordenTema(b.topic));
     if (stories.length < 3) continue;
     let checks: any[] = [];
     try {

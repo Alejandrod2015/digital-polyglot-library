@@ -7,14 +7,16 @@ const LANG: Record<string, string> = { german: "DE", spanish: "ES", portuguese: 
 async function main() {
   const js = await p.journey.findMany({ where: { status: { in: ["active", "draft"] } },
     orderBy: [{ language: "asc" }, { levels: "asc" }],
-    select: { id: true, name: true, language: true, variant: true, levels: true, status: true,
+    select: { id: true, name: true, language: true, variant: true, levels: true, status: true, topics: true,
       stories: { orderBy: [{ topic: "asc" }, { slotIndex: "asc" }], select: { slug: true, text: true, topic: true } } } });
   const out: any[] = [];
   for (const j of js) {
     const lang = LANG[j.language]; if (!lang) continue;
     const names: string[] = (NAMES as any)[lang];
+    const ordenTema = (t: string | null) => { const i = (j as any).topics.indexOf(t ?? ""); return i < 0 ? 99 : i; };
     const stories = j.stories.filter((s) => (s.text ?? "").length > 200)
       .map((s) => ({ slug: s.slug ?? "", title: "", text: s.text ?? "", language: j.language, level: j.levels[0] ?? "", topic: s.topic }));
+    stories.sort((a, b) => ordenTema(a.topic) - ordenTema(b.topic));
     if (stories.length < 3) continue;
     const detected = castOf(stories as any, lang);
     const { hablan } = hablaPorHistoria(stories as any, lang);
