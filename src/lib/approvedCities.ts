@@ -34,7 +34,7 @@ export const APPROVED_CITIES: Record<string, string[]> = {
   french: ["Paris", "Marseille"],
   german: ["Berlin", "Hamburg", "Frankfurt", "Munich"],
   italian: ["Milan"],
-  spanish: ["Madrid", "Buenos Aires", "Guadalajara", "Santiago de Compostela"],
+  spanish: ["Madrid", "Buenos Aires", "Guadalajara", "Santiago de Compostela", "Medellin"],
   portuguese: ["Brasilia"],
   korean: ["Seul"],
   polish: ["Krakow"],
