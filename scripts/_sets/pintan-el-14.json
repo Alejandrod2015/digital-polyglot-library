@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "fachada",
-  "sentence": "En la [[fachada]] del edificio no se ve el número.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the front wall",
-   "options": [
-    "the front wall",
-    "the back yard",
-    "the flat roof",
-    "the side gate"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "En la fachada del edificio no se ve el número.",
-    "targetWord": "fachada",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "borrado",
-  "sentence": "El número está [[borrado]] desde hace años.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "rubbed out",
-   "options": [
-    "rubbed out",
-    "freshly cut",
-    "wide open",
-    "very high"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "El número está borrado desde hace años.",
-    "targetWord": "borrado",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "plantilla",
-  "sentence": "El vecino baja con el bote y una [[plantilla]] de cartón.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a stencil",
-   "options": [
-    "a stencil",
-    "a ladder",
-    "a bucket",
-    "a ruler"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "El vecino baja con el bote y una plantilla de cartón.",
-    "targetWord": "plantilla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bote",
-  "sentence": "Él baja con el [[bote]] de pintura blanca.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the tin",
-   "options": [
-    "the tin",
-    "the brush",
-    "the cloth",
-    "the board"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Él baja con el bote de pintura blanca.",
-    "targetWord": "bote",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vueltas",
-  "sentence": "La repartidora da tres [[vueltas]] cada vez.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "laps",
-   "options": [
-    "laps",
-    "parcels",
-    "corners",
-    "minutes"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "La repartidora da tres vueltas cada vez.",
-    "targetWord": "vueltas",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "arreglamos",
-  "sentence": "El número no se ve; hoy lo _____ nosotros.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "arreglamos",
-   "options": [
-    "arreglamos",
-    "lavamos",
-    "contamos",
-    "vendemos"
-   ],
-   "translation": "You cannot see the number; today we _____ it.",
-   "optionTranslations": [
-    "fix",
-    "wash",
-    "count",
-    "sell"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "El número no se ve; hoy lo arreglamos nosotros.",
-    "targetWord": "arreglamos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "copian",
-  "sentence": "Miran el edificio de al lado y _____ el estilo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "copian",
-   "options": [
-    "copian",
-    "lavan",
-    "cuentan",
-    "venden"
-   ],
-   "translation": "They look at the building next door and _____ the style.",
-   "optionTranslations": [
-    "copy",
-    "wash",
-    "count",
-    "sell"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Miran el edificio de al lado y copian el estilo.",
-    "targetWord": "copian",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "pinta",
-  "sentence": "Con la plantilla, ella _____ un catorce grande.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pinta",
-   "options": [
-    "pinta",
-    "cuenta",
-    "vende",
-    "tapa"
-   ],
-   "translation": "With the stencil, she _____ a big fourteen.",
-   "optionTranslations": [
-    "paints",
-    "counts",
-    "sells",
-    "covers"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Con la plantilla, ella pinta un catorce grande.",
-    "targetWord": "pinta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "rápido",
-  "sentence": "La pintura seca muy _____ con este sol.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rápido",
-   "options": [
-    "rápido",
-    "bajito",
-    "lejos",
-    "despacio"
-   ],
-   "translation": "The paint dries very _____ in this sun.",
-   "optionTranslations": [
-    "fast",
-    "quietly",
-    "far away",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "La pintura seca muy rápido con este sol.",
-    "targetWord": "rápido",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "forma,estilo,catorce,cartón",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "forma",
-     "answer": "the shape",
-     "options": [
-      "the shape",
-      "the style",
-      "the number",
-      "the cardboard"
-     ]
-    },
-    {
-     "word": "estilo",
-     "answer": "the style",
-     "options": [
-      "the shape",
-      "the style",
-      "the number",
-      "the cardboard"
-     ]
-    },
-    {
-     "word": "catorce",
-     "answer": "the number",
-     "options": [
-      "the shape",
-      "the style",
-      "the number",
-      "the cardboard"
-     ]
-    },
-    {
-     "word": "cartón",
-     "answer": "the cardboard",
-     "options": [
-      "the shape",
-      "the style",
-      "the number",
-      "the cardboard"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "fachada",
+    "sentence": "En la [[fachada]] del edificio no se ve el número.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the front wall",
+      "options": [
+        "the front wall",
+        "the back yard",
+        "the flat roof",
+        "the side gate"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "En la fachada del edificio no se ve el número.",
+        "targetWord": "fachada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01d4a863e55101ce.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "borrado",
+    "sentence": "El número está [[borrado]] desde hace años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rubbed out",
+      "options": [
+        "rubbed out",
+        "freshly cut",
+        "wide open",
+        "very high"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "El número está borrado desde hace años.",
+        "targetWord": "borrado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f20990a080b54775.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plantilla",
+    "sentence": "El vecino baja con el bote y una [[plantilla]] de cartón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stencil",
+      "options": [
+        "a stencil",
+        "a ladder",
+        "a bucket",
+        "a ruler"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "El vecino baja con el bote y una plantilla de cartón.",
+        "targetWord": "plantilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e96f988623b3e2cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bote",
+    "sentence": "Él baja con el [[bote]] de pintura blanca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tin",
+      "options": [
+        "the tin",
+        "the brush",
+        "the cloth",
+        "the board"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Él baja con el bote de pintura blanca.",
+        "targetWord": "bote",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b74e3c0ac09646a5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vueltas",
+    "sentence": "La repartidora da tres [[vueltas]] cada vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laps",
+      "options": [
+        "laps",
+        "parcels",
+        "corners",
+        "minutes"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "La repartidora da tres vueltas cada vez.",
+        "targetWord": "vueltas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23400eca74257a14.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arreglamos",
+    "sentence": "El número no se ve; hoy lo _____ nosotros.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arreglamos",
+      "options": [
+        "arreglamos",
+        "lavamos",
+        "contamos",
+        "vendemos"
+      ],
+      "translation": "You cannot see the number; today we _____ it.",
+      "optionTranslations": [
+        "fix",
+        "wash",
+        "count",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "El número no se ve; hoy lo arreglamos nosotros.",
+        "targetWord": "arreglamos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/386e47e90d0316ce.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "copian",
+    "sentence": "Miran el edificio de al lado y _____ el estilo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "copian",
+      "options": [
+        "copian",
+        "lavan",
+        "cuentan",
+        "venden"
+      ],
+      "translation": "They look at the building next door and _____ the style.",
+      "optionTranslations": [
+        "copy",
+        "wash",
+        "count",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Miran el edificio de al lado y copian el estilo.",
+        "targetWord": "copian",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/087d24642d3595e5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pinta",
+    "sentence": "Con la plantilla, ella _____ un catorce grande.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pinta",
+      "options": [
+        "pinta",
+        "cuenta",
+        "vende",
+        "tapa"
+      ],
+      "translation": "With the stencil, she _____ a big fourteen.",
+      "optionTranslations": [
+        "paints",
+        "counts",
+        "sells",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Con la plantilla, ella pinta un catorce grande.",
+        "targetWord": "pinta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99c320d007786345.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rápido",
+    "sentence": "La pintura seca muy _____ con este sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rápido",
+      "options": [
+        "rápido",
+        "bajito",
+        "lejos",
+        "despacio"
+      ],
+      "translation": "The paint dries very _____ in this sun.",
+      "optionTranslations": [
+        "fast",
+        "quietly",
+        "far away",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "La pintura seca muy rápido con este sol.",
+        "targetWord": "rápido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a5a376f57d0990a.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "forma,estilo,catorce,cartón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "forma",
+          "answer": "the shape",
+          "options": [
+            "the shape",
+            "the style",
+            "the number",
+            "the cardboard"
+          ]
+        },
+        {
+          "word": "estilo",
+          "answer": "the style",
+          "options": [
+            "the shape",
+            "the style",
+            "the number",
+            "the cardboard"
+          ]
+        },
+        {
+          "word": "catorce",
+          "answer": "the number",
+          "options": [
+            "the shape",
+            "the style",
+            "the number",
+            "the cardboard"
+          ]
+        },
+        {
+          "word": "cartón",
+          "answer": "the cardboard",
+          "options": [
+            "the shape",
+            "the style",
+            "the number",
+            "the cardboard"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al lado",
+    "featured": false,
+    "sentence": "Copian el estilo del edificio de [[al lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next door",
+      "options": [
+        "next door",
+        "far away",
+        "up above",
+        "across town"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Copian el estilo del edificio de al lado.",
+        "targetWord": "al lado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/583fdaf69a7d6bdb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz alta",
+    "featured": false,
+    "sentence": "Él lee el número [[en voz alta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": [
+        "out loud",
+        "by heart",
+        "one more time",
+        "very slowly"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Él lee el número en voz alta.",
+        "targetWord": "en voz alta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d1dbf6859d53181.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "featured": false,
+    "sentence": "Quedó [[bonito]], dice él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pretty",
+      "options": [
+        "pretty",
+        "narrow",
+        "heavy",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Quedó bonito, dice él.",
+        "targetWord": "bonito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcba1b3ac8fb6d9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ninguno",
+    "featured": false,
+    "sentence": "[[Ninguno]] es para ustedes, dice ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not one",
+      "options": [
+        "not one",
+        "all three",
+        "the last",
+        "the same"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Ninguno es para ustedes, dice ella.",
+        "targetWord": "Ninguno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2771349d17744874.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clara",
+    "featured": false,
+    "sentence": "Solo queda una marca [[clara]] en la pared.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pale",
+      "options": [
+        "pale",
+        "round",
+        "fresh",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Solo queda una marca clara en la pared.",
+        "targetWord": "clara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/895eac09b2e590f6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos",
+    "featured": false,
+    "sentence": "El catorce se ve desde [[lejos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far away",
+      "options": [
+        "far away",
+        "up close",
+        "next door",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "El catorce se ve desde lejos.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/836688aa880e55be.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacito",
+    "featured": false,
+    "sentence": "Ella busca el número otra vez, [[despacito]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "loudly",
+        "again",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "pintan-el-14",
+        "storySource": "user",
+        "sentence": "Ella busca el número otra vez, despacito.",
+        "targetWord": "despacito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ebf06405f8df06c.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "al lado",
-  "featured": false,
-  "sentence": "Copian el estilo del edificio de [[al lado]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next door",
-   "options": [
-    "next door",
-    "far away",
-    "up above",
-    "across town"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Copian el estilo del edificio de al lado.",
-    "targetWord": "al lado",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "en voz alta",
-  "featured": false,
-  "sentence": "Él lee el número [[en voz alta]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "out loud",
-   "options": [
-    "out loud",
-    "by heart",
-    "one more time",
-    "very slowly"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Él lee el número en voz alta.",
-    "targetWord": "en voz alta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bonito",
-  "featured": false,
-  "sentence": "Quedó [[bonito]], dice él.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pretty",
-   "options": [
-    "pretty",
-    "narrow",
-    "heavy",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Quedó bonito, dice él.",
-    "targetWord": "bonito",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ninguno",
-  "featured": false,
-  "sentence": "[[Ninguno]] es para ustedes, dice ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "not one",
-   "options": [
-    "not one",
-    "all three",
-    "the last",
-    "the same"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Ninguno es para ustedes, dice ella.",
-    "targetWord": "Ninguno",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "clara",
-  "featured": false,
-  "sentence": "Solo queda una marca [[clara]] en la pared.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pale",
-   "options": [
-    "pale",
-    "round",
-    "fresh",
-    "deep"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Solo queda una marca clara en la pared.",
-    "targetWord": "clara",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lejos",
-  "featured": false,
-  "sentence": "El catorce se ve desde [[lejos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "far away",
-   "options": [
-    "far away",
-    "up close",
-    "next door",
-    "inside"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "El catorce se ve desde lejos.",
-    "targetWord": "lejos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "despacito",
-  "featured": false,
-  "sentence": "Ella busca el número otra vez, [[despacito]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slowly",
-   "options": [
-    "slowly",
-    "loudly",
-    "again",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "pintan-el-14",
-    "storySource": "user",
-    "sentence": "Ella busca el número otra vez, despacito.",
-    "targetWord": "despacito",
-    "language": "spanish"
-   }
-  }
- }
 ]

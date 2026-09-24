@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "carne",
-  "sentence": "Hoy comemos [[carne]] con salsa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "meat",
-   "options": [
-    "meat",
-    "fish",
-    "bread",
-    "rice"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Hoy comemos carne con salsa.",
-    "targetWord": "carne",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "asador",
-  "sentence": "En la cochera ya está el [[asador]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a grill",
-   "options": [
-    "a grill",
-    "a fridge",
-    "a table",
-    "a sink"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "En la cochera ya está el asador.",
-    "targetWord": "asador",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "parrilla",
-  "sentence": "La carne está encima de la [[parrilla]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grill bars",
-   "options": [
-    "grill bars",
-    "oven doors",
-    "water taps",
-    "kitchen sinks"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "La carne está encima de la parrilla.",
-    "targetWord": "parrilla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "refrescos",
-  "sentence": "La enfermera pone los [[refrescos]] en la mesa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fizzy drinks",
-   "options": [
-    "fizzy drinks",
-    "paper plates",
-    "clean glasses",
-    "white napkins"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "La enfermera pone los refrescos en la mesa.",
-    "targetWord": "refrescos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "saber",
-  "sentence": "Con hambre todo [[sabe]] mejor.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to taste",
-   "options": [
-    "to taste",
-    "to weigh",
-    "to cost",
-    "to smell"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Con hambre todo sabe mejor.",
-    "targetWord": "sabe",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "prendo",
-  "sentence": "Con un cerillo yo _____ el carbón del asador.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "prendo",
-   "options": [
-    "prendo",
-    "guardo",
-    "cuelgo",
-    "mido"
-   ],
-   "translation": "With a match I _____ the charcoal in the grill.",
-   "optionTranslations": [
-    "light",
-    "put away",
-    "hang up",
-    "measure"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Con un cerillo yo prendo el carbón del asador.",
-    "targetWord": "prendo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sopla",
-  "sentence": "El carbón no prende y ella _____ con un abanico.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sopla",
-   "options": [
-    "sopla",
-    "corta",
-    "mide",
-    "canta"
-   ],
-   "translation": "The charcoal will not light and she _____ with a fan.",
-   "optionTranslations": [
-    "blows",
-    "cuts",
-    "measures",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El carbón no prende y ella sopla con un abanico.",
-    "targetWord": "sopla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "quemado",
-  "sentence": "El pan estuvo mucho tiempo en el fuego y está _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "quemado",
-   "options": [
-    "quemado",
-    "mojado",
-    "nuevo",
-    "blando"
-   ],
-   "translation": "The bread was in the fire a long time and it is _____.",
-   "optionTranslations": [
-    "burnt",
-    "wet",
-    "new",
-    "soft"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El pan estuvo mucho tiempo en el fuego y está quemado.",
-    "targetWord": "quemado",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cruda",
-  "sentence": "El centro de la carne todavía está rojo; sigue _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cruda",
-   "options": [
-    "cruda",
-    "mojada",
-    "vieja",
-    "dura"
-   ],
-   "translation": "The middle of the meat is still red; it is still _____.",
-   "optionTranslations": [
-    "raw",
-    "wet",
-    "old",
-    "tough"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El centro de la carne todavía está rojo; sigue cruda.",
-    "targetWord": "cruda",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "cochera,costal,abanico,brasa",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "cochera",
-     "answer": "a garage",
-     "options": [
-      "a garage",
-      "a sack",
-      "a hand fan",
-      "a hot ember"
-     ]
-    },
-    {
-     "word": "costal",
-     "answer": "a sack",
-     "options": [
-      "a garage",
-      "a sack",
-      "a hand fan",
-      "a hot ember"
-     ]
-    },
-    {
-     "word": "abanico",
-     "answer": "a hand fan",
-     "options": [
-      "a garage",
-      "a sack",
-      "a hand fan",
-      "a hot ember"
-     ]
-    },
-    {
-     "word": "brasa",
-     "answer": "a hot ember",
-     "options": [
-      "a garage",
-      "a sack",
-      "a hand fan",
-      "a hot ember"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "carne",
+    "sentence": "Hoy comemos [[carne]] con salsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meat",
+      "options": [
+        "meat",
+        "fish",
+        "bread",
+        "rice"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Hoy comemos carne con salsa.",
+        "targetWord": "carne",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47fa6c0fe3635e08.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asador",
+    "sentence": "En la cochera ya está el [[asador]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grill",
+      "options": [
+        "a grill",
+        "a fridge",
+        "a table",
+        "a sink"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "En la cochera ya está el asador.",
+        "targetWord": "asador",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee3a4af5d838ba45.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parrilla",
+    "sentence": "La carne está encima de la [[parrilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grill bars",
+      "options": [
+        "grill bars",
+        "oven doors",
+        "water taps",
+        "kitchen sinks"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "La carne está encima de la parrilla.",
+        "targetWord": "parrilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98162565482b496b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refrescos",
+    "sentence": "La enfermera pone los [[refrescos]] en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fizzy drinks",
+      "options": [
+        "fizzy drinks",
+        "paper plates",
+        "clean glasses",
+        "white napkins"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "La enfermera pone los refrescos en la mesa.",
+        "targetWord": "refrescos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f7c40e1d749ed0a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "sentence": "Con hambre todo [[sabe]] mejor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to taste",
+      "options": [
+        "to taste",
+        "to weigh",
+        "to cost",
+        "to smell"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Con hambre todo sabe mejor.",
+        "targetWord": "sabe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f2be470e4a631ad.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prendo",
+    "sentence": "Con un cerillo yo _____ el carbón del asador.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prendo",
+      "options": [
+        "prendo",
+        "guardo",
+        "cuelgo",
+        "mido"
+      ],
+      "translation": "With a match I _____ the charcoal in the grill.",
+      "optionTranslations": [
+        "light",
+        "put away",
+        "hang up",
+        "measure"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Con un cerillo yo prendo el carbón del asador.",
+        "targetWord": "prendo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1945084f62e0f358.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sopla",
+    "sentence": "El carbón no prende y ella _____ con un abanico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sopla",
+      "options": [
+        "sopla",
+        "corta",
+        "mide",
+        "canta"
+      ],
+      "translation": "The charcoal will not light and she _____ with a fan.",
+      "optionTranslations": [
+        "blows",
+        "cuts",
+        "measures",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El carbón no prende y ella sopla con un abanico.",
+        "targetWord": "sopla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/952c4003ec339d21.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quemado",
+    "sentence": "El pan estuvo mucho tiempo en el fuego y está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quemado",
+      "options": [
+        "quemado",
+        "mojado",
+        "nuevo",
+        "blando"
+      ],
+      "translation": "The bread was in the fire a long time and it is _____.",
+      "optionTranslations": [
+        "burnt",
+        "wet",
+        "new",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El pan estuvo mucho tiempo en el fuego y está quemado.",
+        "targetWord": "quemado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2aeb8ebb3f831ecc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruda",
+    "sentence": "El centro de la carne todavía está rojo; sigue _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruda",
+      "options": [
+        "cruda",
+        "mojada",
+        "vieja",
+        "dura"
+      ],
+      "translation": "The middle of the meat is still red; it is still _____.",
+      "optionTranslations": [
+        "raw",
+        "wet",
+        "old",
+        "tough"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El centro de la carne todavía está rojo; sigue cruda.",
+        "targetWord": "cruda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fb59ed79ff02315.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cochera,costal,abanico,brasa",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cochera",
+          "answer": "a garage",
+          "options": [
+            "a garage",
+            "a sack",
+            "a hand fan",
+            "a hot ember"
+          ]
+        },
+        {
+          "word": "costal",
+          "answer": "a sack",
+          "options": [
+            "a garage",
+            "a sack",
+            "a hand fan",
+            "a hot ember"
+          ]
+        },
+        {
+          "word": "abanico",
+          "answer": "a hand fan",
+          "options": [
+            "a garage",
+            "a sack",
+            "a hand fan",
+            "a hot ember"
+          ]
+        },
+        {
+          "word": "brasa",
+          "answer": "a hot ember",
+          "options": [
+            "a garage",
+            "a sack",
+            "a hand fan",
+            "a hot ember"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kilos",
+    "featured": false,
+    "sentence": "El primo trae dos [[kilos]] de carbón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kilos",
+      "options": [
+        "kilos",
+        "litres",
+        "metres",
+        "hours"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El primo trae dos kilos de carbón.",
+        "targetWord": "kilos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec38280ccb2ba999.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin parar",
+    "featured": false,
+    "sentence": "Él sopla el carbón [[sin parar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without stopping",
+      "options": [
+        "without stopping",
+        "with two hands",
+        "from very close",
+        "for one minute"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Él sopla el carbón sin parar.",
+        "targetWord": "sin parar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb6a72c35de451ec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las dos",
+    "featured": false,
+    "sentence": "Comemos [[a las dos]] en la cochera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at two",
+      "options": [
+        "at two",
+        "at night",
+        "on Sunday",
+        "in an hour"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Comemos a las dos en la cochera.",
+        "targetWord": "a las dos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56335cb850036f84.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comer",
+    "featured": false,
+    "sentence": "Todos [[comemos]] juntos en la cochera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eat",
+      "options": [
+        "to eat",
+        "to cook",
+        "to buy",
+        "to serve"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Todos comemos juntos en la cochera.",
+        "targetWord": "comemos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/895063ffc76b8a61.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primera",
+    "featured": false,
+    "sentence": "Sale la [[primera]] brasa del asador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "small",
+        "black",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "Sale la primera brasa del asador.",
+        "targetWord": "primera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c18ea1dde221edb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jueves",
+    "featured": false,
+    "sentence": "El costal se mojó el [[jueves]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Thursday",
+      "options": [
+        "Thursday",
+        "Monday",
+        "Friday",
+        "Sunday"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El costal se mojó el jueves.",
+        "targetWord": "jueves",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd23c8044548df33.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "afuera",
+    "featured": false,
+    "sentence": "El costal estuvo [[afuera]] toda la noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "outside",
+      "options": [
+        "outside",
+        "upstairs",
+        "nearby",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "carbon-mojado",
+        "storySource": "user",
+        "sentence": "El costal estuvo afuera toda la noche.",
+        "targetWord": "afuera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/457bad3a797034d5.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kilos",
-  "featured": false,
-  "sentence": "El primo trae dos [[kilos]] de carbón.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "kilos",
-   "options": [
-    "kilos",
-    "litres",
-    "metres",
-    "hours"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El primo trae dos kilos de carbón.",
-    "targetWord": "kilos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sin parar",
-  "featured": false,
-  "sentence": "Él sopla el carbón [[sin parar]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "without stopping",
-   "options": [
-    "without stopping",
-    "with two hands",
-    "from very close",
-    "for one minute"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Él sopla el carbón sin parar.",
-    "targetWord": "sin parar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "a las dos",
-  "featured": false,
-  "sentence": "Comemos [[a las dos]] en la cochera.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at two",
-   "options": [
-    "at two",
-    "at night",
-    "on Sunday",
-    "in an hour"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Comemos a las dos en la cochera.",
-    "targetWord": "a las dos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "comer",
-  "featured": false,
-  "sentence": "Todos [[comemos]] juntos en la cochera.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to eat",
-   "options": [
-    "to eat",
-    "to cook",
-    "to buy",
-    "to serve"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Todos comemos juntos en la cochera.",
-    "targetWord": "comemos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "primera",
-  "featured": false,
-  "sentence": "Sale la [[primera]] brasa del asador.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "first",
-   "options": [
-    "first",
-    "small",
-    "black",
-    "round"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "Sale la primera brasa del asador.",
-    "targetWord": "primera",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jueves",
-  "featured": false,
-  "sentence": "El costal se mojó el [[jueves]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Thursday",
-   "options": [
-    "Thursday",
-    "Monday",
-    "Friday",
-    "Sunday"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El costal se mojó el jueves.",
-    "targetWord": "jueves",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "afuera",
-  "featured": false,
-  "sentence": "El costal estuvo [[afuera]] toda la noche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "outside",
-   "options": [
-    "outside",
-    "upstairs",
-    "nearby",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "carbon-mojado",
-    "storySource": "user",
-    "sentence": "El costal estuvo afuera toda la noche.",
-    "targetWord": "afuera",
-    "language": "spanish"
-   }
-  }
- }
 ]

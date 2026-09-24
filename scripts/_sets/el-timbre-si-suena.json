@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "bocina",
-  "sentence": "Es la [[bocina]] de la calle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the loudspeaker",
-   "options": [
-    "the loudspeaker",
-    "the doorbell",
-    "the motorbike",
-    "the letterbox"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Es la bocina de la calle.",
-    "targetWord": "bocina",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "recibo",
-  "sentence": "La repartidora tiene el [[recibo]] en la mano.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the receipt",
-   "options": [
-    "the receipt",
-    "the helmet",
-    "the parcel",
-    "the bottle"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "La repartidora tiene el recibo en la mano.",
-    "targetWord": "recibo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "paquetes",
-  "sentence": "Ella reparte [[paquetes]] en moto.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "parcels",
-   "options": [
-    "parcels",
-    "letters",
-    "tickets",
-    "flowers"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Ella reparte paquetes en moto.",
-    "targetWord": "paquetes",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pitido",
-  "sentence": "El vecino oye un [[pitido]] corto, ahí dentro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a beep",
-   "options": [
-    "a beep",
-    "a knock",
-    "a song",
-    "a shout"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "El vecino oye un pitido corto, ahí dentro.",
-    "targetWord": "pitido",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "botón",
-  "sentence": "El pitido está en el [[botón]] del timbre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the button",
-   "options": [
-    "the button",
-    "the window",
-    "the handle",
-    "the wall"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "El pitido está en el botón del timbre.",
-    "targetWord": "botón",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "reparte",
-  "sentence": "En moto, ella _____ paquetes por toda la colonia.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "reparte",
-   "options": [
-    "reparte",
-    "rompe",
-    "pinta",
-    "canta"
-   ],
-   "translation": "On a motorbike, she _____ parcels all over the neighbourhood.",
-   "optionTranslations": [
-    "delivers",
-    "breaks",
-    "paints",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "En moto, ella reparte paquetes por toda la colonia.",
-    "targetWord": "reparte",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tiende",
-  "sentence": "Lava el uniforme y lo _____ en la azotea.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tiende",
-   "options": [
-    "tiende",
-    "rompe",
-    "vende",
-    "mide"
-   ],
-   "translation": "She washes the uniform and _____ it on the roof.",
-   "optionTranslations": [
-    "hangs out",
-    "breaks",
-    "sells",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Lava el uniforme y lo tiende en la azotea.",
-    "targetWord": "tiende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "encuentra",
-  "sentence": "Busca el recibo y lo _____ en el zaguán.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "encuentra",
-   "options": [
-    "encuentra",
-    "moja",
-    "canta",
-    "mide"
-   ],
-   "translation": "She looks for the receipt and _____ it in the hallway.",
-   "optionTranslations": [
-    "finds",
-    "wets",
-    "sings",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Busca el recibo y lo encuentra en el zaguán.",
-    "targetWord": "encuentra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "siento",
-  "sentence": "No lo oigo, pero lo _____ en el botón.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "siento",
-   "options": [
-    "siento",
-    "cuento",
-    "pinto",
-    "cuelgo"
-   ],
-   "translation": "I do not hear it, but I _____ it in the button.",
-   "optionTranslations": [
-    "feel",
-    "count",
-    "paint",
-    "hang up"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "No lo oigo, pero lo siento en el botón.",
-    "targetWord": "siento",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "moto,casco,timbre,zaguán",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "moto",
-     "answer": "a motorbike",
-     "options": [
-      "a motorbike",
-      "a crash helmet",
-      "a doorbell",
-      "an entrance hall"
-     ]
-    },
-    {
-     "word": "casco",
-     "answer": "a crash helmet",
-     "options": [
-      "a motorbike",
-      "a crash helmet",
-      "a doorbell",
-      "an entrance hall"
-     ]
-    },
-    {
-     "word": "timbre",
-     "answer": "a doorbell",
-     "options": [
-      "a motorbike",
-      "a crash helmet",
-      "a doorbell",
-      "an entrance hall"
-     ]
-    },
-    {
-     "word": "zaguán",
-     "answer": "an entrance hall",
-     "options": [
-      "a motorbike",
-      "a crash helmet",
-      "a doorbell",
-      "an entrance hall"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "bocina",
+    "sentence": "Es la [[bocina]] de la calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the loudspeaker",
+      "options": [
+        "the loudspeaker",
+        "the doorbell",
+        "the motorbike",
+        "the letterbox"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Es la bocina de la calle.",
+        "targetWord": "bocina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fbfc48095f5c687.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recibo",
+    "sentence": "La repartidora tiene el [[recibo]] en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the receipt",
+      "options": [
+        "the receipt",
+        "the helmet",
+        "the parcel",
+        "the bottle"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "La repartidora tiene el recibo en la mano.",
+        "targetWord": "recibo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4db9afadcd99f979.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paquetes",
+    "sentence": "Ella reparte [[paquetes]] en moto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "parcels",
+      "options": [
+        "parcels",
+        "letters",
+        "tickets",
+        "flowers"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Ella reparte paquetes en moto.",
+        "targetWord": "paquetes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4cb8f641b8dbe81.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pitido",
+    "sentence": "El vecino oye un [[pitido]] corto, ahí dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a beep",
+      "options": [
+        "a beep",
+        "a knock",
+        "a song",
+        "a shout"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "El vecino oye un pitido corto, ahí dentro.",
+        "targetWord": "pitido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd6d0f62fb01d370.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "botón",
+    "sentence": "El pitido está en el [[botón]] del timbre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the button",
+      "options": [
+        "the button",
+        "the window",
+        "the handle",
+        "the wall"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "El pitido está en el botón del timbre.",
+        "targetWord": "botón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc33e710f67c81d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reparte",
+    "sentence": "En moto, ella _____ paquetes por toda la colonia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reparte",
+      "options": [
+        "reparte",
+        "rompe",
+        "pinta",
+        "canta"
+      ],
+      "translation": "On a motorbike, she _____ parcels all over the neighbourhood.",
+      "optionTranslations": [
+        "delivers",
+        "breaks",
+        "paints",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "En moto, ella reparte paquetes por toda la colonia.",
+        "targetWord": "reparte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbcc31253bc9ba94.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tiende",
+    "sentence": "Lava el uniforme y lo _____ en la azotea.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tiende",
+      "options": [
+        "tiende",
+        "rompe",
+        "vende",
+        "mide"
+      ],
+      "translation": "She washes the uniform and _____ it on the roof.",
+      "optionTranslations": [
+        "hangs out",
+        "breaks",
+        "sells",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Lava el uniforme y lo tiende en la azotea.",
+        "targetWord": "tiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/148d1c8350cacfde.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "encuentra",
+    "sentence": "Busca el recibo y lo _____ en el zaguán.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encuentra",
+      "options": [
+        "encuentra",
+        "moja",
+        "canta",
+        "mide"
+      ],
+      "translation": "She looks for the receipt and _____ it in the hallway.",
+      "optionTranslations": [
+        "finds",
+        "wets",
+        "sings",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Busca el recibo y lo encuentra en el zaguán.",
+        "targetWord": "encuentra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aaae573936c94b2a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "siento",
+    "sentence": "No lo oigo, pero lo _____ en el botón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "siento",
+      "options": [
+        "siento",
+        "cuento",
+        "pinto",
+        "cuelgo"
+      ],
+      "translation": "I do not hear it, but I _____ it in the button.",
+      "optionTranslations": [
+        "feel",
+        "count",
+        "paint",
+        "hang up"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "No lo oigo, pero lo siento en el botón.",
+        "targetWord": "siento",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d6151cae7ead1ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "moto,casco,timbre,zaguán",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "moto",
+          "answer": "a motorbike",
+          "options": [
+            "a motorbike",
+            "a crash helmet",
+            "a doorbell",
+            "an entrance hall"
+          ]
+        },
+        {
+          "word": "casco",
+          "answer": "a crash helmet",
+          "options": [
+            "a motorbike",
+            "a crash helmet",
+            "a doorbell",
+            "an entrance hall"
+          ]
+        },
+        {
+          "word": "timbre",
+          "answer": "a doorbell",
+          "options": [
+            "a motorbike",
+            "a crash helmet",
+            "a doorbell",
+            "an entrance hall"
+          ]
+        },
+        {
+          "word": "zaguán",
+          "answer": "an entrance hall",
+          "options": [
+            "a motorbike",
+            "a crash helmet",
+            "a doorbell",
+            "an entrance hall"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de memoria",
+    "featured": false,
+    "sentence": "Ella conoce la colonia [[de memoria]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by heart",
+      "options": [
+        "by heart",
+        "for a year",
+        "from a map",
+        "with a phone"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Ella conoce la colonia de memoria.",
+        "targetWord": "de memoria",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e74c5da7905087cd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corto",
+    "featured": false,
+    "sentence": "Él oye un pitido [[corto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "loud",
+        "sweet",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Él oye un pitido corto.",
+        "targetWord": "corto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07913485a4144dde.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cada dos o tres días",
+    "featured": false,
+    "sentence": "Lo oye [[cada dos o tres días]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every two or three days",
+      "options": [
+        "every two or three days",
+        "once in a whole year",
+        "after every single meal",
+        "at eight in the morning"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Lo oye cada dos o tres días.",
+        "targetWord": "cada dos o tres días",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97dc3e1c8be172af.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "culpar",
+    "featured": false,
+    "sentence": "Y yo [[culpando]] a la calle todo este tiempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to blame",
+      "options": [
+        "to blame",
+        "to thank",
+        "to visit",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Y yo culpando a la calle todo este tiempo.",
+        "targetWord": "culpando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cf9efa49df8db2b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seis veces",
+    "featured": false,
+    "sentence": "Toca el timbre [[seis veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "six times",
+      "options": [
+        "six times",
+        "one hour",
+        "two streets",
+        "three days"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Toca el timbre seis veces.",
+        "targetWord": "seis veces",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3968eb5c3d5edddf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombro",
+    "featured": false,
+    "sentence": "Espera con una caja en el [[hombro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shoulder",
+      "options": [
+        "shoulder",
+        "pocket",
+        "knee",
+        "wrist"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Espera con una caja en el hombro.",
+        "targetWord": "hombro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3329f4badacf58b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en el mismo rato",
+    "featured": false,
+    "sentence": "Lo oye [[en el mismo rato]] cada vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "around the same time",
+      "options": [
+        "around the same time",
+        "with the same person",
+        "in the same street",
+        "for the same reason"
+      ],
+      "audioClip": {
+        "storySlug": "el-timbre-si-suena",
+        "storySource": "user",
+        "sentence": "Lo oye en el mismo rato cada vez.",
+        "targetWord": "en el mismo rato",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dbc08fb4a448bfd.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "de memoria",
-  "featured": false,
-  "sentence": "Ella conoce la colonia [[de memoria]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "by heart",
-   "options": [
-    "by heart",
-    "for a year",
-    "from a map",
-    "with a phone"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Ella conoce la colonia de memoria.",
-    "targetWord": "de memoria",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "corto",
-  "featured": false,
-  "sentence": "Él oye un pitido [[corto]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "short",
-   "options": [
-    "short",
-    "loud",
-    "sweet",
-    "wet"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Él oye un pitido corto.",
-    "targetWord": "corto",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cada dos o tres días",
-  "featured": false,
-  "sentence": "Lo oye [[cada dos o tres días]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every two or three days",
-   "options": [
-    "every two or three days",
-    "once in a whole year",
-    "after every single meal",
-    "at eight in the morning"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Lo oye cada dos o tres días.",
-    "targetWord": "cada dos o tres días",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "culpar",
-  "featured": false,
-  "sentence": "Y yo [[culpando]] a la calle todo este tiempo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to blame",
-   "options": [
-    "to blame",
-    "to thank",
-    "to visit",
-    "to call"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Y yo culpando a la calle todo este tiempo.",
-    "targetWord": "culpando",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "seis veces",
-  "featured": false,
-  "sentence": "Toca el timbre [[seis veces]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "six times",
-   "options": [
-    "six times",
-    "one hour",
-    "two streets",
-    "three days"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Toca el timbre seis veces.",
-    "targetWord": "seis veces",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hombro",
-  "featured": false,
-  "sentence": "Espera con una caja en el [[hombro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shoulder",
-   "options": [
-    "shoulder",
-    "pocket",
-    "knee",
-    "wrist"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Espera con una caja en el hombro.",
-    "targetWord": "hombro",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "en el mismo rato",
-  "featured": false,
-  "sentence": "Lo oye [[en el mismo rato]] cada vez.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "around the same time",
-   "options": [
-    "around the same time",
-    "with the same person",
-    "in the same street",
-    "for the same reason"
-   ],
-   "audioClip": {
-    "storySlug": "el-timbre-si-suena",
-    "storySource": "user",
-    "sentence": "Lo oye en el mismo rato cada vez.",
-    "targetWord": "en el mismo rato",
-    "language": "spanish"
-   }
-  }
- }
 ]

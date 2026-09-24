@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "vendas",
-  "sentence": "La luchadora llega con las [[vendas]] viejas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bandages",
-   "options": [
-    "bandages",
-    "buttons",
-    "brushes",
-    "blankets"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "La luchadora llega con las vendas viejas.",
-    "targetWord": "vendas",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "algodón",
-  "sentence": "Son blancas, de [[algodón]], con una raya azul.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cotton",
-   "options": [
-    "cotton",
-    "leather",
-    "plastic",
-    "glass"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Son blancas, de algodón, con una raya azul.",
-    "targetWord": "algodón",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "raya",
-  "sentence": "Las vendas llevan una [[raya]] azul.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stripe",
-   "options": [
-    "stripe",
-    "pocket",
-    "button",
-    "corner"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Las vendas llevan una raya azul.",
-    "targetWord": "raya",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "apodo",
-  "sentence": "El [[apodo]] le queda para siempre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nickname",
-   "options": [
-    "nickname",
-    "address",
-    "number",
-    "uniform"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "El apodo le queda para siempre.",
-    "targetWord": "apodo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "manos",
-  "sentence": "Se venda las [[manos]] en la puerta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hands",
-   "options": [
-    "hands",
-    "knees",
-    "ears",
-    "eyes"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Se venda las manos en la puerta.",
-    "targetWord": "manos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "necesito",
-  "sentence": "No puedo luchar sin vendas; las _____ para hoy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "necesito",
-   "options": [
-    "necesito",
-    "cuento",
-    "vendo",
-    "tapo"
-   ],
-   "translation": "I cannot fight without bandages; I _____ them for today.",
-   "optionTranslations": [
-    "need",
-    "count",
-    "sell",
-    "cover"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "No puedo luchar sin vendas; las necesito para hoy.",
-    "targetWord": "necesito",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sirve",
-  "sentence": "No es la venda buena, pero _____ para hoy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sirve",
-   "options": [
-    "sirve",
-    "pesa",
-    "suena",
-    "moja"
-   ],
-   "translation": "It is not the right bandage, but it _____ for today.",
-   "optionTranslations": [
-    "will do",
-    "weighs",
-    "sounds",
-    "gets wet"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "No es la venda buena, pero sirve para hoy.",
-    "targetWord": "sirve",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "grita",
-  "sentence": "Nadie la oye de lejos y por eso _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "grita",
-   "options": [
-    "grita",
-    "escribe",
-    "guarda",
-    "cuenta"
-   ],
-   "translation": "Nobody hears her from far away and that is why she _____.",
-   "optionTranslations": [
-    "shouts",
-    "writes",
-    "puts away",
-    "counts"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Nadie la oye de lejos y por eso grita.",
-    "targetWord": "grita",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "queda",
-  "sentence": "El color rosa te _____ muy bien.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "queda",
-   "options": [
-    "queda",
-    "corta",
-    "pesa",
-    "tapa"
-   ],
-   "translation": "The colour pink _____ you very well.",
-   "optionTranslations": [
-    "suits",
-    "cuts",
-    "weighs",
-    "covers"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "El color rosa te queda muy bien.",
-    "targetWord": "queda",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "letrero,cinta,enfermería,cualquier cosa",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "letrero",
-     "answer": "a paper sign",
-     "options": [
-      "a paper sign",
-      "the sticky tape",
-      "the nursing ward",
-      "anything at all"
-     ]
-    },
-    {
-     "word": "cinta",
-     "answer": "the sticky tape",
-     "options": [
-      "a paper sign",
-      "the sticky tape",
-      "the nursing ward",
-      "anything at all"
-     ]
-    },
-    {
-     "word": "enfermería",
-     "answer": "the nursing ward",
-     "options": [
-      "a paper sign",
-      "the sticky tape",
-      "the nursing ward",
-      "anything at all"
-     ]
-    },
-    {
-     "word": "cualquier cosa",
-     "answer": "anything at all",
-     "options": [
-      "a paper sign",
-      "the sticky tape",
-      "the nursing ward",
-      "anything at all"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "vendas",
+    "sentence": "La luchadora llega con las [[vendas]] viejas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bandages",
+      "options": [
+        "bandages",
+        "buttons",
+        "brushes",
+        "blankets"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "La luchadora llega con las vendas viejas.",
+        "targetWord": "vendas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5e53355bd060627.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "algodón",
+    "sentence": "Son blancas, de [[algodón]], con una raya azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cotton",
+      "options": [
+        "cotton",
+        "leather",
+        "plastic",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Son blancas, de algodón, con una raya azul.",
+        "targetWord": "algodón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dabf5572dbaed7e6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raya",
+    "sentence": "Las vendas llevan una [[raya]] azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stripe",
+      "options": [
+        "stripe",
+        "pocket",
+        "button",
+        "corner"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Las vendas llevan una raya azul.",
+        "targetWord": "raya",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc546b1b21925594.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apodo",
+    "sentence": "El [[apodo]] le queda para siempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nickname",
+      "options": [
+        "nickname",
+        "address",
+        "number",
+        "uniform"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "El apodo le queda para siempre.",
+        "targetWord": "apodo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28e8229127aa82ec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manos",
+    "sentence": "Se venda las [[manos]] en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hands",
+      "options": [
+        "hands",
+        "knees",
+        "ears",
+        "eyes"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Se venda las manos en la puerta.",
+        "targetWord": "manos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb8289607d81ec76.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "necesito",
+    "sentence": "No puedo luchar sin vendas; las _____ para hoy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "necesito",
+      "options": [
+        "necesito",
+        "cuento",
+        "vendo",
+        "tapo"
+      ],
+      "translation": "I cannot fight without bandages; I _____ them for today.",
+      "optionTranslations": [
+        "need",
+        "count",
+        "sell",
+        "cover"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "No puedo luchar sin vendas; las necesito para hoy.",
+        "targetWord": "necesito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9b84e6f0b8377c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sirve",
+    "sentence": "No es la venda buena, pero _____ para hoy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sirve",
+      "options": [
+        "sirve",
+        "pesa",
+        "suena",
+        "moja"
+      ],
+      "translation": "It is not the right bandage, but it _____ for today.",
+      "optionTranslations": [
+        "will do",
+        "weighs",
+        "sounds",
+        "gets wet"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "No es la venda buena, pero sirve para hoy.",
+        "targetWord": "sirve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9272611bd69a13e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grita",
+    "sentence": "Nadie la oye de lejos y por eso _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grita",
+      "options": [
+        "grita",
+        "escribe",
+        "guarda",
+        "cuenta"
+      ],
+      "translation": "Nobody hears her from far away and that is why she _____.",
+      "optionTranslations": [
+        "shouts",
+        "writes",
+        "puts away",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Nadie la oye de lejos y por eso grita.",
+        "targetWord": "grita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/394eb7179d2133e2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "queda",
+    "sentence": "El color rosa te _____ muy bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queda",
+      "options": [
+        "queda",
+        "corta",
+        "pesa",
+        "tapa"
+      ],
+      "translation": "The colour pink _____ you very well.",
+      "optionTranslations": [
+        "suits",
+        "cuts",
+        "weighs",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "El color rosa te queda muy bien.",
+        "targetWord": "queda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07ad18aa422535ab.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "letrero,cinta,enfermería,cualquier cosa",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "letrero",
+          "answer": "a paper sign",
+          "options": [
+            "a paper sign",
+            "the sticky tape",
+            "the nursing ward",
+            "anything at all"
+          ]
+        },
+        {
+          "word": "cinta",
+          "answer": "the sticky tape",
+          "options": [
+            "a paper sign",
+            "the sticky tape",
+            "the nursing ward",
+            "anything at all"
+          ]
+        },
+        {
+          "word": "enfermería",
+          "answer": "the nursing ward",
+          "options": [
+            "a paper sign",
+            "the sticky tape",
+            "the nursing ward",
+            "anything at all"
+          ]
+        },
+        {
+          "word": "cualquier cosa",
+          "answer": "anything at all",
+          "options": [
+            "a paper sign",
+            "the sticky tape",
+            "the nursing ward",
+            "anything at all"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "duras",
+    "featured": false,
+    "sentence": "Las vendas viejas están [[duras]] y grises.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stiff",
+      "options": [
+        "stiff",
+        "warm",
+        "clean",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Las vendas viejas están duras y grises.",
+        "targetWord": "duras",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6de25b9d02ede427.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grises",
+    "featured": false,
+    "sentence": "Las vendas están duras y [[grises]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grey",
+      "options": [
+        "grey",
+        "green",
+        "yellow",
+        "brown"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Las vendas están duras y grises.",
+        "targetWord": "grises",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aed10918bbbc6bdd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se nota",
+    "featured": false,
+    "sentence": "La raya azul [[se nota]] desde las gradas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it shows",
+      "options": [
+        "it shows",
+        "it hurts",
+        "it dries",
+        "it falls"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "La raya azul se nota desde las gradas.",
+        "targetWord": "se nota",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/516321ddedbefc3f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la vista",
+    "featured": false,
+    "sentence": "Sale al ring con la raya azul [[a la vista]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in plain sight",
+      "options": [
+        "in plain sight",
+        "under her arm",
+        "after the show",
+        "on both hands"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Sale al ring con la raya azul a la vista.",
+        "targetWord": "a la vista",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29d8c252640af9be.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blancas",
+    "featured": false,
+    "sentence": "Sale al ring con las manos [[blancas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "white",
+      "options": [
+        "white",
+        "open",
+        "cold",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Sale al ring con las manos blancas.",
+        "targetWord": "blancas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbdb0b0477b6179b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriba",
+    "featured": false,
+    "sentence": "Alguien grita desde [[arriba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "up above",
+      "options": [
+        "up above",
+        "far away",
+        "next door",
+        "very slowly"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "Alguien grita desde arriba.",
+        "targetWord": "arriba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa35b15319084fdf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callado",
+    "featured": false,
+    "sentence": "El público se queda [[callado]] un momento largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quiet",
+      "options": [
+        "quiet",
+        "angry",
+        "happy",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "vendas-de-enfermera",
+        "storySource": "user",
+        "sentence": "El público se queda callado un momento largo.",
+        "targetWord": "callado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eeb542b82c0eaedd.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "duras",
-  "featured": false,
-  "sentence": "Las vendas viejas están [[duras]] y grises.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stiff",
-   "options": [
-    "stiff",
-    "warm",
-    "clean",
-    "short"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Las vendas viejas están duras y grises.",
-    "targetWord": "duras",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "grises",
-  "featured": false,
-  "sentence": "Las vendas están duras y [[grises]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grey",
-   "options": [
-    "grey",
-    "green",
-    "yellow",
-    "brown"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Las vendas están duras y grises.",
-    "targetWord": "grises",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se nota",
-  "featured": false,
-  "sentence": "La raya azul [[se nota]] desde las gradas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "it shows",
-   "options": [
-    "it shows",
-    "it hurts",
-    "it dries",
-    "it falls"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "La raya azul se nota desde las gradas.",
-    "targetWord": "se nota",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "a la vista",
-  "featured": false,
-  "sentence": "Sale al ring con la raya azul [[a la vista]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in plain sight",
-   "options": [
-    "in plain sight",
-    "under her arm",
-    "after the show",
-    "on both hands"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Sale al ring con la raya azul a la vista.",
-    "targetWord": "a la vista",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "blancas",
-  "featured": false,
-  "sentence": "Sale al ring con las manos [[blancas]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "white",
-   "options": [
-    "white",
-    "open",
-    "cold",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Sale al ring con las manos blancas.",
-    "targetWord": "blancas",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "arriba",
-  "featured": false,
-  "sentence": "Alguien grita desde [[arriba]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "up above",
-   "options": [
-    "up above",
-    "far away",
-    "next door",
-    "very slowly"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "Alguien grita desde arriba.",
-    "targetWord": "arriba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "callado",
-  "featured": false,
-  "sentence": "El público se queda [[callado]] un momento largo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quiet",
-   "options": [
-    "quiet",
-    "angry",
-    "happy",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "vendas-de-enfermera",
-    "storySource": "user",
-    "sentence": "El público se queda callado un momento largo.",
-    "targetWord": "callado",
-    "language": "spanish"
-   }
-  }
- }
 ]

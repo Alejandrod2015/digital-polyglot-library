@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "limpio",
-  "sentence": "El cerro está [[limpio]] y no llueve.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clear",
-   "options": [
-    "clear",
-    "dark",
-    "near",
-    "high"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "El cerro está limpio y no llueve.",
-    "targetWord": "limpio",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "seguro",
-  "sentence": "¿Estás [[seguro]]?, pregunta ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sure",
-   "options": [
-    "sure",
-    "tired",
-    "late",
-    "alone"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "¿Estás seguro?, pregunta ella.",
-    "targetWord": "seguro",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "seca",
-  "sentence": "Mi ropa está [[seca]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dry",
-   "options": [
-    "dry",
-    "dirty",
-    "warm",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Mi ropa está seca.",
-    "targetWord": "seca",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rosa",
-  "sentence": "El uniforme blanco ahora es [[rosa]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pink",
-   "options": [
-    "pink",
-    "brown",
-    "black",
-    "green"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "El uniforme blanco ahora es rosa.",
-    "targetWord": "rosa",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "avisar",
-  "sentence": "Gracias por [[avisarme]] de la lluvia.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to warn",
-   "options": [
-    "to warn",
-    "to answer",
-    "to carry",
-    "to pay"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Gracias por avisarme de la lluvia.",
-    "targetWord": "avisarme",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "recoge",
-  "sentence": "Antes de la lluvia, ella _____ la ropa del tendedero.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "recoge",
-   "options": [
-    "recoge",
-    "rompe",
-    "vende",
-    "pinta"
-   ],
-   "translation": "Before the rain, she _____ the clothes off the line.",
-   "optionTranslations": [
-    "gathers",
-    "breaks",
-    "sells",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Antes de la lluvia, ella recoge la ropa del tendedero.",
-    "targetWord": "recoge",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mete",
-  "sentence": "Abre la lavadora y _____ el uniforme mojado.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mete",
-   "options": [
-    "mete",
-    "canta",
-    "rompe",
-    "mide"
-   ],
-   "translation": "He opens the washing machine and _____ the wet uniform.",
-   "optionTranslations": [
-    "puts in",
-    "sings",
-    "breaks",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Abre la lavadora y mete el uniforme mojado.",
-    "targetWord": "mete",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "aprieta",
-  "sentence": "Cierra la lavadora y _____ el botón.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "aprieta",
-   "options": [
-    "aprieta",
-    "corta",
-    "canta",
-    "tapa"
-   ],
-   "translation": "He closes the washing machine and _____ the button.",
-   "optionTranslations": [
-    "presses",
-    "cuts",
-    "sings",
-    "covers"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Cierra la lavadora y aprieta el botón.",
-    "targetWord": "aprieta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "confunde",
-  "sentence": "La ropa es igual y él la _____ con la mía.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "confunde",
-   "options": [
-    "confunde",
-    "corta",
-    "cuelga",
-    "mide"
-   ],
-   "translation": "The clothes look the same and he _____ them with mine.",
-   "optionTranslations": [
-    "mixes up",
-    "cuts",
-    "hangs up",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "La ropa es igual y él la confunde con la mía.",
-    "targetWord": "confunde",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "linterna,lavadora,calcetín,gris",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "linterna",
-     "answer": "a flashlight",
-     "options": [
-      "a flashlight",
-      "a washing machine",
-      "a wool sock",
-      "a grey colour"
-     ]
-    },
-    {
-     "word": "lavadora",
-     "answer": "a washing machine",
-     "options": [
-      "a flashlight",
-      "a washing machine",
-      "a wool sock",
-      "a grey colour"
-     ]
-    },
-    {
-     "word": "calcetín",
-     "answer": "a wool sock",
-     "options": [
-      "a flashlight",
-      "a washing machine",
-      "a wool sock",
-      "a grey colour"
-     ]
-    },
-    {
-     "word": "gris",
-     "answer": "a grey colour",
-     "options": [
-      "a flashlight",
-      "a washing machine",
-      "a wool sock",
-      "a grey colour"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "limpio",
+    "sentence": "El cerro está [[limpio]] y no llueve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": [
+        "clear",
+        "dark",
+        "near",
+        "high"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "El cerro está limpio y no llueve.",
+        "targetWord": "limpio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/086604dff3e2f565.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguro",
+    "sentence": "¿Estás [[seguro]]?, pregunta ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sure",
+      "options": [
+        "sure",
+        "tired",
+        "late",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "¿Estás seguro?, pregunta ella.",
+        "targetWord": "seguro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78b04277b77b1845.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seca",
+    "sentence": "Mi ropa está [[seca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dry",
+      "options": [
+        "dry",
+        "dirty",
+        "warm",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Mi ropa está seca.",
+        "targetWord": "seca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0aadbbbf48106c80.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosa",
+    "sentence": "El uniforme blanco ahora es [[rosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pink",
+      "options": [
+        "pink",
+        "brown",
+        "black",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "El uniforme blanco ahora es rosa.",
+        "targetWord": "rosa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c92e46bdd4390b6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Gracias por [[avisarme]] de la lluvia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warn",
+      "options": [
+        "to warn",
+        "to answer",
+        "to carry",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Gracias por avisarme de la lluvia.",
+        "targetWord": "avisarme",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/078cd504165c2b86.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "recoge",
+    "sentence": "Antes de la lluvia, ella _____ la ropa del tendedero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recoge",
+      "options": [
+        "recoge",
+        "rompe",
+        "vende",
+        "pinta"
+      ],
+      "translation": "Before the rain, she _____ the clothes off the line.",
+      "optionTranslations": [
+        "gathers",
+        "breaks",
+        "sells",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Antes de la lluvia, ella recoge la ropa del tendedero.",
+        "targetWord": "recoge",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f5da462f6a6366.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mete",
+    "sentence": "Abre la lavadora y _____ el uniforme mojado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mete",
+      "options": [
+        "mete",
+        "canta",
+        "rompe",
+        "mide"
+      ],
+      "translation": "He opens the washing machine and _____ the wet uniform.",
+      "optionTranslations": [
+        "puts in",
+        "sings",
+        "breaks",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Abre la lavadora y mete el uniforme mojado.",
+        "targetWord": "mete",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69e7c123e8c202dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aprieta",
+    "sentence": "Cierra la lavadora y _____ el botón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aprieta",
+      "options": [
+        "aprieta",
+        "corta",
+        "canta",
+        "tapa"
+      ],
+      "translation": "He closes the washing machine and _____ the button.",
+      "optionTranslations": [
+        "presses",
+        "cuts",
+        "sings",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Cierra la lavadora y aprieta el botón.",
+        "targetWord": "aprieta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ff0c37862d19709.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "confunde",
+    "sentence": "La ropa es igual y él la _____ con la mía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "confunde",
+      "options": [
+        "confunde",
+        "corta",
+        "cuelga",
+        "mide"
+      ],
+      "translation": "The clothes look the same and he _____ them with mine.",
+      "optionTranslations": [
+        "mixes up",
+        "cuts",
+        "hangs up",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "La ropa es igual y él la confunde con la mía.",
+        "targetWord": "confunde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66bb99efb1247a00.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "linterna,lavadora,calcetín,gris",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "linterna",
+          "answer": "a flashlight",
+          "options": [
+            "a flashlight",
+            "a washing machine",
+            "a wool sock",
+            "a grey colour"
+          ]
+        },
+        {
+          "word": "lavadora",
+          "answer": "a washing machine",
+          "options": [
+            "a flashlight",
+            "a washing machine",
+            "a wool sock",
+            "a grey colour"
+          ]
+        },
+        {
+          "word": "calcetín",
+          "answer": "a wool sock",
+          "options": [
+            "a flashlight",
+            "a washing machine",
+            "a wool sock",
+            "a grey colour"
+          ]
+        },
+        {
+          "word": "gris",
+          "answer": "a grey colour",
+          "options": [
+            "a flashlight",
+            "a washing machine",
+            "a wool sock",
+            "a grey colour"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "featured": false,
+    "sentence": "A las once [[empieza]] la tormenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to begin",
+      "options": [
+        "to begin",
+        "to pass",
+        "to fall",
+        "to grow"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "A las once empieza la tormenta.",
+        "targetWord": "empieza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26f0c49f8b1be8e1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajar",
+    "featured": false,
+    "sentence": "La enfermera [[baja]] la escalera otra vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go down",
+      "options": [
+        "to go down",
+        "to clean",
+        "to open",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "La enfermera baja la escalera otra vez.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c41149a142473a6b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "featured": false,
+    "sentence": "El uniforme mojado [[pesa]] cinco kilos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to weigh",
+      "options": [
+        "to weigh",
+        "to dry",
+        "to cost",
+        "to smell"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "El uniforme mojado pesa cinco kilos.",
+        "targetWord": "pesa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27781f22f567b65f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "featured": false,
+    "sentence": "Adentro hay un calcetín rojo, [[nuevo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brand new",
+      "options": [
+        "brand new",
+        "very old",
+        "quite small",
+        "dark blue"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Adentro hay un calcetín rojo, nuevo.",
+        "targetWord": "nuevo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5aa9f228a14f9386.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adentro",
+    "featured": false,
+    "sentence": "[[Adentro]] hay un calcetín rojo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "inside",
+      "options": [
+        "inside",
+        "upstairs",
+        "nearby",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Adentro hay un calcetín rojo.",
+        "targetWord": "Adentro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a0ece457c28e904.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "serio",
+    "featured": false,
+    "sentence": "Lo dice muy [[serio]], sin reírse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "serious",
+      "options": [
+        "serious",
+        "quick",
+        "quiet",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "Lo dice muy serio, sin reírse.",
+        "targetWord": "serio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/764841eb9ea659be.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secar",
+    "featured": false,
+    "sentence": "El sol [[seca]] la ropa en una hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dry",
+      "options": [
+        "to dry",
+        "to break",
+        "to fall",
+        "to shine"
+      ],
+      "audioClip": {
+        "storySlug": "el-cerro-esta-limpio",
+        "storySource": "user",
+        "sentence": "El sol seca la ropa en una hora.",
+        "targetWord": "seca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0003eb1a6fcd147.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "empezar",
-  "featured": false,
-  "sentence": "A las once [[empieza]] la tormenta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to begin",
-   "options": [
-    "to begin",
-    "to pass",
-    "to fall",
-    "to grow"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "A las once empieza la tormenta.",
-    "targetWord": "empieza",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bajar",
-  "featured": false,
-  "sentence": "La enfermera [[baja]] la escalera otra vez.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to go down",
-   "options": [
-    "to go down",
-    "to clean",
-    "to open",
-    "to count"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "La enfermera baja la escalera otra vez.",
-    "targetWord": "baja",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pesar",
-  "featured": false,
-  "sentence": "El uniforme mojado [[pesa]] cinco kilos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to weigh",
-   "options": [
-    "to weigh",
-    "to dry",
-    "to cost",
-    "to smell"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "El uniforme mojado pesa cinco kilos.",
-    "targetWord": "pesa",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nuevo",
-  "featured": false,
-  "sentence": "Adentro hay un calcetín rojo, [[nuevo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "brand new",
-   "options": [
-    "brand new",
-    "very old",
-    "quite small",
-    "dark blue"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Adentro hay un calcetín rojo, nuevo.",
-    "targetWord": "nuevo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "adentro",
-  "featured": false,
-  "sentence": "[[Adentro]] hay un calcetín rojo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "inside",
-   "options": [
-    "inside",
-    "upstairs",
-    "nearby",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Adentro hay un calcetín rojo.",
-    "targetWord": "Adentro",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "serio",
-  "featured": false,
-  "sentence": "Lo dice muy [[serio]], sin reírse.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "serious",
-   "options": [
-    "serious",
-    "quick",
-    "quiet",
-    "happy"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "Lo dice muy serio, sin reírse.",
-    "targetWord": "serio",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "secar",
-  "featured": false,
-  "sentence": "El sol [[seca]] la ropa en una hora.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to dry",
-   "options": [
-    "to dry",
-    "to break",
-    "to fall",
-    "to shine"
-   ],
-   "audioClip": {
-    "storySlug": "el-cerro-esta-limpio",
-    "storySource": "user",
-    "sentence": "El sol seca la ropa en una hora.",
-    "targetWord": "seca",
-    "language": "spanish"
-   }
-  }
- }
 ]

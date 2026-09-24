@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "arena",
-  "sentence": "La [[arena]] de la colonia está llena.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the wrestling hall",
-   "options": [
-    "the wrestling hall",
-    "the bus station",
-    "the flower shop",
-    "the barber shop"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "La arena de la colonia está llena.",
-    "targetWord": "arena",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ring",
-  "sentence": "Abajo, en el [[ring]], entra la luchadora.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the ring",
-   "options": [
-    "the ring",
-    "the door",
-    "the shop",
-    "the roof"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Abajo, en el ring, entra la luchadora.",
-    "targetWord": "ring",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "público",
-  "sentence": "Todo el [[público]] le silba.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the crowd",
-   "options": [
-    "the crowd",
-    "the family",
-    "the team",
-    "the staff"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Todo el público le silba.",
-    "targetWord": "público",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "función",
-  "sentence": "Al final de la [[función]], ella sube a las gradas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the show",
-   "options": [
-    "the show",
-    "the street",
-    "the lesson",
-    "the meal"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Al final de la función, ella sube a las gradas.",
-    "targetWord": "función",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fuerte",
-  "sentence": "Hay que gritar bien [[fuerte]], desde arriba.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "loud",
-   "options": [
-    "loud",
-    "slow",
-    "late",
-    "short"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Hay que gritar bien fuerte, desde arriba.",
-    "targetWord": "fuerte",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "silba",
-  "sentence": "No le gusta la luchadora y por eso le _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "silba",
-   "options": [
-    "silba",
-    "paga",
-    "cuenta",
-    "lava"
-   ],
-   "translation": "He does not like the wrestler and that is why he _____ at her.",
-   "optionTranslations": [
-    "whistles",
-    "pays",
-    "counts",
-    "washes"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "No le gusta la luchadora y por eso le silba.",
-    "targetWord": "silba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "presta",
-  "sentence": "Cuando necesito el taladro, ella me lo _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "presta",
-   "options": [
-    "presta",
-    "canta",
-    "pinta",
-    "rompe"
-   ],
-   "translation": "When I need the drill, she _____ it to me.",
-   "optionTranslations": [
-    "lends",
-    "sings",
-    "paints",
-    "breaks"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Cuando necesito el taladro, ella me lo presta.",
-    "targetWord": "presta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "arruina",
-  "sentence": "Si aplaudes a la mala, me _____ el trabajo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "arruina",
-   "options": [
-    "arruina",
-    "lava",
-    "moja",
-    "tapa"
-   ],
-   "translation": "If you clap for the bad girl, it _____ my work.",
-   "optionTranslations": [
-    "ruins",
-    "washes",
-    "wets",
-    "covers"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Si aplaudes a la mala, me arruina el trabajo.",
-    "targetWord": "arruina",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "ensaya",
-  "sentence": "Toda la semana _____ la voz en la azotea.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ensaya",
-   "options": [
-    "ensaya",
-    "moja",
-    "vende",
-    "cuenta"
-   ],
-   "translation": "All week he _____ his voice on the roof.",
-   "optionTranslations": [
-    "practises",
-    "wets",
-    "sells",
-    "counts"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Toda la semana ensaya la voz en la azotea.",
-    "targetWord": "ensaya",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "botas,taladro,brinco,venda",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "botas",
-     "answer": "the tall boots",
-     "options": [
-      "the tall boots",
-      "an electric drill",
-      "a quick jump",
-      "a hand bandage"
-     ]
-    },
-    {
-     "word": "taladro",
-     "answer": "an electric drill",
-     "options": [
-      "the tall boots",
-      "an electric drill",
-      "a quick jump",
-      "a hand bandage"
-     ]
-    },
-    {
-     "word": "brinco",
-     "answer": "a quick jump",
-     "options": [
-      "the tall boots",
-      "an electric drill",
-      "a quick jump",
-      "a hand bandage"
-     ]
-    },
-    {
-     "word": "venda",
-     "answer": "a hand bandage",
-     "options": [
-      "the tall boots",
-      "an electric drill",
-      "a quick jump",
-      "a hand bandage"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "arena",
+    "sentence": "La [[arena]] de la colonia está llena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wrestling hall",
+      "options": [
+        "the wrestling hall",
+        "the bus station",
+        "the flower shop",
+        "the barber shop"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "La arena de la colonia está llena.",
+        "targetWord": "arena",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6548b5b9d19fb37.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ring",
+    "sentence": "Abajo, en el [[ring]], entra la luchadora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ring",
+      "options": [
+        "the ring",
+        "the door",
+        "the shop",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Abajo, en el ring, entra la luchadora.",
+        "targetWord": "ring",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c176741870735de.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "público",
+    "sentence": "Todo el [[público]] le silba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the crowd",
+      "options": [
+        "the crowd",
+        "the family",
+        "the team",
+        "the staff"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Todo el público le silba.",
+        "targetWord": "público",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19fd8750d0f64456.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "función",
+    "sentence": "Al final de la [[función]], ella sube a las gradas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the show",
+      "options": [
+        "the show",
+        "the street",
+        "the lesson",
+        "the meal"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Al final de la función, ella sube a las gradas.",
+        "targetWord": "función",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1adc3a4baee32944.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "Hay que gritar bien [[fuerte]], desde arriba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loud",
+      "options": [
+        "loud",
+        "slow",
+        "late",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Hay que gritar bien fuerte, desde arriba.",
+        "targetWord": "fuerte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d01dc281f426465.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "silba",
+    "sentence": "No le gusta la luchadora y por eso le _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "silba",
+      "options": [
+        "silba",
+        "paga",
+        "cuenta",
+        "lava"
+      ],
+      "translation": "He does not like the wrestler and that is why he _____ at her.",
+      "optionTranslations": [
+        "whistles",
+        "pays",
+        "counts",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "No le gusta la luchadora y por eso le silba.",
+        "targetWord": "silba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d2abbeb6d6daf70.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "presta",
+    "sentence": "Cuando necesito el taladro, ella me lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "presta",
+      "options": [
+        "presta",
+        "canta",
+        "pinta",
+        "rompe"
+      ],
+      "translation": "When I need the drill, she _____ it to me.",
+      "optionTranslations": [
+        "lends",
+        "sings",
+        "paints",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Cuando necesito el taladro, ella me lo presta.",
+        "targetWord": "presta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6bf92efeea5bd0b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arruina",
+    "sentence": "Si aplaudes a la mala, me _____ el trabajo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arruina",
+      "options": [
+        "arruina",
+        "lava",
+        "moja",
+        "tapa"
+      ],
+      "translation": "If you clap for the bad girl, it _____ my work.",
+      "optionTranslations": [
+        "ruins",
+        "washes",
+        "wets",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Si aplaudes a la mala, me arruina el trabajo.",
+        "targetWord": "arruina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fd3b84a55fee6c8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ensaya",
+    "sentence": "Toda la semana _____ la voz en la azotea.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ensaya",
+      "options": [
+        "ensaya",
+        "moja",
+        "vende",
+        "cuenta"
+      ],
+      "translation": "All week he _____ his voice on the roof.",
+      "optionTranslations": [
+        "practises",
+        "wets",
+        "sells",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Toda la semana ensaya la voz en la azotea.",
+        "targetWord": "ensaya",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49fe13d0509b99f7.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "botas,taladro,brinco,venda",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "botas",
+          "answer": "the tall boots",
+          "options": [
+            "the tall boots",
+            "an electric drill",
+            "a quick jump",
+            "a hand bandage"
+          ]
+        },
+        {
+          "word": "taladro",
+          "answer": "an electric drill",
+          "options": [
+            "the tall boots",
+            "an electric drill",
+            "a quick jump",
+            "a hand bandage"
+          ]
+        },
+        {
+          "word": "brinco",
+          "answer": "a quick jump",
+          "options": [
+            "the tall boots",
+            "an electric drill",
+            "a quick jump",
+            "a hand bandage"
+          ]
+        },
+        {
+          "word": "venda",
+          "answer": "a hand bandage",
+          "options": [
+            "the tall boots",
+            "an electric drill",
+            "a quick jump",
+            "a hand bandage"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gritar",
+    "featured": false,
+    "sentence": "[[Grítale]] desde arriba, es su trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shout",
+      "options": [
+        "to shout",
+        "to wave",
+        "to write",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Grítale desde arriba, es su trabajo.",
+        "targetWord": "Grítale",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c1ff1d499577989.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tirar",
+    "featured": false,
+    "sentence": "La luchadora [[tira]] al otro luchador con un brinco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to throw down",
+      "options": [
+        "to throw down",
+        "to call over",
+        "to wait for",
+        "to pay for"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "La luchadora tira al otro luchador con un brinco.",
+        "targetWord": "tira",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81c5ae4717e0acf2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "técnico",
+    "featured": false,
+    "sentence": "El [[técnico]] cae al suelo del ring.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the good guy",
+      "options": [
+        "the good guy",
+        "the bad girl",
+        "the referee",
+        "the doctor"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "El técnico cae al suelo del ring.",
+        "targetWord": "técnico",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/947f05fc197fdbb3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruda",
+    "featured": false,
+    "sentence": "Ella entra de [[ruda]], con botas rojas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bad girl",
+      "options": [
+        "the bad girl",
+        "the good guy",
+        "the referee",
+        "the doctor"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Ella entra de ruda, con botas rojas.",
+        "targetWord": "ruda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c25bd2bdc420c4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "featured": false,
+    "sentence": "Te oí [[aplaudir]] desde el ring.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clap",
+      "options": [
+        "to clap",
+        "to cough",
+        "to sing",
+        "to run"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "Te oí aplaudir desde el ring.",
+        "targetWord": "aplaudir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b723618e427d7645.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajito",
+    "featured": false,
+    "sentence": "El vecino aplaude [[bajito]], con la gorra en las manos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very quietly",
+      "options": [
+        "very quietly",
+        "for a while",
+        "one more time",
+        "from the door"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "El vecino aplaude bajito, con la gorra en las manos.",
+        "targetWord": "bajito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40bc000cfc5658df.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insultas",
+    "featured": false,
+    "sentence": "La próxima vez me [[insultas]], dice ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you insult",
+      "options": [
+        "you insult",
+        "you follow",
+        "you pay",
+        "you call"
+      ],
+      "audioClip": {
+        "storySlug": "gritale-es-su-trabajo",
+        "storySource": "user",
+        "sentence": "La próxima vez me insultas, dice ella.",
+        "targetWord": "insultas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8e895d7ef67a7a3.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gritar",
-  "featured": false,
-  "sentence": "[[Grítale]] desde arriba, es su trabajo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to shout",
-   "options": [
-    "to shout",
-    "to wave",
-    "to write",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Grítale desde arriba, es su trabajo.",
-    "targetWord": "Grítale",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tirar",
-  "featured": false,
-  "sentence": "La luchadora [[tira]] al otro luchador con un brinco.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to throw down",
-   "options": [
-    "to throw down",
-    "to call over",
-    "to wait for",
-    "to pay for"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "La luchadora tira al otro luchador con un brinco.",
-    "targetWord": "tira",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "técnico",
-  "featured": false,
-  "sentence": "El [[técnico]] cae al suelo del ring.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the good guy",
-   "options": [
-    "the good guy",
-    "the bad girl",
-    "the referee",
-    "the doctor"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "El técnico cae al suelo del ring.",
-    "targetWord": "técnico",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ruda",
-  "featured": false,
-  "sentence": "Ella entra de [[ruda]], con botas rojas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the bad girl",
-   "options": [
-    "the bad girl",
-    "the good guy",
-    "the referee",
-    "the doctor"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Ella entra de ruda, con botas rojas.",
-    "targetWord": "ruda",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aplaudir",
-  "featured": false,
-  "sentence": "Te oí [[aplaudir]] desde el ring.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to clap",
-   "options": [
-    "to clap",
-    "to cough",
-    "to sing",
-    "to run"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "Te oí aplaudir desde el ring.",
-    "targetWord": "aplaudir",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bajito",
-  "featured": false,
-  "sentence": "El vecino aplaude [[bajito]], con la gorra en las manos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "very quietly",
-   "options": [
-    "very quietly",
-    "for a while",
-    "one more time",
-    "from the door"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "El vecino aplaude bajito, con la gorra en las manos.",
-    "targetWord": "bajito",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "insultas",
-  "featured": false,
-  "sentence": "La próxima vez me [[insultas]], dice ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "you insult",
-   "options": [
-    "you insult",
-    "you follow",
-    "you pay",
-    "you call"
-   ],
-   "audioClip": {
-    "storySlug": "gritale-es-su-trabajo",
-    "storySource": "user",
-    "sentence": "La próxima vez me insultas, dice ella.",
-    "targetWord": "insultas",
-    "language": "spanish"
-   }
-  }
- }
 ]

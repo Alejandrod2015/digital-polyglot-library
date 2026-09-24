@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "lleno",
-  "sentence": "Su tendedero está [[lleno]] de ropa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "full",
-   "options": [
-    "full",
-    "clean",
-    "wet",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Su tendedero está lleno de ropa.",
-    "targetWord": "lleno",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "rincón",
-  "sentence": "El mecánico toma café en su [[rincón]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "corner",
-   "options": [
-    "corner",
-    "kitchen",
-    "garden",
-    "office"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "El mecánico toma café en su rincón.",
-    "targetWord": "rincón",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cuerda",
-  "sentence": "Una [[cuerda]] no hace nudos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a rope",
-   "options": [
-    "a rope",
-    "a towel",
-    "a bucket",
-    "a shoe"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Una cuerda no hace nudos.",
-    "targetWord": "cuerda",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nudo",
-  "sentence": "Hay un [[nudo]] en el clavo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a knot",
-   "options": [
-    "a knot",
-    "a nail",
-    "a lamp",
-    "a box"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Hay un nudo en el clavo.",
-    "targetWord": "nudo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sitio",
-  "sentence": "Es el único [[sitio]] con sol.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "spot",
-   "options": [
-    "spot",
-    "hour",
-    "price",
-    "colour"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Es el único sitio con sol.",
-    "targetWord": "sitio",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "rompe",
-  "sentence": "La cuerda está muy vieja y se _____ sola.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rompe",
-   "options": [
-    "rompe",
-    "guarda",
-    "moja",
-    "cuelga"
-   ],
-   "translation": "The rope is very old and it _____ on its own.",
-   "optionTranslations": [
-    "breaks",
-    "is put away",
-    "gets wet",
-    "is hung up"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "La cuerda está muy vieja y se rompe sola.",
-    "targetWord": "rompe",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "calla",
-  "sentence": "No quiere discutir; toma otro café y _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "calla",
-   "options": [
-    "calla",
-    "corre",
-    "paga",
-    "canta"
-   ],
-   "translation": "He does not want to argue; he has another coffee and _____.",
-   "optionTranslations": [
-    "says nothing",
-    "runs",
-    "pays",
-    "sings"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "No quiere discutir; toma otro café y calla.",
-    "targetWord": "calla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tapa",
-  "sentence": "La sábana es muy grande y _____ todo el rincón.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tapa",
-   "options": [
-    "tapa",
-    "pesa",
-    "suena",
-    "mide"
-   ],
-   "translation": "The sheet is very big and it _____ the whole corner.",
-   "optionTranslations": [
-    "covers",
-    "weighs",
-    "sounds",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "La sábana es muy grande y tapa todo el rincón.",
-    "targetWord": "tapa",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mueve",
-  "sentence": "No le llega el sol y _____ la silla dos metros.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mueve",
-   "options": [
-    "mueve",
-    "cuenta",
-    "tapa",
-    "mide"
-   ],
-   "translation": "The sun does not reach him and he _____ the chair two metres.",
-   "optionTranslations": [
-    "moves",
-    "counts",
-    "covers",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "No le llega el sol y mueve la silla dos metros.",
-    "targetWord": "mueve",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "uniforme,jabón,tinaco,sábana",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "uniforme",
-     "answer": "a work uniform",
-     "options": [
-      "a work uniform",
-      "a bar of soap",
-      "a roof water tank",
-      "a bed sheet"
-     ]
-    },
-    {
-     "word": "jabón",
-     "answer": "a bar of soap",
-     "options": [
-      "a work uniform",
-      "a bar of soap",
-      "a roof water tank",
-      "a bed sheet"
-     ]
-    },
-    {
-     "word": "tinaco",
-     "answer": "a roof water tank",
-     "options": [
-      "a work uniform",
-      "a bar of soap",
-      "a roof water tank",
-      "a bed sheet"
-     ]
-    },
-    {
-     "word": "sábana",
-     "answer": "a bed sheet",
-     "options": [
-      "a work uniform",
-      "a bar of soap",
-      "a roof water tank",
-      "a bed sheet"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "Su tendedero está [[lleno]] de ropa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "clean",
+        "wet",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Su tendedero está lleno de ropa.",
+        "targetWord": "lleno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b65f03d0f0361869.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rincón",
+    "sentence": "El mecánico toma café en su [[rincón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "corner",
+      "options": [
+        "corner",
+        "kitchen",
+        "garden",
+        "office"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "El mecánico toma café en su rincón.",
+        "targetWord": "rincón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e285ed4a991553e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuerda",
+    "sentence": "Una [[cuerda]] no hace nudos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rope",
+      "options": [
+        "a rope",
+        "a towel",
+        "a bucket",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Una cuerda no hace nudos.",
+        "targetWord": "cuerda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f0a047f1bbbacfa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nudo",
+    "sentence": "Hay un [[nudo]] en el clavo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a knot",
+      "options": [
+        "a knot",
+        "a nail",
+        "a lamp",
+        "a box"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Hay un nudo en el clavo.",
+        "targetWord": "nudo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cb7a0dc54f3d972.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sitio",
+    "sentence": "Es el único [[sitio]] con sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spot",
+      "options": [
+        "spot",
+        "hour",
+        "price",
+        "colour"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Es el único sitio con sol.",
+        "targetWord": "sitio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d86d58c473d99e6.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rompe",
+    "sentence": "La cuerda está muy vieja y se _____ sola.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rompe",
+      "options": [
+        "rompe",
+        "guarda",
+        "moja",
+        "cuelga"
+      ],
+      "translation": "The rope is very old and it _____ on its own.",
+      "optionTranslations": [
+        "breaks",
+        "is put away",
+        "gets wet",
+        "is hung up"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "La cuerda está muy vieja y se rompe sola.",
+        "targetWord": "rompe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e74d36d2422125a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calla",
+    "sentence": "No quiere discutir; toma otro café y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calla",
+      "options": [
+        "calla",
+        "corre",
+        "paga",
+        "canta"
+      ],
+      "translation": "He does not want to argue; he has another coffee and _____.",
+      "optionTranslations": [
+        "says nothing",
+        "runs",
+        "pays",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "No quiere discutir; toma otro café y calla.",
+        "targetWord": "calla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/726f990c1a16ccc0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tapa",
+    "sentence": "La sábana es muy grande y _____ todo el rincón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tapa",
+      "options": [
+        "tapa",
+        "pesa",
+        "suena",
+        "mide"
+      ],
+      "translation": "The sheet is very big and it _____ the whole corner.",
+      "optionTranslations": [
+        "covers",
+        "weighs",
+        "sounds",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "La sábana es muy grande y tapa todo el rincón.",
+        "targetWord": "tapa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89ffc04a6365d83d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mueve",
+    "sentence": "No le llega el sol y _____ la silla dos metros.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mueve",
+      "options": [
+        "mueve",
+        "cuenta",
+        "tapa",
+        "mide"
+      ],
+      "translation": "The sun does not reach him and he _____ the chair two metres.",
+      "optionTranslations": [
+        "moves",
+        "counts",
+        "covers",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "No le llega el sol y mueve la silla dos metros.",
+        "targetWord": "mueve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cfc7d2031a62c7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "uniforme,jabón,tinaco,sábana",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "uniforme",
+          "answer": "a work uniform",
+          "options": [
+            "a work uniform",
+            "a bar of soap",
+            "a roof water tank",
+            "a bed sheet"
+          ]
+        },
+        {
+          "word": "jabón",
+          "answer": "a bar of soap",
+          "options": [
+            "a work uniform",
+            "a bar of soap",
+            "a roof water tank",
+            "a bed sheet"
+          ]
+        },
+        {
+          "word": "tinaco",
+          "answer": "a roof water tank",
+          "options": [
+            "a work uniform",
+            "a bar of soap",
+            "a roof water tank",
+            "a bed sheet"
+          ]
+        },
+        {
+          "word": "sábana",
+          "answer": "a bed sheet",
+          "options": [
+            "a work uniform",
+            "a bar of soap",
+            "a roof water tank",
+            "a bed sheet"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegar",
+    "featured": false,
+    "sentence": "Ahí [[pega]] el sol toda la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to beat down",
+      "options": [
+        "to beat down",
+        "to go out",
+        "to get cold",
+        "to dry up"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Ahí pega el sol toda la mañana.",
+        "targetWord": "pega",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cdf4c1c31cb6ee8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vieja",
+    "featured": false,
+    "sentence": "Es una cuerda [[vieja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "clean",
+        "short",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Es una cuerda vieja.",
+        "targetWord": "vieja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a3b8620a72c909b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desatada",
+    "featured": false,
+    "sentence": "La cuerda está [[desatada]], con un nudo en el clavo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "untied",
+      "options": [
+        "untied",
+        "painted",
+        "folded",
+        "washed"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "La cuerda está desatada, con un nudo en el clavo.",
+        "targetWord": "desatada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7bd699615dc9d8e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "featured": false,
+    "sentence": "Ella [[entiende]] todo sin hablar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to forget",
+        "to ask",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Ella entiende todo sin hablar.",
+        "targetWord": "entiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0198e492b8f96be9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silla",
+    "featured": false,
+    "sentence": "Él mueve su [[silla]] dos metros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chair",
+      "options": [
+        "chair",
+        "table",
+        "door",
+        "window"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Él mueve su silla dos metros.",
+        "targetWord": "silla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f4cef87ada3b558.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "metros",
+    "featured": false,
+    "sentence": "Mueve la silla dos [[metros]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "metres",
+      "options": [
+        "metres",
+        "hours",
+        "kilos",
+        "pesos"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Mueve la silla dos metros.",
+        "targetWord": "metros",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/766ce50d75a83980.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al final",
+    "featured": false,
+    "sentence": "[[Al final]] ella entiende todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the end",
+      "options": [
+        "in the end",
+        "every day",
+        "by the door",
+        "for a while"
+      ],
+      "audioClip": {
+        "storySlug": "una-cuerda-no-hace-nudos",
+        "storySource": "user",
+        "sentence": "Al final ella entiende todo.",
+        "targetWord": "Al final",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbee2e2b801f8bbe.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pegar",
-  "featured": false,
-  "sentence": "Ahí [[pega]] el sol toda la mañana.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to beat down",
-   "options": [
-    "to beat down",
-    "to go out",
-    "to get cold",
-    "to dry up"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Ahí pega el sol toda la mañana.",
-    "targetWord": "pega",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vieja",
-  "featured": false,
-  "sentence": "Es una cuerda [[vieja]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "old",
-   "options": [
-    "old",
-    "clean",
-    "short",
-    "white"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Es una cuerda vieja.",
-    "targetWord": "vieja",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "desatada",
-  "featured": false,
-  "sentence": "La cuerda está [[desatada]], con un nudo en el clavo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "untied",
-   "options": [
-    "untied",
-    "painted",
-    "folded",
-    "washed"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "La cuerda está desatada, con un nudo en el clavo.",
-    "targetWord": "desatada",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "entender",
-  "featured": false,
-  "sentence": "Ella [[entiende]] todo sin hablar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to understand",
-   "options": [
-    "to understand",
-    "to forget",
-    "to ask",
-    "to pay"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Ella entiende todo sin hablar.",
-    "targetWord": "entiende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "silla",
-  "featured": false,
-  "sentence": "Él mueve su [[silla]] dos metros.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "chair",
-   "options": [
-    "chair",
-    "table",
-    "door",
-    "window"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Él mueve su silla dos metros.",
-    "targetWord": "silla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "metros",
-  "featured": false,
-  "sentence": "Mueve la silla dos [[metros]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "metres",
-   "options": [
-    "metres",
-    "hours",
-    "kilos",
-    "pesos"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Mueve la silla dos metros.",
-    "targetWord": "metros",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "al final",
-  "featured": false,
-  "sentence": "[[Al final]] ella entiende todo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in the end",
-   "options": [
-    "in the end",
-    "every day",
-    "by the door",
-    "for a while"
-   ],
-   "audioClip": {
-    "storySlug": "una-cuerda-no-hace-nudos",
-    "storySource": "user",
-    "sentence": "Al final ella entiende todo.",
-    "targetWord": "Al final",
-    "language": "spanish"
-   }
-  }
- }
 ]

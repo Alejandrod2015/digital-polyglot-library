@@ -1,440 +1,456 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "esquina",
-  "sentence": "La barbería de la [[esquina]] huele a jabón.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the corner",
-   "options": [
-    "the corner",
-    "the market",
-    "the garden",
-    "the station"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "La barbería de la esquina huele a jabón.",
-    "targetWord": "esquina",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "máquina",
-  "sentence": "La [[máquina]] corta el pelo en cinco minutos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the clipper",
-   "options": [
-    "the clipper",
-    "the mirror",
-    "the towel",
-    "the chair"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "La máquina corta el pelo en cinco minutos.",
-    "targetWord": "máquina",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pelo",
-  "sentence": "El [[pelo]] cae sobre un trapo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hair",
-   "options": [
-    "hair",
-    "water",
-    "paper",
-    "sand"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "El pelo cae sobre un trapo.",
-    "targetWord": "pelo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cartel",
-  "sentence": "Hay un [[cartel]] pegado en el espejo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a sign",
-   "options": [
-    "a sign",
-    "a towel",
-    "a lamp",
-    "a window"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Hay un cartel pegado en el espejo.",
-    "targetWord": "cartel",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tomar",
-  "sentence": "El barbero [[toma]] las tijeras y el peine.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pick up",
-   "options": [
-    "to pick up",
-    "to clean",
-    "to sell",
-    "to count"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "El barbero toma las tijeras y el peine.",
-    "targetWord": "toma",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "entra",
-  "sentence": "Toca la puerta, la abre y _____ en la barbería.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "entra",
-   "options": [
-    "entra",
-    "canta",
-    "duerme",
-    "corta"
-   ],
-   "translation": "He knocks on the door, opens it and _____ the barbershop.",
-   "optionTranslations": [
-    "goes into",
-    "sings in",
-    "sleeps in",
-    "cuts in"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Toca la puerta, la abre y entra en la barbería.",
-    "targetWord": "entra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "repite",
-  "sentence": "No lo oyó bien, y por eso él lo _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "repite",
-   "options": [
-    "repite",
-    "escribe",
-    "guarda",
-    "paga"
-   ],
-   "translation": "She did not hear it well, so he _____ it.",
-   "optionTranslations": [
-    "repeats",
-    "writes",
-    "puts away",
-    "pays"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "No lo oyó bien, y por eso él lo repite.",
-    "targetWord": "repite",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "señala",
-  "sentence": "Con el peine, él _____ el cartel del espejo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "señala",
-   "options": [
-    "señala",
-    "guarda",
-    "rompe",
-    "lava"
-   ],
-   "translation": "With the comb, he _____ the sign on the mirror.",
-   "optionTranslations": [
-    "points at",
-    "puts away",
-    "breaks",
-    "washes"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Con el peine, él señala el cartel del espejo.",
-    "targetWord": "señala",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "lee",
-  "sentence": "El cartel tiene letras grandes y él las _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lee",
-   "options": [
-    "lee",
-    "corta",
-    "tapa",
-    "moja"
-   ],
-   "translation": "The sign has big letters and he _____ them.",
-   "optionTranslations": [
-    "reads",
-    "cuts",
-    "covers",
-    "wets"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "El cartel tiene letras grandes y él las lee.",
-    "targetWord": "lee",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "match_meaning",
-  "word": "sillón,tijeras,peine,espejo",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "sillón",
-     "answer": "an armchair",
-     "options": [
-      "an armchair",
-      "the scissors",
-      "a comb",
-      "a mirror"
-     ]
-    },
-    {
-     "word": "tijeras",
-     "answer": "the scissors",
-     "options": [
-      "an armchair",
-      "the scissors",
-      "a comb",
-      "a mirror"
-     ]
-    },
-    {
-     "word": "peine",
-     "answer": "a comb",
-     "options": [
-      "an armchair",
-      "the scissors",
-      "a comb",
-      "a mirror"
-     ]
-    },
-    {
-     "word": "espejo",
-     "answer": "a mirror",
-     "options": [
-      "an armchair",
-      "the scissors",
-      "a comb",
-      "a mirror"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "esquina",
+    "sentence": "La barbería de la [[esquina]] huele a jabón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the corner",
+      "options": [
+        "the corner",
+        "the market",
+        "the garden",
+        "the station"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "La barbería de la esquina huele a jabón.",
+        "targetWord": "esquina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b74ef2c29ae5075f.mp3"
+      }
     }
-   ],
-   "audioClip": null
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "máquina",
+    "sentence": "La [[máquina]] corta el pelo en cinco minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the clipper",
+      "options": [
+        "the clipper",
+        "the mirror",
+        "the towel",
+        "the chair"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "La máquina corta el pelo en cinco minutos.",
+        "targetWord": "máquina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2607f8fcd2f726de.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pelo",
+    "sentence": "El [[pelo]] cae sobre un trapo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hair",
+      "options": [
+        "hair",
+        "water",
+        "paper",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "El pelo cae sobre un trapo.",
+        "targetWord": "pelo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b1416f4ee56ff07.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cartel",
+    "sentence": "Hay un [[cartel]] pegado en el espejo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sign",
+      "options": [
+        "a sign",
+        "a towel",
+        "a lamp",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Hay un cartel pegado en el espejo.",
+        "targetWord": "cartel",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8507ae80b9d63452.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "El barbero [[toma]] las tijeras y el peine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pick up",
+      "options": [
+        "to pick up",
+        "to clean",
+        "to sell",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "El barbero toma las tijeras y el peine.",
+        "targetWord": "toma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9aee1edb35c658f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "entra",
+    "sentence": "Toca la puerta, la abre y _____ en la barbería.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entra",
+      "options": [
+        "entra",
+        "canta",
+        "duerme",
+        "corta"
+      ],
+      "translation": "He knocks on the door, opens it and _____ the barbershop.",
+      "optionTranslations": [
+        "goes into",
+        "sings in",
+        "sleeps in",
+        "cuts in"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Toca la puerta, la abre y entra en la barbería.",
+        "targetWord": "entra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/669bef43d54bc037.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "repite",
+    "sentence": "No lo oyó bien, y por eso él lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repite",
+      "options": [
+        "repite",
+        "escribe",
+        "guarda",
+        "paga"
+      ],
+      "translation": "She did not hear it well, so he _____ it.",
+      "optionTranslations": [
+        "repeats",
+        "writes",
+        "puts away",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "No lo oyó bien, y por eso él lo repite.",
+        "targetWord": "repite",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02ee9ed03b76e573.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "señala",
+    "sentence": "Con el peine, él _____ el cartel del espejo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señala",
+      "options": [
+        "señala",
+        "guarda",
+        "rompe",
+        "lava"
+      ],
+      "translation": "With the comb, he _____ the sign on the mirror.",
+      "optionTranslations": [
+        "points at",
+        "puts away",
+        "breaks",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Con el peine, él señala el cartel del espejo.",
+        "targetWord": "señala",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/210d583fcc155ee1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lee",
+    "sentence": "El cartel tiene letras grandes y él las _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lee",
+      "options": [
+        "lee",
+        "corta",
+        "tapa",
+        "moja"
+      ],
+      "translation": "The sign has big letters and he _____ them.",
+      "optionTranslations": [
+        "reads",
+        "cuts",
+        "covers",
+        "wets"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "El cartel tiene letras grandes y él las lee.",
+        "targetWord": "lee",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d64d509ac98cd4bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sillón,tijeras,peine,espejo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sillón",
+          "answer": "an armchair",
+          "options": [
+            "an armchair",
+            "the scissors",
+            "a comb",
+            "a mirror"
+          ]
+        },
+        {
+          "word": "tijeras",
+          "answer": "the scissors",
+          "options": [
+            "an armchair",
+            "the scissors",
+            "a comb",
+            "a mirror"
+          ]
+        },
+        {
+          "word": "peine",
+          "answer": "a comb",
+          "options": [
+            "an armchair",
+            "the scissors",
+            "a comb",
+            "a mirror"
+          ]
+        },
+        {
+          "word": "espejo",
+          "answer": "a mirror",
+          "options": [
+            "an armchair",
+            "the scissors",
+            "a comb",
+            "a mirror"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poquito",
+    "featured": false,
+    "sentence": "El cliente pide [[poquito]], solo dos dedos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tiny bit",
+      "options": [
+        "a tiny bit",
+        "a whole hour",
+        "two colours",
+        "one more"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "El cliente pide poquito, solo dos dedos.",
+        "targetWord": "poquito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24016e2fd7c6c90a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "featured": false,
+    "sentence": "El barbero contesta [[tranquilo]], sin prisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "angry",
+        "tired",
+        "funny"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "El barbero contesta tranquilo, sin prisa.",
+        "targetWord": "tranquilo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20962b933355422d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "featured": false,
+    "sentence": "La máquina [[suena]] cinco minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make a noise",
+      "options": [
+        "to make a noise",
+        "to break down",
+        "to get hot",
+        "to turn off"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "La máquina suena cinco minutos.",
+        "targetWord": "suena",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a349938a38ac81aa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ojos",
+    "featured": false,
+    "sentence": "Él mira el espejo y abre mucho los [[ojos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eyes",
+      "options": [
+        "eyes",
+        "ears",
+        "hands",
+        "teeth"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Él mira el espejo y abre mucho los ojos.",
+        "targetWord": "ojos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a89dc5791a429a17.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dedos",
+    "featured": false,
+    "sentence": "Poquito son dos [[dedos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fingers",
+      "options": [
+        "fingers",
+        "minutes",
+        "mirrors",
+        "chairs"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Poquito son dos dedos.",
+        "targetWord": "dedos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/620b47f0e7726b27.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chicos",
+    "featured": false,
+    "sentence": "Tus dedos son muy [[chicos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "clean",
+        "warm",
+        "straight"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "Tus dedos son muy chicos.",
+        "targetWord": "chicos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69a64533379a2a4a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "minutos",
+    "featured": false,
+    "sentence": "A los diez [[minutos]] ya está listo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "minutes",
+      "options": [
+        "minutes",
+        "weeks",
+        "metres",
+        "pesos"
+      ],
+      "audioClip": {
+        "storySlug": "poquito-son-dos-dedos",
+        "storySource": "user",
+        "sentence": "A los diez minutos ya está listo.",
+        "targetWord": "minutos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ee609d400a1b87c.mp3"
+      }
+    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "poquito",
-  "featured": false,
-  "sentence": "El cliente pide [[poquito]], solo dos dedos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a tiny bit",
-   "options": [
-    "a tiny bit",
-    "a whole hour",
-    "two colours",
-    "one more"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "El cliente pide poquito, solo dos dedos.",
-    "targetWord": "poquito",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tranquilo",
-  "featured": false,
-  "sentence": "El barbero contesta [[tranquilo]], sin prisa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "calm",
-   "options": [
-    "calm",
-    "angry",
-    "tired",
-    "funny"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "El barbero contesta tranquilo, sin prisa.",
-    "targetWord": "tranquilo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sonar",
-  "featured": false,
-  "sentence": "La máquina [[suena]] cinco minutos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to make a noise",
-   "options": [
-    "to make a noise",
-    "to break down",
-    "to get hot",
-    "to turn off"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "La máquina suena cinco minutos.",
-    "targetWord": "suena",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ojos",
-  "featured": false,
-  "sentence": "Él mira el espejo y abre mucho los [[ojos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "eyes",
-   "options": [
-    "eyes",
-    "ears",
-    "hands",
-    "teeth"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Él mira el espejo y abre mucho los ojos.",
-    "targetWord": "ojos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dedos",
-  "featured": false,
-  "sentence": "Poquito son dos [[dedos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fingers",
-   "options": [
-    "fingers",
-    "minutes",
-    "mirrors",
-    "chairs"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Poquito son dos dedos.",
-    "targetWord": "dedos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "chicos",
-  "featured": false,
-  "sentence": "Tus dedos son muy [[chicos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "small",
-   "options": [
-    "small",
-    "clean",
-    "warm",
-    "straight"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "Tus dedos son muy chicos.",
-    "targetWord": "chicos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "minutos",
-  "featured": false,
-  "sentence": "A los diez [[minutos]] ya está listo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "minutes",
-   "options": [
-    "minutes",
-    "weeks",
-    "metres",
-    "pesos"
-   ],
-   "audioClip": {
-    "storySlug": "poquito-son-dos-dedos",
-    "storySource": "user",
-    "sentence": "A los diez minutos ya está listo.",
-    "targetWord": "minutos",
-    "language": "spanish"
-   }
-  }
- }
 ]
