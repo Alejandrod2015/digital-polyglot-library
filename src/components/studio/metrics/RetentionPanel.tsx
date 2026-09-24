@@ -324,14 +324,13 @@ export function RetentionPanel({
             </span>
           </div>
 
+          {/*
+            Aqui habia cuatro lineas explicando como se lee la grafica. Fuera
+            por decision del usuario: lo que el punto significa ya lo dice el
+            globo al pasar el cursor, y el parrafo ocupaba mas alto que la
+            propia curva.
+          */}
           <RetentionChart points={points} mode={mode} />
-
-          <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted-soft)", lineHeight: 1.5 }}>
-            Cada punto es el % de esa cohorte (semana o día de alta) que seguía dando señal el día 1, 3, 7 o 14.
-            El tamaño del punto crece con el número de altas. Solo cuentan las altas que ya llegaron a ese día
-            (el tooltip dice cuántas son). En la vista diaria, las marcas del eje muestran cuántas altas hubo
-            cada día. Detalle completo, con quién compone cada porcentaje, en la pestaña Adquisición.
-          </p>
         </>
       )}
     </div>
