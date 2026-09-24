@@ -21,6 +21,7 @@
  */
 import { PrismaClient } from "@/generated/prisma";
 import { isCannedMotivation, MIN_EVIDENCE_CHARS, MIN_EVIDENCE_WORDS, tooShortForEvidence } from "./betaMotivations";
+import { assertCityApproved } from "./approvedCities";
 
 /**
  * Largo mínimo de una cita, elegido mirando las citas reales de la base y no
@@ -62,6 +63,23 @@ export type TopicEvidenceOptions = {
    * y este modo la declara.
    */
   journeyEvidence?: string[];
+  /**
+   * LA CIUDAD MARCO, decidida ANTES que los temas (regla del usuario,
+   * 2026-09-24). Obligatoria: sin ella `assertTopicsGrounded` tira, porque la
+   * ciudad condiciona los siete temas y despues cambiarla cuesta el journey
+   * entero. Los tres valores son los de `Journey.cityMode`:
+   *
+   *   { mode: "single", city: "Madrid" }   una ciudad marco, que se comprueba
+   *                                        contra `approvedCities.ts`
+   *   { mode: "multi" }                    gira: siete temas, siete sitios
+   *   { mode: "none" }                     sin ciudad a proposito
+   *
+   * `multi` y `none` no se comprueban contra la lista: en una gira la regla va
+   * sitio a sitio dentro de cada tema, y sin ciudad no hay nada que medir.
+   * Declararlos sigue siendo obligatorio, para que "no aplica" sea una
+   * decision escrita y no un olvido.
+   */
+  city?: { mode: "single"; city: string } | { mode: "multi" | "none" };
   prisma?: PrismaClient;
 };
 
@@ -206,12 +224,31 @@ export async function reportTopicEvidence(opts: TopicEvidenceOptions): Promise<T
 
 /**
  * Imprime el informe de pistas y AVISA de los temas sin cita, sin tirar por
- * eso. Solo tira (`TopicEvidenceError`) si un nombre incumple las reglas de
- * nombre. Devuelve el informe por si quien llama quiere usarlo.
+ * eso. Tira si un nombre incumple las reglas de nombre (`TopicEvidenceError`)
+ * o si la ciudad marco falta o no esta aprobada (`CityNotApprovedError`).
+ * Devuelve el informe por si quien llama quiere usarlo.
  */
 export async function assertTopicsGrounded(opts: TopicEvidenceOptions): Promise<TopicEvidenceReport> {
+  // LA CIUDAD, ANTES QUE LOS TEMAS. Va lo primero a proposito: si falta, no
+  // tiene sentido ni imprimir el informe de pistas, porque los siete temas que
+  // se estan proponiendo dependen de una decision que nadie ha tomado.
+  if (!opts.city) {
+    throw new TopicEvidenceError(
+      "FALTA LA CIUDAD MARCO. Se decide ANTES de fijar los siete temas y se pasa en `city`:\n" +
+      '  { mode: "single", city: "Madrid" }  una ciudad, que se comprueba contra approvedCities.ts\n' +
+      '  { mode: "multi" }                   gira: siete temas, siete sitios\n' +
+      '  { mode: "none" }                    sin ciudad a proposito\n' +
+      "Tiene que ser reconocible FUERA de su pais por un anglosajon (usuario, 2026-09-24).",
+    );
+  }
+  if (opts.city.mode === "single") assertCityApproved(opts.language, opts.city.city);
+
   const r = await reportTopicEvidence(opts);
 
+  const sitio = opts.city.mode === "single" ? opts.city.city
+    : opts.city.mode === "multi" ? "(gira: siete temas, siete sitios)"
+    : "(sin ciudad, a proposito)";
+  console.log(`\nCIUDAD MARCO · ${sitio}`);
   console.log(
     `\nTEMAS PROPUESTOS · pistas: ${r.corpusSize} frases escritas de ${r.language} ` +
     `(${r.writtenMotivations} escritas a mano + ${r.applicationReasons} applicationReason; ` +

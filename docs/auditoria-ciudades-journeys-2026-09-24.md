@@ -152,20 +152,40 @@ coste de arreglar uno es el de un tema, no el del journey.
   A2, y Traveler ES spain B2; también Friends FR A2, B1, DE A0 e IT A0), así que
   cambiarles la ciudad se paga en resíntesis. **No se tocó ninguna.**
 
-## Dónde debería vivir el gate (propuesta, sin implementar)
+## El campo y el gate (hechos el 2026-09-24, en dos commits)
 
-1. En el paso que fija los TEMAS, no en el validador de historias: la ciudad se
-   elige antes del primer tema, y `assertTopicsGrounded`
-   (`src/lib/topicEvidence.ts`) ya es la única puerta obligatoria de ese
-   momento, con su hook `.claude/safety/pre-topic-guard.sh`.
-2. La forma barata: que el journey DECLARE su ciudad (hoy no hay campo; solo se
-   deduce del texto, que es justo lo que ha hecho cara esta auditoría) y que
-   `assertTopicsGrounded` exija esa ciudad contra una lista commiteada de
-   ciudades aprobadas por idioma, tirando si no está y pidiendo el sí del
-   usuario para añadir una nueva, igual que la allowlist de voces.
-3. El validador de historias NO sirve: cuando una historia llega ahí, la ciudad
-   ya está pagada en 21 briefs y en los prompts de portada, y el arreglo cuesta
-   un journey entero en vez de una línea.
+Lo caro de esta auditoría no fue medir: fue que **el dato no tenía sitio donde
+vivir**. La ciudad marco existía repartida por 21 textos, por la memoria y por
+los prompts de portada, y de ahí salieron las cuatro discrepancias. Así que
+primero el campo, después el gate.
+
+**`Journey.city` + `Journey.cityMode`** (`single` | `multi` | `none`). NULL es
+"nadie lo ha rellenado" y es distinto de "no aplica": si los 21 de gira y los 3
+sin ciudad se guardaran como NULL, la distinción se perdería en cuanto alguien
+mirase la columna. Rellenos los 50 con lo medido, sin cambiar ninguna ciudad
+(`scripts/aplicaCiudadJourney.ts`, idempotente y que NO pisa una ciudad que
+alguien haya cambiado a propósito). `journeysTable.ts` lo enseña en una columna
+nueva, así que la próxima auditoría es leer la tabla.
+
+**El gate**, en `assertTopicsGrounded` (`src/lib/topicEvidence.ts`), que ya era
+la única puerta obligatoria del momento en que se fijan los temas:
+
+1. Tira si no se declara ciudad. Declararla es obligatorio incluso para decir
+   "gira" o "sin ciudad": así "no aplica" es una decisión escrita, no un olvido.
+2. Si es `single`, la comprueba contra `src/lib/approvedCities.ts`, la lista
+   aprobada por idioma, al estilo de la allowlist de voces.
+3. La ciudad se mira ANTES que los nombres de tema, porque si la ciudad está
+   mal los siete temas sobran.
+
+La lista se siembra con las ciudades de los journeys que YA cumplían, y con
+nada más. Que falten Sevilla o Napoli no es un olvido: es que nadie las ha
+aprobado. **La amplía el usuario**, no Claude.
+
+Falta una pieza que no puedo poner yo: el hook `PreToolUse` que impida editar
+`approvedCities.ts` sin una frase de aprobación del usuario, como el que
+protege `approvedVoices.ts`. Es configuración del harness y la tiene que
+aprobar el usuario. Hasta entonces, la lista se protege por convención, no por
+gate.
 
 ## Estado de la comprobación
 
@@ -196,5 +216,10 @@ not verified:
   demás journeys.
 - Que el Friends ES argentina A1 deba nombrar Buenos Aires. Es un hallazgo, no
   una decisión: la ciudad cumple la regla pero no se lee.
-- No se tocó contenido de ningún journey, no se generó nada y no se
-  implementó ningún gate.
+- No se tocó contenido de ningún journey, ni una ciudad, y no se generó nada.
+  Lo escrito en `city`/`cityMode` es lo que YA era cierto hoy.
+- El gate solo corre en journeys NUEVOS, al fijar los temas. No mide, ni
+  bloquea, ni arregla los 12 que incumplen hoy; esos esperan a que el usuario
+  decida, y tres de ellos están publicados y narrados.
+- La lista aprobada no tiene hook que impida a Claude ampliarla por su cuenta.
+  Hace falta que el usuario añada ese `PreToolUse`.

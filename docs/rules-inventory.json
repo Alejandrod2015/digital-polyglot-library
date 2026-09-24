@@ -1022,8 +1022,8 @@
     {
       "id": "journey-city-known-abroad",
       "domain": "journey",
-      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, y se decide antes de fijar los siete temas",
-      "gate": "process",
+      "rule": "La ciudad que enmarca un journey tiene que ser reconocible FUERA de su pais por el publico anglosajon (Madrid, Berlin, Rio). Los barrios y sitios concretos de dentro de las historias siguen siendo pequenos y especificos; lo que se mide es la ciudad marco, vive en Journey.city/cityMode, y se declara ANTES de fijar los siete temas: assertTopicsGrounded tira si falta o si no esta en la lista aprobada por idioma",
+      "gate": "src/lib/approvedCities.ts",
       "source": "manual (usuario, 2026-09-24; docs/auditoria-ciudades-journeys-2026-09-24.md)"
     },
     {
