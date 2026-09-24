@@ -409,7 +409,7 @@ function slugify(s: string): string {
         if (!cambios.length) continue;
 
         const base = { title: slot.title, slug: slot.slug ?? undefined, synopsis: slot.synopsis, text: slot.text, arcType: slot.arcType };
-        const ctxV = { language: ctx.language, level: ctx.level, variant: ctx.variant } as never;
+        const ctxV = { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never;
         const antes = await validateGeneratedStory({ ...base, vocab: viejo } as never, ctxV);
         const despues = await validateGeneratedStory({ ...base, vocab: nuevo } as never, ctxV);
         const estadoAntes = new Map(antes.checks.map((c) => [c.id, c.status]));
@@ -474,7 +474,7 @@ function slugify(s: string): string {
         // El título nuevo pasa por el validador canónico; se exigen sus checks de título.
         const r = await validateGeneratedStory(
           { ...d, title: d.title, slug: slot.slug ?? undefined },
-          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+          { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never
         );
         const malos = r.checks.filter((c) => c.id.startsWith("title-") && c.status === "fail");
         if (malos.length) {
@@ -551,7 +551,7 @@ function slugify(s: string): string {
         // La definición nueva pasa por el validador CANÓNICO; se exige su check.
         const r = await validateGeneratedStory(
           { ...d, title: slot.title ?? d.title, slug: slot.slug ?? undefined },
-          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+          { language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant } as never
         );
         const malos = r.checks.filter((c) => c.id === "vocab-definitions" && c.status === "fail");
         if (malos.length) { for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`); continue; }
@@ -867,7 +867,7 @@ function slugify(s: string): string {
   for (const d of stories) {
     const payload = { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType };
     const r = await validateGeneratedStory(payload as any, {
-      language: ctx.language, level: ctx.level, variant: ctx.variant, topic: d.topic,
+      language: ctx.language, variant: ctx.variant, level: ctx.level, variant: ctx.variant, topic: d.topic,
       journeyId: journeyId ?? undefined, slotIndex: d.slotIndex,
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
@@ -1084,14 +1084,14 @@ function slugify(s: string): string {
         const text = d ? String(d.text) : String(f.text ?? "");
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
-                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level,
+                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, variant: ctx.variant, level: ctx.level,
                      topic: f.topic });
         // El MISMO conjunto sin la edición encima, para poder medir el antes.
         // Solo las filas que ya existen: una historia que solo está en la
         // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
         if (String(f.text ?? "").trim()) {
           base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
-                      vocab: f.vocab as never, language: ctx.language, level: ctx.level, topic: f.topic });
+                      vocab: f.vocab as never, language: ctx.language, variant: ctx.variant, level: ctx.level, topic: f.topic });
         }
       }
       // CON SU `topic`. Una historia de la tanda cuya fila esta vacia no pasa
@@ -1102,7 +1102,7 @@ function slugify(s: string): string {
       // falta ir a buscarlo. (2026-09-05, escribiendo el tema 2 del B1 ES.)
       for (const [k, d] of enTanda) if (!vistos.has(k))
         todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), vocab: d.vocab,
-                     language: ctx.language, level: ctx.level, topic: d.topic });
+                     language: ctx.language, variant: ctx.variant, level: ctx.level, topic: d.topic });
       // Personas REALES: el check de personajes no puede medir sin ellas, y sin
       // la lista devuelve `not-implemented`, que bloquea igual que un fallo.
       // `BetaSignup` no guarda el nombre, solo el correo, asi que el nombre se
@@ -1139,7 +1139,7 @@ function slugify(s: string): string {
       // necesita para saber si el journey esta entero. Ver el comentario de
       // `pushSetEscalera` en validateJourneyStories.
       const jc = validateJourneyStories(todas, {
-        language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+        language: ctx.language, variant: ctx.variant, level: ctx.level, realPeople, conjuntoCompleto: completo,
         journeyType: tipoJourney, journeyId,
         plazasDelJourney: plazasJourney || undefined,
       });
@@ -1172,7 +1172,7 @@ function slugify(s: string): string {
         // "pass" en la base por no saber el tipo, y entonces cualquier fallo
         // posterior se leía como EMPEORA por la primera linea de empeora().
         const antes = validateJourneyStories(base, {
-          language: ctx.language, level: ctx.level, realPeople,
+          language: ctx.language, variant: ctx.variant, level: ctx.level, realPeople,
           conjuntoCompleto: completo, journeyType: tipoJourney, journeyId,
         });
         const porId = new Map(antes.map((c) => [c.id, c]));

@@ -1,32 +1,35 @@
 import { describe, it, expect } from "vitest";
-import { nombresDificiles } from "../nameSpeakability";
+import { fueraDelIdioma } from "../nameSpeakability";
+import { getNameBank } from "../characterNames";
 
-describe("nombresDificiles", () => {
+const mx = getNameBank("spanish", "mexico")!;
+
+describe("fueraDelIdioma", () => {
   it("caza los dos que rompieron el audio del Friends ES Mexico A0", () => {
-    const fuera = nombresDificiles(["Bruno", "Itzel", "Arturo", "Citlali"], "spanish");
-    expect(fuera.map((f) => f.nombre)).toEqual(["Itzel", "Citlali"]);
+    // Itzel es maya y Citlali nahuatl: se usan en Mexico, no son espanoles.
+    const cast = ["Bruno", "Itzel", "Arturo", "Citlali", "Valeria"];
+    expect(fueraDelIdioma(cast, mx, "spanish")).toEqual(["Itzel", "Citlali"]);
   });
 
-  it("deja pasar Ximena, que la voz si sabe decir", () => {
-    // Su "x" se lee como la jota castellana, aprendida de "Mexico" y "Javier".
-    expect(nombresDificiles(["Ximena", "Jimena", "Xochilt".slice(0, 4)], "spanish")).toEqual([]);
+  it("deja pasar un reparto entero sacado del banco", () => {
+    const cast = ["Valeria", "Mauricio", "Fernanda", "Omar", "Diego", "Ximena"];
+    expect(fueraDelIdioma(cast, mx, "spanish")).toEqual([]);
   });
 
-  it("deja pasar el reparto entero de un journey sano", () => {
-    const cast = ["Valeria", "Mauricio", "Fernanda", "Omar", "Diego", "Emiliano"];
-    expect(nombresDificiles(cast, "spanish")).toEqual([]);
+  it("no marca a los de generacion mayor, que tambien son del idioma", () => {
+    expect(fueraDelIdioma(["Guadalupe", "Alfonso"], mx, "spanish")).toEqual([]);
   });
 
   it("no repite un nombre que aparece varias veces", () => {
-    expect(nombresDificiles(["Itzel", "Itzel", "ITZEL"], "spanish")).toHaveLength(1);
+    expect(fueraDelIdioma(["Itzel", "Itzel", "ITZEL"], mx, "spanish")).toHaveLength(1);
   });
 
   it("respeta lo que el usuario aprobo de oido", () => {
-    expect(nombresDificiles(["Itzel"], "spanish", ["Itzel"])).toEqual([]);
+    const banco = { young: [...mx.young, "Itzel"], older: mx.older };
+    expect(fueraDelIdioma(["Itzel"], banco, "spanish")).toEqual([]);
   });
 
-  it("no opina sobre un idioma sin reglas", () => {
-    expect(nombresDificiles(["Itzel"], "korean")).toEqual([]);
-    expect(nombresDificiles(["Itzel"], null)).toEqual([]);
+  it("no se inventa nada con un reparto vacio", () => {
+    expect(fueraDelIdioma([], mx, "spanish")).toEqual([]);
   });
 });

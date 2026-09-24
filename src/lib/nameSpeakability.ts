@@ -1,13 +1,12 @@
 /**
- * Nombres que la voz de TTS no sabe decir dos veces igual.
+ * Nombres que la voz de TTS no sabe decir, porque no son de su idioma.
  *
  * POR QUE EXISTE (2026-09-23, Friends ES Mexico A0). El reparto llevaba
- * "Itzel", nombre maya, de personaje recurrente. Paso TODOS los gates: esta en
- * el banco `spanish/mexico` de `characterNames.ts`, es un nombre real, comun en
- * Mexico y de la generacion correcta. Y aun asi rompio el audio del journey
- * entero:
+ * "Itzel", nombre maya, de personaje recurrente. Paso TODOS los gates que
+ * habia: esta en el banco `spanish/mexico`, se usa en Mexico, y es de la
+ * generacion correcta. Y aun asi rompio el audio del journey entero:
  *
- *   - 74 apariciones en 20 de las 21 historias.
+ *   - 72 apariciones en 18 de las 21 historias.
  *   - Duracion de 0,12 s a 0,96 s, casi ocho veces, para la misma palabra.
  *   - Tres reconocedores escribieron "Ixchel", "Excel" y "Chelsea".
  *   - De 21 candidatas llevadas al oido del usuario, 12 salieron mal.
@@ -15,78 +14,52 @@
  * Lo oyo el usuario, no un gate: los tres candados de narracion miran
  * entonacion, contenido y cobertura, y ninguno mira si un nombre suena igual
  * dos veces. Y el fallo solo aparece con el journey ya narrado, que es la fase
- * mas cara y la ultima. Palabras del usuario: "no nombres raros, regla dura,
- * muy dura. Las voces solo saben pronunciar nombres comunes para sus idiomas".
+ * mas cara y la ultima. Palabras del usuario: "Las voces solo saben pronunciar
+ * nombres comunes para sus idiomas".
  *
- * QUE MIRA. No "es raro" ni "es indigena", que no son medibles desde una
- * cadena. Mira GRUPOS DE LETRAS ajenos a la ortografia normal del idioma, que
- * es lo que deja a la voz sin una pronunciacion aprendida y la hace improvisar
- * distinto cada vez. En espanol, los dos que importan vienen del nahuatl y del
- * maya: `tz` (Itzel, Quetzal) y `tl` (Citlali, Xochitl). "Ximena" NO cae aqui,
- * y hace bien: su `x` se lee como la jota castellana, que la voz tiene
- * aprendida de "Mexico" y "Javier".
+ * QUE MIDE, y que NO. La regla es el ORIGEN del nombre, no como se escribe.
+ * El primer intento buscaba grupos de letras ajenos (`tz`, `tl` en espanol);
+ * acertaba con Itzel y Citlali por casualidad, y en el resto del catalogo era
+ * ruido: la version para aleman marco 104 palabras corrientes, Schwester y
+ * Waschmaschine entre ellas. Lo que decide es si el nombre pertenece a la
+ * lengua del journey, y de eso ya hay una lista por idioma y region: el banco
+ * de `characterNames.ts`. Fuera del banco, no entra.
  *
- * ES UNA HEURISTICA, no una prueba. La prueba de verdad es sintetizar UNA linea
- * con el nombre y oirla, que cuesta unos pocos caracteres frente a las decenas
- * de miles de un journey narrado. Este gate solo asegura que nadie llegue a la
- * fase de audio sin haberla hecho.
+ * Se aplica al REPARTO (`castOf`: quien habla en dos historias o mas), no a
+ * toda mayuscula del texto. Un toponimo como Tlaquepaque o una fiesta como la
+ * Guelaguetza salen una vez en boca del narrador y no son el problema que esto
+ * resuelve.
  *
  * Ver `feedback_tts_only_says_common_names` y `project_character_name_rules`.
  */
-
-/** Grupos de letras que dejan a la voz sin pronunciacion aprendida. */
-const GRUPOS_DIFICILES: Record<string, { re: RegExp; porque: string }[]> = {
-  spanish: [
-    { re: /tz/i, porque: "el grupo \"tz\" no es del espanol; viene del nahuatl y del maya" },
-    { re: /tl/i, porque: "el grupo \"tl\" no es del espanol; viene del nahuatl" },
-  ],
-  portuguese: [
-    { re: /tz/i, porque: "el grupo \"tz\" no es del portugues" },
-    { re: /tl/i, porque: "el grupo \"tl\" no es del portugues" },
-  ],
-  italian: [
-    { re: /(kh|tsch)/i, porque: "grupo ajeno a la ortografia italiana" },
-  ],
-  french: [
-    { re: /(tz|kh)/i, porque: "grupo ajeno a la ortografia francesa" },
-  ],
-  german: [
-    { re: /(sch(?=[^aeiouAEIOU])|kh)/i, porque: "grupo ajeno a la ortografia alemana" },
-  ],
-};
-
-export type NombreDificil = { nombre: string; porque: string };
+import type { NameBank } from "@/lib/characterNames";
 
 /**
- * Los nombres del reparto que la voz probablemente no sabe decir.
- * `aprobados` son los que el usuario ya oyo y dio por buenos.
- */
-export function nombresDificiles(
-  nombres: Iterable<string>,
-  language: string | null | undefined,
-  aprobados: Iterable<string> = [],
-): NombreDificil[] {
-  const reglas = GRUPOS_DIFICILES[String(language ?? "").trim().toLowerCase()];
-  if (!reglas) return [];
-  const ok = new Set([...aprobados].map((n) => n.toLowerCase()));
-  const vistos = new Set<string>();
-  const fuera: NombreDificil[] = [];
-  for (const n of nombres) {
-    const clave = n.toLowerCase();
-    if (ok.has(clave) || vistos.has(clave)) continue;
-    const regla = reglas.find((r) => r.re.test(n));
-    if (!regla) continue;
-    vistos.add(clave);
-    fuera.push({ nombre: n, porque: regla.porque });
-  }
-  return fuera;
-}
-
-/**
- * Nombres que el usuario ya aprobo de oido para este idioma, con la fecha.
- * Solo crece cuando el usuario lo dice: es la contrapartida del gate, igual que
- * la lista de voces aprobadas.
+ * Nombres que el usuario ya aprobo DE OIDO para un idioma, oyendo una linea con
+ * ese nombre en la voz del journey. Solo crece cuando el usuario lo dice, igual
+ * que la lista de voces aprobadas.
  */
 export const NOMBRES_APROBADOS_DE_OIDO: Record<string, string[]> = {
   spanish: [],
 };
+
+/** Los del reparto que no son de la lengua del journey ni estan aprobados. */
+export function fueraDelIdioma(
+  cast: Iterable<string>,
+  bank: NameBank,
+  language: string | null | undefined,
+): string[] {
+  const aprobados = NOMBRES_APROBADOS_DE_OIDO[String(language ?? "").trim().toLowerCase()] ?? [];
+  const permitidos = new Set(
+    [...bank.young, ...bank.older, ...aprobados].map((n) => n.trim().toLowerCase()),
+  );
+  const fuera: string[] = [];
+  const vistos = new Set<string>();
+  for (const n of cast) {
+    const clave = n.trim().toLowerCase();
+    if (!clave || permitidos.has(clave) || vistos.has(clave)) continue;
+    vistos.add(clave);
+    fuera.push(n);
+  }
+  return fuera;
+}

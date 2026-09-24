@@ -66,6 +66,9 @@ export type JourneyStoryInput = {
   topic?: string | null;
 };
 
+import { getNameBank } from "@/lib/characterNames";
+import { fueraDelIdioma } from "@/lib/nameSpeakability";
+
 export type JourneyCheck = {
   id: string;
   label: string;
@@ -448,6 +451,9 @@ export function validateJourneyStories(
   stories: JourneyStoryInput[],
   ctx: {
     language: string;
+    /** Variante del journey (mexico, spain, latam...). Da la clave del banco
+     *  de nombres; sin ella el check del reparto no puede medir. */
+    variant?: string | null;
     level: string;
     /** Nombres de personas REALES (solicitantes de la beta). Los pasa
      *  saveStory.ts desde la base; sin ellos el check no puede medir. */
@@ -558,6 +564,47 @@ export function validateJourneyStories(
   }
 
   const cast = castOf(stories, lang);
+
+  // ── Reparto: nombres DEL IDIOMA del journey ────────────────
+  //
+  // La voz de TTS solo tiene aprendidos los nombres de su idioma. Uno de otra
+  // lengua, por muy usado que este en el pais, sale distinto cada vez que
+  // aparece, y un recurrente aparece decenas de veces por journey.
+  //
+  // Medido el 2026-09-23 en el Friends ES Mexico A0 con "Itzel", que es maya:
+  // 72 apariciones en 18 historias, de 0,12 s a 0,96 s para la misma palabra,
+  // tres reconocedores escribiendo Ixchel, Excel y Chelsea, y 12 de 21
+  // candidatas confirmadas malas por el oido del usuario. Paso todos los gates
+  // que habia, porque es mexicano, corriente y de la edad correcta. El usuario:
+  // "Las voces solo saben pronunciar nombres comunes para sus idiomas".
+  //
+  // Se mide contra el BANCO del idioma y la region, que es precisamente la
+  // lista de nombres de esa lengua, y solo sobre `cast`: los nombres que HABLAN
+  // en dos historias o mas. Asi los toponimos (Guadalajara, Tlaquepaque) y las
+  // fiestas no entran, que no los dice un personaje sino la prosa una vez.
+  {
+    const bank = getNameBank(ctx.language, ctx.variant);
+    if (!bank) {
+      noImpl(
+        "journey-cast-names-in-language",
+        "El reparto sale del banco de nombres del idioma",
+        `No hay banco de nombres para ${ctx.language || "?"}/${ctx.variant || "?"}. ` +
+        `Sin banco no se puede medir si un nombre es de esa lengua: anade la region en src/lib/characterNames.ts.`,
+      );
+    } else {
+      const fuera = fueraDelIdioma(cast, bank, ctx.language);
+      push(
+        "journey-cast-names-in-language",
+        "El reparto sale del banco de nombres del idioma",
+        fuera.length === 0,
+        `${fuera.join(", ")}: no esta(n) en el banco de ${ctx.language}/${ctx.variant}. ` +
+        `La voz solo sabe decir los nombres de su idioma y este lo dira distinto cada vez. ` +
+        `Elige del banco (src/lib/characterNames.ts). Para conservarlo, el usuario oye una ` +
+        `linea con ese nombre en la voz del journey y lo aprueba; solo entonces entra en ` +
+        `NOMBRES_APROBADOS_DE_OIDO (src/lib/nameSpeakability.ts).`,
+      );
+    }
+  }
 
   // ── 2 y 3. Presentacion de personajes y variedad de forma ───
   const FORMAS = FORMAS_POR_IDIOMA[lang];

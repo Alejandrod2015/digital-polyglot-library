@@ -425,6 +425,13 @@
       "source": "memory:project_seed_all_sets_wipes_catalog.md"
     },
     {
+      "id": "project_setjourneystatus_bypasses_publish_gate",
+      "domain": "audio",
+      "rule": "\"setJourneyStatus.ts pone un journey en active sin mirar el gate de publicacion, asi que dos journeys llegaron a produccion sin audio de practica; y el runtime tapa el agujero sintetizando al tocar...",
+      "gate": "none",
+      "source": "memory:project_setjourneystatus_bypasses_publish_gate.md"
+    },
+    {
       "id": "project_spain_voice_bank",
       "domain": "audio",
       "rule": "\"Banco PROVISIONAL de voces español de España (Traveler ES Spain) + feedback \\\"sobreactuadas\\\"\"",
@@ -975,6 +982,13 @@
       "domain": "journey",
       "rule": "Nunca mas de 2 personajes fijos",
       "gate": "src/lib/validateJourneyStories.ts#journey-cast-fixed-max-two",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-names-in-language",
+      "domain": "journey",
+      "rule": "El reparto sale del banco de nombres del idioma",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-names-in-language",
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
@@ -1741,6 +1755,13 @@
       "source": "memory:project_positioning.md"
     },
     {
+      "id": "project_reply_to_a_tester_from_a_chat",
+      "domain": "process",
+      "rule": "\"Como responde un chat a UN reporte de feedback (scripts/_replyToFeedback.ts) y por que hace falta un worktree limpio para que el gate de veracidad deje pasar el envio\"",
+      "gate": "none",
+      "source": "memory:project_reply_to_a_tester_from_a_chat.md"
+    },
+    {
       "id": "project_simulator_hardware_keyboard_at_sign",
       "domain": "process",
       "rule": "En el simulador de iOS la arroba sale como comilla; se resuelve pegando desde el portapapeles",
@@ -1913,13 +1934,6 @@
       "domain": "story",
       "rule": "Character names match the characters' generation",
       "gate": "src/lib/validateGeneratedStory.ts#character-names-generation",
-      "source": "validator:src/lib/validateGeneratedStory.ts"
-    },
-    {
-      "id": "character-names-hard-to-say",
-      "domain": "story",
-      "rule": "Character names the narrator voice can pronounce",
-      "gate": "src/lib/validateGeneratedStory.ts#character-names-hard-to-say",
       "source": "validator:src/lib/validateGeneratedStory.ts"
     },
     {
