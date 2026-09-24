@@ -355,6 +355,8 @@ verified:
 - Existencia en R2 de cada clip de palabra que falta, con las cinco versiones
   de la clave determinista (w5..w1) via HEAD: 6 en mexico a0, 0 en latam a0,
   0 en germany a2.
+- Existencia en R2 de las frases de latam a0, con las dos formulas de clave
+  (`fb1` y v4/v3/v2 con rev), en modo informe: 0 de 336, ninguna pagada ya.
 - El desfase de karaoke de mexico a0: 20 de 21 historias,
   `npm run lint:karaoke-fresh`, y el diff palabra a palabra de los 78 bloques
   contra la copia guardada al alinear, cruzado con el commit `3b6bf4c2f`.
@@ -372,9 +374,6 @@ verified:
 - Que el bundle de glosas `german-friends-a2` no esta en el checkout de main.
 
 not verified:
-- **La sonda R2 de las 51 frases de latam a0 no termino**: a 9 historias de 21
-  llevaba 0 encontradas, y el informe asume 0 en las 21. Si alguna resolviera,
-  el coste de ese journey baja un poco; no sube nunca.
 - No se escucho ni un clip ni un fragmento de narracion. Que los 78 bloques
   digan el nombre viejo esta medido sobre el TEXTO guardado al alinear, no por
   oido.
