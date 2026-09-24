@@ -992,6 +992,13 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
+      "id": "journey-cast-names-unheard",
+      "domain": "journey",
+      "rule": "Nombres del reparto que nadie ha oido en esta voz",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-names-unheard",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
       "id": "journey-cast-one-new-per-topic",
       "domain": "journey",
       "rule": "Un personaje nuevo por tema, en su primera historia",

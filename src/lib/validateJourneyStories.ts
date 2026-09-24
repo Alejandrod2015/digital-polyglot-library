@@ -67,7 +67,7 @@ export type JourneyStoryInput = {
 };
 
 import { getNameBank } from "@/lib/characterNames";
-import { fueraDelIdioma } from "@/lib/nameSpeakability";
+import { fueraDelIdioma, nombresVetados } from "@/lib/nameSpeakability";
 
 export type JourneyCheck = {
   id: string;
@@ -147,7 +147,20 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   ES: "dice|dijo|pregunta|pregunto|preguntó|responde|respondio|respondió|contesta|contesto|contestó|" +
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
-      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
+      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió|" +
+      // Ampliado el 2026-09-24 con los del Friends ES C1 latam, que narra en
+      // preterito y con verbos de habla mas ricos que un A0. Con la lista
+      // anterior ese journey daba reparto VACIO y sus cuatro checks de reparto
+      // aprobaban sin medir nada, incluido el del nombre: el C1 lleva "Itzel"
+      // en tres historias publicadas y salia en verde.
+      "confiesa|confeso|confesó|bromea|bromeo|bromeó|promete|prometio|prometió|" +
+      "admite|admitio|admitió|anade|añade|anadio|añadió|murmura|murmuro|murmuró|" +
+      "susurra|susurro|susurró|advierte|advirtio|advirtió|aclara|aclaro|aclaró|" +
+      "propone|propuso|comenta|comento|comentó|exclama|exclamo|exclamó|" +
+      "asegura|aseguro|aseguró|replica|replico|replicó|reclama|reclamo|reclamó|" +
+      "confirma|confirmo|confirmó|niega|nego|negó|suspira|suspiro|suspiró|" +
+      "reconoce|reconocio|reconoció|interrumpe|interrumpio|interrumpió|" +
+      "saluda|saludo|saludó|responde|contesta|diciendo",
   // Italiano (2026-09-14, Friends IT A0 de Genova; ampliado 2026-09-17 con el
   // IT A2 y el IT A1 de Milano). Sin esta lista castOf caia en la alemana y
   // el reparto salia VACIO, el mismo fallo de PT, FR y ES. Union de los
@@ -178,7 +191,21 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
     }
   }
   const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories, lang).filter((n) => hablan.has(n));
+  const legacy = castLegacy(stories, lang);
+  const conHabla = legacy.filter((n) => hablan.has(n));
+  // EL REPARTO NUNCA SALE VACIO (2026-09-24). El filtro de habla afina, pero
+  // cuando no casa con NADIE se lleva por delante a todo el reparto, y un
+  // reparto vacio no hace fallar ningun check: los hace PASAR, sin medir nada.
+  // Eso es peor que fallar, y ya paso cuatro veces, una por idioma (PT, FR, ES
+  // e IT), siempre igual: la lista de verbos no cubria como narra ese journey.
+  // La quinta la vio el usuario, no el gate: el Friends ES C1 latam daba cero
+  // hablantes con los verbos del A0, asi que su reparto era [] y el check de
+  // nombres lo aprobaba con "Itzel" en tres historias publicadas.
+  //
+  // Ampliar la lista de verbos arregla el caso de hoy; esto arregla la clase.
+  // Cuando el filtro deja el reparto en cero, se usa el de frecuencia, que es
+  // lo que habia antes de que el filtro existiera: mide peor, pero mide.
+  return conHabla.length ? conHabla : legacy;
 }
 function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
@@ -592,17 +619,42 @@ export function validateJourneyStories(
         `Sin banco no se puede medir si un nombre es de esa lengua: anade la region en src/lib/characterNames.ts.`,
       );
     } else {
-      const fuera = fueraDelIdioma(cast, bank, ctx.language);
+      // BLOQUEA solo lo que el usuario veto de oido. Exigir pertenencia al
+      // banco tumbaba 20 journeys del catalogo por nombres impecables de su
+      // idioma (Marta, Sophie, Elisa), porque el banco tiene 10-24 nombres y
+      // es una referencia, no una lista cerrada. Medido el 2026-09-24.
+      // Sobre el TEXTO entero, no sobre `cast`. La lista de vetados es
+      // explicita y minuscula, asi que buscarla en todo el texto no puede dar
+      // falsos positivos, y cierra el hueco de `castOf`: en el Friends ES C1
+      // latam "Itzel" sale 13 veces en tres historias publicadas y NO habla en
+      // ninguna, asi que el filtro de reparto no la veia y el journey pasaba.
+      // Al narrador le da igual quien hable: tiene que decir el nombre igual.
+      const todoElTexto = new Set<string>();
+      for (const s of stories)
+        for (const m of s.text.matchAll(/\p{Lu}\p{Ll}{2,}/gu)) todoElTexto.add(m[0]);
+      const vetados = nombresVetados(todoElTexto, ctx.language);
       push(
         "journey-cast-names-in-language",
-        "El reparto sale del banco de nombres del idioma",
-        fuera.length === 0,
-        `${fuera.join(", ")}: no esta(n) en el banco de ${ctx.language}/${ctx.variant}. ` +
-        `La voz solo sabe decir los nombres de su idioma y este lo dira distinto cada vez. ` +
-        `Elige del banco (src/lib/characterNames.ts). Para conservarlo, el usuario oye una ` +
-        `linea con ese nombre en la voz del journey y lo aprueba; solo entonces entra en ` +
-        `NOMBRES_APROBADOS_DE_OIDO (src/lib/nameSpeakability.ts).`,
+        "Ningun nombre del reparto esta vetado de oido",
+        vetados.length === 0,
+        vetados.map((v) => `${v.nombre}: ${v.porque}`).join(" ") +
+        ` La voz no sabe decirlo y lo dira distinto cada vez. Elige otro del banco ` +
+        `(src/lib/characterNames.ts).`,
       );
+      // AVISA de los que no estan en el banco: no es un error, es que nadie ha
+      // comprobado que suenen. El aviso es lo que lleva a oirlos antes de narrar.
+      const fuera = fueraDelIdioma(cast, bank, ctx.language)
+        .filter((n) => !vetados.some((v) => v.nombre === n));
+      if (fuera.length) {
+        out.push({
+          id: "journey-cast-names-unheard",
+          label: "Nombres del reparto que nadie ha oido en esta voz",
+          status: "pass",
+          detail: `${fuera.join(", ")}: fuera del banco de ${ctx.language}/${ctx.variant}. ` +
+            `Antes de narrar, una linea de muestra con cada uno en la voz del journey: ` +
+            `un nombre que la voz no tenga aprendido sale distinto cada vez y se paga en las 21.`,
+        });
+      }
     }
   }
 

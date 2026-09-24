@@ -43,6 +43,48 @@ export const NOMBRES_APROBADOS_DE_OIDO: Record<string, string[]> = {
   spanish: [],
 };
 
+/**
+ * Nombres VETADOS: el usuario los oyo y la voz no los dice bien. Esta lista es
+ * la que BLOQUEA, y solo crece con un veredicto suyo.
+ *
+ * Por que hace falta aparte del banco: el banco tiene entre 10 y 24 nombres por
+ * region y su propia cabecera dice que es una REFERENCIA, no una lista cerrada.
+ * Medido el 2026-09-24 sobre el catalogo, exigir pertenencia al banco habria
+ * tumbado 20 journeys por nombres impecables de su idioma: Marta, Rosa, Sophie,
+ * Elisa, Natalia, Eduardo. Un gate que marca lo normal no protege de nada.
+ *
+ * Lo que separa a Itzel de Marta no es ser poco comun: es venir de OTRA LENGUA
+ * (maya, nahuatl) que la voz no tiene aprendida. Eso no se deduce de una cadena
+ * ni de una lista de 24 nombres; hoy lo decide el oido del usuario, y aqui
+ * queda escrito para que no vuelva a colarse.
+ */
+export const NOMBRES_VETADOS_DE_OIDO: Record<string, Record<string, string>> = {
+  spanish: {
+    itzel:
+      "maya. 72 apariciones en 18 historias del Friends ES Mexico A0, de 0,12 s a 0,96 s " +
+      "para la misma palabra; 12 de 21 apariciones juzgadas malas por el usuario el 2026-09-23.",
+    citlali:
+      "nahuatl. 11 apariciones en 3 historias del mismo journey; misma tanda de veredictos.",
+  },
+};
+
+/** Los del reparto que el usuario veto de oido para este idioma. */
+export function nombresVetados(
+  cast: Iterable<string>,
+  language: string | null | undefined,
+): { nombre: string; porque: string }[] {
+  const vetados = NOMBRES_VETADOS_DE_OIDO[String(language ?? "").trim().toLowerCase()] ?? {};
+  const fuera: { nombre: string; porque: string }[] = [];
+  const vistos = new Set<string>();
+  for (const n of cast) {
+    const clave = n.trim().toLowerCase();
+    if (vistos.has(clave) || !vetados[clave]) continue;
+    vistos.add(clave);
+    fuera.push({ nombre: n, porque: vetados[clave] });
+  }
+  return fuera;
+}
+
 /** Los del reparto que no son de la lengua del journey ni estan aprobados. */
 export function fueraDelIdioma(
   cast: Iterable<string>,
