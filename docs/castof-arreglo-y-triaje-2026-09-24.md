@@ -107,15 +107,23 @@ Daniela, Manuela) por un perro. **No se aplica.** Queda revertido y medido.
 De paso: `llama` en la lista de habla del espanol casa con "se llama X", que
 es nombrar, no hablar. No se ha tocado.
 
-## 4. Otro error mio, y este cambia las cifras del triaje
+## 4. AVISO para quien mida despues: el orden de los temas
 
-La primera pasada de gates ordeno las historias por **tema alfabetico**, no
-por el orden de lectura, que es el array `Journey.topics`. Los dos gates que
-dependen del orden (`first-story-only-fixed` y `one-new-per-topic`) estaban
-mirando la historia equivocada en los 41 journeys cuyos temas no van en orden
-alfabetico. Corregido; las sondas ahora reordenan por `topics`.
+**En este catalogo el orden de lectura de los temas es `Journey.topics`, nunca
+el alfabetico del campo `topic`.** En 41 de los 48 journeys no coinciden.
 
-Con el orden REAL, corriendo el validador sobre los 48:
+Mis primeras sondas ordenaron por tema alfabetico. Las dos reglas que dependen
+del orden, `journey-cast-first-story-only-fixed` (que mira la PRIMERA historia
+del journey) y `journey-cast-one-new-per-topic` (que mira la primera de cada
+tema), estuvieron mirando la historia equivocada en esos 41.
+
+Equivocarse ahi **no rompe nada visible**: el validador corre, las tablas
+salen, los numeros parecen razonables. Solo son falsos. Dos ejemplos de lo que
+se ve mal: el Expat FR france A1 lee `home-family` primero y el alfabetico
+empieza por `city-getting-around`; el Friends ES colombia C1 lee `bogota` y el
+alfabetico `barranquilla`.
+
+El signo del resultado cambia entero. Con el orden bien:
 
 | | Antes del arreglo | Despues |
 | --- | --- | --- |
@@ -124,92 +132,104 @@ Con el orden REAL, corriendo el validador sobre los 48:
 | Gates que pasan de verde a rojo (deuda destapada) | | **15** |
 | Gates que pasan de rojo a verde (falsos rojos que quita) | | **10** |
 
-Asi que me corrijo dos veces seguidas. No son "25 falsos verdes" (proxy), ni
-"5 gates en 3 journeys y 0 resueltos" (orden mal): son **15 deudas destapadas
-y 10 falsos rojos quitados**, repartidos en 15 journeys. Los 10 que se quitan
-son 7 de `closing-alone` y 3 de `protagonist-in-all`, justo donde medi los
-falsos rojos: el detector SI estaba marcando historias correctas.
+Me corregi tres veces sobre esta misma cifra: primero "25 falsos verdes", que
+era artefacto del proxy con el que saque el reparto real; luego "5 destapadas
+y 0 resueltas", que era este error del orden. Lo cierto es **15 destapadas y
+10 falsos rojos quitados**. Los 10 son 7 de `closing-alone` y 3 de
+`protagonist-in-all`: el detector SI estaba marcando historias correctas.
 
-## 5. Cerrado: un swap de orden
+## 5. Cerrados: dos swaps de orden
 
-`journey-cast-one-new-per-topic` en el **Friends ES colombia C1 (live)**: Salo
-se estrenaba en la segunda historia de `medellin`. Cambiado el `slotIndex` de
-las dos primeras del tema (`scripts/_castSwapOrden.ts`), solo el orden, sin
-tocar texto, audio ni portadas:
+Solo `slotIndex`. Ni texto, ni vocab, ni audio, ni portadas: cada historia se
+lleva lo suyo. `scripts/_castSwapOrden.ts`.
+
+**Friends ES colombia C1 (live)**, `journey-cast-one-new-per-topic`: Salo se
+estrenaba en la segunda historia de `medellin`.
 
 ```
 antes:   1:arepas-donde-dona-fanny  2:la-comuna-13-no-es-museo  3:santa-elena-huele-a-sancocho
 despues: 1:la-comuna-13-no-es-museo 2:arepas-donde-dona-fanny   3:santa-elena-huele-a-sancocho
 ```
 
-Comprobado con el validador: ese gate pasa a verde y no aparece ninguno nuevo.
-El journey sigue en rojo en `first-story-only-fixed`, que es del tema
-`bogota` y pide prosa.
+**Expat DE germany C1 (draft, 0 de 21 con audio y 0 con portada)**,
+`journey-cast-first-story-only-fixed`: la primera del journey llevaba tres
+personajes (Nora, Ole, Wiebke) y la segunda del tema lleva dos.
 
-El otro que iba a cerrarse, el **Expat FR france A1**, con el orden bien **ya
-no falla**: era el mismo error del orden alfabetico. Y aparece uno nuevo,
-**Expat DE germany C1 (draft)**, cuyo `first-story-only-fixed` si se arregla
-reordenando; no se ha tocado, porque no estaba en lo autorizado.
+```
+antes:   1:moin-heisst-den-ganzen-tag      2:es-gibt-kein-schlechtes-wetter 3:hummel-hummel-mors-mors
+despues: 1:es-gibt-kein-schlechtes-wetter  2:moin-heisst-den-ganzen-tag     3:hummel-hummel-mors-mors
+```
 
-## 6. Triaje: 19 journeys, 28 gates
+En los dos, la TERCERA historia del tema se queda donde estaba, que es la que
+va narrada en pasado. Comprobado con el validador: los dos gates pasan a verde
+y no aparece ninguno nuevo. Los dos journeys siguen en rojo en otra regla, las
+dos de prosa.
 
-**10 son LIVE y 9 draft.** Por regla: `fixed-max-two` 11, `one-new-per-topic`
-5, `first-story-only-fixed` 4, `closing-alone` 4, `protagonist-in-all` 3.
+El tercero que iba a cerrarse, el Expat FR france A1, con el orden bien **ya
+no fallaba**: era este mismo error.
 
-Por coste: **26 de los 27 que quedan piden reescribir prosa**; 1 se arregla
-reordenando (Expat DE C1 draft, sin audio).
+## 6. Triaje de lo que queda
 
-| Journey | Estado | Reparto | Regla en rojo | Cifra | Arreglo | Arrastra |
-| --- | --- | --- | --- | --- | --- | --- |
-| Friends german/germany a1 | **live** | 5 | `cast-fixed-max-two` | 4 salen en media o mas: Julia (21/21), Moritz (17/21), Svenja (6/21), Theresa (5/21). Tres voces sostenidas se | prosa | audio 21/21, portadas 21/21 |
-| Friends german/germany c1 | **live** | 9 | `cast-fixed-max-two` | 4 salen en media o mas: Nadia (21/21), Timo (15/21), Micha (5/21), Steffi (3/21). Tres voces sostenidas se con | prosa | audio 21/21, portadas 21/21 |
-|  |  |  | `cast-one-new-per-topic` | temas con mas de uno: hamburg (Hauke, Frauke) / muenchen (Korbinian, Sepp) · presentados tarde: Frauke (aparec | prosa |  |
-|  |  |  | `cast-first-story-only-fixed` | 4 en la primera (Nadia, Timo, Micha, Jule). La abre el reparto estable y nadie mas: dos personas como mucho. | prosa |  |
-| Expat german/germany c1 | **live** | 6 | `closing-alone` | 12/21 (protagonista Nadia): bewerbungsgespraech-mit-katze, im-keller-wohnt-die-hausordnung, umzug-ohne-aufzug, | prosa | audio 21/21, portadas 21/21 |
-|  |  |  | `cast-fixed-max-two` | 5 salen en media o mas: Nadia (21/21), Timo (18/21), Katja (8/21), Brandt (4/21), Ronja (4/21). Tres voces sos | prosa |  |
-| Traveler italian/italy a1 | **live** | 3 | `closing-alone` | 14/21 (protagonista Teo): la-macchinetta-gialla, il-regionale-ferma-dappertutto, i-biglietti-li-vende-il-tabac | prosa | audio 21/21, portadas 21/21 |
-|  |  |  | `cast-protagonist-in-all` | Sin hilo en 4 tema(s): trains-tickets (la-macchinetta-gialla, il-regionale-ferma-dappertutto, i-biglietti-li-v | prosa |  |
-| Traveler portuguese/brazil a1 | **live** | 1 | `closing-alone` | 21/21 (protagonista Nara): duas-moedas-para-copacabana, a-ladeira-guarda-mil-azulejos, a-ultima-barca-para-nit | prosa | audio 21/21, portadas 21/21 |
-|  |  |  | `cast-protagonist-in-all` | Sin hilo en 6 tema(s): getting-around-town (duas-moedas-para-copacabana, a-ladeira-guarda-mil-azulejos, a-ulti | prosa |  |
-| Traveler spanish/mexico a1 | **live** | 0 | `closing-alone` | 21/21 (protagonista ?): xochimilco-en-trajinera, la-casa-azul-de-coyoacan, el-mercado-del-zocalo, sofia-prueba | prosa | audio 21/21, portadas 21/21 |
-| Traveler spanish/spain a1 | **live** | 5 | `cast-fixed-max-two` | 4 salen en media o mas: Irene (21/21), Rocío (15/21), Quique (9/21), Rosa (4/21). Tres voces sostenidas se con | prosa | audio 21/21, portadas 21/21 |
-| Traveler spanish/spain a2 | **live** | 6 | `cast-fixed-max-two` | 6 salen en media o mas: Irene (21/21), Rocío (12/21), Rosa (5/21), Quique (6/21), Álvaro (4/21), Marta (3/21). | prosa | audio 21/21, portadas 21/21 |
-| Friends spanish/latam c1 | **live** | 16 | `cast-protagonist-in-all` | Sin hilo en 1 tema(s): el-cotorreo (le-toca-a-mateo, ahorita-salgo, diez-intentos) | prosa | audio 21/21, portadas 21/21 |
-|  |  |  | `cast-one-new-per-topic` | temas con mas de uno: el-chisme (Marina, Valeria, Julián) / la-vacilada (Andrés, Yuly, Daniela) / el-desahogo  | prosa |  |
-| Friends spanish/colombia c1 | **live** | 7 | `cast-first-story-only-fixed` | 3 en la primera (Manu, Manuela, Camilo). La abre el reparto estable y nadie mas: dos personas como mucho. | prosa | audio 21/21, portadas 21/21 |
-| Expat french/france a1 | draft | 5 | `cast-fixed-max-two` | 5 salen en media o mas: Manon (21/21), Sylvie (7/21), Juliette (5/21), Camille (4/21), Pauline (4/21). Tres vo | prosa | audio 7/21 |
-| Traveler german/germany a0 | draft | 5 | `cast-fixed-max-two` | 5 salen en media o mas: Hannah (21/21), Elias (12/21), Sophie (4/21), Leon (4/21), Katrin (4/21). Tres voces s | prosa | audio 1/21 |
-| Traveler german/germany a1 | draft | 15 | `cast-one-new-per-topic` | temas con mas de uno: meeting-new-people (Max, Sofie, Clara) · presentados tarde: Stefan (aparece en la 2a de  | prosa | - |
-| Friends german/germany b1 | draft | 8 | `cast-fixed-max-two` | 4 salen en media o mas: Bastian (21/21), Lena (21/21), Miriam (4/21), Verena (4/21). Tres voces sostenidas se  | prosa | - |
-| Expat german/germany c1 | draft | 7 | `cast-fixed-max-two` | 6 salen en media o mas: Nora (21/21), Ole (13/21), Wiebke (6/21), Merle (6/21), Boysen (2/21), Fiete (3/21). T | prosa | - |
-|  |  |  | `cast-first-story-only-fixed` | 3 en la primera (Nora, Ole, Wiebke). La abre el reparto estable y nadie mas: dos personas como mucho. | orden (metadatos) |  |
-| Cultural spanish/latam a0 | draft | 12 | `cast-one-new-per-topic` | temas con mas de uno: carnival-and-parades (Daniela, Camila, Mateo) | prosa | audio 12/21, portadas 21/21 |
-|  |  |  | `cast-first-story-only-fixed` | 3 en la primera (Daniela, Camila, Mateo). La abre el reparto estable y nadie mas: dos personas como mucho. | prosa |  |
-| Friends spanish/colombia a0 | draft | 5 | `cast-fixed-max-two` | 3 salen en media o mas: Andrés (21/21), Mariana (21/21), Lina (4/21). Tres voces sostenidas se confunden de oi | prosa | portadas 2/21 |
-| Friends spanish/mexico c1 | draft | 6 | `cast-fixed-max-two` | 5 salen en media o mas: Regina (21/21), Beto (4/21), Chucho (3/21), Marisol (2/21), Nayeli (4/21). Tres voces  | prosa | - |
-| Friends spanish/argentina c1 | draft | 6 | `cast-one-new-per-topic` | temas con mas de uno: mar-del-plata (Seba, Sole) · presentados tarde: Ciro (aparece en la 2a de bariloche) | prosa | audio 2/21, portadas 21/21 |
+**19 journeys, 26 gates. 10 live (16 gates) y 9 draft (10 gates).**
+**Los 26 piden reescribir prosa**; ya no queda ninguno de orden.
+
+Por regla: `fixed-max-two` 11, `one-new-per-topic` 5, `closing-alone` 4,
+`first-story-only-fixed` 3, `protagonist-in-all` 3.
+
+| Journey | Estado | Reparto | Regla en rojo | Cifra | Arrastra |
+| --- | --- | --- | --- | --- | --- |
+| Friends german/germany a1 | **live** | 5 | `cast-fixed-max-two` | 4 salen en media o mas: Julia (21/21), Moritz (17/21), Svenja (6/21), Theresa (5/21). Tres voces sostenidas se | audio 21/21, portadas 21/21 |
+| Friends german/germany c1 | **live** | 9 | `cast-fixed-max-two` | 4 salen en media o mas: Nadia (21/21), Timo (15/21), Micha (5/21), Steffi (3/21). Tres voces sostenidas se con | audio 21/21, portadas 21/21 |
+|  |  |  | `cast-one-new-per-topic` | temas con mas de uno: hamburg (Hauke, Frauke) / muenchen (Korbinian, Sepp) · presentados tarde: Frauke (aparec |  |
+|  |  |  | `cast-first-story-only-fixed` | 4 en la primera (Nadia, Timo, Micha, Jule). La abre el reparto estable y nadie mas: dos personas como mucho. |  |
+| Expat german/germany c1 | **live** | 6 | `closing-alone` | 12/21 (protagonista Nadia): bewerbungsgespraech-mit-katze, im-keller-wohnt-die-hausordnung, umzug-ohne-aufzug, | audio 21/21, portadas 21/21 |
+|  |  |  | `cast-fixed-max-two` | 5 salen en media o mas: Nadia (21/21), Timo (18/21), Katja (8/21), Brandt (4/21), Ronja (4/21). Tres voces sos |  |
+| Traveler italian/italy a1 | **live** | 3 | `closing-alone` | 14/21 (protagonista Teo): la-macchinetta-gialla, il-regionale-ferma-dappertutto, i-biglietti-li-vende-il-tabac | audio 21/21, portadas 21/21 |
+|  |  |  | `cast-protagonist-in-all` | Sin hilo en 4 tema(s): trains-tickets (la-macchinetta-gialla, il-regionale-ferma-dappertutto, i-biglietti-li-v |  |
+| Traveler portuguese/brazil a1 | **live** | 1 | `closing-alone` | 21/21 (protagonista Nara): duas-moedas-para-copacabana, a-ladeira-guarda-mil-azulejos, a-ultima-barca-para-nit | audio 21/21, portadas 21/21 |
+|  |  |  | `cast-protagonist-in-all` | Sin hilo en 6 tema(s): getting-around-town (duas-moedas-para-copacabana, a-ladeira-guarda-mil-azulejos, a-ulti |  |
+| Traveler spanish/mexico a1 | **live** | 0 | `closing-alone` | 21/21 (protagonista ?): xochimilco-en-trajinera, la-casa-azul-de-coyoacan, el-mercado-del-zocalo, sofia-prueba | audio 21/21, portadas 21/21 |
+| Traveler spanish/spain a1 | **live** | 5 | `cast-fixed-max-two` | 4 salen en media o mas: Irene (21/21), Rocío (15/21), Quique (9/21), Rosa (4/21). Tres voces sostenidas se con | audio 21/21, portadas 21/21 |
+| Traveler spanish/spain a2 | **live** | 6 | `cast-fixed-max-two` | 6 salen en media o mas: Irene (21/21), Rocío (12/21), Rosa (5/21), Quique (6/21), Álvaro (4/21), Marta (3/21). | audio 21/21, portadas 21/21 |
+| Friends spanish/latam c1 | **live** | 16 | `cast-protagonist-in-all` | Sin hilo en 1 tema(s): el-cotorreo (le-toca-a-mateo, ahorita-salgo, diez-intentos) | audio 21/21, portadas 21/21 |
+|  |  |  | `cast-one-new-per-topic` | temas con mas de uno: el-chisme (Marina, Valeria, Julián) / la-vacilada (Andrés, Yuly, Daniela) / el-desahogo  |  |
+| Friends spanish/colombia c1 | **live** | 7 | `cast-first-story-only-fixed` | 3 en la primera (Manu, Manuela, Camilo). La abre el reparto estable y nadie mas: dos personas como mucho. | audio 21/21, portadas 21/21 |
+| Expat french/france a1 | draft | 5 | `cast-fixed-max-two` | 5 salen en media o mas: Manon (21/21), Sylvie (7/21), Juliette (5/21), Camille (4/21), Pauline (4/21). Tres vo | audio 7/21 |
+| Traveler german/germany a0 | draft | 5 | `cast-fixed-max-two` | 5 salen en media o mas: Hannah (21/21), Elias (12/21), Sophie (4/21), Leon (4/21), Katrin (4/21). Tres voces s | audio 1/21 |
+| Traveler german/germany a1 | draft | 15 | `cast-one-new-per-topic` | temas con mas de uno: meeting-new-people (Max, Sofie, Clara) · presentados tarde: Stefan (aparece en la 2a de  | - |
+| Friends german/germany b1 | draft | 8 | `cast-fixed-max-two` | 4 salen en media o mas: Bastian (21/21), Lena (21/21), Miriam (4/21), Verena (4/21). Tres voces sostenidas se  | - |
+| Expat german/germany c1 | draft | 7 | `cast-fixed-max-two` | 6 salen en media o mas: Nora (21/21), Ole (13/21), Wiebke (6/21), Merle (6/21), Boysen (2/21), Fiete (3/21). T | - |
+| Cultural spanish/latam a0 | draft | 12 | `cast-one-new-per-topic` | temas con mas de uno: carnival-and-parades (Daniela, Camila, Mateo) | audio 12/21, portadas 21/21 |
+|  |  |  | `cast-first-story-only-fixed` | 3 en la primera (Daniela, Camila, Mateo). La abre el reparto estable y nadie mas: dos personas como mucho. |  |
+| Friends spanish/colombia a0 | draft | 5 | `cast-fixed-max-two` | 3 salen en media o mas: Andrés (21/21), Mariana (21/21), Lina (4/21). Tres voces sostenidas se confunden de oi | portadas 2/21 |
+| Friends spanish/mexico c1 | draft | 6 | `cast-fixed-max-two` | 5 salen en media o mas: Regina (21/21), Beto (4/21), Chucho (3/21), Marisol (2/21), Nayeli (4/21). Tres voces  | - |
+| Friends spanish/argentina c1 | draft | 6 | `cast-one-new-per-topic` | temas con mas de uno: mar-del-plata (Seba, Sole) · presentados tarde: Ciro (aparece en la 2a de bariloche) | audio 2/21, portadas 21/21 |
+
+"Arrastra" cuenta cuantas de las 21 tienen `audioUrl` y `coverUrl` hoy: si el
+arreglo es de prosa, eso es lo que hay que rehacer detras.
 
 ## 7. Estado
 
 verified:
-- `castOf` arreglado: 139 perdidos pasan a 45, con 2 falsos positivos, los dos
-  perros. 12 tests, uno por camino. `--dir src/lib/__tests__` (309) y
-  `--dir scripts/__tests__` (100) verdes.
+- `castOf` arreglado: 139 personajes perdidos pasan a 45, con 2 falsos
+  positivos, los dos perros. 12 tests, uno por camino de atribucion.
+  `--dir src/lib/__tests__` (309) y `--dir scripts/__tests__` (100), verdes.
 - El filtro de "solo quien habla" probado y medido: quita 1 falso positivo y
   19 personas. Descartado y revertido.
-- `JourneyStory.cast` vacia en los 51 journeys; `dialogueSpec` ausente en los
-  dos journeys de los perros. Consultado en la base.
-- Gates corridos con el validador de verdad y en el ORDEN DE LECTURA real,
-  antes y despues: 23 gates en rojo pasan a 28, con 15 nuevos y 10 resueltos.
-- El swap de `medellin` cierra `one-new-per-topic` en el Friends ES colombia
-  C1 sin abrir ningun otro gate.
+- `JourneyStory.cast` vacia en los 51 journeys del catalogo; `dialogueSpec`
+  ausente en los dos journeys de los perros.
+- Gates corridos con el validador de verdad y en el orden de lectura real,
+  antes y despues del arreglo: 23 gates en rojo pasan a 28, con 15 nuevos y
+  10 resueltos.
+- Los dos swaps cierran su gate y no abren ninguno; triaje final 19 journeys
+  y 26 gates, medido despues de los dos.
 
 not verified:
 - El reparto "real" sigue siendo el proxy (persona nombrada en 3 historias o
   mas, lista curada a mano en `scripts/_castNames.json`).
-- Nadie ha LEIDO las historias de `medellin` para confirmar que abrir el tema
-  con la Comuna 13 se lee mejor que con las arepas. El gate esta verde; el
-  arco no lo ha juzgado una persona.
-- La columna "arreglo: orden o prosa" es heuristica.
-- No se ha tocado ningun texto de ninguna historia.
+- Nadie ha LEIDO los dos temas reordenados para juzgar si se leen mejor asi.
+  Los gates estan verdes; el arco no lo ha visto una persona.
+- No se ha tocado el texto de ninguna historia.
 - El umbral de 2 historias sigue igual; explica 28 de los 45 que faltan.
+- `llama` esta en la lista de verbos de habla del espanol y casa con "se llama
+  X", que es nombrar y no hablar. Medido, no tocado.

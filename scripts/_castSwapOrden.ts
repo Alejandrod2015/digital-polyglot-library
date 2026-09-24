@@ -7,8 +7,12 @@
  */
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
-const JOURNEY = "cmrpm0tra000032vgxcs33wrb";
-const TEMA = "medellin";
+// Segundo swap, 2026-09-24: Expat DE germany C1 (draft, sin audio ni
+// portadas). Su primera historia llevaba tres personajes; la segunda del
+// mismo tema lleva dos, y la tercera se queda donde esta, que es la que va
+// narrada en pasado.
+const JOURNEY = "cmrdbz11t000032asrvo832i9";
+const TEMA = "ankommen-im-norden";
 const [A, B] = [1, 2];
 
 async function main() {

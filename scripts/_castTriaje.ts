@@ -1,6 +1,6 @@
 import { PrismaClient } from "../src/generated/prisma";
 import { castOf } from "../src/lib/validateJourneyStories";
-import GATES from "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/630369fb-d47e-4a5f-9c4c-452dc32c38cf/scratchpad/gates4.json";
+import GATES from "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/630369fb-d47e-4a5f-9c4c-452dc32c38cf/scratchpad/gates5.json";
 const p = new PrismaClient();
 const LANG: Record<string, string> = { german: "DE", spanish: "ES", portuguese: "PT", french: "FR", italian: "IT" };
 
