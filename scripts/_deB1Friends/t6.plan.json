@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "cultura barata con friccion cotidiana",
+  "espina": "Lena aprende que la cultura publica de Munich es accesible, pero conserva pequenos rituales de entrada.",
+  "recursos": "domingo de un euro, Pinakotheken, Deutsches Museum en isla del Isar, cola, guardarropa, discusion frente a un cuadro",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "aprovechar el domingo barato de museos",
+      "impide": "la cola demuestra que barato no significa vacio",
+      "cuesta": "Lena espera en frio antes de entrar",
+      "cambia": "entiende que el precio bajo tambien es una costumbre compartida",
+      "emocion": "paciencia ironica"
+    },
+    {
+      "slot": "2",
+      "quiere": "entrar directo a ver exposiciones",
+      "impide": "Verena obliga a pasar por el guardarropa",
+      "cuesta": "Lena entrega sus cosas antes de mirar nada",
+      "cambia": "acepta que la curiosidad tambien se ordena",
+      "emocion": "fastidio domesticado"
+    },
+    {
+      "slot": "3",
+      "quiere": "entender un cuadro moderno sin fingir",
+      "impide": "Verena defiende el cuadro con una seriedad incomoda",
+      "cuesta": "Lena discute en voz baja dentro del museo",
+      "cambia": "descubre que no estar de acuerdo tambien es mirar de verdad",
+      "emocion": "friccion viva"
+    }
+  ]
+}

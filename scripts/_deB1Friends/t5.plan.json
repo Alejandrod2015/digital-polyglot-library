@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "germany",
+  "registro": "aventura local con logistica",
+  "espina": "Lena aprende que la cercania de los Alpes no elimina la planificacion, solo la vuelve mas visible.",
+  "recursos": "Bayernticket, Tegernsee, Wanderung, cambio de tiempo, ultimo tren",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "hacer una escapada barata al Tegernsee",
+      "impide": "el Bayernticket exige coordinar cinco personas desde el inicio",
+      "cuesta": "Lena acepta que incluso el ahorro tiene reglas",
+      "cambia": "entiende que la excursion empieza en el andén",
+      "emocion": "impaciencia alegre"
+    },
+    {
+      "slot": "2",
+      "quiere": "disfrutar una Wanderung facil",
+      "impide": "Tobias planifico demasiados Höhenmeter",
+      "cuesta": "el grupo se da la vuelta antes de la cumbre",
+      "cambia": "Lena aprende a llamar exito a ajustar la ruta",
+      "emocion": "humildad con hambre"
+    },
+    {
+      "slot": "3",
+      "quiere": "alargar el dia junto al lago",
+      "impide": "el tiempo cambia y el ultimo tren se acerca",
+      "cuesta": "renuncia a quedarse hasta sentirse lista",
+      "cambia": "ve que Tobias tambien cuida al grupo con sus horarios",
+      "emocion": "gratitud sin admitirla del todo"
+    }
+  ]
+}
