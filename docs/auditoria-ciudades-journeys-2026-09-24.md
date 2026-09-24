@@ -39,45 +39,69 @@ siete sitios); ahí la regla se aplica ciudad a ciudad.
 
 ### Incumplen (certezas)
 
-| Journey | Ciudad marco | Veredicto | Hist. con el nombre |
-|---|---|---|---|
-| Friends ES colombia A0 (draft) | Pereira | NO | 3/21 (+ los 21 prompts de portada, dato del encargo) |
-| Traveler ES spain A1 (live) | Nerja (pueblo de la costa de Málaga) | NO | Nerja 1/21, Málaga 2/21 |
-| Traveler ES spain A2 (live) | Nerja (mismo reparto y pueblo) | NO | Nerja 1/21, Málaga 3/21 |
-| Traveler ES spain B2 (live) | Vitoria (Vitoria-Gasteiz) | NO | 5/21 |
-| Expat FR france A1 (draft) | Clermont-Ferrand | NO | 4/21 (+ 2/21 con el nombre completo) |
-| Friends FR france A2 (live) | Nantes | NO | 8/21 |
+| Journey | Ciudad marco | Hist. con el nombre |
+|---|---|---|
+| Friends ES colombia A0 (draft) | Pereira | 3/21 (+ los 21 prompts de portada, dato del encargo) |
+| Traveler ES spain A1 (live) | Nerja (pueblo de la costa de Malaga) | Nerja 1/21, Malaga 2/21 |
+| Traveler ES spain A2 (live) | Nerja (mismo reparto y pueblo) | Nerja 1/21, Malaga 3/21 |
+| Traveler ES spain B2 (live) | Vitoria (Vitoria-Gasteiz) | 5/21 |
+| Expat FR france A1 (draft) | Clermont-Ferrand | 4/21 |
+| Friends FR france A2 (live) | Nantes | 8/21 |
+| Friends FR france B1 (live) | Lille | Lille 2/21, Roubaix 2/21 |
+| Friends DE germany A0 (live) | Bremen | Bremen 4/21, Munchen 7/21 |
+| Friends DE germany A2 (draft) | Hannover | Hannover 2/21, Munster 4/21 |
+| Friends IT italy A0 (live) | Genova | 4/21 (+ "Genoa" 2/21) |
+| Friends ES spain A2 (live) | Salamanca | 2/21 |
+| Friends ES chile A1 (draft) | Valparaiso | 1/21 |
 
 ### Cumplen (certezas)
 
 | Journey | Ciudad marco | Hist. con el nombre |
 |---|---|---|
 | Friends FR france A1 (live) | Paris | 8/21 |
+| Friends FR france A0 (live) | Marseille | Marseille 2/21, Paris 11/21 |
 | Expat DE germany C1 (live) | Berlin | 8/21 |
 | Expat DE germany C1 (draft, Hamburgo) | Hamburg | 3/21 |
+| Friends DE germany A1 (live) | Frankfurt | Frankfurt 5/21, Rostock 10/21 |
 | Traveler ES spain B1 (live) | Madrid | 3/21 |
+| Friends ES spain B1 (draft, 12/21) | Santiago de Compostela | 1/21 |
+| Friends ES argentina A1 (draft) | Buenos Aires, NUNCA nombrada | 0/21 (Villa Crespo, Warnes, Araoz, Corrientes) |
 | Friends ES mexico A0 (draft) | Guadalajara | 2/21 |
-| Friends IT italy A1 (draft) | Milán | Milano 1/21; "via Padova" (calle de Milán) 4/21 |
-| Traveler KO korea A0 (draft) | Seúl | 1/1 escrita |
-| Traveler PL poland A0 (draft) | Kraków | 1/1 escrita |
+| Friends PT brazil A1 (draft) | Brasilia | 1/21 |
+| Friends IT italy A1 (draft) | Milan | Milano 1/21; "via Padova" (calle de Milan) 4/21 |
+| Traveler KO korea A0 (draft) | Seul | 1/1 escrita |
+| Traveler PL poland A0 (draft) | Krakow | 1/1 escrita |
 | Traveler AR egypt A0 (draft) | El Cairo | 1/1 escrita |
 
-### Dudosos (no decido a ojo)
+### Como se cerraron los 12 dudosos (2026-09-24, segunda pasada)
 
-| Journey | Ciudad | Qué me hace dudar | Hist. |
+Los cuatro de discrepancia memoria/texto se resolvieron **con el texto**, que es
+lo que lee el usuario. En los cuatro, la ciudad "en conflicto" resulto ser el
+ORIGEN o el DESTINO del hilo conductor, nunca el escenario. Medido frase a
+frase con `scripts/_ciudadesAudit5.ts`, que imprime cada oracion donde sale cada
+candidata:
+
+| Journey | Ciudad marco | Por que, con el texto delante | La memoria |
 |---|---|---|---|
-| Friends FR france A0 (live) | Marseille | La memoria la fija en Le Panier (Marsella), pero el texto nombra Paris en 11 historias y Marseille en 2, porque el hilo es que Hugo se muda a Paris. La ciudad marco casi no se dice | Marseille 2/21, Paris 11/21 |
-| Friends FR france B1 (live) | Lille | Lille es frontera: la conoce quien sigue fútbol o ha cruzado a Bélgica, no el lector medio. Además el arranque está en Roubaix | Lille 2/21, Roubaix 2/21 |
-| Friends DE germany A2 (draft) | Hannover o Münster | La memoria la llama "Friends DE A2 (Hannover)"; el texto nombra Münster en 4 historias y Hannover en 2. Ninguna de las dos es reconocible fuera | Münster 4/21, Hannover 2/21 |
-| Friends DE germany A1 (live) | Frankfurt o Rostock | La memoria la llama "(Frankfurt)"; el texto nombra Rostock en 11 y Frankfurt en 5. Frankfurt cumple, Rostock no: la discrepancia decide el veredicto | Rostock 11/21, Frankfurt 5/21 |
-| Friends DE germany A0 (live) | Bremen o München | La memoria la llama "(Bremen)"; el texto nombra München en 7 y Bremen en 4 | München 7/21, Bremen 4/21 |
-| Friends IT italy A0 (live) | Genova | Genoa se reconoce como puerto y como equipo, pero no está en la lista corta de ciudades italianas de un anglosajón | Genova 4/21 + "Genoa" 2/21 |
-| Friends ES spain A2 (live) | Salamanca | Muy conocida por quien ha estudiado español (es destino clásico de estudiantes), casi nada fuera de ese grupo. El target es el estudiante, así que puede ser la excepción | 2/21 |
-| Friends ES spain B1 (draft, 12/21) | Santiago de Compostela | Se conoce por el Camino, no por la ciudad. Depende de si "conocida por el Camino" cuenta | 1/21 |
-| Friends ES chile A1 (draft) | Valparaíso | La memoria la fija en Valparaíso (cerro Cordillera) y el texto casi no la nombra. Fuera de Chile se conoce menos que Santiago | Valparaíso 1/21, Santiago 1/21 |
-| Friends ES argentina A1 (draft) | Córdoba o Buenos Aires | El texto nombra Córdoba en 4 historias, pero las calles son porteñas (Warnes, Aráoz, Corrientes). No sé cuál es el marco | Córdoba 4/21 |
-| Friends PT brazil A1 (draft) | Brasília | Se reconoce como capital y por su arquitectura, pero no es destino conocido; el texto la nombra una vez y vive en "308 Norte" y el Eixão | Brasília 1/21 |
-| Traveler DE germany A0 (draft) | Leipzig (con Heidelberg de segunda) | Los siete temas son paisajes, no ciudades, pero el texto se ancla en Leipzig en 9 historias. Ni el marco ni el reparto de ciudades están declarados en ningún sitio | Leipzig 9/21, Heidelberg 4/21 |
+| Friends DE A0 | **Bremen** | "Anna is back in Bremen after eight years", "eine Grafikerin aus Bremen", "Vier Freunde wohnen noch in Bremen". Munchen (7/21) es el trabajo viejo al que puede volver: es el dilema del journey, no el sitio | coincide |
+| Friends DE A1 | **Frankfurt** | "Julia is new in Frankfurt", "sitzt am Abend auf der Treppe in Frankfurt", "Heute gehore ich nach Frankfurt". Rostock (10/21) es de donde viene: sale siempre en videollamada, en un tren o en cajas sin abrir | coincide |
+| Friends DE A2 | **Hannover** | "the same tiny flat in Hannover", y el penalti "gegen Hannover". Munster (4/21) es el trabajo y el sofa que dejo atras | coincide |
+| Friends FR A0 | **Marseille** | "Lea est une jeune femme de Marseille", el cafe y la pista de petanca del Panier. Paris (11/21) es adonde se muda Hugo en marzo, la espina del journey | coincide |
+
+Los otros ocho, resueltos sin preguntar a nadie:
+
+| Journey | Cierre | Razon |
+|---|---|---|
+| Friends FR B1 | Lille, **NO** | El marco es Lille (Vieux-Lille, el barrio de Fives); Roubaix es la casa del hermano. Lille no esta en la lista corta francesa de un anglosajon (Paris, Nice, Marseille, Lyon, Bordeaux) |
+| Friends IT A0 | Genova, **NO** | El nombre suena (Colon, el equipo), pero no se coloca en el mapa: las italianas reconocibles son Roma, Venecia, Florencia, Milan, Napoli, Pisa |
+| Friends ES spain A2 | Salamanca, **NO** | La conoce quien ha estudiado espanol ahi, que es un subconjunto del target, no el target. Fuera de ese grupo no dice nada |
+| Friends ES spain B1 | Santiago de Compostela, **SI** | Es la unica de las dudosas que llega al anglosajon por una via mainstream y no academica: el Camino de Santiago tiene libros y peliculas en ingles, y la ciudad da nombre a la ruta |
+| Friends ES chile A1 | Valparaiso, **NO** | De Chile viaja el nombre del pais y Santiago. Valparaiso es patrimonio y destino de viajero informado, no de lector medio |
+| Friends ES argentina A1 | Buenos Aires, **SI**, pero nunca nombrada | El marco son Villa Crespo, Warnes, Araoz y Corrientes, todo Buenos Aires. Cordoba (4/21) es adonde se va Damian. La ciudad cumple la regla y el lector no puede saberlo: no aparece escrita ni una vez en las 21 |
+| Friends PT brazil A1 | Brasilia, **SI** | Capital de Brasil: un anglosajon la coloca en el pais aunque no sepa nada mas. Que no sea destino turistico no es lo que mide la regla |
+| Traveler DE A0 | **multiciudad**, no dudoso | Los siete temas son paisajes y el journey es una gira (Dresden, Heidelberg, Triberg, costa, lago, montana). Leipzig (9/21) es la casa y la escuela de Hannah, el ancla del hilo, no el escenario de las escenas |
+
+Ninguno de los doce quedo sin resolver.
 
 ### Multiciudad (la regla se aplica ciudad a ciudad)
 
@@ -106,6 +130,7 @@ coste de arreglar uno es el de un tema, no el del journey.
 | Traveler ES latam A2 (live) | Medellín, Salvador, Buenos Aires, Rosario, Guadalajara, Mérida, puerto de Santa Rosa (Perú) | Santa Rosa, Rosario, Mérida |
 | Traveler ES latam B1 (live) | Manizales, Mendoza, Lima y otros | Manizales |
 | Traveler ES latam B2 (live) | San Telmo (Buenos Aires), Mendoza, Valparaíso, Cali, Guadalajara, Lima | Valparaíso, Cali |
+| Traveler DE germany A0 (draft) | Dresden, Heidelberg, Triberg y paisajes; Leipzig como casa | Leipzig, Triberg |
 
 ### Sin ciudad, por diseño
 
@@ -118,11 +143,14 @@ coste de arreglar uno es el de un tema, no el del journey.
 ## Resumen
 
 - 50 journeys live + draft.
-- 6 incumplen con certeza (una de ellas, el Friends ES colombia A0, ya estaba
-  identificada y su arreglo va en otro encargo).
-- 9 cumplen con certeza.
-- 12 dudosos, la mayoría por discrepancia entre la memoria y el texto.
-- 20 multiciudad y 3 sin ciudad: ahí la regla no se decide journey a journey.
+- 12 incumplen con certeza (una de ellas, el Friends ES colombia A0, ya la está
+  cambiando otro chat a Medellín).
+- 14 cumplen con certeza.
+- 0 dudosos: los 12 de la primera pasada se cerraron con el texto delante.
+- 21 multiciudad y 3 sin ciudad: ahí la regla no se decide journey a journey.
+- Tres de los que incumplen están publicados y narrados (Traveler ES spain A1 y
+  A2, y Traveler ES spain B2; también Friends FR A2, B1, DE A0 e IT A0), así que
+  cambiarles la ciudad se paga en resíntesis. **No se tocó ninguna.**
 
 ## Dónde debería vivir el gate (propuesta, sin implementar)
 
@@ -160,7 +188,13 @@ not verified:
 - El veredicto "reconocible por un anglosajón" es mi juicio, no una medida. No
   hay lista aprobada ni dato de búsqueda detrás; por eso los dudosos van
   separados en vez de repartidos entre SÍ y NO.
-- La ciudad marco de los journeys donde memoria y texto discrepan (Friends DE
-  A0, A1 y A2, Friends FR A0). Hace falta que lo confirme quien los escribió.
+- Que la memoria del proyecto quede corregida. Las fichas de Friends DE A0, A1
+  y A2 y de Friends FR A0 coinciden con el texto, así que no había nada que
+  corregir; la discrepancia estaba entre el texto y el conteo bruto de la
+  primera pasada, que confundía el origen y el destino del hilo con el
+  escenario. Lo que sí falta es que ninguna ficha declare la ciudad de los
+  demás journeys.
+- Que el Friends ES argentina A1 deba nombrar Buenos Aires. Es un hallazgo, no
+  una decisión: la ciudad cumple la regla pero no se lee.
 - No se tocó contenido de ningún journey, no se generó nada y no se
   implementó ningún gate.
