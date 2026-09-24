@@ -178,9 +178,7 @@ type StudioTheme = "warm" | "navy";
 
 export default function StudioShell({
   children,
-  title,
   description,
-  breadcrumbs,
   headerAside,
 }: StudioShellProps) {
   const pathname = usePathname() ?? "";
@@ -499,59 +497,43 @@ export default function StudioShell({
           </div>
         )}
 
-        {/* Page header */}
-        <header
-          style={{
-            padding: "24px 32px 20px",
-            borderBottom: "1px solid var(--card-border)",
-          }}
-        >
-          {breadcrumbs && breadcrumbs.length > 0 && (
-            <div style={{ display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
-              {breadcrumbs.map((crumb, i) => (
-                <span key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  {i > 0 && <span style={{ color: "var(--muted)", opacity: 0.5, margin: "0 2px" }}>/</span>}
-                  {crumb.href ? (
-                    <StudioActionLink
-                      href={crumb.href}
-                      pendingLabel="Abriendo..."
-                      style={{ fontSize: 13, color: ACCENT, background: "none", border: "none", padding: 0, fontWeight: 500 }}
-                    >
-                      {crumb.label}
-                    </StudioActionLink>
-                  ) : (
-                    <span style={{ fontSize: 13, color: "var(--muted)" }}>{crumb.label}</span>
-                  )}
-                </span>
-              ))}
-            </div>
-          )}
-          <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-            <div>
-              <h1
-                style={{
-                  fontSize: "var(--studio-title-size)",
-                  fontWeight: "var(--studio-title-weight)" as unknown as number,
-                  margin: 0,
-                  color: "var(--foreground)",
-                  fontFamily: "var(--studio-title-font)",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {title}
-              </h1>
-              {description && (
-                <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 4, marginBottom: 0 }}>
-                  {description}
-                </p>
-              )}
-            </div>
+        {/*
+          Cabecera de página SIN migas ni título.
+          "Studio / Métricas" encima de un "Métricas" enorme decía dos veces lo
+          que la barra lateral y la URL ya dicen, y se comía la primera franja
+          de cada una de las 42 páginas. Queda lo que no está en ningún otro
+          sitio: la descripción, cuando la hay, y los controles de la derecha.
+          El prop `title` se conserva porque lo pasan las 42 llamadas y sigue
+          sirviendo de nombre de la página en el código.
+        */}
+        {(description || headerAside) && (
+          <header
+            style={{
+              padding: "10px 32px",
+              borderBottom: "1px solid var(--card-border)",
+              display: "flex",
+              alignItems: "center",
+              gap: 24,
+              flexWrap: "wrap",
+            }}
+          >
+            {description && (
+              <p style={{ fontSize: 14, color: "var(--muted)", margin: 0 }}>
+                {description}
+              </p>
+            )}
             {headerAside && <div style={{ flex: 1, minWidth: 0 }}>{headerAside}</div>}
-          </div>
-        </header>
+          </header>
+        )}
 
         {/* Content */}
-        <main style={{ padding: "24px 32px 48px" }}>
+        {/*
+          10px arriba y no 24: la cabecera ya no lleva título, así que entre la
+          barra de filtros y lo primero de la pagina solo quedaba aire. Eran
+          40px de banda muerta (16 de la cabecera mas 24 de aqui) en cada
+          pantalla del Studio.
+        */}
+        <main style={{ padding: "10px 32px 48px" }}>
           {children}
         </main>
       </div>
