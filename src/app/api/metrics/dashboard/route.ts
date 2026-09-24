@@ -134,6 +134,8 @@ type DashboardResponse = {
   prevKpis?: {
     dau: number;
     wau: number;
+    dauMauPct: number;
+    exercisesPerPractitioner: number;
     activeUsersInRange: number;
     plays: number;
     completions: number;
@@ -1057,6 +1059,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     recentSignupRows,
     onboardingFunnelRows,
     weeklyProgressRows,
+    prevPracticeRows,
     prevEvents,
     prevProgressRows,
     prevActiveUsersRows,
@@ -1472,6 +1475,20 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     // ── Period-over-period: same shape as `events` but for the
     // previous window. Used to derive `prevKpis` for deltas.
+    // Ejercicios de practica del periodo ANTERIOR, para que la tarjeta de
+    // "ejercicios por practicante" pueda comparar. Consulta propia porque
+    // `prevEvents` solo trae audio.
+    needsPrevData ? prisma.userMetric.findMany({
+      where: {
+        ...userScope,
+        ...platformFilter,
+        ...librosFilter,
+        createdAt: { gte: prevFrom, lt: prevTo },
+        eventType: "practice_session_completed",
+      },
+      select: { userId: true, metadata: true },
+      take: 50000,
+    }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
@@ -2459,9 +2476,45 @@ export async function GET(req: NextRequest): Promise<Response> {
       prevListeners > 0
         ? Math.round(((prevTotalListenedSeconds / prevListeners) / 60) * 10) / 10
         : 0;
+    // DAU, WAU y DAU/MAU llegaban a cero clavado desde que existe la tarjeta:
+    // el payload las declaraba y nadie las calculaba, asi que tres de las seis
+    // tarjetas del Resumen salian sin comparacion mientras las otras tres si.
+    //
+    // Su periodo anterior NO es el rango anterior del selector: DAU dice "hoy"
+    // y WAU "los ultimos siete dias", asi que lo que toca al lado es ayer y la
+    // semana de antes. `actividadPorDia` ya cubre esos dias, porque su ventana
+    // es el rango mas 29 dias de arranque.
+    const ayer = startOfLocalDaysAgo(now, 1);
+    const prevDau = actividadPorDia.get(toDayKey(ayer))?.size ?? 0;
+    const prevWau = unicosHasta(startOfLocalDaysAgo(now, 7), 7);
+    const prevMau = unicosHasta(ayer, 30);
+    const prevEjerciciosPorPersona = new Map<string, number>();
+    for (const row of prevPracticeRows as Array<{ userId: string; metadata: unknown }>) {
+      const meta = (row.metadata ?? {}) as { itemsCount?: unknown };
+      const items = typeof meta.itemsCount === "number" ? meta.itemsCount : 0;
+      if (items <= 0) continue;
+      prevEjerciciosPorPersona.set(
+        row.userId,
+        (prevEjerciciosPorPersona.get(row.userId) ?? 0) + items
+      );
+    }
+    const prevPractitioners = prevEjerciciosPorPersona.size;
     prevKpisPayload = {
-      dau: 0,
-      wau: 0,
+      dau: prevDau,
+      wau: prevWau,
+      dauMauPct:
+        prevMau > 0 ? Math.round((prevDau / prevMau) * 1000) / 10 : 0,
+      exercisesPerPractitioner:
+        prevPractitioners > 0
+          ? Math.round(
+              (Array.from(prevEjerciciosPorPersona.values()).reduce(
+                (sum, n) => sum + n,
+                0
+              ) /
+                prevPractitioners) *
+                10
+            ) / 10
+          : 0,
       activeUsersInRange: prevActiveUsers,
       plays: prevPlays,
       completions: prevCompletions,

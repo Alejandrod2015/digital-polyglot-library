@@ -93,6 +93,7 @@ export function ResumenView({
         <KpiCard
           hero
           label="DAU/MAU"
+          prev={p?.dauMauPct}
           value={k.dauMauPct ?? 0}
           suffix="%"
           spark={sparkDauMau}

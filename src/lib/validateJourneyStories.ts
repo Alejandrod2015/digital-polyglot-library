@@ -179,11 +179,23 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
  */
 /** Exportada para medir cuanto recupera cada camino. */
 export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
-  hablan: Map<string, Set<string>>; etiquetas: Map<string, Set<string>>;
+  hablan: Map<string, Set<string>>; sinMid: Map<string, Set<string>>; cita: Map<string, Set<string>>;
 } {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
   const hablan = new Map<string, Set<string>>();
-  const etiquetas = new Map<string, Set<string>>();
+  // Camino 2 aparte: una etiqueta va SIEMPRE al empezar linea, nunca tras
+  // una minuscula, asi que el contador de menciones de `castLegacy` no la ve
+  // y un journey en formato dialogo salia con el reparto vacio.
+  //
+  // Los caminos 1 y 3 NO entran aqui, a proposito. Los dos cazan palabras que
+  // no son nadie ("Despues dice", "Regresa a casa. `Ya voy`"), y lo que las
+  // mantiene fuera del reparto es justo la minuscula que les falta delante.
+  // Al darles credito de mencion entraban 17 falsos positivos en los 48
+  // journeys: Despues, Hoy, Luego, Dentro, Echa, Quedan, Regresa, Cerraron.
+  // El precio de no darselo son 5 personajes que solo aparecen al empezar
+  // frase; se prefiere perderlos a inventar.
+  const sinMid = new Map<string, Set<string>>();
+  const cita = new Map<string, Set<string>>();
   const anota = (mapa: Map<string, Set<string>>, n: string, slug: string) => {
     if (!mapa.has(n)) mapa.set(n, new Set());
     mapa.get(n)!.add(slug);
@@ -197,7 +209,7 @@ export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
   // aunque `rosa` sea tambien un color.
   const minusculas = new Set<string>();
   for (const s of stories)
-    for (const m of s.text.matchAll(/(?<!\p{L})\p{Ll}{3,}(?!\p{L})/gu)) minusculas.add(m[0]);
+    for (const m of s.text.matchAll(/(?<!\p{L})\p{Ll}{2,}(?!\p{L})/gu)) minusculas.add(m[0]);
   for (const s of stories) {
     // 1. narracion: verbo de habla pegado al nombre, en los dos ordenes.
     for (const re of [
@@ -207,29 +219,29 @@ export function hablaPorHistoria(stories: JourneyStoryInput[], lang: string): {
     // 2. etiqueta de dialogo: UNA palabra al empezar linea y sus dos puntos.
     //    Anclada al principio de linea y sin nada delante, que es lo que
     //    separa a un hablante de un "Aqui:" en mitad de una frase.
-    for (const m of s.text.matchAll(/(?:^|\n)[ \t]*(\p{Lu}\p{Ll}+)[ \t]*:[ \t]*(?=\S)/gu)) {
+    for (const m of s.text.matchAll(/(?:^|\n)[ \t]*(\p{Lu}\p{Ll}{2,})[ \t]*:[ \t]*(?=\S)/gu)) {
       anota(hablan, m[1], s.slug);
-      anota(etiquetas, m[1], s.slug);
+      anota(sinMid, m[1], s.slug);
     }
     // 3. habla citada sin verbo de atribucion: el nombre ABRE una frase
     //    dentro de un parrafo que lleva cita, y le sigue un verbo.
     for (const parrafo of s.text.split(/\n{2,}/)) {
       if (!parrafo.includes(QUOTE_OPEN)) continue;
       const narr = parrafo.replace(CITA, " ");
-      for (const m of narr.matchAll(/(?:^|[.!?…]["»”]?\s+)(\p{Lu}\p{Ll}+)\s+\p{Ll}/gu))
-        if (!minusculas.has(m[1].toLowerCase())) anota(hablan, m[1], s.slug);
+      for (const m of narr.matchAll(/(?:^|[.!?…]["»”]?\s+)(\p{Lu}\p{Ll}{2,})\s+\p{Ll}/gu))
+        if (!minusculas.has(m[1].toLowerCase())) { anota(hablan, m[1], s.slug); anota(cita, m[1], s.slug); }
     }
   }
-  return { hablan, etiquetas };
+  return { hablan, sinMid, cita };
 }
 
 /** Exportada para el test de los tres caminos (`castOf.test.ts`). */
 export function castOf(stories: JourneyStoryInput[], lang: string): string[] {
-  const { hablan, etiquetas } = hablaPorHistoria(stories, lang);
+  const { hablan, sinMid, cita } = hablaPorHistoria(stories, lang);
   const dosHistorias = new Set([...hablan].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories, lang, etiquetas).filter((n) => dosHistorias.has(n));
+  return castLegacy(stories, lang, sinMid, cita).filter((n) => dosHistorias.has(n));
 }
-function castLegacy(stories: JourneyStoryInput[], lang = "", etiquetas?: Map<string, Set<string>>): string[] {
+function castLegacy(stories: JourneyStoryInput[], lang = "", sinMid?: Map<string, Set<string>>, cita?: Map<string, Set<string>>): string[] {
   // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
   // CONJUNCION en espanol. Con la lista comun, "presenta a Marisol",
   // "pregunta a Yolanda" o "busca a Fabian" metian a todo el reparto en
@@ -267,13 +279,23 @@ function castLegacy(stories: JourneyStoryInput[], lang = "", etiquetas?: Map<str
     }
     for (const w of vistos) cuenta.set(w, (cuenta.get(w) ?? 0) + 1);
   }
-  // Una etiqueta de dialogo (`Lena:`) es una mencion tan buena como cualquier
-  // otra, y NUNCA lleva minuscula delante: sin esto, un journey escrito en
-  // formato dialogo salia con el reparto vacio aunque el hablante fuera en
-  // cada linea (Traveler DE A1, Conversations ES latam A0).
-  for (const [n, slugs] of etiquetas ?? []) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
+  // A QUIEN SE LE ATRIBUYE HABLA, se le cuenta la aparicion. `cuenta` solo
+  // sabia ver menciones con una minuscula delante, y eso deja fuera dos
+  // formas enteras de nombrar a alguien: la etiqueta de dialogo (`Lena:`) y
+  // el nombre que abre frase (`Marta mira el mapa`). Un journey escrito en
+  // formato dialogo salia con el reparto VACIO aunque el hablante fuera en
+  // cada linea (Traveler DE A1, Conversations ES latam A0). El filtro de
+  // habla ya decidio que esa palabra es alguien que habla; aqui solo se
+  // cuenta cuantas historias.
+  for (const [n, slugs] of sinMid ?? []) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
+  // El camino 3 (sujeto al empezar frase junto a una cita) solo cuenta como
+  // mencion si ESA palabra aparece alguna vez en mitad de frase con
+  // mayuscula, que es lo que hace un nombre propio y no hace un verbo. Sin
+  // esta condicion entraban `Regresa`, `Cerraron`, `Despues` y `Luego`.
+  for (const [n, slugs] of cita ?? [])
+    if ((sueltas.get(n) ?? 0) >= 1) cuenta.set(n, Math.max(cuenta.get(n) ?? 0, slugs.size));
   return [...cuenta.entries()]
-    .filter(([w, n]) => n >= 2 && (sueltas.get(w) ?? 0) + (etiquetas?.get(w)?.size ?? 0) > (conArticulo.get(w) ?? 0))
+    .filter(([w, n]) => n >= 2 && (sueltas.get(w) ?? 0) + (sinMid?.get(w)?.size ?? 0) > (conArticulo.get(w) ?? 0))
     .sort((a, b) => b[1] - a[1])
     .map(([w]) => w);
 }
