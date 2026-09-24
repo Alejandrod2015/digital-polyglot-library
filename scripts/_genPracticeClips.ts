@@ -12,6 +12,8 @@
  *
  * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--featured] [--force] [--only=word1,word2]
  * `--featured` renders only the 10 post-story exercises and skips the pool.
+ * `--solo-cloze` renders only the `fill_blank` sentences; the sentence of a
+ * `meaning_in_context` is never played on its own (see the filter below).
  * `--only` re-renders just those words (comma-separated, accent-insensitive)
  * even if they already have a clipUrl. Re-renders bump `audioClip.rev`, which
  * is part of the R2 key hash: R2 serves `immutable`, so a re-render MUST get a
@@ -353,6 +355,29 @@ const NUM_WORDS: Record<string, number> = {
 // "compiere gli anni" fallaron las 4 tomas hasta anadir esto). Elision de
 // vocal en uno/otto ("venti"+"uno" -> "ventuno"), igual que
 // coverageCheckLib.ts canonNumbers() para el mismo idioma.
+// El aleman tenia zwanzig y dreissig y nada mas: faltaban vierzig a neunzig,
+// los adolescentes (vierzehn a neunzehn) y los compuestos, que van al reves
+// que en las otras lenguas ("einundzwanzig" = 1 y 20). Sin esto, cualquier
+// frase con una cifra de dos digitos quema las MAX_TRIES contra un falso miss
+// del STT, que normaliza a cifra. Pasado el 2026-09-23 en achtzig-fuer-drei-
+// beine: "Achtzig Euro fuer einen alten Tisch sind zu teuer" se oye como "80
+// Euro..." y las seis tomas murieron ahi, sin llegar al gate F0. Es el mismo
+// fallo que el-gallo-colorado (centenas) y una-torta-per-dodici (italiano).
+// La `ss` y la `sz` van las dos porque strip() no descompone la eszett.
+(function addGermanNumbers() {
+  const teens: Record<string, number> = { vierzehn: 14, sechzehn: 16, siebzehn: 17, achtzehn: 18, neunzehn: 19 };
+  for (const [w, n] of Object.entries(teens)) NUM_WORDS[w] = n;
+  const tens: Record<string, number> = {
+    zwanzig: 20, dreissig: 30, "dreißig": 30, vierzig: 40, funfzig: 50, fuenfzig: 50,
+    sechzig: 60, siebzig: 70, achtzig: 80, neunzig: 90,
+  };
+  for (const [w, n] of Object.entries(tens)) NUM_WORDS[w] = n;
+  const units: Record<string, number> = { ein: 1, zwei: 2, drei: 3, vier: 4, funf: 5, fuenf: 5, sechs: 6, sieben: 7, acht: 8, neun: 9 };
+  for (const [tenWord, ten] of Object.entries(tens))
+    for (const [unitWord, unit] of Object.entries(units))
+      NUM_WORDS[`${unitWord}und${tenWord}`] = ten + unit;
+})();
+
 (function addItalianCompounds() {
   const units = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove"];
   const tens: Record<number, string> = { 20: "venti", 30: "trenta", 40: "quaranta", 50: "cinquanta", 60: "sessanta", 70: "settanta", 80: "ottanta", 90: "novanta" };
@@ -437,6 +462,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   const slug = process.argv[2];
   const force = process.argv.includes("--force");
   const soloFeatured = process.argv.includes("--featured");
+  const soloCloze = process.argv.includes("--solo-cloze");
   const onlyArg = process.argv.find((a) => a.startsWith("--only="));
   const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map((w) => strip(w))) : null;
   const takesArg = process.argv.find((a) => a.startsWith("--takes="));
@@ -521,7 +547,19 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     // el pool, que solo aparece si el usuario toca la pestaña Practice. Se
     // pagaba el 55% del audio por material que puede no oír nadie. El pool se
     // rellena después, cuando se sepa si se abre.
-    .filter(({ e }) => !soloFeatured || e.featured !== false);
+    .filter(({ e }) => !soloFeatured || e.featured !== false)
+    // `--solo-cloze`: renderiza SOLO las frases de `fill_blank`.
+    // WHY (2026-09-23): la frase de un `meaning_in_context` no la reproduce
+    // ninguna superficie por su cuenta. En movil ese ejercicio es modo
+    // "meaning" (mapSharedExerciseToMobile) y su autoplay llama a
+    // playPracticeMeaningAudio, que suena `wordClipUrl` y nunca el clip de
+    // oracion; el autoplay de revelado sale antes por `mode !== "context"`.
+    // En web hay un boton de escucha, pero sin `clipUrl` cae al segmento del
+    // audio maestro de la historia, asi que no deja silencio. El gate de
+    // publicacion lo dice igual: pide `clipUrl` en fill_blank y solo
+    // `wordClipUrl` en meaning (decision del 2026-08-24, que ya se pago una
+    // vez en el PT-BR A1). En el Friends DE A2 son 273 de los 336 clips.
+    .filter(({ e }) => !soloCloze || e.type === "fill_blank");
   if (only && targets.length !== only.size)
     console.log(`WARN --only matched ${targets.length}/${only.size} words`);
 
