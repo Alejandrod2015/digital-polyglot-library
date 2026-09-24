@@ -911,6 +911,7 @@ export function FunnelsView({
 
   return (
     <div className="mx-view">
+      <div className="mx-row mx-row--2up">
       {activation}
       {/*
         Trial y checkout eran dos paneles con ocho tarjetas y cuatro tasas
@@ -974,6 +975,7 @@ export function FunnelsView({
             </strong>
           </div>
         </div>
+      </div>
       </div>
 
       <div className="mx-panel">
@@ -1311,13 +1313,7 @@ export function LearningView({
             la precisión se mide solo sobre sesiones terminadas
           </span>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gap: 10,
-          }}
-        >
+        <div className="mx-hero-grid">
           <KpiCard label="Sesiones iniciadas" value={practice.started} />
           <KpiCard
             label="Sesiones completadas"
@@ -1525,6 +1521,7 @@ export function LearningView({
         )}
       </div>
 
+      <div className="mx-row mx-row--2up">
       <div className="mx-panel">
         <div className="mx-panel__head">
           <div>
@@ -1535,13 +1532,7 @@ export function LearningView({
             una consulta = un toque en una palabra del texto
           </span>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-          }}
-        >
+        <div className="mx-hero-grid">
           <KpiCard label="Consultas" value={vocab.lookups} accent="cyan" />
           <KpiCard label="Palabras distintas" value={vocab.uniqueWords} />
           <KpiCard label="Usuarios que consultan" value={vocab.lookingUpUsers} />
@@ -1828,6 +1819,7 @@ export function LearningView({
             , así que sus totales no suman los de arriba.
           </p>
         )}
+      </div>
       </div>
     </div>
   );

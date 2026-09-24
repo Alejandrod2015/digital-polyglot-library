@@ -683,6 +683,7 @@ function AudienceView({ data }: { data: DashboardData }) {
   );
   return (
     <div className="mx-view">
+      <div className="mx-row mx-row--2up">
       {/*
         El onboarding estaba en siete tarjetas sueltas y cada una decia su
         porcentaje "del start", asi que para saber DONDE se cae la gente
@@ -758,13 +759,7 @@ function AudienceView({ data }: { data: DashboardData }) {
             ≥10 min/sem = activation rate
           </span>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-          }}
-        >
+        <div className="mx-hero-grid">
           <KpiCard label="Active users (7d)" value={wk.activeUsersLast7Days} />
           <KpiCard
             label="≥10 min/sem"
@@ -843,6 +838,7 @@ function AudienceView({ data }: { data: DashboardData }) {
             </p>
           )}
         </div>
+      </div>
       </div>
 
       <PerUserTable rows={data.audience.perUser ?? []} days={data.range.days} />
