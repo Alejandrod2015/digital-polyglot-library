@@ -23,7 +23,7 @@ const J = "cmufhdbsj0007j8rotoym061z";
   );
   const orderStatus = { fail:0, "pending-set":1, "not-implemented":2, pass:3 } as any;
   checks.sort((a,b)=>orderStatus[a.status]-orderStatus[b.status]);
-  for (const c of checks) console.log(`${c.status.toUpperCase().padEnd(16)} ${c.id.padEnd(38)} ${c.detail ? c.detail.slice(0,150) : ""}`);
+  for (const c of checks) console.log(`${c.status.toUpperCase().padEnd(16)} ${c.id.padEnd(38)} mag=${JSON.stringify((c as any).magnitud)??""} ${c.detail ? c.detail.slice(0,120) : ""}`);
   console.log(`\nfail=${checks.filter(c=>c.status==="fail").length} pending-set=${checks.filter(c=>c.status==="pending-set").length} not-impl=${checks.filter(c=>c.status==="not-implemented").length} pass=${checks.filter(c=>c.status==="pass").length}`);
   await p.$disconnect();
 })();
