@@ -1,0 +1,17 @@
+MATCH|der Lattenrost=a slatted frame|die Matratze=a mattress|der Anhänger=a trailer|das Lager=a store room
+M|gebraucht|Das Bett ist [[gebraucht]] und kostet wenig.|second hand|brand new|badly built|freshly painted
+M|der Kratzer|Das Holz hat keinen einzigen [[Kratzer]].|a scratch|a corner|a handle|a shadow
+M|mustern|Die Händlerin [[mustert]] sie kurz von oben bis unten.|to look somebody over|to greet somebody warmly|to call somebody back|to send somebody away
+M|die Gelegenheit|Bei [[Gelegenheit]] bringt sie zwei Kaffee vorbei.|an occasion|a mistake|a promise|a reason
+M|erfolgreich|Zum ersten Mal hat sie [[erfolgreich]] gehandelt.|successfully|carefully|loudly|slowly
+F|atmet|Vor dem schweren Gespräch _____ sie einmal tief durch.|Before the hard talk she _____ deeply once.|breathes|isst=eats|schreibt=writes|zahlt=pays
+F|fremd|Die eigene Stimme klingt _____, fast wie die von jemand anderem.|Her own voice sounds _____, almost like somebody else's.|strange|laut=loud|tief=deep|schnell=fast
+M|klingen|Ihre Stimme [[klingt]] heute anders als sonst.|to sound|to hurt|to stop|to grow
+M|seltsam|Der neue Preis fühlt sich [[seltsam]] an.|strange|cheap|heavy|useful
+M|wischen|Sie [[wischt]] die Hände an der Hose ab.|to wipe|to warm|to hide|to bite
+M|tief|Sie atmet einmal [[tief]] durch und klingelt.|deeply|quietly|quickly|again
+M|der Rückweg|Auf dem [[Rückweg]] fällt ihr der Zettel auf.|the way back|the front door|the long queue|the last bus
+M|krumm|Auf dem Zettel stehen [[krumme]] Buchstaben.|crooked|golden|tiny|foreign
+M|der Vorname|Er kennt nur ihren [[Vornamen]], nicht den Nachnamen.|a first name|a house number|a bank code|a shop name
+M|das Datum|Unter dem Namen steht das [[Datum]] vom Samstag.|the date|the price|the weight|the address
+M|überhaupt|Sie hat davon [[überhaupt]] nichts gemerkt.|at all|almost|once more|straight away

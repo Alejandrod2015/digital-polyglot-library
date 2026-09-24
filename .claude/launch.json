@@ -295,6 +295,36 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-ecstatic-dubinsky-9e6d06/785b2761-a150-4249-8edf-23f3370896cd/scratchpad/prueba"
       ],
       "port": 8926
+    },
+    {
+      "_comment": "Muestra de narracion del Friends DE A2 (Hannover) con el texto delante. Borrar al cerrar el journey.",
+      "name": "muestra-de-a2-8930",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8930",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-goofy-easley-9152ae/ef103ed3-4dc2-4ab4-88c0-c17d5a3ff7cb/scratchpad/muestra"
+      ],
+      "port": 8930
+    },
+    {
+      "_comment": "Este worktree (goofy-easley): lector del Friends DE A2 (Hannover) para oir cada historia narrada con su texto. Borrar al cerrar el journey.",
+      "name": "de-a2-audio-3012",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3012"
+      ],
+      "port": 3012,
+      "autoPort": false,
+      "env": {
+        "NEXT_DIST_DIR": ".next-3012"
+      }
     }
   ]
 }

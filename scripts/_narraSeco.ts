@@ -44,8 +44,9 @@ const prisma = new PrismaClient();
   for (const s of hs) {
     const voz = vozDe(PERFIL, s);
     if (voz === PERFIL.voces[s.topic]) coinciden++;
-    const primera = hs.find((x) => x.topic === s.topic && x.slotIndex === 1);
-    const o = pasoDelOrden(s, muestras, !!primera?.audioUrl);
+    const delTema = hs.filter((x) => x.topic === s.topic);
+    const primera = delTema.reduce((a, b) => (b.slotIndex < a.slotIndex ? b : a), delTema[0]);
+    const o = pasoDelOrden(s, muestras, !!primera?.audioUrl, primera.slotIndex);
     console.log(`| ${s.slug} | ${s.topic} | ${NOMBRE[voz] ?? voz} (${voz}) | ${o.paso}${o.bloqueo ? `: espera, ${o.bloqueo}` : ""} |`);
   }
   console.log(`\nvoz = mapa del perfil: ${coinciden}/${hs.length} · sin sintesis`);

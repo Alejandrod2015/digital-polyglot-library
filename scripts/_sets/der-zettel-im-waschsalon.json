@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Waschsalon,die Seife,der Karton,der Hinterhof",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Waschsalon",
+     "answer": "a launderette",
+     "options": [
+      "a launderette",
+      "soap",
+      "a cardboard box",
+      "a back yard"
+     ]
+    },
+    {
+     "word": "die Seife",
+     "answer": "soap",
+     "options": [
+      "a launderette",
+      "soap",
+      "a cardboard box",
+      "a back yard"
+     ]
+    },
+    {
+     "word": "der Karton",
+     "answer": "a cardboard box",
+     "options": [
+      "a launderette",
+      "soap",
+      "a cardboard box",
+      "a back yard"
+     ]
+    },
+    {
+     "word": "der Hinterhof",
+     "answer": "a back yard",
+     "options": [
+      "a launderette",
+      "soap",
+      "a cardboard box",
+      "a back yard"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Vormieterin",
+  "sentence": "Die [[Vormieterin]] gibt ihr die Schlüssel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the previous tenant",
+   "options": [
+    "the previous tenant",
+    "the new neighbour",
+    "the young cleaner",
+    "the local dentist"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Die Vormieterin gibt ihr die Schlüssel.",
+    "targetWord": "Vormieterin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ausziehen",
+  "sentence": "Alle fragen, warum sie nach sechs Jahren [[auszieht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move out",
+   "options": [
+    "to move out",
+    "to come back",
+    "to pay more",
+    "to clean up"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Alle fragen, warum sie nach sechs Jahren auszieht.",
+    "targetWord": "auszieht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anfangen",
+  "sentence": "Im Herbst [[fängt]] sie in der neuen Stadt an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to begin",
+   "options": [
+    "to begin",
+    "to arrive",
+    "to travel",
+    "to rest"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Im Herbst fängt sie in der neuen Stadt an.",
+    "targetWord": "fängt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "merken",
+  "sentence": "Sie [[merkt]] sofort, dass etwas fehlt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to notice",
+   "options": [
+    "to notice",
+    "to forget",
+    "to explain",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Sie merkt sofort, dass etwas fehlt.",
+    "targetWord": "merkt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schaffen",
+  "sentence": "Diesmal [[schaffe]] ich das ganz allein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to manage",
+   "options": [
+    "to manage",
+    "to try",
+    "to learn",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Diesmal schaffe ich das ganz allein.",
+    "targetWord": "schaffe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dünn",
+  "sentence": "Die Wände sind so _____, dass man alles hört.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dünn",
+   "options": [
+    "dünn",
+    "alt",
+    "hell",
+    "neu"
+   ],
+   "translation": "The walls are so _____ that you hear everything.",
+   "optionTranslations": [
+    "thin",
+    "old",
+    "bright",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Die Wände sind so dünn, dass man alles hört.",
+    "targetWord": "dünn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "zittern",
+  "sentence": "Sie ist so nervös, dass ihre Hände _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zittern",
+   "options": [
+    "zittern",
+    "frieren",
+    "brennen",
+    "jucken"
+   ],
+   "translation": "She is so nervous that her hands _____.",
+   "optionTranslations": [
+    "shake",
+    "are cold",
+    "burn",
+    "itch"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Sie ist so nervös, dass ihre Hände zittern.",
+    "targetWord": "zittern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "murmeln",
+  "sentence": "Sie [[murmelt]] etwas und liest den Zettel weiter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to mutter",
+   "options": [
+    "to mutter",
+    "to shout",
+    "to sing",
+    "to sigh"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Sie murmelt etwas und liest den Zettel weiter.",
+    "targetWord": "murmelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diesmal",
+  "sentence": "[[Diesmal]] macht sie alles ohne Hilfe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this time",
+   "options": [
+    "this time",
+    "last year",
+    "by chance",
+    "at once"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Diesmal macht sie alles ohne Hilfe.",
+    "targetWord": "Diesmal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brummen",
+  "sentence": "Die alten Maschinen [[brummen]] den ganzen Tag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hum",
+   "options": [
+    "to hum",
+    "to shine",
+    "to smell",
+    "to drip"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Die alten Maschinen brummen den ganzen Tag.",
+    "targetWord": "brummen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Streifen",
+  "sentence": "Sie reißt den letzten [[Streifen]] vom Zettel ab.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a paper strip",
+   "options": [
+    "a paper strip",
+    "a small coin",
+    "a thin nail",
+    "a blue stamp"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Sie reißt den letzten Streifen vom Zettel ab.",
+    "targetWord": "Streifen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Viereck",
+  "sentence": "An der Wand bleibt ein helles [[Viereck]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a square",
+   "options": [
+    "a square",
+    "a circle",
+    "a line",
+    "a hole"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "An der Wand bleibt ein helles Viereck.",
+    "targetWord": "Viereck",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "selbst",
+  "sentence": "Das hat sie [[selbst]] gemacht, ohne Hilfe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "herself",
+   "options": [
+    "herself",
+    "again",
+    "already",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Das hat sie selbst gemacht, ohne Hilfe.",
+    "targetWord": "selbst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allein",
+  "sentence": "Sie wohnt jetzt [[allein]] in zwei Zimmern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "happily",
+    "cheaply",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Sie wohnt jetzt allein in zwei Zimmern.",
+    "targetWord": "allein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kleben",
+  "sentence": "Die alten Zettel _____ noch an der Wand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kleben",
+   "options": [
+    "kleben",
+    "liegen",
+    "warten",
+    "fehlen"
+   ],
+   "translation": "The old notes are still _____ to the wall.",
+   "optionTranslations": [
+    "stuck",
+    "lying",
+    "waiting",
+    "missing"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Die alten Zettel kleben noch an der Wand.",
+    "targetWord": "kleben",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ruhig",
+  "sentence": "Auch im Streit bleibt seine Stimme ganz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ruhig",
+   "options": [
+    "ruhig",
+    "schnell",
+    "streng",
+    "fremd"
+   ],
+   "translation": "Even in an argument his voice stays quite _____.",
+   "optionTranslations": [
+    "calm",
+    "fast",
+    "stern",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "der-zettel-im-waschsalon",
+    "storySource": "user",
+    "sentence": "Auch im Streit bleibt seine Stimme ganz ruhig.",
+    "targetWord": "ruhig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,13 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "germany",
+ "registro": "de mercadillo: cifras, calculo en voz alta y humor seco sobre el dinero",
+ "espina": "Britta ha vuelto a Hannover despues de seis anos fuera y tiene que aceptar ayuda que no quiere necesitar; cada tema le cobra un pedazo de la version que contaba de si misma",
+ "recursos": "imagen concreta y contraste con pero (A0), causalidad explicita y humor de situacion (A1), simil simple, espejo concreto y flashback marcado (A2); nada por encima",
+ "historias": [
+  { "slot": "1", "quiere": "amueblar la casa entera con doscientos euros", "impide": "no le sale del cuerpo preguntar por el precio", "cuesta": "paga ochenta por una mesa coja y se queda sin dinero para la cama", "cambia": "aprende en carne propia lo que cuesta no preguntar", "emocion": "la verguenza que se traga y luego se cobra en casa" },
+  { "slot": "2", "quiere": "la cama que Kerstin le ofrece, por menos de cien", "impide": "tiene que regatear por primera vez en su vida", "cuesta": "se oye a si misma con una voz que no reconoce", "cambia": "descubre que sabe pedir, y que Kerstin ya se lo habia guardado", "emocion": "el susto agradable de ganar algo y descubrir que se lo habian regalado antes" },
+  { "slot": "3", "quiere": "una casa que sea suya, no una version peor de la anterior", "impide": "nada combina y Malte se rie de todo el conjunto", "cuesta": "tiene que renunciar a la idea de casa bonita que traia de Muenster", "cambia": "enumera cada mueble sin pedir perdon por ninguno", "emocion": "el alivio de no echar de menos el sofa verde" }
+ ]
+}

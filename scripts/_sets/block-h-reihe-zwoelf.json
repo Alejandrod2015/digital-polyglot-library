@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Tulpe,die Mütze,das Stadion,der Rasen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Tulpe",
+     "answer": "a tulip",
+     "options": [
+      "a tulip",
+      "a cap",
+      "a stadium",
+      "the pitch"
+     ]
+    },
+    {
+     "word": "die Mütze",
+     "answer": "a cap",
+     "options": [
+      "a tulip",
+      "a cap",
+      "a stadium",
+      "the pitch"
+     ]
+    },
+    {
+     "word": "das Stadion",
+     "answer": "a stadium",
+     "options": [
+      "a tulip",
+      "a cap",
+      "a stadium",
+      "the pitch"
+     ]
+    },
+    {
+     "word": "der Rasen",
+     "answer": "the pitch",
+     "options": [
+      "a tulip",
+      "a cap",
+      "a stadium",
+      "the pitch"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Dauerkarte",
+  "sentence": "Seine zweite [[Dauerkarte]] gilt für alle Heimspiele.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a season ticket",
+   "options": [
+    "a season ticket",
+    "a parking card",
+    "a library card",
+    "a bank card"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Seine zweite Dauerkarte gilt für alle Heimspiele.",
+    "targetWord": "Dauerkarte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stammkunde",
+  "sentence": "Ein [[Stammkunde]] kommt jede Woche in den Laden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a regular customer",
+   "options": [
+    "a regular customer",
+    "a late delivery",
+    "a first visitor",
+    "a new employee"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Ein Stammkunde kommt jede Woche in den Laden.",
+    "targetWord": "Stammkunde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Klappsitz",
+  "sentence": "Neben ihr bleibt ein [[Klappsitz]] leer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tip up seat",
+   "options": [
+    "a tip up seat",
+    "a wide table",
+    "a long bench",
+    "a small door"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Neben ihr bleibt ein Klappsitz leer.",
+    "targetWord": "Klappsitz",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Block",
+  "sentence": "Ihre Karte gilt für [[Block]] H, Reihe zwölf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a stand",
+   "options": [
+    "a stand",
+    "a street",
+    "a tower",
+    "a floor"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Ihre Karte gilt für Block H, Reihe zwölf.",
+    "targetWord": "Block",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Halbzeit",
+  "sentence": "In der zweiten [[Halbzeit]] wird es sehr kalt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a half",
+   "options": [
+    "a half",
+    "a break",
+    "a round",
+    "a match"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "In der zweiten Halbzeit wird es sehr kalt.",
+    "targetWord": "Halbzeit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pünktlich",
+  "sentence": "Der Bus kommt nie zu spät, er ist immer _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pünktlich",
+   "options": [
+    "pünktlich",
+    "leer",
+    "teuer",
+    "neu"
+   ],
+   "translation": "The bus is never late, it is always _____.",
+   "optionTranslations": [
+    "on time",
+    "empty",
+    "expensive",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Der Bus kommt nie zu spät, er ist immer pünktlich.",
+    "targetWord": "pünktlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "friert",
+  "sentence": "Auf der kalten Tribüne sitzt sie im Wind und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "friert",
+   "options": [
+    "friert",
+    "kocht",
+    "singt",
+    "schläft"
+   ],
+   "translation": "In the cold stand she sits in the wind and _____.",
+   "optionTranslations": [
+    "freezes",
+    "cooks",
+    "sings",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Auf der kalten Tribüne sitzt sie im Wind und friert.",
+    "targetWord": "friert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schimpfen",
+  "sentence": "Er [[schimpft]] neunzig Minuten über den Schiedsrichter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to grumble loudly",
+   "options": [
+    "to grumble loudly",
+    "to speak softly",
+    "to wave politely",
+    "to listen quietly"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Er schimpft neunzig Minuten über den Schiedsrichter.",
+    "targetWord": "schimpft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rot",
+  "sentence": "Er trägt bei jedem Wetter eine [[rote]] Mütze.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "thick",
+    "cheap",
+    "damp"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Er trägt bei jedem Wetter eine rote Mütze.",
+    "targetWord": "rote",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Fuß",
+  "sentence": "In der Kälte friert sie an den [[Füßen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a foot",
+   "options": [
+    "a foot",
+    "a hand",
+    "an ear",
+    "a knee"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "In der Kälte friert sie an den Füßen.",
+    "targetWord": "Füßen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Karte",
+  "sentence": "Er legt eine [[Karte]] neben die Kasse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a ticket",
+   "options": [
+    "a ticket",
+    "a coin",
+    "a plate",
+    "a glove"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Er legt eine Karte neben die Kasse.",
+    "targetWord": "Karte",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Fußball",
+  "sentence": "Von [[Fußball]] versteht sie wirklich gar nichts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "football",
+   "options": [
+    "football",
+    "farming",
+    "cooking",
+    "painting"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Von Fußball versteht sie wirklich gar nichts.",
+    "targetWord": "Fußball",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gelb",
+  "sentence": "Jeden Freitag kauft er drei [[gelbe]] Tulpen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yellow",
+   "options": [
+    "yellow",
+    "fresh",
+    "cheap",
+    "tall"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Jeden Freitag kauft er drei gelbe Tulpen.",
+    "targetWord": "gelbe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonst",
+  "sentence": "Die Karte verfällt [[sonst]] einfach im Oktober.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "otherwise",
+   "options": [
+    "otherwise",
+    "already",
+    "equally",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Die Karte verfällt sonst einfach im Oktober.",
+    "targetWord": "sonst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleich",
+  "sentence": "Nächsten Samstag sitzen sie im [[gleichen]] Block.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the same",
+   "options": [
+    "the same",
+    "the last",
+    "the wrong",
+    "the free"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Nächsten Samstag sitzen sie im gleichen Block.",
+    "targetWord": "gleichen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nächsten",
+  "sentence": "Heute ist Samstag, und am _____ Samstag kommen sie wieder.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nächsten",
+   "options": [
+    "nächsten",
+    "letzten",
+    "halben",
+    "dritten"
+   ],
+   "translation": "Today is Saturday, and _____ Saturday they come again.",
+   "optionTranslations": [
+    "next",
+    "last",
+    "half",
+    "third"
+   ],
+   "audioClip": {
+    "storySlug": "block-h-reihe-zwoelf",
+    "storySource": "user",
+    "sentence": "Heute ist Samstag, und am nächsten Samstag kommen sie wieder.",
+    "targetWord": "nächsten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

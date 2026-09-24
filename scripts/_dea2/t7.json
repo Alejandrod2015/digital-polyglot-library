@@ -1,0 +1,397 @@
+[
+ {
+  "topic": "housewarming-and-toasts",
+  "slotIndex": 0,
+  "title": "Ein Kasten im Hausflur",
+  "slug": "ein-kasten-im-hausflur",
+  "arcType": "daily-encounter",
+  "synopsis": "A removal van stands across the entrance on Monday morning and a crate of bottles blocks the landing. The new tenant from the first floor has paint on his hands and cannot find his key. Britta offers to carry the crate up, which is not what she would have done in February.",
+  "text": "Ein Umzugswagen steht am Montagmorgen mitten vor dem Haus. Auf dem Treppenabsatz blockiert ein Kasten mit Flaschen den ganzen Weg. Ihr Nachbar Hendrik sucht seinen Schlüssel und hat neue Farbe an den Händen.\n\nEr hält außerdem einen Stapel Kartons unter dem linken Arm. “Ich nehme den Kasten mit hoch, ich gehe sowieso in den zweiten Stock”, bietet Britta an. Im Februar war ihr so ein Kasten noch völlig egal.\n\nOben riecht es im ganzen Haus nach frischer Wandfarbe. Hendrik stellt die Kartons ab und lehnt sich kurz an das Geländer. “Wohnst du auch hier, oder rettest du einfach fremde Leute im Treppenhaus?”, fragt er.\n\nBritta lacht und deutet nach oben auf ihre eigene Tür. “Zweiter Stock, seit Oktober, und meine Küche ist immer noch halb leer”, antwortet sie fröhlich. Am Abend steht eine Flasche Saft vor ihrer Tür, ganz ohne Zettel.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Umzugswagen",
+    "anchor": true,
+    "surface": "Umzugswagen",
+    "definition": "A removal van; the big truck that carries a whole home."
+   },
+   {
+    "type": "verb",
+    "word": "suchen",
+    "surface": "sucht",
+    "definition": "To look for; to try to find a thing you cannot see."
+   },
+   {
+    "type": "noun",
+    "word": "der Treppenabsatz",
+    "surface": "Treppenabsatz",
+    "definition": "A landing; the flat place where one set of stairs ends."
+   },
+   {
+    "type": "noun",
+    "word": "der Kasten",
+    "anchor": true,
+    "surface": "Kasten",
+    "definition": "A crate; the plastic box German shops sell bottles in."
+   },
+   {
+    "type": "adjective",
+    "word": "neu",
+    "surface": "neue",
+    "definition": "New; here just arrived and not known to anybody yet."
+   },
+   {
+    "type": "noun",
+    "word": "die Farbe",
+    "surface": "Farbe",
+    "definition": "Paint; the wet colour you put on a wall with a brush."
+   },
+   {
+    "type": "adverb",
+    "word": "außerdem",
+    "surface": "außerdem",
+    "definition": "Besides; one more thing on top of what was already said."
+   },
+   {
+    "type": "adverb",
+    "word": "hoch",
+    "surface": "hoch",
+    "definition": "Up; from here to a higher floor of the same house."
+   },
+   {
+    "type": "adverb",
+    "word": "völlig",
+    "surface": "völlig",
+    "definition": "Completely; as much as it is possible to be."
+   },
+   {
+    "type": "adjective",
+    "word": "egal",
+    "surface": "egal",
+    "definition": "Not important; you do not care about it at all."
+   },
+   {
+    "type": "adjective",
+    "word": "frisch",
+    "surface": "frischer",
+    "definition": "Fresh; put there so recently that you can still smell it."
+   },
+   {
+    "type": "verb",
+    "word": "lehnen",
+    "surface": "lehnt",
+    "definition": "To lean; to rest your body against a wall or a rail."
+   },
+   {
+    "type": "noun",
+    "word": "das Geländer",
+    "surface": "Geländer",
+    "definition": "A handrail; the bar you hold on to going up stairs."
+   },
+   {
+    "type": "verb",
+    "word": "retten",
+    "surface": "rettest",
+    "definition": "To rescue; to help somebody out of a difficult spot."
+   },
+   {
+    "type": "adverb",
+    "word": "oben",
+    "surface": "Oben",
+    "definition": "Upstairs; on a higher floor than the one you are on."
+   },
+   {
+    "type": "verb",
+    "word": "deuten",
+    "surface": "deutet",
+    "definition": "To point; to show a direction with your hand or finger."
+   },
+   {
+    "type": "adjective",
+    "word": "leer",
+    "surface": "leer",
+    "definition": "Empty; with almost nothing inside it and still waiting."
+   },
+   {
+    "type": "adjective",
+    "word": "fröhlich",
+    "surface": "fröhlich",
+    "definition": "Cheerful; saying something in a light and happy way."
+   },
+   {
+    "type": "noun",
+    "word": "der Saft",
+    "surface": "Saft",
+    "definition": "Juice; the sweet drink made from pressed fruit."
+   },
+   {
+    "type": "noun",
+    "word": "die Wandfarbe",
+    "surface": "Wandfarbe",
+    "definition": "Wall paint; the colour you put on the walls of a flat."
+   }
+  ]
+ },
+ {
+  "topic": "housewarming-and-toasts",
+  "slotIndex": 1,
+  "title": "Einladung ohne Namen",
+  "slug": "einladung-ohne-namen",
+  "arcType": "recurring-character-callback",
+  "synopsis": "Malte explains that in this country a new tenant owes the house a party, and that the party has a name. Britta writes the invitation on half a sheet because she still does not know who lives behind most of the doors. She pins it downstairs and doubts it for two days.",
+  "text": "Malte sitzt auf demselben Klappstuhl wie im Oktober, und die Küche riecht nach Kaffee. “Ein Einstand ist hier keine Idee, sondern eine Pflicht”, erklärt er ihr. Britta schreibt die Einladung mit dem Kugelschreiber neben seinem Becher.\n\nSie kennt die Leute hinter den meisten Türen noch gar nicht. Deshalb steht oben nur: “Samstag, neunzehn Uhr, zweiter Stock, jeder ist herzlich willkommen.” Der Aushang hängt seit Donnerstag unten neben dem Fahrstuhl.\n\nZwei Tage lang sitzt sie abends auf der Bank vor dem Haus und wartet. Der Zweifel sitzt ihr im Magen und wird jede Stunde größer. Im Treppenlicht liest sie den eigenen Spruch noch dreimal durch.\n\n“Und wenn niemand kommt, stehe ich mutig da mit vierzig Schnittchen”, ruft sie laut. “Du hast für mich Kartons geschleppt, jetzt klingelt hier jemand für dich”, antwortet Malte. Am Freitagabend hängen drei kleine Zettel unter ihrem Aushang, und Britta hofft wieder.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "sitzen",
+    "surface": "sitzt",
+    "definition": "To sit; to be resting on a chair and not standing."
+   },
+   {
+    "type": "adverb",
+    "word": "wieder",
+    "surface": "wieder",
+    "definition": "Again; one more time after it already happened once."
+   },
+   {
+    "type": "noun",
+    "word": "der Einstand",
+    "surface": "Einstand",
+    "definition": "A housewarming; the party a newcomer in Germany owes the house."
+   },
+   {
+    "type": "noun",
+    "word": "die Pflicht",
+    "surface": "Pflicht",
+    "definition": "A duty; something you have to do, not something you choose."
+   },
+   {
+    "type": "noun",
+    "word": "der Kugelschreiber",
+    "surface": "Kugelschreiber",
+    "definition": "A biro; the cheap blue pen everybody has in a drawer."
+   },
+   {
+    "type": "adverb",
+    "word": "herzlich",
+    "surface": "herzlich",
+    "definition": "Warmly; said in a friendly way that means it honestly."
+   },
+   {
+    "type": "adverb",
+    "word": "unten",
+    "surface": "unten",
+    "definition": "Downstairs; on a lower floor, here by the front door."
+   },
+   {
+    "type": "adjective",
+    "word": "willkommen",
+    "surface": "willkommen",
+    "definition": "Welcome; glad to be there, and nobody minds you coming."
+   },
+   {
+    "type": "noun",
+    "word": "der Aushang",
+    "surface": "Aushang",
+    "definition": "A notice; a paper pinned up where the whole house sees it."
+   },
+   {
+    "type": "verb",
+    "word": "hängen",
+    "surface": "hängt",
+    "definition": "To hang; to be fixed on a wall so that everybody reads it."
+   },
+   {
+    "type": "noun",
+    "word": "der Fahrstuhl",
+    "surface": "Fahrstuhl",
+    "definition": "A lift; the small box that carries people up a building."
+   },
+   {
+    "type": "noun",
+    "word": "die Bank",
+    "surface": "Bank",
+    "definition": "A bench; the long hard seat outside a house or in a park."
+   },
+   {
+    "type": "noun",
+    "word": "der Zweifel",
+    "surface": "Zweifel",
+    "definition": "A doubt; the feeling that it may all go wrong."
+   },
+   {
+    "type": "adverb",
+    "word": "dreimal",
+    "surface": "dreimal",
+    "definition": "Three times; once and then twice more, one after another."
+   },
+   {
+    "type": "noun",
+    "word": "das Treppenlicht",
+    "surface": "Treppenlicht",
+    "definition": "The stair light; the lamp that goes out after a minute."
+   },
+   {
+    "type": "noun",
+    "word": "der Spruch",
+    "surface": "Spruch",
+    "definition": "A line; the few words somebody writes or says out loud."
+   },
+   {
+    "type": "adjective",
+    "word": "mutig",
+    "surface": "mutig",
+    "definition": "Brave; doing a thing although it could go badly wrong."
+   },
+   {
+    "type": "adverb",
+    "word": "laut",
+    "surface": "laut",
+    "definition": "Loudly; so that other people in the room can hear it."
+   },
+   {
+    "type": "verb",
+    "word": "rufen",
+    "surface": "ruft",
+    "definition": "To call out; to say something loudly so people hear you."
+   },
+   {
+    "type": "verb",
+    "word": "hoffen",
+    "surface": "hofft",
+    "definition": "To hope; to want something and think it may still happen."
+   }
+  ]
+ },
+ {
+  "topic": "housewarming-and-toasts",
+  "slotIndex": 2,
+  "title": "Brot und Salz für die Neue",
+  "slug": "brot-und-salz-fuer-die-neue",
+  "arcType": "harmonic-close",
+  "synopsis": "On Saturday the flat holds nineteen people and every one of them brings bread and salt. The table with the cardboard under its leg stands through the whole evening. Britta lifts a glass and says four sentences, and this time her voice does not shake at all.",
+  "text": "Neunzehn Leute passen am Samstag in zwei kleine Zimmer. Fast jeder bringt Brot und Salz mit, und die Wohnung riecht nach Hefe. Auf dem Tisch stehen Schüsseln mit Aufstrich, Gurken und ein Stapel Servietten.\n\nDer Korkenzieher wandert von Hand zu Hand, und die Gläser klirren im Zimmer. “Den Sekt aus dem Kasten schulde ich dir noch seit Montag”, lacht Hendrik. Der Tisch mit der Pappe wackelt nicht, obwohl alle gleichzeitig anstoßen wollen.\n\nBritta klopft mit einem Messer an ihr Glas, bis alle auf sie achten. Der Krach wird leiser, und neunzehn Gesichter drehen sich zu ihr. “Ich kenne die halben Namen noch nicht, aber das reicht mir, danke euch allen”, beginnt sie.\n\n“Ihr wisst schon, wer mir Suppe vor die Tür stellt und wer nicht”, sagt sie weiter. Später tanzt jemand in der Küche zwischen schmutzigen Tellern. Britta trinkt den letzten Schluck, räumt den Müll nicht auf und geht spät ins Bett.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Salz",
+    "surface": "Salz",
+    "definition": "Salt; the white grains Germans bring to a new home."
+   },
+   {
+    "type": "verb",
+    "word": "bringen",
+    "surface": "bringt",
+    "definition": "To bring; to carry something with you when you visit."
+   },
+   {
+    "type": "noun",
+    "word": "die Schüssel",
+    "surface": "Schüsseln",
+    "definition": "A bowl; the deep round dish you serve salad or dip in."
+   },
+   {
+    "type": "noun",
+    "word": "der Aufstrich",
+    "surface": "Aufstrich",
+    "definition": "A spread; the soft paste you put on a slice of bread."
+   },
+   {
+    "type": "noun",
+    "word": "die Gurke",
+    "surface": "Gurken",
+    "definition": "A cucumber; the long green vegetable cut into thin slices."
+   },
+   {
+    "type": "noun",
+    "word": "die Serviette",
+    "surface": "Servietten",
+    "definition": "A napkin; the small paper square you wipe your hands on."
+   },
+   {
+    "type": "noun",
+    "word": "der Korkenzieher",
+    "surface": "Korkenzieher",
+    "definition": "A corkscrew; the tool that pulls a cork out of a bottle."
+   },
+   {
+    "type": "verb",
+    "word": "klirren",
+    "surface": "klirren",
+    "definition": "To clink; the bright noise glasses make when they touch."
+   },
+   {
+    "type": "verb",
+    "word": "wandern",
+    "surface": "wandert",
+    "definition": "To wander; to pass slowly from one hand to the next."
+   },
+   {
+    "type": "verb",
+    "word": "anstoßen",
+    "surface": "anstoßen",
+    "definition": "To toast; to touch glasses before everybody drinks together."
+   },
+   {
+    "type": "verb",
+    "word": "achten",
+    "surface": "achten",
+    "definition": "To pay attention; to stop and listen to one person."
+   },
+   {
+    "type": "noun",
+    "word": "der Krach",
+    "surface": "Krach",
+    "definition": "Racket; a lot of loud noise made by many people at once."
+   },
+   {
+    "type": "verb",
+    "word": "reichen",
+    "surface": "reicht",
+    "definition": "To be enough; to be all that somebody needs or wants."
+   },
+   {
+    "type": "noun",
+    "word": "danke",
+    "surface": "danke",
+    "definition": "Thank you; the word you say when somebody has helped you."
+   },
+   {
+    "type": "verb",
+    "word": "tanzen",
+    "surface": "tanzt",
+    "definition": "To dance; to move to music, here in a small kitchen."
+   },
+   {
+    "type": "adjective",
+    "word": "schmutzig",
+    "surface": "schmutzigen",
+    "definition": "Dirty; used for eating and not washed up yet."
+   },
+   {
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkt",
+    "definition": "To drink; to take water, wine or tea into your mouth."
+   },
+   {
+    "type": "verb",
+    "word": "aufräumen",
+    "surface": "räumt",
+    "definition": "To tidy up; to put everything back where it belongs."
+   },
+   {
+    "type": "adjective",
+    "word": "letzt",
+    "surface": "letzten",
+    "definition": "Last; the one at the end, with nothing after it."
+   },
+   {
+    "type": "adverb",
+    "word": "spät",
+    "surface": "spät",
+    "definition": "Late; long after the hour when people usually go to bed."
+   }
+  ]
+ }
+]

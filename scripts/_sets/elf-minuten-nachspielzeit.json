@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Schiedsrichter,der Elfmeter,das Foul,das Radio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Schiedsrichter",
+     "answer": "the referee",
+     "options": [
+      "the referee",
+      "a penalty",
+      "a foul",
+      "a radio"
+     ]
+    },
+    {
+     "word": "der Elfmeter",
+     "answer": "a penalty",
+     "options": [
+      "the referee",
+      "a penalty",
+      "a foul",
+      "a radio"
+     ]
+    },
+    {
+     "word": "das Foul",
+     "answer": "a foul",
+     "options": [
+      "the referee",
+      "a penalty",
+      "a foul",
+      "a radio"
+     ]
+    },
+    {
+     "word": "das Radio",
+     "answer": "a radio",
+     "options": [
+      "the referee",
+      "a penalty",
+      "a foul",
+      "a radio"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Derby",
+  "sentence": "Beim [[Derby]] spielen zwei Städte gegeneinander.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a derby",
+   "options": [
+    "a derby",
+    "a training",
+    "a final",
+    "a break"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Beim Derby spielen zwei Städte gegeneinander.",
+    "targetWord": "Derby",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Gegner",
+  "sentence": "Der [[Gegner]] kommt aus der Nachbarstadt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the opponent",
+   "options": [
+    "the opponent",
+    "the referee",
+    "the trainer",
+    "the reporter"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Der Gegner kommt aus der Nachbarstadt.",
+    "targetWord": "Gegner",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Nachspielzeit",
+  "sentence": "In der [[Nachspielzeit]] steht das ganze Stadion.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stoppage time",
+   "options": [
+    "stoppage time",
+    "half time",
+    "first hour",
+    "early morning"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "In der Nachspielzeit steht das ganze Stadion.",
+    "targetWord": "Nachspielzeit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Anpfiff",
+  "sentence": "Ab dem [[Anpfiff]] setzt sich niemand mehr hin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the kick off",
+   "options": [
+    "the kick off",
+    "the last goal",
+    "the free seat",
+    "the long wait"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Ab dem Anpfiff setzt sich niemand mehr hin.",
+    "targetWord": "Anpfiff",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Tor",
+  "sentence": "Dann fällt das zweite [[Tor]] und alles wird still.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a goal",
+   "options": [
+    "a goal",
+    "a card",
+    "a pass",
+    "a shot"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Dann fällt das zweite Tor und alles wird still.",
+    "targetWord": "Tor",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pfeift",
+  "sentence": "Der Schiedsrichter _____ und zeigt auf den Punkt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pfeift",
+   "options": [
+    "pfeift",
+    "kocht",
+    "schreibt",
+    "zahlt"
+   ],
+   "translation": "The referee _____ and points at the spot.",
+   "optionTranslations": [
+    "whistles",
+    "cooks",
+    "writes",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Der Schiedsrichter pfeift und zeigt auf den Punkt.",
+    "targetWord": "pfeift",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "heiseres",
+  "sentence": "Sie hat neunzig Minuten geschrien, jetzt bleibt nur ein _____ Flüstern.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "heiseres",
+   "options": [
+    "heiseres",
+    "leeres",
+    "langes",
+    "kaltes"
+   ],
+   "translation": "She shouted for ninety minutes, now only a _____ whisper is left.",
+   "optionTranslations": [
+    "hoarse",
+    "empty",
+    "long",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Sie hat neunzig Minuten geschrien, jetzt bleibt nur ein heiseres Flüstern.",
+    "targetWord": "heiseres",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Lärm",
+  "sentence": "Nach dem Tor bricht der [[Lärm]] sofort ab.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "noise",
+   "options": [
+    "noise",
+    "rain",
+    "light",
+    "smoke"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Nach dem Tor bricht der Lärm sofort ab.",
+    "targetWord": "Lärm",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brechen",
+  "sentence": "Der Lärm [[bricht]] nach einer Sekunde ab.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to break off",
+   "options": [
+    "to break off",
+    "to build up",
+    "to move on",
+    "to come back"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Der Lärm bricht nach einer Sekunde ab.",
+    "targetWord": "bricht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schreien",
+  "sentence": "Sie [[schreit]] nach dem ersten Tor am lautesten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to scream",
+   "options": [
+    "to scream",
+    "to whisper",
+    "to listen",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Sie schreit nach dem ersten Tor am lautesten.",
+    "targetWord": "schreit",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kennen",
+  "sentence": "Sie [[kennt]] jetzt beide Lieder auswendig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know",
+   "options": [
+    "to know",
+    "to write",
+    "to choose",
+    "to teach"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Sie kennt jetzt beide Lieder auswendig.",
+    "targetWord": "kennt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brennen",
+  "sentence": "Ihr Hals fängt langsam an zu [[brennen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to burn",
+   "options": [
+    "to burn",
+    "to itch",
+    "to swell",
+    "to heal"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Ihr Hals fängt langsam an zu brennen.",
+    "targetWord": "brennen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Heimweg",
+  "sentence": "Auf dem [[Heimweg]] spricht sie kaum noch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the way home",
+   "options": [
+    "the way home",
+    "the front row",
+    "the last train",
+    "the side street"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Auf dem Heimweg spricht sie kaum noch.",
+    "targetWord": "Heimweg",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alt",
+  "sentence": "Seine Stimme klingt wie ein [[altes]] Radio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "loud",
+    "foreign",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Seine Stimme klingt wie ein altes Radio.",
+    "targetWord": "altes",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zweite",
+  "sentence": "Das [[zweite]] Tor fällt in der letzten Minute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "second",
+   "options": [
+    "second",
+    "whole",
+    "free",
+    "wrong"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Das zweite Tor fällt in der letzten Minute.",
+    "targetWord": "zweite",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Nachbarstadt",
+  "sentence": "Das Derby geht gegen die Mannschaft aus der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Nachbarstadt",
+   "options": [
+    "Nachbarstadt",
+    "Bäckerei",
+    "Praxis",
+    "Wohnung"
+   ],
+   "translation": "The derby is against the team from the _____.",
+   "optionTranslations": [
+    "neighbouring town",
+    "bakery",
+    "surgery",
+    "flat"
+   ],
+   "audioClip": {
+    "storySlug": "elf-minuten-nachspielzeit",
+    "storySource": "user",
+    "sentence": "Das Derby geht gegen die Mannschaft aus der Nachbarstadt.",
+    "targetWord": "Nachbarstadt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

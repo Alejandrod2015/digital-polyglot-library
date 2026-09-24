@@ -1,0 +1,403 @@
+[
+ {
+  "topic": "job-hunting-and-interviews",
+  "slotIndex": 0,
+  "title": "Ein Loch im Lebenslauf",
+  "slug": "ein-loch-im-lebenslauf",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Five applications have been sitting unread since Tuesday when a flower shop in the Nordstadt finally calls back. The owner reads her CV twice and asks about the six months with nothing in them. Britta tells the truth too fast, hears the wage, and hears herself say yes anyway.",
+  "text": "Fünf Bewerbungen liegen seit Dienstag ungelesen in fremden Postfächern. Am Donnerstag ruft endlich ein Blumenladen aus der Nordstadt zurück.\n\nLars ist der Inhaber und riecht nach Erde und kaltem Kaffee. Er legt ihren Lebenslauf auf den Tisch und liest ihn zweimal. “Sechs Jahre Münster, und dann ein halbes Jahr gar nichts, wie kommt das?”, fragt er.\n\nBritta sagt die Wahrheit, aber sie sagt sie viel zu schnell. “Ich bin zurückgekommen, weil ich hier niemanden mehr hatte, und das kostet Zeit”, antwortet sie. Lars hört zu und schneidet dabei die Stiele von drei weißen Rosen.\n\nDann erklärt er die Stelle: vier Tage pro Woche, Mindestlohn, drei Monate Probezeit. Der Lohn liegt weit unter allem, was sie in Münster bekommen hat.\n\nBritta hört sich selbst sagen, dass sie sofort anfangen kann, und ihre Stimme klingt aufgeregt. “Ich habe am Montag noch ein zweites Gespräch, danach rufe ich Sie an”, sagt Lars.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Bewerbung",
+    "anchor": true,
+    "surface": "Bewerbungen",
+    "definition": "An application; the papers you send when you want a job."
+   },
+   {
+    "type": "noun",
+    "word": "das Postfach",
+    "surface": "Postfächern",
+    "definition": "An inbox; the place where somebody else's messages arrive."
+   },
+   {
+    "type": "noun",
+    "word": "der Blumenladen",
+    "surface": "Blumenladen",
+    "definition": "A flower shop; a small shop that sells cut flowers and plants."
+   },
+   {
+    "type": "noun",
+    "word": "der Inhaber",
+    "anchor": true,
+    "surface": "Inhaber",
+    "definition": "The owner; the person the shop belongs to and who decides."
+   },
+   {
+    "type": "noun",
+    "word": "die Erde",
+    "surface": "Erde",
+    "definition": "Soil; the dark earth that plants grow in inside a pot."
+   },
+   {
+    "type": "noun",
+    "word": "der Lebenslauf",
+    "anchor": true,
+    "surface": "Lebenslauf",
+    "definition": "A CV; the page that lists where you worked and studied."
+   },
+   {
+    "type": "adverb",
+    "word": "zweimal",
+    "surface": "zweimal",
+    "definition": "Twice; two times, once and then once again."
+   },
+   {
+    "type": "adjective",
+    "word": "halb",
+    "surface": "halbes",
+    "definition": "Half; one of the two equal parts of a whole thing."
+   },
+   {
+    "type": "verb",
+    "word": "lesen",
+    "surface": "liest",
+    "definition": "To read; to look at written words and understand them."
+   },
+   {
+    "type": "adverb",
+    "word": "schnell",
+    "surface": "schnell",
+    "definition": "Fast; here so fast that it sounds like an excuse."
+   },
+   {
+    "type": "noun",
+    "word": "der Stiel",
+    "surface": "Stiele",
+    "definition": "A stem; the long green part that carries a flower."
+   },
+   {
+    "type": "noun",
+    "word": "die Rose",
+    "surface": "Rosen",
+    "definition": "A rose; the flower with a strong smell and small thorns."
+   },
+   {
+    "type": "adjective",
+    "word": "weiß",
+    "surface": "weißen",
+    "definition": "White; the colour of snow and of many wedding flowers."
+   },
+   {
+    "type": "noun",
+    "word": "die Stelle",
+    "anchor": true,
+    "surface": "Stelle",
+    "definition": "A position; the job itself, with its days and its pay."
+   },
+   {
+    "type": "noun",
+    "word": "der Mindestlohn",
+    "anchor": true,
+    "surface": "Mindestlohn",
+    "definition": "The minimum wage; the lowest hourly pay allowed in Germany."
+   },
+   {
+    "type": "noun",
+    "word": "der Lohn",
+    "surface": "Lohn",
+    "definition": "The pay; the money you get for the hours you work."
+   },
+   {
+    "type": "adverb",
+    "word": "weit",
+    "surface": "weit",
+    "definition": "Far; by a big distance, here far below what she had before."
+   },
+   {
+    "type": "adverb",
+    "word": "sofort",
+    "surface": "sofort",
+    "definition": "Right away; without waiting even a single day longer."
+   },
+   {
+    "type": "adjective",
+    "word": "aufgeregt",
+    "surface": "aufgeregt",
+    "definition": "Excited; so awake inside that your voice goes higher."
+   },
+   {
+    "type": "adverb",
+    "word": "danach",
+    "surface": "danach",
+    "definition": "After that; once the other thing has happened first."
+   }
+  ]
+ },
+ {
+  "topic": "job-hunting-and-interviews",
+  "slotIndex": 1,
+  "title": "Probearbeiten am Freitag",
+  "slug": "probearbeiten-am-freitag",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "On her trial day the shop is still dark at seven and Lars hands her a blue coat and a broom. For four hours she sweeps and carries water while her hands know every pair of scissors on the wall. A customer wants a funeral bouquet, and Britta is finished in two minutes.",
+  "text": "Um sieben ist der Blumenladen noch dunkel und riecht nach nassem Karton. Lars gibt ihr einen blauen Kittel und zeigt auf den Besen. “Erst der Boden, dann die Eimer, und dann sehen wir weiter”, erklärt er.\n\nVier Stunden lang fegt Britta, schleppt Wasser und sagt nichts. Am Vormittag will eine Kundin einen Strauß für eine Beerdigung. “Ich kann das, ich habe sechs Jahre lang nichts anderes gemacht”, bietet Britta an.\n\nLars ist am Telefon und hebt nur den Daumen. Sie schneidet die Stiele schräg, dreht das Band herum und ist in zwei Minuten fertig. Die Frau bedankt sich und geht mit dem Strauß hinaus.\n\n“Und jetzt bitte noch einmal durchwischen, vorne ist alles noch nass”, sagt Lars. Britta greift wieder zum Wasser, und ihre Hände zittern vor Wut. “Am Montag um sieben, wenn Sie wollen”, meint er später an der Kasse.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "dunkel",
+    "surface": "dunkel",
+    "definition": "Dark; with no light yet, the way a shop is before opening."
+   },
+   {
+    "type": "noun",
+    "word": "der Kittel",
+    "surface": "Kittel",
+    "definition": "A work coat; the loose coat you put on over your clothes."
+   },
+   {
+    "type": "noun",
+    "word": "der Besen",
+    "surface": "Besen",
+    "definition": "A broom; the long brush you sweep a floor with."
+   },
+   {
+    "type": "adjective",
+    "word": "blau",
+    "surface": "blauen",
+    "definition": "Blue; the colour of a clear sky on a good day."
+   },
+   {
+    "type": "noun",
+    "word": "der Eimer",
+    "surface": "Eimer",
+    "definition": "A bucket; the round thing with a handle that you carry water in."
+   },
+   {
+    "type": "verb",
+    "word": "fegen",
+    "surface": "fegt",
+    "definition": "To sweep; to clean a floor with a broom, again and again."
+   },
+   {
+    "type": "verb",
+    "word": "schleppen",
+    "surface": "schleppt",
+    "definition": "To lug; to carry something heavy a long way without help."
+   },
+   {
+    "type": "noun",
+    "word": "der Vormittag",
+    "surface": "Vormittag",
+    "definition": "The morning hours, from early until about twelve o'clock."
+   },
+   {
+    "type": "noun",
+    "word": "der Strauß",
+    "anchor": true,
+    "surface": "Strauß",
+    "definition": "A bouquet; flowers tied together to give to somebody."
+   },
+   {
+    "type": "noun",
+    "word": "die Beerdigung",
+    "surface": "Beerdigung",
+    "definition": "A funeral; the day when people say goodbye to somebody."
+   },
+   {
+    "type": "noun",
+    "word": "der Daumen",
+    "surface": "Daumen",
+    "definition": "The thumb; the short thick finger you lift to say yes."
+   },
+   {
+    "type": "verb",
+    "word": "schneiden",
+    "surface": "schneidet",
+    "definition": "To cut; to make something shorter with a knife or scissors."
+   },
+   {
+    "type": "adjective",
+    "word": "schräg",
+    "surface": "schräg",
+    "definition": "At an angle; not straight across, but cut like a slope."
+   },
+   {
+    "type": "noun",
+    "word": "das Band",
+    "surface": "Band",
+    "definition": "A ribbon; the thin strip you tie around a bunch of flowers."
+   },
+   {
+    "type": "adjective",
+    "word": "fertig",
+    "surface": "fertig",
+    "definition": "Finished; with the whole job done and nothing left over."
+   },
+   {
+    "type": "adverb",
+    "word": "vorne",
+    "surface": "vorne",
+    "definition": "At the front; in the part nearest the door or the street."
+   },
+   {
+    "type": "verb",
+    "word": "greifen",
+    "surface": "greift",
+    "definition": "To grab; to take hold of something quickly with your hand."
+   },
+   {
+    "type": "noun",
+    "word": "die Wut",
+    "surface": "Wut",
+    "definition": "Anger; the hot feeling you swallow instead of shouting."
+   },
+   {
+    "type": "noun",
+    "word": "die Kasse",
+    "surface": "Kasse",
+    "definition": "The till; the box or counter where a shop keeps its money."
+   },
+   {
+    "type": "adverb",
+    "word": "später",
+    "surface": "später",
+    "definition": "Later; at a time after the one you are talking about."
+   }
+  ]
+ },
+ {
+  "topic": "job-hunting-and-interviews",
+  "slotIndex": 2,
+  "title": "Die Schere aus Münster",
+  "slug": "die-schere-aus-muenster",
+  "arcType": "recurring-character-callback",
+  "synopsis": "The call comes on Monday at half past ten, in the middle of a supermarket aisle: four days a week from October. In the evening Malte offers his contacts the way he offered to sign for her flat in February. This time Britta shakes her head and asks him for something else instead.",
+  "text": "Der Anruf kommt am Montag um halb elf, zwischen Milch und Käse im Supermarkt. Lars stellt sie ein, vier Tage die Woche. Britta steht ganz still da und weint fast vor Erleichterung.\n\nAm Abend sitzt Malte auf einem Klappstuhl und hört ihr geduldig zu. “Ich kenne jemanden bei der Handelskammer, ich frage da nächste Woche gern mal nach”, schlägt er vor. Im Februar hat Britta bei genau diesem Angebot noch nein gesagt.\n\nHeute schüttelt sie den Kopf und bleibt trotzdem entspannt sitzen. “Die Handelskammer brauche ich nicht, aber am Sonntag brauche ich dich dringend”, antwortet sie. In Münster steht noch eine Holzkiste mit ihrem Werkzeug im Schuppen.\n\nDarin liegt die schwere Schere, die sie mit zweiundzwanzig gekauft hat. “Dann fahren wir eben am Sonntag hoch und holen die Kiste zusammen wieder her”, meint Malte. Zum ersten Mal seit dem Umzug bittet Britta um etwas und schämt sich nicht dafür.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Anruf",
+    "surface": "Anruf",
+    "definition": "A phone call; the moment when somebody rings you up."
+   },
+   {
+    "type": "verb",
+    "word": "einstellen",
+    "surface": "stellt",
+    "definition": "To hire; to give somebody a job in your own business."
+   },
+   {
+    "type": "verb",
+    "word": "weinen",
+    "surface": "weint",
+    "definition": "To cry; to have tears come out of your eyes."
+   },
+   {
+    "type": "noun",
+    "word": "die Erleichterung",
+    "surface": "Erleichterung",
+    "definition": "Relief; the light feeling when a long worry finally stops."
+   },
+   {
+    "type": "adjective",
+    "word": "still",
+    "surface": "still",
+    "definition": "Still; not moving and not saying anything at all."
+   },
+   {
+    "type": "adjective",
+    "word": "geduldig",
+    "surface": "geduldig",
+    "definition": "Patient; happy to wait and listen without saying much."
+   },
+   {
+    "type": "noun",
+    "word": "die Handelskammer",
+    "anchor": true,
+    "surface": "Handelskammer",
+    "definition": "The chamber of commerce; the German body local businesses belong to."
+   },
+   {
+    "type": "noun",
+    "word": "das Angebot",
+    "surface": "Angebot",
+    "definition": "An offer; help or a price that somebody puts in front of you."
+   },
+   {
+    "type": "adverb",
+    "word": "genau",
+    "surface": "genau",
+    "definition": "Exactly; the very same one and not a similar one."
+   },
+   {
+    "type": "adverb",
+    "word": "gern",
+    "surface": "gern",
+    "definition": "Gladly; happy to do it and without being asked twice."
+   },
+   {
+    "type": "adjective",
+    "word": "entspannt",
+    "surface": "entspannt",
+    "definition": "Relaxed; calm in the body, with nothing pulling tight."
+   },
+   {
+    "type": "adverb",
+    "word": "dringend",
+    "surface": "dringend",
+    "definition": "Urgently; so much that it cannot wait for another week."
+   },
+   {
+    "type": "noun",
+    "word": "das Werkzeug",
+    "surface": "Werkzeug",
+    "definition": "Tools; the things you need in your hands to do your work."
+   },
+   {
+    "type": "noun",
+    "word": "die Holzkiste",
+    "surface": "Holzkiste",
+    "definition": "A wooden crate; a strong box people keep heavy things in."
+   },
+   {
+    "type": "noun",
+    "word": "der Schuppen",
+    "surface": "Schuppen",
+    "definition": "A shed; the small wooden hut in a yard for tools."
+   },
+   {
+    "type": "noun",
+    "word": "die Schere",
+    "anchor": true,
+    "surface": "Schere",
+    "definition": "Scissors; the tool with two blades that a florist cuts with."
+   },
+   {
+    "type": "adverb",
+    "word": "eben",
+    "surface": "eben",
+    "definition": "Just; used when the answer is simple and needs no talk."
+   },
+   {
+    "type": "verb",
+    "word": "holen",
+    "surface": "holen",
+    "definition": "To fetch; to go somewhere and bring a thing back with you."
+   },
+   {
+    "type": "verb",
+    "word": "bitten",
+    "surface": "bittet",
+    "definition": "To ask for; to say out loud that you need something."
+   },
+   {
+    "type": "verb",
+    "word": "schämen",
+    "surface": "schämt",
+    "definition": "To be ashamed; to feel small about something you did."
+   }
+  ]
+ }
+]

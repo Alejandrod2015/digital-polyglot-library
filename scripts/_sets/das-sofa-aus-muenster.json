@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Seil,der Filzstift,das Schild,die Lehne",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Seil",
+     "answer": "a rope",
+     "options": [
+      "a rope",
+      "a marker pen",
+      "a sign",
+      "the back of a seat"
+     ]
+    },
+    {
+     "word": "der Filzstift",
+     "answer": "a marker pen",
+     "options": [
+      "a rope",
+      "a marker pen",
+      "a sign",
+      "the back of a seat"
+     ]
+    },
+    {
+     "word": "das Schild",
+     "answer": "a sign",
+     "options": [
+      "a rope",
+      "a marker pen",
+      "a sign",
+      "the back of a seat"
+     ]
+    },
+    {
+     "word": "die Lehne",
+     "answer": "the back of a seat",
+     "options": [
+      "a rope",
+      "a marker pen",
+      "a sign",
+      "the back of a seat"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klemmen",
+  "sentence": "Das Sofa [[klemmt]] zwischen zwei Wänden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to jam",
+   "options": [
+    "to jam",
+    "to fall",
+    "to shine",
+    "to float"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Das Sofa klemmt zwischen zwei Wänden.",
+    "targetWord": "klemmt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stecken",
+  "sentence": "Der Rahmen bleibt in der Tür [[stecken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be stuck",
+   "options": [
+    "to be stuck",
+    "to be broken",
+    "to be ready",
+    "to be open"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Der Rahmen bleibt in der Tür stecken.",
+    "targetWord": "stecken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Knick",
+  "sentence": "Die Treppe macht hier einen scharfen [[Knick]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bend",
+   "options": [
+    "a bend",
+    "a hole",
+    "a step",
+    "a door"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Die Treppe macht hier einen scharfen Knick.",
+    "targetWord": "Knick",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leicht",
+  "sentence": "Mit einem Seil geht das ganz [[leicht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "easily",
+   "options": [
+    "easily",
+    "slowly",
+    "rarely",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Mit einem Seil geht das ganz leicht.",
+    "targetWord": "leicht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Möbelstück",
+  "sentence": "Das Bett war ihr erstes [[Möbelstück]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece of furniture",
+   "options": [
+    "a piece of furniture",
+    "a kind of plant",
+    "a sort of cloth",
+    "a type of tool"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Das Bett war ihr erstes Möbelstück.",
+    "targetWord": "Möbelstück",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "breit",
+  "sentence": "Das Sofa ist zu _____ für die schmale Tür.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "breit",
+   "options": [
+    "breit",
+    "teuer",
+    "weich",
+    "hell"
+   ],
+   "translation": "The sofa is too _____ for the narrow door.",
+   "optionTranslations": [
+    "wide",
+    "expensive",
+    "soft",
+    "bright"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Das Sofa ist zu breit für die schmale Tür.",
+    "targetWord": "breit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "müde",
+  "sentence": "Am Ende des Umzugs sind alle so _____, dass sie sofort schlafen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "müde",
+   "options": [
+    "müde",
+    "hungrig",
+    "nervös",
+    "froh"
+   ],
+   "translation": "At the end of the move everybody is so _____ that they sleep at once.",
+   "optionTranslations": [
+    "tired",
+    "hungry",
+    "nervous",
+    "glad"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Am Ende des Umzugs sind alle so müde, dass sie sofort schlafen.",
+    "targetWord": "müde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rechnen",
+  "sentence": "Sie [[rechnet]] kurz im Kopf und nickt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work out numbers",
+   "options": [
+    "to work out numbers",
+    "to look for keys",
+    "to write down names",
+    "to hand out papers"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Sie rechnet kurz im Kopf und nickt.",
+    "targetWord": "rechnet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leihen",
+  "sentence": "Für den Umzug nimmt er ein [[geliehenes]] Seil.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "borrowed",
+   "options": [
+    "borrowed",
+    "painted",
+    "folded",
+    "stolen"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Für den Umzug nimmt er ein geliehenes Seil.",
+    "targetWord": "geliehenes",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mitten",
+  "sentence": "Der Schrank steht [[mitten]] im Zimmer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right in the middle",
+   "options": [
+    "right in the middle",
+    "close to the wall",
+    "behind the door",
+    "under the window"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Der Schrank steht mitten im Zimmer.",
+    "targetWord": "mitten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grün",
+  "sentence": "Das alte Sofa ist dunkel [[grün]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "round",
+    "empty",
+    "soft"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Das alte Sofa ist dunkel grün.",
+    "targetWord": "grün",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riechen",
+  "sentence": "Die Wohnung [[riecht]] noch nach Farbe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smell",
+   "options": [
+    "to smell",
+    "to sound",
+    "to look",
+    "to feel"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Die Wohnung riecht noch nach Farbe.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "langsam",
+  "sentence": "Der Regen macht alles [[langsam]] nass.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "clearly",
+    "suddenly",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Der Regen macht alles langsam nass.",
+    "targetWord": "langsam",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kaputt",
+  "sentence": "Nach dem Umzug haben alle einen [[kaputten]] Rücken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broken",
+   "options": [
+    "broken",
+    "strong",
+    "straight",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Nach dem Umzug haben alle einen kaputten Rücken.",
+    "targetWord": "kaputten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trocken",
+  "sentence": "Sie sagt das ganz [[trocken]] und geht weiter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drily",
+   "options": [
+    "drily",
+    "loudly",
+    "slowly",
+    "gladly"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Sie sagt das ganz trocken und geht weiter.",
+    "targetWord": "trocken",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verschwindet",
+  "sentence": "Er stellt das Schild hin und _____ im Hinterhof.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verschwindet",
+   "options": [
+    "verschwindet",
+    "kocht",
+    "singt",
+    "liest"
+   ],
+   "translation": "He puts up the sign and _____ into the back yard.",
+   "optionTranslations": [
+    "disappears",
+    "cooks",
+    "sings",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "das-sofa-aus-muenster",
+    "storySource": "user",
+    "sentence": "Er stellt das Schild hin und verschwindet im Hinterhof.",
+    "targetWord": "verschwindet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

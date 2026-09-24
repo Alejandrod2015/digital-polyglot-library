@@ -1,0 +1,17 @@
+MATCH|die Flasche=a bottle|der Sperrmüll=bulky waste|die Delle=a dent|das Ding=a thing
+M|quietschen|Die alten Stühle [[quietschen]] bei jeder Bewegung.|to squeak|to shine|to break|to fall
+M|der Neid|Sie erzählt es ohne [[Neid]] und lacht dabei.|envy|hunger|fear|shame
+M|entschuldigen|Früher hat sie sich für jedes alte Möbel [[entschuldigt]].|to apologise|to pay|to search|to wait
+M|erklären|Heute [[erklärt]] sie jedes Stück in der Wohnung.|to explain|to sell|to hide|to clean
+M|überlegen|Sie [[überlegt]] kurz und antwortet dann ruhig.|to think about it|to laugh about it|to shout about it|to forget about it
+F|voll|Endlich ist die Wohnung _____ und kein Zimmer leer.|At last the flat is _____ and no room empty.|full|neu=new|warm=warm|teuer=expensive
+F|verschiedene|Kein Teller passt zum anderen, sie stellt zwei _____ Teller hin.|No plate matches the other, she puts down two _____ plates.|different|schmutzige=dirty|kleine=small|blaue=blue
+M|werfen|Die Lampe [[wirft]] einen warmen Kreis auf den Boden.|to throw|to pull|to lose|to bring
+M|ehrlich|[[Ehrlich]] gesagt sieht alles wie ein Flohmarkt aus.|honest|sudden|quiet|formal
+M|grinsen|Sie [[grinst]] und stellt den zweiten Teller hin.|to grin|to groan|to yawn|to cough
+M|warm|Die Lampe macht ein [[warmes]] Licht im Zimmer.|warm|white|weak|steady
+M|früher|[[Früher]] hat sie sich für alles entschuldigt.|before|later|always|never
+M|einfach|Sie stellt die Teller [[einfach]] hin.|simply|slowly|twice|outside
+M|vorsichtig|Er fragt [[vorsichtig]] nach dem alten Sofa.|carefully|angrily|proudly|suddenly
+M|der Moment|Sie denkt einen [[Moment]] nach und schüttelt den Kopf.|a moment|a reason|a promise|a number
+F|schön|Alles ist alt und wackelt, die Wohnung ist wirklich nicht _____.|Everything is old and wobbles, the flat really is not _____.|beautiful|leer=empty|kalt=cold|fertig=finished

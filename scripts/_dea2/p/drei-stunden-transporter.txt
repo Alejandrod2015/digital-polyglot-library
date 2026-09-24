@@ -1,0 +1,17 @@
+MATCH|der Transporter=a hired van|das Erdgeschoss=the ground floor|das Klebeband=sticky tape|der Nachbar=a neighbour
+M|heben|Er [[hebt]] die schwere Kiste vom Boden.|to lift|to push|to drop|to open
+M|tragen|Sie [[trägt]] den Schrank durch den Flur.|to carry|to paint|to sell|to measure
+M|zögern|Sie [[zögert]] kurz und sagt dann ja.|to hesitate|to shout|to smile|to leave
+M|nicken|Er [[nickt]] und nimmt den Karton.|to nod|to wave|to sit|to run
+M|die Rechnung|Am Ende der Woche kommt die [[Rechnung]].|the bill|the answer|the parcel|the ticket
+F|passt|Das breite Sofa _____ durch keine einzige Tür.|The wide sofa _____ through any door at all.|fits|klingt=sounds|riecht=smells|wartet=waits
+F|schwer|Die Kiste ist so _____, dass zwei Leute sie tragen.|The crate is so _____ that two people carry it.|heavy|teuer=expensive|alt=old|neu=new
+M|plötzlich|[[Plötzlich]] steht jemand mit Handschuhen vor der Tür.|suddenly|carefully|every day|from below
+M|der Gang|Nach dem dritten [[Gang]] tut ihm alles weh.|a trip on foot|a short break|a free hour|a cold drink
+M|packen|Sie hat alles selbst in Kisten [[gepackt]].|to pack|to park|to count|to paint
+M|stöhnen|Er [[stöhnt]] leise und stellt die Kiste ab.|to groan|to whistle|to shout|to sing
+M|weh|Nach drei Stunden tut ihr der Rücken [[weh]].|painfully|quickly|clearly|hardly
+M|doppelt|Zu dritt geht die Arbeit [[doppelt]] so schnell.|twice as|almost as|never as|hardly as
+M|eng|Das Treppenhaus ist alt und sehr [[eng]].|narrow|bright|warm|clean
+M|warnen|Er [[warnt]] sie vor dem nassen Boden.|to warn|to warm|to follow|to ask
+F|nirgendwo|Sie sucht überall, aber der Schlüssel ist _____ zu finden.|She looks everywhere, but the key is _____ to be found.|nowhere|drinnen=inside|draußen=outside|oben=upstairs

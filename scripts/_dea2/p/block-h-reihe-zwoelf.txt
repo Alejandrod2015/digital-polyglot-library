@@ -1,0 +1,17 @@
+MATCH|die Tulpe=a tulip|die Mütze=a cap|das Stadion=a stadium|der Rasen=the pitch
+M|die Dauerkarte|Seine zweite [[Dauerkarte]] gilt für alle Heimspiele.|a season ticket|a parking card|a library card|a bank card
+M|der Stammkunde|Ein [[Stammkunde]] kommt jede Woche in den Laden.|a regular customer|a late delivery|a first visitor|a new employee
+M|der Klappsitz|Neben ihr bleibt ein [[Klappsitz]] leer.|a tip up seat|a wide table|a long bench|a small door
+M|der Block|Ihre Karte gilt für [[Block]] H, Reihe zwölf.|a stand|a street|a tower|a floor
+M|die Halbzeit|In der zweiten [[Halbzeit]] wird es sehr kalt.|a half|a break|a round|a match
+F|pünktlich|Der Bus kommt nie zu spät, er ist immer _____.|The bus is never late, it is always _____.|on time|leer=empty|teuer=expensive|neu=new
+F|friert|Auf der kalten Tribüne sitzt sie im Wind und _____.|In the cold stand she sits in the wind and _____.|freezes|kocht=cooks|singt=sings|schläft=sleeps
+M|schimpfen|Er [[schimpft]] neunzig Minuten über den Schiedsrichter.|to grumble loudly|to speak softly|to wave politely|to listen quietly
+M|rot|Er trägt bei jedem Wetter eine [[rote]] Mütze.|red|thick|cheap|damp
+M|der Fuß|In der Kälte friert sie an den [[Füßen]].|a foot|a hand|an ear|a knee
+M|die Karte|Er legt eine [[Karte]] neben die Kasse.|a ticket|a coin|a plate|a glove
+M|der Fußball|Von [[Fußball]] versteht sie wirklich gar nichts.|football|farming|cooking|painting
+M|gelb|Jeden Freitag kauft er drei [[gelbe]] Tulpen.|yellow|fresh|cheap|tall
+M|sonst|Die Karte verfällt [[sonst]] einfach im Oktober.|otherwise|already|equally|rarely
+M|gleich|Nächsten Samstag sitzen sie im [[gleichen]] Block.|the same|the last|the wrong|the free
+F|nächsten|Heute ist Samstag, und am _____ Samstag kommen sie wieder.|Today is Saturday, and _____ Saturday they come again.|next|letzten=last|halben=half|dritten=third

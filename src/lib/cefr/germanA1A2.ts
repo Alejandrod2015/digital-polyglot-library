@@ -316,6 +316,65 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "schachtel","notfall","genug","zurück","achten","achtet","geachtet","schein",
   "gemütlich","gesicht","gesichter","streichholz","streichhölzer","verkaufen","verkauft",
   "kunde","kunden","vorne","golden","schön","dicht","kreis","lachen","lacht","warm",
+
+  // ── Batch 9 (2026-09-21) for the German "Friends" A2 (Hannover): renting,
+  //    moving, second-hand, job hunting, match days, sick days. Two kinds of
+  //    entry, the same two the earlier batches already mix: Goethe A1/A2
+  //    Wortliste words the list simply lacked ("miete", "vertrag", "sauber"),
+  //    and the journey's own realia anchors ("schufa", "maklerin", "bürge"),
+  //    which are rare in ANY frequency corpus by definition and are exactly
+  //    what the journey exists to teach. Same criterion as batches 1-8; the
+  //    0/1-2/3+ threshold of vocab-level-frequency is untouched.
+  "bewerber","bewerberin","mappe","maklerin","maklerbüro","schufa","winzig",
+  "miete","mieten","bürgersteig","zugeben","gibt zu","zugegeben","bisher",
+  "sortieren","sortiert","staub","staubig","arbeitsvertrag","bürge","bürgin",
+  "schütteln","schüttelt","zucken","zuckt","wortlos","stolz","wiegen","wiegt",
+  "brett","waschsalon","waschpulver","brummen","brummt","streifen",
+  "vormieter","vormieterin","nachmieter","nachmieterin","kleben","klebt",
+  "viereck","vierecke","zittern","zittert","hinterhof",
+  // Batch 9b (2026-09-21), same journey, tema 2 (moving-and-helping-out).
+  "transporter","deckel","klebeband","stöhnen","stöhnt","gang","weh","doppelt",
+  "rechnung","nicken","nickt","eng","warnen","warnt","nirgendwo","mitten",
+  "knick","rahmen","rechnen","rechnet","kaputt","lehne","filzstift","pappteller",
+  "flach","bedanken","bedankt","schief","hausordnung","tonne","tonnen","gefallen",
+  "irgendwann","umdrehen","umgedreht","waschmaschine","maschine","fensterbank",
+  "leihen","geliehen","pizza","klemmen","klemmt","seil","seile",
+  // Batch 9c (2026-09-21), same journey, tema 3 (second-hand-and-bargains).
+  "händler","händlerin","streichen","streicht","platte","massiv","handeln","handelt",
+  "gehandelt","pappe","deutlich","lager","lattenrost","kratzer","matratze","anhänger",
+  "klingen","klingt","wischen","wischt","mustern","mustert","gelegenheit","seltsam",
+  "krumm","datum","überhaupt","quietschen","quietscht","delle","grinsen","grinst",
+  "gebraucht","entschuldigen","entschuldigt","ding","dinge","überlegen","überlegt","neid",
+  "werfen","wirft","geworfen",
+  // Batch 9d (2026-09-21), same journey, tema 4 (job-hunting-and-interviews).
+  "bewerbung","bewerbungen","strauß","sträuße","schere","scheren","schicht","schichten",
+  "lücke","kittel","fegen","fegt","verlegen","aufgeregt","stiel","stiele","rose","rosen",
+  "band","bänder","vase","schleppen","schleppt","stolpern","rostig","wechseln","wechselt",
+  "schräg","wut","kasse","greifen","greift","erleichterung","weinen","weint","geduldig",
+  "handelskammer","angebot","entspannt","dringend","werkzeug","bitten","bittet","schämen",
+  "schämt","eben","mindestlohn","lebenslauf","probearbeiten","blumenladen","inhaber",
+  "postfach","postfächer","vorstellungsgespräch","danach","schuppen",
+  // Batch 9e (2026-09-21), same journey, tema 5 (sports-and-match-days).
+  "stadion","tribüne","block","trikot","anpfiff","schiedsrichter","fankurve","gesang",
+  "heiser","sieg","jubeln","jubelt","pfeifen","pfeift","fan","fans","brüllen","brüllt",
+  "tulpe","tulpen","fußball","klappsitz","rasen","schimpfen","schimpft","regel","regeln",
+  "frieren","friert","sonst","text","auswendig","senf","pommes","winken","winkt",
+  "umarmen","umarmt","strophe","gegner","derby","punkt","punkte","dauerkarte","nachspielzeit",
+  "falten","faltet","gefaltet","abpfiff","kehle","elfmeter","schreien","schreit","radio","foul",
+  "heimspiel","wurststand","lärm","krähe","bestimmt",
+  // Batch 9f (2026-09-21), same journey, tema 6 (illness-and-sick-days).
+  "fieber","grippe","krankschreibung","krankgeschrieben","halsschmerzen","schlucken",
+  "tablette","tabletten","schwitzen","schwitzt","schüttelfrost","messen","misst",
+  "thermometer","ausruhen","bettruhe","schwindlig","niesen","taschentuch","taschentücher",
+  "praxis","husten","hustet","hausärztin","hausarzt","versichertenkarte","wartezimmer",
+  "krankenschein","nudelsuppe","flüstern","flüstert","tippen","tippt","beginnen","beginnt",
+  "lange","dienst","kratzen","kratzt","unterschrift","lunge","stur","hartnäckig","empfang",
+  // Batch 9g (2026-09-21), same journey, tema 7 (housewarming-and-toasts).
+  "kasten","kästen","anstoßen","stößt","rede","korkenzieher","korken","prost",
+  "anbieten","bietet","stapel","spruch","klirren","klirrt","schnittchen","einweihung",
+  "trinkspruch","abwaschen","spülbecken","lappen","baguette","chips","dip","duft",
+  "krach","egal","völlig","deuten","deutet","einstand","aufstrich","treppenabsatz",
+  "umzugswagen","serviette","aushang","absagen","zusagen","zweifel","geländer",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

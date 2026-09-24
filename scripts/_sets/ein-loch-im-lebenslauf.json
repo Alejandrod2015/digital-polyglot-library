@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Blumenladen,der Lebenslauf,die Rose,der Stiel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Blumenladen",
+     "answer": "a flower shop",
+     "options": [
+      "a flower shop",
+      "a CV",
+      "a rose",
+      "a stem"
+     ]
+    },
+    {
+     "word": "der Lebenslauf",
+     "answer": "a CV",
+     "options": [
+      "a flower shop",
+      "a CV",
+      "a rose",
+      "a stem"
+     ]
+    },
+    {
+     "word": "die Rose",
+     "answer": "a rose",
+     "options": [
+      "a flower shop",
+      "a CV",
+      "a rose",
+      "a stem"
+     ]
+    },
+    {
+     "word": "der Stiel",
+     "answer": "a stem",
+     "options": [
+      "a flower shop",
+      "a CV",
+      "a rose",
+      "a stem"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Bewerbung",
+  "sentence": "Fünf [[Bewerbungen]] liegen seit Dienstag ungelesen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an application",
+   "options": [
+    "an application",
+    "an invitation",
+    "a reminder",
+    "a receipt"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Fünf Bewerbungen liegen seit Dienstag ungelesen.",
+    "targetWord": "Bewerbungen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Stelle",
+  "sentence": "Er erklärt die [[Stelle]]: vier Tage pro Woche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a position",
+   "options": [
+    "a position",
+    "a delivery",
+    "a meeting",
+    "a holiday"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Er erklärt die Stelle: vier Tage pro Woche.",
+    "targetWord": "Stelle",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Mindestlohn",
+  "sentence": "Die Bezahlung liegt genau beim [[Mindestlohn]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the minimum wage",
+   "options": [
+    "the minimum wage",
+    "the yearly bonus",
+    "the monthly rent",
+    "the travel cost"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Die Bezahlung liegt genau beim Mindestlohn.",
+    "targetWord": "Mindestlohn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Lohn",
+  "sentence": "Der [[Lohn]] ist niedriger als früher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the pay",
+   "options": [
+    "the pay",
+    "the noise",
+    "the risk",
+    "the rush"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Der Lohn ist niedriger als früher.",
+    "targetWord": "Lohn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Inhaber",
+  "sentence": "Der [[Inhaber]] entscheidet selbst über neue Leute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the owner",
+   "options": [
+    "the owner",
+    "the cleaner",
+    "the customer",
+    "the courier"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Der Inhaber entscheidet selbst über neue Leute.",
+    "targetWord": "Inhaber",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "weit",
+  "sentence": "Das Geld liegt _____ unter dem alten Gehalt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "weit",
+   "options": [
+    "weit",
+    "kurz",
+    "gern",
+    "spät"
+   ],
+   "translation": "The money is _____ below the old salary.",
+   "optionTranslations": [
+    "far",
+    "briefly",
+    "gladly",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Das Geld liegt weit unter dem alten Gehalt.",
+    "targetWord": "weit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufgeregt",
+  "sentence": "Ihre Stimme wird hoch und klingt sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufgeregt",
+   "options": [
+    "aufgeregt",
+    "müde",
+    "streng",
+    "leise"
+   ],
+   "translation": "Her voice goes high and sounds very _____.",
+   "optionTranslations": [
+    "excited",
+    "tired",
+    "stern",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Ihre Stimme wird hoch und klingt sehr aufgeregt.",
+    "targetWord": "aufgeregt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lesen",
+  "sentence": "Er [[liest]] das Papier zweimal und schaut auf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to read",
+   "options": [
+    "to read",
+    "to fold",
+    "to stamp",
+    "to keep"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Er liest das Papier zweimal und schaut auf.",
+    "targetWord": "liest",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Postfach",
+  "sentence": "Die Briefe liegen in fremden [[Postfächern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an inbox",
+   "options": [
+    "an inbox",
+    "a cupboard",
+    "a suitcase",
+    "a drawer"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Die Briefe liegen in fremden Postfächern.",
+    "targetWord": "Postfächern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Erde",
+  "sentence": "Der Laden riecht nach [[Erde]] und kaltem Kaffee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soil",
+   "options": [
+    "soil",
+    "smoke",
+    "bread",
+    "rain"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Der Laden riecht nach Erde und kaltem Kaffee.",
+    "targetWord": "Erde",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weiß",
+  "sentence": "Er schneidet die Stiele von drei [[weißen]] Rosen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "round",
+    "cheap",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Er schneidet die Stiele von drei weißen Rosen.",
+    "targetWord": "weißen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "halb",
+  "sentence": "Nach sechs Jahren kommt ein [[halbes]] Jahr ohne Arbeit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half",
+   "options": [
+    "half",
+    "third",
+    "double",
+    "whole"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Nach sechs Jahren kommt ein halbes Jahr ohne Arbeit.",
+    "targetWord": "halbes",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zweimal",
+  "sentence": "Er liest das Papier [[zweimal]] und schaut auf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice",
+   "options": [
+    "twice",
+    "slowly",
+    "aloud",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Er liest das Papier zweimal und schaut auf.",
+    "targetWord": "zweimal",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schnell",
+  "sentence": "Sie antwortet zu [[schnell]] und klingt unsicher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast",
+   "options": [
+    "fast",
+    "softly",
+    "rudely",
+    "briefly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Sie antwortet zu schnell und klingt unsicher.",
+    "targetWord": "schnell",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "danach",
+  "sentence": "Zuerst das Gespräch, [[danach]] der Anruf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after that",
+   "options": [
+    "after that",
+    "before that",
+    "instead of that",
+    "during that"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Zuerst das Gespräch, danach der Anruf.",
+    "targetWord": "danach",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sofort",
+  "sentence": "Die Stelle ist ab heute frei, sie kann _____ anfangen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sofort",
+   "options": [
+    "sofort",
+    "später",
+    "selten",
+    "kaum"
+   ],
+   "translation": "The job is free from today, she can start _____.",
+   "optionTranslations": [
+    "right away",
+    "later",
+    "rarely",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-loch-im-lebenslauf",
+    "storySource": "user",
+    "sentence": "Die Stelle ist ab heute frei, sie kann sofort anfangen.",
+    "targetWord": "sofort",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

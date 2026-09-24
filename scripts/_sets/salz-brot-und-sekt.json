@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Salz,die Gurke,die Serviette,der Korkenzieher",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Salz",
+     "answer": "salt",
+     "options": [
+      "salt",
+      "a cucumber",
+      "a napkin",
+      "a corkscrew"
+     ]
+    },
+    {
+     "word": "die Gurke",
+     "answer": "a cucumber",
+     "options": [
+      "salt",
+      "a cucumber",
+      "a napkin",
+      "a corkscrew"
+     ]
+    },
+    {
+     "word": "die Serviette",
+     "answer": "a napkin",
+     "options": [
+      "salt",
+      "a cucumber",
+      "a napkin",
+      "a corkscrew"
+     ]
+    },
+    {
+     "word": "der Korkenzieher",
+     "answer": "a corkscrew",
+     "options": [
+      "salt",
+      "a cucumber",
+      "a napkin",
+      "a corkscrew"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bringen",
+  "sentence": "Fast jeder [[bringt]] Brot und Salz mit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring along",
+   "options": [
+    "to bring along",
+    "to hand back",
+    "to put away",
+    "to ask for"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Fast jeder bringt Brot und Salz mit.",
+    "targetWord": "bringt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anstoßen",
+  "sentence": "Alle wollen gleichzeitig [[anstoßen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to toast",
+   "options": [
+    "to toast",
+    "to leave",
+    "to argue",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Alle wollen gleichzeitig anstoßen.",
+    "targetWord": "anstoßen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Aufstrich",
+  "sentence": "Zum Brot gibt es einen weichen [[Aufstrich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a spread",
+   "options": [
+    "a spread",
+    "a sauce",
+    "a syrup",
+    "a batter"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Zum Brot gibt es einen weichen Aufstrich.",
+    "targetWord": "Aufstrich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Schüssel",
+  "sentence": "Sie stellt eine große [[Schüssel]] auf den Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bowl",
+   "options": [
+    "a bowl",
+    "a kettle",
+    "a tray",
+    "a pan"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Sie stellt eine große Schüssel auf den Tisch.",
+    "targetWord": "Schüssel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Krach",
+  "sentence": "Der [[Krach]] wird leiser, als sie ans Glas klopft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "racket",
+   "options": [
+    "racket",
+    "smoke",
+    "draught",
+    "smell"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Der Krach wird leiser, als sie ans Glas klopft.",
+    "targetWord": "Krach",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "reicht",
+  "sentence": "Mehr braucht sie nicht, das kleine Fest _____ ihr völlig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "reicht",
+   "options": [
+    "reicht",
+    "fehlt",
+    "gefällt",
+    "hilft"
+   ],
+   "translation": "She needs no more, the small party is completely _____ for her.",
+   "optionTranslations": [
+    "enough",
+    "missing",
+    "pleasing",
+    "helpful"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Mehr braucht sie nicht, das kleine Fest reicht ihr völlig.",
+    "targetWord": "reicht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "spät",
+  "sentence": "Erst um drei Uhr nachts geht sie ins Bett, also sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spät",
+   "options": [
+    "spät",
+    "leise",
+    "allein",
+    "müde"
+   ],
+   "translation": "Only at three in the morning does she go to bed, so very _____.",
+   "optionTranslations": [
+    "late",
+    "quietly",
+    "alone",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Erst um drei Uhr nachts geht sie ins Bett, also sehr spät.",
+    "targetWord": "spät",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "achten",
+  "sentence": "Sie klopft ans Glas, bis alle auf sie [[achten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pay attention",
+   "options": [
+    "to pay attention",
+    "to sit down",
+    "to drink up",
+    "to move away"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Sie klopft ans Glas, bis alle auf sie achten.",
+    "targetWord": "achten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klirren",
+  "sentence": "Die Gläser [[klirren]] im ganzen Zimmer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to clink",
+   "options": [
+    "to clink",
+    "to crack",
+    "to spill",
+    "to steam"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Die Gläser klirren im ganzen Zimmer.",
+    "targetWord": "klirren",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tanzen",
+  "sentence": "Später [[tanzt]] jemand zwischen den Tellern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dance",
+   "options": [
+    "to dance",
+    "to cook",
+    "to sleep",
+    "to read"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Später tanzt jemand zwischen den Tellern.",
+    "targetWord": "tanzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schmutzig",
+  "sentence": "In der Küche stehen überall [[schmutzige]] Teller.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dirty",
+   "options": [
+    "dirty",
+    "golden",
+    "square",
+    "deep"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "In der Küche stehen überall schmutzige Teller.",
+    "targetWord": "schmutzige",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trinken",
+  "sentence": "Sie [[trinkt]] den letzten Rest aus dem Glas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to drink",
+   "options": [
+    "to drink",
+    "to pour",
+    "to wash",
+    "to break"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Sie trinkt den letzten Rest aus dem Glas.",
+    "targetWord": "trinkt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufräumen",
+  "sentence": "Heute [[räumt]] sie den Müll nicht auf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tidy up",
+   "options": [
+    "to tidy up",
+    "to take out",
+    "to pay for",
+    "to look at"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Heute räumt sie den Müll nicht auf.",
+    "targetWord": "räumt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letzt",
+  "sentence": "Sie nimmt den [[letzten]] Schluck aus dem Glas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "second",
+    "warm",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Sie nimmt den letzten Schluck aus dem Glas.",
+    "targetWord": "letzten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "danke",
+  "sentence": "Sie sagt [[danke]] und hebt ihr Glas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thank you",
+   "options": [
+    "thank you",
+    "good luck",
+    "see you",
+    "well done"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Sie sagt danke und hebt ihr Glas.",
+    "targetWord": "danke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wandert",
+  "sentence": "Am Tisch _____ der Korkenzieher von einem zum anderen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wandert",
+   "options": [
+    "wandert",
+    "klirrt",
+    "fehlt",
+    "bricht"
+   ],
+   "translation": "At the table the corkscrew _____ from one person to the next.",
+   "optionTranslations": [
+    "passes",
+    "clinks",
+    "is missing",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "salz-brot-und-sekt",
+    "storySource": "user",
+    "sentence": "Am Tisch wandert der Korkenzieher von einem zum anderen.",
+    "targetWord": "wandert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

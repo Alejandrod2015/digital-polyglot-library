@@ -26732,5 +26732,1471 @@
    "g": "alive, and feeling it",
    "t": "adjective"
   }
+ },
+ "german-friends-a2": {
+  "ab": {
+   "g": "off, away (separable prefix: stellt ab, zieht ab); from (ab dem Anpfiff)",
+   "t": "preposition"
+  },
+  "abend": {
+   "g": "the evening (am Abend, in the evening)",
+   "t": "noun"
+  },
+  "achten": {
+   "g": "to pay attention to somebody (achten)",
+   "t": "verb"
+  },
+  "alten": {
+   "g": "old (form of alt after der, die, das)",
+   "t": "adjective"
+  },
+  "anderem": {
+   "g": "someone else (form of anderer after von)",
+   "t": "pronoun"
+  },
+  "anfangen": {
+   "g": "to start, to begin a job",
+   "t": "verb"
+  },
+  "anfing": {
+   "g": "started (anfangen, past)",
+   "t": "verb"
+  },
+  "anfängt": {
+   "g": "starts (anfangen)",
+   "t": "verb"
+  },
+  "angebot": {
+   "g": "the offer, what somebody puts on the table",
+   "t": "noun"
+  },
+  "anhänger": {
+   "g": "a trailer, the little cart you pull behind a car",
+   "t": "noun"
+  },
+  "arbeitsvertrag": {
+   "g": "the work contract that proves you have a job",
+   "t": "noun"
+  },
+  "arm": {
+   "g": "the arm (unter dem Arm, under one arm)",
+   "t": "noun"
+  },
+  "atmet": {
+   "g": "breathes (atmen)",
+   "t": "verb"
+  },
+  "aufgeregt": {
+   "g": "excited, with a voice that cannot stay calm",
+   "t": "adjective"
+  },
+  "aufsetzt": {
+   "g": "sits up in bed (aufsetzen)",
+   "t": "verb"
+  },
+  "aufstehen": {
+   "g": "to get out of bed",
+   "t": "verb"
+  },
+  "aufstehst": {
+   "g": "you get out of bed (aufstehen)",
+   "t": "verb"
+  },
+  "aufstrich": {
+   "g": "spread, what you put on bread",
+   "t": "noun"
+  },
+  "aushang": {
+   "g": "the notice somebody pins up in the hallway",
+   "t": "noun"
+  },
+  "ausruhen": {
+   "g": "to rest, to stay home and do nothing (ausruhen)",
+   "t": "verb"
+  },
+  "auswendig": {
+   "g": "by heart, without reading it",
+   "t": "adverb"
+  },
+  "auszieht": {
+   "g": "moves out, leaves the flat for good (ausziehen)",
+   "t": "verb"
+  },
+  "balkon": {
+   "g": "the balcony",
+   "t": "noun"
+  },
+  "bank": {
+   "g": "a bench to sit on outdoors",
+   "t": "noun"
+  },
+  "bedanken": {
+   "g": "to say thank you (bedanken)",
+   "t": "verb"
+  },
+  "beerdigung": {
+   "g": "a funeral",
+   "t": "noun"
+  },
+  "behalten": {
+   "g": "to keep, to still have when the rest is gone (behalten)",
+   "t": "verb"
+  },
+  "beim": {
+   "g": "at the, while (bei + dem)",
+   "t": "preposition"
+  },
+  "bein": {
+   "g": "the leg, here a table leg",
+   "t": "noun"
+  },
+  "bettruhe": {
+   "g": "bed rest, the doctor's order to stay lying down",
+   "t": "noun"
+  },
+  "bewerber": {
+   "g": "the applicants queuing for the same flat",
+   "t": "noun"
+  },
+  "bewerbungen": {
+   "g": "job applications you send out",
+   "t": "noun"
+  },
+  "bildern": {
+   "g": "pictures (form of Bilder after von)",
+   "t": "noun"
+  },
+  "bisher": {
+   "g": "until now, in all the time up to this moment",
+   "t": "adverb"
+  },
+  "bitte": {
+   "g": "please",
+   "t": "adverb"
+  },
+  "bittet": {
+   "g": "asks for something (bitten)",
+   "t": "verb"
+  },
+  "blatt": {
+   "g": "a sheet of paper",
+   "t": "noun"
+  },
+  "block": {
+   "g": "a block of seats in the stadium",
+   "t": "noun"
+  },
+  "blockiert": {
+   "g": "blocks the way (blockieren)",
+   "t": "verb"
+  },
+  "blumenladen": {
+   "g": "the flower shop",
+   "t": "noun"
+  },
+  "bratwürste": {
+   "g": "grilled sausages sold at the ground",
+   "t": "noun"
+  },
+  "bringen": {
+   "g": "to bring (here: bring me two coffees some time)",
+   "t": "verb"
+  },
+  "bringst": {
+   "g": "you bring (bringen)",
+   "t": "verb"
+  },
+  "brummen": {
+   "g": "to hum, the low sound of working machines (brummen)",
+   "t": "verb"
+  },
+  "buchstaben": {
+   "g": "letters, the shapes you write words with",
+   "t": "noun"
+  },
+  "bürge": {
+   "g": "a guarantor, who promises to pay if you cannot",
+   "t": "noun"
+  },
+  "bürgersteig": {
+   "g": "the pavement, where people walk",
+   "t": "noun"
+  },
+  "computer": {
+   "g": "the computer",
+   "t": "noun"
+  },
+  "da": {
+   "g": "there, present (ich stehe da); here in that situation (da doch nicht)",
+   "t": "adverb"
+  },
+  "daumen": {
+   "g": "the thumb (hebt den Daumen, gives a thumbs up)",
+   "t": "noun"
+  },
+  "dein": {
+   "g": "your",
+   "t": "pronoun"
+  },
+  "delle": {
+   "g": "a dent, a hollow knocked into furniture",
+   "t": "noun"
+  },
+  "demselben": {
+   "g": "the same one (derselbe after auf)",
+   "t": "pronoun"
+  },
+  "derby": {
+   "g": "the derby, the match against the neighbouring town",
+   "t": "noun"
+  },
+  "dick": {
+   "g": "thick, with a lot of paper inside",
+   "t": "adjective"
+  },
+  "dienst": {
+   "g": "his shift at work",
+   "t": "noun"
+  },
+  "dienstag": {
+   "g": "Tuesday",
+   "t": "noun"
+  },
+  "dieselbe": {
+   "g": "the same one",
+   "t": "pronoun"
+  },
+  "ding": {
+   "g": "a thing, any object you own",
+   "t": "noun"
+  },
+  "doch": {
+   "g": "after all (nickt dann doch); but surely (kann ich da doch nicht)",
+   "t": "adverb"
+  },
+  "donnerstag": {
+   "g": "Thursday",
+   "t": "noun"
+  },
+  "doppelt": {
+   "g": "twice as, double",
+   "t": "adverb"
+  },
+  "dringend": {
+   "g": "badly, urgently",
+   "t": "adverb"
+  },
+  "dritt": {
+   "g": "as three people (zu dritt)",
+   "t": "adverb"
+  },
+  "durchwischen": {
+   "g": "to mop the floor once more",
+   "t": "verb"
+  },
+  "dünne": {
+   "g": "thin (form of dünn before a plural noun)",
+   "t": "adjective"
+  },
+  "einstand": {
+   "g": "the drinks you owe the house when you move in",
+   "t": "noun"
+  },
+  "einziger": {
+   "g": "a single one (kein Einziger, not one person)",
+   "t": "pronoun"
+  },
+  "einziges": {
+   "g": "a single one (kein einziges, not one of them)",
+   "t": "pronoun"
+  },
+  "elfmeter": {
+   "g": "a penalty kick",
+   "t": "noun"
+  },
+  "entschuldigt": {
+   "g": "apologised for something (entschuldigen)",
+   "t": "verb"
+  },
+  "erdgeschoss": {
+   "g": "the ground floor",
+   "t": "noun"
+  },
+  "erfolgreich": {
+   "g": "successfully, getting what you asked for",
+   "t": "adverb"
+  },
+  "erleichterung": {
+   "g": "relief, the feeling when the worry drops",
+   "t": "noun"
+  },
+  "erst": {
+   "g": "first of all (erst der Boden); not until (erst, wenn)",
+   "t": "adverb"
+  },
+  "erzählst": {
+   "g": "you tell me (erzählen)",
+   "t": "verb"
+  },
+  "euro": {
+   "g": "euros, the money",
+   "t": "noun"
+  },
+  "fahrstuhl": {
+   "g": "the lift",
+   "t": "noun"
+  },
+  "farbe": {
+   "g": "paint, here fresh on his hands",
+   "t": "noun"
+  },
+  "fegt": {
+   "g": "sweeps the floor (fegen)",
+   "t": "verb"
+  },
+  "fehler": {
+   "g": "a mistake, something you did wrong",
+   "t": "noun"
+  },
+  "fenster": {
+   "g": "the window",
+   "t": "noun"
+  },
+  "filzstift": {
+   "g": "a felt-tip pen",
+   "t": "noun"
+  },
+  "flachen": {
+   "g": "flat (form of flach after in)",
+   "t": "adjective"
+  },
+  "flasche": {
+   "g": "a bottle",
+   "t": "noun"
+  },
+  "floristin": {
+   "g": "a florist, a woman who works with flowers",
+   "t": "noun"
+  },
+  "flüstern": {
+   "g": "a whisper, a voice with almost no sound",
+   "t": "noun"
+  },
+  "foul": {
+   "g": "a foul in football",
+   "t": "noun"
+  },
+  "freitag": {
+   "g": "Friday",
+   "t": "noun"
+  },
+  "fremden": {
+   "g": "strangers' (form of fremd before a plural noun)",
+   "t": "adjective"
+  },
+  "fällt": {
+   "g": "falls on a date (fallen auf); drops in (das Tor fällt, the goal goes in)",
+   "t": "verb"
+  },
+  "füßen": {
+   "g": "feet (form of Füße after an)",
+   "t": "noun"
+  },
+  "gang": {
+   "g": "one trip up and down carrying something",
+   "t": "noun"
+  },
+  "gebrauchtes": {
+   "g": "second-hand, used before by somebody else",
+   "t": "adjective"
+  },
+  "gefaltetes": {
+   "g": "folded (falten)",
+   "t": "adjective"
+  },
+  "gegner": {
+   "g": "the opponent, the other team",
+   "t": "noun"
+  },
+  "gehaltszetteln": {
+   "g": "payslips (form of Gehaltszettel after den)",
+   "t": "noun"
+  },
+  "gehandelt": {
+   "g": "haggled over a price (handeln)",
+   "t": "verb"
+  },
+  "geht": {
+   "g": "goes, walks; works out (das geht doppelt so schnell)",
+   "t": "verb"
+  },
+  "geldscheinen": {
+   "g": "banknotes (form of Geldscheine after mit)",
+   "t": "noun"
+  },
+  "gelegenheit": {
+   "g": "an occasion, whenever it suits you (bei Gelegenheit)",
+   "t": "noun"
+  },
+  "geliehenes": {
+   "g": "borrowed, not yours (leihen)",
+   "t": "adjective"
+  },
+  "gemerkt": {
+   "g": "noticed (merken)",
+   "t": "verb"
+  },
+  "gepackt": {
+   "g": "packed into boxes (packen)",
+   "t": "verb"
+  },
+  "gern": {
+   "g": "gladly, happy to do it",
+   "t": "adverb"
+  },
+  "geräusch": {
+   "g": "a sound, a small noise",
+   "t": "noun"
+  },
+  "gespräch": {
+   "g": "an interview, a talk about a job",
+   "t": "noun"
+  },
+  "gibt": {
+   "g": "gives, hands over (geben)",
+   "t": "verb"
+  },
+  "glas": {
+   "g": "the glass you drink from",
+   "t": "noun"
+  },
+  "gleiche": {
+   "g": "the same (form of gleich before a feminine noun)",
+   "t": "adjective"
+  },
+  "gleicher": {
+   "g": "the same (form of gleich before a masculine noun)",
+   "t": "adjective"
+  },
+  "grippe": {
+   "g": "the flu",
+   "t": "noun"
+  },
+  "gurken": {
+   "g": "gherkins, pickled cucumbers on the table",
+   "t": "noun"
+  },
+  "gut": {
+   "g": "well, without trouble",
+   "t": "adverb"
+  },
+  "gute": {
+   "g": "good (form of gut before a plural noun)",
+   "t": "adjective"
+  },
+  "guten": {
+   "g": "good (form of gut after mit)",
+   "t": "adjective"
+  },
+  "h": {
+   "g": "the letter H, the name of a stand at the ground",
+   "t": "other"
+  },
+  "halb": {
+   "g": "half (halb leer, half empty); half past in the German way (halb vier, 3:30)",
+   "t": "adverb"
+  },
+  "halbzeit": {
+   "g": "half-time in a football match",
+   "t": "noun"
+  },
+  "hals": {
+   "g": "the throat; the neck",
+   "t": "noun"
+  },
+  "halsschmerzen": {
+   "g": "pain in the throat that makes swallowing hard",
+   "t": "noun"
+  },
+  "handeln": {
+   "g": "to haggle, to ask for a lower price (handeln)",
+   "t": "verb"
+  },
+  "handelskammer": {
+   "g": "the chamber of commerce, where local firms are listed",
+   "t": "noun"
+  },
+  "handschrift": {
+   "g": "somebody's handwriting",
+   "t": "noun"
+  },
+  "handschuhen": {
+   "g": "gloves (form of Handschuhe after mit)",
+   "t": "noun"
+  },
+  "hannover": {
+   "g": "Hannover, the city where Britta now lives; also its football club",
+   "t": "noun"
+  },
+  "hast": {
+   "g": "you have (haben)",
+   "t": "verb"
+  },
+  "hatte": {
+   "g": "had (haben, past)",
+   "t": "verb"
+  },
+  "haus": {
+   "g": "the house, the block everybody lives in",
+   "t": "noun"
+  },
+  "hause": {
+   "g": "home (nach Hause, homewards)",
+   "t": "noun"
+  },
+  "hausflur": {
+   "g": "the entrance hall of the building",
+   "t": "noun"
+  },
+  "hausärztin": {
+   "g": "the local family doctor, a woman",
+   "t": "noun"
+  },
+  "hefe": {
+   "g": "yeast, the smell of fresh bread",
+   "t": "noun"
+  },
+  "heimweg": {
+   "g": "the way home",
+   "t": "noun"
+  },
+  "heiser": {
+   "g": "hoarse, with a rough voice",
+   "t": "adverb"
+  },
+  "heiseres": {
+   "g": "hoarse, rough and almost gone (form of heiser)",
+   "t": "adjective"
+  },
+  "hin": {
+   "g": "down, over there (stellt hin, puts down; setzt sich hin, sits down)",
+   "t": "adverb"
+  },
+  "hofft": {
+   "g": "hopes (hoffen)",
+   "t": "verb"
+  },
+  "holzkiste": {
+   "g": "a wooden crate",
+   "t": "noun"
+  },
+  "händlerin": {
+   "g": "a woman who buys and sells second-hand things",
+   "t": "noun"
+  },
+  "hört": {
+   "g": "hears; listens (zuhören); examines with a stethoscope (abhören)",
+   "t": "verb"
+  },
+  "ihnen": {
+   "g": "you, to you (polite Sie); them, to them",
+   "t": "pronoun"
+  },
+  "ihrer": {
+   "g": "her (form of ihr after vor and in)",
+   "t": "pronoun"
+  },
+  "inhaber": {
+   "g": "the owner of the shop",
+   "t": "noun"
+  },
+  "irgendwann": {
+   "g": "some day, at a moment nobody can name yet",
+   "t": "adverb"
+  },
+  "jacken": {
+   "g": "jackets (form of Jacken after nach)",
+   "t": "noun"
+  },
+  "jahr": {
+   "g": "a year",
+   "t": "noun"
+  },
+  "jahre": {
+   "g": "years",
+   "t": "noun"
+  },
+  "jahren": {
+   "g": "years (form of Jahre after nach and seit)",
+   "t": "noun"
+  },
+  "jemanden": {
+   "g": "somebody (form of jemand as an object)",
+   "t": "pronoun"
+  },
+  "kaffee": {
+   "g": "coffee",
+   "t": "noun"
+  },
+  "kaputte": {
+   "g": "broken, worn out (form of kaputt before a plural noun)",
+   "t": "adjective"
+  },
+  "karteikarte": {
+   "g": "the patient card the doctor writes on",
+   "t": "noun"
+  },
+  "karton": {
+   "g": "a cardboard box",
+   "t": "noun"
+  },
+  "kartons": {
+   "g": "cardboard boxes",
+   "t": "noun"
+  },
+  "kasten": {
+   "g": "a crate of bottles",
+   "t": "noun"
+  },
+  "keller": {
+   "g": "the cellar of the building",
+   "t": "noun"
+  },
+  "kenne": {
+   "g": "I know, I am acquainted with (kennen)",
+   "t": "verb"
+  },
+  "kittel": {
+   "g": "a work coat you pull on over your clothes",
+   "t": "noun"
+  },
+  "klappsitz": {
+   "g": "a folding seat in the stand",
+   "t": "noun"
+  },
+  "klappstuhl": {
+   "g": "a folding chair",
+   "t": "noun"
+  },
+  "klappstühle": {
+   "g": "folding chairs",
+   "t": "noun"
+  },
+  "klebeband": {
+   "g": "sticky tape for closing boxes",
+   "t": "noun"
+  },
+  "klinge": {
+   "g": "I come across as, I sound (klingen)",
+   "t": "verb"
+  },
+  "klingelst": {
+   "g": "you ring the doorbell (klingeln)",
+   "t": "verb"
+  },
+  "klingst": {
+   "g": "you sound like (klingen)",
+   "t": "verb"
+  },
+  "klopft": {
+   "g": "knocks, beats (klopfen)",
+   "t": "verb"
+  },
+  "knick": {
+   "g": "a sharp bend in the stairwell",
+   "t": "noun"
+  },
+  "komma": {
+   "g": "point, the comma in a German number (38,9)",
+   "t": "noun"
+  },
+  "kopf": {
+   "g": "the head (schüttelt den Kopf, shakes her head; im Kopf, in her head)",
+   "t": "noun"
+  },
+  "korkenzieher": {
+   "g": "a corkscrew",
+   "t": "noun"
+  },
+  "kosten": {
+   "g": "to cost",
+   "t": "verb"
+  },
+  "krach": {
+   "g": "the racket, loud noise made by people",
+   "t": "noun"
+  },
+  "krankenschein": {
+   "g": "the yellow sick note from the doctor",
+   "t": "noun"
+  },
+  "krankgeschrieben": {
+   "g": "signed off sick by a doctor",
+   "t": "adjective"
+  },
+  "kratzer": {
+   "g": "a scratch on furniture",
+   "t": "noun"
+  },
+  "kreis": {
+   "g": "a circle, here the ring of light on the floor",
+   "t": "noun"
+  },
+  "krummen": {
+   "g": "crooked, not straight (form of krumm after in)",
+   "t": "adjective"
+  },
+  "krähe": {
+   "g": "a crow, the bird with the rough voice",
+   "t": "noun"
+  },
+  "kugelschreiber": {
+   "g": "a ballpoint pen",
+   "t": "noun"
+  },
+  "kundin": {
+   "g": "a customer, a woman buying something",
+   "t": "noun"
+  },
+  "kurve": {
+   "g": "a bend in the road",
+   "t": "noun"
+  },
+  "laden": {
+   "g": "the shop",
+   "t": "noun"
+  },
+  "lag": {
+   "g": "lay, was lying there (liegen, past)",
+   "t": "verb"
+  },
+  "lang": {
+   "g": "for (zwei Tage lang, for two whole days)",
+   "t": "adverb"
+  },
+  "lattenrost": {
+   "g": "the slatted frame under a mattress",
+   "t": "noun"
+  },
+  "leben": {
+   "g": "life (nie im Leben, not in a million years)",
+   "t": "noun"
+  },
+  "lebenslauf": {
+   "g": "a CV, the paper listing your jobs",
+   "t": "noun"
+  },
+  "leere": {
+   "g": "empty (form of leer before a feminine noun)",
+   "t": "adjective"
+  },
+  "leerer": {
+   "g": "empty (form of leer before a masculine noun)",
+   "t": "adjective"
+  },
+  "lege": {
+   "g": "I throw in, I put with it (legen)",
+   "t": "verb"
+  },
+  "legt": {
+   "g": "puts down flat (legen)",
+   "t": "verb"
+  },
+  "lehne": {
+   "g": "the back of the sofa",
+   "t": "noun"
+  },
+  "liegen": {
+   "g": "lie, sit unread somewhere (liegen)",
+   "t": "verb"
+  },
+  "list": {
+   "g": "the List, a district of Hannover",
+   "t": "noun"
+  },
+  "loch": {
+   "g": "a hole, here a gap in her CV",
+   "t": "noun"
+  },
+  "lohn": {
+   "g": "the pay, what the job brings in",
+   "t": "noun"
+  },
+  "lunge": {
+   "g": "the lungs",
+   "t": "noun"
+  },
+  "lässt": {
+   "g": "lets her, allows her to (lassen)",
+   "t": "verb"
+  },
+  "magen": {
+   "g": "the stomach (sitzt im Magen, the doubt sits in her stomach)",
+   "t": "noun"
+  },
+  "maklerin": {
+   "g": "a female estate agent who picks the new tenant",
+   "t": "noun"
+  },
+  "mal": {
+   "g": "time, occasion (zum ersten Mal, for the first time); just, some time (frage mal nach)",
+   "t": "noun"
+  },
+  "maschinen": {
+   "g": "machines, here the washing machines",
+   "t": "noun"
+  },
+  "massiv": {
+   "g": "solid, made of heavy wood",
+   "t": "adjective"
+  },
+  "matratze": {
+   "g": "a mattress",
+   "t": "noun"
+  },
+  "meint": {
+   "g": "says, reckons (meinen)",
+   "t": "verb"
+  },
+  "meisten": {
+   "g": "most of them (die meisten)",
+   "t": "pronoun"
+  },
+  "milch": {
+   "g": "milk",
+   "t": "noun"
+  },
+  "mindestlohn": {
+   "g": "the minimum wage",
+   "t": "noun"
+  },
+  "minuten": {
+   "g": "minutes",
+   "t": "noun"
+  },
+  "mittwoch": {
+   "g": "Wednesday",
+   "t": "noun"
+  },
+  "moment": {
+   "g": "a moment, a short while",
+   "t": "noun"
+  },
+  "monate": {
+   "g": "months",
+   "t": "noun"
+  },
+  "montag": {
+   "g": "Monday",
+   "t": "noun"
+  },
+  "muss": {
+   "g": "have to, must (müssen)",
+   "t": "verb"
+  },
+  "möbel": {
+   "g": "furniture",
+   "t": "noun"
+  },
+  "möbelstück": {
+   "g": "a piece of furniture",
+   "t": "noun"
+  },
+  "müdes": {
+   "g": "tired (form of müde before a neuter noun)",
+   "t": "adjective"
+  },
+  "müll": {
+   "g": "the rubbish",
+   "t": "noun"
+  },
+  "münster": {
+   "g": "Münster, the city where Britta lived before",
+   "t": "noun"
+  },
+  "mütze": {
+   "g": "a woolly hat",
+   "t": "noun"
+  },
+  "nachbarstadt": {
+   "g": "the neighbouring town",
+   "t": "noun"
+  },
+  "nachmittag": {
+   "g": "the afternoon",
+   "t": "noun"
+  },
+  "nachspielzeit": {
+   "g": "stoppage time at the end of a match",
+   "t": "noun"
+  },
+  "nacht": {
+   "g": "the night",
+   "t": "noun"
+  },
+  "nasses": {
+   "g": "wet (form of nass before a neuter noun)",
+   "t": "adjective"
+  },
+  "nehmen": {
+   "g": "to take (Nehmen Sie ihn, go ahead and take it)",
+   "t": "verb"
+  },
+  "neid": {
+   "g": "envy, wanting what somebody else has",
+   "t": "noun"
+  },
+  "niest": {
+   "g": "sneezes (niesen)",
+   "t": "verb"
+  },
+  "noch": {
+   "g": "still, yet; one more (noch ein Tor, one more goal)",
+   "t": "adverb"
+  },
+  "nordstadt": {
+   "g": "the Nordstadt, a district of Hannover",
+   "t": "noun"
+  },
+  "nudelsuppe": {
+   "g": "noodle soup",
+   "t": "noun"
+  },
+  "nächsten": {
+   "g": "next (form of nächst before Samstag)",
+   "t": "adjective"
+  },
+  "pappe": {
+   "g": "cardboard, here folded under a wobbly table",
+   "t": "noun"
+  },
+  "pflicht": {
+   "g": "a duty, something you simply have to do",
+   "t": "noun"
+  },
+  "platz": {
+   "g": "the seat, the place next to her",
+   "t": "noun"
+  },
+  "postfächern": {
+   "g": "pigeonholes, in-trays (form of Postfächer after in)",
+   "t": "noun"
+  },
+  "pro": {
+   "g": "per (vier Tage pro Woche, four days a week)",
+   "t": "preposition"
+  },
+  "probearbeiten": {
+   "g": "a trial day, working unpaid to show what you can do",
+   "t": "noun"
+  },
+  "problem": {
+   "g": "a problem",
+   "t": "noun"
+  },
+  "radio": {
+   "g": "a radio set",
+   "t": "noun"
+  },
+  "rasen": {
+   "g": "the pitch, the grass they play on",
+   "t": "noun"
+  },
+  "reihe": {
+   "g": "a row of seats",
+   "t": "noun"
+  },
+  "rettest": {
+   "g": "you rescue (retten)",
+   "t": "verb"
+  },
+  "rosen": {
+   "g": "roses",
+   "t": "noun"
+  },
+  "rufe": {
+   "g": "I will call you (rufen, here anrufen)",
+   "t": "verb"
+  },
+  "räume": {
+   "g": "the rooms of a flat",
+   "t": "noun"
+  },
+  "rückweg": {
+   "g": "the way back",
+   "t": "noun"
+  },
+  "saft": {
+   "g": "juice",
+   "t": "noun"
+  },
+  "samstag": {
+   "g": "Saturday",
+   "t": "noun"
+  },
+  "satz": {
+   "g": "a sentence, the words somebody says",
+   "t": "noun"
+  },
+  "schachteln": {
+   "g": "boxes, here pizza boxes",
+   "t": "noun"
+  },
+  "schaufenster": {
+   "g": "the shop window",
+   "t": "noun"
+  },
+  "schere": {
+   "g": "the scissors, a florist's tool",
+   "t": "noun"
+  },
+  "schiedsrichter": {
+   "g": "the referee",
+   "t": "noun"
+  },
+  "schild": {
+   "g": "a sign, a small board with writing on it",
+   "t": "noun"
+  },
+  "schimpft": {
+   "g": "grumbles, complains loudly (schimpfen)",
+   "t": "verb"
+  },
+  "schlucken": {
+   "g": "to swallow (schlucken)",
+   "t": "verb"
+  },
+  "schmutzigen": {
+   "g": "dirty (form of schmutzig after zwischen)",
+   "t": "adjective"
+  },
+  "schnittchen": {
+   "g": "little open sandwiches for a party",
+   "t": "noun"
+  },
+  "schufa": {
+   "g": "the Schufa, the German credit record landlords ask for",
+   "t": "noun"
+  },
+  "schulde": {
+   "g": "I owe you (schulden)",
+   "t": "verb"
+  },
+  "schule": {
+   "g": "school",
+   "t": "noun"
+  },
+  "schuppen": {
+   "g": "a shed",
+   "t": "noun"
+  },
+  "schwarzen": {
+   "g": "black (form of schwarz after am; schwarzes Brett, a noticeboard)",
+   "t": "adjective"
+  },
+  "schweiß": {
+   "g": "sweat",
+   "t": "noun"
+  },
+  "schwere": {
+   "g": "heavy (form of schwer before a feminine noun)",
+   "t": "adjective"
+  },
+  "schwitzt": {
+   "g": "sweats (schwitzen)",
+   "t": "verb"
+  },
+  "schämt": {
+   "g": "is ashamed (schämen)",
+   "t": "verb"
+  },
+  "schüsseln": {
+   "g": "bowls on the table",
+   "t": "noun"
+  },
+  "seife": {
+   "g": "soap",
+   "t": "noun"
+  },
+  "seil": {
+   "g": "a rope",
+   "t": "noun"
+  },
+  "seltsam": {
+   "g": "strange, odd to feel",
+   "t": "adverb"
+  },
+  "servietten": {
+   "g": "paper napkins",
+   "t": "noun"
+  },
+  "setzt": {
+   "g": "sits down (sich setzen)",
+   "t": "verb"
+  },
+  "sobald": {
+   "g": "as soon as",
+   "t": "conjunction"
+  },
+  "sollst": {
+   "g": "you are meant to, you should (sollen)",
+   "t": "verb"
+  },
+  "sonne": {
+   "g": "the sun, the sunlight",
+   "t": "noun"
+  },
+  "sonntag": {
+   "g": "Sunday",
+   "t": "noun"
+  },
+  "sperrmüll": {
+   "g": "bulky waste, furniture left on the street to be taken",
+   "t": "noun"
+  },
+  "sprechstunde": {
+   "g": "surgery hours, when the doctor sees patients",
+   "t": "noun"
+  },
+  "spät": {
+   "g": "late",
+   "t": "adverb"
+  },
+  "spätestens": {
+   "g": "at the latest, by then and no later",
+   "t": "adverb"
+  },
+  "stadt": {
+   "g": "the town, the city",
+   "t": "noun"
+  },
+  "stand": {
+   "g": "stood, was standing (stehen, past)",
+   "t": "verb"
+  },
+  "stelle": {
+   "g": "a job, a position (die Stelle); I put, I stand it somewhere (stellen)",
+   "t": "noun"
+  },
+  "stellt": {
+   "g": "puts, stands something somewhere (stellen); takes her on (stellt ein)",
+   "t": "verb"
+  },
+  "stiele": {
+   "g": "the stems of flowers",
+   "t": "noun"
+  },
+  "stille": {
+   "g": "silence, a room with no sound in it",
+   "t": "noun"
+  },
+  "stock": {
+   "g": "a floor of a building (zweiter Stock, second floor)",
+   "t": "noun"
+  },
+  "straße": {
+   "g": "the street",
+   "t": "noun"
+  },
+  "streicht": {
+   "g": "strokes, runs a hand over something (streichen)",
+   "t": "verb"
+  },
+  "streifen": {
+   "g": "a paper strip you tear off an ad",
+   "t": "noun"
+  },
+  "strophen": {
+   "g": "verses of a song",
+   "t": "noun"
+  },
+  "stunde": {
+   "g": "an hour",
+   "t": "noun"
+  },
+  "stunden": {
+   "g": "hours",
+   "t": "noun"
+  },
+  "stur": {
+   "g": "stubbornly, refusing to give in",
+   "t": "adverb"
+  },
+  "stöhnt": {
+   "g": "groans (stöhnen)",
+   "t": "verb"
+  },
+  "stühle": {
+   "g": "chairs",
+   "t": "noun"
+  },
+  "supermarkt": {
+   "g": "the supermarket",
+   "t": "noun"
+  },
+  "südstadt": {
+   "g": "the Südstadt, a district of Hannover",
+   "t": "noun"
+  },
+  "tag": {
+   "g": "a day",
+   "t": "noun"
+  },
+  "tage": {
+   "g": "days",
+   "t": "noun"
+  },
+  "taschentüchern": {
+   "g": "tissues (form of Taschentücher after mit)",
+   "t": "noun"
+  },
+  "teppich": {
+   "g": "a carpet",
+   "t": "noun"
+  },
+  "termin": {
+   "g": "an appointment slot",
+   "t": "noun"
+  },
+  "thermometer": {
+   "g": "a thermometer",
+   "t": "noun"
+  },
+  "tiefe": {
+   "g": "deep (form of tief before a feminine noun)",
+   "t": "adjective"
+  },
+  "tonnen": {
+   "g": "the bins in the yard",
+   "t": "noun"
+  },
+  "transporter": {
+   "g": "a hired van",
+   "t": "noun"
+  },
+  "treppe": {
+   "g": "the stairs",
+   "t": "noun"
+  },
+  "treppenabsatz": {
+   "g": "the landing between two flights of stairs",
+   "t": "noun"
+  },
+  "treppenlicht": {
+   "g": "the timed light in the stairwell",
+   "t": "noun"
+  },
+  "tulpen": {
+   "g": "tulips",
+   "t": "noun"
+  },
+  "uhr": {
+   "g": "o'clock (neunzehn Uhr, seven in the evening)",
+   "t": "noun"
+  },
+  "umgedrehten": {
+   "g": "turned upside down (umdrehen)",
+   "t": "adjective"
+  },
+  "umzug": {
+   "g": "a move to a new flat",
+   "t": "noun"
+  },
+  "umzugswagen": {
+   "g": "a removal van",
+   "t": "noun"
+  },
+  "ungelesen": {
+   "g": "unread, nobody has opened them",
+   "t": "adjective"
+  },
+  "verfällt": {
+   "g": "expires, is lost if nobody uses it (verfallen)",
+   "t": "verb"
+  },
+  "verschiedene": {
+   "g": "different from each other, not matching",
+   "t": "adjective"
+  },
+  "versichertenkarte": {
+   "g": "the health insurance card you hand in at the doctor's",
+   "t": "noun"
+  },
+  "vertrag": {
+   "g": "the contract",
+   "t": "noun"
+  },
+  "vierecke": {
+   "g": "squares, here pale marks left by pictures",
+   "t": "noun"
+  },
+  "viertel": {
+   "g": "quarter (Viertel vor drei, quarter to three)",
+   "t": "noun"
+  },
+  "vom": {
+   "g": "from the, of the (von + dem)",
+   "t": "preposition"
+  },
+  "vormieterin": {
+   "g": "the woman who lived in the flat before",
+   "t": "noun"
+  },
+  "vormittag": {
+   "g": "the late morning",
+   "t": "noun"
+  },
+  "vorname": {
+   "g": "a first name",
+   "t": "noun"
+  },
+  "wandfarbe": {
+   "g": "wall paint",
+   "t": "noun"
+  },
+  "wangen": {
+   "g": "cheeks",
+   "t": "noun"
+  },
+  "wartezimmer": {
+   "g": "the waiting room",
+   "t": "noun"
+  },
+  "waschmaschine": {
+   "g": "a washing machine",
+   "t": "noun"
+  },
+  "waschsalon": {
+   "g": "a launderette",
+   "t": "noun"
+  },
+  "wasserhahn": {
+   "g": "a tap",
+   "t": "noun"
+  },
+  "wegbleiben": {
+   "g": "to stay away from work (wegbleiben)",
+   "t": "verb"
+  },
+  "wegschnappt": {
+   "g": "snatches it away before you (wegschnappen)",
+   "t": "verb"
+  },
+  "weh": {
+   "g": "sore, hurting (tut weh, it hurts)",
+   "t": "adverb"
+  },
+  "weiter": {
+   "g": "on, further (redet weiter, goes on talking); we will see (sehen wir weiter)",
+   "t": "adverb"
+  },
+  "weißen": {
+   "g": "white (form of weiß after von)",
+   "t": "adjective"
+  },
+  "wetter": {
+   "g": "the weather",
+   "t": "noun"
+  },
+  "winzig": {
+   "g": "tiny, with almost no space",
+   "t": "adjective"
+  },
+  "wisst": {
+   "g": "you all know (wissen)",
+   "t": "verb"
+  },
+  "wochenlang": {
+   "g": "for weeks on end",
+   "t": "adverb"
+  },
+  "wort": {
+   "g": "a word (mein letztes Wort, my final offer)",
+   "t": "noun"
+  },
+  "wurststand": {
+   "g": "the sausage stand at the ground",
+   "t": "noun"
+  },
+  "wut": {
+   "g": "anger, rage",
+   "t": "noun"
+  },
+  "wände": {
+   "g": "walls",
+   "t": "noun"
+  },
+  "wörter": {
+   "g": "words, single words written down",
+   "t": "noun"
+  },
+  "zeit": {
+   "g": "time (gleiche Zeit, same time; das kostet Zeit, that takes time)",
+   "t": "noun"
+  },
+  "ziehen": {
+   "g": "drag on, feel longer than they are (sich ziehen)",
+   "t": "verb"
+  },
+  "zieht": {
+   "g": "pulls, tears off (ziehen); twinges (der Rücken zieht)",
+   "t": "verb"
+  },
+  "zu": {
+   "g": "to, towards (zu ihm); too (zu laut); as a group of (zu dritt)",
+   "t": "preposition"
+  },
+  "zugegeben": {
+   "g": "admitted out loud (zugeben)",
+   "t": "verb"
+  },
+  "zugemacht": {
+   "g": "closed, taped shut (zumachen)",
+   "t": "verb"
+  },
+  "zuhause": {
+   "g": "home, the place you belong",
+   "t": "noun"
+  },
+  "zum": {
+   "g": "to the (zu + dem); for the (zum ersten Mal, for the first time)",
+   "t": "preposition"
+  },
+  "zur": {
+   "g": "to the, at the (zu + der)",
+   "t": "preposition"
+  },
+  "zurück": {
+   "g": "back (zurückrufen, to call back; zurückfahren, to drive back)",
+   "t": "adverb"
+  },
+  "zurückgekommen": {
+   "g": "come back to a place (zurückkommen)",
+   "t": "verb"
+  },
+  "zweifel": {
+   "g": "doubt, the feeling that it may go wrong",
+   "t": "noun"
+  },
+  "zweite": {
+   "g": "second (die zweite Wohnung, the second flat)",
+   "t": "adjective"
+  },
+  "zweiten": {
+   "g": "second (form of zweite after im and in der)",
+   "t": "adjective"
+  },
+  "zweites": {
+   "g": "a second one (form of zweit before a neuter noun)",
+   "t": "adjective"
+  },
+  "äpfeln": {
+   "g": "apples (form of Äpfel after mit)",
+   "t": "noun"
+  },
+  "üblich": {
+   "g": "usual, what people normally do here",
+   "t": "adjective"
+  }
  }
 }

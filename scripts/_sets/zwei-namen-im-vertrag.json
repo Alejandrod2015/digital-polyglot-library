@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Staub,der Vermieter,der Arbeitsvertrag,der Bürge",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Staub",
+     "answer": "dust",
+     "options": [
+      "dust",
+      "a landlord",
+      "a work contract",
+      "a guarantor"
+     ]
+    },
+    {
+     "word": "der Vermieter",
+     "answer": "a landlord",
+     "options": [
+      "dust",
+      "a landlord",
+      "a work contract",
+      "a guarantor"
+     ]
+    },
+    {
+     "word": "der Arbeitsvertrag",
+     "answer": "a work contract",
+     "options": [
+      "dust",
+      "a landlord",
+      "a work contract",
+      "a guarantor"
+     ]
+    },
+    {
+     "word": "der Bürge",
+     "answer": "a guarantor",
+     "options": [
+      "dust",
+      "a landlord",
+      "a work contract",
+      "a guarantor"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unterschreiben",
+  "sentence": "Der Mieter [[unterschreibt]] den Vertrag mit seinem Namen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sign",
+   "options": [
+    "to sign",
+    "to read",
+    "to copy",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Der Mieter unterschreibt den Vertrag mit seinem Namen.",
+    "targetWord": "unterschreibt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zufrieden",
+  "sentence": "Nach dem Gespräch wirkt er nicht mehr [[zufrieden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "satisfied",
+   "options": [
+    "satisfied",
+    "surprised",
+    "polite",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Nach dem Gespräch wirkt er nicht mehr zufrieden.",
+    "targetWord": "zufrieden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stolz",
+  "sentence": "Ihr [[Stolz]] ist stärker als ihre Angst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pride",
+   "options": [
+    "pride",
+    "hunger",
+    "luck",
+    "doubt"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Ihr Stolz ist stärker als ihre Angst.",
+    "targetWord": "Stolz",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schenken",
+  "sentence": "Zum Geburtstag [[schenkt]] er ihr Blumen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give as a present",
+   "options": [
+    "to give as a present",
+    "to sell cheaply",
+    "to show quickly",
+    "to bring back"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Zum Geburtstag schenkt er ihr Blumen.",
+    "targetWord": "schenkt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "höflich",
+  "sentence": "Ihre Antwort ist kurz, aber [[höflich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "loud",
+    "angry",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Ihre Antwort ist kurz, aber höflich.",
+    "targetWord": "höflich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sauber",
+  "sentence": "Nach dem Putzen ist die ganze Küche wieder _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sauber",
+   "options": [
+    "sauber",
+    "leer",
+    "teuer",
+    "dunkel"
+   ],
+   "translation": "After the cleaning the whole kitchen is _____ again.",
+   "optionTranslations": [
+    "clean",
+    "empty",
+    "expensive",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Nach dem Putzen ist die ganze Küche wieder sauber.",
+    "targetWord": "sauber",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dauert",
+  "sentence": "Die Fahrt mit dem Bus _____ fast eine Stunde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dauert",
+   "options": [
+    "dauert",
+    "kostet",
+    "endet",
+    "beginnt"
+   ],
+   "translation": "The bus ride _____ almost an hour.",
+   "optionTranslations": [
+    "takes",
+    "costs",
+    "ends",
+    "begins"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Die Fahrt mit dem Bus dauert fast eine Stunde.",
+    "targetWord": "dauert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schütteln",
+  "sentence": "Er [[schüttelt]] den Kopf und sagt nichts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to shake",
+   "options": [
+    "to shake",
+    "to lower",
+    "to turn",
+    "to hold"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Er schüttelt den Kopf und sagt nichts.",
+    "targetWord": "schüttelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wortlos",
+  "sentence": "Er stellt den Teller [[wortlos]] auf den Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without a word",
+   "options": [
+    "without a word",
+    "at the front",
+    "in a hurry",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Er stellt den Teller wortlos auf den Tisch.",
+    "targetWord": "wortlos",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schmal",
+  "sentence": "Der Balkon ist sehr [[schmal]] und kurz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "sunny",
+    "dirty",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Der Balkon ist sehr schmal und kurz.",
+    "targetWord": "schmal",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klopfen",
+  "sentence": "Jemand [[klopft]] laut an die Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to knock",
+   "options": [
+    "to knock",
+    "to open",
+    "to paint",
+    "to close"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Jemand klopft laut an die Tür.",
+    "targetWord": "klopft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sortieren",
+  "sentence": "Sie [[sortiert]] die Papiere nach Datum.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sort",
+   "options": [
+    "to sort",
+    "to store",
+    "to sign",
+    "to burn"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Sie sortiert die Papiere nach Datum.",
+    "targetWord": "sortiert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blättern",
+  "sentence": "Er [[blättert]] langsam durch das Heft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leaf through",
+   "options": [
+    "to leaf through",
+    "to write in",
+    "to look for",
+    "to pay for"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Er blättert langsam durch das Heft.",
+    "targetWord": "blättert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zucken",
+  "sentence": "Sie [[zuckt]] mit den Schultern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to twitch",
+   "options": [
+    "to twitch",
+    "to rub",
+    "to cover",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Sie zuckt mit den Schultern.",
+    "targetWord": "zuckt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wiegen",
+  "sentence": "Der Karton [[wiegt]] mehr als zehn Kilo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to weigh",
+   "options": [
+    "to weigh",
+    "to hold",
+    "to cost",
+    "to last"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Der Karton wiegt mehr als zehn Kilo.",
+    "targetWord": "wiegt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "behalten",
+  "sentence": "Wir werfen den alten Schlüssel nicht weg, wir _____ ihn.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "behalten",
+   "options": [
+    "behalten",
+    "verkaufen",
+    "suchen",
+    "putzen"
+   ],
+   "translation": "We do not throw the old key away, we _____ it.",
+   "optionTranslations": [
+    "keep",
+    "sell",
+    "look for",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-namen-im-vertrag",
+    "storySource": "user",
+    "sentence": "Wir werfen den alten Schlüssel nicht weg, wir behalten ihn.",
+    "targetWord": "behalten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
