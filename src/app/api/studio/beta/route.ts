@@ -9,6 +9,7 @@ import { prisma } from "@/lib/prisma";
 import { requireBetaAdmin } from "@/lib/studioBetaAuth";
 import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
+import { evaluateApplication } from "@/lib/betaRules";
 import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
 import { attachTesterGroup, getPlayBetaState } from "@/lib/googlePlayBeta";
 import { backfillBetaTesterLinks, countActiveTesters, TEST_ROW_EMAIL } from "@/lib/betaProgram";
@@ -191,6 +192,35 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     applicants: applicants.map((a) => ({
       ...a,
+      // ── El score, recalculado con las reglas de HOY ──
+      //
+      // `score`, `decision` y `decisionReason` son columnas selladas el día
+      // que llegó la persona. Publicar un journey cambia las reglas al
+      // instante (la lista de idiomas y pools se deriva en cada lectura), pero
+      // las fichas ya en la cola se quedaban con el numero viejo: el
+      // 2026-09-24 una solicitante de portugues de Portugal seguía en 49 con
+      // el gate de variante puesto dos dias antes, que la deja en 29.
+      //
+      // Se calcula al LEER y no se escribe: la columna sigue siendo el
+      // registro de lo que se decidió entonces, y la cola enseña lo que
+      // valdría ahora, que es con lo que se decide a quién invitar.
+      ...(() => {
+        try {
+          const vivo = evaluateApplication(a, rules, {
+            activeTesterCount: activeTesters,
+          });
+          return {
+            liveScore: vivo.score,
+            liveDecision: vivo.decision,
+            liveSignals: vivo.signals,
+            scoreIsStale: vivo.score !== a.score,
+          };
+        } catch {
+          // Una fila que las reglas no saben puntuar (columnas viejas, un
+          // idioma retirado) no debe tumbar la cola entera.
+          return { liveScore: null, liveDecision: null, liveSignals: [], scoreIsStale: false };
+        }
+      })(),
       usage: a.clerkUserId ? (usage.get(a.clerkUserId) ?? null) : null,
       apple: !a.ascTesterId
         ? null

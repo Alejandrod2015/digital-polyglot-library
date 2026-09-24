@@ -1,6 +1,7 @@
 export const runtime = "nodejs";
 
 import { createClerkClient } from "@clerk/backend";
+import { SIN_STUDIO } from "@/lib/pageVisitScope";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
@@ -573,7 +574,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     >();
     if (visitSessions.length) {
       const rows = await prisma.pageVisit.findMany({
-        where: { sessionId: { in: visitSessions } },
+        where: { sessionId: { in: visitSessions }, ...SIN_STUDIO },
         select: { sessionId: true, utmSource: true, utmCampaign: true, referrer: true },
         orderBy: { createdAt: "asc" },
         take: 20000,

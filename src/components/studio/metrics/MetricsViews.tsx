@@ -172,6 +172,131 @@ export function ResumenView({
   );
 }
 
+// ── AudiobooksView ────────────────────────────────────────
+/**
+ * Los audiolibros, aparte del resto del tablero.
+ *
+ * Todo lo demás del Studio EXCLUYE esta actividad y esta pestaña solo la
+ * incluye: el corte es por evento, no por persona, así que quien lee un
+ * journey y además un libro cuenta en los dos sitios por lo que hizo en cada
+ * uno. Quien solo tiene libros no aparece en ninguna otra pestaña, porque no
+ * tiene un solo evento fuera de un libro.
+ */
+export function AudiobooksView({ data }: { data: DashboardData }) {
+  const k = data.kpis;
+  const filas = data.audiobookSplit ?? [];
+  const dias = useMemo(() => sparkDates(data.daily), [data.daily]);
+  const sparkMinutos = useMemo(
+    () => sparkSeries(data.daily, "listenedMinutes"),
+    [data.daily]
+  );
+  const sparkCr = useMemo(
+    () => sparkSeries(data.daily, "completionRate"),
+    [data.daily]
+  );
+
+  return (
+    <div className="mx-view">
+      <div className="mx-hero-grid">
+        <KpiCard
+          hero
+          label="Lectores"
+          value={k.activeUsersInRange}
+          prev={p2(data)?.activeUsersInRange}
+          accent="cyan"
+          hint={`personas con alguna señal · ${data.range.days}d`}
+        />
+        <KpiCard
+          hero
+          label="Min por oyente"
+          value={k.minutesPerListener ?? 0}
+          spark={sparkMinutos}
+          sparkDates={dias}
+          sparkLabel="minutos de audiolibro por día"
+          sparkSuffix="min"
+          accent="gold"
+          hint={k.listeners ? `${k.listeners} reprodujeron algo` : "minutos de audio"}
+        />
+        <KpiCard
+          hero
+          label="Completion rate"
+          value={k.completionRate}
+          suffix="%"
+          spark={sparkCr}
+          sparkDates={dias}
+          sparkLabel="completion rate por día"
+          sparkSuffix="%"
+          accent="xp"
+          hint={`${k.storiesFinished ?? 0} de ${k.storiesStarted ?? 0} empezadas`}
+        />
+        <KpiCard
+          hero
+          label="Total escuchado"
+          value={k.totalListenedMinutes}
+          suffix="min"
+          spark={sparkMinutos}
+          sparkDates={dias}
+          sparkLabel="minutos de audiolibro por día"
+          sparkSuffix="min"
+          accent="accent"
+          hint="suma de minutos"
+        />
+      </div>
+
+      <div className="mx-panel" style={{ minWidth: 0 }}>
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Catálogo</div>
+            <h3 className="mx-panel__title">Libro a libro</h3>
+          </div>
+          <span className="mx-panel__hint">{data.range.days}d</span>
+        </div>
+        {filas.length === 0 ? (
+          <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
+            Sin datos en el rango seleccionado.
+          </p>
+        ) : (
+          <div style={{ overflowX: "auto" }}>
+            <table className="mx-table">
+              <thead>
+                <tr>
+                  <th>Libro</th>
+                  <th style={{ textAlign: "right" }}>Pers.</th>
+                  <th style={{ textAlign: "right" }}>Min</th>
+                  <th style={{ textAlign: "right" }}>Min/p.</th>
+                  <th style={{ textAlign: "right" }}>Empez.</th>
+                  <th style={{ textAlign: "right" }}>Term.</th>
+                  <th style={{ textAlign: "right" }}>%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filas.map((f) => (
+                  <tr key={f.book}>
+                    <td>{f.book}</td>
+                    <td style={{ textAlign: "right" }}>{f.users}</td>
+                    <td style={{ textAlign: "right" }}>{f.minutes}</td>
+                    <td style={{ textAlign: "right" }}>
+                      {f.users > 0 ? Math.round((f.minutes / f.users) * 10) / 10 : 0}
+                    </td>
+                    <td style={{ textAlign: "right" }}>{f.started}</td>
+                    <td style={{ textAlign: "right" }}>{f.finished}</td>
+                    <td style={{ textAlign: "right" }}>{f.completionRate}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** El periodo anterior, cuando la respuesta lo trae. */
+function p2(data: DashboardData) {
+  return data.prevKpis;
+}
+
 // ── LanguageSplitPanel ──────────────────────────────────────────
 /**
  * Dónde está la gente dentro del catálogo, por idioma y variante.
@@ -228,10 +353,22 @@ function LanguageSplitPanel({
             <tbody>
               {rows.map((fila) => (
                 <tr key={`${fila.language}/${fila.variant}`}>
-                  <td>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
+                  <td title={etiquetaIdioma(fila)}>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                       <LangTag code={LANG_CODE[fila.language] ?? null} />
-                      {etiquetaIdioma(fila)}
+                      {(() => {
+                        if (!fila.variant) {
+                          return <span style={{ color: "var(--mx-muted)" }}>libros</span>;
+                        }
+                        const v = VARIANT_CODE[fila.variant] ?? fila.variant.slice(0, 3);
+                        // Si la variante repite el código del idioma (ES/ES,
+                        // IT/IT, FR/FR, DE/DE) no se pinta dos veces: cuatro de
+                        // las siete filas salían con la misma etiqueta doble.
+                        // Solo aparece cuando dice algo: LATAM, MX, BR.
+                        return v === (LANG_CODE[fila.language] ?? "").toUpperCase() ? null : (
+                          <LangTag code={v} />
+                        );
+                      })()}
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>{fila.users}</td>
@@ -258,6 +395,30 @@ function LanguageSplitPanel({
 function etiquetaIdioma(fila: { language: string; variant: string }): string {
   return fila.variant ? `${fila.language} · ${fila.variant}` : fila.language;
 }
+
+/**
+ * La variante, en dos o cinco letras.
+ *
+ * La fila decía "spanish · latam" al lado de una etiqueta que ya ponía ES,
+ * así que el idioma salia dos veces. Ahora son dos códigos: el del idioma y el
+ * de la variante. `latam` no es un país y se queda con su token; el resto usa
+ * el codigo del país. El nombre largo sigue estando en el `title` de la celda.
+ */
+const VARIANT_CODE: Record<string, string> = {
+  latam: "LATAM",
+  spain: "ES",
+  mexico: "MX",
+  colombia: "CO",
+  argentina: "AR",
+  chile: "CL",
+  brazil: "BR",
+  france: "FR",
+  germany: "DE",
+  italy: "IT",
+  poland: "PL",
+  korea: "KR",
+  egypt: "EG",
+};
 
 /** El idioma viene entero de la base ("spanish"); la etiqueta quiere el código. */
 const LANG_CODE: Record<string, string> = {

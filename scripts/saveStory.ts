@@ -56,6 +56,7 @@ import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
 import { empeora } from "./journeyRatchet";
+import { verificaDestino, optInLiveDelEntorno, OPT_IN_LIVE, type JourneyDestino } from "./journeyWriteTarget";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -198,6 +199,37 @@ function slugify(s: string, lang?: string): string {
   if (!journeyId && !dry) {
     console.error("FAIL: --journey <id> is required (or use --dry to validate only).");
     process.exit(2);
+  }
+
+  // ── DESTINO (2026-09-23): contra QUE journey se escribe ──────────
+  //
+  // Va aqui, lo PRIMERO que se hace con el id, antes de los modos
+  // (--typography-only, --title-only, --dedupe-only...) y antes de leer una
+  // sola historia, para que ninguna rama escriba sin pasar por aqui. Corre
+  // tambien en --dry: si el destino esta mal, validar contra el no significa
+  // nada. Ver scripts/journeyWriteTarget.ts para el porque.
+  if (journeyId) {
+    const p0 = new PrismaClient();
+    try {
+      const destino = await p0.journey.findUnique({
+        where: { id: journeyId },
+        select: { id: true, name: true, levels: true, status: true },
+      });
+      if (!destino) {
+        console.error(`FAIL [journey-write-target]: no existe ningun journey con id ${journeyId}. Nada escrito.`);
+        process.exit(2);
+      }
+      const veredicto = verificaDestino(ctx.level!, destino as JourneyDestino, optInLiveDelEntorno());
+      if (!veredicto.ok) {
+        console.error(veredicto.mensaje);
+        process.exit(2);
+      }
+      if ((destino.status ?? "").toLowerCase() === "active") {
+        console.log(`⚠ ${OPT_IN_LIVE}=1: escribiendo en un journey PUBLICADO (${destino.id}, "${destino.name}").`);
+      }
+    } finally {
+      await p0.$disconnect();
+    }
   }
 
   const stories = JSON.parse(fs.readFileSync(dataFile, "utf8"));

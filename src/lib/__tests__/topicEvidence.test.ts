@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { assertTopicsGrounded, reportTopicEvidence, TopicEvidenceError, type TopicProposal } from "../topicEvidence";
+import { CityNotApprovedError } from "../approvedCities";
 import type { PrismaClient } from "@/generated/prisma";
 
 /**
@@ -134,7 +135,7 @@ describe("assertTopicsGrounded", () => {
   it("NO tira por temas sin cita: avisa y devuelve el informe", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     vi.spyOn(console, "log").mockImplementation(() => {});
-    const r = await assertTopicsGrounded({ language: "French", proposals: EXPAT_FRENCH, prisma: fakePrisma() });
+    const r = await assertTopicsGrounded({ language: "French", city: { mode: "single", city: "Paris" }, proposals: EXPAT_FRENCH, prisma: fakePrisma() });
     expect(r.topics).toHaveLength(7);
     expect(warn).toHaveBeenCalledWith(expect.stringContaining("pista, no filtro"));
     vi.restoreAllMocks();
@@ -146,6 +147,7 @@ describe("assertTopicsGrounded", () => {
     await expect(
       assertTopicsGrounded({
         language: "Polish",
+        city: { mode: "single", city: "Krakow" },
         proposals: [{ label: "Family & Relatives", slug: "family-and-relatives" }],
         prisma: fakePrisma(rows([{ targetLanguage: "Polish", motivation: "Work", learningGoal: null, applicationReason: null }])),
       }),
@@ -158,6 +160,7 @@ describe("assertTopicsGrounded", () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
     const err = await assertTopicsGrounded({
       language: "French",
+      city: { mode: "multi" },
       proposals: [
         { label: "Food And Drink", evidence: ["plan to move there in 6-8 months"] },
         { label: "Moving & Deadlines", slug: "moving", evidence: ["plan to move there in 6-8 months"] },
@@ -167,6 +170,53 @@ describe("assertTopicsGrounded", () => {
     expect(err).toBeInstanceOf(TopicEvidenceError);
     expect(String(err.message)).toContain('"And"');
     expect(String(err.message)).toContain("no deriva del nombre");
+    vi.restoreAllMocks();
+  });
+});
+
+describe("la ciudad marco, antes que los temas", () => {
+  const unTema = [{ label: "Family & Relatives", slug: "family-and-relatives" }];
+
+  it("tira si no se declara ciudad: es una decision, no un olvido", async () => {
+    const err = await assertTopicsGrounded({ language: "French", proposals: unTema, prisma: fakePrisma() }).catch((e) => e);
+    expect(err).toBeInstanceOf(TopicEvidenceError);
+    expect(String(err.message)).toContain("FALTA LA CIUDAD MARCO");
+  });
+
+  it("tira si la ciudad no esta aprobada, y dice cuales lo estan", async () => {
+    const err = await assertTopicsGrounded({
+      language: "French", city: { mode: "single", city: "Nantes" }, proposals: unTema, prisma: fakePrisma(),
+    }).catch((e) => e);
+    expect(err).toBeInstanceOf(CityNotApprovedError);
+    expect(String(err.message)).toContain("Nantes");
+    expect(String(err.message)).toContain("Paris");
+  });
+
+  it("no tira antes de comprobar la ciudad: la ciudad se mira PRIMERO", async () => {
+    // Nombre invalido ("And") Y ciudad invalida. Tiene que ganar la ciudad,
+    // porque si la ciudad esta mal los siete temas sobran.
+    const err = await assertTopicsGrounded({
+      language: "French", city: { mode: "single", city: "Nantes" },
+      proposals: [{ label: "Food And Drink" }], prisma: fakePrisma(),
+    }).catch((e) => e);
+    expect(err).toBeInstanceOf(CityNotApprovedError);
+  });
+
+  it("acepta la gira y el sin-ciudad sin mirar la lista", async () => {
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    for (const city of [{ mode: "multi" } as const, { mode: "none" } as const]) {
+      await expect(assertTopicsGrounded({ language: "French", city, proposals: unTema, prisma: fakePrisma() })).resolves.toBeTruthy();
+    }
+    vi.restoreAllMocks();
+  });
+
+  it("el idioma se busca sin distinguir mayusculas: la base guarda \"french\"", async () => {
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    await expect(assertTopicsGrounded({
+      language: "french", city: { mode: "single", city: "paris" }, proposals: unTema, prisma: fakePrisma(),
+    })).resolves.toBeTruthy();
     vi.restoreAllMocks();
   });
 });

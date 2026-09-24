@@ -110,6 +110,16 @@ type MetricsKpiUser = {
 };
 
 type DashboardResponse = {
+  /**
+   * Cuando se CALCULARON estos numeros, no cuando se pidieron.
+   *
+   * La respuesta se cachea 60 s, asi que dos cargas seguidas pueden devolver
+   * la misma foto. La cabecera decia "actualizado ahora" siempre, y el usuario
+   * lo noto al recargar y ver cambiar las cifras de un "ahora" al siguiente.
+   * Como el sello viaja DENTRO del payload cacheado, un acierto de cache
+   * devuelve su hora original y la cabecera puede decir "hace 40 s".
+   */
+  generatedAt: string;
   range: {
     from: string;
     to: string;
@@ -182,6 +192,14 @@ type DashboardResponse = {
     wau: number;
     dauMauPct: number;
     listenedMinutes: number;
+  }>;
+  audiobookSplit: Array<{
+    book: string;
+    users: number;
+    started: number;
+    finished: number;
+    completionRate: number;
+    minutes: number;
   }>;
   languageSplit: Array<{
     language: string;
@@ -344,6 +362,7 @@ type DashboardSection =
   | "content"
   | "funnels"
   | "audience"
+  | "audiobooks"
   | "alerts";
 
 function parseSection(raw: string | null): DashboardSection {
@@ -354,6 +373,7 @@ function parseSection(raw: string | null): DashboardSection {
     case "content":
     case "funnels":
     case "audience":
+    case "audiobooks":
     case "alerts":
       return raw;
     case "overview":
@@ -364,6 +384,7 @@ function parseSection(raw: string | null): DashboardSection {
 
 function createEmptyDashboardResponse(from: Date, to: Date, days: number): DashboardResponse {
   return {
+    generatedAt: new Date().toISOString(),
     range: {
       from: from.toISOString(),
       to: to.toISOString(),
@@ -392,6 +413,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
     },
     kpiUsers: { dau: [], wau: [] },
     languageSplit: [],
+    audiobookSplit: [],
     daily: [],
     topStories: [],
     topBooks: [],
@@ -506,6 +528,44 @@ function parseGrain(raw: string | null): "day" | "week" {
 function platformWhere(platform: MetricsPlatform) {
   if (platform === "all") return {};
   return { metadata: { path: ["platform"], equals: platform } };
+}
+
+/**
+ * Los `storySlug` que NO son de un journey, o sea: los audiolibros.
+ *
+ * El discriminador tiene que ser el slug de la historia y no `bookSlug`.
+ * Comprobado el 2026-09-24: los cubos `standalone`, `standalone-stories` y
+ * `null` llevan historias de las DOS clases (217+207+202 de journey contra
+ * 25+7+89 de libro), así que filtrar por libro se lleva por delante journeys.
+ *
+ * Con esto los gráficos del Studio cuentan solo journeys y la pestaña
+ * Audiobooks cuenta solo libros. Se corta por ACTIVIDAD y no por persona: de
+ * los 23 que usan las dos cosas, 14 aportan el 46% de las historias de journey
+ * terminadas del mes, y 16 de esos 23 entraron por un journey, no por un
+ * libro. Quien solo tiene libros desaparece igual de los recuentos de
+ * personas, porque ninguno de esos 72 tiene un solo evento fuera de un libro.
+ */
+let cacheLibros: { slugs: string[]; at: number } | null = null;
+const LIBROS_TTL_MS = 5 * 60 * 1000;
+
+async function getAudiobookStorySlugs(): Promise<string[]> {
+  if (cacheLibros && Date.now() - cacheLibros.at < LIBROS_TTL_MS) return cacheLibros.slugs;
+  const vistos = await prisma.userMetric.findMany({
+    distinct: ["storySlug"],
+    select: { storySlug: true },
+  });
+  const slugs = vistos.map((r) => r.storySlug).filter(Boolean) as string[];
+  const deJourney = new Set(
+    (
+      await prisma.journeyStory.findMany({
+        where: { slug: { in: slugs } },
+        select: { slug: true },
+      })
+    ).map((h) => h.slug),
+  );
+  const libros = slugs.filter((s) => !deJourney.has(s));
+  cacheLibros = { slugs: libros, at: Date.now() };
+  return libros;
 }
 
 function parseDate(raw: string | null): Date | null {
@@ -852,7 +912,32 @@ export async function GET(req: NextRequest): Promise<Response> {
   const platform = parsePlatform(search.get("platform"));
   const grain = parseGrain(search.get("grain"));
   const platformFilter = platformWhere(platform);
-  const now = new Date();
+  // Los audiolibros salen de TODO el tablero y viven en su propia pestaña.
+  // `section === "audiobooks"` le da la vuelta al filtro: ahi solo entran.
+  const audiobookSlugs = await getAudiobookStorySlugs();
+  const esAudiobooks = section === "audiobooks";
+  const librosFilter =
+    audiobookSlugs.length === 0
+      ? {}
+      : esAudiobooks
+        ? { storySlug: { in: audiobookSlugs } }
+        : { storySlug: { notIn: audiobookSlugs } };
+  /**
+   * El instante de referencia, redondeado al MINUTO hacia abajo.
+   *
+   * Sin esto la cache del panel no acertaba nunca: su clave lleva `from` y
+   * `to`, y para un rango como 30d valían "hace 30 días" y "ahora mismo", o
+   * sea que cambiaban en cada milisegundo. Cada carga recalculaba las ~30
+   * consultas y la entrada cacheada no la leía nadie.
+   *
+   * Se redondea el INSTANTE y no solo la clave, para que dos peticiones del
+   * mismo minuto midan exactamente la misma ventana: si solo se redondeara la
+   * clave, la segunda recibiría numeros calculados sobre otra ventana que la
+   * que su clave dice. El precio es que un evento de hace 40 s puede tardar
+   * hasta el minuto siguiente en aparecer, y eso no mueve ninguna cifra del
+   * panel: el DAU y el WAU van por día de calendario.
+   */
+  const now = new Date(Math.floor(Date.now() / 60000) * 60000);
   const defaultFrom = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
   const from = parseDate(search.get("from")) ?? defaultFrom;
   const to = parseDate(search.get("to")) ?? now;
@@ -894,7 +979,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     return NextResponse.json(cached.payload);
   }
 
-  const needsOverviewData = section === "overview";
+  // Audiobooks pinta las mismas cifras que el Resumen, con el filtro dado la
+  // vuelta, así que necesita exactamente los mismos datos.
+  const needsOverviewData = section === "overview" || esAudiobooks;
   const needsEngagementData = section === "engagement";
   const needsAcquisitionData = section === "acquisition";
   const needsFunnelsData = section === "funnels";
@@ -971,6 +1058,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1003,6 +1091,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDay(now), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -1016,6 +1105,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDaysAgo(now, 6), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -1035,6 +1125,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDaysAgo(from, 29), lte: to },
         ...(storySlug ? { storySlug } : {}),
@@ -1047,6 +1138,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1066,6 +1158,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -1116,6 +1209,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1135,6 +1229,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1152,6 +1247,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1170,6 +1266,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1189,6 +1286,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -1203,6 +1301,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         eventType: "upgrade_cta_clicked",
         storySlug: { startsWith: "__upgrade_" },
@@ -1214,6 +1313,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         bookSlug: "journey",
         eventType: {
@@ -1235,6 +1335,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1248,6 +1349,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -1269,6 +1371,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           where: {
             ...userScope,
             ...platformFilter,
+        ...librosFilter,
             eventType: "signup_completed",
             createdAt: { gte: sevenDaysAgo },
           },
@@ -1279,6 +1382,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           where: {
             ...userScope,
             ...platformFilter,
+        ...librosFilter,
             eventType: "signup_completed",
             createdAt: { gte: thirtyDaysAgo },
           },
@@ -1299,6 +1403,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         storySlug: "onboarding",
         eventType: {
@@ -1325,6 +1430,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: last7DaysStart, lte: now },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
       },
@@ -1342,6 +1448,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1360,6 +1467,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1377,6 +1485,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: prevFrom, lt: prevTo },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -1410,6 +1519,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["practice_session_started", "practice_session_completed"] },
         ...(storySlug ? { storySlug } : {}),
@@ -1428,6 +1538,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         ...userScope,
         ...platformFilter,
+        ...librosFilter,
         createdAt: { gte: from, lte: to },
         eventType: "vocab_clicked",
         ...(storySlug ? { storySlug } : {}),
@@ -1466,23 +1577,23 @@ export async function GET(req: NextRequest): Promise<Response> {
   // curva diaria del completion rate use la misma definición que la tarjeta.
   const [startedPairs, finishedPairs, prevStartedPairs, prevFinishedPairs] = await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
-      where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: from, lte: to }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
       distinct: ["userId", "storySlug"],
       orderBy: { createdAt: "asc" },
       select: { userId: true, storySlug: true, createdAt: true },
     }) : Promise.resolve([]),
     needsEventData ? prisma.userMetric.findMany({
-      where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to }, eventType: "audio_complete", ...slugFilter },
+      where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: from, lte: to }, eventType: "audio_complete", ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
-      where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
-      where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: "audio_complete", ...slugFilter },
+      where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: prevFrom, lte: prevTo }, eventType: "audio_complete", ...slugFilter },
       distinct: ["userId", "storySlug"],
       select: { userId: true, storySlug: true },
     }) : Promise.resolve([]),
@@ -1895,6 +2006,45 @@ export async function GET(req: NextRequest): Promise<Response> {
     const k = j ? `${j.language}/${j.variant}` : SIN_JOURNEY;
     deIdioma(k, j?.language ?? "libros", j?.variant ?? "").seconds += segundos;
   }
+  // ── Reparto por LIBRO ──
+  // El de idioma agrupa por journey, que un audiolibro no tiene. Aquí la
+  // unidad es el `bookSlug`, que en las filas de libro sí es fiable.
+  const acumLibro = new Map<
+    string,
+    { users: Set<string>; started: number; finished: number; seconds: number }
+  >();
+  if (esAudiobooks) {
+    const libroDeSlug = new Map<string, string>();
+    for (const row of events as EventRow[]) {
+      if (row.bookSlug) libroDeSlug.set(row.storySlug, row.bookSlug);
+    }
+    const deLibro = (slug: string) => libroDeSlug.get(slug) ?? "(sin libro)";
+    for (const par of startedPairs as Array<{ userId: string; storySlug: string }>) {
+      const k = deLibro(par.storySlug);
+      const f = acumLibro.get(k) ?? { users: new Set<string>(), started: 0, finished: 0, seconds: 0 };
+      f.users.add(par.userId);
+      f.started += 1;
+      if (finishedKeys.has(pairKey(par))) f.finished += 1;
+      acumLibro.set(k, f);
+    }
+    for (const [clave, segundos] of byUserStoryMaxSeconds.entries()) {
+      const k = deLibro(clave.split("::")[1]);
+      const f = acumLibro.get(k) ?? { users: new Set<string>(), started: 0, finished: 0, seconds: 0 };
+      f.seconds += segundos;
+      acumLibro.set(k, f);
+    }
+  }
+  const audiobookSplit = Array.from(acumLibro.entries())
+    .map(([book, f]) => ({
+      book,
+      users: f.users.size,
+      started: f.started,
+      finished: f.finished,
+      completionRate: f.started > 0 ? Math.round((f.finished / f.started) * 100) : 0,
+      minutes: Math.round((f.seconds / 60) * 10) / 10,
+    }))
+    .sort((a, b) => b.users - a.users || b.minutes - a.minutes);
+
   const languageSplit: FilaIdioma[] = Array.from(acumIdioma.values())
     .map((f) => ({
       language: f.language,
@@ -2434,12 +2584,12 @@ export async function GET(req: NextRequest): Promise<Response> {
   const [filasAhora, filasAntes] = needsAudienceData
     ? await Promise.all([
         prisma.userMetric.findMany({
-          where: { ...userScope, ...platformFilter, createdAt: { gte: from, lte: to } },
+          where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: from, lte: to } },
           select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
           take: 100000,
         }),
         prisma.userMetric.findMany({
-          where: { ...userScope, ...platformFilter, createdAt: { gte: prevFrom, lte: prevTo } },
+          where: { ...userScope, ...platformFilter, ...librosFilter, createdAt: { gte: prevFrom, lte: prevTo } },
           select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
           take: 100000,
         }),
@@ -2548,6 +2698,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       storiesFinished,
     },
     languageSplit,
+    audiobookSplit,
     daily,
     topStories,
     topBooks,

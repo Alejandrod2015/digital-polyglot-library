@@ -73,6 +73,10 @@ type Applicant = {
   currentApps: string | null;
   status: string;
   score: number | null;
+  /** Lo que valdría HOY con las reglas vigentes. Se calcula al leer, no se guarda. */
+  liveScore?: number | null;
+  liveDecision?: string | null;
+  scoreIsStale?: boolean;
   decision: string | null;
   decisionReason: string | null;
   notes: string | null;
@@ -966,7 +970,21 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
  * a proportion, and the band it landed in to explain why the row is sitting
  * in the queue rather than invited or declined.
  */
-function ScoreBadge({ score, rules }: { score: number | null; rules: Rules | null }) {
+function ScoreBadge({
+  score,
+  rules,
+  guardado,
+}: {
+  score: number | null;
+  rules: Rules | null;
+  /**
+   * El que quedó sellado el día que llegó la persona, cuando NO coincide con
+   * el de hoy. La cifra grande es siempre la viva, que es con la que se
+   * decide; esta va debajo y en pequeño, para que se vea que la regla cambió
+   * y no parezca que el numero baila solo.
+   */
+  guardado?: number | null;
+}) {
   if (score === null) {
     return <span style={{ fontSize: 20, fontWeight: 800, color: "var(--muted)" }}>-</span>;
   }
@@ -986,6 +1004,14 @@ function ScoreBadge({ score, rules }: { score: number | null; rules: Rules | nul
         <span style={{ fontSize: 12, fontWeight: 600, color: "var(--muted)" }}>/100</span>
       </span>
       <span style={{ ...labelStyle(), fontSize: 9 }}>score</span>
+      {typeof guardado === "number" && guardado !== score ? (
+        <span
+          style={{ fontSize: 10, color: "var(--muted)", whiteSpace: "nowrap" }}
+          title={`Al aplicar puntuó ${guardado}. Las reglas han cambiado desde entonces; la cifra grande es la de hoy.`}
+        >
+          era {guardado}
+        </span>
+      ) : null}
     </span>
   );
 }
@@ -1968,7 +1994,11 @@ function ReviewQueue({
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={pill(a.status)}>{a.status}</span>
-              <ScoreBadge score={a.score} rules={rules} />
+              <ScoreBadge
+                score={a.liveScore ?? a.score}
+                rules={rules}
+                guardado={a.score}
+              />
             </div>
           </div>
 

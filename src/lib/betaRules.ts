@@ -12,6 +12,7 @@
 // is betaRulesConfig.ts's, so the scoring can be run from a script or a test
 // without a database anywhere near it.
 import { variantPool } from "@domain/languageVariant";
+import { broadLevelFromCefr, normalizeBroadLevel } from "@domain/cefr";
 
 export type BetaRulesConfig = {
   /** Score at or above this is invited without a human ever seeing it. */
@@ -55,6 +56,21 @@ export type BetaRulesConfig = {
    * decide whether there was anything to invite the person to.
    */
   acceptedVariantPools: string[];
+  /**
+   * Bandas de nivel (beginner / intermediate / advanced) publicadas, por
+   * variante exacta y por pool. Derivadas junto a las dos listas de arriba.
+   *
+   * Sin esto, pedir un nivel que no existe salia gratis: una profesora de
+   * espanol de Espana que pedia avanzado cobraba los 37 puntos enteros de
+   * disponibilidad el 2026-09-24, y no hay ningun C1 de Espana publicado.
+   * El catalogo de Espana llega a B2 y ahi se acaba.
+   *
+   * Vacio significa "sin restriccion de nivel", que es lo que reciben el modo
+   * manual y las filas escritas antes de que el campo existiera.
+   */
+  acceptedLevelsByVariant: Record<string, string[]>;
+  /** Lo mismo por pool: un journey de Latam sirve a quien pidio Mexico. */
+  acceptedLevelsByPool: Record<string, string[]>;
   /** Master switch. Off = every application queues, nothing is auto-invited. */
   autoInviteEnabled: boolean;
 
@@ -106,16 +122,39 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  autoAcceptAt: 60,
+  // 100 y 1, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
+  // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
+  // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
+  // con score paso de 48 a 78. 88 es el mismo percentil 86 que ocupaba el 60
+  // viejo, y 33 el mismo percentil 3 que ocupaba el 24. Quien entraba
+  // directo sigue entrando directo; quien se rechazaba sin leer, igual.
+  // (88 en el primer reparto; 90 al pasar 10 puntos de las horas declaradas
+  // a la motivacion; 94 y 26 al sacar las horas y la cuenta de tienda; 100 y
+  // 11 al salir la motivacion; 100 y 1 al salir tambien el texto libre.)
+  //
+  // Con una sola senal el score toma TRES valores (100, 70, 0), asi que:
+  //
+  // - Auto-aceptar significa "su nivel esta publicado en su variante exacta".
+  //   El auto-invite lleva apagado desde antes; si se enciende, esto es lo
+  //   primero que hay que mirar.
+  // - El suelo de rechazo queda INERTE a proposito, y por eso vale 1. Un 0
+  //   solo se llega con idioma, variante o nivel sin publicar, y esos casos
+  //   ya salen a la cola por su propia puerta, antes del suelo. Nadie se
+  //   rechaza por puntuacion: los unicos rechazos automaticos que quedan son
+  //   el correo desechable y pedir iOS sin iPhone.
+  autoAcceptAt: 100,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 24,
+  autoDeclineBelow: 1,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
   acceptedVariantPools: [],
+  acceptedLevelsByVariant: {},
+  acceptedLevelsByPool: {},
   autoInviteEnabled: true,
   betaEndsAt: null,
   launchedAt: null,
@@ -158,25 +197,6 @@ function emailDomain(email: string): string {
   return email.split("@")[1]?.toLowerCase().trim() ?? "";
 }
 
-// Phrases that show up verbatim in applications written to get past a form
-// rather than to say something. Matched on the lowercased reason.
-const LOW_EFFORT_MARKERS = [
-  "i want to test",
-  "i want to try",
-  "sounds good",
-  "sounds interesting",
-  "looks cool",
-  "looks interesting",
-  "nice app",
-  "good app",
-  "let me in",
-  "please accept",
-  "i like languages",
-  "i love languages",
-  "test the app",
-  "want to be a beta tester",
-];
-
 export type BetaApplication = {
   email: string;
   appleIdEmail?: string | null;
@@ -206,91 +226,60 @@ export type BetaVerdict = {
 };
 
 /**
- * Scores the free-text "why are you applying" answer, which is the single
- * most predictive field: someone who writes two specific sentences about
- * their own situation tests the app, and someone who writes "i want to test"
- * installs it once and never returns.
+ * El techo que la suma de senales puede alcanzar de verdad, senal por senal.
  *
- * Worth up to 30 of the 100 points.
+ * Cada constante es el maximo REAL de su senal, no un tope teorico: si una
+ * deja de ser alcanzable, esta suma miente y el `/100` vuelve a mentir con
+ * ella. Queda UNA senal, la disponibilidad, asi que el score deja de fingir
+ * un ranking: 100 si tenemos su nivel en su variante, 70 si se lo damos desde
+ * el pool, 0 si no hay nada que darle.
+ *
+ * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
+ * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
+ * parecer descartado a quien pedia justo lo que tenemos publicado.
  */
-function scoreApplicationReason(reason: string | null | undefined): {
-  points: number;
-  note: string;
-} {
-  const text = (reason ?? "").trim();
-  if (!text) return { points: 0, note: "no reason given" };
+const LANGUAGE_MAX = 37;
+/**
+ * Lo que vale que el nivel pedido exista en el POOL pero no en la variante
+ * exacta: un journey de Latam le sirve a quien pidio Mexico, y no igual de
+ * bien que uno mexicano. Es el 70% de la nota entera, redondeado.
+ */
+const LANGUAGE_POOL_MATCH = 26;
+const MAX_RAW_SCORE = LANGUAGE_MAX;
 
-  const lower = text.toLowerCase();
-  const words = text.split(/\s+/).filter(Boolean);
-
-  let points = 0;
-
-  // Length, capped so an essay does not outrank a good short answer.
-  if (words.length >= 60) points += 14;
-  else if (words.length >= 30) points += 12;
-  else if (words.length >= 15) points += 8;
-  else if (words.length >= 8) points += 4;
-
-  // Specificity: first person plus a concrete noun beats a generic pitch.
-  const sentences = text.split(/[.!?]+/).filter((s) => s.trim().length > 0);
-  if (sentences.length >= 2) points += 5;
-  if (/\b(i|my|me|we)\b/i.test(text)) points += 3;
-  // A number, a place, or a date is a strong tell that they are describing
-  // their own life rather than restating the question.
-  if (/\d/.test(text) || /\b(month|year|week|trip|move|moving|job|family|wife|husband|partner)\b/i.test(lower)) {
-    points += 5;
-  }
-
-  // Penalties for the tells of a throwaway answer.
-  if (LOW_EFFORT_MARKERS.some((m) => lower.includes(m)) && words.length < 25) points -= 8;
-  // No capital letter anywhere and no punctuation: typed to satisfy a
-  // validator, not to communicate.
-  if (text === lower && !/[.!?,]/.test(text)) points -= 4;
-  // The same word over and over is filler padding to clear the minimum.
-  const unique = new Set(words.map((w) => w.toLowerCase())).size;
-  if (words.length >= 12 && unique / words.length < 0.5) points -= 6;
-
-  const clamped = Math.max(0, Math.min(30, points));
-  const note =
-    clamped >= 22 ? "specific, personal answer"
-    : clamped >= 12 ? "reasonable answer"
-    : clamped >= 6 ? "thin answer"
-    : "low-effort answer";
-  return { points: clamped, note };
+/** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
+function normalizeScore(raw: number): number {
+  return Math.max(0, Math.min(100, Math.round((raw / MAX_RAW_SCORE) * 100)));
 }
 
-function scoreWeeklyHours(hours: string | null | undefined): number {
-  // Values come from the form as "1-3" | "4-7" | "8+".
-  const h = (hours ?? "").trim();
-  if (h.startsWith("8")) return 20;
-  if (h.startsWith("4")) return 15;
-  if (h.startsWith("1")) return 7;
-  return 0;
-}
-
-function scoreMotivation(motivation: string | null | undefined): number {
-  // Stakes predict retention: someone moving abroad in October opens the app
-  // on a Tuesday night, someone learning "just for fun" does not.
-  switch ((motivation ?? "").trim().toLowerCase()) {
-    case "move abroad":
-      return 12;
-    case "work":
-      return 11;
-    case "family connection":
-      return 10;
-    // Igual que trabajo y familia: quien lleva años con un idioma y no quiere
-    // perderlo abre la app un martes por la noche. Antes caía en "just for
-    // fun" y se llevaba 5, la peor nota del campo.
-    case "keep up my level":
-      return 10;
-    case "travel":
-      return 8;
-    case "just for fun":
-      return 5;
-    default:
-      return 5;
-  }
-}
+/*
+ * Aqui vivian tres senales que ya no se puntuan (2026-09-24, decision del
+ * usuario):
+ *
+ * - El TEXTO LIBRE de "por que quieres entrar", que valia 27 y acabo en 10.
+ *   Con 124 invitados y aceptados la correlacion entre palabras escritas y
+ *   actividad real es 0,01, y con el feedback enviado es -0,04: los dos
+ *   testers mas activos del programa escribieron 7 y 5 palabras. Mientras
+ *   hubo otras senales daba igual que pesara poco; al quedarse solo, ordenaba
+ *   la cola entera por quien habia escrito mas largo. Se sigue leyendo en la
+ *   ficha, que es donde decide una persona.
+ * - La MOTIVACION del desplegable, que llego a valer 22. Fuera porque el
+ *   programa necesita gente DISTINTA probando: puntuar el motivo convierte al
+ *   scorer en un filtro de perfil y las plazas se irian todas al mismo tipo
+ *   de aprendiz. Que "Family connection" rinda mas que "Just for fun" en la
+ *   mediana no es razon para dejar de invitar a quien aprende por gusto.
+ *
+ * - Las HORAS POR SEMANA, que costaron 20 puntos y luego 10. Ordenaban al
+ *   reves: entre los 124 invitados y aceptados, quien declaro 1-3 horas tiene
+ *   mediana de 5,5 eventos y quien declaro 4-7 tiene 4. Es una promesa sobre
+ *   el futuro hecha en un formulario, y se comporta como tal.
+ * - La CUENTA DE TIENDA distinta del correo de contacto, que valia 3 por
+ *   "leyo el campo en vez de pegar lo mismo dos veces". Mide atencion al
+ *   rellenar, no ganas de usar la app.
+ *
+ * Las dos columnas se siguen recogiendo y se siguen viendo en la ficha del
+ * Studio; lo que no hacen es mover el numero.
+ */
 
 /**
  * Decides what happens to one application.
@@ -356,12 +345,6 @@ export function evaluateApplication(
   }
 
   // ── Score ──
-  const reason = scoreApplicationReason(app.applicationReason);
-  signals.push({ label: `Application text: ${reason.note}`, points: reason.points });
-
-  const hours = scoreWeeklyHours(app.weeklyHours);
-  signals.push({ label: `Weekly hours: ${app.weeklyHours ?? "unknown"}`, points: hours });
-
   const languageRecruited = rules.acceptedTargetLanguages.some(
     (l) => l.toLowerCase() === app.targetLanguage.trim().toLowerCase(),
   );
@@ -369,59 +352,65 @@ export function evaluateApplication(
   // is live. One we do not ("other", a free-typed country, an old null row)
   // cannot be held against the applicant, so it falls through to the language.
   const pool = variantPool(app.targetVariant);
+  const normalizedVariant = (app.targetVariant ?? "").trim().toLowerCase() || null;
   const variantServed =
     !pool || rules.acceptedVariantPools.length === 0 || rules.acceptedVariantPools.includes(pool);
   const languageAccepted = languageRecruited && variantServed;
-  const languagePoints = languageAccepted ? 20 : 0;
+  // La banda que pide, y donde la tenemos publicada. El formulario escribe
+  // "Beginner" / "Intermediate" / "Advanced"; los journeys guardan a0..c2, y
+  // el config trae ya las bandas por variante y por pool.
+  const banda = normalizeBroadLevel(app.currentLevel) ?? broadLevelFromCefr(app.currentLevel);
+  const bandasVariante = rules.acceptedLevelsByVariant[normalizedVariant ?? ""] ?? [];
+  const bandasPool = rules.acceptedLevelsByPool[pool ?? ""] ?? [];
+  const sinMapaDeNiveles =
+    Object.keys(rules.acceptedLevelsByVariant).length === 0 &&
+    Object.keys(rules.acceptedLevelsByPool).length === 0;
+  // Falla abierto por partida doble: sin mapa (modo manual, config vieja) y
+  // sin banda reconocible, el nivel no se le puede echar en cara a nadie.
+  const cobertura: "exacta" | "pool" | "ninguna" =
+    !languageAccepted ? "ninguna"
+    : sinMapaDeNiveles || !banda ? "exacta"
+    : bandasVariante.includes(banda) ? "exacta"
+    : bandasPool.includes(banda) ? "pool"
+    : "ninguna";
+
+  // 37, no 20. Los 17 que suben vienen del texto libre, que los cobraba sin
+  // predecir nada. Que tengamos publicado lo que la persona pide es lo unico
+  // que sabemos con certeza antes de invitarla, y por eso tiene que mirar las
+  // tres cosas que decide: idioma, variante y NIVEL.
+  const languagePoints =
+    cobertura === "exacta" ? LANGUAGE_MAX : cobertura === "pool" ? LANGUAGE_POOL_MATCH : 0;
+  const nivelServido = cobertura !== "ninguna";
   signals.push({
     label: !languageRecruited
       ? `Target language ${app.targetLanguage} is not being recruited for`
       : !variantServed
         ? `No published ${app.targetLanguage} journey for ${app.targetVariant} yet`
-        : `Target language ${app.targetLanguage} is in the beta`,
+        : cobertura === "ninguna"
+          ? `No ${banda} ${app.targetLanguage} journey for ${app.targetVariant} yet`
+          : cobertura === "pool"
+            ? `${banda} ${app.targetLanguage} is published, but not for ${app.targetVariant}`
+            : `Target language ${app.targetLanguage} is in the beta`,
     points: languagePoints,
   });
 
-  const motivation = scoreMotivation(app.motivation);
-  signals.push({ label: `Motivation: ${app.motivation ?? "unknown"}`, points: motivation });
-
-  // Small trust signal: someone who took the trouble to give the right store
-  // account is a person and not a form-filler.
-  //
-  // The social handle used to be worth 5 points here and the form asked for
-  // it. Both are gone: an optional field whose own helper text had to promise
-  // "we don't share or contact you there" is a field that is not earning its
-  // place, and what actually shows a real applicant is the paragraph they
-  // write about why they are applying. Old rows keep the column.
-  let extras = 0;
-  // Two different addresses mean they read the field instead of pasting the
-  // same value twice. Asked of WHICHEVER store account they gave: when this
-  // only looked at the Apple ID, an Android applicant could never earn the
-  // three points, so identical answers scored three lower on Android and were
-  // likelier to fall into the review band. A scoring bias nobody would have
-  // chosen, arrived at by extending the form and forgetting the scorer.
-  const contact = app.email.trim().toLowerCase();
-  const storeAccounts = [app.appleIdEmail, app.googleEmail]
-    .map((a) => a?.trim().toLowerCase())
-    .filter((a): a is string => Boolean(a));
-  if (storeAccounts.some((a) => a !== contact)) {
-    extras += 3;
-    signals.push({ label: "Store account differs from contact email", points: 3 });
-  }
-
-  const score = Math.max(
-    0,
-    Math.min(100, reason.points + hours + languagePoints + motivation + extras),
-  );
+  // Los puntos de cada senal siguen siendo los de siempre (y asi se listan en
+  // `signals`); lo que sale de aqui es su porcentaje del techo alcanzable.
+  const score = normalizeScore(languagePoints);
 
   // ── Verdict ──
-  if (!languageAccepted) {
+  // A la cola, nunca al rechazo: que hoy no tengamos su nivel no dice nada de
+  // la persona, y publicar ese journey lo arregla solo. El score se recalcula
+  // en cada lectura de la cola, asi que la ficha se corrige sola ese dia.
+  if (!languageAccepted || !nivelServido) {
     return {
       decision: "queue",
       score,
-      reason: languageRecruited
-        ? `No ${app.targetLanguage} (${app.targetVariant}) journey published yet`
-        : `Not recruiting ${app.targetLanguage} right now`,
+      reason: !languageRecruited
+        ? `Not recruiting ${app.targetLanguage} right now`
+        : !variantServed
+          ? `No ${app.targetLanguage} (${app.targetVariant}) journey published yet`
+          : `No ${banda} ${app.targetLanguage} journey for ${app.targetVariant} published yet`,
       signals,
     };
   }
