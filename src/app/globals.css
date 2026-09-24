@@ -958,6 +958,48 @@ body {
   margin: 4px 0 0;
 }
 .mx-panel__hint { font-size: 11.5px; color: var(--mx-muted); margin-top: 4px; }
+
+/* ── Cabecera compacta ──────────────────────────────────────────────────
+   Cada panel gastaba TRES lineas antes de enseñar un dato: eyebrow, titulo
+   (20px serif bajo el tema calido) y pista. En el Resumen apenas se nota
+   porque casi todo son tarjetas; en Aprendizaje, Embudos o Audiencia son
+   cuatro cabeceras por pantalla y el dato empieza donde ya hay que hacer
+   scroll.
+
+   Por defecto la cabecera pasa a UNA linea: el eyebrow delante del titulo,
+   los dos en la misma base. El titulo grande se reserva para el PRIMER panel
+   de la pestaña, que es el unico que tiene que decir de que va. Se aplica
+   por posicion y no por una clase nueva para que ningun panel futuro se
+   olvide de ponersela. */
+.mx-view .mx-panel__head { margin-bottom: 10px; }
+.mx-view .mx-panel__head > div:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.mx-view .mx-panel__title { font-size: 13.5px; margin: 0; }
+.mx-view .mx-panel__eyebrow { flex: 0 0 auto; }
+
+/* El primero de la pestaña conserva el titulo grande, este a pelo dentro de
+   la vista o dentro de la primera fila. */
+.mx-view > .mx-panel:first-child .mx-panel__head > div:first-child,
+.mx-view > .mx-row:first-child .mx-panel:first-child .mx-panel__head > div:first-child,
+.mx-view > .mx-retention-row:first-child .mx-panel:first-child .mx-panel__head > div:first-child,
+.mx-view > .mx-hero-grid:first-child + .mx-panel .mx-panel__head > div:first-child,
+.mx-view > .mx-hero-grid:first-child + .mx-row .mx-panel:first-child .mx-panel__head > div:first-child,
+.mx-view > .mx-hero-grid:first-child + .mx-retention-row .mx-panel:first-child .mx-panel__head > div:first-child {
+  display: block;
+}
+.mx-view > .mx-panel:first-child .mx-panel__title,
+.mx-view > .mx-row:first-child .mx-panel:first-child .mx-panel__title,
+.mx-view > .mx-retention-row:first-child .mx-panel:first-child .mx-panel__title,
+.mx-view > .mx-hero-grid:first-child + .mx-panel .mx-panel__title,
+.mx-view > .mx-hero-grid:first-child + .mx-row .mx-panel:first-child .mx-panel__title,
+.mx-view > .mx-hero-grid:first-child + .mx-retention-row .mx-panel:first-child .mx-panel__title {
+  font-size: 16px;
+  margin: 4px 0 0;
+}
 .mx-panel__sub {
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.12em;
@@ -1433,6 +1475,15 @@ body:has(.studio-shell-root[data-theme="warm"]) {
 }
 .studio-shell-root[data-theme="warm"] .mx-root { background: transparent; }
 .studio-shell-root[data-theme="warm"] .mx-panel__title { font-family: var(--mx-serif); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+/* En las pestañas, el serif de 20px solo en el primer panel; el resto van en
+   la linea compacta de arriba. */
+.studio-shell-root[data-theme="warm"] .mx-view .mx-panel__title { font-family: inherit; font-size: 13.5px; }
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-panel:first-child .mx-panel__title,
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-row:first-child .mx-panel:first-child .mx-panel__title,
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-retention-row:first-child .mx-panel:first-child .mx-panel__title,
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-hero-grid:first-child + .mx-panel .mx-panel__title,
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-hero-grid:first-child + .mx-row .mx-panel:first-child .mx-panel__title,
+.studio-shell-root[data-theme="warm"] .mx-view > .mx-hero-grid:first-child + .mx-retention-row .mx-panel:first-child .mx-panel__title { font-family: var(--mx-serif); font-size: 20px; }
 .studio-shell-root[data-theme="warm"] .mx-fold__eyebrow { font-family: var(--mx-mono); letter-spacing: 0.14em; font-weight: 700; }
 .studio-shell-root[data-theme="warm"] .mx-kpi--hero .mx-kpi__label { color: var(--mx-fg-soft); }
 .studio-shell-root[data-theme="warm"] .mx-kpi { border-radius: 14px; }
