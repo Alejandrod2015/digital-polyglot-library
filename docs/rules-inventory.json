@@ -428,7 +428,7 @@
       "id": "project_setjourneystatus_bypasses_publish_gate",
       "domain": "audio",
       "rule": "\"setJourneyStatus.ts pone un journey en active sin mirar el gate de publicacion, asi que dos journeys llegaron a produccion sin audio de practica; y el runtime tapa el agujero sintetizando al tocar...",
-      "gate": "none",
+      "gate": "scripts/publishJourney.ts",
       "source": "memory:project_setjourneystatus_bypasses_publish_gate.md"
     },
     {
@@ -456,7 +456,7 @@
       "id": "project_ve_report_is_spanish_phonetics",
       "domain": "audio",
       "rule": "\"El 've' que un tester no oye no es audio roto: es la v espanola, medida sobre su propio mp3 el 2026-09-23\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_ve_report_is_spanish_phonetics.md"
     },
     {
@@ -568,7 +568,7 @@
       "id": "project_ads_variant_tour_rules",
       "domain": "comms",
       "rule": "\"Reglas del tour de variantes: una PALABRA por pais comparable con las otras, ventana en mitad de la historia y texto hasta el reproductor\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_ads_variant_tour_rules.md"
     },
     {
@@ -638,7 +638,7 @@
       "id": "project_feedback_status_is_now_true",
       "domain": "comms",
       "rule": "El status de BetaFeedback se puso al dia el 2026-09-23 y ya se puede filtrar por el; releaseId sigue vacio en las 24 filas porque no hay ni una fila en BetaRelease",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_feedback_status_is_now_true.md"
     },
     {
@@ -855,7 +855,7 @@
       "id": "project_tap_gloss_bubble_covers_word",
       "domain": "cover",
       "rule": "\"Movil: la tarjeta de tap-word vive pegada al fondo y tapaba la palabra tocada (Ty, 2026-09-15). Diagnosticado y arreglado el 2026-09-21 en la rama claude/glosas-burbuja-y-deuda; sin comprobar en d...",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_tap_gloss_bubble_covers_word.md"
     },
     {
@@ -1457,7 +1457,7 @@
       "id": "feedback_flagged_fragments_need_the_reviewer",
       "domain": "process",
       "rule": "Tras narrar, los fragmentos marcados por los gates se entregan en el artifact revisor de veredictos, no como lista en el chat",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:feedback_flagged_fragments_need_the_reviewer.md"
     },
     {
@@ -1764,8 +1764,8 @@
     {
       "id": "project_reply_to_a_tester_from_a_chat",
       "domain": "process",
-      "rule": "\"Como responde un chat a UN reporte de feedback (scripts/_replyToFeedback.ts) y por que hace falta un worktree limpio para que el gate de veracidad deje pasar el envio\"",
-      "gate": "none",
+      "rule": "Como responde un chat a UN reporte de feedback (scripts/_replyToFeedback.ts) y por que el envio sale de un worktree limpio; es disciplina, ningun porton lo comprueba",
+      "gate": "process",
       "source": "memory:project_reply_to_a_tester_from_a_chat.md"
     },
     {
@@ -2346,7 +2346,7 @@
       "id": "project_gloss_sibling_copies_carry_wrong_sense",
       "domain": "vocab",
       "rule": "\"rebuildTapGlosses copia glosas de journeys hermanos y 71 de 530 traian el sentido de OTRO journey; y la lectura a mano de respuesta unica necesita DOS pasadas, la segunda encontro 8 que la primera...",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_gloss_sibling_copies_carry_wrong_sense.md"
     },
     {
