@@ -122,21 +122,22 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  // 90 y 33, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // 94 y 26, recalibrados el 2026-09-24 con el reparto nuevo de senales.
   // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
   // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
   // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
   // con score paso de 48 a 78. 88 es el mismo percentil 86 que ocupaba el 60
   // viejo, y 33 el mismo percentil 3 que ocupaba el 24. Quien entraba
   // directo sigue entrando directo; quien se rechazaba sin leer, igual.
-  // (88 en el primer reparto; 90 tras pasar 10 puntos de las horas
-  // declaradas a la motivacion, que subio otro poco la distribucion.)
-  autoAcceptAt: 90,
+  // (88 en el primer reparto; 90 al pasar 10 puntos de las horas declaradas
+  // a la motivacion; 94 y 26 al sacar del todo las horas y la cuenta de
+  // tienda, que bajo el techo de 82 a 69 y volvio a mover la escala.)
+  autoAcceptAt: 94,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 33,
+  autoDeclineBelow: 26,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -289,15 +290,15 @@ function scoreApplicationReason(reason: string | null | undefined): {
  *
  * Cada constante es el maximo REAL de su senal, no un tope teorico: si una
  * deja de ser alcanzable, esta suma miente y el `/100` vuelve a mentir con
- * ella. La suma da 82, el mismo techo que antes del reparto del 2026-09-24,
- * asi que los dos umbrales (73 y 29) siguen valiendo tal cual.
+ * ella. Quedan tres senales y la suma da 69; al salir las horas y la cuenta
+ * de tienda el techo baja, y por eso los umbrales se vuelven a recalibrar al
+ * percentil que ocupaban en vez de quedarse donde estaban.
  *
  * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
  * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
  * parecer descartado a quien pedia justo lo que tenemos publicado.
  */
 const REASON_MAX = 10;
-const HOURS_MAX = 10;
 const LANGUAGE_MAX = 37;
 /**
  * Lo que vale que el nivel pedido exista en el POOL pero no en la variante
@@ -306,33 +307,28 @@ const LANGUAGE_MAX = 37;
  */
 const LANGUAGE_POOL_MATCH = 26;
 const MOTIVATION_MAX = 22;
-const EXTRAS_MAX = 3;
-const MAX_RAW_SCORE = REASON_MAX + HOURS_MAX + LANGUAGE_MAX + MOTIVATION_MAX + EXTRAS_MAX;
+const MAX_RAW_SCORE = REASON_MAX + LANGUAGE_MAX + MOTIVATION_MAX;
 
 /** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
 function normalizeScore(raw: number): number {
   return Math.max(0, Math.min(100, Math.round((raw / MAX_RAW_SCORE) * 100)));
 }
 
-/**
- * Las horas que la persona DICE que va a dedicar, que valen la mitad de lo
- * que valian.
+/*
+ * Aqui vivian dos senales que ya no se puntuan (2026-09-24, decision del
+ * usuario):
  *
- * Costaban 20 puntos y ordenaban al reves: entre los 124 invitados y
- * aceptados, quien declaro 1-3 horas tiene mediana de 5,5 eventos y quien
- * declaro 4-7 tiene 4, y cobraban 7 y 15. El unico tramo que rinde de verdad
- * es "8+" (mediana 14,5), y son seis personas, asi que la ventaja que se le
- * da es de cuatro puntos y no de trece. Los otros dos tramos empatan porque
- * en el dato empatan.
+ * - Las HORAS POR SEMANA, que costaron 20 puntos y luego 10. Ordenaban al
+ *   reves: entre los 124 invitados y aceptados, quien declaro 1-3 horas tiene
+ *   mediana de 5,5 eventos y quien declaro 4-7 tiene 4. Es una promesa sobre
+ *   el futuro hecha en un formulario, y se comporta como tal.
+ * - La CUENTA DE TIENDA distinta del correo de contacto, que valia 3 por
+ *   "leyo el campo en vez de pegar lo mismo dos veces". Mide atencion al
+ *   rellenar, no ganas de usar la app.
+ *
+ * Las dos columnas se siguen recogiendo y se siguen viendo en la ficha del
+ * Studio; lo que no hacen es mover el numero.
  */
-function scoreWeeklyHours(hours: string | null | undefined): number {
-  // Values come from the form as "1-3" | "4-7" | "8+".
-  const h = (hours ?? "").trim();
-  if (h.startsWith("8")) return HOURS_MAX;
-  if (h.startsWith("4")) return 6;
-  if (h.startsWith("1")) return 6;
-  return 0;
-}
 
 function scoreMotivation(motivation: string | null | undefined): number {
   // El orden ya no es una teoria sobre quien tiene mas en juego: es la mediana
@@ -436,9 +432,6 @@ export function evaluateApplication(
   const reason = scoreApplicationReason(app.applicationReason);
   signals.push({ label: `Application text: ${reason.note}`, points: reason.points });
 
-  const hours = scoreWeeklyHours(app.weeklyHours);
-  signals.push({ label: `Weekly hours: ${app.weeklyHours ?? "unknown"}`, points: hours });
-
   const languageRecruited = rules.acceptedTargetLanguages.some(
     (l) => l.toLowerCase() === app.targetLanguage.trim().toLowerCase(),
   );
@@ -491,33 +484,9 @@ export function evaluateApplication(
   const motivation = scoreMotivation(app.motivation);
   signals.push({ label: `Motivation: ${app.motivation ?? "unknown"}`, points: motivation });
 
-  // Small trust signal: someone who took the trouble to give the right store
-  // account is a person and not a form-filler.
-  //
-  // The social handle used to be worth 5 points here and the form asked for
-  // it. Both are gone: an optional field whose own helper text had to promise
-  // "we don't share or contact you there" is a field that is not earning its
-  // place, and what actually shows a real applicant is the paragraph they
-  // write about why they are applying. Old rows keep the column.
-  let extras = 0;
-  // Two different addresses mean they read the field instead of pasting the
-  // same value twice. Asked of WHICHEVER store account they gave: when this
-  // only looked at the Apple ID, an Android applicant could never earn the
-  // three points, so identical answers scored three lower on Android and were
-  // likelier to fall into the review band. A scoring bias nobody would have
-  // chosen, arrived at by extending the form and forgetting the scorer.
-  const contact = app.email.trim().toLowerCase();
-  const storeAccounts = [app.appleIdEmail, app.googleEmail]
-    .map((a) => a?.trim().toLowerCase())
-    .filter((a): a is string => Boolean(a));
-  if (storeAccounts.some((a) => a !== contact)) {
-    extras += 3;
-    signals.push({ label: "Store account differs from contact email", points: 3 });
-  }
-
   // Los puntos de cada senal siguen siendo los de siempre (y asi se listan en
   // `signals`); lo que sale de aqui es su porcentaje del techo alcanzable.
-  const score = normalizeScore(reason.points + hours + languagePoints + motivation + extras);
+  const score = normalizeScore(reason.points + languagePoints + motivation);
 
   // ── Verdict ──
   // A la cola, nunca al rechazo: que hoy no tengamos su nivel no dice nada de
