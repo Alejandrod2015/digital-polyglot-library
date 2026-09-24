@@ -356,11 +356,19 @@ function LanguageSplitPanel({
                   <td title={etiquetaIdioma(fila)}>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                       <LangTag code={LANG_CODE[fila.language] ?? null} />
-                      {fila.variant ? (
-                        <LangTag code={VARIANT_CODE[fila.variant] ?? fila.variant.slice(0, 3)} />
-                      ) : (
-                        <span style={{ color: "var(--mx-muted)" }}>libros</span>
-                      )}
+                      {(() => {
+                        if (!fila.variant) {
+                          return <span style={{ color: "var(--mx-muted)" }}>libros</span>;
+                        }
+                        const v = VARIANT_CODE[fila.variant] ?? fila.variant.slice(0, 3);
+                        // Si la variante repite el código del idioma (ES/ES,
+                        // IT/IT, FR/FR, DE/DE) no se pinta dos veces: cuatro de
+                        // las siete filas salían con la misma etiqueta doble.
+                        // Solo aparece cuando dice algo: LATAM, MX, BR.
+                        return v === (LANG_CODE[fila.language] ?? "").toUpperCase() ? null : (
+                          <LangTag code={v} />
+                        );
+                      })()}
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>{fila.users}</td>
