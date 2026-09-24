@@ -122,7 +122,7 @@ export type BetaRulesConfig = {
 };
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
-  // 94 y 26, recalibrados el 2026-09-24 con el reparto nuevo de senales.
+  // 100 y 11, recalibrados el 2026-09-24 con el reparto nuevo de senales.
   // Primero fueron 73 y 29 (los viejos 60 y 24 llevados a la escala
   // normalizada), pero pasar 17 puntos del texto libre a la disponibilidad
   // sube a todo el que pide algo publicado: la mediana de los 150 solicitantes
@@ -130,14 +130,20 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   // viejo, y 33 el mismo percentil 3 que ocupaba el 24. Quien entraba
   // directo sigue entrando directo; quien se rechazaba sin leer, igual.
   // (88 en el primer reparto; 90 al pasar 10 puntos de las horas declaradas
-  // a la motivacion; 94 y 26 al sacar del todo las horas y la cuenta de
-  // tienda, que bajo el techo de 82 a 69 y volvio a mover la escala.)
-  autoAcceptAt: 94,
+  // a la motivacion; 94 y 26 al sacar las horas y la cuenta de tienda; 100 y
+  // 11 al salir tambien la motivacion.)
+  //
+  // Con dos senales el score solo puede tomar NUEVE valores, asi que el
+  // umbral de arriba acaba en el propio maximo: auto-aceptar significa ahora
+  // "su nivel esta publicado en su variante exacta y escribio algo". Es una
+  // consecuencia del reparto, no un descuido; el auto-invite lleva apagado
+  // desde antes, y si se enciende hay que mirar esto primero.
+  autoAcceptAt: 100,
   // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
   // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
   // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
   // rechazado sin leerlo a quien ayer entraba a revisión.
-  autoDeclineBelow: 26,
+  autoDeclineBelow: 11,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -290,9 +296,9 @@ function scoreApplicationReason(reason: string | null | undefined): {
  *
  * Cada constante es el maximo REAL de su senal, no un tope teorico: si una
  * deja de ser alcanzable, esta suma miente y el `/100` vuelve a mentir con
- * ella. Quedan tres senales y la suma da 69; al salir las horas y la cuenta
- * de tienda el techo baja, y por eso los umbrales se vuelven a recalibrar al
- * percentil que ocupaban en vez de quedarse donde estaban.
+ * ella. Quedan dos senales y la suma da 47; cada vez que sale una el techo
+ * baja, y los umbrales se recalibran al percentil que ocupaban en vez de
+ * quedarse donde estaban.
  *
  * Existe porque el score se presenta como `/100` y nadie podia pasar de 82:
  * un 43 se leia como suspenso cuando era el 52% de lo alcanzable, y eso hacia
@@ -306,8 +312,7 @@ const LANGUAGE_MAX = 37;
  * bien que uno mexicano. Es el 70% de la nota entera, redondeado.
  */
 const LANGUAGE_POOL_MATCH = 26;
-const MOTIVATION_MAX = 22;
-const MAX_RAW_SCORE = REASON_MAX + LANGUAGE_MAX + MOTIVATION_MAX;
+const MAX_RAW_SCORE = REASON_MAX + LANGUAGE_MAX;
 
 /** La suma cruda, llevada a la escala 0..100 que dice la interfaz. */
 function normalizeScore(raw: number): number {
@@ -315,8 +320,14 @@ function normalizeScore(raw: number): number {
 }
 
 /*
- * Aqui vivian dos senales que ya no se puntuan (2026-09-24, decision del
+ * Aqui vivian tres senales que ya no se puntuan (2026-09-24, decision del
  * usuario):
+ *
+ * - La MOTIVACION del desplegable, que llego a valer 22. Fuera porque el
+ *   programa necesita gente DISTINTA probando: puntuar el motivo convierte al
+ *   scorer en un filtro de perfil y las plazas se irian todas al mismo tipo
+ *   de aprendiz. Que "Family connection" rinda mas que "Just for fun" en la
+ *   mediana no es razon para dejar de invitar a quien aprende por gusto.
  *
  * - Las HORAS POR SEMANA, que costaron 20 puntos y luego 10. Ordenaban al
  *   reves: entre los 124 invitados y aceptados, quien declaro 1-3 horas tiene
@@ -329,41 +340,6 @@ function normalizeScore(raw: number): number {
  * Las dos columnas se siguen recogiendo y se siguen viendo en la ficha del
  * Studio; lo que no hacen es mover el numero.
  */
-
-function scoreMotivation(motivation: string | null | undefined): number {
-  // El orden ya no es una teoria sobre quien tiene mas en juego: es la mediana
-  // de eventos reales de los 124 invitados y aceptados, medida el 2026-09-24.
-  //
-  //   Keep up my level   n=6    mediana 31
-  //   Family connection  n=27   mediana 11
-  //   Move abroad        n=18   mediana 6,5
-  //   Just for fun       n=25   mediana 3
-  //   Travel             n=29   mediana 3
-  //   Work               n=9    mediana 0
-  //
-  // "Work" cobraba 11, la segunda nota mas alta del campo, y es la unica
-  // opcion cuya mediana de actividad es cero. La horquilla se queda estrecha
-  // (13..22) porque con estas muestras no da para mas: los dos extremos
-  // tienen seis y nueve personas detras. El campo pesa 22 desde el
-  // 2026-09-24, que son los 10 que se le quitaron a las horas declaradas: lo
-  // que la persona dice que quiere separa mejor que las horas que promete.
-  switch ((motivation ?? "").trim().toLowerCase()) {
-    case "family connection":
-      return MOTIVATION_MAX;
-    case "keep up my level":
-      return MOTIVATION_MAX;
-    case "move abroad":
-      return 18;
-    case "travel":
-      return 13;
-    case "just for fun":
-      return 13;
-    case "work":
-      return 13;
-    default:
-      return 13;
-  }
-}
 
 /**
  * Decides what happens to one application.
@@ -481,12 +457,9 @@ export function evaluateApplication(
     points: languagePoints,
   });
 
-  const motivation = scoreMotivation(app.motivation);
-  signals.push({ label: `Motivation: ${app.motivation ?? "unknown"}`, points: motivation });
-
   // Los puntos de cada senal siguen siendo los de siempre (y asi se listan en
   // `signals`); lo que sale de aqui es su porcentaje del techo alcanzable.
-  const score = normalizeScore(reason.points + languagePoints + motivation);
+  const score = normalizeScore(reason.points + languagePoints);
 
   // ── Verdict ──
   // A la cola, nunca al rechazo: que hoy no tengamos su nivel no dice nada de
